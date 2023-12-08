@@ -18,9 +18,9 @@ namespace ReversePrism
         }
 
         [DllImport("libember")] public extern static IntPtr mbedtlshelper_aes_create();
-        [DllImport("libember")] public extern static int    mbedtlshelper_aes_crypt_ctr(IntPtr ctx, IntPtr a2, IntPtr a3, IntPtr a4, IntPtr a5);
+        [DllImport("libember")] public extern static int    mbedtlshelper_aes_crypt_ctr(IntPtr ctx, IntPtr input, IntPtr output, long length, IntPtr counter);
         [DllImport("libember")] public extern static int    mbedtlshelper_aes_destroy(IntPtr ctx);
-        [DllImport("libember")] public extern static int    mbedtlshelper_aes_setkey_enc(IntPtr ctx, IntPtr a2, int bits);
+        [DllImport("libember")] public extern static int    mbedtlshelper_aes_setkey_enc(IntPtr ctx, IntPtr key, int bits);
 
         [DllImport("libember")] public extern static IntPtr lz4frameutil_decompressor_create();
         [DllImport("libember")] public extern static int    lz4frameutil_decompressor_destroy(IntPtr ctx);

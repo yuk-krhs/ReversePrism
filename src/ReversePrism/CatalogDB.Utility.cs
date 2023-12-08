@@ -10,6 +10,9 @@ namespace ReversePrism
     {
         public static string Base32Chars    = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
+        public static byte[] CalcKey(long size, long label, long encrypt)
+            => CalcKey((ulong)size, (ulong)label, (ulong)encrypt);
+
         public static byte[] CalcKey(ulong size, ulong label, ulong encrypt)
         {
             var buf = new byte[24];
@@ -55,7 +58,10 @@ namespace ReversePrism
             return hash;
         }
 
-        public static string GetAssetName(ulong label, ulong checksum, ulong size)
+        public static string GetResourceName(long label, long checksum, long size)
+            => GetResourceName((ulong)label, (ulong)checksum, (ulong)size);
+
+        public static string GetResourceName(ulong label, ulong checksum, ulong size)
         {
             var buf = new byte[32];
             var idx = 0;

@@ -21,15 +21,15 @@ namespace ReversePrism
              Dispose(disposing: false);
         }
 
-        public unsafe int SetKey(byte[] data, int bits)
+        public unsafe int SetKey(byte[] key, int bits)
         {
-            fixed(byte* p= &data[0])
+            fixed(byte* p= &key[0])
                 return SetKey(p, bits);
         }
 
-        public unsafe int SetKey(byte* data, int bits)
+        public unsafe int SetKey(byte* key, int bits)
         {
-            return LibEmber.mbedtlshelper_aes_setkey_enc(context, new IntPtr(data), bits);
+            return LibEmber.mbedtlshelper_aes_setkey_enc(context, new IntPtr(key), bits);
         }
 
         public unsafe int Transform(byte[] input, byte[] output, byte[] counter)

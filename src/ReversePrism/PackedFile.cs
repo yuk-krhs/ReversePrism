@@ -17,29 +17,29 @@ namespace ReversePrism
             Data    = data;
         }
 
-        public unsafe static PackedFile FromEncryptedFile(string path, ulong label, ulong encrypt)
+        public unsafe static PackedFile FromEncryptedFile(string file, long label, long encrypt)
         {
-            var indata  = File.ReadAllBytes(path);
-            var outdata = new byte[indata.Length];
-            var key     = CatalogDB.CalcKey((ulong)indata.Length, label, encrypt);
+            var input   = File.ReadAllBytes(file);
+            var output  = new byte[input.Length];
+            var key     = CatalogDB.CalcKey(input.Length, label, encrypt);
 
             using(var aes= new AesCtr())
             {
-                fixed(byte* pIn = &indata[0])
-                fixed(byte* pOut= &outdata[0])
+                fixed(byte* pIn = &input[0])
+                fixed(byte* pOut= &output[0])
                 fixed(byte* pKey= &key[0])
                 {
-                    aes.SetKey(pKey+0, 128);
-                    aes.Transform(pIn, pOut, indata.Length, pKey + 4);
+                    aes.SetKey(pKey + 0, 128);
+                    aes.Transform(pIn, pOut, input.Length, pKey + 4);
                 }
             }
 
             using(var lz4= new Lz4Decompressor())
             {
-                outdata = lz4.Decompress(outdata);
+                output = lz4.Decompress(output);
             }
 
-            return new PackedFile(path, outdata);
+            return new PackedFile(file, output);
         }
     }
 }
