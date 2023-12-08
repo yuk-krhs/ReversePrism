@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Authors>yuk-krhs</Authors>
+    <Copyright>(C) yuk-krhs 2023</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yuk-krhs/ReversePrism</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="x64\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\external\x64\libember.dll" Link="x64\libember.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-sqlcipher" Version="1.8.116" />
+  </ItemGroup>
+
+</Project>
