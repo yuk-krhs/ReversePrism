@@ -122,5 +122,20 @@ namespace ReversePrism
 
             return sb.ToString();
         }
+
+        public static long CalcResourceLabel(string str)
+            => CalcCrc64(str, Encoding.ASCII);
+
+        public static long CalcCrc64(string str, Encoding enc)
+            => CalcCrc64(enc.GetBytes(str));
+
+        public static long CalcCrc64(byte[] data)
+        {
+            var crc64   = new System.IO.Hashing.Crc64();
+
+            crc64.Append(data);
+
+            return BitConverter.ToInt64(crc64.GetHashAndReset().Reverse().ToArray(), 0);
+        }
     }
 }
