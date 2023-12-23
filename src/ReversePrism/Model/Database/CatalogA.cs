@@ -18,4 +18,13 @@ namespace ReversePrism
         public int      S { get; set; }
         public int      P { get; set; }
     }
+
+    public class CatalogASet : Dictionary<long, CatalogA>
+    {
+        public CatalogASet(IEnumerable<CatalogA> items)
+        {
+            foreach(var i in items)
+                Add(i.L, i);
+        }
+    }
 }

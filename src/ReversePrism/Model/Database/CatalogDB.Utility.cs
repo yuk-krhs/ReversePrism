@@ -10,6 +10,9 @@ namespace ReversePrism
     {
         public static string Base32Chars    = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
+        public static byte[] CalcKey(CatalogA rec)
+            => CalcKey(rec.S, rec.L, rec.E);
+
         public static byte[] CalcKey(long size, long label, long encrypt)
             => CalcKey((ulong)size, (ulong)label, (ulong)encrypt);
 
@@ -47,7 +50,7 @@ namespace ReversePrism
 
             var hash= System.Security.Cryptography.SHA1.Create().ComputeHash(buf, 0, idx);
 
-            #if DEBUG
+            #if DEBUG_CATALOG
             var s1  = string.Join(" ", buf .Select(i => $"{i:X2}"));
             var s2  = string.Join(" ", hash.Select(i => $"{i:X2}"));
 
@@ -57,6 +60,9 @@ namespace ReversePrism
 
             return hash;
         }
+
+        public static string GetResourceName(CatalogA rec)
+            => GetResourceName(rec.L, rec.C, rec.S);
 
         public static string GetResourceName(long label, long checksum, long size)
             => GetResourceName((ulong)label, (ulong)checksum, (ulong)size);
@@ -96,7 +102,7 @@ namespace ReversePrism
             var hash= System.Security.Cryptography.MD5.Create().ComputeHash(buf, 0, idx);
             var str = ToBase32(hash);
 
-            #if DEBUG
+            #if DEBUG_CATALOG
             System.Diagnostics.Debug.Print($"Input {string.Join(" ", buf .Select(i => i.ToString("X2")))}");
             System.Diagnostics.Debug.Print($"Hash  {string.Join(" ", hash.Select(i => i.ToString("X2")))}");
             System.Diagnostics.Debug.Print($"Base32 {str}");
