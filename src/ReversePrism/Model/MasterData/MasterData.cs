@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Cache;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -10,16 +11,25 @@ using System.Threading.Tasks;
 namespace ReversePrism
 {
     // masterdata.bytes
-    public class MasterData
+    public partial class MasterData
     {
         public string?                  FileName                { get; set; }
         public byte                     EntryCount              { get; private set; }
+
+        /*
         public List<MasterDataBase[]>   DataEntries             { get; private set; } = new List<MasterDataBase[]>();
-        public IEnumerable<MasterData01> Idol                   => DataEntries[ 0].Cast<MasterData01>();
-        public IEnumerable<MasterData03> Unit                   => DataEntries[ 2].Cast<MasterData03>();
-        public IEnumerable<MasterData05> Costume                => DataEntries[ 4].Cast<MasterData05>();
-        public IEnumerable<MasterData06> Dress                  => DataEntries[ 5].Cast<MasterData06>();
-        public IEnumerable<MasterData10> Accessory              => DataEntries[ 9].Cast<MasterData10>();
+        public IEnumerable<_00_MstCharacterInfo> Idol                   => DataEntries[ 0].Cast<_00_MstCharacterInfo>();
+        public IEnumerable<_01_MstIdol> Data02                 => DataEntries[ 1].Cast<_01_MstIdol>();    // Initial Dress?
+        public IEnumerable<_02_MstIdolStandingPosition> Unit                   => DataEntries[ 2].Cast<_02_MstIdolStandingPosition>();
+        public IEnumerable<_03_MstCostumeSet> CostumeSet             => DataEntries[ 3].Cast<_03_MstCostumeSet>();
+        public IEnumerable<_04_MstCostume> Costume                => DataEntries[ 4].Cast<_04_MstCostume>();
+        public IEnumerable<_05_MstCostumeResource> ClothModel             => DataEntries[ 5].Cast<_05_MstCostumeResource>();
+        public IEnumerable<_06_MstHairstyle> CosutumePresets        => DataEntries[ 6].Cast<_06_MstHairstyle>();
+        public IEnumerable<_07_MstHairstyleResource> Data08                 => DataEntries[ 7].Cast<_07_MstHairstyleResource>();
+        public IEnumerable<_08_MstAccessorie> Data09                 => DataEntries[ 8].Cast<_08_MstAccessorie>();
+        public IEnumerable<_09_MstAccessoryResource> AccessoryModel         => DataEntries[ 9].Cast<_09_MstAccessoryResource>();
+        public IEnumerable<_39_MstSong> Song                   => DataEntries[39].Cast<_39_MstSong>();
+        */
 
         public static string GetRealName(CatalogASet catalog)
         {
@@ -33,96 +43,187 @@ namespace ReversePrism
             return real;
         }
 
+        private void Load<T>(BinaryReader r, ref T[] values) where T : new()
+        {
+            values  = MasterDataDeserializer.Deserialize<T>(r);
+        }
+
         private void Load(BinaryReader r)
         {
             EntryCount  = r.ReadByte();
 
-            Load<MasterData01>(r);
-            Load<MasterData02>(r);
-            Load<MasterData03>(r);
-            Load<MasterData04>(r);
-            Load<MasterData05>(r);
-            Load<MasterData06>(r);
-            Load<MasterData07>(r);
-            Load<MasterData08>(r);
-            Load<MasterData09>(r);
-            Load<MasterData10>(r);
-            Load<MasterData11>(r);
-            Load<MasterData12>(r);
-            Load<MasterData13>(r);
-            Load<MasterData14>(r);
-            Load<MasterData15>(r);
-            Load<MasterData16>(r);
-            Load<MasterData17>(r);
-            Load<MasterData18>(r);
-            Load<MasterData19>(r);
-            Load<MasterData20>(r);
-            Load<MasterData21>(r);
-            Load<MasterData22>(r);
-            Load<MasterData23>(r);
-            Load<MasterData24>(r);
-            Load<MasterData25>(r);
+            #if true
+            Load(r, ref CharacterInfos);
+            Load(r, ref Idols);
+            Load(r, ref IdolStandingPositions);
+            Load(r, ref CostumeSets);
+            Load(r, ref Costumes);
+            Load(r, ref CostumeResources);
+            Load(r, ref Hairstyles);
+            Load(r, ref HairstyleResources);
+            Load(r, ref Accessories);
+            Load(r, ref AccessoryResources);
+            Load(r, ref FavoriteMarks);
+            Load(r, ref ProductTypes);
+            Load(r, ref ProduceIdolLimitBreakRecipes);
+            Load(r, ref ProduceIdolEvolutionRecipes);
+            Load(r, ref SupportCharacterLevelExps);
+            Load(r, ref SupportCharacterLimitBreakRecipes);
+            Load(r, ref OutgameVoiceMotions);
+            Load(r, ref Units);
+            Load(r, ref ItemProviders);
+            Load(r, ref TrainingTickets);
+            Load(r, ref ProduceActionEffectDisplays);
+            Load(r, ref VoiceResources);
+            Load(r, ref SupportEffects);
+            Load(r, ref ProducePassiveEffects);
+            Load(r, ref SupportCharacterLimitBreakBonuses);
+            Load(r, ref Tips);
+            Load(r, ref TipsCategory);
+            Load(r, ref ExchangeProductFilters);
+            Load(r, ref PotentialLiveSkills);
+            Load(r, ref PotentialLiveSkillLevels);
+            Load(r, ref LiveSkillEffects);
+            Load(r, ref ChainGroups);
+            Load(r, ref PhoneUsers);
+            Load(r, ref PotentialSupportSkills);
+            Load(r, ref Helps);
+            Load(r, ref BirthdayVoice);
+            Load(r, ref HelpGroups);
+            Load(r, ref IdolStories);
+            Load(r, ref TitleImages);
+            Load(r, ref Songs);
+            Load(r, ref AdvInfos);
+            Load(r, ref TwestaUsers);
+            Load(r, ref ChainUsers);
+            Load(r, ref BannerGenre);
+            Load(r, ref Achievement);
+            Load(r, ref EventIcon);
+            Load(r, ref LoginBonus);
+            Load(r, ref LoginBonusGraffiti);
+            Load(r, ref Episodes);
+            Load(r, ref ProduceCardContentGroups);
+            Load(r, ref ProduceActionEffects);
+            Load(r, ref Events);
+            Load(r, ref ProduceIdols);
+            Load(r, ref TwestaArticles);
+            Load(r, ref SupportCharacters);
+            Load(r, ref GeneralItems);
+            Load(r, ref RecoveryDrinks);
+            Load(r, ref EpisodeEventMissionBanners);
+            Load(r, ref MainStoryChapters);
+            Load(r, ref MainStories);
+            Load(r, ref ExtraStoryCategories);
+            Load(r, ref ExtraStorySubCategories);
+            Load(r, ref ExtraStories);
+            Load(r, ref EventStories);
+            Load(r, ref ChallengeTourStages);
+            Load(r, ref ChallengeTourMissions);
+            Load(r, ref ChallengeTours);
+            Load(r, ref ChallengeTourRivals);
+            Load(r, ref SeasonMissions);
+            Load(r, ref GashaResources);
+            Load(r, ref PhoneCalls);
+            Load(r, ref GashaTickets);
+            Load(r, ref GashaCompensationTickets);
+            Load(r, ref GashaTokens);
+            Load(r, ref SelectionTickets);
+            Load(r, ref CostumeTickets);
+            Load(r, ref ProduceStrategyTypes);
+            Load(r, ref ChainTalkTexts);
+            Load(r, ref ProduceAuditionSettings);
+          //Load(r, ref FavoriteMarkIds);
+            #else
+            Load<_00_MstCharacterInfo>(r);
+            Load<_01_MstIdol>(r);
+            Load<_02_MstIdolStandingPosition>(r);
+            Load<_03_MstCostumeSet>(r);
+            Load<_04_MstCostume>(r);
+            Load<_05_MstCostumeResource>(r);
+            Load<_06_MstHairstyle>(r);
+            Load<_07_MstHairstyleResource>(r);
+            Load<_08_MstAccessorie>(r);
+            Load<_09_MstAccessoryResource>(r);
+            Load<_10_MstFavoriteMark>(r);
+            Load<_11_MstProductType>(r);
+            Load<_12_MstProduceIdolLimitBreakRecipe>(r);
+            Load<_13_MstProduceIdolEvolutionRecipe>(r);
+            Load<_14_MstSupportCharacterLevelExp>(r);
+            Load<_15_MstSupportCharacterLimitBreakRecipe>(r);
+            Load<_16_MstOutgameVoiceMotion>(r);
+            Load<_17_MstUnit>(r);
+            Load<_18_MstItemProvider>(r);
+            Load<_19_MstTrainingTicket>(r);
+            Load<_20_MstProduceActionEffectDisplay>(r);
+            Load<_21_MstVoiceResource>(r);
+            Load<_22_MstSupportEffect>(r);
+            Load<_23_MstProducePassiveEffect>(r);
+            Load<_24_MstSupportCharacterLimitBreakBonuse>(r);
             Load<MasterData26>(r);
-            Load<MasterData27>(r);
-            Load<MasterData28>(r);
-            Load<MasterData29>(r);
-            Load<MasterData30>(r);
-            Load<MasterData31>(r);
-            Load<MasterData32>(r);
-            Load<MasterData33>(r);
-            Load<MasterData34>(r);
+            Load<_26_MstTipsCategor>(r);
+            Load<_27_MstExchangeProductFilter>(r);
+            Load<_28_MstPotentialLiveSkill>(r);
+            Load<_29_MstPotentialLiveSkillLevel>(r);
+            Load<_30_MstLiveSkillEffect>(r);
+            Load<_31_MstChainGroup>(r);
+            Load<_32_MstPhoneUser>(r);
+            Load<_32_MstPhoneUser>(r);
+            Load<_33_MstPotentialSupportSkill>(r);
             Load<MasterData35>(r);
             Load<MasterData36>(r);
-            Load<MasterData37>(r);
+            Load<_36_MstHelpGroup>(r);
             Load<MasterData38>(r);
-            Load<MasterData39>(r);
-            Load<MasterData40>(r);
+            Load<_38_MstTitleImage>(r);
+            Load<_39_MstSong>(r);
             Load<MasterData41>(r);
-            Load<MasterData42>(r);
-            Load<MasterData43>(r);
-            Load<MasterData44>(r);
-            Load<MasterData45>(r);
-            Load<MasterData46>(r);
-            Load<MasterData47>(r);
-            Load<MasterData48>(r);
-            Load<MasterData49>(r);
-            Load<MasterData50>(r);
-            Load<MasterData51>(r);
+            Load<_41_MstTwestaUser>(r);
+            Load<_42_MstChainUser>(r);
+            Load<_43_MstBannerGenr>(r);
+            Load<_44_MstAchievemen>(r);
+            Load<_45_MstEventIco>(r);
+            Load<_46_MstLoginBonu>(r);
+            Load<_47_MstLoginBonusGraffit>(r);
+            Load<_48_MstEpisode>(r);
+            Load<_49_MstProduceCardContentGroup>(r);
+            Load<_50_MstProduceActionEffect>(r);
             Load<MasterData52>(r);
-            Load<MasterData53>(r);
-            Load<MasterData54>(r);
-            Load<MasterData55>(r);
-            Load<MasterData56>(r);
-            Load<MasterData57>(r);
+            Load<_52_MstProduceIdol>(r);
+            Load<_53_MstTwestaArticle>(r);
+            Load<_54_MstSupportCharacter>(r);
+            Load<_55_MstGeneralItem>(r);
+            Load<_56_MstRecoveryDrink>(r);
             Load<MasterData58>(r);
-            Load<MasterData59>(r);
-            Load<MasterData60>(r);
-            Load<MasterData61>(r);
+            Load<_58_MstMainStoryChapter>(r);
+            Load<_59_MstMainStorie>(r);
+            Load<_60_MstExtraStoryCategorie>(r);
             Load<MasterData62>(r);
-            Load<MasterData63>(r);
-            Load<MasterData64>(r);
-            Load<MasterData65>(r);
-            Load<MasterData66>(r);
+            Load<_62_MstExtraStorie>(r);
+            Load<_63_MstEventStorie>(r);
+            Load<_64_MstChallengeTourStage>(r);
+            Load<_65_MstChallengeTourMission>(r);
             Load<MasterData67>(r);
             Load<MasterData68>(r);
             Load<MasterData69>(r);
-            Load<MasterData70>(r);
+            Load<_69_MstGashaResource>(r);
             Load<MasterData71>(r);
             Load<MasterData72>(r);
-            Load<MasterData73>(r);
+            Load<_72_MstGashaCompensationTicket>(r);
             Load<MasterData74>(r);
             Load<MasterData75>(r);
-            Load<MasterData76>(r);
+            Load<_75_MstCostumeTicket>(r);
             Load<MasterData77>(r);
             Load<MasterData78>(r);
             Load<MasterData79>(r);
+            #endif
 
             //System.Diagnostics.Debug.Print($"{r.BaseStream.Position:X6}");
             //System.Diagnostics.Debug.Assert(r.BaseStream.Position == r.BaseStream.Length);
         }
 
+        /*
         private void Load<T>(BinaryReader r) where T : MasterDataBase, new()
             => DataEntries.Add(MasterDataBase.ReadData<T>(r));
+        */
 
         public static MasterData FromFile(string file)
         {
@@ -141,6 +242,87 @@ namespace ReversePrism
         }
     }
 
+    public static class MasterDataDeserializer
+    {
+        public delegate void FieldReader(BinaryReader r, object target);
+
+        public static T[] Deserialize<T>(BinaryReader r) where T : new()
+        {
+            var fields  = new List<FieldReader>();
+            var type    = typeof(T);
+            var baseType= type.BaseType;
+            var idField = type.GetFields().Where(i => i.GetCustomAttribute<IDAttribute>() != null).FirstOrDefault();
+
+            if(null == idField)
+                fields.Add(GetFieldReader(idField));
+
+            foreach(var i in baseType.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
+                fields.Add(GetFieldReader(i));
+
+            foreach(var i in type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance))
+                fields.Add(GetFieldReader(i));
+
+            var count       = r.ReadInt32();
+            var values      = new T[count];
+
+            for(int i= 0; i < count; ++i)
+            {
+                var value   = values[i]= new T();
+
+                foreach(var j in fields)
+                    j(r, value);
+            }
+
+            return values;
+        }
+
+        public static FieldReader GetFieldReader(FieldInfo fi)
+        {
+            if(fi.FieldType.IsArray)
+            {
+                if(fi.FieldType == typeof(byte))    return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadByte  ()).ToArray());
+                if(fi.FieldType == typeof(short))   return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadInt16 ()).ToArray());
+                if(fi.FieldType == typeof(ushort))  return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadUInt16()).ToArray());
+                if(fi.FieldType == typeof(int))     return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadInt32 ()).ToArray());
+                if(fi.FieldType == typeof(uint))    return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadUInt32()).ToArray());
+                if(fi.FieldType == typeof(long))    return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadInt64 ()).ToArray());
+                if(fi.FieldType == typeof(ulong))   return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadUInt64()).ToArray());
+                if(fi.FieldType == typeof(float))   return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadSingle()).ToArray());
+                if(fi.FieldType == typeof(double))  return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => r.ReadDouble()).ToArray());
+                if(fi.FieldType == typeof(string))  return (r, target) => fi.SetValue(target, Enumerable.Range(0, r.ReadInt32()).Select(i => ReadString(r)) .ToArray());
+            } else
+            {
+                if(fi.FieldType == typeof(byte))    return (r, target) => fi.SetValue(target, r.ReadByte  ());
+                if(fi.FieldType == typeof(short))   return (r, target) => fi.SetValue(target, r.ReadInt16 ());
+                if(fi.FieldType == typeof(ushort))  return (r, target) => fi.SetValue(target, r.ReadUInt16());
+                if(fi.FieldType == typeof(int))     return (r, target) => fi.SetValue(target, r.ReadInt32 ());
+                if(fi.FieldType == typeof(uint))    return (r, target) => fi.SetValue(target, r.ReadUInt32());
+                if(fi.FieldType == typeof(long))    return (r, target) => fi.SetValue(target, r.ReadInt64 ());
+                if(fi.FieldType == typeof(ulong))   return (r, target) => fi.SetValue(target, r.ReadUInt64());
+                if(fi.FieldType == typeof(float))   return (r, target) => fi.SetValue(target, r.ReadSingle());
+                if(fi.FieldType == typeof(double))  return (r, target) => fi.SetValue(target, r.ReadDouble());
+                if(fi.FieldType == typeof(string))  return (r, target) => fi.SetValue(target, ReadString(r));
+            }
+
+            throw new NotSupportedException();
+        }
+
+        public static string? ReadString(BinaryReader r)
+        {
+            var size    = r.ReadInt32();
+
+            if(size == 0)
+                return null;
+
+            var chars   = r.ReadInt32();
+            var value   = Encoding.UTF8.GetString(r.ReadBytes(~size));
+
+            System.Diagnostics.Debug.Assert(value.Length == chars);
+
+            return value;
+        }
+    }
+
     public abstract partial class MasterDataBase
     {
         public byte                     Fields;
@@ -154,18 +336,28 @@ namespace ReversePrism
 
         public static T[] ReadData<T>(BinaryReader r) where T : MasterDataBase, new()
         {
-            //System.Diagnostics.Debug.Print($"{r.BaseStream.Position:X6}: {typeof(T).Name}");
+            var pos = r.BaseStream.Position;
 
-            var count   = r.ReadInt32();
-            var values  = new T[count];
-
-            for(int i= 0; i < count; ++i)
+            try
             {
-                values[i] = new T();
-                values[i].Deserialize(r);
-            }
+                var count   = r.ReadInt32();
+                var values  = new T[count];
 
-            return values;
+                for(int i= 0; i < count; ++i)
+                {
+                    values[i] = new T();
+                    values[i].Deserialize(r);
+                }
+
+                System.Diagnostics.Debug.Print($"{r.BaseStream.Position:X6}: {typeof(T).Name} Count:{count}");
+
+                return values;
+            } catch
+            {
+                System.Diagnostics.Debug.Print($"{r.BaseStream.Position:X6}: {typeof(T).Name}");
+
+                throw;
+            }
         }
 
         protected abstract void Deserialize(BinaryReader r);
@@ -197,90 +389,90 @@ namespace ReversePrism
         }
     }
 
-    public partial class MasterData01 : MasterDataBase    { }
-    public partial class MasterData02 : MasterDataBase    { }
-    public partial class MasterData03 : MasterDataBase    { }
-    public partial class MasterData04 : MasterDataBase    { }
-    public partial class MasterData05 : MasterDataBase    { }
-    public partial class MasterData06 : MasterDataBase    { }
-    public partial class MasterData07 : MasterDataBase    { }
-    public partial class MasterData08 : MasterDataBase    { }
-    public partial class MasterData09 : MasterDataBase    { }
+    public partial class _00_MstCharacterInfo : MasterDataBase    { }
+    public partial class _01_MstIdol : MasterDataBase    { }
+    public partial class _02_MstIdolStandingPosition : MasterDataBase    { }
+    public partial class _03_MstCostumeSet : MasterDataBase    { }
+    public partial class _04_MstCostume : MasterDataBase    { }
+    public partial class _05_MstCostumeResource : MasterDataBase    { }
+    public partial class _06_MstHairstyle : MasterDataBase    { }
+    public partial class _07_MstHairstyleResource : MasterDataBase    { }
+    public partial class _08_MstAccessorie : MasterDataBase    { }
 
-    public partial class MasterData10 : MasterDataBase    { }
-    public partial class MasterData11 : MasterDataBase    { }
-    public partial class MasterData12 : MasterDataBase    { }
-    public partial class MasterData13 : MasterDataBase    { }
-    public partial class MasterData14 : MasterDataBase    { }
-    public partial class MasterData15 : MasterDataBase    { }
-    public partial class MasterData16 : MasterDataBase    { }
-    public partial class MasterData17 : MasterDataBase    { }
-    public partial class MasterData18 : MasterDataBase    { }
-    public partial class MasterData19 : MasterDataBase    { }
+    public partial class _09_MstAccessoryResource : MasterDataBase    { }
+    public partial class _10_MstFavoriteMark : MasterDataBase    { }
+    public partial class _11_MstProductType : MasterDataBase    { }
+    public partial class _12_MstProduceIdolLimitBreakRecipe : MasterDataBase    { }
+    public partial class _13_MstProduceIdolEvolutionRecipe : MasterDataBase    { }
+    public partial class _14_MstSupportCharacterLevelExp : MasterDataBase    { }
+    public partial class _15_MstSupportCharacterLimitBreakRecipe : MasterDataBase    { }
+    public partial class _16_MstOutgameVoiceMotion : MasterDataBase    { }
+    public partial class _17_MstUnit : MasterDataBase    { }
+    public partial class _18_MstItemProvider : MasterDataBase    { }
 
-    public partial class MasterData20 : MasterDataBase    { }
-    public partial class MasterData21 : MasterDataBase    { }
-    public partial class MasterData22 : MasterDataBase    { }
-    public partial class MasterData23 : MasterDataBase    { }
-    public partial class MasterData24 : MasterDataBase    { }
-    public partial class MasterData25 : MasterDataBase    { }
-    public partial class MasterData26 : MasterDataBase    { }
-    public partial class MasterData27 : MasterDataBase    { }
-    public partial class MasterData28 : MasterDataBase    { }
-    public partial class MasterData29 : MasterDataBase    { }
+    public partial class _19_MstTrainingTicket : MasterDataBase    { }
+    public partial class _20_MstProduceActionEffectDisplay : MasterDataBase    { }
+    public partial class _21_MstVoiceResource : MasterDataBase    { }
+    public partial class _22_MstSupportEffect : MasterDataBase    { }
+    public partial class _23_MstProducePassiveEffect : MasterDataBase    { }
+    public partial class _24_MstSupportCharacterLimitBreakBonuse : MasterDataBase    { }
+    public partial class _25_MstTip : MasterDataBase    { }
+    public partial class _26_MstTipsCategor : MasterDataBase    { }
+    public partial class _27_MstExchangeProductFilter : MasterDataBase    { }
+    public partial class _28_MstPotentialLiveSkill : MasterDataBase    { }
 
-    public partial class MasterData30 : MasterDataBase    { }
-    public partial class MasterData31 : MasterDataBase    { }
-    public partial class MasterData32 : MasterDataBase    { }
-    public partial class MasterData33 : MasterDataBase    { }
-    public partial class MasterData34 : MasterDataBase    { }
-    public partial class MasterData35 : MasterDataBase    { }
-    public partial class MasterData36 : MasterDataBase    { }
-    public partial class MasterData37 : MasterDataBase    { }
-    public partial class MasterData38 : MasterDataBase    { }
-    public partial class MasterData39 : MasterDataBase    { }
+    public partial class _29_MstPotentialLiveSkillLevel : MasterDataBase    { }
+    public partial class _30_MstLiveSkillEffect : MasterDataBase    { }
+    public partial class _31_MstChainGroup : MasterDataBase    { }
+    public partial class _32_MstPhoneUser : MasterDataBase    { }
+    public partial class _33_MstPotentialSupportSkill : MasterDataBase    { }
+    public partial class _34_MstHelp : MasterDataBase    { }
+    public partial class _35_MstBirthdayVoic : MasterDataBase    { }
+    public partial class _36_MstHelpGroup : MasterDataBase    { }
+    public partial class _37_MstIdolStorie : MasterDataBase    { }
+    public partial class _38_MstTitleImage : MasterDataBase    { }
 
-    public partial class MasterData40 : MasterDataBase    { }
-    public partial class MasterData41 : MasterDataBase    { }
-    public partial class MasterData42 : MasterDataBase    { }
-    public partial class MasterData43 : MasterDataBase    { }
-    public partial class MasterData44 : MasterDataBase    { }
-    public partial class MasterData45 : MasterDataBase    { }
-    public partial class MasterData46 : MasterDataBase    { }
-    public partial class MasterData47 : MasterDataBase    { }
-    public partial class MasterData48 : MasterDataBase    { }
-    public partial class MasterData49 : MasterDataBase    { }
+    public partial class _39_MstSong : MasterDataBase    { }
+    public partial class _40_MstAdvInfo : MasterDataBase    { }
+    public partial class _41_MstTwestaUser : MasterDataBase    { }
+    public partial class _42_MstChainUser : MasterDataBase    { }
+    public partial class _43_MstBannerGenr : MasterDataBase    { }
+    public partial class _44_MstAchievemen : MasterDataBase    { }
+    public partial class _45_MstEventIco : MasterDataBase    { }
+    public partial class _46_MstLoginBonu : MasterDataBase    { }
+    public partial class _47_MstLoginBonusGraffit : MasterDataBase    { }
+    public partial class _48_MstEpisode : MasterDataBase    { }
 
-    public partial class MasterData50 : MasterDataBase    { }
-    public partial class MasterData51 : MasterDataBase    { }
-    public partial class MasterData52 : MasterDataBase    { }
-    public partial class MasterData53 : MasterDataBase    { }
-    public partial class MasterData54 : MasterDataBase    { }
-    public partial class MasterData55 : MasterDataBase    { }
-    public partial class MasterData56 : MasterDataBase    { }
-    public partial class MasterData57 : MasterDataBase    { }
-    public partial class MasterData58 : MasterDataBase    { }
-    public partial class MasterData59 : MasterDataBase    { }
+    public partial class _49_MstProduceCardContentGroup : MasterDataBase    { }
+    public partial class _50_MstProduceActionEffect : MasterDataBase    { }
+    public partial class _51_MstEvent : MasterDataBase    { }
+    public partial class _52_MstProduceIdol : MasterDataBase    { }
+    public partial class _53_MstTwestaArticle : MasterDataBase    { }
+    public partial class _54_MstSupportCharacter : MasterDataBase    { }
+    public partial class _55_MstGeneralItem : MasterDataBase    { }
+    public partial class _56_MstRecoveryDrink : MasterDataBase    { }
+    public partial class _57_MstEpisodeEventMissionBanner : MasterDataBase    { }
+    public partial class _58_MstMainStoryChapter : MasterDataBase    { }
 
-    public partial class MasterData60 : MasterDataBase    { }
-    public partial class MasterData61 : MasterDataBase    { }
-    public partial class MasterData62 : MasterDataBase    { }
-    public partial class MasterData63 : MasterDataBase    { }
-    public partial class MasterData64 : MasterDataBase    { }
-    public partial class MasterData65 : MasterDataBase    { }
-    public partial class MasterData66 : MasterDataBase    { }
-    public partial class MasterData67 : MasterDataBase    { }
-    public partial class MasterData68 : MasterDataBase    { }
-    public partial class MasterData69 : MasterDataBase    { }
+    public partial class _59_MstMainStorie : MasterDataBase    { }
+    public partial class _60_MstExtraStoryCategorie : MasterDataBase    { }
+    public partial class _61_MstExtraStorySubCategorie : MasterDataBase    { }
+    public partial class _62_MstExtraStorie : MasterDataBase    { }
+    public partial class _63_MstEventStorie : MasterDataBase    { }
+    public partial class _64_MstChallengeTourStage : MasterDataBase    { }
+    public partial class _65_MstChallengeTourMission : MasterDataBase    { }
+    public partial class _66_MstChallengeTour : MasterDataBase    { }
+    public partial class _67_MstChallengeTourRival : MasterDataBase    { }
+    public partial class _68_MstSeasonMission : MasterDataBase    { }
 
-    public partial class MasterData70 : MasterDataBase    { }
-    public partial class MasterData71 : MasterDataBase    { }
-    public partial class MasterData72 : MasterDataBase    { }
-    public partial class MasterData73 : MasterDataBase    { }
-    public partial class MasterData74 : MasterDataBase    { }
-    public partial class MasterData75 : MasterDataBase    { }
-    public partial class MasterData76 : MasterDataBase    { }
-    public partial class MasterData77 : MasterDataBase    { }
-    public partial class MasterData78 : MasterDataBase    { }
-    public partial class MasterData79 : MasterDataBase    { }
+    public partial class _69_MstGashaResource : MasterDataBase    { }
+    public partial class _70_MstPhoneCall : MasterDataBase    { }
+    public partial class _71_MstGashaTicket : MasterDataBase    { }
+    public partial class _72_MstGashaCompensationTicket : MasterDataBase    { }
+    public partial class _73_MstGashaToken : MasterDataBase    { }
+    public partial class _74_MstSelectionTicket : MasterDataBase    { }
+    public partial class _75_MstCostumeTicket : MasterDataBase    { }
+    public partial class _76_MstProduceStrategyType : MasterDataBase    { }
+    public partial class _77_MstChainTalkText : MasterDataBase    { }
+    public partial class _78_MstProduceAuditionSetting : MasterDataBase    { }
 }
