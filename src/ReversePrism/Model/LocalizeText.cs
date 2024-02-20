@@ -18,6 +18,8 @@ namespace ReversePrism
         public int                      Count                   { get; set; }
         public List<MasterGroup>        Groups                  { get; set; } = new List<MasterGroup>();
         public Dictionary<string, MasterGroup> GroupMap         { get; set; } = new Dictionary<string, MasterGroup>();
+        public MasterGroup              this[string group]      => GroupMap[group];
+        public string                   this[string group, int id] => GroupMap[group].ItemMap[id].Text;
 
         public static string GetRealName(CatalogASet catalog)
         {
@@ -26,7 +28,7 @@ namespace ReversePrism
             if(!catalog.TryGetValue(label, out var rec))
                 throw new InvalidDataException();
 
-            var real    = CatalogDB.GetResourceName(rec);
+            var real    = CatalogDB.GetRealName(rec);
 
             return real;
         }
@@ -109,9 +111,26 @@ namespace ReversePrism
             }
         }
 
+
+        public static LocalizeText FromPackedFile(string file, long label, long encrypt)
+        {
+            var packfile= PackedFile.FromEncryptedFile(file, label, encrypt);
+            var value   = FromBytes(packfile.Data);
+
+            value.FileName  = file;
+
+            return value;
+        }
+
         public static LocalizeText FromFile(string file)
         {
             using(var s= File.OpenRead(file))
+                return FromStream(s);
+        }
+
+        public static LocalizeText FromBytes(byte[] data)
+        {
+            using(var s= new MemoryStream(data))
                 return FromStream(s);
         }
 
@@ -128,13 +147,18 @@ namespace ReversePrism
         }
     }
 
-    public class MasterGroup
+    public class MasterGroup : IEnumerable<(int Id, string Text)>
     {
         public int                      Length                  { get; set; }
         public string                   Name                    { get; set; } = "";
         public int                      Count                   { get; set; }
         public List<MasterItem>         Items                   { get; set; } = new List<MasterItem>();
         public Dictionary<int, MasterItem> ItemMap              { get; set; } = new Dictionary<int, MasterItem>();
+
+        public IEnumerator<(int Id, string Text)> GetEnumerator()
+            => ItemMap.Values.Select(i => (i.Id, i.Text)).GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     public class MasterItem

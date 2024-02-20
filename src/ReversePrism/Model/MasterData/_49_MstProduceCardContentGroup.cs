@@ -1,17 +1,10 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _49_MstProduceCardContentGroup
+    public partial class MstProduceCardContentGroup : MasterDataItem
     {
-        public int          Value1;
-        public int          Value2;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 2);
-            Read(r, ref Value1);
-            Read(r, ref Value2);
-        }
+        public int                              MstProduceCardId;
+        public int                              MstProduceCardContentGroupTypeId;
     }
 }

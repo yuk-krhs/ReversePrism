@@ -1,29 +1,16 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _34_MstHelp
+    public partial class MstHelp : MasterDataItem
     {
-        public int          Id;
-        public int          Value1;
-        public int          Value2;
-        public byte         Value3;
-        public byte         Value4;
-        public byte         Value5;
-        public long         Value6;
-        public long         Value7;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 8);
-            Read(r, ref Id);
-            Read(r, ref Value1);
-            Read(r, ref Value2);
-            Read(r, ref Value3);
-            Read(r, ref Value4);
-            Read(r, ref Value5);
-            Read(r, ref Value6);
-            Read(r, ref Value7);
-        }
+        public int                              Id;
+        public int                              SortId;
+        public int                              MstHelpGroupId;
+        public bool                             IsMobile;
+        public bool                             IsGpg;
+        public bool                             IsDmm;
+        public DateTime                         BeginDate;
+        public DateTime                         EndDate;
     }
 }

@@ -61,7 +61,7 @@ namespace ReversePrism
             return hash;
         }
 
-        public static string GetResourceName(CatalogA rec)
+        public static string GetRealName(CatalogA rec)
             => GetResourceName(rec.L, rec.C, rec.S);
 
         public static string GetResourceName(long label, long checksum, long size)

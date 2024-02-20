@@ -1,25 +1,11 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    using static System.Diagnostics.Debug;
-
-    partial class _21_MstVoiceResource
+    public partial class MstVoiceResource : MasterDataItem
     {
-        public int          Id;
-        public int          TextIndex1;
-        public string?      Token1;
-        public string?      Token2;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            Read(r, ref Id);
-            ReadFieldCount(r, 3);
-            Read(r, ref TextIndex1);
-            Read(r, ref Token1);
-            Read(r, ref Token2);
-
-            Assert(Id == TextIndex1);
-        }
+        public int                              Id;
+        public string?                          CueSheetName;
+        public string?                          CueName;
     }
 }

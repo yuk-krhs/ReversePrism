@@ -21,10 +21,17 @@ namespace ReversePrism
 
     public class CatalogASet : Dictionary<long, CatalogA>
     {
+        public Dictionary<string, CatalogA> ByRealName { get; private set; }
+
         public CatalogASet(IEnumerable<CatalogA> items)
         {
+            ByRealName  = new Dictionary<string, CatalogA>();
+
             foreach(var i in items)
+            {
                 Add(i.L, i);
+                ByRealName.Add(CatalogDB.GetRealName(i), i);
+            }
         }
     }
 }

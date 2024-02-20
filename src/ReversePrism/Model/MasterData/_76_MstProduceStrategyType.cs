@@ -1,15 +1,9 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _76_MstProduceStrategyType
+    public partial class MstProduceStrategyType : MasterDataItem
     {
-        public int          Id;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 1);
-            Read(r, ref Id);
-        }
+        public int                              Id;
     }
 }

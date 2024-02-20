@@ -1,15 +1,19 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _50_MstProduceActionEffect
+    public partial class MstProduceActionEffect : MasterDataItem
     {
-        public int          Value1;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 1);
-            Read(r, ref Value1);
-        }
+        public int                              Id;
+        public int                              MstProduceActionEffectTypeId;
+        public int[]?                           ValueList;
+        public int                              MstProduceActionEffectConditionTypeId;
+        public int                              ConditionValue;
+        public bool                             IsHideConditionEffect;
+        public int                              MstProduceActionEffectActivationTimingTypeId;
+        public int                              MstSkillBufferDisplayId;
+        public int                              GrantMstSkillBufferDisplayId;
+        public int[]?                           MstProduceActionEffectDisplayIdList;
+        public int                              IconId;
     }
 }

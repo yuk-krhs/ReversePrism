@@ -19,7 +19,7 @@ namespace ReversePrism
             if(!catalog.TryGetValue(label, out var rec))
                 throw new InvalidDataException();
 
-            var real    = CatalogDB.GetResourceName(rec);
+            var real    = CatalogDB.GetRealName(rec);
 
             return real;
         }

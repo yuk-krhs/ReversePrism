@@ -1,25 +1,11 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    using static System.Diagnostics.Debug;
-
-    partial class _23_MstProducePassiveEffect
+    public partial class MstProducePassiveEffect : MasterDataItem
     {
-        public int          Id;
-        public int          Id2;
-        public int          Value1;
-        public int[]?       Values1;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            Read(r, ref Id);
-            ReadFieldCount(r, 3);
-            Read(r, ref Id2);
-            Read(r, ref Value1);
-            Read(r, ref Values1);
-
-            Assert(Id == Id2);
-        }
+        public int                              Id;
+        public int                              MstProducePassiveEffectTypeId;
+        public int[]?                           ValueList;
     }
 }

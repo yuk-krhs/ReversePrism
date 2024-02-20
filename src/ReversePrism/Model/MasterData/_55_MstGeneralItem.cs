@@ -1,17 +1,10 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _55_MstGeneralItem
+    public partial class MstGeneralItem : MasterDataItem
     {
-        public int          Value1;
-        public int          Value2;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 2);
-            Read(r, ref Value1);
-            Read(r, ref Value2);
-        }
+        public int                              ProductType;
+        public int                              Id;
     }
 }

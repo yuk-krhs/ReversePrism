@@ -1,31 +1,14 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    using static System.Diagnostics.Debug;
-
-    partial class _03_MstCostumeSet
+    public partial class MstCostumeSet : MasterDataItem
     {
-        public int          Id;
-        public int          TextIndexStyle;
-        public int          Value1;
-        public int          TextIndexCloth;
-        public int          TextIndexHairStyle;
-        public int[]?       TextIndexAccessories;
-        public int          Value2;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            Read(r, ref Id);
-            ReadFieldCount(r, 6);
-            Read(r, ref TextIndexStyle);
-            Read(r, ref Value1);
-            Read(r, ref TextIndexCloth);
-            Read(r, ref TextIndexHairStyle);
-            Read(r, ref TextIndexAccessories);
-            Read(r, ref Value2);
-
-            Assert(Id == TextIndexStyle);
-        }
+        public int                              Id;
+        public int                              CostumeType;
+        public int                              MstCostumeId;
+        public int                              MstHairstyleId;
+        public int[]?                           MstAccessoryIdList;
+        public int                              SortId;
     }
 }

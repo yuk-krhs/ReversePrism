@@ -22,6 +22,11 @@ namespace ReversePrism
         [DllImport("libember")] public extern static int    mbedtlshelper_aes_destroy(IntPtr ctx);
         [DllImport("libember")] public extern static int    mbedtlshelper_aes_setkey_enc(IntPtr ctx, IntPtr key, int bits);
 
+        [DllImport("libember")] public extern static IntPtr lz4frameutil_create_context();
+        [DllImport("libember")] public extern static int    lz4frameutil_destroy_context(IntPtr ctx);
+        [DllImport("libember", CharSet= CharSet.Ansi)]
+                                public extern static IntPtr lz4frameutil_compress_file(IntPtr ctx, string srcfile, string dstfile);
+
         [DllImport("libember")] public extern static IntPtr lz4frameutil_decompressor_create();
         [DllImport("libember")] public extern static int    lz4frameutil_decompressor_destroy(IntPtr ctx);
         [DllImport("libember")] public extern static int    lz4frameutil_decompressor_set_input(IntPtr ctx, IntPtr input, long size);

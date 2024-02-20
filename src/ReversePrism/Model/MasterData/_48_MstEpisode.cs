@@ -1,19 +1,11 @@
-﻿using System.IO;
+using System;
 
 namespace ReversePrism
 {
-    partial class _48_MstEpisode
+    public partial class MstEpisode : MasterDataItem
     {
-        public int          Value1;
-        public int          Value2;
-        public int          Value3;
-
-        protected override void Deserialize(BinaryReader r)
-        {
-            ReadFieldCount(r, 3);
-            Read(r, ref Value1);
-            Read(r, ref Value2);
-            Read(r, ref Value3);
-        }
+        public int                              Id;
+        public int                              MstUnitId;
+        public int                              Chapter;
     }
 }
