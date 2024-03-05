@@ -19,7 +19,7 @@ namespace ReversePrism
         public List<MasterGroup>        Groups                  { get; set; } = new List<MasterGroup>();
         public Dictionary<string, MasterGroup> GroupMap         { get; set; } = new Dictionary<string, MasterGroup>();
         public MasterGroup              this[string group]      => GroupMap[group];
-        public string                   this[string group, int id] => GroupMap[group].ItemMap[id].Text;
+        public string?                  this[string group, int id] => GroupMap[group].ItemMap[id].Text;
 
         public static string GetRealName(CatalogASet catalog)
         {
