@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 _callback                                Func`2<<object>, bool> IL2CPP_TYPE_GENERICINST
+    // 018 WeakTargetObj                            0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
+    public partial class Gen2GcCallback
+    {
+        public GCHandle                                 WeakTargetObj                           { get; set; }
+
+        public static Gen2GcCallback? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new Gen2GcCallback();
+
+            value.WeakTargetObj                             = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 027003D2A950 0x18 WeakTargetObj               ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+
+            return value;
+        }
+    }
+}

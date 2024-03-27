@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 ReferencedAssembly                       00018658BE80 ModelClassType Assembly Assembly Assembly Pointer
+    // 018 FileName                                 000186672F10 ModelPrimitiveType string string string String
+    // 020 ResourceLocation                         000186670310 ModelEnumType ResourceLocation ResourceLocation ResourceLocation Int32
+    public partial class ManifestResourceInfo
+    {
+        public Assembly?                                ReferencedAssembly                      { get; set; }
+        public string                                   FileName                                { get; set; }
+        public ResourceLocation                         ResourceLocation                        { get; set; }
+
+        public static ManifestResourceInfo? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ManifestResourceInfo();
+
+            value.ReferencedAssembly                        = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0270D0E92518 0x10 ReferencedAssembly          ( 00018658BE80 ModelClassType Assembly Assembly Assembly Pointer )
+            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0270D0E92538 0x18 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ResourceLocation                          = (ResourceLocation)GetInt32(new IntPtr(p + 0x020)); // 0270D0E92558 0x20 ResourceLocation            ( 000186670310 ModelEnumType ResourceLocation ResourceLocation ResourceLocation Int32 )
+
+            return value;
+        }
+    }
+}

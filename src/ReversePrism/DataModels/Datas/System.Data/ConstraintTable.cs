@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Table                                    0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer
+    // 018 Constraint                               0001865B81B0 ModelClassType XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint Pointer
+    public partial class ConstraintTable
+    {
+        public DataTable?                               Table                                   { get; set; }
+        public XmlSchemaIdentityConstraint?             Constraint                              { get; set; }
+
+        public static ConstraintTable? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ConstraintTable();
+
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D8968750 0x10 Table                       ( 0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Constraint                                = GetObject<XmlSchemaIdentityConstraint>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchemaIdentityConstraint.FromPointer); // 0270D8968770 0x18 Constraint                  ( 0001865B81B0 ModelClassType XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint Pointer )
+
+            return value;
+        }
+    }
+}

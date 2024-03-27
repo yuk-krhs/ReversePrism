@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 CreateDate                               000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 000 _parser                                  MessageParser`1<PresentHistoryStatus> IL2CPP_TYPE_GENERICINST
+    // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
+    // 000 PresentHistoryIdFieldNumber              int IL2CPP_TYPE_I4
+    // 028 PresentHistoryId                         000186671910 ModelPrimitiveType string string string String
+    // 000 PresentFieldNumber                       int IL2CPP_TYPE_I4
+    // 030 Present                                  00018650E740 ModelClassType PresentStatus PresentStatus PresentStatus Pointer
+    // 000 CreateDateFieldNumber                    int IL2CPP_TYPE_I4
+    // 038 _CreateDate                              000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    public partial class PresentHistoryStatus
+    {
+        public DateTime                                 CreateDate                              { get; set; }
+        public string                                   PresentHistoryId                        { get; set; }
+        public PresentStatus?                           Present                                 { get; set; }
+        public Timestamp?                               _CreateDate                             { get; set; }
+
+        public static PresentHistoryStatus? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new PresentHistoryStatus();
+
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D2473FD8 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.PresentHistoryId                          = GetString(new IntPtr(p + 0x028)); // 0270D2474058 0x28 PresentHistoryId            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Present                                   = GetObject<PresentStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PresentStatus.FromPointer); // 0270D2474098 0x30 Present                     ( 00018650E740 ModelClassType PresentStatus PresentStatus PresentStatus Pointer )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D24740D8 0x38 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.CreateDate                    = ToDateTime(value._CreateDate);
+
+            return value;
+        }
+    }
+}

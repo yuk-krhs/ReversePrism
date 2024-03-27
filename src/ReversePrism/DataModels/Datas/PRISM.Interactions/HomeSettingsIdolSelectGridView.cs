@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 090 CellPrefab                               0001866CD830 ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer
+    public partial class HomeSettingsIdolSelectGridView
+    {
+        public HomeSettingsIdolSelectGridViewCell?      CellPrefab                              { get; set; }
+
+        public static HomeSettingsIdolSelectGridView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new HomeSettingsIdolSelectGridView();
+
+            value.CellPrefab                                = GetObject<HomeSettingsIdolSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.HomeSettingsIdolSelectGridViewCell.FromPointer); // 0270DB50BC50 0x90 CellPrefab                  ( 0001866CD830 ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer )
+
+            return value;
+        }
+    }
+}

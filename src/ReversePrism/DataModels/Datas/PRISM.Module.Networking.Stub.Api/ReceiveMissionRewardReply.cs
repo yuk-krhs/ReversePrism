@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 000 _parser                                  MessageParser`1<ReceiveMissionRewardReply> IL2CPP_TYPE_GENERICINST
+    // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
+    // 000 MissionGroupFieldNumber                  int IL2CPP_TYPE_I4
+    // 018 MissionGroup                             000186623930 ModelClassType MissionGroupStatus MissionGroupStatus MissionGroupStatus Pointer
+    // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
+    // 008 _repeated_rewardList_codec               FieldCodec`1<RewardProductStatus> IL2CPP_TYPE_GENERICINST
+    // 020 RewardList                               000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer
+    // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
+    // 028 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
+    public partial class ReceiveMissionRewardReply
+    {
+        public MissionGroupStatus?                      MissionGroup                            { get; set; }
+        public List<RewardProductStatus>?               RewardList                              { get; set; }
+        public HavingProductGroupStatus?                HavingGroup                             { get; set; }
+
+        public static ReceiveMissionRewardReply? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ReceiveMissionRewardReply();
+
+            value.MissionGroup                              = GetObject<MissionGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MissionGroupStatus.FromPointer); // 0270D22E7CC0 0x18 MissionGroup                ( 000186623930 ModelClassType MissionGroupStatus MissionGroupStatus MissionGroupStatus Pointer )
+            value.RewardList                                = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 0270D22E7D20 0x20 RewardList                  ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D22E7D60 0x28 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+
+            return value;
+        }
+    }
+}

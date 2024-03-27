@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 ReadDate                                 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 000 _parser                                  MessageParser`1<ChainInfoStatus> IL2CPP_TYPE_GENERICINST
+    // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
+    // 000 ReadDateFieldNumber                      int IL2CPP_TYPE_I4
+    // 028 _ReadDate                                000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 000 MstChainTalkIdFieldNumber                int IL2CPP_TYPE_I4
+    // 030 MstChainTalkId                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 000 MstChainTalkGroupIdFieldNumber           int IL2CPP_TYPE_I4
+    // 034 MstChainTalkGroupId                      0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 000 ChainTalkFieldNumber                     int IL2CPP_TYPE_I4
+    // 038 ChainTalk                                000186566AC0 ModelClassType ChainTalkStatus ChainTalkStatus ChainTalkStatus Pointer
+    public partial class ChainInfoStatus
+    {
+        public DateTime                                 ReadDate                                { get; set; }
+        public Timestamp?                               _ReadDate                               { get; set; }
+        public int                                      MstChainTalkId                          { get; set; }
+        public int                                      MstChainTalkGroupId                     { get; set; }
+        public ChainTalkStatus?                         ChainTalk                               { get; set; }
+
+        public static ChainInfoStatus? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ChainInfoStatus();
+
+            value.ReadDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D23060A0 0x10 ReadDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._ReadDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2306120 0x28 _ReadDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.MstChainTalkId                            = GetInt32(new IntPtr(p + 0x030)); // 0270D2306160 0x30 MstChainTalkId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstChainTalkGroupId                       = GetInt32(new IntPtr(p + 0x034)); // 0270D23061A0 0x34 MstChainTalkGroupId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ChainTalk                                 = GetObject<ChainTalkStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChainTalkStatus.FromPointer); // 0270D23061E0 0x38 ChainTalk                   ( 000186566AC0 ModelClassType ChainTalkStatus ChainTalkStatus ChainTalkStatus Pointer )
+            value.ReadDate                      = ToDateTime(value._ReadDate);
+
+            return value;
+        }
+    }
+}

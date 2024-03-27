@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Fps                                      0001865F2AF0 ModelPrimitiveType int int int Int32
+    public partial class FrameRateDish
+    {
+        public int                                      Fps                                     { get; set; }
+
+        public static FrameRateDish? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new FrameRateDish();
+
+            value.Fps                                       = GetInt32(new IntPtr(p + 0x010)); // 0270DB6957F8 0x10 Fps                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+
+            return value;
+        }
+    }
+}

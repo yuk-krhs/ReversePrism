@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Doc                                      000186710FA0 ModelClassType SecurityDocument SecurityDocument SecurityDocument Pointer
+    // 018 T                                        000186688BD0 ModelClassType Tokenizer Tokenizer Tokenizer Pointer
+    public partial class Parser
+    {
+        public SecurityDocument?                        Doc                                     { get; set; }
+        public Tokenizer?                               T                                       { get; set; }
+
+        public static Parser? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new Parser();
+
+            value.Doc                                       = GetObject<SecurityDocument>(new IntPtr(p + 0x010), ReversePrism.DataModels.SecurityDocument.FromPointer); // 0270D6B6A118 0x10 Doc                         ( 000186710FA0 ModelClassType SecurityDocument SecurityDocument SecurityDocument Pointer )
+            value.T                                         = GetObject<Tokenizer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Tokenizer.FromPointer); // 0270D6B6A138 0x18 T                           ( 000186688BD0 ModelClassType Tokenizer Tokenizer Tokenizer Pointer )
+
+            return value;
+        }
+    }
+}

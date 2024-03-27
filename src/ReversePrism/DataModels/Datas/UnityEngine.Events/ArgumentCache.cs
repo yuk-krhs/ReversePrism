@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_ObjectArgument                         000186638250 ModelClassType Object Object Object Pointer
+    // 018 M_ObjectArgumentAssemblyTypeName         000186671910 ModelPrimitiveType string string string String
+    // 020 M_IntArgument                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 M_FloatArgument                          0001866656B0 ModelPrimitiveType float float float Single
+    // 028 M_StringArgument                         000186671910 ModelPrimitiveType string string string String
+    // 030 M_BoolArgument                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class ArgumentCache
+    {
+        public Object?                                  M_ObjectArgument                        { get; set; }
+        public string                                   M_ObjectArgumentAssemblyTypeName        { get; set; }
+        public int                                      M_IntArgument                           { get; set; }
+        public float                                    M_FloatArgument                         { get; set; }
+        public string                                   M_StringArgument                        { get; set; }
+        public bool                                     M_BoolArgument                          { get; set; }
+
+        public static ArgumentCache? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ArgumentCache();
+
+            value.M_ObjectArgument                          = GetObject<Object>(new IntPtr(p + 0x010), ReversePrism.DataModels.Object.FromPointer); // 027003F854F8 0x10 M_ObjectArgument            ( 000186638250 ModelClassType Object Object Object Pointer )
+            value.M_ObjectArgumentAssemblyTypeName          = GetString(new IntPtr(p + 0x018)); // 027003F85518 0x18 M_ObjectArgumentAssemblyTypeName ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_IntArgument                             = GetInt32(new IntPtr(p + 0x020)); // 027003F85538 0x20 M_IntArgument               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_FloatArgument                           = GetSingle(new IntPtr(p + 0x024)); // 027003F85558 0x24 M_FloatArgument             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_StringArgument                          = GetString(new IntPtr(p + 0x028)); // 027003F85578 0x28 M_StringArgument            ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_BoolArgument                            = GetBool(new IntPtr(p + 0x030)); // 027003F85598 0x30 M_BoolArgument              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

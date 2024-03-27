@@ -89,6 +89,7 @@ namespace ReversePrism
         public Dictionary<int, MstChainTalkText>?                          ChainTalkTexts;
         public MstAuditionSettings[]?                                      ProduceAuditionSettings;
         public Dictionary<int, MstSongType>?                               SongTypes;
+        public Dictionary<int, MstDressUpRoomVoice>?                       DressUpRoomVoices;
         public Dictionary<int, MstLetterGroup>?                            LetterGroups;
         public MstLetter[]?                                                Letters;
         public MstGalleryEtcCategory[]?                                    GalleryEtcCategories;
@@ -99,6 +100,7 @@ namespace ReversePrism
         public MstPvpIngameSettings[]?                                     PvpIngameSettings;
         public Dictionary<int, MstChainTalk>?                              ChainTalks;
         public MstSubSeasonOpeningAdvOption[]?                             SubSeasonOpeningAdvOption;
+        public MstCostumeShopItemGroup[]?                                  CostumeShopItems;
 
         private void Load(BinaryReader r)
         {
@@ -186,6 +188,7 @@ namespace ReversePrism
             Load(r, nameof(ChainTalkTexts),                     out ChainTalkTexts);
             Load(r, nameof(ProduceAuditionSettings),            out ProduceAuditionSettings);
             Load(r, nameof(SongTypes),                          out SongTypes);
+            Load(r, nameof(DressUpRoomVoices),                  out DressUpRoomVoices);
             Load(r, nameof(LetterGroups),                       out LetterGroups);
             Load(r, nameof(Letters),                            out Letters);
             Load(r, nameof(GalleryEtcCategories),               out GalleryEtcCategories);
@@ -196,6 +199,7 @@ namespace ReversePrism
             Load(r, nameof(PvpIngameSettings),                  out PvpIngameSettings);
             Load(r, nameof(ChainTalks),                         out ChainTalks);
             Load(r, nameof(SubSeasonOpeningAdvOption),          out SubSeasonOpeningAdvOption);
+            Load(r, nameof(CostumeShopItems),                   out CostumeShopItems);
         }
     }
 }

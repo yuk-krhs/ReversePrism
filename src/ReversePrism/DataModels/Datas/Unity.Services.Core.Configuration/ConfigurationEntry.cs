@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_Value                                  000186671910 ModelPrimitiveType string string string String
+    // 018 M_IsReadOnly                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class ConfigurationEntry
+    {
+        public string                                   M_Value                                 { get; set; }
+        public bool                                     M_IsReadOnly                            { get; set; }
+
+        public static ConfigurationEntry? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ConfigurationEntry();
+
+            value.M_Value                                   = GetString(new IntPtr(p + 0x010)); // 02700664F8B0 0x10 M_Value                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_IsReadOnly                              = GetBool(new IntPtr(p + 0x018)); // 02700664F8D0 0x18 M_IsReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

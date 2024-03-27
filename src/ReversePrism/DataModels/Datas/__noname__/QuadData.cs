@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 CyalumeBaseObject                        0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
+    // 018 CyalumeSubObjects                        000185B81700 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    public partial class QuadData
+    {
+        public GameObject?                              CyalumeBaseObject                       { get; set; }
+        public List<GameObject>?                        CyalumeSubObjects                       { get; set; }
+
+        public static QuadData? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new QuadData();
+
+            value.CyalumeBaseObject                         = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4E4C070 0x10 CyalumeBaseObject           ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CyalumeSubObjects                         = GetObjectList<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4E4C090 0x18 CyalumeSubObjects           ( 000185B81700 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+
+            return value;
+        }
+    }
+}

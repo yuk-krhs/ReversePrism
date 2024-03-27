@@ -152,8 +152,8 @@ namespace ReversePrism
         public int                      Length                  { get; set; }
         public string                   Name                    { get; set; } = "";
         public int                      Count                   { get; set; }
-        public List<MasterItem>         Items                   { get; set; } = new List<MasterItem>();
-        public Dictionary<int, MasterItem> ItemMap              { get; set; } = new Dictionary<int, MasterItem>();
+        public List<MasterItem>         Items                   { get; set; } = new();
+        public Dictionary<int, MasterItem> ItemMap              { get; set; } = new();
 
         public IEnumerator<(int Id, string Text)> GetEnumerator()
             => ItemMap.Values.Select(i => (i.Id, i.Text)).GetEnumerator();

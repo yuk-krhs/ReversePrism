@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 TypeCounters                             000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 018 onUpdateCounterSubject                   Subject`1<ValueTuple`2<ProduceParameterType, int>> IL2CPP_TYPE_GENERICINST
+    public partial class IngameTypeCounterModel
+    {
+        public List<int>?                               TypeCounters                            { get; set; }
+
+        public static IngameTypeCounterModel? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new IngameTypeCounterModel();
+
+            value.TypeCounters                              = GetInt32List(new IntPtr(p + 0x010)); // 0270D5B6FBD0 0x10 TypeCounters                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+
+            return value;
+        }
+    }
+}

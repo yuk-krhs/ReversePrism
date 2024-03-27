@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 CueSheetName                             0001866722E0 ModelPrimitiveType string string string String
+    // 028 CueName                                  0001866722E0 ModelPrimitiveType string string string String
+    public partial class PlaySoundObject
+    {
+        public string                                   CueSheetName                            { get; set; }
+        public string                                   CueName                                 { get; set; }
+
+        public static PlaySoundObject? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new PlaySoundObject();
+
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x020)); // 0270D4DF7980 0x20 CueSheetName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x028)); // 0270D4DF79A0 0x28 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
+
+            return value;
+        }
+    }
+}

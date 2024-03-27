@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Ok                                       000186595960 ModelPrimitiveType bool bool bool Bool
+    // 018 Errors                                   000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 020 Results                                  00018651BEB0 ModelClassType Result Result Result Pointer
+    public partial class ConsentResponse
+    {
+        public bool                                     Ok                                      { get; set; }
+        public List<string>?                            Errors                                  { get; set; }
+        public Result?                                  Results                                 { get; set; }
+
+        public static ConsentResponse? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ConsentResponse();
+
+            value.Ok                                        = GetBool(new IntPtr(p + 0x010)); // 027004E10FE8 0x10 Ok                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Errors                                    = GetStringList(new IntPtr(p + 0x018)); // 027004E11008 0x18 Errors                      ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Results                                   = GetObject<Result>(new IntPtr(p + 0x020), ReversePrism.DataModels.Result.FromPointer); // 027004E11028 0x20 Results                     ( 00018651BEB0 ModelClassType Result Result Result Pointer )
+
+            return value;
+        }
+    }
+}

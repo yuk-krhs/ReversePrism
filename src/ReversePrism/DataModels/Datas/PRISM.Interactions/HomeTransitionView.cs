@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 TransitonAnimator                        0001866B8DE0 ModelClassType Animator Animator Animator Pointer
+    public partial class HomeTransitionView
+    {
+        public Animator?                                TransitonAnimator                       { get; set; }
+
+        public static HomeTransitionView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new HomeTransitionView();
+
+            value.TransitonAnimator                         = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0270DB50A8E8 0x20 TransitonAnimator           ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+
+            return value;
+        }
+    }
+}

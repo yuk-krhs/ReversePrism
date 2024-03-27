@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 038 CellHeight                               0001866656B0 ModelPrimitiveType float float float Single
+    // 040 TxtTitle                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 TxtSelectedEffectType                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 TxtSelectedSchedule                      0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 BtnClose                                 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 060 TypeToggleButtonGroup                    000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer
+    // 068 TypeToggleButtons                        000185D153A8 ModelClassListType List`1<ToggleButton> List`1<ToggleButton> List<ToggleButton> Pointer
+    // 070 ScheduleToggleButtonGroup                000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer
+    // 078 ScheduleToggleButtons                    000185D153A8 ModelClassListType List`1<ToggleButton> List`1<ToggleButton> List<ToggleButton> Pointer
+    // 080 BtnReset                                 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 088 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 090 LockScheduleSelect                       000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class SupportCharaSupportEffectFilterCellView
+    {
+        public float                                    CellHeight                              { get; set; }
+        public UITextMeshProUGUI?                       TxtTitle                                { get; set; }
+        public UITextMeshProUGUI?                       TxtSelectedEffectType                   { get; set; }
+        public UITextMeshProUGUI?                       TxtSelectedSchedule                     { get; set; }
+        public UIButton?                                BtnClose                                { get; set; }
+        public ToggleButtonGroup?                       TypeToggleButtonGroup                   { get; set; }
+        public List<ToggleButton>?                      TypeToggleButtons                       { get; set; }
+        public ToggleButtonGroup?                       ScheduleToggleButtonGroup               { get; set; }
+        public List<ToggleButton>?                      ScheduleToggleButtons                   { get; set; }
+        public UIButton?                                BtnReset                                { get; set; }
+        public IDisposable?                             Disposable                              { get; set; }
+        public bool                                     LockScheduleSelect                      { get; set; }
+
+        public static SupportCharaSupportEffectFilterCellView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new SupportCharaSupportEffectFilterCellView();
+
+            value.CellHeight                                = GetSingle(new IntPtr(p + 0x038)); // 0270DA3420F0 0x38 CellHeight                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TxtTitle                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA342110 0x40 TxtTitle                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSelectedEffectType                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA342130 0x48 TxtSelectedEffectType       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSelectedSchedule                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA342150 0x50 TxtSelectedSchedule         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnClose                                  = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA342170 0x58 BtnClose                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TypeToggleButtonGroup                     = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x060), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 0270DA342190 0x60 TypeToggleButtonGroup       ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
+            value.TypeToggleButtons                         = GetObjectList<ToggleButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DA3421B0 0x68 TypeToggleButtons           ( 000185D153A8 ModelClassListType List`1<ToggleButton> List`1<ToggleButton> List<ToggleButton> Pointer )
+            value.ScheduleToggleButtonGroup                 = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x070), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 0270DA3421D0 0x70 ScheduleToggleButtonGroup   ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
+            value.ScheduleToggleButtons                     = GetObjectList<ToggleButton>(new IntPtr(p + 0x078), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DA3421F0 0x78 ScheduleToggleButtons       ( 000185D153A8 ModelClassListType List`1<ToggleButton> List`1<ToggleButton> List<ToggleButton> Pointer )
+            value.BtnReset                                  = GetObject<UIButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA342210 0x80 BtnReset                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x088), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DA342230 0x88 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.LockScheduleSelect                        = GetBool(new IntPtr(p + 0x090)); // 0270DA342250 0x90 LockScheduleSelect          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

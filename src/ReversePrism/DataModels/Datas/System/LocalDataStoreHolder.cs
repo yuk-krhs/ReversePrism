@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_Store                                  0001865A3610 ModelClassType LocalDataStore LocalDataStore LocalDataStore Pointer
+    public partial class LocalDataStoreHolder
+    {
+        public LocalDataStore?                          M_Store                                 { get; set; }
+
+        public static LocalDataStoreHolder? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new LocalDataStoreHolder();
+
+            value.M_Store                                   = GetObject<LocalDataStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.LocalDataStore.FromPointer); // 0270D6A609A8 0x10 M_Store                     ( 0001865A3610 ModelClassType LocalDataStore LocalDataStore LocalDataStore Pointer )
+
+            return value;
+        }
+    }
+}

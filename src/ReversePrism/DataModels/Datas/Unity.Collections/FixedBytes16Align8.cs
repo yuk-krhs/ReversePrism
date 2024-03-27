@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Byte0000                                 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
+    // 018 Byte0008                                 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
+    public partial class FixedBytes16Align8
+    {
+        public ulong                                    Byte0000                                { get; set; }
+        public ulong                                    Byte0008                                { get; set; }
+
+        public static FixedBytes16Align8? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new FixedBytes16Align8();
+
+            value.Byte0000                                  = GetUInt64(new IntPtr(p + 0x010)); // 02700355A8A0 0x10 Byte0000                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Byte0008                                  = GetUInt64(new IntPtr(p + 0x018)); // 02700355A8C0 0x18 Byte0008                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+
+            return value;
+        }
+    }
+}

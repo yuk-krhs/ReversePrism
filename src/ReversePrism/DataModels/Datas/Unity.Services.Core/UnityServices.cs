@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 000 <Instance>k__BackingField                IUnityServices IL2CPP_TYPE_CLASS
+    // 008 <InstantiationCompletion>k__BackingField TaskCompletionSource`1<<object>> IL2CPP_TYPE_GENERICINST
+    // 010 ExternalUserIdProperty                   000186537A30 ModelClassType ExternalUserIdProperty ExternalUserIdProperty ExternalUserIdProperty Pointer
+    public partial class UnityServices
+    {
+        public ExternalUserIdProperty?                  ExternalUserIdProperty                  { get; set; }
+
+        public static UnityServices? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new UnityServices();
+
+            value.ExternalUserIdProperty                    = GetObject<ExternalUserIdProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExternalUserIdProperty.FromPointer); // 0270D0876E38 0x10 ExternalUserIdProperty      ( 000186537A30 ModelClassType ExternalUserIdProperty ExternalUserIdProperty ExternalUserIdProperty Pointer )
+
+            return value;
+        }
+    }
+}

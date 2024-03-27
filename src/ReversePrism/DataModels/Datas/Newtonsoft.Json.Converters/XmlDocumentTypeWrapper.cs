@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 028 DocumentType                             0001865965F0 ModelClassType XmlDocumentType XmlDocumentType XmlDocumentType Pointer
+    public partial class XmlDocumentTypeWrapper
+    {
+        public XmlDocumentType?                         DocumentType                            { get; set; }
+
+        public static XmlDocumentTypeWrapper? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new XmlDocumentTypeWrapper();
+
+            value.DocumentType                              = GetObject<XmlDocumentType>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlDocumentType.FromPointer); // 0270D886C0C0 0x28 DocumentType                ( 0001865965F0 ModelClassType XmlDocumentType XmlDocumentType XmlDocumentType Pointer )
+
+            return value;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 018 Behaviour                                000186715EF0 ModelClassType AudienceControllerBehaviour AudienceControllerBehaviour AudienceControllerBehaviour Pointer
+    public partial class AudienceControllerClip
+    {
+        public AudienceControllerBehaviour?             Behaviour                               { get; set; }
+
+        public static AudienceControllerClip? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new AudienceControllerClip();
+
+            value.Behaviour                                 = GetObject<AudienceControllerBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.AudienceControllerBehaviour.FromPointer); // 0270D4DFDA38 0x18 Behaviour                   ( 000186715EF0 ModelClassType AudienceControllerBehaviour AudienceControllerBehaviour AudienceControllerBehaviour Pointer )
+
+            return value;
+        }
+    }
+}

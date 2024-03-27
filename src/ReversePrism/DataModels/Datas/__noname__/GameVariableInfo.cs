@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Name                                     000186675150 ModelPrimitiveType string string string String
+    // 018 Id                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 01C GameValue                                000186666050 ModelPrimitiveType float float float Single
+    public partial class GameVariableInfo
+    {
+        public string                                   Name                                    { get; set; }
+        public uint                                     Id                                      { get; set; }
+        public float                                    GameValue                               { get; set; }
+
+        public static GameVariableInfo? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new GameVariableInfo();
+
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D501A6D0 0x10 Name                        ( 000186675150 ModelPrimitiveType string string string String )
+            value.Id                                        = GetUInt32(new IntPtr(p + 0x018)); // 0270D501A6F0 0x18 Id                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.GameValue                                 = GetSingle(new IntPtr(p + 0x01C)); // 0270D501A710 0x1C GameValue                   ( 000186666050 ModelPrimitiveType float float float Single )
+
+            return value;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 DisplayType                              000186701A60 ModelEnumType DisplayType DisplayType DisplayType Int32
+    public partial class BoolParameter
+    {
+        public DisplayType                              DisplayType                             { get; set; }
+
+        public static BoolParameter? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new BoolParameter();
+
+            value.DisplayType                               = (DisplayType)GetInt32(new IntPtr(p + 0x020)); // 0270D9153C00 0x20 DisplayType                 ( 000186701A60 ModelEnumType DisplayType DisplayType DisplayType Int32 )
+
+            return value;
+        }
+    }
+}

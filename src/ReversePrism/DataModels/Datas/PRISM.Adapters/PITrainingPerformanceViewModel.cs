@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
+    // 014 MstProduceIdolId                         0001865F4260 ModelPrimitiveType int int int Int32
+    // 018 UnitIdol                                 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer
+    // 020 Color                                    000186672F10 ModelPrimitiveType string string string String
+    // 028 BeforeStar                               0001865F4260 ModelPrimitiveType int int int Int32
+    // 02C AfterStar                                0001865F4260 ModelPrimitiveType int int int Int32
+    // 030 IsMaxLv                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 038 IdolBaseReward                           000186571DC0 ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer
+    // 040 OtherSceneLoaderAddressables             000185D05E08 ModelClassListType List`1<SceneLoaderAddressable> List`1<SceneLoaderAddressable> List<SceneLoaderAddressable> Pointer
+    public partial class PITrainingPerformanceViewModel
+    {
+        public int                                      MstCharacterInfoId                      { get; set; }
+        public int                                      MstProduceIdolId                        { get; set; }
+        public UnitIdol?                                UnitIdol                                { get; set; }
+        public string                                   Color                                   { get; set; }
+        public int                                      BeforeStar                              { get; set; }
+        public int                                      AfterStar                               { get; set; }
+        public bool                                     IsMaxLv                                 { get; set; }
+        public IIdolBaseRewardStatus?                   IdolBaseReward                          { get; set; }
+        public List<SceneLoaderAddressable>?            OtherSceneLoaderAddressables            { get; set; }
+
+        public static PITrainingPerformanceViewModel? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new PITrainingPerformanceViewModel();
+
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0270D5FB45D0 0x10 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x014)); // 0270D5FB45F0 0x14 MstProduceIdolId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.UnitIdol                                  = GetObject<UnitIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.UnitIdol.FromPointer); // 0270D5FB4610 0x18 UnitIdol                    ( 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer )
+            value.Color                                     = GetString(new IntPtr(p + 0x020)); // 0270D5FB4630 0x20 Color                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.BeforeStar                                = GetInt32(new IntPtr(p + 0x028)); // 0270D5FB4650 0x28 BeforeStar                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.AfterStar                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D5FB4670 0x2C AfterStar                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsMaxLv                                   = GetBool(new IntPtr(p + 0x030)); // 0270D5FB4690 0x30 IsMaxLv                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IdolBaseReward                            = GetObject<IIdolBaseRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IIdolBaseRewardStatus.FromPointer); // 0270D5FB46B0 0x38 IdolBaseReward              ( 000186571DC0 ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer )
+            value.OtherSceneLoaderAddressables              = GetObjectList<SceneLoaderAddressable>(new IntPtr(p + 0x040), ReversePrism.DataModels.SceneLoaderAddressable.FromPointer); // 0270D5FB46D0 0x40 OtherSceneLoaderAddressables ( 000185D05E08 ModelClassListType List`1<SceneLoaderAddressable> List`1<SceneLoaderAddressable> List<SceneLoaderAddressable> Pointer )
+
+            return value;
+        }
+    }
+}

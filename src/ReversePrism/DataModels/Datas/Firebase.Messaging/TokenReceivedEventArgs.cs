@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Token                                    000186671910 ModelPrimitiveType string string string String
+    public partial class TokenReceivedEventArgs
+    {
+        public string                                   Token                                   { get; set; }
+
+        public static TokenReceivedEventArgs? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new TokenReceivedEventArgs();
+
+            value.Token                                     = GetString(new IntPtr(p + 0x010)); // 0270DBD83D98 0x10 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+
+            return value;
+        }
+    }
+}

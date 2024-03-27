@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 UnitSelectView                           000186730450 ModelClassType IntroductionUnitSelectView IntroductionUnitSelectView IntroductionUnitSelectView Pointer
+    // 028 introductionLetterOverlayFactory         OverlayViewFactory`1<IIntroductionLetterOverlayView> IL2CPP_TYPE_GENERICINST
+    // 030 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
+    public partial class IntroductionUnitLetterView
+    {
+        public IntroductionUnitSelectView?              UnitSelectView                          { get; set; }
+        public IResourceTag?                            ResourceTag                             { get; set; }
+
+        public static IntroductionUnitLetterView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new IntroductionUnitLetterView();
+
+            value.UnitSelectView                            = GetObject<IntroductionUnitSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionUnitSelectView.FromPointer); // 0270DB651A00 0x20 UnitSelectView              ( 000186730450 ModelClassType IntroductionUnitSelectView IntroductionUnitSelectView IntroductionUnitSelectView Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x030), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB651A40 0x30 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+
+            return value;
+        }
+    }
+}

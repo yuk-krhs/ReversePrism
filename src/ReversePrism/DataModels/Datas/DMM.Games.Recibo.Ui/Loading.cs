@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 000 Path                                     string IL2CPP_TYPE_STRING
+    // 000 _dialog                                  GameObject IL2CPP_TYPE_CLASS
+    // 020 Rt                                       000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 028 Rot                                      0001866AC430 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 008 _instance                                Loading IL2CPP_TYPE_CLASS
+    // 038 Logo                                     0001866CCDB0 ModelClassType Image Image Image Pointer
+    public partial class Loading
+    {
+        public RectTransform?                           Rt                                      { get; set; }
+        public Vector3                                  Rot                                     { get; set; }
+        public Image?                                   Logo                                    { get; set; }
+
+        public static Loading? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new Loading();
+
+            value.Rt                                        = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DB45A168 0x20 Rt                          ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Rot                                       = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0270DB45A188 0x28 Rot                         ( 0001866AC430 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 0270DB45A1C8 0x38 Logo                        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+
+            return value;
+        }
+    }
+}

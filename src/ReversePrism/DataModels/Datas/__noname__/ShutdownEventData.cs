@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Max_num_devices                          0001865F36C0 ModelPrimitiveType int int int Int32
+    // 014 Max_state_size_in_bytes                  0001865F36C0 ModelPrimitiveType int int int Int32
+    // 018 Total_event_bytes                        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 01C Total_event_count                        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 020 Total_frame_count                        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 024 Total_event_processing_time              000186666050 ModelPrimitiveType float float float Single
+    public partial class ShutdownEventData
+    {
+        public int                                      Max_num_devices                         { get; set; }
+        public int                                      Max_state_size_in_bytes                 { get; set; }
+        public int                                      Total_event_bytes                       { get; set; }
+        public int                                      Total_event_count                       { get; set; }
+        public int                                      Total_frame_count                       { get; set; }
+        public float                                    Total_event_processing_time             { get; set; }
+
+        public static ShutdownEventData? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ShutdownEventData();
+
+            value.Max_num_devices                           = GetInt32(new IntPtr(p + 0x010)); // 0270D771AB48 0x10 Max_num_devices             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Max_state_size_in_bytes                   = GetInt32(new IntPtr(p + 0x014)); // 0270D771AB68 0x14 Max_state_size_in_bytes     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Total_event_bytes                         = GetInt32(new IntPtr(p + 0x018)); // 0270D771AB88 0x18 Total_event_bytes           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Total_event_count                         = GetInt32(new IntPtr(p + 0x01C)); // 0270D771ABA8 0x1C Total_event_count           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Total_frame_count                         = GetInt32(new IntPtr(p + 0x020)); // 0270D771ABC8 0x20 Total_frame_count           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Total_event_processing_time               = GetSingle(new IntPtr(p + 0x024)); // 0270D771ABE8 0x24 Total_event_processing_time ( 000186666050 ModelPrimitiveType float float float Single )
+
+            return value;
+        }
+    }
+}

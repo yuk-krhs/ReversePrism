@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 SelectedFilterTypes                      000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 018 SortFilterSettings                       0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer
+    public partial class ProfileAchievementSortFilterSaveData
+    {
+        public List<int>?                               SelectedFilterTypes                     { get; set; }
+        public SortFilterSettings?                      SortFilterSettings                      { get; set; }
+
+        public static ProfileAchievementSortFilterSaveData? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ProfileAchievementSortFilterSaveData();
+
+            value.SelectedFilterTypes                       = GetInt32List(new IntPtr(p + 0x010)); // 027003A6D608 0x10 SelectedFilterTypes         ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 027003A6D628 0x18 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
+
+            return value;
+        }
+    }
+}

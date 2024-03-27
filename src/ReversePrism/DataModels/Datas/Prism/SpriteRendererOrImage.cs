@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 SpriteRenderer                           000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer
+    // 028 Image                                    0001866CCDB0 ModelClassType Image Image Image Pointer
+    public partial class SpriteRendererOrImage
+    {
+        public SpriteRenderer?                          SpriteRenderer                          { get; set; }
+        public Image?                                   Image                                   { get; set; }
+
+        public static SpriteRendererOrImage? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new SpriteRendererOrImage();
+
+            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4EBF6A8 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0270D4EBF6C8 0x28 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+
+            return value;
+        }
+    }
+}

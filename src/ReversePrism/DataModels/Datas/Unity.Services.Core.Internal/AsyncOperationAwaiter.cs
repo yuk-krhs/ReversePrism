@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_Operation                              000186707F50 ModelClassType IAsyncOperation IAsyncOperation IAsyncOperation Pointer
+    public partial class AsyncOperationAwaiter
+    {
+        public IAsyncOperation?                         M_Operation                             { get; set; }
+
+        public static AsyncOperationAwaiter? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new AsyncOperationAwaiter();
+
+            value.M_Operation                               = GetObject<IAsyncOperation>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAsyncOperation.FromPointer); // 0270DBA5F878 0x10 M_Operation                 ( 000186707F50 ModelClassType IAsyncOperation IAsyncOperation IAsyncOperation Pointer )
+
+            return value;
+        }
+    }
+}

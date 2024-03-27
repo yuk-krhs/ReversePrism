@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Left                                     00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer
+    // 018 Right                                    00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer
+    public partial class MergedRestriction
+    {
+        public BindingRestrictions?                     Left                                    { get; set; }
+        public BindingRestrictions?                     Right                                   { get; set; }
+
+        public static MergedRestriction? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new MergedRestriction();
+
+            value.Left                                      = GetObject<BindingRestrictions>(new IntPtr(p + 0x010), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 0270DA06C480 0x10 Left                        ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
+            value.Right                                     = GetObject<BindingRestrictions>(new IntPtr(p + 0x018), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 0270DA06C4A0 0x18 Right                       ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
+
+            return value;
+        }
+    }
+}

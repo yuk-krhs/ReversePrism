@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 Excludes                                 000185B833A0 ModelClassListType Graphic[] Graphic[] List<Graphic> Pointer
+    // 028 GrayOutColor                             0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 038 originalColors                           Dictionary`2<Graphic, Color> IL2CPP_TYPE_GENERICINST
+    // 040 originalTMPOutlineColors                 Dictionary`2<ColorToOutlineForTextMeshProUGUI, Color> IL2CPP_TYPE_GENERICINST
+    // 048 originalTMPUnderlayColors                Dictionary`2<ColorToUnderlayForTextMeshProUGUI, Color> IL2CPP_TYPE_GENERICINST
+    // 050 originalGradients                        Dictionary`2<UIGradient, Gradient> IL2CPP_TYPE_GENERICINST
+    // 058 IsGrayOut                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class UIGrayOutController
+    {
+        public List<Graphic>?                           Excludes                                { get; set; }
+        public Color                                    GrayOutColor                            { get; set; }
+        public bool                                     IsGrayOut                               { get; set; }
+
+        public static UIGrayOutController? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new UIGrayOutController();
+
+            value.Excludes                                  = GetObjectList<Graphic>(new IntPtr(p + 0x020), ReversePrism.DataModels.Graphic.FromPointer); // 027005B090F0 0x20 Excludes                    ( 000185B833A0 ModelClassListType Graphic[] Graphic[] List<Graphic> Pointer )
+            value.GrayOutColor                              = (Color)GetInt32(new IntPtr(p + 0x028)); // 027005B09110 0x28 GrayOutColor                ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.IsGrayOut                                 = GetBool(new IntPtr(p + 0x058)); // 027005B091B0 0x58 IsGrayOut                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

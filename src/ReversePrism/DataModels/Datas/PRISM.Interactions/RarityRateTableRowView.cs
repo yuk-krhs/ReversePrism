@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 020 Rect                                     000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 028 TxtRarity                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 TxtNormalRate                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 TxtPromisedRate                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 BgBlue                                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 048 BgWhite                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    public partial class RarityRateTableRowView
+    {
+        public RectTransform?                           Rect                                    { get; set; }
+        public UITextMeshProUGUI?                       TxtRarity                               { get; set; }
+        public UITextMeshProUGUI?                       TxtNormalRate                           { get; set; }
+        public UITextMeshProUGUI?                       TxtPromisedRate                         { get; set; }
+        public GameObject?                              BgBlue                                  { get; set; }
+        public GameObject?                              BgWhite                                 { get; set; }
+
+        public static RarityRateTableRowView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new RarityRateTableRowView();
+
+            value.Rect                                      = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DBA131D8 0x20 Rect                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.TxtRarity                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA131F8 0x28 TxtRarity                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtNormalRate                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA13218 0x30 TxtNormalRate               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtPromisedRate                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA13238 0x38 TxtPromisedRate             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BgBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBA13258 0x40 BgBlue                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BgWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBA13278 0x48 BgWhite                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+
+            return value;
+        }
+    }
+}

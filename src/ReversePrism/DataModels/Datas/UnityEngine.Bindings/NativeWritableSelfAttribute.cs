@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 WritableSelf                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class NativeWritableSelfAttribute
+    {
+        public bool                                     WritableSelf                            { get; set; }
+
+        public static NativeWritableSelfAttribute? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new NativeWritableSelfAttribute();
+
+            value.WritableSelf                              = GetBool(new IntPtr(p + 0x010)); // 027006978DA0 0x10 WritableSelf                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

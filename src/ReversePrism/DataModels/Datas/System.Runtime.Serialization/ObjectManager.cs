@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_onDeserializationHandler               0001866C6A30 ModelClassType DeserializationEventHandler DeserializationEventHandler DeserializationEventHandler Pointer
+    // 018 M_onDeserializedHandler                  00018672C9E0 ModelClassType SerializationEventHandler SerializationEventHandler SerializationEventHandler Pointer
+    // 020 M_objects                                000185B98BA0 ModelClassListType ObjectHolder[] ObjectHolder[] List<ObjectHolder> Pointer
+    // 028 m_topObject                              <object> IL2CPP_TYPE_OBJECT
+    // 030 M_specialFixupObjects                    0001866C87F0 ModelClassType ObjectHolderList ObjectHolderList ObjectHolderList Pointer
+    // 038 M_fixupCount                             0001865F79C0 ModelPrimitiveType long long long Int64
+    // 040 M_selector                               0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer
+    // 048 M_context                                0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32
+    public partial class ObjectManager
+    {
+        public DeserializationEventHandler?             M_onDeserializationHandler              { get; set; }
+        public SerializationEventHandler?               M_onDeserializedHandler                 { get; set; }
+        public List<ObjectHolder>?                      M_objects                               { get; set; }
+        public ObjectHolderList?                        M_specialFixupObjects                   { get; set; }
+        public long                                     M_fixupCount                            { get; set; }
+        public ISurrogateSelector?                      M_selector                              { get; set; }
+        public StreamingContext                         M_context                               { get; set; }
+
+        public static ObjectManager? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new ObjectManager();
+
+            value.M_onDeserializationHandler                = GetObject<DeserializationEventHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.DeserializationEventHandler.FromPointer); // 0270D6C1D3E0 0x10 M_onDeserializationHandler  ( 0001866C6A30 ModelClassType DeserializationEventHandler DeserializationEventHandler DeserializationEventHandler Pointer )
+            value.M_onDeserializedHandler                   = GetObject<SerializationEventHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.SerializationEventHandler.FromPointer); // 0270D6C1D400 0x18 M_onDeserializedHandler     ( 00018672C9E0 ModelClassType SerializationEventHandler SerializationEventHandler SerializationEventHandler Pointer )
+            value.M_objects                                 = GetObjectList<ObjectHolder>(new IntPtr(p + 0x020), ReversePrism.DataModels.ObjectHolder.FromPointer); // 0270D6C1D420 0x20 M_objects                   ( 000185B98BA0 ModelClassListType ObjectHolder[] ObjectHolder[] List<ObjectHolder> Pointer )
+            value.M_specialFixupObjects                     = GetObject<ObjectHolderList>(new IntPtr(p + 0x030), ReversePrism.DataModels.ObjectHolderList.FromPointer); // 0270D6C1D460 0x30 M_specialFixupObjects       ( 0001866C87F0 ModelClassType ObjectHolderList ObjectHolderList ObjectHolderList Pointer )
+            value.M_fixupCount                              = GetInt64(new IntPtr(p + 0x038)); // 0270D6C1D480 0x38 M_fixupCount                ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.M_selector                                = GetObject<ISurrogateSelector>(new IntPtr(p + 0x040), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 0270D6C1D4A0 0x40 M_selector                  ( 0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
+            value.M_context                                 = (StreamingContext)GetInt32(new IntPtr(p + 0x048)); // 0270D6C1D4C0 0x48 M_context                   ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
+
+            return value;
+        }
+    }
+}

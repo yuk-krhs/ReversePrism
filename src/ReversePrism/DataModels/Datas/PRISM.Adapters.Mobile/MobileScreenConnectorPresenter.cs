@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 View                                     0001865B8310 ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer
+    // 018 Container                                0001865B71F0 ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer
+    // 020 parameterStack                           Stack`1<IMobileScreenParameter> IL2CPP_TYPE_GENERICINST
+    // 028 screenPresenters                         Dictionary`2<int, IMobileScreenPresenter> IL2CPP_TYPE_GENERICINST
+    // 030 onScreenJumpFinishedSubject              Subject`1<ScreenType> IL2CPP_TYPE_GENERICINST
+    // 038 overlayCloser                            Action`1<Action> IL2CPP_TYPE_GENERICINST
+    public partial class MobileScreenConnectorPresenter
+    {
+        public IMobileScreenConnectorView?              View                                    { get; set; }
+        public IMobileScreenCommonInfoContainer?        Container                               { get; set; }
+
+        public static MobileScreenConnectorPresenter? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new MobileScreenConnectorPresenter();
+
+            value.View                                      = GetObject<IMobileScreenConnectorView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMobileScreenConnectorView.FromPointer); // 0270D688C888 0x10 View                        ( 0001865B8310 ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer )
+            value.Container                                 = GetObject<IMobileScreenCommonInfoContainer>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMobileScreenCommonInfoContainer.FromPointer); // 0270D688C8A8 0x18 Container                   ( 0001865B71F0 ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer )
+
+            return value;
+        }
+    }
+}

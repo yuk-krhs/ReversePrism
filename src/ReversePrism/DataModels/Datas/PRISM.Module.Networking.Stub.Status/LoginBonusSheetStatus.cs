@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 000 _parser                                  MessageParser`1<LoginBonusSheetStatus> IL2CPP_TYPE_GENERICINST
+    // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
+    // 000 NumFieldNumber                           int IL2CPP_TYPE_I4
+    // 018 Num                                      0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 000 StepListFieldNumber                      int IL2CPP_TYPE_I4
+    // 008 _repeated_stepList_codec                 FieldCodec`1<LoginBonusStepStatus> IL2CPP_TYPE_GENERICINST
+    // 020 StepList                                 000185CE5088 ModelClassListType RepeatedField`1<LoginBonusStepStatus> RepeatedField`1<LoginBonusStepStatus> List<LoginBonusStepStatus> Pointer
+    public partial class LoginBonusSheetStatus
+    {
+        public int                                      Num                                     { get; set; }
+        public List<LoginBonusStepStatus>?              StepList                                { get; set; }
+
+        public static LoginBonusSheetStatus? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new LoginBonusSheetStatus();
+
+            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D22085F0 0x18 Num                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StepList                                  = GetObjectList<LoginBonusStepStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoginBonusStepStatus.FromPointer); // 0270D2208650 0x20 StepList                    ( 000185CE5088 ModelClassListType RepeatedField`1<LoginBonusStepStatus> RepeatedField`1<LoginBonusStepStatus> List<LoginBonusStepStatus> Pointer )
+
+            return value;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 ViewType                                 000186541D30 ModelEnumType LoginBonusViewType LoginBonusViewType LoginBonusViewType Int32
+    // 018 LoginBonus                               0001865A40E0 ModelClassType ILoginBonusStatus ILoginBonusStatus ILoginBonusStatus Pointer
+    // 020 RewardItemListViewModels                 000185B84960 ModelClassListType HomeLoginBonusRewardItemIconViewModel[] HomeLoginBonusRewardItemIconViewModel[] List<HomeLoginBonusRewardItemIconViewModel> Pointer
+    // 028 NextLoginBonusSheet                      0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer
+    // 030 IsAnnounceNext                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    public partial class HomeLoginBonusViewModel
+    {
+        public LoginBonusViewType                       ViewType                                { get; set; }
+        public ILoginBonusStatus?                       LoginBonus                              { get; set; }
+        public List<HomeLoginBonusRewardItemIconViewModel>? RewardItemListViewModels                { get; set; }
+        public HomeLoginBonusViewModel?                 NextLoginBonusSheet                     { get; set; }
+        public bool                                     IsAnnounceNext                          { get; set; }
+
+        public static HomeLoginBonusViewModel? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new HomeLoginBonusViewModel();
+
+            value.ViewType                                  = (LoginBonusViewType)GetInt32(new IntPtr(p + 0x010)); // 027005DE32F8 0x10 ViewType                    ( 000186541D30 ModelEnumType LoginBonusViewType LoginBonusViewType LoginBonusViewType Int32 )
+            value.LoginBonus                                = GetObject<ILoginBonusStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILoginBonusStatus.FromPointer); // 027005DE3318 0x18 LoginBonus                  ( 0001865A40E0 ModelClassType ILoginBonusStatus ILoginBonusStatus ILoginBonusStatus Pointer )
+            value.RewardItemListViewModels                  = GetObjectList<HomeLoginBonusRewardItemIconViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeLoginBonusRewardItemIconViewModel.FromPointer); // 027005DE3338 0x20 RewardItemListViewModels    ( 000185B84960 ModelClassListType HomeLoginBonusRewardItemIconViewModel[] HomeLoginBonusRewardItemIconViewModel[] List<HomeLoginBonusRewardItemIconViewModel> Pointer )
+            value.NextLoginBonusSheet                       = GetObject<HomeLoginBonusViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeLoginBonusViewModel.FromPointer); // 027005DE3358 0x28 NextLoginBonusSheet         ( 0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer )
+            value.IsAnnounceNext                            = GetBool(new IntPtr(p + 0x030)); // 027005DE3378 0x30 IsAnnounceNext              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+
+            return value;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 M_Value                                  0001866CC550 ModelEnumType v128 v128 v128 Int32
+    public partial class V128DebugView
+    {
+        public v128                                     M_Value                                 { get; set; }
+
+        public static V128DebugView? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new V128DebugView();
+
+            value.M_Value                                   = (v128)GetInt32(new IntPtr(p + 0x010)); // 0270DA9057A8 0x10 M_Value                     ( 0001866CC550 ModelEnumType v128 v128 v128 Int32 )
+
+            return value;
+        }
+    }
+}

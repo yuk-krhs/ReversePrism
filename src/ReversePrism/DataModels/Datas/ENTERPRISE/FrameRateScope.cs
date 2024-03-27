@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 Dish                                     0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer
+    // 000 stack                                    ActivationStack`1<FrameRateDish> IL2CPP_TYPE_GENERICINST
+    public partial class FrameRateScope
+    {
+        public FrameRateDish?                           Dish                                    { get; set; }
+
+        public static FrameRateScope? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new FrameRateScope();
+
+            value.Dish                                      = GetObject<FrameRateDish>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameRateDish.FromPointer); // 0270DB695B58 0x10 Dish                        ( 0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer )
+
+            return value;
+        }
+    }
+}
