@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Logger                                   ILogger IL2CPP_TYPE_CLASS
     // 008 dispatcherCallback                       NativeCallbackDispatcherCallback IL2CPP_TYPE_CLASS
-    public partial class NativeCallbackDispatcher
+    public partial class NativeCallbackDispatcher : DataModel
     {
 
         public static NativeCallbackDispatcher? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeCallbackDispatcher();
+            var value   = new NativeCallbackDispatcher() { Pointer= p0 };
 
 
             return value;

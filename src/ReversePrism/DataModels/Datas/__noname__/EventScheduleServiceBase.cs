@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventScheduleServiceBase
+    public partial class EventScheduleServiceBase : DataModel
     {
 
         public static EventScheduleServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventScheduleServiceBase();
+            var value   = new EventScheduleServiceBase() { Pointer= p0 };
 
 
             return value;

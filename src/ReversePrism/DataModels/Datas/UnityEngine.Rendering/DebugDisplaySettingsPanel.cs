@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Widgets                                000185D21C98 ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer
     // 018 M_DisplayInfo                            0001866DBA60 ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer
-    public partial class DebugDisplaySettingsPanel
+    public partial class DebugDisplaySettingsPanel : DataModel
     {
         public List<Widget>?                            M_Widgets                               { get; set; }
         public DisplayInfoAttribute?                    M_DisplayInfo                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugDisplaySettingsPanel();
+            var value   = new DebugDisplaySettingsPanel() { Pointer= p0 };
 
-            value.M_Widgets                                 = GetObjectList<Widget>(new IntPtr(p + 0x010), ReversePrism.DataModels.Widget.FromPointer); // 0270D9142E60 0x10 M_Widgets                   ( 000185D21C98 ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer )
-            value.M_DisplayInfo                             = GetObject<DisplayInfoAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplayInfoAttribute.FromPointer); // 0270D9142E80 0x18 M_DisplayInfo               ( 0001866DBA60 ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer )
+            value.M_Widgets                                 = GetObjectList<Widget>(new IntPtr(p + 0x010), ReversePrism.DataModels.Widget.FromPointer); // 0246691A5A18 0x10 M_Widgets                   ( 000185D21C98 ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer )
+            value.M_DisplayInfo                             = GetObject<DisplayInfoAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplayInfoAttribute.FromPointer); // 0246691A5A38 0x18 M_DisplayInfo               ( 0001866DBA60 ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer )
 
             return value;
         }

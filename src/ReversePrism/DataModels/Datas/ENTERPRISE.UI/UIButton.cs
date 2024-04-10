@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 1E0 MImageSet                                000185B8B270 ModelClassListType ImageSetInformation[] ImageSetInformation[] List<ImageSetInformation> Pointer
     // 1E8 MTextSet                                 000185CAAD28 ModelClassListType TextSetInformation[] TextSetInformation[] List<TextSetInformation> Pointer
-    public partial class UIButton
+    public partial class UIButton : DataModel
     {
         public List<ImageSetInformation>?               MImageSet                               { get; set; }
         public List<TextSetInformation>?                MTextSet                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIButton();
+            var value   = new UIButton() { Pointer= p0 };
 
-            value.MImageSet                                 = GetObjectList<ImageSetInformation>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.ImageSetInformation.FromPointer); // 0270D0C9C9C0 0x1E0 MImageSet                   ( 000185B8B270 ModelClassListType ImageSetInformation[] ImageSetInformation[] List<ImageSetInformation> Pointer )
-            value.MTextSet                                  = GetObjectList<TextSetInformation>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.TextSetInformation.FromPointer); // 0270D0C9C9E0 0x1E8 MTextSet                    ( 000185CAAD28 ModelClassListType TextSetInformation[] TextSetInformation[] List<TextSetInformation> Pointer )
+            value.MImageSet                                 = GetObjectList<ImageSetInformation>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.ImageSetInformation.FromPointer); // 024660CCAF88 0x1E0 MImageSet                   ( 000185B8B270 ModelClassListType ImageSetInformation[] ImageSetInformation[] List<ImageSetInformation> Pointer )
+            value.MTextSet                                  = GetObjectList<TextSetInformation>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.TextSetInformation.FromPointer); // 024660CCAFA8 0x1E8 MTextSet                    ( 000185CAAD28 ModelClassListType TextSetInformation[] TextSetInformation[] List<TextSetInformation> Pointer )
 
             return value;
         }

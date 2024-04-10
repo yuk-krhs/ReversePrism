@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class unitytls_tlsctx_certificate_callback
+    public partial class unitytls_tlsctx_certificate_callback : DataModel
     {
 
         public static unitytls_tlsctx_certificate_callback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new unitytls_tlsctx_certificate_callback();
+            var value   = new unitytls_tlsctx_certificate_callback() { Pointer= p0 };
 
 
             return value;

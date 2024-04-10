@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 characterFirstNameRomaDic                Dictionary`2<int, string> IL2CPP_TYPE_GENERICINST
-    public partial class SoundUtility
+    public partial class SoundUtility : DataModel
     {
 
         public static SoundUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoundUtility();
+            var value   = new SoundUtility() { Pointer= p0 };
 
 
             return value;

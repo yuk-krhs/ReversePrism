@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 00C UnobservedExceptionWriteLogType          LogType IL2CPP_TYPE_VALUETYPE
     // 010 DispatchUnityMainThread                  000186596380 ModelPrimitiveType bool bool bool Bool
     // 018 HandleExceptionInvoke                    0001867255F0 ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer
-    public partial class UniTaskScheduler
+    public partial class UniTaskScheduler : DataModel
     {
         public bool                                     DispatchUnityMainThread                 { get; set; }
         public SendOrPostCallback?                      HandleExceptionInvoke                   { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniTaskScheduler();
+            var value   = new UniTaskScheduler() { Pointer= p0 };
 
-            value.DispatchUnityMainThread                   = GetBool(new IntPtr(p + 0x010)); // 027003EE4170 0x10 DispatchUnityMainThread     ( 000186596380 ModelPrimitiveType bool bool bool Bool )
-            value.HandleExceptionInvoke                     = GetObject<SendOrPostCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.SendOrPostCallback.FromPointer); // 027003EE4190 0x18 HandleExceptionInvoke       ( 0001867255F0 ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer )
+            value.DispatchUnityMainThread                   = GetBool(new IntPtr(p + 0x010)); // 0245A3EE4170 0x10 DispatchUnityMainThread     ( 000186596380 ModelPrimitiveType bool bool bool Bool )
+            value.HandleExceptionInvoke                     = GetObject<SendOrPostCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.SendOrPostCallback.FromPointer); // 0245A3EE4190 0x18 HandleExceptionInvoke       ( 0001867255F0 ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer )
 
             return value;
         }

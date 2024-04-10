@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetLiveEnableArgs
+    public partial class IGetLiveEnableArgs : DataModel
     {
 
         public static IGetLiveEnableArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetLiveEnableArgs();
+            var value   = new IGetLiveEnableArgs() { Pointer= p0 };
 
 
             return value;

@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 068 __Method_ConnectReleaseOther             Method`2<ConnectReleaseOtherArgs, ConnectReleaseOtherReply> IL2CPP_TYPE_GENERICINST
     // 070 __Method_ExecuteConnectProvider          Method`2<ExecuteConnectProviderArgs, ExecuteConnectProviderReply> IL2CPP_TYPE_GENERICINST
     // 078 __Method_VerifyConnectToken              Method`2<VerifyConnectTokenArgs, VerifyConnectTokenReply> IL2CPP_TYPE_GENERICINST
-    public partial class TransferService
+    public partial class TransferService : DataModel
     {
 
         public static TransferService? FromPointer(IntPtr p0)
@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferService();
+            var value   = new TransferService() { Pointer= p0 };
 
 
             return value;

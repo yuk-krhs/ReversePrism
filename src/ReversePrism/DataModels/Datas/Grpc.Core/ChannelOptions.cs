@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 PrimaryUserAgentString                   string IL2CPP_TYPE_STRING
     // 000 SecondaryUserAgentString                 string IL2CPP_TYPE_STRING
     // 000 SoReuseport                              string IL2CPP_TYPE_STRING
-    public partial class ChannelOptions
+    public partial class ChannelOptions : DataModel
     {
 
         public static ChannelOptions? FromPointer(IntPtr p0)
@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChannelOptions();
+            var value   = new ChannelOptions() { Pointer= p0 };
 
 
             return value;

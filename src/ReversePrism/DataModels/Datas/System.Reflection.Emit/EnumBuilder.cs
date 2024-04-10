@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EnumBuilder
+    public partial class EnumBuilder : DataModel
     {
 
         public static EnumBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumBuilder();
+            var value   = new EnumBuilder() { Pointer= p0 };
 
 
             return value;

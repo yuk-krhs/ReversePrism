@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CrossContextChannel
+    public partial class CrossContextChannel : DataModel
     {
 
         public static CrossContextChannel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrossContextChannel();
+            var value   = new CrossContextChannel() { Pointer= p0 };
 
 
             return value;

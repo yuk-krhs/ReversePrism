@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TopLevelAssembly                         00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer
-    public partial class TopLevelAssemblyTypeResolver
+    public partial class TopLevelAssemblyTypeResolver : DataModel
     {
         public Assembly?                                TopLevelAssembly                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TopLevelAssemblyTypeResolver();
+            var value   = new TopLevelAssemblyTypeResolver() { Pointer= p0 };
 
-            value.TopLevelAssembly                          = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0270D7D71270 0x10 TopLevelAssembly            ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
+            value.TopLevelAssembly                          = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 024667DD9270 0x10 TopLevelAssembly            ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
 
             return value;
         }

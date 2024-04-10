@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 m_Graphics                               Dictionary`2<Canvas, IndexedSet`1<Graphic>> IL2CPP_TYPE_GENERICINST
     // 018 m_RaycastableGraphics                    Dictionary`2<Canvas, IndexedSet`1<Graphic>> IL2CPP_TYPE_GENERICINST
     // 008 s_EmptyList                              List`1<Graphic> IL2CPP_TYPE_GENERICINST
-    public partial class GraphicRegistry
+    public partial class GraphicRegistry : DataModel
     {
 
         public static GraphicRegistry? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphicRegistry();
+            var value   = new GraphicRegistry() { Pointer= p0 };
 
 
             return value;

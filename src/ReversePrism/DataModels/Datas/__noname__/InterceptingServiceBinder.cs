@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Builder                                  000186760600 ModelClassType Builder Builder Builder Pointer
     // 018 Interceptor                              000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer
-    public partial class InterceptingServiceBinder
+    public partial class InterceptingServiceBinder : DataModel
     {
         public Builder?                                 Builder                                 { get; set; }
         public Interceptor?                             Interceptor                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InterceptingServiceBinder();
+            var value   = new InterceptingServiceBinder() { Pointer= p0 };
 
-            value.Builder                                   = GetObject<Builder>(new IntPtr(p + 0x010), ReversePrism.DataModels.Builder.FromPointer); // 0270D9459C50 0x10 Builder                     ( 000186760600 ModelClassType Builder Builder Builder Pointer )
-            value.Interceptor                               = GetObject<Interceptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interceptor.FromPointer); // 0270D9459C70 0x18 Interceptor                 ( 000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer )
+            value.Builder                                   = GetObject<Builder>(new IntPtr(p + 0x010), ReversePrism.DataModels.Builder.FromPointer); // 0246694BFA18 0x10 Builder                     ( 000186760600 ModelClassType Builder Builder Builder Pointer )
+            value.Interceptor                               = GetObject<Interceptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interceptor.FromPointer); // 0246694BFA38 0x18 Interceptor                 ( 000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer )
 
             return value;
         }

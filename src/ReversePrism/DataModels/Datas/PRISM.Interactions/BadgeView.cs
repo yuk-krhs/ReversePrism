@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 CircleBlueObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 AmountObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 038 AmountText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class BadgeView
+    public partial class BadgeView : DataModel
     {
         public GameObject?                              CircleObject                            { get; set; }
         public GameObject?                              CircleBlueObject                        { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeView();
+            var value   = new BadgeView() { Pointer= p0 };
 
-            value.CircleObject                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 027004F607E8 0x20 CircleObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CircleBlueObject                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 027004F60808 0x28 CircleBlueObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AmountObject                              = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 027004F60828 0x30 AmountObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AmountText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004F60848 0x38 AmountText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CircleObject                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4F63708 0x20 CircleObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CircleBlueObject                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4F63728 0x28 CircleBlueObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AmountObject                              = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4F63748 0x30 AmountObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AmountText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4F63768 0x38 AmountText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

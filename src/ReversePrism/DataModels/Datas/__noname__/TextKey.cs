@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 GameStartMessage                         ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 010 PressToStart                             ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 020 PressToTransferData                      ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    public partial class TextKey
+    public partial class TextKey : DataModel
     {
 
         public static TextKey? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextKey();
+            var value   = new TextKey() { Pointer= p0 };
 
 
             return value;

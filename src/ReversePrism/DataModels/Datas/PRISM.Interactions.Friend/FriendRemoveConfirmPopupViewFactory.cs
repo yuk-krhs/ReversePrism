@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FriendRemoveConfirmPopupViewFactory
+    public partial class FriendRemoveConfirmPopupViewFactory : DataModel
     {
 
         public static FriendRemoveConfirmPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendRemoveConfirmPopupViewFactory();
+            var value   = new FriendRemoveConfirmPopupViewFactory() { Pointer= p0 };
 
 
             return value;

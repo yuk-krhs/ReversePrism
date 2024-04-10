@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 OwnerThreadId                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 queue                                    Queue`1<Action> IL2CPP_TYPE_GENERICINST
-    public partial class Dispatcher
+    public partial class Dispatcher : DataModel
     {
         public int                                      OwnerThreadId                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Dispatcher();
+            var value   = new Dispatcher() { Pointer= p0 };
 
-            value.OwnerThreadId                             = GetInt32(new IntPtr(p + 0x010)); // 0270DBCE1580 0x10 OwnerThreadId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OwnerThreadId                             = GetInt32(new IntPtr(p + 0x010)); // 02466BD61370 0x10 OwnerThreadId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

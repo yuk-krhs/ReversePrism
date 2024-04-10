@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 <Initializers>k__BackingField            ReadOnlyCollection`1<ElementInit> IL2CPP_TYPE_GENERICINST
-    public partial class MemberListBinding
+    public partial class MemberListBinding : DataModel
     {
 
         public static MemberListBinding? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberListBinding();
+            var value   = new MemberListBinding() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 InProduceSupportCharacterList            000185CE0F88 ModelClassListType RepeatedField`1<InProduceSupportCharacterStatus> RepeatedField`1<InProduceSupportCharacterStatus> List<InProduceSupportCharacterStatus> Pointer
     // 000 FriendInProduceSupportCharacterFieldNumber int IL2CPP_TYPE_I4
     // 020 FriendInProduceSupportCharacter          0001866DC630 ModelClassType InProduceSupportCharacterStatus InProduceSupportCharacterStatus InProduceSupportCharacterStatus Pointer
-    public partial class SupportUnitStatus
+    public partial class SupportUnitStatus : DataModel
     {
         public List<InProduceSupportCharacterStatus>?   InProduceSupportCharacterList           { get; set; }
         public InProduceSupportCharacterStatus?         FriendInProduceSupportCharacter         { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportUnitStatus();
+            var value   = new SupportUnitStatus() { Pointer= p0 };
 
-            value.InProduceSupportCharacterList             = GetObjectList<InProduceSupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProduceSupportCharacterStatus.FromPointer); // 0270D1161C38 0x18 InProduceSupportCharacterList ( 000185CE0F88 ModelClassListType RepeatedField`1<InProduceSupportCharacterStatus> RepeatedField`1<InProduceSupportCharacterStatus> List<InProduceSupportCharacterStatus> Pointer )
-            value.FriendInProduceSupportCharacter           = GetObject<InProduceSupportCharacterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InProduceSupportCharacterStatus.FromPointer); // 0270D1161C78 0x20 FriendInProduceSupportCharacter ( 0001866DC630 ModelClassType InProduceSupportCharacterStatus InProduceSupportCharacterStatus InProduceSupportCharacterStatus Pointer )
+            value.InProduceSupportCharacterList             = GetObjectList<InProduceSupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProduceSupportCharacterStatus.FromPointer); // 0246610C7718 0x18 InProduceSupportCharacterList ( 000185CE0F88 ModelClassListType RepeatedField`1<InProduceSupportCharacterStatus> RepeatedField`1<InProduceSupportCharacterStatus> List<InProduceSupportCharacterStatus> Pointer )
+            value.FriendInProduceSupportCharacter           = GetObject<InProduceSupportCharacterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InProduceSupportCharacterStatus.FromPointer); // 0246610C7758 0x20 FriendInProduceSupportCharacter ( 0001866DC630 ModelClassType InProduceSupportCharacterStatus InProduceSupportCharacterStatus InProduceSupportCharacterStatus Pointer )
 
             return value;
         }

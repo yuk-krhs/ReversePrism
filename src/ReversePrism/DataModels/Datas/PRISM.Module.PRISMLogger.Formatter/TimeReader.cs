@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 Disposables                              0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 028 colorFormatter                           Utf8PreparedFormat`2<string, string> IL2CPP_TYPE_GENERICINST
     // 030 TimeText                                 000186671910 ModelPrimitiveType string string string String
-    public partial class TimeReader
+    public partial class TimeReader : DataModel
     {
         public Color                                    TextColor                               { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeReader();
+            var value   = new TimeReader() { Pointer= p0 };
 
-            value.TextColor                                 = (Color)GetInt32(new IntPtr(p + 0x010)); // 027003CA5F98 0x10 TextColor                   ( 0001865ABA40 ModelEnumType Color Color Color Int32 )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 027003CA5FB8 0x20 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.TimeText                                  = GetString(new IntPtr(p + 0x030)); // 027003CA5FF8 0x30 TimeText                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.TextColor                                 = (Color)GetInt32(new IntPtr(p + 0x010)); // 0245A3CA5F98 0x10 TextColor                   ( 0001865ABA40 ModelEnumType Color Color Color Int32 )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A3CA5FB8 0x20 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.TimeText                                  = GetString(new IntPtr(p + 0x030)); // 0245A3CA5FF8 0x30 TimeText                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

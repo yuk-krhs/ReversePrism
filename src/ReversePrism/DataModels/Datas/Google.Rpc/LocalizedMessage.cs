@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Locale                                   000186671910 ModelPrimitiveType string string string String
     // 000 MessageFieldNumber                       int IL2CPP_TYPE_I4
     // 020 Message                                  000186671910 ModelPrimitiveType string string string String
-    public partial class LocalizedMessage
+    public partial class LocalizedMessage : DataModel
     {
         public string                                   Locale                                  { get; set; }
         public string                                   Message                                 { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalizedMessage();
+            var value   = new LocalizedMessage() { Pointer= p0 };
 
-            value.Locale                                    = GetString(new IntPtr(p + 0x018)); // 0270DA705A78 0x18 Locale                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0270DA705AB8 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Locale                                    = GetString(new IntPtr(p + 0x018)); // 02466A759048 0x18 Locale                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 02466A759088 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

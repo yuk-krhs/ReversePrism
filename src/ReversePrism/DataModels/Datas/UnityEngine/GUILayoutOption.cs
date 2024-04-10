@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Type                                     0001866E0E10 ModelEnumType Type Type Type Int32
     // 018 value                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class GUILayoutOption
+    public partial class GUILayoutOption : DataModel
     {
         public Type                                     Type                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GUILayoutOption();
+            var value   = new GUILayoutOption() { Pointer= p0 };
 
-            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 027006927478 0x10 Type                        ( 0001866E0E10 ModelEnumType Type Type Type Int32 )
+            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 0245A68EA350 0x10 Type                        ( 0001866E0E10 ModelEnumType Type Type Type Int32 )
 
             return value;
         }

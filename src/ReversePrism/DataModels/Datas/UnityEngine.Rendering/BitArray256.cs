@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Data2                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
     // 020 Data3                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
     // 028 Data4                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class BitArray256
+    public partial class BitArray256 : DataModel
     {
         public ulong                                    Data1                                   { get; set; }
         public ulong                                    Data2                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitArray256();
+            var value   = new BitArray256() { Pointer= p0 };
 
-            value.Data1                                     = GetUInt64(new IntPtr(p + 0x010)); // 0270D929FA20 0x10 Data1                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Data2                                     = GetUInt64(new IntPtr(p + 0x018)); // 0270D929FA40 0x18 Data2                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Data3                                     = GetUInt64(new IntPtr(p + 0x020)); // 0270D929FA60 0x20 Data3                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Data4                                     = GetUInt64(new IntPtr(p + 0x028)); // 0270D929FA80 0x28 Data4                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data1                                     = GetUInt64(new IntPtr(p + 0x010)); // 02466930A488 0x10 Data1                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data2                                     = GetUInt64(new IntPtr(p + 0x018)); // 02466930A4A8 0x18 Data2                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data3                                     = GetUInt64(new IntPtr(p + 0x020)); // 02466930A4C8 0x20 Data3                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data4                                     = GetUInt64(new IntPtr(p + 0x028)); // 02466930A4E8 0x28 Data4                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

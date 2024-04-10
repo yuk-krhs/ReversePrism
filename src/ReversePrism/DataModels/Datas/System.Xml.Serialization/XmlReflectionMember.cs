@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 MemberType                               000186692850 ModelClassType Type Type Type Pointer
     // 028 XmlAttributes                            00018658B300 ModelClassType XmlAttributes XmlAttributes XmlAttributes Pointer
     // 030 DeclaringType                            000186692850 ModelClassType Type Type Type Pointer
-    public partial class XmlReflectionMember
+    public partial class XmlReflectionMember : DataModel
     {
         public bool                                     IsReturnValue                           { get; set; }
         public string                                   MemberName                              { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlReflectionMember();
+            var value   = new XmlReflectionMember() { Pointer= p0 };
 
-            value.IsReturnValue                             = GetBool(new IntPtr(p + 0x010)); // 0270D74BA998 0x10 IsReturnValue               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MemberName                                = GetString(new IntPtr(p + 0x018)); // 0270D74BA9B8 0x18 MemberName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D74BA9D8 0x20 MemberType                  ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.XmlAttributes                             = GetObject<XmlAttributes>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlAttributes.FromPointer); // 0270D74BA9F8 0x28 XmlAttributes               ( 00018658B300 ModelClassType XmlAttributes XmlAttributes XmlAttributes Pointer )
-            value.DeclaringType                             = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0270D74BAA18 0x30 DeclaringType               ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.IsReturnValue                             = GetBool(new IntPtr(p + 0x010)); // 02466751A998 0x10 IsReturnValue               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MemberName                                = GetString(new IntPtr(p + 0x018)); // 02466751A9B8 0x18 MemberName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 02466751A9D8 0x20 MemberType                  ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.XmlAttributes                             = GetObject<XmlAttributes>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlAttributes.FromPointer); // 02466751A9F8 0x28 XmlAttributes               ( 00018658B300 ModelClassType XmlAttributes XmlAttributes XmlAttributes Pointer )
+            value.DeclaringType                             = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 02466751AA18 0x30 DeclaringType               ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

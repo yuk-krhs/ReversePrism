@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BreakLiveArgsTranslator
+    public partial class BreakLiveArgsTranslator : DataModel
     {
 
         public static BreakLiveArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BreakLiveArgsTranslator();
+            var value   = new BreakLiveArgsTranslator() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICanvasRaycastFilter
+    public partial class ICanvasRaycastFilter : DataModel
     {
 
         public static ICanvasRaycastFilter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICanvasRaycastFilter();
+            var value   = new ICanvasRaycastFilter() { Pointer= p0 };
 
 
             return value;

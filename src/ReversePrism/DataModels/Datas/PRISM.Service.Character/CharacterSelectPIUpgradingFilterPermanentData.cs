@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 CanAwaken                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 CanTraining                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 012 CanSkillLvUp                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CharacterSelectPIUpgradingFilterPermanentData
+    public partial class CharacterSelectPIUpgradingFilterPermanentData : DataModel
     {
         public bool                                     CanAwaken                               { get; set; }
         public bool                                     CanTraining                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectPIUpgradingFilterPermanentData();
+            var value   = new CharacterSelectPIUpgradingFilterPermanentData() { Pointer= p0 };
 
-            value.CanAwaken                                 = GetBool(new IntPtr(p + 0x010)); // 027003A6BEA8 0x10 CanAwaken                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 027003A6BEC8 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanSkillLvUp                              = GetBool(new IntPtr(p + 0x012)); // 027003A6BEE8 0x12 CanSkillLvUp                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanAwaken                                 = GetBool(new IntPtr(p + 0x010)); // 0245A3A76DE0 0x10 CanAwaken                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 0245A3A76E00 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanSkillLvUp                              = GetBool(new IntPtr(p + 0x012)); // 0245A3A76E20 0x12 CanSkillLvUp                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

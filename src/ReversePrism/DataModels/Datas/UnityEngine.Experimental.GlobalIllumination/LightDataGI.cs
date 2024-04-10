@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 06D Mode                                     000186526160 ModelEnumType LightMode LightMode LightMode Int32
     // 06E Shadow                                   00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 06F Falloff                                  000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32
-    public partial class LightDataGI
+    public partial class LightDataGI : DataModel
     {
         public int                                      InstanceID                              { get; set; }
         public int                                      CookieID                                { get; set; }
@@ -49,24 +49,24 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LightDataGI();
+            var value   = new LightDataGI() { Pointer= p0 };
 
-            value.InstanceID                                = GetInt32(new IntPtr(p + 0x010)); // 0270023891F8 0x10 InstanceID                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CookieID                                  = GetInt32(new IntPtr(p + 0x014)); // 027002389218 0x14 CookieID                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CookieScale                               = GetSingle(new IntPtr(p + 0x018)); // 027002389238 0x18 CookieScale                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Color                                     = (LinearColor)GetInt32(new IntPtr(p + 0x01C)); // 027002389258 0x1C Color                       ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
-            value.IndirectColor                             = (LinearColor)GetInt32(new IntPtr(p + 0x02C)); // 027002389278 0x2C IndirectColor               ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
-            value.Orientation                               = (Quaternion)GetInt32(new IntPtr(p + 0x03C)); // 027002389298 0x3C Orientation                 ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x04C)); // 0270023892B8 0x4C Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Range                                     = GetSingle(new IntPtr(p + 0x058)); // 0270023892D8 0x58 Range                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ConeAngle                                 = GetSingle(new IntPtr(p + 0x05C)); // 0270023892F8 0x5C ConeAngle                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.InnerConeAngle                            = GetSingle(new IntPtr(p + 0x060)); // 027002389318 0x60 InnerConeAngle              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Shape0                                    = GetSingle(new IntPtr(p + 0x064)); // 027002389338 0x64 Shape0                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Shape1                                    = GetSingle(new IntPtr(p + 0x068)); // 027002389358 0x68 Shape1                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Type                                      = (LightType)GetInt32(new IntPtr(p + 0x06C)); // 027002389378 0x6C Type                        ( 000186528410 ModelEnumType LightType LightType LightType Int32 )
-            value.Mode                                      = (LightMode)GetInt32(new IntPtr(p + 0x06D)); // 027002389398 0x6D Mode                        ( 000186526160 ModelEnumType LightMode LightMode LightMode Int32 )
-            value.Shadow                                    = GetSByte(new IntPtr(p + 0x06E)); // 0270023893B8 0x6E Shadow                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Falloff                                   = (FalloffType)GetInt32(new IntPtr(p + 0x06F)); // 0270023893D8 0x6F Falloff                     ( 000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32 )
+            value.InstanceID                                = GetInt32(new IntPtr(p + 0x010)); // 0245A23891F8 0x10 InstanceID                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CookieID                                  = GetInt32(new IntPtr(p + 0x014)); // 0245A2389218 0x14 CookieID                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CookieScale                               = GetSingle(new IntPtr(p + 0x018)); // 0245A2389238 0x18 CookieScale                 ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Color                                     = (LinearColor)GetInt32(new IntPtr(p + 0x01C)); // 0245A2389258 0x1C Color                       ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
+            value.IndirectColor                             = (LinearColor)GetInt32(new IntPtr(p + 0x02C)); // 0245A2389278 0x2C IndirectColor               ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
+            value.Orientation                               = (Quaternion)GetInt32(new IntPtr(p + 0x03C)); // 0245A2389298 0x3C Orientation                 ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x04C)); // 0245A23892B8 0x4C Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Range                                     = GetSingle(new IntPtr(p + 0x058)); // 0245A23892D8 0x58 Range                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ConeAngle                                 = GetSingle(new IntPtr(p + 0x05C)); // 0245A23892F8 0x5C ConeAngle                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.InnerConeAngle                            = GetSingle(new IntPtr(p + 0x060)); // 0245A2389318 0x60 InnerConeAngle              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Shape0                                    = GetSingle(new IntPtr(p + 0x064)); // 0245A2389338 0x64 Shape0                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Shape1                                    = GetSingle(new IntPtr(p + 0x068)); // 0245A2389358 0x68 Shape1                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Type                                      = (LightType)GetInt32(new IntPtr(p + 0x06C)); // 0245A2389378 0x6C Type                        ( 000186528410 ModelEnumType LightType LightType LightType Int32 )
+            value.Mode                                      = (LightMode)GetInt32(new IntPtr(p + 0x06D)); // 0245A2389398 0x6D Mode                        ( 000186526160 ModelEnumType LightMode LightMode LightMode Int32 )
+            value.Shadow                                    = GetSByte(new IntPtr(p + 0x06E)); // 0245A23893B8 0x6E Shadow                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Falloff                                   = (FalloffType)GetInt32(new IntPtr(p + 0x06F)); // 0245A23893D8 0x6F Falloff                     ( 000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32 )
 
             return value;
         }

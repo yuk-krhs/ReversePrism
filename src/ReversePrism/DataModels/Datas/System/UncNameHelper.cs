@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UncNameHelper
+    public partial class UncNameHelper : DataModel
     {
 
         public static UncNameHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UncNameHelper();
+            var value   = new UncNameHelper() { Pointer= p0 };
 
 
             return value;

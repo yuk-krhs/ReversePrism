@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SignalTrack
+    public partial class SignalTrack : DataModel
     {
 
         public static SignalTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignalTrack();
+            var value   = new SignalTrack() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C LowFrequency                             000186666050 ModelPrimitiveType float float float Single
     // 020 SurroundLeft                             000186666050 ModelPrimitiveType float float float Single
     // 024 SurroundRight                            000186666050 ModelPrimitiveType float float float Single
-    public partial class SpeakerAngles6ch
+    public partial class SpeakerAngles6ch : DataModel
     {
         public float                                    FrontLeft                               { get; set; }
         public float                                    FrontRight                              { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpeakerAngles6ch();
+            var value   = new SpeakerAngles6ch() { Pointer= p0 };
 
-            value.FrontLeft                                 = GetSingle(new IntPtr(p + 0x010)); // 0270DAC6C1C0 0x10 FrontLeft                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FrontRight                                = GetSingle(new IntPtr(p + 0x014)); // 0270DAC6C1E0 0x14 FrontRight                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FrontCenter                               = GetSingle(new IntPtr(p + 0x018)); // 0270DAC6C200 0x18 FrontCenter                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LowFrequency                              = GetSingle(new IntPtr(p + 0x01C)); // 0270DAC6C220 0x1C LowFrequency                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SurroundLeft                              = GetSingle(new IntPtr(p + 0x020)); // 0270DAC6C240 0x20 SurroundLeft                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SurroundRight                             = GetSingle(new IntPtr(p + 0x024)); // 0270DAC6C260 0x24 SurroundRight               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FrontLeft                                 = GetSingle(new IntPtr(p + 0x010)); // 02466ACD41C0 0x10 FrontLeft                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FrontRight                                = GetSingle(new IntPtr(p + 0x014)); // 02466ACD41E0 0x14 FrontRight                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FrontCenter                               = GetSingle(new IntPtr(p + 0x018)); // 02466ACD4200 0x18 FrontCenter                 ( 000186666050 ModelPrimitiveType float float float Single )
+            value.LowFrequency                              = GetSingle(new IntPtr(p + 0x01C)); // 02466ACD4220 0x1C LowFrequency                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SurroundLeft                              = GetSingle(new IntPtr(p + 0x020)); // 02466ACD4240 0x20 SurroundLeft                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SurroundRight                             = GetSingle(new IntPtr(p + 0x024)); // 02466ACD4260 0x24 SurroundRight               ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

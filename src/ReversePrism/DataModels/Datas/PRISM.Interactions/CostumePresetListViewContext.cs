@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 OnClickApplyButton                       Action`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class CostumePresetListViewContext
+    public partial class CostumePresetListViewContext : DataModel
     {
 
         public static CostumePresetListViewContext? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumePresetListViewContext();
+            var value   = new CostumePresetListViewContext() { Pointer= p0 };
 
 
             return value;

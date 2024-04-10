@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 onComplete                               AsyncCompletion IL2CPP_TYPE_CLASS
     // 070 Writer                                   0001865CBC80 ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer
-    public partial class FlushBufferAsyncResult
+    public partial class FlushBufferAsyncResult : DataModel
     {
         public XmlStreamNodeWriter?                     Writer                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FlushBufferAsyncResult();
+            var value   = new FlushBufferAsyncResult() { Pointer= p0 };
 
-            value.Writer                                    = GetObject<XmlStreamNodeWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlStreamNodeWriter.FromPointer); // 0270D7CB2100 0x70 Writer                      ( 0001865CBC80 ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer )
+            value.Writer                                    = GetObject<XmlStreamNodeWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlStreamNodeWriter.FromPointer); // 024667D0A100 0x70 Writer                      ( 0001865CBC80 ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer )
 
             return value;
         }

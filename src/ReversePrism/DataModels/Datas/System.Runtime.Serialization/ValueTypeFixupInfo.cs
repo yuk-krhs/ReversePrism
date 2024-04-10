@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ContainerID                              0001865F8300 ModelPrimitiveType long long long Int64
     // 018 ParentField                              000186573870 ModelClassType FieldInfo FieldInfo FieldInfo Pointer
     // 020 ParentIndex                              000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class ValueTypeFixupInfo
+    public partial class ValueTypeFixupInfo : DataModel
     {
         public long                                     ContainerID                             { get; set; }
         public FieldInfo?                               ParentField                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueTypeFixupInfo();
+            var value   = new ValueTypeFixupInfo() { Pointer= p0 };
 
-            value.ContainerID                               = GetInt64(new IntPtr(p + 0x010)); // 0270D6C1CC60 0x10 ContainerID                 ( 0001865F8300 ModelPrimitiveType long long long Int64 )
-            value.ParentField                               = GetObject<FieldInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldInfo.FromPointer); // 0270D6C1CC80 0x18 ParentField                 ( 000186573870 ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
-            value.ParentIndex                               = GetInt32List(new IntPtr(p + 0x020)); // 0270D6C1CCA0 0x20 ParentIndex                 ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.ContainerID                               = GetInt64(new IntPtr(p + 0x010)); // 024666C8CE00 0x10 ContainerID                 ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.ParentField                               = GetObject<FieldInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldInfo.FromPointer); // 024666C8CE20 0x18 ParentField                 ( 000186573870 ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
+            value.ParentIndex                               = GetInt32List(new IntPtr(p + 0x020)); // 024666C8CE40 0x20 ParentIndex                 ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CostumePresetFieldNumber                 int IL2CPP_TYPE_I4
     // 018 CostumePreset                            000186630330 ModelClassType CostumePresetStatus CostumePresetStatus CostumePresetStatus Pointer
-    public partial class ClearCostumePresetReply
+    public partial class ClearCostumePresetReply : DataModel
     {
         public CostumePresetStatus?                     CostumePreset                           { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClearCostumePresetReply();
+            var value   = new ClearCostumePresetReply() { Pointer= p0 };
 
-            value.CostumePreset                             = GetObject<CostumePresetStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CostumePresetStatus.FromPointer); // 0270D0D759A0 0x18 CostumePreset               ( 000186630330 ModelClassType CostumePresetStatus CostumePresetStatus CostumePresetStatus Pointer )
+            value.CostumePreset                             = GetObject<CostumePresetStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CostumePresetStatus.FromPointer); // 0245A404A988 0x18 CostumePreset               ( 000186630330 ModelClassType CostumePresetStatus CostumePresetStatus CostumePresetStatus Pointer )
 
             return value;
         }

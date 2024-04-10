@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     0001866BB500 ModelClassType TutorialIntroductionView TutorialIntroductionView TutorialIntroductionView Pointer
-    public partial class TutorialIntroductionBuilder
+    public partial class TutorialIntroductionBuilder : DataModel
     {
         public TutorialIntroductionView?                View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialIntroductionBuilder();
+            var value   = new TutorialIntroductionBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<TutorialIntroductionView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TutorialIntroductionView.FromPointer); // 0270DB61FA70 0x20 View                        ( 0001866BB500 ModelClassType TutorialIntroductionView TutorialIntroductionView TutorialIntroductionView Pointer )
+            value.View                                      = GetObject<TutorialIntroductionView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TutorialIntroductionView.FromPointer); // 02466B6B33F8 0x20 View                        ( 0001866BB500 ModelClassType TutorialIntroductionView TutorialIntroductionView TutorialIntroductionView Pointer )
 
             return value;
         }

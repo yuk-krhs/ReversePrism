@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 IsEnable                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 080 UITextMeshProUGUIs                       000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer
     // 088 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CmnTableTd
+    public partial class CmnTableTd : DataModel
     {
         public GameObject?                              GoArea1                                 { get; set; }
         public GameObject?                              GoArea2                                 { get; set; }
@@ -45,22 +45,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CmnTableTd();
+            var value   = new CmnTableTd() { Pointer= p0 };
 
-            value.GoArea1                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4ED60D8 0x20 GoArea1                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoArea2                                   = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4ED60F8 0x28 GoArea2                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Txt                                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4ED6118 0x30 Txt                         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PFIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270D4ED6138 0x38 PFIdolIconView              ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.SCharaIconView                            = GetObject<SCharaIconView>(new IntPtr(p + 0x040), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0270D4ED6158 0x40 SCharaIconView              ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.CmnItem                                   = GetObject<CmnItem>(new IntPtr(p + 0x048), ReversePrism.DataModels.CmnItem.FromPointer); // 0270D4ED6178 0x48 CmnItem                     ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.RawImage                                  = GetObject<RawImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.RawImage.FromPointer); // 0270D4ED6198 0x50 RawImage                    ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 0270D4ED61B8 0x58 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.PaddingArea1                              = GetObject<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4ED61D8 0x60 PaddingArea1                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.PaddingArea2                              = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4ED61F8 0x68 PaddingArea2                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.SelfElement                               = GetObject<LayoutElement>(new IntPtr(p + 0x070), ReversePrism.DataModels.LayoutElement.FromPointer); // 0270D4ED6218 0x70 SelfElement                 ( 00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
-            value.IsEnable                                  = GetBool(new IntPtr(p + 0x078)); // 0270D4ED6238 0x78 IsEnable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UITextMeshProUGUIs                        = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4ED6258 0x80 UITextMeshProUGUIs          ( 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x088)); // 0270D4ED6278 0x88 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoArea1                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664F3BCF0 0x20 GoArea1                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoArea2                                   = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664F3BD10 0x28 GoArea2                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Txt                                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664F3BD30 0x30 Txt                         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PFIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 024664F3BD50 0x38 PFIdolIconView              ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.SCharaIconView                            = GetObject<SCharaIconView>(new IntPtr(p + 0x040), ReversePrism.DataModels.SCharaIconView.FromPointer); // 024664F3BD70 0x40 SCharaIconView              ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.CmnItem                                   = GetObject<CmnItem>(new IntPtr(p + 0x048), ReversePrism.DataModels.CmnItem.FromPointer); // 024664F3BD90 0x48 CmnItem                     ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
+            value.RawImage                                  = GetObject<RawImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.RawImage.FromPointer); // 024664F3BDB0 0x50 RawImage                    ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 024664F3BDD0 0x58 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.PaddingArea1                              = GetObject<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 024664F3BDF0 0x60 PaddingArea1                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.PaddingArea2                              = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 024664F3BE10 0x68 PaddingArea2                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.SelfElement                               = GetObject<LayoutElement>(new IntPtr(p + 0x070), ReversePrism.DataModels.LayoutElement.FromPointer); // 024664F3BE30 0x70 SelfElement                 ( 00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
+            value.IsEnable                                  = GetBool(new IntPtr(p + 0x078)); // 024664F3BE50 0x78 IsEnable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UITextMeshProUGUIs                        = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664F3BE70 0x80 UITextMeshProUGUIs          ( 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x088)); // 024664F3BE90 0x88 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveRankingUnitIdolStatusTranslator
+    public partial class LiveRankingUnitIdolStatusTranslator : DataModel
     {
 
         public static LiveRankingUnitIdolStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveRankingUnitIdolStatusTranslator();
+            var value   = new LiveRankingUnitIdolStatusTranslator() { Pointer= p0 };
 
 
             return value;

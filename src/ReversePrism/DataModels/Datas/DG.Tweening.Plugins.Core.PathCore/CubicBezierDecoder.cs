@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _PartialControlPs                        ControlPoint[] IL2CPP_TYPE_SZARRAY
     // 008 _PartialWps                              Vector3[] IL2CPP_TYPE_SZARRAY
-    public partial class CubicBezierDecoder
+    public partial class CubicBezierDecoder : DataModel
     {
 
         public static CubicBezierDecoder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CubicBezierDecoder();
+            var value   = new CubicBezierDecoder() { Pointer= p0 };
 
 
             return value;

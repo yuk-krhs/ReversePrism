@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotEqualCharLiftedToNull
+    public partial class NotEqualCharLiftedToNull : DataModel
     {
 
         public static NotEqualCharLiftedToNull? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotEqualCharLiftedToNull();
+            var value   = new NotEqualCharLiftedToNull() { Pointer= p0 };
 
 
             return value;

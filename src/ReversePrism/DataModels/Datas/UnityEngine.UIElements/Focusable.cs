@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 024 TabIndex                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 M_DelegatesFocus                         000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 M_ExcludeFromFocusRing                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class Focusable
+    public partial class Focusable : DataModel
     {
         public bool                                     _Focusable                              { get; set; }
         public int                                      TabIndex                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Focusable();
+            var value   = new Focusable() { Pointer= p0 };
 
-            value._Focusable                                = GetBool(new IntPtr(p + 0x020)); // 027003F08070 0x20 _Focusable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TabIndex                                  = GetInt32(new IntPtr(p + 0x024)); // 027003F08090 0x24 TabIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_DelegatesFocus                          = GetBool(new IntPtr(p + 0x028)); // 027003F080B0 0x28 M_DelegatesFocus            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ExcludeFromFocusRing                    = GetBool(new IntPtr(p + 0x029)); // 027003F080D0 0x29 M_ExcludeFromFocusRing      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value._Focusable                                = GetBool(new IntPtr(p + 0x020)); // 0245A3F08070 0x20 _Focusable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TabIndex                                  = GetInt32(new IntPtr(p + 0x024)); // 0245A3F08090 0x24 TabIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_DelegatesFocus                          = GetBool(new IntPtr(p + 0x028)); // 0245A3F080B0 0x28 M_DelegatesFocus            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ExcludeFromFocusRing                    = GetBool(new IntPtr(p + 0x029)); // 0245A3F080D0 0x29 M_ExcludeFromFocusRing      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Message                                  0001865B2810 ModelClassType IMethodMessage IMethodMessage IMethodMessage Pointer
     // 020 MethodKeys                               000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 028 OwnProperties                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MessageDictionary
+    public partial class MessageDictionary : DataModel
     {
         public IDictionary?                             InternalProperties                      { get; set; }
         public IMethodMessage?                          Message                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MessageDictionary();
+            var value   = new MessageDictionary() { Pointer= p0 };
 
-            value.InternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDictionary.FromPointer); // 0270D6BE9108 0x10 InternalProperties          ( 000186750200 ModelClassType IDictionary IDictionary IDictionary Pointer )
-            value.Message                                   = GetObject<IMethodMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMethodMessage.FromPointer); // 0270D6BE9128 0x18 Message                     ( 0001865B2810 ModelClassType IMethodMessage IMethodMessage IMethodMessage Pointer )
-            value.MethodKeys                                = GetStringList(new IntPtr(p + 0x020)); // 0270D6BE9148 0x20 MethodKeys                  ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.OwnProperties                             = GetBool(new IntPtr(p + 0x028)); // 0270D6BE9168 0x28 OwnProperties               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.InternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDictionary.FromPointer); // 024666C61108 0x10 InternalProperties          ( 000186750200 ModelClassType IDictionary IDictionary IDictionary Pointer )
+            value.Message                                   = GetObject<IMethodMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMethodMessage.FromPointer); // 024666C61128 0x18 Message                     ( 0001865B2810 ModelClassType IMethodMessage IMethodMessage IMethodMessage Pointer )
+            value.MethodKeys                                = GetStringList(new IntPtr(p + 0x020)); // 024666C61148 0x20 MethodKeys                  ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.OwnProperties                             = GetBool(new IntPtr(p + 0x028)); // 024666C61168 0x28 OwnProperties               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

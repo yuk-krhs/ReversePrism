@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_AndroidPriceChangeConfirmationListenerClassName string IL2CPP_TYPE_STRING
     // 020 m_OnPriceChangeConfirmationResult        Action`1<IGoogleBillingResult> IL2CPP_TYPE_GENERICINST
-    public partial class GooglePriceChangeConfirmationListener
+    public partial class GooglePriceChangeConfirmationListener : DataModel
     {
 
         public static GooglePriceChangeConfirmationListener? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GooglePriceChangeConfirmationListener();
+            var value   = new GooglePriceChangeConfirmationListener() { Pointer= p0 };
 
 
             return value;

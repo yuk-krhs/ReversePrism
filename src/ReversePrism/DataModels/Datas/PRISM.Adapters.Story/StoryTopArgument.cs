@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Legacy                                   0001865ABE80 ModelClassType StoryTopLegacyParameter StoryTopLegacyParameter StoryTopLegacyParameter Pointer
-    public partial class StoryTopArgument
+    public partial class StoryTopArgument : DataModel
     {
         public StoryTopLegacyParameter?                 Legacy                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopArgument();
+            var value   = new StoryTopArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<StoryTopLegacyParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.StoryTopLegacyParameter.FromPointer); // 0270D6812EB0 0x10 Legacy                      ( 0001865ABE80 ModelClassType StoryTopLegacyParameter StoryTopLegacyParameter StoryTopLegacyParameter Pointer )
+            value.Legacy                                    = GetObject<StoryTopLegacyParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.StoryTopLegacyParameter.FromPointer); // 024666872EB0 0x10 Legacy                      ( 0001865ABE80 ModelClassType StoryTopLegacyParameter StoryTopLegacyParameter StoryTopLegacyParameter Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Cached_add_event                         000186632900 ModelClassType AddEventAdapter AddEventAdapter AddEventAdapter Pointer
-    public partial class EventInfo
+    public partial class EventInfo : DataModel
     {
         public AddEventAdapter?                         Cached_add_event                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventInfo();
+            var value   = new EventInfo() { Pointer= p0 };
 
-            value.Cached_add_event                          = GetObject<AddEventAdapter>(new IntPtr(p + 0x010), ReversePrism.DataModels.AddEventAdapter.FromPointer); // 0270034B7158 0x10 Cached_add_event            ( 000186632900 ModelClassType AddEventAdapter AddEventAdapter AddEventAdapter Pointer )
+            value.Cached_add_event                          = GetObject<AddEventAdapter>(new IntPtr(p + 0x010), ReversePrism.DataModels.AddEventAdapter.FromPointer); // 0245A34B7158 0x10 Cached_add_event            ( 000186632900 ModelClassType AddEventAdapter AddEventAdapter AddEventAdapter Pointer )
 
             return value;
         }

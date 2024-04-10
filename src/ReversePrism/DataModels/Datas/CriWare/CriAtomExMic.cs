@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 030 GcHandles                                000185B80720 ModelEnumListType GCHandle[] GCHandle[] List<GCHandle> Pointer
     // 038 OutputWriteStream                        00018664EF10 ModelClassType CriAudioWriteStream CriAudioWriteStream CriAudioWriteStream Pointer
     // 004 _initializationCount                     int IL2CPP_TYPE_I4
-    public partial class CriAtomExMic
+    public partial class CriAtomExMic : DataModel
     {
         public List<GCHandle>?                          GcHandles                               { get; set; }
         public CriAudioWriteStream?                     OutputWriteStream                       { get; set; }
@@ -30,10 +30,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExMic();
+            var value   = new CriAtomExMic() { Pointer= p0 };
 
-            value.GcHandles                                 = GetEnumList<GCHandle>(new IntPtr(p + 0x030)); // 0270DAC76568 0x30 GcHandles                   ( 000185B80720 ModelEnumListType GCHandle[] GCHandle[] List<GCHandle> Pointer )
-            value.OutputWriteStream                         = GetObject<CriAudioWriteStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriAudioWriteStream.FromPointer); // 0270DAC76588 0x38 OutputWriteStream           ( 00018664EF10 ModelClassType CriAudioWriteStream CriAudioWriteStream CriAudioWriteStream Pointer )
+            value.GcHandles                                 = GetEnumList<GCHandle>(new IntPtr(p + 0x030)); // 02466ACDE568 0x30 GcHandles                   ( 000185B80720 ModelEnumListType GCHandle[] GCHandle[] List<GCHandle> Pointer )
+            value.OutputWriteStream                         = GetObject<CriAudioWriteStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriAudioWriteStream.FromPointer); // 02466ACDE588 0x38 OutputWriteStream           ( 00018664EF10 ModelClassType CriAudioWriteStream CriAudioWriteStream CriAudioWriteStream Pointer )
 
             return value;
         }

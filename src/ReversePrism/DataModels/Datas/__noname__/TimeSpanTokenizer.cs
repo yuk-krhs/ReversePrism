@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _value                                   ReadOnlySpan`1<char> IL2CPP_TYPE_GENERICINST
     // 020 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class TimeSpanTokenizer
+    public partial class TimeSpanTokenizer : DataModel
     {
         public int                                      Pos                                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeSpanTokenizer();
+            var value   = new TimeSpanTokenizer() { Pointer= p0 };
 
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D6D33DC0 0x20 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 024666D8BDC0 0x20 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

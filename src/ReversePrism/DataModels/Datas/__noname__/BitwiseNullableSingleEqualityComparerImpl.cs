@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BitwiseNullableSingleEqualityComparerImpl
+    public partial class BitwiseNullableSingleEqualityComparerImpl : DataModel
     {
 
         public static BitwiseNullableSingleEqualityComparerImpl? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitwiseNullableSingleEqualityComparerImpl();
+            var value   = new BitwiseNullableSingleEqualityComparerImpl() { Pointer= p0 };
 
 
             return value;

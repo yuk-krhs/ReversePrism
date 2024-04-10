@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 028 MstAccessoryIdList                       000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     // 000 DressUpRoomCostumeTypeFieldNumber        int IL2CPP_TYPE_I4
     // 030 DressUpRoomCostumeType                   000186700730 ModelEnumType DressUpRoomCostumeType DressUpRoomCostumeType DressUpRoomCostumeType Int32
-    public partial class SetDressUpRoomCostumeArgs
+    public partial class SetDressUpRoomCostumeArgs : DataModel
     {
         public string                                   DressUpRoomCostumeId                    { get; set; }
         public int                                      MstCostumeId                            { get; set; }
@@ -35,13 +35,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetDressUpRoomCostumeArgs();
+            var value   = new SetDressUpRoomCostumeArgs() { Pointer= p0 };
 
-            value.DressUpRoomCostumeId                      = GetString(new IntPtr(p + 0x018)); // 0270D0FE1FF0 0x18 DressUpRoomCostumeId        ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x020)); // 0270D0FE2030 0x20 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x024)); // 0270D0FE2070 0x24 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 0270D0FE20D0 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.DressUpRoomCostumeType                    = (DressUpRoomCostumeType)GetInt32(new IntPtr(p + 0x030)); // 0270D0FE2110 0x30 DressUpRoomCostumeType      ( 000186700730 ModelEnumType DressUpRoomCostumeType DressUpRoomCostumeType DressUpRoomCostumeType Int32 )
+            value.DressUpRoomCostumeId                      = GetString(new IntPtr(p + 0x018)); // 024660F8D960 0x18 DressUpRoomCostumeId        ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x020)); // 024660F8D9A0 0x20 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x024)); // 024660F8D9E0 0x24 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 024660F8DA40 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.DressUpRoomCostumeType                    = (DressUpRoomCostumeType)GetInt32(new IntPtr(p + 0x030)); // 024660F8DA80 0x30 DressUpRoomCostumeType      ( 000186700730 ModelEnumType DressUpRoomCostumeType DressUpRoomCostumeType DressUpRoomCostumeType Int32 )
 
             return value;
         }

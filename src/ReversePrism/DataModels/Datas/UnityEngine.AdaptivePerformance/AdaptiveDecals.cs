@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultDecalsDistance                  0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptiveDecals
+    public partial class AdaptiveDecals : DataModel
     {
         public float                                    M_DefaultDecalsDistance                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveDecals();
+            var value   = new AdaptiveDecals() { Pointer= p0 };
 
-            value.M_DefaultDecalsDistance                   = GetSingle(new IntPtr(p + 0x040)); // 0270DB6899F8 0x40 M_DefaultDecalsDistance     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DefaultDecalsDistance                   = GetSingle(new IntPtr(p + 0x040)); // 02466B715CB8 0x40 M_DefaultDecalsDistance     ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

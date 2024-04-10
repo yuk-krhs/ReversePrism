@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AppReviewResetTime                       0001865F7700 ModelPrimitiveType long long long Int64
     // 018 IsGashaAppReview                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AppReviewSaveData
+    public partial class AppReviewSaveData : DataModel
     {
         public long                                     AppReviewResetTime                      { get; set; }
         public bool                                     IsGashaAppReview                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppReviewSaveData();
+            var value   = new AppReviewSaveData() { Pointer= p0 };
 
-            value.AppReviewResetTime                        = GetInt64(new IntPtr(p + 0x010)); // 027003A6F140 0x10 AppReviewResetTime          ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.IsGashaAppReview                          = GetBool(new IntPtr(p + 0x018)); // 027003A6F160 0x18 IsGashaAppReview            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AppReviewResetTime                        = GetInt64(new IntPtr(p + 0x010)); // 0245A3A7A078 0x10 AppReviewResetTime          ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.IsGashaAppReview                          = GetBool(new IntPtr(p + 0x018)); // 0245A3A7A098 0x18 IsGashaAppReview            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

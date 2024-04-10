@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyCollectionDebugView
+    public partial class KeyCollectionDebugView : DataModel
     {
 
         public static KeyCollectionDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyCollectionDebugView();
+            var value   = new KeyCollectionDebugView() { Pointer= p0 };
 
 
             return value;

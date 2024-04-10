@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Sprite                                   00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer
     // 018 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    public partial class ImageStateInfo
+    public partial class ImageStateInfo : DataModel
     {
         public Sprite?                                  Sprite                                  { get; set; }
         public Color                                    Color                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImageStateInfo();
+            var value   = new ImageStateInfo() { Pointer= p0 };
 
-            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x010), ReversePrism.DataModels.Sprite.FromPointer); // 0270DB0474C0 0x10 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x018)); // 0270DB0474E0 0x18 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x010), ReversePrism.DataModels.Sprite.FromPointer); // 02466B0A74C0 0x10 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x018)); // 02466B0A74E0 0x18 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

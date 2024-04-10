@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CanMasterTraining                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 CanTraining                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SCharaUpgradingModel
+    public partial class SCharaUpgradingModel : DataModel
     {
         public bool                                     CanMasterTraining                       { get; set; }
         public bool                                     CanTraining                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaUpgradingModel();
+            var value   = new SCharaUpgradingModel() { Pointer= p0 };
 
-            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x010)); // 0270D619B3F8 0x10 CanMasterTraining           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 0270D619B418 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x010)); // 02466620BC28 0x10 CanMasterTraining           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 02466620BC48 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

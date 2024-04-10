@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 040 HaveBuiltActiveTouches                   000186595960 ModelPrimitiveType bool bool bool Bool
     // 041 HaveActiveTouchesNeedingRefreshNextUpdate 000186595960 ModelPrimitiveType bool bool bool Bool
     // 048 activeTouchState                         InputStateHistory`1<TouchState> IL2CPP_TYPE_GENERICINST
-    public partial class FingerAndTouchState
+    public partial class FingerAndTouchState : DataModel
     {
         public InputUpdateType                          UpdateMask                              { get; set; }
         public List<Finger>?                            Fingers                                 { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FingerAndTouchState();
+            var value   = new FingerAndTouchState() { Pointer= p0 };
 
-            value.UpdateMask                                = (InputUpdateType)GetInt32(new IntPtr(p + 0x010)); // 0270D77DE5C0 0x10 UpdateMask                  ( 000186705EF0 ModelEnumType InputUpdateType InputUpdateType InputUpdateType Int32 )
-            value.Fingers                                   = GetObjectList<Finger>(new IntPtr(p + 0x018), ReversePrism.DataModels.Finger.FromPointer); // 0270D77DE5E0 0x18 Fingers                     ( 000185B7F830 ModelClassListType Finger[] Finger[] List<Finger> Pointer )
-            value.ActiveFingers                             = GetObjectList<Finger>(new IntPtr(p + 0x020), ReversePrism.DataModels.Finger.FromPointer); // 0270D77DE600 0x20 ActiveFingers               ( 000185B7F830 ModelClassListType Finger[] Finger[] List<Finger> Pointer )
-            value.ActiveTouches                             = GetEnumList<Touch>(new IntPtr(p + 0x028)); // 0270D77DE620 0x28 ActiveTouches               ( 000185CAC3F8 ModelEnumListType Touch[] Touch[] List<Touch> Pointer )
-            value.ActiveFingerCount                         = GetInt32(new IntPtr(p + 0x030)); // 0270D77DE640 0x30 ActiveFingerCount           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ActiveTouchCount                          = GetInt32(new IntPtr(p + 0x034)); // 0270D77DE660 0x34 ActiveTouchCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TotalFingerCount                          = GetInt32(new IntPtr(p + 0x038)); // 0270D77DE680 0x38 TotalFingerCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LastId                                    = GetUInt32(new IntPtr(p + 0x03C)); // 0270D77DE6A0 0x3C LastId                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.HaveBuiltActiveTouches                    = GetBool(new IntPtr(p + 0x040)); // 0270D77DE6C0 0x40 HaveBuiltActiveTouches      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.HaveActiveTouchesNeedingRefreshNextUpdate = GetBool(new IntPtr(p + 0x041)); // 0270D77DE6E0 0x41 HaveActiveTouchesNeedingRefreshNextUpdate ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.UpdateMask                                = (InputUpdateType)GetInt32(new IntPtr(p + 0x010)); // 0246678365C0 0x10 UpdateMask                  ( 000186705EF0 ModelEnumType InputUpdateType InputUpdateType InputUpdateType Int32 )
+            value.Fingers                                   = GetObjectList<Finger>(new IntPtr(p + 0x018), ReversePrism.DataModels.Finger.FromPointer); // 0246678365E0 0x18 Fingers                     ( 000185B7F830 ModelClassListType Finger[] Finger[] List<Finger> Pointer )
+            value.ActiveFingers                             = GetObjectList<Finger>(new IntPtr(p + 0x020), ReversePrism.DataModels.Finger.FromPointer); // 024667836600 0x20 ActiveFingers               ( 000185B7F830 ModelClassListType Finger[] Finger[] List<Finger> Pointer )
+            value.ActiveTouches                             = GetEnumList<Touch>(new IntPtr(p + 0x028)); // 024667836620 0x28 ActiveTouches               ( 000185CAC3F8 ModelEnumListType Touch[] Touch[] List<Touch> Pointer )
+            value.ActiveFingerCount                         = GetInt32(new IntPtr(p + 0x030)); // 024667836640 0x30 ActiveFingerCount           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ActiveTouchCount                          = GetInt32(new IntPtr(p + 0x034)); // 024667836660 0x34 ActiveTouchCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TotalFingerCount                          = GetInt32(new IntPtr(p + 0x038)); // 024667836680 0x38 TotalFingerCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LastId                                    = GetUInt32(new IntPtr(p + 0x03C)); // 0246678366A0 0x3C LastId                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.HaveBuiltActiveTouches                    = GetBool(new IntPtr(p + 0x040)); // 0246678366C0 0x40 HaveBuiltActiveTouches      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.HaveActiveTouchesNeedingRefreshNextUpdate = GetBool(new IntPtr(p + 0x041)); // 0246678366E0 0x41 HaveActiveTouchesNeedingRefreshNextUpdate ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

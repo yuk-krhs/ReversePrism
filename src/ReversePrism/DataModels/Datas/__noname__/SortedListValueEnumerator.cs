@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 _index                                   int IL2CPP_TYPE_I4
     // 000 _version                                 int IL2CPP_TYPE_I4
     // 000 _currentValue                            <var> IL2CPP_TYPE_VAR
-    public partial class SortedListValueEnumerator
+    public partial class SortedListValueEnumerator : DataModel
     {
 
         public static SortedListValueEnumerator? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SortedListValueEnumerator();
+            var value   = new SortedListValueEnumerator() { Pointer= p0 };
 
 
             return value;

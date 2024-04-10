@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ScreenParent                             0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 028 ScreenBuilders                           000185CBF258 ModelClassListType KeyBuilderPair[] KeyBuilderPair[] List<KeyBuilderPair> Pointer
     // 030 screenBuilderDic                         Dictionary`2<int, IMobileScreenBuilder> IL2CPP_TYPE_GENERICINST
-    public partial class MobileScreenConnectorView
+    public partial class MobileScreenConnectorView : DataModel
     {
         public Transform?                               ScreenParent                            { get; set; }
         public List<KeyBuilderPair>?                    ScreenBuilders                          { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileScreenConnectorView();
+            var value   = new MobileScreenConnectorView() { Pointer= p0 };
 
-            value.ScreenParent                              = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0270DB11FDD0 0x20 ScreenParent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ScreenBuilders                            = GetObjectList<KeyBuilderPair>(new IntPtr(p + 0x028), ReversePrism.DataModels.KeyBuilderPair.FromPointer); // 0270DB11FDF0 0x28 ScreenBuilders              ( 000185CBF258 ModelClassListType KeyBuilderPair[] KeyBuilderPair[] List<KeyBuilderPair> Pointer )
+            value.ScreenParent                              = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 02466B17FDD0 0x20 ScreenParent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ScreenBuilders                            = GetObjectList<KeyBuilderPair>(new IntPtr(p + 0x028), ReversePrism.DataModels.KeyBuilderPair.FromPointer); // 02466B17FDF0 0x28 ScreenBuilders              ( 000185CBF258 ModelClassListType KeyBuilderPair[] KeyBuilderPair[] List<KeyBuilderPair> Pointer )
 
             return value;
         }

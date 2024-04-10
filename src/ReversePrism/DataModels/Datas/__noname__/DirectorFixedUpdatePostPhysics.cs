@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DirectorFixedUpdatePostPhysics
+    public partial class DirectorFixedUpdatePostPhysics : DataModel
     {
 
         public static DirectorFixedUpdatePostPhysics? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectorFixedUpdatePostPhysics();
+            var value   = new DirectorFixedUpdatePostPhysics() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 EventCount                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C SizeInBytes                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 CapacityInBytes                          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class NativeInputEventBuffer
+    public partial class NativeInputEventBuffer : DataModel
     {
         public int                                      EventCount                              { get; set; }
         public int                                      SizeInBytes                             { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeInputEventBuffer();
+            var value   = new NativeInputEventBuffer() { Pointer= p0 };
 
-            value.EventCount                                = GetInt32(new IntPtr(p + 0x018)); // 02700697AC50 0x18 EventCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SizeInBytes                               = GetInt32(new IntPtr(p + 0x01C)); // 02700697AC70 0x1C SizeInBytes                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CapacityInBytes                           = GetInt32(new IntPtr(p + 0x020)); // 02700697AC90 0x20 CapacityInBytes             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.EventCount                                = GetInt32(new IntPtr(p + 0x018)); // 0245A692D3E8 0x18 EventCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SizeInBytes                               = GetInt32(new IntPtr(p + 0x01C)); // 0245A692D408 0x1C SizeInBytes                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CapacityInBytes                           = GetInt32(new IntPtr(p + 0x020)); // 0245A692D428 0x20 CapacityInBytes             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

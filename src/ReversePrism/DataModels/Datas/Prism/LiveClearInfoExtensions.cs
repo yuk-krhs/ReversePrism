@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveClearInfoExtensions
+    public partial class LiveClearInfoExtensions : DataModel
     {
 
         public static LiveClearInfoExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveClearInfoExtensions();
+            var value   = new LiveClearInfoExtensions() { Pointer= p0 };
 
 
             return value;

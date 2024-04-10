@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Node                                     000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer
     // 018 ObjectType                               000186692850 ModelClassType Type Type Type Pointer
     // 020 _instance                                <object> IL2CPP_TYPE_OBJECT
-    public partial class DefaultTypeDescriptor
+    public partial class DefaultTypeDescriptor : DataModel
     {
         public TypeDescriptionNode?                     Node                                    { get; set; }
         public Type?                                    ObjectType                              { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultTypeDescriptor();
+            var value   = new DefaultTypeDescriptor() { Pointer= p0 };
 
-            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 02700602AC58 0x10 Node                        ( 000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
-            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 02700602AC78 0x18 ObjectType                  ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 0245A60049C0 0x10 Node                        ( 000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
+            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A60049E0 0x18 ObjectType                  ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

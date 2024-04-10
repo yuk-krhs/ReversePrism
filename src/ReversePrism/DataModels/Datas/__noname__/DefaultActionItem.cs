@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 028 FlowLegacyActivityId                     000186594D10 ModelPrimitiveType bool bool bool Bool
     // 02C ActivityId                               0001865DBED0 ModelEnumType Guid Guid Guid Int32
     // 040 EventTraceActivity                       00018676C8E0 ModelClassType EventTraceActivity EventTraceActivity EventTraceActivity Pointer
-    public partial class DefaultActionItem
+    public partial class DefaultActionItem : DataModel
     {
         public bool                                     FlowLegacyActivityId                    { get; set; }
         public Guid                                     ActivityId                              { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultActionItem();
+            var value   = new DefaultActionItem() { Pointer= p0 };
 
-            value.FlowLegacyActivityId                      = GetBool(new IntPtr(p + 0x028)); // 0270DBA29968 0x28 FlowLegacyActivityId        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ActivityId                                = (Guid)GetInt32(new IntPtr(p + 0x02C)); // 0270DBA29988 0x2C ActivityId                  ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
-            value.EventTraceActivity                        = GetObject<EventTraceActivity>(new IntPtr(p + 0x040), ReversePrism.DataModels.EventTraceActivity.FromPointer); // 0270DBA299A8 0x40 EventTraceActivity          ( 00018676C8E0 ModelClassType EventTraceActivity EventTraceActivity EventTraceActivity Pointer )
+            value.FlowLegacyActivityId                      = GetBool(new IntPtr(p + 0x028)); // 02466BAB0E08 0x28 FlowLegacyActivityId        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ActivityId                                = (Guid)GetInt32(new IntPtr(p + 0x02C)); // 02466BAB0E28 0x2C ActivityId                  ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
+            value.EventTraceActivity                        = GetObject<EventTraceActivity>(new IntPtr(p + 0x040), ReversePrism.DataModels.EventTraceActivity.FromPointer); // 02466BAB0E48 0x40 EventTraceActivity          ( 00018676C8E0 ModelClassType EventTraceActivity EventTraceActivity EventTraceActivity Pointer )
 
             return value;
         }

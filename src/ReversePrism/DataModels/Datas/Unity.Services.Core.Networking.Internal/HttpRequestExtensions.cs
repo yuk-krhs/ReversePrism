@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HttpRequestExtensions
+    public partial class HttpRequestExtensions : DataModel
     {
 
         public static HttpRequestExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpRequestExtensions();
+            var value   = new HttpRequestExtensions() { Pointer= p0 };
 
 
             return value;

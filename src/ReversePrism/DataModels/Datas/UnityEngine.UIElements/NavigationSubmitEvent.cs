@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NavigationSubmitEvent
+    public partial class NavigationSubmitEvent : DataModel
     {
 
         public static NavigationSubmitEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NavigationSubmitEvent();
+            var value   = new NavigationSubmitEvent() { Pointer= p0 };
 
 
             return value;

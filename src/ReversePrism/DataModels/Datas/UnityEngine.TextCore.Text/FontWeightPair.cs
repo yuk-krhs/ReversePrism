@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RegularTypeface                          0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer
     // 018 ItalicTypeface                           0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer
-    public partial class FontWeightPair
+    public partial class FontWeightPair : DataModel
     {
         public FontAsset?                               RegularTypeface                         { get; set; }
         public FontAsset?                               ItalicTypeface                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FontWeightPair();
+            var value   = new FontWeightPair() { Pointer= p0 };
 
-            value.RegularTypeface                           = GetObject<FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.FontAsset.FromPointer); // 0270068E7128 0x10 RegularTypeface             ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
-            value.ItalicTypeface                            = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 0270068E7148 0x18 ItalicTypeface              ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.RegularTypeface                           = GetObject<FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A68A9DF0 0x10 RegularTypeface             ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.ItalicTypeface                            = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A68A9E10 0x18 ItalicTypeface              ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
 
             return value;
         }

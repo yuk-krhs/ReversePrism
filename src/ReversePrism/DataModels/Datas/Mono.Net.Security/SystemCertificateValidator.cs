@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 is_macosx                                bool IL2CPP_TYPE_BOOLEAN
     // 004 s_flags                                  X509KeyUsageFlags IL2CPP_TYPE_VALUETYPE
-    public partial class SystemCertificateValidator
+    public partial class SystemCertificateValidator : DataModel
     {
 
         public static SystemCertificateValidator? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemCertificateValidator();
+            var value   = new SystemCertificateValidator() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VignetteMixerBehaviour
+    public partial class VignetteMixerBehaviour : DataModel
     {
 
         public static VignetteMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VignetteMixerBehaviour();
+            var value   = new VignetteMixerBehaviour() { Pointer= p0 };
 
 
             return value;

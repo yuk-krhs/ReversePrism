@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 dict                                     Dictionary`2<<int>, IOpCompletionCallback> IL2CPP_TYPE_GENERICINST
     // 030 SpinLock                                 00018654CAA0 ModelEnumType SpinLock SpinLock SpinLock Int32
     // 038 lastRegisteredKey                        <int> IL2CPP_TYPE_I
-    public partial class CompletionRegistry
+    public partial class CompletionRegistry : DataModel
     {
         public GrpcEnvironment?                         Environment                             { get; set; }
         public SpinLock                                 SpinLock                                { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompletionRegistry();
+            var value   = new CompletionRegistry() { Pointer= p0 };
 
-            value.Environment                               = GetObject<GrpcEnvironment>(new IntPtr(p + 0x010), ReversePrism.DataModels.GrpcEnvironment.FromPointer); // 02700410DBF0 0x10 Environment                 ( 00018669E6D0 ModelClassType GrpcEnvironment GrpcEnvironment GrpcEnvironment Pointer )
-            value.SpinLock                                  = (SpinLock)GetInt32(new IntPtr(p + 0x030)); // 02700410DC70 0x30 SpinLock                    ( 00018654CAA0 ModelEnumType SpinLock SpinLock SpinLock Int32 )
+            value.Environment                               = GetObject<GrpcEnvironment>(new IntPtr(p + 0x010), ReversePrism.DataModels.GrpcEnvironment.FromPointer); // 0245A413B0D8 0x10 Environment                 ( 00018669E6D0 ModelClassType GrpcEnvironment GrpcEnvironment GrpcEnvironment Pointer )
+            value.SpinLock                                  = (SpinLock)GetInt32(new IntPtr(p + 0x030)); // 0245A413B158 0x30 SpinLock                    ( 00018654CAA0 ModelEnumType SpinLock SpinLock SpinLock Int32 )
 
             return value;
         }

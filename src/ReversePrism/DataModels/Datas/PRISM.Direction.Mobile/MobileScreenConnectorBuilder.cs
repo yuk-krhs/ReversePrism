@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186634520 ModelClassType MobileScreenConnectorView MobileScreenConnectorView MobileScreenConnectorView Pointer
-    public partial class MobileScreenConnectorBuilder
+    public partial class MobileScreenConnectorBuilder : DataModel
     {
         public MobileScreenConnectorView?               View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileScreenConnectorBuilder();
+            var value   = new MobileScreenConnectorBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<MobileScreenConnectorView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileScreenConnectorView.FromPointer); // 0270DB647748 0x20 View                        ( 000186634520 ModelClassType MobileScreenConnectorView MobileScreenConnectorView MobileScreenConnectorView Pointer )
+            value.View                                      = GetObject<MobileScreenConnectorView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileScreenConnectorView.FromPointer); // 02466B6D38A8 0x20 View                        ( 000186634520 ModelClassType MobileScreenConnectorView MobileScreenConnectorView MobileScreenConnectorView Pointer )
 
             return value;
         }

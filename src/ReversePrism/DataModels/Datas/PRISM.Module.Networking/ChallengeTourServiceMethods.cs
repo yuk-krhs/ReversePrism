@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 048 TouchChallengeTour                       Method`2<ITouchChallengeTourArgs, ITouchChallengeTourReply> IL2CPP_TYPE_GENERICINST
     // 060 StartChallengeTourStage                  Method`2<IStartChallengeTourStageArgs, IStartChallengeTourStageReply> IL2CPP_TYPE_GENERICINST
     // 078 FinishChallengeTourStage                 Method`2<IFinishChallengeTourStageArgs, IFinishChallengeTourStageReply> IL2CPP_TYPE_GENERICINST
-    public partial class ChallengeTourServiceMethods
+    public partial class ChallengeTourServiceMethods : DataModel
     {
 
         public static ChallengeTourServiceMethods? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourServiceMethods();
+            var value   = new ChallengeTourServiceMethods() { Pointer= p0 };
 
 
             return value;

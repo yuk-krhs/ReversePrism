@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class __JobReflectionRegistrationOutput__207833366
+    public partial class __JobReflectionRegistrationOutput__207833366 : DataModel
     {
 
         public static __JobReflectionRegistrationOutput__207833366? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new __JobReflectionRegistrationOutput__207833366();
+            var value   = new __JobReflectionRegistrationOutput__207833366() { Pointer= p0 };
 
 
             return value;

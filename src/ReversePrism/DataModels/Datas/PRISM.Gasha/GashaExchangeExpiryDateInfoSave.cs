@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 GashaExchangeIds                         000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class GashaExchangeExpiryDateInfoSave
+    public partial class GashaExchangeExpiryDateInfoSave : DataModel
     {
         public List<string>?                            GashaExchangeIds                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeExpiryDateInfoSave();
+            var value   = new GashaExchangeExpiryDateInfoSave() { Pointer= p0 };
 
-            value.GashaExchangeIds                          = GetStringList(new IntPtr(p + 0x020)); // 027003A71198 0x20 GashaExchangeIds            ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.GashaExchangeIds                          = GetStringList(new IntPtr(p + 0x020)); // 0245A3A7C0D0 0x20 GashaExchangeIds            ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

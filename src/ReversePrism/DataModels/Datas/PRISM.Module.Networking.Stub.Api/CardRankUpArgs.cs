@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 RankUpCardIdListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_rankUpCardIdList_codec         FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 018 RankUpCardIdList                         000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class CardRankUpArgs
+    public partial class CardRankUpArgs : DataModel
     {
         public List<string>?                            RankUpCardIdList                        { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CardRankUpArgs();
+            var value   = new CardRankUpArgs() { Pointer= p0 };
 
-            value.RankUpCardIdList                          = GetStringList(new IntPtr(p + 0x018)); // 0270D252AB70 0x18 RankUpCardIdList            ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.RankUpCardIdList                          = GetStringList(new IntPtr(p + 0x018)); // 024662509DA8 0x18 RankUpCardIdList            ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

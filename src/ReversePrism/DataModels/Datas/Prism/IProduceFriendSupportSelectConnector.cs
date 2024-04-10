@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceFriendSupportSelectConnector
+    public partial class IProduceFriendSupportSelectConnector : DataModel
     {
 
         public static IProduceFriendSupportSelectConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceFriendSupportSelectConnector();
+            var value   = new IProduceFriendSupportSelectConnector() { Pointer= p0 };
 
 
             return value;

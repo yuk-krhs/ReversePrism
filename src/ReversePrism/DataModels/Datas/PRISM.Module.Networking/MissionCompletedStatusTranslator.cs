@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MissionCompletedStatusTranslator
+    public partial class MissionCompletedStatusTranslator : DataModel
     {
 
         public static MissionCompletedStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionCompletedStatusTranslator();
+            var value   = new MissionCompletedStatusTranslator() { Pointer= p0 };
 
 
             return value;

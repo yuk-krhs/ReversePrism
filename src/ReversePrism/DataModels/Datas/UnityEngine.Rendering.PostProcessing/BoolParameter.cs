@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BoolParameter
+    public partial class BoolParameter : DataModel
     {
 
         public static BoolParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoolParameter();
+            var value   = new BoolParameter() { Pointer= p0 };
 
 
             return value;

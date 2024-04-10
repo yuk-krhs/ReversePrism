@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <callBack>k__BackingField                Action`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ActionQueryMatcher
+    public partial class ActionQueryMatcher : DataModel
     {
 
         public static ActionQueryMatcher? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ActionQueryMatcher();
+            var value   = new ActionQueryMatcher() { Pointer= p0 };
 
 
             return value;

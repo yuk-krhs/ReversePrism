@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 FaceAct                                  000185CBF2D8 ModelClassListType FaceAct[] FaceAct[] List<FaceAct> Pointer
-    public partial class FaceActSet
+    public partial class FaceActSet : DataModel
     {
         public List<FaceAct>?                           FaceAct                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FaceActSet();
+            var value   = new FaceActSet() { Pointer= p0 };
 
-            value.FaceAct                                   = GetObjectList<FaceAct>(new IntPtr(p + 0x010), ReversePrism.DataModels.FaceAct.FromPointer); // 0270060EFD68 0x10 FaceAct                     ( 000185CBF2D8 ModelClassListType FaceAct[] FaceAct[] List<FaceAct> Pointer )
+            value.FaceAct                                   = GetObjectList<FaceAct>(new IntPtr(p + 0x010), ReversePrism.DataModels.FaceAct.FromPointer); // 0245A60C9470 0x10 FaceAct                     ( 000185CBF2D8 ModelClassListType FaceAct[] FaceAct[] List<FaceAct> Pointer )
 
             return value;
         }

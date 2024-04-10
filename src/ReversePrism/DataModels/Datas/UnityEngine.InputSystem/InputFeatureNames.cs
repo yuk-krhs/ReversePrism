@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 kUseOptimizedControls                    string IL2CPP_TYPE_STRING
     // 000 kUseReadValueCaching                     string IL2CPP_TYPE_STRING
     // 000 kParanoidReadValueCachingChecks          string IL2CPP_TYPE_STRING
-    public partial class InputFeatureNames
+    public partial class InputFeatureNames : DataModel
     {
 
         public static InputFeatureNames? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputFeatureNames();
+            var value   = new InputFeatureNames() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 248 ObjectOn                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 250 ObjectOff                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class PlayAndStopToggleButton
+    public partial class PlayAndStopToggleButton : DataModel
     {
         public GameObject?                              ObjectOn                                { get; set; }
         public GameObject?                              ObjectOff                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayAndStopToggleButton();
+            var value   = new PlayAndStopToggleButton() { Pointer= p0 };
 
-            value.ObjectOn                                  = GetObject<GameObject>(new IntPtr(p + 0x248), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4C093A0 0x248 ObjectOn                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ObjectOff                                 = GetObject<GameObject>(new IntPtr(p + 0x250), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4C093C0 0x250 ObjectOff                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ObjectOn                                  = GetObject<GameObject>(new IntPtr(p + 0x248), ReversePrism.DataModels.GameObject.FromPointer); // 024664C6C4C8 0x248 ObjectOn                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ObjectOff                                 = GetObject<GameObject>(new IntPtr(p + 0x250), ReversePrism.DataModels.GameObject.FromPointer); // 024664C6C4E8 0x250 ObjectOff                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

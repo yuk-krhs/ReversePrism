@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyValuePairFormatter
+    public partial class KeyValuePairFormatter : DataModel
     {
 
         public static KeyValuePairFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyValuePairFormatter();
+            var value   = new KeyValuePairFormatter() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class X509ChainImpl
+    public partial class X509ChainImpl : DataModel
     {
 
         public static X509ChainImpl? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509ChainImpl();
+            var value   = new X509ChainImpl() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FromMicroCoroutine
+    public partial class FromMicroCoroutine : DataModel
     {
 
         public static FromMicroCoroutine? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FromMicroCoroutine();
+            var value   = new FromMicroCoroutine() { Pointer= p0 };
 
 
             return value;

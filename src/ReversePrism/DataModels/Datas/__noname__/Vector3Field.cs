@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 060 IncStep                                  000186666050 ModelPrimitiveType float float float Single
     // 064 IncStepMult                              000186666050 ModelPrimitiveType float float float Single
     // 068 Decimals                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Vector3Field
+    public partial class Vector3Field : DataModel
     {
         public float                                    IncStep                                 { get; set; }
         public float                                    IncStepMult                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector3Field();
+            var value   = new Vector3Field() { Pointer= p0 };
 
-            value.IncStep                                   = GetSingle(new IntPtr(p + 0x060)); // 0270D918D138 0x60 IncStep                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.IncStepMult                               = GetSingle(new IntPtr(p + 0x064)); // 0270D918D158 0x64 IncStepMult                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Decimals                                  = GetInt32(new IntPtr(p + 0x068)); // 0270D918D178 0x68 Decimals                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.IncStep                                   = GetSingle(new IntPtr(p + 0x060)); // 0246691DF990 0x60 IncStep                     ( 000186666050 ModelPrimitiveType float float float Single )
+            value.IncStepMult                               = GetSingle(new IntPtr(p + 0x064)); // 0246691DF9B0 0x64 IncStepMult                 ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Decimals                                  = GetInt32(new IntPtr(p + 0x068)); // 0246691DF9D0 0x68 Decimals                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

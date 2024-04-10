@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UserModifyDelegateFunction
+    public partial class UserModifyDelegateFunction : DataModel
     {
 
         public static UserModifyDelegateFunction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserModifyDelegateFunction();
+            var value   = new UserModifyDelegateFunction() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PvpTopConnector
+    public partial class PvpTopConnector : DataModel
     {
 
         public static PvpTopConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpTopConnector();
+            var value   = new PvpTopConnector() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 kSize                                    int IL2CPP_TYPE_I4
     // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
     // 018 Frequency                                000186666050 ModelPrimitiveType float float float Single
-    public partial class QuerySamplingFrequencyCommand
+    public partial class QuerySamplingFrequencyCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public float                                    Frequency                               { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QuerySamplingFrequencyCommand();
+            var value   = new QuerySamplingFrequencyCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FC298 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.Frequency                                 = GetSingle(new IntPtr(p + 0x018)); // 0270D77FC2B8 0x18 Frequency                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667854298 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.Frequency                                 = GetSingle(new IntPtr(p + 0x018)); // 0246678542B8 0x18 Frequency                   ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

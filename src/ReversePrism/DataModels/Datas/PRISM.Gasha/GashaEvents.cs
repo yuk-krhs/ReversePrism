@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 EventType                                00018676D7F0 ModelEnumType EventType EventType EventType Int32
-    public partial class GashaEvents
+    public partial class GashaEvents : DataModel
     {
         public EventType                                EventType                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaEvents();
+            var value   = new GashaEvents() { Pointer= p0 };
 
-            value.EventType                                 = (EventType)GetInt32(new IntPtr(p + 0x010)); // 0270D52EF220 0x10 EventType                   ( 00018676D7F0 ModelEnumType EventType EventType EventType Int32 )
+            value.EventType                                 = (EventType)GetInt32(new IntPtr(p + 0x010)); // 0246653629C8 0x10 EventType                   ( 00018676D7F0 ModelEnumType EventType EventType EventType Int32 )
 
             return value;
         }

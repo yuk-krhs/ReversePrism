@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 070 EventEndObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 078 ThumbnailImage                           0001866CCDB0 ModelClassType Image Image Image Pointer
     // 080 ClickButton                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    public partial class MissionEventListViewCell
+    public partial class MissionEventListViewCell : DataModel
     {
         public UITextMeshProUGUI?                       EventText                               { get; set; }
         public UITextMeshProUGUI?                       EventTermTypeText                       { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionEventListViewCell();
+            var value   = new MissionEventListViewCell() { Pointer= p0 };
 
-            value.EventText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5555CD0 0x40 EventText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EventTermTypeText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5555CF0 0x48 EventTermTypeText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EventTermText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5555D10 0x50 EventTermText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EventTypeImageObject                      = GetObjectList<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5555D30 0x58 EventTypeImageObject        ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.BadgeDotObject                            = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5555D50 0x60 BadgeDotObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BadgeNewObject                            = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5555D70 0x68 BadgeNewObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EventEndObject                            = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5555D90 0x70 EventEndObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ThumbnailImage                            = GetObject<Image>(new IntPtr(p + 0x078), ReversePrism.DataModels.Image.FromPointer); // 0270D5555DB0 0x78 ThumbnailImage              ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ClickButton                               = GetObject<UIButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIButton.FromPointer); // 0270D5555DD0 0x80 ClickButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.EventText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655C78B8 0x40 EventText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventTermTypeText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655C78D8 0x48 EventTermTypeText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventTermText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655C78F8 0x50 EventTermText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventTypeImageObject                      = GetObjectList<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7918 0x58 EventTypeImageObject        ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.BadgeDotObject                            = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7938 0x60 BadgeDotObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BadgeNewObject                            = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7958 0x68 BadgeNewObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EventEndObject                            = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7978 0x70 EventEndObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ThumbnailImage                            = GetObject<Image>(new IntPtr(p + 0x078), ReversePrism.DataModels.Image.FromPointer); // 0246655C7998 0x78 ThumbnailImage              ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.ClickButton                               = GetObject<UIButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIButton.FromPointer); // 0246655C79B8 0x80 ClickButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

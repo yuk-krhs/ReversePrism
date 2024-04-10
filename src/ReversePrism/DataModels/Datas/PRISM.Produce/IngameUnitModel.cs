@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 048 DeckCards                                000185D05FD8 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
     // 050 SkillModels                              000185D112C8 ModelClassListType IReadOnlyList`1<IngameSkillModel> IReadOnlyList`1<IngameSkillModel> List<IngameSkillModel> Pointer
     // 058 SupportSkills                            000185D11558 ModelClassListType IReadOnlyList`1<IngameSupportSkillModel> IReadOnlyList`1<IngameSupportSkillModel> List<IngameSupportSkillModel> Pointer
-    public partial class IngameUnitModel
+    public partial class IngameUnitModel : DataModel
     {
         public IngamePlayerStatusModel?                 CurrentStatus                           { get; set; }
         public IngamePlayerStatusModel?                 BaseStatus                              { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameUnitModel();
+            var value   = new IngameUnitModel() { Pointer= p0 };
 
-            value.CurrentStatus                             = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 0270D4CD37B0 0x10 CurrentStatus               ( 0001865E67C0 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
-            value.BaseStatus                                = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 0270D4CD37D0 0x18 BaseStatus                  ( 0001865E67C0 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
-            value.EffectManager                             = GetObject<ProduceInGameEffectManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceInGameEffectManager.FromPointer); // 0270D4CD37F0 0x20 EffectManager               ( 000186557830 ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer )
-            value.IsNeedCorrect                             = GetBool(new IntPtr(p + 0x028)); // 0270D4CD3810 0x28 IsNeedCorrect               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D4CD3830 0x30 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x038)); // 0270D4CD3850 0x38 UnitID                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitMemberModels                          = GetObjectList<IngameUnitMemberModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameUnitMemberModel.FromPointer); // 0270D4CD3870 0x40 UnitMemberModels            ( 000185D11798 ModelClassListType IReadOnlyList`1<IngameUnitMemberModel> IReadOnlyList`1<IngameUnitMemberModel> List<IngameUnitMemberModel> Pointer )
-            value.DeckCards                                 = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0270D4CD3890 0x48 DeckCards                   ( 000185D05FD8 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
-            value.SkillModels                               = GetObjectList<IngameSkillModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 0270D4CD38B0 0x50 SkillModels                 ( 000185D112C8 ModelClassListType IReadOnlyList`1<IngameSkillModel> IReadOnlyList`1<IngameSkillModel> List<IngameSkillModel> Pointer )
-            value.SupportSkills                             = GetObjectList<IngameSupportSkillModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.IngameSupportSkillModel.FromPointer); // 0270D4CD38D0 0x58 SupportSkills               ( 000185D11558 ModelClassListType IReadOnlyList`1<IngameSupportSkillModel> IReadOnlyList`1<IngameSupportSkillModel> List<IngameSupportSkillModel> Pointer )
+            value.CurrentStatus                             = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 024664D4F7B0 0x10 CurrentStatus               ( 0001865E67C0 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
+            value.BaseStatus                                = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 024664D4F7D0 0x18 BaseStatus                  ( 0001865E67C0 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
+            value.EffectManager                             = GetObject<ProduceInGameEffectManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceInGameEffectManager.FromPointer); // 024664D4F7F0 0x20 EffectManager               ( 000186557830 ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer )
+            value.IsNeedCorrect                             = GetBool(new IntPtr(p + 0x028)); // 024664D4F810 0x28 IsNeedCorrect               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024664D4F830 0x30 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x038)); // 024664D4F850 0x38 UnitID                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitMemberModels                          = GetObjectList<IngameUnitMemberModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameUnitMemberModel.FromPointer); // 024664D4F870 0x40 UnitMemberModels            ( 000185D11798 ModelClassListType IReadOnlyList`1<IngameUnitMemberModel> IReadOnlyList`1<IngameUnitMemberModel> List<IngameUnitMemberModel> Pointer )
+            value.DeckCards                                 = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024664D4F890 0x48 DeckCards                   ( 000185D05FD8 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.SkillModels                               = GetObjectList<IngameSkillModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 024664D4F8B0 0x50 SkillModels                 ( 000185D112C8 ModelClassListType IReadOnlyList`1<IngameSkillModel> IReadOnlyList`1<IngameSkillModel> List<IngameSkillModel> Pointer )
+            value.SupportSkills                             = GetObjectList<IngameSupportSkillModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.IngameSupportSkillModel.FromPointer); // 024664D4F8D0 0x58 SupportSkills               ( 000185D11558 ModelClassListType IReadOnlyList`1<IngameSupportSkillModel> IReadOnlyList`1<IngameSupportSkillModel> List<IngameSupportSkillModel> Pointer )
 
             return value;
         }

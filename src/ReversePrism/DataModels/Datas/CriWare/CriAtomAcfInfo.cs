@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 acfInfo                                  AcfInfo IL2CPP_TYPE_CLASS
-    public partial class CriAtomAcfInfo
+    public partial class CriAtomAcfInfo : DataModel
     {
 
         public static CriAtomAcfInfo? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomAcfInfo();
+            var value   = new CriAtomAcfInfo() { Pointer= p0 };
 
 
             return value;

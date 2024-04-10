@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ProgramListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_programList_codec              FieldCodec`1<ArchiveStreamProgramStatus> IL2CPP_TYPE_GENERICINST
     // 018 ProgramList                              000185CCEB58 ModelClassListType RepeatedField`1<ArchiveStreamProgramStatus> RepeatedField`1<ArchiveStreamProgramStatus> List<ArchiveStreamProgramStatus> Pointer
-    public partial class GetStreamArchiveListReply
+    public partial class GetStreamArchiveListReply : DataModel
     {
         public List<ArchiveStreamProgramStatus>?        ProgramList                             { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStreamArchiveListReply();
+            var value   = new GetStreamArchiveListReply() { Pointer= p0 };
 
-            value.ProgramList                               = GetObjectList<ArchiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveStreamProgramStatus.FromPointer); // 0270D2ABCC78 0x18 ProgramList                 ( 000185CCEB58 ModelClassListType RepeatedField`1<ArchiveStreamProgramStatus> RepeatedField`1<ArchiveStreamProgramStatus> List<ArchiveStreamProgramStatus> Pointer )
+            value.ProgramList                               = GetObjectList<ArchiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveStreamProgramStatus.FromPointer); // 024662A3B998 0x18 ProgramList                 ( 000185CCEB58 ModelClassListType RepeatedField`1<ArchiveStreamProgramStatus> RepeatedField`1<ArchiveStreamProgramStatus> List<ArchiveStreamProgramStatus> Pointer )
 
             return value;
         }

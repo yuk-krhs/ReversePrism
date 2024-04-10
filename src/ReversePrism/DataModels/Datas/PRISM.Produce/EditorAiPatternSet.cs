@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 EditorAiPatternList                      000185CD8278 ModelClassListType List`1<EditorAiPattern> List`1<EditorAiPattern> List<EditorAiPattern> Pointer
     // 018 PatternSetName                           000186671910 ModelPrimitiveType string string string String
-    public partial class EditorAiPatternSet
+    public partial class EditorAiPatternSet : DataModel
     {
         public List<EditorAiPattern>?                   EditorAiPatternList                     { get; set; }
         public string                                   PatternSetName                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditorAiPatternSet();
+            var value   = new EditorAiPatternSet() { Pointer= p0 };
 
-            value.EditorAiPatternList                       = GetObjectList<EditorAiPattern>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiPattern.FromPointer); // 0270D5A9E020 0x10 EditorAiPatternList         ( 000185CD8278 ModelClassListType List`1<EditorAiPattern> List`1<EditorAiPattern> List<EditorAiPattern> Pointer )
-            value.PatternSetName                            = GetString(new IntPtr(p + 0x018)); // 0270D5A9E040 0x18 PatternSetName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.EditorAiPatternList                       = GetObjectList<EditorAiPattern>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiPattern.FromPointer); // 024665B0EAA0 0x10 EditorAiPatternList         ( 000185CD8278 ModelClassListType List`1<EditorAiPattern> List`1<EditorAiPattern> List<EditorAiPattern> Pointer )
+            value.PatternSetName                            = GetString(new IntPtr(p + 0x018)); // 024665B0EAC0 0x18 PatternSetName              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

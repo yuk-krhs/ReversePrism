@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CameraWorkData                           000185CB6F48 ModelClassListType CameraWorkDataSave[] CameraWorkDataSave[] List<CameraWorkDataSave> Pointer
-    public partial class CameraWorkDatas
+    public partial class CameraWorkDatas : DataModel
     {
         public List<CameraWorkDataSave>?                CameraWorkData                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CameraWorkDatas();
+            var value   = new CameraWorkDatas() { Pointer= p0 };
 
-            value.CameraWorkData                            = GetObjectList<CameraWorkDataSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraWorkDataSave.FromPointer); // 027006B21378 0x10 CameraWorkData              ( 000185CB6F48 ModelClassListType CameraWorkDataSave[] CameraWorkDataSave[] List<CameraWorkDataSave> Pointer )
+            value.CameraWorkData                            = GetObjectList<CameraWorkDataSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraWorkDataSave.FromPointer); // 0245A6AEAA58 0x10 CameraWorkData              ( 000185CB6F48 ModelClassListType CameraWorkDataSave[] CameraWorkDataSave[] List<CameraWorkDataSave> Pointer )
 
             return value;
         }

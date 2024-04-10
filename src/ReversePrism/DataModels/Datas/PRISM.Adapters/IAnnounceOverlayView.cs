@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAnnounceOverlayView
+    public partial class IAnnounceOverlayView : DataModel
     {
 
         public static IAnnounceOverlayView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAnnounceOverlayView();
+            var value   = new IAnnounceOverlayView() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Success                                  000186595960 ModelPrimitiveType bool bool bool Bool
     // 018 Error                                    0001865C8690 ModelClassType Error Error Error Pointer
-    public partial class SendSpendEventResult
+    public partial class SendSpendEventResult : DataModel
     {
         public bool                                     Success                                 { get; set; }
         public Error?                                   Error                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SendSpendEventResult();
+            var value   = new SendSpendEventResult() { Pointer= p0 };
 
-            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 0270DB49B780 0x10 Success                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 0270DB49B7A0 0x18 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 02466B5306E0 0x10 Success                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 02466B530700 0x18 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
 
             return value;
         }

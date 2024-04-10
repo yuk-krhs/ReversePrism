@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 VolumeTable                              float[] IL2CPP_TYPE_SZARRAY
     // 010 IsMute                                   000186595960 ModelPrimitiveType bool bool bool Bool
     // 014 VolumeIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class EachSoundSettingsLocalSaveType
+    public partial class EachSoundSettingsLocalSaveType : DataModel
     {
         public bool                                     IsMute                                  { get; set; }
         public int                                      VolumeIndex                             { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EachSoundSettingsLocalSaveType();
+            var value   = new EachSoundSettingsLocalSaveType() { Pointer= p0 };
 
-            value.IsMute                                    = GetBool(new IntPtr(p + 0x010)); // 027003A80E08 0x10 IsMute                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.VolumeIndex                               = GetInt32(new IntPtr(p + 0x014)); // 027003A80E28 0x14 VolumeIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.IsMute                                    = GetBool(new IntPtr(p + 0x010)); // 0245A3A8BE00 0x10 IsMute                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.VolumeIndex                               = GetInt32(new IntPtr(p + 0x014)); // 0245A3A8BE20 0x14 VolumeIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

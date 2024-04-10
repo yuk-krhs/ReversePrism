@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 OuterSpriteMarginUnit                    0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 038 EffectInnerSprite                        000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer
     // 040 InnerSpriteMarginUnit                    0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    public partial class SkillNote
+    public partial class SkillNote : DataModel
     {
         public SpriteRenderer?                          SpriteRenderer                          { get; set; }
         public SpriteRenderer?                          EffectOuterSprite                       { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkillNote();
+            var value   = new SkillNote() { Pointer= p0 };
 
-            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4FB3438 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
-            value.EffectOuterSprite                         = GetObject<SpriteRenderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4FB3458 0x28 EffectOuterSprite           ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
-            value.OuterSpriteMarginUnit                     = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 0270D4FB3478 0x30 OuterSpriteMarginUnit       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.EffectInnerSprite                         = GetObject<SpriteRenderer>(new IntPtr(p + 0x038), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4FB3498 0x38 EffectInnerSprite           ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
-            value.InnerSpriteMarginUnit                     = (Vector2)GetInt32(new IntPtr(p + 0x040)); // 0270D4FB34B8 0x40 InnerSpriteMarginUnit       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024665032DB0 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.EffectOuterSprite                         = GetObject<SpriteRenderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024665032DD0 0x28 EffectOuterSprite           ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.OuterSpriteMarginUnit                     = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 024665032DF0 0x30 OuterSpriteMarginUnit       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.EffectInnerSprite                         = GetObject<SpriteRenderer>(new IntPtr(p + 0x038), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024665032E10 0x38 EffectInnerSprite           ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.InnerSpriteMarginUnit                     = (Vector2)GetInt32(new IntPtr(p + 0x040)); // 024665032E30 0x40 InnerSpriteMarginUnit       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

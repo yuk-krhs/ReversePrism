@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EncoderExceptionFallbackBuffer
+    public partial class EncoderExceptionFallbackBuffer : DataModel
     {
 
         public static EncoderExceptionFallbackBuffer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncoderExceptionFallbackBuffer();
+            var value   = new EncoderExceptionFallbackBuffer() { Pointer= p0 };
 
 
             return value;

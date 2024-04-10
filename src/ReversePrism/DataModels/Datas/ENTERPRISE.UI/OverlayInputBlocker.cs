@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Overlay                                  0001866CCDB0 ModelClassType Image Image Image Pointer
-    public partial class OverlayInputBlocker
+    public partial class OverlayInputBlocker : DataModel
     {
         public Image?                                   Overlay                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OverlayInputBlocker();
+            var value   = new OverlayInputBlocker() { Pointer= p0 };
 
-            value.Overlay                                   = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 027001E99BD0 0x20 Overlay                     ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.Overlay                                   = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0245A1E9C9C8 0x20 Overlay                     ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
 
             return value;
         }

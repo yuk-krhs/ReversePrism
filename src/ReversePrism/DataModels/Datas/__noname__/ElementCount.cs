@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 uniqueCount                              int IL2CPP_TYPE_I4
     // 000 unfoundCount                             int IL2CPP_TYPE_I4
-    public partial class ElementCount
+    public partial class ElementCount : DataModel
     {
 
         public static ElementCount? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ElementCount();
+            var value   = new ElementCount() { Pointer= p0 };
 
 
             return value;

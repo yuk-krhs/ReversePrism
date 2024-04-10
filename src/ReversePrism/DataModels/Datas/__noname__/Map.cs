@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 match                                    char IL2CPP_TYPE_CHAR
     // 018 Replacement                              000186671BA0 ModelPrimitiveType string string string String
-    public partial class Map
+    public partial class Map : DataModel
     {
         public string                                   Replacement                             { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Map();
+            var value   = new Map() { Pointer= p0 };
 
-            value.Replacement                               = GetString(new IntPtr(p + 0x018)); // 0270D75273E8 0x18 Replacement                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Replacement                               = GetString(new IntPtr(p + 0x018)); // 02466758F3E8 0x18 Replacement                 ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

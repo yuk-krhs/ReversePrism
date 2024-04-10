@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 interceptor                              Func`2<Metadata, Metadata> IL2CPP_TYPE_GENERICINST
-    public partial class MetadataInterceptor
+    public partial class MetadataInterceptor : DataModel
     {
 
         public static MetadataInterceptor? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetadataInterceptor();
+            var value   = new MetadataInterceptor() { Pointer= p0 };
 
 
             return value;

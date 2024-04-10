@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 000 MaxProducePointValue                     int IL2CPP_TYPE_I4
     // 000 ShhisUnitId                              int IL2CPP_TYPE_I4
     // 000 AiLogicNum                               int IL2CPP_TYPE_I4
-    public partial class InGameDefine
+    public partial class InGameDefine : DataModel
     {
 
         public static InGameDefine? FromPointer(IntPtr p0)
@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InGameDefine();
+            var value   = new InGameDefine() { Pointer= p0 };
 
 
             return value;

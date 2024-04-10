@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 048 _DefensePvpUnitChangeableDate            000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 PvpEventEffectFieldNumber                int IL2CPP_TYPE_I4
     // 050 PvpEventEffect                           0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer
-    public partial class GetPvpTopReply
+    public partial class GetPvpTopReply : DataModel
     {
         public DateTime                                 DefensePvpUnitChangeableDate            { get; set; }
         public PvpProfileStatus?                        Profile                                 { get; set; }
@@ -40,15 +40,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetPvpTopReply();
+            var value   = new GetPvpTopReply() { Pointer= p0 };
 
-            value.DefensePvpUnitChangeableDate              = GetDateTime(new IntPtr(p + 0x010)); // 0270D2746638 0x10 DefensePvpUnitChangeableDate ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Profile                                   = GetObject<PvpProfileStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpProfileStatus.FromPointer); // 0270D27466B8 0x28 Profile                     ( 0001865EFBB0 ModelClassType PvpProfileStatus PvpProfileStatus PvpProfileStatus Pointer )
-            value.UnitList                                  = GetObjectList<PvpUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 0270D2746718 0x30 UnitList                    ( 000185CEE2F8 ModelClassListType RepeatedField`1<PvpUnitStatus> RepeatedField`1<PvpUnitStatus> List<PvpUnitStatus> Pointer )
-            value.PvpEvent                                  = GetObject<GameEventStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0270D2746758 0x38 PvpEvent                    ( 0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
-            value.PvpStamina                                = GetObject<StaminaStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D2746798 0x40 PvpStamina                  ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value._DefensePvpUnitChangeableDate             = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D27467D8 0x48 _DefensePvpUnitChangeableDate ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.PvpEventEffect                            = GetObject<PvpEventEffectStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.PvpEventEffectStatus.FromPointer); // 0270D2746818 0x50 PvpEventEffect              ( 0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer )
+            value.DefensePvpUnitChangeableDate              = GetDateTime(new IntPtr(p + 0x010)); // 0246626BF118 0x10 DefensePvpUnitChangeableDate ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Profile                                   = GetObject<PvpProfileStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpProfileStatus.FromPointer); // 0246626BF198 0x28 Profile                     ( 0001865EFBB0 ModelClassType PvpProfileStatus PvpProfileStatus PvpProfileStatus Pointer )
+            value.UnitList                                  = GetObjectList<PvpUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 0246626BF1F8 0x30 UnitList                    ( 000185CEE2F8 ModelClassListType RepeatedField`1<PvpUnitStatus> RepeatedField`1<PvpUnitStatus> List<PvpUnitStatus> Pointer )
+            value.PvpEvent                                  = GetObject<GameEventStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0246626BF238 0x38 PvpEvent                    ( 0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
+            value.PvpStamina                                = GetObject<StaminaStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246626BF278 0x40 PvpStamina                  ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value._DefensePvpUnitChangeableDate             = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626BF2B8 0x48 _DefensePvpUnitChangeableDate ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PvpEventEffect                            = GetObject<PvpEventEffectStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.PvpEventEffectStatus.FromPointer); // 0246626BF2F8 0x50 PvpEventEffect              ( 0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer )
             value.DefensePvpUnitChangeableDate  = ToDateTime(value._DefensePvpUnitChangeableDate);
 
             return value;

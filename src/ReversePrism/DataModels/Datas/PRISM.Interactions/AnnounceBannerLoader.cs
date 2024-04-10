@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Loader                                   000186551710 ModelClassType WebTextureLoader WebTextureLoader WebTextureLoader Pointer
-    public partial class AnnounceBannerLoader
+    public partial class AnnounceBannerLoader : DataModel
     {
         public WebTextureLoader?                        Loader                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceBannerLoader();
+            var value   = new AnnounceBannerLoader() { Pointer= p0 };
 
-            value.Loader                                    = GetObject<WebTextureLoader>(new IntPtr(p + 0x010), ReversePrism.DataModels.WebTextureLoader.FromPointer); // 0270DBDD96C8 0x10 Loader                      ( 000186551710 ModelClassType WebTextureLoader WebTextureLoader WebTextureLoader Pointer )
+            value.Loader                                    = GetObject<WebTextureLoader>(new IntPtr(p + 0x010), ReversePrism.DataModels.WebTextureLoader.FromPointer); // 02466BE61060 0x10 Loader                      ( 000186551710 ModelClassType WebTextureLoader WebTextureLoader WebTextureLoader Pointer )
 
             return value;
         }

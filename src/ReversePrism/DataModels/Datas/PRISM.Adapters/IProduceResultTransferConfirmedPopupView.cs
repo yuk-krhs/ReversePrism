@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceResultTransferConfirmedPopupView
+    public partial class IProduceResultTransferConfirmedPopupView : DataModel
     {
 
         public static IProduceResultTransferConfirmedPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceResultTransferConfirmedPopupView();
+            var value   = new IProduceResultTransferConfirmedPopupView() { Pointer= p0 };
 
 
             return value;

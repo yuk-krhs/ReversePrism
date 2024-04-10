@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 MaxPoolSize                              int IL2CPP_TYPE_I4
     // 008 sizes                                    Dictionary`2<Type, Func`1<int>> IL2CPP_TYPE_GENERICINST
-    public partial class TaskPool
+    public partial class TaskPool : DataModel
     {
 
         public static TaskPool? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskPool();
+            var value   = new TaskPool() { Pointer= p0 };
 
 
             return value;

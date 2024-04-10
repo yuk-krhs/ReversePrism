@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotificationReceiverBase
+    public partial class NotificationReceiverBase : DataModel
     {
 
         public static NotificationReceiverBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotificationReceiverBase();
+            var value   = new NotificationReceiverBase() { Pointer= p0 };
 
 
             return value;

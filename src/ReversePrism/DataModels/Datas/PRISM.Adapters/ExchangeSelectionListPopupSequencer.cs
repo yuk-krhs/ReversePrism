@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExchangeSelectionListPopupSequencer
+    public partial class ExchangeSelectionListPopupSequencer : DataModel
     {
 
         public static ExchangeSelectionListPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeSelectionListPopupSequencer();
+            var value   = new ExchangeSelectionListPopupSequencer() { Pointer= p0 };
 
 
             return value;

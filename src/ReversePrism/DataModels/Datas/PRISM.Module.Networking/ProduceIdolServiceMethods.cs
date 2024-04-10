@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 048 LevelUpIdolSkill                         Method`2<ILevelUpIdolSkillArgs, ILevelUpIdolSkillReply> IL2CPP_TYPE_GENERICINST
     // 060 MarkFavoriteProduceIdol                  Method`2<IMarkFavoriteProduceIdolArgs, IMarkFavoriteProduceIdolReply> IL2CPP_TYPE_GENERICINST
     // 078 SelectIdolSkill                          Method`2<ISelectIdolSkillArgs, ISelectIdolSkillReply> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceIdolServiceMethods
+    public partial class ProduceIdolServiceMethods : DataModel
     {
 
         public static ProduceIdolServiceMethods? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolServiceMethods();
+            var value   = new ProduceIdolServiceMethods() { Pointer= p0 };
 
 
             return value;

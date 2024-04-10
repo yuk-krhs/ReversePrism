@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Zero                                     <uint> IL2CPP_TYPE_U
     // 010 _pointer                                 IntPtr IL2CPP_TYPE_PTR
-    public partial class UIntPtr
+    public partial class UIntPtr : DataModel
     {
 
         public static UIntPtr? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIntPtr();
+            var value   = new UIntPtr() { Pointer= p0 };
 
 
             return value;

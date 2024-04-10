@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 04B Byte0059                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 04C Byte0060                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 04D Byte0061                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class FixedBytes62
+    public partial class FixedBytes62 : DataModel
     {
         public FixedBytes16                             Offset0000                              { get; set; }
         public FixedBytes16                             Offset0016                              { get; set; }
@@ -51,25 +51,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedBytes62();
+            var value   = new FixedBytes62() { Pointer= p0 };
 
-            value.Offset0000                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x010)); // 0270D98A8390 0x10 Offset0000                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
-            value.Offset0016                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x020)); // 0270D98A83B0 0x20 Offset0016                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
-            value.Offset0032                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x030)); // 0270D98A83D0 0x30 Offset0032                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
-            value.Byte0048                                  = GetSByte(new IntPtr(p + 0x040)); // 0270D98A83F0 0x40 Byte0048                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0049                                  = GetSByte(new IntPtr(p + 0x041)); // 0270D98A8410 0x41 Byte0049                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0050                                  = GetSByte(new IntPtr(p + 0x042)); // 0270D98A8430 0x42 Byte0050                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0051                                  = GetSByte(new IntPtr(p + 0x043)); // 0270D98A8450 0x43 Byte0051                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0052                                  = GetSByte(new IntPtr(p + 0x044)); // 0270D98A8470 0x44 Byte0052                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0053                                  = GetSByte(new IntPtr(p + 0x045)); // 0270D98A8490 0x45 Byte0053                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0054                                  = GetSByte(new IntPtr(p + 0x046)); // 0270D98A84B0 0x46 Byte0054                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0055                                  = GetSByte(new IntPtr(p + 0x047)); // 0270D98A84D0 0x47 Byte0055                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0056                                  = GetSByte(new IntPtr(p + 0x048)); // 0270D98A84F0 0x48 Byte0056                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0057                                  = GetSByte(new IntPtr(p + 0x049)); // 0270D98A8510 0x49 Byte0057                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0058                                  = GetSByte(new IntPtr(p + 0x04A)); // 0270D98A8530 0x4A Byte0058                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0059                                  = GetSByte(new IntPtr(p + 0x04B)); // 0270D98A8550 0x4B Byte0059                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0060                                  = GetSByte(new IntPtr(p + 0x04C)); // 0270D98A8570 0x4C Byte0060                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Byte0061                                  = GetSByte(new IntPtr(p + 0x04D)); // 0270D98A8590 0x4D Byte0061                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Offset0000                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x010)); // 02466990DE80 0x10 Offset0000                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
+            value.Offset0016                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x020)); // 02466990DEA0 0x20 Offset0016                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
+            value.Offset0032                                = (FixedBytes16)GetInt32(new IntPtr(p + 0x030)); // 02466990DEC0 0x30 Offset0032                  ( 00018659BD00 ModelEnumType FixedBytes16 FixedBytes16 FixedBytes16 Int32 )
+            value.Byte0048                                  = GetSByte(new IntPtr(p + 0x040)); // 02466990DEE0 0x40 Byte0048                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0049                                  = GetSByte(new IntPtr(p + 0x041)); // 02466990DF00 0x41 Byte0049                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0050                                  = GetSByte(new IntPtr(p + 0x042)); // 02466990DF20 0x42 Byte0050                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0051                                  = GetSByte(new IntPtr(p + 0x043)); // 02466990DF40 0x43 Byte0051                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0052                                  = GetSByte(new IntPtr(p + 0x044)); // 02466990DF60 0x44 Byte0052                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0053                                  = GetSByte(new IntPtr(p + 0x045)); // 02466990DF80 0x45 Byte0053                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0054                                  = GetSByte(new IntPtr(p + 0x046)); // 02466990DFA0 0x46 Byte0054                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0055                                  = GetSByte(new IntPtr(p + 0x047)); // 02466990DFC0 0x47 Byte0055                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0056                                  = GetSByte(new IntPtr(p + 0x048)); // 02466990DFE0 0x48 Byte0056                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0057                                  = GetSByte(new IntPtr(p + 0x049)); // 02466990E000 0x49 Byte0057                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0058                                  = GetSByte(new IntPtr(p + 0x04A)); // 02466990E020 0x4A Byte0058                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0059                                  = GetSByte(new IntPtr(p + 0x04B)); // 02466990E040 0x4B Byte0059                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0060                                  = GetSByte(new IntPtr(p + 0x04C)); // 02466990E060 0x4C Byte0060                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Byte0061                                  = GetSByte(new IntPtr(p + 0x04D)); // 02466990E080 0x4D Byte0061                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

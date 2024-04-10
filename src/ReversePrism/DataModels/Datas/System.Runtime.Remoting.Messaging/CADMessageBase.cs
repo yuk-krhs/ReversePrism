@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 PropertyCount                            0001865F3220 ModelPrimitiveType int int int Int32
     // 028 CallContext                              00018651E500 ModelClassType CADArgHolder CADArgHolder CADArgHolder Pointer
     // 030 SerializedMethod                         000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class CADMessageBase
+    public partial class CADMessageBase : DataModel
     {
         public List<sbyte>?                             SerializedArgs                          { get; set; }
         public int                                      PropertyCount                           { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CADMessageBase();
+            var value   = new CADMessageBase() { Pointer= p0 };
 
-            value.SerializedArgs                            = GetSByteList(new IntPtr(p + 0x018)); // 0270D6A64580 0x18 SerializedArgs              ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.PropertyCount                             = GetInt32(new IntPtr(p + 0x020)); // 0270D6A645A0 0x20 PropertyCount               ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.CallContext                               = GetObject<CADArgHolder>(new IntPtr(p + 0x028), ReversePrism.DataModels.CADArgHolder.FromPointer); // 0270D6A645C0 0x28 CallContext                 ( 00018651E500 ModelClassType CADArgHolder CADArgHolder CADArgHolder Pointer )
-            value.SerializedMethod                          = GetSByteList(new IntPtr(p + 0x030)); // 0270D6A645E0 0x30 SerializedMethod            ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.SerializedArgs                            = GetSByteList(new IntPtr(p + 0x018)); // 024666AC4580 0x18 SerializedArgs              ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.PropertyCount                             = GetInt32(new IntPtr(p + 0x020)); // 024666AC45A0 0x20 PropertyCount               ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.CallContext                               = GetObject<CADArgHolder>(new IntPtr(p + 0x028), ReversePrism.DataModels.CADArgHolder.FromPointer); // 024666AC45C0 0x28 CallContext                 ( 00018651E500 ModelClassType CADArgHolder CADArgHolder CADArgHolder Pointer )
+            value.SerializedMethod                          = GetSByteList(new IntPtr(p + 0x030)); // 024666AC45E0 0x30 SerializedMethod            ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

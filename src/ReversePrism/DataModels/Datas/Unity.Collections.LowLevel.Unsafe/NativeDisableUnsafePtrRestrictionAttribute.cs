@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeDisableUnsafePtrRestrictionAttribute
+    public partial class NativeDisableUnsafePtrRestrictionAttribute : DataModel
     {
 
         public static NativeDisableUnsafePtrRestrictionAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeDisableUnsafePtrRestrictionAttribute();
+            var value   = new NativeDisableUnsafePtrRestrictionAttribute() { Pointer= p0 };
 
 
             return value;

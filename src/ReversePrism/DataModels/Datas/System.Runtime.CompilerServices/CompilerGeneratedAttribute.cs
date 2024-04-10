@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CompilerGeneratedAttribute
+    public partial class CompilerGeneratedAttribute : DataModel
     {
 
         public static CompilerGeneratedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompilerGeneratedAttribute();
+            var value   = new CompilerGeneratedAttribute() { Pointer= p0 };
 
 
             return value;

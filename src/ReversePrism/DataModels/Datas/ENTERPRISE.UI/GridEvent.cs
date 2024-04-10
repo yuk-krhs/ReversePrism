@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GridEvent
+    public partial class GridEvent : DataModel
     {
 
         public static GridEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GridEvent();
+            var value   = new GridEvent() { Pointer= p0 };
 
 
             return value;

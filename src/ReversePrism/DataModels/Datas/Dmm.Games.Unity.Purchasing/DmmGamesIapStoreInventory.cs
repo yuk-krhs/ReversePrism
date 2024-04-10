@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 items                                    Dictionary`2<string, DmmGamesIapStoreInventoryItem> IL2CPP_TYPE_GENERICINST
-    public partial class DmmGamesIapStoreInventory
+    public partial class DmmGamesIapStoreInventory : DataModel
     {
 
         public static DmmGamesIapStoreInventory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesIapStoreInventory();
+            var value   = new DmmGamesIapStoreInventory() { Pointer= p0 };
 
 
             return value;

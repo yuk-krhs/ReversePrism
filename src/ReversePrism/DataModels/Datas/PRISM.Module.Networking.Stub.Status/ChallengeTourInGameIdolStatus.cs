@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 IdolSkill                                000186570A80 ModelClassType ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus Pointer
     // 000 IdolBaseParameterFieldNumber             int IL2CPP_TYPE_I4
     // 030 IdolBaseParameter                        0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
-    public partial class ChallengeTourInGameIdolStatus
+    public partial class ChallengeTourInGameIdolStatus : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameIdolStatus();
+            var value   = new ChallengeTourInGameIdolStatus() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0270041568F0 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x01C)); // 027004156930 0x1C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 027004156970 0x20 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.IdolSkill                                 = GetObject<ChallengeTourInGameIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourInGameIdolSkillStatus.FromPointer); // 0270041569B0 0x28 IdolSkill                   ( 000186570A80 ModelClassType ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus Pointer )
-            value.IdolBaseParameter                         = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270041569F0 0x30 IdolBaseParameter           ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024660ED3220 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x01C)); // 024660ED3260 0x1C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 024660ED32A0 0x20 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.IdolSkill                                 = GetObject<ChallengeTourInGameIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourInGameIdolSkillStatus.FromPointer); // 024660ED32E0 0x28 IdolSkill                   ( 000186570A80 ModelClassType ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus ChallengeTourInGameIdolSkillStatus Pointer )
+            value.IdolBaseParameter                         = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 024660ED3320 0x30 IdolBaseParameter           ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
 
             return value;
         }

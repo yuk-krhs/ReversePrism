@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Callback                                 Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class ReactivePropertyExtensions
+    public partial class ReactivePropertyExtensions : DataModel
     {
 
         public static ReactivePropertyExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReactivePropertyExtensions();
+            var value   = new ReactivePropertyExtensions() { Pointer= p0 };
 
 
             return value;

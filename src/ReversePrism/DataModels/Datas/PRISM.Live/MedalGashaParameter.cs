@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 EventId                                  0001865F4260 ModelPrimitiveType int int int Int32
     // 014 GashaId                                  0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MedalGashaParameter
+    public partial class MedalGashaParameter : DataModel
     {
         public int                                      EventId                                 { get; set; }
         public int                                      GashaId                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaParameter();
+            var value   = new MedalGashaParameter() { Pointer= p0 };
 
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D512BF40 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.GashaId                                   = GetInt32(new IntPtr(p + 0x014)); // 0270D512BF60 0x14 GashaId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 02466519F498 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.GashaId                                   = GetInt32(new IntPtr(p + 0x014)); // 02466519F4B8 0x14 GashaId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

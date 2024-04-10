@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CanMasterTraining                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 CanTraining                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CharacterSelectSCUpgradingFilterPermanentData
+    public partial class CharacterSelectSCUpgradingFilterPermanentData : DataModel
     {
         public bool                                     CanMasterTraining                       { get; set; }
         public bool                                     CanTraining                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectSCUpgradingFilterPermanentData();
+            var value   = new CharacterSelectSCUpgradingFilterPermanentData() { Pointer= p0 };
 
-            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x010)); // 027003A6BBD0 0x10 CanMasterTraining           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 027003A6BBF0 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x010)); // 0245A3A76B08 0x10 CanMasterTraining           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanTraining                               = GetBool(new IntPtr(p + 0x011)); // 0245A3A76B28 0x11 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

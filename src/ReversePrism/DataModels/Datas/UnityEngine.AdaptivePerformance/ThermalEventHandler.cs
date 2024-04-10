@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ThermalEventHandler
+    public partial class ThermalEventHandler : DataModel
     {
 
         public static ThermalEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThermalEventHandler();
+            var value   = new ThermalEventHandler() { Pointer= p0 };
 
 
             return value;

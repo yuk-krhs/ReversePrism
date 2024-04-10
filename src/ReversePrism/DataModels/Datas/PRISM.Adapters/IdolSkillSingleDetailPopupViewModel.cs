@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 Level                                    0001865F4260 ModelPrimitiveType int int int Int32
     // 030 SkillActionEffectList                    000185CFDCC8 ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer
     // 038 ActionCondition                          000186576720 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer
-    public partial class IdolSkillSingleDetailPopupViewModel
+    public partial class IdolSkillSingleDetailPopupViewModel : DataModel
     {
         public int                                      MstIdolSkillId                          { get; set; }
         public int                                      IconId                                  { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillSingleDetailPopupViewModel();
+            var value   = new IdolSkillSingleDetailPopupViewModel() { Pointer= p0 };
 
-            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x010)); // 0270D61D9020 0x10 MstIdolSkillId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IconId                                    = GetInt32(new IntPtr(p + 0x014)); // 0270D61D9040 0x14 IconId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Pp                                        = GetInt32(new IntPtr(p + 0x018)); // 0270D61D9060 0x18 Pp                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x020)); // 0270D61D9080 0x20 AppealTypeList              ( 000185D18D28 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D61D90A0 0x28 Level                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SkillActionEffectList                     = GetObjectList<IIdolSkillActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IIdolSkillActionEffectStatus.FromPointer); // 0270D61D90C0 0x30 SkillActionEffectList       ( 000185CFDCC8 ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer )
-            value.ActionCondition                           = GetObject<IIdolSkillActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IIdolSkillActionConditionStatus.FromPointer); // 0270D61D90E0 0x38 ActionCondition             ( 000186576720 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer )
+            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x010)); // 024666249020 0x10 MstIdolSkillId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IconId                                    = GetInt32(new IntPtr(p + 0x014)); // 024666249040 0x14 IconId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Pp                                        = GetInt32(new IntPtr(p + 0x018)); // 024666249060 0x18 Pp                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x020)); // 024666249080 0x20 AppealTypeList              ( 000185D18D28 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x028)); // 0246662490A0 0x28 Level                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SkillActionEffectList                     = GetObjectList<IIdolSkillActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IIdolSkillActionEffectStatus.FromPointer); // 0246662490C0 0x30 SkillActionEffectList       ( 000185CFDCC8 ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer )
+            value.ActionCondition                           = GetObject<IIdolSkillActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IIdolSkillActionConditionStatus.FromPointer); // 0246662490E0 0x38 ActionCondition             ( 000186576720 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer )
 
             return value;
         }

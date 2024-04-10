@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_searchedFontAssets                     List`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class TMP_FontUtilities
+    public partial class TMP_FontUtilities : DataModel
     {
 
         public static TMP_FontUtilities? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_FontUtilities();
+            var value   = new TMP_FontUtilities() { Pointer= p0 };
 
 
             return value;

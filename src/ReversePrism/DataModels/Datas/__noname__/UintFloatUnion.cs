@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 UintValue                                0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 010 FloatValue                               000186666050 ModelPrimitiveType float float float Single
-    public partial class UintFloatUnion
+    public partial class UintFloatUnion : DataModel
     {
         public uint                                     UintValue                               { get; set; }
         public float                                    FloatValue                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UintFloatUnion();
+            var value   = new UintFloatUnion() { Pointer= p0 };
 
-            value.UintValue                                 = GetUInt32(new IntPtr(p + 0x010)); // 0270D99EF868 0x10 UintValue                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.FloatValue                                = GetSingle(new IntPtr(p + 0x010)); // 0270D99EF888 0x10 FloatValue                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.UintValue                                 = GetUInt32(new IntPtr(p + 0x010)); // 024669A56F90 0x10 UintValue                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.FloatValue                                = GetSingle(new IntPtr(p + 0x010)); // 024669A56FB0 0x10 FloatValue                  ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

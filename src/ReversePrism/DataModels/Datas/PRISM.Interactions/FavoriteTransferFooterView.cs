@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 090 transferSelected                         Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 098 CurrentType                              0001866B2B20 ModelEnumType IdolListFooterType IdolListFooterType IdolListFooterType Int32
     // 09C Limit                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FavoriteTransferFooterView
+    public partial class FavoriteTransferFooterView : DataModel
     {
         public CanvasGroup?                             CgTotalCount                            { get; set; }
         public CanvasGroup?                             CgSelectedFavorites                     { get; set; }
@@ -48,22 +48,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FavoriteTransferFooterView();
+            var value   = new FavoriteTransferFooterView() { Pointer= p0 };
 
-            value.CgTotalCount                              = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA26F5A0 0x20 CgTotalCount                ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CgSelectedFavorites                       = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA26F5C0 0x28 CgSelectedFavorites         ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CgSelectedTransfers                       = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA26F5E0 0x30 CgSelectedTransfers         ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ImgFavoriteIcon                           = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270DA26F600 0x38 ImgFavoriteIcon             ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.TxtTotalCount                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA26F620 0x40 TxtTotalCount               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtSelectedFavorites                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA26F640 0x48 TxtSelectedFavorites        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtTransferLimits                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA26F660 0x50 TxtTransferLimits           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtSelectedTransfers                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA26F680 0x58 TxtSelectedTransfers        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnRight                                  = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA26F6A0 0x60 BtnRight                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnLeftBlue                               = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA26F6C0 0x68 BtnLeftBlue                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnLeftCancel                             = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA26F6E0 0x70 BtnLeftCancel               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TxtBtnRight                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA26F700 0x78 TxtBtnRight                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CurrentType                               = (IdolListFooterType)GetInt32(new IntPtr(p + 0x098)); // 0270DA26F780 0x98 CurrentType                 ( 0001866B2B20 ModelEnumType IdolListFooterType IdolListFooterType IdolListFooterType Int32 )
-            value.Limit                                     = GetInt32(new IntPtr(p + 0x09C)); // 0270DA26F7A0 0x9C Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CgTotalCount                              = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A2C2B68 0x20 CgTotalCount                ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CgSelectedFavorites                       = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A2C2B88 0x28 CgSelectedFavorites         ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CgSelectedTransfers                       = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A2C2BA8 0x30 CgSelectedTransfers         ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ImgFavoriteIcon                           = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A2C2BC8 0x38 ImgFavoriteIcon             ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.TxtTotalCount                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2C2BE8 0x40 TxtTotalCount               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSelectedFavorites                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2C2C08 0x48 TxtSelectedFavorites        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtTransferLimits                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2C2C28 0x50 TxtTransferLimits           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSelectedTransfers                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2C2C48 0x58 TxtSelectedTransfers        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnRight                                  = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2C2C68 0x60 BtnRight                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnLeftBlue                               = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2C2C88 0x68 BtnLeftBlue                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnLeftCancel                             = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2C2CA8 0x70 BtnLeftCancel               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TxtBtnRight                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2C2CC8 0x78 TxtBtnRight                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CurrentType                               = (IdolListFooterType)GetInt32(new IntPtr(p + 0x098)); // 02466A2C2D48 0x98 CurrentType                 ( 0001866B2B20 ModelEnumType IdolListFooterType IdolListFooterType IdolListFooterType Int32 )
+            value.Limit                                     = GetInt32(new IntPtr(p + 0x09C)); // 02466A2C2D68 0x9C Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

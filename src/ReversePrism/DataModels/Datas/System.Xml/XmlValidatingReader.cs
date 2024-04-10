@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Impl                                     0001865D4510 ModelClassType XmlValidatingReaderImpl XmlValidatingReaderImpl XmlValidatingReaderImpl Pointer
-    public partial class XmlValidatingReader
+    public partial class XmlValidatingReader : DataModel
     {
         public XmlValidatingReaderImpl?                 Impl                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlValidatingReader();
+            var value   = new XmlValidatingReader() { Pointer= p0 };
 
-            value.Impl                                      = GetObject<XmlValidatingReaderImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlValidatingReaderImpl.FromPointer); // 0270D7401E28 0x10 Impl                        ( 0001865D4510 ModelClassType XmlValidatingReaderImpl XmlValidatingReaderImpl XmlValidatingReaderImpl Pointer )
+            value.Impl                                      = GetObject<XmlValidatingReaderImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlValidatingReaderImpl.FromPointer); // 024667461E28 0x10 Impl                        ( 0001865D4510 ModelClassType XmlValidatingReaderImpl XmlValidatingReaderImpl XmlValidatingReaderImpl Pointer )
 
             return value;
         }

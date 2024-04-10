@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 M_SubsystemDescriptor                    000186666130 ModelClassType ISubsystemDescriptor ISubsystemDescriptor ISubsystemDescriptor Pointer
-    public partial class IntegratedSubsystem
+    public partial class IntegratedSubsystem : DataModel
     {
         public ISubsystemDescriptor?                    M_SubsystemDescriptor                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntegratedSubsystem();
+            var value   = new IntegratedSubsystem() { Pointer= p0 };
 
-            value.M_SubsystemDescriptor                     = GetObject<ISubsystemDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISubsystemDescriptor.FromPointer); // 02700210BA10 0x18 M_SubsystemDescriptor       ( 000186666130 ModelClassType ISubsystemDescriptor ISubsystemDescriptor ISubsystemDescriptor Pointer )
+            value.M_SubsystemDescriptor                     = GetObject<ISubsystemDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISubsystemDescriptor.FromPointer); // 0245A210BA10 0x18 M_SubsystemDescriptor       ( 000186666130 ModelClassType ISubsystemDescriptor ISubsystemDescriptor ISubsystemDescriptor Pointer )
 
             return value;
         }

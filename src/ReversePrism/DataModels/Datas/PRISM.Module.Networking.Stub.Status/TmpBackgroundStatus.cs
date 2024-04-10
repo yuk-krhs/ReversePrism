@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BackgroundIdFieldNumber                  int IL2CPP_TYPE_I4
     // 018 BackgroundId                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class TmpBackgroundStatus
+    public partial class TmpBackgroundStatus : DataModel
     {
         public int                                      BackgroundId                            { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TmpBackgroundStatus();
+            var value   = new TmpBackgroundStatus() { Pointer= p0 };
 
-            value.BackgroundId                              = GetInt32(new IntPtr(p + 0x018)); // 0270D2066088 0x18 BackgroundId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BackgroundId                              = GetInt32(new IntPtr(p + 0x018)); // 02466202CF18 0x18 BackgroundId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

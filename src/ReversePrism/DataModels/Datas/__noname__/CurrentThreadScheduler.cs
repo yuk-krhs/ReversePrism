@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // FFFFFFFF s_threadLocalQueue                       SchedulerQueue IL2CPP_TYPE_CLASS
     // FFFFFFFF s_clock                                  Stopwatch IL2CPP_TYPE_CLASS
-    public partial class CurrentThreadScheduler
+    public partial class CurrentThreadScheduler : DataModel
     {
 
         public static CurrentThreadScheduler? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CurrentThreadScheduler();
+            var value   = new CurrentThreadScheduler() { Pointer= p0 };
 
 
             return value;

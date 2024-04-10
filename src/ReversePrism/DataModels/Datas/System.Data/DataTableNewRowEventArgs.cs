@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Row                                      00018667D390 ModelClassType DataRow DataRow DataRow Pointer
-    public partial class DataTableNewRowEventArgs
+    public partial class DataTableNewRowEventArgs : DataModel
     {
         public DataRow?                                 Row                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataTableNewRowEventArgs();
+            var value   = new DataTableNewRowEventArgs() { Pointer= p0 };
 
-            value.Row                                       = GetObject<DataRow>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataRow.FromPointer); // 0270D890AD58 0x10 Row                         ( 00018667D390 ModelClassType DataRow DataRow DataRow Pointer )
+            value.Row                                       = GetObject<DataRow>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataRow.FromPointer); // 024668976B10 0x10 Row                         ( 00018667D390 ModelClassType DataRow DataRow DataRow Pointer )
 
             return value;
         }

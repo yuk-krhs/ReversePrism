@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 VoiceMotionListFieldNumber               int IL2CPP_TYPE_I4
     // 010 _repeated_voiceMotionList_codec          FieldCodec`1<HomeVoiceMotionStatus> IL2CPP_TYPE_GENERICINST
     // 020 VoiceMotionList                          000185CDEAD8 ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer
-    public partial class TmpHomeUnitStatus
+    public partial class TmpHomeUnitStatus : DataModel
     {
         public List<TmpHomeUnitIdolStatus>?             HomeUnitIdolList                        { get; set; }
         public List<HomeVoiceMotionStatus>?             VoiceMotionList                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TmpHomeUnitStatus();
+            var value   = new TmpHomeUnitStatus() { Pointer= p0 };
 
-            value.HomeUnitIdolList                          = GetObjectList<TmpHomeUnitIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TmpHomeUnitIdolStatus.FromPointer); // 0270D2069168 0x18 HomeUnitIdolList            ( 000185CF5288 ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer )
-            value.VoiceMotionList                           = GetObjectList<HomeVoiceMotionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeVoiceMotionStatus.FromPointer); // 0270D20691C8 0x20 VoiceMotionList             ( 000185CDEAD8 ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer )
+            value.HomeUnitIdolList                          = GetObjectList<TmpHomeUnitIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TmpHomeUnitIdolStatus.FromPointer); // 0246620300D0 0x18 HomeUnitIdolList            ( 000185CF5288 ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer )
+            value.VoiceMotionList                           = GetObjectList<HomeVoiceMotionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeVoiceMotionStatus.FromPointer); // 024662030130 0x20 VoiceMotionList             ( 000185CDEAD8 ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer )
 
             return value;
         }

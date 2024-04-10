@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ExchangeGroupListFieldNumber             int IL2CPP_TYPE_I4
     // 008 _repeated_exchangeGroupList_codec        FieldCodec`1<ExchangeGroupStatus> IL2CPP_TYPE_GENERICINST
     // 018 ExchangeGroupList                        000185CD6408 ModelClassListType RepeatedField`1<ExchangeGroupStatus> RepeatedField`1<ExchangeGroupStatus> List<ExchangeGroupStatus> Pointer
-    public partial class GetExchangeGroupListReply
+    public partial class GetExchangeGroupListReply : DataModel
     {
         public List<ExchangeGroupStatus>?               ExchangeGroupList                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeGroupListReply();
+            var value   = new GetExchangeGroupListReply() { Pointer= p0 };
 
-            value.ExchangeGroupList                         = GetObjectList<ExchangeGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExchangeGroupStatus.FromPointer); // 0270D121F140 0x18 ExchangeGroupList           ( 000185CD6408 ModelClassListType RepeatedField`1<ExchangeGroupStatus> RepeatedField`1<ExchangeGroupStatus> List<ExchangeGroupStatus> Pointer )
+            value.ExchangeGroupList                         = GetObjectList<ExchangeGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExchangeGroupStatus.FromPointer); // 024661194D58 0x18 ExchangeGroupList           ( 000185CD6408 ModelClassListType RepeatedField`1<ExchangeGroupStatus> RepeatedField`1<ExchangeGroupStatus> List<ExchangeGroupStatus> Pointer )
 
             return value;
         }

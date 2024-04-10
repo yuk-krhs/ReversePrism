@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Tutorial                                 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer
     // 000 UserFieldNumber                          int IL2CPP_TYPE_I4
     // 020 User                                     000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer
-    public partial class ProceedTutorialReply
+    public partial class ProceedTutorialReply : DataModel
     {
         public TutorialStatus?                          Tutorial                                { get; set; }
         public SelfStatus?                              User                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProceedTutorialReply();
+            var value   = new ProceedTutorialReply() { Pointer= p0 };
 
-            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 0270D2C509F8 0x18 Tutorial                    ( 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
-            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 0270D2C50A38 0x20 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
+            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 024662BDF7F0 0x18 Tutorial                    ( 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
+            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 024662BDF830 0x20 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
 
             return value;
         }

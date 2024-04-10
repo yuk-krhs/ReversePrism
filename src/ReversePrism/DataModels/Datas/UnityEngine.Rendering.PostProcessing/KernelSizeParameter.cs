@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KernelSizeParameter
+    public partial class KernelSizeParameter : DataModel
     {
 
         public static KernelSizeParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KernelSizeParameter();
+            var value   = new KernelSizeParameter() { Pointer= p0 };
 
 
             return value;

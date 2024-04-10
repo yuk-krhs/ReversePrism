@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CostumePresetIdFieldNumber               int IL2CPP_TYPE_I4
     // 018 CostumePresetId                          000186671910 ModelPrimitiveType string string string String
-    public partial class ClearCostumePresetArgs
+    public partial class ClearCostumePresetArgs : DataModel
     {
         public string                                   CostumePresetId                         { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClearCostumePresetArgs();
+            var value   = new ClearCostumePresetArgs() { Pointer= p0 };
 
-            value.CostumePresetId                           = GetString(new IntPtr(p + 0x018)); // 0270D0D74F30 0x18 CostumePresetId             ( 000186671910 ModelPrimitiveType string string string String )
+            value.CostumePresetId                           = GetString(new IntPtr(p + 0x018)); // 024660D78D60 0x18 CostumePresetId             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

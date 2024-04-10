@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorParameter
+    public partial class ColorParameter : DataModel
     {
 
         public static ColorParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorParameter();
+            var value   = new ColorParameter() { Pointer= p0 };
 
 
             return value;

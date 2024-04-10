@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 GetAchievementList                       Method`2<IGetAchievementListArgs, IGetAchievementListReply> IL2CPP_TYPE_GENERICINST
-    public partial class AchievementServiceMethods
+    public partial class AchievementServiceMethods : DataModel
     {
 
         public static AchievementServiceMethods? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AchievementServiceMethods();
+            var value   = new AchievementServiceMethods() { Pointer= p0 };
 
 
             return value;

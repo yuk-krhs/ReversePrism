@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeviceVolumeProvider
+    public partial class DeviceVolumeProvider : DataModel
     {
 
         public static DeviceVolumeProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceVolumeProvider();
+            var value   = new DeviceVolumeProvider() { Pointer= p0 };
 
 
             return value;

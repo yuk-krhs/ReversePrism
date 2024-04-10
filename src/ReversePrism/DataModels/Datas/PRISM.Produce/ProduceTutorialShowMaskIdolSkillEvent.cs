@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 getMaskPosFanc                           Func`1<Vector3> IL2CPP_TYPE_GENERICINST
     // 020 getMaskSizeFanc                          Func`1<Vector2> IL2CPP_TYPE_GENERICINST
     // 028 getMaskOffsetFanc                        Func`1<Vector2> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceTutorialShowMaskIdolSkillEvent
+    public partial class ProduceTutorialShowMaskIdolSkillEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialShowMaskIdolSkillEvent();
+            var value   = new ProduceTutorialShowMaskIdolSkillEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D48500 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DB9218 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
 
             return value;
         }

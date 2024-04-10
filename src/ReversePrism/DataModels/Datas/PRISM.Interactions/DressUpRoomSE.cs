@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 SheetName                                string IL2CPP_TYPE_STRING
     // 000 CloseCurtain                             SoundKey IL2CPP_TYPE_VALUETYPE
     // 010 OpenCurtain                              000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class DressUpRoomSE
+    public partial class DressUpRoomSE : DataModel
     {
         public SoundKey                                 OpenCurtain                             { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressUpRoomSE();
+            var value   = new DressUpRoomSE() { Pointer= p0 };
 
-            value.OpenCurtain                               = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270DBC0F110 0x10 OpenCurtain                 ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.OpenCurtain                               = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466BC96470 0x10 OpenCurtain                 ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

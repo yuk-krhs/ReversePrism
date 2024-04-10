@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class AttributeContextReflection
+    public partial class AttributeContextReflection : DataModel
     {
 
         public static AttributeContextReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttributeContextReflection();
+            var value   = new AttributeContextReflection() { Pointer= p0 };
 
 
             return value;

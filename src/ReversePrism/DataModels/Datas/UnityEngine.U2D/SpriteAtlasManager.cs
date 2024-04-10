@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atlasRequested                           Action`2<string, Action`1<SpriteAtlas>> IL2CPP_TYPE_GENERICINST
     // 008 atlasRegistered                          Action`1<SpriteAtlas> IL2CPP_TYPE_GENERICINST
-    public partial class SpriteAtlasManager
+    public partial class SpriteAtlasManager : DataModel
     {
 
         public static SpriteAtlasManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpriteAtlasManager();
+            var value   = new SpriteAtlasManager() { Pointer= p0 };
 
 
             return value;

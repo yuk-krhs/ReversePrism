@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C Mask                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 OwnerDocument                            000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer
     // 028 NameTable                                0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
-    public partial class DomNameTable
+    public partial class DomNameTable : DataModel
     {
         public List<XmlName>?                           Entries                                 { get; set; }
         public int                                      Count                                   { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DomNameTable();
+            var value   = new DomNameTable() { Pointer= p0 };
 
-            value.Entries                                   = GetObjectList<XmlName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlName.FromPointer); // 0270D744A238 0x10 Entries                     ( 000185CB3BB8 ModelClassListType XmlName[] XmlName[] List<XmlName> Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D744A258 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Mask                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D744A278 0x1C Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OwnerDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlDocument.FromPointer); // 0270D744A298 0x20 OwnerDocument               ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
-            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0270D744A2B8 0x28 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.Entries                                   = GetObjectList<XmlName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlName.FromPointer); // 0246674AA238 0x10 Entries                     ( 000185CB3BB8 ModelClassListType XmlName[] XmlName[] List<XmlName> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0246674AA258 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Mask                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246674AA278 0x1C Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OwnerDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlDocument.FromPointer); // 0246674AA298 0x20 OwnerDocument               ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
+            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0246674AA2B8 0x28 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
 
             return value;
         }

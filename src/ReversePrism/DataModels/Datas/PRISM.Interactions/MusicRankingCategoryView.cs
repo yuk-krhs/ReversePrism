@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MusicRankingCategoryView
+    public partial class MusicRankingCategoryView : DataModel
     {
 
         public static MusicRankingCategoryView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRankingCategoryView();
+            var value   = new MusicRankingCategoryView() { Pointer= p0 };
 
 
             return value;

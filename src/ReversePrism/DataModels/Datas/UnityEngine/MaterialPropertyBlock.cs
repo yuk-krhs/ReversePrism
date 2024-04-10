@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
-    public partial class MaterialPropertyBlock
+    public partial class MaterialPropertyBlock : DataModel
     {
 
         public static MaterialPropertyBlock? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaterialPropertyBlock();
+            var value   = new MaterialPropertyBlock() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 M_Owner                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 020 M_VfxAsset                               000186528690 ModelClassType VisualEffectAsset VisualEffectAsset VisualEffectAsset Pointer
-    public partial class VFXEventAttribute
+    public partial class VFXEventAttribute : DataModel
     {
         public bool                                     M_Owner                                 { get; set; }
         public VisualEffectAsset?                       M_VfxAsset                              { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VFXEventAttribute();
+            var value   = new VFXEventAttribute() { Pointer= p0 };
 
-            value.M_Owner                                   = GetBool(new IntPtr(p + 0x018)); // 027002198F10 0x18 M_Owner                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_VfxAsset                                = GetObject<VisualEffectAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualEffectAsset.FromPointer); // 027002198F30 0x20 M_VfxAsset                  ( 000186528690 ModelClassType VisualEffectAsset VisualEffectAsset VisualEffectAsset Pointer )
+            value.M_Owner                                   = GetBool(new IntPtr(p + 0x018)); // 0245A2198F10 0x18 M_Owner                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_VfxAsset                                = GetObject<VisualEffectAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualEffectAsset.FromPointer); // 0245A2198F30 0x20 M_VfxAsset                  ( 000186528690 ModelClassType VisualEffectAsset VisualEffectAsset VisualEffectAsset Pointer )
 
             return value;
         }

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 010 StringLength                             0001865F5290 ModelPrimitiveType int int int Int32
     // 014 _firstChar                               char IL2CPP_TYPE_CHAR
     // 000 Empty                                    string IL2CPP_TYPE_STRING
-    public partial class String
+    public partial class String : DataModel
     {
         public int                                      StringLength                            { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new String();
+            var value   = new String() { Pointer= p0 };
 
-            value.StringLength                              = GetInt32(new IntPtr(p + 0x010)); // 027000289D48 0x10 StringLength                ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.StringLength                              = GetInt32(new IntPtr(p + 0x010)); // 0245A0289D48 0x10 StringLength                ( 0001865F5290 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GUILayout
+    public partial class GUILayout : DataModel
     {
 
         public static GUILayout? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GUILayout();
+            var value   = new GUILayout() { Pointer= p0 };
 
 
             return value;

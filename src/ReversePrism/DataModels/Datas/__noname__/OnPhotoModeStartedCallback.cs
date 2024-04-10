@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnPhotoModeStartedCallback
+    public partial class OnPhotoModeStartedCallback : DataModel
     {
 
         public static OnPhotoModeStartedCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnPhotoModeStartedCallback();
+            var value   = new OnPhotoModeStartedCallback() { Pointer= p0 };
 
 
             return value;

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 AllocatedIndexLength                     0001865F2F90 ModelPrimitiveType int int int Int32
     // 000 kFirstFreeTLSOffset                      int IL2CPP_TYPE_I4
     // 000 IntsPerCacheLine                         int IL2CPP_TYPE_I4
-    public partial class UnsafeParallelHashMapData
+    public partial class UnsafeParallelHashMapData : DataModel
     {
         public int                                      KeyCapacity                             { get; set; }
         public int                                      BucketCapacityMask                      { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeParallelHashMapData();
+            var value   = new UnsafeParallelHashMapData() { Pointer= p0 };
 
-            value.KeyCapacity                               = GetInt32(new IntPtr(p + 0x030)); // 0270D9CDD140 0x30 KeyCapacity                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x034)); // 0270D9CDD160 0x34 BucketCapacityMask          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.AllocatedIndexLength                      = GetInt32(new IntPtr(p + 0x038)); // 0270D9CDD180 0x38 AllocatedIndexLength        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.KeyCapacity                               = GetInt32(new IntPtr(p + 0x030)); // 024669D31DE8 0x30 KeyCapacity                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x034)); // 024669D31E08 0x34 BucketCapacityMask          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.AllocatedIndexLength                      = GetInt32(new IntPtr(p + 0x038)); // 024669D31E28 0x38 AllocatedIndexLength        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

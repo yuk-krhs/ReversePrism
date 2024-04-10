@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PartialTrustHelpers
+    public partial class PartialTrustHelpers : DataModel
     {
 
         public static PartialTrustHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PartialTrustHelpers();
+            var value   = new PartialTrustHelpers() { Pointer= p0 };
 
 
             return value;

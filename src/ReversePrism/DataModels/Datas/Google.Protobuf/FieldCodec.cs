@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FieldCodec
+    public partial class FieldCodec : DataModel
     {
 
         public static FieldCodec? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldCodec();
+            var value   = new FieldCodec() { Pointer= p0 };
 
 
             return value;

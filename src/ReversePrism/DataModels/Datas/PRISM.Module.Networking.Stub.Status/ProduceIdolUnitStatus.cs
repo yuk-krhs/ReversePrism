@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 030 SupportCharacterList                     000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer
     // 000 UnitParameterFieldNumber                 int IL2CPP_TYPE_I4
     // 038 UnitParameter                            0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
-    public partial class ProduceIdolUnitStatus
+    public partial class ProduceIdolUnitStatus : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
         public int                                      UnitNumber                              { get; set; }
@@ -39,14 +39,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolUnitStatus();
+            var value   = new ProduceIdolUnitStatus() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D111F1E0 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D111F220 0x1C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D111F260 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProduceUnitIdolList                       = GetObjectList<ProduceUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceUnitIdolStatus.FromPointer); // 0270D111F2C0 0x28 ProduceUnitIdolList         ( 000185CEC6B8 ModelClassListType RepeatedField`1<ProduceUnitIdolStatus> RepeatedField`1<ProduceUnitIdolStatus> List<ProduceUnitIdolStatus> Pointer )
-            value.SupportCharacterList                      = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 0270D111F320 0x30 SupportCharacterList        ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
-            value.UnitParameter                             = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D111F360 0x38 UnitParameter               ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466109C738 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 02466109C778 0x1C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 02466109C7B8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProduceUnitIdolList                       = GetObjectList<ProduceUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceUnitIdolStatus.FromPointer); // 02466109C818 0x28 ProduceUnitIdolList         ( 000185CEC6B8 ModelClassListType RepeatedField`1<ProduceUnitIdolStatus> RepeatedField`1<ProduceUnitIdolStatus> List<ProduceUnitIdolStatus> Pointer )
+            value.SupportCharacterList                      = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 02466109C878 0x30 SupportCharacterList        ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
+            value.UnitParameter                             = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 02466109C8B8 0x38 UnitParameter               ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
 
             return value;
         }

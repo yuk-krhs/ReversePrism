@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 RootCurveData                            0001866EA5C0 ModelClassType RootCurveData RootCurveData RootCurveData Pointer
     // 038 StartPos                                 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 000 commonHipsHight                          float IL2CPP_TYPE_R4
-    public partial class RootAnimation
+    public partial class RootAnimation : DataModel
     {
         public Character?                               Character                               { get; set; }
         public PlayableDirector?                        Timeline                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RootAnimation();
+            var value   = new RootAnimation() { Pointer= p0 };
 
-            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 027006AAAF50 0x20 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
-            value.Timeline                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x028), ReversePrism.DataModels.PlayableDirector.FromPointer); // 027006AAAF70 0x28 Timeline                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
-            value.RootCurveData                             = GetObject<RootCurveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.RootCurveData.FromPointer); // 027006AAAF90 0x30 RootCurveData               ( 0001866EA5C0 ModelClassType RootCurveData RootCurveData RootCurveData Pointer )
-            value.StartPos                                  = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 027006AAAFB0 0x38 StartPos                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 0245A6A5B390 0x20 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
+            value.Timeline                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x028), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0245A6A5B3B0 0x28 Timeline                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.RootCurveData                             = GetObject<RootCurveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.RootCurveData.FromPointer); // 0245A6A5B3D0 0x30 RootCurveData               ( 0001866EA5C0 ModelClassType RootCurveData RootCurveData RootCurveData Pointer )
+            value.StartPos                                  = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0245A6A5B3F0 0x38 StartPos                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

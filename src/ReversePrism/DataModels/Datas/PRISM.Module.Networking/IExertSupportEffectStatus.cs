@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IExertSupportEffectStatus
+    public partial class IExertSupportEffectStatus : DataModel
     {
 
         public static IExertSupportEffectStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IExertSupportEffectStatus();
+            var value   = new IExertSupportEffectStatus() { Pointer= p0 };
 
 
             return value;

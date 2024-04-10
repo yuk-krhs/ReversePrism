@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceAutoPlayProgressedSeasonStatusTranslator
+    public partial class ProduceAutoPlayProgressedSeasonStatusTranslator : DataModel
     {
 
         public static ProduceAutoPlayProgressedSeasonStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoPlayProgressedSeasonStatusTranslator();
+            var value   = new ProduceAutoPlayProgressedSeasonStatusTranslator() { Pointer= p0 };
 
 
             return value;

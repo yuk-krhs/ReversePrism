@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 CharacterListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_characterList_codec            FieldCodec`1<ProduceCharacterEffectCharacterStatus> IL2CPP_TYPE_GENERICINST
     // 040 CharacterList                            000185CEB438 ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer
-    public partial class CreateGashaProduceIdolEffectArgs
+    public partial class CreateGashaProduceIdolEffectArgs : DataModel
     {
         public string                                   Phase1                                  { get; set; }
         public string                                   Phase2                                  { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateGashaProduceIdolEffectArgs();
+            var value   = new CreateGashaProduceIdolEffectArgs() { Pointer= p0 };
 
-            value.Phase1                                    = GetString(new IntPtr(p + 0x018)); // 0270D19F5A20 0x18 Phase1                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase2                                    = GetString(new IntPtr(p + 0x020)); // 0270D19F5A60 0x20 Phase2                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase3                                    = GetString(new IntPtr(p + 0x028)); // 0270D19F5AA0 0x28 Phase3                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase4Step1                               = GetString(new IntPtr(p + 0x030)); // 0270D19F5AE0 0x30 Phase4Step1                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase4Step2                               = GetString(new IntPtr(p + 0x038)); // 0270D19F5B20 0x38 Phase4Step2                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.CharacterList                             = GetObjectList<ProduceCharacterEffectCharacterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceCharacterEffectCharacterStatus.FromPointer); // 0270D19F5B80 0x40 CharacterList               ( 000185CEB438 ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer )
+            value.Phase1                                    = GetString(new IntPtr(p + 0x018)); // 024661992CA8 0x18 Phase1                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase2                                    = GetString(new IntPtr(p + 0x020)); // 024661992CE8 0x20 Phase2                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase3                                    = GetString(new IntPtr(p + 0x028)); // 024661992D28 0x28 Phase3                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase4Step1                               = GetString(new IntPtr(p + 0x030)); // 024661992D68 0x30 Phase4Step1                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase4Step2                               = GetString(new IntPtr(p + 0x038)); // 024661992DA8 0x38 Phase4Step2                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.CharacterList                             = GetObjectList<ProduceCharacterEffectCharacterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceCharacterEffectCharacterStatus.FromPointer); // 024661992E08 0x40 CharacterList               ( 000185CEB438 ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer )
 
             return value;
         }

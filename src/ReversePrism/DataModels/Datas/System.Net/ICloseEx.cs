@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICloseEx
+    public partial class ICloseEx : DataModel
     {
 
         public static ICloseEx? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICloseEx();
+            var value   = new ICloseEx() { Pointer= p0 };
 
 
             return value;

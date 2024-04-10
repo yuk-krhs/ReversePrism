@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
-    public partial class Datatype_anySimpleType
+    public partial class Datatype_anySimpleType : DataModel
     {
 
         public static Datatype_anySimpleType? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_anySimpleType();
+            var value   = new Datatype_anySimpleType() { Pointer= p0 };
 
 
             return value;

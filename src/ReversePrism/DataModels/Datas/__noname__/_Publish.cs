@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
     // 000 <Cysharp.Threading.Tasks.ITriggerHandler<TSource>.Prev>k__BackingField ITriggerHandler`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Cysharp.Threading.Tasks.ITriggerHandler<TSource>.Next>k__BackingField ITriggerHandler`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class _Publish
+    public partial class _Publish : DataModel
     {
 
         public static _Publish? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Publish();
+            var value   = new _Publish() { Pointer= p0 };
 
 
             return value;

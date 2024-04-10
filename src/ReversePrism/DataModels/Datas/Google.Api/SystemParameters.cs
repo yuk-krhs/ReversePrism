@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 RulesFieldNumber                         int IL2CPP_TYPE_I4
     // 008 _repeated_rules_codec                    FieldCodec`1<SystemParameterRule> IL2CPP_TYPE_GENERICINST
     // 018 Rules                                    000185CF4988 ModelClassListType RepeatedField`1<SystemParameterRule> RepeatedField`1<SystemParameterRule> List<SystemParameterRule> Pointer
-    public partial class SystemParameters
+    public partial class SystemParameters : DataModel
     {
         public List<SystemParameterRule>?               Rules                                   { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemParameters();
+            var value   = new SystemParameters() { Pointer= p0 };
 
-            value.Rules                                     = GetObjectList<SystemParameterRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.SystemParameterRule.FromPointer); // 0270DA8823C8 0x18 Rules                       ( 000185CF4988 ModelClassListType RepeatedField`1<SystemParameterRule> RepeatedField`1<SystemParameterRule> List<SystemParameterRule> Pointer )
+            value.Rules                                     = GetObjectList<SystemParameterRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.SystemParameterRule.FromPointer); // 02466A8E7970 0x18 Rules                       ( 000185CF4988 ModelClassListType RepeatedField`1<SystemParameterRule> RepeatedField`1<SystemParameterRule> List<SystemParameterRule> Pointer )
 
             return value;
         }

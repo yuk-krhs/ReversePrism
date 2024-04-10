@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 CheckmarkUssClassName                    000186674040 ModelPrimitiveType string string string String
     // 028 TextUssClassName                         000186674040 ModelPrimitiveType string string string String
     // 450 M_CheckmarkBackground                    0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    public partial class RadioButton
+    public partial class RadioButton : DataModel
     {
         public string                                   InputUssClassName                       { get; set; }
         public string                                   CheckmarkBackgroundUssClassName         { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RadioButton();
+            var value   = new RadioButton() { Pointer= p0 };
 
-            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 02700672F500 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
-            value.CheckmarkBackgroundUssClassName           = GetString(new IntPtr(p + 0x018)); // 02700672F520 0x18 CheckmarkBackgroundUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.CheckmarkUssClassName                     = GetString(new IntPtr(p + 0x020)); // 02700672F540 0x20 CheckmarkUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.TextUssClassName                          = GetString(new IntPtr(p + 0x028)); // 02700672F560 0x28 TextUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
-            value.M_CheckmarkBackground                     = GetObject<VisualElement>(new IntPtr(p + 0x450), ReversePrism.DataModels.VisualElement.FromPointer); // 02700672F580 0x450 M_CheckmarkBackground       ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0245A66F1D28 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
+            value.CheckmarkBackgroundUssClassName           = GetString(new IntPtr(p + 0x018)); // 0245A66F1D48 0x18 CheckmarkBackgroundUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.CheckmarkUssClassName                     = GetString(new IntPtr(p + 0x020)); // 0245A66F1D68 0x20 CheckmarkUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
+            value.TextUssClassName                          = GetString(new IntPtr(p + 0x028)); // 0245A66F1D88 0x28 TextUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
+            value.M_CheckmarkBackground                     = GetObject<VisualElement>(new IntPtr(p + 0x450), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F1DA8 0x450 M_CheckmarkBackground       ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

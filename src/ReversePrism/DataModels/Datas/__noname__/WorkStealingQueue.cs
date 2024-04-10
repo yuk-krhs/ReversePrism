@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 _frozen                                  bool IL2CPP_TYPE_BOOLEAN
     // 000 _nextQueue                               WorkStealingQueue<<var>> IL2CPP_TYPE_GENERICINST
     // 000 _ownerThreadId                           int IL2CPP_TYPE_I4
-    public partial class WorkStealingQueue
+    public partial class WorkStealingQueue : DataModel
     {
 
         public static WorkStealingQueue? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WorkStealingQueue();
+            var value   = new WorkStealingQueue() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 OptimalMaxSpinWaitsPerSpinIteration      int IL2CPP_TYPE_I4
     // 010 Thread                                   000186689180 ModelClassType Thread Thread Thread Pointer
-    public partial class RuntimeThread
+    public partial class RuntimeThread : DataModel
     {
         public Thread?                                  Thread                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeThread();
+            var value   = new RuntimeThread() { Pointer= p0 };
 
-            value.Thread                                    = GetObject<Thread>(new IntPtr(p + 0x010), ReversePrism.DataModels.Thread.FromPointer); // 0270D1996578 0x10 Thread                      ( 000186689180 ModelClassType Thread Thread Thread Pointer )
+            value.Thread                                    = GetObject<Thread>(new IntPtr(p + 0x010), ReversePrism.DataModels.Thread.FromPointer); // 024661951C70 0x10 Thread                      ( 000186689180 ModelClassType Thread Thread Thread Pointer )
 
             return value;
         }

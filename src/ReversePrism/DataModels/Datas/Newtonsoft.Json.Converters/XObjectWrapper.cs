@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 XmlObject                                00018657C4D0 ModelClassType XObject XObject XObject Pointer
-    public partial class XObjectWrapper
+    public partial class XObjectWrapper : DataModel
     {
         public XObject?                                 XmlObject                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XObjectWrapper();
+            var value   = new XObjectWrapper() { Pointer= p0 };
 
-            value.XmlObject                                 = GetObject<XObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.XObject.FromPointer); // 0270D886D520 0x10 XmlObject                   ( 00018657C4D0 ModelClassType XObject XObject XObject Pointer )
+            value.XmlObject                                 = GetObject<XObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.XObject.FromPointer); // 0246688C1238 0x10 XmlObject                   ( 00018657C4D0 ModelClassType XObject XObject XObject Pointer )
 
             return value;
         }

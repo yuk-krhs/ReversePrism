@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SyntaxTreeNode
+    public partial class SyntaxTreeNode : DataModel
     {
 
         public static SyntaxTreeNode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SyntaxTreeNode();
+            var value   = new SyntaxTreeNode() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 <OnLondPressPFIcon>k__BackingField       Subject`1<string> IL2CPP_TYPE_GENERICINST
     // 040 <OnClickAchievement>k__BackingField      Subject`1<ValueTuple`2<int, int>> IL2CPP_TYPE_GENERICINST
-    public partial class FriendListViewContext
+    public partial class FriendListViewContext : DataModel
     {
 
         public static FriendListViewContext? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendListViewContext();
+            var value   = new FriendListViewContext() { Pointer= p0 };
 
 
             return value;

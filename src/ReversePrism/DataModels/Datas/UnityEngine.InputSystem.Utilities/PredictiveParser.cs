@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Position                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class PredictiveParser
+    public partial class PredictiveParser : DataModel
     {
         public int                                      M_Position                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PredictiveParser();
+            var value   = new PredictiveParser() { Pointer= p0 };
 
-            value.M_Position                                = GetInt32(new IntPtr(p + 0x010)); // 0270D78CDB50 0x10 M_Position                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Position                                = GetInt32(new IntPtr(p + 0x010)); // 02466793DB50 0x10 M_Position                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GrpcPreconditions
+    public partial class GrpcPreconditions : DataModel
     {
 
         public static GrpcPreconditions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GrpcPreconditions();
+            var value   = new GrpcPreconditions() { Pointer= p0 };
 
 
             return value;

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 0A0 Disposable                               0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 0A8 SelectedFavoriteMarkId                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 0AC IsSetupFinish                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SelectInheritanceFUPopupContent
+    public partial class SelectInheritanceFUPopupContent : DataModel
     {
         public FUHeaderView?                            HeaderView                              { get; set; }
         public InheritanceUnitSelectGridView?           GridView                                { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectInheritanceFUPopupContent();
+            var value   = new SelectInheritanceFUPopupContent() { Pointer= p0 };
 
-            value.HeaderView                                = GetObject<FUHeaderView>(new IntPtr(p + 0x060), ReversePrism.DataModels.FUHeaderView.FromPointer); // 0270D5A43360 0x60 HeaderView                  ( 000186547AB0 ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer )
-            value.GridView                                  = GetObject<InheritanceUnitSelectGridView>(new IntPtr(p + 0x068), ReversePrism.DataModels.InheritanceUnitSelectGridView.FromPointer); // 0270D5A43380 0x68 GridView                    ( 0001866EFDB0 ModelClassType InheritanceUnitSelectGridView InheritanceUnitSelectGridView InheritanceUnitSelectGridView Pointer )
-            value.TxtEmptyView                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5A433A0 0x70 TxtEmptyView                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.FilterAndSortView                         = GetObject<FilterAndSortView>(new IntPtr(p + 0x078), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 0270D5A433C0 0x78 FilterAndSortView           ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
-            value.BtnSwitchSortDirection                    = GetObject<UISwitch>(new IntPtr(p + 0x080), ReversePrism.DataModels.UISwitch.FromPointer); // 0270D5A433E0 0x80 BtnSwitchSortDirection      ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
-            value.NumText                                   = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D5A43400 0x88 NumText                     ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.FesUnitSearchPopupCaller                  = GetObject<FesUnitSearchPopupCaller>(new IntPtr(p + 0x090), ReversePrism.DataModels.FesUnitSearchPopupCaller.FromPointer); // 0270D5A43420 0x90 FesUnitSearchPopupCaller    ( 00018656A1C0 ModelClassType FesUnitSearchPopupCaller FesUnitSearchPopupCaller FesUnitSearchPopupCaller Pointer )
-            value.Model                                     = GetObject<FesUnitSelectModel>(new IntPtr(p + 0x098), ReversePrism.DataModels.FesUnitSelectModel.FromPointer); // 0270D5A43440 0x98 Model                       ( 00018656C2B0 ModelClassType FesUnitSelectModel FesUnitSelectModel FesUnitSelectModel Pointer )
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D5A43460 0xA0 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.SelectedFavoriteMarkId                    = GetInt32(new IntPtr(p + 0x0A8)); // 0270D5A43480 0xA8 SelectedFavoriteMarkId      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsSetupFinish                             = GetBool(new IntPtr(p + 0x0AC)); // 0270D5A434A0 0xAC IsSetupFinish               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HeaderView                                = GetObject<FUHeaderView>(new IntPtr(p + 0x060), ReversePrism.DataModels.FUHeaderView.FromPointer); // 024665AA3D30 0x60 HeaderView                  ( 000186547AB0 ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer )
+            value.GridView                                  = GetObject<InheritanceUnitSelectGridView>(new IntPtr(p + 0x068), ReversePrism.DataModels.InheritanceUnitSelectGridView.FromPointer); // 024665AA3D50 0x68 GridView                    ( 0001866EFDB0 ModelClassType InheritanceUnitSelectGridView InheritanceUnitSelectGridView InheritanceUnitSelectGridView Pointer )
+            value.TxtEmptyView                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665AA3D70 0x70 TxtEmptyView                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.FilterAndSortView                         = GetObject<FilterAndSortView>(new IntPtr(p + 0x078), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 024665AA3D90 0x78 FilterAndSortView           ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
+            value.BtnSwitchSortDirection                    = GetObject<UISwitch>(new IntPtr(p + 0x080), ReversePrism.DataModels.UISwitch.FromPointer); // 024665AA3DB0 0x80 BtnSwitchSortDirection      ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
+            value.NumText                                   = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024665AA3DD0 0x88 NumText                     ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.FesUnitSearchPopupCaller                  = GetObject<FesUnitSearchPopupCaller>(new IntPtr(p + 0x090), ReversePrism.DataModels.FesUnitSearchPopupCaller.FromPointer); // 024665AA3DF0 0x90 FesUnitSearchPopupCaller    ( 00018656A1C0 ModelClassType FesUnitSearchPopupCaller FesUnitSearchPopupCaller FesUnitSearchPopupCaller Pointer )
+            value.Model                                     = GetObject<FesUnitSelectModel>(new IntPtr(p + 0x098), ReversePrism.DataModels.FesUnitSelectModel.FromPointer); // 024665AA3E10 0x98 Model                       ( 00018656C2B0 ModelClassType FesUnitSelectModel FesUnitSelectModel FesUnitSelectModel Pointer )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024665AA3E30 0xA0 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.SelectedFavoriteMarkId                    = GetInt32(new IntPtr(p + 0x0A8)); // 024665AA3E50 0xA8 SelectedFavoriteMarkId      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsSetupFinish                             = GetBool(new IntPtr(p + 0x0AC)); // 024665AA3E70 0xAC IsSetupFinish               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

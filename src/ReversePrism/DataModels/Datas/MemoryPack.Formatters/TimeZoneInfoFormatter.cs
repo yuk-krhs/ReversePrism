@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimeZoneInfoFormatter
+    public partial class TimeZoneInfoFormatter : DataModel
     {
 
         public static TimeZoneInfoFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeZoneInfoFormatter();
+            var value   = new TimeZoneInfoFormatter() { Pointer= p0 };
 
 
             return value;

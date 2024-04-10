@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRuntimePanelComponent
+    public partial class IRuntimePanelComponent : DataModel
     {
 
         public static IRuntimePanelComponent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRuntimePanelComponent();
+            var value   = new IRuntimePanelComponent() { Pointer= p0 };
 
 
             return value;

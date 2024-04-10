@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ArraySize                                0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 ElementType                              000186692F60 ModelClassType Type Type Type Pointer
-    public partial class HLSLArray
+    public partial class HLSLArray : DataModel
     {
         public int                                      ArraySize                               { get; set; }
         public Type?                                    ElementType                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HLSLArray();
+            var value   = new HLSLArray() { Pointer= p0 };
 
-            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D925C168 0x10 ArraySize                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ElementType                               = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D925C188 0x18 ElementType                 ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x010)); // 0246692BDEE8 0x10 ArraySize                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ElementType                               = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0246692BDF08 0x18 ElementType                 ( 000186692F60 ModelClassType Type Type Type Pointer )
 
             return value;
         }

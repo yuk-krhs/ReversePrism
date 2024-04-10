@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 VersionAdded                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class OptionalFieldAttribute
+    public partial class OptionalFieldAttribute : DataModel
     {
         public int                                      VersionAdded                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OptionalFieldAttribute();
+            var value   = new OptionalFieldAttribute() { Pointer= p0 };
 
-            value.VersionAdded                              = GetInt32(new IntPtr(p + 0x010)); // 027004D65C90 0x10 VersionAdded                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VersionAdded                              = GetInt32(new IntPtr(p + 0x010)); // 0245A4DAB708 0x10 VersionAdded                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

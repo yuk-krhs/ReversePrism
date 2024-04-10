@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class QNameDataContract
+    public partial class QNameDataContract : DataModel
     {
 
         public static QNameDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QNameDataContract();
+            var value   = new QNameDataContract() { Pointer= p0 };
 
 
             return value;

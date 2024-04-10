@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 048 StartProduceTutorial                     Method`2<IStartProduceTutorialArgs, IStartProduceTutorialReply> IL2CPP_TYPE_GENERICINST
     // 060 FinishTutorial                           Method`2<IFinishTutorialArgs, IFinishTutorialReply> IL2CPP_TYPE_GENERICINST
     // 078 ProceedTutorial                          Method`2<IProceedTutorialArgs, IProceedTutorialReply> IL2CPP_TYPE_GENERICINST
-    public partial class TutorialServiceMethods
+    public partial class TutorialServiceMethods : DataModel
     {
 
         public static TutorialServiceMethods? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialServiceMethods();
+            var value   = new TutorialServiceMethods() { Pointer= p0 };
 
 
             return value;

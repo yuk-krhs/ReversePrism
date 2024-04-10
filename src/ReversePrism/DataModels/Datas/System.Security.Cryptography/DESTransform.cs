@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 028 PC2                                      000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 030 IpTab                                    000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 038 FpTab                                    000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    public partial class DESTransform
+    public partial class DESTransform : DataModel
     {
         public List<sbyte>?                             KeySchedule                             { get; set; }
         public List<sbyte>?                             ByteBuff                                { get; set; }
@@ -39,17 +39,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DESTransform();
+            var value   = new DESTransform() { Pointer= p0 };
 
-            value.KeySchedule                               = GetSByteList(new IntPtr(p + 0x058)); // 0270D6BB06F0 0x58 KeySchedule                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.ByteBuff                                  = GetSByteList(new IntPtr(p + 0x060)); // 0270D6BB0710 0x60 ByteBuff                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.DwordBuff                                 = GetUInt32List(new IntPtr(p + 0x068)); // 0270D6BB0730 0x68 DwordBuff                   ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.SpBoxes                                   = GetUInt32List(new IntPtr(p + 0x010)); // 0270D6BB0750 0x10 SpBoxes                     ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.PC1                                       = GetSByteList(new IntPtr(p + 0x018)); // 0270D6BB0770 0x18 PC1                         ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.LeftRotTotal                              = GetSByteList(new IntPtr(p + 0x020)); // 0270D6BB0790 0x20 LeftRotTotal                ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.PC2                                       = GetSByteList(new IntPtr(p + 0x028)); // 0270D6BB07B0 0x28 PC2                         ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.IpTab                                     = GetUInt32List(new IntPtr(p + 0x030)); // 0270D6BB07D0 0x30 IpTab                       ( 000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.FpTab                                     = GetUInt32List(new IntPtr(p + 0x038)); // 0270D6BB07F0 0x38 FpTab                       ( 000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.KeySchedule                               = GetSByteList(new IntPtr(p + 0x058)); // 024666C286F0 0x58 KeySchedule                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ByteBuff                                  = GetSByteList(new IntPtr(p + 0x060)); // 024666C28710 0x60 ByteBuff                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.DwordBuff                                 = GetUInt32List(new IntPtr(p + 0x068)); // 024666C28730 0x68 DwordBuff                   ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.SpBoxes                                   = GetUInt32List(new IntPtr(p + 0x010)); // 024666C28750 0x10 SpBoxes                     ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.PC1                                       = GetSByteList(new IntPtr(p + 0x018)); // 024666C28770 0x18 PC1                         ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.LeftRotTotal                              = GetSByteList(new IntPtr(p + 0x020)); // 024666C28790 0x20 LeftRotTotal                ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.PC2                                       = GetSByteList(new IntPtr(p + 0x028)); // 024666C287B0 0x28 PC2                         ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.IpTab                                     = GetUInt32List(new IntPtr(p + 0x030)); // 024666C287D0 0x30 IpTab                       ( 000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.FpTab                                     = GetUInt32List(new IntPtr(p + 0x038)); // 024666C287F0 0x38 FpTab                       ( 000185B83FB0 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

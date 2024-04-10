@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Utf8Encoding                             Encoding IL2CPP_TYPE_CLASS
-    public partial class WritingPrimitives
+    public partial class WritingPrimitives : DataModel
     {
 
         public static WritingPrimitives? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WritingPrimitives();
+            var value   = new WritingPrimitives() { Pointer= p0 };
 
 
             return value;

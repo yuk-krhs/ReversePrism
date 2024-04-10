@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 070 TargetThis                               0001865D6F20 ModelClassType MarshalByRefObject MarshalByRefObject MarshalByRefObject Pointer
-    public partial class ClientActivatedIdentity
+    public partial class ClientActivatedIdentity : DataModel
     {
         public MarshalByRefObject?                      TargetThis                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClientActivatedIdentity();
+            var value   = new ClientActivatedIdentity() { Pointer= p0 };
 
-            value.TargetThis                                = GetObject<MarshalByRefObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.MarshalByRefObject.FromPointer); // 0270D6BB8808 0x70 TargetThis                  ( 0001865D6F20 ModelClassType MarshalByRefObject MarshalByRefObject MarshalByRefObject Pointer )
+            value.TargetThis                                = GetObject<MarshalByRefObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.MarshalByRefObject.FromPointer); // 024666C30808 0x70 TargetThis                  ( 0001865D6F20 ModelClassType MarshalByRefObject MarshalByRefObject MarshalByRefObject Pointer )
 
             return value;
         }

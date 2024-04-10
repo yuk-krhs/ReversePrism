@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 MultiProductIconKey                      string IL2CPP_TYPE_STRING
     // 000 StoreMasterIconNameKey                   string IL2CPP_TYPE_STRING
     // 000 ShopMasterIconNameKey                    string IL2CPP_TYPE_STRING
-    public partial class ShopUtility
+    public partial class ShopUtility : DataModel
     {
 
         public static ShopUtility? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopUtility();
+            var value   = new ShopUtility() { Pointer= p0 };
 
 
             return value;

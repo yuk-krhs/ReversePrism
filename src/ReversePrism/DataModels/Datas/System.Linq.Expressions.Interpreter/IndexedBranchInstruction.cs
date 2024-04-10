@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 LabelIndex                               0001865F44E0 ModelPrimitiveType int int int Int32
-    public partial class IndexedBranchInstruction
+    public partial class IndexedBranchInstruction : DataModel
     {
         public int                                      LabelIndex                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IndexedBranchInstruction();
+            var value   = new IndexedBranchInstruction() { Pointer= p0 };
 
-            value.LabelIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0270D9FA3FC8 0x10 LabelIndex                  ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.LabelIndex                                = GetInt32(new IntPtr(p + 0x010)); // 024669FFBB38 0x10 LabelIndex                  ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

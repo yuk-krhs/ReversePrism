@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 m_Instance                               IAdaptivePerformance IL2CPP_TYPE_CLASS
     // 008 LifecycleEventHandler                    LifecycleEventHandler IL2CPP_TYPE_CLASS
-    public partial class Holder
+    public partial class Holder : DataModel
     {
 
         public static Holder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Holder();
+            var value   = new Holder() { Pointer= p0 };
 
 
             return value;

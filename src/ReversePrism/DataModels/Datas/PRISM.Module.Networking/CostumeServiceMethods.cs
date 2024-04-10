@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 SetCostumePreset                         Method`2<ISetCostumePresetArgs, ISetCostumePresetReply> IL2CPP_TYPE_GENERICINST
     // 048 SetCostumePresetName                     Method`2<ISetCostumePresetNameArgs, ISetCostumePresetNameReply> IL2CPP_TYPE_GENERICINST
     // 060 ClearCostumePreset                       Method`2<IClearCostumePresetArgs, IClearCostumePresetReply> IL2CPP_TYPE_GENERICINST
-    public partial class CostumeServiceMethods
+    public partial class CostumeServiceMethods : DataModel
     {
 
         public static CostumeServiceMethods? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeServiceMethods();
+            var value   = new CostumeServiceMethods() { Pointer= p0 };
 
 
             return value;

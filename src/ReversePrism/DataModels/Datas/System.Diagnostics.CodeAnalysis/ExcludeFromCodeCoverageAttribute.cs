@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExcludeFromCodeCoverageAttribute
+    public partial class ExcludeFromCodeCoverageAttribute : DataModel
     {
 
         public static ExcludeFromCodeCoverageAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExcludeFromCodeCoverageAttribute();
+            var value   = new ExcludeFromCodeCoverageAttribute() { Pointer= p0 };
 
 
             return value;

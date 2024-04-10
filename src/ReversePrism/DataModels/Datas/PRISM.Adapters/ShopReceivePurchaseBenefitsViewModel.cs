@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ReceivedPassProductList                  000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
     // 018 ShopGroupType                            000186773BB0 ModelEnumType GroupType GroupType GroupType Int32
-    public partial class ShopReceivePurchaseBenefitsViewModel
+    public partial class ShopReceivePurchaseBenefitsViewModel : DataModel
     {
         public List<IProductWithAmountStatus>?          ReceivedPassProductList                 { get; set; }
         public GroupType                                ShopGroupType                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopReceivePurchaseBenefitsViewModel();
+            var value   = new ShopReceivePurchaseBenefitsViewModel() { Pointer= p0 };
 
-            value.ReceivedPassProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270036697A0 0x10 ReceivedPassProductList     ( 000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
-            value.ShopGroupType                             = (GroupType)GetInt32(new IntPtr(p + 0x018)); // 0270036697C0 0x18 ShopGroupType               ( 000186773BB0 ModelEnumType GroupType GroupType GroupType Int32 )
+            value.ReceivedPassProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0245A5B58240 0x10 ReceivedPassProductList     ( 000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
+            value.ShopGroupType                             = (GroupType)GetInt32(new IntPtr(p + 0x018)); // 0245A5B58260 0x18 ShopGroupType               ( 000186773BB0 ModelEnumType GroupType GroupType GroupType Int32 )
 
             return value;
         }

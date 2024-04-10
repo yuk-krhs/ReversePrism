@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 data                                     IntPtr IL2CPP_TYPE_PTR
     // 018 Len                                      0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class GPtrArray
+    public partial class GPtrArray : DataModel
     {
         public int                                      Len                                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GPtrArray();
+            var value   = new GPtrArray() { Pointer= p0 };
 
-            value.Len                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D692FB00 0x18 Len                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Len                                       = GetInt32(new IntPtr(p + 0x018)); // 0246669A7B00 0x18 Len                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHaptics
+    public partial class IHaptics : DataModel
     {
 
         public static IHaptics? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHaptics();
+            var value   = new IHaptics() { Pointer= p0 };
 
 
             return value;

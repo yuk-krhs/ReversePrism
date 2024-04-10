@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 View                                     0001865CEDB0 ModelClassType IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView Pointer
     // 018 Vm                                       000186707280 ModelClassType PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel Pointer
-    public partial class PITrainingExecutionConfirmedPopupPresenter
+    public partial class PITrainingExecutionConfirmedPopupPresenter : DataModel
     {
         public IPITrainingExecutionConfirmedPopupView?  View                                    { get; set; }
         public PITrainingExecutionConfirmedPopupViewModel? Vm                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PITrainingExecutionConfirmedPopupPresenter();
+            var value   = new PITrainingExecutionConfirmedPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IPITrainingExecutionConfirmedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPITrainingExecutionConfirmedPopupView.FromPointer); // 0270D5F8D650 0x10 View                        ( 0001865CEDB0 ModelClassType IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView Pointer )
-            value.Vm                                        = GetObject<PITrainingExecutionConfirmedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.PITrainingExecutionConfirmedPopupViewModel.FromPointer); // 0270D5F8D670 0x18 Vm                          ( 000186707280 ModelClassType PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel Pointer )
+            value.View                                      = GetObject<IPITrainingExecutionConfirmedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPITrainingExecutionConfirmedPopupView.FromPointer); // 024666005650 0x10 View                        ( 0001865CEDB0 ModelClassType IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView IPITrainingExecutionConfirmedPopupView Pointer )
+            value.Vm                                        = GetObject<PITrainingExecutionConfirmedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.PITrainingExecutionConfirmedPopupViewModel.FromPointer); // 024666005670 0x18 Vm                          ( 000186707280 ModelClassType PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel PITrainingExecutionConfirmedPopupViewModel Pointer )
 
             return value;
         }

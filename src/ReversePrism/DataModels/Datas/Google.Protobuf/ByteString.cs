@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 empty                                    ByteString IL2CPP_TYPE_CLASS
     // 010 bytes                                    ReadOnlyMemory`1<sbyte> IL2CPP_TYPE_GENERICINST
-    public partial class ByteString
+    public partial class ByteString : DataModel
     {
 
         public static ByteString? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteString();
+            var value   = new ByteString() { Pointer= p0 };
 
 
             return value;

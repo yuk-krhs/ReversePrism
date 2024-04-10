@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 030 ContainingType                           000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer
     // 038 values                                   IList`1<EnumValueDescriptor> IL2CPP_TYPE_GENERICINST
     // 040 ClrType                                  0001866936B0 ModelClassType Type Type Type Pointer
-    public partial class EnumDescriptor
+    public partial class EnumDescriptor : DataModel
     {
         public EnumDescriptorProto?                     Proto                                   { get; set; }
         public MessageDescriptor?                       ContainingType                          { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumDescriptor();
+            var value   = new EnumDescriptor() { Pointer= p0 };
 
-            value.Proto                                     = GetObject<EnumDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 0270D0CED728 0x28 Proto                       ( 00018673A770 ModelClassType EnumDescriptorProto EnumDescriptorProto EnumDescriptorProto Pointer )
-            value.ContainingType                            = GetObject<MessageDescriptor>(new IntPtr(p + 0x030), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 0270D0CED748 0x30 ContainingType              ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
-            value.ClrType                                   = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0270D0CED788 0x40 ClrType                     ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Proto                                     = GetObject<EnumDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 024660CF3F68 0x28 Proto                       ( 00018673A770 ModelClassType EnumDescriptorProto EnumDescriptorProto EnumDescriptorProto Pointer )
+            value.ContainingType                            = GetObject<MessageDescriptor>(new IntPtr(p + 0x030), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 024660CF3F88 0x30 ContainingType              ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
+            value.ClrType                                   = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 024660CF3FC8 0x40 ClrType                     ( 0001866936B0 ModelClassType Type Type Type Pointer )
 
             return value;
         }

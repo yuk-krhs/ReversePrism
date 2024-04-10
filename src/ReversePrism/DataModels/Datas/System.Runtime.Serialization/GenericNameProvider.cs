@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 GenericTypeName                          000186671910 ModelPrimitiveType string string string String
     // 018 genericParams                            <object>[] IL2CPP_TYPE_SZARRAY
     // 020 nestedParamCounts                        IList`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class GenericNameProvider
+    public partial class GenericNameProvider : DataModel
     {
         public string                                   GenericTypeName                         { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GenericNameProvider();
+            var value   = new GenericNameProvider() { Pointer= p0 };
 
-            value.GenericTypeName                           = GetString(new IntPtr(p + 0x010)); // 0270D7CEABF0 0x10 GenericTypeName             ( 000186671910 ModelPrimitiveType string string string String )
+            value.GenericTypeName                           = GetString(new IntPtr(p + 0x010)); // 024667D42BF0 0x10 GenericTypeName             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

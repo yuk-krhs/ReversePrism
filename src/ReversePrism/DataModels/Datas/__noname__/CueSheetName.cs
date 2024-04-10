@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 OutGameLiveSE                            string IL2CPP_TYPE_STRING
-    public partial class CueSheetName
+    public partial class CueSheetName : DataModel
     {
 
         public static CueSheetName? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CueSheetName();
+            var value   = new CueSheetName() { Pointer= p0 };
 
 
             return value;

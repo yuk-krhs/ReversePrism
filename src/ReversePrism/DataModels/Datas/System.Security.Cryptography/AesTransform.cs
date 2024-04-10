@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 040 IT1                                      000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 048 IT2                                      000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 050 IT3                                      000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    public partial class AesTransform
+    public partial class AesTransform : DataModel
     {
         public List<uint>?                              ExpandedKey                             { get; set; }
         public int                                      Nk                                      { get; set; }
@@ -43,20 +43,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AesTransform();
+            var value   = new AesTransform() { Pointer= p0 };
 
-            value.ExpandedKey                               = GetUInt32List(new IntPtr(p + 0x058)); // 0270D1997980 0x58 ExpandedKey                 ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.Nk                                        = GetInt32(new IntPtr(p + 0x060)); // 0270D19979A0 0x60 Nk                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Nr                                        = GetInt32(new IntPtr(p + 0x064)); // 0270D19979C0 0x64 Nr                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ISBox                                     = GetSByteList(new IntPtr(p + 0x010)); // 0270D1997A20 0x10 ISBox                       ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.T0                                        = GetUInt32List(new IntPtr(p + 0x018)); // 0270D1997A40 0x18 T0                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.T1                                        = GetUInt32List(new IntPtr(p + 0x020)); // 0270D1997A60 0x20 T1                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.T2                                        = GetUInt32List(new IntPtr(p + 0x028)); // 0270D1997A80 0x28 T2                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.T3                                        = GetUInt32List(new IntPtr(p + 0x030)); // 0270D1997AA0 0x30 T3                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.IT0                                       = GetUInt32List(new IntPtr(p + 0x038)); // 0270D1997AC0 0x38 IT0                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.IT1                                       = GetUInt32List(new IntPtr(p + 0x040)); // 0270D1997AE0 0x40 IT1                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.IT2                                       = GetUInt32List(new IntPtr(p + 0x048)); // 0270D1997B00 0x48 IT2                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.IT3                                       = GetUInt32List(new IntPtr(p + 0x050)); // 0270D1997B20 0x50 IT3                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.ExpandedKey                               = GetUInt32List(new IntPtr(p + 0x058)); // 024661952D78 0x58 ExpandedKey                 ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Nk                                        = GetInt32(new IntPtr(p + 0x060)); // 024661952D98 0x60 Nk                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Nr                                        = GetInt32(new IntPtr(p + 0x064)); // 024661952DB8 0x64 Nr                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ISBox                                     = GetSByteList(new IntPtr(p + 0x010)); // 024661952E18 0x10 ISBox                       ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.T0                                        = GetUInt32List(new IntPtr(p + 0x018)); // 024661952E38 0x18 T0                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.T1                                        = GetUInt32List(new IntPtr(p + 0x020)); // 024661952E58 0x20 T1                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.T2                                        = GetUInt32List(new IntPtr(p + 0x028)); // 024661952E78 0x28 T2                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.T3                                        = GetUInt32List(new IntPtr(p + 0x030)); // 024661952E98 0x30 T3                          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.IT0                                       = GetUInt32List(new IntPtr(p + 0x038)); // 024661952EB8 0x38 IT0                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.IT1                                       = GetUInt32List(new IntPtr(p + 0x040)); // 024661952ED8 0x40 IT1                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.IT2                                       = GetUInt32List(new IntPtr(p + 0x048)); // 024661952EF8 0x48 IT2                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.IT3                                       = GetUInt32List(new IntPtr(p + 0x050)); // 024661952F18 0x50 IT3                         ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

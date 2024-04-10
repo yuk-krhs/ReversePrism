@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScriptRunDelayedFixedFrameRate
+    public partial class ScriptRunDelayedFixedFrameRate : DataModel
     {
 
         public static ScriptRunDelayedFixedFrameRate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScriptRunDelayedFixedFrameRate();
+            var value   = new ScriptRunDelayedFixedFrameRate() { Pointer= p0 };
 
 
             return value;

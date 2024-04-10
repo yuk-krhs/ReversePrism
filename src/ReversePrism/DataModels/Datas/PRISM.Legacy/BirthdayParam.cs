@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 010 BirthYear                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 BirthMonth                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 BirthDay                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class BirthdayParam
+    public partial class BirthdayParam : DataModel
     {
         public int                                      BirthYear                               { get; set; }
         public int                                      BirthMonth                              { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BirthdayParam();
+            var value   = new BirthdayParam() { Pointer= p0 };
 
-            value.BirthYear                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D50B2460 0x10 BirthYear                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BirthMonth                                = GetInt32(new IntPtr(p + 0x014)); // 0270D50B2480 0x14 BirthMonth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BirthDay                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D50B24A0 0x18 BirthDay                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BirthYear                                 = GetInt32(new IntPtr(p + 0x010)); // 024665115510 0x10 BirthYear                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BirthMonth                                = GetInt32(new IntPtr(p + 0x014)); // 024665115530 0x14 BirthMonth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BirthDay                                  = GetInt32(new IntPtr(p + 0x018)); // 024665115550 0x18 BirthDay                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

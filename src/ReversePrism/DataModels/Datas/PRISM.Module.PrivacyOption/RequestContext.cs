@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 <Value>k__BackingField                   <object> IL2CPP_TYPE_OBJECT
     // 040 Method                                   0001866132B0 ModelEnumType MethodType MethodType MethodType Int32
     // 048 Timestamp                                0001865BCF70 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32
-    public partial class RequestContext
+    public partial class RequestContext : DataModel
     {
         public int                                      DecoratorIndex                          { get; set; }
         public List<IAsyncDecorator>?                   Decorators                              { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestContext();
+            var value   = new RequestContext() { Pointer= p0 };
 
-            value.DecoratorIndex                            = GetInt32(new IntPtr(p + 0x010)); // 027004E237E0 0x10 DecoratorIndex              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Decorators                                = GetObjectList<IAsyncDecorator>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAsyncDecorator.FromPointer); // 027004E23800 0x18 Decorators                  ( 000185B85A60 ModelClassListType IAsyncDecorator[] IAsyncDecorator[] List<IAsyncDecorator> Pointer )
-            value.BaseUrl                                   = GetString(new IntPtr(p + 0x028)); // 027004E23840 0x28 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x030)); // 027004E23860 0x30 Url                         ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Method                                    = (MethodType)GetInt32(new IntPtr(p + 0x040)); // 027004E238A0 0x40 Method                      ( 0001866132B0 ModelEnumType MethodType MethodType MethodType Int32 )
-            value.Timestamp                                 = (DateTimeOffset)GetInt32(new IntPtr(p + 0x048)); // 027004E238C0 0x48 Timestamp                   ( 0001865BCF70 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
+            value.DecoratorIndex                            = GetInt32(new IntPtr(p + 0x010)); // 0245A4E55448 0x10 DecoratorIndex              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Decorators                                = GetObjectList<IAsyncDecorator>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAsyncDecorator.FromPointer); // 0245A4E55468 0x18 Decorators                  ( 000185B85A60 ModelClassListType IAsyncDecorator[] IAsyncDecorator[] List<IAsyncDecorator> Pointer )
+            value.BaseUrl                                   = GetString(new IntPtr(p + 0x028)); // 0245A4E554A8 0x28 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x030)); // 0245A4E554C8 0x30 Url                         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Method                                    = (MethodType)GetInt32(new IntPtr(p + 0x040)); // 0245A4E55508 0x40 Method                      ( 0001866132B0 ModelEnumType MethodType MethodType MethodType Int32 )
+            value.Timestamp                                 = (DateTimeOffset)GetInt32(new IntPtr(p + 0x048)); // 0245A4E55528 0x48 Timestamp                   ( 0001865BCF70 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
 
             return value;
         }

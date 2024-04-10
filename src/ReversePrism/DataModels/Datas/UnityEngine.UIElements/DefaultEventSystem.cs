@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 084 M_ConsecutiveMoveCount                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 088 M_LastMoveVector                         0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 090 M_PrevActionTime                         0001866656B0 ModelPrimitiveType float float float Single
-    public partial class DefaultEventSystem
+    public partial class DefaultEventSystem : DataModel
     {
         public IInput?                                  M_Input                                 { get; set; }
         public string                                   M_HorizontalAxis                        { get; set; }
@@ -62,30 +62,30 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultEventSystem();
+            var value   = new DefaultEventSystem() { Pointer= p0 };
 
-            value.M_Input                                   = GetObject<IInput>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInput.FromPointer); // 027006750B30 0x10 M_Input                     ( 000186595380 ModelClassType IInput IInput IInput Pointer )
-            value.M_HorizontalAxis                          = GetString(new IntPtr(p + 0x018)); // 027006750B50 0x18 M_HorizontalAxis            ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_VerticalAxis                            = GetString(new IntPtr(p + 0x020)); // 027006750B70 0x20 M_VerticalAxis              ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_SubmitButton                            = GetString(new IntPtr(p + 0x028)); // 027006750B90 0x28 M_SubmitButton              ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_CancelButton                            = GetString(new IntPtr(p + 0x030)); // 027006750BB0 0x30 M_CancelButton              ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_InputActionsPerSecond                   = GetSingle(new IntPtr(p + 0x038)); // 027006750BD0 0x38 M_InputActionsPerSecond     ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.M_RepeatDelay                             = GetSingle(new IntPtr(p + 0x03C)); // 027006750BF0 0x3C M_RepeatDelay               ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.M_SendingTouchEvents                      = GetBool(new IntPtr(p + 0x040)); // 027006750C10 0x40 M_SendingTouchEvents        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_SendingPenEvent                         = GetBool(new IntPtr(p + 0x041)); // 027006750C30 0x41 M_SendingPenEvent           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Event                                   = GetObject<Event>(new IntPtr(p + 0x048), ReversePrism.DataModels.Event.FromPointer); // 027006750C50 0x48 M_Event                     ( 00018674CC10 ModelClassType Event Event Event Pointer )
-            value.M_FocusedPanel                            = GetObject<BaseRuntimePanel>(new IntPtr(p + 0x050), ReversePrism.DataModels.BaseRuntimePanel.FromPointer); // 027006750C70 0x50 M_FocusedPanel              ( 000186742070 ModelClassType BaseRuntimePanel BaseRuntimePanel BaseRuntimePanel Pointer )
-            value.M_PreviousFocusedPanel                    = GetObject<BaseRuntimePanel>(new IntPtr(p + 0x058), ReversePrism.DataModels.BaseRuntimePanel.FromPointer); // 027006750C90 0x58 M_PreviousFocusedPanel      ( 000186742070 ModelClassType BaseRuntimePanel BaseRuntimePanel BaseRuntimePanel Pointer )
-            value.M_PreviousFocusedElement                  = GetObject<Focusable>(new IntPtr(p + 0x060), ReversePrism.DataModels.Focusable.FromPointer); // 027006750CB0 0x60 M_PreviousFocusedElement    ( 0001865D3CE0 ModelClassType Focusable Focusable Focusable Pointer )
-            value.M_CurrentModifiers                        = (EventModifiers)GetInt32(new IntPtr(p + 0x068)); // 027006750CD0 0x68 M_CurrentModifiers          ( 00018675F1A0 ModelEnumType EventModifiers EventModifiers EventModifiers Int32 )
-            value.M_LastMousePressButton                    = GetInt32(new IntPtr(p + 0x06C)); // 027006750CF0 0x6C M_LastMousePressButton      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NextMousePressTime                      = GetSingle(new IntPtr(p + 0x070)); // 027006750D10 0x70 M_NextMousePressTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_LastMouseClickCount                     = GetInt32(new IntPtr(p + 0x074)); // 027006750D30 0x74 M_LastMouseClickCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_LastMousePosition                       = (Vector2)GetInt32(new IntPtr(p + 0x078)); // 027006750D50 0x78 M_LastMousePosition         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_MouseProcessedAtLeastOnce               = GetBool(new IntPtr(p + 0x080)); // 027006750D70 0x80 M_MouseProcessedAtLeastOnce ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ConsecutiveMoveCount                    = GetInt32(new IntPtr(p + 0x084)); // 027006750D90 0x84 M_ConsecutiveMoveCount      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_LastMoveVector                          = (Vector2)GetInt32(new IntPtr(p + 0x088)); // 027006750DB0 0x88 M_LastMoveVector            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_PrevActionTime                          = GetSingle(new IntPtr(p + 0x090)); // 027006750DD0 0x90 M_PrevActionTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Input                                   = GetObject<IInput>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInput.FromPointer); // 0245A6713320 0x10 M_Input                     ( 000186595380 ModelClassType IInput IInput IInput Pointer )
+            value.M_HorizontalAxis                          = GetString(new IntPtr(p + 0x018)); // 0245A6713340 0x18 M_HorizontalAxis            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_VerticalAxis                            = GetString(new IntPtr(p + 0x020)); // 0245A6713360 0x20 M_VerticalAxis              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_SubmitButton                            = GetString(new IntPtr(p + 0x028)); // 0245A6713380 0x28 M_SubmitButton              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_CancelButton                            = GetString(new IntPtr(p + 0x030)); // 0245A67133A0 0x30 M_CancelButton              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_InputActionsPerSecond                   = GetSingle(new IntPtr(p + 0x038)); // 0245A67133C0 0x38 M_InputActionsPerSecond     ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.M_RepeatDelay                             = GetSingle(new IntPtr(p + 0x03C)); // 0245A67133E0 0x3C M_RepeatDelay               ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.M_SendingTouchEvents                      = GetBool(new IntPtr(p + 0x040)); // 0245A6713400 0x40 M_SendingTouchEvents        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_SendingPenEvent                         = GetBool(new IntPtr(p + 0x041)); // 0245A6713420 0x41 M_SendingPenEvent           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Event                                   = GetObject<Event>(new IntPtr(p + 0x048), ReversePrism.DataModels.Event.FromPointer); // 0245A6713440 0x48 M_Event                     ( 00018674CC10 ModelClassType Event Event Event Pointer )
+            value.M_FocusedPanel                            = GetObject<BaseRuntimePanel>(new IntPtr(p + 0x050), ReversePrism.DataModels.BaseRuntimePanel.FromPointer); // 0245A6713460 0x50 M_FocusedPanel              ( 000186742070 ModelClassType BaseRuntimePanel BaseRuntimePanel BaseRuntimePanel Pointer )
+            value.M_PreviousFocusedPanel                    = GetObject<BaseRuntimePanel>(new IntPtr(p + 0x058), ReversePrism.DataModels.BaseRuntimePanel.FromPointer); // 0245A6713480 0x58 M_PreviousFocusedPanel      ( 000186742070 ModelClassType BaseRuntimePanel BaseRuntimePanel BaseRuntimePanel Pointer )
+            value.M_PreviousFocusedElement                  = GetObject<Focusable>(new IntPtr(p + 0x060), ReversePrism.DataModels.Focusable.FromPointer); // 0245A67134A0 0x60 M_PreviousFocusedElement    ( 0001865D3CE0 ModelClassType Focusable Focusable Focusable Pointer )
+            value.M_CurrentModifiers                        = (EventModifiers)GetInt32(new IntPtr(p + 0x068)); // 0245A67134C0 0x68 M_CurrentModifiers          ( 00018675F1A0 ModelEnumType EventModifiers EventModifiers EventModifiers Int32 )
+            value.M_LastMousePressButton                    = GetInt32(new IntPtr(p + 0x06C)); // 0245A67134E0 0x6C M_LastMousePressButton      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_NextMousePressTime                      = GetSingle(new IntPtr(p + 0x070)); // 0245A6713500 0x70 M_NextMousePressTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_LastMouseClickCount                     = GetInt32(new IntPtr(p + 0x074)); // 0245A6713520 0x74 M_LastMouseClickCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_LastMousePosition                       = (Vector2)GetInt32(new IntPtr(p + 0x078)); // 0245A6713540 0x78 M_LastMousePosition         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_MouseProcessedAtLeastOnce               = GetBool(new IntPtr(p + 0x080)); // 0245A6713560 0x80 M_MouseProcessedAtLeastOnce ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ConsecutiveMoveCount                    = GetInt32(new IntPtr(p + 0x084)); // 0245A6713580 0x84 M_ConsecutiveMoveCount      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_LastMoveVector                          = (Vector2)GetInt32(new IntPtr(p + 0x088)); // 0245A67135A0 0x88 M_LastMoveVector            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_PrevActionTime                          = GetSingle(new IntPtr(p + 0x090)); // 0245A67135C0 0x90 M_PrevActionTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

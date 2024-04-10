@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 FanText                                  0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
     // 040 DiffFanText                              0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
     // 048 CharacterId                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LiveResultIdolView
+    public partial class LiveResultIdolView : DataModel
     {
         public PFIdolIconViewBase?                      Icon                                    { get; set; }
         public LiveResultIdolGaugeView?                 LevelGauge                              { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveResultIdolView();
+            var value   = new LiveResultIdolView() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<PFIdolIconViewBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconViewBase.FromPointer); // 0270D522B3F8 0x20 Icon                        ( 0001867048F0 ModelClassType PFIdolIconViewBase PFIdolIconViewBase PFIdolIconViewBase Pointer )
-            value.LevelGauge                                = GetObject<LiveResultIdolGaugeView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveResultIdolGaugeView.FromPointer); // 0270D522B418 0x28 LevelGauge                  ( 00018656F150 ModelClassType LiveResultIdolGaugeView LiveResultIdolGaugeView LiveResultIdolGaugeView Pointer )
-            value.DearnessGauge                             = GetObject<LiveResultIdolGaugeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveResultIdolGaugeView.FromPointer); // 0270D522B438 0x30 DearnessGauge               ( 00018656F150 ModelClassType LiveResultIdolGaugeView LiveResultIdolGaugeView LiveResultIdolGaugeView Pointer )
-            value.FanText                                   = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D522B458 0x38 FanText                     ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.DiffFanText                               = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D522B478 0x40 DiffFanText                 ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x048)); // 0270D522B498 0x48 CharacterId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Icon                                      = GetObject<PFIdolIconViewBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconViewBase.FromPointer); // 0246652A04A0 0x20 Icon                        ( 0001867048F0 ModelClassType PFIdolIconViewBase PFIdolIconViewBase PFIdolIconViewBase Pointer )
+            value.LevelGauge                                = GetObject<LiveResultIdolGaugeView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveResultIdolGaugeView.FromPointer); // 0246652A04C0 0x28 LevelGauge                  ( 00018656F150 ModelClassType LiveResultIdolGaugeView LiveResultIdolGaugeView LiveResultIdolGaugeView Pointer )
+            value.DearnessGauge                             = GetObject<LiveResultIdolGaugeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveResultIdolGaugeView.FromPointer); // 0246652A04E0 0x30 DearnessGauge               ( 00018656F150 ModelClassType LiveResultIdolGaugeView LiveResultIdolGaugeView LiveResultIdolGaugeView Pointer )
+            value.FanText                                   = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0246652A0500 0x38 FanText                     ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.DiffFanText                               = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0246652A0520 0x40 DiffFanText                 ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x048)); // 0246652A0540 0x48 CharacterId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

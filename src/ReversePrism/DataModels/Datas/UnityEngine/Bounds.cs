@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Center                                 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 01C M_Extents                                0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class Bounds
+    public partial class Bounds : DataModel
     {
         public Vector3                                  M_Center                                { get; set; }
         public Vector3                                  M_Extents                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Bounds();
+            var value   = new Bounds() { Pointer= p0 };
 
-            value.M_Center                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 027002333A90 0x10 M_Center                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_Extents                                 = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 027002333AB0 0x1C M_Extents                   ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Center                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A2333A90 0x10 M_Center                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Extents                                 = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0245A2333AB0 0x1C M_Extents                   ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

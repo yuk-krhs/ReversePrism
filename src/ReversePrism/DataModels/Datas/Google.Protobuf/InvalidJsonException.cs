@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidJsonException
+    public partial class InvalidJsonException : DataModel
     {
 
         public static InvalidJsonException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidJsonException();
+            var value   = new InvalidJsonException() { Pointer= p0 };
 
 
             return value;

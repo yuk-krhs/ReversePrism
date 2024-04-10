@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 Vm                                       00018662F240 ModelClassType CostumePopupViewModel CostumePopupViewModel CostumePopupViewModel Pointer
     // 060 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class CostumePopupView
+    public partial class CostumePopupView : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
         public UITabGroupEx?                            CostumeTabGroup                         { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumePopupView();
+            var value   = new CostumePopupView() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DA291988 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.CostumeTabGroup                           = GetObject<UITabGroupEx>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0270DA2919A8 0x28 CostumeTabGroup             ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
-            value.SetGridView                               = GetObject<CostumeSetSelectGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeSetSelectGridView.FromPointer); // 0270DA2919C8 0x30 SetGridView                 ( 000186634D60 ModelClassType CostumeSetSelectGridView CostumeSetSelectGridView CostumeSetSelectGridView Pointer )
-            value.GridView                                  = GetObject<CostumeSelectGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeSelectGridView.FromPointer); // 0270DA2919E8 0x38 GridView                    ( 0001866320B0 ModelClassType CostumeSelectGridView CostumeSelectGridView CostumeSelectGridView Pointer )
-            value.TxtPossess                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA291A08 0x40 TxtPossess                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Vm                                        = GetObject<CostumePopupViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.CostumePopupViewModel.FromPointer); // 0270DA291A68 0x58 Vm                          ( 00018662F240 ModelClassType CostumePopupViewModel CostumePopupViewModel CostumePopupViewModel Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270DA291A88 0x60 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA291AA8 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A2E4F58 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.CostumeTabGroup                           = GetObject<UITabGroupEx>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466A2E4F78 0x28 CostumeTabGroup             ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.SetGridView                               = GetObject<CostumeSetSelectGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeSetSelectGridView.FromPointer); // 02466A2E4F98 0x30 SetGridView                 ( 000186634D60 ModelClassType CostumeSetSelectGridView CostumeSetSelectGridView CostumeSetSelectGridView Pointer )
+            value.GridView                                  = GetObject<CostumeSelectGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeSelectGridView.FromPointer); // 02466A2E4FB8 0x38 GridView                    ( 0001866320B0 ModelClassType CostumeSelectGridView CostumeSelectGridView CostumeSelectGridView Pointer )
+            value.TxtPossess                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2E4FD8 0x40 TxtPossess                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Vm                                        = GetObject<CostumePopupViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.CostumePopupViewModel.FromPointer); // 02466A2E5038 0x58 Vm                          ( 00018662F240 ModelClassType CostumePopupViewModel CostumePopupViewModel CostumePopupViewModel Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466A2E5058 0x60 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A2E5078 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

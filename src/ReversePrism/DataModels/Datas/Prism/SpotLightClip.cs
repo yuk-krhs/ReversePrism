@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                00018654E3D0 ModelClassType SpotLightBehaviour SpotLightBehaviour SpotLightBehaviour Pointer
-    public partial class SpotLightClip
+    public partial class SpotLightClip : DataModel
     {
         public SpotLightBehaviour?                      Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpotLightClip();
+            var value   = new SpotLightClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<SpotLightBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpotLightBehaviour.FromPointer); // 0270D4DFEBE0 0x18 Behaviour                   ( 00018654E3D0 ModelClassType SpotLightBehaviour SpotLightBehaviour SpotLightBehaviour Pointer )
+            value.Behaviour                                 = GetObject<SpotLightBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpotLightBehaviour.FromPointer); // 024664E74010 0x18 Behaviour                   ( 00018654E3D0 ModelClassType SpotLightBehaviour SpotLightBehaviour SpotLightBehaviour Pointer )
 
             return value;
         }

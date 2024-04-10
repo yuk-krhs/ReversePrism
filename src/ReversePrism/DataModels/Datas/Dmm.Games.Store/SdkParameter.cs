@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SdkCommand                               0001866722E0 ModelPrimitiveType string string string String
     // 018 Setting                                  0001866E6B70 ModelClassType DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings Pointer
-    public partial class SdkParameter
+    public partial class SdkParameter : DataModel
     {
         public string                                   SdkCommand                              { get; set; }
         public DmmGamesStoreSdkSettings?                Setting                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SdkParameter();
+            var value   = new SdkParameter() { Pointer= p0 };
 
-            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 0270DB4A0DA8 0x10 SdkCommand                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Setting                                   = GetObject<DmmGamesStoreSdkSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.DmmGamesStoreSdkSettings.FromPointer); // 0270DB4A0DC8 0x18 Setting                     ( 0001866E6B70 ModelClassType DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings Pointer )
+            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 02466B535D08 0x10 SdkCommand                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Setting                                   = GetObject<DmmGamesStoreSdkSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.DmmGamesStoreSdkSettings.FromPointer); // 02466B535D28 0x18 Setting                     ( 0001866E6B70 ModelClassType DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVerifyReceiptForDevelopArgs
+    public partial class IVerifyReceiptForDevelopArgs : DataModel
     {
 
         public static IVerifyReceiptForDevelopArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVerifyReceiptForDevelopArgs();
+            var value   = new IVerifyReceiptForDevelopArgs() { Pointer= p0 };
 
 
             return value;

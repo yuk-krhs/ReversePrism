@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PreloadData
+    public partial class PreloadData : DataModel
     {
 
         public static PreloadData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreloadData();
+            var value   = new PreloadData() { Pointer= p0 };
 
 
             return value;

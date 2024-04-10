@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 138 KeyCode                                  00018676C7A0 ModelEnumType Key Key Key Int32
     // 13C M_ScanCode                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class KeyControl
+    public partial class KeyControl : DataModel
     {
         public Key                                      KeyCode                                 { get; set; }
         public int                                      M_ScanCode                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyControl();
+            var value   = new KeyControl() { Pointer= p0 };
 
-            value.KeyCode                                   = (Key)GetInt32(new IntPtr(p + 0x138)); // 02700337A168 0x138 KeyCode                     ( 00018676C7A0 ModelEnumType Key Key Key Int32 )
-            value.M_ScanCode                                = GetInt32(new IntPtr(p + 0x13C)); // 02700337A188 0x13C M_ScanCode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.KeyCode                                   = (Key)GetInt32(new IntPtr(p + 0x138)); // 0245A337A168 0x138 KeyCode                     ( 00018676C7A0 ModelEnumType Key Key Key Int32 )
+            value.M_ScanCode                                = GetInt32(new IntPtr(p + 0x13C)); // 0245A337A188 0x13C M_ScanCode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

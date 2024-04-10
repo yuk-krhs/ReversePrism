@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 030 IsStartRotation                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 040 Duration                                 0001866656B0 ModelPrimitiveType float float float Single
-    public partial class BadgeRotation
+    public partial class BadgeRotation : DataModel
     {
         public List<GameObject>?                        BadgeLists                              { get; set; }
         public int                                      CurrentIndex                            { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeRotation();
+            var value   = new BadgeRotation() { Pointer= p0 };
 
-            value.BadgeLists                                = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4BBEBA8 0x20 BadgeLists                  ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x028)); // 0270D4BBEBC8 0x28 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentDuration                           = GetSingle(new IntPtr(p + 0x02C)); // 0270D4BBEBE8 0x2C CurrentDuration             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsStartRotation                           = GetBool(new IntPtr(p + 0x030)); // 0270D4BBEC08 0x30 IsStartRotation             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270D4BBEC28 0x38 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x040)); // 0270D4BBEC48 0x40 Duration                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.BadgeLists                                = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664C21710 0x20 BadgeLists                  ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x028)); // 024664C21730 0x28 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentDuration                           = GetSingle(new IntPtr(p + 0x02C)); // 024664C21750 0x2C CurrentDuration             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsStartRotation                           = GetBool(new IntPtr(p + 0x030)); // 024664C21770 0x30 IsStartRotation             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 024664C21790 0x38 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x040)); // 024664C217B0 0x40 Duration                    ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

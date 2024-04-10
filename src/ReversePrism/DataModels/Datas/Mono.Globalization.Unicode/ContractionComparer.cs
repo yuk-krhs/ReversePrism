@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 ContractionComparer IL2CPP_TYPE_CLASS
-    public partial class ContractionComparer
+    public partial class ContractionComparer : DataModel
     {
 
         public static ContractionComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContractionComparer();
+            var value   = new ContractionComparer() { Pointer= p0 };
 
 
             return value;

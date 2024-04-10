@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 IsBurstEnabledImpl                       IsBurstEnabledDelegate IL2CPP_TYPE_CLASS
     // 008 IsBurstGenerated                         bool IL2CPP_TYPE_BOOLEAN
-    public partial class BurstCompilerHelper
+    public partial class BurstCompilerHelper : DataModel
     {
 
         public static BurstCompilerHelper? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BurstCompilerHelper();
+            var value   = new BurstCompilerHelper() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetStreamArchiveLiveURLReply
+    public partial class IGetStreamArchiveLiveURLReply : DataModel
     {
 
         public static IGetStreamArchiveLiveURLReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetStreamArchiveLiveURLReply();
+            var value   = new IGetStreamArchiveLiveURLReply() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UserFieldNumber                          int IL2CPP_TYPE_I4
     // 018 User                                     000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer
-    public partial class FinishTutorialReply
+    public partial class FinishTutorialReply : DataModel
     {
         public SelfStatus?                              User                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishTutorialReply();
+            var value   = new FinishTutorialReply() { Pointer= p0 };
 
-            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SelfStatus.FromPointer); // 0270D2C46770 0x18 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
+            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SelfStatus.FromPointer); // 024662BDC158 0x18 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
 
             return value;
         }

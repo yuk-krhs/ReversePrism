@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 048 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
     // 058 IsPageMove                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceIdolSelectPresenter
+    public partial class ProduceIdolSelectPresenter : DataModel
     {
         public IProduceIdolSelectView?                  View                                    { get; set; }
         public ProduceIdolSelectArgument?               Argument                                { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolSelectPresenter();
+            var value   = new ProduceIdolSelectPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceIdolSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceIdolSelectView.FromPointer); // 0270D655F5A8 0x10 View                        ( 0001865EA370 ModelClassType IProduceIdolSelectView IProduceIdolSelectView IProduceIdolSelectView Pointer )
-            value.Argument                                  = GetObject<ProduceIdolSelectArgument>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolSelectArgument.FromPointer); // 0270D655F5E8 0x20 Argument                    ( 00018654BA10 ModelClassType ProduceIdolSelectArgument ProduceIdolSelectArgument ProduceIdolSelectArgument Pointer )
-            value.Model                                     = GetObject<ViewProducePreparationIdolSelectModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewProducePreparationIdolSelectModel.FromPointer); // 0270D655F608 0x28 Model                       ( 000186521780 ModelClassType ViewProducePreparationIdolSelectModel ViewProducePreparationIdolSelectModel ViewProducePreparationIdolSelectModel Pointer )
-            value.SubSeasonDetailContentViewModel           = GetObject<SubSeasonDetailContentViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.SubSeasonDetailContentViewModel.FromPointer); // 0270D655F628 0x30 SubSeasonDetailContentViewModel ( 0001865D4BF0 ModelClassType SubSeasonDetailContentViewModel SubSeasonDetailContentViewModel SubSeasonDetailContentViewModel Pointer )
-            value.MasterData                                = GetObject<MasterData>(new IntPtr(p + 0x038), ReversePrism.DataModels.MasterData.FromPointer); // 0270D655F648 0x38 MasterData                  ( 00018660B2F0 ModelClassType MasterData MasterData MasterData Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x040), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D655F668 0x40 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D655F688 0x48 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270D655F6A8 0x50 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
-            value.IsPageMove                                = GetBool(new IntPtr(p + 0x058)); // 0270D655F6C8 0x58 IsPageMove                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.View                                      = GetObject<IProduceIdolSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceIdolSelectView.FromPointer); // 0246665CF4C0 0x10 View                        ( 0001865EA370 ModelClassType IProduceIdolSelectView IProduceIdolSelectView IProduceIdolSelectView Pointer )
+            value.Argument                                  = GetObject<ProduceIdolSelectArgument>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolSelectArgument.FromPointer); // 0246665CF500 0x20 Argument                    ( 00018654BA10 ModelClassType ProduceIdolSelectArgument ProduceIdolSelectArgument ProduceIdolSelectArgument Pointer )
+            value.Model                                     = GetObject<ViewProducePreparationIdolSelectModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewProducePreparationIdolSelectModel.FromPointer); // 0246665CF520 0x28 Model                       ( 000186521780 ModelClassType ViewProducePreparationIdolSelectModel ViewProducePreparationIdolSelectModel ViewProducePreparationIdolSelectModel Pointer )
+            value.SubSeasonDetailContentViewModel           = GetObject<SubSeasonDetailContentViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.SubSeasonDetailContentViewModel.FromPointer); // 0246665CF540 0x30 SubSeasonDetailContentViewModel ( 0001865D4BF0 ModelClassType SubSeasonDetailContentViewModel SubSeasonDetailContentViewModel SubSeasonDetailContentViewModel Pointer )
+            value.MasterData                                = GetObject<MasterData>(new IntPtr(p + 0x038), ReversePrism.DataModels.MasterData.FromPointer); // 0246665CF560 0x38 MasterData                  ( 00018660B2F0 ModelClassType MasterData MasterData MasterData Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x040), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246665CF580 0x40 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246665CF5A0 0x48 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0246665CF5C0 0x50 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.IsPageMove                                = GetBool(new IntPtr(p + 0x058)); // 0246665CF5E0 0x58 IsPageMove                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

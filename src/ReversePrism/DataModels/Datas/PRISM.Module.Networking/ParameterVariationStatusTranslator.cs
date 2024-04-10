@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ParameterVariationStatusTranslator
+    public partial class ParameterVariationStatusTranslator : DataModel
     {
 
         public static ParameterVariationStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParameterVariationStatusTranslator();
+            var value   = new ParameterVariationStatusTranslator() { Pointer= p0 };
 
 
             return value;

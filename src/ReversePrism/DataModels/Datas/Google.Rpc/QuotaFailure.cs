@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ViolationsFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_violations_codec               FieldCodec`1<Violation> IL2CPP_TYPE_GENERICINST
     // 018 Violations                               000185CF9928 ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer
-    public partial class QuotaFailure
+    public partial class QuotaFailure : DataModel
     {
         public List<Violation>?                         Violations                              { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QuotaFailure();
+            var value   = new QuotaFailure() { Pointer= p0 };
 
-            value.Violations                                = GetObjectList<Violation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Violation.FromPointer); // 0270DA6B6E20 0x18 Violations                  ( 000185CF9928 ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer )
+            value.Violations                                = GetObjectList<Violation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Violation.FromPointer); // 02466A71A578 0x18 Violations                  ( 000185CF9928 ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer )
 
             return value;
         }

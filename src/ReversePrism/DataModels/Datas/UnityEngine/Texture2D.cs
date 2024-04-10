@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 streamingMipmapsPriorityMin              int IL2CPP_TYPE_I4
     // 000 streamingMipmapsPriorityMax              int IL2CPP_TYPE_I4
-    public partial class Texture2D
+    public partial class Texture2D : DataModel
     {
 
         public static Texture2D? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2D();
+            var value   = new Texture2D() { Pointer= p0 };
 
 
             return value;

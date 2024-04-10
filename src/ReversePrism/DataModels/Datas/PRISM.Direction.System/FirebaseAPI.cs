@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 initialized                              ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class FirebaseAPI
+    public partial class FirebaseAPI : DataModel
     {
 
         public static FirebaseAPI? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseAPI();
+            var value   = new FirebaseAPI() { Pointer= p0 };
 
 
             return value;

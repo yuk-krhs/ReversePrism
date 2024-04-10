@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 INT_UNSET                                int IL2CPP_TYPE_I4
     // 000 MAX_16BIT                                Vector2 IL2CPP_TYPE_VALUETYPE
     // 008 MIN_16BIT                                Vector2 IL2CPP_TYPE_VALUETYPE
-    public partial class TMP_Math
+    public partial class TMP_Math : DataModel
     {
 
         public static TMP_Math? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_Math();
+            var value   = new TMP_Math() { Pointer= p0 };
 
 
             return value;

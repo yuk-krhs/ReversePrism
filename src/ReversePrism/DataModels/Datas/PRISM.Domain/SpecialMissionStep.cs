@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 040 RewardList                               000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
     // 048 IsUnlocked                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 04C State                                    000186606520 ModelEnumType MissionState MissionState MissionState Int32
-    public partial class SpecialMissionStep
+    public partial class SpecialMissionStep : DataModel
     {
         public int                                      MstSpecialMissionStepId                 { get; set; }
         public DateTime                                 LastDisplayDate                         { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialMissionStep();
+            var value   = new SpecialMissionStep() { Pointer= p0 };
 
-            value.MstSpecialMissionStepId                   = GetInt32(new IntPtr(p + 0x010)); // 0270D562F828 0x10 MstSpecialMissionStepId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x018)); // 0270D562F848 0x18 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MissionList                               = GetObjectList<ISpecialMissionMissionStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISpecialMissionMissionStatus.FromPointer); // 0270D562F868 0x28 MissionList                 ( 000185D0BB08 ModelClassListType IReadOnlyList`1<ISpecialMissionMissionStatus> IReadOnlyList`1<ISpecialMissionMissionStatus> List<ISpecialMissionMissionStatus> Pointer )
-            value.StepNumber                                = GetInt32(new IntPtr(p + 0x030)); // 0270D562F888 0x30 StepNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x034)); // 0270D562F8A8 0x34 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CompleteCount                             = GetInt32(new IntPtr(p + 0x038)); // 0270D562F8C8 0x38 CompleteCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x03C)); // 0270D562F8E8 0x3C IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RewardList                                = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D562F908 0x40 RewardList                  ( 000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
-            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x048)); // 0270D562F928 0x48 IsUnlocked                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x04C)); // 0270D562F948 0x4C State                       ( 000186606520 ModelEnumType MissionState MissionState MissionState Int32 )
+            value.MstSpecialMissionStepId                   = GetInt32(new IntPtr(p + 0x010)); // 0246656909A0 0x10 MstSpecialMissionStepId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x018)); // 0246656909C0 0x18 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MissionList                               = GetObjectList<ISpecialMissionMissionStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISpecialMissionMissionStatus.FromPointer); // 0246656909E0 0x28 MissionList                 ( 000185D0BB08 ModelClassListType IReadOnlyList`1<ISpecialMissionMissionStatus> IReadOnlyList`1<ISpecialMissionMissionStatus> List<ISpecialMissionMissionStatus> Pointer )
+            value.StepNumber                                = GetInt32(new IntPtr(p + 0x030)); // 024665690A00 0x30 StepNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x034)); // 024665690A20 0x34 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CompleteCount                             = GetInt32(new IntPtr(p + 0x038)); // 024665690A40 0x38 CompleteCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x03C)); // 024665690A60 0x3C IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RewardList                                = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 024665690A80 0x40 RewardList                  ( 000185D075A8 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
+            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x048)); // 024665690AA0 0x48 IsUnlocked                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x04C)); // 024665690AC0 0x4C State                       ( 000186606520 ModelEnumType MissionState MissionState MissionState Int32 )
 
             return value;
         }

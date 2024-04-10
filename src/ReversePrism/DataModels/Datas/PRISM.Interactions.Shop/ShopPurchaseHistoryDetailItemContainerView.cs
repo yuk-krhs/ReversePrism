@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 ItemParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 038 NoItemLabel                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 040 onPassDetailSubject                      Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ShopPurchaseHistoryDetailItemContainerView
+    public partial class ShopPurchaseHistoryDetailItemContainerView : DataModel
     {
         public UITextMeshProUGUI?                       TitleText                               { get; set; }
         public ShopGoodsSetItem?                        ItemPrefab                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopPurchaseHistoryDetailItemContainerView();
+            var value   = new ShopPurchaseHistoryDetailItemContainerView() { Pointer= p0 };
 
-            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB801448 0x20 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 0270DB801468 0x28 ItemPrefab                  ( 00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
-            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DB801488 0x30 ItemParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.NoItemLabel                               = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB8014A8 0x38 NoItemLabel                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B879270 0x20 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 02466B879290 0x28 ItemPrefab                  ( 00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
+            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466B8792B0 0x30 ItemParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.NoItemLabel                               = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466B8792D0 0x38 NoItemLabel                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

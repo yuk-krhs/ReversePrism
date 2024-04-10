@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 LoopLength                               0001865F7E40 ModelPrimitiveType long long long Int64
     // 030 NumChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 034 Reserved                                 0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    public partial class FormatInfo
+    public partial class FormatInfo : DataModel
     {
         public Format                                   Format                                  { get; set; }
         public int                                      SamplingRate                            { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FormatInfo();
+            var value   = new FormatInfo() { Pointer= p0 };
 
-            value.Format                                    = (Format)GetInt32(new IntPtr(p + 0x010)); // 0270DAC6C440 0x10 Format                      ( 000186540750 ModelEnumType Format Format Format Int32 )
-            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x014)); // 0270DAC6C460 0x14 SamplingRate                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NumSamples                                = GetInt64(new IntPtr(p + 0x018)); // 0270DAC6C480 0x18 NumSamples                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.LoopOffset                                = GetInt64(new IntPtr(p + 0x020)); // 0270DAC6C4A0 0x20 LoopOffset                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.LoopLength                                = GetInt64(new IntPtr(p + 0x028)); // 0270DAC6C4C0 0x28 LoopLength                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.NumChannels                               = GetInt32(new IntPtr(p + 0x030)); // 0270DAC6C4E0 0x30 NumChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Reserved                                  = GetUInt32(new IntPtr(p + 0x034)); // 0270DAC6C500 0x34 Reserved                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Format                                    = (Format)GetInt32(new IntPtr(p + 0x010)); // 02466ACD4440 0x10 Format                      ( 000186540750 ModelEnumType Format Format Format Int32 )
+            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x014)); // 02466ACD4460 0x14 SamplingRate                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NumSamples                                = GetInt64(new IntPtr(p + 0x018)); // 02466ACD4480 0x18 NumSamples                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.LoopOffset                                = GetInt64(new IntPtr(p + 0x020)); // 02466ACD44A0 0x20 LoopOffset                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.LoopLength                                = GetInt64(new IntPtr(p + 0x028)); // 02466ACD44C0 0x28 LoopLength                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.NumChannels                               = GetInt32(new IntPtr(p + 0x030)); // 02466ACD44E0 0x30 NumChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Reserved                                  = GetUInt32(new IntPtr(p + 0x034)); // 02466ACD4500 0x34 Reserved                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

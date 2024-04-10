@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVolumetricCloud
+    public partial class IVolumetricCloud : DataModel
     {
 
         public static IVolumetricCloud? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVolumetricCloud();
+            var value   = new IVolumetricCloud() { Pointer= p0 };
 
 
             return value;

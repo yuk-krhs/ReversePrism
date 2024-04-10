@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ContinuousEvent
+    public partial class ContinuousEvent : DataModel
     {
 
         public static ContinuousEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContinuousEvent();
+            var value   = new ContinuousEvent() { Pointer= p0 };
 
 
             return value;

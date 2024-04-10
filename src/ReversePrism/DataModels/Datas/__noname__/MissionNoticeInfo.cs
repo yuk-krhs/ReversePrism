@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Type                                     0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 CategoryId                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C AddMore                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class MissionNoticeInfo
+    public partial class MissionNoticeInfo : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      Type                                    { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionNoticeInfo();
+            var value   = new MissionNoticeInfo() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270D0A82BF8 0x10 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Type                                      = GetInt32(new IntPtr(p + 0x014)); // 0270D0A82C18 0x14 Type                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CategoryId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D0A82C38 0x18 CategoryId                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.AddMore                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D0A82C58 0x1C AddMore                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 024660A72338 0x10 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = GetInt32(new IntPtr(p + 0x014)); // 024660A72358 0x14 Type                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CategoryId                                = GetInt32(new IntPtr(p + 0x018)); // 024660A72378 0x18 CategoryId                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.AddMore                                   = GetInt32(new IntPtr(p + 0x01C)); // 024660A72398 0x1C AddMore                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Page                                     000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer
     // 018 Idx                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class XPathNodeRef
+    public partial class XPathNodeRef : DataModel
     {
         public List<XPathNode>?                         Page                                    { get; set; }
         public int                                      Idx                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XPathNodeRef();
+            var value   = new XPathNodeRef() { Pointer= p0 };
 
-            value.Page                                      = GetEnumList<XPathNode>(new IntPtr(p + 0x010)); // 0270D749BE70 0x10 Page                        ( 000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
-            value.Idx                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D749BE90 0x18 Idx                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Page                                      = GetEnumList<XPathNode>(new IntPtr(p + 0x010)); // 024667503E70 0x10 Page                        ( 000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
+            value.Idx                                       = GetInt32(new IntPtr(p + 0x018)); // 024667503E90 0x18 Idx                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

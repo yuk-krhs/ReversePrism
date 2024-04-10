@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 m_MenuBuilder                            Action`1<ContextualMenuPopulateEvent> IL2CPP_TYPE_GENERICINST
-    public partial class ContextualMenuManipulator
+    public partial class ContextualMenuManipulator : DataModel
     {
 
         public static ContextualMenuManipulator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContextualMenuManipulator();
+            var value   = new ContextualMenuManipulator() { Pointer= p0 };
 
 
             return value;

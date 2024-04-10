@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 DeckProduceCards                         IEnumerable`1<IProduceCardStatus> IL2CPP_TYPE_GENERICINST
-    public partial class DeckListPopupParam
+    public partial class DeckListPopupParam : DataModel
     {
 
         public static DeckListPopupParam? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeckListPopupParam();
+            var value   = new DeckListPopupParam() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_OrderBlocks                            List`1<OrderBlock> IL2CPP_TYPE_GENERICINST
-    public partial class BeforeRenderHelper
+    public partial class BeforeRenderHelper : DataModel
     {
 
         public static BeforeRenderHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BeforeRenderHelper();
+            var value   = new BeforeRenderHelper() { Pointer= p0 };
 
 
             return value;

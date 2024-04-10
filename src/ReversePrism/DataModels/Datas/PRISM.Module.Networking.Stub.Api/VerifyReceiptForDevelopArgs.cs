@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 CurrencyCode                             000186671910 ModelPrimitiveType string string string String
     // 000 UnitPriceFieldNumber                     int IL2CPP_TYPE_I4
     // 028 UnitPrice                                0001865C2950 ModelPrimitiveType double double double Double
-    public partial class VerifyReceiptForDevelopArgs
+    public partial class VerifyReceiptForDevelopArgs : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public string                                   CurrencyCode                            { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptForDevelopArgs();
+            var value   = new VerifyReceiptForDevelopArgs() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B521D8 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.CurrencyCode                              = GetString(new IntPtr(p + 0x020)); // 0270D0B52218 0x20 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnitPrice                                 = GetDouble(new IntPtr(p + 0x028)); // 0270D0B52258 0x28 UnitPrice                   ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B446C0 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.CurrencyCode                              = GetString(new IntPtr(p + 0x020)); // 024660B44700 0x20 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnitPrice                                 = GetDouble(new IntPtr(p + 0x028)); // 024660B44740 0x28 UnitPrice                   ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

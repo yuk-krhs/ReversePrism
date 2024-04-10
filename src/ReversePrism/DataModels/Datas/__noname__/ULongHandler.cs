@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ULongHandler
+    public partial class ULongHandler : DataModel
     {
 
         public static ULongHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ULongHandler();
+            var value   = new ULongHandler() { Pointer= p0 };
 
 
             return value;

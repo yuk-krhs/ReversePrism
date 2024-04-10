@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DynamicUtils
+    public partial class DynamicUtils : DataModel
     {
 
         public static DynamicUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DynamicUtils();
+            var value   = new DynamicUtils() { Pointer= p0 };
 
 
             return value;

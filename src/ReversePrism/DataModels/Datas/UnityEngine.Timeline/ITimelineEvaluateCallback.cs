@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITimelineEvaluateCallback
+    public partial class ITimelineEvaluateCallback : DataModel
     {
 
         public static ITimelineEvaluateCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITimelineEvaluateCallback();
+            var value   = new ITimelineEvaluateCallback() { Pointer= p0 };
 
 
             return value;

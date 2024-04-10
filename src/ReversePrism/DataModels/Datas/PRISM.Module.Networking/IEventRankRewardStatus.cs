@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IEventRankRewardStatus
+    public partial class IEventRankRewardStatus : DataModel
     {
 
         public static IEventRankRewardStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IEventRankRewardStatus();
+            var value   = new IEventRankRewardStatus() { Pointer= p0 };
 
 
             return value;

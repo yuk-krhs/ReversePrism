@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChallengeTourPIdolSelectPopupView
+    public partial class IChallengeTourPIdolSelectPopupView : DataModel
     {
 
         public static IChallengeTourPIdolSelectPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChallengeTourPIdolSelectPopupView();
+            var value   = new IChallengeTourPIdolSelectPopupView() { Pointer= p0 };
 
 
             return value;

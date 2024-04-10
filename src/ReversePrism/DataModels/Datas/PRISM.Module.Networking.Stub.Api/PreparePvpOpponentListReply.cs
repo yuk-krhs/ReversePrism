@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 OpponentListFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_opponentList_codec             FieldCodec`1<PvpOpponentStatus> IL2CPP_TYPE_GENERICINST
     // 020 OpponentList                             000185CEDC28 ModelClassListType RepeatedField`1<PvpOpponentStatus> RepeatedField`1<PvpOpponentStatus> List<PvpOpponentStatus> Pointer
-    public partial class PreparePvpOpponentListReply
+    public partial class PreparePvpOpponentListReply : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public int                                      Rank                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreparePvpOpponentListReply();
+            var value   = new PreparePvpOpponentListReply() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D2748778 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D27487B8 0x1C Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OpponentList                              = GetObjectList<PvpOpponentStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpOpponentStatus.FromPointer); // 0270D2748818 0x20 OpponentList                ( 000185CEDC28 ModelClassListType RepeatedField`1<PvpOpponentStatus> RepeatedField`1<PvpOpponentStatus> List<PvpOpponentStatus> Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0246626C0C70 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246626C0CB0 0x1C Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OpponentList                              = GetObjectList<PvpOpponentStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpOpponentStatus.FromPointer); // 0246626C0D10 0x20 OpponentList                ( 000185CEDC28 ModelClassListType RepeatedField`1<PvpOpponentStatus> RepeatedField`1<PvpOpponentStatus> List<PvpOpponentStatus> Pointer )
 
             return value;
         }

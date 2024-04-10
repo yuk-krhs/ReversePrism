@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 078 MainGroupLayout                          000186515B70 ModelClassType VerticalLayoutGroup VerticalLayoutGroup VerticalLayoutGroup Pointer
     // 080 UiTextMeshProUgui1                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 088 UiTextMeshProUgui2                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class DataTransferContent
+    public partial class DataTransferContent : DataModel
     {
         public DateTime                                 OpenTime                                { get; set; }
         public List<UITextMeshProUGUI>?                 LocalizedTextList                       { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataTransferContent();
+            var value   = new DataTransferContent() { Pointer= p0 };
 
-            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x060)); // 027004397880 0x60 OpenTime                    ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.LocalizedTextList                         = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270043978A0 0x68 LocalizedTextList           ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.FooterTextGameObject                      = GetObjectList<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0270043978C0 0x70 FooterTextGameObject        ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.MainGroupLayout                           = GetObject<VerticalLayoutGroup>(new IntPtr(p + 0x078), ReversePrism.DataModels.VerticalLayoutGroup.FromPointer); // 0270043978E0 0x78 MainGroupLayout             ( 000186515B70 ModelClassType VerticalLayoutGroup VerticalLayoutGroup VerticalLayoutGroup Pointer )
-            value.UiTextMeshProUgui1                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004397900 0x80 UiTextMeshProUgui1          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UiTextMeshProUgui2                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004397920 0x88 UiTextMeshProUgui2          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x060)); // 0245A440B370 0x60 OpenTime                    ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.LocalizedTextList                         = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A440B390 0x68 LocalizedTextList           ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.FooterTextGameObject                      = GetObjectList<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0245A440B3B0 0x70 FooterTextGameObject        ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.MainGroupLayout                           = GetObject<VerticalLayoutGroup>(new IntPtr(p + 0x078), ReversePrism.DataModels.VerticalLayoutGroup.FromPointer); // 0245A440B3D0 0x78 MainGroupLayout             ( 000186515B70 ModelClassType VerticalLayoutGroup VerticalLayoutGroup VerticalLayoutGroup Pointer )
+            value.UiTextMeshProUgui1                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A440B3F0 0x80 UiTextMeshProUgui1          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UiTextMeshProUgui2                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A440B410 0x88 UiTextMeshProUgui2          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

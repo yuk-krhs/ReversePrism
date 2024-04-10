@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 Iteration                                000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
     // 018 TimeBasedOperations                      000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
     // 020 AsyncConversions                         000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
-    public partial class DefaultSchedulers
+    public partial class DefaultSchedulers : DataModel
     {
         public IScheduler?                              Iteration                               { get; set; }
         public IScheduler?                              TimeBasedOperations                     { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultSchedulers();
+            var value   = new DefaultSchedulers() { Pointer= p0 };
 
-            value.Iteration                                 = GetObject<IScheduler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1D420 0x10 Iteration                   ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.TimeBasedOperations                       = GetObject<IScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1D440 0x18 TimeBasedOperations         ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.AsyncConversions                          = GetObject<IScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1D460 0x20 AsyncConversions            ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.Iteration                                 = GetObject<IScheduler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1D420 0x10 Iteration                   ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.TimeBasedOperations                       = GetObject<IScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1D440 0x18 TimeBasedOperations         ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.AsyncConversions                          = GetObject<IScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1D460 0x20 AsyncConversions            ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
 
             return value;
         }

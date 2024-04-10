@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 058 BoxCount                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IsLockEnabledFieldNumber                 int IL2CPP_TYPE_I4
     // 05C IsLockEnabled                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MedalGashaStatus
+    public partial class MedalGashaStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -45,17 +45,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaStatus();
+            var value   = new MedalGashaStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D229D860 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D229D880 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x038)); // 0270D229D900 0x38 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x03C)); // 0270D229D940 0x3C MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D229D980 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D229D9C0 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.PriceList                                 = GetObjectList<GashaPriceStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.GashaPriceStatus.FromPointer); // 0270D229DA20 0x50 PriceList                   ( 000185CDBF68 ModelClassListType RepeatedField`1<GashaPriceStatus> RepeatedField`1<GashaPriceStatus> List<GashaPriceStatus> Pointer )
-            value.BoxCount                                  = GetInt32(new IntPtr(p + 0x058)); // 0270D229DA60 0x58 BoxCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsLockEnabled                             = GetBool(new IntPtr(p + 0x05C)); // 0270D229DAA0 0x5C IsLockEnabled               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024662210C68 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024662210C88 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x038)); // 024662210D08 0x38 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x03C)); // 024662210D48 0x3C MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024662210D88 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024662210DC8 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PriceList                                 = GetObjectList<GashaPriceStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.GashaPriceStatus.FromPointer); // 024662210E28 0x50 PriceList                   ( 000185CDBF68 ModelClassListType RepeatedField`1<GashaPriceStatus> RepeatedField`1<GashaPriceStatus> List<GashaPriceStatus> Pointer )
+            value.BoxCount                                  = GetInt32(new IntPtr(p + 0x058)); // 024662210E68 0x58 BoxCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsLockEnabled                             = GetBool(new IntPtr(p + 0x05C)); // 024662210EA8 0x5C IsLockEnabled               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

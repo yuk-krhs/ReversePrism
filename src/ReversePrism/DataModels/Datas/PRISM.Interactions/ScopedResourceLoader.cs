@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 totalCount                               int IL2CPP_TYPE_I4
     // 010 Tag                                      000186672F10 ModelPrimitiveType string string string String
-    public partial class ScopedResourceLoader
+    public partial class ScopedResourceLoader : DataModel
     {
         public string                                   Tag                                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScopedResourceLoader();
+            var value   = new ScopedResourceLoader() { Pointer= p0 };
 
-            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 027003ACCD68 0x10 Tag                         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 0245A3AD0900 0x10 Tag                         ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

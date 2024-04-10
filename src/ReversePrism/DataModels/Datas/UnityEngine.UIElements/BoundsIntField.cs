@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 010 InputUssClassName                        000186674040 ModelPrimitiveType string string string String
     // 018 PositionUssClassName                     000186674040 ModelPrimitiveType string string string String
     // 020 SizeUssClassName                         000186674040 ModelPrimitiveType string string string String
-    public partial class BoundsIntField
+    public partial class BoundsIntField : DataModel
     {
         public Vector3IntField?                         M_PositionField                         { get; set; }
         public Vector3IntField?                         M_SizeField                             { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoundsIntField();
+            var value   = new BoundsIntField() { Pointer= p0 };
 
-            value.M_PositionField                           = GetObject<Vector3IntField>(new IntPtr(p + 0x440), ReversePrism.DataModels.Vector3IntField.FromPointer); // 027005062CB0 0x440 M_PositionField             ( 000186778210 ModelClassType Vector3IntField Vector3IntField Vector3IntField Pointer )
-            value.M_SizeField                               = GetObject<Vector3IntField>(new IntPtr(p + 0x448), ReversePrism.DataModels.Vector3IntField.FromPointer); // 027005062CD0 0x448 M_SizeField                 ( 000186778210 ModelClassType Vector3IntField Vector3IntField Vector3IntField Pointer )
-            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 027005062D30 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
-            value.PositionUssClassName                      = GetString(new IntPtr(p + 0x018)); // 027005062D50 0x18 PositionUssClassName        ( 000186674040 ModelPrimitiveType string string string String )
-            value.SizeUssClassName                          = GetString(new IntPtr(p + 0x020)); // 027005062D70 0x20 SizeUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
+            value.M_PositionField                           = GetObject<Vector3IntField>(new IntPtr(p + 0x440), ReversePrism.DataModels.Vector3IntField.FromPointer); // 0245A502C6C8 0x440 M_PositionField             ( 000186778210 ModelClassType Vector3IntField Vector3IntField Vector3IntField Pointer )
+            value.M_SizeField                               = GetObject<Vector3IntField>(new IntPtr(p + 0x448), ReversePrism.DataModels.Vector3IntField.FromPointer); // 0245A502C6E8 0x448 M_SizeField                 ( 000186778210 ModelClassType Vector3IntField Vector3IntField Vector3IntField Pointer )
+            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0245A502C748 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
+            value.PositionUssClassName                      = GetString(new IntPtr(p + 0x018)); // 0245A502C768 0x18 PositionUssClassName        ( 000186674040 ModelPrimitiveType string string string String )
+            value.SizeUssClassName                          = GetString(new IntPtr(p + 0x020)); // 0245A502C788 0x20 SizeUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

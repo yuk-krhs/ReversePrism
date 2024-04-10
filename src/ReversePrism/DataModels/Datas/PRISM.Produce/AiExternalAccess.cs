@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
     // 0D8 <GetPredictionByCardFunc>k__BackingField Func`3<IngamePCardModel, float, AutoReleaseScope`1<InGameActionResult>> IL2CPP_TYPE_GENERICINST
     // 0E0 <OnExecuteCard>k__BackingField           Action`1<int> IL2CPP_TYPE_GENERICINST
     // 0E8 OnExecuteIdolSkillSubject                Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class AiExternalAccess
+    public partial class AiExternalAccess : DataModel
     {
 
         public static AiExternalAccess? FromPointer(IntPtr p0)
@@ -45,7 +45,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AiExternalAccess();
+            var value   = new AiExternalAccess() { Pointer= p0 };
 
 
             return value;

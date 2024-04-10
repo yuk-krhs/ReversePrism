@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVisualElementScheduler
+    public partial class IVisualElementScheduler : DataModel
     {
 
         public static IVisualElementScheduler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVisualElementScheduler();
+            var value   = new IVisualElementScheduler() { Pointer= p0 };
 
 
             return value;

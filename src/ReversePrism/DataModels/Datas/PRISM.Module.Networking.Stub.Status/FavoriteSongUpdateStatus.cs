@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Name                                     000186671910 ModelPrimitiveType string string string String
     // 000 IsActiveFieldNumber                      int IL2CPP_TYPE_I4
     // 028 IsActive                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class FavoriteSongUpdateStatus
+    public partial class FavoriteSongUpdateStatus : DataModel
     {
         public FavoriteSongSlot                         Slot                                    { get; set; }
         public string                                   Name                                    { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FavoriteSongUpdateStatus();
+            var value   = new FavoriteSongUpdateStatus() { Pointer= p0 };
 
-            value.Slot                                      = (FavoriteSongSlot)GetInt32(new IntPtr(p + 0x018)); // 0270D133D3A8 0x18 Slot                        ( 00018655C790 ModelEnumType FavoriteSongSlot FavoriteSongSlot FavoriteSongSlot Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D133D3E8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x028)); // 0270D133D428 0x28 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Slot                                      = (FavoriteSongSlot)GetInt32(new IntPtr(p + 0x018)); // 0246612C4050 0x18 Slot                        ( 00018655C790 ModelEnumType FavoriteSongSlot FavoriteSongSlot FavoriteSongSlot Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246612C4090 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x028)); // 0246612C40D0 0x28 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

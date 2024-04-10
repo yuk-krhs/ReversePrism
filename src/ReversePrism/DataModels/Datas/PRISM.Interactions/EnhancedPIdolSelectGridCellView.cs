@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 IconViews                                000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer
-    public partial class EnhancedPIdolSelectGridCellView
+    public partial class EnhancedPIdolSelectGridCellView : DataModel
     {
         public List<PFIdolIconView>?                    IconViews                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnhancedPIdolSelectGridCellView();
+            var value   = new EnhancedPIdolSelectGridCellView() { Pointer= p0 };
 
-            value.IconViews                                 = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DA237C40 0x38 IconViews                   ( 000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
+            value.IconViews                                 = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A2A31F0 0x38 IconViews                   ( 000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
 
             return value;
         }

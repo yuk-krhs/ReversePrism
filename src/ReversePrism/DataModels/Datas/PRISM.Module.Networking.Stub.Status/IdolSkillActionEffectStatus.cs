@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 020 ValueList                                000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     // 000 IconIdFieldNumber                        int IL2CPP_TYPE_I4
     // 028 IconId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IdolSkillActionEffectStatus
+    public partial class IdolSkillActionEffectStatus : DataModel
     {
         public int                                      MstProduceActionEffectId                { get; set; }
         public int                                      MstProduceActionEffectTypeId            { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillActionEffectStatus();
+            var value   = new IdolSkillActionEffectStatus() { Pointer= p0 };
 
-            value.MstProduceActionEffectId                  = GetInt32(new IntPtr(p + 0x018)); // 0270041B8DF0 0x18 MstProduceActionEffectId    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceActionEffectTypeId              = GetInt32(new IntPtr(p + 0x01C)); // 0270041B8E30 0x1C MstProduceActionEffectTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 0270041B8E90 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.IconId                                    = GetInt32(new IntPtr(p + 0x028)); // 0270041B8ED0 0x28 IconId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceActionEffectId                  = GetInt32(new IntPtr(p + 0x018)); // 024660FB5C20 0x18 MstProduceActionEffectId    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceActionEffectTypeId              = GetInt32(new IntPtr(p + 0x01C)); // 024660FB5C60 0x1C MstProduceActionEffectTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 024660FB5CC0 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.IconId                                    = GetInt32(new IntPtr(p + 0x028)); // 024660FB5D00 0x28 IconId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

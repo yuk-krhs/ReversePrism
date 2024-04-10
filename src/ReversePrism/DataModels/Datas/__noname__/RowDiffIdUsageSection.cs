@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TargetTable                              0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer
-    public partial class RowDiffIdUsageSection
+    public partial class RowDiffIdUsageSection : DataModel
     {
         public DataTable?                               TargetTable                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RowDiffIdUsageSection();
+            var value   = new RowDiffIdUsageSection() { Pointer= p0 };
 
-            value.TargetTable                               = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D88DCF78 0x10 TargetTable                 ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
+            value.TargetTable                               = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 024668958BB0 0x10 TargetTable                 ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
 
             return value;
         }

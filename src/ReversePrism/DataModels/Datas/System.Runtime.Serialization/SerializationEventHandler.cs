@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SerializationEventHandler
+    public partial class SerializationEventHandler : DataModel
     {
 
         public static SerializationEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializationEventHandler();
+            var value   = new SerializationEventHandler() { Pointer= p0 };
 
 
             return value;

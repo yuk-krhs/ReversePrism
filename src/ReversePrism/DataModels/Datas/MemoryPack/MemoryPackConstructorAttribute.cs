@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MemoryPackConstructorAttribute
+    public partial class MemoryPackConstructorAttribute : DataModel
     {
 
         public static MemoryPackConstructorAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackConstructorAttribute();
+            var value   = new MemoryPackConstructorAttribute() { Pointer= p0 };
 
 
             return value;

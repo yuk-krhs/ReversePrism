@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  OverlayViewFactory`1<IShopView> IL2CPP_TYPE_GENERICINST
-    public partial class ShopOverlayCallerImplement
+    public partial class ShopOverlayCallerImplement : DataModel
     {
 
         public static ShopOverlayCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopOverlayCallerImplement();
+            var value   = new ShopOverlayCallerImplement() { Pointer= p0 };
 
 
             return value;

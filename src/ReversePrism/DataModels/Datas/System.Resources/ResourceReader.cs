@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 068 NumResources                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 070 Ums                                      000186733F70 ModelClassType UnmanagedMemoryStream UnmanagedMemoryStream UnmanagedMemoryStream Pointer
     // 078 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ResourceReader
+    public partial class ResourceReader : DataModel
     {
         public BinaryReader?                            Store                                   { get; set; }
         public long                                     NameSectionOffset                       { get; set; }
@@ -42,19 +42,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceReader();
+            var value   = new ResourceReader() { Pointer= p0 };
 
-            value.Store                                     = GetObject<BinaryReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.BinaryReader.FromPointer); // 0270D6CC8250 0x10 Store                       ( 00018675B820 ModelClassType BinaryReader BinaryReader BinaryReader Pointer )
-            value.NameSectionOffset                         = GetInt64(new IntPtr(p + 0x020)); // 0270D6CC8290 0x20 NameSectionOffset           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.DataSectionOffset                         = GetInt64(new IntPtr(p + 0x028)); // 0270D6CC82B0 0x28 DataSectionOffset           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.NameHashes                                = GetInt32List(new IntPtr(p + 0x030)); // 0270D6CC82D0 0x30 NameHashes                  ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.NamePositions                             = GetInt32List(new IntPtr(p + 0x040)); // 0270D6CC8310 0x40 NamePositions               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.TypeTable                                 = GetObjectList<RuntimeType>(new IntPtr(p + 0x050), ReversePrism.DataModels.RuntimeType.FromPointer); // 0270D6CC8350 0x50 TypeTable                   ( 000185B801B0 ModelClassListType RuntimeType[] RuntimeType[] List<RuntimeType> Pointer )
-            value.TypeNamePositions                         = GetInt32List(new IntPtr(p + 0x058)); // 0270D6CC8370 0x58 TypeNamePositions           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.ObjFormatter                              = GetObject<BinaryFormatter>(new IntPtr(p + 0x060), ReversePrism.DataModels.BinaryFormatter.FromPointer); // 0270D6CC8390 0x60 ObjFormatter                ( 000186757960 ModelClassType BinaryFormatter BinaryFormatter BinaryFormatter Pointer )
-            value.NumResources                              = GetInt32(new IntPtr(p + 0x068)); // 0270D6CC83B0 0x68 NumResources                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Ums                                       = GetObject<UnmanagedMemoryStream>(new IntPtr(p + 0x070), ReversePrism.DataModels.UnmanagedMemoryStream.FromPointer); // 0270D6CC83D0 0x70 Ums                         ( 000186733F70 ModelClassType UnmanagedMemoryStream UnmanagedMemoryStream UnmanagedMemoryStream Pointer )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x078)); // 0270D6CC83F0 0x78 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Store                                     = GetObject<BinaryReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.BinaryReader.FromPointer); // 024666D28250 0x10 Store                       ( 00018675B820 ModelClassType BinaryReader BinaryReader BinaryReader Pointer )
+            value.NameSectionOffset                         = GetInt64(new IntPtr(p + 0x020)); // 024666D28290 0x20 NameSectionOffset           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.DataSectionOffset                         = GetInt64(new IntPtr(p + 0x028)); // 024666D282B0 0x28 DataSectionOffset           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.NameHashes                                = GetInt32List(new IntPtr(p + 0x030)); // 024666D282D0 0x30 NameHashes                  ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.NamePositions                             = GetInt32List(new IntPtr(p + 0x040)); // 024666D28310 0x40 NamePositions               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.TypeTable                                 = GetObjectList<RuntimeType>(new IntPtr(p + 0x050), ReversePrism.DataModels.RuntimeType.FromPointer); // 024666D28350 0x50 TypeTable                   ( 000185B801B0 ModelClassListType RuntimeType[] RuntimeType[] List<RuntimeType> Pointer )
+            value.TypeNamePositions                         = GetInt32List(new IntPtr(p + 0x058)); // 024666D28370 0x58 TypeNamePositions           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.ObjFormatter                              = GetObject<BinaryFormatter>(new IntPtr(p + 0x060), ReversePrism.DataModels.BinaryFormatter.FromPointer); // 024666D28390 0x60 ObjFormatter                ( 000186757960 ModelClassType BinaryFormatter BinaryFormatter BinaryFormatter Pointer )
+            value.NumResources                              = GetInt32(new IntPtr(p + 0x068)); // 024666D283B0 0x68 NumResources                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Ums                                       = GetObject<UnmanagedMemoryStream>(new IntPtr(p + 0x070), ReversePrism.DataModels.UnmanagedMemoryStream.FromPointer); // 024666D283D0 0x70 Ums                         ( 000186733F70 ModelClassType UnmanagedMemoryStream UnmanagedMemoryStream UnmanagedMemoryStream Pointer )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x078)); // 024666D283F0 0x78 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

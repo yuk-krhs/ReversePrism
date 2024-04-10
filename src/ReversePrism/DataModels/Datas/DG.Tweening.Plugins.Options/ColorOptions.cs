@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 AlphaOnly                                000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class ColorOptions
+    public partial class ColorOptions : DataModel
     {
         public bool                                     AlphaOnly                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorOptions();
+            var value   = new ColorOptions() { Pointer= p0 };
 
-            value.AlphaOnly                                 = GetBool(new IntPtr(p + 0x010)); // 027004348900 0x10 AlphaOnly                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AlphaOnly                                 = GetBool(new IntPtr(p + 0x010)); // 0245A43A8D40 0x10 AlphaOnly                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

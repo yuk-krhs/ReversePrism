@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 02C SilhouetteBackgroundId                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstChallengeTourRivalIdFieldNumber       int IL2CPP_TYPE_I4
     // 030 MstChallengeTourRivalId                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourRivalStatus
+    public partial class ChallengeTourRivalStatus : DataModel
     {
         public ProduceParameterStatus?                  Parameter                               { get; set; }
         public RivalSkillStatus?                        RivalSkill                              { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourRivalStatus();
+            var value   = new ChallengeTourRivalStatus() { Pointer= p0 };
 
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D0F33F70 0x18 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.RivalSkill                                = GetObject<RivalSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RivalSkillStatus.FromPointer); // 0270D0F33FB0 0x20 RivalSkill                  ( 0001866909F0 ModelClassType RivalSkillStatus RivalSkillStatus RivalSkillStatus Pointer )
-            value.SilhouetteId                              = GetInt32(new IntPtr(p + 0x028)); // 0270D0F33FF0 0x28 SilhouetteId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SilhouetteBackgroundId                    = GetInt32(new IntPtr(p + 0x02C)); // 0270D0F34030 0x2C SilhouetteBackgroundId      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstChallengeTourRivalId                   = GetInt32(new IntPtr(p + 0x030)); // 0270D0F34070 0x30 MstChallengeTourRivalId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 024660EDA1A0 0x18 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.RivalSkill                                = GetObject<RivalSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RivalSkillStatus.FromPointer); // 024660EDA1E0 0x20 RivalSkill                  ( 0001866909F0 ModelClassType RivalSkillStatus RivalSkillStatus RivalSkillStatus Pointer )
+            value.SilhouetteId                              = GetInt32(new IntPtr(p + 0x028)); // 024660EDA220 0x28 SilhouetteId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SilhouetteBackgroundId                    = GetInt32(new IntPtr(p + 0x02C)); // 024660EDA260 0x2C SilhouetteBackgroundId      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstChallengeTourRivalId                   = GetInt32(new IntPtr(p + 0x030)); // 024660EDA2A0 0x30 MstChallengeTourRivalId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Director                                 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
     // 028 LayerClips                               000185D14BA8 ModelClassListType List`1<TimelineLayerClip> List`1<TimelineLayerClip> List<TimelineLayerClip> Pointer
-    public partial class TimelineLayerController
+    public partial class TimelineLayerController : DataModel
     {
         public PlayableDirector?                        Director                                { get; set; }
         public List<TimelineLayerClip>?                 LayerClips                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineLayerController();
+            var value   = new TimelineLayerController() { Pointer= p0 };
 
-            value.Director                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0270D4E9E580 0x20 Director                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
-            value.LayerClips                                = GetObjectList<TimelineLayerClip>(new IntPtr(p + 0x028), ReversePrism.DataModels.TimelineLayerClip.FromPointer); // 0270D4E9E5A0 0x28 LayerClips                  ( 000185D14BA8 ModelClassListType List`1<TimelineLayerClip> List`1<TimelineLayerClip> List<TimelineLayerClip> Pointer )
+            value.Director                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlayableDirector.FromPointer); // 024664F0D938 0x20 Director                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.LayerClips                                = GetObjectList<TimelineLayerClip>(new IntPtr(p + 0x028), ReversePrism.DataModels.TimelineLayerClip.FromPointer); // 024664F0D958 0x28 LayerClips                  ( 000185D14BA8 ModelClassListType List`1<TimelineLayerClip> List`1<TimelineLayerClip> List<TimelineLayerClip> Pointer )
 
             return value;
         }

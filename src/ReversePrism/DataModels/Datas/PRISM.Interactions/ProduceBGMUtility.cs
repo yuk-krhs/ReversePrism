@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceBGMUtility
+    public partial class ProduceBGMUtility : DataModel
     {
 
         public static ProduceBGMUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceBGMUtility();
+            var value   = new ProduceBGMUtility() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIntroductionCharacterSelectView
+    public partial class IIntroductionCharacterSelectView : DataModel
     {
 
         public static IIntroductionCharacterSelectView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIntroductionCharacterSelectView();
+            var value   = new IIntroductionCharacterSelectView() { Pointer= p0 };
 
 
             return value;

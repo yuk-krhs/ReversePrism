@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 NumItems                                 0001865F4260 ModelPrimitiveType int int int Int32
     // 02C CurrItem                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 Current                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SerializationInfoEnumerator
+    public partial class SerializationInfoEnumerator : DataModel
     {
         public List<string>?                            Members                                 { get; set; }
         public List<Type>?                              Types                                   { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializationInfoEnumerator();
+            var value   = new SerializationInfoEnumerator() { Pointer= p0 };
 
-            value.Members                                   = GetStringList(new IntPtr(p + 0x010)); // 0270D6BED568 0x10 Members                     ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D6BED5A8 0x20 Types                       ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.NumItems                                  = GetInt32(new IntPtr(p + 0x028)); // 0270D6BED5C8 0x28 NumItems                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CurrItem                                  = GetInt32(new IntPtr(p + 0x02C)); // 0270D6BED5E8 0x2C CurrItem                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Current                                   = GetBool(new IntPtr(p + 0x030)); // 0270D6BED608 0x30 Current                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Members                                   = GetStringList(new IntPtr(p + 0x010)); // 024666C65568 0x10 Members                     ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024666C655A8 0x20 Types                       ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.NumItems                                  = GetInt32(new IntPtr(p + 0x028)); // 024666C655C8 0x28 NumItems                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CurrItem                                  = GetInt32(new IntPtr(p + 0x02C)); // 024666C655E8 0x2C CurrItem                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Current                                   = GetBool(new IntPtr(p + 0x030)); // 024666C65608 0x30 Current                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

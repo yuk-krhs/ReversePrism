@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 068 LastMaxUIActive                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 070 MentalBreakUI                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 078 MentalBreakTimeText                      0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class ProducePointContent
+    public partial class ProducePointContent : DataModel
     {
         public GameObject?                              NormalUI                                { get; set; }
         public UIImage?                                 GaugeImage                              { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducePointContent();
+            var value   = new ProducePointContent() { Pointer= p0 };
 
-            value.NormalUI                                  = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BC98A0 0x20 NormalUI                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GaugeImage                                = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0270D5BC98C0 0x28 GaugeImage                  ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.NormalMoleculeText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC98E0 0x30 NormalMoleculeText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NormalDenominatorText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC9900 0x38 NormalDenominatorText       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NormalUIAnimator                          = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 0270D5BC9920 0x40 NormalUIAnimator            ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.LastNormalUIActive                        = GetBool(new IntPtr(p + 0x048)); // 0270D5BC9940 0x48 LastNormalUIActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MaxUI                                     = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BC9960 0x50 MaxUI                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MaxMoleculeText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC9980 0x58 MaxMoleculeText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MaxDenominatorText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC99A0 0x60 MaxDenominatorText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LastMaxUIActive                           = GetBool(new IntPtr(p + 0x068)); // 0270D5BC99C0 0x68 LastMaxUIActive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MentalBreakUI                             = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BC99E0 0x70 MentalBreakUI               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MentalBreakTimeText                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC9A00 0x78 MentalBreakTimeText         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalUI                                  = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024665C3A118 0x20 NormalUI                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GaugeImage                                = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 024665C3A138 0x28 GaugeImage                  ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.NormalMoleculeText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C3A158 0x30 NormalMoleculeText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalDenominatorText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C3A178 0x38 NormalDenominatorText       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalUIAnimator                          = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 024665C3A198 0x40 NormalUIAnimator            ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.LastNormalUIActive                        = GetBool(new IntPtr(p + 0x048)); // 024665C3A1B8 0x48 LastNormalUIActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaxUI                                     = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 024665C3A1D8 0x50 MaxUI                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MaxMoleculeText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C3A1F8 0x58 MaxMoleculeText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MaxDenominatorText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C3A218 0x60 MaxDenominatorText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LastMaxUIActive                           = GetBool(new IntPtr(p + 0x068)); // 024665C3A238 0x68 LastMaxUIActive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MentalBreakUI                             = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 024665C3A258 0x70 MentalBreakUI               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MentalBreakTimeText                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C3A278 0x78 MentalBreakTimeText         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

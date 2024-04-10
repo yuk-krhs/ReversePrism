@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSupportCharacterFormatter
+    public partial class MstSupportCharacterFormatter : DataModel
     {
 
         public static MstSupportCharacterFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSupportCharacterFormatter();
+            var value   = new MstSupportCharacterFormatter() { Pointer= p0 };
 
 
             return value;

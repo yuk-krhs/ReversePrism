@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C ScaleY                                   000186666050 ModelPrimitiveType float float float Single
     // 020 LnA                                      000186666050 ModelPrimitiveType float float float Single
     // 024 B                                        000186666050 ModelPrimitiveType float float float Single
-    public partial class Segment
+    public partial class Segment : DataModel
     {
         public float                                    OffsetX                                 { get; set; }
         public float                                    OffsetY                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Segment();
+            var value   = new Segment() { Pointer= p0 };
 
-            value.OffsetX                                   = GetSingle(new IntPtr(p + 0x010)); // 0270DB420F98 0x10 OffsetX                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.OffsetY                                   = GetSingle(new IntPtr(p + 0x014)); // 0270DB420FB8 0x14 OffsetY                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ScaleX                                    = GetSingle(new IntPtr(p + 0x018)); // 0270DB420FD8 0x18 ScaleX                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ScaleY                                    = GetSingle(new IntPtr(p + 0x01C)); // 0270DB420FF8 0x1C ScaleY                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LnA                                       = GetSingle(new IntPtr(p + 0x020)); // 0270DB421018 0x20 LnA                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.B                                         = GetSingle(new IntPtr(p + 0x024)); // 0270DB421038 0x24 B                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OffsetX                                   = GetSingle(new IntPtr(p + 0x010)); // 02466B4A5F98 0x10 OffsetX                     ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OffsetY                                   = GetSingle(new IntPtr(p + 0x014)); // 02466B4A5FB8 0x14 OffsetY                     ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ScaleX                                    = GetSingle(new IntPtr(p + 0x018)); // 02466B4A5FD8 0x18 ScaleX                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ScaleY                                    = GetSingle(new IntPtr(p + 0x01C)); // 02466B4A5FF8 0x1C ScaleY                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.LnA                                       = GetSingle(new IntPtr(p + 0x020)); // 02466B4A6018 0x20 LnA                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.B                                         = GetSingle(new IntPtr(p + 0x024)); // 02466B4A6038 0x24 B                           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

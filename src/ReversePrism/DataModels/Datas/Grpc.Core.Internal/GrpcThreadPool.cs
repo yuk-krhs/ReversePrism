@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 050 ThreadProfilers                          000185CCF128 ModelClassListType List`1<BasicProfiler> List`1<BasicProfiler> List<BasicProfiler> Pointer
     // 058 StopRequested                            000186594D10 ModelPrimitiveType bool bool bool Bool
     // 060 completionQueues                         IReadOnlyCollection`1<CompletionQueueSafeHandle> IL2CPP_TYPE_GENERICINST
-    public partial class GrpcThreadPool
+    public partial class GrpcThreadPool : DataModel
     {
         public GrpcEnvironment?                         Environment                             { get; set; }
         public List<Thread>?                            Threads                                 { get; set; }
@@ -42,18 +42,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GrpcThreadPool();
+            var value   = new GrpcThreadPool() { Pointer= p0 };
 
-            value.Environment                               = GetObject<GrpcEnvironment>(new IntPtr(p + 0x010), ReversePrism.DataModels.GrpcEnvironment.FromPointer); // 0270040A8598 0x10 Environment                 ( 00018669E6D0 ModelClassType GrpcEnvironment GrpcEnvironment GrpcEnvironment Pointer )
-            value.Threads                                   = GetObjectList<Thread>(new IntPtr(p + 0x020), ReversePrism.DataModels.Thread.FromPointer); // 0270040A85D8 0x20 Threads                     ( 000185D14138 ModelClassListType List`1<Thread> List`1<Thread> List<Thread> Pointer )
-            value.PoolSize                                  = GetInt32(new IntPtr(p + 0x028)); // 0270040A85F8 0x28 PoolSize                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CompletionQueueCount                      = GetInt32(new IntPtr(p + 0x02C)); // 0270040A8618 0x2C CompletionQueueCount        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.InlineHandlers                            = GetBool(new IntPtr(p + 0x030)); // 0270040A8638 0x30 InlineHandlers              ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.RunCompletionQueueEventCallbackSuccess    = GetObject<WaitCallback>(new IntPtr(p + 0x038), ReversePrism.DataModels.WaitCallback.FromPointer); // 0270040A8658 0x38 RunCompletionQueueEventCallbackSuccess ( 00018653FA50 ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
-            value.RunCompletionQueueEventCallbackFailure    = GetObject<WaitCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.WaitCallback.FromPointer); // 0270040A8678 0x40 RunCompletionQueueEventCallbackFailure ( 00018653FA50 ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
-            value.QueuedContinuationCounter                 = GetObject<AtomicCounter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0270040A8698 0x48 QueuedContinuationCounter   ( 00018670DF60 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
-            value.ThreadProfilers                           = GetObjectList<BasicProfiler>(new IntPtr(p + 0x050), ReversePrism.DataModels.BasicProfiler.FromPointer); // 0270040A86B8 0x50 ThreadProfilers             ( 000185CCF128 ModelClassListType List`1<BasicProfiler> List`1<BasicProfiler> List<BasicProfiler> Pointer )
-            value.StopRequested                             = GetBool(new IntPtr(p + 0x058)); // 0270040A86D8 0x58 StopRequested               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Environment                               = GetObject<GrpcEnvironment>(new IntPtr(p + 0x010), ReversePrism.DataModels.GrpcEnvironment.FromPointer); // 024660E396A0 0x10 Environment                 ( 00018669E6D0 ModelClassType GrpcEnvironment GrpcEnvironment GrpcEnvironment Pointer )
+            value.Threads                                   = GetObjectList<Thread>(new IntPtr(p + 0x020), ReversePrism.DataModels.Thread.FromPointer); // 024660E396E0 0x20 Threads                     ( 000185D14138 ModelClassListType List`1<Thread> List`1<Thread> List<Thread> Pointer )
+            value.PoolSize                                  = GetInt32(new IntPtr(p + 0x028)); // 024660E39700 0x28 PoolSize                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CompletionQueueCount                      = GetInt32(new IntPtr(p + 0x02C)); // 024660E39720 0x2C CompletionQueueCount        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.InlineHandlers                            = GetBool(new IntPtr(p + 0x030)); // 024660E39740 0x30 InlineHandlers              ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.RunCompletionQueueEventCallbackSuccess    = GetObject<WaitCallback>(new IntPtr(p + 0x038), ReversePrism.DataModels.WaitCallback.FromPointer); // 024660E39760 0x38 RunCompletionQueueEventCallbackSuccess ( 00018653FA50 ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
+            value.RunCompletionQueueEventCallbackFailure    = GetObject<WaitCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.WaitCallback.FromPointer); // 024660E39780 0x40 RunCompletionQueueEventCallbackFailure ( 00018653FA50 ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
+            value.QueuedContinuationCounter                 = GetObject<AtomicCounter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AtomicCounter.FromPointer); // 024660E397A0 0x48 QueuedContinuationCounter   ( 00018670DF60 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
+            value.ThreadProfilers                           = GetObjectList<BasicProfiler>(new IntPtr(p + 0x050), ReversePrism.DataModels.BasicProfiler.FromPointer); // 024660E397C0 0x50 ThreadProfilers             ( 000185CCF128 ModelClassListType List`1<BasicProfiler> List`1<BasicProfiler> List<BasicProfiler> Pointer )
+            value.StopRequested                             = GetBool(new IntPtr(p + 0x058)); // 024660E397E0 0x58 StopRequested               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

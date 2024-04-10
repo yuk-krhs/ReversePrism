@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WebCompletionSource
+    public partial class WebCompletionSource : DataModel
     {
 
         public static WebCompletionSource? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WebCompletionSource();
+            var value   = new WebCompletionSource() { Pointer= p0 };
 
 
             return value;

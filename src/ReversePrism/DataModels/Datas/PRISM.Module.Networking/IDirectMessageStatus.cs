@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDirectMessageStatus
+    public partial class IDirectMessageStatus : DataModel
     {
 
         public static IDirectMessageStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDirectMessageStatus();
+            var value   = new IDirectMessageStatus() { Pointer= p0 };
 
 
             return value;

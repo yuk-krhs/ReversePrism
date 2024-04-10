@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MulOvfInt32
+    public partial class MulOvfInt32 : DataModel
     {
 
         public static MulOvfInt32? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MulOvfInt32();
+            var value   = new MulOvfInt32() { Pointer= p0 };
 
 
             return value;

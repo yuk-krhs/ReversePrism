@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Start                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class RangeInt
+    public partial class RangeInt : DataModel
     {
         public int                                      Start                                   { get; set; }
         public int                                      Length                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RangeInt();
+            var value   = new RangeInt() { Pointer= p0 };
 
-            value.Start                                     = GetInt32(new IntPtr(p + 0x010)); // 02700456F280 0x10 Start                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 02700456F2A0 0x14 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Start                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A45EAE40 0x10 Start                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A45EAE60 0x14 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

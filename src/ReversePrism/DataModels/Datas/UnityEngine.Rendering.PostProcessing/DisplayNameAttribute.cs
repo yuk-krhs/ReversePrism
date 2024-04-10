@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DisplayName                              0001866736C0 ModelPrimitiveType string string string String
-    public partial class DisplayNameAttribute
+    public partial class DisplayNameAttribute : DataModel
     {
         public string                                   DisplayName                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisplayNameAttribute();
+            var value   = new DisplayNameAttribute() { Pointer= p0 };
 
-            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 0270DB41E988 0x10 DisplayName                 ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 02466B4A3988 0x10 DisplayName                 ( 0001866736C0 ModelPrimitiveType string string string String )
 
             return value;
         }

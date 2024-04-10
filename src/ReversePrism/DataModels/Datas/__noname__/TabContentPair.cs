@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Tab                                      00018662D810 ModelClassType MobileHeaderTab MobileHeaderTab MobileHeaderTab Pointer
     // 018 Content                                  0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class TabContentPair
+    public partial class TabContentPair : DataModel
     {
         public MobileHeaderTab?                         Tab                                     { get; set; }
         public GameObject?                              Content                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TabContentPair();
+            var value   = new TabContentPair() { Pointer= p0 };
 
-            value.Tab                                       = GetObject<MobileHeaderTab>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileHeaderTab.FromPointer); // 0270DB11C668 0x10 Tab                         ( 00018662D810 ModelClassType MobileHeaderTab MobileHeaderTab MobileHeaderTab Pointer )
-            value.Content                                   = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB11C688 0x18 Content                     ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Tab                                       = GetObject<MobileHeaderTab>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileHeaderTab.FromPointer); // 02466B17C668 0x10 Tab                         ( 00018662D810 ModelClassType MobileHeaderTab MobileHeaderTab MobileHeaderTab Pointer )
+            value.Content                                   = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 02466B17C688 0x18 Content                     ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

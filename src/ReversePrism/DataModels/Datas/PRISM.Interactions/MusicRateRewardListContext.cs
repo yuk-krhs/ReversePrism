@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 EffectNormalizedTime                     0001866656B0 ModelPrimitiveType float float float Single
-    public partial class MusicRateRewardListContext
+    public partial class MusicRateRewardListContext : DataModel
     {
         public float                                    EffectNormalizedTime                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRateRewardListContext();
+            var value   = new MusicRateRewardListContext() { Pointer= p0 };
 
-            value.EffectNormalizedTime                      = GetSingle(new IntPtr(p + 0x038)); // 0270DB3F0090 0x38 EffectNormalizedTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.EffectNormalizedTime                      = GetSingle(new IntPtr(p + 0x038)); // 02466B46D0F0 0x38 EffectNormalizedTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

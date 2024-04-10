@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PvpIdolIcon
+    public partial class PvpIdolIcon : DataModel
     {
 
         public static PvpIdolIcon? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpIdolIcon();
+            var value   = new PvpIdolIcon() { Pointer= p0 };
 
 
             return value;

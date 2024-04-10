@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 swigExceptionHelper                      SWIGExceptionHelper IL2CPP_TYPE_CLASS
     // 008 swigStringHelper                         SWIGStringHelper IL2CPP_TYPE_CLASS
-    public partial class FirebaseMessagingPINVOKE
+    public partial class FirebaseMessagingPINVOKE : DataModel
     {
 
         public static FirebaseMessagingPINVOKE? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseMessagingPINVOKE();
+            var value   = new FirebaseMessagingPINVOKE() { Pointer= p0 };
 
 
             return value;

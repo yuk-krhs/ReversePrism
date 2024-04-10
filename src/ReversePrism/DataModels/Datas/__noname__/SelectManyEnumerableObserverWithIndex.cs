@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   SelectManyObservable`3<<var>, <var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class SelectManyEnumerableObserverWithIndex
+    public partial class SelectManyEnumerableObserverWithIndex : DataModel
     {
 
         public static SelectManyEnumerableObserverWithIndex? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectManyEnumerableObserverWithIndex();
+            var value   = new SelectManyEnumerableObserverWithIndex() { Pointer= p0 };
 
 
             return value;

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 0A8 TotalPower                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 0B0 UserIdolIcons                            000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer
     // 0B8 CurrentIconStatus                        000186557DF0 ModelEnumType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType Int32
-    public partial class MusicScoreRankingCell
+    public partial class MusicScoreRankingCell : DataModel
     {
         public ToggleButton?                            ToggleDetailButton                      { get; set; }
         public MusicRankingHeaderView?                  HeaderView                              { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicScoreRankingCell();
+            var value   = new MusicScoreRankingCell() { Pointer= p0 };
 
-            value.ToggleDetailButton                        = GetObject<ToggleButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DB3F6E40 0x60 ToggleDetailButton          ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.HeaderView                                = GetObject<MusicRankingHeaderView>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicRankingHeaderView.FromPointer); // 0270DB3F6E60 0x68 HeaderView                  ( 000186669DB0 ModelClassType MusicRankingHeaderView MusicRankingHeaderView MusicRankingHeaderView Pointer )
-            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x070), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DB3F6E80 0x70 IdolIcon                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.UserName                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB3F6EA0 0x78 UserName                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Score                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB3F6EC0 0x80 Score                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScoreDivisionLabels                       = GetObjectList<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB3F6EE0 0x88 ScoreDivisionLabels         ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.AchievementIcons                          = GetObjectList<AchievementIconView>(new IntPtr(p + 0x090), ReversePrism.DataModels.AchievementIconView.FromPointer); // 0270DB3F6F00 0x90 AchievementIcons            ( 000185B6F170 ModelClassListType AchievementIconView[] AchievementIconView[] List<AchievementIconView> Pointer )
-            value.MyselfCellBase                            = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB3F6F20 0x98 MyselfCellBase              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ExtendArea                                = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB3F6F40 0xA0 ExtendArea                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TotalPower                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB3F6F60 0xA8 TotalPower                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UserIdolIcons                             = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DB3F6F80 0xB0 UserIdolIcons               ( 000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
-            value.CurrentIconStatus                         = (LiveIdolIconStatusDisplayType)GetInt32(new IntPtr(p + 0x0B8)); // 0270DB3F6FA0 0xB8 CurrentIconStatus           ( 000186557DF0 ModelEnumType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType Int32 )
+            value.ToggleDetailButton                        = GetObject<ToggleButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466B473EA0 0x60 ToggleDetailButton          ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.HeaderView                                = GetObject<MusicRankingHeaderView>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicRankingHeaderView.FromPointer); // 02466B473EC0 0x68 HeaderView                  ( 000186669DB0 ModelClassType MusicRankingHeaderView MusicRankingHeaderView MusicRankingHeaderView Pointer )
+            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x070), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466B473EE0 0x70 IdolIcon                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.UserName                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B473F00 0x78 UserName                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Score                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B473F20 0x80 Score                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScoreDivisionLabels                       = GetObjectList<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 02466B473F40 0x88 ScoreDivisionLabels         ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.AchievementIcons                          = GetObjectList<AchievementIconView>(new IntPtr(p + 0x090), ReversePrism.DataModels.AchievementIconView.FromPointer); // 02466B473F60 0x90 AchievementIcons            ( 000185B6F170 ModelClassListType AchievementIconView[] AchievementIconView[] List<AchievementIconView> Pointer )
+            value.MyselfCellBase                            = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 02466B473F80 0x98 MyselfCellBase              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ExtendArea                                = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 02466B473FA0 0xA0 ExtendArea                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TotalPower                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B473FC0 0xA8 TotalPower                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UserIdolIcons                             = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466B473FE0 0xB0 UserIdolIcons               ( 000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
+            value.CurrentIconStatus                         = (LiveIdolIconStatusDisplayType)GetInt32(new IntPtr(p + 0x0B8)); // 02466B474000 0xB8 CurrentIconStatus           ( 000186557DF0 ModelEnumType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType LiveIdolIconStatusDisplayType Int32 )
 
             return value;
         }

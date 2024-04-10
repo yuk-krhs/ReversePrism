@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 IAPLogTag                                string IL2CPP_TYPE_STRING
-    public partial class LoggerExtensions
+    public partial class LoggerExtensions : DataModel
     {
 
         public static LoggerExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggerExtensions();
+            var value   = new LoggerExtensions() { Pointer= p0 };
 
 
             return value;

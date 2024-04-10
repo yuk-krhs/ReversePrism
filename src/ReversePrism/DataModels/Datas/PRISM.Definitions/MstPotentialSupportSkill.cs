@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 024 GrantMstSkillBufferDisplayId             0001865F4260 ModelPrimitiveType int int int Int32
     // 028 EntrustAppealType                        0001865F4260 ModelPrimitiveType int int int Int32
     // 02C EntrustScore                             0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstPotentialSupportSkill
+    public partial class MstPotentialSupportSkill : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstSupportSkillTypeId                   { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstPotentialSupportSkill();
+            var value   = new MstPotentialSupportSkill() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270046104F8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstSupportSkillTypeId                     = GetInt32(new IntPtr(p + 0x014)); // 027004610518 0x14 MstSupportSkillTypeId       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x018)); // 027004610538 0x18 ValueList                   ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.MstSkillBufferDisplayId                   = GetInt32(new IntPtr(p + 0x020)); // 027004610558 0x20 MstSkillBufferDisplayId     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.GrantMstSkillBufferDisplayId              = GetInt32(new IntPtr(p + 0x024)); // 027004610578 0x24 GrantMstSkillBufferDisplayId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EntrustAppealType                         = GetInt32(new IntPtr(p + 0x028)); // 027004610598 0x28 EntrustAppealType           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EntrustScore                              = GetInt32(new IntPtr(p + 0x02C)); // 0270046105B8 0x2C EntrustScore                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A468BE58 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstSupportSkillTypeId                     = GetInt32(new IntPtr(p + 0x014)); // 0245A468BE78 0x14 MstSupportSkillTypeId       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x018)); // 0245A468BE98 0x18 ValueList                   ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.MstSkillBufferDisplayId                   = GetInt32(new IntPtr(p + 0x020)); // 0245A468BEB8 0x20 MstSkillBufferDisplayId     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.GrantMstSkillBufferDisplayId              = GetInt32(new IntPtr(p + 0x024)); // 0245A468BED8 0x24 GrantMstSkillBufferDisplayId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EntrustAppealType                         = GetInt32(new IntPtr(p + 0x028)); // 0245A468BEF8 0x28 EntrustAppealType           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EntrustScore                              = GetInt32(new IntPtr(p + 0x02C)); // 0245A468BF18 0x2C EntrustScore                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

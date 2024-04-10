@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncInitializePotentialDragTrigger
+    public partial class AsyncInitializePotentialDragTrigger : DataModel
     {
 
         public static AsyncInitializePotentialDragTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncInitializePotentialDragTrigger();
+            var value   = new AsyncInitializePotentialDragTrigger() { Pointer= p0 };
 
 
             return value;

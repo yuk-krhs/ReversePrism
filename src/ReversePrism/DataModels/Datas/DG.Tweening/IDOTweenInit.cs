@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDOTweenInit
+    public partial class IDOTweenInit : DataModel
     {
 
         public static IDOTweenInit? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDOTweenInit();
+            var value   = new IDOTweenInit() { Pointer= p0 };
 
 
             return value;

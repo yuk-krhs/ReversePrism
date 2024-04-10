@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IButtonGotoTypeProcessorForLegacy
+    public partial class IButtonGotoTypeProcessorForLegacy : DataModel
     {
 
         public static IButtonGotoTypeProcessorForLegacy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IButtonGotoTypeProcessorForLegacy();
+            var value   = new IButtonGotoTypeProcessorForLegacy() { Pointer= p0 };
 
 
             return value;

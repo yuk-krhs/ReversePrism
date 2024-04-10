@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 DefaultState                             0001866558A0 ModelEnumType TextureParameterDefault TextureParameterDefault TextureParameterDefault Int32
-    public partial class TextureParameter
+    public partial class TextureParameter : DataModel
     {
         public TextureParameterDefault                  DefaultState                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureParameter();
+            var value   = new TextureParameter() { Pointer= p0 };
 
-            value.DefaultState                              = (TextureParameterDefault)GetInt32(new IntPtr(p + 0x020)); // 027006120D00 0x20 DefaultState                ( 0001866558A0 ModelEnumType TextureParameterDefault TextureParameterDefault TextureParameterDefault Int32 )
+            value.DefaultState                              = (TextureParameterDefault)GetInt32(new IntPtr(p + 0x020)); // 0245A60DCA28 0x20 DefaultState                ( 0001866558A0 ModelEnumType TextureParameterDefault TextureParameterDefault TextureParameterDefault Int32 )
 
             return value;
         }

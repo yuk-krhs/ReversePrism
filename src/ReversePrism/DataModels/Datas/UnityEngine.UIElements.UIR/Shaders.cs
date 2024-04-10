@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 K_RuntimeWorld                           000186674040 ModelPrimitiveType string string string String
     // 020 K_GraphView                              000186674040 ModelPrimitiveType string string string String
     // 028 K_ColorConversionBlit                    000186674040 ModelPrimitiveType string string string String
-    public partial class Shaders
+    public partial class Shaders : DataModel
     {
         public string                                   K_Runtime                               { get; set; }
         public string                                   K_RuntimeWorld                          { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Shaders();
+            var value   = new Shaders() { Pointer= p0 };
 
-            value.K_Runtime                                 = GetString(new IntPtr(p + 0x010)); // 027006878D30 0x10 K_Runtime                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_RuntimeWorld                            = GetString(new IntPtr(p + 0x018)); // 027006878D50 0x18 K_RuntimeWorld              ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_GraphView                               = GetString(new IntPtr(p + 0x020)); // 027006878D70 0x20 K_GraphView                 ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_ColorConversionBlit                     = GetString(new IntPtr(p + 0x028)); // 027006878D90 0x28 K_ColorConversionBlit       ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_Runtime                                 = GetString(new IntPtr(p + 0x010)); // 0245A683AAD0 0x10 K_Runtime                   ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_RuntimeWorld                            = GetString(new IntPtr(p + 0x018)); // 0245A683AAF0 0x18 K_RuntimeWorld              ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_GraphView                               = GetString(new IntPtr(p + 0x020)); // 0245A683AB10 0x20 K_GraphView                 ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_ColorConversionBlit                     = GetString(new IntPtr(p + 0x028)); // 0245A683AB30 0x28 K_ColorConversionBlit       ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

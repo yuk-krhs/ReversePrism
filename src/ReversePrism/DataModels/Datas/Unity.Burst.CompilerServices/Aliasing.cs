@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Aliasing
+    public partial class Aliasing : DataModel
     {
 
         public static Aliasing? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Aliasing();
+            var value   = new Aliasing() { Pointer= p0 };
 
 
             return value;

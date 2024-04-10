@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlFloatAttributeDescription
+    public partial class UxmlFloatAttributeDescription : DataModel
     {
 
         public static UxmlFloatAttributeDescription? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlFloatAttributeDescription();
+            var value   = new UxmlFloatAttributeDescription() { Pointer= p0 };
 
 
             return value;

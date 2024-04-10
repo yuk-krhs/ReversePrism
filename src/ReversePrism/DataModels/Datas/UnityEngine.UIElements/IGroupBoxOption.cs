@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGroupBoxOption
+    public partial class IGroupBoxOption : DataModel
     {
 
         public static IGroupBoxOption? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGroupBoxOption();
+            var value   = new IGroupBoxOption() { Pointer= p0 };
 
 
             return value;

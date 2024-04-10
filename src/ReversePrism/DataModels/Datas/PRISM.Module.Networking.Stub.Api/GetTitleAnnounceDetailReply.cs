@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 AnnounceDetailFieldNumber                int IL2CPP_TYPE_I4
     // 018 AnnounceDetail                           0001866BF600 ModelClassType AnnounceDetailStatus AnnounceDetailStatus AnnounceDetailStatus Pointer
-    public partial class GetTitleAnnounceDetailReply
+    public partial class GetTitleAnnounceDetailReply : DataModel
     {
         public AnnounceDetailStatus?                    AnnounceDetail                          { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTitleAnnounceDetailReply();
+            var value   = new GetTitleAnnounceDetailReply() { Pointer= p0 };
 
-            value.AnnounceDetail                            = GetObject<AnnounceDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnnounceDetailStatus.FromPointer); // 0270D2B5F038 0x18 AnnounceDetail              ( 0001866BF600 ModelClassType AnnounceDetailStatus AnnounceDetailStatus AnnounceDetailStatus Pointer )
+            value.AnnounceDetail                            = GetObject<AnnounceDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnnounceDetailStatus.FromPointer); // 024662AE66A8 0x18 AnnounceDetail              ( 0001866BF600 ModelClassType AnnounceDetailStatus AnnounceDetailStatus AnnounceDetailStatus Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CostumeDetailPopupSequencer
+    public partial class CostumeDetailPopupSequencer : DataModel
     {
 
         public static CostumeDetailPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeDetailPopupSequencer();
+            var value   = new CostumeDetailPopupSequencer() { Pointer= p0 };
 
 
             return value;

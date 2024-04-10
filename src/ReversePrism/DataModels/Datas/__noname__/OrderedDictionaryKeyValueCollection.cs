@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Objects                                  00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
     // 018 IsKeys                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class OrderedDictionaryKeyValueCollection
+    public partial class OrderedDictionaryKeyValueCollection : DataModel
     {
         public ArrayList?                               Objects                                 { get; set; }
         public bool                                     IsKeys                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OrderedDictionaryKeyValueCollection();
+            var value   = new OrderedDictionaryKeyValueCollection() { Pointer= p0 };
 
-            value.Objects                                   = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 02700602E0E8 0x10 Objects                     ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.IsKeys                                    = GetBool(new IntPtr(p + 0x018)); // 02700602E108 0x18 IsKeys                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Objects                                   = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0245A6007E50 0x10 Objects                     ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.IsKeys                                    = GetBool(new IntPtr(p + 0x018)); // 0245A6007E70 0x18 IsKeys                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TutorialADVCallbackView
+    public partial class TutorialADVCallbackView : DataModel
     {
 
         public static TutorialADVCallbackView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialADVCallbackView();
+            var value   = new TutorialADVCallbackView() { Pointer= p0 };
 
 
             return value;

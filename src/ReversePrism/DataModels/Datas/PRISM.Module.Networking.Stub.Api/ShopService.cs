@@ -39,7 +39,7 @@ namespace ReversePrism.DataModels
     // 0E0 __Method_GetShopItemSeasonPassGroup      Method`2<GetShopItemSeasonPassGroupArgs, GetShopItemSeasonPassGroupReply> IL2CPP_TYPE_GENERICINST
     // 0E8 __Method_GetShopItemLoginBonusPassGroup  Method`2<GetShopItemLoginBonusPassGroupArgs, GetShopItemLoginBonusPassGroupReply> IL2CPP_TYPE_GENERICINST
     // 0F0 __Method_GetShopItemCostumeGroup         Method`2<GetShopItemCostumeGroupArgs, GetShopItemCostumeGroupReply> IL2CPP_TYPE_GENERICINST
-    public partial class ShopService
+    public partial class ShopService : DataModel
     {
 
         public static ShopService? FromPointer(IntPtr p0)
@@ -48,7 +48,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopService();
+            var value   = new ShopService() { Pointer= p0 };
 
 
             return value;

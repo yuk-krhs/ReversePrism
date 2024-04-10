@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DataViewManager                          0001866861A0 ModelClassType DataViewManager DataViewManager DataViewManager Pointer
-    public partial class DataViewManagerListItemTypeDescriptor
+    public partial class DataViewManagerListItemTypeDescriptor : DataModel
     {
         public DataViewManager?                         DataViewManager                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataViewManagerListItemTypeDescriptor();
+            var value   = new DataViewManagerListItemTypeDescriptor() { Pointer= p0 };
 
-            value.DataViewManager                           = GetObject<DataViewManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataViewManager.FromPointer); // 0270D89264A0 0x10 DataViewManager             ( 0001866861A0 ModelClassType DataViewManager DataViewManager DataViewManager Pointer )
+            value.DataViewManager                           = GetObject<DataViewManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataViewManager.FromPointer); // 0246689922E8 0x10 DataViewManager             ( 0001866861A0 ModelClassType DataViewManager DataViewManager DataViewManager Pointer )
 
             return value;
         }

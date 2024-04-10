@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Header                                   0001866736C0 ModelPrimitiveType string string string String
-    public partial class HeaderAttribute
+    public partial class HeaderAttribute : DataModel
     {
         public string                                   Header                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HeaderAttribute();
+            var value   = new HeaderAttribute() { Pointer= p0 };
 
-            value.Header                                    = GetString(new IntPtr(p + 0x010)); // 0270068B8418 0x10 Header                      ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Header                                    = GetString(new IntPtr(p + 0x010)); // 0245A687AAC8 0x10 Header                      ( 0001866736C0 ModelPrimitiveType string string string String )
 
             return value;
         }

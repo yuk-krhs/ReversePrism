@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 015 M_ColorBlendOperation                    00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 016 M_AlphaBlendOperation                    00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 017 M_Padding                                00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class RenderTargetBlendState
+    public partial class RenderTargetBlendState : DataModel
     {
         public sbyte                                    M_WriteMask                             { get; set; }
         public sbyte                                    M_SourceColorBlendMode                  { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderTargetBlendState();
+            var value   = new RenderTargetBlendState() { Pointer= p0 };
 
-            value.M_WriteMask                               = GetSByte(new IntPtr(p + 0x010)); // 0270068CD498 0x10 M_WriteMask                 ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_SourceColorBlendMode                    = GetSByte(new IntPtr(p + 0x011)); // 0270068CD4B8 0x11 M_SourceColorBlendMode      ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_DestinationColorBlendMode               = GetSByte(new IntPtr(p + 0x012)); // 0270068CD4D8 0x12 M_DestinationColorBlendMode ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_SourceAlphaBlendMode                    = GetSByte(new IntPtr(p + 0x013)); // 0270068CD4F8 0x13 M_SourceAlphaBlendMode      ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_DestinationAlphaBlendMode               = GetSByte(new IntPtr(p + 0x014)); // 0270068CD518 0x14 M_DestinationAlphaBlendMode ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_ColorBlendOperation                     = GetSByte(new IntPtr(p + 0x015)); // 0270068CD538 0x15 M_ColorBlendOperation       ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_AlphaBlendOperation                     = GetSByte(new IntPtr(p + 0x016)); // 0270068CD558 0x16 M_AlphaBlendOperation       ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_Padding                                 = GetSByte(new IntPtr(p + 0x017)); // 0270068CD578 0x17 M_Padding                   ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_WriteMask                               = GetSByte(new IntPtr(p + 0x010)); // 0245A6890428 0x10 M_WriteMask                 ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_SourceColorBlendMode                    = GetSByte(new IntPtr(p + 0x011)); // 0245A6890448 0x11 M_SourceColorBlendMode      ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_DestinationColorBlendMode               = GetSByte(new IntPtr(p + 0x012)); // 0245A6890468 0x12 M_DestinationColorBlendMode ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_SourceAlphaBlendMode                    = GetSByte(new IntPtr(p + 0x013)); // 0245A6890488 0x13 M_SourceAlphaBlendMode      ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_DestinationAlphaBlendMode               = GetSByte(new IntPtr(p + 0x014)); // 0245A68904A8 0x14 M_DestinationAlphaBlendMode ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_ColorBlendOperation                     = GetSByte(new IntPtr(p + 0x015)); // 0245A68904C8 0x15 M_ColorBlendOperation       ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_AlphaBlendOperation                     = GetSByte(new IntPtr(p + 0x016)); // 0245A68904E8 0x16 M_AlphaBlendOperation       ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_Padding                                 = GetSByte(new IntPtr(p + 0x017)); // 0245A6890508 0x17 M_Padding                   ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

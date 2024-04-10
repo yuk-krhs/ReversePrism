@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypeNames
+    public partial class TypeNames : DataModel
     {
 
         public static TypeNames? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeNames();
+            var value   = new TypeNames() { Pointer= p0 };
 
 
             return value;

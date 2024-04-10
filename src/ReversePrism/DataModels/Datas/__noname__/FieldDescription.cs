@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 ussName                                  string IL2CPP_TYPE_STRING
     // 000 read                                     Func`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 write                                    WriteDelegate<<var>, <var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class FieldDescription
+    public partial class FieldDescription : DataModel
     {
 
         public static FieldDescription? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldDescription();
+            var value   = new FieldDescription() { Pointer= p0 };
 
 
             return value;

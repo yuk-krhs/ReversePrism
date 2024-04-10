@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<ILiveStageDetailPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class LiveStageDetailPopupCallerImplement
+    public partial class LiveStageDetailPopupCallerImplement : DataModel
     {
 
         public static LiveStageDetailPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveStageDetailPopupCallerImplement();
+            var value   = new LiveStageDetailPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

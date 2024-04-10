@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Types                                    000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer
     // 018 Values                                   00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
-    public partial class TypeListConverter
+    public partial class TypeListConverter : DataModel
     {
         public List<Type>?                              Types                                   { get; set; }
         public StandardValuesCollection?                Values                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeListConverter();
+            var value   = new TypeListConverter() { Pointer= p0 };
 
-            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D7B3A200 0x10 Types                       ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0270D7B3A220 0x18 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
+            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024667BA2200 0x10 Types                       ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 024667BA2220 0x18 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 W                                        000186666050 ModelPrimitiveType float float float Single
     // 014 H                                        000186666050 ModelPrimitiveType float float float Single
-    public partial class SpriteSize
+    public partial class SpriteSize : DataModel
     {
         public float                                    W                                       { get; set; }
         public float                                    H                                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpriteSize();
+            var value   = new SpriteSize() { Pointer= p0 };
 
-            value.W                                         = GetSingle(new IntPtr(p + 0x010)); // 0270DA657A98 0x10 W                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.H                                         = GetSingle(new IntPtr(p + 0x014)); // 0270DA657AB8 0x14 H                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.W                                         = GetSingle(new IntPtr(p + 0x010)); // 02466A6CB240 0x10 W                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.H                                         = GetSingle(new IntPtr(p + 0x014)); // 02466A6CB260 0x14 H                           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_NativePtr                              <int> IL2CPP_TYPE_I
     // 000 HR_SUCCESS                               long IL2CPP_TYPE_I8
-    public partial class VideoCapture
+    public partial class VideoCapture : DataModel
     {
 
         public static VideoCapture? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VideoCapture();
+            var value   = new VideoCapture() { Pointer= p0 };
 
 
             return value;

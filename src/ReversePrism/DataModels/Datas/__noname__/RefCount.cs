@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   RefCountObservable`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class RefCount
+    public partial class RefCount : DataModel
     {
 
         public static RefCount? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RefCount();
+            var value   = new RefCount() { Pointer= p0 };
 
 
             return value;

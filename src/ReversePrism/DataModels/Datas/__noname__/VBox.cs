@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VBox
+    public partial class VBox : DataModel
     {
 
         public static VBox? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VBox();
+            var value   = new VBox() { Pointer= p0 };
 
 
             return value;

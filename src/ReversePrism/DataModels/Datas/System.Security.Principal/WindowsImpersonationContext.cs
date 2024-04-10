@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _token                                   <int> IL2CPP_TYPE_I
     // 018 Undo                                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class WindowsImpersonationContext
+    public partial class WindowsImpersonationContext : DataModel
     {
         public bool                                     Undo                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WindowsImpersonationContext();
+            var value   = new WindowsImpersonationContext() { Pointer= p0 };
 
-            value.Undo                                      = GetBool(new IntPtr(p + 0x018)); // 0270D6BB1BD8 0x18 Undo                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Undo                                      = GetBool(new IntPtr(p + 0x018)); // 024666C29BD8 0x18 Undo                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 kMaxNameLength                           int IL2CPP_TYPE_I4
     // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
     // 018 NameBuffer                               000186699A90 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32
-    public partial class QueryKeyboardLayoutCommand
+    public partial class QueryKeyboardLayoutCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public <nameBuffer>e__FixedBuffer               NameBuffer                              { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueryKeyboardLayoutCommand();
+            var value   = new QueryKeyboardLayoutCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FB7D0 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 0270D77FB7F0 0x18 NameBuffer                  ( 000186699A90 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0246678537D0 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 0246678537F0 0x18 NameBuffer                  ( 000186699A90 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
 
             return value;
         }

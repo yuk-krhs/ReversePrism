@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Op                                       0001865F44E0 ModelPrimitiveType int int int Int32
-    public partial class ZeroOpNode
+    public partial class ZeroOpNode : DataModel
     {
         public int                                      Op                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ZeroOpNode();
+            var value   = new ZeroOpNode() { Pointer= p0 };
 
-            value.Op                                        = GetInt32(new IntPtr(p + 0x018)); // 0270D892E300 0x18 Op                          ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Op                                        = GetInt32(new IntPtr(p + 0x018)); // 0246689A9250 0x18 Op                          ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

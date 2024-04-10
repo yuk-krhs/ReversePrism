@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185CA5458 ModelClassListType SqlChars[] SqlChars[] List<SqlChars> Pointer
-    public partial class SqlCharsStorage
+    public partial class SqlCharsStorage : DataModel
     {
         public List<SqlChars>?                          Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlCharsStorage();
+            var value   = new SqlCharsStorage() { Pointer= p0 };
 
-            value.Values                                    = GetObjectList<SqlChars>(new IntPtr(p + 0x050), ReversePrism.DataModels.SqlChars.FromPointer); // 0270D89EA838 0x50 Values                      ( 000185CA5458 ModelClassListType SqlChars[] SqlChars[] List<SqlChars> Pointer )
+            value.Values                                    = GetObjectList<SqlChars>(new IntPtr(p + 0x050), ReversePrism.DataModels.SqlChars.FromPointer); // 024668A45440 0x50 Values                      ( 000185CA5458 ModelClassListType SqlChars[] SqlChars[] List<SqlChars> Pointer )
 
             return value;
         }

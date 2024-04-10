@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LyricTrack
+    public partial class LyricTrack : DataModel
     {
 
         public static LyricTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LyricTrack();
+            var value   = new LyricTrack() { Pointer= p0 };
 
 
             return value;

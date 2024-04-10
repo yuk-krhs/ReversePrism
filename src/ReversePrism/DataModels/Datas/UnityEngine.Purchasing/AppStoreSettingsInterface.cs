@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_typeCache                              Type IL2CPP_TYPE_CLASS
-    public partial class AppStoreSettingsInterface
+    public partial class AppStoreSettingsInterface : DataModel
     {
 
         public static AppStoreSettingsInterface? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppStoreSettingsInterface();
+            var value   = new AppStoreSettingsInterface() { Pointer= p0 };
 
 
             return value;

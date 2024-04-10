@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ViewKey                                  string IL2CPP_TYPE_STRING
     // 010 UiCanvasManager                          0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer
-    public partial class TutorialBuilder
+    public partial class TutorialBuilder : DataModel
     {
         public UICanvasManager?                         UiCanvasManager                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialBuilder();
+            var value   = new TutorialBuilder() { Pointer= p0 };
 
-            value.UiCanvasManager                           = GetObject<UICanvasManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.UICanvasManager.FromPointer); // 027003A65BC0 0x10 UiCanvasManager             ( 0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
+            value.UiCanvasManager                           = GetObject<UICanvasManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.UICanvasManager.FromPointer); // 0245A3A6FF18 0x10 UiCanvasManager             ( 0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
 
             return value;
         }

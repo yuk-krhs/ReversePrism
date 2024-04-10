@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 090 ReadChainTalk                            Method`2<IReadChainTalkArgs, IReadChainTalkReply> IL2CPP_TYPE_GENERICINST
     // 0A8 GetPhoneCallList                         Method`2<IGetPhoneCallListArgs, IGetPhoneCallListReply> IL2CPP_TYPE_GENERICINST
     // 0C0 ReadPhoneCall                            Method`2<IReadPhoneCallArgs, IReadPhoneCallReply> IL2CPP_TYPE_GENERICINST
-    public partial class MobileServiceMethods
+    public partial class MobileServiceMethods : DataModel
     {
 
         public static MobileServiceMethods? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileServiceMethods();
+            var value   = new MobileServiceMethods() { Pointer= p0 };
 
 
             return value;

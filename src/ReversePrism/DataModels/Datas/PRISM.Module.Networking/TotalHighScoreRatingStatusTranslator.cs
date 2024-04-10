@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TotalHighScoreRatingStatusTranslator
+    public partial class TotalHighScoreRatingStatusTranslator : DataModel
     {
 
         public static TotalHighScoreRatingStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TotalHighScoreRatingStatusTranslator();
+            var value   = new TotalHighScoreRatingStatusTranslator() { Pointer= p0 };
 
 
             return value;

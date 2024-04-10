@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HomeCutSceneStatusTranslator
+    public partial class HomeCutSceneStatusTranslator : DataModel
     {
 
         public static HomeCutSceneStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeCutSceneStatusTranslator();
+            var value   = new HomeCutSceneStatusTranslator() { Pointer= p0 };
 
 
             return value;

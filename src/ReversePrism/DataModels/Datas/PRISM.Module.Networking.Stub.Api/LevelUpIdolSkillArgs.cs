@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IdolSkillLevelFieldNumber                int IL2CPP_TYPE_I4
     // 01C IdolSkillLevel                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LevelUpIdolSkillArgs
+    public partial class LevelUpIdolSkillArgs : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      IdolSkillLevel                          { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LevelUpIdolSkillArgs();
+            var value   = new LevelUpIdolSkillArgs() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0270D25F72B8 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillLevel                            = GetInt32(new IntPtr(p + 0x01C)); // 0270D25F72F8 0x1C IdolSkillLevel              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024662535EB0 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolSkillLevel                            = GetInt32(new IntPtr(p + 0x01C)); // 024662535EF0 0x1C IdolSkillLevel              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

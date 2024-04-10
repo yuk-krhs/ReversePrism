@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ProduceCard                              0001865E4D60 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer
     // 018 TargetRank                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class PCardRankUpModel
+    public partial class PCardRankUpModel : DataModel
     {
         public IProduceCardStatus?                      ProduceCard                             { get; set; }
         public int                                      TargetRank                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardRankUpModel();
+            var value   = new PCardRankUpModel() { Pointer= p0 };
 
-            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0270D5CEA468 0x10 ProduceCard                 ( 0001865E4D60 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
-            value.TargetRank                                = GetInt32(new IntPtr(p + 0x018)); // 0270D5CEA488 0x18 TargetRank                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D3B040 0x10 ProduceCard                 ( 0001865E4D60 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
+            value.TargetRank                                = GetInt32(new IntPtr(p + 0x018)); // 024665D3B060 0x18 TargetRank                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

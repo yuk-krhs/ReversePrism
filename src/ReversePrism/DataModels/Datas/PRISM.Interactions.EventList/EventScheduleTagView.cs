@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Text                                     0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 Background                               0001866CCDB0 ModelClassType Image Image Image Pointer
-    public partial class EventScheduleTagView
+    public partial class EventScheduleTagView : DataModel
     {
         public UITextMeshProUGUI?                       Text                                    { get; set; }
         public Image?                                   Background                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventScheduleTagView();
+            var value   = new EventScheduleTagView() { Pointer= p0 };
 
-            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBEBF010 0x20 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Background                                = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0270DBEBF030 0x28 Background                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF5EE68 0x20 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Background                                = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 02466BF5EE88 0x28 Background                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
 
             return value;
         }

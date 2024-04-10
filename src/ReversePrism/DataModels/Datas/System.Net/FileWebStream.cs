@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 070 M_request                                00018657EA90 ModelClassType FileWebRequest FileWebRequest FileWebRequest Pointer
-    public partial class FileWebStream
+    public partial class FileWebStream : DataModel
     {
         public FileWebRequest?                          M_request                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileWebStream();
+            var value   = new FileWebStream() { Pointer= p0 };
 
-            value.M_request                                 = GetObject<FileWebRequest>(new IntPtr(p + 0x070), ReversePrism.DataModels.FileWebRequest.FromPointer); // 0270D7A594B8 0x70 M_request                   ( 00018657EA90 ModelClassType FileWebRequest FileWebRequest FileWebRequest Pointer )
+            value.M_request                                 = GetObject<FileWebRequest>(new IntPtr(p + 0x070), ReversePrism.DataModels.FileWebRequest.FromPointer); // 024667AB14B8 0x70 M_request                   ( 00018657EA90 ModelClassType FileWebRequest FileWebRequest FileWebRequest Pointer )
 
             return value;
         }

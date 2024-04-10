@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProcessWaitHandle
+    public partial class ProcessWaitHandle : DataModel
     {
 
         public static ProcessWaitHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProcessWaitHandle();
+            var value   = new ProcessWaitHandle() { Pointer= p0 };
 
 
             return value;

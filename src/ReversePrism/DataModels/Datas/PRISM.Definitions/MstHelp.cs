@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01E IsDmm                                    0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 020 BeginDate                                0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 028 EndDate                                  0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class MstHelp
+    public partial class MstHelp : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      SortId                                  { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstHelp();
+            var value   = new MstHelp() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045985C0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0270045985E0 0x14 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstHelpGroupId                            = GetInt32(new IntPtr(p + 0x018)); // 027004598600 0x18 MstHelpGroupId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsMobile                                  = GetBool(new IntPtr(p + 0x01C)); // 027004598620 0x1C IsMobile                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsGpg                                     = GetBool(new IntPtr(p + 0x01D)); // 027004598640 0x1D IsGpg                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsDmm                                     = GetBool(new IntPtr(p + 0x01E)); // 027004598660 0x1E IsDmm                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 027004598680 0x20 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0270045986A0 0x28 EndDate                     ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4613B78 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A4613B98 0x14 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstHelpGroupId                            = GetInt32(new IntPtr(p + 0x018)); // 0245A4613BB8 0x18 MstHelpGroupId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsMobile                                  = GetBool(new IntPtr(p + 0x01C)); // 0245A4613BD8 0x1C IsMobile                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsGpg                                     = GetBool(new IntPtr(p + 0x01D)); // 0245A4613BF8 0x1D IsGpg                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsDmm                                     = GetBool(new IntPtr(p + 0x01E)); // 0245A4613C18 0x1E IsDmm                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0245A4613C38 0x20 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0245A4613C58 0x28 EndDate                     ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

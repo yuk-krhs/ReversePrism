@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Rank                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 PointFieldNumber                         int IL2CPP_TYPE_I4
     // 020 Point                                    0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class LiveEventRankingStatus
+    public partial class LiveEventRankingStatus : DataModel
     {
         public EventRankingType                         RankingType                             { get; set; }
         public int                                      Rank                                    { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventRankingStatus();
+            var value   = new LiveEventRankingStatus() { Pointer= p0 };
 
-            value.RankingType                               = (EventRankingType)GetInt32(new IntPtr(p + 0x018)); // 0270D2306DB8 0x18 RankingType                 ( 000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32 )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D2306DF8 0x1C Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Point                                     = GetInt64(new IntPtr(p + 0x020)); // 0270D2306E38 0x20 Point                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.RankingType                               = (EventRankingType)GetInt32(new IntPtr(p + 0x018)); // 0246622E8F80 0x18 RankingType                 ( 000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32 )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246622E8FC0 0x1C Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Point                                     = GetInt64(new IntPtr(p + 0x020)); // 0246622E9000 0x20 Point                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

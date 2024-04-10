@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 M_Index                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DebugUIHandlerObjectPopupField
+    public partial class DebugUIHandlerObjectPopupField : DataModel
     {
         public int                                      M_Index                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerObjectPopupField();
+            var value   = new DebugUIHandlerObjectPopupField() { Pointer= p0 };
 
-            value.M_Index                                   = GetInt32(new IntPtr(p + 0x088)); // 0270D93378F0 0x88 M_Index                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Index                                   = GetInt32(new IntPtr(p + 0x088)); // 02466938A620 0x88 M_Index                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

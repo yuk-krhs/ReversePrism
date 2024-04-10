@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 Array                                    0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32
     // 028 Index                                    0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32
-    public partial class ArrayByRefUpdater
+    public partial class ArrayByRefUpdater : DataModel
     {
         public LocalDefinition                          Array                                   { get; set; }
         public LocalDefinition                          Index                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArrayByRefUpdater();
+            var value   = new ArrayByRefUpdater() { Pointer= p0 };
 
-            value.Array                                     = (LocalDefinition)GetInt32(new IntPtr(p + 0x018)); // 0270DA00C6C0 0x18 Array                       ( 0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32 )
-            value.Index                                     = (LocalDefinition)GetInt32(new IntPtr(p + 0x028)); // 0270DA00C6E0 0x28 Index                       ( 0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32 )
+            value.Array                                     = (LocalDefinition)GetInt32(new IntPtr(p + 0x018)); // 02466A070440 0x18 Array                       ( 0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32 )
+            value.Index                                     = (LocalDefinition)GetInt32(new IntPtr(p + 0x028)); // 02466A070460 0x28 Index                       ( 0001865A4BE0 ModelEnumType LocalDefinition LocalDefinition LocalDefinition Int32 )
 
             return value;
         }

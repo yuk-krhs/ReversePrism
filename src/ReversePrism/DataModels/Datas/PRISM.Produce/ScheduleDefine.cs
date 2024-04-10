@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 008 <CacheProduceBaseInfo>k__BackingField    IProduceBaseInfoStatus IL2CPP_TYPE_CLASS
     // 010 CacheProduceNextOrderType                00018660CF70 ModelEnumType ProduceNextOrderType ProduceNextOrderType ProduceNextOrderType Int32
     // 014 IsResumeState                            000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class ScheduleDefine
+    public partial class ScheduleDefine : DataModel
     {
         public ProduceNextOrderType                     CacheProduceNextOrderType               { get; set; }
         public bool                                     IsResumeState                           { get; set; }
@@ -37,10 +37,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleDefine();
+            var value   = new ScheduleDefine() { Pointer= p0 };
 
-            value.CacheProduceNextOrderType                 = (ProduceNextOrderType)GetInt32(new IntPtr(p + 0x010)); // 0270D5D09C00 0x10 CacheProduceNextOrderType   ( 00018660CF70 ModelEnumType ProduceNextOrderType ProduceNextOrderType ProduceNextOrderType Int32 )
-            value.IsResumeState                             = GetBool(new IntPtr(p + 0x014)); // 0270D5D09C20 0x14 IsResumeState               ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.CacheProduceNextOrderType                 = (ProduceNextOrderType)GetInt32(new IntPtr(p + 0x010)); // 024665D5A818 0x10 CacheProduceNextOrderType   ( 00018660CF70 ModelEnumType ProduceNextOrderType ProduceNextOrderType ProduceNextOrderType Int32 )
+            value.IsResumeState                             = GetBool(new IntPtr(p + 0x014)); // 024665D5A838 0x14 IsResumeState               ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

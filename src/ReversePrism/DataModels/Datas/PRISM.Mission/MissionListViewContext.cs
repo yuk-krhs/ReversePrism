@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 038 OnClickButton                            Action`1<int> IL2CPP_TYPE_GENERICINST
     // 040 LastDisplayDate                          000185D00A78 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 050 ResourceTagName                          0001866722E0 ModelPrimitiveType string string string String
-    public partial class MissionListViewContext
+    public partial class MissionListViewContext : DataModel
     {
         public DateTime                                 LastDisplayDate                         { get; set; }
         public string                                   ResourceTagName                         { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionListViewContext();
+            var value   = new MissionListViewContext() { Pointer= p0 };
 
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x040)); // 0270D5555B88 0x40 LastDisplayDate             ( 000185D00A78 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ResourceTagName                           = GetString(new IntPtr(p + 0x050)); // 0270D5555BA8 0x50 ResourceTagName             ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x040)); // 0246655C7770 0x40 LastDisplayDate             ( 000185D00A78 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ResourceTagName                           = GetString(new IntPtr(p + 0x050)); // 0246655C7790 0x50 ResourceTagName             ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

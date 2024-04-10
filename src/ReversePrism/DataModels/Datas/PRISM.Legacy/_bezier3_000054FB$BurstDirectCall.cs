@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Pointer                                  <int> IL2CPP_TYPE_I
     // 008 DeferredCompilation                      <int> IL2CPP_TYPE_I
-    public partial class _bezier3_000054FB$BurstDirectCall
+    public partial class _bezier3_000054FB$BurstDirectCall : DataModel
     {
 
         public static _bezier3_000054FB$BurstDirectCall? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _bezier3_000054FB$BurstDirectCall();
+            var value   = new _bezier3_000054FB$BurstDirectCall() { Pointer= p0 };
 
 
             return value;

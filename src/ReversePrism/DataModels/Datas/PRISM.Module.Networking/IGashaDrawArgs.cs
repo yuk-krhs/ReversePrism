@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaDrawArgs
+    public partial class IGashaDrawArgs : DataModel
     {
 
         public static IGashaDrawArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaDrawArgs();
+            var value   = new IGashaDrawArgs() { Pointer= p0 };
 
 
             return value;

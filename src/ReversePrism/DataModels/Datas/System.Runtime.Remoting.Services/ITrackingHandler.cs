@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITrackingHandler
+    public partial class ITrackingHandler : DataModel
     {
 
         public static ITrackingHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITrackingHandler();
+            var value   = new ITrackingHandler() { Pointer= p0 };
 
 
             return value;

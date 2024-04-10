@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 TopicStartEvent                          string IL2CPP_TYPE_STRING
     // 000 TopicStartSeason                         string IL2CPP_TYPE_STRING
     // 000 TopicBow                                 string IL2CPP_TYPE_STRING
-    public partial class MessagingConst
+    public partial class MessagingConst : DataModel
     {
 
         public static MessagingConst? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MessagingConst();
+            var value   = new MessagingConst() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Left                                     00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer
     // 018 Right                                    00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer
-    public partial class MergedRestriction
+    public partial class MergedRestriction : DataModel
     {
         public BindingRestrictions?                     Left                                    { get; set; }
         public BindingRestrictions?                     Right                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MergedRestriction();
+            var value   = new MergedRestriction() { Pointer= p0 };
 
-            value.Left                                      = GetObject<BindingRestrictions>(new IntPtr(p + 0x010), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 0270DA06C480 0x10 Left                        ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
-            value.Right                                     = GetObject<BindingRestrictions>(new IntPtr(p + 0x018), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 0270DA06C4A0 0x18 Right                       ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
+            value.Left                                      = GetObject<BindingRestrictions>(new IntPtr(p + 0x010), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 02466A0D01E0 0x10 Left                        ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
+            value.Right                                     = GetObject<BindingRestrictions>(new IntPtr(p + 0x018), ReversePrism.DataModels.BindingRestrictions.FromPointer); // 02466A0D0200 0x18 Right                       ( 00018675E560 ModelClassType BindingRestrictions BindingRestrictions BindingRestrictions Pointer )
 
             return value;
         }

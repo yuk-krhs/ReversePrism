@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 0A0 CurrentLBValue                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 SkipButtonIndex                          int IL2CPP_TYPE_I4
     // 000 AutoButtonIndex                          int IL2CPP_TYPE_I4
-    public partial class SkipLiveConfirmationPopupContent
+    public partial class SkipLiveConfirmationPopupContent : DataModel
     {
         public LiveBonusUsageSliderView?                SliderView                              { get; set; }
         public UITextMeshProUGUI?                       CurrentLiveBonus                        { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkipLiveConfirmationPopupContent();
+            var value   = new SkipLiveConfirmationPopupContent() { Pointer= p0 };
 
-            value.SliderView                                = GetObject<LiveBonusUsageSliderView>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveBonusUsageSliderView.FromPointer); // 0270D5229AA8 0x68 SliderView                  ( 0001865424D0 ModelClassType LiveBonusUsageSliderView LiveBonusUsageSliderView LiveBonusUsageSliderView Pointer )
-            value.CurrentLiveBonus                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5229AC8 0x70 CurrentLiveBonus            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LiveBonusAfterConsumption                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5229AE8 0x78 LiveBonusAfterConsumption   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RemainingSkipCount                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5229B08 0x80 RemainingSkipCount          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RemainingAutoCount                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5229B28 0x88 RemainingAutoCount          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.StartButtonOverlayUI                      = GetObject<RectTransform>(new IntPtr(p + 0x090), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5229B48 0x90 StartButtonOverlayUI        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.AutoButtonOverlayUI                       = GetObject<RectTransform>(new IntPtr(p + 0x098), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5229B68 0x98 AutoButtonOverlayUI         ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.CurrentLBValue                            = GetInt32(new IntPtr(p + 0x0A0)); // 0270D5229B88 0xA0 CurrentLBValue              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SliderView                                = GetObject<LiveBonusUsageSliderView>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveBonusUsageSliderView.FromPointer); // 02466529EB50 0x68 SliderView                  ( 0001865424D0 ModelClassType LiveBonusUsageSliderView LiveBonusUsageSliderView LiveBonusUsageSliderView Pointer )
+            value.CurrentLiveBonus                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466529EB70 0x70 CurrentLiveBonus            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LiveBonusAfterConsumption                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466529EB90 0x78 LiveBonusAfterConsumption   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RemainingSkipCount                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466529EBB0 0x80 RemainingSkipCount          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RemainingAutoCount                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466529EBD0 0x88 RemainingAutoCount          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.StartButtonOverlayUI                      = GetObject<RectTransform>(new IntPtr(p + 0x090), ReversePrism.DataModels.RectTransform.FromPointer); // 02466529EBF0 0x90 StartButtonOverlayUI        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.AutoButtonOverlayUI                       = GetObject<RectTransform>(new IntPtr(p + 0x098), ReversePrism.DataModels.RectTransform.FromPointer); // 02466529EC10 0x98 AutoButtonOverlayUI         ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.CurrentLBValue                            = GetInt32(new IntPtr(p + 0x0A0)); // 02466529EC30 0xA0 CurrentLBValue              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

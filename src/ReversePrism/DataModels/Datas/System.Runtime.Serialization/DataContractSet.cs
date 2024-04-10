@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 referencedCollectionTypes                ICollection`1<Type> IL2CPP_TYPE_GENERICINST
     // 048 referencedTypesDictionary                Dictionary`2<XmlQualifiedName, <object>> IL2CPP_TYPE_GENERICINST
     // 050 referencedCollectionTypesDictionary      Dictionary`2<XmlQualifiedName, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class DataContractSet
+    public partial class DataContractSet : DataModel
     {
         public IDataContractSurrogate?                  DataContractSurrogate                   { get; set; }
         public Hashtable?                               SurrogateDataTable                      { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataContractSet();
+            var value   = new DataContractSet() { Pointer= p0 };
 
-            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 0270D7CB8030 0x20 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
-            value.SurrogateDataTable                        = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D7CB8050 0x28 SurrogateDataTable          ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 024667D10030 0x20 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
+            value.SurrogateDataTable                        = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 024667D10050 0x28 SurrogateDataTable          ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

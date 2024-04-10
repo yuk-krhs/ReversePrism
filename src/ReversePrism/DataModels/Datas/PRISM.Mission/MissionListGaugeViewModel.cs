@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 IsAllReceived                            0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 029 IsClear                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 02C GetGaugeMax                              0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MissionListGaugeViewModel
+    public partial class MissionListGaugeViewModel : DataModel
     {
         public int                                      Point                                   { get; set; }
         public int                                      PreviousGaugePoint                      { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionListGaugeViewModel();
+            var value   = new MissionListGaugeViewModel() { Pointer= p0 };
 
-            value.Point                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D5557418 0x10 Point                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.PreviousGaugePoint                        = GetInt32(new IntPtr(p + 0x014)); // 0270D5557438 0x14 PreviousGaugePoint          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RewardList                                = GetObjectList<IMissionGaugeRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMissionGaugeRewardStatus.FromPointer); // 0270D5557458 0x18 RewardList                  ( 000185D03318 ModelClassListType IReadOnlyList`1<IMissionGaugeRewardStatus> IReadOnlyList`1<IMissionGaugeRewardStatus> List<IMissionGaugeRewardStatus> Pointer )
-            value.PreviousRate                              = GetSingle(new IntPtr(p + 0x020)); // 0270D5557478 0x20 PreviousRate                ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.AfterRate                                 = GetSingle(new IntPtr(p + 0x024)); // 0270D5557498 0x24 AfterRate                   ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.IsAllReceived                             = GetBool(new IntPtr(p + 0x028)); // 0270D55574B8 0x28 IsAllReceived               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsClear                                   = GetBool(new IntPtr(p + 0x029)); // 0270D55574D8 0x29 IsClear                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.GetGaugeMax                               = GetInt32(new IntPtr(p + 0x02C)); // 0270D55574F8 0x2C GetGaugeMax                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x010)); // 0246655C9000 0x10 Point                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.PreviousGaugePoint                        = GetInt32(new IntPtr(p + 0x014)); // 0246655C9020 0x14 PreviousGaugePoint          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RewardList                                = GetObjectList<IMissionGaugeRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMissionGaugeRewardStatus.FromPointer); // 0246655C9040 0x18 RewardList                  ( 000185D03318 ModelClassListType IReadOnlyList`1<IMissionGaugeRewardStatus> IReadOnlyList`1<IMissionGaugeRewardStatus> List<IMissionGaugeRewardStatus> Pointer )
+            value.PreviousRate                              = GetSingle(new IntPtr(p + 0x020)); // 0246655C9060 0x20 PreviousRate                ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.AfterRate                                 = GetSingle(new IntPtr(p + 0x024)); // 0246655C9080 0x24 AfterRate                   ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.IsAllReceived                             = GetBool(new IntPtr(p + 0x028)); // 0246655C90A0 0x28 IsAllReceived               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsClear                                   = GetBool(new IntPtr(p + 0x029)); // 0246655C90C0 0x29 IsClear                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.GetGaugeMax                               = GetInt32(new IntPtr(p + 0x02C)); // 0246655C90E0 0x2C GetGaugeMax                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

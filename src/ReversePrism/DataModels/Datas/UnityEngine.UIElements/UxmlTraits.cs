@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlTraits
+    public partial class UxmlTraits : DataModel
     {
 
         public static UxmlTraits? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlTraits();
+            var value   = new UxmlTraits() { Pointer= p0 };
 
 
             return value;

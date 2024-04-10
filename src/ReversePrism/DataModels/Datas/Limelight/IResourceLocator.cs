@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IResourceLocator
+    public partial class IResourceLocator : DataModel
     {
 
         public static IResourceLocator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IResourceLocator();
+            var value   = new IResourceLocator() { Pointer= p0 };
 
 
             return value;

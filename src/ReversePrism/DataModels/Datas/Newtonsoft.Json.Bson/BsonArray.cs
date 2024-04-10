@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Children                                 000185CCFC58 ModelClassListType List`1<BsonToken> List`1<BsonToken> List<BsonToken> Pointer
-    public partial class BsonArray
+    public partial class BsonArray : DataModel
     {
         public List<BsonToken>?                         Children                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BsonArray();
+            var value   = new BsonArray() { Pointer= p0 };
 
-            value.Children                                  = GetObjectList<BsonToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.BsonToken.FromPointer); // 0270D888DAE8 0x20 Children                    ( 000185CCFC58 ModelClassListType List`1<BsonToken> List`1<BsonToken> List<BsonToken> Pointer )
+            value.Children                                  = GetObjectList<BsonToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.BsonToken.FromPointer); // 0246688F2038 0x20 Children                    ( 000185CCFC58 ModelClassListType List`1<BsonToken> List`1<BsonToken> List<BsonToken> Pointer )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 GashaProductRarity                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 RateFieldNumber                          int IL2CPP_TYPE_I4
     // 01C Rate                                     0001866656B0 ModelPrimitiveType float float float Single
-    public partial class GashaRarityRateStatus
+    public partial class GashaRarityRateStatus : DataModel
     {
         public int                                      GashaProductRarity                      { get; set; }
         public float                                    Rate                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaRarityRateStatus();
+            var value   = new GashaRarityRateStatus() { Pointer= p0 };
 
-            value.GashaProductRarity                        = GetInt32(new IntPtr(p + 0x018)); // 0270D159ED10 0x18 GashaProductRarity          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rate                                      = GetSingle(new IntPtr(p + 0x01C)); // 0270D159ED50 0x1C Rate                        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.GashaProductRarity                        = GetInt32(new IntPtr(p + 0x018)); // 02466153ECA0 0x18 GashaProductRarity          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rate                                      = GetSingle(new IntPtr(p + 0x01C)); // 02466153ECE0 0x1C Rate                        ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

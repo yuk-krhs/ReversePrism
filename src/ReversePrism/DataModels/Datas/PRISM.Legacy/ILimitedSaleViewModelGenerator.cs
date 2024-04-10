@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILimitedSaleViewModelGenerator
+    public partial class ILimitedSaleViewModelGenerator : DataModel
     {
 
         public static ILimitedSaleViewModelGenerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILimitedSaleViewModelGenerator();
+            var value   = new ILimitedSaleViewModelGenerator() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _instance                                DebugLogger IL2CPP_TYPE_CLASS
-    public partial class DebugLogger
+    public partial class DebugLogger : DataModel
     {
 
         public static DebugLogger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugLogger();
+            var value   = new DebugLogger() { Pointer= p0 };
 
 
             return value;

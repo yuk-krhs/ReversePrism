@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     0001867095C0 ModelEnumType ScenarioType ScenarioType ScenarioType Int32
     // 018 Id_center                                000186671910 ModelPrimitiveType string string string String
     // 020 Id_tail                                  000186671910 ModelPrimitiveType string string string String
-    public partial class ScenarioID
+    public partial class ScenarioID : DataModel
     {
         public ScenarioType                             Type                                    { get; set; }
         public string                                   Id_center                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScenarioID();
+            var value   = new ScenarioID() { Pointer= p0 };
 
-            value.Type                                      = (ScenarioType)GetInt32(new IntPtr(p + 0x010)); // 027006F3C820 0x10 Type                        ( 0001867095C0 ModelEnumType ScenarioType ScenarioType ScenarioType Int32 )
-            value.Id_center                                 = GetString(new IntPtr(p + 0x018)); // 027006F3C840 0x18 Id_center                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Id_tail                                   = GetString(new IntPtr(p + 0x020)); // 027006F3C860 0x20 Id_tail                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = (ScenarioType)GetInt32(new IntPtr(p + 0x010)); // 0245A6F08D70 0x10 Type                        ( 0001867095C0 ModelEnumType ScenarioType ScenarioType ScenarioType Int32 )
+            value.Id_center                                 = GetString(new IntPtr(p + 0x018)); // 0245A6F08D90 0x18 Id_center                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Id_tail                                   = GetString(new IntPtr(p + 0x020)); // 0245A6F08DB0 0x20 Id_tail                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

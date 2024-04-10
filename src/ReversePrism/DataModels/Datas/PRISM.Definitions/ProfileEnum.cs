@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileEnum
+    public partial class ProfileEnum : DataModel
     {
 
         public static ProfileEnum? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileEnum();
+            var value   = new ProfileEnum() { Pointer= p0 };
 
 
             return value;

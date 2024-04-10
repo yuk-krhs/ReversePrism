@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class X509Pal
+    public partial class X509Pal : DataModel
     {
 
         public static X509Pal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509Pal();
+            var value   = new X509Pal() { Pointer= p0 };
 
 
             return value;

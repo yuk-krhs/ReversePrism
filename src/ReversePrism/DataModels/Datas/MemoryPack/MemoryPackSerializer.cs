@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // FFFFFFFF threadStaticReaderOptionalState          MemoryPackReaderOptionalState IL2CPP_TYPE_CLASS
     // FFFFFFFF threadStaticState                        SerializerWriterThreadStaticState IL2CPP_TYPE_CLASS
     // FFFFFFFF threadStaticWriterOptionalState          MemoryPackWriterOptionalState IL2CPP_TYPE_CLASS
-    public partial class MemoryPackSerializer
+    public partial class MemoryPackSerializer : DataModel
     {
 
         public static MemoryPackSerializer? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackSerializer();
+            var value   = new MemoryPackSerializer() { Pointer= p0 };
 
 
             return value;

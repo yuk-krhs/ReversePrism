@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Icon                                     00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer
     // 028 RewardCountText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 030 PIdolCaller                              000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
-    public partial class MedalGashaRewardIcon
+    public partial class MedalGashaRewardIcon : DataModel
     {
         public RewardItemIcon?                          Icon                                    { get; set; }
         public UITextMeshProUGUI?                       RewardCountText                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardIcon();
+            var value   = new MedalGashaRewardIcon() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<RewardItemIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 0270DB934AF0 0x20 Icon                        ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
-            value.RewardCountText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB934B10 0x28 RewardCountText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PIdolCaller                               = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x030), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0270DB934B30 0x30 PIdolCaller                 ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
+            value.Icon                                      = GetObject<RewardItemIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 02466B9B3D88 0x20 Icon                        ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
+            value.RewardCountText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9B3DA8 0x28 RewardCountText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PIdolCaller                               = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x030), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 02466B9B3DC8 0x30 PIdolCaller                 ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
 
             return value;
         }

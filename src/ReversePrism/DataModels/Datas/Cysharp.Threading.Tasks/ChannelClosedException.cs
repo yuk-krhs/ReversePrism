@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ChannelClosedException
+    public partial class ChannelClosedException : DataModel
     {
 
         public static ChannelClosedException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChannelClosedException();
+            var value   = new ChannelClosedException() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ComImportAttribute
+    public partial class ComImportAttribute : DataModel
     {
 
         public static ComImportAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComImportAttribute();
+            var value   = new ComImportAttribute() { Pointer= p0 };
 
 
             return value;

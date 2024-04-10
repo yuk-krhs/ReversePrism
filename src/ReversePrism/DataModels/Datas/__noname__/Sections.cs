@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 section6                                 int IL2CPP_TYPE_I4
     // 000 section7                                 int IL2CPP_TYPE_I4
     // 000 section8                                 int IL2CPP_TYPE_I4
-    public partial class Sections
+    public partial class Sections : DataModel
     {
 
         public static Sections? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Sections();
+            var value   = new Sections() { Pointer= p0 };
 
 
             return value;

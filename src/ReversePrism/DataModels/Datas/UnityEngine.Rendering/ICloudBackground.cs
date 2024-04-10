@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICloudBackground
+    public partial class ICloudBackground : DataModel
     {
 
         public static ICloudBackground? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICloudBackground();
+            var value   = new ICloudBackground() { Pointer= p0 };
 
 
             return value;

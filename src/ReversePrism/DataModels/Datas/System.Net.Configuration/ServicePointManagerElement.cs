@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ServicePointManagerElement
+    public partial class ServicePointManagerElement : DataModel
     {
 
         public static ServicePointManagerElement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServicePointManagerElement();
+            var value   = new ServicePointManagerElement() { Pointer= p0 };
 
 
             return value;

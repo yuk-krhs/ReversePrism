@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 NeedPlaceListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_needPlaceList_codec            FieldCodec`1<NotificationPlace> IL2CPP_TYPE_GENERICINST
     // 020 NeedPlaceList                            000185CE7F18 ModelEnumListType RepeatedField`1<NotificationPlace> RepeatedField`1<NotificationPlace> List<NotificationPlace> Pointer
-    public partial class GetHomeNotificationListArgs
+    public partial class GetHomeNotificationListArgs : DataModel
     {
         public List<NotificationPlace>?                 NeedPlaceList                           { get; set; }
 
@@ -24,9 +24,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetHomeNotificationListArgs();
+            var value   = new GetHomeNotificationListArgs() { Pointer= p0 };
 
-            value.NeedPlaceList                             = GetEnumList<NotificationPlace>(new IntPtr(p + 0x020)); // 0270D204F848 0x20 NeedPlaceList               ( 000185CE7F18 ModelEnumListType RepeatedField`1<NotificationPlace> RepeatedField`1<NotificationPlace> List<NotificationPlace> Pointer )
+            value.NeedPlaceList                             = GetEnumList<NotificationPlace>(new IntPtr(p + 0x020)); // 024662011038 0x20 NeedPlaceList               ( 000185CE7F18 ModelEnumListType RepeatedField`1<NotificationPlace> RepeatedField`1<NotificationPlace> List<NotificationPlace> Pointer )
 
             return value;
         }

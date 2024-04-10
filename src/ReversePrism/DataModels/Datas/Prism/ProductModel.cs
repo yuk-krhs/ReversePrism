@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Product                                  0001865F9470 ModelClassType IProductStatus IProductStatus IProductStatus Pointer
-    public partial class ProductModel
+    public partial class ProductModel : DataModel
     {
         public IProductStatus?                          Product                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductModel();
+            var value   = new ProductModel() { Pointer= p0 };
 
-            value.Product                                   = GetObject<IProductStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductStatus.FromPointer); // 0270D4C81970 0x10 Product                     ( 0001865F9470 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
+            value.Product                                   = GetObject<IProductStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductStatus.FromPointer); // 024664CE5360 0x10 Product                     ( 0001865F9470 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
 
             return value;
         }

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 LabelsFieldNumber                        int IL2CPP_TYPE_I4
     // 008 _map_labels_codec                        Codec<string, string> IL2CPP_TYPE_GENERICINST
     // 020 labels_                                  MapField`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class Metric
+    public partial class Metric : DataModel
     {
         public string                                   Type                                    { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Metric();
+            var value   = new Metric() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270DA7FE098 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466A863700 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

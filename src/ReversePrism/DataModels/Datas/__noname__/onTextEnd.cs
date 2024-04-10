@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class onTextEnd
+    public partial class onTextEnd : DataModel
     {
 
         public static onTextEnd? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new onTextEnd();
+            var value   = new onTextEnd() { Pointer= p0 };
 
 
             return value;

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 SkillBufferDisplay                       0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer
     // 000 GrantSkillBufferDisplayFieldNumber       int IL2CPP_TYPE_I4
     // 030 GrantSkillBufferDisplay                  0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer
-    public partial class PvpEventEffectStatus
+    public partial class PvpEventEffectStatus : DataModel
     {
         public int                                      MstPvpEventEffectId                     { get; set; }
         public List<int>?                               ValueList                               { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpEventEffectStatus();
+            var value   = new PvpEventEffectStatus() { Pointer= p0 };
 
-            value.MstPvpEventEffectId                       = GetInt32(new IntPtr(p + 0x018)); // 0270D141EAF8 0x18 MstPvpEventEffectId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 0270D141EB58 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D141EB98 0x28 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
-            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D141EBD8 0x30 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.MstPvpEventEffectId                       = GetInt32(new IntPtr(p + 0x018)); // 02466138ED60 0x18 MstPvpEventEffectId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 02466138EDC0 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 02466138EE00 0x28 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 02466138EE40 0x30 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ViewConnector
+    public partial class ViewConnector : DataModel
     {
 
         public static ViewConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewConnector();
+            var value   = new ViewConnector() { Pointer= p0 };
 
 
             return value;

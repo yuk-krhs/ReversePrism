@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Instance                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class PrefabControlPlayable
+    public partial class PrefabControlPlayable : DataModel
     {
         public GameObject?                              M_Instance                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrefabControlPlayable();
+            var value   = new PrefabControlPlayable() { Pointer= p0 };
 
-            value.M_Instance                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB29D3F8 0x10 M_Instance                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.M_Instance                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 02466B309238 0x10 M_Instance                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

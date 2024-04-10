@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 _StartTime                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndTimeFieldNumber                       int IL2CPP_TYPE_I4
     // 020 _EndTime                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class Interval
+    public partial class Interval : DataModel
     {
         public Timestamp?                               _StartTime                              { get; set; }
         public Timestamp?                               _EndTime                                { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Interval();
+            var value   = new Interval() { Pointer= p0 };
 
-            value._StartTime                                = GetObject<Timestamp>(new IntPtr(p + 0x018), ReversePrism.DataModels.Timestamp.FromPointer); // 0270DA693D50 0x18 _StartTime                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndTime                                  = GetObject<Timestamp>(new IntPtr(p + 0x020), ReversePrism.DataModels.Timestamp.FromPointer); // 0270DA693D90 0x20 _EndTime                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._StartTime                                = GetObject<Timestamp>(new IntPtr(p + 0x018), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A6FF4F0 0x18 _StartTime                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndTime                                  = GetObject<Timestamp>(new IntPtr(p + 0x020), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A6FF530 0x20 _EndTime                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
 
             return value;
         }

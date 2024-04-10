@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UpdatedHavingProductGroupFieldNumber     int IL2CPP_TYPE_I4
     // 030 UpdatedHavingProductGroup                0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class PurchaseShopItemReply
+    public partial class PurchaseShopItemReply : DataModel
     {
         public ShopItemStatus?                          BeforeShopItem                          { get; set; }
         public ShopItemStatus?                          AfterShopItem                           { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchaseShopItemReply();
+            var value   = new PurchaseShopItemReply() { Pointer= p0 };
 
-            value.BeforeShopItem                            = GetObject<ShopItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 0270D27F2180 0x18 BeforeShopItem              ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
-            value.AfterShopItem                             = GetObject<ShopItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 0270D27F21C0 0x20 AfterShopItem               ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x028)); // 0270D27F2200 0x28 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D27F2240 0x30 UpdatedHavingProductGroup   ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.BeforeShopItem                            = GetObject<ShopItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 02466274F3F0 0x18 BeforeShopItem              ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
+            value.AfterShopItem                             = GetObject<ShopItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 02466274F430 0x20 AfterShopItem               ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x028)); // 02466274F470 0x28 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 02466274F4B0 0x30 UpdatedHavingProductGroup   ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

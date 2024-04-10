@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 signedData                               sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class X509PalImpl
+    public partial class X509PalImpl : DataModel
     {
 
         public static X509PalImpl? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509PalImpl();
+            var value   = new X509PalImpl() { Pointer= p0 };
 
 
             return value;

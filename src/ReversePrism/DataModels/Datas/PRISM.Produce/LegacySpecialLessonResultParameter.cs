@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Reply                                    0001865145F0 ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer
-    public partial class LegacySpecialLessonResultParameter
+    public partial class LegacySpecialLessonResultParameter : DataModel
     {
         public IFinishSpecialLessonReply?               Reply                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacySpecialLessonResultParameter();
+            var value   = new LegacySpecialLessonResultParameter() { Pointer= p0 };
 
-            value.Reply                                     = GetObject<IFinishSpecialLessonReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishSpecialLessonReply.FromPointer); // 0270D55C82F0 0x10 Reply                       ( 0001865145F0 ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer )
+            value.Reply                                     = GetObject<IFinishSpecialLessonReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishSpecialLessonReply.FromPointer); // 024665639528 0x10 Reply                       ( 0001865145F0 ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer )
 
             return value;
         }

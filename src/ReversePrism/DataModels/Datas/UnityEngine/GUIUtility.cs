@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 038 GuiChanged                               000186679EC0 ModelClassType Action Action Action Pointer
     // 040 GuiIsExiting                             000186595C30 ModelPrimitiveType bool bool bool Bool
     // 048 s_HasCurrentWindowKeyFocusFunc           Func`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class GUIUtility
+    public partial class GUIUtility : DataModel
     {
         public Action?                                  TakeCapture                             { get; set; }
         public Action?                                  ReleaseCapture                          { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GUIUtility();
+            var value   = new GUIUtility() { Pointer= p0 };
 
-            value.TakeCapture                               = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0270021E0878 0x10 TakeCapture                 ( 000186679EC0 ModelClassType Action Action Action Pointer )
-            value.ReleaseCapture                            = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270021E0898 0x18 ReleaseCapture              ( 000186679EC0 ModelClassType Action Action Action Pointer )
-            value.CleanupRoots                              = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0270021E08D8 0x28 CleanupRoots                ( 000186679EC0 ModelClassType Action Action Action Pointer )
-            value.GuiChanged                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0270021E0918 0x38 GuiChanged                  ( 000186679EC0 ModelClassType Action Action Action Pointer )
-            value.GuiIsExiting                              = GetBool(new IntPtr(p + 0x040)); // 0270021E0938 0x40 GuiIsExiting                ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.TakeCapture                               = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0245A21E0878 0x10 TakeCapture                 ( 000186679EC0 ModelClassType Action Action Action Pointer )
+            value.ReleaseCapture                            = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A21E0898 0x18 ReleaseCapture              ( 000186679EC0 ModelClassType Action Action Action Pointer )
+            value.CleanupRoots                              = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0245A21E08D8 0x28 CleanupRoots                ( 000186679EC0 ModelClassType Action Action Action Pointer )
+            value.GuiChanged                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0245A21E0918 0x38 GuiChanged                  ( 000186679EC0 ModelClassType Action Action Action Pointer )
+            value.GuiIsExiting                              = GetBool(new IntPtr(p + 0x040)); // 0245A21E0938 0x40 GuiIsExiting                ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

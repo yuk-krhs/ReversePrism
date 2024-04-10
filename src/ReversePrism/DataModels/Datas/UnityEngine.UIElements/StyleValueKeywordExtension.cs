@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StyleValueKeywordExtension
+    public partial class StyleValueKeywordExtension : DataModel
     {
 
         public static StyleValueKeywordExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleValueKeywordExtension();
+            var value   = new StyleValueKeywordExtension() { Pointer= p0 };
 
 
             return value;

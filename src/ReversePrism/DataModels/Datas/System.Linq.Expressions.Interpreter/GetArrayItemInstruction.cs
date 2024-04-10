@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 GetArrayItemInstruction IL2CPP_TYPE_CLASS
-    public partial class GetArrayItemInstruction
+    public partial class GetArrayItemInstruction : DataModel
     {
 
         public static GetArrayItemInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetArrayItemInstruction();
+            var value   = new GetArrayItemInstruction() { Pointer= p0 };
 
 
             return value;

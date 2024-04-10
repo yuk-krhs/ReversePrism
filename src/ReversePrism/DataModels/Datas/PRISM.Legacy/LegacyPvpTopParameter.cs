@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 EventId                                  0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class LegacyPvpTopParameter
+    public partial class LegacyPvpTopParameter : DataModel
     {
         public int                                      EventId                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyPvpTopParameter();
+            var value   = new LegacyPvpTopParameter() { Pointer= p0 };
 
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D5E3E3C8 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 024665EAEB40 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

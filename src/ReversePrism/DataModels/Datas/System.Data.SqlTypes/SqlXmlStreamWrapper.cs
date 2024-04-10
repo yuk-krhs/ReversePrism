@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 028 Stream                                   000186670270 ModelClassType Stream Stream Stream Pointer
     // 030 LPosition                                0001865F7700 ModelPrimitiveType long long long Int64
     // 038 IsClosed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SqlXmlStreamWrapper
+    public partial class SqlXmlStreamWrapper : DataModel
     {
         public Stream?                                  Stream                                  { get; set; }
         public long                                     LPosition                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlXmlStreamWrapper();
+            var value   = new SqlXmlStreamWrapper() { Pointer= p0 };
 
-            value.Stream                                    = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 0270D89A5758 0x28 Stream                      ( 000186670270 ModelClassType Stream Stream Stream Pointer )
-            value.LPosition                                 = GetInt64(new IntPtr(p + 0x030)); // 0270D89A5778 0x30 LPosition                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.IsClosed                                  = GetBool(new IntPtr(p + 0x038)); // 0270D89A5798 0x38 IsClosed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Stream                                    = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 024668A10670 0x28 Stream                      ( 000186670270 ModelClassType Stream Stream Stream Pointer )
+            value.LPosition                                 = GetInt64(new IntPtr(p + 0x030)); // 024668A10690 0x30 LPosition                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.IsClosed                                  = GetBool(new IntPtr(p + 0x038)); // 024668A106B0 0x38 IsClosed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

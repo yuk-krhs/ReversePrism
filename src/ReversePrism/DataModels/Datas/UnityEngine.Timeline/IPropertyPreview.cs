@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPropertyPreview
+    public partial class IPropertyPreview : DataModel
     {
 
         public static IPropertyPreview? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPropertyPreview();
+            var value   = new IPropertyPreview() { Pointer= p0 };
 
 
             return value;

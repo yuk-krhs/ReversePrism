@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 020 Song                                     00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer
     // 000 EventPointFieldNumber                    int IL2CPP_TYPE_I4
     // 028 EventPoint                               0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class GetRankingListReply
+    public partial class GetRankingListReply : DataModel
     {
         public List<EventRankingStatus>?                RankingList                             { get; set; }
         public SongStatus?                              Song                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetRankingListReply();
+            var value   = new GetRankingListReply() { Pointer= p0 };
 
-            value.RankingList                               = GetObjectList<EventRankingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventRankingStatus.FromPointer); // 0270D1014018 0x18 RankingList                 ( 000185CD5928 ModelClassListType RepeatedField`1<EventRankingStatus> RepeatedField`1<EventRankingStatus> List<EventRankingStatus> Pointer )
-            value.Song                                      = GetObject<SongStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SongStatus.FromPointer); // 0270D1014058 0x20 Song                        ( 00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer )
-            value.EventPoint                                = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1014098 0x28 EventPoint                  ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.RankingList                               = GetObjectList<EventRankingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventRankingStatus.FromPointer); // 024660FA8D50 0x18 RankingList                 ( 000185CD5928 ModelClassListType RepeatedField`1<EventRankingStatus> RepeatedField`1<EventRankingStatus> List<EventRankingStatus> Pointer )
+            value.Song                                      = GetObject<SongStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SongStatus.FromPointer); // 024660FA8D90 0x20 Song                        ( 00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer )
+            value.EventPoint                                = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024660FA8DD0 0x28 EventPoint                  ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

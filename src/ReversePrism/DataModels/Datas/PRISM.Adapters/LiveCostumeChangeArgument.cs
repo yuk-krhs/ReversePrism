@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 CasualCostumeIdol                        00018654A810 ModelClassType CasualCostumeIdol CasualCostumeIdol CasualCostumeIdol Pointer
     // 028 FirstViewCategory                        0001866298D0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32
     // 030 ViewStacks                               000185CC59D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
-    public partial class LiveCostumeChangeArgument
+    public partial class LiveCostumeChangeArgument : DataModel
     {
         public ILiveUnit?                               Unit                                    { get; set; }
         public int                                      IdolPosition                            { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumeChangeArgument();
+            var value   = new LiveCostumeChangeArgument() { Pointer= p0 };
 
-            value.Unit                                      = GetObject<ILiveUnit>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILiveUnit.FromPointer); // 0270D63EBF58 0x10 Unit                        ( 00018659C550 ModelClassType ILiveUnit ILiveUnit ILiveUnit Pointer )
-            value.IdolPosition                              = GetInt32(new IntPtr(p + 0x018)); // 0270D63EBF78 0x18 IdolPosition                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CasualCostumeIdol                         = GetObject<CasualCostumeIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.CasualCostumeIdol.FromPointer); // 0270D63EBF98 0x20 CasualCostumeIdol           ( 00018654A810 ModelClassType CasualCostumeIdol CasualCostumeIdol CasualCostumeIdol Pointer )
-            value.FirstViewCategory                         = (CostumeCategory)GetInt32(new IntPtr(p + 0x028)); // 0270D63EBFB8 0x28 FirstViewCategory           ( 0001866298D0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32 )
-            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.ViewValue.FromPointer); // 0270D63EBFD8 0x30 ViewStacks                  ( 000185CC59D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
+            value.Unit                                      = GetObject<ILiveUnit>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILiveUnit.FromPointer); // 02466643AAC8 0x10 Unit                        ( 00018659C550 ModelClassType ILiveUnit ILiveUnit ILiveUnit Pointer )
+            value.IdolPosition                              = GetInt32(new IntPtr(p + 0x018)); // 02466643AAE8 0x18 IdolPosition                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CasualCostumeIdol                         = GetObject<CasualCostumeIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.CasualCostumeIdol.FromPointer); // 02466643AB08 0x20 CasualCostumeIdol           ( 00018654A810 ModelClassType CasualCostumeIdol CasualCostumeIdol CasualCostumeIdol Pointer )
+            value.FirstViewCategory                         = (CostumeCategory)GetInt32(new IntPtr(p + 0x028)); // 02466643AB28 0x28 FirstViewCategory           ( 0001866298D0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32 )
+            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.ViewValue.FromPointer); // 02466643AB48 0x30 ViewStacks                  ( 000185CC59D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
 
             return value;
         }

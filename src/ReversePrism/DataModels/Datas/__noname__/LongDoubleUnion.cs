@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 LongValue                                0001865F79C0 ModelPrimitiveType long long long Int64
     // 010 DoubleValue                              0001865C2BA0 ModelPrimitiveType double double double Double
-    public partial class LongDoubleUnion
+    public partial class LongDoubleUnion : DataModel
     {
         public long                                     LongValue                               { get; set; }
         public double                                   DoubleValue                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LongDoubleUnion();
+            var value   = new LongDoubleUnion() { Pointer= p0 };
 
-            value.LongValue                                 = GetInt64(new IntPtr(p + 0x010)); // 0270D988B460 0x10 LongValue                   ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.DoubleValue                               = GetDouble(new IntPtr(p + 0x010)); // 0270D988B480 0x10 DoubleValue                 ( 0001865C2BA0 ModelPrimitiveType double double double Double )
+            value.LongValue                                 = GetInt64(new IntPtr(p + 0x010)); // 0246698D8748 0x10 LongValue                   ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.DoubleValue                               = GetDouble(new IntPtr(p + 0x010)); // 0246698D8768 0x10 DoubleValue                 ( 0001865C2BA0 ModelPrimitiveType double double double Double )
 
             return value;
         }

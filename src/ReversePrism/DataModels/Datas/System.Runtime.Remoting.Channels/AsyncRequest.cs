@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ReplySink                                0001865B0AA0 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
     // 018 MsgRequest                               0001865AECF0 ModelClassType IMessage IMessage IMessage Pointer
-    public partial class AsyncRequest
+    public partial class AsyncRequest : DataModel
     {
         public IMessageSink?                            ReplySink                               { get; set; }
         public IMessage?                                MsgRequest                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncRequest();
+            var value   = new AsyncRequest() { Pointer= p0 };
 
-            value.ReplySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 0270D6BE5C88 0x10 ReplySink                   ( 0001865B0AA0 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.MsgRequest                                = GetObject<IMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMessage.FromPointer); // 0270D6BE5CA8 0x18 MsgRequest                  ( 0001865AECF0 ModelClassType IMessage IMessage IMessage Pointer )
+            value.ReplySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C5DC88 0x10 ReplySink                   ( 0001865B0AA0 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.MsgRequest                                = GetObject<IMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMessage.FromPointer); // 024666C5DCA8 0x18 MsgRequest                  ( 0001865AECF0 ModelClassType IMessage IMessage IMessage Pointer )
 
             return value;
         }

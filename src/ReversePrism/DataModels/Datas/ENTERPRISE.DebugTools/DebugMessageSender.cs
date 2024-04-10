@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SendBytes                                000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class DebugMessageSender
+    public partial class DebugMessageSender : DataModel
     {
         public List<sbyte>?                             SendBytes                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugMessageSender();
+            var value   = new DebugMessageSender() { Pointer= p0 };
 
-            value.SendBytes                                 = GetSByteList(new IntPtr(p + 0x010)); // 0270DB6DF938 0x10 SendBytes                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.SendBytes                                 = GetSByteList(new IntPtr(p + 0x010)); // 02466B76C370 0x10 SendBytes                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

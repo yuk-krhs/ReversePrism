@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 030 AllowListToList                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 Untyped                                  XmlValueConverter IL2CPP_TYPE_CLASS
     // 008 UntypedList                              XmlValueConverter IL2CPP_TYPE_CLASS
-    public partial class XmlUntypedConverter
+    public partial class XmlUntypedConverter : DataModel
     {
         public bool                                     AllowListToList                         { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlUntypedConverter();
+            var value   = new XmlUntypedConverter() { Pointer= p0 };
 
-            value.AllowListToList                           = GetBool(new IntPtr(p + 0x030)); // 0270D75EA2A0 0x30 AllowListToList             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AllowListToList                           = GetBool(new IntPtr(p + 0x030)); // 02466765A2A0 0x30 AllowListToList             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

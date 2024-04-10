@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 098 CanceledTask                             000186682220 ModelClassType Task Task Task Pointer
-    public partial class TaskCanceledException
+    public partial class TaskCanceledException : DataModel
     {
         public Task?                                    CanceledTask                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskCanceledException();
+            var value   = new TaskCanceledException() { Pointer= p0 };
 
-            value.CanceledTask                              = GetObject<Task>(new IntPtr(p + 0x098), ReversePrism.DataModels.Task.FromPointer); // 0270D6AF3F18 0x98 CanceledTask                ( 000186682220 ModelClassType Task Task Task Pointer )
+            value.CanceledTask                              = GetObject<Task>(new IntPtr(p + 0x098), ReversePrism.DataModels.Task.FromPointer); // 024666B53F18 0x98 CanceledTask                ( 000186682220 ModelClassType Task Task Task Pointer )
 
             return value;
         }

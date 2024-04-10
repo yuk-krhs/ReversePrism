@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Volatile
+    public partial class Volatile : DataModel
     {
 
         public static Volatile? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Volatile();
+            var value   = new Volatile() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ResultType                               000186569300 ModelEnumType CaptureResultType CaptureResultType CaptureResultType Int32
     // 018 HResult                                  0001865F7E40 ModelPrimitiveType long long long Int64
-    public partial class PhotoCaptureResult
+    public partial class PhotoCaptureResult : DataModel
     {
         public CaptureResultType                        ResultType                              { get; set; }
         public long                                     HResult                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhotoCaptureResult();
+            var value   = new PhotoCaptureResult() { Pointer= p0 };
 
-            value.ResultType                                = (CaptureResultType)GetInt32(new IntPtr(p + 0x010)); // 0270068C1728 0x10 ResultType                  ( 000186569300 ModelEnumType CaptureResultType CaptureResultType CaptureResultType Int32 )
-            value.HResult                                   = GetInt64(new IntPtr(p + 0x018)); // 0270068C1748 0x18 HResult                     ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.ResultType                                = (CaptureResultType)GetInt32(new IntPtr(p + 0x010)); // 0245A6883E30 0x10 ResultType                  ( 000186569300 ModelEnumType CaptureResultType CaptureResultType CaptureResultType Int32 )
+            value.HResult                                   = GetInt64(new IntPtr(p + 0x018)); // 0245A6883E50 0x18 HResult                     ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

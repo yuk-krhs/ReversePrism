@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class BadgeReflection
+    public partial class BadgeReflection : DataModel
     {
 
         public static BadgeReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeReflection();
+            var value   = new BadgeReflection() { Pointer= p0 };
 
 
             return value;

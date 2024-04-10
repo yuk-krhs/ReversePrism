@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 048 Called                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AsyncStartTrigger
+    public partial class AsyncStartTrigger : DataModel
     {
         public bool                                     Called                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncStartTrigger();
+            var value   = new AsyncStartTrigger() { Pointer= p0 };
 
-            value.Called                                    = GetBool(new IntPtr(p + 0x048)); // 0270D8FBB928 0x48 Called                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Called                                    = GetBool(new IntPtr(p + 0x048)); // 02466902A400 0x48 Called                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

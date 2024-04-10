@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 <current>k__BackingField                 Joystick IL2CPP_TYPE_CLASS
     // 008 s_JoystickCount                          int IL2CPP_TYPE_I4
     // 010 S_Joysticks                              000185B8EBD0 ModelClassListType Joystick[] Joystick[] List<Joystick> Pointer
-    public partial class Joystick
+    public partial class Joystick : DataModel
     {
         public ButtonControl?                           Trigger                                 { get; set; }
         public StickControl?                            Stick                                   { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Joystick();
+            var value   = new Joystick() { Pointer= p0 };
 
-            value.Trigger                                   = GetObject<ButtonControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.ButtonControl.FromPointer); // 0270033A0770 0x170 Trigger                     ( 0001865166C0 ModelClassType ButtonControl ButtonControl ButtonControl Pointer )
-            value.Stick                                     = GetObject<StickControl>(new IntPtr(p + 0x178), ReversePrism.DataModels.StickControl.FromPointer); // 0270033A0790 0x178 Stick                       ( 00018658CCA0 ModelClassType StickControl StickControl StickControl Pointer )
-            value.Twist                                     = GetObject<AxisControl>(new IntPtr(p + 0x180), ReversePrism.DataModels.AxisControl.FromPointer); // 0270033A07B0 0x180 Twist                       ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
-            value.Hatswitch                                 = GetObject<Vector2Control>(new IntPtr(p + 0x188), ReversePrism.DataModels.Vector2Control.FromPointer); // 0270033A07D0 0x188 Hatswitch                   ( 000186774A20 ModelClassType Vector2Control Vector2Control Vector2Control Pointer )
-            value.S_Joysticks                               = GetObjectList<Joystick>(new IntPtr(p + 0x010), ReversePrism.DataModels.Joystick.FromPointer); // 0270033A0830 0x10 S_Joysticks                 ( 000185B8EBD0 ModelClassListType Joystick[] Joystick[] List<Joystick> Pointer )
+            value.Trigger                                   = GetObject<ButtonControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.ButtonControl.FromPointer); // 0245A33A0770 0x170 Trigger                     ( 0001865166C0 ModelClassType ButtonControl ButtonControl ButtonControl Pointer )
+            value.Stick                                     = GetObject<StickControl>(new IntPtr(p + 0x178), ReversePrism.DataModels.StickControl.FromPointer); // 0245A33A0790 0x178 Stick                       ( 00018658CCA0 ModelClassType StickControl StickControl StickControl Pointer )
+            value.Twist                                     = GetObject<AxisControl>(new IntPtr(p + 0x180), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33A07B0 0x180 Twist                       ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.Hatswitch                                 = GetObject<Vector2Control>(new IntPtr(p + 0x188), ReversePrism.DataModels.Vector2Control.FromPointer); // 0245A33A07D0 0x188 Hatswitch                   ( 000186774A20 ModelClassType Vector2Control Vector2Control Vector2Control Pointer )
+            value.S_Joysticks                               = GetObjectList<Joystick>(new IntPtr(p + 0x010), ReversePrism.DataModels.Joystick.FromPointer); // 0245A33A0830 0x10 S_Joysticks                 ( 000185B8EBD0 ModelClassListType Joystick[] Joystick[] List<Joystick> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 LockIcon                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class PlayMVButton
+    public partial class PlayMVButton : DataModel
     {
         public GameObject?                              LockIcon                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayMVButton();
+            var value   = new PlayMVButton() { Pointer= p0 };
 
-            value.LockIcon                                  = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5174988 0x40 LockIcon                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.LockIcon                                  = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0246651E7D30 0x40 LockIcon                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

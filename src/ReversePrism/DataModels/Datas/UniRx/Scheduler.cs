@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 MainThreadIgnoreTimeScale                000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
     // 028 MainThreadFixedUpdate                    000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
     // 030 MainThreadEndOfFrame                     000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer
-    public partial class Scheduler
+    public partial class Scheduler : DataModel
     {
         public IScheduler?                              ThreadPool                              { get; set; }
         public IScheduler?                              MainThread                              { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Scheduler();
+            var value   = new Scheduler() { Pointer= p0 };
 
-            value.ThreadPool                                = GetObject<IScheduler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1DAD8 0x10 ThreadPool                  ( 000186629AF0 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.MainThread                                = GetObject<IScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1DAF8 0x18 MainThread                  ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.MainThreadIgnoreTimeScale                 = GetObject<IScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1DB18 0x20 MainThreadIgnoreTimeScale   ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.MainThreadFixedUpdate                     = GetObject<IScheduler>(new IntPtr(p + 0x028), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1DB38 0x28 MainThreadFixedUpdate       ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
-            value.MainThreadEndOfFrame                      = GetObject<IScheduler>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduler.FromPointer); // 027003C1DB58 0x30 MainThreadEndOfFrame        ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.ThreadPool                                = GetObject<IScheduler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1DAD8 0x10 ThreadPool                  ( 000186629AF0 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.MainThread                                = GetObject<IScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1DAF8 0x18 MainThread                  ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.MainThreadIgnoreTimeScale                 = GetObject<IScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1DB18 0x20 MainThreadIgnoreTimeScale   ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.MainThreadFixedUpdate                     = GetObject<IScheduler>(new IntPtr(p + 0x028), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1DB38 0x28 MainThreadFixedUpdate       ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.MainThreadEndOfFrame                      = GetObject<IScheduler>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C1DB58 0x30 MainThreadEndOfFrame        ( 000186629400 ModelClassType IScheduler IScheduler IScheduler Pointer )
 
             return value;
         }

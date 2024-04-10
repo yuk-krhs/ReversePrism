@@ -55,7 +55,7 @@ namespace ReversePrism.DataModels
     // 000 TicksField                               string IL2CPP_TYPE_STRING
     // 000 DateDataField                            string IL2CPP_TYPE_STRING
     // 010 DateData                                 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class DateTime
+    public partial class DateTime : DataModel
     {
         public DateTime                                 MinValue                                { get; set; }
         public DateTime                                 MaxValue                                { get; set; }
@@ -68,12 +68,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTime();
+            var value   = new DateTime() { Pointer= p0 };
 
-            value.MinValue                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270021C50D8 0x10 MinValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.MaxValue                                  = GetDateTime(new IntPtr(p + 0x018)); // 0270021C50F8 0x18 MaxValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.UnixEpoch                                 = GetDateTime(new IntPtr(p + 0x020)); // 0270021C5118 0x20 UnixEpoch                   ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.DateData                                  = GetUInt64(new IntPtr(p + 0x010)); // 0270021C5298 0x10 DateData                    ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.MinValue                                  = GetDateTime(new IntPtr(p + 0x010)); // 0245A21C50D8 0x10 MinValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.MaxValue                                  = GetDateTime(new IntPtr(p + 0x018)); // 0245A21C50F8 0x18 MaxValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.UnixEpoch                                 = GetDateTime(new IntPtr(p + 0x020)); // 0245A21C5118 0x20 UnixEpoch                   ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.DateData                                  = GetUInt64(new IntPtr(p + 0x010)); // 0245A21C5298 0x10 DateData                    ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

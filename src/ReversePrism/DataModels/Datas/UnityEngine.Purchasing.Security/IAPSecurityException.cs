@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAPSecurityException
+    public partial class IAPSecurityException : DataModel
     {
 
         public static IAPSecurityException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAPSecurityException();
+            var value   = new IAPSecurityException() { Pointer= p0 };
 
 
             return value;

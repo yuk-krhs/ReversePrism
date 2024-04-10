@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SupportEffectStatusTranslator
+    public partial class SupportEffectStatusTranslator : DataModel
     {
 
         public static SupportEffectStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportEffectStatusTranslator();
+            var value   = new SupportEffectStatusTranslator() { Pointer= p0 };
 
 
             return value;

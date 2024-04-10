@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 028 M_SpeedMultiplier                        0001866656B0 ModelPrimitiveType float float float Single
     // 02C M_Tag                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 M_Loop                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AnimatorStateInfo
+    public partial class AnimatorStateInfo : DataModel
     {
         public int                                      M_Name                                  { get; set; }
         public int                                      M_Path                                  { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimatorStateInfo();
+            var value   = new AnimatorStateInfo() { Pointer= p0 };
 
-            value.M_Name                                    = GetInt32(new IntPtr(p + 0x010)); // 0270022253A8 0x10 M_Name                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Path                                    = GetInt32(new IntPtr(p + 0x014)); // 0270022253C8 0x14 M_Path                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_FullPath                                = GetInt32(new IntPtr(p + 0x018)); // 0270022253E8 0x18 M_FullPath                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NormalizedTime                          = GetSingle(new IntPtr(p + 0x01C)); // 027002225408 0x1C M_NormalizedTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Length                                  = GetSingle(new IntPtr(p + 0x020)); // 027002225428 0x20 M_Length                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Speed                                   = GetSingle(new IntPtr(p + 0x024)); // 027002225448 0x24 M_Speed                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_SpeedMultiplier                         = GetSingle(new IntPtr(p + 0x028)); // 027002225468 0x28 M_SpeedMultiplier           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Tag                                     = GetInt32(new IntPtr(p + 0x02C)); // 027002225488 0x2C M_Tag                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Loop                                    = GetInt32(new IntPtr(p + 0x030)); // 0270022254A8 0x30 M_Loop                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Name                                    = GetInt32(new IntPtr(p + 0x010)); // 0245A22253A8 0x10 M_Name                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Path                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A22253C8 0x14 M_Path                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_FullPath                                = GetInt32(new IntPtr(p + 0x018)); // 0245A22253E8 0x18 M_FullPath                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_NormalizedTime                          = GetSingle(new IntPtr(p + 0x01C)); // 0245A2225408 0x1C M_NormalizedTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Length                                  = GetSingle(new IntPtr(p + 0x020)); // 0245A2225428 0x20 M_Length                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Speed                                   = GetSingle(new IntPtr(p + 0x024)); // 0245A2225448 0x24 M_Speed                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_SpeedMultiplier                         = GetSingle(new IntPtr(p + 0x028)); // 0245A2225468 0x28 M_SpeedMultiplier           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Tag                                     = GetInt32(new IntPtr(p + 0x02C)); // 0245A2225488 0x2C M_Tag                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Loop                                    = GetInt32(new IntPtr(p + 0x030)); // 0245A22254A8 0x30 M_Loop                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

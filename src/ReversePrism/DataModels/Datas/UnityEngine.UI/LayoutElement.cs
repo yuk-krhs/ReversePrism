@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 034 M_FlexibleWidth                          0001866656B0 ModelPrimitiveType float float float Single
     // 038 M_FlexibleHeight                         0001866656B0 ModelPrimitiveType float float float Single
     // 03C M_LayoutPriority                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LayoutElement
+    public partial class LayoutElement : DataModel
     {
         public bool                                     M_IgnoreLayout                          { get; set; }
         public float                                    M_MinWidth                              { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LayoutElement();
+            var value   = new LayoutElement() { Pointer= p0 };
 
-            value.M_IgnoreLayout                            = GetBool(new IntPtr(p + 0x020)); // 027003F91788 0x20 M_IgnoreLayout              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_MinWidth                                = GetSingle(new IntPtr(p + 0x024)); // 027003F917A8 0x24 M_MinWidth                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_MinHeight                               = GetSingle(new IntPtr(p + 0x028)); // 027003F917C8 0x28 M_MinHeight                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_PreferredWidth                          = GetSingle(new IntPtr(p + 0x02C)); // 027003F917E8 0x2C M_PreferredWidth            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_PreferredHeight                         = GetSingle(new IntPtr(p + 0x030)); // 027003F91808 0x30 M_PreferredHeight           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_FlexibleWidth                           = GetSingle(new IntPtr(p + 0x034)); // 027003F91828 0x34 M_FlexibleWidth             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_FlexibleHeight                          = GetSingle(new IntPtr(p + 0x038)); // 027003F91848 0x38 M_FlexibleHeight            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_LayoutPriority                          = GetInt32(new IntPtr(p + 0x03C)); // 027003F91868 0x3C M_LayoutPriority            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_IgnoreLayout                            = GetBool(new IntPtr(p + 0x020)); // 0245A3FA20C0 0x20 M_IgnoreLayout              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_MinWidth                                = GetSingle(new IntPtr(p + 0x024)); // 0245A3FA20E0 0x24 M_MinWidth                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_MinHeight                               = GetSingle(new IntPtr(p + 0x028)); // 0245A3FA2100 0x28 M_MinHeight                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_PreferredWidth                          = GetSingle(new IntPtr(p + 0x02C)); // 0245A3FA2120 0x2C M_PreferredWidth            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_PreferredHeight                         = GetSingle(new IntPtr(p + 0x030)); // 0245A3FA2140 0x30 M_PreferredHeight           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_FlexibleWidth                           = GetSingle(new IntPtr(p + 0x034)); // 0245A3FA2160 0x34 M_FlexibleWidth             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_FlexibleHeight                          = GetSingle(new IntPtr(p + 0x038)); // 0245A3FA2180 0x38 M_FlexibleHeight            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_LayoutPriority                          = GetInt32(new IntPtr(p + 0x03C)); // 0245A3FA21A0 0x3C M_LayoutPriority            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

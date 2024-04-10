@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FocusInEvent
+    public partial class FocusInEvent : DataModel
     {
 
         public static FocusInEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FocusInEvent();
+            var value   = new FocusInEvent() { Pointer= p0 };
 
 
             return value;

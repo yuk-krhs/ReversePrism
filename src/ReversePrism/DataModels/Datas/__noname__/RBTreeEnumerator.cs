@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 _index                                   int IL2CPP_TYPE_I4
     // 000 _mainTreeNodeId                          int IL2CPP_TYPE_I4
     // 000 _current                                 <var> IL2CPP_TYPE_VAR
-    public partial class RBTreeEnumerator
+    public partial class RBTreeEnumerator : DataModel
     {
 
         public static RBTreeEnumerator? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RBTreeEnumerator();
+            var value   = new RBTreeEnumerator() { Pointer= p0 };
 
 
             return value;

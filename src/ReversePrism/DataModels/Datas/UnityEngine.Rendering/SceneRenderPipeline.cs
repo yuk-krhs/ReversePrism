@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SceneRenderPipeline
+    public partial class SceneRenderPipeline : DataModel
     {
 
         public static SceneRenderPipeline? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneRenderPipeline();
+            var value   = new SceneRenderPipeline() { Pointer= p0 };
 
 
             return value;

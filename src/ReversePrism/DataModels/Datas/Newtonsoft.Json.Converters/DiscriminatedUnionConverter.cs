@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 FieldsPropertyName                       string IL2CPP_TYPE_STRING
     // 000 UnionCache                               ThreadSafeStore`2<Type, Union> IL2CPP_TYPE_GENERICINST
     // 008 UnionTypeLookupCache                     ThreadSafeStore`2<Type, Type> IL2CPP_TYPE_GENERICINST
-    public partial class DiscriminatedUnionConverter
+    public partial class DiscriminatedUnionConverter : DataModel
     {
 
         public static DiscriminatedUnionConverter? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiscriminatedUnionConverter();
+            var value   = new DiscriminatedUnionConverter() { Pointer= p0 };
 
 
             return value;

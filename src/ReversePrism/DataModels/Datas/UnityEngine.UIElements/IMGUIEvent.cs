@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMGUIEvent
+    public partial class IMGUIEvent : DataModel
     {
 
         public static IMGUIEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMGUIEvent();
+            var value   = new IMGUIEvent() { Pointer= p0 };
 
 
             return value;

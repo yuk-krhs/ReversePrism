@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 StartVoiceType                           000186689820 ModelEnumType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType Int32
     // 02C TapSEIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 030 FlickSEIndex                             0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class RhythmGameOptionSound
+    public partial class RhythmGameOptionSound : DataModel
     {
         public EachSoundSettingsLocalSaveType?          Bgm                                     { get; set; }
         public EachSoundSettingsLocalSaveType?          SE                                      { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameOptionSound();
+            var value   = new RhythmGameOptionSound() { Pointer= p0 };
 
-            value.Bgm                                       = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x010), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A80AC0 0x10 Bgm                         ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.SE                                        = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x018), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A80AE0 0x18 SE                          ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.Voice                                     = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x020), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A80B00 0x20 Voice                       ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.StartVoiceType                            = (RhythmGameOptionStartVoiceType)GetInt32(new IntPtr(p + 0x028)); // 027003A80B20 0x28 StartVoiceType              ( 000186689820 ModelEnumType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType Int32 )
-            value.TapSEIndex                                = GetInt32(new IntPtr(p + 0x02C)); // 027003A80B40 0x2C TapSEIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FlickSEIndex                              = GetInt32(new IntPtr(p + 0x030)); // 027003A80B60 0x30 FlickSEIndex                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Bgm                                       = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x010), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A8BAB8 0x10 Bgm                         ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.SE                                        = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x018), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A8BAD8 0x18 SE                          ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.Voice                                     = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x020), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A8BAF8 0x20 Voice                       ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.StartVoiceType                            = (RhythmGameOptionStartVoiceType)GetInt32(new IntPtr(p + 0x028)); // 0245A3A8BB18 0x28 StartVoiceType              ( 000186689820 ModelEnumType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType RhythmGameOptionStartVoiceType Int32 )
+            value.TapSEIndex                                = GetInt32(new IntPtr(p + 0x02C)); // 0245A3A8BB38 0x2C TapSEIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FlickSEIndex                              = GetInt32(new IntPtr(p + 0x030)); // 0245A3A8BB58 0x30 FlickSEIndex                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

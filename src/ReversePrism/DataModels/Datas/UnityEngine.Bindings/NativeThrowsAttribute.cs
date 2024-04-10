@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ThrowsException                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class NativeThrowsAttribute
+    public partial class NativeThrowsAttribute : DataModel
     {
         public bool                                     ThrowsException                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeThrowsAttribute();
+            var value   = new NativeThrowsAttribute() { Pointer= p0 };
 
-            value.ThrowsException                           = GetBool(new IntPtr(p + 0x010)); // 027006979A70 0x10 ThrowsException             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ThrowsException                           = GetBool(new IntPtr(p + 0x010)); // 0245A692C208 0x10 ThrowsException             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

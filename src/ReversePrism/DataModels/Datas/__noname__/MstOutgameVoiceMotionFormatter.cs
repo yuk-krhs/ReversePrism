@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstOutgameVoiceMotionFormatter
+    public partial class MstOutgameVoiceMotionFormatter : DataModel
     {
 
         public static MstOutgameVoiceMotionFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstOutgameVoiceMotionFormatter();
+            var value   = new MstOutgameVoiceMotionFormatter() { Pointer= p0 };
 
 
             return value;

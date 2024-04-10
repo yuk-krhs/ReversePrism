@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Content                                  IDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class Diagnostic
+    public partial class Diagnostic : DataModel
     {
 
         public static Diagnostic? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Diagnostic();
+            var value   = new Diagnostic() { Pointer= p0 };
 
 
             return value;

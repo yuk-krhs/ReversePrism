@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 END_MARK                                 string IL2CPP_TYPE_STRING
     // 000 argCommna                                string IL2CPP_TYPE_STRING
     // 010 ArgCommaSeparator                        000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class SourceReplacer
+    public partial class SourceReplacer : DataModel
     {
         public List<string>?                            ArgCommaSeparator                       { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SourceReplacer();
+            var value   = new SourceReplacer() { Pointer= p0 };
 
-            value.ArgCommaSeparator                         = GetStringList(new IntPtr(p + 0x010)); // 0270D4B32828 0x10 ArgCommaSeparator           ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.ArgCommaSeparator                         = GetStringList(new IntPtr(p + 0x010)); // 024664BA5E40 0x10 ArgCommaSeparator           ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

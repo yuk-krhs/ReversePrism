@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 <SameFunc>k__BackingField                Func`3<Length, Length, bool> IL2CPP_TYPE_GENERICINST
-    public partial class ValuesLength
+    public partial class ValuesLength : DataModel
     {
 
         public static ValuesLength? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesLength();
+            var value   = new ValuesLength() { Pointer= p0 };
 
 
             return value;

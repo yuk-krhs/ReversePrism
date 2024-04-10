@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 MstProduceIdolIdListFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_mstProduceIdolIdList_codec     FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 030 MstProduceIdolIdList                     000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class SetPvpUnitArgs
+    public partial class SetPvpUnitArgs : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public PvpUnitType                              UnitType                                { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetPvpUnitArgs();
+            var value   = new SetPvpUnitArgs() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D274BA80 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitType                                  = (PvpUnitType)GetInt32(new IntPtr(p + 0x01C)); // 0270D274BAC0 0x1C UnitType                    ( 0001865F87B0 ModelEnumType PvpUnitType PvpUnitType PvpUnitType Int32 )
-            value.UnitMemberType                            = (PvpUnitMemberType)GetInt32(new IntPtr(p + 0x020)); // 0270D274BB00 0x20 UnitMemberType              ( 0001865F79D0 ModelEnumType PvpUnitMemberType PvpUnitMemberType PvpUnitMemberType Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D274BB40 0x24 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FesUnitId                                 = GetString(new IntPtr(p + 0x028)); // 0270D274BB80 0x28 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x030)); // 0270D274BBE0 0x30 MstProduceIdolIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0246626C3F48 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitType                                  = (PvpUnitType)GetInt32(new IntPtr(p + 0x01C)); // 0246626C3F88 0x1C UnitType                    ( 0001865F87B0 ModelEnumType PvpUnitType PvpUnitType PvpUnitType Int32 )
+            value.UnitMemberType                            = (PvpUnitMemberType)GetInt32(new IntPtr(p + 0x020)); // 0246626C3FC8 0x20 UnitMemberType              ( 0001865F79D0 ModelEnumType PvpUnitMemberType PvpUnitMemberType PvpUnitMemberType Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x024)); // 0246626C4008 0x24 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesUnitId                                 = GetString(new IntPtr(p + 0x028)); // 0246626C4048 0x28 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x030)); // 0246626C40A8 0x30 MstProduceIdolIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

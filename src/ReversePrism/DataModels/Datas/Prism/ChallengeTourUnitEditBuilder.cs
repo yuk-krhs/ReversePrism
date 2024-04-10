@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     00018658AEF0 ModelClassType ChallengeTourUnitEditView ChallengeTourUnitEditView ChallengeTourUnitEditView Pointer
-    public partial class ChallengeTourUnitEditBuilder
+    public partial class ChallengeTourUnitEditBuilder : DataModel
     {
         public ChallengeTourUnitEditView?               View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourUnitEditBuilder();
+            var value   = new ChallengeTourUnitEditBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ChallengeTourUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourUnitEditView.FromPointer); // 0270DB61E870 0x20 View                        ( 00018658AEF0 ModelClassType ChallengeTourUnitEditView ChallengeTourUnitEditView ChallengeTourUnitEditView Pointer )
+            value.View                                      = GetObject<ChallengeTourUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourUnitEditView.FromPointer); // 02466B6B21F8 0x20 View                        ( 00018658AEF0 ModelClassType ChallengeTourUnitEditView ChallengeTourUnitEditView ChallengeTourUnitEditView Pointer )
 
             return value;
         }

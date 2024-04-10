@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 1F0 WarningObject                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 1F8 PurchaseObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 200 BlackCover                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class PopupButton
+    public partial class PopupButton : DataModel
     {
         public GameObject?                              NormalObject                            { get; set; }
         public GameObject?                              PositiveObject                          { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupButton();
+            var value   = new PopupButton() { Pointer= p0 };
 
-            value.NormalObject                              = GetObject<GameObject>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0CDB1D0 0x1E0 NormalObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PositiveObject                            = GetObject<GameObject>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0CDB1F0 0x1E8 PositiveObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.WarningObject                             = GetObject<GameObject>(new IntPtr(p + 0x1F0), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0CDB210 0x1F0 WarningObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PurchaseObject                            = GetObject<GameObject>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0CDB230 0x1F8 PurchaseObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BlackCover                                = GetObject<GameObject>(new IntPtr(p + 0x200), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0CDB250 0x200 BlackCover                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.NormalObject                              = GetObject<GameObject>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.GameObject.FromPointer); // 024660CE0E90 0x1E0 NormalObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PositiveObject                            = GetObject<GameObject>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.GameObject.FromPointer); // 024660CE0EB0 0x1E8 PositiveObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.WarningObject                             = GetObject<GameObject>(new IntPtr(p + 0x1F0), ReversePrism.DataModels.GameObject.FromPointer); // 024660CE0ED0 0x1F0 WarningObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PurchaseObject                            = GetObject<GameObject>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.GameObject.FromPointer); // 024660CE0EF0 0x1F8 PurchaseObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BlackCover                                = GetObject<GameObject>(new IntPtr(p + 0x200), ReversePrism.DataModels.GameObject.FromPointer); // 024660CE0F10 0x200 BlackCover                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

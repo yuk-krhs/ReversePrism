@@ -84,7 +84,7 @@ namespace ReversePrism.DataModels
     // 258 <OnRemoveTapCardSbuject>k__BackingField  Subject`1<Action> IL2CPP_TYPE_GENERICINST
     // 260 <OnAddTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
     // 268 <OnRemoveTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    public partial class TutorialExternalAccess
+    public partial class TutorialExternalAccess : DataModel
     {
         public Action?                                  OnHideSkipBtn                           { get; set; }
         public Action?                                  OnHideCommonWindow                      { get; set; }
@@ -98,13 +98,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialExternalAccess();
+            var value   = new TutorialExternalAccess() { Pointer= p0 };
 
-            value.OnHideSkipBtn                             = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 0270D4D484C0 0x150 OnHideSkipBtn               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnHideCommonWindow                        = GetObject<Action>(new IntPtr(p + 0x158), ReversePrism.DataModels.Action.FromPointer); // 0270D4D484E0 0x158 OnHideCommonWindow          ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnResetGame                               = GetObject<Action>(new IntPtr(p + 0x188), ReversePrism.DataModels.Action.FromPointer); // 0270D4D485A0 0x188 OnResetGame                 ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnBrekeMental                             = GetObject<Action>(new IntPtr(p + 0x190), ReversePrism.DataModels.Action.FromPointer); // 0270D4D485C0 0x190 OnBrekeMental               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnDebffSkill                              = GetObject<Action>(new IntPtr(p + 0x198), ReversePrism.DataModels.Action.FromPointer); // 0270D4D485E0 0x198 OnDebffSkill                ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnHideSkipBtn                             = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 024664DABC90 0x150 OnHideSkipBtn               ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnHideCommonWindow                        = GetObject<Action>(new IntPtr(p + 0x158), ReversePrism.DataModels.Action.FromPointer); // 024664DABCB0 0x158 OnHideCommonWindow          ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnResetGame                               = GetObject<Action>(new IntPtr(p + 0x188), ReversePrism.DataModels.Action.FromPointer); // 024664DABD70 0x188 OnResetGame                 ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnBrekeMental                             = GetObject<Action>(new IntPtr(p + 0x190), ReversePrism.DataModels.Action.FromPointer); // 024664DABD90 0x190 OnBrekeMental               ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnDebffSkill                              = GetObject<Action>(new IntPtr(p + 0x198), ReversePrism.DataModels.Action.FromPointer); // 024664DABDB0 0x198 OnDebffSkill                ( 0001866792B0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

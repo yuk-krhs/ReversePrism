@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 FocusTargets                             000185CBEC18 ModelEnumListType Position[] Position[] List<Position> Pointer
     // 030 IsDolly                                  000186595960 ModelPrimitiveType bool bool bool Bool
     // 038 Effect                                   0001866722E0 ModelPrimitiveType string string string String
-    public partial class TimelineCameraCutData
+    public partial class TimelineCameraCutData : DataModel
     {
         public string                                   Name                                    { get; set; }
         public int                                      StartFrame                              { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineCameraCutData();
+            var value   = new TimelineCameraCutData() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D4E9D9C0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.StartFrame                                = GetInt32(new IntPtr(p + 0x018)); // 0270D4E9D9E0 0x18 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.EndFrame                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D4E9DA00 0x1C EndFrame                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0270D4E9DA20 0x20 Description                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FocusTargets                              = GetEnumList<Position>(new IntPtr(p + 0x028)); // 0270D4E9DA40 0x28 FocusTargets                ( 000185CBEC18 ModelEnumListType Position[] Position[] List<Position> Pointer )
-            value.IsDolly                                   = GetBool(new IntPtr(p + 0x030)); // 0270D4E9DA60 0x30 IsDolly                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Effect                                    = GetString(new IntPtr(p + 0x038)); // 0270D4E9DA80 0x38 Effect                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 024664F0C798 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.StartFrame                                = GetInt32(new IntPtr(p + 0x018)); // 024664F0C7B8 0x18 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.EndFrame                                  = GetInt32(new IntPtr(p + 0x01C)); // 024664F0C7D8 0x1C EndFrame                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 024664F0C7F8 0x20 Description                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.FocusTargets                              = GetEnumList<Position>(new IntPtr(p + 0x028)); // 024664F0C818 0x28 FocusTargets                ( 000185CBEC18 ModelEnumListType Position[] Position[] List<Position> Pointer )
+            value.IsDolly                                   = GetBool(new IntPtr(p + 0x030)); // 024664F0C838 0x30 IsDolly                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Effect                                    = GetString(new IntPtr(p + 0x038)); // 024664F0C858 0x38 Effect                      ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

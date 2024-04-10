@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 SelectedIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 <OnCellClicked>k__BackingField           Action`1<int> IL2CPP_TYPE_GENERICINST
     // 030 <OnCellLongPressed>k__BackingField       Action`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class CommonListViewContext
+    public partial class CommonListViewContext : DataModel
     {
         public int                                      SelectedIndex                           { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonListViewContext();
+            var value   = new CommonListViewContext() { Pointer= p0 };
 
-            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x020)); // 027004F748E0 0x20 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x020)); // 0245A4F6B768 0x20 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

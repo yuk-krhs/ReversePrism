@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Counter                                  0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class AtomicCounter
+    public partial class AtomicCounter : DataModel
     {
         public long                                     Counter                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AtomicCounter();
+            var value   = new AtomicCounter() { Pointer= p0 };
 
-            value.Counter                                   = GetInt64(new IntPtr(p + 0x010)); // 0270D0EAA610 0x10 Counter                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Counter                                   = GetInt64(new IntPtr(p + 0x010)); // 0245A40AD820 0x10 Counter                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnVideoModeStoppedCallback
+    public partial class OnVideoModeStoppedCallback : DataModel
     {
 
         public static OnVideoModeStoppedCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnVideoModeStoppedCallback();
+            var value   = new OnVideoModeStoppedCallback() { Pointer= p0 };
 
 
             return value;

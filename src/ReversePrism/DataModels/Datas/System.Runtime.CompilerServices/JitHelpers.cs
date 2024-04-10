@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JitHelpers
+    public partial class JitHelpers : DataModel
     {
 
         public static JitHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JitHelpers();
+            var value   = new JitHelpers() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Increment                                00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
     // 018 State                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class PcgRandom
+    public partial class PcgRandom : DataModel
     {
         public ulong                                    Increment                               { get; set; }
         public ulong                                    State                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PcgRandom();
+            var value   = new PcgRandom() { Pointer= p0 };
 
-            value.Increment                                 = GetUInt64(new IntPtr(p + 0x010)); // 027004FAC5A8 0x10 Increment                   ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.State                                     = GetUInt64(new IntPtr(p + 0x018)); // 027004FAC5C8 0x18 State                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Increment                                 = GetUInt64(new IntPtr(p + 0x010)); // 0245A4FADBA8 0x10 Increment                   ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.State                                     = GetUInt64(new IntPtr(p + 0x018)); // 0245A4FADBC8 0x18 State                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

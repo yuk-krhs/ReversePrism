@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SharedStatic
+    public partial class SharedStatic : DataModel
     {
 
         public static SharedStatic? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SharedStatic();
+            var value   = new SharedStatic() { Pointer= p0 };
 
 
             return value;

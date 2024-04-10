@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 EPHEMERON_TOMBSTONE                      <object> IL2CPP_TYPE_OBJECT
-    public partial class GC
+    public partial class GC : DataModel
     {
 
         public static GC? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GC();
+            var value   = new GC() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 StaminaType                              00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32
     // 000 RecoverCountFieldNumber                  int IL2CPP_TYPE_I4
     // 01C RecoverCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class RecoverStaminaByInGameCurrencyArgs
+    public partial class RecoverStaminaByInGameCurrencyArgs : DataModel
     {
         public StaminaType                              StaminaType                             { get; set; }
         public int                                      RecoverCount                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverStaminaByInGameCurrencyArgs();
+            var value   = new RecoverStaminaByInGameCurrencyArgs() { Pointer= p0 };
 
-            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0270D2961370 0x18 StaminaType                 ( 00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32 )
-            value.RecoverCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0270D29613B0 0x1C RecoverCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0246628CEA60 0x18 StaminaType                 ( 00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32 )
+            value.RecoverCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0246628CEAA0 0x1C RecoverCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

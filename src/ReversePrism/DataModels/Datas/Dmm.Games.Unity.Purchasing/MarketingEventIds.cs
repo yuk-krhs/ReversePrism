@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Boot                                     000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer
     // 020 Signup                                   000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer
     // 028 Spend                                    000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer
-    public partial class MarketingEventIds
+    public partial class MarketingEventIds : DataModel
     {
         public List<long>?                              FirstBoot                               { get; set; }
         public List<long>?                              Boot                                    { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarketingEventIds();
+            var value   = new MarketingEventIds() { Pointer= p0 };
 
-            value.FirstBoot                                 = GetInt64List(new IntPtr(p + 0x010)); // 0270DB481100 0x10 FirstBoot                   ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
-            value.Boot                                      = GetInt64List(new IntPtr(p + 0x018)); // 0270DB481120 0x18 Boot                        ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
-            value.Signup                                    = GetInt64List(new IntPtr(p + 0x020)); // 0270DB481140 0x20 Signup                      ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
-            value.Spend                                     = GetInt64List(new IntPtr(p + 0x028)); // 0270DB481160 0x28 Spend                       ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
+            value.FirstBoot                                 = GetInt64List(new IntPtr(p + 0x010)); // 02466B50E030 0x10 FirstBoot                   ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
+            value.Boot                                      = GetInt64List(new IntPtr(p + 0x018)); // 02466B50E050 0x18 Boot                        ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
+            value.Signup                                    = GetInt64List(new IntPtr(p + 0x020)); // 02466B50E070 0x20 Signup                      ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
+            value.Spend                                     = GetInt64List(new IntPtr(p + 0x028)); // 02466B50E090 0x28 Spend                       ( 000185CED588 ModelPrimitiveListType List`1<long> List`1<long> List<long> Pointer )
 
             return value;
         }

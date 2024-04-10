@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 GiveupMessageText                        0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 000 AssetPath                                string IL2CPP_TYPE_STRING
-    public partial class ProduceGiveUpConfirmationPopupContent
+    public partial class ProduceGiveUpConfirmationPopupContent : DataModel
     {
         public UITextMeshProUGUI?                       GiveupMessageText                       { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceGiveUpConfirmationPopupContent();
+            var value   = new ProduceGiveUpConfirmationPopupContent() { Pointer= p0 };
 
-            value.GiveupMessageText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C830A8 0x60 GiveupMessageText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GiveupMessageText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CF3B68 0x60 GiveupMessageText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

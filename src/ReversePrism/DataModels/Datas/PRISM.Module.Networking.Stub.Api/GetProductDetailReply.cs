@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProductDetailFieldNumber                 int IL2CPP_TYPE_I4
     // 018 ProductDetail                            0001865A12F0 ModelClassType ProductDetailStatus ProductDetailStatus ProductDetailStatus Pointer
-    public partial class GetProductDetailReply
+    public partial class GetProductDetailReply : DataModel
     {
         public ProductDetailStatus?                     ProductDetail                           { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProductDetailReply();
+            var value   = new GetProductDetailReply() { Pointer= p0 };
 
-            value.ProductDetail                             = GetObject<ProductDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductDetailStatus.FromPointer); // 0270D266F288 0x18 ProductDetail               ( 0001865A12F0 ModelClassType ProductDetailStatus ProductDetailStatus ProductDetailStatus Pointer )
+            value.ProductDetail                             = GetObject<ProductDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductDetailStatus.FromPointer); // 0246625C1980 0x18 ProductDetail               ( 0001865A12F0 ModelClassType ProductDetailStatus ProductDetailStatus ProductDetailStatus Pointer )
 
             return value;
         }

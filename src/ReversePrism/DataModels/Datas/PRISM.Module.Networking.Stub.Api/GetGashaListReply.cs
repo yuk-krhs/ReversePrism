@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 RevertExchangeIdListFieldNumber          int IL2CPP_TYPE_I4
     // 028 _repeated_revertExchangeIdList_codec     FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 038 RevertExchangeIdList                     000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class GetGashaListReply
+    public partial class GetGashaListReply : DataModel
     {
         public List<GashaStatus>?                       GashaList                               { get; set; }
         public List<GashaPrismGaugeStatus>?             GaugeList                               { get; set; }
@@ -39,13 +39,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGashaListReply();
+            var value   = new GetGashaListReply() { Pointer= p0 };
 
-            value.GashaList                                 = GetObjectList<GashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaStatus.FromPointer); // 0270D1A148C0 0x18 GashaList                   ( 000185CDD3E8 ModelClassListType RepeatedField`1<GashaStatus> RepeatedField`1<GashaStatus> List<GashaStatus> Pointer )
-            value.GaugeList                                 = GetObjectList<GashaPrismGaugeStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPrismGaugeStatus.FromPointer); // 0270D1A14920 0x20 GaugeList                   ( 000185CDC428 ModelClassListType RepeatedField`1<GashaPrismGaugeStatus> RepeatedField`1<GashaPrismGaugeStatus> List<GashaPrismGaugeStatus> Pointer )
-            value.ConvertExchangeIdList                     = GetStringList(new IntPtr(p + 0x028)); // 0270D1A14980 0x28 ConvertExchangeIdList       ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.ExchangeList                              = GetObjectList<GashaExchangeStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaExchangeStatus.FromPointer); // 0270D1A149E0 0x30 ExchangeList                ( 000185CDB638 ModelClassListType RepeatedField`1<GashaExchangeStatus> RepeatedField`1<GashaExchangeStatus> List<GashaExchangeStatus> Pointer )
-            value.RevertExchangeIdList                      = GetStringList(new IntPtr(p + 0x038)); // 0270D1A14A40 0x38 RevertExchangeIdList        ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.GashaList                                 = GetObjectList<GashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaStatus.FromPointer); // 02466199F3E0 0x18 GashaList                   ( 000185CDD3E8 ModelClassListType RepeatedField`1<GashaStatus> RepeatedField`1<GashaStatus> List<GashaStatus> Pointer )
+            value.GaugeList                                 = GetObjectList<GashaPrismGaugeStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPrismGaugeStatus.FromPointer); // 02466199F440 0x20 GaugeList                   ( 000185CDC428 ModelClassListType RepeatedField`1<GashaPrismGaugeStatus> RepeatedField`1<GashaPrismGaugeStatus> List<GashaPrismGaugeStatus> Pointer )
+            value.ConvertExchangeIdList                     = GetStringList(new IntPtr(p + 0x028)); // 02466199F4A0 0x28 ConvertExchangeIdList       ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.ExchangeList                              = GetObjectList<GashaExchangeStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaExchangeStatus.FromPointer); // 02466199F500 0x30 ExchangeList                ( 000185CDB638 ModelClassListType RepeatedField`1<GashaExchangeStatus> RepeatedField`1<GashaExchangeStatus> List<GashaExchangeStatus> Pointer )
+            value.RevertExchangeIdList                      = GetStringList(new IntPtr(p + 0x038)); // 02466199F560 0x38 RevertExchangeIdList        ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

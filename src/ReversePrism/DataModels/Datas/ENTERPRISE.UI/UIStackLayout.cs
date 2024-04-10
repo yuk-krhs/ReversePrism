@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 0A8 Generator                                00018664D700 ModelClassType IStackLayoutItemGenerator IStackLayoutItemGenerator IStackLayoutItemGenerator Pointer
     // 0B0 StackItems                               000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
-    public partial class UIStackLayout
+    public partial class UIStackLayout : DataModel
     {
         public IStackLayoutItemGenerator?               Generator                               { get; set; }
         public List<GameObject>?                        StackItems                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIStackLayout();
+            var value   = new UIStackLayout() { Pointer= p0 };
 
-            value.Generator                                 = GetObject<IStackLayoutItemGenerator>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IStackLayoutItemGenerator.FromPointer); // 0270DB046D28 0xA8 Generator                   ( 00018664D700 ModelClassType IStackLayoutItemGenerator IStackLayoutItemGenerator IStackLayoutItemGenerator Pointer )
-            value.StackItems                                = GetObjectList<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB046D48 0xB0 StackItems                  ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.Generator                                 = GetObject<IStackLayoutItemGenerator>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IStackLayoutItemGenerator.FromPointer); // 02466B0A6D28 0xA8 Generator                   ( 00018664D700 ModelClassType IStackLayoutItemGenerator IStackLayoutItemGenerator IStackLayoutItemGenerator Pointer )
+            value.StackItems                                = GetObjectList<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 02466B0A6D48 0xB0 StackItems                  ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
 
             return value;
         }

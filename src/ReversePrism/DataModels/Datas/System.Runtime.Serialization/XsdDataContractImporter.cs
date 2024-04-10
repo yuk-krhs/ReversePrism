@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XsdDataContractImporter
+    public partial class XsdDataContractImporter : DataModel
     {
 
         public static XsdDataContractImporter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XsdDataContractImporter();
+            var value   = new XsdDataContractImporter() { Pointer= p0 };
 
 
             return value;

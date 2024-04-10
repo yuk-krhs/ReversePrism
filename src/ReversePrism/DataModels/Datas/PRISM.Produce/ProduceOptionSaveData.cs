@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 024 IsSkipIdolSkillCutIn                     000186595960 ModelPrimitiveType bool bool bool Bool
     // 025 IsSkipConfirmView                        000186595960 ModelPrimitiveType bool bool bool Bool
     // 026 IsNotStopAutoMode                        000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceOptionSaveData
+    public partial class ProduceOptionSaveData : DataModel
     {
         public CommuSkipModeEnum                        CommuSkipMode                           { get; set; }
         public bool                                     IsSkipIdolSkillCutIn                    { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceOptionSaveData();
+            var value   = new ProduceOptionSaveData() { Pointer= p0 };
 
-            value.CommuSkipMode                             = (CommuSkipModeEnum)GetInt32(new IntPtr(p + 0x020)); // 027003A7C7D8 0x20 CommuSkipMode               ( 000186601E60 ModelEnumType CommuSkipModeEnum CommuSkipModeEnum CommuSkipModeEnum Int32 )
-            value.IsSkipIdolSkillCutIn                      = GetBool(new IntPtr(p + 0x024)); // 027003A7C7F8 0x24 IsSkipIdolSkillCutIn        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsSkipConfirmView                         = GetBool(new IntPtr(p + 0x025)); // 027003A7C818 0x25 IsSkipConfirmView           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsNotStopAutoMode                         = GetBool(new IntPtr(p + 0x026)); // 027003A7C838 0x26 IsNotStopAutoMode           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CommuSkipMode                             = (CommuSkipModeEnum)GetInt32(new IntPtr(p + 0x020)); // 0245A3A805E0 0x20 CommuSkipMode               ( 000186601E60 ModelEnumType CommuSkipModeEnum CommuSkipModeEnum CommuSkipModeEnum Int32 )
+            value.IsSkipIdolSkillCutIn                      = GetBool(new IntPtr(p + 0x024)); // 0245A3A80600 0x24 IsSkipIdolSkillCutIn        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsSkipConfirmView                         = GetBool(new IntPtr(p + 0x025)); // 0245A3A80620 0x25 IsSkipConfirmView           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsNotStopAutoMode                         = GetBool(new IntPtr(p + 0x026)); // 0245A3A80640 0x26 IsNotStopAutoMode           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

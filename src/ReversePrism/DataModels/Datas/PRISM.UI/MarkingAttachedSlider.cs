@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 168 MarkingContainer                         000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 170 HeadMarkingPrefab                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 178 BetweenMarkingPrefab                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class MarkingAttachedSlider
+    public partial class MarkingAttachedSlider : DataModel
     {
         public RectTransform?                           MarkingContainer                        { get; set; }
         public GameObject?                              HeadMarkingPrefab                       { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarkingAttachedSlider();
+            var value   = new MarkingAttachedSlider() { Pointer= p0 };
 
-            value.MarkingContainer                          = GetObject<RectTransform>(new IntPtr(p + 0x168), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D526F1C8 0x168 MarkingContainer            ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.HeadMarkingPrefab                         = GetObject<GameObject>(new IntPtr(p + 0x170), ReversePrism.DataModels.GameObject.FromPointer); // 0270D526F1E8 0x170 HeadMarkingPrefab           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BetweenMarkingPrefab                      = GetObject<GameObject>(new IntPtr(p + 0x178), ReversePrism.DataModels.GameObject.FromPointer); // 0270D526F208 0x178 BetweenMarkingPrefab        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MarkingContainer                          = GetObject<RectTransform>(new IntPtr(p + 0x168), ReversePrism.DataModels.RectTransform.FromPointer); // 0246652E29B8 0x168 MarkingContainer            ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.HeadMarkingPrefab                         = GetObject<GameObject>(new IntPtr(p + 0x170), ReversePrism.DataModels.GameObject.FromPointer); // 0246652E29D8 0x170 HeadMarkingPrefab           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BetweenMarkingPrefab                      = GetObject<GameObject>(new IntPtr(p + 0x178), ReversePrism.DataModels.GameObject.FromPointer); // 0246652E29F8 0x178 BetweenMarkingPrefab        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

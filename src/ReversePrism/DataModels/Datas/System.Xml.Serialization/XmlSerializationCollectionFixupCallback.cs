@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSerializationCollectionFixupCallback
+    public partial class XmlSerializationCollectionFixupCallback : DataModel
     {
 
         public static XmlSerializationCollectionFixupCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSerializationCollectionFixupCallback();
+            var value   = new XmlSerializationCollectionFixupCallback() { Pointer= p0 };
 
 
             return value;

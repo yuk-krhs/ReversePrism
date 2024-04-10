@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 count                                    int IL2CPP_TYPE_I4
     // 000 remaining                                int IL2CPP_TYPE_I4
     // 000 cancellationToken                        CancellationToken IL2CPP_TYPE_VALUETYPE
-    public partial class _Repeat
+    public partial class _Repeat : DataModel
     {
 
         public static _Repeat? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Repeat();
+            var value   = new _Repeat() { Pointer= p0 };
 
 
             return value;

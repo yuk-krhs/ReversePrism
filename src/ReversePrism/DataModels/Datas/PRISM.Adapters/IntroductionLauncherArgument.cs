@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <TargetIndex>k__BackingField             Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class IntroductionLauncherArgument
+    public partial class IntroductionLauncherArgument : DataModel
     {
 
         public static IntroductionLauncherArgument? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLauncherArgument();
+            var value   = new IntroductionLauncherArgument() { Pointer= p0 };
 
 
             return value;

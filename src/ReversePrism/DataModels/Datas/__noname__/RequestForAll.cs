@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RequestForAll
+    public partial class RequestForAll : DataModel
     {
 
         public static RequestForAll? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestForAll();
+            var value   = new RequestForAll() { Pointer= p0 };
 
 
             return value;

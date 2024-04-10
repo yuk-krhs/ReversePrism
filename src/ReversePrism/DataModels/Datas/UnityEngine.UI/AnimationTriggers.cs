@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 M_PressedTrigger                         000186671910 ModelPrimitiveType string string string String
     // 028 M_SelectedTrigger                        000186671910 ModelPrimitiveType string string string String
     // 030 M_DisabledTrigger                        000186671910 ModelPrimitiveType string string string String
-    public partial class AnimationTriggers
+    public partial class AnimationTriggers : DataModel
     {
         public string                                   M_NormalTrigger                         { get; set; }
         public string                                   M_HighlightedTrigger                    { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimationTriggers();
+            var value   = new AnimationTriggers() { Pointer= p0 };
 
-            value.M_NormalTrigger                           = GetString(new IntPtr(p + 0x010)); // 0270D0A986E8 0x10 M_NormalTrigger             ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_HighlightedTrigger                      = GetString(new IntPtr(p + 0x018)); // 0270D0A98708 0x18 M_HighlightedTrigger        ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_PressedTrigger                          = GetString(new IntPtr(p + 0x020)); // 0270D0A98728 0x20 M_PressedTrigger            ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_SelectedTrigger                         = GetString(new IntPtr(p + 0x028)); // 0270D0A98748 0x28 M_SelectedTrigger           ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_DisabledTrigger                         = GetString(new IntPtr(p + 0x030)); // 0270D0A98768 0x30 M_DisabledTrigger           ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_NormalTrigger                           = GetString(new IntPtr(p + 0x010)); // 024660A87E20 0x10 M_NormalTrigger             ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_HighlightedTrigger                      = GetString(new IntPtr(p + 0x018)); // 024660A87E40 0x18 M_HighlightedTrigger        ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_PressedTrigger                          = GetString(new IntPtr(p + 0x020)); // 024660A87E60 0x20 M_PressedTrigger            ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_SelectedTrigger                         = GetString(new IntPtr(p + 0x028)); // 024660A87E80 0x28 M_SelectedTrigger           ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_DisabledTrigger                         = GetString(new IntPtr(p + 0x030)); // 024660A87EA0 0x30 M_DisabledTrigger           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

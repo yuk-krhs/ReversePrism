@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Es                                       0001866B1520 ModelClassType DefaultEventSystem DefaultEventSystem DefaultEventSystem Pointer
-    public partial class FocusBasedEventSequenceContext
+    public partial class FocusBasedEventSequenceContext : DataModel
     {
         public DefaultEventSystem?                      Es                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FocusBasedEventSequenceContext();
+            var value   = new FocusBasedEventSequenceContext() { Pointer= p0 };
 
-            value.Es                                        = GetObject<DefaultEventSystem>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultEventSystem.FromPointer); // 027006750F70 0x10 Es                          ( 0001866B1520 ModelClassType DefaultEventSystem DefaultEventSystem DefaultEventSystem Pointer )
+            value.Es                                        = GetObject<DefaultEventSystem>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultEventSystem.FromPointer); // 0245A6713760 0x10 Es                          ( 0001866B1520 ModelClassType DefaultEventSystem DefaultEventSystem DefaultEventSystem Pointer )
 
             return value;
         }

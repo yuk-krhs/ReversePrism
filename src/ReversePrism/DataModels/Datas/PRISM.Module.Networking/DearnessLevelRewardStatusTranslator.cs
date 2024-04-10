@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DearnessLevelRewardStatusTranslator
+    public partial class DearnessLevelRewardStatusTranslator : DataModel
     {
 
         public static DearnessLevelRewardStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DearnessLevelRewardStatusTranslator();
+            var value   = new DearnessLevelRewardStatusTranslator() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_RegisteredConstantBuffers              List`1<ConstantBufferBase> IL2CPP_TYPE_GENERICINST
-    public partial class ConstantBuffer
+    public partial class ConstantBuffer : DataModel
     {
 
         public static ConstantBuffer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstantBuffer();
+            var value   = new ConstantBuffer() { Pointer= p0 };
 
 
             return value;

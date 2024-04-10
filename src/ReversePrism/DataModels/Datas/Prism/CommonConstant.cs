@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 INPUT_FORM_OVERFLOW_LENGTH               int IL2CPP_TYPE_I4
     // 000 EPSILON                                  float IL2CPP_TYPE_R4
-    public partial class CommonConstant
+    public partial class CommonConstant : DataModel
     {
 
         public static CommonConstant? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonConstant();
+            var value   = new CommonConstant() { Pointer= p0 };
 
 
             return value;

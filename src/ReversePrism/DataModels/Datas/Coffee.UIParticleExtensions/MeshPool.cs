@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Pool                                   Stack`1<Mesh> IL2CPP_TYPE_GENERICINST
     // 008 s_HashPool                               HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class MeshPool
+    public partial class MeshPool : DataModel
     {
 
         public static MeshPool? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshPool();
+            var value   = new MeshPool() { Pointer= p0 };
 
 
             return value;

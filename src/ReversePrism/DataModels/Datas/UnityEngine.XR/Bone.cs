@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_DeviceId                               00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
     // 018 M_FeatureIndex                           000186698B70 ModelPrimitiveType uint uint uint UInt32
-    public partial class Bone
+    public partial class Bone : DataModel
     {
         public ulong                                    M_DeviceId                              { get; set; }
         public uint                                     M_FeatureIndex                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Bone();
+            var value   = new Bone() { Pointer= p0 };
 
-            value.M_DeviceId                                = GetUInt64(new IntPtr(p + 0x010)); // 0270020F0610 0x10 M_DeviceId                  ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.M_FeatureIndex                            = GetUInt32(new IntPtr(p + 0x018)); // 0270020F0630 0x18 M_FeatureIndex              ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_DeviceId                                = GetUInt64(new IntPtr(p + 0x010)); // 0245A20F0610 0x10 M_DeviceId                  ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_FeatureIndex                            = GetUInt32(new IntPtr(p + 0x018)); // 0245A20F0630 0x18 M_FeatureIndex              ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

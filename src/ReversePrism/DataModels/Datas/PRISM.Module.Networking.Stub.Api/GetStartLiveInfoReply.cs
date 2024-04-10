@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 SkipLive                                 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     // 000 EventPeriodFieldNumber                   int IL2CPP_TYPE_I4
     // 030 EventPeriod                              000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
-    public partial class GetStartLiveInfoReply
+    public partial class GetStartLiveInfoReply : DataModel
     {
         public int                                      MaxAvailableLiveBoost                   { get; set; }
         public bool                                     IsEvent                                 { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStartLiveInfoReply();
+            var value   = new GetStartLiveInfoReply() { Pointer= p0 };
 
-            value.MaxAvailableLiveBoost                     = GetInt32(new IntPtr(p + 0x018)); // 0270D21E09E0 0x18 MaxAvailableLiveBoost       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsEvent                                   = GetBool(new IntPtr(p + 0x01C)); // 0270D21E0A20 0x1C IsEvent                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D21E0A60 0x20 AutoLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.SkipLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D21E0AA0 0x28 SkipLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0270D21E0AE0 0x30 EventPeriod                 ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.MaxAvailableLiveBoost                     = GetInt32(new IntPtr(p + 0x018)); // 02466218CB88 0x18 MaxAvailableLiveBoost       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsEvent                                   = GetBool(new IntPtr(p + 0x01C)); // 02466218CBC8 0x1C IsEvent                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AutoLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 02466218CC08 0x20 AutoLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.SkipLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.StaminaStatus.FromPointer); // 02466218CC48 0x28 SkipLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PeriodStatus.FromPointer); // 02466218CC88 0x30 EventPeriod                 ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
 
             return value;
         }

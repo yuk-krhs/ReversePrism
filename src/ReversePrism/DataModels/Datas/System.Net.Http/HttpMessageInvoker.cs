@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Handler                                  0001866E02F0 ModelClassType HttpMessageHandler HttpMessageHandler HttpMessageHandler Pointer
     // 018 DisposeHandler                           0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class HttpMessageInvoker
+    public partial class HttpMessageInvoker : DataModel
     {
         public HttpMessageHandler?                      Handler                                 { get; set; }
         public bool                                     DisposeHandler                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpMessageInvoker();
+            var value   = new HttpMessageInvoker() { Pointer= p0 };
 
-            value.Handler                                   = GetObject<HttpMessageHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpMessageHandler.FromPointer); // 0270DB6DBE40 0x10 Handler                     ( 0001866E02F0 ModelClassType HttpMessageHandler HttpMessageHandler HttpMessageHandler Pointer )
-            value.DisposeHandler                            = GetBool(new IntPtr(p + 0x018)); // 0270DB6DBE60 0x18 DisposeHandler              ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Handler                                   = GetObject<HttpMessageHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpMessageHandler.FromPointer); // 02466B768878 0x10 Handler                     ( 0001866E02F0 ModelClassType HttpMessageHandler HttpMessageHandler HttpMessageHandler Pointer )
+            value.DisposeHandler                            = GetBool(new IntPtr(p + 0x018)); // 02466B768898 0x18 DisposeHandler              ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

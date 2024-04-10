@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INativeDownloader
+    public partial class INativeDownloader : DataModel
     {
 
         public static INativeDownloader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INativeDownloader();
+            var value   = new INativeDownloader() { Pointer= p0 };
 
 
             return value;

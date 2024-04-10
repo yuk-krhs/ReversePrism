@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 048 TypeForInitialization                    000186692850 ModelClassType Type Type Type Pointer
     // 050 ParseMethod                              000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 058 ParseMethodSet                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DataContractCriticalHelper
+    public partial class DataContractCriticalHelper : DataModel
     {
         public int                                      DataContractID                          { get; set; }
         public XmlDictionary?                           ClrTypeStringsDictionary                { get; set; }
@@ -57,22 +57,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataContractCriticalHelper();
+            var value   = new DataContractCriticalHelper() { Pointer= p0 };
 
-            value.DataContractID                            = GetInt32(new IntPtr(p + 0x010)); // 027004C68318 0x10 DataContractID              ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.ClrTypeStringsDictionary                  = GetObject<XmlDictionary>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlDictionary.FromPointer); // 027004C683D8 0x40 ClrTypeStringsDictionary    ( 000186593740 ModelClassType XmlDictionary XmlDictionary XmlDictionary Pointer )
-            value.TypeHandleRef                             = GetObject<TypeHandleRef>(new IntPtr(p + 0x048), ReversePrism.DataModels.TypeHandleRef.FromPointer); // 027004C683F8 0x48 TypeHandleRef               ( 0001866D6940 ModelClassType TypeHandleRef TypeHandleRef TypeHandleRef Pointer )
-            value.UnderlyingType                            = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027004C684B8 0x10 UnderlyingType              ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.OriginalUnderlyingType                    = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 027004C684D8 0x18 OriginalUnderlyingType      ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.IsReference                               = GetBool(new IntPtr(p + 0x020)); // 027004C684F8 0x20 IsReference                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsValueType                               = GetBool(new IntPtr(p + 0x021)); // 027004C68518 0x21 IsValueType                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StableName                                = GetObject<XmlQualifiedName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 027004C68538 0x28 StableName                  ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.GenericInfo                               = GetObject<GenericInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.GenericInfo.FromPointer); // 027004C68558 0x30 GenericInfo                 ( 000186624990 ModelClassType GenericInfo GenericInfo GenericInfo Pointer )
-            value.Name                                      = GetObject<XmlDictionaryString>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 027004C68578 0x38 Name                        ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
-            value.Ns                                        = GetObject<XmlDictionaryString>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 027004C68598 0x40 Ns                          ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
-            value.TypeForInitialization                     = GetObject<Type>(new IntPtr(p + 0x048), ReversePrism.DataModels.Type.FromPointer); // 027004C685B8 0x48 TypeForInitialization       ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.ParseMethod                               = GetObject<MethodInfo>(new IntPtr(p + 0x050), ReversePrism.DataModels.MethodInfo.FromPointer); // 027004C685D8 0x50 ParseMethod                 ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.ParseMethodSet                            = GetBool(new IntPtr(p + 0x058)); // 027004C685F8 0x58 ParseMethodSet              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DataContractID                            = GetInt32(new IntPtr(p + 0x010)); // 0245A4CAC080 0x10 DataContractID              ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.ClrTypeStringsDictionary                  = GetObject<XmlDictionary>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlDictionary.FromPointer); // 0245A4CAC140 0x40 ClrTypeStringsDictionary    ( 000186593740 ModelClassType XmlDictionary XmlDictionary XmlDictionary Pointer )
+            value.TypeHandleRef                             = GetObject<TypeHandleRef>(new IntPtr(p + 0x048), ReversePrism.DataModels.TypeHandleRef.FromPointer); // 0245A4CAC160 0x48 TypeHandleRef               ( 0001866D6940 ModelClassType TypeHandleRef TypeHandleRef TypeHandleRef Pointer )
+            value.UnderlyingType                            = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A4CAC220 0x10 UnderlyingType              ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.OriginalUnderlyingType                    = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A4CAC240 0x18 OriginalUnderlyingType      ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.IsReference                               = GetBool(new IntPtr(p + 0x020)); // 0245A4CAC260 0x20 IsReference                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsValueType                               = GetBool(new IntPtr(p + 0x021)); // 0245A4CAC280 0x21 IsValueType                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StableName                                = GetObject<XmlQualifiedName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0245A4CAC2A0 0x28 StableName                  ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.GenericInfo                               = GetObject<GenericInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.GenericInfo.FromPointer); // 0245A4CAC2C0 0x30 GenericInfo                 ( 000186624990 ModelClassType GenericInfo GenericInfo GenericInfo Pointer )
+            value.Name                                      = GetObject<XmlDictionaryString>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0245A4CAC2E0 0x38 Name                        ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.Ns                                        = GetObject<XmlDictionaryString>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0245A4CAC300 0x40 Ns                          ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.TypeForInitialization                     = GetObject<Type>(new IntPtr(p + 0x048), ReversePrism.DataModels.Type.FromPointer); // 0245A4CAC320 0x48 TypeForInitialization       ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.ParseMethod                               = GetObject<MethodInfo>(new IntPtr(p + 0x050), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A4CAC340 0x50 ParseMethod                 ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.ParseMethodSet                            = GetBool(new IntPtr(p + 0x058)); // 0245A4CAC360 0x58 ParseMethodSet              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

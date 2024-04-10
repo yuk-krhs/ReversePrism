@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetDearnessLevelRewardListArgs
+    public partial class IGetDearnessLevelRewardListArgs : DataModel
     {
 
         public static IGetDearnessLevelRewardListArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetDearnessLevelRewardListArgs();
+            var value   = new IGetDearnessLevelRewardListArgs() { Pointer= p0 };
 
 
             return value;

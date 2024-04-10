@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ErrorAllocationCrossesWordBoundary       int IL2CPP_TYPE_I4
     // 000 EmptyBeforeAllocation                    int IL2CPP_TYPE_I4
     // 000 EmptyAfterFree                           int IL2CPP_TYPE_I4
-    public partial class ConcurrentMask
+    public partial class ConcurrentMask : DataModel
     {
 
         public static ConcurrentMask? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConcurrentMask();
+            var value   = new ConcurrentMask() { Pointer= p0 };
 
 
             return value;

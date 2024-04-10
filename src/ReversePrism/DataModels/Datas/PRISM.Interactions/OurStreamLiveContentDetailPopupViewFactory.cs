@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OurStreamLiveContentDetailPopupViewFactory
+    public partial class OurStreamLiveContentDetailPopupViewFactory : DataModel
     {
 
         public static OurStreamLiveContentDetailPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamLiveContentDetailPopupViewFactory();
+            var value   = new OurStreamLiveContentDetailPopupViewFactory() { Pointer= p0 };
 
 
             return value;

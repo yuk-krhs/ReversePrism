@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Mobile                                   string IL2CPP_TYPE_STRING
     // 008 Touch                                    string IL2CPP_TYPE_STRING
     // 010 Canvas                                   000186674040 ModelPrimitiveType string string string String
-    public partial class Types
+    public partial class Types : DataModel
     {
         public string                                   Canvas                                  { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Types();
+            var value   = new Types() { Pointer= p0 };
 
-            value.Canvas                                    = GetString(new IntPtr(p + 0x010)); // 0270DB4B2610 0x10 Canvas                      ( 000186674040 ModelPrimitiveType string string string String )
+            value.Canvas                                    = GetString(new IntPtr(p + 0x010)); // 02466B53F560 0x10 Canvas                      ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

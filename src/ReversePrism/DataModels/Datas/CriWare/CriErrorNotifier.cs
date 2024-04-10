@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _onCallbackThreadUnsafe                  Callback IL2CPP_TYPE_CLASS
     // 008 objectLock                               <object> IL2CPP_TYPE_OBJECT
-    public partial class CriErrorNotifier
+    public partial class CriErrorNotifier : DataModel
     {
 
         public static CriErrorNotifier? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriErrorNotifier();
+            var value   = new CriErrorNotifier() { Pointer= p0 };
 
 
             return value;

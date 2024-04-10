@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScreenEdgeColorMixerBehaviour
+    public partial class ScreenEdgeColorMixerBehaviour : DataModel
     {
 
         public static ScreenEdgeColorMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenEdgeColorMixerBehaviour();
+            var value   = new ScreenEdgeColorMixerBehaviour() { Pointer= p0 };
 
 
             return value;

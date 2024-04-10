@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 LevelColor                               000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
-    public partial class ProduceScheduleLevelColorData
+    public partial class ProduceScheduleLevelColorData : DataModel
     {
         public List<Color>?                             LevelColor                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceScheduleLevelColorData();
+            var value   = new ProduceScheduleLevelColorData() { Pointer= p0 };
 
-            value.LevelColor                                = GetEnumList<Color>(new IntPtr(p + 0x018)); // 0270DA0CEE78 0x18 LevelColor                  ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.LevelColor                                = GetEnumList<Color>(new IntPtr(p + 0x018)); // 02466A1231C0 0x18 LevelColor                  ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
 
             return value;
         }

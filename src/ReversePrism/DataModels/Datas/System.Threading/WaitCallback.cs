@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WaitCallback
+    public partial class WaitCallback : DataModel
     {
 
         public static WaitCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitCallback();
+            var value   = new WaitCallback() { Pointer= p0 };
 
 
             return value;

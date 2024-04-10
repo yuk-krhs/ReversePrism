@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PvpRankedUserStatusTranslator
+    public partial class PvpRankedUserStatusTranslator : DataModel
     {
 
         public static PvpRankedUserStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpRankedUserStatusTranslator();
+            var value   = new PvpRankedUserStatusTranslator() { Pointer= p0 };
 
 
             return value;

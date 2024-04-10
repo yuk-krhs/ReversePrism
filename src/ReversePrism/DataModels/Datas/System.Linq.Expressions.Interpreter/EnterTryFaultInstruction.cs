@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 TryHandler                               0001866B4D70 ModelClassType TryFaultHandler TryFaultHandler TryFaultHandler Pointer
-    public partial class EnterTryFaultInstruction
+    public partial class EnterTryFaultInstruction : DataModel
     {
         public TryFaultHandler?                         TryHandler                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnterTryFaultInstruction();
+            var value   = new EnterTryFaultInstruction() { Pointer= p0 };
 
-            value.TryHandler                                = GetObject<TryFaultHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.TryFaultHandler.FromPointer); // 0270D9FA4E90 0x18 TryHandler                  ( 0001866B4D70 ModelClassType TryFaultHandler TryFaultHandler TryFaultHandler Pointer )
+            value.TryHandler                                = GetObject<TryFaultHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.TryFaultHandler.FromPointer); // 02466A010A18 0x18 TryHandler                  ( 0001866B4D70 ModelClassType TryFaultHandler TryFaultHandler TryFaultHandler Pointer )
 
             return value;
         }

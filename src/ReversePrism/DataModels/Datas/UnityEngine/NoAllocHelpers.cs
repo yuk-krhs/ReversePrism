@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoAllocHelpers
+    public partial class NoAllocHelpers : DataModel
     {
 
         public static NoAllocHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoAllocHelpers();
+            var value   = new NoAllocHelpers() { Pointer= p0 };
 
 
             return value;

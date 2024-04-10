@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_SizeInBytes                            0001865F7700 ModelPrimitiveType long long long Int64
     // 028 M_EventCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 02C M_WeOwnTheBuffer                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class InputEventBuffer
+    public partial class InputEventBuffer : DataModel
     {
         public long                                     M_SizeInBytes                           { get; set; }
         public int                                      M_EventCount                            { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputEventBuffer();
+            var value   = new InputEventBuffer() { Pointer= p0 };
 
-            value.M_SizeInBytes                             = GetInt64(new IntPtr(p + 0x020)); // 02700334E5F0 0x20 M_SizeInBytes               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_EventCount                              = GetInt32(new IntPtr(p + 0x028)); // 02700334E610 0x28 M_EventCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_WeOwnTheBuffer                          = GetBool(new IntPtr(p + 0x02C)); // 02700334E630 0x2C M_WeOwnTheBuffer            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_SizeInBytes                             = GetInt64(new IntPtr(p + 0x020)); // 0245A334E5F0 0x20 M_SizeInBytes               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_EventCount                              = GetInt32(new IntPtr(p + 0x028)); // 0245A334E610 0x28 M_EventCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_WeOwnTheBuffer                          = GetBool(new IntPtr(p + 0x02C)); // 0245A334E630 0x2C M_WeOwnTheBuffer            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

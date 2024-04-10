@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Height                                   000186666050 ModelPrimitiveType float float float Single
     // 014 Width                                    000186666050 ModelPrimitiveType float float float Single
-    public partial class SizeTypeInfo
+    public partial class SizeTypeInfo : DataModel
     {
         public float                                    Height                                  { get; set; }
         public float                                    Width                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SizeTypeInfo();
+            var value   = new SizeTypeInfo() { Pointer= p0 };
 
-            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 0270DB55CD88 0x10 Height                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Width                                     = GetSingle(new IntPtr(p + 0x014)); // 0270DB55CDA8 0x14 Width                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 02466B5F0F08 0x10 Height                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Width                                     = GetSingle(new IntPtr(p + 0x014)); // 02466B5F0F28 0x14 Width                       ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

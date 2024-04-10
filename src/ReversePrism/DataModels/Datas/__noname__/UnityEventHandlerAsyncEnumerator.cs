@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 registration2                            CancellationTokenRegistration IL2CPP_TYPE_VALUETYPE
     // 000 isDisposed                               bool IL2CPP_TYPE_BOOLEAN
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class UnityEventHandlerAsyncEnumerator
+    public partial class UnityEventHandlerAsyncEnumerator : DataModel
     {
 
         public static UnityEventHandlerAsyncEnumerator? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityEventHandlerAsyncEnumerator();
+            var value   = new UnityEventHandlerAsyncEnumerator() { Pointer= p0 };
 
 
             return value;

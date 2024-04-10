@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VerticalLayoutGroup
+    public partial class VerticalLayoutGroup : DataModel
     {
 
         public static VerticalLayoutGroup? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerticalLayoutGroup();
+            var value   = new VerticalLayoutGroup() { Pointer= p0 };
 
 
             return value;

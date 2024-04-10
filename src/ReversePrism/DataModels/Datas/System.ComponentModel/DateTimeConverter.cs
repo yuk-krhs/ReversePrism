@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DateTimeConverter
+    public partial class DateTimeConverter : DataModel
     {
 
         public static DateTimeConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeConverter();
+            var value   = new DateTimeConverter() { Pointer= p0 };
 
 
             return value;

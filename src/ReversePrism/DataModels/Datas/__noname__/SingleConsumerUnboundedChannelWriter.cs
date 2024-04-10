@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   SingleConsumerUnboundedChannel`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class SingleConsumerUnboundedChannelWriter
+    public partial class SingleConsumerUnboundedChannelWriter : DataModel
     {
 
         public static SingleConsumerUnboundedChannelWriter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleConsumerUnboundedChannelWriter();
+            var value   = new SingleConsumerUnboundedChannelWriter() { Pointer= p0 };
 
 
             return value;

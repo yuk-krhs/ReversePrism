@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveCameraModeSettingPopupCaller
+    public partial class LiveCameraModeSettingPopupCaller : DataModel
     {
 
         public static LiveCameraModeSettingPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCameraModeSettingPopupCaller();
+            var value   = new LiveCameraModeSettingPopupCaller() { Pointer= p0 };
 
 
             return value;

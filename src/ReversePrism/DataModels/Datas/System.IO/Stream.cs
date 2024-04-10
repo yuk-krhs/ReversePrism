@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Null                                     Stream IL2CPP_TYPE_CLASS
     // 018 ActiveReadWriteTask                      000186591C40 ModelClassType ReadWriteTask ReadWriteTask ReadWriteTask Pointer
     // 020 AsyncActiveSemaphore                     000186723FB0 ModelClassType SemaphoreSlim SemaphoreSlim SemaphoreSlim Pointer
-    public partial class Stream
+    public partial class Stream : DataModel
     {
         public ReadWriteTask?                           ActiveReadWriteTask                     { get; set; }
         public SemaphoreSlim?                           AsyncActiveSemaphore                    { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Stream();
+            var value   = new Stream() { Pointer= p0 };
 
-            value.ActiveReadWriteTask                       = GetObject<ReadWriteTask>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReadWriteTask.FromPointer); // 027003CFE868 0x18 ActiveReadWriteTask         ( 000186591C40 ModelClassType ReadWriteTask ReadWriteTask ReadWriteTask Pointer )
-            value.AsyncActiveSemaphore                      = GetObject<SemaphoreSlim>(new IntPtr(p + 0x020), ReversePrism.DataModels.SemaphoreSlim.FromPointer); // 027003CFE888 0x20 AsyncActiveSemaphore        ( 000186723FB0 ModelClassType SemaphoreSlim SemaphoreSlim SemaphoreSlim Pointer )
+            value.ActiveReadWriteTask                       = GetObject<ReadWriteTask>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReadWriteTask.FromPointer); // 0245A3CFE868 0x18 ActiveReadWriteTask         ( 000186591C40 ModelClassType ReadWriteTask ReadWriteTask ReadWriteTask Pointer )
+            value.AsyncActiveSemaphore                      = GetObject<SemaphoreSlim>(new IntPtr(p + 0x020), ReversePrism.DataModels.SemaphoreSlim.FromPointer); // 0245A3CFE888 0x20 AsyncActiveSemaphore        ( 000186723FB0 ModelClassType SemaphoreSlim SemaphoreSlim SemaphoreSlim Pointer )
 
             return value;
         }

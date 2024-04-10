@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 000 pool                                     Queue`1<Queue`1<<var>>> IL2CPP_TYPE_GENERICINST
-    public partial class QueuePool
+    public partial class QueuePool : DataModel
     {
 
         public static QueuePool? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueuePool();
+            var value   = new QueuePool() { Pointer= p0 };
 
 
             return value;

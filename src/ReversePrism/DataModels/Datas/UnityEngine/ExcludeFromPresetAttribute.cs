@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExcludeFromPresetAttribute
+    public partial class ExcludeFromPresetAttribute : DataModel
     {
 
         public static ExcludeFromPresetAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExcludeFromPresetAttribute();
+            var value   = new ExcludeFromPresetAttribute() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 0C8 ChildKey                                 00018667B160 ModelEnumType DataKey DataKey DataKey Int32
     // 0D0 ParentRowView                            0001866802C0 ModelClassType DataRowView DataRowView DataRowView Pointer
     // 0D8 _filterValues                            <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class RelatedView
+    public partial class RelatedView : DataModel
     {
         public DataKey                                  ChildKey                                { get; set; }
         public DataRowView?                             ParentRowView                           { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RelatedView();
+            var value   = new RelatedView() { Pointer= p0 };
 
-            value.ChildKey                                  = (DataKey)GetInt32(new IntPtr(p + 0x0C8)); // 0270D894DDF8 0xC8 ChildKey                    ( 00018667B160 ModelEnumType DataKey DataKey DataKey Int32 )
-            value.ParentRowView                             = GetObject<DataRowView>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.DataRowView.FromPointer); // 0270D894DE18 0xD0 ParentRowView               ( 0001866802C0 ModelClassType DataRowView DataRowView DataRowView Pointer )
+            value.ChildKey                                  = (DataKey)GetInt32(new IntPtr(p + 0x0C8)); // 0246689B0CB8 0xC8 ChildKey                    ( 00018667B160 ModelEnumType DataKey DataKey DataKey Int32 )
+            value.ParentRowView                             = GetObject<DataRowView>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.DataRowView.FromPointer); // 0246689B0CD8 0xD0 ParentRowView               ( 0001866802C0 ModelClassType DataRowView DataRowView DataRowView Pointer )
 
             return value;
         }

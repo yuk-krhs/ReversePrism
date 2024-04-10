@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUIGridViewDataSource
+    public partial class IUIGridViewDataSource : DataModel
     {
 
         public static IUIGridViewDataSource? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUIGridViewDataSource();
+            var value   = new IUIGridViewDataSource() { Pointer= p0 };
 
 
             return value;

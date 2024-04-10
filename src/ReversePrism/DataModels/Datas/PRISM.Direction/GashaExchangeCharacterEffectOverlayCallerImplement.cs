@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  OverlayViewFactory`1<ICharacterGetEffectOverlayView> IL2CPP_TYPE_GENERICINST
-    public partial class GashaExchangeCharacterEffectOverlayCallerImplement
+    public partial class GashaExchangeCharacterEffectOverlayCallerImplement : DataModel
     {
 
         public static GashaExchangeCharacterEffectOverlayCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeCharacterEffectOverlayCallerImplement();
+            var value   = new GashaExchangeCharacterEffectOverlayCallerImplement() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncStateMachineAttribute
+    public partial class AsyncStateMachineAttribute : DataModel
     {
 
         public static AsyncStateMachineAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncStateMachineAttribute();
+            var value   = new AsyncStateMachineAttribute() { Pointer= p0 };
 
 
             return value;

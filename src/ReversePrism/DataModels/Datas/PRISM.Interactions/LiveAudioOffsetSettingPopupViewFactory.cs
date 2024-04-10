@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveAudioOffsetSettingPopupViewFactory
+    public partial class LiveAudioOffsetSettingPopupViewFactory : DataModel
     {
 
         public static LiveAudioOffsetSettingPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveAudioOffsetSettingPopupViewFactory();
+            var value   = new LiveAudioOffsetSettingPopupViewFactory() { Pointer= p0 };
 
 
             return value;

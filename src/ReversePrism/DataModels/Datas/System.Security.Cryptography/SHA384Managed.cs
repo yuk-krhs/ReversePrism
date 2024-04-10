@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 038 StateSHA384                              000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
     // 040 W                                        000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
     // 000 _K                                       ulong[] IL2CPP_TYPE_SZARRAY
-    public partial class SHA384Managed
+    public partial class SHA384Managed : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public ulong                                    Count                                   { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SHA384Managed();
+            var value   = new SHA384Managed() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 027004234878 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Count                                     = GetUInt64(new IntPtr(p + 0x030)); // 027004234898 0x30 Count                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.StateSHA384                               = GetUInt64List(new IntPtr(p + 0x038)); // 0270042348B8 0x38 StateSHA384                 ( 000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
-            value.W                                         = GetUInt64List(new IntPtr(p + 0x040)); // 0270042348D8 0x40 W                           ( 000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 024661938E78 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Count                                     = GetUInt64(new IntPtr(p + 0x030)); // 024661938E98 0x30 Count                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.StateSHA384                               = GetUInt64List(new IntPtr(p + 0x038)); // 024661938EB8 0x38 StateSHA384                 ( 000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.W                                         = GetUInt64List(new IntPtr(p + 0x040)); // 024661938ED8 0x40 W                           ( 000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
 
             return value;
         }

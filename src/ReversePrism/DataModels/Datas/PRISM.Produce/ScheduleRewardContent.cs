@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 RewardContents                           000185D034E8 ModelClassListType List`1<RewardContent> List`1<RewardContent> List<RewardContent> Pointer
     // 028 ParameterContent                         00018671BD80 ModelClassType ParameterContent ParameterContent ParameterContent Pointer
-    public partial class ScheduleRewardContent
+    public partial class ScheduleRewardContent : DataModel
     {
         public List<RewardContent>?                     RewardContents                          { get; set; }
         public ParameterContent?                        ParameterContent                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleRewardContent();
+            var value   = new ScheduleRewardContent() { Pointer= p0 };
 
-            value.RewardContents                            = GetObjectList<RewardContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardContent.FromPointer); // 0270D5D30C40 0x20 RewardContents              ( 000185D034E8 ModelClassListType List`1<RewardContent> List`1<RewardContent> List<RewardContent> Pointer )
-            value.ParameterContent                          = GetObject<ParameterContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParameterContent.FromPointer); // 0270D5D30C60 0x28 ParameterContent            ( 00018671BD80 ModelClassType ParameterContent ParameterContent ParameterContent Pointer )
+            value.RewardContents                            = GetObjectList<RewardContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardContent.FromPointer); // 024665D91930 0x20 RewardContents              ( 000185D034E8 ModelClassListType List`1<RewardContent> List`1<RewardContent> List<RewardContent> Pointer )
+            value.ParameterContent                          = GetObject<ParameterContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParameterContent.FromPointer); // 024665D91950 0x28 ParameterContent            ( 00018671BD80 ModelClassType ParameterContent ParameterContent ParameterContent Pointer )
 
             return value;
         }

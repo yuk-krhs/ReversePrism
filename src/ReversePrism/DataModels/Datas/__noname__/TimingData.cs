@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 reversingShorteningFactor                float IL2CPP_TYPE_R4
     // 000 isStarted                                bool IL2CPP_TYPE_BOOLEAN
     // 000 delayMs                                  int IL2CPP_TYPE_I4
-    public partial class TimingData
+    public partial class TimingData : DataModel
     {
 
         public static TimingData? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimingData();
+            var value   = new TimingData() { Pointer= p0 };
 
 
             return value;

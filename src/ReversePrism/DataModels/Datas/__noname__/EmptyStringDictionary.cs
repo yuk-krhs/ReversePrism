@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Empty                                    0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer
-    public partial class EmptyStringDictionary
+    public partial class EmptyStringDictionary : DataModel
     {
         public XmlDictionaryString?                     Empty                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EmptyStringDictionary();
+            var value   = new EmptyStringDictionary() { Pointer= p0 };
 
-            value.Empty                                     = GetObject<XmlDictionaryString>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 027004CE16C0 0x10 Empty                       ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.Empty                                     = GetObject<XmlDictionaryString>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0245A4D1DC48 0x10 Empty                       ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
 
             return value;
         }

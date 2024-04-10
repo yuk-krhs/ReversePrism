@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSupportCharacterEventId               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstAdvInfoIdFieldNumber                  int IL2CPP_TYPE_I4
     // 020 MstAdvInfoId                             000186671910 ModelPrimitiveType string string string String
-    public partial class SupportCharacterEventStatus
+    public partial class SupportCharacterEventStatus : DataModel
     {
         public int                                      MstSupportCharacterEventId              { get; set; }
         public string                                   MstAdvInfoId                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharacterEventStatus();
+            var value   = new SupportCharacterEventStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterEventId                = GetInt32(new IntPtr(p + 0x018)); // 0270D14386A0 0x18 MstSupportCharacterEventId  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAdvInfoId                              = GetString(new IntPtr(p + 0x020)); // 0270D14386E0 0x20 MstAdvInfoId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstSupportCharacterEventId                = GetInt32(new IntPtr(p + 0x018)); // 0246613A1188 0x18 MstSupportCharacterEventId  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAdvInfoId                              = GetString(new IntPtr(p + 0x020)); // 0246613A11C8 0x20 MstAdvInfoId                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

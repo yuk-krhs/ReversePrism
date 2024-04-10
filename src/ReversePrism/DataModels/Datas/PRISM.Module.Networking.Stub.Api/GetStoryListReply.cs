@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 000 ExtraStoryListFieldNumber                int IL2CPP_TYPE_I4
     // 020 _repeated_extraStoryList_codec           FieldCodec`1<ExtraStoryStatus> IL2CPP_TYPE_GENERICINST
     // 030 ExtraStoryList                           000185CD7188 ModelClassListType RepeatedField`1<ExtraStoryStatus> RepeatedField`1<ExtraStoryStatus> List<ExtraStoryStatus> Pointer
-    public partial class GetStoryListReply
+    public partial class GetStoryListReply : DataModel
     {
         public List<MainStoryStatus>?                   MainStoryList                           { get; set; }
         public List<IdolStoryStatus>?                   IdolStoryList                           { get; set; }
@@ -35,12 +35,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStoryListReply();
+            var value   = new GetStoryListReply() { Pointer= p0 };
 
-            value.MainStoryList                             = GetObjectList<MainStoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MainStoryStatus.FromPointer); // 0270D2A2D198 0x18 MainStoryList               ( 000185CE52D8 ModelClassListType RepeatedField`1<MainStoryStatus> RepeatedField`1<MainStoryStatus> List<MainStoryStatus> Pointer )
-            value.IdolStoryList                             = GetObjectList<IdolStoryStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolStoryStatus.FromPointer); // 0270D2A2D1F8 0x20 IdolStoryList               ( 000185CE06A8 ModelClassListType RepeatedField`1<IdolStoryStatus> RepeatedField`1<IdolStoryStatus> List<IdolStoryStatus> Pointer )
-            value.EventStoryList                            = GetObjectList<EventStoryStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventStoryStatus.FromPointer); // 0270D2A2D258 0x28 EventStoryList              ( 000185CD6208 ModelClassListType RepeatedField`1<EventStoryStatus> RepeatedField`1<EventStoryStatus> List<EventStoryStatus> Pointer )
-            value.ExtraStoryList                            = GetObjectList<ExtraStoryStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExtraStoryStatus.FromPointer); // 0270D2A2D2B8 0x30 ExtraStoryList              ( 000185CD7188 ModelClassListType RepeatedField`1<ExtraStoryStatus> RepeatedField`1<ExtraStoryStatus> List<ExtraStoryStatus> Pointer )
+            value.MainStoryList                             = GetObjectList<MainStoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MainStoryStatus.FromPointer); // 0246629B1D08 0x18 MainStoryList               ( 000185CE52D8 ModelClassListType RepeatedField`1<MainStoryStatus> RepeatedField`1<MainStoryStatus> List<MainStoryStatus> Pointer )
+            value.IdolStoryList                             = GetObjectList<IdolStoryStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolStoryStatus.FromPointer); // 0246629B1D68 0x20 IdolStoryList               ( 000185CE06A8 ModelClassListType RepeatedField`1<IdolStoryStatus> RepeatedField`1<IdolStoryStatus> List<IdolStoryStatus> Pointer )
+            value.EventStoryList                            = GetObjectList<EventStoryStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventStoryStatus.FromPointer); // 0246629B1DC8 0x28 EventStoryList              ( 000185CD6208 ModelClassListType RepeatedField`1<EventStoryStatus> RepeatedField`1<EventStoryStatus> List<EventStoryStatus> Pointer )
+            value.ExtraStoryList                            = GetObjectList<ExtraStoryStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExtraStoryStatus.FromPointer); // 0246629B1E28 0x30 ExtraStoryList              ( 000185CD7188 ModelClassListType RepeatedField`1<ExtraStoryStatus> RepeatedField`1<ExtraStoryStatus> List<ExtraStoryStatus> Pointer )
 
             return value;
         }

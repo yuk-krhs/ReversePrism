@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ContextProperties                        000186591B20 ModelClassType IList IList IList Pointer
-    public partial class RemoteActivationAttribute
+    public partial class RemoteActivationAttribute : DataModel
     {
         public IList?                                   ContextProperties                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoteActivationAttribute();
+            var value   = new RemoteActivationAttribute() { Pointer= p0 };
 
-            value.ContextProperties                         = GetObject<IList>(new IntPtr(p + 0x010), ReversePrism.DataModels.IList.FromPointer); // 0270D6BE6B30 0x10 ContextProperties           ( 000186591B20 ModelClassType IList IList IList Pointer )
+            value.ContextProperties                         = GetObject<IList>(new IntPtr(p + 0x010), ReversePrism.DataModels.IList.FromPointer); // 024666C5EB30 0x10 ContextProperties           ( 000186591B20 ModelClassType IList IList IList Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 048 M_ColumnController                       00018665E2A0 ModelClassType MultiColumnController MultiColumnController MultiColumnController Pointer
-    public partial class MultiColumnListViewController
+    public partial class MultiColumnListViewController : DataModel
     {
         public MultiColumnController?                   M_ColumnController                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MultiColumnListViewController();
+            var value   = new MultiColumnListViewController() { Pointer= p0 };
 
-            value.M_ColumnController                        = GetObject<MultiColumnController>(new IntPtr(p + 0x048), ReversePrism.DataModels.MultiColumnController.FromPointer); // 0270066E8A68 0x48 M_ColumnController          ( 00018665E2A0 ModelClassType MultiColumnController MultiColumnController MultiColumnController Pointer )
+            value.M_ColumnController                        = GetObject<MultiColumnController>(new IntPtr(p + 0x048), ReversePrism.DataModels.MultiColumnController.FromPointer); // 0245A66AAF78 0x48 M_ColumnController          ( 00018665E2A0 ModelClassType MultiColumnController MultiColumnController MultiColumnController Pointer )
 
             return value;
         }

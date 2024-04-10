@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 View                                     00018666BDD0 ModelClassType ISystemCacheClearProgressView ISystemCacheClearProgressView ISystemCacheClearProgressView Pointer
-    public partial class SystemCacheClearProgressPresenter
+    public partial class SystemCacheClearProgressPresenter : DataModel
     {
         public ISystemCacheClearProgressView?           View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemCacheClearProgressPresenter();
+            var value   = new SystemCacheClearProgressPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ISystemCacheClearProgressView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISystemCacheClearProgressView.FromPointer); // 0270D676CB68 0x10 View                        ( 00018666BDD0 ModelClassType ISystemCacheClearProgressView ISystemCacheClearProgressView ISystemCacheClearProgressView Pointer )
+            value.View                                      = GetObject<ISystemCacheClearProgressView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISystemCacheClearProgressView.FromPointer); // 0246667DCB68 0x10 View                        ( 00018666BDD0 ModelClassType ISystemCacheClearProgressView ISystemCacheClearProgressView ISystemCacheClearProgressView Pointer )
 
             return value;
         }

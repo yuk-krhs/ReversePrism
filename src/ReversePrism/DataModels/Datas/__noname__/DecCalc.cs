@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Ulo                                      0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 01C Umid                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 018 UlomidLE                                 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class DecCalc
+    public partial class DecCalc : DataModel
     {
         public uint                                     Uflags                                  { get; set; }
         public uint                                     Uhi                                     { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecCalc();
+            var value   = new DecCalc() { Pointer= p0 };
 
-            value.Uflags                                    = GetUInt32(new IntPtr(p + 0x010)); // 0270DAAA8A90 0x10 Uflags                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Uhi                                       = GetUInt32(new IntPtr(p + 0x014)); // 0270DAAA8AB0 0x14 Uhi                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Ulo                                       = GetUInt32(new IntPtr(p + 0x018)); // 0270DAAA8AD0 0x18 Ulo                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Umid                                      = GetUInt32(new IntPtr(p + 0x01C)); // 0270DAAA8AF0 0x1C Umid                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.UlomidLE                                  = GetUInt64(new IntPtr(p + 0x018)); // 0270DAAA8B10 0x18 UlomidLE                    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Uflags                                    = GetUInt32(new IntPtr(p + 0x010)); // 02466AB0E2B0 0x10 Uflags                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Uhi                                       = GetUInt32(new IntPtr(p + 0x014)); // 02466AB0E2D0 0x14 Uhi                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Ulo                                       = GetUInt32(new IntPtr(p + 0x018)); // 02466AB0E2F0 0x18 Ulo                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Umid                                      = GetUInt32(new IntPtr(p + 0x01C)); // 02466AB0E310 0x1C Umid                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.UlomidLE                                  = GetUInt64(new IntPtr(p + 0x018)); // 02466AB0E330 0x18 UlomidLE                    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

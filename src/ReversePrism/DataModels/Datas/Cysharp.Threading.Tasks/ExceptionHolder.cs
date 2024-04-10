@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Exception                                0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer
     // 018 CalledGet                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ExceptionHolder
+    public partial class ExceptionHolder : DataModel
     {
         public ExceptionDispatchInfo?                   Exception                               { get; set; }
         public bool                                     CalledGet                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExceptionHolder();
+            var value   = new ExceptionHolder() { Pointer= p0 };
 
-            value.Exception                                 = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 027003EE3EC0 0x10 Exception                   ( 0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
-            value.CalledGet                                 = GetBool(new IntPtr(p + 0x018)); // 027003EE3EE0 0x18 CalledGet                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Exception                                 = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 0245A3EE3EC0 0x10 Exception                   ( 0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
+            value.CalledGet                                 = GetBool(new IntPtr(p + 0x018)); // 0245A3EE3EE0 0x18 CalledGet                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

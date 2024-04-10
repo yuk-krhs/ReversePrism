@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PvpServiceBase
+    public partial class PvpServiceBase : DataModel
     {
 
         public static PvpServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpServiceBase();
+            var value   = new PvpServiceBase() { Pointer= p0 };
 
 
             return value;

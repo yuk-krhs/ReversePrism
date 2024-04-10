@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 BaseTotal                                0001865F4260 ModelPrimitiveType int int int Int32
     // 024 UnitBonus                                0001865F4260 ModelPrimitiveType int int int Int32
     // 028 Total                                    0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class LiveIdolParameter
+    public partial class LiveIdolParameter : DataModel
     {
         public int                                      Vocal                                   { get; set; }
         public int                                      Dance                                   { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveIdolParameter();
+            var value   = new LiveIdolParameter() { Pointer= p0 };
 
-            value.Vocal                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D4CB4ED0 0x10 Vocal                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Dance                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D4CB4EF0 0x14 Dance                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Visual                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D4CB4F10 0x18 Visual                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Mental                                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D4CB4F30 0x1C Mental                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.BaseTotal                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D4CB4F50 0x20 BaseTotal                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.UnitBonus                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D4CB4F70 0x24 UnitBonus                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Total                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D4CB4F90 0x28 Total                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Vocal                                     = GetInt32(new IntPtr(p + 0x010)); // 024664D28ED0 0x10 Vocal                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Dance                                     = GetInt32(new IntPtr(p + 0x014)); // 024664D28EF0 0x14 Dance                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Visual                                    = GetInt32(new IntPtr(p + 0x018)); // 024664D28F10 0x18 Visual                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Mental                                    = GetInt32(new IntPtr(p + 0x01C)); // 024664D28F30 0x1C Mental                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.BaseTotal                                 = GetInt32(new IntPtr(p + 0x020)); // 024664D28F50 0x20 BaseTotal                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.UnitBonus                                 = GetInt32(new IntPtr(p + 0x024)); // 024664D28F70 0x24 UnitBonus                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Total                                     = GetInt32(new IntPtr(p + 0x028)); // 024664D28F90 0x28 Total                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

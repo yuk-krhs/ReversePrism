@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               00018656A1B0 ModelClassType ChainTopScreenView ChainTopScreenView ChainTopScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class ChainTopScreenBuilder
+    public partial class ChainTopScreenBuilder : DataModel
     {
         public ChainTopScreenView?                      ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTopScreenBuilder();
+            var value   = new ChainTopScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<ChainTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTopScreenView.FromPointer); // 0270DB647708 0x20 ViewPrefab                  ( 00018656A1B0 ModelClassType ChainTopScreenView ChainTopScreenView ChainTopScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB647728 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<ChainTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTopScreenView.FromPointer); // 02466B6D3868 0x20 ViewPrefab                  ( 00018656A1B0 ModelClassType ChainTopScreenView ChainTopScreenView ChainTopScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3888 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPurchaseLimitStatus
+    public partial class IPurchaseLimitStatus : DataModel
     {
 
         public static IPurchaseLimitStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPurchaseLimitStatus();
+            var value   = new IPurchaseLimitStatus() { Pointer= p0 };
 
 
             return value;

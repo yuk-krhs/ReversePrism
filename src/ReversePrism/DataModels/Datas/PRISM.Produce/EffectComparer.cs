@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 EffectComparer IL2CPP_TYPE_CLASS
-    public partial class EffectComparer
+    public partial class EffectComparer : DataModel
     {
 
         public static EffectComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EffectComparer();
+            var value   = new EffectComparer() { Pointer= p0 };
 
 
             return value;

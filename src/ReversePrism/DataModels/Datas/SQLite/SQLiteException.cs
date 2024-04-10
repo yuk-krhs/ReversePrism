@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 Result                                   0001866FB310 ModelEnumType Result Result Result Int32
-    public partial class SQLiteException
+    public partial class SQLiteException : DataModel
     {
         public Result                                   Result                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SQLiteException();
+            var value   = new SQLiteException() { Pointer= p0 };
 
-            value.Result                                    = (Result)GetInt32(new IntPtr(p + 0x090)); // 0270DB2A8180 0x90 Result                      ( 0001866FB310 ModelEnumType Result Result Result Int32 )
+            value.Result                                    = (Result)GetInt32(new IntPtr(p + 0x090)); // 02466B32CD40 0x90 Result                      ( 0001866FB310 ModelEnumType Result Result Result Int32 )
 
             return value;
         }

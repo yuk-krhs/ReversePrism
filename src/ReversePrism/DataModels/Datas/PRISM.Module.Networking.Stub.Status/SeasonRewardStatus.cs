@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 038 RewardType                               00018670D110 ModelEnumType SeasonRewardType SeasonRewardType SeasonRewardType Int32
     // 000 BeginDateFieldNumber                     int IL2CPP_TYPE_I4
     // 040 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class SeasonRewardStatus
+    public partial class SeasonRewardStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public int                                      Rank                                    { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonRewardStatus();
+            var value   = new SeasonRewardStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D279D6B0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 0270D279D730 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (SeasonRewardState)GetInt32(new IntPtr(p + 0x02C)); // 0270D279D770 0x2C State                       ( 00018670C4A0 ModelEnumType SeasonRewardState SeasonRewardState SeasonRewardState Int32 )
-            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D279D7D0 0x30 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.RewardType                                = (SeasonRewardType)GetInt32(new IntPtr(p + 0x038)); // 0270D279D810 0x38 RewardType                  ( 00018670D110 ModelEnumType SeasonRewardType SeasonRewardType SeasonRewardType Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D279D850 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0246626FE0D0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 0246626FE150 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (SeasonRewardState)GetInt32(new IntPtr(p + 0x02C)); // 0246626FE190 0x2C State                       ( 00018670C4A0 ModelEnumType SeasonRewardState SeasonRewardState SeasonRewardState Int32 )
+            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246626FE1F0 0x30 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.RewardType                                = (SeasonRewardType)GetInt32(new IntPtr(p + 0x038)); // 0246626FE230 0x38 RewardType                  ( 00018670D110 ModelEnumType SeasonRewardType SeasonRewardType SeasonRewardType Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626FE270 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
 
             return value;

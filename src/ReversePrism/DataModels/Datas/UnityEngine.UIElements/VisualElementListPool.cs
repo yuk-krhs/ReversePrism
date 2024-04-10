@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 pool                                     ObjectPool`1<List`1<VisualElement>> IL2CPP_TYPE_GENERICINST
-    public partial class VisualElementListPool
+    public partial class VisualElementListPool : DataModel
     {
 
         public static VisualElementListPool? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualElementListPool();
+            var value   = new VisualElementListPool() { Pointer= p0 };
 
 
             return value;

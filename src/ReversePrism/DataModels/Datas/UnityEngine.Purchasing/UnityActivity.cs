@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_AndroidClassName                       string IL2CPP_TYPE_STRING
-    public partial class UnityActivity
+    public partial class UnityActivity : DataModel
     {
 
         public static UnityActivity? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityActivity();
+            var value   = new UnityActivity() { Pointer= p0 };
 
 
             return value;

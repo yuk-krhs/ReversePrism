@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AppTrackingTransparencyFactory
+    public partial class AppTrackingTransparencyFactory : DataModel
     {
 
         public static AppTrackingTransparencyFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppTrackingTransparencyFactory();
+            var value   = new AppTrackingTransparencyFactory() { Pointer= p0 };
 
 
             return value;

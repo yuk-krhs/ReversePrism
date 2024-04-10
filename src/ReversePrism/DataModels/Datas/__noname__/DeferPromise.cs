@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 factory                                  Func`1<UniTask> IL2CPP_TYPE_GENERICINST
     // 018 Task                                     00018669FD00 ModelEnumType UniTask UniTask UniTask Int32
     // 028 Awaiter                                  000186716C40 ModelEnumType Awaiter Awaiter Awaiter Int32
-    public partial class DeferPromise
+    public partial class DeferPromise : DataModel
     {
         public UniTask                                  Task                                    { get; set; }
         public Awaiter                                  Awaiter                                 { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeferPromise();
+            var value   = new DeferPromise() { Pointer= p0 };
 
-            value.Task                                      = (UniTask)GetInt32(new IntPtr(p + 0x018)); // 0270D8BED5E0 0x18 Task                        ( 00018669FD00 ModelEnumType UniTask UniTask UniTask Int32 )
-            value.Awaiter                                   = (Awaiter)GetInt32(new IntPtr(p + 0x028)); // 0270D8BED600 0x28 Awaiter                     ( 000186716C40 ModelEnumType Awaiter Awaiter Awaiter Int32 )
+            value.Task                                      = (UniTask)GetInt32(new IntPtr(p + 0x018)); // 024668C50300 0x18 Task                        ( 00018669FD00 ModelEnumType UniTask UniTask UniTask Int32 )
+            value.Awaiter                                   = (Awaiter)GetInt32(new IntPtr(p + 0x028)); // 024668C50320 0x28 Awaiter                     ( 000186716C40 ModelEnumType Awaiter Awaiter Awaiter Int32 )
 
             return value;
         }

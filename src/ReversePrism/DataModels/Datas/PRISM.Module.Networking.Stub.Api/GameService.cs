@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_GetDmmGamesAPITokenReply Marshaller`1<GetDmmGamesAPITokenReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetVersion                      Method`2<GetVersionArgs, GetVersionReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_GetDmmGamesAPIToken             Method`2<GetDmmGamesAPITokenArgs, GetDmmGamesAPITokenReply> IL2CPP_TYPE_GENERICINST
-    public partial class GameService
+    public partial class GameService : DataModel
     {
 
         public static GameService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameService();
+            var value   = new GameService() { Pointer= p0 };
 
 
             return value;

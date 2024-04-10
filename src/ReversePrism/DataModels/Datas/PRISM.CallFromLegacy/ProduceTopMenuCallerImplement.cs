@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 viewFactory                              PopupViewFactory`1<IProduceGiveUpConfirmationPopupView> IL2CPP_TYPE_GENERICINST
     // 028 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
     // 030 IsGiveupResult                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceTopMenuCallerImplement
+    public partial class ProduceTopMenuCallerImplement : DataModel
     {
         public IResourceTag?                            ResourceTag                             { get; set; }
         public bool                                     IsGiveupResult                          { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTopMenuCallerImplement();
+            var value   = new ProduceTopMenuCallerImplement() { Pointer= p0 };
 
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x028), ReversePrism.DataModels.IResourceTag.FromPointer); // 027004FB9750 0x28 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.IsGiveupResult                            = GetBool(new IntPtr(p + 0x030)); // 027004FB9770 0x30 IsGiveupResult              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x028), ReversePrism.DataModels.IResourceTag.FromPointer); // 0245A5B2B238 0x28 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.IsGiveupResult                            = GetBool(new IntPtr(p + 0x030)); // 0245A5B2B258 0x30 IsGiveupResult              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

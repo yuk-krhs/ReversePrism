@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               00018652D5A0 ModelClassType CallPlaybackScreenView CallPlaybackScreenView CallPlaybackScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class CallPlaybackScreenBuilder
+    public partial class CallPlaybackScreenBuilder : DataModel
     {
         public CallPlaybackScreenView?                  ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallPlaybackScreenBuilder();
+            var value   = new CallPlaybackScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<CallPlaybackScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallPlaybackScreenView.FromPointer); // 0270DB647588 0x20 ViewPrefab                  ( 00018652D5A0 ModelClassType CallPlaybackScreenView CallPlaybackScreenView CallPlaybackScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB6475A8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<CallPlaybackScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallPlaybackScreenView.FromPointer); // 02466B6D36E8 0x20 ViewPrefab                  ( 00018652D5A0 ModelClassType CallPlaybackScreenView CallPlaybackScreenView CallPlaybackScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3708 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

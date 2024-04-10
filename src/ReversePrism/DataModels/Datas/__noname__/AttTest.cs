@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 LogText                                  000186631C00 ModelClassType Text Text Text Pointer
     // 028 AppTrackingTransparency                  0001866F87E0 ModelClassType IAppTrackingTransparency IAppTrackingTransparency IAppTrackingTransparency Pointer
-    public partial class AttTest
+    public partial class AttTest : DataModel
     {
         public Text?                                    LogText                                 { get; set; }
         public IAppTrackingTransparency?                AppTrackingTransparency                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttTest();
+            var value   = new AttTest() { Pointer= p0 };
 
-            value.LogText                                   = GetObject<Text>(new IntPtr(p + 0x020), ReversePrism.DataModels.Text.FromPointer); // 0270DBF536B0 0x20 LogText                     ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.AppTrackingTransparency                   = GetObject<IAppTrackingTransparency>(new IntPtr(p + 0x028), ReversePrism.DataModels.IAppTrackingTransparency.FromPointer); // 0270DBF536D0 0x28 AppTrackingTransparency     ( 0001866F87E0 ModelClassType IAppTrackingTransparency IAppTrackingTransparency IAppTrackingTransparency Pointer )
+            value.LogText                                   = GetObject<Text>(new IntPtr(p + 0x020), ReversePrism.DataModels.Text.FromPointer); // 02466BFBB4C8 0x20 LogText                     ( 000186631C00 ModelClassType Text Text Text Pointer )
+            value.AppTrackingTransparency                   = GetObject<IAppTrackingTransparency>(new IntPtr(p + 0x028), ReversePrism.DataModels.IAppTrackingTransparency.FromPointer); // 02466BFBB4E8 0x28 AppTrackingTransparency     ( 0001866F87E0 ModelClassType IAppTrackingTransparency IAppTrackingTransparency IAppTrackingTransparency Pointer )
 
             return value;
         }

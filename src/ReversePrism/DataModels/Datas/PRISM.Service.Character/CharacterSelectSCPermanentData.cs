@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 058 OnEffect2ScheduleFilterId                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 060 PotentialSupportSkill                    000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 068 SortFilterSettings                       0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer
-    public partial class CharacterSelectSCPermanentData
+    public partial class CharacterSelectSCPermanentData : DataModel
     {
         public int                                      SortTargetIndex                         { get; set; }
         public int                                      SortDirection                           { get; set; }
@@ -47,23 +47,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectSCPermanentData();
+            var value   = new CharacterSelectSCPermanentData() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 027003A6F418 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SortDirection                             = GetInt32(new IntPtr(p + 0x014)); // 027003A6F438 0x14 SortDirection               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectedFavoriteMarkIds                   = GetInt32List(new IntPtr(p + 0x018)); // 027003A6F458 0x18 SelectedFavoriteMarkIds     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedChara                             = GetInt32List(new IntPtr(p + 0x020)); // 027003A6F478 0x20 SelectedChara               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedGoodSchedule                      = GetInt32List(new IntPtr(p + 0x028)); // 027003A6F498 0x28 SelectedGoodSchedule        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedRarity                            = GetInt32List(new IntPtr(p + 0x030)); // 027003A6F4B8 0x30 SelectedRarity              ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedDiamond                           = GetInt32List(new IntPtr(p + 0x038)); // 027003A6F4D8 0x38 SelectedDiamond             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedSkillSlot                         = GetInt32List(new IntPtr(p + 0x040)); // 027003A6F4F8 0x40 SelectedSkillSlot           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.IncludesNotYetAcquiredSkills              = GetInt32(new IntPtr(p + 0x048)); // 027003A6F518 0x48 IncludesNotYetAcquiredSkills ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnEffect1EffectFilterId                   = GetInt32(new IntPtr(p + 0x04C)); // 027003A6F538 0x4C OnEffect1EffectFilterId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnEffect1ScheduleFilterId                 = GetInt32(new IntPtr(p + 0x050)); // 027003A6F558 0x50 OnEffect1ScheduleFilterId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnEffect2EffectFilterId                   = GetInt32(new IntPtr(p + 0x054)); // 027003A6F578 0x54 OnEffect2EffectFilterId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnEffect2ScheduleFilterId                 = GetInt32(new IntPtr(p + 0x058)); // 027003A6F598 0x58 OnEffect2ScheduleFilterId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PotentialSupportSkill                     = GetInt32List(new IntPtr(p + 0x060)); // 027003A6F5B8 0x60 PotentialSupportSkill       ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x068), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 027003A6F5D8 0x68 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0245A3A7A350 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SortDirection                             = GetInt32(new IntPtr(p + 0x014)); // 0245A3A7A370 0x14 SortDirection               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedFavoriteMarkIds                   = GetInt32List(new IntPtr(p + 0x018)); // 0245A3A7A390 0x18 SelectedFavoriteMarkIds     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedChara                             = GetInt32List(new IntPtr(p + 0x020)); // 0245A3A7A3B0 0x20 SelectedChara               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedGoodSchedule                      = GetInt32List(new IntPtr(p + 0x028)); // 0245A3A7A3D0 0x28 SelectedGoodSchedule        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedRarity                            = GetInt32List(new IntPtr(p + 0x030)); // 0245A3A7A3F0 0x30 SelectedRarity              ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedDiamond                           = GetInt32List(new IntPtr(p + 0x038)); // 0245A3A7A410 0x38 SelectedDiamond             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedSkillSlot                         = GetInt32List(new IntPtr(p + 0x040)); // 0245A3A7A430 0x40 SelectedSkillSlot           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.IncludesNotYetAcquiredSkills              = GetInt32(new IntPtr(p + 0x048)); // 0245A3A7A450 0x48 IncludesNotYetAcquiredSkills ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnEffect1EffectFilterId                   = GetInt32(new IntPtr(p + 0x04C)); // 0245A3A7A470 0x4C OnEffect1EffectFilterId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnEffect1ScheduleFilterId                 = GetInt32(new IntPtr(p + 0x050)); // 0245A3A7A490 0x50 OnEffect1ScheduleFilterId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnEffect2EffectFilterId                   = GetInt32(new IntPtr(p + 0x054)); // 0245A3A7A4B0 0x54 OnEffect2EffectFilterId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnEffect2ScheduleFilterId                 = GetInt32(new IntPtr(p + 0x058)); // 0245A3A7A4D0 0x58 OnEffect2ScheduleFilterId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PotentialSupportSkill                     = GetInt32List(new IntPtr(p + 0x060)); // 0245A3A7A4F0 0x60 PotentialSupportSkill       ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x068), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 0245A3A7A510 0x68 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
 
             return value;
         }

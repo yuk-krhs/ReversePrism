@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 020 RewardList                               000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
-    public partial class EventRankRewardStatus
+    public partial class EventRankRewardStatus : DataModel
     {
         public RangeStatus?                             RankRange                               { get; set; }
         public List<ProductWithAmountStatus>?           RewardList                              { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventRankRewardStatus();
+            var value   = new EventRankRewardStatus() { Pointer= p0 };
 
-            value.RankRange                                 = GetObject<RangeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RangeStatus.FromPointer); // 0270D1380CF8 0x18 RankRange                   ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
-            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1380D58 0x20 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.RankRange                                 = GetObject<RangeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RangeStatus.FromPointer); // 02466130BB80 0x18 RankRange                   ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
+            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466130BBE0 0x20 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

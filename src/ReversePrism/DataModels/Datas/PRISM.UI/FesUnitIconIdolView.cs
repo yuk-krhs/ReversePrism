@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 CgSeparatorLeft                          000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 030 CgSeparatorRight                         000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 038 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class FesUnitIconIdolView
+    public partial class FesUnitIconIdolView : DataModel
     {
         public Transform?                               TrIdolOffset                            { get; set; }
         public CanvasGroup?                             CgSeparatorLeft                         { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitIconIdolView();
+            var value   = new FesUnitIconIdolView() { Pointer= p0 };
 
-            value.TrIdolOffset                              = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 027005B21E40 0x20 TrIdolOffset                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.CgSeparatorLeft                           = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027005B21E60 0x28 CgSeparatorLeft             ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CgSeparatorRight                          = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027005B21E80 0x30 CgSeparatorRight            ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 027005B21EA0 0x38 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.TrIdolOffset                              = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0245A5B239B0 0x20 TrIdolOffset                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CgSeparatorLeft                           = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A5B239D0 0x28 CgSeparatorLeft             ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CgSeparatorRight                          = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A5B239F0 0x30 CgSeparatorRight            ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A5B23A10 0x38 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

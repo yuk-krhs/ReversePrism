@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceUnitFieldNumber                   int IL2CPP_TYPE_I4
     // 018 ProduceUnit                              000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer
-    public partial class SetProduceUnitReply
+    public partial class SetProduceUnitReply : DataModel
     {
         public ProduceIdolUnitStatus?                   ProduceUnit                             { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetProduceUnitReply();
+            var value   = new SetProduceUnitReply() { Pointer= p0 };
 
-            value.ProduceUnit                               = GetObject<ProduceIdolUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolUnitStatus.FromPointer); // 0270D25A8A88 0x18 ProduceUnit                 ( 000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer )
+            value.ProduceUnit                               = GetObject<ProduceIdolUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolUnitStatus.FromPointer); // 0246625795E8 0x18 ProduceUnit                 ( 000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer )
 
             return value;
         }

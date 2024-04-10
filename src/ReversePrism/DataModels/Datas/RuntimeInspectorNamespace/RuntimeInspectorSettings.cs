@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 M_referenceDrawers                       000185B8D230 ModelClassListType InspectorField[] InspectorField[] List<InspectorField> Pointer
     // 028 M_hiddenVariables                        000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer
     // 030 M_exposedVariables                       000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer
-    public partial class RuntimeInspectorSettings
+    public partial class RuntimeInspectorSettings : DataModel
     {
         public List<InspectorField>?                    M_standardDrawers                       { get; set; }
         public List<InspectorField>?                    M_referenceDrawers                      { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeInspectorSettings();
+            var value   = new RuntimeInspectorSettings() { Pointer= p0 };
 
-            value.M_standardDrawers                         = GetObjectList<InspectorField>(new IntPtr(p + 0x018), ReversePrism.DataModels.InspectorField.FromPointer); // 0270DB1B99E0 0x18 M_standardDrawers           ( 000185B8D230 ModelClassListType InspectorField[] InspectorField[] List<InspectorField> Pointer )
-            value.M_referenceDrawers                        = GetObjectList<InspectorField>(new IntPtr(p + 0x020), ReversePrism.DataModels.InspectorField.FromPointer); // 0270DB1B9A00 0x20 M_referenceDrawers          ( 000185B8D230 ModelClassListType InspectorField[] InspectorField[] List<InspectorField> Pointer )
-            value.M_hiddenVariables                         = GetObjectList<VariableSet>(new IntPtr(p + 0x028), ReversePrism.DataModels.VariableSet.FromPointer); // 0270DB1B9A20 0x28 M_hiddenVariables           ( 000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer )
-            value.M_exposedVariables                        = GetObjectList<VariableSet>(new IntPtr(p + 0x030), ReversePrism.DataModels.VariableSet.FromPointer); // 0270DB1B9A40 0x30 M_exposedVariables          ( 000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer )
+            value.M_standardDrawers                         = GetObjectList<InspectorField>(new IntPtr(p + 0x018), ReversePrism.DataModels.InspectorField.FromPointer); // 02466B21A210 0x18 M_standardDrawers           ( 000185B8D230 ModelClassListType InspectorField[] InspectorField[] List<InspectorField> Pointer )
+            value.M_referenceDrawers                        = GetObjectList<InspectorField>(new IntPtr(p + 0x020), ReversePrism.DataModels.InspectorField.FromPointer); // 02466B21A230 0x20 M_referenceDrawers          ( 000185B8D230 ModelClassListType InspectorField[] InspectorField[] List<InspectorField> Pointer )
+            value.M_hiddenVariables                         = GetObjectList<VariableSet>(new IntPtr(p + 0x028), ReversePrism.DataModels.VariableSet.FromPointer); // 02466B21A250 0x28 M_hiddenVariables           ( 000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer )
+            value.M_exposedVariables                        = GetObjectList<VariableSet>(new IntPtr(p + 0x030), ReversePrism.DataModels.VariableSet.FromPointer); // 02466B21A270 0x30 M_exposedVariables          ( 000185CB03D8 ModelClassListType VariableSet[] VariableSet[] List<VariableSet> Pointer )
 
             return value;
         }

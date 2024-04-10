@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 MethodSignature                          RepeatedExtension`2<MethodOptions, string> IL2CPP_TYPE_GENERICINST
     // 008 DefaultHost                              Extension`2<ServiceOptions, string> IL2CPP_TYPE_GENERICINST
     // 010 OauthScopes                              Extension`2<ServiceOptions, string> IL2CPP_TYPE_GENERICINST
-    public partial class ClientExtensions
+    public partial class ClientExtensions : DataModel
     {
 
         public static ClientExtensions? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClientExtensions();
+            var value   = new ClientExtensions() { Pointer= p0 };
 
 
             return value;

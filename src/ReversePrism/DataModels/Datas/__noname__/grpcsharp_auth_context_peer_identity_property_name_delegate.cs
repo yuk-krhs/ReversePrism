@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class grpcsharp_auth_context_peer_identity_property_name_delegate
+    public partial class grpcsharp_auth_context_peer_identity_property_name_delegate : DataModel
     {
 
         public static grpcsharp_auth_context_peer_identity_property_name_delegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new grpcsharp_auth_context_peer_identity_property_name_delegate();
+            var value   = new grpcsharp_auth_context_peer_identity_property_name_delegate() { Pointer= p0 };
 
 
             return value;

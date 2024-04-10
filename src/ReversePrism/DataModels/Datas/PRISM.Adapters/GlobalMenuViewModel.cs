@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NotificationManageViewModel              0001866B2CF0 ModelClassType NotificationManageViewModel NotificationManageViewModel NotificationManageViewModel Pointer
-    public partial class GlobalMenuViewModel
+    public partial class GlobalMenuViewModel : DataModel
     {
         public NotificationManageViewModel?             NotificationManageViewModel             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalMenuViewModel();
+            var value   = new GlobalMenuViewModel() { Pointer= p0 };
 
-            value.NotificationManageViewModel               = GetObject<NotificationManageViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.NotificationManageViewModel.FromPointer); // 0270D636A9E8 0x10 NotificationManageViewModel ( 0001866B2CF0 ModelClassType NotificationManageViewModel NotificationManageViewModel NotificationManageViewModel Pointer )
+            value.NotificationManageViewModel               = GetObject<NotificationManageViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.NotificationManageViewModel.FromPointer); // 0246663DA9E8 0x10 NotificationManageViewModel ( 0001866B2CF0 ModelClassType NotificationManageViewModel NotificationManageViewModel NotificationManageViewModel Pointer )
 
             return value;
         }

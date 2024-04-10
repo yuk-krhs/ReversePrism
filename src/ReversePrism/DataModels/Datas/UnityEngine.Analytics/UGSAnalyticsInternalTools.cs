@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UGSAnalyticsInternalTools
+    public partial class UGSAnalyticsInternalTools : DataModel
     {
 
         public static UGSAnalyticsInternalTools? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UGSAnalyticsInternalTools();
+            var value   = new UGSAnalyticsInternalTools() { Pointer= p0 };
 
 
             return value;

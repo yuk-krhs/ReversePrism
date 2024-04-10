@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _primitiveConversions                    Primitives[] IL2CPP_TYPE_SZARRAY
-    public partial class DefaultBinder
+    public partial class DefaultBinder : DataModel
     {
 
         public static DefaultBinder? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultBinder();
+            var value   = new DefaultBinder() { Pointer= p0 };
 
 
             return value;

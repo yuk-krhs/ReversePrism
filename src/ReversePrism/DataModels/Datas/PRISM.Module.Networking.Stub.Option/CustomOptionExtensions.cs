@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 PrismOption                              Extension`2<ServiceOptions, PrismOptions> IL2CPP_TYPE_GENERICINST
     // 008 GoType                                   Extension`2<FieldOptions, string> IL2CPP_TYPE_GENERICINST
     // 010 GqlOperationOption                       Extension`2<MethodOptions, GraphQLOperationOption> IL2CPP_TYPE_GENERICINST
-    public partial class CustomOptionExtensions
+    public partial class CustomOptionExtensions : DataModel
     {
 
         public static CustomOptionExtensions? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomOptionExtensions();
+            var value   = new CustomOptionExtensions() { Pointer= p0 };
 
 
             return value;

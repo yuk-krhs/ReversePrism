@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DecrementUInt32
+    public partial class DecrementUInt32 : DataModel
     {
 
         public static DecrementUInt32? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecrementUInt32();
+            var value   = new DecrementUInt32() { Pointer= p0 };
 
 
             return value;

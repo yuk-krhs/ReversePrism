@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 012 Top                                      0001865F1520 ModelPrimitiveType short short short Int16
     // 014 Right                                    0001865F1520 ModelPrimitiveType short short short Int16
     // 016 Bottom                                   0001865F1520 ModelPrimitiveType short short short Int16
-    public partial class SmallRect
+    public partial class SmallRect : DataModel
     {
         public short                                    Left                                    { get; set; }
         public short                                    Top                                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SmallRect();
+            var value   = new SmallRect() { Pointer= p0 };
 
-            value.Left                                      = GetInt16(new IntPtr(p + 0x010)); // 0270D6AC01F8 0x10 Left                        ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.Top                                       = GetInt16(new IntPtr(p + 0x012)); // 0270D6AC0218 0x12 Top                         ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.Right                                     = GetInt16(new IntPtr(p + 0x014)); // 0270D6AC0238 0x14 Right                       ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.Bottom                                    = GetInt16(new IntPtr(p + 0x016)); // 0270D6AC0258 0x16 Bottom                      ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.Left                                      = GetInt16(new IntPtr(p + 0x010)); // 024666B201F8 0x10 Left                        ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.Top                                       = GetInt16(new IntPtr(p + 0x012)); // 024666B20218 0x12 Top                         ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.Right                                     = GetInt16(new IntPtr(p + 0x014)); // 024666B20238 0x14 Right                       ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.Bottom                                    = GetInt16(new IntPtr(p + 0x016)); // 024666B20258 0x16 Bottom                      ( 0001865F1520 ModelPrimitiveType short short short Int16 )
 
             return value;
         }

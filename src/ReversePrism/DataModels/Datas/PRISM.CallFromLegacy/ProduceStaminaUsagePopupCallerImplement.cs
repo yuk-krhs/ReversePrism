@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<IProduceStaminaUsagePopupView> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceStaminaUsagePopupCallerImplement
+    public partial class ProduceStaminaUsagePopupCallerImplement : DataModel
     {
 
         public static ProduceStaminaUsagePopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceStaminaUsagePopupCallerImplement();
+            var value   = new ProduceStaminaUsagePopupCallerImplement() { Pointer= p0 };
 
 
             return value;

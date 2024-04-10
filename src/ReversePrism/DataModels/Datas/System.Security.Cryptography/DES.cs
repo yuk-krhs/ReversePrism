@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_legalBlockSizes                        KeySizes[] IL2CPP_TYPE_SZARRAY
     // 008 s_legalKeySizes                          KeySizes[] IL2CPP_TYPE_SZARRAY
-    public partial class DES
+    public partial class DES : DataModel
     {
 
         public static DES? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DES();
+            var value   = new DES() { Pointer= p0 };
 
 
             return value;

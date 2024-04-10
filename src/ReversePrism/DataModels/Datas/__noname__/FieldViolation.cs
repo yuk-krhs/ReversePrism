@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Field                                    000186671910 ModelPrimitiveType string string string String
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
     // 020 Description                              000186671910 ModelPrimitiveType string string string String
-    public partial class FieldViolation
+    public partial class FieldViolation : DataModel
     {
         public string                                   Field                                   { get; set; }
         public string                                   Description                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldViolation();
+            var value   = new FieldViolation() { Pointer= p0 };
 
-            value.Field                                     = GetString(new IntPtr(p + 0x018)); // 0270DA6EFDA0 0x18 Field                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0270DA6EFDE0 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Field                                     = GetString(new IntPtr(p + 0x018)); // 02466A7433C8 0x18 Field                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 02466A743408 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

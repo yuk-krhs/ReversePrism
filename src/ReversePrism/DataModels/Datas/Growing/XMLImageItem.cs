@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 068 MaxWidth                                 0001866656B0 ModelPrimitiveType float float float Single
     // 070 Tex2d                                    000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
     // 078 Param                                    000186577940 ModelClassType XMLImageItemParam XMLImageItemParam XMLImageItemParam Pointer
-    public partial class XMLImageItem
+    public partial class XMLImageItem : DataModel
     {
         public RawImage?                                Image                                   { get; set; }
         public float                                    MaxWidth                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLImageItem();
+            var value   = new XMLImageItem() { Pointer= p0 };
 
-            value.Image                                     = GetObject<RawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.RawImage.FromPointer); // 0270D4B3DB20 0x60 Image                       ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.MaxWidth                                  = GetSingle(new IntPtr(p + 0x068)); // 0270D4B3DB40 0x68 MaxWidth                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Tex2d                                     = GetObject<Texture2D>(new IntPtr(p + 0x070), ReversePrism.DataModels.Texture2D.FromPointer); // 0270D4B3DB60 0x70 Tex2d                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.Param                                     = GetObject<XMLImageItemParam>(new IntPtr(p + 0x078), ReversePrism.DataModels.XMLImageItemParam.FromPointer); // 0270D4B3DB80 0x78 Param                       ( 000186577940 ModelClassType XMLImageItemParam XMLImageItemParam XMLImageItemParam Pointer )
+            value.Image                                     = GetObject<RawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.RawImage.FromPointer); // 024664BB8908 0x60 Image                       ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.MaxWidth                                  = GetSingle(new IntPtr(p + 0x068)); // 024664BB8928 0x68 MaxWidth                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Tex2d                                     = GetObject<Texture2D>(new IntPtr(p + 0x070), ReversePrism.DataModels.Texture2D.FromPointer); // 024664BB8948 0x70 Tex2d                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.Param                                     = GetObject<XMLImageItemParam>(new IntPtr(p + 0x078), ReversePrism.DataModels.XMLImageItemParam.FromPointer); // 024664BB8968 0x78 Param                       ( 000186577940 ModelClassType XMLImageItemParam XMLImageItemParam XMLImageItemParam Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FindTransform
+    public partial class FindTransform : DataModel
     {
 
         public static FindTransform? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FindTransform();
+            var value   = new FindTransform() { Pointer= p0 };
 
 
             return value;

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 M_FirstOffset                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 05C M_NumberOfBlocks                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 060 M_ThreadIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Writer
+    public partial class Writer : DataModel
     {
         public Block                                    M_BlockData                             { get; set; }
         public int                                      M_ForeachIndex                          { get; set; }
@@ -33,14 +33,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Writer();
+            var value   = new Writer() { Pointer= p0 };
 
-            value.M_BlockData                               = (Block)GetInt32(new IntPtr(p + 0x010)); // 0270D9C493C0 0x10 M_BlockData                 ( 0001866CD820 ModelEnumType Block Block Block Int32 )
-            value.M_ForeachIndex                            = GetInt32(new IntPtr(p + 0x048)); // 0270D9C49440 0x48 M_ForeachIndex              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_ElementCount                            = GetInt32(new IntPtr(p + 0x04C)); // 0270D9C49460 0x4C M_ElementCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_FirstOffset                             = GetInt32(new IntPtr(p + 0x058)); // 0270D9C494A0 0x58 M_FirstOffset               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NumberOfBlocks                          = GetInt32(new IntPtr(p + 0x05C)); // 0270D9C494C0 0x5C M_NumberOfBlocks            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_ThreadIndex                             = GetInt32(new IntPtr(p + 0x060)); // 0270D9C494E0 0x60 M_ThreadIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_BlockData                               = (Block)GetInt32(new IntPtr(p + 0x010)); // 024669CB0158 0x10 M_BlockData                 ( 0001866CD820 ModelEnumType Block Block Block Int32 )
+            value.M_ForeachIndex                            = GetInt32(new IntPtr(p + 0x048)); // 024669CB01D8 0x48 M_ForeachIndex              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_ElementCount                            = GetInt32(new IntPtr(p + 0x04C)); // 024669CB01F8 0x4C M_ElementCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_FirstOffset                             = GetInt32(new IntPtr(p + 0x058)); // 024669CB0238 0x58 M_FirstOffset               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_NumberOfBlocks                          = GetInt32(new IntPtr(p + 0x05C)); // 024669CB0258 0x5C M_NumberOfBlocks            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ThreadIndex                             = GetInt32(new IntPtr(p + 0x060)); // 024669CB0278 0x60 M_ThreadIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

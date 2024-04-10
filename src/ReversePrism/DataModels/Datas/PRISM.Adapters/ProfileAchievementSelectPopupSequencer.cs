@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 isNewSaveData                            SavableJsonObject`1<ProfileAchievementIsNewSaveData> IL2CPP_TYPE_GENERICINST
     // 028 UserSelfViewModel                        0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer
     // 030 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    public partial class ProfileAchievementSelectPopupSequencer
+    public partial class ProfileAchievementSelectPopupSequencer : DataModel
     {
         public ProfileUserSalfViewModel?                UserSelfViewModel                       { get; set; }
         public AutoCancellationTokenSource              Canceller                               { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileAchievementSelectPopupSequencer();
+            var value   = new ProfileAchievementSelectPopupSequencer() { Pointer= p0 };
 
-            value.UserSelfViewModel                         = GetObject<ProfileUserSalfViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileUserSalfViewModel.FromPointer); // 0270D66898F0 0x28 UserSelfViewModel           ( 0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x030)); // 0270D6689910 0x30 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.UserSelfViewModel                         = GetObject<ProfileUserSalfViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileUserSalfViewModel.FromPointer); // 0246666F98F0 0x28 UserSelfViewModel           ( 0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x030)); // 0246666F9910 0x30 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

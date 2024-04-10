@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_MultiHashMapData                       UnsafeParallelMultiHashMap`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class ReadOnly
+    public partial class ReadOnly : DataModel
     {
 
         public static ReadOnly? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadOnly();
+            var value   = new ReadOnly() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               0001866CAF50 ModelClassType TwestaFavoriteScreenView TwestaFavoriteScreenView TwestaFavoriteScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class TwestaFavoriteScreenBuilder
+    public partial class TwestaFavoriteScreenBuilder : DataModel
     {
         public TwestaFavoriteScreenView?                ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaFavoriteScreenBuilder();
+            var value   = new TwestaFavoriteScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<TwestaFavoriteScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TwestaFavoriteScreenView.FromPointer); // 0270DB651840 0x20 ViewPrefab                  ( 0001866CAF50 ModelClassType TwestaFavoriteScreenView TwestaFavoriteScreenView TwestaFavoriteScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB651860 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<TwestaFavoriteScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TwestaFavoriteScreenView.FromPointer); // 02466B6D58D8 0x20 ViewPrefab                  ( 0001866CAF50 ModelClassType TwestaFavoriteScreenView TwestaFavoriteScreenView TwestaFavoriteScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D58F8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

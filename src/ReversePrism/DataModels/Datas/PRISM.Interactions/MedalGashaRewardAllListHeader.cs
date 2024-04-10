@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 060 FeaturedObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class MedalGashaRewardAllListHeader
+    public partial class MedalGashaRewardAllListHeader : DataModel
     {
         public GameObject?                              FeaturedObject                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardAllListHeader();
+            var value   = new MedalGashaRewardAllListHeader() { Pointer= p0 };
 
-            value.FeaturedObject                            = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB9346A0 0x60 FeaturedObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.FeaturedObject                            = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9B3938 0x60 FeaturedObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

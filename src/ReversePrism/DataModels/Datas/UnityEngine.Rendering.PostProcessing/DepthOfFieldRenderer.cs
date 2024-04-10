@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 m_CoCHistoryTextures                     RenderTexture[][] IL2CPP_TYPE_SZARRAY
     // 028 M_HistoryPingPong                        000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 000 k_FilmHeight                             float IL2CPP_TYPE_R4
-    public partial class DepthOfFieldRenderer
+    public partial class DepthOfFieldRenderer : DataModel
     {
         public List<int>?                               M_HistoryPingPong                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DepthOfFieldRenderer();
+            var value   = new DepthOfFieldRenderer() { Pointer= p0 };
 
-            value.M_HistoryPingPong                         = GetInt32List(new IntPtr(p + 0x028)); // 02700657AA40 0x28 M_HistoryPingPong           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_HistoryPingPong                         = GetInt32List(new IntPtr(p + 0x028)); // 0245A6550BA0 0x28 M_HistoryPingPong           ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

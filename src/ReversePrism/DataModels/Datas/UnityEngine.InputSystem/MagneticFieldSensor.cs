@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 MagneticField                            000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer
     // 000 <current>k__BackingField                 MagneticFieldSensor IL2CPP_TYPE_CLASS
-    public partial class MagneticFieldSensor
+    public partial class MagneticFieldSensor : DataModel
     {
         public Vector3Control?                          MagneticField                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MagneticFieldSensor();
+            var value   = new MagneticFieldSensor() { Pointer= p0 };
 
-            value.MagneticField                             = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0270033B1558 0x170 MagneticField               ( 000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
+            value.MagneticField                             = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0245A33B1558 0x170 MagneticField               ( 000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
 
             return value;
         }

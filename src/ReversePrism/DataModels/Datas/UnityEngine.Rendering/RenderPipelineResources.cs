@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RenderPipelineResources
+    public partial class RenderPipelineResources : DataModel
     {
 
         public static RenderPipelineResources? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderPipelineResources();
+            var value   = new RenderPipelineResources() { Pointer= p0 };
 
 
             return value;

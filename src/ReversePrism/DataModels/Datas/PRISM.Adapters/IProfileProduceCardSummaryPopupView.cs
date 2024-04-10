@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProfileProduceCardSummaryPopupView
+    public partial class IProfileProduceCardSummaryPopupView : DataModel
     {
 
         public static IProfileProduceCardSummaryPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProfileProduceCardSummaryPopupView();
+            var value   = new IProfileProduceCardSummaryPopupView() { Pointer= p0 };
 
 
             return value;

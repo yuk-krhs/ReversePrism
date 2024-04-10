@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Disposable1                              000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 018 Disposable2                              000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class CombinedDisposable2
+    public partial class CombinedDisposable2 : DataModel
     {
         public IDisposable?                             Disposable1                             { get; set; }
         public IDisposable?                             Disposable2                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CombinedDisposable2();
+            var value   = new CombinedDisposable2() { Pointer= p0 };
 
-            value.Disposable1                               = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DAAA75D8 0x10 Disposable1                 ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.Disposable2                               = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DAAA75F8 0x18 Disposable2                 ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Disposable1                               = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 02466AB0CDF8 0x10 Disposable1                 ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Disposable2                               = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 02466AB0CE18 0x18 Disposable2                 ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ScrollerPosition                         0001866656B0 ModelPrimitiveType float float float Single
-    public partial class TwestaFavoriteParameter
+    public partial class TwestaFavoriteParameter : DataModel
     {
         public float                                    ScrollerPosition                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaFavoriteParameter();
+            var value   = new TwestaFavoriteParameter() { Pointer= p0 };
 
-            value.ScrollerPosition                          = GetSingle(new IntPtr(p + 0x010)); // 0270D68DB460 0x10 ScrollerPosition            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScrollerPosition                          = GetSingle(new IntPtr(p + 0x010)); // 02466694B460 0x10 ScrollerPosition            ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 targetObserver                           IObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 targetDisposable                         IDisposable IL2CPP_TYPE_CLASS
-    public partial class Amb
+    public partial class Amb : DataModel
     {
 
         public static Amb? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Amb();
+            var value   = new Amb() { Pointer= p0 };
 
 
             return value;

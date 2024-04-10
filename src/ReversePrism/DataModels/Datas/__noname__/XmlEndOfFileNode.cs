@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlEndOfFileNode
+    public partial class XmlEndOfFileNode : DataModel
     {
 
         public static XmlEndOfFileNode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlEndOfFileNode();
+            var value   = new XmlEndOfFileNode() { Pointer= p0 };
 
 
             return value;

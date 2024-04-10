@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 queue                                    ConcurrentQueue`1<ReusableLinkedArrayBufferWriter> IL2CPP_TYPE_GENERICINST
-    public partial class ReusableLinkedArrayBufferWriterPool
+    public partial class ReusableLinkedArrayBufferWriterPool : DataModel
     {
 
         public static ReusableLinkedArrayBufferWriterPool? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableLinkedArrayBufferWriterPool();
+            var value   = new ReusableLinkedArrayBufferWriterPool() { Pointer= p0 };
 
 
             return value;

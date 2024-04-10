@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IsUnmanagedAttribute
+    public partial class IsUnmanagedAttribute : DataModel
     {
 
         public static IsUnmanagedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsUnmanagedAttribute();
+            var value   = new IsUnmanagedAttribute() { Pointer= p0 };
 
 
             return value;

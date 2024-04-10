@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Random                                   0001866093D0 ModelClassType Random Random Random Pointer
     // 018 SettingModel                             000186530A50 ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer
-    public partial class SubSeasonSelectModel
+    public partial class SubSeasonSelectModel : DataModel
     {
         public Random?                                  Random                                  { get; set; }
         public ProduceAutoSettingModel?                 SettingModel                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonSelectModel();
+            var value   = new SubSeasonSelectModel() { Pointer= p0 };
 
-            value.Random                                    = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0270D6469B50 0x10 Random                      ( 0001866093D0 ModelClassType Random Random Random Pointer )
-            value.SettingModel                              = GetObject<ProduceAutoSettingModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoSettingModel.FromPointer); // 0270D6469B70 0x18 SettingModel                ( 000186530A50 ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer )
+            value.Random                                    = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0246664C8B90 0x10 Random                      ( 0001866093D0 ModelClassType Random Random Random Pointer )
+            value.SettingModel                              = GetObject<ProduceAutoSettingModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoSettingModel.FromPointer); // 0246664C8BB0 0x18 SettingModel                ( 000186530A50 ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer )
 
             return value;
         }

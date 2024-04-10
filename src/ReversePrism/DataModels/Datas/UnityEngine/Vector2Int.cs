@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 018 S_Down                                   0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
     // 020 S_Left                                   0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
     // 028 S_Right                                  0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
-    public partial class Vector2Int
+    public partial class Vector2Int : DataModel
     {
         public int                                      M_X                                     { get; set; }
         public int                                      M_Y                                     { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector2Int();
+            var value   = new Vector2Int() { Pointer= p0 };
 
-            value.M_X                                       = GetInt32(new IntPtr(p + 0x010)); // 0270015F4F98 0x10 M_X                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Y                                       = GetInt32(new IntPtr(p + 0x014)); // 0270015F4FB8 0x14 M_Y                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.S_Up                                      = (Vector2Int)GetInt32(new IntPtr(p + 0x010)); // 0270015F5018 0x10 S_Up                        ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.S_Down                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x018)); // 0270015F5038 0x18 S_Down                      ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.S_Left                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x020)); // 0270015F5058 0x20 S_Left                      ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.S_Right                                   = (Vector2Int)GetInt32(new IntPtr(p + 0x028)); // 0270015F5078 0x28 S_Right                     ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.M_X                                       = GetInt32(new IntPtr(p + 0x010)); // 0245A15F4F98 0x10 M_X                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Y                                       = GetInt32(new IntPtr(p + 0x014)); // 0245A15F4FB8 0x14 M_Y                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.S_Up                                      = (Vector2Int)GetInt32(new IntPtr(p + 0x010)); // 0245A15F5018 0x10 S_Up                        ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.S_Down                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x018)); // 0245A15F5038 0x18 S_Down                      ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.S_Left                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x020)); // 0245A15F5058 0x20 S_Left                      ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.S_Right                                   = (Vector2Int)GetInt32(new IntPtr(p + 0x028)); // 0245A15F5078 0x28 S_Right                     ( 0001866AAAD0 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
 
             return value;
         }

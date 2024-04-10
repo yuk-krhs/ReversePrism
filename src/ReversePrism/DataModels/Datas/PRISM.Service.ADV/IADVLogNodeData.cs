@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IADVLogNodeData
+    public partial class IADVLogNodeData : DataModel
     {
 
         public static IADVLogNodeData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IADVLogNodeData();
+            var value   = new IADVLogNodeData() { Pointer= p0 };
 
 
             return value;

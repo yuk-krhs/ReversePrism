@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EnlightenRuntimeUpdate
+    public partial class EnlightenRuntimeUpdate : DataModel
     {
 
         public static EnlightenRuntimeUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnlightenRuntimeUpdate();
+            var value   = new EnlightenRuntimeUpdate() { Pointer= p0 };
 
 
             return value;

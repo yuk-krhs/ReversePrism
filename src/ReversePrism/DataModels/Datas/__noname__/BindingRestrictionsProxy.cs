@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BindingRestrictionsProxy
+    public partial class BindingRestrictionsProxy : DataModel
     {
 
         public static BindingRestrictionsProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BindingRestrictionsProxy();
+            var value   = new BindingRestrictionsProxy() { Pointer= p0 };
 
 
             return value;

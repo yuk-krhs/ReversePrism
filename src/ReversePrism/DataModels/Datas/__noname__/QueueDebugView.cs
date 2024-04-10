@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class QueueDebugView
+    public partial class QueueDebugView : DataModel
     {
 
         public static QueueDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueueDebugView();
+            var value   = new QueueDebugView() { Pointer= p0 };
 
 
             return value;

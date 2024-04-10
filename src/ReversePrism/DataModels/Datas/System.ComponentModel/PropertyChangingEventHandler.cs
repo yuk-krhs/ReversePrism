@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PropertyChangingEventHandler
+    public partial class PropertyChangingEventHandler : DataModel
     {
 
         public static PropertyChangingEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropertyChangingEventHandler();
+            var value   = new PropertyChangingEventHandler() { Pointer= p0 };
 
 
             return value;

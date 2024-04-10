@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 InappPurchaseDataList                    000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     // 018 ReceiptInfoList                          000185D003F8 ModelEnumListType List`1<ReceiptInfo> List`1<ReceiptInfo> List<ReceiptInfo> Pointer
     // 020 InappDataSignatureList                   000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class ReceiptList
+    public partial class ReceiptList : DataModel
     {
         public List<string>?                            InappPurchaseDataList                   { get; set; }
         public List<ReceiptInfo>?                       ReceiptInfoList                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiptList();
+            var value   = new ReceiptList() { Pointer= p0 };
 
-            value.InappPurchaseDataList                     = GetStringList(new IntPtr(p + 0x010)); // 027004D5B660 0x10 InappPurchaseDataList       ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.ReceiptInfoList                           = GetEnumList<ReceiptInfo>(new IntPtr(p + 0x018)); // 027004D5B680 0x18 ReceiptInfoList             ( 000185D003F8 ModelEnumListType List`1<ReceiptInfo> List`1<ReceiptInfo> List<ReceiptInfo> Pointer )
-            value.InappDataSignatureList                    = GetStringList(new IntPtr(p + 0x020)); // 027004D5B6A0 0x20 InappDataSignatureList      ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.InappPurchaseDataList                     = GetStringList(new IntPtr(p + 0x010)); // 0245A4D985A8 0x10 InappPurchaseDataList       ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.ReceiptInfoList                           = GetEnumList<ReceiptInfo>(new IntPtr(p + 0x018)); // 0245A4D985C8 0x18 ReceiptInfoList             ( 000185D003F8 ModelEnumListType List`1<ReceiptInfo> List`1<ReceiptInfo> List<ReceiptInfo> Pointer )
+            value.InappDataSignatureList                    = GetStringList(new IntPtr(p + 0x020)); // 0245A4D985E8 0x20 InappDataSignatureList      ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

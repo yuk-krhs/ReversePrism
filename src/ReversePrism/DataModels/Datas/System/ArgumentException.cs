@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 ParamName                                000186671910 ModelPrimitiveType string string string String
-    public partial class ArgumentException
+    public partial class ArgumentException : DataModel
     {
         public string                                   ParamName                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArgumentException();
+            var value   = new ArgumentException() { Pointer= p0 };
 
-            value.ParamName                                 = GetString(new IntPtr(p + 0x090)); // 027004D34228 0x90 ParamName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ParamName                                 = GetString(new IntPtr(p + 0x090)); // 0245A4D71168 0x90 ParamName                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

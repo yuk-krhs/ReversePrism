@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 _arg0                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class MethodCallExpression1
+    public partial class MethodCallExpression1 : DataModel
     {
 
         public static MethodCallExpression1? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MethodCallExpression1();
+            var value   = new MethodCallExpression1() { Pointer= p0 };
 
 
             return value;

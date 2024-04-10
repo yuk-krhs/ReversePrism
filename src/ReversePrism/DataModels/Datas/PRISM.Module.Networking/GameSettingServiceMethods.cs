@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 GetSetting                               Method`2<IGetSettingArgs, IGetSettingReply> IL2CPP_TYPE_GENERICINST
-    public partial class GameSettingServiceMethods
+    public partial class GameSettingServiceMethods : DataModel
     {
 
         public static GameSettingServiceMethods? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameSettingServiceMethods();
+            var value   = new GameSettingServiceMethods() { Pointer= p0 };
 
 
             return value;

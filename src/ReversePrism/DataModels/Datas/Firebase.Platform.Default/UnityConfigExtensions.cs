@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _instance                                UnityConfigExtensions IL2CPP_TYPE_CLASS
-    public partial class UnityConfigExtensions
+    public partial class UnityConfigExtensions : DataModel
     {
 
         public static UnityConfigExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityConfigExtensions();
+            var value   = new UnityConfigExtensions() { Pointer= p0 };
 
 
             return value;

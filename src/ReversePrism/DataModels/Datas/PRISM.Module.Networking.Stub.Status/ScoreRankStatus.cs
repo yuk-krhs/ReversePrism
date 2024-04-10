@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Rank                                     0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32
     // 000 TargetValueFieldNumber                   int IL2CPP_TYPE_I4
     // 01C TargetValue                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ScoreRankStatus
+    public partial class ScoreRankStatus : DataModel
     {
         public ScoreRank                                Rank                                    { get; set; }
         public int                                      TargetValue                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScoreRankStatus();
+            var value   = new ScoreRankStatus() { Pointer= p0 };
 
-            value.Rank                                      = (ScoreRank)GetInt32(new IntPtr(p + 0x018)); // 0270D136F5A8 0x18 Rank                        ( 0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
-            value.TargetValue                               = GetInt32(new IntPtr(p + 0x01C)); // 0270D136F5E8 0x1C TargetValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = (ScoreRank)GetInt32(new IntPtr(p + 0x018)); // 0246612F61D0 0x18 Rank                        ( 0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
+            value.TargetValue                               = GetInt32(new IntPtr(p + 0x01C)); // 0246612F6210 0x1C TargetValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

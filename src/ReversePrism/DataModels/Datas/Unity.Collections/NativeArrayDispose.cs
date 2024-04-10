@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Buffer                                 IntPtr IL2CPP_TYPE_PTR
     // 018 M_AllocatorLabel                         0001866A38A0 ModelEnumType Allocator Allocator Allocator Int32
-    public partial class NativeArrayDispose
+    public partial class NativeArrayDispose : DataModel
     {
         public Allocator                                M_AllocatorLabel                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeArrayDispose();
+            var value   = new NativeArrayDispose() { Pointer= p0 };
 
-            value.M_AllocatorLabel                          = (Allocator)GetInt32(new IntPtr(p + 0x018)); // 0270022E5F48 0x18 M_AllocatorLabel            ( 0001866A38A0 ModelEnumType Allocator Allocator Allocator Int32 )
+            value.M_AllocatorLabel                          = (Allocator)GetInt32(new IntPtr(p + 0x018)); // 0245A22E5F48 0x18 M_AllocatorLabel            ( 0001866A38A0 ModelEnumType Allocator Allocator Allocator Int32 )
 
             return value;
         }

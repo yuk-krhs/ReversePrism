@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 118 TotalVertices                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 11C TotalIndices                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 120 M_TextInfo                               00018663E490 ModelClassType TextInfo TextInfo TextInfo Pointer
-    public partial class UIRStylePainter
+    public partial class UIRStylePainter : DataModel
     {
         public RenderChain?                             M_Owner                                 { get; set; }
         public List<Entry>?                             M_Entries                               { get; set; }
@@ -58,27 +58,27 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRStylePainter();
+            var value   = new UIRStylePainter() { Pointer= p0 };
 
-            value.M_Owner                                   = GetObject<RenderChain>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderChain.FromPointer); // 02700687F428 0x10 M_Owner                     ( 00018664F650 ModelClassType RenderChain RenderChain RenderChain Pointer )
-            value.M_Entries                                 = GetEnumList<Entry>(new IntPtr(p + 0x018)); // 02700687F448 0x18 M_Entries                   ( 000185D2F528 ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
-            value.M_Atlas                                   = GetObject<AtlasBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.AtlasBase.FromPointer); // 02700687F468 0x20 M_Atlas                     ( 00018670BF90 ModelClassType AtlasBase AtlasBase AtlasBase Pointer )
-            value.M_VectorImageManager                      = GetObject<VectorImageManager>(new IntPtr(p + 0x028), ReversePrism.DataModels.VectorImageManager.FromPointer); // 02700687F488 0x28 M_VectorImageManager        ( 000186509820 ModelClassType VectorImageManager VectorImageManager VectorImageManager Pointer )
-            value.M_CurrentEntry                            = (Entry)GetInt32(new IntPtr(p + 0x030)); // 02700687F4A8 0x30 M_CurrentEntry              ( 000186660C10 ModelEnumType Entry Entry Entry Int32 )
-            value.M_ClosingInfo                             = (ClosingInfo)GetInt32(new IntPtr(p + 0x080)); // 02700687F4C8 0x80 M_ClosingInfo               ( 000186660760 ModelEnumType ClosingInfo ClosingInfo ClosingInfo Int32 )
-            value.M_MaskDepth                               = GetInt32(new IntPtr(p + 0x0B8)); // 02700687F4E8 0xB8 M_MaskDepth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_StencilRef                              = GetInt32(new IntPtr(p + 0x0BC)); // 02700687F508 0xBC M_StencilRef                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_ClipRectID                              = (BMPAlloc)GetInt32(new IntPtr(p + 0x0C0)); // 02700687F528 0xC0 M_ClipRectID                ( 000186732230 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.M_SVGBackgroundEntryIndex                 = GetInt32(new IntPtr(p + 0x0C8)); // 02700687F548 0xC8 M_SVGBackgroundEntryIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MeshWriteDataPool                       = GetObjectList<MeshWriteData>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.MeshWriteData.FromPointer); // 02700687F5A8 0xE0 M_MeshWriteDataPool         ( 000185CF3288 ModelClassListType List`1<MeshWriteData> List`1<MeshWriteData> List<MeshWriteData> Pointer )
-            value.M_NextMeshWriteDataPoolItem               = GetInt32(new IntPtr(p + 0x0E8)); // 02700687F5C8 0xE8 M_NextMeshWriteDataPoolItem ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_AllocRawVertsIndicesDelegate            = GetObject<Allocator>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.Allocator.FromPointer); // 02700687F608 0xF8 M_AllocRawVertsIndicesDelegate ( 00018653AFD0 ModelClassType Allocator Allocator Allocator Pointer )
-            value.M_AllocThroughDrawMeshDelegate            = GetObject<Allocator>(new IntPtr(p + 0x100), ReversePrism.DataModels.Allocator.FromPointer); // 02700687F628 0x100 M_AllocThroughDrawMeshDelegate ( 00018653AFD0 ModelClassType Allocator Allocator Allocator Pointer )
-            value.MeshGenerationContext                     = GetObject<MeshGenerationContext>(new IntPtr(p + 0x108), ReversePrism.DataModels.MeshGenerationContext.FromPointer); // 02700687F648 0x108 MeshGenerationContext       ( 000186601AD0 ModelClassType MeshGenerationContext MeshGenerationContext MeshGenerationContext Pointer )
-            value.CurrentElement                            = GetObject<VisualElement>(new IntPtr(p + 0x110), ReversePrism.DataModels.VisualElement.FromPointer); // 02700687F668 0x110 CurrentElement              ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.TotalVertices                             = GetInt32(new IntPtr(p + 0x118)); // 02700687F688 0x118 TotalVertices               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalIndices                              = GetInt32(new IntPtr(p + 0x11C)); // 02700687F6A8 0x11C TotalIndices                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_TextInfo                                = GetObject<TextInfo>(new IntPtr(p + 0x120), ReversePrism.DataModels.TextInfo.FromPointer); // 02700687F6C8 0x120 M_TextInfo                  ( 00018663E490 ModelClassType TextInfo TextInfo TextInfo Pointer )
+            value.M_Owner                                   = GetObject<RenderChain>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderChain.FromPointer); // 0245A6841298 0x10 M_Owner                     ( 00018664F650 ModelClassType RenderChain RenderChain RenderChain Pointer )
+            value.M_Entries                                 = GetEnumList<Entry>(new IntPtr(p + 0x018)); // 0245A68412B8 0x18 M_Entries                   ( 000185D2F528 ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
+            value.M_Atlas                                   = GetObject<AtlasBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.AtlasBase.FromPointer); // 0245A68412D8 0x20 M_Atlas                     ( 00018670BF90 ModelClassType AtlasBase AtlasBase AtlasBase Pointer )
+            value.M_VectorImageManager                      = GetObject<VectorImageManager>(new IntPtr(p + 0x028), ReversePrism.DataModels.VectorImageManager.FromPointer); // 0245A68412F8 0x28 M_VectorImageManager        ( 000186509820 ModelClassType VectorImageManager VectorImageManager VectorImageManager Pointer )
+            value.M_CurrentEntry                            = (Entry)GetInt32(new IntPtr(p + 0x030)); // 0245A6841318 0x30 M_CurrentEntry              ( 000186660C10 ModelEnumType Entry Entry Entry Int32 )
+            value.M_ClosingInfo                             = (ClosingInfo)GetInt32(new IntPtr(p + 0x080)); // 0245A6841338 0x80 M_ClosingInfo               ( 000186660760 ModelEnumType ClosingInfo ClosingInfo ClosingInfo Int32 )
+            value.M_MaskDepth                               = GetInt32(new IntPtr(p + 0x0B8)); // 0245A6841358 0xB8 M_MaskDepth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_StencilRef                              = GetInt32(new IntPtr(p + 0x0BC)); // 0245A6841378 0xBC M_StencilRef                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ClipRectID                              = (BMPAlloc)GetInt32(new IntPtr(p + 0x0C0)); // 0245A6841398 0xC0 M_ClipRectID                ( 000186732230 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.M_SVGBackgroundEntryIndex                 = GetInt32(new IntPtr(p + 0x0C8)); // 0245A68413B8 0xC8 M_SVGBackgroundEntryIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_MeshWriteDataPool                       = GetObjectList<MeshWriteData>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.MeshWriteData.FromPointer); // 0245A6841418 0xE0 M_MeshWriteDataPool         ( 000185CF3288 ModelClassListType List`1<MeshWriteData> List`1<MeshWriteData> List<MeshWriteData> Pointer )
+            value.M_NextMeshWriteDataPoolItem               = GetInt32(new IntPtr(p + 0x0E8)); // 0245A6841438 0xE8 M_NextMeshWriteDataPoolItem ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_AllocRawVertsIndicesDelegate            = GetObject<Allocator>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.Allocator.FromPointer); // 0245A6841478 0xF8 M_AllocRawVertsIndicesDelegate ( 00018653AFD0 ModelClassType Allocator Allocator Allocator Pointer )
+            value.M_AllocThroughDrawMeshDelegate            = GetObject<Allocator>(new IntPtr(p + 0x100), ReversePrism.DataModels.Allocator.FromPointer); // 0245A6841498 0x100 M_AllocThroughDrawMeshDelegate ( 00018653AFD0 ModelClassType Allocator Allocator Allocator Pointer )
+            value.MeshGenerationContext                     = GetObject<MeshGenerationContext>(new IntPtr(p + 0x108), ReversePrism.DataModels.MeshGenerationContext.FromPointer); // 0245A68414B8 0x108 MeshGenerationContext       ( 000186601AD0 ModelClassType MeshGenerationContext MeshGenerationContext MeshGenerationContext Pointer )
+            value.CurrentElement                            = GetObject<VisualElement>(new IntPtr(p + 0x110), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A68414D8 0x110 CurrentElement              ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.TotalVertices                             = GetInt32(new IntPtr(p + 0x118)); // 0245A68414F8 0x118 TotalVertices               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalIndices                              = GetInt32(new IntPtr(p + 0x11C)); // 0245A6841518 0x11C TotalIndices                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_TextInfo                                = GetObject<TextInfo>(new IntPtr(p + 0x120), ReversePrism.DataModels.TextInfo.FromPointer); // 0245A6841538 0x120 M_TextInfo                  ( 00018663E490 ModelClassType TextInfo TextInfo TextInfo Pointer )
 
             return value;
         }

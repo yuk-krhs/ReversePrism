@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 ComponentTypeHashToPackageTypeHash       Dictionary`2<int, int> IL2CPP_TYPE_GENERICINST
     // 020 PackageTypeHashToComponentTypeHashDependencies Dictionary`2<int, List`1<int>> IL2CPP_TYPE_GENERICINST
     // 028 ComponentTypeHashToInstance              Dictionary`2<int, IServiceComponent> IL2CPP_TYPE_GENERICINST
-    public partial class DependencyTree
+    public partial class DependencyTree : DataModel
     {
 
         public static DependencyTree? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DependencyTree();
+            var value   = new DependencyTree() { Pointer= p0 };
 
 
             return value;

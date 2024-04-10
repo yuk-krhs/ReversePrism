@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 GameObjects                              000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    public partial class PhaseContent
+    public partial class PhaseContent : DataModel
     {
         public List<GameObject>?                        GameObjects                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhaseContent();
+            var value   = new PhaseContent() { Pointer= p0 };
 
-            value.GameObjects                               = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BCD7A0 0x20 GameObjects                 ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.GameObjects                               = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024665C3E018 0x20 GameObjects                 ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

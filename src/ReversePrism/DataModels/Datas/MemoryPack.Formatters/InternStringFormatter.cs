@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  InternStringFormatter IL2CPP_TYPE_CLASS
-    public partial class InternStringFormatter
+    public partial class InternStringFormatter : DataModel
     {
 
         public static InternStringFormatter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternStringFormatter();
+            var value   = new InternStringFormatter() { Pointer= p0 };
 
 
             return value;

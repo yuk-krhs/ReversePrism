@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 034 LeaveOpen                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 035 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 Native                                   0001866B8C70 ModelClassType DeflateStreamNative DeflateStreamNative DeflateStreamNative Pointer
-    public partial class DeflateStream
+    public partial class DeflateStream : DataModel
     {
         public Stream?                                  Base_stream                             { get; set; }
         public CompressionMode                          Mode                                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeflateStream();
+            var value   = new DeflateStream() { Pointer= p0 };
 
-            value.Base_stream                               = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 0270D7BDBB18 0x28 Base_stream                 ( 000186670270 ModelClassType Stream Stream Stream Pointer )
-            value.Mode                                      = (CompressionMode)GetInt32(new IntPtr(p + 0x030)); // 0270D7BDBB38 0x30 Mode                        ( 0001865F52A0 ModelEnumType CompressionMode CompressionMode CompressionMode Int32 )
-            value.LeaveOpen                                 = GetBool(new IntPtr(p + 0x034)); // 0270D7BDBB58 0x34 LeaveOpen                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x035)); // 0270D7BDBB78 0x35 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Native                                    = GetObject<DeflateStreamNative>(new IntPtr(p + 0x038), ReversePrism.DataModels.DeflateStreamNative.FromPointer); // 0270D7BDBB98 0x38 Native                      ( 0001866B8C70 ModelClassType DeflateStreamNative DeflateStreamNative DeflateStreamNative Pointer )
+            value.Base_stream                               = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 024667C3A288 0x28 Base_stream                 ( 000186670270 ModelClassType Stream Stream Stream Pointer )
+            value.Mode                                      = (CompressionMode)GetInt32(new IntPtr(p + 0x030)); // 024667C3A2A8 0x30 Mode                        ( 0001865F52A0 ModelEnumType CompressionMode CompressionMode CompressionMode Int32 )
+            value.LeaveOpen                                 = GetBool(new IntPtr(p + 0x034)); // 024667C3A2C8 0x34 LeaveOpen                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x035)); // 024667C3A2E8 0x35 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Native                                    = GetObject<DeflateStreamNative>(new IntPtr(p + 0x038), ReversePrism.DataModels.DeflateStreamNative.FromPointer); // 024667C3A308 0x38 Native                      ( 0001866B8C70 ModelClassType DeflateStreamNative DeflateStreamNative DeflateStreamNative Pointer )
 
             return value;
         }

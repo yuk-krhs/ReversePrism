@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 LoadedAssembly                           00018658BE80 ModelClassType Assembly Assembly Assembly Pointer
-    public partial class AssemblyLoadEventArgs
+    public partial class AssemblyLoadEventArgs : DataModel
     {
         public Assembly?                                LoadedAssembly                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyLoadEventArgs();
+            var value   = new AssemblyLoadEventArgs() { Pointer= p0 };
 
-            value.LoadedAssembly                            = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0270D69674D0 0x10 LoadedAssembly              ( 00018658BE80 ModelClassType Assembly Assembly Assembly Pointer )
+            value.LoadedAssembly                            = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0246669DF4D0 0x10 LoadedAssembly              ( 00018658BE80 ModelClassType Assembly Assembly Assembly Pointer )
 
             return value;
         }

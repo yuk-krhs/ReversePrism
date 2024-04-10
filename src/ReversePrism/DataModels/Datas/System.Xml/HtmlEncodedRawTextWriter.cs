@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 0E8 DoNotEscapeUriAttributes                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 elementPropertySearch                    TernaryTreeReadOnly IL2CPP_TYPE_CLASS
     // 008 attributePropertySearch                  TernaryTreeReadOnly IL2CPP_TYPE_CLASS
-    public partial class HtmlEncodedRawTextWriter
+    public partial class HtmlEncodedRawTextWriter : DataModel
     {
         public ByteStack?                               ElementScope                            { get; set; }
         public ElementProperties                        CurrentElementProperties                { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HtmlEncodedRawTextWriter();
+            var value   = new HtmlEncodedRawTextWriter() { Pointer= p0 };
 
-            value.ElementScope                              = GetObject<ByteStack>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.ByteStack.FromPointer); // 0270D73692F8 0xC0 ElementScope                ( 00018651D300 ModelClassType ByteStack ByteStack ByteStack Pointer )
-            value.CurrentElementProperties                  = (ElementProperties)GetInt32(new IntPtr(p + 0x0C8)); // 0270D7369318 0xC8 CurrentElementProperties    ( 000186723250 ModelEnumType ElementProperties ElementProperties ElementProperties Int32 )
-            value.CurrentAttributeProperties                = (AttributeProperties)GetInt32(new IntPtr(p + 0x0CC)); // 0270D7369338 0xCC CurrentAttributeProperties  ( 000186713220 ModelEnumType AttributeProperties AttributeProperties AttributeProperties Int32 )
-            value.EndsWithAmpersand                         = GetBool(new IntPtr(p + 0x0D0)); // 0270D7369358 0xD0 EndsWithAmpersand           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UriEscapingBuffer                         = GetSByteList(new IntPtr(p + 0x0D8)); // 0270D7369378 0xD8 UriEscapingBuffer           ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.MediaType                                 = GetString(new IntPtr(p + 0x0E0)); // 0270D7369398 0xE0 MediaType                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.DoNotEscapeUriAttributes                  = GetBool(new IntPtr(p + 0x0E8)); // 0270D73693B8 0xE8 DoNotEscapeUriAttributes    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ElementScope                              = GetObject<ByteStack>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.ByteStack.FromPointer); // 0246673B92F8 0xC0 ElementScope                ( 00018651D300 ModelClassType ByteStack ByteStack ByteStack Pointer )
+            value.CurrentElementProperties                  = (ElementProperties)GetInt32(new IntPtr(p + 0x0C8)); // 0246673B9318 0xC8 CurrentElementProperties    ( 000186723250 ModelEnumType ElementProperties ElementProperties ElementProperties Int32 )
+            value.CurrentAttributeProperties                = (AttributeProperties)GetInt32(new IntPtr(p + 0x0CC)); // 0246673B9338 0xCC CurrentAttributeProperties  ( 000186713220 ModelEnumType AttributeProperties AttributeProperties AttributeProperties Int32 )
+            value.EndsWithAmpersand                         = GetBool(new IntPtr(p + 0x0D0)); // 0246673B9358 0xD0 EndsWithAmpersand           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UriEscapingBuffer                         = GetSByteList(new IntPtr(p + 0x0D8)); // 0246673B9378 0xD8 UriEscapingBuffer           ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.MediaType                                 = GetString(new IntPtr(p + 0x0E0)); // 0246673B9398 0xE0 MediaType                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.DoNotEscapeUriAttributes                  = GetBool(new IntPtr(p + 0x0E8)); // 0246673B93B8 0xE8 DoNotEscapeUriAttributes    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

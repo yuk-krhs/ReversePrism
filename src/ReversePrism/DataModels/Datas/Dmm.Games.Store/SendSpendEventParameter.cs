@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SdkCommand                               0001866722E0 ModelPrimitiveType string string string String
     // 018 Parameter                                00018675D650 ModelClassType AmountParameter AmountParameter AmountParameter Pointer
-    public partial class SendSpendEventParameter
+    public partial class SendSpendEventParameter : DataModel
     {
         public string                                   SdkCommand                              { get; set; }
         public AmountParameter?                         Parameter                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SendSpendEventParameter();
+            var value   = new SendSpendEventParameter() { Pointer= p0 };
 
-            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 0270DB4B7358 0x10 SdkCommand                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Parameter                                 = GetObject<AmountParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.AmountParameter.FromPointer); // 0270DB4B7378 0x18 Parameter                   ( 00018675D650 ModelClassType AmountParameter AmountParameter AmountParameter Pointer )
+            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 02466B544B28 0x10 SdkCommand                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Parameter                                 = GetObject<AmountParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.AmountParameter.FromPointer); // 02466B544B48 0x18 Parameter                   ( 00018675D650 ModelClassType AmountParameter AmountParameter AmountParameter Pointer )
 
             return value;
         }

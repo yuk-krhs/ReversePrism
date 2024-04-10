@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Handle                                   00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class unitytls_key_ref
+    public partial class unitytls_key_ref : DataModel
     {
         public ulong                                    Handle                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new unitytls_key_ref();
+            var value   = new unitytls_key_ref() { Pointer= p0 };
 
-            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0270D78EA068 0x10 Handle                      ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 024667952068 0x10 Handle                      ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

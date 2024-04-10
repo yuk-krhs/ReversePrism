@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDownloadContextFactory
+    public partial class IDownloadContextFactory : DataModel
     {
 
         public static IDownloadContextFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDownloadContextFactory();
+            var value   = new IDownloadContextFactory() { Pointer= p0 };
 
 
             return value;

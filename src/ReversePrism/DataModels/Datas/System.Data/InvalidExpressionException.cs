@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidExpressionException
+    public partial class InvalidExpressionException : DataModel
     {
 
         public static InvalidExpressionException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidExpressionException();
+            var value   = new InvalidExpressionException() { Pointer= p0 };
 
 
             return value;

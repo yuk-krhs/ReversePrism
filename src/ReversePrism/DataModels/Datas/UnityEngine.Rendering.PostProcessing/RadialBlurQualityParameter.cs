@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RadialBlurQualityParameter
+    public partial class RadialBlurQualityParameter : DataModel
     {
 
         public static RadialBlurQualityParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RadialBlurQualityParameter();
+            var value   = new RadialBlurQualityParameter() { Pointer= p0 };
 
 
             return value;

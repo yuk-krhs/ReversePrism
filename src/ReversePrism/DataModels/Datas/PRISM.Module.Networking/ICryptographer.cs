@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICryptographer
+    public partial class ICryptographer : DataModel
     {
 
         public static ICryptographer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICryptographer();
+            var value   = new ICryptographer() { Pointer= p0 };
 
 
             return value;

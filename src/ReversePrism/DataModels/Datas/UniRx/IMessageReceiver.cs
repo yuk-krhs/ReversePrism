@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMessageReceiver
+    public partial class IMessageReceiver : DataModel
     {
 
         public static IMessageReceiver? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMessageReceiver();
+            var value   = new IMessageReceiver() { Pointer= p0 };
 
 
             return value;

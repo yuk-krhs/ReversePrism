@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProcessThreadCollection
+    public partial class ProcessThreadCollection : DataModel
     {
 
         public static ProcessThreadCollection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProcessThreadCollection();
+            var value   = new ProcessThreadCollection() { Pointer= p0 };
 
 
             return value;

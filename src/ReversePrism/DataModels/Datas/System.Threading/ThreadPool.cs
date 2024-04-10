@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ThreadPool
+    public partial class ThreadPool : DataModel
     {
 
         public static ThreadPool? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThreadPool();
+            var value   = new ThreadPool() { Pointer= p0 };
 
 
             return value;

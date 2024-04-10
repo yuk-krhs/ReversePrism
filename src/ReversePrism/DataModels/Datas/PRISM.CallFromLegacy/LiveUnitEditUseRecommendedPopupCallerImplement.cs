@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<ILiveUnitEditUseRecommendedPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class LiveUnitEditUseRecommendedPopupCallerImplement
+    public partial class LiveUnitEditUseRecommendedPopupCallerImplement : DataModel
     {
 
         public static LiveUnitEditUseRecommendedPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitEditUseRecommendedPopupCallerImplement();
+            var value   = new LiveUnitEditUseRecommendedPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

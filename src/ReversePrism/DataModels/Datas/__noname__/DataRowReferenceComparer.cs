@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_default                                DataRowReferenceComparer IL2CPP_TYPE_CLASS
-    public partial class DataRowReferenceComparer
+    public partial class DataRowReferenceComparer : DataModel
     {
 
         public static DataRowReferenceComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataRowReferenceComparer();
+            var value   = new DataRowReferenceComparer() { Pointer= p0 };
 
 
             return value;

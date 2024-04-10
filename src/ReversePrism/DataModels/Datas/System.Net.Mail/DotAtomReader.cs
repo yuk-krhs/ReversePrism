@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DotAtomReader
+    public partial class DotAtomReader : DataModel
     {
 
         public static DotAtomReader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DotAtomReader();
+            var value   = new DotAtomReader() { Pointer= p0 };
 
 
             return value;

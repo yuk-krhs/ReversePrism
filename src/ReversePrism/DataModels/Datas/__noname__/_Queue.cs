@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 channelEnumerator                        IUniTaskAsyncEnumerator`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 sourceEnumerator                         IUniTaskAsyncEnumerator`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 channelClosed                            bool IL2CPP_TYPE_BOOLEAN
-    public partial class _Queue
+    public partial class _Queue : DataModel
     {
 
         public static _Queue? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Queue();
+            var value   = new _Queue() { Pointer= p0 };
 
 
             return value;

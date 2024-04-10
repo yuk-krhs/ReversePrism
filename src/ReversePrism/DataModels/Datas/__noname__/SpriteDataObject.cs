@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Frames                                   000185D2E3B8 ModelEnumListType List`1<Frame> List`1<Frame> List<Frame> Pointer
     // 018 Meta                                     0001865FD640 ModelEnumType Meta Meta Meta Int32
-    public partial class SpriteDataObject
+    public partial class SpriteDataObject : DataModel
     {
         public List<Frame>?                             Frames                                  { get; set; }
         public Meta                                     Meta                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpriteDataObject();
+            var value   = new SpriteDataObject() { Pointer= p0 };
 
-            value.Frames                                    = GetEnumList<Frame>(new IntPtr(p + 0x010)); // 0270DA657D80 0x10 Frames                      ( 000185D2E3B8 ModelEnumListType List`1<Frame> List`1<Frame> List<Frame> Pointer )
-            value.Meta                                      = (Meta)GetInt32(new IntPtr(p + 0x018)); // 0270DA657DA0 0x18 Meta                        ( 0001865FD640 ModelEnumType Meta Meta Meta Int32 )
+            value.Frames                                    = GetEnumList<Frame>(new IntPtr(p + 0x010)); // 02466A6CB528 0x10 Frames                      ( 000185D2E3B8 ModelEnumListType List`1<Frame> List`1<Frame> List<Frame> Pointer )
+            value.Meta                                      = (Meta)GetInt32(new IntPtr(p + 0x018)); // 02466A6CB548 0x18 Meta                        ( 0001865FD640 ModelEnumType Meta Meta Meta Int32 )
 
             return value;
         }

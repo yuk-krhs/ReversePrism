@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 078 getter                                   Func`2<int, bool> IL2CPP_TYPE_GENERICINST
     // 080 setter                                   Action`2<int, bool> IL2CPP_TYPE_GENERICINST
     // 088 Index                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class DebugUIHandlerIndirectToggle
+    public partial class DebugUIHandlerIndirectToggle : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public Toggle?                                  ValueToggle                             { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerIndirectToggle();
+            var value   = new DebugUIHandlerIndirectToggle() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D9306EE0 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueToggle                               = GetObject<Toggle>(new IntPtr(p + 0x068), ReversePrism.DataModels.Toggle.FromPointer); // 0270D9306F00 0x68 ValueToggle                 ( 000186682980 ModelClassType Toggle Toggle Toggle Pointer )
-            value.CheckmarkImage                            = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 0270D9306F20 0x70 CheckmarkImage              ( 0001866CD270 ModelClassType Image Image Image Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x088)); // 0270D9306F80 0x88 Index                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 024669371428 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueToggle                               = GetObject<Toggle>(new IntPtr(p + 0x068), ReversePrism.DataModels.Toggle.FromPointer); // 024669371448 0x68 ValueToggle                 ( 000186682980 ModelClassType Toggle Toggle Toggle Pointer )
+            value.CheckmarkImage                            = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 024669371468 0x70 CheckmarkImage              ( 0001866CD270 ModelClassType Image Image Image Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x088)); // 0246693714C8 0x88 Index                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceTopMenuCaller
+    public partial class ProduceTopMenuCaller : DataModel
     {
 
         public static ProduceTopMenuCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTopMenuCaller();
+            var value   = new ProduceTopMenuCaller() { Pointer= p0 };
 
 
             return value;

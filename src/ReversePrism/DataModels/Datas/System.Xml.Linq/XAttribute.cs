@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Next                                     000186572400 ModelClassType XAttribute XAttribute XAttribute Pointer
     // 028 Name                                     00018657AE30 ModelClassType XName XName XName Pointer
     // 030 Value                                    000186671BA0 ModelPrimitiveType string string string String
-    public partial class XAttribute
+    public partial class XAttribute : DataModel
     {
         public XAttribute?                              Next                                    { get; set; }
         public XName?                                   Name                                    { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XAttribute();
+            var value   = new XAttribute() { Pointer= p0 };
 
-            value.Next                                      = GetObject<XAttribute>(new IntPtr(p + 0x020), ReversePrism.DataModels.XAttribute.FromPointer); // 0270D8881090 0x20 Next                        ( 000186572400 ModelClassType XAttribute XAttribute XAttribute Pointer )
-            value.Name                                      = GetObject<XName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XName.FromPointer); // 0270D88810B0 0x28 Name                        ( 00018657AE30 ModelClassType XName XName XName Pointer )
-            value.Value                                     = GetString(new IntPtr(p + 0x030)); // 0270D88810D0 0x30 Value                       ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Next                                      = GetObject<XAttribute>(new IntPtr(p + 0x020), ReversePrism.DataModels.XAttribute.FromPointer); // 0246688C4D80 0x20 Next                        ( 000186572400 ModelClassType XAttribute XAttribute XAttribute Pointer )
+            value.Name                                      = GetObject<XName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XName.FromPointer); // 0246688C4DA0 0x28 Name                        ( 00018657AE30 ModelClassType XName XName XName Pointer )
+            value.Value                                     = GetString(new IntPtr(p + 0x030)); // 0246688C4DC0 0x30 Value                       ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

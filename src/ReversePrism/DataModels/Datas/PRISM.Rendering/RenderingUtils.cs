@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 BeforeCharacterFilteringSettings         000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer
     // 028 CharacterFilteringSettings               000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer
     // 030 AfterCharacterFilteringSettings          000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer
-    public partial class RenderingUtils
+    public partial class RenderingUtils : DataModel
     {
         public List<FilteringSettings>?                 OpaqueFilteringSettings                 { get; set; }
         public List<FilteringSettings>?                 BeforeCharacterFilteringSettings        { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderingUtils();
+            var value   = new RenderingUtils() { Pointer= p0 };
 
-            value.OpaqueFilteringSettings                   = GetEnumList<FilteringSettings>(new IntPtr(p + 0x018)); // 0270D0AC5D18 0x18 OpaqueFilteringSettings     ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
-            value.BeforeCharacterFilteringSettings          = GetEnumList<FilteringSettings>(new IntPtr(p + 0x020)); // 0270D0AC5D38 0x20 BeforeCharacterFilteringSettings ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
-            value.CharacterFilteringSettings                = GetEnumList<FilteringSettings>(new IntPtr(p + 0x028)); // 0270D0AC5D58 0x28 CharacterFilteringSettings  ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
-            value.AfterCharacterFilteringSettings           = GetEnumList<FilteringSettings>(new IntPtr(p + 0x030)); // 0270D0AC5D78 0x30 AfterCharacterFilteringSettings ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
+            value.OpaqueFilteringSettings                   = GetEnumList<FilteringSettings>(new IntPtr(p + 0x018)); // 024660AB5578 0x18 OpaqueFilteringSettings     ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
+            value.BeforeCharacterFilteringSettings          = GetEnumList<FilteringSettings>(new IntPtr(p + 0x020)); // 024660AB5598 0x20 BeforeCharacterFilteringSettings ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
+            value.CharacterFilteringSettings                = GetEnumList<FilteringSettings>(new IntPtr(p + 0x028)); // 024660AB55B8 0x28 CharacterFilteringSettings  ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
+            value.AfterCharacterFilteringSettings           = GetEnumList<FilteringSettings>(new IntPtr(p + 0x030)); // 024660AB55D8 0x30 AfterCharacterFilteringSettings ( 000185B7F720 ModelEnumListType FilteringSettings[] FilteringSettings[] List<FilteringSettings> Pointer )
 
             return value;
         }

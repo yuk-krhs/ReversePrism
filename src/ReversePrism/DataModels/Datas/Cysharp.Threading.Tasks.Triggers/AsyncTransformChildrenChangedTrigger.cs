@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncTransformChildrenChangedTrigger
+    public partial class AsyncTransformChildrenChangedTrigger : DataModel
     {
 
         public static AsyncTransformChildrenChangedTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncTransformChildrenChangedTrigger();
+            var value   = new AsyncTransformChildrenChangedTrigger() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 fesUnitSearchPopupViewFactory            PopupViewFactory`1<IFesUnitSearchPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class FesUnitSearchPopupCallerImplement
+    public partial class FesUnitSearchPopupCallerImplement : DataModel
     {
 
         public static FesUnitSearchPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitSearchPopupCallerImplement();
+            var value   = new FesUnitSearchPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

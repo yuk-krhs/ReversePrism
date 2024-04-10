@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CachedService                            000186715730 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer
-    public partial class CostumeService
+    public partial class CostumeService : DataModel
     {
         public ICachedCostumeService?                   CachedService                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeService();
+            var value   = new CostumeService() { Pointer= p0 };
 
-            value.CachedService                             = GetObject<ICachedCostumeService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICachedCostumeService.FromPointer); // 027005D26738 0x10 CachedService               ( 000186715730 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer )
+            value.CachedService                             = GetObject<ICachedCostumeService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICachedCostumeService.FromPointer); // 0245A3684088 0x10 CachedService               ( 000186715730 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer )
 
             return value;
         }

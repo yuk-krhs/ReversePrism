@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 038 M_ExecutionContextBelongsToOuterScope    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 Principal                                0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer
     // 048 Principal_version                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Thread
+    public partial class Thread : DataModel
     {
         public InternalThread?                          Internal_thread                         { get; set; }
         public MulticastDelegate?                       M_Delegate                              { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Thread();
+            var value   = new Thread() { Pointer= p0 };
 
-            value.Internal_thread                           = GetObject<InternalThread>(new IntPtr(p + 0x010), ReversePrism.DataModels.InternalThread.FromPointer); // 02700028B710 0x10 Internal_thread             ( 00018671F860 ModelClassType InternalThread InternalThread InternalThread Pointer )
-            value.M_Delegate                                = GetObject<MulticastDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.MulticastDelegate.FromPointer); // 02700028B790 0x28 M_Delegate                  ( 000186660E80 ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer )
-            value.M_ExecutionContext                        = GetObject<ExecutionContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExecutionContext.FromPointer); // 02700028B7B0 0x30 M_ExecutionContext          ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.M_ExecutionContextBelongsToOuterScope     = GetBool(new IntPtr(p + 0x038)); // 02700028B7D0 0x38 M_ExecutionContextBelongsToOuterScope ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPrincipal.FromPointer); // 02700028B7F0 0x40 Principal                   ( 0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
-            value.Principal_version                         = GetInt32(new IntPtr(p + 0x048)); // 02700028B810 0x48 Principal_version           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Internal_thread                           = GetObject<InternalThread>(new IntPtr(p + 0x010), ReversePrism.DataModels.InternalThread.FromPointer); // 0245A028B710 0x10 Internal_thread             ( 00018671F860 ModelClassType InternalThread InternalThread InternalThread Pointer )
+            value.M_Delegate                                = GetObject<MulticastDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.MulticastDelegate.FromPointer); // 0245A028B790 0x28 M_Delegate                  ( 000186660E80 ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer )
+            value.M_ExecutionContext                        = GetObject<ExecutionContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0245A028B7B0 0x30 M_ExecutionContext          ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.M_ExecutionContextBelongsToOuterScope     = GetBool(new IntPtr(p + 0x038)); // 0245A028B7D0 0x38 M_ExecutionContextBelongsToOuterScope ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPrincipal.FromPointer); // 0245A028B7F0 0x40 Principal                   ( 0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
+            value.Principal_version                         = GetInt32(new IntPtr(p + 0x048)); // 0245A028B810 0x48 Principal_version           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

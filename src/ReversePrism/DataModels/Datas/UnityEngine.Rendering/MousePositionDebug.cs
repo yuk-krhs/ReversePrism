@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Instance                               MousePositionDebug IL2CPP_TYPE_CLASS
-    public partial class MousePositionDebug
+    public partial class MousePositionDebug : DataModel
     {
 
         public static MousePositionDebug? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MousePositionDebug();
+            var value   = new MousePositionDebug() { Pointer= p0 };
 
 
             return value;

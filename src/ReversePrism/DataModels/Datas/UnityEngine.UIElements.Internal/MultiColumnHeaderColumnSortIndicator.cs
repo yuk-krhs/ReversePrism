@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 arrowUssClassName                        string IL2CPP_TYPE_STRING
     // 010 IndexLabelUssClassName                   000186674040 ModelPrimitiveType string string string String
     // 3C8 M_IndexLabel                             000186774D80 ModelClassType Label Label Label Pointer
-    public partial class MultiColumnHeaderColumnSortIndicator
+    public partial class MultiColumnHeaderColumnSortIndicator : DataModel
     {
         public string                                   IndexLabelUssClassName                  { get; set; }
         public Label?                                   M_IndexLabel                            { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MultiColumnHeaderColumnSortIndicator();
+            var value   = new MultiColumnHeaderColumnSortIndicator() { Pointer= p0 };
 
-            value.IndexLabelUssClassName                    = GetString(new IntPtr(p + 0x010)); // 0270068A0F28 0x10 IndexLabelUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
-            value.M_IndexLabel                              = GetObject<Label>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.Label.FromPointer); // 0270068A0F48 0x3C8 M_IndexLabel                ( 000186774D80 ModelClassType Label Label Label Pointer )
+            value.IndexLabelUssClassName                    = GetString(new IntPtr(p + 0x010)); // 0245A6862E70 0x10 IndexLabelUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
+            value.M_IndexLabel                              = GetObject<Label>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.Label.FromPointer); // 0245A6862E90 0x3C8 M_IndexLabel                ( 000186774D80 ModelClassType Label Label Label Pointer )
 
             return value;
         }

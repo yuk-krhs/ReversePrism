@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 MinObjectVisibleTimeRate                 float IL2CPP_TYPE_R4
     // 000 MaxObjectVisibleTimeRate                 float IL2CPP_TYPE_R4
     // 000 RESOURCE_TAG                             string IL2CPP_TYPE_STRING
-    public partial class RhythmGameConstant
+    public partial class RhythmGameConstant : DataModel
     {
 
         public static RhythmGameConstant? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameConstant();
+            var value   = new RhythmGameConstant() { Pointer= p0 };
 
 
             return value;

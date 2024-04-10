@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICriLipsAnalyzeModule
+    public partial class ICriLipsAnalyzeModule : DataModel
     {
 
         public static ICriLipsAnalyzeModule? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICriLipsAnalyzeModule();
+            var value   = new ICriLipsAnalyzeModule() { Pointer= p0 };
 
 
             return value;

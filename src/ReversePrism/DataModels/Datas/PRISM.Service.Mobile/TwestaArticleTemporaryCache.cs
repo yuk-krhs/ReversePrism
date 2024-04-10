@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 cachedArticles                           Dictionary`2<int, ITwestaArticleStatus> IL2CPP_TYPE_GENERICINST
     // 018 CachedCursor                             000186649990 ModelClassType TwestaArticleCursor TwestaArticleCursor TwestaArticleCursor Pointer
-    public partial class TwestaArticleTemporaryCache
+    public partial class TwestaArticleTemporaryCache : DataModel
     {
         public TwestaArticleCursor?                     CachedCursor                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaArticleTemporaryCache();
+            var value   = new TwestaArticleTemporaryCache() { Pointer= p0 };
 
-            value.CachedCursor                              = GetObject<TwestaArticleCursor>(new IntPtr(p + 0x018), ReversePrism.DataModels.TwestaArticleCursor.FromPointer); // 0270D68C6E18 0x18 CachedCursor                ( 000186649990 ModelClassType TwestaArticleCursor TwestaArticleCursor TwestaArticleCursor Pointer )
+            value.CachedCursor                              = GetObject<TwestaArticleCursor>(new IntPtr(p + 0x018), ReversePrism.DataModels.TwestaArticleCursor.FromPointer); // 024666936E18 0x18 CachedCursor                ( 000186649990 ModelClassType TwestaArticleCursor TwestaArticleCursor TwestaArticleCursor Pointer )
 
             return value;
         }

@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 040 GoodScheduleTypeList                     000185CEFA68 ModelEnumListType RepeatedField`1<ScheduleType> RepeatedField`1<ScheduleType> List<ScheduleType> Pointer
     // 000 IsFriendSupportFieldNumber               int IL2CPP_TYPE_I4
     // 048 IsFriendSupport                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class FesUnitSupportCharacterStatus
+    public partial class FesUnitSupportCharacterStatus : DataModel
     {
         public List<ScheduleType>?                      GoodScheduleTypeList                    { get; set; }
         public int                                      MstSupportCharacterId                   { get; set; }
@@ -48,17 +48,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitSupportCharacterStatus();
+            var value   = new FesUnitSupportCharacterStatus() { Pointer= p0 };
 
-            value.GoodScheduleTypeList                      = GetEnumList<ScheduleType>(new IntPtr(p + 0x040)); // 0270D12B2ED0 0x40 GoodScheduleTypeList        ( 000185CEFA68 ModelEnumListType RepeatedField`1<ScheduleType> RepeatedField`1<ScheduleType> List<ScheduleType> Pointer )
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x020)); // 0270D12B2CF0 0x20 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x024)); // 0270D12B2D30 0x24 Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D12B2D70 0x28 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Diamond                                   = GetInt32(new IntPtr(p + 0x02C)); // 0270D12B2DB0 0x2C Diamond                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D12B2DF0 0x30 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x034)); // 0270D12B2E30 0x34 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SupportSkillSlotAmount                    = GetObject<LimitedValueStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D12B2E70 0x38 SupportSkillSlotAmount      ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.IsFriendSupport                           = GetBool(new IntPtr(p + 0x048)); // 0270D12B2F10 0x48 IsFriendSupport             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.GoodScheduleTypeList                      = GetEnumList<ScheduleType>(new IntPtr(p + 0x040)); // 02466122F658 0x40 GoodScheduleTypeList        ( 000185CEFA68 ModelEnumListType RepeatedField`1<ScheduleType> RepeatedField`1<ScheduleType> List<ScheduleType> Pointer )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x020)); // 02466122F478 0x20 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x024)); // 02466122F4B8 0x24 Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x028)); // 02466122F4F8 0x28 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Diamond                                   = GetInt32(new IntPtr(p + 0x02C)); // 02466122F538 0x2C Diamond                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x030)); // 02466122F578 0x30 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x034)); // 02466122F5B8 0x34 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SupportSkillSlotAmount                    = GetObject<LimitedValueStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 02466122F5F8 0x38 SupportSkillSlotAmount      ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.IsFriendSupport                           = GetBool(new IntPtr(p + 0x048)); // 02466122F698 0x48 IsFriendSupport             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

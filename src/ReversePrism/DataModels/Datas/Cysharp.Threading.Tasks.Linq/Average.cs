@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Average
+    public partial class Average : DataModel
     {
 
         public static Average? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Average();
+            var value   = new Average() { Pointer= p0 };
 
 
             return value;

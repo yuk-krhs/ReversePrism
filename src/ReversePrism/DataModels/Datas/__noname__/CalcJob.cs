@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 cp                                       NativeArray`1<ColliderParam> IL2CPP_TYPE_GENERICINST
     // 030 bcp                                      NativeArray`1<BoneColliderParam> IL2CPP_TYPE_GENERICINST
     // 040 ssd                                      NativeArray`1<SwayStringData> IL2CPP_TYPE_GENERICINST
-    public partial class CalcJob
+    public partial class CalcJob : DataModel
     {
 
         public static CalcJob? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CalcJob();
+            var value   = new CalcJob() { Pointer= p0 };
 
 
             return value;

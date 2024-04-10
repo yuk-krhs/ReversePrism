@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 klass                                    <int> IL2CPP_TYPE_I
     // 020 handle                                   <int> IL2CPP_TYPE_I
-    public partial class RuntimeEventInfo
+    public partial class RuntimeEventInfo : DataModel
     {
 
         public static RuntimeEventInfo? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeEventInfo();
+            var value   = new RuntimeEventInfo() { Pointer= p0 };
 
 
             return value;

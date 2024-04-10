@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ProduceIngame                            int IL2CPP_TYPE_I4
     // 000 DefaultRenderFPS                         int IL2CPP_TYPE_I4
     // 000 PowerSavingRenderFPS                     int IL2CPP_TYPE_I4
-    public partial class FrameRateConstants
+    public partial class FrameRateConstants : DataModel
     {
 
         public static FrameRateConstants? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameRateConstants();
+            var value   = new FrameRateConstants() { Pointer= p0 };
 
 
             return value;

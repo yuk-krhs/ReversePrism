@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ShinyPartyTokenListFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_shinyPartyTokenList_codec      FieldCodec`1<ShinyPartyTokenStatus> IL2CPP_TYPE_GENERICINST
     // 018 ShinyPartyTokenList                      000185CF1188 ModelClassListType RepeatedField`1<ShinyPartyTokenStatus> RepeatedField`1<ShinyPartyTokenStatus> List<ShinyPartyTokenStatus> Pointer
-    public partial class GetExchangeAvailableShinyPartyTokenListReply
+    public partial class GetExchangeAvailableShinyPartyTokenListReply : DataModel
     {
         public List<ShinyPartyTokenStatus>?             ShinyPartyTokenList                     { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeAvailableShinyPartyTokenListReply();
+            var value   = new GetExchangeAvailableShinyPartyTokenListReply() { Pointer= p0 };
 
-            value.ShinyPartyTokenList                       = GetObjectList<ShinyPartyTokenStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShinyPartyTokenStatus.FromPointer); // 0270D121E030 0x18 ShinyPartyTokenList         ( 000185CF1188 ModelClassListType RepeatedField`1<ShinyPartyTokenStatus> RepeatedField`1<ShinyPartyTokenStatus> List<ShinyPartyTokenStatus> Pointer )
+            value.ShinyPartyTokenList                       = GetObjectList<ShinyPartyTokenStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShinyPartyTokenStatus.FromPointer); // 024661193BD0 0x18 ShinyPartyTokenList         ( 000185CF1188 ModelClassListType RepeatedField`1<ShinyPartyTokenStatus> RepeatedField`1<ShinyPartyTokenStatus> List<ShinyPartyTokenStatus> Pointer )
 
             return value;
         }

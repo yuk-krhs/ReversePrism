@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetTwestaAllReply
+    public partial class IGetTwestaAllReply : DataModel
     {
 
         public static IGetTwestaAllReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetTwestaAllReply();
+            var value   = new IGetTwestaAllReply() { Pointer= p0 };
 
 
             return value;

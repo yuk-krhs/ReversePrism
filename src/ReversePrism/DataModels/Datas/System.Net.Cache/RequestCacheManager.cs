@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 S_DefaultGlobalBinding                   000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer
     // 018 S_DefaultHttpBinding                     000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer
     // 020 S_DefaultFtpBinding                      000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer
-    public partial class RequestCacheManager
+    public partial class RequestCacheManager : DataModel
     {
         public RequestCacheBinding?                     S_DefaultGlobalBinding                  { get; set; }
         public RequestCacheBinding?                     S_DefaultHttpBinding                    { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestCacheManager();
+            var value   = new RequestCacheManager() { Pointer= p0 };
 
-            value.S_DefaultGlobalBinding                    = GetObject<RequestCacheBinding>(new IntPtr(p + 0x010), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 0270D7AE4168 0x10 S_DefaultGlobalBinding      ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
-            value.S_DefaultHttpBinding                      = GetObject<RequestCacheBinding>(new IntPtr(p + 0x018), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 0270D7AE4188 0x18 S_DefaultHttpBinding        ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
-            value.S_DefaultFtpBinding                       = GetObject<RequestCacheBinding>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 0270D7AE41A8 0x20 S_DefaultFtpBinding         ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
+            value.S_DefaultGlobalBinding                    = GetObject<RequestCacheBinding>(new IntPtr(p + 0x010), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 024667B4C168 0x10 S_DefaultGlobalBinding      ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
+            value.S_DefaultHttpBinding                      = GetObject<RequestCacheBinding>(new IntPtr(p + 0x018), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 024667B4C188 0x18 S_DefaultHttpBinding        ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
+            value.S_DefaultFtpBinding                       = GetObject<RequestCacheBinding>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 024667B4C1A8 0x20 S_DefaultFtpBinding         ( 000186664670 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
 
             return value;
         }

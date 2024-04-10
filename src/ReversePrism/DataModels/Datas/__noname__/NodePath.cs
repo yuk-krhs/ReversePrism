@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _nodeID                                  int IL2CPP_TYPE_I4
     // 000 _mainTreeNodeID                          int IL2CPP_TYPE_I4
-    public partial class NodePath
+    public partial class NodePath : DataModel
     {
 
         public static NodePath? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NodePath();
+            var value   = new NodePath() { Pointer= p0 };
 
 
             return value;

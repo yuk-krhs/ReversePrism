@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Doc                                      000186710FA0 ModelClassType SecurityDocument SecurityDocument SecurityDocument Pointer
     // 018 T                                        000186688BD0 ModelClassType Tokenizer Tokenizer Tokenizer Pointer
-    public partial class Parser
+    public partial class Parser : DataModel
     {
         public SecurityDocument?                        Doc                                     { get; set; }
         public Tokenizer?                               T                                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Parser();
+            var value   = new Parser() { Pointer= p0 };
 
-            value.Doc                                       = GetObject<SecurityDocument>(new IntPtr(p + 0x010), ReversePrism.DataModels.SecurityDocument.FromPointer); // 0270D6B6A118 0x10 Doc                         ( 000186710FA0 ModelClassType SecurityDocument SecurityDocument SecurityDocument Pointer )
-            value.T                                         = GetObject<Tokenizer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Tokenizer.FromPointer); // 0270D6B6A138 0x18 T                           ( 000186688BD0 ModelClassType Tokenizer Tokenizer Tokenizer Pointer )
+            value.Doc                                       = GetObject<SecurityDocument>(new IntPtr(p + 0x010), ReversePrism.DataModels.SecurityDocument.FromPointer); // 024666BE2118 0x10 Doc                         ( 000186710FA0 ModelClassType SecurityDocument SecurityDocument SecurityDocument Pointer )
+            value.T                                         = GetObject<Tokenizer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Tokenizer.FromPointer); // 024666BE2138 0x18 T                           ( 000186688BD0 ModelClassType Tokenizer Tokenizer Tokenizer Pointer )
 
             return value;
         }

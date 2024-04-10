@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PCardAndSkillUIEffectModel
+    public partial class PCardAndSkillUIEffectModel : DataModel
     {
 
         public static PCardAndSkillUIEffectModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardAndSkillUIEffectModel();
+            var value   = new PCardAndSkillUIEffectModel() { Pointer= p0 };
 
 
             return value;

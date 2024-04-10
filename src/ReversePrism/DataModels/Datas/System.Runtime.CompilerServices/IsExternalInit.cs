@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IsExternalInit
+    public partial class IsExternalInit : DataModel
     {
 
         public static IsExternalInit? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsExternalInit();
+            var value   = new IsExternalInit() { Pointer= p0 };
 
 
             return value;

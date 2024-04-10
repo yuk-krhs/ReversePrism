@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InternalSpanEx
+    public partial class InternalSpanEx : DataModel
     {
 
         public static InternalSpanEx? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalSpanEx();
+            var value   = new InternalSpanEx() { Pointer= p0 };
 
 
             return value;

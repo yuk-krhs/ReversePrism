@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetProducerEventInfoArgs
+    public partial class IGetProducerEventInfoArgs : DataModel
     {
 
         public static IGetProducerEventInfoArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetProducerEventInfoArgs();
+            var value   = new IGetProducerEventInfoArgs() { Pointer= p0 };
 
 
             return value;

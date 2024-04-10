@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 060 GashaHistoryDetailScroll                 000186604F10 ModelClassType GashaHistoryDetailScroll GashaHistoryDetailScroll GashaHistoryDetailScroll Pointer
-    public partial class GashaHistoryDetailContent
+    public partial class GashaHistoryDetailContent : DataModel
     {
         public GashaHistoryDetailScroll?                GashaHistoryDetailScroll                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaHistoryDetailContent();
+            var value   = new GashaHistoryDetailContent() { Pointer= p0 };
 
-            value.GashaHistoryDetailScroll                  = GetObject<GashaHistoryDetailScroll>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaHistoryDetailScroll.FromPointer); // 0270D5307E70 0x60 GashaHistoryDetailScroll    ( 000186604F10 ModelClassType GashaHistoryDetailScroll GashaHistoryDetailScroll GashaHistoryDetailScroll Pointer )
+            value.GashaHistoryDetailScroll                  = GetObject<GashaHistoryDetailScroll>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaHistoryDetailScroll.FromPointer); // 02466537B638 0x60 GashaHistoryDetailScroll    ( 000186604F10 ModelClassType GashaHistoryDetailScroll GashaHistoryDetailScroll GashaHistoryDetailScroll Pointer )
 
             return value;
         }

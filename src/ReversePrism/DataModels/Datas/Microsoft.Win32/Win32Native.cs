@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Win32Native
+    public partial class Win32Native : DataModel
     {
 
         public static Win32Native? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Win32Native();
+            var value   = new Win32Native() { Pointer= p0 };
 
 
             return value;

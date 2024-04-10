@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 000 AdvicesFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_advices_codec                  FieldCodec`1<Advice> IL2CPP_TYPE_GENERICINST
     // 038 Advices                                  000185CCDAC8 ModelClassListType RepeatedField`1<Advice> RepeatedField`1<Advice> List<Advice> Pointer
-    public partial class ConfigChange
+    public partial class ConfigChange : DataModel
     {
         public string                                   Element                                 { get; set; }
         public string                                   OldValue                                { get; set; }
@@ -35,13 +35,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfigChange();
+            var value   = new ConfigChange() { Pointer= p0 };
 
-            value.Element                                   = GetString(new IntPtr(p + 0x018)); // 0270DA76C4D0 0x18 Element                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.OldValue                                  = GetString(new IntPtr(p + 0x020)); // 0270DA76C510 0x20 OldValue                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.NewValue                                  = GetString(new IntPtr(p + 0x028)); // 0270DA76C550 0x28 NewValue                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.ChangeType                                = (ChangeType)GetInt32(new IntPtr(p + 0x030)); // 0270DA76C590 0x30 ChangeType                  ( 00018658E830 ModelEnumType ChangeType ChangeType ChangeType Int32 )
-            value.Advices                                   = GetObjectList<Advice>(new IntPtr(p + 0x038), ReversePrism.DataModels.Advice.FromPointer); // 0270DA76C5F0 0x38 Advices                     ( 000185CCDAC8 ModelClassListType RepeatedField`1<Advice> RepeatedField`1<Advice> List<Advice> Pointer )
+            value.Element                                   = GetString(new IntPtr(p + 0x018)); // 02466A7D7F80 0x18 Element                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.OldValue                                  = GetString(new IntPtr(p + 0x020)); // 02466A7D7FC0 0x20 OldValue                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.NewValue                                  = GetString(new IntPtr(p + 0x028)); // 02466A7D8000 0x28 NewValue                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.ChangeType                                = (ChangeType)GetInt32(new IntPtr(p + 0x030)); // 02466A7D8040 0x30 ChangeType                  ( 00018658E830 ModelEnumType ChangeType ChangeType ChangeType Int32 )
+            value.Advices                                   = GetObjectList<Advice>(new IntPtr(p + 0x038), ReversePrism.DataModels.Advice.FromPointer); // 02466A7D80A0 0x38 Advices                     ( 000185CCDAC8 ModelClassListType RepeatedField`1<Advice> RepeatedField`1<Advice> List<Advice> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _attributeProvider                       <object> IL2CPP_TYPE_OBJECT
-    public partial class ReflectionAttributeProvider
+    public partial class ReflectionAttributeProvider : DataModel
     {
 
         public static ReflectionAttributeProvider? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionAttributeProvider();
+            var value   = new ReflectionAttributeProvider() { Pointer= p0 };
 
 
             return value;

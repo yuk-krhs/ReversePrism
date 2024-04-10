@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProducePreparationEpisodeListCarousel
+    public partial class ProducePreparationEpisodeListCarousel : DataModel
     {
 
         public static ProducePreparationEpisodeListCarousel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducePreparationEpisodeListCarousel();
+            var value   = new ProducePreparationEpisodeListCarousel() { Pointer= p0 };
 
 
             return value;

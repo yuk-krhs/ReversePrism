@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDtdDefaultAttributeInfo
+    public partial class IDtdDefaultAttributeInfo : DataModel
     {
 
         public static IDtdDefaultAttributeInfo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDtdDefaultAttributeInfo();
+            var value   = new IDtdDefaultAttributeInfo() { Pointer= p0 };
 
 
             return value;

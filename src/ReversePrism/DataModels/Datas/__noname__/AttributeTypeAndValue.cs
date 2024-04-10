@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 AttrValue                                000186671910 ModelPrimitiveType string string string String
     // 020 UpperBound                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 Encoding                                 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class AttributeTypeAndValue
+    public partial class AttributeTypeAndValue : DataModel
     {
         public string                                   Oid                                     { get; set; }
         public string                                   AttrValue                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttributeTypeAndValue();
+            var value   = new AttributeTypeAndValue() { Pointer= p0 };
 
-            value.Oid                                       = GetString(new IntPtr(p + 0x010)); // 0270DB37C630 0x10 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.AttrValue                                 = GetString(new IntPtr(p + 0x018)); // 0270DB37C650 0x18 AttrValue                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.UpperBound                                = GetInt32(new IntPtr(p + 0x020)); // 0270DB37C670 0x20 UpperBound                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Encoding                                  = GetSByte(new IntPtr(p + 0x024)); // 0270DB37C690 0x24 Encoding                    ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Oid                                       = GetString(new IntPtr(p + 0x010)); // 02466B40A400 0x10 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.AttrValue                                 = GetString(new IntPtr(p + 0x018)); // 02466B40A420 0x18 AttrValue                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.UpperBound                                = GetInt32(new IntPtr(p + 0x020)); // 02466B40A440 0x20 UpperBound                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Encoding                                  = GetSByte(new IntPtr(p + 0x024)); // 02466B40A460 0x24 Encoding                    ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

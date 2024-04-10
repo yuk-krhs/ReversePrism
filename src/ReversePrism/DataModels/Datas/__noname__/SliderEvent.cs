@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SliderEvent
+    public partial class SliderEvent : DataModel
     {
 
         public static SliderEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SliderEvent();
+            var value   = new SliderEvent() { Pointer= p0 };
 
 
             return value;

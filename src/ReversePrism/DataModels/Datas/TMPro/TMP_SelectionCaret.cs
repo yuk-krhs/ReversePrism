@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TMP_SelectionCaret
+    public partial class TMP_SelectionCaret : DataModel
     {
 
         public static TMP_SelectionCaret? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_SelectionCaret();
+            var value   = new TMP_SelectionCaret() { Pointer= p0 };
 
 
             return value;

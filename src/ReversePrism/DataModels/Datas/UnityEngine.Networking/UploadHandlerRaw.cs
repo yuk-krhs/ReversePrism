@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 m_Payload                                NativeArray`1<sbyte> IL2CPP_TYPE_GENERICINST
-    public partial class UploadHandlerRaw
+    public partial class UploadHandlerRaw : DataModel
     {
 
         public static UploadHandlerRaw? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UploadHandlerRaw();
+            var value   = new UploadHandlerRaw() { Pointer= p0 };
 
 
             return value;

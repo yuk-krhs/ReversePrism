@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 FavoriteToggle                           000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
     // 028 Particle                                 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer
     // 030 onClickSubject                           Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class TwestaFavoriteToggle
+    public partial class TwestaFavoriteToggle : DataModel
     {
         public ToggleButton?                            FavoriteToggle                          { get; set; }
         public ParticleSystem?                          Particle                                { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaFavoriteToggle();
+            var value   = new TwestaFavoriteToggle() { Pointer= p0 };
 
-            value.FavoriteToggle                            = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DB1781A8 0x20 FavoriteToggle              ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.Particle                                  = GetObject<ParticleSystem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270DB1781C8 0x28 Particle                    ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.FavoriteToggle                            = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466B1C81A8 0x20 FavoriteToggle              ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.Particle                                  = GetObject<ParticleSystem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParticleSystem.FromPointer); // 02466B1C81C8 0x28 Particle                    ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
 
             return value;
         }

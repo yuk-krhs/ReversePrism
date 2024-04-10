@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 PlatformFieldNumber                      int IL2CPP_TYPE_I4
     // 028 Platform                                 000186671910 ModelPrimitiveType string string string String
-    public partial class ConfirmTransferArgs
+    public partial class ConfirmTransferArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
         public string                                   Token                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfirmTransferArgs();
+            var value   = new ConfirmTransferArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 027003B08880 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 027003B088C0 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Platform                                  = GetString(new IntPtr(p + 0x028)); // 027003B08900 0x28 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0245A3B05E28 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 0245A3B05E68 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Platform                                  = GetString(new IntPtr(p + 0x028)); // 0245A3B05EA8 0x28 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

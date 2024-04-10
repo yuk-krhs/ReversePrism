@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 serializersBySource                      Hashtable IL2CPP_TYPE_CLASS
-    public partial class XmlSerializerFactory
+    public partial class XmlSerializerFactory : DataModel
     {
 
         public static XmlSerializerFactory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSerializerFactory();
+            var value   = new XmlSerializerFactory() { Pointer= p0 };
 
 
             return value;

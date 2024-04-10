@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ImageEffectAllowedInSceneView
+    public partial class ImageEffectAllowedInSceneView : DataModel
     {
 
         public static ImageEffectAllowedInSceneView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImageEffectAllowedInSceneView();
+            var value   = new ImageEffectAllowedInSceneView() { Pointer= p0 };
 
 
             return value;

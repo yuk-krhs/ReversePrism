@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 SelectedIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Presets                                  000185CE1F18 ModelClassListType List`1<ICostumePresetStatus> List`1<ICostumePresetStatus> List<ICostumePresetStatus> Pointer
     // 020 OnUpdateModel                            000186679A00 ModelClassType Action Action Action Pointer
-    public partial class CostumePresetModel
+    public partial class CostumePresetModel : DataModel
     {
         public int                                      SelectedIndex                           { get; set; }
         public List<ICostumePresetStatus>?              Presets                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumePresetModel();
+            var value   = new CostumePresetModel() { Pointer= p0 };
 
-            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0270DBC08E08 0x10 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Presets                                   = GetObjectList<ICostumePresetStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICostumePresetStatus.FromPointer); // 0270DBC08E28 0x18 Presets                     ( 000185CE1F18 ModelClassListType List`1<ICostumePresetStatus> List`1<ICostumePresetStatus> List<ICostumePresetStatus> Pointer )
-            value.OnUpdateModel                             = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0270DBC08E48 0x20 OnUpdateModel               ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x010)); // 02466BC90168 0x10 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Presets                                   = GetObjectList<ICostumePresetStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICostumePresetStatus.FromPointer); // 02466BC90188 0x18 Presets                     ( 000185CE1F18 ModelClassListType List`1<ICostumePresetStatus> List`1<ICostumePresetStatus> List<ICostumePresetStatus> Pointer )
+            value.OnUpdateModel                             = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 02466BC901A8 0x20 OnUpdateModel               ( 000186679A00 ModelClassType Action Action Action Pointer )
 
             return value;
         }

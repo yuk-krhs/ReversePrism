@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CueLinkCbFunc
+    public partial class CueLinkCbFunc : DataModel
     {
 
         public static CueLinkCbFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CueLinkCbFunc();
+            var value   = new CueLinkCbFunc() { Pointer= p0 };
 
 
             return value;

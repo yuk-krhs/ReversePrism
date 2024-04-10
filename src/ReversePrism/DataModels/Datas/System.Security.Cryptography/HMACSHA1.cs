@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HMACSHA1
+    public partial class HMACSHA1 : DataModel
     {
 
         public static HMACSHA1? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HMACSHA1();
+            var value   = new HMACSHA1() { Pointer= p0 };
 
 
             return value;

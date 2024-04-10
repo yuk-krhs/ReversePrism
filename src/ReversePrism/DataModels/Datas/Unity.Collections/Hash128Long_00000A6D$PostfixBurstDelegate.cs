@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Hash128Long_00000A6D$PostfixBurstDelegate
+    public partial class Hash128Long_00000A6D$PostfixBurstDelegate : DataModel
     {
 
         public static Hash128Long_00000A6D$PostfixBurstDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hash128Long_00000A6D$PostfixBurstDelegate();
+            var value   = new Hash128Long_00000A6D$PostfixBurstDelegate() { Pointer= p0 };
 
 
             return value;

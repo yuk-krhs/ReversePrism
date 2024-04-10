@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOurStreamTabGroup
+    public partial class IOurStreamTabGroup : DataModel
     {
 
         public static IOurStreamTabGroup? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOurStreamTabGroup();
+            var value   = new IOurStreamTabGroup() { Pointer= p0 };
 
 
             return value;

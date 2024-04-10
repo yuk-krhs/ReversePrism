@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 receivedData                             ConcurrentQueue`1<Queue`1<sbyte[]>> IL2CPP_TYPE_GENERICINST
     // 018 ReadData                                 0001865AD470 ModelClassType ReadData ReadData ReadData Pointer
-    public partial class PrismStream
+    public partial class PrismStream : DataModel
     {
         public ReadData?                                ReadData                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrismStream();
+            var value   = new PrismStream() { Pointer= p0 };
 
-            value.ReadData                                  = GetObject<ReadData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReadData.FromPointer); // 0270D4F117E8 0x18 ReadData                    ( 0001865AD470 ModelClassType ReadData ReadData ReadData Pointer )
+            value.ReadData                                  = GetObject<ReadData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReadData.FromPointer); // 024664F702A8 0x18 ReadData                    ( 0001865AD470 ModelClassType ReadData ReadData ReadData Pointer )
 
             return value;
         }

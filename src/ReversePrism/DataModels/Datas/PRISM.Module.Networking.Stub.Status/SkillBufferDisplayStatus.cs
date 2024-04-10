@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C MstSkillBufferIconId                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstSkillBufferGroupIdFieldNumber         int IL2CPP_TYPE_I4
     // 020 MstSkillBufferGroupId                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SkillBufferDisplayStatus
+    public partial class SkillBufferDisplayStatus : DataModel
     {
         public int                                      MstSkillBufferDisplayId                 { get; set; }
         public int                                      MstSkillBufferIconId                    { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkillBufferDisplayStatus();
+            var value   = new SkillBufferDisplayStatus() { Pointer= p0 };
 
-            value.MstSkillBufferDisplayId                   = GetInt32(new IntPtr(p + 0x018)); // 0270D1144940 0x18 MstSkillBufferDisplayId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSkillBufferIconId                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D1144980 0x1C MstSkillBufferIconId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSkillBufferGroupId                     = GetInt32(new IntPtr(p + 0x020)); // 0270D11449C0 0x20 MstSkillBufferGroupId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSkillBufferDisplayId                   = GetInt32(new IntPtr(p + 0x018)); // 0246610B4620 0x18 MstSkillBufferDisplayId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSkillBufferIconId                      = GetInt32(new IntPtr(p + 0x01C)); // 0246610B4660 0x1C MstSkillBufferIconId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSkillBufferGroupId                     = GetInt32(new IntPtr(p + 0x020)); // 0246610B46A0 0x20 MstSkillBufferGroupId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

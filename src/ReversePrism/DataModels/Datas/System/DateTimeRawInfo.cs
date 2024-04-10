@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 02C TimeMark                                 0001866EDE10 ModelEnumType TM TM TM Int32
     // 030 Fraction                                 0001865C2BA0 ModelPrimitiveType double double double Double
     // 038 HasSameDateAndTimeSeparators             000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class DateTimeRawInfo
+    public partial class DateTimeRawInfo : DataModel
     {
         public int                                      NumCount                                { get; set; }
         public int                                      Month                                   { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeRawInfo();
+            var value   = new DateTimeRawInfo() { Pointer= p0 };
 
-            value.NumCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D6994C18 0x18 NumCount                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Month                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D6994C38 0x1C Month                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Year                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D6994C58 0x20 Year                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.DayOfWeek                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D6994C78 0x24 DayOfWeek                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Era                                       = GetInt32(new IntPtr(p + 0x028)); // 0270D6994C98 0x28 Era                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.TimeMark                                  = (TM)GetInt32(new IntPtr(p + 0x02C)); // 0270D6994CB8 0x2C TimeMark                    ( 0001866EDE10 ModelEnumType TM TM TM Int32 )
-            value.Fraction                                  = GetDouble(new IntPtr(p + 0x030)); // 0270D6994CD8 0x30 Fraction                    ( 0001865C2BA0 ModelPrimitiveType double double double Double )
-            value.HasSameDateAndTimeSeparators              = GetBool(new IntPtr(p + 0x038)); // 0270D6994CF8 0x38 HasSameDateAndTimeSeparators ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.NumCount                                  = GetInt32(new IntPtr(p + 0x018)); // 024666A0CC18 0x18 NumCount                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Month                                     = GetInt32(new IntPtr(p + 0x01C)); // 024666A0CC38 0x1C Month                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Year                                      = GetInt32(new IntPtr(p + 0x020)); // 024666A0CC58 0x20 Year                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.DayOfWeek                                 = GetInt32(new IntPtr(p + 0x024)); // 024666A0CC78 0x24 DayOfWeek                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Era                                       = GetInt32(new IntPtr(p + 0x028)); // 024666A0CC98 0x28 Era                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.TimeMark                                  = (TM)GetInt32(new IntPtr(p + 0x02C)); // 024666A0CCB8 0x2C TimeMark                    ( 0001866EDE10 ModelEnumType TM TM TM Int32 )
+            value.Fraction                                  = GetDouble(new IntPtr(p + 0x030)); // 024666A0CCD8 0x30 Fraction                    ( 0001865C2BA0 ModelPrimitiveType double double double Double )
+            value.HasSameDateAndTimeSeparators              = GetBool(new IntPtr(p + 0x038)); // 024666A0CCF8 0x38 HasSameDateAndTimeSeparators ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

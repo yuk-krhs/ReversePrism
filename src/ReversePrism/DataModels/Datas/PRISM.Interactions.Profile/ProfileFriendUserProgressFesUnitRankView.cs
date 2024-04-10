@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 FesUnitRankingIconImage                  0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 028 FesUnitRankingText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 030 FesRankingDetailButton                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    public partial class ProfileFriendUserProgressFesUnitRankView
+    public partial class ProfileFriendUserProgressFesUnitRankView : DataModel
     {
         public UIImage?                                 FesUnitRankingIconImage                 { get; set; }
         public UITextMeshProUGUI?                       FesUnitRankingText                      { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileFriendUserProgressFesUnitRankView();
+            var value   = new ProfileFriendUserProgressFesUnitRankView() { Pointer= p0 };
 
-            value.FesUnitRankingIconImage                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB7411F8 0x20 FesUnitRankingIconImage     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FesUnitRankingText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB741218 0x28 FesUnitRankingText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.FesRankingDetailButton                    = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB741238 0x30 FesRankingDetailButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.FesUnitRankingIconImage                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B7C5868 0x20 FesUnitRankingIconImage     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FesUnitRankingText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B7C5888 0x28 FesUnitRankingText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.FesRankingDetailButton                    = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466B7C58A8 0x30 FesRankingDetailButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

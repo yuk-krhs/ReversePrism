@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 GetHavingItemAll                         Method`2<IGetHavingItemAllArgs, IGetHavingItemAllReply> IL2CPP_TYPE_GENERICINST
     // 018 GetProductDetail                         Method`2<IGetProductDetailArgs, IGetProductDetailReply> IL2CPP_TYPE_GENERICINST
-    public partial class ProductServiceMethods
+    public partial class ProductServiceMethods : DataModel
     {
 
         public static ProductServiceMethods? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductServiceMethods();
+            var value   = new ProductServiceMethods() { Pointer= p0 };
 
 
             return value;

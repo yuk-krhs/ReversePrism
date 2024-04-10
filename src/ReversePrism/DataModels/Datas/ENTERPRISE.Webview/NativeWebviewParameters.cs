@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeWebviewParameters
+    public partial class NativeWebviewParameters : DataModel
     {
 
         public static NativeWebviewParameters? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeWebviewParameters();
+            var value   = new NativeWebviewParameters() { Pointer= p0 };
 
 
             return value;

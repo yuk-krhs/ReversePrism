@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 ValueType                                000186533D30 ModelEnumType ValueType ValueType ValueType Int32
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
     // 028 Description                              000186671910 ModelPrimitiveType string string string String
-    public partial class LabelDescriptor
+    public partial class LabelDescriptor : DataModel
     {
         public string                                   Key                                     { get; set; }
         public ValueType                                ValueType                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LabelDescriptor();
+            var value   = new LabelDescriptor() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x018)); // 0270DA7D7E50 0x18 Key                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValueType                                 = (ValueType)GetInt32(new IntPtr(p + 0x020)); // 0270DA7D7E90 0x20 ValueType                   ( 000186533D30 ModelEnumType ValueType ValueType ValueType Int32 )
-            value.Description                               = GetString(new IntPtr(p + 0x028)); // 0270DA7D7ED0 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Key                                       = GetString(new IntPtr(p + 0x018)); // 02466A844078 0x18 Key                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.ValueType                                 = (ValueType)GetInt32(new IntPtr(p + 0x020)); // 02466A8440B8 0x20 ValueType                   ( 000186533D30 ModelEnumType ValueType ValueType ValueType Int32 )
+            value.Description                               = GetString(new IntPtr(p + 0x028)); // 02466A8440F8 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

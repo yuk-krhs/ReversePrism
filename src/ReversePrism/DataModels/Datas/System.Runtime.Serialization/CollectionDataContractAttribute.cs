@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 03C IsItemNameSetExplicitly                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 03D IsKeyNameSetExplicitly                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 03E IsValueNameSetExplicitly                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CollectionDataContractAttribute
+    public partial class CollectionDataContractAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Ns                                      { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CollectionDataContractAttribute();
+            var value   = new CollectionDataContractAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027004D5E108 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 027004D5E128 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.ItemName                                  = GetString(new IntPtr(p + 0x020)); // 027004D5E148 0x20 ItemName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.KeyName                                   = GetString(new IntPtr(p + 0x028)); // 027004D5E168 0x28 KeyName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValueName                                 = GetString(new IntPtr(p + 0x030)); // 027004D5E188 0x30 ValueName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsReference                               = GetBool(new IntPtr(p + 0x038)); // 027004D5E1A8 0x38 IsReference                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x039)); // 027004D5E1C8 0x39 IsNameSetExplicitly         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsNamespaceSetExplicitly                  = GetBool(new IntPtr(p + 0x03A)); // 027004D5E1E8 0x3A IsNamespaceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReferenceSetExplicitly                  = GetBool(new IntPtr(p + 0x03B)); // 027004D5E208 0x3B IsReferenceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsItemNameSetExplicitly                   = GetBool(new IntPtr(p + 0x03C)); // 027004D5E228 0x3C IsItemNameSetExplicitly     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsKeyNameSetExplicitly                    = GetBool(new IntPtr(p + 0x03D)); // 027004D5E248 0x3D IsKeyNameSetExplicitly      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsValueNameSetExplicitly                  = GetBool(new IntPtr(p + 0x03E)); // 027004D5E268 0x3E IsValueNameSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A4D9B050 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0245A4D9B070 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.ItemName                                  = GetString(new IntPtr(p + 0x020)); // 0245A4D9B090 0x20 ItemName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.KeyName                                   = GetString(new IntPtr(p + 0x028)); // 0245A4D9B0B0 0x28 KeyName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.ValueName                                 = GetString(new IntPtr(p + 0x030)); // 0245A4D9B0D0 0x30 ValueName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsReference                               = GetBool(new IntPtr(p + 0x038)); // 0245A4D9B0F0 0x38 IsReference                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x039)); // 0245A4D9B110 0x39 IsNameSetExplicitly         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsNamespaceSetExplicitly                  = GetBool(new IntPtr(p + 0x03A)); // 0245A4D9B130 0x3A IsNamespaceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReferenceSetExplicitly                  = GetBool(new IntPtr(p + 0x03B)); // 0245A4D9B150 0x3B IsReferenceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsItemNameSetExplicitly                   = GetBool(new IntPtr(p + 0x03C)); // 0245A4D9B170 0x3C IsItemNameSetExplicitly     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsKeyNameSetExplicitly                    = GetBool(new IntPtr(p + 0x03D)); // 0245A4D9B190 0x3D IsKeyNameSetExplicitly      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsValueNameSetExplicitly                  = GetBool(new IntPtr(p + 0x03E)); // 0245A4D9B1B0 0x3E IsValueNameSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

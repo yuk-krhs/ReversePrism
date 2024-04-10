@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C SilRnd                                   000186666050 ModelPrimitiveType float float float Single
     // 020 CyaPosi                                  0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 02C SilPosi                                  0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class CyaSilData
+    public partial class CyaSilData : DataModel
     {
         public bool                                     Enable                                  { get; set; }
         public int                                      Movpat                                  { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CyaSilData();
+            var value   = new CyaSilData() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0270035B68D0 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Movpat                                    = GetInt32(new IntPtr(p + 0x014)); // 0270035B68F0 0x14 Movpat                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Texpat                                    = GetInt32(new IntPtr(p + 0x018)); // 0270035B6910 0x18 Texpat                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SilRnd                                    = GetSingle(new IntPtr(p + 0x01C)); // 0270035B6930 0x1C SilRnd                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CyaPosi                                   = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0270035B6950 0x20 CyaPosi                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.SilPosi                                   = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0270035B6970 0x2C SilPosi                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0245A35B68D0 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Movpat                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A35B68F0 0x14 Movpat                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Texpat                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A35B6910 0x18 Texpat                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SilRnd                                    = GetSingle(new IntPtr(p + 0x01C)); // 0245A35B6930 0x1C SilRnd                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CyaPosi                                   = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0245A35B6950 0x20 CyaPosi                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.SilPosi                                   = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0245A35B6970 0x2C SilPosi                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 020 S_minDateOnly                            0001865BA6C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 028 MaxOffset                                00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 030 MinOffset                                00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
-    public partial class TimeZoneInfo
+    public partial class TimeZoneInfo : DataModel
     {
         public string                                   Id                                      { get; set; }
         public string                                   DisplayName                             { get; set; }
@@ -43,20 +43,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeZoneInfo();
+            var value   = new TimeZoneInfo() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 027003CA71E8 0x10 Id                          ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 027003CA7208 0x18 DisplayName                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.StandardDisplayName                       = GetString(new IntPtr(p + 0x020)); // 027003CA7228 0x20 StandardDisplayName         ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DaylightDisplayName                       = GetString(new IntPtr(p + 0x028)); // 027003CA7248 0x28 DaylightDisplayName         ( 000186672F10 ModelPrimitiveType string string string String )
-            value.BaseUtcOffset                             = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 027003CA7268 0x30 BaseUtcOffset               ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.SupportsDaylightSavingTime                = GetBool(new IntPtr(p + 0x038)); // 027003CA7288 0x38 SupportsDaylightSavingTime  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.AdjustmentRules                           = GetObjectList<AdjustmentRule>(new IntPtr(p + 0x040), ReversePrism.DataModels.AdjustmentRule.FromPointer); // 027003CA72A8 0x40 AdjustmentRules             ( 000185B87180 ModelClassListType AdjustmentRule[] AdjustmentRule[] List<AdjustmentRule> Pointer )
-            value.S_cachedData                              = GetObject<CachedData>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedData.FromPointer); // 027003CA72E8 0x10 S_cachedData                ( 000186609410 ModelClassType CachedData CachedData CachedData Pointer )
-            value.S_maxDateOnly                             = GetDateTime(new IntPtr(p + 0x018)); // 027003CA7308 0x18 S_maxDateOnly               ( 0001865BA6C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.S_minDateOnly                             = GetDateTime(new IntPtr(p + 0x020)); // 027003CA7328 0x20 S_minDateOnly               ( 0001865BA6C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.MaxOffset                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x028)); // 027003CA7348 0x28 MaxOffset                   ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.MinOffset                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 027003CA7368 0x30 MinOffset                   ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0245A3CA71E8 0x10 Id                          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 0245A3CA7208 0x18 DisplayName                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.StandardDisplayName                       = GetString(new IntPtr(p + 0x020)); // 0245A3CA7228 0x20 StandardDisplayName         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DaylightDisplayName                       = GetString(new IntPtr(p + 0x028)); // 0245A3CA7248 0x28 DaylightDisplayName         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.BaseUtcOffset                             = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 0245A3CA7268 0x30 BaseUtcOffset               ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.SupportsDaylightSavingTime                = GetBool(new IntPtr(p + 0x038)); // 0245A3CA7288 0x38 SupportsDaylightSavingTime  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.AdjustmentRules                           = GetObjectList<AdjustmentRule>(new IntPtr(p + 0x040), ReversePrism.DataModels.AdjustmentRule.FromPointer); // 0245A3CA72A8 0x40 AdjustmentRules             ( 000185B87180 ModelClassListType AdjustmentRule[] AdjustmentRule[] List<AdjustmentRule> Pointer )
+            value.S_cachedData                              = GetObject<CachedData>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedData.FromPointer); // 0245A3CA72E8 0x10 S_cachedData                ( 000186609410 ModelClassType CachedData CachedData CachedData Pointer )
+            value.S_maxDateOnly                             = GetDateTime(new IntPtr(p + 0x018)); // 0245A3CA7308 0x18 S_maxDateOnly               ( 0001865BA6C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.S_minDateOnly                             = GetDateTime(new IntPtr(p + 0x020)); // 0245A3CA7328 0x20 S_minDateOnly               ( 0001865BA6C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.MaxOffset                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x028)); // 0245A3CA7348 0x28 MaxOffset                   ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.MinOffset                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 0245A3CA7368 0x30 MinOffset                   ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
 
             return value;
         }

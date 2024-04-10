@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Pointer                                  IntPtr IL2CPP_TYPE_PTR
     // 018 UpdateAllocatorHelper0                   AllocatorHelper`1<RewindableAllocator> IL2CPP_TYPE_GENERICINST
     // 028 UpdateAllocatorHelper1                   AllocatorHelper`1<RewindableAllocator> IL2CPP_TYPE_GENERICINST
-    public partial class DoubleRewindableAllocators
+    public partial class DoubleRewindableAllocators : DataModel
     {
 
         public static DoubleRewindableAllocators? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleRewindableAllocators();
+            var value   = new DoubleRewindableAllocators() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EndGraphicsJobsAfterScriptUpdate
+    public partial class EndGraphicsJobsAfterScriptUpdate : DataModel
     {
 
         public static EndGraphicsJobsAfterScriptUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EndGraphicsJobsAfterScriptUpdate();
+            var value   = new EndGraphicsJobsAfterScriptUpdate() { Pointer= p0 };
 
 
             return value;

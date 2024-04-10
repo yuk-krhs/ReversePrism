@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 ProductRateListFieldNumber               int IL2CPP_TYPE_I4
     // 010 _repeated_productRateList_codec          FieldCodec`1<GashaProductRateStatus> IL2CPP_TYPE_GENERICINST
     // 020 ProductRateList                          000185CDC888 ModelClassListType RepeatedField`1<GashaProductRateStatus> RepeatedField`1<GashaProductRateStatus> List<GashaProductRateStatus> Pointer
-    public partial class GashaNormalRateStatus
+    public partial class GashaNormalRateStatus : DataModel
     {
         public List<GashaRarityRateStatus>?             RarityRateList                          { get; set; }
         public List<GashaProductRateStatus>?            ProductRateList                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaNormalRateStatus();
+            var value   = new GashaNormalRateStatus() { Pointer= p0 };
 
-            value.RarityRateList                            = GetObjectList<GashaRarityRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaRarityRateStatus.FromPointer); // 0270D1592410 0x18 RarityRateList              ( 000185CDCAD8 ModelClassListType RepeatedField`1<GashaRarityRateStatus> RepeatedField`1<GashaRarityRateStatus> List<GashaRarityRateStatus> Pointer )
-            value.ProductRateList                           = GetObjectList<GashaProductRateStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaProductRateStatus.FromPointer); // 0270D1592470 0x20 ProductRateList             ( 000185CDC888 ModelClassListType RepeatedField`1<GashaProductRateStatus> RepeatedField`1<GashaProductRateStatus> List<GashaProductRateStatus> Pointer )
+            value.RarityRateList                            = GetObjectList<GashaRarityRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaRarityRateStatus.FromPointer); // 024661533D80 0x18 RarityRateList              ( 000185CDCAD8 ModelClassListType RepeatedField`1<GashaRarityRateStatus> RepeatedField`1<GashaRarityRateStatus> List<GashaRarityRateStatus> Pointer )
+            value.ProductRateList                           = GetObjectList<GashaProductRateStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaProductRateStatus.FromPointer); // 024661533DE0 0x20 ProductRateList             ( 000185CDC888 ModelClassListType RepeatedField`1<GashaProductRateStatus> RepeatedField`1<GashaProductRateStatus> List<GashaProductRateStatus> Pointer )
 
             return value;
         }

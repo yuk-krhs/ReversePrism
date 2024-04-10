@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeviceLostEvent
+    public partial class DeviceLostEvent : DataModel
     {
 
         public static DeviceLostEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceLostEvent();
+            var value   = new DeviceLostEvent() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFirebaseAppUtils
+    public partial class IFirebaseAppUtils : DataModel
     {
 
         public static IFirebaseAppUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFirebaseAppUtils();
+            var value   = new IFirebaseAppUtils() { Pointer= p0 };
 
 
             return value;

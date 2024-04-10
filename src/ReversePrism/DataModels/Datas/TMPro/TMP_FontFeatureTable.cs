@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_GlyphPairAdjustmentRecords             000185D121A8 ModelClassListType List`1<TMP_GlyphPairAdjustmentRecord> List`1<TMP_GlyphPairAdjustmentRecord> List<TMP_GlyphPairAdjustmentRecord> Pointer
     // 018 m_GlyphPairAdjustmentRecordLookupDictionary Dictionary`2<uint, TMP_GlyphPairAdjustmentRecord> IL2CPP_TYPE_GENERICINST
-    public partial class TMP_FontFeatureTable
+    public partial class TMP_FontFeatureTable : DataModel
     {
         public List<TMP_GlyphPairAdjustmentRecord>?     M_GlyphPairAdjustmentRecords            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_FontFeatureTable();
+            var value   = new TMP_FontFeatureTable() { Pointer= p0 };
 
-            value.M_GlyphPairAdjustmentRecords              = GetObjectList<TMP_GlyphPairAdjustmentRecord>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_GlyphPairAdjustmentRecord.FromPointer); // 0270D09C01A8 0x10 M_GlyphPairAdjustmentRecords ( 000185D121A8 ModelClassListType List`1<TMP_GlyphPairAdjustmentRecord> List`1<TMP_GlyphPairAdjustmentRecord> List<TMP_GlyphPairAdjustmentRecord> Pointer )
+            value.M_GlyphPairAdjustmentRecords              = GetObjectList<TMP_GlyphPairAdjustmentRecord>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_GlyphPairAdjustmentRecord.FromPointer); // 0246609AF228 0x10 M_GlyphPairAdjustmentRecords ( 000185D121A8 ModelClassListType List`1<TMP_GlyphPairAdjustmentRecord> List`1<TMP_GlyphPairAdjustmentRecord> List<TMP_GlyphPairAdjustmentRecord> Pointer )
 
             return value;
         }

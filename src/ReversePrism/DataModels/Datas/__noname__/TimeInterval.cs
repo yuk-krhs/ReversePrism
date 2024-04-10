@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   TimeIntervalObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 lastTime                                 DateTimeOffset IL2CPP_TYPE_VALUETYPE
-    public partial class TimeInterval
+    public partial class TimeInterval : DataModel
     {
 
         public static TimeInterval? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeInterval();
+            var value   = new TimeInterval() { Pointer= p0 };
 
 
             return value;

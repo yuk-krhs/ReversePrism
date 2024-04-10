@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICrashlyticsForLegacy
+    public partial class ICrashlyticsForLegacy : DataModel
     {
 
         public static ICrashlyticsForLegacy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICrashlyticsForLegacy();
+            var value   = new ICrashlyticsForLegacy() { Pointer= p0 };
 
 
             return value;

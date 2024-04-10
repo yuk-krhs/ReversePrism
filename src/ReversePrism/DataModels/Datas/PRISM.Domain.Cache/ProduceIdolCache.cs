@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 produceIdols                             Dictionary`2<int, IProduceIdolStatus> IL2CPP_TYPE_GENERICINST
     // 018 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceIdolCache
+    public partial class ProduceIdolCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolCache();
+            var value   = new ProduceIdolCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 027004A89D28 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0245A4AE0708 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 kSize                                    int IL2CPP_TYPE_I4
     // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
     // 018 IdBuffer                                 00018669BCA0 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32
-    public partial class QueryUserIdCommand
+    public partial class QueryUserIdCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public <idBuffer>e__FixedBuffer                 IdBuffer                                { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueryUserIdCommand();
+            var value   = new QueryUserIdCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FC508 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 0270D77FC528 0x18 IdBuffer                    ( 00018669BCA0 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667854508 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 024667854528 0x18 IdBuffer                    ( 00018669BCA0 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
 
             return value;
         }

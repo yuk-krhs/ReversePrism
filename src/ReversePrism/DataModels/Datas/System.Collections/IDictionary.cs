@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDictionary
+    public partial class IDictionary : DataModel
     {
 
         public static IDictionary? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDictionary();
+            var value   = new IDictionary() { Pointer= p0 };
 
 
             return value;

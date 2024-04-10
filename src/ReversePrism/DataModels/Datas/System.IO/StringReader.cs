@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 S                                        000186671910 ModelPrimitiveType string string string String
     // 020 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StringReader
+    public partial class StringReader : DataModel
     {
         public string                                   S                                       { get; set; }
         public int                                      Pos                                     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringReader();
+            var value   = new StringReader() { Pointer= p0 };
 
-            value.S                                         = GetString(new IntPtr(p + 0x018)); // 027005FE4FA0 0x18 S                           ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 027005FE4FC0 0x20 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 027005FE4FE0 0x24 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.S                                         = GetString(new IntPtr(p + 0x018)); // 0245A5FAC668 0x18 S                           ( 000186671910 ModelPrimitiveType string string string String )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 0245A5FAC688 0x20 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 0245A5FAC6A8 0x24 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

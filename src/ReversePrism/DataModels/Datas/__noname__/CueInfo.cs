@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 048 Pos3dInfo                                00018653F280 ModelEnumType CuePos3dInfo CuePos3dInfo CuePos3dInfo Int32
     // 090 GameVariableInfo                         0001866D55C0 ModelEnumType GameVariableInfo GameVariableInfo GameVariableInfo Int32
     // 0A0 Volume                                   000186666050 ModelPrimitiveType float float float Single
-    public partial class CueInfo
+    public partial class CueInfo : DataModel
     {
         public int                                      Id                                      { get; set; }
         public CueType                                  Type                                    { get; set; }
@@ -53,26 +53,26 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CueInfo();
+            var value   = new CueInfo() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270D501A2F0 0x10 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Type                                      = (CueType)GetInt32(new IntPtr(p + 0x014)); // 0270D501A310 0x14 Type                        ( 00018653F780 ModelEnumType CueType CueType CueType Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D501A330 0x18 Name                        ( 000186675150 ModelPrimitiveType string string string String )
-            value.UserData                                  = GetString(new IntPtr(p + 0x020)); // 0270D501A350 0x20 UserData                    ( 000186675150 ModelPrimitiveType string string string String )
-            value.Length                                    = GetInt64(new IntPtr(p + 0x028)); // 0270D501A370 0x28 Length                      ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Categories                                = GetUInt16List(new IntPtr(p + 0x030)); // 0270D501A390 0x30 Categories                  ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
-            value.NumLimits                                 = GetInt16(new IntPtr(p + 0x038)); // 0270D501A3B0 0x38 NumLimits                   ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.NumBlocks                                 = GetUInt16(new IntPtr(p + 0x03A)); // 0270D501A3D0 0x3A NumBlocks                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.NumTracks                                 = GetUInt16(new IntPtr(p + 0x03C)); // 0270D501A3F0 0x3C NumTracks                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.NumRelatedWaveForms                       = GetUInt16(new IntPtr(p + 0x03E)); // 0270D501A410 0x3E NumRelatedWaveForms         ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Priority                                  = GetSByte(new IntPtr(p + 0x040)); // 0270D501A430 0x40 Priority                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.HeaderVisibility                          = GetSByte(new IntPtr(p + 0x041)); // 0270D501A450 0x41 HeaderVisibility            ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Ignore_player_parameter                   = GetSByte(new IntPtr(p + 0x042)); // 0270D501A470 0x42 Ignore_player_parameter     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Probability                               = GetSByte(new IntPtr(p + 0x043)); // 0270D501A490 0x43 Probability                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.PanType                                   = (PanType)GetInt32(new IntPtr(p + 0x044)); // 0270D501A4B0 0x44 PanType                     ( 000186540F20 ModelEnumType PanType PanType PanType Int32 )
-            value.Pos3dInfo                                 = (CuePos3dInfo)GetInt32(new IntPtr(p + 0x048)); // 0270D501A4D0 0x48 Pos3dInfo                   ( 00018653F280 ModelEnumType CuePos3dInfo CuePos3dInfo CuePos3dInfo Int32 )
-            value.GameVariableInfo                          = (GameVariableInfo)GetInt32(new IntPtr(p + 0x090)); // 0270D501A4F0 0x90 GameVariableInfo            ( 0001866D55C0 ModelEnumType GameVariableInfo GameVariableInfo GameVariableInfo Int32 )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x0A0)); // 0270D501A510 0xA0 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A729F658 0x10 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (CueType)GetInt32(new IntPtr(p + 0x014)); // 0245A729F678 0x14 Type                        ( 00018653F780 ModelEnumType CueType CueType CueType Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A729F698 0x18 Name                        ( 000186675150 ModelPrimitiveType string string string String )
+            value.UserData                                  = GetString(new IntPtr(p + 0x020)); // 0245A729F6B8 0x20 UserData                    ( 000186675150 ModelPrimitiveType string string string String )
+            value.Length                                    = GetInt64(new IntPtr(p + 0x028)); // 0245A729F6D8 0x28 Length                      ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Categories                                = GetUInt16List(new IntPtr(p + 0x030)); // 0245A729F6F8 0x30 Categories                  ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
+            value.NumLimits                                 = GetInt16(new IntPtr(p + 0x038)); // 0245A729F718 0x38 NumLimits                   ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.NumBlocks                                 = GetUInt16(new IntPtr(p + 0x03A)); // 0245A729F738 0x3A NumBlocks                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.NumTracks                                 = GetUInt16(new IntPtr(p + 0x03C)); // 0245A729F758 0x3C NumTracks                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.NumRelatedWaveForms                       = GetUInt16(new IntPtr(p + 0x03E)); // 0245A729F778 0x3E NumRelatedWaveForms         ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Priority                                  = GetSByte(new IntPtr(p + 0x040)); // 0245A729F798 0x40 Priority                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.HeaderVisibility                          = GetSByte(new IntPtr(p + 0x041)); // 0245A729F7B8 0x41 HeaderVisibility            ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Ignore_player_parameter                   = GetSByte(new IntPtr(p + 0x042)); // 0245A729F7D8 0x42 Ignore_player_parameter     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Probability                               = GetSByte(new IntPtr(p + 0x043)); // 0245A729F7F8 0x43 Probability                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.PanType                                   = (PanType)GetInt32(new IntPtr(p + 0x044)); // 0245A729F818 0x44 PanType                     ( 000186540F20 ModelEnumType PanType PanType PanType Int32 )
+            value.Pos3dInfo                                 = (CuePos3dInfo)GetInt32(new IntPtr(p + 0x048)); // 0245A729F838 0x48 Pos3dInfo                   ( 00018653F280 ModelEnumType CuePos3dInfo CuePos3dInfo CuePos3dInfo Int32 )
+            value.GameVariableInfo                          = (GameVariableInfo)GetInt32(new IntPtr(p + 0x090)); // 0245A729F858 0x90 GameVariableInfo            ( 0001866D55C0 ModelEnumType GameVariableInfo GameVariableInfo GameVariableInfo Int32 )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x0A0)); // 0245A729F878 0xA0 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

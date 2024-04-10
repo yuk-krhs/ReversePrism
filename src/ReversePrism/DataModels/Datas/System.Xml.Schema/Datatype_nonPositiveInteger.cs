@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 numeric10FacetsChecker                   FacetsChecker IL2CPP_TYPE_CLASS
-    public partial class Datatype_nonPositiveInteger
+    public partial class Datatype_nonPositiveInteger : DataModel
     {
 
         public static Datatype_nonPositiveInteger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_nonPositiveInteger();
+            var value   = new Datatype_nonPositiveInteger() { Pointer= p0 };
 
 
             return value;

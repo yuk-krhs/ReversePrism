@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 CatalogDBVersion                         string IL2CPP_TYPE_STRING
     // 000 CatalogDBVersionKey                      string IL2CPP_TYPE_STRING
     // 000 LocalAssetsRootName                      string IL2CPP_TYPE_STRING
-    public partial class CatalogDefinition
+    public partial class CatalogDefinition : DataModel
     {
 
         public static CatalogDefinition? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatalogDefinition();
+            var value   = new CatalogDefinition() { Pointer= p0 };
 
 
             return value;

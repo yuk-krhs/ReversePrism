@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 ScreenEdgeColorAdd                       string IL2CPP_TYPE_STRING
     // 000 ScreenEdgeColorAlphaBlend                string IL2CPP_TYPE_STRING
     // 000 ScreenEdgeColorMultiply                  string IL2CPP_TYPE_STRING
-    public partial class ScreenEdgeColorRenderer
+    public partial class ScreenEdgeColorRenderer : DataModel
     {
 
         public static ScreenEdgeColorRenderer? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenEdgeColorRenderer();
+            var value   = new ScreenEdgeColorRenderer() { Pointer= p0 };
 
 
             return value;

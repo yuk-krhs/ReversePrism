@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ChallengeTourId                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 SelectUnitIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 SelectStageIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LegacyChallengeTourUnitEditParameter
+    public partial class LegacyChallengeTourUnitEditParameter : DataModel
     {
         public int                                      ChallengeTourId                         { get; set; }
         public int                                      SelectUnitIndex                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyChallengeTourUnitEditParameter();
+            var value   = new LegacyChallengeTourUnitEditParameter() { Pointer= p0 };
 
-            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x010)); // 0270D5E3DBE0 0x10 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x014)); // 0270D5E3DC00 0x14 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x018)); // 0270D5E3DC20 0x18 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x010)); // 024665EAE358 0x10 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x014)); // 024665EAE378 0x14 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x018)); // 024665EAE398 0x18 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

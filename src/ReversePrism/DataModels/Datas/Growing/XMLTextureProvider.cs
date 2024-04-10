@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _textures                                Dictionary`2<string, Texture2D> IL2CPP_TYPE_GENERICINST
     // 018 RequestingUrlHashes                      000185D313A8 ModelClassListType List`1<TextureRequest> List`1<TextureRequest> List<TextureRequest> Pointer
-    public partial class XMLTextureProvider
+    public partial class XMLTextureProvider : DataModel
     {
         public List<TextureRequest>?                    RequestingUrlHashes                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLTextureProvider();
+            var value   = new XMLTextureProvider() { Pointer= p0 };
 
-            value.RequestingUrlHashes                       = GetObjectList<TextureRequest>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextureRequest.FromPointer); // 0270D4B5DA40 0x18 RequestingUrlHashes         ( 000185D313A8 ModelClassListType List`1<TextureRequest> List`1<TextureRequest> List<TextureRequest> Pointer )
+            value.RequestingUrlHashes                       = GetObjectList<TextureRequest>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextureRequest.FromPointer); // 024664BD1700 0x18 RequestingUrlHashes         ( 000185D313A8 ModelClassListType List`1<TextureRequest> List`1<TextureRequest> List<TextureRequest> Pointer )
 
             return value;
         }

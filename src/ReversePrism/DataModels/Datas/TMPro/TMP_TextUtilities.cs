@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 m_rectWorldCorners                       Vector3[] IL2CPP_TYPE_SZARRAY
     // 000 k_lookupStringL                          string IL2CPP_TYPE_STRING
     // 000 k_lookupStringU                          string IL2CPP_TYPE_STRING
-    public partial class TMP_TextUtilities
+    public partial class TMP_TextUtilities : DataModel
     {
 
         public static TMP_TextUtilities? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_TextUtilities();
+            var value   = new TMP_TextUtilities() { Pointer= p0 };
 
 
             return value;

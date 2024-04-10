@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AutoResisterRendererResourceFactories
+    public partial class AutoResisterRendererResourceFactories : DataModel
     {
 
         public static AutoResisterRendererResourceFactories? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AutoResisterRendererResourceFactories();
+            var value   = new AutoResisterRendererResourceFactories() { Pointer= p0 };
 
 
             return value;

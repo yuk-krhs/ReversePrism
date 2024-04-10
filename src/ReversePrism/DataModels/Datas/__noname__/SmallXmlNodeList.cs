@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 field                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class SmallXmlNodeList
+    public partial class SmallXmlNodeList : DataModel
     {
 
         public static SmallXmlNodeList? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SmallXmlNodeList();
+            var value   = new SmallXmlNodeList() { Pointer= p0 };
 
 
             return value;

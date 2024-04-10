@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 DrawProductList                          000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer
     // 000 GashaStateFieldNumber                    int IL2CPP_TYPE_I4
     // 030 GashaState                               00018661DC20 ModelEnumType GashaState GashaState GashaState Int32
-    public partial class RetryGashaCommitReply
+    public partial class RetryGashaCommitReply : DataModel
     {
         public GashaStatus?                             Gasha                                   { get; set; }
         public HavingProductGroupStatus?                HavingGroup                             { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RetryGashaCommitReply();
+            var value   = new RetryGashaCommitReply() { Pointer= p0 };
 
-            value.Gasha                                     = GetObject<GashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaStatus.FromPointer); // 0270D1A211B8 0x18 Gasha                       ( 00018661E310 ModelClassType GashaStatus GashaStatus GashaStatus Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D1A211F8 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
-            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 0270D1A21258 0x28 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
-            value.GashaState                                = (GashaState)GetInt32(new IntPtr(p + 0x030)); // 0270D1A21298 0x30 GashaState                  ( 00018661DC20 ModelEnumType GashaState GashaState GashaState Int32 )
+            value.Gasha                                     = GetObject<GashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaStatus.FromPointer); // 0246619B1550 0x18 Gasha                       ( 00018661E310 ModelClassType GashaStatus GashaStatus GashaStatus Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0246619B1590 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 0246619B15F0 0x28 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
+            value.GashaState                                = (GashaState)GetInt32(new IntPtr(p + 0x030)); // 0246619B1630 0x30 GashaState                  ( 00018661DC20 ModelEnumType GashaState GashaState GashaState Int32 )
 
             return value;
         }

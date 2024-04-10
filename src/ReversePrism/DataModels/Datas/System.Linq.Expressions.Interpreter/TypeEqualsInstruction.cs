@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 TypeEqualsInstruction IL2CPP_TYPE_CLASS
-    public partial class TypeEqualsInstruction
+    public partial class TypeEqualsInstruction : DataModel
     {
 
         public static TypeEqualsInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeEqualsInstruction();
+            var value   = new TypeEqualsInstruction() { Pointer= p0 };
 
 
             return value;

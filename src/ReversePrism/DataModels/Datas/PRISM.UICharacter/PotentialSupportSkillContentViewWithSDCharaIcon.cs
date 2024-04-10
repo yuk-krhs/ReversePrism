@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 SdCharaIcons                             000185CC03F8 ModelClassListType GameObjectImagePair[] GameObjectImagePair[] List<GameObjectImagePair> Pointer
-    public partial class PotentialSupportSkillContentViewWithSDCharaIcon
+    public partial class PotentialSupportSkillContentViewWithSDCharaIcon : DataModel
     {
         public List<GameObjectImagePair>?               SdCharaIcons                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PotentialSupportSkillContentViewWithSDCharaIcon();
+            var value   = new PotentialSupportSkillContentViewWithSDCharaIcon() { Pointer= p0 };
 
-            value.SdCharaIcons                              = GetObjectList<GameObjectImagePair>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObjectImagePair.FromPointer); // 0270D5472B60 0x38 SdCharaIcons                ( 000185CC03F8 ModelClassListType GameObjectImagePair[] GameObjectImagePair[] List<GameObjectImagePair> Pointer )
+            value.SdCharaIcons                              = GetObjectList<GameObjectImagePair>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObjectImagePair.FromPointer); // 0246654E5700 0x38 SdCharaIcons                ( 000185CC03F8 ModelClassListType GameObjectImagePair[] GameObjectImagePair[] List<GameObjectImagePair> Pointer )
 
             return value;
         }

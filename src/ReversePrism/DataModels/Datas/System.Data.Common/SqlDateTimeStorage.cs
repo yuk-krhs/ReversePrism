@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185CA5658 ModelEnumListType SqlDateTime[] SqlDateTime[] List<SqlDateTime> Pointer
-    public partial class SqlDateTimeStorage
+    public partial class SqlDateTimeStorage : DataModel
     {
         public List<SqlDateTime>?                       Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlDateTimeStorage();
+            var value   = new SqlDateTimeStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlDateTime>(new IntPtr(p + 0x050)); // 0270D89EAE50 0x50 Values                      ( 000185CA5658 ModelEnumListType SqlDateTime[] SqlDateTime[] List<SqlDateTime> Pointer )
+            value.Values                                    = GetEnumList<SqlDateTime>(new IntPtr(p + 0x050)); // 024668A45A58 0x50 Values                      ( 000185CA5658 ModelEnumListType SqlDateTime[] SqlDateTime[] List<SqlDateTime> Pointer )
 
             return value;
         }

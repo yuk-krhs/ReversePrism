@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 StreamType                               000186549380 ModelEnumType StreamType StreamType StreamType Int32
     // 014 EnableSpatialAudio                       000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class PlatformConfigAndroid
+    public partial class PlatformConfigAndroid : DataModel
     {
         public StreamType                               StreamType                              { get; set; }
         public bool                                     EnableSpatialAudio                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlatformConfigAndroid();
+            var value   = new PlatformConfigAndroid() { Pointer= p0 };
 
-            value.StreamType                                = (StreamType)GetInt32(new IntPtr(p + 0x010)); // 0270DAC2A510 0x10 StreamType                  ( 000186549380 ModelEnumType StreamType StreamType StreamType Int32 )
-            value.EnableSpatialAudio                        = GetBool(new IntPtr(p + 0x014)); // 0270DAC2A530 0x14 EnableSpatialAudio          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.StreamType                                = (StreamType)GetInt32(new IntPtr(p + 0x010)); // 02466AC82510 0x10 StreamType                  ( 000186549380 ModelEnumType StreamType StreamType StreamType Int32 )
+            value.EnableSpatialAudio                        = GetBool(new IntPtr(p + 0x014)); // 02466AC82530 0x14 EnableSpatialAudio          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

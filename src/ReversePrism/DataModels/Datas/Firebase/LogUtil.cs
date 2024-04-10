@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _instance                                LogUtil IL2CPP_TYPE_CLASS
     // 008 InitializeLoggingLock                    <object> IL2CPP_TYPE_OBJECT
     // 010 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LogUtil
+    public partial class LogUtil : DataModel
     {
         public bool                                     Disposed                                { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogUtil();
+            var value   = new LogUtil() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0270DB7454A8 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 02466B7D9768 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

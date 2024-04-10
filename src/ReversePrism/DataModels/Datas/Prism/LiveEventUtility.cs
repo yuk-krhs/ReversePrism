@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 EventTitleTextKey                        string IL2CPP_TYPE_STRING
     // 008 ChallengeTourTitleTextKey                string IL2CPP_TYPE_STRING
-    public partial class LiveEventUtility
+    public partial class LiveEventUtility : DataModel
     {
 
         public static LiveEventUtility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventUtility();
+            var value   = new LiveEventUtility() { Pointer= p0 };
 
 
             return value;

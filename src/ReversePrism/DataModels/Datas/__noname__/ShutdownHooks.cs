@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 staticLock                               <object> IL2CPP_TYPE_OBJECT
     // 008 hooksRegistered                          bool IL2CPP_TYPE_BOOLEAN
-    public partial class ShutdownHooks
+    public partial class ShutdownHooks : DataModel
     {
 
         public static ShutdownHooks? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShutdownHooks();
+            var value   = new ShutdownHooks() { Pointer= p0 };
 
 
             return value;

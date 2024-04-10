@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 IdolBaseListFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_idolBaseList_codec             FieldCodec`1<IdolBaseStatus> IL2CPP_TYPE_GENERICINST
     // 020 IdolBaseList                             000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer
-    public partial class PvpFesUnitStatus
+    public partial class PvpFesUnitStatus : DataModel
     {
         public FesUnitStatus?                           FesUnit                                 { get; set; }
         public List<IdolBaseStatus>?                    IdolBaseList                            { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpFesUnitStatus();
+            var value   = new PvpFesUnitStatus() { Pointer= p0 };
 
-            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 0270D141F6F8 0x18 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
-            value.IdolBaseList                              = GetObjectList<IdolBaseStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 0270D141F758 0x20 IdolBaseList                ( 000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer )
+            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 02466138F960 0x18 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
+            value.IdolBaseList                              = GetObjectList<IdolBaseStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 02466138F9C0 0x20 IdolBaseList                ( 000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer )
 
             return value;
         }

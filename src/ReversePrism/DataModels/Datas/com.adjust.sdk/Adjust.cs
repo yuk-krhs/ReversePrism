@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
     // 092 AdServicesInfoReading                    000186595960 ModelPrimitiveType bool bool bool Bool
     // 093 IdfaInfoReading                          000186595960 ModelPrimitiveType bool bool bool Bool
     // 094 SkAdNetworkHandling                      000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class Adjust
+    public partial class Adjust : DataModel
     {
         public bool                                     StartManually                           { get; set; }
         public string                                   AppToken                                { get; set; }
@@ -70,33 +70,33 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Adjust();
+            var value   = new Adjust() { Pointer= p0 };
 
-            value.StartManually                             = GetBool(new IntPtr(p + 0x020)); // 0270043756D0 0x20 StartManually               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AppToken                                  = GetString(new IntPtr(p + 0x028)); // 0270043756F0 0x28 AppToken                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Environment                               = (AdjustEnvironment)GetInt32(new IntPtr(p + 0x030)); // 027004375710 0x30 Environment                 ( 00018668F140 ModelEnumType AdjustEnvironment AdjustEnvironment AdjustEnvironment Int32 )
-            value.LogLevel                                  = (AdjustLogLevel)GetInt32(new IntPtr(p + 0x034)); // 027004375730 0x34 LogLevel                    ( 000186690780 ModelEnumType AdjustLogLevel AdjustLogLevel AdjustLogLevel Int32 )
-            value.EventBuffering                            = GetBool(new IntPtr(p + 0x038)); // 027004375750 0x38 EventBuffering              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SendInBackground                          = GetBool(new IntPtr(p + 0x039)); // 027004375770 0x39 SendInBackground            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LaunchDeferredDeeplink                    = GetBool(new IntPtr(p + 0x03A)); // 027004375790 0x3A LaunchDeferredDeeplink      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedsCost                                 = GetBool(new IntPtr(p + 0x03B)); // 0270043757B0 0x3B NeedsCost                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CoppaCompliant                            = GetBool(new IntPtr(p + 0x03C)); // 0270043757D0 0x3C CoppaCompliant              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LinkMe                                    = GetBool(new IntPtr(p + 0x03D)); // 0270043757F0 0x3D LinkMe                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultTracker                            = GetString(new IntPtr(p + 0x040)); // 027004375810 0x40 DefaultTracker              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.UrlStrategy                               = (AdjustUrlStrategy)GetInt32(new IntPtr(p + 0x048)); // 027004375830 0x48 UrlStrategy                 ( 000186692250 ModelEnumType AdjustUrlStrategy AdjustUrlStrategy AdjustUrlStrategy Int32 )
-            value.StartDelay                                = GetDouble(new IntPtr(p + 0x050)); // 027004375850 0x50 StartDelay                  ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.SecretId                                  = GetInt64(new IntPtr(p + 0x058)); // 027004375870 0x58 SecretId                    ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Info1                                     = GetInt64(new IntPtr(p + 0x060)); // 027004375890 0x60 Info1                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Info2                                     = GetInt64(new IntPtr(p + 0x068)); // 0270043758B0 0x68 Info2                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Info3                                     = GetInt64(new IntPtr(p + 0x070)); // 0270043758D0 0x70 Info3                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Info4                                     = GetInt64(new IntPtr(p + 0x078)); // 0270043758F0 0x78 Info4                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.PreinstallTracking                        = GetBool(new IntPtr(p + 0x080)); // 027004375910 0x80 PreinstallTracking          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PreinstallFilePath                        = GetString(new IntPtr(p + 0x088)); // 027004375930 0x88 PreinstallFilePath          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.PlayStoreKidsApp                          = GetBool(new IntPtr(p + 0x090)); // 027004375950 0x90 PlayStoreKidsApp            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IadInfoReading                            = GetBool(new IntPtr(p + 0x091)); // 027004375970 0x91 IadInfoReading              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AdServicesInfoReading                     = GetBool(new IntPtr(p + 0x092)); // 027004375990 0x92 AdServicesInfoReading       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IdfaInfoReading                           = GetBool(new IntPtr(p + 0x093)); // 0270043759B0 0x93 IdfaInfoReading             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SkAdNetworkHandling                       = GetBool(new IntPtr(p + 0x094)); // 0270043759D0 0x94 SkAdNetworkHandling         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.StartManually                             = GetBool(new IntPtr(p + 0x020)); // 0245A44009E0 0x20 StartManually               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AppToken                                  = GetString(new IntPtr(p + 0x028)); // 0245A4400A00 0x28 AppToken                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Environment                               = (AdjustEnvironment)GetInt32(new IntPtr(p + 0x030)); // 0245A4400A20 0x30 Environment                 ( 00018668F140 ModelEnumType AdjustEnvironment AdjustEnvironment AdjustEnvironment Int32 )
+            value.LogLevel                                  = (AdjustLogLevel)GetInt32(new IntPtr(p + 0x034)); // 0245A4400A40 0x34 LogLevel                    ( 000186690780 ModelEnumType AdjustLogLevel AdjustLogLevel AdjustLogLevel Int32 )
+            value.EventBuffering                            = GetBool(new IntPtr(p + 0x038)); // 0245A4400A60 0x38 EventBuffering              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SendInBackground                          = GetBool(new IntPtr(p + 0x039)); // 0245A4400A80 0x39 SendInBackground            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.LaunchDeferredDeeplink                    = GetBool(new IntPtr(p + 0x03A)); // 0245A4400AA0 0x3A LaunchDeferredDeeplink      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NeedsCost                                 = GetBool(new IntPtr(p + 0x03B)); // 0245A4400AC0 0x3B NeedsCost                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CoppaCompliant                            = GetBool(new IntPtr(p + 0x03C)); // 0245A4400AE0 0x3C CoppaCompliant              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.LinkMe                                    = GetBool(new IntPtr(p + 0x03D)); // 0245A4400B00 0x3D LinkMe                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultTracker                            = GetString(new IntPtr(p + 0x040)); // 0245A4400B20 0x40 DefaultTracker              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.UrlStrategy                               = (AdjustUrlStrategy)GetInt32(new IntPtr(p + 0x048)); // 0245A4400B40 0x48 UrlStrategy                 ( 000186692250 ModelEnumType AdjustUrlStrategy AdjustUrlStrategy AdjustUrlStrategy Int32 )
+            value.StartDelay                                = GetDouble(new IntPtr(p + 0x050)); // 0245A4400B60 0x50 StartDelay                  ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.SecretId                                  = GetInt64(new IntPtr(p + 0x058)); // 0245A4400B80 0x58 SecretId                    ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Info1                                     = GetInt64(new IntPtr(p + 0x060)); // 0245A4400BA0 0x60 Info1                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Info2                                     = GetInt64(new IntPtr(p + 0x068)); // 0245A4400BC0 0x68 Info2                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Info3                                     = GetInt64(new IntPtr(p + 0x070)); // 0245A4400BE0 0x70 Info3                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Info4                                     = GetInt64(new IntPtr(p + 0x078)); // 0245A4400C00 0x78 Info4                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.PreinstallTracking                        = GetBool(new IntPtr(p + 0x080)); // 0245A4400C20 0x80 PreinstallTracking          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.PreinstallFilePath                        = GetString(new IntPtr(p + 0x088)); // 0245A4400C40 0x88 PreinstallFilePath          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.PlayStoreKidsApp                          = GetBool(new IntPtr(p + 0x090)); // 0245A4400C60 0x90 PlayStoreKidsApp            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IadInfoReading                            = GetBool(new IntPtr(p + 0x091)); // 0245A4400C80 0x91 IadInfoReading              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AdServicesInfoReading                     = GetBool(new IntPtr(p + 0x092)); // 0245A4400CA0 0x92 AdServicesInfoReading       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IdfaInfoReading                           = GetBool(new IntPtr(p + 0x093)); // 0245A4400CC0 0x93 IdfaInfoReading             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SkAdNetworkHandling                       = GetBool(new IntPtr(p + 0x094)); // 0245A4400CE0 0x94 SkAdNetworkHandling         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

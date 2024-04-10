@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 handlers                                 Dictionary`2<Type, INumberHandler> IL2CPP_TYPE_GENERICINST
-    public partial class NumberHandlers
+    public partial class NumberHandlers : DataModel
     {
 
         public static NumberHandlers? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NumberHandlers();
+            var value   = new NumberHandlers() { Pointer= p0 };
 
 
             return value;

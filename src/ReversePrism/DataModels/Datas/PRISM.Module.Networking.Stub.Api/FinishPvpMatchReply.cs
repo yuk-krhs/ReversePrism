@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
     // 030 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FinishPvpMatchReply
+    public partial class FinishPvpMatchReply : DataModel
     {
         public PvpMatchResultStatus?                    MatchResult                             { get; set; }
         public List<ProductWithAmountStatus>?           HighestRankUpdateRewardList             { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishPvpMatchReply();
+            var value   = new FinishPvpMatchReply() { Pointer= p0 };
 
-            value.MatchResult                               = GetObject<PvpMatchResultStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchResultStatus.FromPointer); // 0270D27419A8 0x18 MatchResult                 ( 0001865EA090 ModelClassType PvpMatchResultStatus PvpMatchResultStatus PvpMatchResultStatus Pointer )
-            value.HighestRankUpdateRewardList               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D2741A08 0x20 HighestRankUpdateRewardList ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D2741A48 0x28 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x030)); // 0270D2741A88 0x30 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MatchResult                               = GetObject<PvpMatchResultStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchResultStatus.FromPointer); // 0246626BA4E0 0x18 MatchResult                 ( 0001865EA090 ModelClassType PvpMatchResultStatus PvpMatchResultStatus PvpMatchResultStatus Pointer )
+            value.HighestRankUpdateRewardList               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246626BA540 0x20 HighestRankUpdateRewardList ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0246626BA580 0x28 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x030)); // 0246626BA5C0 0x30 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

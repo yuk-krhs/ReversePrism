@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 onFailure                                Subject`1<IProduceFailureResultReply> IL2CPP_TYPE_GENERICINST
     // 020 <OnExecuteAudition>k__BackingField       Func`2<IStartAuditionReply, IInGameResultStatus> IL2CPP_TYPE_GENERICINST
     // 028 <OnExecScenarioAsync>k__BackingField     Func`4<ProduceNextOrderType, IProduceBaseInfoStatus, CancellationToken, UniTask`1<ValueTuple`2<ProduceNextOrderType, IProduceBaseInfoStatus>>> IL2CPP_TYPE_GENERICINST
-    public partial class AuditionAutoExecModel
+    public partial class AuditionAutoExecModel : DataModel
     {
         public ProduceService?                          Service                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuditionAutoExecModel();
+            var value   = new AuditionAutoExecModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 0270DADF3170 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
+            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 02466AE4B170 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
 
             return value;
         }

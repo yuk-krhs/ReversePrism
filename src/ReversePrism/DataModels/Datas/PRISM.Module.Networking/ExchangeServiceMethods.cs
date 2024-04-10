@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 078 GetExchangeShinyPartyTokenList           Method`2<IGetExchangeShinyPartyTokenListArgs, IGetExchangeShinyPartyTokenListReply> IL2CPP_TYPE_GENERICINST
     // 090 ExchangeShinyPartyToken                  Method`2<IExchangeShinyPartyTokenArgs, IExchangeShinyPartyTokenReply> IL2CPP_TYPE_GENERICINST
     // 0A8 GetExchangeAvailableShinyPartyTokenList  Method`2<IGetExchangeAvailableShinyPartyTokenListArgs, IGetExchangeAvailableShinyPartyTokenListReply> IL2CPP_TYPE_GENERICINST
-    public partial class ExchangeServiceMethods
+    public partial class ExchangeServiceMethods : DataModel
     {
 
         public static ExchangeServiceMethods? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeServiceMethods();
+            var value   = new ExchangeServiceMethods() { Pointer= p0 };
 
 
             return value;

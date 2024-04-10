@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 LegacyShaderTagIds                       List`1<ShaderTagId> IL2CPP_TYPE_GENERICINST
     // 008 ErrorMaterial                            Material IL2CPP_TYPE_CLASS
-    public partial class DrawUnsupportedPass
+    public partial class DrawUnsupportedPass : DataModel
     {
 
         public static DrawUnsupportedPass? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawUnsupportedPass();
+            var value   = new DrawUnsupportedPass() { Pointer= p0 };
 
 
             return value;

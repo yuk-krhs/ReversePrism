@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LowMemoryCallback
+    public partial class LowMemoryCallback : DataModel
     {
 
         public static LowMemoryCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LowMemoryCallback();
+            var value   = new LowMemoryCallback() { Pointer= p0 };
 
 
             return value;

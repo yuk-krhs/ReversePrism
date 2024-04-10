@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 CloseTime                                000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 038 TourPopupViewModel                       0001865B1980 ModelClassType ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel Pointer
     // 040 LivePopupViewModel                       0001865AFCF0 ModelClassType ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel Pointer
-    public partial class ProfileEventArchiveInfoPopupViewModel
+    public partial class ProfileEventArchiveInfoPopupViewModel : DataModel
     {
         public int                                      EventId                                 { get; set; }
         public ProfileEventType                         EventType                               { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileEventArchiveInfoPopupViewModel();
+            var value   = new ProfileEventArchiveInfoPopupViewModel() { Pointer= p0 };
 
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D5599F68 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x014)); // 0270D5599F88 0x14 EventType                   ( 000186611CA0 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
-            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x018)); // 0270D5599FA8 0x18 OpenTime                    ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.CloseTime                                 = GetDateTime(new IntPtr(p + 0x028)); // 0270D5599FC8 0x28 CloseTime                   ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.TourPopupViewModel                        = GetObject<ProfileEventArchiveInfoTourPopupViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProfileEventArchiveInfoTourPopupViewModel.FromPointer); // 0270D5599FE8 0x38 TourPopupViewModel          ( 0001865B1980 ModelClassType ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel Pointer )
-            value.LivePopupViewModel                        = GetObject<ProfileEventArchiveInfoLivePopupViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileEventArchiveInfoLivePopupViewModel.FromPointer); // 0270D559A008 0x40 LivePopupViewModel          ( 0001865AFCF0 ModelClassType ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel Pointer )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 02466560B268 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x014)); // 02466560B288 0x14 EventType                   ( 000186611CA0 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
+            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x018)); // 02466560B2A8 0x18 OpenTime                    ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.CloseTime                                 = GetDateTime(new IntPtr(p + 0x028)); // 02466560B2C8 0x28 CloseTime                   ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.TourPopupViewModel                        = GetObject<ProfileEventArchiveInfoTourPopupViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProfileEventArchiveInfoTourPopupViewModel.FromPointer); // 02466560B2E8 0x38 TourPopupViewModel          ( 0001865B1980 ModelClassType ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel ProfileEventArchiveInfoTourPopupViewModel Pointer )
+            value.LivePopupViewModel                        = GetObject<ProfileEventArchiveInfoLivePopupViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileEventArchiveInfoLivePopupViewModel.FromPointer); // 02466560B308 0x40 LivePopupViewModel          ( 0001865AFCF0 ModelClassType ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel ProfileEventArchiveInfoLivePopupViewModel Pointer )
 
             return value;
         }

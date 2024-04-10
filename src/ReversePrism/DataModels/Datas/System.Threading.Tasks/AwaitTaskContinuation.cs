@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_capturedContext                        0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
     // 018 M_action                                 00018667A860 ModelClassType Action Action Action Pointer
     // 000 s_invokeActionCallback                   ContextCallback IL2CPP_TYPE_CLASS
-    public partial class AwaitTaskContinuation
+    public partial class AwaitTaskContinuation : DataModel
     {
         public ExecutionContext?                        M_capturedContext                       { get; set; }
         public Action?                                  M_action                                { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AwaitTaskContinuation();
+            var value   = new AwaitTaskContinuation() { Pointer= p0 };
 
-            value.M_capturedContext                         = GetObject<ExecutionContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0270D0EE1E98 0x10 M_capturedContext           ( 0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.M_action                                  = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270D0EE1EB8 0x18 M_action                    ( 00018667A860 ModelClassType Action Action Action Pointer )
+            value.M_capturedContext                         = GetObject<ExecutionContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0245A4157ED0 0x10 M_capturedContext           ( 0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.M_action                                  = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A4157EF0 0x18 M_action                    ( 00018667A860 ModelClassType Action Action Action Pointer )
 
             return value;
         }

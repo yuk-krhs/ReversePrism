@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ArrayListDebugView
+    public partial class ArrayListDebugView : DataModel
     {
 
         public static ArrayListDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArrayListDebugView();
+            var value   = new ArrayListDebugView() { Pointer= p0 };
 
 
             return value;

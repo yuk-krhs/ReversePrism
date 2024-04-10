@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 isConfigured                             bool IL2CPP_TYPE_BOOLEAN
     // 005 enabledMultithreadedRendering            bool IL2CPP_TYPE_BOOLEAN
     // 008 renderingEventOffset                     int IL2CPP_TYPE_I4
-    public partial class CriManaPlugin
+    public partial class CriManaPlugin : DataModel
     {
 
         public static CriManaPlugin? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriManaPlugin();
+            var value   = new CriManaPlugin() { Pointer= p0 };
 
 
             return value;

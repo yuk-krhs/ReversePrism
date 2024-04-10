@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JValueDynamicProxy
+    public partial class JValueDynamicProxy : DataModel
     {
 
         public static JValueDynamicProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JValueDynamicProxy();
+            var value   = new JValueDynamicProxy() { Pointer= p0 };
 
 
             return value;

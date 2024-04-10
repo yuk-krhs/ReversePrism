@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_DefaultShaderName                      string IL2CPP_TYPE_STRING
     // 008 k_DefaultWorldSpaceShaderName            string IL2CPP_TYPE_STRING
-    public partial class UIRUtility
+    public partial class UIRUtility : DataModel
     {
 
         public static UIRUtility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRUtility();
+            var value   = new UIRUtility() { Pointer= p0 };
 
 
             return value;

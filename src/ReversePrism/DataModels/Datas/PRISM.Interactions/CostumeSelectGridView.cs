@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 CellPrefab                               000186632570 ModelClassType CostumeSelectGridViewCell CostumeSelectGridViewCell CostumeSelectGridViewCell Pointer
     // 098 EmptyView                                0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class CostumeSelectGridView
+    public partial class CostumeSelectGridView : DataModel
     {
         public CostumeSelectGridViewCell?               CellPrefab                              { get; set; }
         public GameObject?                              EmptyView                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeSelectGridView();
+            var value   = new CostumeSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<CostumeSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.CostumeSelectGridViewCell.FromPointer); // 0270DA2A6B50 0x90 CellPrefab                  ( 000186632570 ModelClassType CostumeSelectGridViewCell CostumeSelectGridViewCell CostumeSelectGridViewCell Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2A6B70 0x98 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CellPrefab                                = GetObject<CostumeSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.CostumeSelectGridViewCell.FromPointer); // 02466A2FA138 0x90 CellPrefab                  ( 000186632570 ModelClassType CostumeSelectGridViewCell CostumeSelectGridViewCell CostumeSelectGridViewCell Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 02466A2FA158 0x98 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstGashaCompensationTicketFormatter
+    public partial class MstGashaCompensationTicketFormatter : DataModel
     {
 
         public static MstGashaCompensationTicketFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstGashaCompensationTicketFormatter();
+            var value   = new MstGashaCompensationTicketFormatter() { Pointer= p0 };
 
 
             return value;

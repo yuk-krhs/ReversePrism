@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ScoreUpRate                              0001866656B0 ModelPrimitiveType float float float Single
-    public partial class LongScoreUpSkillEffect
+    public partial class LongScoreUpSkillEffect : DataModel
     {
         public float                                    ScoreUpRate                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LongScoreUpSkillEffect();
+            var value   = new LongScoreUpSkillEffect() { Pointer= p0 };
 
-            value.ScoreUpRate                               = GetSingle(new IntPtr(p + 0x020)); // 0270D4F8A4F8 0x20 ScoreUpRate                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScoreUpRate                               = GetSingle(new IntPtr(p + 0x020)); // 024665011E68 0x20 ScoreUpRate                 ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

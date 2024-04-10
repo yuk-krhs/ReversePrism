@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class EventScheduleReflection
+    public partial class EventScheduleReflection : DataModel
     {
 
         public static EventScheduleReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventScheduleReflection();
+            var value   = new EventScheduleReflection() { Pointer= p0 };
 
 
             return value;

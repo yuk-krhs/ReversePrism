@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IsReadOnlyAttribute
+    public partial class IsReadOnlyAttribute : DataModel
     {
 
         public static IsReadOnlyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsReadOnlyAttribute();
+            var value   = new IsReadOnlyAttribute() { Pointer= p0 };
 
 
             return value;

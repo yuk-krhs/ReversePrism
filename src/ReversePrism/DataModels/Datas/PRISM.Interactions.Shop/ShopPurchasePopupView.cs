@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 customPopup                              AssetCollection`1<PopupContentBase> IL2CPP_TYPE_GENERICINST
     // 028 ViewModel                                000186774A10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer
-    public partial class ShopPurchasePopupView
+    public partial class ShopPurchasePopupView : DataModel
     {
         public ShopViewModel?                           ViewModel                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopPurchasePopupView();
+            var value   = new ShopPurchasePopupView() { Pointer= p0 };
 
-            value.ViewModel                                 = GetObject<ShopViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopViewModel.FromPointer); // 0270DB7BF148 0x28 ViewModel                   ( 000186774A10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer )
+            value.ViewModel                                 = GetObject<ShopViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopViewModel.FromPointer); // 02466B857098 0x28 ViewModel                   ( 000186774A10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer )
 
             return value;
         }

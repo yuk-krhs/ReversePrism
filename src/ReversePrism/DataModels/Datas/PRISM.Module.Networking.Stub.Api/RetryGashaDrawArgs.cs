@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 GashaId                                  000186671910 ModelPrimitiveType string string string String
     // 000 GashaPriceIdFieldNumber                  int IL2CPP_TYPE_I4
     // 020 GashaPriceId                             000186671910 ModelPrimitiveType string string string String
-    public partial class RetryGashaDrawArgs
+    public partial class RetryGashaDrawArgs : DataModel
     {
         public string                                   GashaId                                 { get; set; }
         public string                                   GashaPriceId                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RetryGashaDrawArgs();
+            var value   = new RetryGashaDrawArgs() { Pointer= p0 };
 
-            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 0270D1A21D68 0x18 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.GashaPriceId                              = GetString(new IntPtr(p + 0x020)); // 0270D1A21DA8 0x20 GashaPriceId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 0246619B2100 0x18 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.GashaPriceId                              = GetString(new IntPtr(p + 0x020)); // 0246619B2140 0x20 GashaPriceId                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

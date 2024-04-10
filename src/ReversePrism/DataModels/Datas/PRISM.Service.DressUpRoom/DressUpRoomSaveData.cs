@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 SelectedCharacterInfoId                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 CostumeType                              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C IsShowUnlockedCostumeOnly                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DressUpRoomSaveData
+    public partial class DressUpRoomSaveData : DataModel
     {
         public bool                                     Saved                                   { get; set; }
         public int                                      SelectedCharacterInfoId                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressUpRoomSaveData();
+            var value   = new DressUpRoomSaveData() { Pointer= p0 };
 
-            value.Saved                                     = GetBool(new IntPtr(p + 0x010)); // 027003A6B208 0x10 Saved                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x014)); // 027003A6B228 0x14 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CostumeType                               = GetInt32(new IntPtr(p + 0x018)); // 027003A6B248 0x18 CostumeType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsShowUnlockedCostumeOnly                 = GetBool(new IntPtr(p + 0x01C)); // 027003A6B268 0x1C IsShowUnlockedCostumeOnly   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Saved                                     = GetBool(new IntPtr(p + 0x010)); // 0245A3A76140 0x10 Saved                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x014)); // 0245A3A76160 0x14 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CostumeType                               = GetInt32(new IntPtr(p + 0x018)); // 0245A3A76180 0x18 CostumeType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsShowUnlockedCostumeOnly                 = GetBool(new IntPtr(p + 0x01C)); // 0245A3A761A0 0x1C IsShowUnlockedCostumeOnly   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

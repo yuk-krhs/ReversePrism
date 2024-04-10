@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfilerStartFrame
+    public partial class ProfilerStartFrame : DataModel
     {
 
         public static ProfilerStartFrame? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilerStartFrame();
+            var value   = new ProfilerStartFrame() { Pointer= p0 };
 
 
             return value;

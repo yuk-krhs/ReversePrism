@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 000 secondAwaiter                            Awaiter<bool> IL2CPP_TYPE_GENERICINST
     // 000 resultAwaiter                            Awaiter<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _ZipAwaitWithCancellation
+    public partial class _ZipAwaitWithCancellation : DataModel
     {
 
         public static _ZipAwaitWithCancellation? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _ZipAwaitWithCancellation();
+            var value   = new _ZipAwaitWithCancellation() { Pointer= p0 };
 
 
             return value;

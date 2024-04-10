@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ElementType                              0001866936B0 ModelClassType Type Type Type Pointer
     // 018 Length                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class FixedBufferAttribute
+    public partial class FixedBufferAttribute : DataModel
     {
         public Type?                                    ElementType                             { get; set; }
         public int                                      Length                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedBufferAttribute();
+            var value   = new FixedBufferAttribute() { Pointer= p0 };
 
-            value.ElementType                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D6CA6DE8 0x10 ElementType                 ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D6CA6E08 0x18 Length                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ElementType                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024666D065B8 0x10 ElementType                 ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 024666D065D8 0x18 Length                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

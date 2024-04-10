@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 DupInstruction IL2CPP_TYPE_CLASS
-    public partial class DupInstruction
+    public partial class DupInstruction : DataModel
     {
 
         public static DupInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DupInstruction();
+            var value   = new DupInstruction() { Pointer= p0 };
 
 
             return value;

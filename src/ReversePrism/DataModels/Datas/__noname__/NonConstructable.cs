@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NonConstructable
+    public partial class NonConstructable : DataModel
     {
 
         public static NonConstructable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NonConstructable();
+            var value   = new NonConstructable() { Pointer= p0 };
 
 
             return value;

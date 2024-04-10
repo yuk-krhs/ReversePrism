@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Rsa                                      000186603C00 ModelClassType RSA RSA RSA Pointer
     // 018 HashName                                 000186671910 ModelPrimitiveType string string string String
-    public partial class RSAPKCS1SignatureDeformatter
+    public partial class RSAPKCS1SignatureDeformatter : DataModel
     {
         public RSA?                                     Rsa                                     { get; set; }
         public string                                   HashName                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RSAPKCS1SignatureDeformatter();
+            var value   = new RSAPKCS1SignatureDeformatter() { Pointer= p0 };
 
-            value.Rsa                                       = GetObject<RSA>(new IntPtr(p + 0x010), ReversePrism.DataModels.RSA.FromPointer); // 027004233B78 0x10 Rsa                         ( 000186603C00 ModelClassType RSA RSA RSA Pointer )
-            value.HashName                                  = GetString(new IntPtr(p + 0x018)); // 027004233B98 0x18 HashName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Rsa                                       = GetObject<RSA>(new IntPtr(p + 0x010), ReversePrism.DataModels.RSA.FromPointer); // 024661937AB8 0x10 Rsa                         ( 000186603C00 ModelClassType RSA RSA RSA Pointer )
+            value.HashName                                  = GetString(new IntPtr(p + 0x018)); // 024661937AD8 0x18 HashName                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ValuesMerger
+    public partial class ValuesMerger : DataModel
     {
 
         public static ValuesMerger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesMerger();
+            var value   = new ValuesMerger() { Pointer= p0 };
 
 
             return value;

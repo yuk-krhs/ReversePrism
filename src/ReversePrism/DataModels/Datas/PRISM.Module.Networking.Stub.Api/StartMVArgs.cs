@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnitNumberFieldNumber                    int IL2CPP_TYPE_I4
     // 01C UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StartMVArgs
+    public partial class StartMVArgs : DataModel
     {
         public int                                      MstSongId                               { get; set; }
         public int                                      UnitNumber                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartMVArgs();
+            var value   = new StartMVArgs() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D21FD160 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D21FD1A0 0x1C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0246621ABEC0 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 0246621ABF00 0x1C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

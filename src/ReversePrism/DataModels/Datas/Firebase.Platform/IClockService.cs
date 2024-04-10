@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IClockService
+    public partial class IClockService : DataModel
     {
 
         public static IClockService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IClockService();
+            var value   = new IClockService() { Pointer= p0 };
 
 
             return value;

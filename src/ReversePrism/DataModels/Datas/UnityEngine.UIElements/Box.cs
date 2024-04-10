@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
-    public partial class Box
+    public partial class Box : DataModel
     {
 
         public static Box? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Box();
+            var value   = new Box() { Pointer= p0 };
 
 
             return value;

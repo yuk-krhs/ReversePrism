@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Id                                       000186648E00 ModelEnumType PropertyName PropertyName PropertyName Int32
-    public partial class SEMarker
+    public partial class SEMarker : DataModel
     {
         public PropertyName                             Id                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SEMarker();
+            var value   = new SEMarker() { Pointer= p0 };
 
-            value.Id                                        = (PropertyName)GetInt32(new IntPtr(p + 0x028)); // 0270D4DFE7F0 0x28 Id                          ( 000186648E00 ModelEnumType PropertyName PropertyName PropertyName Int32 )
+            value.Id                                        = (PropertyName)GetInt32(new IntPtr(p + 0x028)); // 024664E73C20 0x28 Id                          ( 000186648E00 ModelEnumType PropertyName PropertyName PropertyName Int32 )
 
             return value;
         }

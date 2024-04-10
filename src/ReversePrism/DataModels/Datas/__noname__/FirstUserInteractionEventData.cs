@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FirstUserInteractionEventData
+    public partial class FirstUserInteractionEventData : DataModel
     {
 
         public static FirstUserInteractionEventData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirstUserInteractionEventData();
+            var value   = new FirstUserInteractionEventData() { Pointer= p0 };
 
 
             return value;

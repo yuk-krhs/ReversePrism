@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     000186770200 ModelEnumType ListType ListType ListType Int32
     // 018 Set                                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
     // 020 TargetNamespace                          000186671910 ModelPrimitiveType string string string String
-    public partial class NamespaceList
+    public partial class NamespaceList : DataModel
     {
         public ListType                                 Type                                    { get; set; }
         public Hashtable?                               Set                                     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamespaceList();
+            var value   = new NamespaceList() { Pointer= p0 };
 
-            value.Type                                      = (ListType)GetInt32(new IntPtr(p + 0x010)); // 0270D74FCD28 0x10 Type                        ( 000186770200 ModelEnumType ListType ListType ListType Int32 )
-            value.Set                                       = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D74FCD48 0x18 Set                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.TargetNamespace                           = GetString(new IntPtr(p + 0x020)); // 0270D74FCD68 0x20 TargetNamespace             ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = (ListType)GetInt32(new IntPtr(p + 0x010)); // 02466755CD28 0x10 Type                        ( 000186770200 ModelEnumType ListType ListType ListType Int32 )
+            value.Set                                       = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 02466755CD48 0x18 Set                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.TargetNamespace                           = GetString(new IntPtr(p + 0x020)); // 02466755CD68 0x20 TargetNamespace             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

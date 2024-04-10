@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRemotingTypeInfo
+    public partial class IRemotingTypeInfo : DataModel
     {
 
         public static IRemotingTypeInfo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRemotingTypeInfo();
+            var value   = new IRemotingTypeInfo() { Pointer= p0 };
 
 
             return value;

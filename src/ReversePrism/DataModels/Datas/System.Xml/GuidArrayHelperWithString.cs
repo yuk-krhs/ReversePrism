@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 GuidArrayHelperWithString IL2CPP_TYPE_CLASS
-    public partial class GuidArrayHelperWithString
+    public partial class GuidArrayHelperWithString : DataModel
     {
 
         public static GuidArrayHelperWithString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GuidArrayHelperWithString();
+            var value   = new GuidArrayHelperWithString() { Pointer= p0 };
 
 
             return value;

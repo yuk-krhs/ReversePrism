@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DoubleClickDelegate
+    public partial class DoubleClickDelegate : DataModel
     {
 
         public static DoubleClickDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleClickDelegate();
+            var value   = new DoubleClickDelegate() { Pointer= p0 };
 
 
             return value;

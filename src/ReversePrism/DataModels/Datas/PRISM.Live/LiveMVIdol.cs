@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Costume                                  00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
-    public partial class LiveMVIdol
+    public partial class LiveMVIdol : DataModel
     {
         public int                                      CharacterId                             { get; set; }
         public int                                      MstUnitId                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVIdol();
+            var value   = new LiveMVIdol() { Pointer= p0 };
 
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 0270D4CB5B30 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0270D4CB5B50 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 0270D4CB5B70 0x18 Costume                     ( 00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 024664D29B30 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 024664D29B50 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 024664D29B70 0x18 Costume                     ( 00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
 
             return value;
         }

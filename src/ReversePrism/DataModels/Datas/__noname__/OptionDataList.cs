@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Options                                000185D22318 ModelClassListType List`1<OptionData> List`1<OptionData> List<OptionData> Pointer
-    public partial class OptionDataList
+    public partial class OptionDataList : DataModel
     {
         public List<OptionData>?                        M_Options                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OptionDataList();
+            var value   = new OptionDataList() { Pointer= p0 };
 
-            value.M_Options                                 = GetObjectList<OptionData>(new IntPtr(p + 0x010), ReversePrism.DataModels.OptionData.FromPointer); // 0270068DAD98 0x10 M_Options                   ( 000185D22318 ModelClassListType List`1<OptionData> List`1<OptionData> List<OptionData> Pointer )
+            value.M_Options                                 = GetObjectList<OptionData>(new IntPtr(p + 0x010), ReversePrism.DataModels.OptionData.FromPointer); // 0245A689D498 0x10 M_Options                   ( 000185D22318 ModelClassListType List`1<OptionData> List`1<OptionData> List<OptionData> Pointer )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 UninterpretedOptionFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_uninterpretedOption_codec      FieldCodec`1<UninterpretedOption> IL2CPP_TYPE_GENERICINST
     // 020 UninterpretedOption                      000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer
-    public partial class ExtensionRangeOptions
+    public partial class ExtensionRangeOptions : DataModel
     {
         public List<UninterpretedOption>?               UninterpretedOption                     { get; set; }
 
@@ -24,9 +24,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtensionRangeOptions();
+            var value   = new ExtensionRangeOptions() { Pointer= p0 };
 
-            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x020), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 0270D0B91808 0x20 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
+            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x020), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 0245A3B10668 0x20 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
 
             return value;
         }

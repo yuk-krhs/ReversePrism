@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DocumentTypeFieldNumber                  int IL2CPP_TYPE_I4
     // 018 DocumentType                             00018675A170 ModelEnumType ShopDocumentType ShopDocumentType ShopDocumentType Int32
-    public partial class GetDocumentArgs
+    public partial class GetDocumentArgs : DataModel
     {
         public ShopDocumentType                         DocumentType                            { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetDocumentArgs();
+            var value   = new GetDocumentArgs() { Pointer= p0 };
 
-            value.DocumentType                              = (ShopDocumentType)GetInt32(new IntPtr(p + 0x018)); // 0270D27C7028 0x18 DocumentType                ( 00018675A170 ModelEnumType ShopDocumentType ShopDocumentType ShopDocumentType Int32 )
+            value.DocumentType                              = (ShopDocumentType)GetInt32(new IntPtr(p + 0x018)); // 024662731EC0 0x18 DocumentType                ( 00018675A170 ModelEnumType ShopDocumentType ShopDocumentType ShopDocumentType Int32 )
 
             return value;
         }

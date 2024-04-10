@@ -57,7 +57,7 @@ namespace ReversePrism.DataModels
     // 170 __Method_GetUserForDmmGames              Method`2<GetUserForDmmGamesArgs, GetUserForDmmGamesReply> IL2CPP_TYPE_GENERICINST
     // 178 __Method_UnlinkForDmmGames               Method`2<UnlinkForDmmGamesArgs, UnlinkForDmmGamesReply> IL2CPP_TYPE_GENERICINST
     // 180 __Method_GetTransferState                Method`2<GetTransferStateArgs, GetTransferStateReply> IL2CPP_TYPE_GENERICINST
-    public partial class AuthService
+    public partial class AuthService : DataModel
     {
 
         public static AuthService? FromPointer(IntPtr p0)
@@ -66,7 +66,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthService();
+            var value   = new AuthService() { Pointer= p0 };
 
 
             return value;

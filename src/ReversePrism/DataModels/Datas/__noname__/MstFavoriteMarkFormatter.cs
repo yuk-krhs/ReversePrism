@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstFavoriteMarkFormatter
+    public partial class MstFavoriteMarkFormatter : DataModel
     {
 
         public static MstFavoriteMarkFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstFavoriteMarkFormatter();
+            var value   = new MstFavoriteMarkFormatter() { Pointer= p0 };
 
 
             return value;

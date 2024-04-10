@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Lock                                     0001865A91B0 ModelClassType Lock Lock Lock Pointer
-    public partial class LockHolder
+    public partial class LockHolder : DataModel
     {
         public Lock?                                    Lock                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LockHolder();
+            var value   = new LockHolder() { Pointer= p0 };
 
-            value.Lock                                      = GetObject<Lock>(new IntPtr(p + 0x010), ReversePrism.DataModels.Lock.FromPointer); // 0270D6AC7CC0 0x10 Lock                        ( 0001865A91B0 ModelClassType Lock Lock Lock Pointer )
+            value.Lock                                      = GetObject<Lock>(new IntPtr(p + 0x010), ReversePrism.DataModels.Lock.FromPointer); // 024666B27CC0 0x10 Lock                        ( 0001865A91B0 ModelClassType Lock Lock Lock Pointer )
 
             return value;
         }

@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 0F4 IsShowSkillBalloon                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 0F8 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 100 WaitDurationTask                         0001865409D0 ModelClassType WaitDurationTask WaitDurationTask WaitDurationTask Pointer
-    public partial class EnemySkillContent
+    public partial class EnemySkillContent : DataModel
     {
         public UIRawImage?                              EnemyIcon                               { get; set; }
         public TrainerSkillIconView?                    SkillIcon                               { get; set; }
@@ -47,23 +47,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnemySkillContent();
+            var value   = new EnemySkillContent() { Pointer= p0 };
 
-            value.EnemyIcon                                 = GetObject<UIRawImage>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D5B08870 0x78 EnemyIcon                   ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.SkillIcon                                 = GetObject<TrainerSkillIconView>(new IntPtr(p + 0x080), ReversePrism.DataModels.TrainerSkillIconView.FromPointer); // 0270D5B08890 0x80 SkillIcon                   ( 00018669EBE0 ModelClassType TrainerSkillIconView TrainerSkillIconView TrainerSkillIconView Pointer )
-            value.SkillBalloonObject                        = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5B088B0 0x88 SkillBalloonObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SkillBalloonImage                         = GetObject<Graphic>(new IntPtr(p + 0x090), ReversePrism.DataModels.Graphic.FromPointer); // 0270D5B088D0 0x90 SkillBalloonImage           ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
-            value.SkillNameText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5B088F0 0x98 SkillNameText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ShowSkillBalloonTime                      = GetSingle(new IntPtr(p + 0x0A0)); // 0270D5B08910 0xA0 ShowSkillBalloonTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.VoLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0A4)); // 0270D5B08930 0xA4 VoLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.DaLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0B4)); // 0270D5B08950 0xB4 DaLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.ViLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0C4)); // 0270D5B08970 0xC4 ViLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.OtherColor                                = (Color)GetInt32(new IntPtr(p + 0x0D4)); // 0270D5B08990 0xD4 OtherColor                  ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Animator.FromPointer); // 0270D5B089B0 0xE8 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.AnimationSpeed                            = GetSingle(new IntPtr(p + 0x0F0)); // 0270D5B089D0 0xF0 AnimationSpeed              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsShowSkillBalloon                        = GetBool(new IntPtr(p + 0x0F4)); // 0270D5B089F0 0xF4 IsShowSkillBalloon          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D5B08A10 0xF8 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.WaitDurationTask                          = GetObject<WaitDurationTask>(new IntPtr(p + 0x100), ReversePrism.DataModels.WaitDurationTask.FromPointer); // 0270D5B08A30 0x100 WaitDurationTask            ( 0001865409D0 ModelClassType WaitDurationTask WaitDurationTask WaitDurationTask Pointer )
+            value.EnemyIcon                                 = GetObject<UIRawImage>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIRawImage.FromPointer); // 024665B691B0 0x78 EnemyIcon                   ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.SkillIcon                                 = GetObject<TrainerSkillIconView>(new IntPtr(p + 0x080), ReversePrism.DataModels.TrainerSkillIconView.FromPointer); // 024665B691D0 0x80 SkillIcon                   ( 00018669EBE0 ModelClassType TrainerSkillIconView TrainerSkillIconView TrainerSkillIconView Pointer )
+            value.SkillBalloonObject                        = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 024665B691F0 0x88 SkillBalloonObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SkillBalloonImage                         = GetObject<Graphic>(new IntPtr(p + 0x090), ReversePrism.DataModels.Graphic.FromPointer); // 024665B69210 0x90 SkillBalloonImage           ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
+            value.SkillNameText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665B69230 0x98 SkillNameText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ShowSkillBalloonTime                      = GetSingle(new IntPtr(p + 0x0A0)); // 024665B69250 0xA0 ShowSkillBalloonTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.VoLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0A4)); // 024665B69270 0xA4 VoLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.DaLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0B4)); // 024665B69290 0xB4 DaLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.ViLessonColor                             = (Color)GetInt32(new IntPtr(p + 0x0C4)); // 024665B692B0 0xC4 ViLessonColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.OtherColor                                = (Color)GetInt32(new IntPtr(p + 0x0D4)); // 024665B692D0 0xD4 OtherColor                  ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Animator.FromPointer); // 024665B692F0 0xE8 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.AnimationSpeed                            = GetSingle(new IntPtr(p + 0x0F0)); // 024665B69310 0xF0 AnimationSpeed              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsShowSkillBalloon                        = GetBool(new IntPtr(p + 0x0F4)); // 024665B69330 0xF4 IsShowSkillBalloon          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024665B69350 0xF8 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.WaitDurationTask                          = GetObject<WaitDurationTask>(new IntPtr(p + 0x100), ReversePrism.DataModels.WaitDurationTask.FromPointer); // 024665B69370 0x100 WaitDurationTask            ( 0001865409D0 ModelClassType WaitDurationTask WaitDurationTask WaitDurationTask Pointer )
 
             return value;
         }

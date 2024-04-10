@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IInGamePlayerView
+    public partial class IInGamePlayerView : DataModel
     {
 
         public static IInGamePlayerView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IInGamePlayerView();
+            var value   = new IInGamePlayerView() { Pointer= p0 };
 
 
             return value;

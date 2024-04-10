@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 013 C1                                       0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32
     // 016 C2                                       0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32
     // 019 C3                                       0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32
-    public partial class bool3x4
+    public partial class bool3x4 : DataModel
     {
         public bool3                                    C0                                      { get; set; }
         public bool3                                    C1                                      { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new bool3x4();
+            var value   = new bool3x4() { Pointer= p0 };
 
-            value.C0                                        = (bool3)GetInt32(new IntPtr(p + 0x010)); // 0270D7E4C4A8 0x10 C0                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
-            value.C1                                        = (bool3)GetInt32(new IntPtr(p + 0x013)); // 0270D7E4C4C8 0x13 C1                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
-            value.C2                                        = (bool3)GetInt32(new IntPtr(p + 0x016)); // 0270D7E4C4E8 0x16 C2                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
-            value.C3                                        = (bool3)GetInt32(new IntPtr(p + 0x019)); // 0270D7E4C508 0x19 C3                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
+            value.C0                                        = (bool3)GetInt32(new IntPtr(p + 0x010)); // 024667EB64D8 0x10 C0                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
+            value.C1                                        = (bool3)GetInt32(new IntPtr(p + 0x013)); // 024667EB64F8 0x13 C1                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
+            value.C2                                        = (bool3)GetInt32(new IntPtr(p + 0x016)); // 024667EB6518 0x16 C2                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
+            value.C3                                        = (bool3)GetInt32(new IntPtr(p + 0x019)); // 024667EB6538 0x19 C3                          ( 0001866C21A0 ModelEnumType bool3 bool3 bool3 Int32 )
 
             return value;
         }

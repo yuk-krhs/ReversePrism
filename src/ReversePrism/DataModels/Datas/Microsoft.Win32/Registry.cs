@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 PerformanceData                          000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer
     // 028 CurrentConfig                            000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer
     // 030 DynData                                  000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer
-    public partial class Registry
+    public partial class Registry : DataModel
     {
         public RegistryKey?                             ClassesRoot                             { get; set; }
         public RegistryKey?                             Users                                   { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Registry();
+            var value   = new Registry() { Pointer= p0 };
 
-            value.ClassesRoot                               = GetObject<RegistryKey>(new IntPtr(p + 0x010), ReversePrism.DataModels.RegistryKey.FromPointer); // 0270D306CEB0 0x10 ClassesRoot                 ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
-            value.Users                                     = GetObject<RegistryKey>(new IntPtr(p + 0x018), ReversePrism.DataModels.RegistryKey.FromPointer); // 0270D306CED0 0x18 Users                       ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
-            value.PerformanceData                           = GetObject<RegistryKey>(new IntPtr(p + 0x020), ReversePrism.DataModels.RegistryKey.FromPointer); // 0270D306CEF0 0x20 PerformanceData             ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
-            value.CurrentConfig                             = GetObject<RegistryKey>(new IntPtr(p + 0x028), ReversePrism.DataModels.RegistryKey.FromPointer); // 0270D306CF10 0x28 CurrentConfig               ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
-            value.DynData                                   = GetObject<RegistryKey>(new IntPtr(p + 0x030), ReversePrism.DataModels.RegistryKey.FromPointer); // 0270D306CF30 0x30 DynData                     ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
+            value.ClassesRoot                               = GetObject<RegistryKey>(new IntPtr(p + 0x010), ReversePrism.DataModels.RegistryKey.FromPointer); // 024662FD7EB8 0x10 ClassesRoot                 ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
+            value.Users                                     = GetObject<RegistryKey>(new IntPtr(p + 0x018), ReversePrism.DataModels.RegistryKey.FromPointer); // 024662FD7ED8 0x18 Users                       ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
+            value.PerformanceData                           = GetObject<RegistryKey>(new IntPtr(p + 0x020), ReversePrism.DataModels.RegistryKey.FromPointer); // 024662FD7EF8 0x20 PerformanceData             ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
+            value.CurrentConfig                             = GetObject<RegistryKey>(new IntPtr(p + 0x028), ReversePrism.DataModels.RegistryKey.FromPointer); // 024662FD7F18 0x28 CurrentConfig               ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
+            value.DynData                                   = GetObject<RegistryKey>(new IntPtr(p + 0x030), ReversePrism.DataModels.RegistryKey.FromPointer); // 024662FD7F38 0x30 DynData                     ( 000186645F00 ModelClassType RegistryKey RegistryKey RegistryKey Pointer )
 
             return value;
         }

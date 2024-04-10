@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DropdownEvent
+    public partial class DropdownEvent : DataModel
     {
 
         public static DropdownEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DropdownEvent();
+            var value   = new DropdownEvent() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DisplayName                              000186671910 ModelPrimitiveType string string string String
     // 018 Internal_name                            000186671910 ModelPrimitiveType string string string String
-    public partial class Display
+    public partial class Display : DataModel
     {
         public string                                   DisplayName                             { get; set; }
         public string                                   Internal_name                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Display();
+            var value   = new Display() { Pointer= p0 };
 
-            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 0270D6AA10E8 0x10 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Internal_name                             = GetString(new IntPtr(p + 0x018)); // 0270D6AA1108 0x18 Internal_name               ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 024666B090E8 0x10 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Internal_name                             = GetString(new IntPtr(p + 0x018)); // 024666B09108 0x18 Internal_name               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

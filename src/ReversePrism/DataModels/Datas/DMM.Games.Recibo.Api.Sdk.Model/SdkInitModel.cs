@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 ViewerIdSignature                        000186671910 ModelPrimitiveType string string string String
     // 030 PointChargeUrl                           000186671910 ModelPrimitiveType string string string String
     // 038 IsAdult                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SdkInitModel
+    public partial class SdkInitModel : DataModel
     {
         public int                                      ApplicationId                           { get; set; }
         public int                                      GamesId                                 { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SdkInitModel();
+            var value   = new SdkInitModel() { Pointer= p0 };
 
-            value.ApplicationId                             = GetInt32(new IntPtr(p + 0x010)); // 027004BB5E28 0x10 ApplicationId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GamesId                                   = GetInt32(new IntPtr(p + 0x014)); // 027004BB5E48 0x14 GamesId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GamesIdSignature                          = GetString(new IntPtr(p + 0x018)); // 027004BB5E68 0x18 GamesIdSignature            ( 000186671910 ModelPrimitiveType string string string String )
-            value.ViewerId                                  = GetInt32(new IntPtr(p + 0x020)); // 027004BB5E88 0x20 ViewerId                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ViewerIdSignature                         = GetString(new IntPtr(p + 0x028)); // 027004BB5EA8 0x28 ViewerIdSignature           ( 000186671910 ModelPrimitiveType string string string String )
-            value.PointChargeUrl                            = GetString(new IntPtr(p + 0x030)); // 027004BB5EC8 0x30 PointChargeUrl              ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsAdult                                   = GetBool(new IntPtr(p + 0x038)); // 027004BB5EE8 0x38 IsAdult                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ApplicationId                             = GetInt32(new IntPtr(p + 0x010)); // 0245A4BECDC8 0x10 ApplicationId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GamesId                                   = GetInt32(new IntPtr(p + 0x014)); // 0245A4BECDE8 0x14 GamesId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GamesIdSignature                          = GetString(new IntPtr(p + 0x018)); // 0245A4BECE08 0x18 GamesIdSignature            ( 000186671910 ModelPrimitiveType string string string String )
+            value.ViewerId                                  = GetInt32(new IntPtr(p + 0x020)); // 0245A4BECE28 0x20 ViewerId                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ViewerIdSignature                         = GetString(new IntPtr(p + 0x028)); // 0245A4BECE48 0x28 ViewerIdSignature           ( 000186671910 ModelPrimitiveType string string string String )
+            value.PointChargeUrl                            = GetString(new IntPtr(p + 0x030)); // 0245A4BECE68 0x30 PointChargeUrl              ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsAdult                                   = GetBool(new IntPtr(p + 0x038)); // 0245A4BECE88 0x38 IsAdult                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

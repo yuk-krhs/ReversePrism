@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    public partial class FullConditionalExpressionWithType
+    public partial class FullConditionalExpressionWithType : DataModel
     {
         public Type?                                    Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FullConditionalExpressionWithType();
+            var value   = new FullConditionalExpressionWithType() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0270D9F3C910 0x28 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 024669F999C8 0x28 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
 
             return value;
         }

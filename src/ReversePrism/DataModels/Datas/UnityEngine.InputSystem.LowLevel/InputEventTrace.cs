@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 0B9 M_RecordFrameMarkers                     000186594D10 ModelPrimitiveType bool bool bool Bool
     // 0C0 M_DeviceInfos                            000185CBD978 ModelEnumListType DeviceInfo[] DeviceInfo[] List<DeviceInfo> Pointer
     // 000 kFileVersion                             int IL2CPP_TYPE_I4
-    public partial class InputEventTrace
+    public partial class InputEventTrace : DataModel
     {
         public int                                      M_ChangeCounter                         { get; set; }
         public bool                                     M_Enabled                               { get; set; }
@@ -49,22 +49,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputEventTrace();
+            var value   = new InputEventTrace() { Pointer= p0 };
 
-            value.M_ChangeCounter                           = GetInt32(new IntPtr(p + 0x010)); // 0270D781C180 0x10 M_ChangeCounter             ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.M_Enabled                                 = GetBool(new IntPtr(p + 0x014)); // 0270D781C1A0 0x14 M_Enabled                   ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
-            value.M_DeviceId                                = GetInt32(new IntPtr(p + 0x020)); // 0270D781C1E0 0x20 M_DeviceId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_EventBufferSize                         = GetInt64(new IntPtr(p + 0x078)); // 0270D781C220 0x78 M_EventBufferSize           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_MaxEventBufferSize                      = GetInt64(new IntPtr(p + 0x080)); // 0270D781C240 0x80 M_MaxEventBufferSize        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_GrowIncrementSize                       = GetInt64(new IntPtr(p + 0x088)); // 0270D781C260 0x88 M_GrowIncrementSize         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_EventCount                              = GetInt64(new IntPtr(p + 0x090)); // 0270D781C280 0x90 M_EventCount                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_EventSizeInBytes                        = GetInt64(new IntPtr(p + 0x098)); // 0270D781C2A0 0x98 M_EventSizeInBytes          ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.M_EventBufferStorage                      = GetUInt64(new IntPtr(p + 0x0A0)); // 0270D781C2C0 0xA0 M_EventBufferStorage        ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.M_EventBufferHeadStorage                  = GetUInt64(new IntPtr(p + 0x0A8)); // 0270D781C2E0 0xA8 M_EventBufferHeadStorage    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.M_EventBufferTailStorage                  = GetUInt64(new IntPtr(p + 0x0B0)); // 0270D781C300 0xB0 M_EventBufferTailStorage    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.M_HasWrapped                              = GetBool(new IntPtr(p + 0x0B8)); // 0270D781C320 0xB8 M_HasWrapped                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_RecordFrameMarkers                      = GetBool(new IntPtr(p + 0x0B9)); // 0270D781C340 0xB9 M_RecordFrameMarkers        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DeviceInfos                             = GetEnumList<DeviceInfo>(new IntPtr(p + 0x0C0)); // 0270D781C360 0xC0 M_DeviceInfos               ( 000185CBD978 ModelEnumListType DeviceInfo[] DeviceInfo[] List<DeviceInfo> Pointer )
+            value.M_ChangeCounter                           = GetInt32(new IntPtr(p + 0x010)); // 024667874180 0x10 M_ChangeCounter             ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.M_Enabled                                 = GetBool(new IntPtr(p + 0x014)); // 0246678741A0 0x14 M_Enabled                   ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.M_DeviceId                                = GetInt32(new IntPtr(p + 0x020)); // 0246678741E0 0x20 M_DeviceId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_EventBufferSize                         = GetInt64(new IntPtr(p + 0x078)); // 024667874220 0x78 M_EventBufferSize           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_MaxEventBufferSize                      = GetInt64(new IntPtr(p + 0x080)); // 024667874240 0x80 M_MaxEventBufferSize        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_GrowIncrementSize                       = GetInt64(new IntPtr(p + 0x088)); // 024667874260 0x88 M_GrowIncrementSize         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_EventCount                              = GetInt64(new IntPtr(p + 0x090)); // 024667874280 0x90 M_EventCount                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_EventSizeInBytes                        = GetInt64(new IntPtr(p + 0x098)); // 0246678742A0 0x98 M_EventSizeInBytes          ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.M_EventBufferStorage                      = GetUInt64(new IntPtr(p + 0x0A0)); // 0246678742C0 0xA0 M_EventBufferStorage        ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_EventBufferHeadStorage                  = GetUInt64(new IntPtr(p + 0x0A8)); // 0246678742E0 0xA8 M_EventBufferHeadStorage    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_EventBufferTailStorage                  = GetUInt64(new IntPtr(p + 0x0B0)); // 024667874300 0xB0 M_EventBufferTailStorage    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_HasWrapped                              = GetBool(new IntPtr(p + 0x0B8)); // 024667874320 0xB8 M_HasWrapped                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_RecordFrameMarkers                      = GetBool(new IntPtr(p + 0x0B9)); // 024667874340 0xB9 M_RecordFrameMarkers        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_DeviceInfos                             = GetEnumList<DeviceInfo>(new IntPtr(p + 0x0C0)); // 024667874360 0xC0 M_DeviceInfos               ( 000185CBD978 ModelEnumListType DeviceInfo[] DeviceInfo[] List<DeviceInfo> Pointer )
 
             return value;
         }

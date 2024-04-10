@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetFesUnitIDListUsingForPvpEventArgs
+    public partial class IGetFesUnitIDListUsingForPvpEventArgs : DataModel
     {
 
         public static IGetFesUnitIDListUsingForPvpEventArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetFesUnitIDListUsingForPvpEventArgs();
+            var value   = new IGetFesUnitIDListUsingForPvpEventArgs() { Pointer= p0 };
 
 
             return value;

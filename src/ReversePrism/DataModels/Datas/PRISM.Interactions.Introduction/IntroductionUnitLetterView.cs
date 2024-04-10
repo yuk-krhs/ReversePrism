@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 UnitSelectView                           000186730450 ModelClassType IntroductionUnitSelectView IntroductionUnitSelectView IntroductionUnitSelectView Pointer
     // 028 introductionLetterOverlayFactory         OverlayViewFactory`1<IIntroductionLetterOverlayView> IL2CPP_TYPE_GENERICINST
     // 030 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class IntroductionUnitLetterView
+    public partial class IntroductionUnitLetterView : DataModel
     {
         public IntroductionUnitSelectView?              UnitSelectView                          { get; set; }
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionUnitLetterView();
+            var value   = new IntroductionUnitLetterView() { Pointer= p0 };
 
-            value.UnitSelectView                            = GetObject<IntroductionUnitSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionUnitSelectView.FromPointer); // 0270DB651A00 0x20 UnitSelectView              ( 000186730450 ModelClassType IntroductionUnitSelectView IntroductionUnitSelectView IntroductionUnitSelectView Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x030), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB651A40 0x30 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.UnitSelectView                            = GetObject<IntroductionUnitSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionUnitSelectView.FromPointer); // 02466B6D5A98 0x20 UnitSelectView              ( 000186730450 ModelClassType IntroductionUnitSelectView IntroductionUnitSelectView IntroductionUnitSelectView Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x030), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B6D5AD8 0x30 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

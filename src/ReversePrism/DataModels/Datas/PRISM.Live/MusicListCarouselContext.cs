@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 03C CellInterval                             0001866656B0 ModelPrimitiveType float float float Single
     // 040 CenterCellXOffset                        0001866656B0 ModelPrimitiveType float float float Single
     // 044 IsListUnderDragging                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MusicListCarouselContext
+    public partial class MusicListCarouselContext : DataModel
     {
         public SongDifficultyLevel                      Difficulty                              { get; set; }
         public float                                    CellInterval                            { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicListCarouselContext();
+            var value   = new MusicListCarouselContext() { Pointer= p0 };
 
-            value.Difficulty                                = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x038)); // 0270D5170720 0x38 Difficulty                  ( 00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.CellInterval                              = GetSingle(new IntPtr(p + 0x03C)); // 0270D5170740 0x3C CellInterval                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CenterCellXOffset                         = GetSingle(new IntPtr(p + 0x040)); // 0270D5170760 0x40 CenterCellXOffset           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsListUnderDragging                       = GetBool(new IntPtr(p + 0x044)); // 0270D5170780 0x44 IsListUnderDragging         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Difficulty                                = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x038)); // 0246651E3AC8 0x38 Difficulty                  ( 00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.CellInterval                              = GetSingle(new IntPtr(p + 0x03C)); // 0246651E3AE8 0x3C CellInterval                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CenterCellXOffset                         = GetSingle(new IntPtr(p + 0x040)); // 0246651E3B08 0x40 CenterCellXOffset           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsListUnderDragging                       = GetBool(new IntPtr(p + 0x044)); // 0246651E3B28 0x44 IsListUnderDragging         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

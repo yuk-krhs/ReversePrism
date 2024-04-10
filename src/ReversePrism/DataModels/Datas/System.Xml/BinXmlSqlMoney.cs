@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class BinXmlSqlMoney
+    public partial class BinXmlSqlMoney : DataModel
     {
         public long                                     Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinXmlSqlMoney();
+            var value   = new BinXmlSqlMoney() { Pointer= p0 };
 
-            value.Data                                      = GetInt64(new IntPtr(p + 0x010)); // 0270D734B908 0x10 Data                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Data                                      = GetInt64(new IntPtr(p + 0x010)); // 02466739B908 0x10 Data                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

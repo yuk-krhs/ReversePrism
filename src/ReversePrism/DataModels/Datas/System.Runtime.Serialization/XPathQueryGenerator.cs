@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 XPathSeparator                           string IL2CPP_TYPE_STRING
     // 000 NsSeparator                              string IL2CPP_TYPE_STRING
-    public partial class XPathQueryGenerator
+    public partial class XPathQueryGenerator : DataModel
     {
 
         public static XPathQueryGenerator? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XPathQueryGenerator();
+            var value   = new XPathQueryGenerator() { Pointer= p0 };
 
 
             return value;

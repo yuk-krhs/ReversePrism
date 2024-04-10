@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 handle                                   <int> IL2CPP_TYPE_I
     // 028 DataHandle                               0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
-    public partial class CriAtomExAcb
+    public partial class CriAtomExAcb : DataModel
     {
         public GCHandle                                 DataHandle                              { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExAcb();
+            var value   = new CriAtomExAcb() { Pointer= p0 };
 
-            value.DataHandle                                = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 027004268238 0x28 DataHandle                  ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.DataHandle                                = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 024661964FD8 0x28 DataHandle                  ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
 
             return value;
         }

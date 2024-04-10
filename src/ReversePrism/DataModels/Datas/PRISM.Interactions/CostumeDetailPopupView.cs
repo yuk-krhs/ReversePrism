@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 CharacterExclusiveTagText                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 060 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class CostumeDetailPopupView
+    public partial class CostumeDetailPopupView : DataModel
     {
         public UIRawImage?                              CostumeIcon                             { get; set; }
         public UITextMeshProUGUI?                       CostumeName                             { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeDetailPopupView();
+            var value   = new CostumeDetailPopupView() { Pointer= p0 };
 
-            value.CostumeIcon                               = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270DA2A7D00 0x20 CostumeIcon                 ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.CostumeName                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7D20 0x28 CostumeName                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CostumeDescription                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7D40 0x30 CostumeDescription          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CostumeUnlockCondition                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7D60 0x38 CostumeUnlockCondition      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TagParent                                 = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DA2A7D80 0x40 TagParent                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.StageCostumeTag                           = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2A7DA0 0x48 StageCostumeTag             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CasualCostumeTag                          = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2A7DC0 0x50 CasualCostumeTag            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CharacterExclusiveTagText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7DE0 0x58 CharacterExclusiveTagText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA2A7E20 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.CostumeIcon                               = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A2FB2E8 0x20 CostumeIcon                 ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.CostumeName                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB308 0x28 CostumeName                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CostumeDescription                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB328 0x30 CostumeDescription          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CostumeUnlockCondition                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB348 0x38 CostumeUnlockCondition      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TagParent                                 = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A2FB368 0x40 TagParent                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.StageCostumeTag                           = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A2FB388 0x48 StageCostumeTag             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CasualCostumeTag                          = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466A2FB3A8 0x50 CasualCostumeTag            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CharacterExclusiveTagText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB3C8 0x58 CharacterExclusiveTagText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A2FB408 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

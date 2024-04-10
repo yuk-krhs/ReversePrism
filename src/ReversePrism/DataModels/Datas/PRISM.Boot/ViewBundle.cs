@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 TypeName                                 0001866722E0 ModelPrimitiveType string string string String
     // 018 Reference                                0001866722E0 ModelPrimitiveType string string string String
     // 020 Tags                                     000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class ViewBundle
+    public partial class ViewBundle : DataModel
     {
         public string                                   TypeName                                { get; set; }
         public string                                   Reference                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewBundle();
+            var value   = new ViewBundle() { Pointer= p0 };
 
-            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 0270D0A4E870 0x10 TypeName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Reference                                 = GetString(new IntPtr(p + 0x018)); // 0270D0A4E890 0x18 Reference                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Tags                                      = GetStringList(new IntPtr(p + 0x020)); // 0270D0A4E8B0 0x20 Tags                        ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 024660A424E0 0x10 TypeName                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Reference                                 = GetString(new IntPtr(p + 0x018)); // 024660A42500 0x18 Reference                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Tags                                      = GetStringList(new IntPtr(p + 0x020)); // 024660A42520 0x20 Tags                        ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

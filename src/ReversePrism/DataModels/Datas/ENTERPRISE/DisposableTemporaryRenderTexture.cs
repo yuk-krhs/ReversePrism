@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Texture                                  000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
-    public partial class DisposableTemporaryRenderTexture
+    public partial class DisposableTemporaryRenderTexture : DataModel
     {
         public RenderTexture?                           Texture                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisposableTemporaryRenderTexture();
+            var value   = new DisposableTemporaryRenderTexture() { Pointer= p0 };
 
-            value.Texture                                   = GetObject<RenderTexture>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderTexture.FromPointer); // 0270DB68EC48 0x10 Texture                     ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.Texture                                   = GetObject<RenderTexture>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderTexture.FromPointer); // 02466B72AF08 0x10 Texture                     ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
 
             return value;
         }

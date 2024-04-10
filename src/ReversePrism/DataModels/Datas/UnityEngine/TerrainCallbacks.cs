@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 heightmapChanged                         HeightmapChangedCallback IL2CPP_TYPE_CLASS
     // 008 textureChanged                           TextureChangedCallback IL2CPP_TYPE_CLASS
-    public partial class TerrainCallbacks
+    public partial class TerrainCallbacks : DataModel
     {
 
         public static TerrainCallbacks? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TerrainCallbacks();
+            var value   = new TerrainCallbacks() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Cache                                    Dictionary`2<Type, <object>> IL2CPP_TYPE_GENERICINST
     // 000 <UpdateLabel>k__BackingField             LabelTarget IL2CPP_TYPE_CLASS
-    public partial class CallSiteBinder
+    public partial class CallSiteBinder : DataModel
     {
 
         public static CallSiteBinder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallSiteBinder();
+            var value   = new CallSiteBinder() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _instance                                LateBoundReflectionDelegateFactory IL2CPP_TYPE_CLASS
-    public partial class LateBoundReflectionDelegateFactory
+    public partial class LateBoundReflectionDelegateFactory : DataModel
     {
 
         public static LateBoundReflectionDelegateFactory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LateBoundReflectionDelegateFactory();
+            var value   = new LateBoundReflectionDelegateFactory() { Pointer= p0 };
 
 
             return value;

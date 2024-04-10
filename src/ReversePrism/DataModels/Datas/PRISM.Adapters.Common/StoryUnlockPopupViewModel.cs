@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ItemCellDataList                         000185D16D18 ModelClassListType IReadOnlyList`1<StoryUnlockPopupItemCellData> IReadOnlyList`1<StoryUnlockPopupItemCellData> List<StoryUnlockPopupItemCellData> Pointer
-    public partial class StoryUnlockPopupViewModel
+    public partial class StoryUnlockPopupViewModel : DataModel
     {
         public List<StoryUnlockPopupItemCellData>?      ItemCellDataList                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryUnlockPopupViewModel();
+            var value   = new StoryUnlockPopupViewModel() { Pointer= p0 };
 
-            value.ItemCellDataList                          = GetObjectList<StoryUnlockPopupItemCellData>(new IntPtr(p + 0x010), ReversePrism.DataModels.StoryUnlockPopupItemCellData.FromPointer); // 0270D6910518 0x10 ItemCellDataList            ( 000185D16D18 ModelClassListType IReadOnlyList`1<StoryUnlockPopupItemCellData> IReadOnlyList`1<StoryUnlockPopupItemCellData> List<StoryUnlockPopupItemCellData> Pointer )
+            value.ItemCellDataList                          = GetObjectList<StoryUnlockPopupItemCellData>(new IntPtr(p + 0x010), ReversePrism.DataModels.StoryUnlockPopupItemCellData.FromPointer); // 024666980518 0x10 ItemCellDataList            ( 000185D16D18 ModelClassListType IReadOnlyList`1<StoryUnlockPopupItemCellData> IReadOnlyList`1<StoryUnlockPopupItemCellData> List<StoryUnlockPopupItemCellData> Pointer )
 
             return value;
         }

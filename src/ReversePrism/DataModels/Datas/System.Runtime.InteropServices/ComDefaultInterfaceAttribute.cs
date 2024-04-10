@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Val                                      000186692A80 ModelClassType Type Type Type Pointer
-    public partial class ComDefaultInterfaceAttribute
+    public partial class ComDefaultInterfaceAttribute : DataModel
     {
         public Type?                                    Val                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComDefaultInterfaceAttribute();
+            var value   = new ComDefaultInterfaceAttribute() { Pointer= p0 };
 
-            value.Val                                       = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D6C82510 0x10 Val                         ( 000186692A80 ModelClassType Type Type Type Pointer )
+            value.Val                                       = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024666CF2510 0x10 Val                         ( 000186692A80 ModelClassType Type Type Type Pointer )
 
             return value;
         }

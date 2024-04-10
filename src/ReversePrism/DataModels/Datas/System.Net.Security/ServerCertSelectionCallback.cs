@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ServerCertSelectionCallback
+    public partial class ServerCertSelectionCallback : DataModel
     {
 
         public static ServerCertSelectionCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerCertSelectionCallback();
+            var value   = new ServerCertSelectionCallback() { Pointer= p0 };
 
 
             return value;

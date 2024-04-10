@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 030 Zero                                     UniTask`1<int> IL2CPP_TYPE_GENERICINST
     // 040 MinusOne                                 UniTask`1<int> IL2CPP_TYPE_GENERICINST
     // 050 One                                      UniTask`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class CompletedTasks
+    public partial class CompletedTasks : DataModel
     {
 
         public static CompletedTasks? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompletedTasks();
+            var value   = new CompletedTasks() { Pointer= p0 };
 
 
             return value;

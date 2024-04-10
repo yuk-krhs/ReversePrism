@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 Response                                 000186662AF0 ModelClassType ThumbnailResult ThumbnailResult ThumbnailResult Pointer
-    public partial class OsapiThumbnailResult
+    public partial class OsapiThumbnailResult : DataModel
     {
         public ThumbnailResult?                         Response                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OsapiThumbnailResult();
+            var value   = new OsapiThumbnailResult() { Pointer= p0 };
 
-            value.Response                                  = GetObject<ThumbnailResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.ThumbnailResult.FromPointer); // 0270DB498F30 0x40 Response                    ( 000186662AF0 ModelClassType ThumbnailResult ThumbnailResult ThumbnailResult Pointer )
+            value.Response                                  = GetObject<ThumbnailResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.ThumbnailResult.FromPointer); // 02466B515E30 0x40 Response                    ( 000186662AF0 ModelClassType ThumbnailResult ThumbnailResult ThumbnailResult Pointer )
 
             return value;
         }

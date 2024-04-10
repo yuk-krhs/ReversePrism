@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Message                                  000186606300 ModelClassType MessageBase MessageBase MessageBase Pointer
-    public partial class NtlmSession
+    public partial class NtlmSession : DataModel
     {
         public MessageBase?                             Message                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NtlmSession();
+            var value   = new NtlmSession() { Pointer= p0 };
 
-            value.Message                                   = GetObject<MessageBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageBase.FromPointer); // 0270D793B9C0 0x10 Message                     ( 000186606300 ModelClassType MessageBase MessageBase MessageBase Pointer )
+            value.Message                                   = GetObject<MessageBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageBase.FromPointer); // 0246679A39C0 0x10 Message                     ( 000186606300 ModelClassType MessageBase MessageBase MessageBase Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstVoiceResourceId                       0001865F4260 ModelPrimitiveType int int int Int32
     // 018 ReleaseDate                              0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class MstBirthdayVoice
+    public partial class MstBirthdayVoice : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstVoiceResourceId                      { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstBirthdayVoice();
+            var value   = new MstBirthdayVoice() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045AA800 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstVoiceResourceId                        = GetInt32(new IntPtr(p + 0x014)); // 0270045AA820 0x14 MstVoiceResourceId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x018)); // 0270045AA840 0x18 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4625E90 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstVoiceResourceId                        = GetInt32(new IntPtr(p + 0x014)); // 0245A4625EB0 0x14 MstVoiceResourceId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x018)); // 0245A4625ED0 0x18 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

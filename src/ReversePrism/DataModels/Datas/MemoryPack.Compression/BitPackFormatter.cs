@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  BitPackFormatter IL2CPP_TYPE_CLASS
-    public partial class BitPackFormatter
+    public partial class BitPackFormatter : DataModel
     {
 
         public static BitPackFormatter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitPackFormatter();
+            var value   = new BitPackFormatter() { Pointer= p0 };
 
 
             return value;

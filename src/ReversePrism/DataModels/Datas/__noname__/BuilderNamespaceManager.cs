@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 NsMgr                                    0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer
     // 058 Reader                                   0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer
-    public partial class BuilderNamespaceManager
+    public partial class BuilderNamespaceManager : DataModel
     {
         public XmlNamespaceManager?                     NsMgr                                   { get; set; }
         public XmlReader?                               Reader                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BuilderNamespaceManager();
+            var value   = new BuilderNamespaceManager() { Pointer= p0 };
 
-            value.NsMgr                                     = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 0270D75F1708 0x50 NsMgr                       ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
-            value.Reader                                    = GetObject<XmlReader>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlReader.FromPointer); // 0270D75F1728 0x58 Reader                      ( 0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer )
+            value.NsMgr                                     = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 024667661708 0x50 NsMgr                       ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
+            value.Reader                                    = GetObject<XmlReader>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlReader.FromPointer); // 024667661728 0x58 Reader                      ( 0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer )
 
             return value;
         }

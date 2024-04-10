@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Service                                  0001865B4FD0 ModelClassType StreamProgramService StreamProgramService StreamProgramService Pointer
-    public partial class OurStreamArchiveDetailModel
+    public partial class OurStreamArchiveDetailModel : DataModel
     {
         public StreamProgramService?                    Service                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamArchiveDetailModel();
+            var value   = new OurStreamArchiveDetailModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<StreamProgramService>(new IntPtr(p + 0x010), ReversePrism.DataModels.StreamProgramService.FromPointer); // 0270D689FFF0 0x10 Service                     ( 0001865B4FD0 ModelClassType StreamProgramService StreamProgramService StreamProgramService Pointer )
+            value.Service                                   = GetObject<StreamProgramService>(new IntPtr(p + 0x010), ReversePrism.DataModels.StreamProgramService.FromPointer); // 0246668FFFF0 0x10 Service                     ( 0001865B4FD0 ModelClassType StreamProgramService StreamProgramService StreamProgramService Pointer )
 
             return value;
         }

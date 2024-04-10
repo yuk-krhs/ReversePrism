@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILoadingView
+    public partial class ILoadingView : DataModel
     {
 
         public static ILoadingView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILoadingView();
+            var value   = new ILoadingView() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeVerifyFunc
+    public partial class NativeVerifyFunc : DataModel
     {
 
         public static NativeVerifyFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeVerifyFunc();
+            var value   = new NativeVerifyFunc() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Entries                                List`1<MatEntry> IL2CPP_TYPE_GENERICINST
-    public partial class ModifiedMaterial
+    public partial class ModifiedMaterial : DataModel
     {
 
         public static ModifiedMaterial? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ModifiedMaterial();
+            var value   = new ModifiedMaterial() { Pointer= p0 };
 
 
             return value;

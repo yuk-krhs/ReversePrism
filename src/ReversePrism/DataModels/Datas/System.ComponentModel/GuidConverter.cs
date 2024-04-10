@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GuidConverter
+    public partial class GuidConverter : DataModel
     {
 
         public static GuidConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GuidConverter();
+            var value   = new GuidConverter() { Pointer= p0 };
 
 
             return value;

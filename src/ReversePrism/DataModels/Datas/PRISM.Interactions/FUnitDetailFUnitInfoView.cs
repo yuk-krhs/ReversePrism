@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 068 BtnFavoriteMark                          0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 070 BtnParameterDetail                       0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 078 Ct                                       00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    public partial class FUnitDetailFUnitInfoView
+    public partial class FUnitDetailFUnitInfoView : DataModel
     {
         public RawImage?                                ImgUnitIcon                             { get; set; }
         public FUnitIconView?                           FUnitIconView                           { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FUnitDetailFUnitInfoView();
+            var value   = new FUnitDetailFUnitInfoView() { Pointer= p0 };
 
-            value.ImgUnitIcon                               = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA2C5BB8 0x20 ImgUnitIcon                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.FUnitIconView                             = GetObject<FUnitIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitIconView.FromPointer); // 0270DA2C5BD8 0x28 FUnitIconView               ( 00018654D050 ModelClassType FUnitIconView FUnitIconView FUnitIconView Pointer )
-            value.TxtUnitName                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2C5BF8 0x30 TxtUnitName                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ImgTotalRank                              = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA2C5C18 0x38 ImgTotalRank                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.RankEffectAnimator                        = GetObject<ParamRememberableAnimator>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParamRememberableAnimator.FromPointer); // 0270DA2C5C38 0x40 RankEffectAnimator          ( 00018671A280 ModelClassType ParamRememberableAnimator ParamRememberableAnimator ParamRememberableAnimator Pointer )
-            value.TxtTotal                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2C5C58 0x48 TxtTotal                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x050), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 0270DA2C5C78 0x50 VoDaViMeRankView            ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
-            value.BtnEditUnitName                           = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2C5C98 0x58 BtnEditUnitName             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ImgFavoriteMark                           = GetObject<RawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA2C5CB8 0x60 ImgFavoriteMark             ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.BtnFavoriteMark                           = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2C5CD8 0x68 BtnFavoriteMark             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnParameterDetail                        = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2C5CF8 0x70 BtnParameterDetail          ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x078)); // 0270DA2C5D18 0x78 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.ImgUnitIcon                               = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3191C8 0x20 ImgUnitIcon                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.FUnitIconView                             = GetObject<FUnitIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitIconView.FromPointer); // 02466A3191E8 0x28 FUnitIconView               ( 00018654D050 ModelClassType FUnitIconView FUnitIconView FUnitIconView Pointer )
+            value.TxtUnitName                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A319208 0x30 TxtUnitName                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgTotalRank                              = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 02466A319228 0x38 ImgTotalRank                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.RankEffectAnimator                        = GetObject<ParamRememberableAnimator>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParamRememberableAnimator.FromPointer); // 02466A319248 0x40 RankEffectAnimator          ( 00018671A280 ModelClassType ParamRememberableAnimator ParamRememberableAnimator ParamRememberableAnimator Pointer )
+            value.TxtTotal                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A319268 0x48 TxtTotal                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x050), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 02466A319288 0x50 VoDaViMeRankView            ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
+            value.BtnEditUnitName                           = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3192A8 0x58 BtnEditUnitName             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ImgFavoriteMark                           = GetObject<RawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3192C8 0x60 ImgFavoriteMark             ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.BtnFavoriteMark                           = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3192E8 0x68 BtnFavoriteMark             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnParameterDetail                        = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 02466A319308 0x70 BtnParameterDetail          ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x078)); // 02466A319328 0x78 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

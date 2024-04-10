@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RemotePerfTimeScope
+    public partial class RemotePerfTimeScope : DataModel
     {
 
         public static RemotePerfTimeScope? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemotePerfTimeScope();
+            var value   = new RemotePerfTimeScope() { Pointer= p0 };
 
 
             return value;

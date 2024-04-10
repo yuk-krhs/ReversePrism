@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAmountBadgeStatus
+    public partial class IAmountBadgeStatus : DataModel
     {
 
         public static IAmountBadgeStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAmountBadgeStatus();
+            var value   = new IAmountBadgeStatus() { Pointer= p0 };
 
 
             return value;

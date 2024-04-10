@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 PurchaseCountRange                       00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer
     // 000 ProductWithAmountFieldNumber             int IL2CPP_TYPE_I4
     // 020 ProductWithAmount                        0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class ExchangeProductPriceRateStatus
+    public partial class ExchangeProductPriceRateStatus : DataModel
     {
         public RangeStatus?                             PurchaseCountRange                      { get; set; }
         public ProductWithAmountStatus?                 ProductWithAmount                       { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeProductPriceRateStatus();
+            var value   = new ExchangeProductPriceRateStatus() { Pointer= p0 };
 
-            value.PurchaseCountRange                        = GetObject<RangeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RangeStatus.FromPointer); // 0270D12266C8 0x18 PurchaseCountRange          ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
-            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1226708 0x20 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.PurchaseCountRange                        = GetObject<RangeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RangeStatus.FromPointer); // 02466119FE98 0x18 PurchaseCountRange          ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
+            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466119FED8 0x20 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

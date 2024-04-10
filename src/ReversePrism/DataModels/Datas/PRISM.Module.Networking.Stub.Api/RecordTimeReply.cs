@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RecordTimeFieldNumber                    int IL2CPP_TYPE_I4
     // 018 RecordTime                               00018662AF50 ModelClassType RecordTimeStatus RecordTimeStatus RecordTimeStatus Pointer
-    public partial class RecordTimeReply
+    public partial class RecordTimeReply : DataModel
     {
         public RecordTimeStatus?                        RecordTime                              { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecordTimeReply();
+            var value   = new RecordTimeReply() { Pointer= p0 };
 
-            value.RecordTime                                = GetObject<RecordTimeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RecordTimeStatus.FromPointer); // 0270D2D1F2A8 0x18 RecordTime                  ( 00018662AF50 ModelClassType RecordTimeStatus RecordTimeStatus RecordTimeStatus Pointer )
+            value.RecordTime                                = GetObject<RecordTimeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RecordTimeStatus.FromPointer); // 024662CD3F28 0x18 RecordTime                  ( 00018662AF50 ModelClassType RecordTimeStatus RecordTimeStatus RecordTimeStatus Pointer )
 
             return value;
         }

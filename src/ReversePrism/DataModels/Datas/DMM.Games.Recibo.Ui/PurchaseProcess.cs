@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 070 _order                                   Nullable`1<OrderModel> IL2CPP_TYPE_GENERICINST
     // 0E0 _receipt                                 Nullable`1<ReceiptModel> IL2CPP_TYPE_GENERICINST
     // 148 IsUpdatePoint                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class PurchaseProcess
+    public partial class PurchaseProcess : DataModel
     {
         public PurchaseState                            State                                   { get; set; }
         public ErrorObject?                             Error                                   { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchaseProcess();
+            var value   = new PurchaseProcess() { Pointer= p0 };
 
-            value.State                                     = (PurchaseState)GetInt32(new IntPtr(p + 0x020)); // 0270DB45ACE8 0x20 State                       ( 0001865DF880 ModelEnumType PurchaseState PurchaseState PurchaseState Int32 )
-            value.Error                                     = GetObject<ErrorObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.ErrorObject.FromPointer); // 0270DB45AD08 0x28 Error                       ( 000186747D20 ModelClassType ErrorObject ErrorObject ErrorObject Pointer )
-            value.Store                                     = GetObject<DmmGamesIapStore>(new IntPtr(p + 0x030), ReversePrism.DataModels.DmmGamesIapStore.FromPointer); // 0270DB45AD28 0x30 Store                       ( 0001866E38E0 ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer )
-            value.Product                                   = GetObject<ProductDefinition>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductDefinition.FromPointer); // 0270DB45AD48 0x38 Product                     ( 0001865A0170 ModelClassType ProductDefinition ProductDefinition ProductDefinition Pointer )
-            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x040)); // 0270DB45ADA8 0x40 DeveloperPayload            ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsRetry                                   = GetBool(new IntPtr(p + 0x058)); // 0270DB45AE08 0x58 IsRetry                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RetryState                                = (PurchaseState)GetInt32(new IntPtr(p + 0x05C)); // 0270DB45AE28 0x5C RetryState                  ( 0001865DF880 ModelEnumType PurchaseState PurchaseState PurchaseState Int32 )
-            value.IsUpdatePoint                             = GetBool(new IntPtr(p + 0x148)); // 0270DB45AEA8 0x148 IsUpdatePoint               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.State                                     = (PurchaseState)GetInt32(new IntPtr(p + 0x020)); // 02466B4E7CD8 0x20 State                       ( 0001865DF880 ModelEnumType PurchaseState PurchaseState PurchaseState Int32 )
+            value.Error                                     = GetObject<ErrorObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.ErrorObject.FromPointer); // 02466B4E7CF8 0x28 Error                       ( 000186747D20 ModelClassType ErrorObject ErrorObject ErrorObject Pointer )
+            value.Store                                     = GetObject<DmmGamesIapStore>(new IntPtr(p + 0x030), ReversePrism.DataModels.DmmGamesIapStore.FromPointer); // 02466B4E7D18 0x30 Store                       ( 0001866E38E0 ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer )
+            value.Product                                   = GetObject<ProductDefinition>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductDefinition.FromPointer); // 02466B4E7D38 0x38 Product                     ( 0001865A0170 ModelClassType ProductDefinition ProductDefinition ProductDefinition Pointer )
+            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x040)); // 02466B4E7D98 0x40 DeveloperPayload            ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsRetry                                   = GetBool(new IntPtr(p + 0x058)); // 02466B4E7DF8 0x58 IsRetry                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RetryState                                = (PurchaseState)GetInt32(new IntPtr(p + 0x05C)); // 02466B4E7E18 0x5C RetryState                  ( 0001865DF880 ModelEnumType PurchaseState PurchaseState PurchaseState Int32 )
+            value.IsUpdatePoint                             = GetBool(new IntPtr(p + 0x148)); // 02466B4E7E98 0x148 IsUpdatePoint               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

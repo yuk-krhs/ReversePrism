@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<StartMVReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class StartMVReply
+    public partial class StartMVReply : DataModel
     {
 
         public static StartMVReply? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartMVReply();
+            var value   = new StartMVReply() { Pointer= p0 };
 
 
             return value;

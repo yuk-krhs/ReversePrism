@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 060 MinExclusive                             000186671910 ModelPrimitiveType string string string String
     // 068 MinInclusive                             000186671910 ModelPrimitiveType string string string String
     // 070 Enumeration                              000186671BA0 ModelPrimitiveType string string string String
-    public partial class SimpleType
+    public partial class SimpleType : DataModel
     {
         public string                                   BaseType                                { get; set; }
         public SimpleType?                              BaseSimpleType                          { get; set; }
@@ -45,22 +45,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SimpleType();
+            var value   = new SimpleType() { Pointer= p0 };
 
-            value.BaseType                                  = GetString(new IntPtr(p + 0x010)); // 0270D88B6650 0x10 BaseType                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.BaseSimpleType                            = GetObject<SimpleType>(new IntPtr(p + 0x018), ReversePrism.DataModels.SimpleType.FromPointer); // 0270D88B6670 0x18 BaseSimpleType              ( 00018650C2B0 ModelClassType SimpleType SimpleType SimpleType Pointer )
-            value.XmlBaseType                               = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D88B6690 0x20 XmlBaseType                 ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270D88B66B0 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D88B66D0 0x30 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MinLength                                 = GetInt32(new IntPtr(p + 0x034)); // 0270D88B66F0 0x34 MinLength                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxLength                                 = GetInt32(new IntPtr(p + 0x038)); // 0270D88B6710 0x38 MaxLength                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x040)); // 0270D88B6730 0x40 Pattern                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x048)); // 0270D88B6750 0x48 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.MaxExclusive                              = GetString(new IntPtr(p + 0x050)); // 0270D88B6770 0x50 MaxExclusive                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MaxInclusive                              = GetString(new IntPtr(p + 0x058)); // 0270D88B6790 0x58 MaxInclusive                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MinExclusive                              = GetString(new IntPtr(p + 0x060)); // 0270D88B67B0 0x60 MinExclusive                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MinInclusive                              = GetString(new IntPtr(p + 0x068)); // 0270D88B67D0 0x68 MinInclusive                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Enumeration                               = GetString(new IntPtr(p + 0x070)); // 0270D88B67F0 0x70 Enumeration                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.BaseType                                  = GetString(new IntPtr(p + 0x010)); // 024668922770 0x10 BaseType                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.BaseSimpleType                            = GetObject<SimpleType>(new IntPtr(p + 0x018), ReversePrism.DataModels.SimpleType.FromPointer); // 024668922790 0x18 BaseSimpleType              ( 00018650C2B0 ModelClassType SimpleType SimpleType SimpleType Pointer )
+            value.XmlBaseType                               = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246689227B0 0x20 XmlBaseType                 ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0246689227D0 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x030)); // 0246689227F0 0x30 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MinLength                                 = GetInt32(new IntPtr(p + 0x034)); // 024668922810 0x34 MinLength                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxLength                                 = GetInt32(new IntPtr(p + 0x038)); // 024668922830 0x38 MaxLength                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x040)); // 024668922850 0x40 Pattern                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x048)); // 024668922870 0x48 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.MaxExclusive                              = GetString(new IntPtr(p + 0x050)); // 024668922890 0x50 MaxExclusive                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MaxInclusive                              = GetString(new IntPtr(p + 0x058)); // 0246689228B0 0x58 MaxInclusive                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MinExclusive                              = GetString(new IntPtr(p + 0x060)); // 0246689228D0 0x60 MinExclusive                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MinInclusive                              = GetString(new IntPtr(p + 0x068)); // 0246689228F0 0x68 MinInclusive                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Enumeration                               = GetString(new IntPtr(p + 0x070)); // 024668922910 0x70 Enumeration                 ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

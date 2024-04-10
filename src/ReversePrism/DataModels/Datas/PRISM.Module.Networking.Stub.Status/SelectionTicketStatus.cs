@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
     // 044 ExchangeLimitCount                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 ExchangeResetTypeFieldNumber             int IL2CPP_TYPE_I4
     // 048 ExchangeResetType                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SelectionTicketStatus
+    public partial class SelectionTicketStatus : DataModel
     {
         public ProductWithAmountStatus?                 ProductWithAmount                       { get; set; }
         public bool                                     IsHaving                                { get; set; }
@@ -52,19 +52,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectionTicketStatus();
+            var value   = new SelectionTicketStatus() { Pointer= p0 };
 
-            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1232600 0x18 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.IsHaving                                  = GetBool(new IntPtr(p + 0x020)); // 0270D1232640 0x20 IsHaving                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RequiredAmount                            = GetInt32(new IntPtr(p + 0x024)); // 0270D1232680 0x24 RequiredAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolPieceAmount                           = GetInt32(new IntPtr(p + 0x028)); // 0270D12326C0 0x28 IdolPieceAmount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RainbowCrystalAmount                      = GetInt32(new IntPtr(p + 0x02C)); // 0270D1232700 0x2C RainbowCrystalAmount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSelectionTicketId                      = GetInt32(new IntPtr(p + 0x030)); // 0270D1232740 0x30 MstSelectionTicketId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSelectionTicketProductId               = GetInt32(new IntPtr(p + 0x034)); // 0270D1232780 0x34 MstSelectionTicketProductId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PriceProduct                              = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D12327C0 0x38 PriceProduct                ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x040)); // 0270D1232800 0x40 ExchangeCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExchangeLimitCount                        = GetInt32(new IntPtr(p + 0x044)); // 0270D1232840 0x44 ExchangeLimitCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExchangeResetType                         = GetInt32(new IntPtr(p + 0x048)); // 0270D1232880 0x48 ExchangeResetType           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246611AD970 0x18 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.IsHaving                                  = GetBool(new IntPtr(p + 0x020)); // 0246611AD9B0 0x20 IsHaving                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RequiredAmount                            = GetInt32(new IntPtr(p + 0x024)); // 0246611AD9F0 0x24 RequiredAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolPieceAmount                           = GetInt32(new IntPtr(p + 0x028)); // 0246611ADA30 0x28 IdolPieceAmount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RainbowCrystalAmount                      = GetInt32(new IntPtr(p + 0x02C)); // 0246611ADA70 0x2C RainbowCrystalAmount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSelectionTicketId                      = GetInt32(new IntPtr(p + 0x030)); // 0246611ADAB0 0x30 MstSelectionTicketId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSelectionTicketProductId               = GetInt32(new IntPtr(p + 0x034)); // 0246611ADAF0 0x34 MstSelectionTicketProductId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PriceProduct                              = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246611ADB30 0x38 PriceProduct                ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x040)); // 0246611ADB70 0x40 ExchangeCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExchangeLimitCount                        = GetInt32(new IntPtr(p + 0x044)); // 0246611ADBB0 0x44 ExchangeLimitCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExchangeResetType                         = GetInt32(new IntPtr(p + 0x048)); // 0246611ADBF0 0x48 ExchangeResetType           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVisualElementPanelActivatable
+    public partial class IVisualElementPanelActivatable : DataModel
     {
 
         public static IVisualElementPanelActivatable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVisualElementPanelActivatable();
+            var value   = new IVisualElementPanelActivatable() { Pointer= p0 };
 
 
             return value;

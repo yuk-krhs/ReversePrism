@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ProductListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_productList_codec              FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 020 ProductList                              000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
-    public partial class DressSetStatus
+    public partial class DressSetStatus : DataModel
     {
         public int                                      MstDressSetId                           { get; set; }
         public List<ProductWithAmountStatus>?           ProductList                             { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressSetStatus();
+            var value   = new DressSetStatus() { Pointer= p0 };
 
-            value.MstDressSetId                             = GetInt32(new IntPtr(p + 0x018)); // 0270D3749140 0x18 MstDressSetId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D37491A0 0x20 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.MstDressSetId                             = GetInt32(new IntPtr(p + 0x018)); // 02466080AE08 0x18 MstDressSetId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466080AE68 0x20 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

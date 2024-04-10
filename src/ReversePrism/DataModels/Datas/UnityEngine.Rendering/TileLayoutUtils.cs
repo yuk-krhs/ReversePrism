@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TileLayoutUtils
+    public partial class TileLayoutUtils : DataModel
     {
 
         public static TileLayoutUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TileLayoutUtils();
+            var value   = new TileLayoutUtils() { Pointer= p0 };
 
 
             return value;

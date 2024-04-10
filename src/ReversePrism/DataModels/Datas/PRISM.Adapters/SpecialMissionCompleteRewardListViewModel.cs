@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Reward                                   0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
     // 018 ResourceLoader                           00018661AD70 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
-    public partial class SpecialMissionCompleteRewardListViewModel
+    public partial class SpecialMissionCompleteRewardListViewModel : DataModel
     {
         public IProductWithAmountStatus?                Reward                                  { get; set; }
         public IResourceLoader?                         ResourceLoader                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialMissionCompleteRewardListViewModel();
+            var value   = new SpecialMissionCompleteRewardListViewModel() { Pointer= p0 };
 
-            value.Reward                                    = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D6746E10 0x10 Reward                      ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270D6746E30 0x18 ResourceLoader              ( 00018661AD70 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.Reward                                    = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0246667B6E10 0x10 Reward                      ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0246667B6E30 0x18 ResourceLoader              ( 00018661AD70 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

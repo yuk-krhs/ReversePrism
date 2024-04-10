@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 LeftDown                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 019 RightDown                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 01A MiddleDown                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ShaderDebugPrintInput
+    public partial class ShaderDebugPrintInput : DataModel
     {
         public Vector2                                  Pos                                     { get; set; }
         public bool                                     LeftDown                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShaderDebugPrintInput();
+            var value   = new ShaderDebugPrintInput() { Pointer= p0 };
 
-            value.Pos                                       = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0270D91B2158 0x10 Pos                         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.LeftDown                                  = GetBool(new IntPtr(p + 0x018)); // 0270D91B2178 0x18 LeftDown                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RightDown                                 = GetBool(new IntPtr(p + 0x019)); // 0270D91B2198 0x19 RightDown                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MiddleDown                                = GetBool(new IntPtr(p + 0x01A)); // 0270D91B21B8 0x1A MiddleDown                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Pos                                       = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0246692048B0 0x10 Pos                         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.LeftDown                                  = GetBool(new IntPtr(p + 0x018)); // 0246692048D0 0x18 LeftDown                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RightDown                                 = GetBool(new IntPtr(p + 0x019)); // 0246692048F0 0x19 RightDown                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MiddleDown                                = GetBool(new IntPtr(p + 0x01A)); // 024669204910 0x1A MiddleDown                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

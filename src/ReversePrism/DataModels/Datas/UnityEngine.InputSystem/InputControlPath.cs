@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 DoubleWildcard                           string IL2CPP_TYPE_STRING
     // 000 Separator                                char IL2CPP_TYPE_CHAR
     // 000 SeparatorReplacement                     char IL2CPP_TYPE_CHAR
-    public partial class InputControlPath
+    public partial class InputControlPath : DataModel
     {
 
         public static InputControlPath? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputControlPath();
+            var value   = new InputControlPath() { Pointer= p0 };
 
 
             return value;

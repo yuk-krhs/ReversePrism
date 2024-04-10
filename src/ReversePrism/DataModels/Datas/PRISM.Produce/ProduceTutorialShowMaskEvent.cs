@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 getMaskSizeFanc                          Func`1<Vector2> IL2CPP_TYPE_GENERICINST
     // 028 AnchorMin                                0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 030 AnchorMax                                0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    public partial class ProduceTutorialShowMaskEvent
+    public partial class ProduceTutorialShowMaskEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public Vector2                                  AnchorMin                               { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialShowMaskEvent();
+            var value   = new ProduceTutorialShowMaskEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D3F2F8 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.AnchorMin                                 = (Vector2)GetInt32(new IntPtr(p + 0x028)); // 0270D5D3F358 0x28 AnchorMin                   ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.AnchorMax                                 = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 0270D5D3F378 0x30 AnchorMax                   ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DB8040 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.AnchorMin                                 = (Vector2)GetInt32(new IntPtr(p + 0x028)); // 024665DB80A0 0x28 AnchorMin                   ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.AnchorMax                                 = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 024665DB80C0 0x30 AnchorMax                   ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

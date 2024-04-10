@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XRDisplaySubsystemDescriptor
+    public partial class XRDisplaySubsystemDescriptor : DataModel
     {
 
         public static XRDisplaySubsystemDescriptor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRDisplaySubsystemDescriptor();
+            var value   = new XRDisplaySubsystemDescriptor() { Pointer= p0 };
 
 
             return value;

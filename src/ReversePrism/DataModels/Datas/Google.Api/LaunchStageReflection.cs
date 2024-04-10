@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class LaunchStageReflection
+    public partial class LaunchStageReflection : DataModel
     {
 
         public static LaunchStageReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LaunchStageReflection();
+            var value   = new LaunchStageReflection() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   SkipObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 open                                     bool IL2CPP_TYPE_BOOLEAN
-    public partial class Skip_
+    public partial class Skip_ : DataModel
     {
 
         public static Skip_? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Skip_();
+            var value   = new Skip_() { Pointer= p0 };
 
 
             return value;

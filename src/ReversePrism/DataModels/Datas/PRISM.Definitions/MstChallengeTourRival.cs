@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SilhouetteId                             0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstChallengeTourRival
+    public partial class MstChallengeTourRival : DataModel
     {
         public int                                      SilhouetteId                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstChallengeTourRival();
+            var value   = new MstChallengeTourRival() { Pointer= p0 };
 
-            value.SilhouetteId                              = GetInt32(new IntPtr(p + 0x010)); // 0270045A9A58 0x10 SilhouetteId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SilhouetteId                              = GetInt32(new IntPtr(p + 0x010)); // 0245A46250E8 0x10 SilhouetteId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

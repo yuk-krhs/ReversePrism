@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
     // 0A8 Collection                               0001865D7890 ModelClassType Columns Columns Columns Pointer
     // 0B0 changed                                  Action`2<Column, ColumnDataType> IL2CPP_TYPE_GENERICINST
     // 0B8 resized                                  Action`1<Column> IL2CPP_TYPE_GENERICINST
-    public partial class Column
+    public partial class Column : DataModel
     {
         public string                                   M_Name                                  { get; set; }
         public string                                   M_Title                                 { get; set; }
@@ -54,21 +54,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Column();
+            var value   = new Column() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0270067249B0 0x10 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Title                                   = GetString(new IntPtr(p + 0x018)); // 0270067249D0 0x18 M_Title                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Icon                                    = (Background)GetInt32(new IntPtr(p + 0x020)); // 0270067249F0 0x20 M_Icon                      ( 000186733D40 ModelEnumType Background Background Background Int32 )
-            value.M_Visible                                 = GetBool(new IntPtr(p + 0x040)); // 027006724A10 0x40 M_Visible                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Width                                   = (Length)GetInt32(new IntPtr(p + 0x044)); // 027006724A30 0x44 M_Width                     ( 0001866061D0 ModelEnumType Length Length Length Int32 )
-            value.M_MinWidth                                = (Length)GetInt32(new IntPtr(p + 0x04C)); // 027006724A50 0x4C M_MinWidth                  ( 0001866061D0 ModelEnumType Length Length Length Int32 )
-            value.M_MaxWidth                                = (Length)GetInt32(new IntPtr(p + 0x054)); // 027006724A70 0x54 M_MaxWidth                  ( 0001866061D0 ModelEnumType Length Length Length Int32 )
-            value.M_DesiredWidth                            = GetSingle(new IntPtr(p + 0x05C)); // 027006724A90 0x5C M_DesiredWidth              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Stretchable                             = GetBool(new IntPtr(p + 0x060)); // 027006724AB0 0x60 M_Stretchable               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Sortable                                = GetBool(new IntPtr(p + 0x061)); // 027006724AD0 0x61 M_Sortable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Optional                                = GetBool(new IntPtr(p + 0x062)); // 027006724AF0 0x62 M_Optional                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Resizable                               = GetBool(new IntPtr(p + 0x063)); // 027006724B10 0x63 M_Resizable                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Collection                                = GetObject<Columns>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Columns.FromPointer); // 027006724C30 0xA8 Collection                  ( 0001865D7890 ModelClassType Columns Columns Columns Pointer )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0245A66E6990 0x10 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Title                                   = GetString(new IntPtr(p + 0x018)); // 0245A66E69B0 0x18 M_Title                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Icon                                    = (Background)GetInt32(new IntPtr(p + 0x020)); // 0245A66E69D0 0x20 M_Icon                      ( 000186733D40 ModelEnumType Background Background Background Int32 )
+            value.M_Visible                                 = GetBool(new IntPtr(p + 0x040)); // 0245A66E69F0 0x40 M_Visible                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Width                                   = (Length)GetInt32(new IntPtr(p + 0x044)); // 0245A66E6A10 0x44 M_Width                     ( 0001866061D0 ModelEnumType Length Length Length Int32 )
+            value.M_MinWidth                                = (Length)GetInt32(new IntPtr(p + 0x04C)); // 0245A66E6A30 0x4C M_MinWidth                  ( 0001866061D0 ModelEnumType Length Length Length Int32 )
+            value.M_MaxWidth                                = (Length)GetInt32(new IntPtr(p + 0x054)); // 0245A66E6A50 0x54 M_MaxWidth                  ( 0001866061D0 ModelEnumType Length Length Length Int32 )
+            value.M_DesiredWidth                            = GetSingle(new IntPtr(p + 0x05C)); // 0245A66E6A70 0x5C M_DesiredWidth              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Stretchable                             = GetBool(new IntPtr(p + 0x060)); // 0245A66E6A90 0x60 M_Stretchable               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Sortable                                = GetBool(new IntPtr(p + 0x061)); // 0245A66E6AB0 0x61 M_Sortable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Optional                                = GetBool(new IntPtr(p + 0x062)); // 0245A66E6AD0 0x62 M_Optional                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Resizable                               = GetBool(new IntPtr(p + 0x063)); // 0245A66E6AF0 0x63 M_Resizable                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Collection                                = GetObject<Columns>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Columns.FromPointer); // 0245A66E6C10 0xA8 Collection                  ( 0001865D7890 ModelClassType Columns Columns Columns Pointer )
 
             return value;
         }

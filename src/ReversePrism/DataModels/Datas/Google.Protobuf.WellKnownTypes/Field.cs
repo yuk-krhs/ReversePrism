@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 048 JsonName                                 000186671910 ModelPrimitiveType string string string String
     // 000 DefaultValueFieldNumber                  int IL2CPP_TYPE_I4
     // 050 DefaultValue                             000186671910 ModelPrimitiveType string string string String
-    public partial class Field
+    public partial class Field : DataModel
     {
         public Kind                                     Kind                                    { get; set; }
         public Cardinality                              Cardinality                             { get; set; }
@@ -50,18 +50,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Field();
+            var value   = new Field() { Pointer= p0 };
 
-            value.Kind                                      = (Kind)GetInt32(new IntPtr(p + 0x018)); // 0270DA4AC6C8 0x18 Kind                        ( 00018650E3F0 ModelEnumType Kind Kind Kind Int32 )
-            value.Cardinality                               = (Cardinality)GetInt32(new IntPtr(p + 0x01C)); // 0270DA4AC708 0x1C Cardinality                 ( 00018650DC80 ModelEnumType Cardinality Cardinality Cardinality Int32 )
-            value.Number                                    = GetInt32(new IntPtr(p + 0x020)); // 0270DA4AC748 0x20 Number                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270DA4AC788 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.TypeUrl                                   = GetString(new IntPtr(p + 0x030)); // 0270DA4AC7C8 0x30 TypeUrl                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.OneofIndex                                = GetInt32(new IntPtr(p + 0x038)); // 0270DA4AC808 0x38 OneofIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Packed                                    = GetBool(new IntPtr(p + 0x03C)); // 0270DA4AC848 0x3C Packed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x040), ReversePrism.DataModels.Option.FromPointer); // 0270DA4AC8A8 0x40 Options                     ( 000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
-            value.JsonName                                  = GetString(new IntPtr(p + 0x048)); // 0270DA4AC8E8 0x48 JsonName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.DefaultValue                              = GetString(new IntPtr(p + 0x050)); // 0270DA4AC928 0x50 DefaultValue                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Kind                                      = (Kind)GetInt32(new IntPtr(p + 0x018)); // 02466A517EF8 0x18 Kind                        ( 00018650E3F0 ModelEnumType Kind Kind Kind Int32 )
+            value.Cardinality                               = (Cardinality)GetInt32(new IntPtr(p + 0x01C)); // 02466A517F38 0x1C Cardinality                 ( 00018650DC80 ModelEnumType Cardinality Cardinality Cardinality Int32 )
+            value.Number                                    = GetInt32(new IntPtr(p + 0x020)); // 02466A517F78 0x20 Number                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 02466A517FB8 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.TypeUrl                                   = GetString(new IntPtr(p + 0x030)); // 02466A517FF8 0x30 TypeUrl                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.OneofIndex                                = GetInt32(new IntPtr(p + 0x038)); // 02466A518038 0x38 OneofIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Packed                                    = GetBool(new IntPtr(p + 0x03C)); // 02466A518078 0x3C Packed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x040), ReversePrism.DataModels.Option.FromPointer); // 02466A5180D8 0x40 Options                     ( 000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
+            value.JsonName                                  = GetString(new IntPtr(p + 0x048)); // 02466A518118 0x48 JsonName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.DefaultValue                              = GetString(new IntPtr(p + 0x050)); // 02466A518158 0x50 DefaultValue                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

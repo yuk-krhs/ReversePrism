@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 <FilterIDs>k__BackingField               IList`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ExchangeItemSortFilterModel
+    public partial class ExchangeItemSortFilterModel : DataModel
     {
 
         public static ExchangeItemSortFilterModel? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeItemSortFilterModel();
+            var value   = new ExchangeItemSortFilterModel() { Pointer= p0 };
 
 
             return value;

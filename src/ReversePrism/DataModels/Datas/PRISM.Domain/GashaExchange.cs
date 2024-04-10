@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Point                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 EndDate                                  000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 030 RewardList                               000185CF9B88 ModelClassListType IReadOnlyList`1<IGashaExchangeRewardStatus> IReadOnlyList`1<IGashaExchangeRewardStatus> List<IGashaExchangeRewardStatus> Pointer
-    public partial class GashaExchange
+    public partial class GashaExchange : DataModel
     {
         public string                                   GashaExchangeId                         { get; set; }
         public int                                      Point                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchange();
+            var value   = new GashaExchange() { Pointer= p0 };
 
-            value.GashaExchangeId                           = GetString(new IntPtr(p + 0x010)); // 0270D530D030 0x10 GashaExchangeId             ( 000186671910 ModelPrimitiveType string string string String )
-            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D530D050 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D530D070 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.RewardList                                = GetObjectList<IGashaExchangeRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IGashaExchangeRewardStatus.FromPointer); // 0270D530D090 0x30 RewardList                  ( 000185CF9B88 ModelClassListType IReadOnlyList`1<IGashaExchangeRewardStatus> IReadOnlyList`1<IGashaExchangeRewardStatus> List<IGashaExchangeRewardStatus> Pointer )
+            value.GashaExchangeId                           = GetString(new IntPtr(p + 0x010)); // 024665388978 0x10 GashaExchangeId             ( 000186671910 ModelPrimitiveType string string string String )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 024665388998 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0246653889B8 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.RewardList                                = GetObjectList<IGashaExchangeRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IGashaExchangeRewardStatus.FromPointer); // 0246653889D8 0x30 RewardList                  ( 000185CF9B88 ModelClassListType IReadOnlyList`1<IGashaExchangeRewardStatus> IReadOnlyList`1<IGashaExchangeRewardStatus> List<IGashaExchangeRewardStatus> Pointer )
 
             return value;
         }

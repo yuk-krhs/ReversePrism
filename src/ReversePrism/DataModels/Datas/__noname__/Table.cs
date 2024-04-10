@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 IsReadOnly                               000186595960 ModelPrimitiveType bool bool bool Bool
     // 058 M_Header                                 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
-    public partial class Table
+    public partial class Table : DataModel
     {
         public bool                                     IsReadOnly                              { get; set; }
         public List<bool>?                              M_Header                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Table();
+            var value   = new Table() { Pointer= p0 };
 
-            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x050)); // 0270D9151870 0x50 IsReadOnly                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.M_Header                                  = GetBoolList(new IntPtr(p + 0x058)); // 0270D9151890 0x58 M_Header                    ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x050)); // 0246691BABB0 0x50 IsReadOnly                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.M_Header                                  = GetBoolList(new IntPtr(p + 0x058)); // 0246691BABD0 0x58 M_Header                    ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

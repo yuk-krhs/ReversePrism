@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPAddressParser
+    public partial class IPAddressParser : DataModel
     {
 
         public static IPAddressParser? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPAddressParser();
+            var value   = new IPAddressParser() { Pointer= p0 };
 
 
             return value;

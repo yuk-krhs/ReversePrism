@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Responses                              ConcurrentBag`1<ValueTuple`2<IGoogleBillingResult, IEnumerable`1<AndroidJavaObject>>> IL2CPP_TYPE_GENERICINST
-    public partial class SkuDetailsQueryResponse
+    public partial class SkuDetailsQueryResponse : DataModel
     {
 
         public static SkuDetailsQueryResponse? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkuDetailsQueryResponse();
+            var value   = new SkuDetailsQueryResponse() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 Dispose                                  00018667A3C0 ModelClassType Action Action Action Pointer
-    public partial class AnonymousDisposable
+    public partial class AnonymousDisposable : DataModel
     {
         public bool                                     IsDisposed                              { get; set; }
         public Action?                                  Dispose                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnonymousDisposable();
+            var value   = new AnonymousDisposable() { Pointer= p0 };
 
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0270D0E234A0 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Dispose                                   = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270D0E234C0 0x18 Dispose                     ( 00018667A3C0 ModelClassType Action Action Action Pointer )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0245A408DF50 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Dispose                                   = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A408DF70 0x18 Dispose                     ( 00018667A3C0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

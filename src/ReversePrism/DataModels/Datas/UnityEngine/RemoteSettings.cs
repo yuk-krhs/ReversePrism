@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Updated                                  UpdatedEventHandler IL2CPP_TYPE_CLASS
     // 008 BeforeFetchFromServer                    Action IL2CPP_TYPE_CLASS
     // 010 Completed                                Action`3<bool, bool, int> IL2CPP_TYPE_GENERICINST
-    public partial class RemoteSettings
+    public partial class RemoteSettings : DataModel
     {
 
         public static RemoteSettings? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoteSettings();
+            var value   = new RemoteSettings() { Pointer= p0 };
 
 
             return value;

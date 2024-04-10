@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 treeR                                    string IL2CPP_TYPE_STRING
     // 000 treeHips                                 string IL2CPP_TYPE_STRING
     // 000 ConstLerpCount                           float IL2CPP_TYPE_R4
-    public partial class ConeConstrain
+    public partial class ConeConstrain : DataModel
     {
         public List<ConeInfo>?                          LeftCones                               { get; set; }
         public List<ConeInfo>?                          RightCones                              { get; set; }
@@ -46,20 +46,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConeConstrain();
+            var value   = new ConeConstrain() { Pointer= p0 };
 
-            value.LeftCones                                 = GetObjectList<ConeInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ConeInfo.FromPointer); // 0270069DC1C8 0x20 LeftCones                   ( 000185CB7C78 ModelClassListType ConeInfo[] ConeInfo[] List<ConeInfo> Pointer )
-            value.RightCones                                = GetObjectList<ConeInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.ConeInfo.FromPointer); // 0270069DC1E8 0x28 RightCones                  ( 000185CB7C78 ModelClassListType ConeInfo[] ConeInfo[] List<ConeInfo> Pointer )
-            value.CollideOn                                 = GetBool(new IntPtr(p + 0x030)); // 0270069DC208 0x30 CollideOn                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BendOn                                    = GetBool(new IntPtr(p + 0x031)); // 0270069DC228 0x31 BendOn                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Lhand                                     = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 0270069DC248 0x38 Lhand                       ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Rhand                                     = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0270069DC268 0x40 Rhand                       ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Hips                                      = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 0270069DC288 0x48 Hips                        ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ForeLen                                   = GetSingle(new IntPtr(p + 0x050)); // 0270069DC2A8 0x50 ForeLen                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.UpperLen                                  = GetSingle(new IntPtr(p + 0x054)); // 0270069DC2C8 0x54 UpperLen                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LeftCollide                               = (CalcCollidePos)GetInt32(new IntPtr(p + 0x058)); // 0270069DC2E8 0x58 LeftCollide                 ( 0001866D16B0 ModelEnumType CalcCollidePos CalcCollidePos CalcCollidePos Int32 )
-            value.RightCollide                              = (CalcCollidePos)GetInt32(new IntPtr(p + 0x0A0)); // 0270069DC308 0xA0 RightCollide                ( 0001866D16B0 ModelEnumType CalcCollidePos CalcCollidePos CalcCollidePos Int32 )
-            value.IsReset                                   = GetBool(new IntPtr(p + 0x0E8)); // 0270069DC328 0xE8 IsReset                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LeftCones                                 = GetObjectList<ConeInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ConeInfo.FromPointer); // 0245A69997C8 0x20 LeftCones                   ( 000185CB7C78 ModelClassListType ConeInfo[] ConeInfo[] List<ConeInfo> Pointer )
+            value.RightCones                                = GetObjectList<ConeInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.ConeInfo.FromPointer); // 0245A69997E8 0x28 RightCones                  ( 000185CB7C78 ModelClassListType ConeInfo[] ConeInfo[] List<ConeInfo> Pointer )
+            value.CollideOn                                 = GetBool(new IntPtr(p + 0x030)); // 0245A6999808 0x30 CollideOn                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BendOn                                    = GetBool(new IntPtr(p + 0x031)); // 0245A6999828 0x31 BendOn                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Lhand                                     = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 0245A6999848 0x38 Lhand                       ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.Rhand                                     = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0245A6999868 0x40 Rhand                       ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.Hips                                      = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 0245A6999888 0x48 Hips                        ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ForeLen                                   = GetSingle(new IntPtr(p + 0x050)); // 0245A69998A8 0x50 ForeLen                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.UpperLen                                  = GetSingle(new IntPtr(p + 0x054)); // 0245A69998C8 0x54 UpperLen                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LeftCollide                               = (CalcCollidePos)GetInt32(new IntPtr(p + 0x058)); // 0245A69998E8 0x58 LeftCollide                 ( 0001866D16B0 ModelEnumType CalcCollidePos CalcCollidePos CalcCollidePos Int32 )
+            value.RightCollide                              = (CalcCollidePos)GetInt32(new IntPtr(p + 0x0A0)); // 0245A6999908 0xA0 RightCollide                ( 0001866D16B0 ModelEnumType CalcCollidePos CalcCollidePos CalcCollidePos Int32 )
+            value.IsReset                                   = GetBool(new IntPtr(p + 0x0E8)); // 0245A6999928 0xE8 IsReset                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

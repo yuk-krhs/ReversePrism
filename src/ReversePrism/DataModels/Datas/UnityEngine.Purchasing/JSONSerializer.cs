@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JSONSerializer
+    public partial class JSONSerializer : DataModel
     {
 
         public static JSONSerializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JSONSerializer();
+            var value   = new JSONSerializer() { Pointer= p0 };
 
 
             return value;

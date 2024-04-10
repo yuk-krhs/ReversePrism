@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 puFactory                                IPopupViewFactory`1<IEditUnitNamePopupView> IL2CPP_TYPE_GENERICINST
-    public partial class EditUnitNamePopupSequencer
+    public partial class EditUnitNamePopupSequencer : DataModel
     {
 
         public static EditUnitNamePopupSequencer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditUnitNamePopupSequencer();
+            var value   = new EditUnitNamePopupSequencer() { Pointer= p0 };
 
 
             return value;

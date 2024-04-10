@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 058 AiResult                                 000186544B20 ModelClassType CardAndSkillExecResult CardAndSkillExecResult CardAndSkillExecResult Pointer
     // 060 PrevMental                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 068 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    public partial class AiModel
+    public partial class AiModel : DataModel
     {
         public bool                                     IsLog                                   { get; set; }
         public float                                    DebugTime                               { get; set; }
@@ -48,22 +48,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AiModel();
+            var value   = new AiModel() { Pointer= p0 };
 
-            value.IsLog                                     = GetBool(new IntPtr(p + 0x010)); // 0270D5A90DF8 0x10 IsLog                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DebugTime                                 = GetSingle(new IntPtr(p + 0x014)); // 0270D5A90E18 0x14 DebugTime                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.UseCardIndex                              = GetInt32(new IntPtr(p + 0x018)); // 0270D5A90E38 0x18 UseCardIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseSkillIndex                             = GetInt32(new IntPtr(p + 0x01C)); // 0270D5A90E58 0x1C UseSkillIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Time                                      = GetSingle(new IntPtr(p + 0x020)); // 0270D5A90E78 0x20 Time                        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ExternalAccess                            = GetObject<AiExternalAccess>(new IntPtr(p + 0x028), ReversePrism.DataModels.AiExternalAccess.FromPointer); // 0270D5A90E98 0x28 ExternalAccess              ( 00018669C800 ModelClassType AiExternalAccess AiExternalAccess AiExternalAccess Pointer )
-            value.AiTestDataCreateModel                     = GetObject<AiTestDataCreateModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.AiTestDataCreateModel.FromPointer); // 0270D5A90EB8 0x30 AiTestDataCreateModel       ( 00018669EA60 ModelClassType AiTestDataCreateModel AiTestDataCreateModel AiTestDataCreateModel Pointer )
-            value.ComboModel                                = GetObject<AiComboModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.AiComboModel.FromPointer); // 0270D5A90ED8 0x38 ComboModel                  ( 00018669C100 ModelClassType AiComboModel AiComboModel AiComboModel Pointer )
-            value.SkillActionModel                          = GetObject<IngameSkillActionModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameSkillActionModel.FromPointer); // 0270D5A90EF8 0x40 SkillActionModel            ( 0001866E7070 ModelClassType IngameSkillActionModel IngameSkillActionModel IngameSkillActionModel Pointer )
-            value.SkillDataList                             = GetObjectList<SkillData>(new IntPtr(p + 0x048), ReversePrism.DataModels.SkillData.FromPointer); // 0270D5A90F18 0x48 SkillDataList               ( 000185D1E5E8 ModelClassListType List`1<SkillData> List`1<SkillData> List<SkillData> Pointer )
-            value.ExecuteData                               = GetObject<ExecuteData>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExecuteData.FromPointer); // 0270D5A90F38 0x50 ExecuteData                 ( 000186696060 ModelClassType ExecuteData ExecuteData ExecuteData Pointer )
-            value.AiResult                                  = GetObject<CardAndSkillExecResult>(new IntPtr(p + 0x058), ReversePrism.DataModels.CardAndSkillExecResult.FromPointer); // 0270D5A90F58 0x58 AiResult                    ( 000186544B20 ModelClassType CardAndSkillExecResult CardAndSkillExecResult CardAndSkillExecResult Pointer )
-            value.PrevMental                                = GetInt32(new IntPtr(p + 0x060)); // 0270D5A90F78 0x60 PrevMental                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D5A90F98 0x68 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.IsLog                                     = GetBool(new IntPtr(p + 0x010)); // 024665B01878 0x10 IsLog                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DebugTime                                 = GetSingle(new IntPtr(p + 0x014)); // 024665B01898 0x14 DebugTime                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.UseCardIndex                              = GetInt32(new IntPtr(p + 0x018)); // 024665B018B8 0x18 UseCardIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UseSkillIndex                             = GetInt32(new IntPtr(p + 0x01C)); // 024665B018D8 0x1C UseSkillIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Time                                      = GetSingle(new IntPtr(p + 0x020)); // 024665B018F8 0x20 Time                        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ExternalAccess                            = GetObject<AiExternalAccess>(new IntPtr(p + 0x028), ReversePrism.DataModels.AiExternalAccess.FromPointer); // 024665B01918 0x28 ExternalAccess              ( 00018669C800 ModelClassType AiExternalAccess AiExternalAccess AiExternalAccess Pointer )
+            value.AiTestDataCreateModel                     = GetObject<AiTestDataCreateModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.AiTestDataCreateModel.FromPointer); // 024665B01938 0x30 AiTestDataCreateModel       ( 00018669EA60 ModelClassType AiTestDataCreateModel AiTestDataCreateModel AiTestDataCreateModel Pointer )
+            value.ComboModel                                = GetObject<AiComboModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.AiComboModel.FromPointer); // 024665B01958 0x38 ComboModel                  ( 00018669C100 ModelClassType AiComboModel AiComboModel AiComboModel Pointer )
+            value.SkillActionModel                          = GetObject<IngameSkillActionModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameSkillActionModel.FromPointer); // 024665B01978 0x40 SkillActionModel            ( 0001866E7070 ModelClassType IngameSkillActionModel IngameSkillActionModel IngameSkillActionModel Pointer )
+            value.SkillDataList                             = GetObjectList<SkillData>(new IntPtr(p + 0x048), ReversePrism.DataModels.SkillData.FromPointer); // 024665B01998 0x48 SkillDataList               ( 000185D1E5E8 ModelClassListType List`1<SkillData> List`1<SkillData> List<SkillData> Pointer )
+            value.ExecuteData                               = GetObject<ExecuteData>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExecuteData.FromPointer); // 024665B019B8 0x50 ExecuteData                 ( 000186696060 ModelClassType ExecuteData ExecuteData ExecuteData Pointer )
+            value.AiResult                                  = GetObject<CardAndSkillExecResult>(new IntPtr(p + 0x058), ReversePrism.DataModels.CardAndSkillExecResult.FromPointer); // 024665B019D8 0x58 AiResult                    ( 000186544B20 ModelClassType CardAndSkillExecResult CardAndSkillExecResult CardAndSkillExecResult Pointer )
+            value.PrevMental                                = GetInt32(new IntPtr(p + 0x060)); // 024665B019F8 0x60 PrevMental                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024665B01A18 0x68 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

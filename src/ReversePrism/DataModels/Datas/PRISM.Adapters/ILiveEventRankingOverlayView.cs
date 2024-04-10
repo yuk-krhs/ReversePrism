@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveEventRankingOverlayView
+    public partial class ILiveEventRankingOverlayView : DataModel
     {
 
         public static ILiveEventRankingOverlayView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveEventRankingOverlayView();
+            var value   = new ILiveEventRankingOverlayView() { Pointer= p0 };
 
 
             return value;

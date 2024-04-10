@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 000 UninterpretedOptionFieldNumber           int IL2CPP_TYPE_I4
     // 018 _repeated_uninterpretedOption_codec      FieldCodec`1<UninterpretedOption> IL2CPP_TYPE_GENERICINST
     // 038 UninterpretedOption                      000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer
-    public partial class FieldOptions
+    public partial class FieldOptions : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public CType                                    Ctype                                   { get; set; }
@@ -54,20 +54,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldOptions();
+            var value   = new FieldOptions() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D0B9C088 0x20 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Ctype                                     = (CType)GetInt32(new IntPtr(p + 0x024)); // 0270D0B9C0E8 0x24 Ctype                       ( 000186510270 ModelEnumType CType CType CType Int32 )
-            value.Packed                                    = GetBool(new IntPtr(p + 0x028)); // 0270D0B9C148 0x28 Packed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.JstypeDefaultValue                        = (JSType)GetInt32(new IntPtr(p + 0x010)); // 0270D0B9C188 0x10 JstypeDefaultValue          ( 000186510F30 ModelEnumType JSType JSType JSType Int32 )
-            value.Jstype                                    = (JSType)GetInt32(new IntPtr(p + 0x02C)); // 0270D0B9C1A8 0x2C Jstype                      ( 000186510C70 ModelEnumType JSType JSType JSType Int32 )
-            value.LazyDefaultValue                          = GetBool(new IntPtr(p + 0x014)); // 0270D0B9C1E8 0x14 LazyDefaultValue            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.Lazy                                      = GetBool(new IntPtr(p + 0x030)); // 0270D0B9C208 0x30 Lazy                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DeprecatedDefaultValue                    = GetBool(new IntPtr(p + 0x015)); // 0270D0B9C248 0x15 DeprecatedDefaultValue      ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.Deprecated                                = GetBool(new IntPtr(p + 0x031)); // 0270D0B9C268 0x31 Deprecated                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WeakDefaultValue                          = GetBool(new IntPtr(p + 0x016)); // 0270D0B9C2A8 0x16 WeakDefaultValue            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.Weak                                      = GetBool(new IntPtr(p + 0x032)); // 0270D0B9C2C8 0x32 Weak                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x038), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 0270D0B9C328 0x38 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x020)); // 0245A3B15678 0x20 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Ctype                                     = (CType)GetInt32(new IntPtr(p + 0x024)); // 0245A3B156D8 0x24 Ctype                       ( 000186510270 ModelEnumType CType CType CType Int32 )
+            value.Packed                                    = GetBool(new IntPtr(p + 0x028)); // 0245A3B15738 0x28 Packed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.JstypeDefaultValue                        = (JSType)GetInt32(new IntPtr(p + 0x010)); // 0245A3B15778 0x10 JstypeDefaultValue          ( 000186510F30 ModelEnumType JSType JSType JSType Int32 )
+            value.Jstype                                    = (JSType)GetInt32(new IntPtr(p + 0x02C)); // 0245A3B15798 0x2C Jstype                      ( 000186510C70 ModelEnumType JSType JSType JSType Int32 )
+            value.LazyDefaultValue                          = GetBool(new IntPtr(p + 0x014)); // 0245A3B157D8 0x14 LazyDefaultValue            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.Lazy                                      = GetBool(new IntPtr(p + 0x030)); // 0245A3B157F8 0x30 Lazy                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DeprecatedDefaultValue                    = GetBool(new IntPtr(p + 0x015)); // 0245A3B15838 0x15 DeprecatedDefaultValue      ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.Deprecated                                = GetBool(new IntPtr(p + 0x031)); // 0245A3B15858 0x31 Deprecated                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WeakDefaultValue                          = GetBool(new IntPtr(p + 0x016)); // 0245A3B15898 0x16 WeakDefaultValue            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.Weak                                      = GetBool(new IntPtr(p + 0x032)); // 0245A3B158B8 0x32 Weak                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x038), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 0245A3B15918 0x38 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
 
             return value;
         }

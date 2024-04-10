@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 006 Zero                                     SqlByte IL2CPP_TYPE_VALUETYPE
     // 008 MinValue                                 SqlByte IL2CPP_TYPE_VALUETYPE
     // 00A MaxValue                                 SqlByte IL2CPP_TYPE_VALUETYPE
-    public partial class SqlByte
+    public partial class SqlByte : DataModel
     {
         public bool                                     M_fNotNull                              { get; set; }
         public sbyte                                    M_value                                 { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlByte();
+            var value   = new SqlByte() { Pointer= p0 };
 
-            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0270D897FEF8 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_value                                   = GetSByte(new IntPtr(p + 0x011)); // 0270D897FF18 0x11 M_value                     ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0246689EA948 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetSByte(new IntPtr(p + 0x011)); // 0246689EA968 0x11 M_value                     ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

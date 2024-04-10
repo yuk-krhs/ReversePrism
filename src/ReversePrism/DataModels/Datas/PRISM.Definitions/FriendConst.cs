@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ResourceTagName                          string IL2CPP_TYPE_STRING
-    public partial class FriendConst
+    public partial class FriendConst : DataModel
     {
 
         public static FriendConst? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendConst();
+            var value   = new FriendConst() { Pointer= p0 };
 
 
             return value;

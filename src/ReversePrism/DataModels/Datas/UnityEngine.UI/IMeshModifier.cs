@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMeshModifier
+    public partial class IMeshModifier : DataModel
     {
 
         public static IMeshModifier? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMeshModifier();
+            var value   = new IMeshModifier() { Pointer= p0 };
 
 
             return value;

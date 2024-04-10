@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 C0                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
     // 012 C1                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
     // 014 C2                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
-    public partial class bool2x3
+    public partial class bool2x3 : DataModel
     {
         public bool2                                    C0                                      { get; set; }
         public bool2                                    C1                                      { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new bool2x3();
+            var value   = new bool2x3() { Pointer= p0 };
 
-            value.C0                                        = (bool2)GetInt32(new IntPtr(p + 0x010)); // 0270D7E48B80 0x10 C0                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
-            value.C1                                        = (bool2)GetInt32(new IntPtr(p + 0x012)); // 0270D7E48BA0 0x12 C1                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
-            value.C2                                        = (bool2)GetInt32(new IntPtr(p + 0x014)); // 0270D7E48BC0 0x14 C2                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C0                                        = (bool2)GetInt32(new IntPtr(p + 0x010)); // 024667EB2BB0 0x10 C0                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C1                                        = (bool2)GetInt32(new IntPtr(p + 0x012)); // 024667EB2BD0 0x12 C1                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C2                                        = (bool2)GetInt32(new IntPtr(p + 0x014)); // 024667EB2BF0 0x14 C2                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
 
             return value;
         }

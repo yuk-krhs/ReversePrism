@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_NullHandle                             ComputeBufferHandle IL2CPP_TYPE_VALUETYPE
     // 010 Handle                                   00018665ABA0 ModelEnumType ResourceHandle ResourceHandle ResourceHandle Int32
-    public partial class ComputeBufferHandle
+    public partial class ComputeBufferHandle : DataModel
     {
         public ResourceHandle                           Handle                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComputeBufferHandle();
+            var value   = new ComputeBufferHandle() { Pointer= p0 };
 
-            value.Handle                                    = (ResourceHandle)GetInt32(new IntPtr(p + 0x010)); // 0270D90B46E0 0x10 Handle                      ( 00018665ABA0 ModelEnumType ResourceHandle ResourceHandle ResourceHandle Int32 )
+            value.Handle                                    = (ResourceHandle)GetInt32(new IntPtr(p + 0x010)); // 0246691078C8 0x10 Handle                      ( 00018665ABA0 ModelEnumType ResourceHandle ResourceHandle ResourceHandle Int32 )
 
             return value;
         }

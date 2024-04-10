@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Status                                   0001865B0870 ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32
     // 018 Information                              <int> IL2CPP_TYPE_I
-    public partial class IO_STATUS_BLOCK
+    public partial class IO_STATUS_BLOCK : DataModel
     {
         public IO_STATUS                                Status                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IO_STATUS_BLOCK();
+            var value   = new IO_STATUS_BLOCK() { Pointer= p0 };
 
-            value.Status                                    = (IO_STATUS)GetInt32(new IntPtr(p + 0x010)); // 0270D692A670 0x10 Status                      ( 0001865B0870 ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32 )
+            value.Status                                    = (IO_STATUS)GetInt32(new IntPtr(p + 0x010)); // 0246669A2670 0x10 Status                      ( 0001865B0870 ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32 )
 
             return value;
         }

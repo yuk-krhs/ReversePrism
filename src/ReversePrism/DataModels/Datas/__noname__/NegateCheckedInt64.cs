@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NegateCheckedInt64
+    public partial class NegateCheckedInt64 : DataModel
     {
 
         public static NegateCheckedInt64? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NegateCheckedInt64();
+            var value   = new NegateCheckedInt64() { Pointer= p0 };
 
 
             return value;

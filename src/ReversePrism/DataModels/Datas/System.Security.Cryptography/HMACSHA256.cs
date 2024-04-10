@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HMACSHA256
+    public partial class HMACSHA256 : DataModel
     {
 
         public static HMACSHA256? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HMACSHA256();
+            var value   = new HMACSHA256() { Pointer= p0 };
 
 
             return value;

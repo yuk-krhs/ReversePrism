@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 008 MaxValue                                 TimeSpan IL2CPP_TYPE_VALUETYPE
     // 010 MinValue                                 00018668BEB0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 010 Ticks                                    0001865F8520 ModelPrimitiveType long long long Int64
-    public partial class TimeSpan
+    public partial class TimeSpan : DataModel
     {
         public TimeSpan                                 MinValue                                { get; set; }
         public long                                     Ticks                                   { get; set; }
@@ -42,10 +42,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeSpan();
+            var value   = new TimeSpan() { Pointer= p0 };
 
-            value.MinValue                                  = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0270033D1370 0x10 MinValue                    ( 00018668BEB0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.Ticks                                     = GetInt64(new IntPtr(p + 0x010)); // 0270033D1390 0x10 Ticks                       ( 0001865F8520 ModelPrimitiveType long long long Int64 )
+            value.MinValue                                  = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0245A33D1370 0x10 MinValue                    ( 00018668BEB0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Ticks                                     = GetInt64(new IntPtr(p + 0x010)); // 0245A33D1390 0x10 Ticks                       ( 0001865F8520 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

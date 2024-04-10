@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 018 s_SampleValueCountValid                  Func`3<float, float, float> IL2CPP_TYPE_GENERICINST
     // 020 s_SampleValueEnsureValid                 Func`3<float, float, float> IL2CPP_TYPE_GENERICINST
     // 028 s_SampleValueDivide                      Func`3<float, float, float> IL2CPP_TYPE_GENERICINST
-    public partial class FrameTimeSampleHistory
+    public partial class FrameTimeSampleHistory : DataModel
     {
         public List<FrameTimeSample>?                   M_Samples                               { get; set; }
         public FrameTimeSample                          SampleAverage                           { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameTimeSampleHistory();
+            var value   = new FrameTimeSampleHistory() { Pointer= p0 };
 
-            value.M_Samples                                 = GetEnumList<FrameTimeSample>(new IntPtr(p + 0x010)); // 0270D9161958 0x10 M_Samples                   ( 000185CDCAC8 ModelEnumListType List`1<FrameTimeSample> List`1<FrameTimeSample> List<FrameTimeSample> Pointer )
-            value.SampleAverage                             = (FrameTimeSample)GetInt32(new IntPtr(p + 0x018)); // 0270D9161978 0x18 SampleAverage               ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
-            value.SampleMin                                 = (FrameTimeSample)GetInt32(new IntPtr(p + 0x030)); // 0270D9161998 0x30 SampleMin                   ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
-            value.SampleMax                                 = (FrameTimeSample)GetInt32(new IntPtr(p + 0x048)); // 0270D91619B8 0x48 SampleMax                   ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
+            value.M_Samples                                 = GetEnumList<FrameTimeSample>(new IntPtr(p + 0x010)); // 0246691C4B18 0x10 M_Samples                   ( 000185CDCAC8 ModelEnumListType List`1<FrameTimeSample> List`1<FrameTimeSample> List<FrameTimeSample> Pointer )
+            value.SampleAverage                             = (FrameTimeSample)GetInt32(new IntPtr(p + 0x018)); // 0246691C4B38 0x18 SampleAverage               ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
+            value.SampleMin                                 = (FrameTimeSample)GetInt32(new IntPtr(p + 0x030)); // 0246691C4B58 0x30 SampleMin                   ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
+            value.SampleMax                                 = (FrameTimeSample)GetInt32(new IntPtr(p + 0x048)); // 0246691C4B78 0x48 SampleMax                   ( 0001865D7060 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
 
             return value;
         }

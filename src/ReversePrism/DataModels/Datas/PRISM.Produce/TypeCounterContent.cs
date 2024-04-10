@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ParameterUIs                             000185CC4838 ModelClassListType ParameterUI[] ParameterUI[] List<ParameterUI> Pointer
-    public partial class TypeCounterContent
+    public partial class TypeCounterContent : DataModel
     {
         public List<ParameterUI>?                       ParameterUIs                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeCounterContent();
+            var value   = new TypeCounterContent() { Pointer= p0 };
 
-            value.ParameterUIs                              = GetObjectList<ParameterUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.ParameterUI.FromPointer); // 0270D5BC6040 0x20 ParameterUIs                ( 000185CC4838 ModelClassListType ParameterUI[] ParameterUI[] List<ParameterUI> Pointer )
+            value.ParameterUIs                              = GetObjectList<ParameterUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.ParameterUI.FromPointer); // 024665C368B8 0x20 ParameterUIs                ( 000185CC4838 ModelClassListType ParameterUI[] ParameterUI[] List<ParameterUI> Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 supportedTypes                           HashSet`1<Type> IL2CPP_TYPE_GENERICINST
     // 080 Input                                    00018676E9C0 ModelClassType BoundInputField BoundInputField BoundInputField Pointer
     // 088 NumberHandler                            0001865C4590 ModelClassType INumberHandler INumberHandler INumberHandler Pointer
-    public partial class NumberField
+    public partial class NumberField : DataModel
     {
         public BoundInputField?                         Input                                   { get; set; }
         public INumberHandler?                          NumberHandler                           { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NumberField();
+            var value   = new NumberField() { Pointer= p0 };
 
-            value.Input                                     = GetObject<BoundInputField>(new IntPtr(p + 0x080), ReversePrism.DataModels.BoundInputField.FromPointer); // 0270DB1E7A98 0x80 Input                       ( 00018676E9C0 ModelClassType BoundInputField BoundInputField BoundInputField Pointer )
-            value.NumberHandler                             = GetObject<INumberHandler>(new IntPtr(p + 0x088), ReversePrism.DataModels.INumberHandler.FromPointer); // 0270DB1E7AB8 0x88 NumberHandler               ( 0001865C4590 ModelClassType INumberHandler INumberHandler INumberHandler Pointer )
+            value.Input                                     = GetObject<BoundInputField>(new IntPtr(p + 0x080), ReversePrism.DataModels.BoundInputField.FromPointer); // 02466B247A98 0x80 Input                       ( 00018676E9C0 ModelClassType BoundInputField BoundInputField BoundInputField Pointer )
+            value.NumberHandler                             = GetObject<INumberHandler>(new IntPtr(p + 0x088), ReversePrism.DataModels.INumberHandler.FromPointer); // 02466B247AB8 0x88 NumberHandler               ( 0001865C4590 ModelClassType INumberHandler INumberHandler INumberHandler Pointer )
 
             return value;
         }

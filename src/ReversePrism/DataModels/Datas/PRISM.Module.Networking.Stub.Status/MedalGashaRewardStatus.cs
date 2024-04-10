@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Count                                    00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
     // 000 RewardFieldNumber                        int IL2CPP_TYPE_I4
     // 028 Reward                                   0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class MedalGashaRewardStatus
+    public partial class MedalGashaRewardStatus : DataModel
     {
         public bool                                     IsFeatured                              { get; set; }
         public LimitedValueStatus?                      Count                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardStatus();
+            var value   = new MedalGashaRewardStatus() { Pointer= p0 };
 
-            value.IsFeatured                                = GetBool(new IntPtr(p + 0x018)); // 0270D229AFB0 0x18 IsFeatured                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D229AFF0 0x20 Count                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D229B030 0x28 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.IsFeatured                                = GetBool(new IntPtr(p + 0x018)); // 02466220A7C0 0x18 IsFeatured                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 02466220A800 0x20 Count                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466220A840 0x28 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

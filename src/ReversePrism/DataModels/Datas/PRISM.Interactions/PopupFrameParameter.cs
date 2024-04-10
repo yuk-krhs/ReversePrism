@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 OutOfRangeParameter                      00018658DEB0 ModelClassType OutOfRangeInfoParameter OutOfRangeInfoParameter OutOfRangeInfoParameter Pointer
     // 030 OpenSE                                   0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 040 CloseSE                                  0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class PopupFrameParameter
+    public partial class PopupFrameParameter : DataModel
     {
         public PopupSizeType                            SizeType                                { get; set; }
         public HeaderInfoParameter?                     HeaderParameter                         { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupFrameParameter();
+            var value   = new PopupFrameParameter() { Pointer= p0 };
 
-            value.SizeType                                  = (PopupSizeType)GetInt32(new IntPtr(p + 0x010)); // 0270DA0CDBF0 0x10 SizeType                    ( 00018658C690 ModelEnumType PopupSizeType PopupSizeType PopupSizeType Int32 )
-            value.HeaderParameter                           = GetObject<HeaderInfoParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderInfoParameter.FromPointer); // 0270DA0CDC10 0x18 HeaderParameter             ( 00018658D9B0 ModelClassType HeaderInfoParameter HeaderInfoParameter HeaderInfoParameter Pointer )
-            value.FooterParameter                           = GetObject<FooterInfoParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.FooterInfoParameter.FromPointer); // 0270DA0CDC30 0x20 FooterParameter             ( 00018658D480 ModelClassType FooterInfoParameter FooterInfoParameter FooterInfoParameter Pointer )
-            value.OutOfRangeParameter                       = GetObject<OutOfRangeInfoParameter>(new IntPtr(p + 0x028), ReversePrism.DataModels.OutOfRangeInfoParameter.FromPointer); // 0270DA0CDC50 0x28 OutOfRangeParameter         ( 00018658DEB0 ModelClassType OutOfRangeInfoParameter OutOfRangeInfoParameter OutOfRangeInfoParameter Pointer )
-            value.OpenSE                                    = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 0270DA0CDC70 0x30 OpenSE                      ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.CloseSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 0270DA0CDC90 0x40 CloseSE                     ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.SizeType                                  = (PopupSizeType)GetInt32(new IntPtr(p + 0x010)); // 02466A121F38 0x10 SizeType                    ( 00018658C690 ModelEnumType PopupSizeType PopupSizeType PopupSizeType Int32 )
+            value.HeaderParameter                           = GetObject<HeaderInfoParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderInfoParameter.FromPointer); // 02466A121F58 0x18 HeaderParameter             ( 00018658D9B0 ModelClassType HeaderInfoParameter HeaderInfoParameter HeaderInfoParameter Pointer )
+            value.FooterParameter                           = GetObject<FooterInfoParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.FooterInfoParameter.FromPointer); // 02466A121F78 0x20 FooterParameter             ( 00018658D480 ModelClassType FooterInfoParameter FooterInfoParameter FooterInfoParameter Pointer )
+            value.OutOfRangeParameter                       = GetObject<OutOfRangeInfoParameter>(new IntPtr(p + 0x028), ReversePrism.DataModels.OutOfRangeInfoParameter.FromPointer); // 02466A121F98 0x28 OutOfRangeParameter         ( 00018658DEB0 ModelClassType OutOfRangeInfoParameter OutOfRangeInfoParameter OutOfRangeInfoParameter Pointer )
+            value.OpenSE                                    = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 02466A121FB8 0x30 OpenSE                      ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.CloseSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 02466A121FD8 0x40 CloseSE                     ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

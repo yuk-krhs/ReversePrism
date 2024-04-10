@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimelineLayerTrack
+    public partial class TimelineLayerTrack : DataModel
     {
 
         public static TimelineLayerTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineLayerTrack();
+            var value   = new TimelineLayerTrack() { Pointer= p0 };
 
 
             return value;

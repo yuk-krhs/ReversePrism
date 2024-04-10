@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 <OnStartSeasonAsync>k__BackingField      Func`4<IProduceTermStatus, ISubSeasonStatus, CancellationToken, UniTask> IL2CPP_TYPE_GENERICINST
     // 048 <OnPostExecScheduleAsync>k__BackingField Func`7<ScheduleType, IScheduleDetailStatus, IProduceTermStatus, ISubSeasonStatus, bool, CancellationToken, UniTask> IL2CPP_TYPE_GENERICINST
     // 050 <OnPostSingleExecScheduleAsync>k__BackingField Func`5<IProduceTermStatus, ISubSeasonStatus, bool, CancellationToken, UniTask> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceSelectScheduleAutoExecModel
+    public partial class ProduceSelectScheduleAutoExecModel : DataModel
     {
         public ProduceService?                          Service                                 { get; set; }
 
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceSelectScheduleAutoExecModel();
+            var value   = new ProduceSelectScheduleAutoExecModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 0270DAE10820 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
+            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 02466AE68820 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 BonusText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 ShowDetailButton                         0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    public partial class EventBonusRateView
+    public partial class EventBonusRateView : DataModel
     {
         public UITextMeshProUGUI?                       BonusText                               { get; set; }
         public UIButton?                                ShowDetailButton                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventBonusRateView();
+            var value   = new EventBonusRateView() { Pointer= p0 };
 
-            value.BonusText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB916890 0x20 BonusText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ShowDetailButton                          = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB9168B0 0x28 ShowDetailButton            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BonusText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9ADB70 0x20 BonusText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ShowDetailButton                          = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B9ADB90 0x28 ShowDetailButton            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

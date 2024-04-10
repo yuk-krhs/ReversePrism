@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 060 InnerConeAngle                           000186666050 ModelPrimitiveType float float float Single
     // 064 Falloff                                  000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32
     // 065 AngularFalloff                           0001866B0B30 ModelEnumType AngularFalloffType AngularFalloffType AngularFalloffType Int32
-    public partial class SpotLight
+    public partial class SpotLight : DataModel
     {
         public int                                      InstanceID                              { get; set; }
         public bool                                     Shadow                                  { get; set; }
@@ -43,21 +43,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpotLight();
+            var value   = new SpotLight() { Pointer= p0 };
 
-            value.InstanceID                                = GetInt32(new IntPtr(p + 0x010)); // 0270068D7B60 0x10 InstanceID                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Shadow                                    = GetBool(new IntPtr(p + 0x014)); // 0270068D7B80 0x14 Shadow                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Mode                                      = (LightMode)GetInt32(new IntPtr(p + 0x015)); // 0270068D7BA0 0x15 Mode                        ( 000186526160 ModelEnumType LightMode LightMode LightMode Int32 )
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0270068D7BC0 0x18 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Orientation                               = (Quaternion)GetInt32(new IntPtr(p + 0x024)); // 0270068D7BE0 0x24 Orientation                 ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.Color                                     = (LinearColor)GetInt32(new IntPtr(p + 0x034)); // 0270068D7C00 0x34 Color                       ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
-            value.IndirectColor                             = (LinearColor)GetInt32(new IntPtr(p + 0x044)); // 0270068D7C20 0x44 IndirectColor               ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
-            value.Range                                     = GetSingle(new IntPtr(p + 0x054)); // 0270068D7C40 0x54 Range                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SphereRadius                              = GetSingle(new IntPtr(p + 0x058)); // 0270068D7C60 0x58 SphereRadius                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ConeAngle                                 = GetSingle(new IntPtr(p + 0x05C)); // 0270068D7C80 0x5C ConeAngle                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.InnerConeAngle                            = GetSingle(new IntPtr(p + 0x060)); // 0270068D7CA0 0x60 InnerConeAngle              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Falloff                                   = (FalloffType)GetInt32(new IntPtr(p + 0x064)); // 0270068D7CC0 0x64 Falloff                     ( 000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32 )
-            value.AngularFalloff                            = (AngularFalloffType)GetInt32(new IntPtr(p + 0x065)); // 0270068D7CE0 0x65 AngularFalloff              ( 0001866B0B30 ModelEnumType AngularFalloffType AngularFalloffType AngularFalloffType Int32 )
+            value.InstanceID                                = GetInt32(new IntPtr(p + 0x010)); // 0245A689A260 0x10 InstanceID                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Shadow                                    = GetBool(new IntPtr(p + 0x014)); // 0245A689A280 0x14 Shadow                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Mode                                      = (LightMode)GetInt32(new IntPtr(p + 0x015)); // 0245A689A2A0 0x15 Mode                        ( 000186526160 ModelEnumType LightMode LightMode LightMode Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0245A689A2C0 0x18 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Orientation                               = (Quaternion)GetInt32(new IntPtr(p + 0x024)); // 0245A689A2E0 0x24 Orientation                 ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.Color                                     = (LinearColor)GetInt32(new IntPtr(p + 0x034)); // 0245A689A300 0x34 Color                       ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
+            value.IndirectColor                             = (LinearColor)GetInt32(new IntPtr(p + 0x044)); // 0245A689A320 0x44 IndirectColor               ( 000186607DF0 ModelEnumType LinearColor LinearColor LinearColor Int32 )
+            value.Range                                     = GetSingle(new IntPtr(p + 0x054)); // 0245A689A340 0x54 Range                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SphereRadius                              = GetSingle(new IntPtr(p + 0x058)); // 0245A689A360 0x58 SphereRadius                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ConeAngle                                 = GetSingle(new IntPtr(p + 0x05C)); // 0245A689A380 0x5C ConeAngle                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.InnerConeAngle                            = GetSingle(new IntPtr(p + 0x060)); // 0245A689A3A0 0x60 InnerConeAngle              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Falloff                                   = (FalloffType)GetInt32(new IntPtr(p + 0x064)); // 0245A689A3C0 0x64 Falloff                     ( 000186552FB0 ModelEnumType FalloffType FalloffType FalloffType Int32 )
+            value.AngularFalloff                            = (AngularFalloffType)GetInt32(new IntPtr(p + 0x065)); // 0245A689A3E0 0x65 AngularFalloff              ( 0001866B0B30 ModelEnumType AngularFalloffType AngularFalloffType AngularFalloffType Int32 )
 
             return value;
         }

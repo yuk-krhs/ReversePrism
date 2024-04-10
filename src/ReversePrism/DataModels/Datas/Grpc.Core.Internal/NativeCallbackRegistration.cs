@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Handle                                   0001865D9600 ModelEnumType GCHandle GCHandle GCHandle Int32
-    public partial class NativeCallbackRegistration
+    public partial class NativeCallbackRegistration : DataModel
     {
         public GCHandle                                 Handle                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeCallbackRegistration();
+            var value   = new NativeCallbackRegistration() { Pointer= p0 };
 
-            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x010)); // 0270D93ACBD8 0x10 Handle                      ( 0001865D9600 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x010)); // 02466940EED8 0x10 Handle                      ( 0001865D9600 ModelEnumType GCHandle GCHandle GCHandle Int32 )
 
             return value;
         }

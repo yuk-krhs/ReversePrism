@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVolume
+    public partial class IVolume : DataModel
     {
 
         public static IVolume? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVolume();
+            var value   = new IVolume() { Pointer= p0 };
 
 
             return value;

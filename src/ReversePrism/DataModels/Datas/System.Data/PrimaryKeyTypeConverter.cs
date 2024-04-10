@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PrimaryKeyTypeConverter
+    public partial class PrimaryKeyTypeConverter : DataModel
     {
 
         public static PrimaryKeyTypeConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrimaryKeyTypeConverter();
+            var value   = new PrimaryKeyTypeConverter() { Pointer= p0 };
 
 
             return value;

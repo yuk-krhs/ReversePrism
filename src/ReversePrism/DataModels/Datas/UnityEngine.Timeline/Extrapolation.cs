@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 kMinExtrapolationTime                    double IL2CPP_TYPE_R8
-    public partial class Extrapolation
+    public partial class Extrapolation : DataModel
     {
 
         public static Extrapolation? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Extrapolation();
+            var value   = new Extrapolation() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BatchCompletionDelegate
+    public partial class BatchCompletionDelegate : DataModel
     {
 
         public static BatchCompletionDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchCompletionDelegate();
+            var value   = new BatchCompletionDelegate() { Pointer= p0 };
 
 
             return value;

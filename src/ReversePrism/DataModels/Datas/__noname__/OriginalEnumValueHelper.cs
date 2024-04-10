@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 dictionaries                             Dictionary`2<Type, Dictionary`2<<object>, string>> IL2CPP_TYPE_GENERICINST
-    public partial class OriginalEnumValueHelper
+    public partial class OriginalEnumValueHelper : DataModel
     {
 
         public static OriginalEnumValueHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OriginalEnumValueHelper();
+            var value   = new OriginalEnumValueHelper() { Pointer= p0 };
 
 
             return value;

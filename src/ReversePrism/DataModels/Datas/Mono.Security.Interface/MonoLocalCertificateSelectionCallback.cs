@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoLocalCertificateSelectionCallback
+    public partial class MonoLocalCertificateSelectionCallback : DataModel
     {
 
         public static MonoLocalCertificateSelectionCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoLocalCertificateSelectionCallback();
+            var value   = new MonoLocalCertificateSelectionCallback() { Pointer= p0 };
 
 
             return value;

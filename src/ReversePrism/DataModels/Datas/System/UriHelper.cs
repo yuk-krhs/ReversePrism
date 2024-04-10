@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 HexUpperChars                            char[] IL2CPP_TYPE_SZARRAY
-    public partial class UriHelper
+    public partial class UriHelper : DataModel
     {
 
         public static UriHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UriHelper();
+            var value   = new UriHelper() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GIContributors
+    public partial class GIContributors : DataModel
     {
 
         public static GIContributors? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GIContributors();
+            var value   = new GIContributors() { Pointer= p0 };
 
 
             return value;

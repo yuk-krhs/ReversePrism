@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Consent
+    public partial class Consent : DataModel
     {
 
         public static Consent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Consent();
+            var value   = new Consent() { Pointer= p0 };
 
 
             return value;

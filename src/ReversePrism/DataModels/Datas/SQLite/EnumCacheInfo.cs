@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 IsEnum                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 StoreAsText                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 <EnumValues>k__BackingField              Dictionary`2<int, string> IL2CPP_TYPE_GENERICINST
-    public partial class EnumCacheInfo
+    public partial class EnumCacheInfo : DataModel
     {
         public bool                                     IsEnum                                  { get; set; }
         public bool                                     StoreAsText                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumCacheInfo();
+            var value   = new EnumCacheInfo() { Pointer= p0 };
 
-            value.IsEnum                                    = GetBool(new IntPtr(p + 0x010)); // 0270DB2C5880 0x10 IsEnum                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StoreAsText                               = GetBool(new IntPtr(p + 0x011)); // 0270DB2C58A0 0x11 StoreAsText                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsEnum                                    = GetBool(new IntPtr(p + 0x010)); // 02466B342B78 0x10 IsEnum                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StoreAsText                               = GetBool(new IntPtr(p + 0x011)); // 02466B342B98 0x11 StoreAsText                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 028 SelectedDifficultyLevel                  00018660C140 ModelEnumType ProduceDifficultyType ProduceDifficultyType ProduceDifficultyType Int32
     // 030 ReleasedDifficultyLevelDictionary        Dictionary`2<string, ProduceDifficultyType> IL2CPP_TYPE_GENERICINST
     // 038 LastPlayDifficultyLevelDictionary        Dictionary`2<string, ProduceDifficultyType> IL2CPP_TYPE_GENERICINST
-    public partial class ProducePreparationEpisodeSelectSaveData
+    public partial class ProducePreparationEpisodeSelectSaveData : DataModel
     {
         public int                                      SelectedUnitId                          { get; set; }
         public int                                      SelectedEpisodeId                       { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducePreparationEpisodeSelectSaveData();
+            var value   = new ProducePreparationEpisodeSelectSaveData() { Pointer= p0 };
 
-            value.SelectedUnitId                            = GetInt32(new IntPtr(p + 0x020)); // 027003A7C988 0x20 SelectedUnitId              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SelectedEpisodeId                         = GetInt32(new IntPtr(p + 0x024)); // 027003A7C9A8 0x24 SelectedEpisodeId           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SelectedDifficultyLevel                   = (ProduceDifficultyType)GetInt32(new IntPtr(p + 0x028)); // 027003A7C9C8 0x28 SelectedDifficultyLevel     ( 00018660C140 ModelEnumType ProduceDifficultyType ProduceDifficultyType ProduceDifficultyType Int32 )
+            value.SelectedUnitId                            = GetInt32(new IntPtr(p + 0x020)); // 0245A3A80790 0x20 SelectedUnitId              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SelectedEpisodeId                         = GetInt32(new IntPtr(p + 0x024)); // 0245A3A807B0 0x24 SelectedEpisodeId           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SelectedDifficultyLevel                   = (ProduceDifficultyType)GetInt32(new IntPtr(p + 0x028)); // 0245A3A807D0 0x28 SelectedDifficultyLevel     ( 00018660C140 ModelEnumType ProduceDifficultyType ProduceDifficultyType ProduceDifficultyType Int32 )
 
             return value;
         }

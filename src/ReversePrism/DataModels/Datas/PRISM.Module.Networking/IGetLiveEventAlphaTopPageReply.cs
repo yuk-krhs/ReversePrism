@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetLiveEventAlphaTopPageReply
+    public partial class IGetLiveEventAlphaTopPageReply : DataModel
     {
 
         public static IGetLiveEventAlphaTopPageReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetLiveEventAlphaTopPageReply();
+            var value   = new IGetLiveEventAlphaTopPageReply() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_PendingDelegates                       List`1<EarlyInitFunction> IL2CPP_TYPE_GENERICINST
-    public partial class EarlyInitHelpers
+    public partial class EarlyInitHelpers : DataModel
     {
 
         public static EarlyInitHelpers? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EarlyInitHelpers();
+            var value   = new EarlyInitHelpers() { Pointer= p0 };
 
 
             return value;

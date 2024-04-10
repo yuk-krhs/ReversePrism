@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 WarningTemp                              0001866656B0 ModelPrimitiveType float float float Single
     // 014 ThrottlingTemp                           0001866656B0 ModelPrimitiveType float float float Single
-    public partial class ThermalStateTracker
+    public partial class ThermalStateTracker : DataModel
     {
         public float                                    WarningTemp                             { get; set; }
         public float                                    ThrottlingTemp                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThermalStateTracker();
+            var value   = new ThermalStateTracker() { Pointer= p0 };
 
-            value.WarningTemp                               = GetSingle(new IntPtr(p + 0x010)); // 0270DB65E588 0x10 WarningTemp                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ThrottlingTemp                            = GetSingle(new IntPtr(p + 0x014)); // 0270DB65E5A8 0x14 ThrottlingTemp              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.WarningTemp                               = GetSingle(new IntPtr(p + 0x010)); // 02466B6F2640 0x10 WarningTemp                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ThrottlingTemp                            = GetSingle(new IntPtr(p + 0x014)); // 02466B6F2660 0x14 ThrottlingTemp              ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

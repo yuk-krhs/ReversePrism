@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_ControlPath                            000186671BA0 ModelPrimitiveType string string string String
     // 018 M_Flags                                  000186526CB0 ModelEnumType Flags Flags Flags Int32
-    public partial class DeviceRequirement
+    public partial class DeviceRequirement : DataModel
     {
         public string                                   M_ControlPath                           { get; set; }
         public Flags                                    M_Flags                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceRequirement();
+            var value   = new DeviceRequirement() { Pointer= p0 };
 
-            value.M_ControlPath                             = GetString(new IntPtr(p + 0x010)); // 0270D7672240 0x10 M_ControlPath               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x018)); // 0270D7672260 0x18 M_Flags                     ( 000186526CB0 ModelEnumType Flags Flags Flags Int32 )
+            value.M_ControlPath                             = GetString(new IntPtr(p + 0x010)); // 0246676DA240 0x10 M_ControlPath               ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x018)); // 0246676DA260 0x18 M_Flags                     ( 000186526CB0 ModelEnumType Flags Flags Flags Int32 )
 
             return value;
         }

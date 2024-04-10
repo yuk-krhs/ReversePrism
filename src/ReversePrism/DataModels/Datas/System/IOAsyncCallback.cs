@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOAsyncCallback
+    public partial class IOAsyncCallback : DataModel
     {
 
         public static IOAsyncCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOAsyncCallback();
+            var value   = new IOAsyncCallback() { Pointer= p0 };
 
 
             return value;

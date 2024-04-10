@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 ExtraListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_extraList_codec                FieldCodec`1<GashaExtraRewardProductStatus> IL2CPP_TYPE_GENERICINST
     // 048 ExtraList                                000185CDB8A8 ModelClassListType RepeatedField`1<GashaExtraRewardProductStatus> RepeatedField`1<GashaExtraRewardProductStatus> List<GashaExtraRewardProductStatus> Pointer
-    public partial class GashaExchangeRewardStatus
+    public partial class GashaExchangeRewardStatus : DataModel
     {
         public string                                   GashaExchangeRewardId                   { get; set; }
         public int                                      Point                                   { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeRewardStatus();
+            var value   = new GashaExchangeRewardStatus() { Pointer= p0 };
 
-            value.GashaExchangeRewardId                     = GetString(new IntPtr(p + 0x018)); // 0270D158E3F8 0x18 GashaExchangeRewardId       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Point                                     = GetInt32(new IntPtr(p + 0x020)); // 0270D158E438 0x20 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Value                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D158E478 0x28 Value                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D158E4B8 0x30 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Product                                   = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D158E4F8 0x38 Product                     ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.PickupBonus                               = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D158E538 0x40 PickupBonus                 ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.ExtraList                                 = GetObjectList<GashaExtraRewardProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.GashaExtraRewardProductStatus.FromPointer); // 0270D158E598 0x48 ExtraList                   ( 000185CDB8A8 ModelClassListType RepeatedField`1<GashaExtraRewardProductStatus> RepeatedField`1<GashaExtraRewardProductStatus> List<GashaExtraRewardProductStatus> Pointer )
+            value.GashaExchangeRewardId                     = GetString(new IntPtr(p + 0x018)); // 02466152A0B8 0x18 GashaExchangeRewardId       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x020)); // 02466152A0F8 0x20 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Value                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 02466152A138 0x28 Value                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x030)); // 02466152A178 0x30 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Product                                   = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466152A1B8 0x38 Product                     ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.PickupBonus                               = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466152A1F8 0x40 PickupBonus                 ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.ExtraList                                 = GetObjectList<GashaExtraRewardProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.GashaExtraRewardProductStatus.FromPointer); // 02466152A258 0x48 ExtraList                   ( 000185CDB8A8 ModelClassListType RepeatedField`1<GashaExtraRewardProductStatus> RepeatedField`1<GashaExtraRewardProductStatus> List<GashaExtraRewardProductStatus> Pointer )
 
             return value;
         }

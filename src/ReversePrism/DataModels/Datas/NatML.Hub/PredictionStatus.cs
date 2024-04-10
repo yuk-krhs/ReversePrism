@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Waiting                                  string IL2CPP_TYPE_STRING
     // 000 Processing                               string IL2CPP_TYPE_STRING
     // 000 Completed                                string IL2CPP_TYPE_STRING
-    public partial class PredictionStatus
+    public partial class PredictionStatus : DataModel
     {
 
         public static PredictionStatus? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PredictionStatus();
+            var value   = new PredictionStatus() { Pointer= p0 };
 
 
             return value;

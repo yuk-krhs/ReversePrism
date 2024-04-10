@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReceiveSpecialMissionCompleteRewardReplyTranslator
+    public partial class ReceiveSpecialMissionCompleteRewardReplyTranslator : DataModel
     {
 
         public static ReceiveSpecialMissionCompleteRewardReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiveSpecialMissionCompleteRewardReplyTranslator();
+            var value   = new ReceiveSpecialMissionCompleteRewardReplyTranslator() { Pointer= p0 };
 
 
             return value;

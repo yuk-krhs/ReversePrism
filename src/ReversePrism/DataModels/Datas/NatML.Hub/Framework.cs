@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Unity                                    string IL2CPP_TYPE_STRING
-    public partial class Framework
+    public partial class Framework : DataModel
     {
 
         public static Framework? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Framework();
+            var value   = new Framework() { Pointer= p0 };
 
 
             return value;

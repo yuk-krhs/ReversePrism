@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 playVoiceActions                         Dictionary`2<LiveIdol, ValueTuple`2<Func`1<CriAtomExPlayback>, Func`1<CriAtomExPlayback>>> IL2CPP_TYPE_GENERICINST
     // 048 cueNameCache                             Dictionary`2<ValueTuple`2<string, int>, string> IL2CPP_TYPE_GENERICINST
     // 050 lastPlayTimes                            Dictionary`2<string, float> IL2CPP_TYPE_GENERICINST
-    public partial class RhythmGameSoundService
+    public partial class RhythmGameSoundService : DataModel
     {
         public SoundManager?                            SoundManager                            { get; set; }
         public List<string>?                            SheetNames                              { get; set; }
@@ -31,13 +31,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameSoundService();
+            var value   = new RhythmGameSoundService() { Pointer= p0 };
 
-            value.SoundManager                              = GetObject<SoundManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.SoundManager.FromPointer); // 0270D500D8D8 0x10 SoundManager                ( 000186537E00 ModelClassType SoundManager SoundManager SoundManager Pointer )
-            value.SheetNames                                = GetStringList(new IntPtr(p + 0x018)); // 0270D500D8F8 0x18 SheetNames                  ( 000185D0D798 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0270D500D918 0x20 Player                      ( 000186649570 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.SeAcb                                     = GetObject<CriAtomExAcb>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtomExAcb.FromPointer); // 0270D500D938 0x28 SeAcb                       ( 000186645230 ModelClassType CriAtomExAcb CriAtomExAcb CriAtomExAcb Pointer )
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x038)); // 0270D500D978 0x38 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SoundManager                              = GetObject<SoundManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.SoundManager.FromPointer); // 024665089730 0x10 SoundManager                ( 000186537E00 ModelClassType SoundManager SoundManager SoundManager Pointer )
+            value.SheetNames                                = GetStringList(new IntPtr(p + 0x018)); // 024665089750 0x18 SheetNames                  ( 000185D0D798 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 024665089770 0x20 Player                      ( 000186649570 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.SeAcb                                     = GetObject<CriAtomExAcb>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtomExAcb.FromPointer); // 024665089790 0x28 SeAcb                       ( 000186645230 ModelClassType CriAtomExAcb CriAtomExAcb CriAtomExAcb Pointer )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x038)); // 0246650897D0 0x38 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

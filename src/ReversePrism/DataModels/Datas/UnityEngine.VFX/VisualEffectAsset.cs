@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 PlayEventID                              int IL2CPP_TYPE_I4
     // 004 StopEventID                              int IL2CPP_TYPE_I4
-    public partial class VisualEffectAsset
+    public partial class VisualEffectAsset : DataModel
     {
 
         public static VisualEffectAsset? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualEffectAsset();
+            var value   = new VisualEffectAsset() { Pointer= p0 };
 
 
             return value;

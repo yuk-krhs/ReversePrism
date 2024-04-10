@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RpnTokens                                000185B81E90 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 018 HasVariables                             000186596860 ModelPrimitiveType bool bool bool Bool
-    public partial class Expression
+    public partial class Expression : DataModel
     {
         public List<string>?                            RpnTokens                               { get; set; }
         public bool                                     HasVariables                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Expression();
+            var value   = new Expression() { Pointer= p0 };
 
-            value.RpnTokens                                 = GetStringList(new IntPtr(p + 0x010)); // 0270068A86D0 0x10 RpnTokens                   ( 000185B81E90 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.HasVariables                              = GetBool(new IntPtr(p + 0x018)); // 0270068A86F0 0x18 HasVariables                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.RpnTokens                                 = GetStringList(new IntPtr(p + 0x010)); // 0245A686A618 0x10 RpnTokens                   ( 000185B81E90 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.HasVariables                              = GetBool(new IntPtr(p + 0x018)); // 0245A686A638 0x18 HasVariables                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

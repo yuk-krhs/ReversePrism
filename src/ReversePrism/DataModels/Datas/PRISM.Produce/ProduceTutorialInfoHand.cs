@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 028 DefaultPos                               0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 034 TargetPos                                0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 040 Sec                                      0001866656B0 ModelPrimitiveType float float float Single
-    public partial class ProduceTutorialInfoHand
+    public partial class ProduceTutorialInfoHand : DataModel
     {
         public RectTransform?                           RectTransform                           { get; set; }
         public Vector3                                  DefaultPos                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialInfoHand();
+            var value   = new ProduceTutorialInfoHand() { Pointer= p0 };
 
-            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5D4F9A0 0x20 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.DefaultPos                                = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0270D5D4F9C0 0x28 DefaultPos                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.TargetPos                                 = (Vector3)GetInt32(new IntPtr(p + 0x034)); // 0270D5D4F9E0 0x34 TargetPos                   ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Sec                                       = GetSingle(new IntPtr(p + 0x040)); // 0270D5D4FA00 0x40 Sec                         ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 024665DC06B8 0x20 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.DefaultPos                                = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 024665DC06D8 0x28 DefaultPos                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.TargetPos                                 = (Vector3)GetInt32(new IntPtr(p + 0x034)); // 024665DC06F8 0x34 TargetPos                   ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Sec                                       = GetSingle(new IntPtr(p + 0x040)); // 024665DC0718 0x40 Sec                         ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

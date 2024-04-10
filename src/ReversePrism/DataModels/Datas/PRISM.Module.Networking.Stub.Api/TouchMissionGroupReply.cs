@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LastDisplayDateFieldNumber               int IL2CPP_TYPE_I4
     // 028 _LastDisplayDate                         000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class TouchMissionGroupReply
+    public partial class TouchMissionGroupReply : DataModel
     {
         public DateTime                                 LastDisplayDate                         { get; set; }
         public Timestamp?                               _LastDisplayDate                        { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchMissionGroupReply();
+            var value   = new TouchMissionGroupReply() { Pointer= p0 };
 
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 0270D22EB0B8 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D22EB138 0x28 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 02466225AEC8 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 02466225AF48 0x28 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.LastDisplayDate               = ToDateTime(value._LastDisplayDate);
 
             return value;

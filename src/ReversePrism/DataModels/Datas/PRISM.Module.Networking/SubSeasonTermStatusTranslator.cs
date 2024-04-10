@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SubSeasonTermStatusTranslator
+    public partial class SubSeasonTermStatusTranslator : DataModel
     {
 
         public static SubSeasonTermStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonTermStatusTranslator();
+            var value   = new SubSeasonTermStatusTranslator() { Pointer= p0 };
 
 
             return value;

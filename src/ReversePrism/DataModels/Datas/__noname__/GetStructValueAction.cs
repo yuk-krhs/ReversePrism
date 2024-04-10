@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetStructValueAction
+    public partial class GetStructValueAction : DataModel
     {
 
         public static GetStructValueAction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStructValueAction();
+            var value   = new GetStructValueAction() { Pointer= p0 };
 
 
             return value;

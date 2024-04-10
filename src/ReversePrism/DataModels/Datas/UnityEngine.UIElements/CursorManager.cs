@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IsCursorOverriden                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CursorManager
+    public partial class CursorManager : DataModel
     {
         public bool                                     IsCursorOverriden                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CursorManager();
+            var value   = new CursorManager() { Pointer= p0 };
 
-            value.IsCursorOverriden                         = GetBool(new IntPtr(p + 0x010)); // 027006750A38 0x10 IsCursorOverriden           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsCursorOverriden                         = GetBool(new IntPtr(p + 0x010)); // 0245A6713228 0x10 IsCursorOverriden           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

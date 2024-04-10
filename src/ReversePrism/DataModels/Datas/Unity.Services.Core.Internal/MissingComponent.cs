@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IntendedType                             0001866936B0 ModelClassType Type Type Type Pointer
-    public partial class MissingComponent
+    public partial class MissingComponent : DataModel
     {
         public Type?                                    IntendedType                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissingComponent();
+            var value   = new MissingComponent() { Pointer= p0 };
 
-            value.IntendedType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027003B60748 0x10 IntendedType                ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.IntendedType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A3B60748 0x10 IntendedType                ( 0001866936B0 ModelClassType Type Type Type Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BaseViewModel                            0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer
     // 018 UnitId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class UnitIconDisplayableAdvTitleViewModel
+    public partial class UnitIconDisplayableAdvTitleViewModel : DataModel
     {
         public AdvTitleViewModel?                       BaseViewModel                           { get; set; }
         public int                                      UnitId                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnitIconDisplayableAdvTitleViewModel();
+            var value   = new UnitIconDisplayableAdvTitleViewModel() { Pointer= p0 };
 
-            value.BaseViewModel                             = GetObject<AdvTitleViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdvTitleViewModel.FromPointer); // 0270D5DD3778 0x10 BaseViewModel               ( 0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer )
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D5DD3798 0x18 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.BaseViewModel                             = GetObject<AdvTitleViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdvTitleViewModel.FromPointer); // 024665E44088 0x10 BaseViewModel               ( 0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 024665E440A8 0x18 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

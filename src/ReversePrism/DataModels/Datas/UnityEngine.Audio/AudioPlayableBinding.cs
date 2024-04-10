@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AudioPlayableBinding
+    public partial class AudioPlayableBinding : DataModel
     {
 
         public static AudioPlayableBinding? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudioPlayableBinding();
+            var value   = new AudioPlayableBinding() { Pointer= p0 };
 
 
             return value;

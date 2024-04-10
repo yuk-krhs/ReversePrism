@@ -40,7 +40,7 @@ namespace ReversePrism.DataModels
     // 0D8 <ItemIsReference>k__BackingField         Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 0DC <ItemTypeNameHandling>k__BackingField    Nullable`1<TypeNameHandling> IL2CPP_TYPE_GENERICINST
     // 0E4 <ItemReferenceLoopHandling>k__BackingField Nullable`1<ReferenceLoopHandling> IL2CPP_TYPE_GENERICINST
-    public partial class JsonProperty
+    public partial class JsonProperty : DataModel
     {
         public bool                                     HasExplicitDefaultValue                 { get; set; }
         public bool                                     HasGeneratedDefaultValue                { get; set; }
@@ -65,24 +65,24 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonProperty();
+            var value   = new JsonProperty() { Pointer= p0 };
 
-            value.HasExplicitDefaultValue                   = GetBool(new IntPtr(p + 0x018)); // 027006037798 0x18 HasExplicitDefaultValue     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.HasGeneratedDefaultValue                  = GetBool(new IntPtr(p + 0x028)); // 0270060377D8 0x28 HasGeneratedDefaultValue    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PropertyName                              = GetString(new IntPtr(p + 0x030)); // 0270060377F8 0x30 PropertyName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.SkipPropertyNameEscape                    = GetBool(new IntPtr(p + 0x038)); // 027006037818 0x38 SkipPropertyNameEscape      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.PropertyType                              = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 027006037838 0x40 PropertyType                ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.PropertyContract                          = GetObject<JsonContract>(new IntPtr(p + 0x048), ReversePrism.DataModels.JsonContract.FromPointer); // 027006037858 0x48 PropertyContract            ( 000186602210 ModelClassType JsonContract JsonContract JsonContract Pointer )
-            value.DeclaringType                             = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 027006037878 0x50 DeclaringType               ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.UnderlyingName                            = GetString(new IntPtr(p + 0x060)); // 0270060378B8 0x60 UnderlyingName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValueProvider                             = GetObject<IValueProvider>(new IntPtr(p + 0x068), ReversePrism.DataModels.IValueProvider.FromPointer); // 0270060378D8 0x68 ValueProvider               ( 000186691B10 ModelClassType IValueProvider IValueProvider IValueProvider Pointer )
-            value.AttributeProvider                         = GetObject<IAttributeProvider>(new IntPtr(p + 0x070), ReversePrism.DataModels.IAttributeProvider.FromPointer); // 0270060378F8 0x70 AttributeProvider           ( 00018670B580 ModelClassType IAttributeProvider IAttributeProvider IAttributeProvider Pointer )
-            value.Converter                                 = GetObject<JsonConverter>(new IntPtr(p + 0x078), ReversePrism.DataModels.JsonConverter.FromPointer); // 027006037918 0x78 Converter                   ( 0001866027B0 ModelClassType JsonConverter JsonConverter JsonConverter Pointer )
-            value.Ignored                                   = GetBool(new IntPtr(p + 0x080)); // 027006037938 0x80 Ignored                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Readable                                  = GetBool(new IntPtr(p + 0x081)); // 027006037958 0x81 Readable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Writable                                  = GetBool(new IntPtr(p + 0x082)); // 027006037978 0x82 Writable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasMemberAttribute                        = GetBool(new IntPtr(p + 0x083)); // 027006037998 0x83 HasMemberAttribute          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ItemConverter                             = GetObject<JsonConverter>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.JsonConverter.FromPointer); // 027006037AF8 0xD0 ItemConverter               ( 0001866027B0 ModelClassType JsonConverter JsonConverter JsonConverter Pointer )
+            value.HasExplicitDefaultValue                   = GetBool(new IntPtr(p + 0x018)); // 0245A6010CB0 0x18 HasExplicitDefaultValue     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.HasGeneratedDefaultValue                  = GetBool(new IntPtr(p + 0x028)); // 0245A6010CF0 0x28 HasGeneratedDefaultValue    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PropertyName                              = GetString(new IntPtr(p + 0x030)); // 0245A6010D10 0x30 PropertyName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.SkipPropertyNameEscape                    = GetBool(new IntPtr(p + 0x038)); // 0245A6010D30 0x38 SkipPropertyNameEscape      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.PropertyType                              = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0245A6010D50 0x40 PropertyType                ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.PropertyContract                          = GetObject<JsonContract>(new IntPtr(p + 0x048), ReversePrism.DataModels.JsonContract.FromPointer); // 0245A6010D70 0x48 PropertyContract            ( 000186602210 ModelClassType JsonContract JsonContract JsonContract Pointer )
+            value.DeclaringType                             = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 0245A6010D90 0x50 DeclaringType               ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.UnderlyingName                            = GetString(new IntPtr(p + 0x060)); // 0245A6010DD0 0x60 UnderlyingName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.ValueProvider                             = GetObject<IValueProvider>(new IntPtr(p + 0x068), ReversePrism.DataModels.IValueProvider.FromPointer); // 0245A6010DF0 0x68 ValueProvider               ( 000186691B10 ModelClassType IValueProvider IValueProvider IValueProvider Pointer )
+            value.AttributeProvider                         = GetObject<IAttributeProvider>(new IntPtr(p + 0x070), ReversePrism.DataModels.IAttributeProvider.FromPointer); // 0245A6010E10 0x70 AttributeProvider           ( 00018670B580 ModelClassType IAttributeProvider IAttributeProvider IAttributeProvider Pointer )
+            value.Converter                                 = GetObject<JsonConverter>(new IntPtr(p + 0x078), ReversePrism.DataModels.JsonConverter.FromPointer); // 0245A6010E30 0x78 Converter                   ( 0001866027B0 ModelClassType JsonConverter JsonConverter JsonConverter Pointer )
+            value.Ignored                                   = GetBool(new IntPtr(p + 0x080)); // 0245A6010E50 0x80 Ignored                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Readable                                  = GetBool(new IntPtr(p + 0x081)); // 0245A6010E70 0x81 Readable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Writable                                  = GetBool(new IntPtr(p + 0x082)); // 0245A6010E90 0x82 Writable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasMemberAttribute                        = GetBool(new IntPtr(p + 0x083)); // 0245A6010EB0 0x83 HasMemberAttribute          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ItemConverter                             = GetObject<JsonConverter>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.JsonConverter.FromPointer); // 0245A6011010 0xD0 ItemConverter               ( 0001866027B0 ModelClassType JsonConverter JsonConverter JsonConverter Pointer )
 
             return value;
         }

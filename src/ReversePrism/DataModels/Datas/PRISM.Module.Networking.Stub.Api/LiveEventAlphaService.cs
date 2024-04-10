@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_GetLiveEventAlphaRewardListReply Marshaller`1<GetLiveEventAlphaRewardListReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetLiveEventAlphaTopPage        Method`2<GetLiveEventAlphaTopPageArgs, GetLiveEventAlphaTopPageReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_GetLiveEventAlphaRewardList     Method`2<GetLiveEventAlphaRewardListArgs, GetLiveEventAlphaRewardListReply> IL2CPP_TYPE_GENERICINST
-    public partial class LiveEventAlphaService
+    public partial class LiveEventAlphaService : DataModel
     {
 
         public static LiveEventAlphaService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventAlphaService();
+            var value   = new LiveEventAlphaService() { Pointer= p0 };
 
 
             return value;

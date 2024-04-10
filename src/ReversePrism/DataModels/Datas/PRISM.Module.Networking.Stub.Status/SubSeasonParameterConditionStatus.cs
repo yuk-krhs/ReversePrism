@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 UnitParameter                            0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     // 000 MeetConditionFieldNumber                 int IL2CPP_TYPE_I4
     // 030 MeetCondition                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SubSeasonParameterConditionStatus
+    public partial class SubSeasonParameterConditionStatus : DataModel
     {
         public bool                                     IsCondition                             { get; set; }
         public ProduceParameterStatus?                  RequiredUnitParameter                   { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonParameterConditionStatus();
+            var value   = new SubSeasonParameterConditionStatus() { Pointer= p0 };
 
-            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0270D1155828 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RequiredUnitParameter                     = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D1155868 0x20 RequiredUnitParameter       ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.UnitParameter                             = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D11558A8 0x28 UnitParameter               ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.MeetCondition                             = GetBool(new IntPtr(p + 0x030)); // 0270D11558E8 0x30 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0246610BD488 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RequiredUnitParameter                     = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0246610BD4C8 0x20 RequiredUnitParameter       ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.UnitParameter                             = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0246610BD508 0x28 UnitParameter               ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.MeetCondition                             = GetBool(new IntPtr(p + 0x030)); // 0246610BD548 0x30 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

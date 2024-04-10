@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SerializableInterfaceExtension
+    public partial class SerializableInterfaceExtension : DataModel
     {
 
         public static SerializableInterfaceExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializableInterfaceExtension();
+            var value   = new SerializableInterfaceExtension() { Pointer= p0 };
 
 
             return value;

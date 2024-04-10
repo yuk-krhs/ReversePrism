@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 PromisedRate                             0001866126E0 ModelClassType GashaPromisedRateStatus GashaPromisedRateStatus GashaPromisedRateStatus Pointer
     // 000 StepNoFieldNumber                        int IL2CPP_TYPE_I4
     // 028 StepNo                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GashaRateStatus
+    public partial class GashaRateStatus : DataModel
     {
         public GashaNormalRateStatus?                   NormalRate                              { get; set; }
         public GashaPromisedRateStatus?                 PromisedRate                            { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaRateStatus();
+            var value   = new GashaRateStatus() { Pointer= p0 };
 
-            value.NormalRate                                = GetObject<GashaNormalRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaNormalRateStatus.FromPointer); // 0270D159F980 0x18 NormalRate                  ( 000186609580 ModelClassType GashaNormalRateStatus GashaNormalRateStatus GashaNormalRateStatus Pointer )
-            value.PromisedRate                              = GetObject<GashaPromisedRateStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPromisedRateStatus.FromPointer); // 0270D159F9C0 0x20 PromisedRate                ( 0001866126E0 ModelClassType GashaPromisedRateStatus GashaPromisedRateStatus GashaPromisedRateStatus Pointer )
-            value.StepNo                                    = GetInt32(new IntPtr(p + 0x028)); // 0270D159FA00 0x28 StepNo                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NormalRate                                = GetObject<GashaNormalRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaNormalRateStatus.FromPointer); // 02466153FA20 0x18 NormalRate                  ( 000186609580 ModelClassType GashaNormalRateStatus GashaNormalRateStatus GashaNormalRateStatus Pointer )
+            value.PromisedRate                              = GetObject<GashaPromisedRateStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPromisedRateStatus.FromPointer); // 02466153FA60 0x20 PromisedRate                ( 0001866126E0 ModelClassType GashaPromisedRateStatus GashaPromisedRateStatus GashaPromisedRateStatus Pointer )
+            value.StepNo                                    = GetInt32(new IntPtr(p + 0x028)); // 02466153FAA0 0x28 StepNo                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

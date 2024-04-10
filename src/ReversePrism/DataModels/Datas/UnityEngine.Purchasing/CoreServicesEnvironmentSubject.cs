@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 k_DefaultLiveEnvironment                 string IL2CPP_TYPE_STRING
     // 010 M_LastKnownEnvironment                   000186671910 ModelPrimitiveType string string string String
     // 018 M_Observers                              000185CE1C18 ModelClassListType List`1<ICoreServicesEnvironmentObserver> List`1<ICoreServicesEnvironmentObserver> List<ICoreServicesEnvironmentObserver> Pointer
-    public partial class CoreServicesEnvironmentSubject
+    public partial class CoreServicesEnvironmentSubject : DataModel
     {
         public string                                   M_LastKnownEnvironment                  { get; set; }
         public List<ICoreServicesEnvironmentObserver>?  M_Observers                             { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreServicesEnvironmentSubject();
+            var value   = new CoreServicesEnvironmentSubject() { Pointer= p0 };
 
-            value.M_LastKnownEnvironment                    = GetString(new IntPtr(p + 0x010)); // 027004BD9C30 0x10 M_LastKnownEnvironment      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Observers                               = GetObjectList<ICoreServicesEnvironmentObserver>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICoreServicesEnvironmentObserver.FromPointer); // 027004BD9C50 0x18 M_Observers                 ( 000185CE1C18 ModelClassListType List`1<ICoreServicesEnvironmentObserver> List`1<ICoreServicesEnvironmentObserver> List<ICoreServicesEnvironmentObserver> Pointer )
+            value.M_LastKnownEnvironment                    = GetString(new IntPtr(p + 0x010)); // 0245A4C10D38 0x10 M_LastKnownEnvironment      ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Observers                               = GetObjectList<ICoreServicesEnvironmentObserver>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICoreServicesEnvironmentObserver.FromPointer); // 0245A4C10D58 0x18 M_Observers                 ( 000185CE1C18 ModelClassListType List`1<ICoreServicesEnvironmentObserver> List`1<ICoreServicesEnvironmentObserver> List<ICoreServicesEnvironmentObserver> Pointer )
 
             return value;
         }

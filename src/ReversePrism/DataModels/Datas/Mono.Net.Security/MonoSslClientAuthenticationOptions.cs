@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Options                                  00018655C390 ModelClassType SslClientAuthenticationOptions SslClientAuthenticationOptions SslClientAuthenticationOptions Pointer
-    public partial class MonoSslClientAuthenticationOptions
+    public partial class MonoSslClientAuthenticationOptions : DataModel
     {
         public SslClientAuthenticationOptions?          Options                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoSslClientAuthenticationOptions();
+            var value   = new MonoSslClientAuthenticationOptions() { Pointer= p0 };
 
-            value.Options                                   = GetObject<SslClientAuthenticationOptions>(new IntPtr(p + 0x018), ReversePrism.DataModels.SslClientAuthenticationOptions.FromPointer); // 0270D79280C0 0x18 Options                     ( 00018655C390 ModelClassType SslClientAuthenticationOptions SslClientAuthenticationOptions SslClientAuthenticationOptions Pointer )
+            value.Options                                   = GetObject<SslClientAuthenticationOptions>(new IntPtr(p + 0x018), ReversePrism.DataModels.SslClientAuthenticationOptions.FromPointer); // 0246679900C0 0x18 Options                     ( 00018655C390 ModelClassType SslClientAuthenticationOptions SslClientAuthenticationOptions SslClientAuthenticationOptions Pointer )
 
             return value;
         }

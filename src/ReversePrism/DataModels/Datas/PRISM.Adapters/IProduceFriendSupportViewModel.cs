@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceFriendSupportViewModel
+    public partial class IProduceFriendSupportViewModel : DataModel
     {
 
         public static IProduceFriendSupportViewModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceFriendSupportViewModel();
+            var value   = new IProduceFriendSupportViewModel() { Pointer= p0 };
 
 
             return value;

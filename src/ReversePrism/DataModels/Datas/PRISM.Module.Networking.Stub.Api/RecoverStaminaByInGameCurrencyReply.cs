@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 AfterStamina                             00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
     // 020 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class RecoverStaminaByInGameCurrencyReply
+    public partial class RecoverStaminaByInGameCurrencyReply : DataModel
     {
         public StaminaStatus?                           AfterStamina                            { get; set; }
         public HavingProductGroupStatus?                HavingGroup                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverStaminaByInGameCurrencyReply();
+            var value   = new RecoverStaminaByInGameCurrencyReply() { Pointer= p0 };
 
-            value.AfterStamina                              = GetObject<StaminaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D29626B8 0x18 AfterStamina                ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D29626F8 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.AfterStamina                              = GetObject<StaminaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246628CFE78 0x18 AfterStamina                ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0246628CFEB8 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

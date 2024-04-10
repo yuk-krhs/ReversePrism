@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 068 Module                                   000186614A60 ModelClassType Module Module Module Pointer
-    public partial class UnmanagedMemoryStreamForModule
+    public partial class UnmanagedMemoryStreamForModule : DataModel
     {
         public Module?                                  Module                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnmanagedMemoryStreamForModule();
+            var value   = new UnmanagedMemoryStreamForModule() { Pointer= p0 };
 
-            value.Module                                    = GetObject<Module>(new IntPtr(p + 0x068), ReversePrism.DataModels.Module.FromPointer); // 0270D0E92350 0x68 Module                      ( 000186614A60 ModelClassType Module Module Module Pointer )
+            value.Module                                    = GetObject<Module>(new IntPtr(p + 0x068), ReversePrism.DataModels.Module.FromPointer); // 0245A410A808 0x68 Module                      ( 000186614A60 ModelClassType Module Module Module Pointer )
 
             return value;
         }

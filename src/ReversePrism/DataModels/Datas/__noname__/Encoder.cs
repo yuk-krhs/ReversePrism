@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 Bits                                     0001865F2F90 ModelPrimitiveType int int int Int32
     // 03C BitCount                                 0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class Encoder
+    public partial class Encoder : DataModel
     {
         public int                                      Bits                                    { get; set; }
         public int                                      BitCount                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Encoder();
+            var value   = new Encoder() { Pointer= p0 };
 
-            value.Bits                                      = GetInt32(new IntPtr(p + 0x038)); // 0270D6B65628 0x38 Bits                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BitCount                                  = GetInt32(new IntPtr(p + 0x03C)); // 0270D6B65648 0x3C BitCount                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Bits                                      = GetInt32(new IntPtr(p + 0x038)); // 024666BDD628 0x38 Bits                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.BitCount                                  = GetInt32(new IntPtr(p + 0x03C)); // 024666BDD648 0x3C BitCount                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

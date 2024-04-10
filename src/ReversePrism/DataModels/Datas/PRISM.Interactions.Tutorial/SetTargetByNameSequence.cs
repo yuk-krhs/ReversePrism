@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ObjectName                               000186671910 ModelPrimitiveType string string string String
-    public partial class SetTargetByNameSequence
+    public partial class SetTargetByNameSequence : DataModel
     {
         public string                                   ObjectName                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetTargetByNameSequence();
+            var value   = new SetTargetByNameSequence() { Pointer= p0 };
 
-            value.ObjectName                                = GetString(new IntPtr(p + 0x010)); // 0270DBC10B80 0x10 ObjectName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ObjectName                                = GetString(new IntPtr(p + 0x010)); // 02466BC97EE0 0x10 ObjectName                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

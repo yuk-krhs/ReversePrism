@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOSImpl
+    public partial class IOSImpl : DataModel
     {
 
         public static IOSImpl? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOSImpl();
+            var value   = new IOSImpl() { Pointer= p0 };
 
 
             return value;

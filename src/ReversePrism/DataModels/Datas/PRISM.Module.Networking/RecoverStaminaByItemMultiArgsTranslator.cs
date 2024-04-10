@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RecoverStaminaByItemMultiArgsTranslator
+    public partial class RecoverStaminaByItemMultiArgsTranslator : DataModel
     {
 
         public static RecoverStaminaByItemMultiArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverStaminaByItemMultiArgsTranslator();
+            var value   = new RecoverStaminaByItemMultiArgsTranslator() { Pointer= p0 };
 
 
             return value;

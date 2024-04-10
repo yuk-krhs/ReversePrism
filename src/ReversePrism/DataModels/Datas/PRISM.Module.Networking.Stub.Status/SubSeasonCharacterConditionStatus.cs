@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 028 MstCharacterInfoIdList                   000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     // 000 MeetConditionFieldNumber                 int IL2CPP_TYPE_I4
     // 030 MeetCondition                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SubSeasonCharacterConditionStatus
+    public partial class SubSeasonCharacterConditionStatus : DataModel
     {
         public bool                                     IsCondition                             { get; set; }
         public int                                      RequiredCharacterNum                    { get; set; }
@@ -36,13 +36,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonCharacterConditionStatus();
+            var value   = new SubSeasonCharacterConditionStatus() { Pointer= p0 };
 
-            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0270D114B530 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RequiredCharacterNum                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D114B570 0x1C RequiredCharacterNum        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequiredMstCharacterInfoIdList            = GetInt32List(new IntPtr(p + 0x020)); // 0270D114B5D0 0x20 RequiredMstCharacterInfoIdList ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x028)); // 0270D114B630 0x28 MstCharacterInfoIdList      ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.MeetCondition                             = GetBool(new IntPtr(p + 0x030)); // 0270D114B670 0x30 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0246610B61C8 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RequiredCharacterNum                      = GetInt32(new IntPtr(p + 0x01C)); // 0246610B6208 0x1C RequiredCharacterNum        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RequiredMstCharacterInfoIdList            = GetInt32List(new IntPtr(p + 0x020)); // 0246610B6268 0x20 RequiredMstCharacterInfoIdList ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x028)); // 0246610B62C8 0x28 MstCharacterInfoIdList      ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MeetCondition                             = GetBool(new IntPtr(p + 0x030)); // 0246610B6308 0x30 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

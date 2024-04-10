@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAgePurchaseLimitPopupView
+    public partial class IAgePurchaseLimitPopupView : DataModel
     {
 
         public static IAgePurchaseLimitPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAgePurchaseLimitPopupView();
+            var value   = new IAgePurchaseLimitPopupView() { Pointer= p0 };
 
 
             return value;

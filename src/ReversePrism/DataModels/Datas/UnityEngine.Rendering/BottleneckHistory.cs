@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Bottlenecks                            000185CF8E18 ModelEnumListType List`1<PerformanceBottleneck> List`1<PerformanceBottleneck> List<PerformanceBottleneck> Pointer
     // 018 Histogram                                00018676D7E0 ModelEnumType BottleneckHistogram BottleneckHistogram BottleneckHistogram Int32
-    public partial class BottleneckHistory
+    public partial class BottleneckHistory : DataModel
     {
         public List<PerformanceBottleneck>?             M_Bottlenecks                           { get; set; }
         public BottleneckHistogram                      Histogram                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BottleneckHistory();
+            var value   = new BottleneckHistory() { Pointer= p0 };
 
-            value.M_Bottlenecks                             = GetEnumList<PerformanceBottleneck>(new IntPtr(p + 0x010)); // 0270D9161D68 0x10 M_Bottlenecks               ( 000185CF8E18 ModelEnumListType List`1<PerformanceBottleneck> List`1<PerformanceBottleneck> List<PerformanceBottleneck> Pointer )
-            value.Histogram                                 = (BottleneckHistogram)GetInt32(new IntPtr(p + 0x018)); // 0270D9161D88 0x18 Histogram                   ( 00018676D7E0 ModelEnumType BottleneckHistogram BottleneckHistogram BottleneckHistogram Int32 )
+            value.M_Bottlenecks                             = GetEnumList<PerformanceBottleneck>(new IntPtr(p + 0x010)); // 0246691C4F28 0x10 M_Bottlenecks               ( 000185CF8E18 ModelEnumListType List`1<PerformanceBottleneck> List`1<PerformanceBottleneck> List<PerformanceBottleneck> Pointer )
+            value.Histogram                                 = (BottleneckHistogram)GetInt32(new IntPtr(p + 0x018)); // 0246691C4F48 0x18 Histogram                   ( 00018676D7E0 ModelEnumType BottleneckHistogram BottleneckHistogram BottleneckHistogram Int32 )
 
             return value;
         }

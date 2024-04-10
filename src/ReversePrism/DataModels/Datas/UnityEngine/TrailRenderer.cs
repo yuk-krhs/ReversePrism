@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TrailRenderer
+    public partial class TrailRenderer : DataModel
     {
 
         public static TrailRenderer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TrailRenderer();
+            var value   = new TrailRenderer() { Pointer= p0 };
 
 
             return value;

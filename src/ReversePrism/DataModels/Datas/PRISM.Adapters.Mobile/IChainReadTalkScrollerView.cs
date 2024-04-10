@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChainReadTalkScrollerView
+    public partial class IChainReadTalkScrollerView : DataModel
     {
 
         public static IChainReadTalkScrollerView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChainReadTalkScrollerView();
+            var value   = new IChainReadTalkScrollerView() { Pointer= p0 };
 
 
             return value;

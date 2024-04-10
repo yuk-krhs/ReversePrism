@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 awaiter                                  Awaiter<bool> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _Take
+    public partial class _Take : DataModel
     {
 
         public static _Take? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Take();
+            var value   = new _Take() { Pointer= p0 };
 
 
             return value;

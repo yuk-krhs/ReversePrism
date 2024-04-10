@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 Name                                     000186672F10 ModelPrimitiveType string string string String
     // 040 RootObjects                              000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer
-    public partial class HierarchyDataRootPseudoScene
+    public partial class HierarchyDataRootPseudoScene : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<Transform>?                         RootObjects                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HierarchyDataRootPseudoScene();
+            var value   = new HierarchyDataRootPseudoScene() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x038)); // 0270DB1A24D8 0x38 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.RootObjects                               = GetObjectList<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0270DB1A24F8 0x40 RootObjects                 ( 000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x038)); // 02466B1F24D8 0x38 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.RootObjects                               = GetObjectList<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 02466B1F24F8 0x40 RootObjects                 ( 000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
 
             return value;
         }

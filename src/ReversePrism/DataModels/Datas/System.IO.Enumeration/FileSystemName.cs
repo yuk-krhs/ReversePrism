@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_wildcardChars                          char[] IL2CPP_TYPE_SZARRAY
     // 008 s_simpleWildcardChars                    char[] IL2CPP_TYPE_SZARRAY
-    public partial class FileSystemName
+    public partial class FileSystemName : DataModel
     {
 
         public static FileSystemName? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileSystemName();
+            var value   = new FileSystemName() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMedalGashaView
+    public partial class IMedalGashaView : DataModel
     {
 
         public static IMedalGashaView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMedalGashaView();
+            var value   = new IMedalGashaView() { Pointer= p0 };
 
 
             return value;

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 MaximumSupportCharacter                  0001865E5EA0 ModelClassType MaximumSupportCharacterStatus MaximumSupportCharacterStatus MaximumSupportCharacterStatus Pointer
     // 000 SetProductFieldNumber                    int IL2CPP_TYPE_I4
     // 030 SetProduct                               000186746DA0 ModelClassType SetProductStatus SetProductStatus SetProductStatus Pointer
-    public partial class ProductDetailStatus
+    public partial class ProductDetailStatus : DataModel
     {
         public HavingProductStatus?                     Product                                 { get; set; }
         public MaximumProduceIdolStatus?                MaximumProduceIdol                      { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductDetailStatus();
+            var value   = new ProductDetailStatus() { Pointer= p0 };
 
-            value.Product                                   = GetObject<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0270D1A34B58 0x18 Product                     ( 0001866AD720 ModelClassType HavingProductStatus HavingProductStatus HavingProductStatus Pointer )
-            value.MaximumProduceIdol                        = GetObject<MaximumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MaximumProduceIdolStatus.FromPointer); // 0270D1A34B98 0x20 MaximumProduceIdol          ( 0001865E57D0 ModelClassType MaximumProduceIdolStatus MaximumProduceIdolStatus MaximumProduceIdolStatus Pointer )
-            value.MaximumSupportCharacter                   = GetObject<MaximumSupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.MaximumSupportCharacterStatus.FromPointer); // 0270D1A34BD8 0x28 MaximumSupportCharacter     ( 0001865E5EA0 ModelClassType MaximumSupportCharacterStatus MaximumSupportCharacterStatus MaximumSupportCharacterStatus Pointer )
-            value.SetProduct                                = GetObject<SetProductStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SetProductStatus.FromPointer); // 0270D1A34C18 0x30 SetProduct                  ( 000186746DA0 ModelClassType SetProductStatus SetProductStatus SetProductStatus Pointer )
+            value.Product                                   = GetObject<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0246619BD408 0x18 Product                     ( 0001866AD720 ModelClassType HavingProductStatus HavingProductStatus HavingProductStatus Pointer )
+            value.MaximumProduceIdol                        = GetObject<MaximumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MaximumProduceIdolStatus.FromPointer); // 0246619BD448 0x20 MaximumProduceIdol          ( 0001865E57D0 ModelClassType MaximumProduceIdolStatus MaximumProduceIdolStatus MaximumProduceIdolStatus Pointer )
+            value.MaximumSupportCharacter                   = GetObject<MaximumSupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.MaximumSupportCharacterStatus.FromPointer); // 0246619BD488 0x28 MaximumSupportCharacter     ( 0001865E5EA0 ModelClassType MaximumSupportCharacterStatus MaximumSupportCharacterStatus MaximumSupportCharacterStatus Pointer )
+            value.SetProduct                                = GetObject<SetProductStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SetProductStatus.FromPointer); // 0246619BD4C8 0x30 SetProduct                  ( 000186746DA0 ModelClassType SetProductStatus SetProductStatus SetProductStatus Pointer )
 
             return value;
         }

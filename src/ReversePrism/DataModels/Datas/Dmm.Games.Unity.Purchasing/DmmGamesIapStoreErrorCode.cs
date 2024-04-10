@@ -37,7 +37,7 @@ namespace ReversePrism.DataModels
     // 000 UnableToGetSKU                           int IL2CPP_TYPE_I4
     // 000 PurchaseNotExist                         int IL2CPP_TYPE_I4
     // 000 UnknownError                             int IL2CPP_TYPE_I4
-    public partial class DmmGamesIapStoreErrorCode
+    public partial class DmmGamesIapStoreErrorCode : DataModel
     {
 
         public static DmmGamesIapStoreErrorCode? FromPointer(IntPtr p0)
@@ -46,7 +46,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesIapStoreErrorCode();
+            var value   = new DmmGamesIapStoreErrorCode() { Pointer= p0 };
 
 
             return value;

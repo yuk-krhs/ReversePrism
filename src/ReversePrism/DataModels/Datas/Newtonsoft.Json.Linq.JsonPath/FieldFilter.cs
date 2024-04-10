@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Name                                     000186671BA0 ModelPrimitiveType string string string String
-    public partial class FieldFilter
+    public partial class FieldFilter : DataModel
     {
         public string                                   Name                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldFilter();
+            var value   = new FieldFilter() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D8837FA0 0x10 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 024668882D60 0x10 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

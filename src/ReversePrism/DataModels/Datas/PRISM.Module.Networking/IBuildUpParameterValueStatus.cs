@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBuildUpParameterValueStatus
+    public partial class IBuildUpParameterValueStatus : DataModel
     {
 
         public static IBuildUpParameterValueStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBuildUpParameterValueStatus();
+            var value   = new IBuildUpParameterValueStatus() { Pointer= p0 };
 
 
             return value;

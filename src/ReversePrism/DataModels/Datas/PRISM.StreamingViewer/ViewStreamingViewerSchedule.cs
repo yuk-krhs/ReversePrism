@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 070 UrlButton                                0001865140C0 ModelClassType Button Button Button Pointer
     // 078 ArchiveButton                            0001865140C0 ModelClassType Button Button Button Pointer
     // 080 PModeToggle                              000186682710 ModelClassType Toggle Toggle Toggle Pointer
-    public partial class ViewStreamingViewerSchedule
+    public partial class ViewStreamingViewerSchedule : DataModel
     {
         public TMP_InputField?                          RoomNameField                           { get; set; }
         public Button?                                  RoomNameButton                          { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewStreamingViewerSchedule();
+            var value   = new ViewStreamingViewerSchedule() { Pointer= p0 };
 
-            value.RoomNameField                             = GetObject<TMP_InputField>(new IntPtr(p + 0x058), ReversePrism.DataModels.TMP_InputField.FromPointer); // 0270D4F5F7C0 0x58 RoomNameField               ( 00018660DCA0 ModelClassType TMP_InputField TMP_InputField TMP_InputField Pointer )
-            value.RoomNameButton                            = GetObject<Button>(new IntPtr(p + 0x060), ReversePrism.DataModels.Button.FromPointer); // 0270D4F5F7E0 0x60 RoomNameButton              ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.UrlField                                  = GetObject<TMP_InputField>(new IntPtr(p + 0x068), ReversePrism.DataModels.TMP_InputField.FromPointer); // 0270D4F5F800 0x68 UrlField                    ( 00018660DCA0 ModelClassType TMP_InputField TMP_InputField TMP_InputField Pointer )
-            value.UrlButton                                 = GetObject<Button>(new IntPtr(p + 0x070), ReversePrism.DataModels.Button.FromPointer); // 0270D4F5F820 0x70 UrlButton                   ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.ArchiveButton                             = GetObject<Button>(new IntPtr(p + 0x078), ReversePrism.DataModels.Button.FromPointer); // 0270D4F5F840 0x78 ArchiveButton               ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.PModeToggle                               = GetObject<Toggle>(new IntPtr(p + 0x080), ReversePrism.DataModels.Toggle.FromPointer); // 0270D4F5F860 0x80 PModeToggle                 ( 000186682710 ModelClassType Toggle Toggle Toggle Pointer )
+            value.RoomNameField                             = GetObject<TMP_InputField>(new IntPtr(p + 0x058), ReversePrism.DataModels.TMP_InputField.FromPointer); // 024664FC61D0 0x58 RoomNameField               ( 00018660DCA0 ModelClassType TMP_InputField TMP_InputField TMP_InputField Pointer )
+            value.RoomNameButton                            = GetObject<Button>(new IntPtr(p + 0x060), ReversePrism.DataModels.Button.FromPointer); // 024664FC61F0 0x60 RoomNameButton              ( 0001865140C0 ModelClassType Button Button Button Pointer )
+            value.UrlField                                  = GetObject<TMP_InputField>(new IntPtr(p + 0x068), ReversePrism.DataModels.TMP_InputField.FromPointer); // 024664FC6210 0x68 UrlField                    ( 00018660DCA0 ModelClassType TMP_InputField TMP_InputField TMP_InputField Pointer )
+            value.UrlButton                                 = GetObject<Button>(new IntPtr(p + 0x070), ReversePrism.DataModels.Button.FromPointer); // 024664FC6230 0x70 UrlButton                   ( 0001865140C0 ModelClassType Button Button Button Pointer )
+            value.ArchiveButton                             = GetObject<Button>(new IntPtr(p + 0x078), ReversePrism.DataModels.Button.FromPointer); // 024664FC6250 0x78 ArchiveButton               ( 0001865140C0 ModelClassType Button Button Button Pointer )
+            value.PModeToggle                               = GetObject<Toggle>(new IntPtr(p + 0x080), ReversePrism.DataModels.Toggle.FromPointer); // 024664FC6270 0x80 PModeToggle                 ( 000186682710 ModelClassType Toggle Toggle Toggle Pointer )
 
             return value;
         }

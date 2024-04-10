@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Instance>k__BackingField                ISEPlayer IL2CPP_TYPE_CLASS
-    public partial class SEPlayerManager
+    public partial class SEPlayerManager : DataModel
     {
 
         public static SEPlayerManager? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SEPlayerManager();
+            var value   = new SEPlayerManager() { Pointer= p0 };
 
 
             return value;

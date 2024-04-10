@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AlgorithmId                              000186671BA0 ModelPrimitiveType string string string String
     // 018 Parameters                               000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class AlgorithmIdentifier
+    public partial class AlgorithmIdentifier : DataModel
     {
         public string                                   AlgorithmId                             { get; set; }
         public List<sbyte>?                             Parameters                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AlgorithmIdentifier();
+            var value   = new AlgorithmIdentifier() { Pointer= p0 };
 
-            value.AlgorithmId                               = GetString(new IntPtr(p + 0x010)); // 0270D793FFB8 0x10 AlgorithmId                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Parameters                                = GetSByteList(new IntPtr(p + 0x018)); // 0270D793FFD8 0x18 Parameters                  ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.AlgorithmId                               = GetString(new IntPtr(p + 0x010)); // 0246679A7FB8 0x10 AlgorithmId                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Parameters                                = GetSByteList(new IntPtr(p + 0x018)); // 0246679A7FD8 0x18 Parameters                  ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

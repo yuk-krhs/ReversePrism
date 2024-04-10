@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_AllocatedPools                         List`1<SharedObjectPoolBase> IL2CPP_TYPE_GENERICINST
-    public partial class SharedObjectPoolBase
+    public partial class SharedObjectPoolBase : DataModel
     {
 
         public static SharedObjectPoolBase? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SharedObjectPoolBase();
+            var value   = new SharedObjectPoolBase() { Pointer= p0 };
 
 
             return value;

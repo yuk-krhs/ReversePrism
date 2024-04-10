@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SampleFramesHandler
+    public partial class SampleFramesHandler : DataModel
     {
 
         public static SampleFramesHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SampleFramesHandler();
+            var value   = new SampleFramesHandler() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 SelectionMstPotentialSkillId             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 RemoveMstPotentialSkillIdFieldNumber     int IL2CPP_TYPE_I4
     // 01C RemoveMstPotentialSkillId                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SelectionSupportSkillStatus
+    public partial class SelectionSupportSkillStatus : DataModel
     {
         public int                                      SelectionMstPotentialSkillId            { get; set; }
         public int                                      RemoveMstPotentialSkillId               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectionSupportSkillStatus();
+            var value   = new SelectionSupportSkillStatus() { Pointer= p0 };
 
-            value.SelectionMstPotentialSkillId              = GetInt32(new IntPtr(p + 0x018)); // 0270041D9E98 0x18 SelectionMstPotentialSkillId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RemoveMstPotentialSkillId                 = GetInt32(new IntPtr(p + 0x01C)); // 0270041D9ED8 0x1C RemoveMstPotentialSkillId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectionMstPotentialSkillId              = GetInt32(new IntPtr(p + 0x018)); // 0246610B2250 0x18 SelectionMstPotentialSkillId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RemoveMstPotentialSkillId                 = GetInt32(new IntPtr(p + 0x01C)); // 0246610B2290 0x1C RemoveMstPotentialSkillId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

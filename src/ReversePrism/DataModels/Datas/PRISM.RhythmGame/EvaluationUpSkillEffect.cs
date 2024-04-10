@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EvaluationUpSkillEffect
+    public partial class EvaluationUpSkillEffect : DataModel
     {
 
         public static EvaluationUpSkillEffect? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EvaluationUpSkillEffect();
+            var value   = new EvaluationUpSkillEffect() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PreparedSqliteInsertCommand
+    public partial class PreparedSqliteInsertCommand : DataModel
     {
 
         public static PreparedSqliteInsertCommand? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreparedSqliteInsertCommand();
+            var value   = new PreparedSqliteInsertCommand() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Cell                                     000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer
     // 028 StoryTypeLabel                           0001865B0F90 ModelClassType StoryTypeLabel StoryTypeLabel StoryTypeLabel Pointer
     // 030 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class SortFilteredStoryCell
+    public partial class SortFilteredStoryCell : DataModel
     {
         public StoryLastCategoryCell?                   Cell                                    { get; set; }
         public StoryTypeLabel?                          StoryTypeLabel                          { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SortFilteredStoryCell();
+            var value   = new SortFilteredStoryCell() { Pointer= p0 };
 
-            value.Cell                                      = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 0270DB977040 0x20 Cell                        ( 000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
-            value.StoryTypeLabel                            = GetObject<StoryTypeLabel>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryTypeLabel.FromPointer); // 0270DB977060 0x28 StoryTypeLabel              ( 0001865B0F90 ModelClassType StoryTypeLabel StoryTypeLabel StoryTypeLabel Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270DB977080 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Cell                                      = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 02466BA064B8 0x20 Cell                        ( 000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
+            value.StoryTypeLabel                            = GetObject<StoryTypeLabel>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryTypeLabel.FromPointer); // 02466BA064D8 0x28 StoryTypeLabel              ( 0001865B0F90 ModelClassType StoryTypeLabel StoryTypeLabel StoryTypeLabel Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466BA064F8 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 data                                     Notification`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 node                                     LinkedListNode`1<SchedulableAction<<var>>> IL2CPP_TYPE_GENERICINST
     // 000 schedule                                 IDisposable IL2CPP_TYPE_CLASS
-    public partial class SchedulableAction
+    public partial class SchedulableAction : DataModel
     {
 
         public static SchedulableAction? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SchedulableAction();
+            var value   = new SchedulableAction() { Pointer= p0 };
 
 
             return value;

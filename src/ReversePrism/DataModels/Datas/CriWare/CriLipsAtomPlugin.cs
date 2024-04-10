@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 pluginName                               string IL2CPP_TYPE_STRING
     // 000 pluginCallingConvention                  CallingConvention IL2CPP_TYPE_VALUETYPE
     // 000 initializationCount                      int IL2CPP_TYPE_I4
-    public partial class CriLipsAtomPlugin
+    public partial class CriLipsAtomPlugin : DataModel
     {
 
         public static CriLipsAtomPlugin? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsAtomPlugin();
+            var value   = new CriLipsAtomPlugin() { Pointer= p0 };
 
 
             return value;

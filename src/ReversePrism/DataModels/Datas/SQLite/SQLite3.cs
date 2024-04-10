@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 LibraryPath                              string IL2CPP_TYPE_STRING
-    public partial class SQLite3
+    public partial class SQLite3 : DataModel
     {
 
         public static SQLite3? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SQLite3();
+            var value   = new SQLite3() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILayerable
+    public partial class ILayerable : DataModel
     {
 
         public static ILayerable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILayerable();
+            var value   = new ILayerable() { Pointer= p0 };
 
 
             return value;

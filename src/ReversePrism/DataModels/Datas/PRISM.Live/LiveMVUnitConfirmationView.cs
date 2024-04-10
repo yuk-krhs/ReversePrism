@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveMVUnitConfirmationView
+    public partial class LiveMVUnitConfirmationView : DataModel
     {
 
         public static LiveMVUnitConfirmationView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVUnitConfirmationView();
+            var value   = new LiveMVUnitConfirmationView() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Vector3ReactiveProperty
+    public partial class Vector3ReactiveProperty : DataModel
     {
 
         public static Vector3ReactiveProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector3ReactiveProperty();
+            var value   = new Vector3ReactiveProperty() { Pointer= p0 };
 
 
             return value;

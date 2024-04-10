@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 060 FUpgradeThreadHoldingRead                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 064 Owners                                   000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 068 FDisposed                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ReaderWriterLockSlim
+    public partial class ReaderWriterLockSlim : DataModel
     {
         public bool                                     FIsReentrant                            { get; set; }
         public int                                      MyLock                                  { get; set; }
@@ -53,25 +53,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReaderWriterLockSlim();
+            var value   = new ReaderWriterLockSlim() { Pointer= p0 };
 
-            value.FIsReentrant                              = GetBool(new IntPtr(p + 0x010)); // 0270D88FD890 0x10 FIsReentrant                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MyLock                                    = GetInt32(new IntPtr(p + 0x014)); // 0270D88FD8B0 0x14 MyLock                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NumWriteWaiters                           = GetUInt32(new IntPtr(p + 0x018)); // 0270D88FD8D0 0x18 NumWriteWaiters             ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.NumReadWaiters                            = GetUInt32(new IntPtr(p + 0x01C)); // 0270D88FD8F0 0x1C NumReadWaiters              ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.NumWriteUpgradeWaiters                    = GetUInt32(new IntPtr(p + 0x020)); // 0270D88FD910 0x20 NumWriteUpgradeWaiters      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.NumUpgradeWaiters                         = GetUInt32(new IntPtr(p + 0x024)); // 0270D88FD930 0x24 NumUpgradeWaiters           ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.FNoWaiters                                = GetBool(new IntPtr(p + 0x028)); // 0270D88FD950 0x28 FNoWaiters                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UpgradeLockOwnerId                        = GetInt32(new IntPtr(p + 0x02C)); // 0270D88FD970 0x2C UpgradeLockOwnerId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.WriteLockOwnerId                          = GetInt32(new IntPtr(p + 0x030)); // 0270D88FD990 0x30 WriteLockOwnerId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.WriteEvent                                = GetObject<EventWaitHandle>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0270D88FD9B0 0x38 WriteEvent                  ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
-            value.ReadEvent                                 = GetObject<EventWaitHandle>(new IntPtr(p + 0x040), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0270D88FD9D0 0x40 ReadEvent                   ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
-            value.UpgradeEvent                              = GetObject<EventWaitHandle>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0270D88FD9F0 0x48 UpgradeEvent                ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
-            value.WaitUpgradeEvent                          = GetObject<EventWaitHandle>(new IntPtr(p + 0x050), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0270D88FDA10 0x50 WaitUpgradeEvent            ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
-            value.LockID                                    = GetInt64(new IntPtr(p + 0x058)); // 0270D88FDA50 0x58 LockID                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.FUpgradeThreadHoldingRead                 = GetBool(new IntPtr(p + 0x060)); // 0270D88FDA90 0x60 FUpgradeThreadHoldingRead   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Owners                                    = GetUInt32(new IntPtr(p + 0x064)); // 0270D88FDAB0 0x64 Owners                      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.FDisposed                                 = GetBool(new IntPtr(p + 0x068)); // 0270D88FDAD0 0x68 FDisposed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FIsReentrant                              = GetBool(new IntPtr(p + 0x010)); // 024668971658 0x10 FIsReentrant                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MyLock                                    = GetInt32(new IntPtr(p + 0x014)); // 024668971678 0x14 MyLock                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NumWriteWaiters                           = GetUInt32(new IntPtr(p + 0x018)); // 024668971698 0x18 NumWriteWaiters             ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.NumReadWaiters                            = GetUInt32(new IntPtr(p + 0x01C)); // 0246689716B8 0x1C NumReadWaiters              ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.NumWriteUpgradeWaiters                    = GetUInt32(new IntPtr(p + 0x020)); // 0246689716D8 0x20 NumWriteUpgradeWaiters      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.NumUpgradeWaiters                         = GetUInt32(new IntPtr(p + 0x024)); // 0246689716F8 0x24 NumUpgradeWaiters           ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.FNoWaiters                                = GetBool(new IntPtr(p + 0x028)); // 024668971718 0x28 FNoWaiters                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UpgradeLockOwnerId                        = GetInt32(new IntPtr(p + 0x02C)); // 024668971738 0x2C UpgradeLockOwnerId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.WriteLockOwnerId                          = GetInt32(new IntPtr(p + 0x030)); // 024668971758 0x30 WriteLockOwnerId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.WriteEvent                                = GetObject<EventWaitHandle>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 024668971778 0x38 WriteEvent                  ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
+            value.ReadEvent                                 = GetObject<EventWaitHandle>(new IntPtr(p + 0x040), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 024668971798 0x40 ReadEvent                   ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
+            value.UpgradeEvent                              = GetObject<EventWaitHandle>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0246689717B8 0x48 UpgradeEvent                ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
+            value.WaitUpgradeEvent                          = GetObject<EventWaitHandle>(new IntPtr(p + 0x050), ReversePrism.DataModels.EventWaitHandle.FromPointer); // 0246689717D8 0x50 WaitUpgradeEvent            ( 0001865C9D10 ModelClassType EventWaitHandle EventWaitHandle EventWaitHandle Pointer )
+            value.LockID                                    = GetInt64(new IntPtr(p + 0x058)); // 024668971818 0x58 LockID                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.FUpgradeThreadHoldingRead                 = GetBool(new IntPtr(p + 0x060)); // 024668971858 0x60 FUpgradeThreadHoldingRead   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Owners                                    = GetUInt32(new IntPtr(p + 0x064)); // 024668971878 0x64 Owners                      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.FDisposed                                 = GetBool(new IntPtr(p + 0x068)); // 024668971898 0x68 FDisposed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

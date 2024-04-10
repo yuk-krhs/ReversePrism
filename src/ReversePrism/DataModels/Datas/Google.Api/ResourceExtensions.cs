@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 ResourceReference                        Extension`2<FieldOptions, ResourceReference> IL2CPP_TYPE_GENERICINST
     // 008 ResourceDefinition                       RepeatedExtension`2<FileOptions, ResourceDescriptor> IL2CPP_TYPE_GENERICINST
     // 010 Resource                                 Extension`2<MessageOptions, ResourceDescriptor> IL2CPP_TYPE_GENERICINST
-    public partial class ResourceExtensions
+    public partial class ResourceExtensions : DataModel
     {
 
         public static ResourceExtensions? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceExtensions();
+            var value   = new ResourceExtensions() { Pointer= p0 };
 
 
             return value;

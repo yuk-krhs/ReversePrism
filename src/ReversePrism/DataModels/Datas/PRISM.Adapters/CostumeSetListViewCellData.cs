@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 Glasses                                  00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer
     // 040 Earrings                                 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer
     // 048 Makeup                                   00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer
-    public partial class CostumeSetListViewCellData
+    public partial class CostumeSetListViewCellData : DataModel
     {
         public int                                      CostumeSetId                            { get; set; }
         public string                                   CostumeSetName                          { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeSetListViewCellData();
+            var value   = new CostumeSetListViewCellData() { Pointer= p0 };
 
-            value.CostumeSetId                              = GetInt32(new IntPtr(p + 0x010)); // 0270D623D160 0x10 CostumeSetId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CostumeSetName                            = GetString(new IntPtr(p + 0x018)); // 0270D623D180 0x18 CostumeSetName              ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x020)); // 0270D623D1A0 0x20 IsUnlocked                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Dress                                     = GetObject<CostumeCellData>(new IntPtr(p + 0x028), ReversePrism.DataModels.CostumeCellData.FromPointer); // 0270D623D1C0 0x28 Dress                       ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
-            value.Hairstyle                                 = GetObject<CostumeCellData>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeCellData.FromPointer); // 0270D623D1E0 0x30 Hairstyle                   ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
-            value.Glasses                                   = GetObject<CostumeCellData>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeCellData.FromPointer); // 0270D623D200 0x38 Glasses                     ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
-            value.Earrings                                  = GetObject<CostumeCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeCellData.FromPointer); // 0270D623D220 0x40 Earrings                    ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
-            value.Makeup                                    = GetObject<CostumeCellData>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeCellData.FromPointer); // 0270D623D240 0x48 Makeup                      ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
+            value.CostumeSetId                              = GetInt32(new IntPtr(p + 0x010)); // 02466629D160 0x10 CostumeSetId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CostumeSetName                            = GetString(new IntPtr(p + 0x018)); // 02466629D180 0x18 CostumeSetName              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x020)); // 02466629D1A0 0x20 IsUnlocked                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Dress                                     = GetObject<CostumeCellData>(new IntPtr(p + 0x028), ReversePrism.DataModels.CostumeCellData.FromPointer); // 02466629D1C0 0x28 Dress                       ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
+            value.Hairstyle                                 = GetObject<CostumeCellData>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeCellData.FromPointer); // 02466629D1E0 0x30 Hairstyle                   ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
+            value.Glasses                                   = GetObject<CostumeCellData>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeCellData.FromPointer); // 02466629D200 0x38 Glasses                     ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
+            value.Earrings                                  = GetObject<CostumeCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeCellData.FromPointer); // 02466629D220 0x40 Earrings                    ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
+            value.Makeup                                    = GetObject<CostumeCellData>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeCellData.FromPointer); // 02466629D240 0x48 Makeup                      ( 00018662A1F0 ModelClassType CostumeCellData CostumeCellData CostumeCellData Pointer )
 
             return value;
         }

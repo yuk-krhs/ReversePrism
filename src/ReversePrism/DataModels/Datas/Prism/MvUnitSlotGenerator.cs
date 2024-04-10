@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MvUnitSlotGenerator
+    public partial class MvUnitSlotGenerator : DataModel
     {
 
         public static MvUnitSlotGenerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MvUnitSlotGenerator();
+            var value   = new MvUnitSlotGenerator() { Pointer= p0 };
 
 
             return value;

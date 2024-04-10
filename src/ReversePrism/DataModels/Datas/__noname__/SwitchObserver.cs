@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 isStopped                                bool IL2CPP_TYPE_BOOLEAN
     // 000 latest                                   ulong IL2CPP_TYPE_U8
     // 000 hasLatest                                bool IL2CPP_TYPE_BOOLEAN
-    public partial class SwitchObserver
+    public partial class SwitchObserver : DataModel
     {
 
         public static SwitchObserver? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchObserver();
+            var value   = new SwitchObserver() { Pointer= p0 };
 
 
             return value;

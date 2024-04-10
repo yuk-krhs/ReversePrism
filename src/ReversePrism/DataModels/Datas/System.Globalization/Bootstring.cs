@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 024 Damp                                     0001865F4260 ModelPrimitiveType int int int Int32
     // 028 Initial_bias                             0001865F4260 ModelPrimitiveType int int int Int32
     // 02C Initial_n                                0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class Bootstring
+    public partial class Bootstring : DataModel
     {
         public int                                      Base_num                                { get; set; }
         public int                                      Tmin                                    { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Bootstring();
+            var value   = new Bootstring() { Pointer= p0 };
 
-            value.Base_num                                  = GetInt32(new IntPtr(p + 0x014)); // 0270D6D39208 0x14 Base_num                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Tmin                                      = GetInt32(new IntPtr(p + 0x018)); // 0270D6D39228 0x18 Tmin                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Tmax                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D6D39248 0x1C Tmax                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Skew                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D6D39268 0x20 Skew                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Damp                                      = GetInt32(new IntPtr(p + 0x024)); // 0270D6D39288 0x24 Damp                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Initial_bias                              = GetInt32(new IntPtr(p + 0x028)); // 0270D6D392A8 0x28 Initial_bias                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Initial_n                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D6D392C8 0x2C Initial_n                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Base_num                                  = GetInt32(new IntPtr(p + 0x014)); // 024666D91208 0x14 Base_num                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Tmin                                      = GetInt32(new IntPtr(p + 0x018)); // 024666D91228 0x18 Tmin                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Tmax                                      = GetInt32(new IntPtr(p + 0x01C)); // 024666D91248 0x1C Tmax                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Skew                                      = GetInt32(new IntPtr(p + 0x020)); // 024666D91268 0x20 Skew                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Damp                                      = GetInt32(new IntPtr(p + 0x024)); // 024666D91288 0x24 Damp                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Initial_bias                              = GetInt32(new IntPtr(p + 0x028)); // 024666D912A8 0x28 Initial_bias                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Initial_n                                 = GetInt32(new IntPtr(p + 0x02C)); // 024666D912C8 0x2C Initial_n                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 Profile                                  0001865EFBB0 ModelClassType PvpProfileStatus PvpProfileStatus PvpProfileStatus Pointer
     // 000 DefensePvpUnitFieldNumber                int IL2CPP_TYPE_I4
     // 038 DefensePvpUnit                           0001865F80B0 ModelClassType PvpUnitStatus PvpUnitStatus PvpUnitStatus Pointer
-    public partial class PvpOpponentStatus
+    public partial class PvpOpponentStatus : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public string                                   UserId                                  { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpOpponentStatus();
+            var value   = new PvpOpponentStatus() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D1441F98 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 0270D1441FD8 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 0270D1442018 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Profile                                   = GetObject<PvpProfileStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpProfileStatus.FromPointer); // 0270D1442058 0x30 Profile                     ( 0001865EFBB0 ModelClassType PvpProfileStatus PvpProfileStatus PvpProfileStatus Pointer )
-            value.DefensePvpUnit                            = GetObject<PvpUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 0270D1442098 0x38 DefensePvpUnit              ( 0001865F80B0 ModelClassType PvpUnitStatus PvpUnitStatus PvpUnitStatus Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 02466139F6B0 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 02466139F6F0 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 02466139F730 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Profile                                   = GetObject<PvpProfileStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpProfileStatus.FromPointer); // 02466139F770 0x30 Profile                     ( 0001865EFBB0 ModelClassType PvpProfileStatus PvpProfileStatus PvpProfileStatus Pointer )
+            value.DefensePvpUnit                            = GetObject<PvpUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 02466139F7B0 0x38 DefensePvpUnit              ( 0001865F80B0 ModelClassType PvpUnitStatus PvpUnitStatus PvpUnitStatus Pointer )
 
             return value;
         }

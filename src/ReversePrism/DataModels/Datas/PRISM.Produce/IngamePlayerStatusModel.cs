@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Dance                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Visual                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C Mental                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IngamePlayerStatusModel
+    public partial class IngamePlayerStatusModel : DataModel
     {
         public int                                      Vocal                                   { get; set; }
         public int                                      Dance                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngamePlayerStatusModel();
+            var value   = new IngamePlayerStatusModel() { Pointer= p0 };
 
-            value.Vocal                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D5A89EE8 0x10 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Dance                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D5A89F08 0x14 Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Visual                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D5A89F28 0x18 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Mental                                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D5A89F48 0x1C Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Vocal                                     = GetInt32(new IntPtr(p + 0x010)); // 024665AFABB0 0x10 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dance                                     = GetInt32(new IntPtr(p + 0x014)); // 024665AFABD0 0x14 Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Visual                                    = GetInt32(new IntPtr(p + 0x018)); // 024665AFABF0 0x18 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Mental                                    = GetInt32(new IntPtr(p + 0x01C)); // 024665AFAC10 0x1C Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

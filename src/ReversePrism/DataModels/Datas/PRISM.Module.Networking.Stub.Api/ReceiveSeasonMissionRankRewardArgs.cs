@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSeasonMissionIdFieldNumber            int IL2CPP_TYPE_I4
     // 018 MstSeasonMissionId                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ReceiveSeasonMissionRankRewardArgs
+    public partial class ReceiveSeasonMissionRankRewardArgs : DataModel
     {
         public int                                      MstSeasonMissionId                      { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiveSeasonMissionRankRewardArgs();
+            var value   = new ReceiveSeasonMissionRankRewardArgs() { Pointer= p0 };
 
-            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D27868E8 0x18 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x018)); // 0246626E12A0 0x18 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

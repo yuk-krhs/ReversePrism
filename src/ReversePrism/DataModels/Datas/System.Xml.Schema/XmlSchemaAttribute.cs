@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 088 Type                                     0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer
     // 090 AttributeType                            0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer
     // 098 AttDef                                   0001866E6E40 ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer
-    public partial class XmlSchemaAttribute
+    public partial class XmlSchemaAttribute : DataModel
     {
         public string                                   DefaultValue                            { get; set; }
         public string                                   FixedValue                              { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaAttribute();
+            var value   = new XmlSchemaAttribute() { Pointer= p0 };
 
-            value.DefaultValue                              = GetString(new IntPtr(p + 0x050)); // 0270D739A190 0x50 DefaultValue                ( 000186671910 ModelPrimitiveType string string string String )
-            value.FixedValue                                = GetString(new IntPtr(p + 0x058)); // 0270D739A1B0 0x58 FixedValue                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Name                                      = GetString(new IntPtr(p + 0x060)); // 0270D739A1D0 0x60 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Form                                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x068)); // 0270D739A1F0 0x68 Form                        ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
-            value.Use                                       = (XmlSchemaUse)GetInt32(new IntPtr(p + 0x06C)); // 0270D739A210 0x6C Use                         ( 0001865C1F80 ModelEnumType XmlSchemaUse XmlSchemaUse XmlSchemaUse Int32 )
-            value.RefName                                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D739A230 0x70 RefName                     ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.TypeName                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D739A250 0x78 TypeName                    ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.QualifiedName                             = GetObject<XmlQualifiedName>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D739A270 0x80 QualifiedName               ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.Type                                      = GetObject<XmlSchemaSimpleType>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0270D739A290 0x88 Type                        ( 0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer )
-            value.AttributeType                             = GetObject<XmlSchemaSimpleType>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0270D739A2B0 0x90 AttributeType               ( 0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer )
-            value.AttDef                                    = GetObject<SchemaAttDef>(new IntPtr(p + 0x098), ReversePrism.DataModels.SchemaAttDef.FromPointer); // 0270D739A2D0 0x98 AttDef                      ( 0001866E6E40 ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer )
+            value.DefaultValue                              = GetString(new IntPtr(p + 0x050)); // 0246673EA190 0x50 DefaultValue                ( 000186671910 ModelPrimitiveType string string string String )
+            value.FixedValue                                = GetString(new IntPtr(p + 0x058)); // 0246673EA1B0 0x58 FixedValue                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x060)); // 0246673EA1D0 0x60 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Form                                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x068)); // 0246673EA1F0 0x68 Form                        ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
+            value.Use                                       = (XmlSchemaUse)GetInt32(new IntPtr(p + 0x06C)); // 0246673EA210 0x6C Use                         ( 0001865C1F80 ModelEnumType XmlSchemaUse XmlSchemaUse XmlSchemaUse Int32 )
+            value.RefName                                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246673EA230 0x70 RefName                     ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.TypeName                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246673EA250 0x78 TypeName                    ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.QualifiedName                             = GetObject<XmlQualifiedName>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246673EA270 0x80 QualifiedName               ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Type                                      = GetObject<XmlSchemaSimpleType>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0246673EA290 0x88 Type                        ( 0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer )
+            value.AttributeType                             = GetObject<XmlSchemaSimpleType>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0246673EA2B0 0x90 AttributeType               ( 0001866BF5F0 ModelClassType XmlSchemaSimpleType XmlSchemaSimpleType XmlSchemaSimpleType Pointer )
+            value.AttDef                                    = GetObject<SchemaAttDef>(new IntPtr(p + 0x098), ReversePrism.DataModels.SchemaAttDef.FromPointer); // 0246673EA2D0 0x98 AttDef                      ( 0001866E6E40 ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer )
 
             return value;
         }

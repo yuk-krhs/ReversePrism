@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RectIntEqualityComparer
+    public partial class RectIntEqualityComparer : DataModel
     {
 
         public static RectIntEqualityComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RectIntEqualityComparer();
+            var value   = new RectIntEqualityComparer() { Pointer= p0 };
 
 
             return value;

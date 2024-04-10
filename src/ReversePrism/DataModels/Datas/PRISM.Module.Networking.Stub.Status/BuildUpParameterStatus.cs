@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ScheduleValue                            00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer
     // 000 SupportBonusValueFieldNumber             int IL2CPP_TYPE_I4
     // 020 SupportBonusValue                        00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer
-    public partial class BuildUpParameterStatus
+    public partial class BuildUpParameterStatus : DataModel
     {
         public BuildUpParameterValueStatus?             ScheduleValue                           { get; set; }
         public BuildUpParameterValueStatus?             SupportBonusValue                       { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BuildUpParameterStatus();
+            var value   = new BuildUpParameterStatus() { Pointer= p0 };
 
-            value.ScheduleValue                             = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 0270D10B0A78 0x18 ScheduleValue               ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
-            value.SupportBonusValue                         = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 0270D10B0AB8 0x20 SupportBonusValue           ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
+            value.ScheduleValue                             = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 024661038BB0 0x18 ScheduleValue               ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
+            value.SupportBonusValue                         = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 024661038BF0 0x20 SupportBonusValue           ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
 
             return value;
         }

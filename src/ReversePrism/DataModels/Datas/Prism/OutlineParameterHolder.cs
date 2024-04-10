@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 OutlineAdjust                            000186666050 ModelPrimitiveType float float float Single
     // 024 OutlineInclusive                         000186666050 ModelPrimitiveType float float float Single
     // 028 OutlineResizeRate                        000186666050 ModelPrimitiveType float float float Single
-    public partial class OutlineParameterHolder
+    public partial class OutlineParameterHolder : DataModel
     {
         public float                                    OutlineAdjust                           { get; set; }
         public float                                    OutlineInclusive                        { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutlineParameterHolder();
+            var value   = new OutlineParameterHolder() { Pointer= p0 };
 
-            value.OutlineAdjust                             = GetSingle(new IntPtr(p + 0x020)); // 0270D3307F50 0x20 OutlineAdjust               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.OutlineInclusive                          = GetSingle(new IntPtr(p + 0x024)); // 0270D3307F70 0x24 OutlineInclusive            ( 000186666050 ModelPrimitiveType float float float Single )
-            value.OutlineResizeRate                         = GetSingle(new IntPtr(p + 0x028)); // 0270D3307F90 0x28 OutlineResizeRate           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OutlineAdjust                             = GetSingle(new IntPtr(p + 0x020)); // 024663326D18 0x20 OutlineAdjust               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OutlineInclusive                          = GetSingle(new IntPtr(p + 0x024)); // 024663326D38 0x24 OutlineInclusive            ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OutlineResizeRate                         = GetSingle(new IntPtr(p + 0x028)); // 024663326D58 0x28 OutlineResizeRate           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

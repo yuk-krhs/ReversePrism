@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EmbeddedAttribute
+    public partial class EmbeddedAttribute : DataModel
     {
 
         public static EmbeddedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EmbeddedAttribute();
+            var value   = new EmbeddedAttribute() { Pointer= p0 };
 
 
             return value;

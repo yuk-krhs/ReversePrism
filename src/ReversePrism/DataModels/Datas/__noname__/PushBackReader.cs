@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Reader                                   000186645510 ModelClassType TextReader TextReader TextReader Pointer
     // 018 nextChar                                 Nullable`1<char> IL2CPP_TYPE_GENERICINST
-    public partial class PushBackReader
+    public partial class PushBackReader : DataModel
     {
         public TextReader?                              Reader                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PushBackReader();
+            var value   = new PushBackReader() { Pointer= p0 };
 
-            value.Reader                                    = GetObject<TextReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.TextReader.FromPointer); // 0270DA42BB00 0x10 Reader                      ( 000186645510 ModelClassType TextReader TextReader TextReader Pointer )
+            value.Reader                                    = GetObject<TextReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.TextReader.FromPointer); // 02466A47E288 0x10 Reader                      ( 000186645510 ModelClassType TextReader TextReader TextReader Pointer )
 
             return value;
         }

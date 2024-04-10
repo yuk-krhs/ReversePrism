@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 From                                     00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
     // 018 To                                       00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class AllowRange
+    public partial class AllowRange : DataModel
     {
         public ulong                                    From                                    { get; set; }
         public ulong                                    To                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AllowRange();
+            var value   = new AllowRange() { Pointer= p0 };
 
-            value.From                                      = GetUInt64(new IntPtr(p + 0x010)); // 0270044013D8 0x10 From                        ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.To                                        = GetUInt64(new IntPtr(p + 0x018)); // 0270044013F8 0x18 To                          ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.From                                      = GetUInt64(new IntPtr(p + 0x010)); // 0245A4431FB0 0x10 From                        ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.To                                        = GetUInt64(new IntPtr(p + 0x018)); // 0245A4431FD0 0x18 To                          ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

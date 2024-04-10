@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Numerator                                0001865F7700 ModelPrimitiveType long long long Int64
     // 000 DenominatorFieldNumber                   int IL2CPP_TYPE_I4
     // 020 Denominator                              0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class Fraction
+    public partial class Fraction : DataModel
     {
         public long                                     Numerator                               { get; set; }
         public long                                     Denominator                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Fraction();
+            var value   = new Fraction() { Pointer= p0 };
 
-            value.Numerator                                 = GetInt64(new IntPtr(p + 0x018)); // 0270DA692470 0x18 Numerator                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Denominator                               = GetInt64(new IntPtr(p + 0x020)); // 0270DA6924B0 0x20 Denominator                 ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Numerator                                 = GetInt64(new IntPtr(p + 0x018)); // 02466A6FDC10 0x18 Numerator                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Denominator                               = GetInt64(new IntPtr(p + 0x020)); // 02466A6FDC50 0x20 Denominator                 ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 000 s_InvalidSampler                         Sampler IL2CPP_TYPE_CLASS
-    public partial class Sampler
+    public partial class Sampler : DataModel
     {
 
         public static Sampler? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Sampler();
+            var value   = new Sampler() { Pointer= p0 };
 
 
             return value;

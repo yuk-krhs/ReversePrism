@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 0D0 PurchaseReply                            000186602DF0 ModelClassType IPurchaseExchangeProductReply IPurchaseExchangeProductReply IPurchaseExchangeProductReply Pointer
     // 0D8 <OnExchangeCompletedSubject>k__BackingField Subject`1<ValueTuple`2<ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
     // 0E0 <OnGoToOtherViewSubject>k__BackingField  Subject`1<ValueTuple`3<ButtonGoToType, ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
-    public partial class ExchangePopupDialogParam
+    public partial class ExchangePopupDialogParam : DataModel
     {
         public ExchangeGoodsClientModel?                GoodsModel                              { get; set; }
         public int                                      ExchangeCount                           { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangePopupDialogParam();
+            var value   = new ExchangePopupDialogParam() { Pointer= p0 };
 
-            value.GoodsModel                                = GetObject<ExchangeGoodsClientModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.ExchangeGoodsClientModel.FromPointer); // 0270D5508018 0x90 GoodsModel                  ( 000186509660 ModelClassType ExchangeGoodsClientModel ExchangeGoodsClientModel ExchangeGoodsClientModel Pointer )
-            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x098)); // 0270D5508038 0x98 ExchangeCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BeforePurchaseProductAmount               = GetInt64(new IntPtr(p + 0x0A0)); // 0270D5508058 0xA0 BeforePurchaseProductAmount ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.AfterPurchaseProductAmount                = GetInt64(new IntPtr(p + 0x0A8)); // 0270D5508078 0xA8 AfterPurchaseProductAmount  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.BeforeGoodsAmount                         = GetInt64(new IntPtr(p + 0x0B0)); // 0270D5508098 0xB0 BeforeGoodsAmount           ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.AfterGoodsAmount                          = GetInt64(new IntPtr(p + 0x0B8)); // 0270D55080B8 0xB8 AfterGoodsAmount            ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.BeforeExchangeLimmit                      = GetInt32(new IntPtr(p + 0x0C0)); // 0270D55080D8 0xC0 BeforeExchangeLimmit        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.AfterExchangeLimmit                       = GetInt32(new IntPtr(p + 0x0C4)); // 0270D55080F8 0xC4 AfterExchangeLimmit         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PieceCharaID                              = GetInt32(new IntPtr(p + 0x0C8)); // 0270D5508118 0xC8 PieceCharaID                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PurchaseReply                             = GetObject<IPurchaseExchangeProductReply>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.IPurchaseExchangeProductReply.FromPointer); // 0270D5508138 0xD0 PurchaseReply               ( 000186602DF0 ModelClassType IPurchaseExchangeProductReply IPurchaseExchangeProductReply IPurchaseExchangeProductReply Pointer )
+            value.GoodsModel                                = GetObject<ExchangeGoodsClientModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.ExchangeGoodsClientModel.FromPointer); // 0246655716B0 0x90 GoodsModel                  ( 000186509660 ModelClassType ExchangeGoodsClientModel ExchangeGoodsClientModel ExchangeGoodsClientModel Pointer )
+            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x098)); // 0246655716D0 0x98 ExchangeCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BeforePurchaseProductAmount               = GetInt64(new IntPtr(p + 0x0A0)); // 0246655716F0 0xA0 BeforePurchaseProductAmount ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.AfterPurchaseProductAmount                = GetInt64(new IntPtr(p + 0x0A8)); // 024665571710 0xA8 AfterPurchaseProductAmount  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.BeforeGoodsAmount                         = GetInt64(new IntPtr(p + 0x0B0)); // 024665571730 0xB0 BeforeGoodsAmount           ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.AfterGoodsAmount                          = GetInt64(new IntPtr(p + 0x0B8)); // 024665571750 0xB8 AfterGoodsAmount            ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.BeforeExchangeLimmit                      = GetInt32(new IntPtr(p + 0x0C0)); // 024665571770 0xC0 BeforeExchangeLimmit        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.AfterExchangeLimmit                       = GetInt32(new IntPtr(p + 0x0C4)); // 024665571790 0xC4 AfterExchangeLimmit         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PieceCharaID                              = GetInt32(new IntPtr(p + 0x0C8)); // 0246655717B0 0xC8 PieceCharaID                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PurchaseReply                             = GetObject<IPurchaseExchangeProductReply>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.IPurchaseExchangeProductReply.FromPointer); // 0246655717D0 0xD0 PurchaseReply               ( 000186602DF0 ModelClassType IPurchaseExchangeProductReply IPurchaseExchangeProductReply IPurchaseExchangeProductReply Pointer )
 
             return value;
         }

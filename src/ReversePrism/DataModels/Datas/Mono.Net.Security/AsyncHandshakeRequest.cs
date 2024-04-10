@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncHandshakeRequest
+    public partial class AsyncHandshakeRequest : DataModel
     {
 
         public static AsyncHandshakeRequest? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncHandshakeRequest();
+            var value   = new AsyncHandshakeRequest() { Pointer= p0 };
 
 
             return value;

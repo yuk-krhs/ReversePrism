@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 HttpHeader                               000186671910 ModelPrimitiveType string string string String
     // 000 UrlQueryParameterFieldNumber             int IL2CPP_TYPE_I4
     // 028 UrlQueryParameter                        000186671910 ModelPrimitiveType string string string String
-    public partial class SystemParameter
+    public partial class SystemParameter : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   HttpHeader                              { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemParameter();
+            var value   = new SystemParameter() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA896AC0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.HttpHeader                                = GetString(new IntPtr(p + 0x020)); // 0270DA896B00 0x20 HttpHeader                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.UrlQueryParameter                         = GetString(new IntPtr(p + 0x028)); // 0270DA896B40 0x28 UrlQueryParameter           ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A8FBA70 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.HttpHeader                                = GetString(new IntPtr(p + 0x020)); // 02466A8FBAB0 0x20 HttpHeader                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.UrlQueryParameter                         = GetString(new IntPtr(p + 0x028)); // 02466A8FBAF0 0x28 UrlQueryParameter           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

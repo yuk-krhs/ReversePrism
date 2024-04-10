@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 091 CanTraining                              0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 092 CanSkillLvUp                             0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 093 HasEventBonus                            0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class PIdolIcon
+    public partial class PIdolIcon : DataModel
     {
         public bool                                     AwakenDisplayPermit                     { get; set; }
         public bool                                     TrainingDisplayPermit                   { get; set; }
@@ -47,22 +47,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PIdolIcon();
+            var value   = new PIdolIcon() { Pointer= p0 };
 
-            value.AwakenDisplayPermit                       = GetBool(new IntPtr(p + 0x048)); // 0270D4C8A680 0x48 AwakenDisplayPermit         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TrainingDisplayPermit                     = GetBool(new IntPtr(p + 0x049)); // 0270D4C8A6A0 0x49 TrainingDisplayPermit       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkillLvUpDisplayPermit                    = GetBool(new IntPtr(p + 0x04A)); // 0270D4C8A6C0 0x4A SkillLvUpDisplayPermit      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IconId                                    = GetString(new IntPtr(p + 0x050)); // 0270D4C8A6E0 0x50 IconId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x058)); // 0270D4C8A700 0x58 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Star                                      = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0270D4C8A720 0x60 Star                        ( 0001865913D0 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.AwakeningLv                               = GetInt32(new IntPtr(p + 0x068)); // 0270D4C8A740 0x68 AwakeningLv                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VoDaViMe                                  = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 0270D4C8A760 0x70 VoDaViMe                    ( 000186575070 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
-            value.UnlockIdolSkillIconIdList                 = GetInt32List(new IntPtr(p + 0x080)); // 0270D4C8A7A0 0x80 UnlockIdolSkillIconIdList   ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.IdolSkillIconIdList                       = GetInt32List(new IntPtr(p + 0x088)); // 0270D4C8A7C0 0x88 IdolSkillIconIdList         ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.CanAwaken                                 = GetBool(new IntPtr(p + 0x090)); // 0270D4C8A7E0 0x90 CanAwaken                   ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CanTraining                               = GetBool(new IntPtr(p + 0x091)); // 0270D4C8A800 0x91 CanTraining                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CanSkillLvUp                              = GetBool(new IntPtr(p + 0x092)); // 0270D4C8A820 0x92 CanSkillLvUp                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.HasEventBonus                             = GetBool(new IntPtr(p + 0x093)); // 0270D4C8A840 0x93 HasEventBonus               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.AwakenDisplayPermit                       = GetBool(new IntPtr(p + 0x048)); // 024664CEE070 0x48 AwakenDisplayPermit         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TrainingDisplayPermit                     = GetBool(new IntPtr(p + 0x049)); // 024664CEE090 0x49 TrainingDisplayPermit       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkillLvUpDisplayPermit                    = GetBool(new IntPtr(p + 0x04A)); // 024664CEE0B0 0x4A SkillLvUpDisplayPermit      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IconId                                    = GetString(new IntPtr(p + 0x050)); // 024664CEE0D0 0x50 IconId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x058)); // 024664CEE0F0 0x58 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Star                                      = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 024664CEE110 0x60 Star                        ( 0001865913D0 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.AwakeningLv                               = GetInt32(new IntPtr(p + 0x068)); // 024664CEE130 0x68 AwakeningLv                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VoDaViMe                                  = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 024664CEE150 0x70 VoDaViMe                    ( 000186575070 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
+            value.UnlockIdolSkillIconIdList                 = GetInt32List(new IntPtr(p + 0x080)); // 024664CEE190 0x80 UnlockIdolSkillIconIdList   ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.IdolSkillIconIdList                       = GetInt32List(new IntPtr(p + 0x088)); // 024664CEE1B0 0x88 IdolSkillIconIdList         ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.CanAwaken                                 = GetBool(new IntPtr(p + 0x090)); // 024664CEE1D0 0x90 CanAwaken                   ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CanTraining                               = GetBool(new IntPtr(p + 0x091)); // 024664CEE1F0 0x91 CanTraining                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CanSkillLvUp                              = GetBool(new IntPtr(p + 0x092)); // 024664CEE210 0x92 CanSkillLvUp                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.HasEventBonus                             = GetBool(new IntPtr(p + 0x093)); // 024664CEE230 0x93 HasEventBonus               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

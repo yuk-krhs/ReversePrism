@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LastPassFieldNumber                      int IL2CPP_TYPE_I4
     // 018 LastPass                                 0001865B77B0 ModelClassType LoginBonusPassStatus LoginBonusPassStatus LoginBonusPassStatus Pointer
-    public partial class ExecuteLoginBonusPassReply
+    public partial class ExecuteLoginBonusPassReply : DataModel
     {
         public LoginBonusPassStatus?                    LastPass                                { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteLoginBonusPassReply();
+            var value   = new ExecuteLoginBonusPassReply() { Pointer= p0 };
 
-            value.LastPass                                  = GetObject<LoginBonusPassStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginBonusPassStatus.FromPointer); // 0270D2261D18 0x18 LastPass                    ( 0001865B77B0 ModelClassType LoginBonusPassStatus LoginBonusPassStatus LoginBonusPassStatus Pointer )
+            value.LastPass                                  = GetObject<LoginBonusPassStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginBonusPassStatus.FromPointer); // 0246621D18F0 0x18 LastPass                    ( 0001865B77B0 ModelClassType LoginBonusPassStatus LoginBonusPassStatus LoginBonusPassStatus Pointer )
 
             return value;
         }

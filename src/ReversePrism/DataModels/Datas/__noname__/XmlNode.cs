@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 058 HasContent                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 059 IsEmptyElement                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 05A quoteChar                                char IL2CPP_TYPE_CHAR
-    public partial class XmlNode
+    public partial class XmlNode : DataModel
     {
         public XmlNodeType                              NodeType                                { get; set; }
         public PrefixHandle?                            Prefix                                  { get; set; }
@@ -52,25 +52,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNode();
+            var value   = new XmlNode() { Pointer= p0 };
 
-            value.NodeType                                  = (XmlNodeType)GetInt32(new IntPtr(p + 0x010)); // 027004C519A0 0x10 NodeType                    ( 0001866BBCE0 ModelEnumType XmlNodeType XmlNodeType XmlNodeType Int32 )
-            value.Prefix                                    = GetObject<PrefixHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.PrefixHandle.FromPointer); // 027004C519C0 0x18 Prefix                      ( 000186775C20 ModelClassType PrefixHandle PrefixHandle PrefixHandle Pointer )
-            value.LocalName                                 = GetObject<StringHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.StringHandle.FromPointer); // 027004C519E0 0x20 LocalName                   ( 0001865BFE90 ModelClassType StringHandle StringHandle StringHandle Pointer )
-            value.Value                                     = GetObject<ValueHandle>(new IntPtr(p + 0x028), ReversePrism.DataModels.ValueHandle.FromPointer); // 027004C51A00 0x28 Value                       ( 000186769240 ModelClassType ValueHandle ValueHandle ValueHandle Pointer )
-            value.Ns                                        = GetObject<Namespace>(new IntPtr(p + 0x030), ReversePrism.DataModels.Namespace.FromPointer); // 027004C51A20 0x30 Ns                          ( 000186729060 ModelClassType Namespace Namespace Namespace Pointer )
-            value.HasValue                                  = GetBool(new IntPtr(p + 0x038)); // 027004C51A40 0x38 HasValue                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanGetAttribute                           = GetBool(new IntPtr(p + 0x039)); // 027004C51A60 0x39 CanGetAttribute             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanMoveToElement                          = GetBool(new IntPtr(p + 0x03A)); // 027004C51A80 0x3A CanMoveToElement            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReadState                                 = (ReadState)GetInt32(new IntPtr(p + 0x03C)); // 027004C51AA0 0x3C ReadState                   ( 00018661DEC0 ModelEnumType ReadState ReadState ReadState Int32 )
-            value.AttributeTextNode                         = GetObject<XmlAttributeTextNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlAttributeTextNode.FromPointer); // 027004C51AC0 0x40 AttributeTextNode           ( 00018672AB90 ModelClassType XmlAttributeTextNode XmlAttributeTextNode XmlAttributeTextNode Pointer )
-            value.ExitScope                                 = GetBool(new IntPtr(p + 0x048)); // 027004C51AE0 0x48 ExitScope                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DepthDelta                                = GetInt32(new IntPtr(p + 0x04C)); // 027004C51B00 0x4C DepthDelta                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsAtomicValue                             = GetBool(new IntPtr(p + 0x050)); // 027004C51B20 0x50 IsAtomicValue               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkipValue                                 = GetBool(new IntPtr(p + 0x051)); // 027004C51B40 0x51 SkipValue                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.QnameType                                 = (QNameType)GetInt32(new IntPtr(p + 0x054)); // 027004C51B60 0x54 QnameType                   ( 000186729C00 ModelEnumType QNameType QNameType QNameType Int32 )
-            value.HasContent                                = GetBool(new IntPtr(p + 0x058)); // 027004C51B80 0x58 HasContent                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsEmptyElement                            = GetBool(new IntPtr(p + 0x059)); // 027004C51BA0 0x59 IsEmptyElement              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NodeType                                  = (XmlNodeType)GetInt32(new IntPtr(p + 0x010)); // 0245A4C954E8 0x10 NodeType                    ( 0001866BBCE0 ModelEnumType XmlNodeType XmlNodeType XmlNodeType Int32 )
+            value.Prefix                                    = GetObject<PrefixHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.PrefixHandle.FromPointer); // 0245A4C95508 0x18 Prefix                      ( 000186775C20 ModelClassType PrefixHandle PrefixHandle PrefixHandle Pointer )
+            value.LocalName                                 = GetObject<StringHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.StringHandle.FromPointer); // 0245A4C95528 0x20 LocalName                   ( 0001865BFE90 ModelClassType StringHandle StringHandle StringHandle Pointer )
+            value.Value                                     = GetObject<ValueHandle>(new IntPtr(p + 0x028), ReversePrism.DataModels.ValueHandle.FromPointer); // 0245A4C95548 0x28 Value                       ( 000186769240 ModelClassType ValueHandle ValueHandle ValueHandle Pointer )
+            value.Ns                                        = GetObject<Namespace>(new IntPtr(p + 0x030), ReversePrism.DataModels.Namespace.FromPointer); // 0245A4C95568 0x30 Ns                          ( 000186729060 ModelClassType Namespace Namespace Namespace Pointer )
+            value.HasValue                                  = GetBool(new IntPtr(p + 0x038)); // 0245A4C95588 0x38 HasValue                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanGetAttribute                           = GetBool(new IntPtr(p + 0x039)); // 0245A4C955A8 0x39 CanGetAttribute             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanMoveToElement                          = GetBool(new IntPtr(p + 0x03A)); // 0245A4C955C8 0x3A CanMoveToElement            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReadState                                 = (ReadState)GetInt32(new IntPtr(p + 0x03C)); // 0245A4C955E8 0x3C ReadState                   ( 00018661DEC0 ModelEnumType ReadState ReadState ReadState Int32 )
+            value.AttributeTextNode                         = GetObject<XmlAttributeTextNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlAttributeTextNode.FromPointer); // 0245A4C95608 0x40 AttributeTextNode           ( 00018672AB90 ModelClassType XmlAttributeTextNode XmlAttributeTextNode XmlAttributeTextNode Pointer )
+            value.ExitScope                                 = GetBool(new IntPtr(p + 0x048)); // 0245A4C95628 0x48 ExitScope                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DepthDelta                                = GetInt32(new IntPtr(p + 0x04C)); // 0245A4C95648 0x4C DepthDelta                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsAtomicValue                             = GetBool(new IntPtr(p + 0x050)); // 0245A4C95668 0x50 IsAtomicValue               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkipValue                                 = GetBool(new IntPtr(p + 0x051)); // 0245A4C95688 0x51 SkipValue                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.QnameType                                 = (QNameType)GetInt32(new IntPtr(p + 0x054)); // 0245A4C956A8 0x54 QnameType                   ( 000186729C00 ModelEnumType QNameType QNameType QNameType Int32 )
+            value.HasContent                                = GetBool(new IntPtr(p + 0x058)); // 0245A4C956C8 0x58 HasContent                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsEmptyElement                            = GetBool(new IntPtr(p + 0x059)); // 0245A4C956E8 0x59 IsEmptyElement              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

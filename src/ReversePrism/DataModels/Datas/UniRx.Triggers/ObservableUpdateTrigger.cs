@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 update                                   Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableUpdateTrigger
+    public partial class ObservableUpdateTrigger : DataModel
     {
 
         public static ObservableUpdateTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableUpdateTrigger();
+            var value   = new ObservableUpdateTrigger() { Pointer= p0 };
 
 
             return value;

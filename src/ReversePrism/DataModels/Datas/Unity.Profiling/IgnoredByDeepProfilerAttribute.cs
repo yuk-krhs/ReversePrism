@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IgnoredByDeepProfilerAttribute
+    public partial class IgnoredByDeepProfilerAttribute : DataModel
     {
 
         public static IgnoredByDeepProfilerAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IgnoredByDeepProfilerAttribute();
+            var value   = new IgnoredByDeepProfilerAttribute() { Pointer= p0 };
 
 
             return value;

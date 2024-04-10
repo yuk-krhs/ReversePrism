@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 M_BakedIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Light
+    public partial class Light : DataModel
     {
         public int                                      M_BakedIndex                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Light();
+            var value   = new Light() { Pointer= p0 };
 
-            value.M_BakedIndex                              = GetInt32(new IntPtr(p + 0x018)); // 0270065F6A38 0x18 M_BakedIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_BakedIndex                              = GetInt32(new IntPtr(p + 0x018)); // 0245A65C4D90 0x18 M_BakedIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

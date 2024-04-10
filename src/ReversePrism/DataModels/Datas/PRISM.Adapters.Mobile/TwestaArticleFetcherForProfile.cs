@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Cache                                    0001866C72F0 ModelClassType TwestaArticleTemporaryCache TwestaArticleTemporaryCache TwestaArticleTemporaryCache Pointer
     // 018 MstTwestaUserId                          0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class TwestaArticleFetcherForProfile
+    public partial class TwestaArticleFetcherForProfile : DataModel
     {
         public TwestaArticleTemporaryCache?             Cache                                   { get; set; }
         public int                                      MstTwestaUserId                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaArticleFetcherForProfile();
+            var value   = new TwestaArticleFetcherForProfile() { Pointer= p0 };
 
-            value.Cache                                     = GetObject<TwestaArticleTemporaryCache>(new IntPtr(p + 0x010), ReversePrism.DataModels.TwestaArticleTemporaryCache.FromPointer); // 0270D68DD210 0x10 Cache                       ( 0001866C72F0 ModelClassType TwestaArticleTemporaryCache TwestaArticleTemporaryCache TwestaArticleTemporaryCache Pointer )
-            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D68DD230 0x18 MstTwestaUserId             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Cache                                     = GetObject<TwestaArticleTemporaryCache>(new IntPtr(p + 0x010), ReversePrism.DataModels.TwestaArticleTemporaryCache.FromPointer); // 02466694D210 0x10 Cache                       ( 0001866C72F0 ModelClassType TwestaArticleTemporaryCache TwestaArticleTemporaryCache TwestaArticleTemporaryCache Pointer )
+            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x018)); // 02466694D230 0x18 MstTwestaUserId             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

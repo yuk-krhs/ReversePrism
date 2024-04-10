@@ -171,7 +171,7 @@ namespace ReversePrism.DataModels
     // 500 __Method_FinishScheduleMiniLive          Method`2<FinishScheduleMiniLiveArgs, FinishScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
     // 508 __Method_StartScheduleTalkShow           Method`2<StartScheduleTalkShowArgs, StartScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
     // 510 __Method_FinishScheduleTalkShow          Method`2<FinishScheduleTalkShowArgs, FinishScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceService
+    public partial class ProduceService : DataModel
     {
 
         public static ProduceService? FromPointer(IntPtr p0)
@@ -180,7 +180,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceService();
+            var value   = new ProduceService() { Pointer= p0 };
 
 
             return value;

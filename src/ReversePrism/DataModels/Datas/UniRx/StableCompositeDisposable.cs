@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StableCompositeDisposable
+    public partial class StableCompositeDisposable : DataModel
     {
 
         public static StableCompositeDisposable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StableCompositeDisposable();
+            var value   = new StableCompositeDisposable() { Pointer= p0 };
 
 
             return value;

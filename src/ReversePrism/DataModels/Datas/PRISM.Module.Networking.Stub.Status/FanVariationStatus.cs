@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 BeforeFan                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 AfterFanFieldNumber                      int IL2CPP_TYPE_I4
     // 01C AfterFan                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FanVariationStatus
+    public partial class FanVariationStatus : DataModel
     {
         public int                                      BeforeFan                               { get; set; }
         public int                                      AfterFan                                { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FanVariationStatus();
+            var value   = new FanVariationStatus() { Pointer= p0 };
 
-            value.BeforeFan                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D10BB110 0x18 BeforeFan                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AfterFan                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D10BB150 0x1C AfterFan                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BeforeFan                                 = GetInt32(new IntPtr(p + 0x018)); // 024661051B50 0x18 BeforeFan                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AfterFan                                  = GetInt32(new IntPtr(p + 0x01C)); // 024661051B90 0x1C AfterFan                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

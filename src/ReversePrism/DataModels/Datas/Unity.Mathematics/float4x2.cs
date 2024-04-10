@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 C0                                       0001866C7C90 ModelEnumType float4 float4 float4 Int32
     // 020 C1                                       0001866C7C90 ModelEnumType float4 float4 float4 Int32
     // 000 zero                                     float4x2 IL2CPP_TYPE_VALUETYPE
-    public partial class float4x2
+    public partial class float4x2 : DataModel
     {
         public float4                                   C0                                      { get; set; }
         public float4                                   C1                                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new float4x2();
+            var value   = new float4x2() { Pointer= p0 };
 
-            value.C0                                        = (float4)GetInt32(new IntPtr(p + 0x010)); // 0270D7E9C1C8 0x10 C0                          ( 0001866C7C90 ModelEnumType float4 float4 float4 Int32 )
-            value.C1                                        = (float4)GetInt32(new IntPtr(p + 0x020)); // 0270D7E9C1E8 0x20 C1                          ( 0001866C7C90 ModelEnumType float4 float4 float4 Int32 )
+            value.C0                                        = (float4)GetInt32(new IntPtr(p + 0x010)); // 024667F041C8 0x10 C0                          ( 0001866C7C90 ModelEnumType float4 float4 float4 Int32 )
+            value.C1                                        = (float4)GetInt32(new IntPtr(p + 0x020)); // 024667F041E8 0x20 C1                          ( 0001866C7C90 ModelEnumType float4 float4 float4 Int32 )
 
             return value;
         }

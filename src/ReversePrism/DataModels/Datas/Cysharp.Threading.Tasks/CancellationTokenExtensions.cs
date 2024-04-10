@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 cancellationTokenCallback                Action`1<<object>> IL2CPP_TYPE_GENERICINST
     // 008 disposeCallback                          Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class CancellationTokenExtensions
+    public partial class CancellationTokenExtensions : DataModel
     {
 
         public static CancellationTokenExtensions? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CancellationTokenExtensions();
+            var value   = new CancellationTokenExtensions() { Pointer= p0 };
 
 
             return value;

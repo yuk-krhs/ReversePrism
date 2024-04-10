@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnValidateHandler
+    public partial class IAsyncOnValidateHandler : DataModel
     {
 
         public static IAsyncOnValidateHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnValidateHandler();
+            var value   = new IAsyncOnValidateHandler() { Pointer= p0 };
 
 
             return value;

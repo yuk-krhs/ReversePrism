@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SqlConvert
+    public partial class SqlConvert : DataModel
     {
 
         public static SqlConvert? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlConvert();
+            var value   = new SqlConvert() { Pointer= p0 };
 
 
             return value;

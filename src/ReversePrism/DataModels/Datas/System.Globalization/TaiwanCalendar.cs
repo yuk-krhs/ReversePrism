@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 s_defaultInstance                        Calendar IL2CPP_TYPE_CLASS
     // 020 Helper                                   0001866991E0 ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer
     // 010 CalendarMinValue                         0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class TaiwanCalendar
+    public partial class TaiwanCalendar : DataModel
     {
         public GregorianCalendarHelper?                 Helper                                  { get; set; }
         public DateTime                                 CalendarMinValue                        { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaiwanCalendar();
+            var value   = new TaiwanCalendar() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<GregorianCalendarHelper>(new IntPtr(p + 0x020), ReversePrism.DataModels.GregorianCalendarHelper.FromPointer); // 0270D6D367B8 0x20 Helper                      ( 0001866991E0 ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer )
-            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 0270D6D367D8 0x10 CalendarMinValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Helper                                    = GetObject<GregorianCalendarHelper>(new IntPtr(p + 0x020), ReversePrism.DataModels.GregorianCalendarHelper.FromPointer); // 024666D8E7B8 0x20 Helper                      ( 0001866991E0 ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer )
+            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 024666D8E7D8 0x10 CalendarMinValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

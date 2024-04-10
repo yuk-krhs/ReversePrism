@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVerifyConnectTokenReply
+    public partial class IVerifyConnectTokenReply : DataModel
     {
 
         public static IVerifyConnectTokenReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVerifyConnectTokenReply();
+            var value   = new IVerifyConnectTokenReply() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FileWebRequestCreator
+    public partial class FileWebRequestCreator : DataModel
     {
 
         public static FileWebRequestCreator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileWebRequestCreator();
+            var value   = new FileWebRequestCreator() { Pointer= p0 };
 
 
             return value;

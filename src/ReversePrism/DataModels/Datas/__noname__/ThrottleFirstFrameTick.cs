@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   ThrottleFirstFrame<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ThrottleFirstFrameTick
+    public partial class ThrottleFirstFrameTick : DataModel
     {
 
         public static ThrottleFirstFrameTick? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThrottleFirstFrameTick();
+            var value   = new ThrottleFirstFrameTick() { Pointer= p0 };
 
 
             return value;

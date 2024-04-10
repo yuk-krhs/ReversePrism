@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 030 Phase3Step2                              000186671910 ModelPrimitiveType string string string String
     // 000 IsNewFieldNumber                         int IL2CPP_TYPE_I4
     // 038 IsNew                                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SupportCharacterEffectCharacterStatus
+    public partial class SupportCharacterEffectCharacterStatus : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public int                                      NoticeType                              { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharacterEffectCharacterStatus();
+            var value   = new SupportCharacterEffectCharacterStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D15A9230 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NoticeType                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D15A9270 0x1C NoticeType                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Phase3Step0                               = GetString(new IntPtr(p + 0x020)); // 0270D15A92B0 0x20 Phase3Step0                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase3Step1                               = GetString(new IntPtr(p + 0x028)); // 0270D15A92F0 0x28 Phase3Step1                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase3Step2                               = GetString(new IntPtr(p + 0x030)); // 0270D15A9330 0x30 Phase3Step2                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x038)); // 0270D15A9370 0x38 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 02466154BE28 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NoticeType                                = GetInt32(new IntPtr(p + 0x01C)); // 02466154BE68 0x1C NoticeType                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Phase3Step0                               = GetString(new IntPtr(p + 0x020)); // 02466154BEA8 0x20 Phase3Step0                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase3Step1                               = GetString(new IntPtr(p + 0x028)); // 02466154BEE8 0x28 Phase3Step1                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Phase3Step2                               = GetString(new IntPtr(p + 0x030)); // 02466154BF28 0x30 Phase3Step2                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x038)); // 02466154BF68 0x38 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

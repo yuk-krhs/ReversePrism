@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 m_NativeData                             NativeArray`1<sbyte> IL2CPP_TYPE_GENERICINST
-    public partial class DownloadHandlerBuffer
+    public partial class DownloadHandlerBuffer : DataModel
     {
 
         public static DownloadHandlerBuffer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadHandlerBuffer();
+            var value   = new DownloadHandlerBuffer() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DebuggerHiddenAttribute
+    public partial class DebuggerHiddenAttribute : DataModel
     {
 
         public static DebuggerHiddenAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebuggerHiddenAttribute();
+            var value   = new DebuggerHiddenAttribute() { Pointer= p0 };
 
 
             return value;

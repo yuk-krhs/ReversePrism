@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 mono_corlib_version                      string IL2CPP_TYPE_STRING
     // 000 nl                                       string IL2CPP_TYPE_STRING
     // 008 os                                       OperatingSystem IL2CPP_TYPE_CLASS
-    public partial class Environment
+    public partial class Environment : DataModel
     {
 
         public static Environment? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Environment();
+            var value   = new Environment() { Pointer= p0 };
 
 
             return value;

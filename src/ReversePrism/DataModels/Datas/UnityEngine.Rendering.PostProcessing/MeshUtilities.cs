@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Primitives                             Dictionary`2<PrimitiveType, Mesh> IL2CPP_TYPE_GENERICINST
     // 008 s_ColliderPrimitives                     Dictionary`2<Type, PrimitiveType> IL2CPP_TYPE_GENERICINST
-    public partial class MeshUtilities
+    public partial class MeshUtilities : DataModel
     {
 
         public static MeshUtilities? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshUtilities();
+            var value   = new MeshUtilities() { Pointer= p0 };
 
 
             return value;

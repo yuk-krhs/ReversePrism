@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 020 ConditionList                            000185CDF898 ModelClassListType RepeatedField`1<IdolDearnessConditionStatus> RepeatedField`1<IdolDearnessConditionStatus> List<IdolDearnessConditionStatus> Pointer
     // 000 MeetConditionFieldNumber                 int IL2CPP_TYPE_I4
     // 028 MeetCondition                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SubSeasonDearnessConditionStatus
+    public partial class SubSeasonDearnessConditionStatus : DataModel
     {
         public bool                                     IsCondition                             { get; set; }
         public List<IdolDearnessConditionStatus>?       ConditionList                           { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonDearnessConditionStatus();
+            var value   = new SubSeasonDearnessConditionStatus() { Pointer= p0 };
 
-            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0270D1150328 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ConditionList                             = GetObjectList<IdolDearnessConditionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolDearnessConditionStatus.FromPointer); // 0270D1150388 0x20 ConditionList               ( 000185CDF898 ModelClassListType RepeatedField`1<IdolDearnessConditionStatus> RepeatedField`1<IdolDearnessConditionStatus> List<IdolDearnessConditionStatus> Pointer )
-            value.MeetCondition                             = GetBool(new IntPtr(p + 0x028)); // 0270D11503C8 0x28 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsCondition                               = GetBool(new IntPtr(p + 0x018)); // 0246610B8428 0x18 IsCondition                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ConditionList                             = GetObjectList<IdolDearnessConditionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolDearnessConditionStatus.FromPointer); // 0246610B8488 0x20 ConditionList               ( 000185CDF898 ModelClassListType RepeatedField`1<IdolDearnessConditionStatus> RepeatedField`1<IdolDearnessConditionStatus> List<IdolDearnessConditionStatus> Pointer )
+            value.MeetCondition                             = GetBool(new IntPtr(p + 0x028)); // 0246610B84C8 0x28 MeetCondition               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

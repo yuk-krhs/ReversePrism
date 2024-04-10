@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 C1                                       0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32
     // 020 C2                                       0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32
     // 000 zero                                     uint2x3 IL2CPP_TYPE_VALUETYPE
-    public partial class uint2x3
+    public partial class uint2x3 : DataModel
     {
         public uint2                                    C0                                      { get; set; }
         public uint2                                    C1                                      { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new uint2x3();
+            var value   = new uint2x3() { Pointer= p0 };
 
-            value.C0                                        = (uint2)GetInt32(new IntPtr(p + 0x010)); // 0270D7E55408 0x10 C0                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
-            value.C1                                        = (uint2)GetInt32(new IntPtr(p + 0x018)); // 0270D7E55428 0x18 C1                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
-            value.C2                                        = (uint2)GetInt32(new IntPtr(p + 0x020)); // 0270D7E55448 0x20 C2                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
+            value.C0                                        = (uint2)GetInt32(new IntPtr(p + 0x010)); // 024667EBF438 0x10 C0                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
+            value.C1                                        = (uint2)GetInt32(new IntPtr(p + 0x018)); // 024667EBF458 0x18 C1                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
+            value.C2                                        = (uint2)GetInt32(new IntPtr(p + 0x020)); // 024667EBF478 0x20 C2                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
 
             return value;
         }

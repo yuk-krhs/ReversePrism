@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventScheduleStatusExtensions
+    public partial class EventScheduleStatusExtensions : DataModel
     {
 
         public static EventScheduleStatusExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventScheduleStatusExtensions();
+            var value   = new EventScheduleStatusExtensions() { Pointer= p0 };
 
 
             return value;

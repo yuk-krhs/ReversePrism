@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 __Method_GetGalleryCostumeList           Method`2<GetGalleryCostumeListArgs, GetGalleryCostumeListReply> IL2CPP_TYPE_GENERICINST
     // 058 __Method_GetGalleryVoiceList             Method`2<GetGalleryVoiceListArgs, GetGalleryVoiceListReply> IL2CPP_TYPE_GENERICINST
     // 060 __Method_GetGalleryMovieList             Method`2<GetGalleryMovieListArgs, GetGalleryMovieListReply> IL2CPP_TYPE_GENERICINST
-    public partial class GalleryService
+    public partial class GalleryService : DataModel
     {
 
         public static GalleryService? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryService();
+            var value   = new GalleryService() { Pointer= p0 };
 
 
             return value;

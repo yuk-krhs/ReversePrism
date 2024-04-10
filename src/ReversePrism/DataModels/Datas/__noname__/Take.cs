@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 rest                                     int IL2CPP_TYPE_I4
-    public partial class Take
+    public partial class Take : DataModel
     {
 
         public static Take? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Take();
+            var value   = new Take() { Pointer= p0 };
 
 
             return value;

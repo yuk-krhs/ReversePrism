@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Prefix                                   0001866722E0 ModelPrimitiveType string string string String
     // 018 Localname                                0001866722E0 ModelPrimitiveType string string string String
     // 020 NamespaceUri                             0001866722E0 ModelPrimitiveType string string string String
-    public partial class QName
+    public partial class QName : DataModel
     {
         public string                                   Prefix                                  { get; set; }
         public string                                   Localname                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QName();
+            var value   = new QName() { Pointer= p0 };
 
-            value.Prefix                                    = GetString(new IntPtr(p + 0x010)); // 0270D734DDF0 0x10 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Localname                                 = GetString(new IntPtr(p + 0x018)); // 0270D734DE10 0x18 Localname                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.NamespaceUri                              = GetString(new IntPtr(p + 0x020)); // 0270D734DE30 0x20 NamespaceUri                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x010)); // 02466739DDF0 0x10 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Localname                                 = GetString(new IntPtr(p + 0x018)); // 02466739DE10 0x18 Localname                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.NamespaceUri                              = GetString(new IntPtr(p + 0x020)); // 02466739DE30 0x20 NamespaceUri                ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

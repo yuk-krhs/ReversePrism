@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 080 __Method_GetHomeNotificationList         Method`2<GetHomeNotificationListArgs, GetHomeNotificationListReply> IL2CPP_TYPE_GENERICINST
     // 088 __Method_GetSuspendedLive                Method`2<GetSuspendedLiveArgs, GetSuspendedLiveReply> IL2CPP_TYPE_GENERICINST
     // 090 __Method_GetSuspendedPvp                 Method`2<GetSuspendedPvpArgs, GetSuspendedPvpReply> IL2CPP_TYPE_GENERICINST
-    public partial class HomeService
+    public partial class HomeService : DataModel
     {
 
         public static HomeService? FromPointer(IntPtr p0)
@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeService();
+            var value   = new HomeService() { Pointer= p0 };
 
 
             return value;

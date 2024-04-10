@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ProducePolicyView                        0001865657E0 ModelClassType ProducePolicyView ProducePolicyView ProducePolicyView Pointer
-    public partial class ProducePolicyBuilder
+    public partial class ProducePolicyBuilder : DataModel
     {
         public ProducePolicyView?                       ProducePolicyView                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducePolicyBuilder();
+            var value   = new ProducePolicyBuilder() { Pointer= p0 };
 
-            value.ProducePolicyView                         = GetObject<ProducePolicyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePolicyView.FromPointer); // 0270DB5E7238 0x20 ProducePolicyView           ( 0001865657E0 ModelClassType ProducePolicyView ProducePolicyView ProducePolicyView Pointer )
+            value.ProducePolicyView                         = GetObject<ProducePolicyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePolicyView.FromPointer); // 02466B66B4F8 0x20 ProducePolicyView           ( 0001865657E0 ModelClassType ProducePolicyView ProducePolicyView ProducePolicyView Pointer )
 
             return value;
         }

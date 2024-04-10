@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstIdolId                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 PresetTypeFieldNumber                    int IL2CPP_TYPE_I4
     // 01C PresetType                               000186630A70 ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32
-    public partial class GetCostumePresetListArgs
+    public partial class GetCostumePresetListArgs : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
         public CostumePresetType                        PresetType                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetCostumePresetListArgs();
+            var value   = new GetCostumePresetListArgs() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D0D78940 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PresetType                                = (CostumePresetType)GetInt32(new IntPtr(p + 0x01C)); // 0270D0D78980 0x1C PresetType                  ( 000186630A70 ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A404E898 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PresetType                                = (CostumePresetType)GetInt32(new IntPtr(p + 0x01C)); // 0245A404E8D8 0x1C PresetType                  ( 000186630A70 ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32 )
 
             return value;
         }

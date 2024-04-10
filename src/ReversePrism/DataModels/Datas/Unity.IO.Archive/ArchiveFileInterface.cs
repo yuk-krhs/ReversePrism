@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ArchiveFileInterface
+    public partial class ArchiveFileInterface : DataModel
     {
 
         public static ArchiveFileInterface? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArchiveFileInterface();
+            var value   = new ArchiveFileInterface() { Pointer= p0 };
 
 
             return value;

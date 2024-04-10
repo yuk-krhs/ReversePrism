@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Key                                      000186671910 ModelPrimitiveType string string string String
     // 018 Value                                    000186671910 ModelPrimitiveType string string string String
-    public partial class MetadatasRow
+    public partial class MetadatasRow : DataModel
     {
         public string                                   Key                                     { get; set; }
         public string                                   Value                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetadatasRow();
+            var value   = new MetadatasRow() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 027003E01DC8 0x10 Key                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 027003E01DE8 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0245A3E01DC8 0x10 Key                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0245A3E01DE8 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

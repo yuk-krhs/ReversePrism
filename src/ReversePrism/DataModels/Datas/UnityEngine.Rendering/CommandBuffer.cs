@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
-    public partial class CommandBuffer
+    public partial class CommandBuffer : DataModel
     {
 
         public static CommandBuffer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommandBuffer();
+            var value   = new CommandBuffer() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LoggingDecorator
+    public partial class LoggingDecorator : DataModel
     {
 
         public static LoggingDecorator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggingDecorator();
+            var value   = new LoggingDecorator() { Pointer= p0 };
 
 
             return value;

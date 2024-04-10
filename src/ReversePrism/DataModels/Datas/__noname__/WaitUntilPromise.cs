@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 predicate                                Func`1<bool> IL2CPP_TYPE_GENERICINST
     // 020 CancellationToken                        00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     // 028 core                                     UniTaskCompletionSourceCore`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class WaitUntilPromise
+    public partial class WaitUntilPromise : DataModel
     {
         public WaitUntilPromise?                        NextNode                                { get; set; }
         public CancellationToken                        CancellationToken                       { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitUntilPromise();
+            var value   = new WaitUntilPromise() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<WaitUntilPromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitUntilPromise.FromPointer); // 027003A35300 0x10 NextNode                    ( 00018671A750 ModelClassType WaitUntilPromise WaitUntilPromise WaitUntilPromise Pointer )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 027003A35340 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.NextNode                                  = GetObject<WaitUntilPromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitUntilPromise.FromPointer); // 0245A3A401A0 0x10 NextNode                    ( 00018671A750 ModelClassType WaitUntilPromise WaitUntilPromise WaitUntilPromise Pointer )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 0245A3A401E0 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

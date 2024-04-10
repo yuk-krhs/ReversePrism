@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Id                                       0001865277D0 ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer
     // 000 IsReadFieldNumber                        int IL2CPP_TYPE_I4
     // 020 IsRead                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceAdvStatus
+    public partial class ProduceAdvStatus : DataModel
     {
         public ProduceAdvIDStatus?                      Id                                      { get; set; }
         public bool                                     IsRead                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAdvStatus();
+            var value   = new ProduceAdvStatus() { Pointer= p0 };
 
-            value.Id                                        = GetObject<ProduceAdvIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvIDStatus.FromPointer); // 0270D11040B8 0x18 Id                          ( 0001865277D0 ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer )
-            value.IsRead                                    = GetBool(new IntPtr(p + 0x020)); // 0270D11040F8 0x20 IsRead                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetObject<ProduceAdvIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvIDStatus.FromPointer); // 02466108D060 0x18 Id                          ( 0001865277D0 ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer )
+            value.IsRead                                    = GetBool(new IntPtr(p + 0x020)); // 02466108D0A0 0x20 IsRead                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

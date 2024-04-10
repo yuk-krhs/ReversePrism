@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CatalogDownloadError
+    public partial class CatalogDownloadError : DataModel
     {
 
         public static CatalogDownloadError? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatalogDownloadError();
+            var value   = new CatalogDownloadError() { Pointer= p0 };
 
 
             return value;

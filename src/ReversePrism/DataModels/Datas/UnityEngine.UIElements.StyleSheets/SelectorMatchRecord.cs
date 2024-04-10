@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Sheet                                    0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer
     // 018 StyleSheetIndexInStack                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 ComplexSelector                          0001865C65F0 ModelClassType StyleComplexSelector StyleComplexSelector StyleComplexSelector Pointer
-    public partial class SelectorMatchRecord
+    public partial class SelectorMatchRecord : DataModel
     {
         public StyleSheet?                              Sheet                                   { get; set; }
         public int                                      StyleSheetIndexInStack                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectorMatchRecord();
+            var value   = new SelectorMatchRecord() { Pointer= p0 };
 
-            value.Sheet                                     = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 027006886608 0x10 Sheet                       ( 0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
-            value.StyleSheetIndexInStack                    = GetInt32(new IntPtr(p + 0x018)); // 027006886628 0x18 StyleSheetIndexInStack      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ComplexSelector                           = GetObject<StyleComplexSelector>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleComplexSelector.FromPointer); // 027006886648 0x20 ComplexSelector             ( 0001865C65F0 ModelClassType StyleComplexSelector StyleComplexSelector StyleComplexSelector Pointer )
+            value.Sheet                                     = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 0245A6848478 0x10 Sheet                       ( 0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
+            value.StyleSheetIndexInStack                    = GetInt32(new IntPtr(p + 0x018)); // 0245A6848498 0x18 StyleSheetIndexInStack      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ComplexSelector                           = GetObject<StyleComplexSelector>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleComplexSelector.FromPointer); // 0245A68484B8 0x20 ComplexSelector             ( 0001865C65F0 ModelClassType StyleComplexSelector StyleComplexSelector StyleComplexSelector Pointer )
 
             return value;
         }

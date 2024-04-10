@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 m_ToReturn                               <var> IL2CPP_TYPE_VAR
     // 000 m_Pool                                   ObjectPool`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class PooledObject
+    public partial class PooledObject : DataModel
     {
 
         public static PooledObject? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PooledObject();
+            var value   = new PooledObject() { Pointer= p0 };
 
 
             return value;

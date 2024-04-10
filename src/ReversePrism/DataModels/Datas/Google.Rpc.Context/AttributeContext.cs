@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 000 ExtensionsFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_extensions_codec               FieldCodec`1<Any> IL2CPP_TYPE_GENERICINST
     // 050 Extensions                               000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer
-    public partial class AttributeContext
+    public partial class AttributeContext : DataModel
     {
         public Peer?                                    Origin                                  { get; set; }
         public Peer?                                    Source                                  { get; set; }
@@ -44,16 +44,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttributeContext();
+            var value   = new AttributeContext() { Pointer= p0 };
 
-            value.Origin                                    = GetObject<Peer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Peer.FromPointer); // 0270DA717980 0x18 Origin                      ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
-            value.Source                                    = GetObject<Peer>(new IntPtr(p + 0x020), ReversePrism.DataModels.Peer.FromPointer); // 0270DA7179C0 0x20 Source                      ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
-            value.Destination                               = GetObject<Peer>(new IntPtr(p + 0x028), ReversePrism.DataModels.Peer.FromPointer); // 0270DA717A00 0x28 Destination                 ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
-            value.Request                                   = GetObject<Request>(new IntPtr(p + 0x030), ReversePrism.DataModels.Request.FromPointer); // 0270DA717A40 0x30 Request                     ( 000186764EF0 ModelClassType Request Request Request Pointer )
-            value.Response                                  = GetObject<Response>(new IntPtr(p + 0x038), ReversePrism.DataModels.Response.FromPointer); // 0270DA717A80 0x38 Response                    ( 0001867658B0 ModelClassType Response Response Response Pointer )
-            value.Resource                                  = GetObject<Resource>(new IntPtr(p + 0x040), ReversePrism.DataModels.Resource.FromPointer); // 0270DA717AC0 0x40 Resource                    ( 0001867653B0 ModelClassType Resource Resource Resource Pointer )
-            value.Api                                       = GetObject<Api>(new IntPtr(p + 0x048), ReversePrism.DataModels.Api.FromPointer); // 0270DA717B00 0x48 Api                         ( 0001867640A0 ModelClassType Api Api Api Pointer )
-            value.Extensions                                = GetObjectList<Any>(new IntPtr(p + 0x050), ReversePrism.DataModels.Any.FromPointer); // 0270DA717B60 0x50 Extensions                  ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
+            value.Origin                                    = GetObject<Peer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Peer.FromPointer); // 02466A76B4E0 0x18 Origin                      ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
+            value.Source                                    = GetObject<Peer>(new IntPtr(p + 0x020), ReversePrism.DataModels.Peer.FromPointer); // 02466A76B520 0x20 Source                      ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
+            value.Destination                               = GetObject<Peer>(new IntPtr(p + 0x028), ReversePrism.DataModels.Peer.FromPointer); // 02466A76B560 0x28 Destination                 ( 000186764A50 ModelClassType Peer Peer Peer Pointer )
+            value.Request                                   = GetObject<Request>(new IntPtr(p + 0x030), ReversePrism.DataModels.Request.FromPointer); // 02466A76B5A0 0x30 Request                     ( 000186764EF0 ModelClassType Request Request Request Pointer )
+            value.Response                                  = GetObject<Response>(new IntPtr(p + 0x038), ReversePrism.DataModels.Response.FromPointer); // 02466A76B5E0 0x38 Response                    ( 0001867658B0 ModelClassType Response Response Response Pointer )
+            value.Resource                                  = GetObject<Resource>(new IntPtr(p + 0x040), ReversePrism.DataModels.Resource.FromPointer); // 02466A76B620 0x40 Resource                    ( 0001867653B0 ModelClassType Resource Resource Resource Pointer )
+            value.Api                                       = GetObject<Api>(new IntPtr(p + 0x048), ReversePrism.DataModels.Api.FromPointer); // 02466A76B660 0x48 Api                         ( 0001867640A0 ModelClassType Api Api Api Pointer )
+            value.Extensions                                = GetObjectList<Any>(new IntPtr(p + 0x050), ReversePrism.DataModels.Any.FromPointer); // 02466A76B6C0 0x50 Extensions                  ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
 
             return value;
         }

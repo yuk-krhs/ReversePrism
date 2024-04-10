@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TaskTraceCallbacks
+    public partial class TaskTraceCallbacks : DataModel
     {
 
         public static TaskTraceCallbacks? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskTraceCallbacks();
+            var value   = new TaskTraceCallbacks() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 PhoneCallId                              0001865F4260 ModelPrimitiveType int int int Int32
     // 014 IsUnread                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 018 PostDate                                 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    public partial class CallHistoryButtonViewModel
+    public partial class CallHistoryButtonViewModel : DataModel
     {
         public int                                      PhoneCallId                             { get; set; }
         public bool                                     IsUnread                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallHistoryButtonViewModel();
+            var value   = new CallHistoryButtonViewModel() { Pointer= p0 };
 
-            value.PhoneCallId                               = GetInt32(new IntPtr(p + 0x010)); // 0270D6842750 0x10 PhoneCallId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x014)); // 0270D6842770 0x14 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x018)); // 0270D6842790 0x18 PostDate                    ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.PhoneCallId                               = GetInt32(new IntPtr(p + 0x010)); // 0246668A2750 0x10 PhoneCallId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x014)); // 0246668A2770 0x14 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x018)); // 0246668A2790 0x18 PostDate                    ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
 
             return value;
         }

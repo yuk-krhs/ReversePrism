@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceStaminaUsageGetterImplement
+    public partial class ProduceStaminaUsageGetterImplement : DataModel
     {
 
         public static ProduceStaminaUsageGetterImplement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceStaminaUsageGetterImplement();
+            var value   = new ProduceStaminaUsageGetterImplement() { Pointer= p0 };
 
 
             return value;

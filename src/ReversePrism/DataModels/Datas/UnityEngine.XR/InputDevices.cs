@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 deviceConnected                          Action`1<InputDevice> IL2CPP_TYPE_GENERICINST
     // 008 deviceDisconnected                       Action`1<InputDevice> IL2CPP_TYPE_GENERICINST
     // 010 deviceConfigChanged                      Action`1<InputDevice> IL2CPP_TYPE_GENERICINST
-    public partial class InputDevices
+    public partial class InputDevices : DataModel
     {
 
         public static InputDevices? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputDevices();
+            var value   = new InputDevices() { Pointer= p0 };
 
 
             return value;

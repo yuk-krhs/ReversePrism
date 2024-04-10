@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 098 StreamingAvatarAttachBoneObject          0001865B7BB0 ModelClassType StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject Pointer
     // 0A0 Id                                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 0A4 IsViewPaused                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AttachBoneObjectView
+    public partial class AttachBoneObjectView : DataModel
     {
         public bool                                     IsLoaded                                { get; set; }
         public int                                      CharacterId                             { get; set; }
@@ -53,25 +53,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttachBoneObjectView();
+            var value   = new AttachBoneObjectView() { Pointer= p0 };
 
-            value.IsLoaded                                  = GetBool(new IntPtr(p + 0x020)); // 0270D4F404F8 0x20 IsLoaded                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x024)); // 0270D4F40518 0x24 CharacterId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x028)); // 0270D4F40538 0x28 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ObjectPath                                = GetString(new IntPtr(p + 0x030)); // 0270D4F40558 0x30 ObjectPath                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Bone                                      = (HumanBodyBones)GetInt32(new IntPtr(p + 0x038)); // 0270D4F40578 0x38 Bone                        ( 0001866E7060 ModelEnumType HumanBodyBones HumanBodyBones HumanBodyBones Int32 )
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 0270D4F40598 0x3C Position                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Rotation                                  = (Vector3)GetInt32(new IntPtr(p + 0x048)); // 0270D4F405B8 0x48 Rotation                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.OnTriggerName                             = GetString(new IntPtr(p + 0x058)); // 0270D4F405D8 0x58 OnTriggerName               ( 000186671910 ModelPrimitiveType string string string String )
-            value.OffTriggerName                            = GetString(new IntPtr(p + 0x060)); // 0270D4F405F8 0x60 OffTriggerName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.HandPose                                  = GetObject<TextAsset>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextAsset.FromPointer); // 0270D4F40618 0x68 HandPose                    ( 000186634CA0 ModelClassType TextAsset TextAsset TextAsset Pointer )
-            value.HandPoseName                              = GetString(new IntPtr(p + 0x070)); // 0270D4F40638 0x70 HandPoseName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ReleaseHandItem                           = GetBool(new IntPtr(p + 0x078)); // 0270D4F40658 0x78 ReleaseHandItem             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HandItem                                  = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4F40698 0x88 HandItem                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AccessoryItem                             = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4F406B8 0x90 AccessoryItem               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.StreamingAvatarAttachBoneObject           = GetObject<StreamingAvatarAttachBoneObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.StreamingAvatarAttachBoneObject.FromPointer); // 0270D4F406D8 0x98 StreamingAvatarAttachBoneObject ( 0001865B7BB0 ModelClassType StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject Pointer )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x0A0)); // 0270D4F406F8 0xA0 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x0A4)); // 0270D4F40718 0xA4 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsLoaded                                  = GetBool(new IntPtr(p + 0x020)); // 024664FA6FF8 0x20 IsLoaded                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x024)); // 024664FA7018 0x24 CharacterId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x028)); // 024664FA7038 0x28 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ObjectPath                                = GetString(new IntPtr(p + 0x030)); // 024664FA7058 0x30 ObjectPath                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Bone                                      = (HumanBodyBones)GetInt32(new IntPtr(p + 0x038)); // 024664FA7078 0x38 Bone                        ( 0001866E7060 ModelEnumType HumanBodyBones HumanBodyBones HumanBodyBones Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 024664FA7098 0x3C Position                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Rotation                                  = (Vector3)GetInt32(new IntPtr(p + 0x048)); // 024664FA70B8 0x48 Rotation                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.OnTriggerName                             = GetString(new IntPtr(p + 0x058)); // 024664FA70D8 0x58 OnTriggerName               ( 000186671910 ModelPrimitiveType string string string String )
+            value.OffTriggerName                            = GetString(new IntPtr(p + 0x060)); // 024664FA70F8 0x60 OffTriggerName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.HandPose                                  = GetObject<TextAsset>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextAsset.FromPointer); // 024664FA7118 0x68 HandPose                    ( 000186634CA0 ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.HandPoseName                              = GetString(new IntPtr(p + 0x070)); // 024664FA7138 0x70 HandPoseName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.ReleaseHandItem                           = GetBool(new IntPtr(p + 0x078)); // 024664FA7158 0x78 ReleaseHandItem             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HandItem                                  = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 024664FA7198 0x88 HandItem                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AccessoryItem                             = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 024664FA71B8 0x90 AccessoryItem               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.StreamingAvatarAttachBoneObject           = GetObject<StreamingAvatarAttachBoneObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.StreamingAvatarAttachBoneObject.FromPointer); // 024664FA71D8 0x98 StreamingAvatarAttachBoneObject ( 0001865B7BB0 ModelClassType StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject StreamingAvatarAttachBoneObject Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x0A0)); // 024664FA71F8 0xA0 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x0A4)); // 024664FA7218 0xA4 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

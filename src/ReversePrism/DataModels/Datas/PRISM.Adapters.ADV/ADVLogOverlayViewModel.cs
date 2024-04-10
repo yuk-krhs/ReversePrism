@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Title                                    000186672F10 ModelPrimitiveType string string string String
     // 020 ContentList                              000185CE08B8 ModelClassListType List`1<IADVLogNodeViewModel> List`1<IADVLogNodeViewModel> List<IADVLogNodeViewModel> Pointer
     // 028 CueSheetName                             000186672F10 ModelPrimitiveType string string string String
-    public partial class ADVLogOverlayViewModel
+    public partial class ADVLogOverlayViewModel : DataModel
     {
         public ScenarioID?                              ScenarioId                              { get; set; }
         public string                                   Title                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogOverlayViewModel();
+            var value   = new ADVLogOverlayViewModel() { Pointer= p0 };
 
-            value.ScenarioId                                = GetObject<ScenarioID>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScenarioID.FromPointer); // 0270D6919440 0x10 ScenarioId                  ( 0001866C4FD0 ModelClassType ScenarioID ScenarioID ScenarioID Pointer )
-            value.Title                                     = GetString(new IntPtr(p + 0x018)); // 0270D6919460 0x18 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ContentList                               = GetObjectList<IADVLogNodeViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IADVLogNodeViewModel.FromPointer); // 0270D6919480 0x20 ContentList                 ( 000185CE08B8 ModelClassListType List`1<IADVLogNodeViewModel> List`1<IADVLogNodeViewModel> List<IADVLogNodeViewModel> Pointer )
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x028)); // 0270D69194A0 0x28 CueSheetName                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ScenarioId                                = GetObject<ScenarioID>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScenarioID.FromPointer); // 024666989440 0x10 ScenarioId                  ( 0001866C4FD0 ModelClassType ScenarioID ScenarioID ScenarioID Pointer )
+            value.Title                                     = GetString(new IntPtr(p + 0x018)); // 024666989460 0x18 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ContentList                               = GetObjectList<IADVLogNodeViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IADVLogNodeViewModel.FromPointer); // 024666989480 0x20 ContentList                 ( 000185CE08B8 ModelClassListType List`1<IADVLogNodeViewModel> List`1<IADVLogNodeViewModel> List<IADVLogNodeViewModel> Pointer )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x028)); // 0246669894A0 0x28 CueSheetName                ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeSetThreadIndexAttribute
+    public partial class NativeSetThreadIndexAttribute : DataModel
     {
 
         public static NativeSetThreadIndexAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeSetThreadIndexAttribute();
+            var value   = new NativeSetThreadIndexAttribute() { Pointer= p0 };
 
 
             return value;

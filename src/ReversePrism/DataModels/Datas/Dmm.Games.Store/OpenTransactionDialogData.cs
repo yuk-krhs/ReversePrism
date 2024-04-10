@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Status                                   0001866E2620 ModelEnumType OpenTransactionDialogResult OpenTransactionDialogResult OpenTransactionDialogResult Int32
     // 018 PaymentId                                0001866722E0 ModelPrimitiveType string string string String
     // 020 Error                                    0001865C8690 ModelClassType Error Error Error Pointer
-    public partial class OpenTransactionDialogData
+    public partial class OpenTransactionDialogData : DataModel
     {
         public OpenTransactionDialogResult              Status                                  { get; set; }
         public string                                   PaymentId                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OpenTransactionDialogData();
+            var value   = new OpenTransactionDialogData() { Pointer= p0 };
 
-            value.Status                                    = (OpenTransactionDialogResult)GetInt32(new IntPtr(p + 0x010)); // 0270DB49B080 0x10 Status                      ( 0001866E2620 ModelEnumType OpenTransactionDialogResult OpenTransactionDialogResult OpenTransactionDialogResult Int32 )
-            value.PaymentId                                 = GetString(new IntPtr(p + 0x018)); // 0270DB49B0A0 0x18 PaymentId                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x020), ReversePrism.DataModels.Error.FromPointer); // 0270DB49B0C0 0x20 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.Status                                    = (OpenTransactionDialogResult)GetInt32(new IntPtr(p + 0x010)); // 02466B517F80 0x10 Status                      ( 0001866E2620 ModelEnumType OpenTransactionDialogResult OpenTransactionDialogResult OpenTransactionDialogResult Int32 )
+            value.PaymentId                                 = GetString(new IntPtr(p + 0x018)); // 02466B517FA0 0x18 PaymentId                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x020), ReversePrism.DataModels.Error.FromPointer); // 02466B517FC0 0x20 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
 
             return value;
         }

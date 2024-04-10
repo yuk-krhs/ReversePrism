@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IWebProxy
+    public partial class IWebProxy : DataModel
     {
 
         public static IWebProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IWebProxy();
+            var value   = new IWebProxy() { Pointer= p0 };
 
 
             return value;

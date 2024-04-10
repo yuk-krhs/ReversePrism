@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 050 Vm                                       000186537C90 ModelClassType VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel Pointer
     // 058 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class VoicePlayTabListPopupView
+    public partial class VoicePlayTabListPopupView : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
         public CategoryElementGridView?                 HomeGridView                            { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VoicePlayTabListPopupView();
+            var value   = new VoicePlayTabListPopupView() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DA344810 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.HomeGridView                              = GetObject<CategoryElementGridView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0270DA344830 0x28 HomeGridView                ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.ProduceGridView                           = GetObject<CategoryElementGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0270DA344850 0x30 ProduceGridView             ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.LiveGridView                              = GetObject<CategoryElementGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0270DA344870 0x38 LiveGridView                ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.OtherGridView                             = GetObject<CategoryElementGridView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0270DA344890 0x40 OtherGridView               ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.Vm                                        = GetObject<VoicePlayTabListPopupViewModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.VoicePlayTabListPopupViewModel.FromPointer); // 0270DA3448D0 0x50 Vm                          ( 000186537C90 ModelClassType VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA3448F0 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A3A76C8 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.HomeGridView                              = GetObject<CategoryElementGridView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A3A76E8 0x28 HomeGridView                ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.ProduceGridView                           = GetObject<CategoryElementGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A3A7708 0x30 ProduceGridView             ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.LiveGridView                              = GetObject<CategoryElementGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A3A7728 0x38 LiveGridView                ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.OtherGridView                             = GetObject<CategoryElementGridView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A3A7748 0x40 OtherGridView               ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.Vm                                        = GetObject<VoicePlayTabListPopupViewModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.VoicePlayTabListPopupViewModel.FromPointer); // 02466A3A7788 0x50 Vm                          ( 000186537C90 ModelClassType VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel VoicePlayTabListPopupViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A3A77A8 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

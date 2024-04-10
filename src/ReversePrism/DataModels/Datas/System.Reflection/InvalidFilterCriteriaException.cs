@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidFilterCriteriaException
+    public partial class InvalidFilterCriteriaException : DataModel
     {
 
         public static InvalidFilterCriteriaException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidFilterCriteriaException();
+            var value   = new InvalidFilterCriteriaException() { Pointer= p0 };
 
 
             return value;

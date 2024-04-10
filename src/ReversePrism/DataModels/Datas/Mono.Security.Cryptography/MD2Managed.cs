@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 040 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 048 X                                        000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 000 PI_SUBST                                 sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class MD2Managed
+    public partial class MD2Managed : DataModel
     {
         public List<sbyte>?                             State                                   { get; set; }
         public List<sbyte>?                             Checksum                                { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MD2Managed();
+            var value   = new MD2Managed() { Pointer= p0 };
 
-            value.State                                     = GetSByteList(new IntPtr(p + 0x028)); // 0270DB3803C8 0x28 State                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Checksum                                  = GetSByteList(new IntPtr(p + 0x030)); // 0270DB3803E8 0x30 Checksum                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x038)); // 0270DB380408 0x38 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x040)); // 0270DB380428 0x40 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.X                                         = GetSByteList(new IntPtr(p + 0x048)); // 0270DB380448 0x48 X                           ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.State                                     = GetSByteList(new IntPtr(p + 0x028)); // 02466B4102F8 0x28 State                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Checksum                                  = GetSByteList(new IntPtr(p + 0x030)); // 02466B410318 0x30 Checksum                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x038)); // 02466B410338 0x38 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x040)); // 02466B410358 0x40 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.X                                         = GetSByteList(new IntPtr(p + 0x048)); // 02466B410378 0x48 X                           ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

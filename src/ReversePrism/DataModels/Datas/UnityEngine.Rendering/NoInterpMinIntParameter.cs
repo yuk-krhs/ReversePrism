@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Min                                      0001865F59B0 ModelPrimitiveType int int int Int32
-    public partial class NoInterpMinIntParameter
+    public partial class NoInterpMinIntParameter : DataModel
     {
         public int                                      Min                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoInterpMinIntParameter();
+            var value   = new NoInterpMinIntParameter() { Pointer= p0 };
 
-            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D92EEE28 0x20 Min                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
+            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 024669358B50 0x20 Min                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

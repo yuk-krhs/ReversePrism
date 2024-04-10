@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 HavingItemListFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_havingItemList_codec           FieldCodec`1<HavingProductStatus> IL2CPP_TYPE_GENERICINST
     // 018 HavingItemList                           000185CDDF68 ModelClassListType RepeatedField`1<HavingProductStatus> RepeatedField`1<HavingProductStatus> List<HavingProductStatus> Pointer
-    public partial class GetHavingItemAllReply
+    public partial class GetHavingItemAllReply : DataModel
     {
         public List<HavingProductStatus>?               HavingItemList                          { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetHavingItemAllReply();
+            var value   = new GetHavingItemAllReply() { Pointer= p0 };
 
-            value.HavingItemList                            = GetObjectList<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0270D266D9C8 0x18 HavingItemList              ( 000185CDDF68 ModelClassListType RepeatedField`1<HavingProductStatus> RepeatedField`1<HavingProductStatus> List<HavingProductStatus> Pointer )
+            value.HavingItemList                            = GetObjectList<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0246625BD620 0x18 HavingItemList              ( 000185CDDF68 ModelClassListType RepeatedField`1<HavingProductStatus> RepeatedField`1<HavingProductStatus> List<HavingProductStatus> Pointer )
 
             return value;
         }

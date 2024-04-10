@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 UnitColorObjects                         000185B833A0 ModelClassListType Graphic[] Graphic[] List<Graphic> Pointer
     // 050 Config                                   000186587F10 ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer
     // 058 ArtistName                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class MusicBasicInfoView
+    public partial class MusicBasicInfoView : DataModel
     {
         public UIRawImage?                              MusicTypeIcon                           { get; set; }
         public UITextMeshProUGUI?                       MusicName                               { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicBasicInfoView();
+            var value   = new MusicBasicInfoView() { Pointer= p0 };
 
-            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D51132F0 0x20 MusicTypeIcon               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.MusicName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5113310 0x28 MusicName                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MusicDifficulties                         = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5113330 0x30 MusicDifficulties           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.MusicLevel                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5113350 0x38 MusicLevel                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MusicLevelColors                          = GetEnumList<Color>(new IntPtr(p + 0x040)); // 0270D5113370 0x40 MusicLevelColors            ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
-            value.UnitColorObjects                          = GetObjectList<Graphic>(new IntPtr(p + 0x048), ReversePrism.DataModels.Graphic.FromPointer); // 0270D5113390 0x48 UnitColorObjects            ( 000185B833A0 ModelClassListType Graphic[] Graphic[] List<Graphic> Pointer )
-            value.Config                                    = GetObject<LiveUIResourceConfig>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveUIResourceConfig.FromPointer); // 0270D51133B0 0x50 Config                      ( 000186587F10 ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer )
-            value.ArtistName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D51133D0 0x58 ArtistName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466517E7D0 0x20 MusicTypeIcon               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.MusicName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466517E7F0 0x28 MusicName                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicDifficulties                         = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466517E810 0x30 MusicDifficulties           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.MusicLevel                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466517E830 0x38 MusicLevel                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicLevelColors                          = GetEnumList<Color>(new IntPtr(p + 0x040)); // 02466517E850 0x40 MusicLevelColors            ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.UnitColorObjects                          = GetObjectList<Graphic>(new IntPtr(p + 0x048), ReversePrism.DataModels.Graphic.FromPointer); // 02466517E870 0x48 UnitColorObjects            ( 000185B833A0 ModelClassListType Graphic[] Graphic[] List<Graphic> Pointer )
+            value.Config                                    = GetObject<LiveUIResourceConfig>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveUIResourceConfig.FromPointer); // 02466517E890 0x50 Config                      ( 000186587F10 ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer )
+            value.ArtistName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466517E8B0 0x58 ArtistName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

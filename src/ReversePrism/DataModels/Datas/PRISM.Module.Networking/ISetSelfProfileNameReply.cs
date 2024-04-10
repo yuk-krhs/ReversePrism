@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISetSelfProfileNameReply
+    public partial class ISetSelfProfileNameReply : DataModel
     {
 
         public static ISetSelfProfileNameReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISetSelfProfileNameReply();
+            var value   = new ISetSelfProfileNameReply() { Pointer= p0 };
 
 
             return value;

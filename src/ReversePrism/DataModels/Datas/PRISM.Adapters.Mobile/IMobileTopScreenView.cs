@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMobileTopScreenView
+    public partial class IMobileTopScreenView : DataModel
     {
 
         public static IMobileTopScreenView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMobileTopScreenView();
+            var value   = new IMobileTopScreenView() { Pointer= p0 };
 
 
             return value;

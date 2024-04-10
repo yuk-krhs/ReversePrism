@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReusableMultiColumnListViewItem
+    public partial class ReusableMultiColumnListViewItem : DataModel
     {
 
         public static ReusableMultiColumnListViewItem? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableMultiColumnListViewItem();
+            var value   = new ReusableMultiColumnListViewItem() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TimeOfDay                                00018653A580 ModelEnumType TimeOfDay TimeOfDay TimeOfDay Int32
     // 014 Weather                                  00018653AFB0 ModelEnumType Weather Weather Weather Int32
-    public partial class HomeBgmViewModel
+    public partial class HomeBgmViewModel : DataModel
     {
         public TimeOfDay                                TimeOfDay                               { get; set; }
         public Weather                                  Weather                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeBgmViewModel();
+            var value   = new HomeBgmViewModel() { Pointer= p0 };
 
-            value.TimeOfDay                                 = (TimeOfDay)GetInt32(new IntPtr(p + 0x010)); // 0270D3134E78 0x10 TimeOfDay                   ( 00018653A580 ModelEnumType TimeOfDay TimeOfDay TimeOfDay Int32 )
-            value.Weather                                   = (Weather)GetInt32(new IntPtr(p + 0x014)); // 0270D3134E98 0x14 Weather                     ( 00018653AFB0 ModelEnumType Weather Weather Weather Int32 )
+            value.TimeOfDay                                 = (TimeOfDay)GetInt32(new IntPtr(p + 0x010)); // 0245A5D43A98 0x10 TimeOfDay                   ( 00018653A580 ModelEnumType TimeOfDay TimeOfDay TimeOfDay Int32 )
+            value.Weather                                   = (Weather)GetInt32(new IntPtr(p + 0x014)); // 0245A5D43AB8 0x14 Weather                     ( 00018653AFB0 ModelEnumType Weather Weather Weather Int32 )
 
             return value;
         }

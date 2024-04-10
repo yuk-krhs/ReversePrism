@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 PvpUnitListFieldNumber                   int IL2CPP_TYPE_I4
     // 010 _repeated_pvpUnitList_codec              FieldCodec`1<PvpUnitStatus> IL2CPP_TYPE_GENERICINST
     // 050 PvpUnitList                              000185CEE2F8 ModelClassListType RepeatedField`1<PvpUnitStatus> RepeatedField`1<PvpUnitStatus> List<PvpUnitStatus> Pointer
-    public partial class PvpRankedUserStatus
+    public partial class PvpRankedUserStatus : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public string                                   UserId                                  { get; set; }
@@ -45,16 +45,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpRankedUserStatus();
+            var value   = new PvpRankedUserStatus() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D101C590 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 0270D101C5D0 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 0270D101C610 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 0270D101C650 0x30 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.FavoriteProduceIdol                       = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0270D101C690 0x38 FavoriteProduceIdol         ( 000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
-            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x040)); // 0270D101C6F0 0x40 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.Comment                                   = GetString(new IntPtr(p + 0x048)); // 0270D101C730 0x48 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.PvpUnitList                               = GetObjectList<PvpUnitStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 0270D101C790 0x50 PvpUnitList                 ( 000185CEE2F8 ModelClassListType RepeatedField`1<PvpUnitStatus> RepeatedField`1<PvpUnitStatus> List<PvpUnitStatus> Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 024660FB0F90 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 024660FB0FD0 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x028)); // 024660FB1010 0x28 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 024660FB1050 0x30 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.FavoriteProduceIdol                       = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 024660FB1090 0x38 FavoriteProduceIdol         ( 000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
+            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x040)); // 024660FB10F0 0x40 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Comment                                   = GetString(new IntPtr(p + 0x048)); // 024660FB1130 0x48 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.PvpUnitList                               = GetObjectList<PvpUnitStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.PvpUnitStatus.FromPointer); // 024660FB1190 0x50 PvpUnitList                 ( 000185CEE2F8 ModelClassListType RepeatedField`1<PvpUnitStatus> RepeatedField`1<PvpUnitStatus> List<PvpUnitStatus> Pointer )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 050 UseRecommendedButton                     0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
     // 058 DressIcons                               000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer
     // 060 HairstyleIcons                           000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer
-    public partial class LiveUnitConfirmationUnitEditViewBase
+    public partial class LiveUnitConfirmationUnitEditViewBase : DataModel
     {
         public GameObject?                              DefaultBackground                       { get; set; }
         public GameObject?                              SpecialBackground                       { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitConfirmationUnitEditViewBase();
+            var value   = new LiveUnitConfirmationUnitEditViewBase() { Pointer= p0 };
 
-            value.DefaultBackground                         = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5112D80 0x20 DefaultBackground           ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SpecialBackground                         = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5112DA0 0x28 SpecialBackground           ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OpenUnitListButton                        = GetObject<ButtonBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D5112DC0 0x30 OpenUnitListButton          ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.UnitNameInputField                        = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 0270D5112DE0 0x38 UnitNameInputField          ( 0001865E53E0 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
-            value.SwitchContentTabGroup                     = GetObject<UITabGroupEx>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0270D5112E00 0x40 SwitchContentTabGroup       ( 0001866F5E40 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
-            value.TabContentParents                         = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5112E20 0x48 TabContentParents           ( 000185B81600 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.UseRecommendedButton                      = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D5112E40 0x50 UseRecommendedButton        ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.DressIcons                                = GetObjectList<LiveUnitEditCostumeIcon>(new IntPtr(p + 0x058), ReversePrism.DataModels.LiveUnitEditCostumeIcon.FromPointer); // 0270D5112E60 0x58 DressIcons                  ( 000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer )
-            value.HairstyleIcons                            = GetObjectList<LiveUnitEditCostumeIcon>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveUnitEditCostumeIcon.FromPointer); // 0270D5112E80 0x60 HairstyleIcons              ( 000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer )
+            value.DefaultBackground                         = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466517E260 0x20 DefaultBackground           ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SpecialBackground                         = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466517E280 0x28 SpecialBackground           ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.OpenUnitListButton                        = GetObject<ButtonBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466517E2A0 0x30 OpenUnitListButton          ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.UnitNameInputField                        = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 02466517E2C0 0x38 UnitNameInputField          ( 0001865E53E0 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
+            value.SwitchContentTabGroup                     = GetObject<UITabGroupEx>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466517E2E0 0x40 SwitchContentTabGroup       ( 0001866F5E40 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.TabContentParents                         = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466517E300 0x48 TabContentParents           ( 000185B81600 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.UseRecommendedButton                      = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466517E320 0x50 UseRecommendedButton        ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.DressIcons                                = GetObjectList<LiveUnitEditCostumeIcon>(new IntPtr(p + 0x058), ReversePrism.DataModels.LiveUnitEditCostumeIcon.FromPointer); // 02466517E340 0x58 DressIcons                  ( 000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer )
+            value.HairstyleIcons                            = GetObjectList<LiveUnitEditCostumeIcon>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveUnitEditCostumeIcon.FromPointer); // 02466517E360 0x60 HairstyleIcons              ( 000185B91C90 ModelClassListType LiveUnitEditCostumeIcon[] LiveUnitEditCostumeIcon[] List<LiveUnitEditCostumeIcon> Pointer )
 
             return value;
         }

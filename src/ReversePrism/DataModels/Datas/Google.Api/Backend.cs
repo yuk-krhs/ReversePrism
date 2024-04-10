@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 RulesFieldNumber                         int IL2CPP_TYPE_I4
     // 008 _repeated_rules_codec                    FieldCodec`1<BackendRule> IL2CPP_TYPE_GENERICINST
     // 018 Rules                                    000185CCF718 ModelClassListType RepeatedField`1<BackendRule> RepeatedField`1<BackendRule> List<BackendRule> Pointer
-    public partial class Backend
+    public partial class Backend : DataModel
     {
         public List<BackendRule>?                       Rules                                   { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Backend();
+            var value   = new Backend() { Pointer= p0 };
 
-            value.Rules                                     = GetObjectList<BackendRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.BackendRule.FromPointer); // 0270DA757C68 0x18 Rules                       ( 000185CCF718 ModelClassListType RepeatedField`1<BackendRule> RepeatedField`1<BackendRule> List<BackendRule> Pointer )
+            value.Rules                                     = GetObjectList<BackendRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.BackendRule.FromPointer); // 02466A7BC7D0 0x18 Rules                       ( 000185CCF718 ModelClassListType RepeatedField`1<BackendRule> RepeatedField`1<BackendRule> List<BackendRule> Pointer )
 
             return value;
         }

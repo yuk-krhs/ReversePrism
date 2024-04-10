@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ChannelCredentials                       000186590860 ModelClassType ChannelCredentials ChannelCredentials ChannelCredentials Pointer
     // 018 CallCredentials                          000186526380 ModelClassType CallCredentials CallCredentials CallCredentials Pointer
-    public partial class CompositeChannelCredentials
+    public partial class CompositeChannelCredentials : DataModel
     {
         public ChannelCredentials?                      ChannelCredentials                      { get; set; }
         public CallCredentials?                         CallCredentials                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompositeChannelCredentials();
+            var value   = new CompositeChannelCredentials() { Pointer= p0 };
 
-            value.ChannelCredentials                        = GetObject<ChannelCredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChannelCredentials.FromPointer); // 0270DBB39C08 0x10 ChannelCredentials          ( 000186590860 ModelClassType ChannelCredentials ChannelCredentials ChannelCredentials Pointer )
-            value.CallCredentials                           = GetObject<CallCredentials>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallCredentials.FromPointer); // 0270DBB39C28 0x18 CallCredentials             ( 000186526380 ModelClassType CallCredentials CallCredentials CallCredentials Pointer )
+            value.ChannelCredentials                        = GetObject<ChannelCredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChannelCredentials.FromPointer); // 02466BBC10D0 0x10 ChannelCredentials          ( 000186590860 ModelClassType ChannelCredentials ChannelCredentials ChannelCredentials Pointer )
+            value.CallCredentials                           = GetObject<CallCredentials>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallCredentials.FromPointer); // 02466BBC10F0 0x18 CallCredentials             ( 000186526380 ModelClassType CallCredentials CallCredentials CallCredentials Pointer )
 
             return value;
         }

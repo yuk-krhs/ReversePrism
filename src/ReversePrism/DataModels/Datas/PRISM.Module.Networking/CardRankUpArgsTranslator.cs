@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CardRankUpArgsTranslator
+    public partial class CardRankUpArgsTranslator : DataModel
     {
 
         public static CardRankUpArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CardRankUpArgsTranslator();
+            var value   = new CardRankUpArgsTranslator() { Pointer= p0 };
 
 
             return value;

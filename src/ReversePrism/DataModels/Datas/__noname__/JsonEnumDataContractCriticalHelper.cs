@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 IsULong                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonEnumDataContractCriticalHelper
+    public partial class JsonEnumDataContractCriticalHelper : DataModel
     {
         public bool                                     IsULong                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonEnumDataContractCriticalHelper();
+            var value   = new JsonEnumDataContractCriticalHelper() { Pointer= p0 };
 
-            value.IsULong                                   = GetBool(new IntPtr(p + 0x028)); // 0270D7DC4760 0x28 IsULong                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsULong                                   = GetBool(new IntPtr(p + 0x028)); // 024667E2C760 0x28 IsULong                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

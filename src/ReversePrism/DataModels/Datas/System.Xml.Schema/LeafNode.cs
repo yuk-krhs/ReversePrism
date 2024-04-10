@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LeafNode
+    public partial class LeafNode : DataModel
     {
         public int                                      Pos                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LeafNode();
+            var value   = new LeafNode() { Pointer= p0 };
 
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x010)); // 0270D74FD7A8 0x10 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x010)); // 02466755D7A8 0x10 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

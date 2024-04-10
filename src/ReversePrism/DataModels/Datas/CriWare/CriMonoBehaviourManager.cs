@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _instance                                CriMonoBehaviourManager IL2CPP_TYPE_CLASS
     // 008 criMonoBehaviourList                     List`1<CriMonoBehaviour> IL2CPP_TYPE_GENERICINST
-    public partial class CriMonoBehaviourManager
+    public partial class CriMonoBehaviourManager : DataModel
     {
 
         public static CriMonoBehaviourManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriMonoBehaviourManager();
+            var value   = new CriMonoBehaviourManager() { Pointer= p0 };
 
 
             return value;

@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 038 Cursor                                   000186671910 ModelPrimitiveType string string string String
     // 000 LastFollowerAddDateFieldNumber           int IL2CPP_TYPE_I4
     // 040 _LastFollowerAddDate                     000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class GetFollowListReply
+    public partial class GetFollowListReply : DataModel
     {
         public DateTime                                 LastFollowerAddDate                     { get; set; }
         public int                                      FollowCount                             { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFollowListReply();
+            var value   = new GetFollowListReply() { Pointer= p0 };
 
-            value.LastFollowerAddDate                       = GetDateTime(new IntPtr(p + 0x010)); // 0270D1415770 0x10 LastFollowerAddDate         ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.FollowCount                               = GetInt32(new IntPtr(p + 0x028)); // 0270D14157F0 0x28 FollowCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FollowMaxCount                            = GetInt32(new IntPtr(p + 0x02C)); // 0270D1415830 0x2C FollowMaxCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FollowList                                = GetObjectList<FriendStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.FriendStatus.FromPointer); // 0270D1415890 0x30 FollowList                  ( 000185CD91E8 ModelClassListType RepeatedField`1<FriendStatus> RepeatedField`1<FriendStatus> List<FriendStatus> Pointer )
-            value.Cursor                                    = GetString(new IntPtr(p + 0x038)); // 0270D14158D0 0x38 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
-            value._LastFollowerAddDate                      = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1415910 0x40 _LastFollowerAddDate        ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.LastFollowerAddDate                       = GetDateTime(new IntPtr(p + 0x010)); // 024661398690 0x10 LastFollowerAddDate         ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.FollowCount                               = GetInt32(new IntPtr(p + 0x028)); // 024661398710 0x28 FollowCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FollowMaxCount                            = GetInt32(new IntPtr(p + 0x02C)); // 024661398750 0x2C FollowMaxCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FollowList                                = GetObjectList<FriendStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.FriendStatus.FromPointer); // 0246613987B0 0x30 FollowList                  ( 000185CD91E8 ModelClassListType RepeatedField`1<FriendStatus> RepeatedField`1<FriendStatus> List<FriendStatus> Pointer )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x038)); // 0246613987F0 0x38 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value._LastFollowerAddDate                      = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024661398830 0x40 _LastFollowerAddDate        ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.LastFollowerAddDate           = ToDateTime(value._LastFollowerAddDate);
 
             return value;

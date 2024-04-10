@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Dtt                                      00018657D3E0 ModelEnumType DTT DTT DTT Int32
     // 014 Suffix                                   00018668DA40 ModelEnumType TokenType TokenType TokenType Int32
     // 018 Num                                      0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class DateTimeToken
+    public partial class DateTimeToken : DataModel
     {
         public DTT                                      Dtt                                     { get; set; }
         public TokenType                                Suffix                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeToken();
+            var value   = new DateTimeToken() { Pointer= p0 };
 
-            value.Dtt                                       = (DTT)GetInt32(new IntPtr(p + 0x010)); // 0270D6994A60 0x10 Dtt                         ( 00018657D3E0 ModelEnumType DTT DTT DTT Int32 )
-            value.Suffix                                    = (TokenType)GetInt32(new IntPtr(p + 0x014)); // 0270D6994A80 0x14 Suffix                      ( 00018668DA40 ModelEnumType TokenType TokenType TokenType Int32 )
-            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D6994AA0 0x18 Num                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Dtt                                       = (DTT)GetInt32(new IntPtr(p + 0x010)); // 024666A0CA60 0x10 Dtt                         ( 00018657D3E0 ModelEnumType DTT DTT DTT Int32 )
+            value.Suffix                                    = (TokenType)GetInt32(new IntPtr(p + 0x014)); // 024666A0CA80 0x14 Suffix                      ( 00018668DA40 ModelEnumType TokenType TokenType TokenType Int32 )
+            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 024666A0CAA0 0x18 Num                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

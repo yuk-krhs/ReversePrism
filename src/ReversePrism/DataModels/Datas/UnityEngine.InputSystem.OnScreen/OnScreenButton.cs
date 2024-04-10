@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 M_ControlPath                            000186671910 ModelPrimitiveType string string string String
-    public partial class OnScreenButton
+    public partial class OnScreenButton : DataModel
     {
         public string                                   M_ControlPath                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnScreenButton();
+            var value   = new OnScreenButton() { Pointer= p0 };
 
-            value.M_ControlPath                             = GetString(new IntPtr(p + 0x038)); // 0270D77BC7C8 0x38 M_ControlPath               ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_ControlPath                             = GetString(new IntPtr(p + 0x038)); // 0246678147C8 0x38 M_ControlPath               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

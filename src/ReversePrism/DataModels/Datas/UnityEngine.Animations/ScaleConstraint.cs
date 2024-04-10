@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScaleConstraint
+    public partial class ScaleConstraint : DataModel
     {
 
         public static ScaleConstraint? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScaleConstraint();
+            var value   = new ScaleConstraint() { Pointer= p0 };
 
 
             return value;

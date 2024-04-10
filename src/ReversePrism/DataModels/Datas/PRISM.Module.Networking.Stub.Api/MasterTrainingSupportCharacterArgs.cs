@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSupportCharacterId                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DiamondFieldNumber                       int IL2CPP_TYPE_I4
     // 01C Diamond                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class MasterTrainingSupportCharacterArgs
+    public partial class MasterTrainingSupportCharacterArgs : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public int                                      Diamond                                 { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MasterTrainingSupportCharacterArgs();
+            var value   = new MasterTrainingSupportCharacterArgs() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D2AFA4C8 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Diamond                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D2AFA508 0x1C Diamond                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 024662A63E90 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Diamond                                   = GetInt32(new IntPtr(p + 0x01C)); // 024662A63ED0 0x1C Diamond                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

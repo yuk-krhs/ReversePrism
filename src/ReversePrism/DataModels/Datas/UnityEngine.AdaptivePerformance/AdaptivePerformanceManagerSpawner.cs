@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 AdaptivePerformanceManagerObjectName     string IL2CPP_TYPE_STRING
     // 018 M_ManagerGameObject                      0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class AdaptivePerformanceManagerSpawner
+    public partial class AdaptivePerformanceManagerSpawner : DataModel
     {
         public GameObject?                              M_ManagerGameObject                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceManagerSpawner();
+            var value   = new AdaptivePerformanceManagerSpawner() { Pointer= p0 };
 
-            value.M_ManagerGameObject                       = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0909DD8 0x18 M_ManagerGameObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.M_ManagerGameObject                       = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 024660909DD8 0x18 M_ManagerGameObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

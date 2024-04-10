@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UniTaskLoopRunnerYieldInitialization
+    public partial class UniTaskLoopRunnerYieldInitialization : DataModel
     {
 
         public static UniTaskLoopRunnerYieldInitialization? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniTaskLoopRunnerYieldInitialization();
+            var value   = new UniTaskLoopRunnerYieldInitialization() { Pointer= p0 };
 
 
             return value;

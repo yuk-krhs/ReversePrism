@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Total                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 TotalOpenedFieldNumber                   int IL2CPP_TYPE_I4
     // 020 TotalOpened                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class UserProfileProduceCardSummaryStatus
+    public partial class UserProfileProduceCardSummaryStatus : DataModel
     {
         public int                                      UnitId                                  { get; set; }
         public int                                      Total                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserProfileProduceCardSummaryStatus();
+            var value   = new UserProfileProduceCardSummaryStatus() { Pointer= p0 };
 
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D27260C8 0x18 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D2726108 0x1C Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalOpened                               = GetInt32(new IntPtr(p + 0x020)); // 0270D2726148 0x20 TotalOpened                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 024662694090 0x18 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246626940D0 0x1C Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalOpened                               = GetInt32(new IntPtr(p + 0x020)); // 024662694110 0x20 TotalOpened                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

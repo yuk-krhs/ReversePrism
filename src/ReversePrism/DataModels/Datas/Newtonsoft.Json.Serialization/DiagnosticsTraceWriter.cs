@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 LevelFilter                              000186698940 ModelEnumType TraceLevel TraceLevel TraceLevel Int32
-    public partial class DiagnosticsTraceWriter
+    public partial class DiagnosticsTraceWriter : DataModel
     {
         public TraceLevel                               LevelFilter                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiagnosticsTraceWriter();
+            var value   = new DiagnosticsTraceWriter() { Pointer= p0 };
 
-            value.LevelFilter                               = (TraceLevel)GetInt32(new IntPtr(p + 0x010)); // 0270D875D168 0x10 LevelFilter                 ( 000186698940 ModelEnumType TraceLevel TraceLevel TraceLevel Int32 )
+            value.LevelFilter                               = (TraceLevel)GetInt32(new IntPtr(p + 0x010)); // 0246687C51B0 0x10 LevelFilter                 ( 000186698940 ModelEnumType TraceLevel TraceLevel TraceLevel Int32 )
 
             return value;
         }

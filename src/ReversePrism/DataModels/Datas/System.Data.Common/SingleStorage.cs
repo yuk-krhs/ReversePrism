@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
-    public partial class SingleStorage
+    public partial class SingleStorage : DataModel
     {
         public List<float>?                             Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleStorage();
+            var value   = new SingleStorage() { Pointer= p0 };
 
-            value.Values                                    = GetSingleList(new IntPtr(p + 0x050)); // 0270D89EF6A8 0x50 Values                      ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Values                                    = GetSingleList(new IntPtr(p + 0x050)); // 024668A5A780 0x50 Values                      ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
 
             return value;
         }

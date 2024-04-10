@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   Sample<<var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class SampleTick
+    public partial class SampleTick : DataModel
     {
 
         public static SampleTick? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SampleTick();
+            var value   = new SampleTick() { Pointer= p0 };
 
 
             return value;

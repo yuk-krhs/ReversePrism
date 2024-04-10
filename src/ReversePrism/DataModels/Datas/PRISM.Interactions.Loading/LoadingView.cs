@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 Counter                                  000186714310 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
     // 040 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
     // 048 UiFaderEventCaller                       0001866E7890 ModelClassType UIFaderEventCaller UIFaderEventCaller UIFaderEventCaller Pointer
-    public partial class LoadingView
+    public partial class LoadingView : DataModel
     {
         public IntReactiveProperty?                     Counter                                 { get; set; }
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadingView();
+            var value   = new LoadingView() { Pointer= p0 };
 
-            value.Counter                                   = GetObject<IntReactiveProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 027001E9C3E0 0x38 Counter                     ( 000186714310 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.IResourceTag.FromPointer); // 027001E9C400 0x40 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.UiFaderEventCaller                        = GetObject<UIFaderEventCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIFaderEventCaller.FromPointer); // 027001E9C420 0x48 UiFaderEventCaller          ( 0001866E7890 ModelClassType UIFaderEventCaller UIFaderEventCaller UIFaderEventCaller Pointer )
+            value.Counter                                   = GetObject<IntReactiveProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0245A1E9F1D8 0x38 Counter                     ( 000186714310 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.IResourceTag.FromPointer); // 0245A1E9F1F8 0x40 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.UiFaderEventCaller                        = GetObject<UIFaderEventCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIFaderEventCaller.FromPointer); // 0245A1E9F218 0x48 UiFaderEventCaller          ( 0001866E7890 ModelClassType UIFaderEventCaller UIFaderEventCaller UIFaderEventCaller Pointer )
 
             return value;
         }

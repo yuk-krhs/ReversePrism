@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityProjectNotLinkedException
+    public partial class UnityProjectNotLinkedException : DataModel
     {
 
         public static UnityProjectNotLinkedException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityProjectNotLinkedException();
+            var value   = new UnityProjectNotLinkedException() { Pointer= p0 };
 
 
             return value;

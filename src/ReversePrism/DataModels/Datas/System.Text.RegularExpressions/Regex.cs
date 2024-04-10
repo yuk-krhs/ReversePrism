@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 058 _replref                                 WeakReference`1<RegexReplacement> IL2CPP_TYPE_GENERICINST
     // 060 Code                                     00018663CC00 ModelClassType RegexCode RegexCode RegexCode Pointer
     // 068 RefsInitialized                          000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class Regex
+    public partial class Regex : DataModel
     {
         public int                                      S_cacheCount                            { get; set; }
         public CachedCodeEntry?                         S_cacheFirst                            { get; set; }
@@ -57,25 +57,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Regex();
+            var value   = new Regex() { Pointer= p0 };
 
-            value.S_cacheCount                              = GetInt32(new IntPtr(p + 0x010)); // 0270033D0E50 0x10 S_cacheCount                ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_cacheFirst                              = GetObject<CachedCodeEntry>(new IntPtr(p + 0x018), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0270033D0E70 0x18 S_cacheFirst                ( 00018670BD10 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
-            value.S_cacheLast                               = GetObject<CachedCodeEntry>(new IntPtr(p + 0x020), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0270033D0E90 0x20 S_cacheLast                 ( 00018670BD10 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
-            value.S_maximumMatchTimeout                     = (TimeSpan)GetInt32(new IntPtr(p + 0x028)); // 0270033D0EB0 0x28 S_maximumMatchTimeout       ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.S_defaultMatchTimeout                     = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 0270033D0EF0 0x30 S_defaultMatchTimeout       ( 00018668BC50 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.InfiniteMatchTimeout                      = (TimeSpan)GetInt32(new IntPtr(p + 0x038)); // 0270033D0F10 0x38 InfiniteMatchTimeout        ( 00018668BEB0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.InternalMatchTimeout                      = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0270033D0F30 0x10 InternalMatchTimeout        ( 00018668AD90 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x018)); // 0270033D0F70 0x18 Pattern                     ( 000186672090 ModelPrimitiveType string string string String )
-            value.Roptions                                  = (RegexOptions)GetInt32(new IntPtr(p + 0x020)); // 0270033D0F90 0x20 Roptions                    ( 00018663EE20 ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
-            value.Factory                                   = GetObject<RegexRunnerFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.RegexRunnerFactory.FromPointer); // 0270033D0FB0 0x28 Factory                     ( 000186640BF0 ModelClassType RegexRunnerFactory RegexRunnerFactory RegexRunnerFactory Pointer )
-            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 0270033D0FD0 0x30 Caps                        ( 0001865DEA60 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Capnames                                  = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 0270033D0FF0 0x38 Capnames                    ( 0001865DEA60 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Capslist                                  = GetStringList(new IntPtr(p + 0x040)); // 0270033D1010 0x40 Capslist                    ( 000185B818A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Capsize                                   = GetInt32(new IntPtr(p + 0x048)); // 0270033D1030 0x48 Capsize                     ( 0001865F3400 ModelPrimitiveType int int int Int32 )
-            value.Runnerref                                 = GetObject<ExclusiveReference>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExclusiveReference.FromPointer); // 0270033D1050 0x50 Runnerref                   ( 000186520B90 ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer )
-            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x060), ReversePrism.DataModels.RegexCode.FromPointer); // 0270033D1090 0x60 Code                        ( 00018663CC00 ModelClassType RegexCode RegexCode RegexCode Pointer )
-            value.RefsInitialized                           = GetBool(new IntPtr(p + 0x068)); // 0270033D10B0 0x68 RefsInitialized             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.S_cacheCount                              = GetInt32(new IntPtr(p + 0x010)); // 0245A33D0E50 0x10 S_cacheCount                ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_cacheFirst                              = GetObject<CachedCodeEntry>(new IntPtr(p + 0x018), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0245A33D0E70 0x18 S_cacheFirst                ( 00018670BD10 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
+            value.S_cacheLast                               = GetObject<CachedCodeEntry>(new IntPtr(p + 0x020), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0245A33D0E90 0x20 S_cacheLast                 ( 00018670BD10 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
+            value.S_maximumMatchTimeout                     = (TimeSpan)GetInt32(new IntPtr(p + 0x028)); // 0245A33D0EB0 0x28 S_maximumMatchTimeout       ( 00018668BA00 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.S_defaultMatchTimeout                     = (TimeSpan)GetInt32(new IntPtr(p + 0x030)); // 0245A33D0EF0 0x30 S_defaultMatchTimeout       ( 00018668BC50 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.InfiniteMatchTimeout                      = (TimeSpan)GetInt32(new IntPtr(p + 0x038)); // 0245A33D0F10 0x38 InfiniteMatchTimeout        ( 00018668BEB0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.InternalMatchTimeout                      = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0245A33D0F30 0x10 InternalMatchTimeout        ( 00018668AD90 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x018)); // 0245A33D0F70 0x18 Pattern                     ( 000186672090 ModelPrimitiveType string string string String )
+            value.Roptions                                  = (RegexOptions)GetInt32(new IntPtr(p + 0x020)); // 0245A33D0F90 0x20 Roptions                    ( 00018663EE20 ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
+            value.Factory                                   = GetObject<RegexRunnerFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.RegexRunnerFactory.FromPointer); // 0245A33D0FB0 0x28 Factory                     ( 000186640BF0 ModelClassType RegexRunnerFactory RegexRunnerFactory RegexRunnerFactory Pointer )
+            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A33D0FD0 0x30 Caps                        ( 0001865DEA60 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Capnames                                  = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A33D0FF0 0x38 Capnames                    ( 0001865DEA60 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Capslist                                  = GetStringList(new IntPtr(p + 0x040)); // 0245A33D1010 0x40 Capslist                    ( 000185B818A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Capsize                                   = GetInt32(new IntPtr(p + 0x048)); // 0245A33D1030 0x48 Capsize                     ( 0001865F3400 ModelPrimitiveType int int int Int32 )
+            value.Runnerref                                 = GetObject<ExclusiveReference>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExclusiveReference.FromPointer); // 0245A33D1050 0x50 Runnerref                   ( 000186520B90 ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer )
+            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x060), ReversePrism.DataModels.RegexCode.FromPointer); // 0245A33D1090 0x60 Code                        ( 00018663CC00 ModelClassType RegexCode RegexCode RegexCode Pointer )
+            value.RefsInitialized                           = GetBool(new IntPtr(p + 0x068)); // 0245A33D10B0 0x68 RefsInitialized             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

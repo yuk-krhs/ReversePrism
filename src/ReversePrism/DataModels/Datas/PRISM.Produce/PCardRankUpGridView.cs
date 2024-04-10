@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 0A8 RankUpIconBlinkDuration                  0001866656B0 ModelPrimitiveType float float float Single
     // 0AC RankUpIconBlinkValue                     0001866656B0 ModelPrimitiveType float float float Single
     // 0B0 rankUpIconBlinkTweener                   TweenerCore`3<float, float, FloatOptions> IL2CPP_TYPE_GENERICINST
-    public partial class PCardRankUpGridView
+    public partial class PCardRankUpGridView : DataModel
     {
         public float                                    RankUpIconBlinkDuration                 { get; set; }
         public float                                    RankUpIconBlinkValue                    { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardRankUpGridView();
+            var value   = new PCardRankUpGridView() { Pointer= p0 };
 
-            value.RankUpIconBlinkDuration                   = GetSingle(new IntPtr(p + 0x0A8)); // 0270D5CEA390 0xA8 RankUpIconBlinkDuration     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.RankUpIconBlinkValue                      = GetSingle(new IntPtr(p + 0x0AC)); // 0270D5CEA3B0 0xAC RankUpIconBlinkValue        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.RankUpIconBlinkDuration                   = GetSingle(new IntPtr(p + 0x0A8)); // 024665D3AF68 0xA8 RankUpIconBlinkDuration     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.RankUpIconBlinkValue                      = GetSingle(new IntPtr(p + 0x0AC)); // 024665D3AF88 0xAC RankUpIconBlinkValue        ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

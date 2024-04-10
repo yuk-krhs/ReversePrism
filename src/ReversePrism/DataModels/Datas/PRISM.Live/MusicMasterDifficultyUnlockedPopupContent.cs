@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 MusicJacketImage                         0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
     // 068 Message                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class MusicMasterDifficultyUnlockedPopupContent
+    public partial class MusicMasterDifficultyUnlockedPopupContent : DataModel
     {
         public UIRawImage?                              MusicJacketImage                        { get; set; }
         public UITextMeshProUGUI?                       Message                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicMasterDifficultyUnlockedPopupContent();
+            var value   = new MusicMasterDifficultyUnlockedPopupContent() { Pointer= p0 };
 
-            value.MusicJacketImage                          = GetObject<UIRawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D51EBE78 0x60 MusicJacketImage            ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.Message                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D51EBE98 0x68 Message                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicJacketImage                          = GetObject<UIRawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466523EB60 0x60 MusicJacketImage            ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.Message                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466523EB80 0x68 Message                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

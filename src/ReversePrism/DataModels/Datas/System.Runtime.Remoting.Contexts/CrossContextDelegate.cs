@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CrossContextDelegate
+    public partial class CrossContextDelegate : DataModel
     {
 
         public static CrossContextDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrossContextDelegate();
+            var value   = new CrossContextDelegate() { Pointer= p0 };
 
 
             return value;

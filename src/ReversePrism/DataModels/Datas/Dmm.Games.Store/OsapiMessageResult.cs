@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 Response                                 00018660B580 ModelClassType MessageResult MessageResult MessageResult Pointer
-    public partial class OsapiMessageResult
+    public partial class OsapiMessageResult : DataModel
     {
         public MessageResult?                           Response                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OsapiMessageResult();
+            var value   = new OsapiMessageResult() { Pointer= p0 };
 
-            value.Response                                  = GetObject<MessageResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.MessageResult.FromPointer); // 0270DB4993F0 0x40 Response                    ( 00018660B580 ModelClassType MessageResult MessageResult MessageResult Pointer )
+            value.Response                                  = GetObject<MessageResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.MessageResult.FromPointer); // 02466B5162F0 0x40 Response                    ( 00018660B580 ModelClassType MessageResult MessageResult MessageResult Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Buffer                                 0001865E17F0 ModelClassType IBuffer IBuffer IBuffer Pointer
-    public partial class DataGenerator
+    public partial class DataGenerator : DataModel
     {
         public IBuffer?                                 M_Buffer                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataGenerator();
+            var value   = new DataGenerator() { Pointer= p0 };
 
-            value.M_Buffer                                  = GetObject<IBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.IBuffer.FromPointer); // 0270066C1290 0x10 M_Buffer                    ( 0001865E17F0 ModelClassType IBuffer IBuffer IBuffer Pointer )
+            value.M_Buffer                                  = GetObject<IBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.IBuffer.FromPointer); // 0245A6682C08 0x10 M_Buffer                    ( 0001865E17F0 ModelClassType IBuffer IBuffer IBuffer Pointer )
 
             return value;
         }

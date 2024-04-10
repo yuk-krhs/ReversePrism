@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PostNormalizeAttribute
+    public partial class PostNormalizeAttribute : DataModel
     {
 
         public static PostNormalizeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostNormalizeAttribute();
+            var value   = new PostNormalizeAttribute() { Pointer= p0 };
 
 
             return value;

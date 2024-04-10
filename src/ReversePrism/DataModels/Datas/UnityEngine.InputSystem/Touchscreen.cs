@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 008 s_TapTime                                float IL2CPP_TYPE_R4
     // 00C s_TapDelayTime                           float IL2CPP_TYPE_R4
     // 010 S_TapRadiusSquared                       000186666530 ModelPrimitiveType float float float Single
-    public partial class Touchscreen
+    public partial class Touchscreen : DataModel
     {
         public TouchControl?                            PrimaryTouch                            { get; set; }
         public float                                    S_TapRadiusSquared                      { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Touchscreen();
+            var value   = new Touchscreen() { Pointer= p0 };
 
-            value.PrimaryTouch                              = GetObject<TouchControl>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.TouchControl.FromPointer); // 0270033ADDF0 0x1A0 PrimaryTouch                ( 00018668E310 ModelClassType TouchControl TouchControl TouchControl Pointer )
-            value.S_TapRadiusSquared                        = GetSingle(new IntPtr(p + 0x010)); // 0270033ADE90 0x10 S_TapRadiusSquared          ( 000186666530 ModelPrimitiveType float float float Single )
+            value.PrimaryTouch                              = GetObject<TouchControl>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.TouchControl.FromPointer); // 0245A33ADDF0 0x1A0 PrimaryTouch                ( 00018668E310 ModelClassType TouchControl TouchControl TouchControl Pointer )
+            value.S_TapRadiusSquared                        = GetSingle(new IntPtr(p + 0x010)); // 0245A33ADE90 0x10 S_TapRadiusSquared          ( 000186666530 ModelPrimitiveType float float float Single )
 
             return value;
         }

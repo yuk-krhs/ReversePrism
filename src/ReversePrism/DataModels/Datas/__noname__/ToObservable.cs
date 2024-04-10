@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   ToObservableObservable`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ToObservable
+    public partial class ToObservable : DataModel
     {
 
         public static ToObservable? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToObservable();
+            var value   = new ToObservable() { Pointer= p0 };
 
 
             return value;

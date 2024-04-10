@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Source                                   000186689CF0 ModelClassType IUniTaskSource IUniTaskSource IUniTaskSource Pointer
-    public partial class AsyncUnitSource
+    public partial class AsyncUnitSource : DataModel
     {
         public IUniTaskSource?                          Source                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncUnitSource();
+            var value   = new AsyncUnitSource() { Pointer= p0 };
 
-            value.Source                                    = GetObject<IUniTaskSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUniTaskSource.FromPointer); // 0270D8BE8E98 0x10 Source                      ( 000186689CF0 ModelClassType IUniTaskSource IUniTaskSource IUniTaskSource Pointer )
+            value.Source                                    = GetObject<IUniTaskSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUniTaskSource.FromPointer); // 024668C3BB78 0x10 Source                      ( 000186689CF0 ModelClassType IUniTaskSource IUniTaskSource IUniTaskSource Pointer )
 
             return value;
         }

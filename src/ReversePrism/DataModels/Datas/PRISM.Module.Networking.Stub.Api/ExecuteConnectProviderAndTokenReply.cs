@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Result                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 UserFieldNumber                          int IL2CPP_TYPE_I4
     // 020 User                                     000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer
-    public partial class ExecuteConnectProviderAndTokenReply
+    public partial class ExecuteConnectProviderAndTokenReply : DataModel
     {
         public bool                                     Result                                  { get; set; }
         public SelfStatus?                              User                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteConnectProviderAndTokenReply();
+            var value   = new ExecuteConnectProviderAndTokenReply() { Pointer= p0 };
 
-            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 0270D0B3E770 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 0270D0B3E7B0 0x20 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
+            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 024660B24780 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 024660B247C0 0x20 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
 
             return value;
         }

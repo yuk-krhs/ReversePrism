@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GalleryServiceBase
+    public partial class GalleryServiceBase : DataModel
     {
 
         public static GalleryServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryServiceBase();
+            var value   = new GalleryServiceBase() { Pointer= p0 };
 
 
             return value;

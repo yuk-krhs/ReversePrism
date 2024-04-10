@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 CueSheetName                             0001866722E0 ModelPrimitiveType string string string String
     // 028 CueName                                  0001866722E0 ModelPrimitiveType string string string String
-    public partial class PlaySoundObject
+    public partial class PlaySoundObject : DataModel
     {
         public string                                   CueSheetName                            { get; set; }
         public string                                   CueName                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlaySoundObject();
+            var value   = new PlaySoundObject() { Pointer= p0 };
 
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x020)); // 0270D4DF7980 0x20 CueSheetName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x028)); // 0270D4DF79A0 0x28 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x020)); // 024664E6C100 0x20 CueSheetName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x028)); // 024664E6C120 0x28 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

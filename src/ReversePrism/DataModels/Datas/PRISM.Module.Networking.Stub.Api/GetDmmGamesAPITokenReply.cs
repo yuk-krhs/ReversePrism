@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TokenFieldNumber                         int IL2CPP_TYPE_I4
     // 018 Token                                    000186671910 ModelPrimitiveType string string string String
-    public partial class GetDmmGamesAPITokenReply
+    public partial class GetDmmGamesAPITokenReply : DataModel
     {
         public string                                   Token                                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetDmmGamesAPITokenReply();
+            var value   = new GetDmmGamesAPITokenReply() { Pointer= p0 };
 
-            value.Token                                     = GetString(new IntPtr(p + 0x018)); // 0270D196C500 0x18 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Token                                     = GetString(new IntPtr(p + 0x018)); // 0246618E24A0 0x18 Token                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

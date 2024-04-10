@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CacheFinishAuditionReply                 00018650C290 ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer
-    public partial class FinishAuditionModel
+    public partial class FinishAuditionModel : DataModel
     {
         public IFinishAuditionReply?                    CacheFinishAuditionReply                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishAuditionModel();
+            var value   = new FinishAuditionModel() { Pointer= p0 };
 
-            value.CacheFinishAuditionReply                  = GetObject<IFinishAuditionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishAuditionReply.FromPointer); // 0270D65ACD60 0x10 CacheFinishAuditionReply    ( 00018650C290 ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer )
+            value.CacheFinishAuditionReply                  = GetObject<IFinishAuditionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishAuditionReply.FromPointer); // 024666613D00 0x10 CacheFinishAuditionReply    ( 00018650C290 ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer )
 
             return value;
         }

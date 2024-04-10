@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ContentParent                            0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 028 GoContentPrefab                          00018652D370 ModelClassType LimitLvContentView LimitLvContentView LimitLvContentView Pointer
-    public partial class LimitLvView
+    public partial class LimitLvView : DataModel
     {
         public Transform?                               ContentParent                           { get; set; }
         public LimitLvContentView?                      GoContentPrefab                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LimitLvView();
+            var value   = new LimitLvView() { Pointer= p0 };
 
-            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0270DA28FC30 0x20 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.GoContentPrefab                           = GetObject<LimitLvContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitLvContentView.FromPointer); // 0270DA28FC50 0x28 GoContentPrefab             ( 00018652D370 ModelClassType LimitLvContentView LimitLvContentView LimitLvContentView Pointer )
+            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 02466A2E3200 0x20 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.GoContentPrefab                           = GetObject<LimitLvContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitLvContentView.FromPointer); // 02466A2E3220 0x28 GoContentPrefab             ( 00018652D370 ModelClassType LimitLvContentView LimitLvContentView LimitLvContentView Pointer )
 
             return value;
         }

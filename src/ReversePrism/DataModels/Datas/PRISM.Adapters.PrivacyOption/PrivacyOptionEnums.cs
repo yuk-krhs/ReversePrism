@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PrivacyOptionEnums
+    public partial class PrivacyOptionEnums : DataModel
     {
 
         public static PrivacyOptionEnums? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrivacyOptionEnums();
+            var value   = new PrivacyOptionEnums() { Pointer= p0 };
 
 
             return value;

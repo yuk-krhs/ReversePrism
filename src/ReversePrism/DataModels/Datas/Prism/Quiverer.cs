@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 AmpMagy                                  000186666050 ModelPrimitiveType float float float Single
     // 054 FmMag                                    000186666050 ModelPrimitiveType float float float Single
     // 058 SlowMag                                  0001866656B0 ModelPrimitiveType float float float Single
-    public partial class Quiverer
+    public partial class Quiverer : DataModel
     {
         public List<float>?                             Angs                                    { get; set; }
         public List<float>?                             FmAngs                                  { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Quiverer();
+            var value   = new Quiverer() { Pointer= p0 };
 
-            value.Angs                                      = GetSingleList(new IntPtr(p + 0x010)); // 0270D4E343A0 0x10 Angs                        ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.FmAngs                                    = GetSingleList(new IntPtr(p + 0x018)); // 0270D4E343C0 0x18 FmAngs                      ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.FmAngAdds                                 = GetSingleList(new IntPtr(p + 0x020)); // 0270D4E343E0 0x20 FmAngAdds                   ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Outv                                      = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0270D4E34400 0x28 Outv                        ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Outv5                                     = GetSingleList(new IntPtr(p + 0x038)); // 0270D4E34420 0x38 Outv5                       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.SpeedMagRnd                               = GetSingle(new IntPtr(p + 0x040)); // 0270D4E34440 0x40 SpeedMagRnd                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SpeedMag                                  = GetSingle(new IntPtr(p + 0x044)); // 0270D4E34460 0x44 SpeedMag                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AmpMag0                                   = GetSingle(new IntPtr(p + 0x048)); // 0270D4E34480 0x48 AmpMag0                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AmpMag                                    = GetSingle(new IntPtr(p + 0x04C)); // 0270D4E344A0 0x4C AmpMag                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AmpMagy                                   = GetSingle(new IntPtr(p + 0x050)); // 0270D4E344C0 0x50 AmpMagy                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FmMag                                     = GetSingle(new IntPtr(p + 0x054)); // 0270D4E344E0 0x54 FmMag                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SlowMag                                   = GetSingle(new IntPtr(p + 0x058)); // 0270D4E34500 0x58 SlowMag                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Angs                                      = GetSingleList(new IntPtr(p + 0x010)); // 024664EA98A0 0x10 Angs                        ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.FmAngs                                    = GetSingleList(new IntPtr(p + 0x018)); // 024664EA98C0 0x18 FmAngs                      ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.FmAngAdds                                 = GetSingleList(new IntPtr(p + 0x020)); // 024664EA98E0 0x20 FmAngAdds                   ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Outv                                      = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 024664EA9900 0x28 Outv                        ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Outv5                                     = GetSingleList(new IntPtr(p + 0x038)); // 024664EA9920 0x38 Outv5                       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.SpeedMagRnd                               = GetSingle(new IntPtr(p + 0x040)); // 024664EA9940 0x40 SpeedMagRnd                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SpeedMag                                  = GetSingle(new IntPtr(p + 0x044)); // 024664EA9960 0x44 SpeedMag                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.AmpMag0                                   = GetSingle(new IntPtr(p + 0x048)); // 024664EA9980 0x48 AmpMag0                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.AmpMag                                    = GetSingle(new IntPtr(p + 0x04C)); // 024664EA99A0 0x4C AmpMag                      ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.AmpMagy                                   = GetSingle(new IntPtr(p + 0x050)); // 024664EA99C0 0x50 AmpMagy                     ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FmMag                                     = GetSingle(new IntPtr(p + 0x054)); // 024664EA99E0 0x54 FmMag                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SlowMag                                   = GetSingle(new IntPtr(p + 0x058)); // 024664EA9A00 0x58 SlowMag                     ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 168 EnemySkillExecuteTime                    000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
     // 170 Opponent                                 0001867230B0 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer
     // 178 InGameTallyModel                         000186573AA0 ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer
-    public partial class ChallengeTourInGameModel
+    public partial class ChallengeTourInGameModel : DataModel
     {
         public List<float>?                             EnemySkillExecuteTime                   { get; set; }
         public IChallengeTourOpponentStatus?            Opponent                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameModel();
+            var value   = new ChallengeTourInGameModel() { Pointer= p0 };
 
-            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 0270D5AD6FE0 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Opponent                                  = GetObject<IChallengeTourOpponentStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IChallengeTourOpponentStatus.FromPointer); // 0270D5AD7000 0x170 Opponent                    ( 0001867230B0 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer )
-            value.InGameTallyModel                          = GetObject<ChallengeTourInGameTallyModel>(new IntPtr(p + 0x178), ReversePrism.DataModels.ChallengeTourInGameTallyModel.FromPointer); // 0270D5AD7020 0x178 InGameTallyModel            ( 000186573AA0 ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer )
+            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 024665B479D0 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Opponent                                  = GetObject<IChallengeTourOpponentStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IChallengeTourOpponentStatus.FromPointer); // 024665B479F0 0x170 Opponent                    ( 0001867230B0 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer )
+            value.InGameTallyModel                          = GetObject<ChallengeTourInGameTallyModel>(new IntPtr(p + 0x178), ReversePrism.DataModels.ChallengeTourInGameTallyModel.FromPointer); // 024665B47A10 0x178 InGameTallyModel            ( 000186573AA0 ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer )
 
             return value;
         }

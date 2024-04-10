@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TouchPhaseControl
+    public partial class TouchPhaseControl : DataModel
     {
 
         public static TouchPhaseControl? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchPhaseControl();
+            var value   = new TouchPhaseControl() { Pointer= p0 };
 
 
             return value;

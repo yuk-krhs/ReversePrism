@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 HistoryListItems                         000185CDA768 ModelClassListType List`1<ExchangeHistoryItemViewModel> List`1<ExchangeHistoryItemViewModel> List<ExchangeHistoryItemViewModel> Pointer
     // 018 CurrentTabType                           000186640E10 ModelEnumType ExchangeTabType ExchangeTabType ExchangeTabType Int32
-    public partial class ExchangeHistoryViewModel
+    public partial class ExchangeHistoryViewModel : DataModel
     {
         public List<ExchangeHistoryItemViewModel>?      HistoryListItems                        { get; set; }
         public ExchangeTabType                          CurrentTabType                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeHistoryViewModel();
+            var value   = new ExchangeHistoryViewModel() { Pointer= p0 };
 
-            value.HistoryListItems                          = GetObjectList<ExchangeHistoryItemViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExchangeHistoryItemViewModel.FromPointer); // 0270D62BD148 0x10 HistoryListItems            ( 000185CDA768 ModelClassListType List`1<ExchangeHistoryItemViewModel> List`1<ExchangeHistoryItemViewModel> List<ExchangeHistoryItemViewModel> Pointer )
-            value.CurrentTabType                            = (ExchangeTabType)GetInt32(new IntPtr(p + 0x018)); // 0270D62BD168 0x18 CurrentTabType              ( 000186640E10 ModelEnumType ExchangeTabType ExchangeTabType ExchangeTabType Int32 )
+            value.HistoryListItems                          = GetObjectList<ExchangeHistoryItemViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExchangeHistoryItemViewModel.FromPointer); // 02466632D148 0x10 HistoryListItems            ( 000185CDA768 ModelClassListType List`1<ExchangeHistoryItemViewModel> List`1<ExchangeHistoryItemViewModel> List<ExchangeHistoryItemViewModel> Pointer )
+            value.CurrentTabType                            = (ExchangeTabType)GetInt32(new IntPtr(p + 0x018)); // 02466632D168 0x18 CurrentTabType              ( 000186640E10 ModelEnumType ExchangeTabType ExchangeTabType ExchangeTabType Int32 )
 
             return value;
         }

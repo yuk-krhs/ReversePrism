@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AttachCharacterObjectBehaviour
+    public partial class AttachCharacterObjectBehaviour : DataModel
     {
 
         public static AttachCharacterObjectBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttachCharacterObjectBehaviour();
+            var value   = new AttachCharacterObjectBehaviour() { Pointer= p0 };
 
 
             return value;

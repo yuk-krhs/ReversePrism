@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetUserProgressInfoArgs
+    public partial class IGetUserProgressInfoArgs : DataModel
     {
 
         public static IGetUserProgressInfoArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetUserProgressInfoArgs();
+            var value   = new IGetUserProgressInfoArgs() { Pointer= p0 };
 
 
             return value;

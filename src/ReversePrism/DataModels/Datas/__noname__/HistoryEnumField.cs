@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 <historyIndexGetter>k__BackingField      Func`1<int>[] IL2CPP_TYPE_SZARRAY
-    public partial class HistoryEnumField
+    public partial class HistoryEnumField : DataModel
     {
 
         public static HistoryEnumField? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HistoryEnumField();
+            var value   = new HistoryEnumField() { Pointer= p0 };
 
 
             return value;

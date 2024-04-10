@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
     // 030 SelfProfileContent                       0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer
     // 038 OpponentProfileContent                   0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer
-    public partial class PvpPerformanceContent
+    public partial class PvpPerformanceContent : DataModel
     {
         public GameObject?                              RootObject                              { get; set; }
         public Animator?                                Animator                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpPerformanceContent();
+            var value   = new PvpPerformanceContent() { Pointer= p0 };
 
-            value.RootObject                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBF15760 0x20 RootObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0270DBF15780 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.SelfProfileContent                        = GetObject<PvpPerformanceProfileContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpPerformanceProfileContent.FromPointer); // 0270DBF157A0 0x30 SelfProfileContent          ( 0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer )
-            value.OpponentProfileContent                    = GetObject<PvpPerformanceProfileContent>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpPerformanceProfileContent.FromPointer); // 0270DBF157C0 0x38 OpponentProfileContent      ( 0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer )
+            value.RootObject                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466BF855C0 0x20 RootObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 02466BF855E0 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.SelfProfileContent                        = GetObject<PvpPerformanceProfileContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpPerformanceProfileContent.FromPointer); // 02466BF85600 0x30 SelfProfileContent          ( 0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer )
+            value.OpponentProfileContent                    = GetObject<PvpPerformanceProfileContent>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpPerformanceProfileContent.FromPointer); // 02466BF85620 0x38 OpponentProfileContent      ( 0001865ED3E0 ModelClassType PvpPerformanceProfileContent PvpPerformanceProfileContent PvpPerformanceProfileContent Pointer )
 
             return value;
         }

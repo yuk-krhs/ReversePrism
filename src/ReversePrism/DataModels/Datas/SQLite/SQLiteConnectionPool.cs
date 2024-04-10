@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 _entries                                 Dictionary`2<string, Entry> IL2CPP_TYPE_GENERICINST
     // 018 _entriesLock                             <object> IL2CPP_TYPE_OBJECT
     // 000 _shared                                  SQLiteConnectionPool IL2CPP_TYPE_CLASS
-    public partial class SQLiteConnectionPool
+    public partial class SQLiteConnectionPool : DataModel
     {
 
         public static SQLiteConnectionPool? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SQLiteConnectionPool();
+            var value   = new SQLiteConnectionPool() { Pointer= p0 };
 
 
             return value;

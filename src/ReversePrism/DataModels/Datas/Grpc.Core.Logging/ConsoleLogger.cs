@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConsoleLogger
+    public partial class ConsoleLogger : DataModel
     {
 
         public static ConsoleLogger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConsoleLogger();
+            var value   = new ConsoleLogger() { Pointer= p0 };
 
 
             return value;

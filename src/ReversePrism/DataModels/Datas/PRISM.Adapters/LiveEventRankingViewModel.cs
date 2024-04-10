@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 SelectedRewardIndex                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C SelectedRankingIndex                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 onChangeIndex                            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class LiveEventRankingViewModel
+    public partial class LiveEventRankingViewModel : DataModel
     {
         public int                                      EventId                                 { get; set; }
         public int                                      SelectedFunctionIndex                   { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventRankingViewModel();
+            var value   = new LiveEventRankingViewModel() { Pointer= p0 };
 
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D6291418 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SelectedFunctionIndex                     = GetInt32(new IntPtr(p + 0x014)); // 0270D6291438 0x14 SelectedFunctionIndex       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectedRewardIndex                       = GetInt32(new IntPtr(p + 0x018)); // 0270D6291458 0x18 SelectedRewardIndex         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectedRankingIndex                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D6291478 0x1C SelectedRankingIndex        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 024666301C48 0x10 EventId                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SelectedFunctionIndex                     = GetInt32(new IntPtr(p + 0x014)); // 024666301C68 0x14 SelectedFunctionIndex       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedRewardIndex                       = GetInt32(new IntPtr(p + 0x018)); // 024666301C88 0x18 SelectedRewardIndex         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedRankingIndex                      = GetInt32(new IntPtr(p + 0x01C)); // 024666301CA8 0x1C SelectedRankingIndex        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

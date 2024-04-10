@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Data>k__BackingField                    Dictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class EventData
+    public partial class EventData : DataModel
     {
 
         public static EventData? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventData();
+            var value   = new EventData() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimeoutException
+    public partial class TimeoutException : DataModel
     {
 
         public static TimeoutException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeoutException();
+            var value   = new TimeoutException() { Pointer= p0 };
 
 
             return value;

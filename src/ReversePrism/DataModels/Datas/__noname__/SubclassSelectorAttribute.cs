@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SubclassSelectorAttribute
+    public partial class SubclassSelectorAttribute : DataModel
     {
 
         public static SubclassSelectorAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubclassSelectorAttribute();
+            var value   = new SubclassSelectorAttribute() { Pointer= p0 };
 
 
             return value;

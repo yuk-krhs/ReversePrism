@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Response                               0001866E3620 ModelClassType HttpResponse HttpResponse HttpResponse Pointer
-    public partial class ReadOnlyHttpResponse
+    public partial class ReadOnlyHttpResponse : DataModel
     {
         public HttpResponse?                            M_Response                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadOnlyHttpResponse();
+            var value   = new ReadOnlyHttpResponse() { Pointer= p0 };
 
-            value.M_Response                                = GetObject<HttpResponse>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpResponse.FromPointer); // 0270DBA5DE58 0x10 M_Response                  ( 0001866E3620 ModelClassType HttpResponse HttpResponse HttpResponse Pointer )
+            value.M_Response                                = GetObject<HttpResponse>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpResponse.FromPointer); // 02466BAE5338 0x10 M_Response                  ( 0001866E3620 ModelClassType HttpResponse HttpResponse HttpResponse Pointer )
 
             return value;
         }

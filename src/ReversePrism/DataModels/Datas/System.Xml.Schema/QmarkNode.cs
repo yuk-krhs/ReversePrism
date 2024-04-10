@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class QmarkNode
+    public partial class QmarkNode : DataModel
     {
 
         public static QmarkNode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QmarkNode();
+            var value   = new QmarkNode() { Pointer= p0 };
 
 
             return value;

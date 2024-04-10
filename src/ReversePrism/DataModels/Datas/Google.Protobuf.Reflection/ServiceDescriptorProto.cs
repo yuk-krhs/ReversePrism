@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 Method                                   000185CE62E8 ModelClassListType RepeatedField`1<MethodDescriptorProto> RepeatedField`1<MethodDescriptorProto> List<MethodDescriptorProto> Pointer
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
     // 028 Options                                  0001867389D0 ModelClassType ServiceOptions ServiceOptions ServiceOptions Pointer
-    public partial class ServiceDescriptorProto
+    public partial class ServiceDescriptorProto : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<MethodDescriptorProto>?             Method                                  { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServiceDescriptorProto();
+            var value   = new ServiceDescriptorProto() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 027003B1CD30 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Method                                    = GetObjectList<MethodDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodDescriptorProto.FromPointer); // 027003B1CD90 0x20 Method                      ( 000185CE62E8 ModelClassListType RepeatedField`1<MethodDescriptorProto> RepeatedField`1<MethodDescriptorProto> List<MethodDescriptorProto> Pointer )
-            value.Options                                   = GetObject<ServiceOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceOptions.FromPointer); // 027003B1CDD0 0x28 Options                     ( 0001867389D0 ModelClassType ServiceOptions ServiceOptions ServiceOptions Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024660BABF28 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Method                                    = GetObjectList<MethodDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodDescriptorProto.FromPointer); // 024660BABF88 0x20 Method                      ( 000185CE62E8 ModelClassListType RepeatedField`1<MethodDescriptorProto> RepeatedField`1<MethodDescriptorProto> List<MethodDescriptorProto> Pointer )
+            value.Options                                   = GetObject<ServiceOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceOptions.FromPointer); // 024660BABFC8 0x28 Options                     ( 0001867389D0 ModelClassType ServiceOptions ServiceOptions ServiceOptions Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Data                                   IntPtr IL2CPP_TYPE_PTR
-    public partial class NativeText
+    public partial class NativeText : DataModel
     {
 
         public static NativeText? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeText();
+            var value   = new NativeText() { Pointer= p0 };
 
 
             return value;

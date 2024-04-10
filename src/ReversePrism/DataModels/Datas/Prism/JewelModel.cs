@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 JewelRP                                  0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer
-    public partial class JewelModel
+    public partial class JewelModel : DataModel
     {
         public LongReactiveProperty?                    JewelRP                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JewelModel();
+            var value   = new JewelModel() { Pointer= p0 };
 
-            value.JewelRP                                   = GetObject<LongReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 027004F46640 0x10 JewelRP                     ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.JewelRP                                   = GetObject<LongReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0246630F4460 0x10 JewelRP                     ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
 
             return value;
         }

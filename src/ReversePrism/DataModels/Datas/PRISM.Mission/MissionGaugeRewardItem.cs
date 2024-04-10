@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 LightFrameObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 048 BadgeObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 050 CheckMarkObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class MissionGaugeRewardItem
+    public partial class MissionGaugeRewardItem : DataModel
     {
         public RewardItemIcon?                          RewardItem                              { get; set; }
         public TextMeshProUGUI?                         PointText                               { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionGaugeRewardItem();
+            var value   = new MissionGaugeRewardItem() { Pointer= p0 };
 
-            value.RewardItem                                = GetObject<RewardItemIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 0270D55561E8 0x20 RewardItem                  ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
-            value.PointText                                 = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D5556208 0x28 PointText                   ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.BallonImage                               = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0270D5556228 0x30 BallonImage                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.SelectFrameObject                         = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5556248 0x38 SelectFrameObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.LightFrameObject                          = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5556268 0x40 LightFrameObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BadgeObject                               = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5556288 0x48 BadgeObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CheckMarkObject                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270D55562A8 0x50 CheckMarkObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.RewardItem                                = GetObject<RewardItemIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 0246655C7DD0 0x20 RewardItem                  ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
+            value.PointText                                 = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0246655C7DF0 0x28 PointText                   ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.BallonImage                               = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0246655C7E10 0x30 BallonImage                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.SelectFrameObject                         = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7E30 0x38 SelectFrameObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.LightFrameObject                          = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7E50 0x40 LightFrameObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BadgeObject                               = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7E70 0x48 BadgeObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CheckMarkObject                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0246655C7E90 0x50 CheckMarkObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

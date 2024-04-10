@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IEditRankingCommentReply
+    public partial class IEditRankingCommentReply : DataModel
     {
 
         public static IEditRankingCommentReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IEditRankingCommentReply();
+            var value   = new IEditRankingCommentReply() { Pointer= p0 };
 
 
             return value;

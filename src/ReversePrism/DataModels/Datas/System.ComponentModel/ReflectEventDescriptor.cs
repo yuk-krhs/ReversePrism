@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 078 RemoveMethod                             000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 080 RealEvent                                0001867599C0 ModelClassType EventInfo EventInfo EventInfo Pointer
     // 088 FilledMethods                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ReflectEventDescriptor
+    public partial class ReflectEventDescriptor : DataModel
     {
         public Type?                                    Type                                    { get; set; }
         public Type?                                    ComponentClass                          { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectEventDescriptor();
+            var value   = new ReflectEventDescriptor() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0270D7B394D0 0x60 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.ComponentClass                            = GetObject<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 0270D7B394F0 0x68 ComponentClass              ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.AddMethod                                 = GetObject<MethodInfo>(new IntPtr(p + 0x070), ReversePrism.DataModels.MethodInfo.FromPointer); // 0270D7B39510 0x70 AddMethod                   ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.RemoveMethod                              = GetObject<MethodInfo>(new IntPtr(p + 0x078), ReversePrism.DataModels.MethodInfo.FromPointer); // 0270D7B39530 0x78 RemoveMethod                ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.RealEvent                                 = GetObject<EventInfo>(new IntPtr(p + 0x080), ReversePrism.DataModels.EventInfo.FromPointer); // 0270D7B39550 0x80 RealEvent                   ( 0001867599C0 ModelClassType EventInfo EventInfo EventInfo Pointer )
-            value.FilledMethods                             = GetBool(new IntPtr(p + 0x088)); // 0270D7B39570 0x88 FilledMethods               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 024667BA14D0 0x60 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.ComponentClass                            = GetObject<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 024667BA14F0 0x68 ComponentClass              ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.AddMethod                                 = GetObject<MethodInfo>(new IntPtr(p + 0x070), ReversePrism.DataModels.MethodInfo.FromPointer); // 024667BA1510 0x70 AddMethod                   ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.RemoveMethod                              = GetObject<MethodInfo>(new IntPtr(p + 0x078), ReversePrism.DataModels.MethodInfo.FromPointer); // 024667BA1530 0x78 RemoveMethod                ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.RealEvent                                 = GetObject<EventInfo>(new IntPtr(p + 0x080), ReversePrism.DataModels.EventInfo.FromPointer); // 024667BA1550 0x80 RealEvent                   ( 0001867599C0 ModelClassType EventInfo EventInfo EventInfo Pointer )
+            value.FilledMethods                             = GetBool(new IntPtr(p + 0x088)); // 024667BA1570 0x88 FilledMethods               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

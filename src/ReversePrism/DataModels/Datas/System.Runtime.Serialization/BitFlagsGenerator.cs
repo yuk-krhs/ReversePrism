@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BitCount                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Locals                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class BitFlagsGenerator
+    public partial class BitFlagsGenerator : DataModel
     {
         public int                                      BitCount                                { get; set; }
         public List<sbyte>?                             Locals                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitFlagsGenerator();
+            var value   = new BitFlagsGenerator() { Pointer= p0 };
 
-            value.BitCount                                  = GetInt32(new IntPtr(p + 0x010)); // 027004D4F800 0x10 BitCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Locals                                    = GetSByteList(new IntPtr(p + 0x018)); // 027004D4F820 0x18 Locals                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.BitCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A4D93F30 0x10 BitCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Locals                                    = GetSByteList(new IntPtr(p + 0x018)); // 0245A4D93F50 0x18 Locals                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _EditorAiSynergySetList                  000185CD8948 ModelClassListType List`1<EditorAiSynergySet> List`1<EditorAiSynergySet> List<EditorAiSynergySet> Pointer
-    public partial class EditorAiSynergySetList
+    public partial class EditorAiSynergySetList : DataModel
     {
         public List<EditorAiSynergySet>?                _EditorAiSynergySetList                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditorAiSynergySetList();
+            var value   = new EditorAiSynergySetList() { Pointer= p0 };
 
-            value._EditorAiSynergySetList                   = GetObjectList<EditorAiSynergySet>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiSynergySet.FromPointer); // 0270D5A9DDB0 0x10 _EditorAiSynergySetList     ( 000185CD8948 ModelClassListType List`1<EditorAiSynergySet> List`1<EditorAiSynergySet> List<EditorAiSynergySet> Pointer )
+            value._EditorAiSynergySetList                   = GetObjectList<EditorAiSynergySet>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiSynergySet.FromPointer); // 024665B0E830 0x10 _EditorAiSynergySetList     ( 000185CD8948 ModelClassListType List`1<EditorAiSynergySet> List`1<EditorAiSynergySet> List<EditorAiSynergySet> Pointer )
 
             return value;
         }

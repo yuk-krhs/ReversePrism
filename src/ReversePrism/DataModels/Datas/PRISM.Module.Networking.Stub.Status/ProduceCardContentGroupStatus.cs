@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 ProduceCardContentListFieldNumber        int IL2CPP_TYPE_I4
     // 008 _repeated_produceCardContentList_codec   FieldCodec`1<ProduceCardContentStatus> IL2CPP_TYPE_GENERICINST
     // 020 ProduceCardContentList                   000185CEAF58 ModelClassListType RepeatedField`1<ProduceCardContentStatus> RepeatedField`1<ProduceCardContentStatus> List<ProduceCardContentStatus> Pointer
-    public partial class ProduceCardContentGroupStatus
+    public partial class ProduceCardContentGroupStatus : DataModel
     {
         public int                                      MstProduceCardContentGroupId            { get; set; }
         public int                                      MstProduceCardContentGroupTypeId        { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceCardContentGroupStatus();
+            var value   = new ProduceCardContentGroupStatus() { Pointer= p0 };
 
-            value.MstProduceCardContentGroupId              = GetInt32(new IntPtr(p + 0x018)); // 0270D1115930 0x18 MstProduceCardContentGroupId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x01C)); // 0270D1115970 0x1C MstProduceCardContentGroupTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceCardContentList                    = GetObjectList<ProduceCardContentStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardContentStatus.FromPointer); // 0270D11159D0 0x20 ProduceCardContentList      ( 000185CEAF58 ModelClassListType RepeatedField`1<ProduceCardContentStatus> RepeatedField`1<ProduceCardContentStatus> List<ProduceCardContentStatus> Pointer )
+            value.MstProduceCardContentGroupId              = GetInt32(new IntPtr(p + 0x018)); // 024661095EC0 0x18 MstProduceCardContentGroupId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x01C)); // 024661095F00 0x1C MstProduceCardContentGroupTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceCardContentList                    = GetObjectList<ProduceCardContentStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardContentStatus.FromPointer); // 024661095F60 0x20 ProduceCardContentList      ( 000185CEAF58 ModelClassListType RepeatedField`1<ProduceCardContentStatus> RepeatedField`1<ProduceCardContentStatus> List<ProduceCardContentStatus> Pointer )
 
             return value;
         }

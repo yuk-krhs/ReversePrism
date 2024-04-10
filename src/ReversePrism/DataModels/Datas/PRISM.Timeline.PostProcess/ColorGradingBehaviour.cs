@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Saturation                               000186666050 ModelPrimitiveType float float float Single
     // 02C Brightness                               000186666050 ModelPrimitiveType float float float Single
     // 030 Contrast                                 000186666050 ModelPrimitiveType float float float Single
-    public partial class ColorGradingBehaviour
+    public partial class ColorGradingBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
         public Color                                    ColorFilter                             { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorGradingBehaviour();
+            var value   = new ColorGradingBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0270D5074CF8 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ColorFilter                               = (Color)GetInt32(new IntPtr(p + 0x014)); // 0270D5074D18 0x14 ColorFilter                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.HueShift                                  = GetSingle(new IntPtr(p + 0x024)); // 0270D5074D38 0x24 HueShift                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Saturation                                = GetSingle(new IntPtr(p + 0x028)); // 0270D5074D58 0x28 Saturation                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Brightness                                = GetSingle(new IntPtr(p + 0x02C)); // 0270D5074D78 0x2C Brightness                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Contrast                                  = GetSingle(new IntPtr(p + 0x030)); // 0270D5074D98 0x30 Contrast                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D8650 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ColorFilter                               = (Color)GetInt32(new IntPtr(p + 0x014)); // 0246650D8670 0x14 ColorFilter                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.HueShift                                  = GetSingle(new IntPtr(p + 0x024)); // 0246650D8690 0x24 HueShift                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Saturation                                = GetSingle(new IntPtr(p + 0x028)); // 0246650D86B0 0x28 Saturation                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Brightness                                = GetSingle(new IntPtr(p + 0x02C)); // 0246650D86D0 0x2C Brightness                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Contrast                                  = GetSingle(new IntPtr(p + 0x030)); // 0246650D86F0 0x30 Contrast                    ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 SongRewardType                           00018652A940 ModelEnumType SongRewardType SongRewardType SongRewardType Int32
     // 000 RewardFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Reward                                   0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class SongRewardStatus
+    public partial class SongRewardStatus : DataModel
     {
         public SongRewardType                           SongRewardType                          { get; set; }
         public ProductWithAmountStatus?                 Reward                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SongRewardStatus();
+            var value   = new SongRewardStatus() { Pointer= p0 };
 
-            value.SongRewardType                            = (SongRewardType)GetInt32(new IntPtr(p + 0x018)); // 0270D13724A0 0x18 SongRewardType              ( 00018652A940 ModelEnumType SongRewardType SongRewardType SongRewardType Int32 )
-            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D13724E0 0x20 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.SongRewardType                            = (SongRewardType)GetInt32(new IntPtr(p + 0x018)); // 0246612F9EE8 0x18 SongRewardType              ( 00018652A940 ModelEnumType SongRewardType SongRewardType SongRewardType Int32 )
+            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246612F9F28 0x20 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

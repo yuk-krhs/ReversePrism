@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonRequiredAttribute
+    public partial class JsonRequiredAttribute : DataModel
     {
 
         public static JsonRequiredAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonRequiredAttribute();
+            var value   = new JsonRequiredAttribute() { Pointer= p0 };
 
 
             return value;

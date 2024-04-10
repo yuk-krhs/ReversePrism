@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AnnounceService
+    public partial class AnnounceService : DataModel
     {
 
         public static AnnounceService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceService();
+            var value   = new AnnounceService() { Pointer= p0 };
 
 
             return value;

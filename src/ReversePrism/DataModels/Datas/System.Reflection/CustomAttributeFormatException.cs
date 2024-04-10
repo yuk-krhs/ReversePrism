@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CustomAttributeFormatException
+    public partial class CustomAttributeFormatException : DataModel
     {
 
         public static CustomAttributeFormatException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomAttributeFormatException();
+            var value   = new CustomAttributeFormatException() { Pointer= p0 };
 
 
             return value;

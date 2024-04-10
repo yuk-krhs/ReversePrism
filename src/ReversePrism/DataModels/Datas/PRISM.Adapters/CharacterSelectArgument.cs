@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 JumpParam                                0001865A3840 ModelClassType CharacterSelectViewParameter CharacterSelectViewParameter CharacterSelectViewParameter Pointer
-    public partial class CharacterSelectArgument
+    public partial class CharacterSelectArgument : DataModel
     {
         public CharacterSelectViewParameter?            JumpParam                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectArgument();
+            var value   = new CharacterSelectArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<CharacterSelectViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.CharacterSelectViewParameter.FromPointer); // 0270D5E924C0 0x10 JumpParam                   ( 0001865A3840 ModelClassType CharacterSelectViewParameter CharacterSelectViewParameter CharacterSelectViewParameter Pointer )
+            value.JumpParam                                 = GetObject<CharacterSelectViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.CharacterSelectViewParameter.FromPointer); // 024665F02B20 0x10 JumpParam                   ( 0001865A3840 ModelClassType CharacterSelectViewParameter CharacterSelectViewParameter CharacterSelectViewParameter Pointer )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstCharacterId                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstCostumeSetIdFieldNumber               int IL2CPP_TYPE_I4
     // 01C MstCostumeSetId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GashaPasserbyCharacterEffectStatus
+    public partial class GashaPasserbyCharacterEffectStatus : DataModel
     {
         public int                                      MstCharacterId                          { get; set; }
         public int                                      MstCostumeSetId                         { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaPasserbyCharacterEffectStatus();
+            var value   = new GashaPasserbyCharacterEffectStatus() { Pointer= p0 };
 
-            value.MstCharacterId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D1593B48 0x18 MstCharacterId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCostumeSetId                           = GetInt32(new IntPtr(p + 0x01C)); // 0270D1593B88 0x1C MstCostumeSetId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterId                            = GetInt32(new IntPtr(p + 0x018)); // 024661535290 0x18 MstCharacterId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCostumeSetId                           = GetInt32(new IntPtr(p + 0x01C)); // 0246615352D0 0x1C MstCostumeSetId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

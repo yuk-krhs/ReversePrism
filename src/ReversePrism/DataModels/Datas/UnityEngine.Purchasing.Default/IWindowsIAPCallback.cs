@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IWindowsIAPCallback
+    public partial class IWindowsIAPCallback : DataModel
     {
 
         public static IWindowsIAPCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IWindowsIAPCallback();
+            var value   = new IWindowsIAPCallback() { Pointer= p0 };
 
 
             return value;

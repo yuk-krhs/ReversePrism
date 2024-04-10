@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStartSpecialLessonReply
+    public partial class IStartSpecialLessonReply : DataModel
     {
 
         public static IStartSpecialLessonReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStartSpecialLessonReply();
+            var value   = new IStartSpecialLessonReply() { Pointer= p0 };
 
 
             return value;

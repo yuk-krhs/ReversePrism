@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Volume                                   000186666050 ModelPrimitiveType float float float Single
     // 018 CueName                                  0001866722E0 ModelPrimitiveType string string string String
     // 020 BackUpVolume                             000186666050 ModelPrimitiveType float float float Single
-    public partial class CueVolumePlayableBehaviour
+    public partial class CueVolumePlayableBehaviour : DataModel
     {
         public float                                    Volume                                  { get; set; }
         public string                                   CueName                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CueVolumePlayableBehaviour();
+            var value   = new CueVolumePlayableBehaviour() { Pointer= p0 };
 
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 0270D4B1B040 0x10 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0270D4B1B060 0x18 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.BackUpVolume                              = GetSingle(new IntPtr(p + 0x020)); // 0270D4B1B080 0x20 BackUpVolume                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 024664B855D8 0x10 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 024664B855F8 0x18 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.BackUpVolume                              = GetSingle(new IntPtr(p + 0x020)); // 024664B85618 0x20 BackUpVolume                ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

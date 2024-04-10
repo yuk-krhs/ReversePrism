@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 048 Enc                                      00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer
     // 050 Encoder                                  00018672CFA0 ModelClassType EncoderNLS EncoderNLS EncoderNLS Pointer
     // 058 FallbackBuffer                           00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer
-    public partial class EncodingByteBuffer
+    public partial class EncodingByteBuffer : DataModel
     {
         public int                                      ByteCountResult                         { get; set; }
         public Encoding?                                Enc                                     { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncodingByteBuffer();
+            var value   = new EncodingByteBuffer() { Pointer= p0 };
 
-            value.ByteCountResult                           = GetInt32(new IntPtr(p + 0x040)); // 0270D6B66E28 0x40 ByteCountResult             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Enc                                       = GetObject<Encoding>(new IntPtr(p + 0x048), ReversePrism.DataModels.Encoding.FromPointer); // 0270D6B66E48 0x48 Enc                         ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.Encoder                                   = GetObject<EncoderNLS>(new IntPtr(p + 0x050), ReversePrism.DataModels.EncoderNLS.FromPointer); // 0270D6B66E68 0x50 Encoder                     ( 00018672CFA0 ModelClassType EncoderNLS EncoderNLS EncoderNLS Pointer )
-            value.FallbackBuffer                            = GetObject<EncoderFallbackBuffer>(new IntPtr(p + 0x058), ReversePrism.DataModels.EncoderFallbackBuffer.FromPointer); // 0270D6B66E88 0x58 FallbackBuffer              ( 00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer )
+            value.ByteCountResult                           = GetInt32(new IntPtr(p + 0x040)); // 024666BDEE28 0x40 ByteCountResult             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Enc                                       = GetObject<Encoding>(new IntPtr(p + 0x048), ReversePrism.DataModels.Encoding.FromPointer); // 024666BDEE48 0x48 Enc                         ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
+            value.Encoder                                   = GetObject<EncoderNLS>(new IntPtr(p + 0x050), ReversePrism.DataModels.EncoderNLS.FromPointer); // 024666BDEE68 0x50 Encoder                     ( 00018672CFA0 ModelClassType EncoderNLS EncoderNLS EncoderNLS Pointer )
+            value.FallbackBuffer                            = GetObject<EncoderFallbackBuffer>(new IntPtr(p + 0x058), ReversePrism.DataModels.EncoderFallbackBuffer.FromPointer); // 024666BDEE88 0x58 FallbackBuffer              ( 00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer )
 
             return value;
         }

@@ -119,7 +119,7 @@ namespace ReversePrism.DataModels
     // 000 completedCount                           int IL2CPP_TYPE_I4
     // 000 syncRunning                              bool IL2CPP_TYPE_BOOLEAN
     // 000 result                                   <var> IL2CPP_TYPE_VAR
-    public partial class _CombineLatest
+    public partial class _CombineLatest : DataModel
     {
 
         public static _CombineLatest? FromPointer(IntPtr p0)
@@ -128,7 +128,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _CombineLatest();
+            var value   = new _CombineLatest() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateContentLoading
+    public partial class UpdateContentLoading : DataModel
     {
 
         public static UpdateContentLoading? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateContentLoading();
+            var value   = new UpdateContentLoading() { Pointer= p0 };
 
 
             return value;

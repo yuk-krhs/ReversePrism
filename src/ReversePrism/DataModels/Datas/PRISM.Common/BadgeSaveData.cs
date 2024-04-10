@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 LastDateTimes                            000185B7E4D0 ModelPrimitiveListType long[] long[] List<long> Pointer
-    public partial class BadgeSaveData
+    public partial class BadgeSaveData : DataModel
     {
         public List<long>?                              LastDateTimes                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeSaveData();
+            var value   = new BadgeSaveData() { Pointer= p0 };
 
-            value.LastDateTimes                             = GetInt64List(new IntPtr(p + 0x020)); // 027003A70048 0x20 LastDateTimes               ( 000185B7E4D0 ModelPrimitiveListType long[] long[] List<long> Pointer )
+            value.LastDateTimes                             = GetInt64List(new IntPtr(p + 0x020)); // 0245A3A7AF80 0x20 LastDateTimes               ( 000185B7E4D0 ModelPrimitiveListType long[] long[] List<long> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SizeProperty
+    public partial class SizeProperty : DataModel
     {
 
         public static SizeProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SizeProperty();
+            var value   = new SizeProperty() { Pointer= p0 };
 
 
             return value;

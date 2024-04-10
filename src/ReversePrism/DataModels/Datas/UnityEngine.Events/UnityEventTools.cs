@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityEventTools
+    public partial class UnityEventTools : DataModel
     {
 
         public static UnityEventTools? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityEventTools();
+            var value   = new UnityEventTools() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   Zip<<var>> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class ZipObserver
+    public partial class ZipObserver : DataModel
     {
 
         public static ZipObserver? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ZipObserver();
+            var value   = new ZipObserver() { Pointer= p0 };
 
 
             return value;

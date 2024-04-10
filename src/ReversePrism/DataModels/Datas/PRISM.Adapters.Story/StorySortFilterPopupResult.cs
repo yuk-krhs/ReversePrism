@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SortTargetIndex                          0001865F4260 ModelPrimitiveType int int int Int32
     // 018 <FilterOnIndices>k__BackingField         HashSet`1<int>[] IL2CPP_TYPE_SZARRAY
-    public partial class StorySortFilterPopupResult
+    public partial class StorySortFilterPopupResult : DataModel
     {
         public int                                      SortTargetIndex                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StorySortFilterPopupResult();
+            var value   = new StorySortFilterPopupResult() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0270D67C1390 0x10 SortTargetIndex             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 024666821390 0x10 SortTargetIndex             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

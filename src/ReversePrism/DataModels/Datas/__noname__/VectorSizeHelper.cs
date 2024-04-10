@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _placeholder                             Vector`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 _byte                                    sbyte IL2CPP_TYPE_U1
-    public partial class VectorSizeHelper
+    public partial class VectorSizeHelper : DataModel
     {
 
         public static VectorSizeHelper? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VectorSizeHelper();
+            var value   = new VectorSizeHelper() { Pointer= p0 };
 
 
             return value;

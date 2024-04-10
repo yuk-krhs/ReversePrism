@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 LeaveExceptionFilterInstruction IL2CPP_TYPE_CLASS
-    public partial class LeaveExceptionFilterInstruction
+    public partial class LeaveExceptionFilterInstruction : DataModel
     {
 
         public static LeaveExceptionFilterInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LeaveExceptionFilterInstruction();
+            var value   = new LeaveExceptionFilterInstruction() { Pointer= p0 };
 
 
             return value;

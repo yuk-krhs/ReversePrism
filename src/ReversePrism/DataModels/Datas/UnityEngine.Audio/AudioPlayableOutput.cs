@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Handle                                 000186640DC0 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32
-    public partial class AudioPlayableOutput
+    public partial class AudioPlayableOutput : DataModel
     {
         public PlayableOutputHandle                     M_Handle                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudioPlayableOutput();
+            var value   = new AudioPlayableOutput() { Pointer= p0 };
 
-            value.M_Handle                                  = (PlayableOutputHandle)GetInt32(new IntPtr(p + 0x010)); // 0270021B87D0 0x10 M_Handle                    ( 000186640DC0 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32 )
+            value.M_Handle                                  = (PlayableOutputHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A21B87D0 0x10 M_Handle                    ( 000186640DC0 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   StackableSubject`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 unsubscribeTarget                        IObserver`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class Subscription
+    public partial class Subscription : DataModel
     {
 
         public static Subscription? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Subscription();
+            var value   = new Subscription() { Pointer= p0 };
 
 
             return value;

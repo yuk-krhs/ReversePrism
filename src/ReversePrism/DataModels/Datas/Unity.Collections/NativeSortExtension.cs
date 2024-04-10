@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_IntrosortSizeThreshold                 int IL2CPP_TYPE_I4
-    public partial class NativeSortExtension
+    public partial class NativeSortExtension : DataModel
     {
 
         public static NativeSortExtension? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeSortExtension();
+            var value   = new NativeSortExtension() { Pointer= p0 };
 
 
             return value;

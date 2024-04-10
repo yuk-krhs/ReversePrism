@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 000 outerKeyAwaiter                          Awaiter<<var>> IL2CPP_TYPE_GENERICINST
     // 000 continueNext                             bool IL2CPP_TYPE_BOOLEAN
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _JoinAwaitWithCancellation
+    public partial class _JoinAwaitWithCancellation : DataModel
     {
 
         public static _JoinAwaitWithCancellation? FromPointer(IntPtr p0)
@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _JoinAwaitWithCancellation();
+            var value   = new _JoinAwaitWithCancellation() { Pointer= p0 };
 
 
             return value;

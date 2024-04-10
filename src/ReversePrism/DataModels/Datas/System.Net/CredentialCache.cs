@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CredentialCache
+    public partial class CredentialCache : DataModel
     {
 
         public static CredentialCache? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CredentialCache();
+            var value   = new CredentialCache() { Pointer= p0 };
 
 
             return value;

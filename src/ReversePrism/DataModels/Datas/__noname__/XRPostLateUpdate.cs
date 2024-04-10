@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XRPostLateUpdate
+    public partial class XRPostLateUpdate : DataModel
     {
 
         public static XRPostLateUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRPostLateUpdate();
+            var value   = new XRPostLateUpdate() { Pointer= p0 };
 
 
             return value;

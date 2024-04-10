@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 038 M_ComponentsDefaultState                 000185D1C4A8 ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer
     // 040 M_TempColliders                          000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer
     // 048 M_DefaultStack                           00018653D5C0 ModelClassType VolumeStack VolumeStack VolumeStack Pointer
-    public partial class VolumeManager
+    public partial class VolumeManager : DataModel
     {
         public VolumeStack?                             Stack                                   { get; set; }
         public List<Type>?                              BaseComponentTypeArray                  { get; set; }
@@ -34,14 +34,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolumeManager();
+            var value   = new VolumeManager() { Pointer= p0 };
 
-            value.Stack                                     = GetObject<VolumeStack>(new IntPtr(p + 0x010), ReversePrism.DataModels.VolumeStack.FromPointer); // 0270D92D8C78 0x10 Stack                       ( 00018653D5C0 ModelClassType VolumeStack VolumeStack VolumeStack Pointer )
-            value.BaseComponentTypeArray                    = GetObjectList<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D92D8CB8 0x18 BaseComponentTypeArray      ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.M_Volumes                                 = GetObjectList<Volume>(new IntPtr(p + 0x028), ReversePrism.DataModels.Volume.FromPointer); // 0270D92D8D18 0x28 M_Volumes                   ( 000185D1C1E8 ModelClassListType List`1<Volume> List`1<Volume> List<Volume> Pointer )
-            value.M_ComponentsDefaultState                  = GetObjectList<VolumeComponent>(new IntPtr(p + 0x038), ReversePrism.DataModels.VolumeComponent.FromPointer); // 0270D92D8D58 0x38 M_ComponentsDefaultState    ( 000185D1C4A8 ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer )
-            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x040), ReversePrism.DataModels.Collider.FromPointer); // 0270D92D8D78 0x40 M_TempColliders             ( 000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
-            value.M_DefaultStack                            = GetObject<VolumeStack>(new IntPtr(p + 0x048), ReversePrism.DataModels.VolumeStack.FromPointer); // 0270D92D8D98 0x48 M_DefaultStack              ( 00018653D5C0 ModelClassType VolumeStack VolumeStack VolumeStack Pointer )
+            value.Stack                                     = GetObject<VolumeStack>(new IntPtr(p + 0x010), ReversePrism.DataModels.VolumeStack.FromPointer); // 02466932B160 0x10 Stack                       ( 00018653D5C0 ModelClassType VolumeStack VolumeStack VolumeStack Pointer )
+            value.BaseComponentTypeArray                    = GetObjectList<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 02466932B1A0 0x18 BaseComponentTypeArray      ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.M_Volumes                                 = GetObjectList<Volume>(new IntPtr(p + 0x028), ReversePrism.DataModels.Volume.FromPointer); // 02466932B200 0x28 M_Volumes                   ( 000185D1C1E8 ModelClassListType List`1<Volume> List`1<Volume> List<Volume> Pointer )
+            value.M_ComponentsDefaultState                  = GetObjectList<VolumeComponent>(new IntPtr(p + 0x038), ReversePrism.DataModels.VolumeComponent.FromPointer); // 02466932B240 0x38 M_ComponentsDefaultState    ( 000185D1C4A8 ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer )
+            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x040), ReversePrism.DataModels.Collider.FromPointer); // 02466932B260 0x40 M_TempColliders             ( 000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
+            value.M_DefaultStack                            = GetObject<VolumeStack>(new IntPtr(p + 0x048), ReversePrism.DataModels.VolumeStack.FromPointer); // 02466932B280 0x48 M_DefaultStack              ( 00018653D5C0 ModelClassType VolumeStack VolumeStack VolumeStack Pointer )
 
             return value;
         }

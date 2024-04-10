@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIdolStoryLastCategoryConnector
+    public partial class IIdolStoryLastCategoryConnector : DataModel
     {
 
         public static IIdolStoryLastCategoryConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIdolStoryLastCategoryConnector();
+            var value   = new IIdolStoryLastCategoryConnector() { Pointer= p0 };
 
 
             return value;

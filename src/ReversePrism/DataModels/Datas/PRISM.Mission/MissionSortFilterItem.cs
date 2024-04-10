@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 FilterValue                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class MissionSortFilterItem
+    public partial class MissionSortFilterItem : DataModel
     {
         public int                                      FilterValue                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionSortFilterItem();
+            var value   = new MissionSortFilterItem() { Pointer= p0 };
 
-            value.FilterValue                               = GetInt32(new IntPtr(p + 0x018)); // 0270D55888C8 0x18 FilterValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FilterValue                               = GetInt32(new IntPtr(p + 0x018)); // 0246655F9B58 0x18 FilterValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

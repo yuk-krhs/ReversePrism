@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICommonSequencerContainerForLegacy
+    public partial class ICommonSequencerContainerForLegacy : DataModel
     {
 
         public static ICommonSequencerContainerForLegacy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICommonSequencerContainerForLegacy();
+            var value   = new ICommonSequencerContainerForLegacy() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Attributes                               00018652E890 ModelEnumType ObjectAttributes ObjectAttributes ObjectAttributes Int32
     // 030 SecurityDescriptor                       IntPtr IL2CPP_TYPE_PTR
     // 038 SecurityQualityOfService                 IntPtr IL2CPP_TYPE_PTR
-    public partial class OBJECT_ATTRIBUTES
+    public partial class OBJECT_ATTRIBUTES : DataModel
     {
         public uint                                     Length                                  { get; set; }
         public ObjectAttributes                         Attributes                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OBJECT_ATTRIBUTES();
+            var value   = new OBJECT_ATTRIBUTES() { Pointer= p0 };
 
-            value.Length                                    = GetUInt32(new IntPtr(p + 0x010)); // 0270D692A6B8 0x10 Length                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Attributes                                = (ObjectAttributes)GetInt32(new IntPtr(p + 0x028)); // 0270D692A718 0x28 Attributes                  ( 00018652E890 ModelEnumType ObjectAttributes ObjectAttributes ObjectAttributes Int32 )
+            value.Length                                    = GetUInt32(new IntPtr(p + 0x010)); // 0246669A26B8 0x10 Length                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Attributes                                = (ObjectAttributes)GetInt32(new IntPtr(p + 0x028)); // 0246669A2718 0x28 Attributes                  ( 00018652E890 ModelEnumType ObjectAttributes ObjectAttributes ObjectAttributes Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnDemandRenderingScope
+    public partial class OnDemandRenderingScope : DataModel
     {
 
         public static OnDemandRenderingScope? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnDemandRenderingScope();
+            var value   = new OnDemandRenderingScope() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetExchangeAvailableShinyPartyTokenListArgsTranslator
+    public partial class GetExchangeAvailableShinyPartyTokenListArgsTranslator : DataModel
     {
 
         public static GetExchangeAvailableShinyPartyTokenListArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeAvailableShinyPartyTokenListArgsTranslator();
+            var value   = new GetExchangeAvailableShinyPartyTokenListArgsTranslator() { Pointer= p0 };
 
 
             return value;

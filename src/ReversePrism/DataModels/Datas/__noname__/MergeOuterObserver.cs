@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 sourceDisposable                         SingleAssignmentDisposable IL2CPP_TYPE_CLASS
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 000 isStopped                                bool IL2CPP_TYPE_BOOLEAN
-    public partial class MergeOuterObserver
+    public partial class MergeOuterObserver : DataModel
     {
 
         public static MergeOuterObserver? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MergeOuterObserver();
+            var value   = new MergeOuterObserver() { Pointer= p0 };
 
 
             return value;

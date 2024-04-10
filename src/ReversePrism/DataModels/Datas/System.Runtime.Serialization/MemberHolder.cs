@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 MemberType                               000186693960 ModelClassType Type Type Type Pointer
     // 018 Context                                  0001865B9460 ModelEnumType StreamingContext StreamingContext StreamingContext Int32
-    public partial class MemberHolder
+    public partial class MemberHolder : DataModel
     {
         public Type?                                    MemberType                              { get; set; }
         public StreamingContext                         Context                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberHolder();
+            var value   = new MemberHolder() { Pointer= p0 };
 
-            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027004D48948 0x10 MemberType                  ( 000186693960 ModelClassType Type Type Type Pointer )
-            value.Context                                   = (StreamingContext)GetInt32(new IntPtr(p + 0x018)); // 027004D48968 0x18 Context                     ( 0001865B9460 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
+            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A4D8D078 0x10 MemberType                  ( 000186693960 ModelClassType Type Type Type Pointer )
+            value.Context                                   = (StreamingContext)GetInt32(new IntPtr(p + 0x018)); // 0245A4D8D098 0x18 Context                     ( 0001865B9460 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
 
             return value;
         }

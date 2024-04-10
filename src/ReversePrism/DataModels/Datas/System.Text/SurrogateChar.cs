@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 surHighMax                               char IL2CPP_TYPE_CHAR
     // 000 surLowMin                                char IL2CPP_TYPE_CHAR
     // 000 surLowMax                                char IL2CPP_TYPE_CHAR
-    public partial class SurrogateChar
+    public partial class SurrogateChar : DataModel
     {
 
         public static SurrogateChar? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SurrogateChar();
+            var value   = new SurrogateChar() { Pointer= p0 };
 
 
             return value;

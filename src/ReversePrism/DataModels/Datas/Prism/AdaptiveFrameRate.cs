@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 001 <force60Flag>k__BackingField             bool IL2CPP_TYPE_BOOLEAN
     // 002 <moveFlag>k__BackingField                bool IL2CPP_TYPE_BOOLEAN
     // 003 <pause3DFlag>k__BackingField             bool IL2CPP_TYPE_BOOLEAN
-    public partial class AdaptiveFrameRate
+    public partial class AdaptiveFrameRate : DataModel
     {
 
         public static AdaptiveFrameRate? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveFrameRate();
+            var value   = new AdaptiveFrameRate() { Pointer= p0 };
 
 
             return value;

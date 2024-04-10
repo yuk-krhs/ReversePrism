@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsSingleUnitObservable
+    public partial class AsSingleUnitObservable : DataModel
     {
 
         public static AsSingleUnitObservable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsSingleUnitObservable();
+            var value   = new AsSingleUnitObservable() { Pointer= p0 };
 
 
             return value;

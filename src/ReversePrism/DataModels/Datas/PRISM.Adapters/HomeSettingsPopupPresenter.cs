@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 038 pupupFactory                             IPopupViewFactory`1<IHomeSettingsIdolSelectPopupView> IL2CPP_TYPE_GENERICINST
     // 040 onReloadHome                             Func`1<UniTask> IL2CPP_TYPE_GENERICINST
-    public partial class HomeSettingsPopupPresenter
+    public partial class HomeSettingsPopupPresenter : DataModel
     {
         public IHomeSettingsPopupView?                  View                                    { get; set; }
         public HomeSettingsViewModel?                   ViewModel                               { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSettingsPopupPresenter();
+            var value   = new HomeSettingsPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IHomeSettingsPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IHomeSettingsPopupView.FromPointer); // 0270D63A4028 0x10 View                        ( 00018656BEC0 ModelClassType IHomeSettingsPopupView IHomeSettingsPopupView IHomeSettingsPopupView Pointer )
-            value.ViewModel                                 = GetObject<HomeSettingsViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeSettingsViewModel.FromPointer); // 0270D63A4048 0x18 ViewModel                   ( 0001866D0370 ModelClassType HomeSettingsViewModel HomeSettingsViewModel HomeSettingsViewModel Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D63A4068 0x20 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.IdolSelectDisposables                     = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D63A4088 0x28 IdolSelectDisposables       ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D63A40A8 0x30 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<IHomeSettingsPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IHomeSettingsPopupView.FromPointer); // 024666402F28 0x10 View                        ( 00018656BEC0 ModelClassType IHomeSettingsPopupView IHomeSettingsPopupView IHomeSettingsPopupView Pointer )
+            value.ViewModel                                 = GetObject<HomeSettingsViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeSettingsViewModel.FromPointer); // 024666402F48 0x18 ViewModel                   ( 0001866D0370 ModelClassType HomeSettingsViewModel HomeSettingsViewModel HomeSettingsViewModel Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666402F68 0x20 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.IdolSelectDisposables                     = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666402F88 0x28 IdolSelectDisposables       ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024666402FA8 0x30 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

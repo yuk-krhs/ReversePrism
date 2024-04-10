@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaRarityRateStatus
+    public partial class IGashaRarityRateStatus : DataModel
     {
 
         public static IGashaRarityRateStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaRarityRateStatus();
+            var value   = new IGashaRarityRateStatus() { Pointer= p0 };
 
 
             return value;

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 040 Downloader                               00018666DEB0 ModelClassType ResourceDownloader ResourceDownloader ResourceDownloader Pointer
     // 048 PermanentData                            0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer
     // 050 UserSaveData                             0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer
-    public partial class Global
+    public partial class Global : DataModel
     {
         public bool                                     Initialized                             { get; set; }
         public CancellationTokenSource?                 CancelSource                            { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Global();
+            var value   = new Global() { Pointer= p0 };
 
-            value.Initialized                               = GetBool(new IntPtr(p + 0x010)); // 027003C77870 0x10 Initialized                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CancelSource                              = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 027003C77890 0x18 CancelSource                ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Subscribes                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 027003C778B0 0x20 Subscribes                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Core                                      = GetObject<LimelightCore>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimelightCore.FromPointer); // 027003C778D0 0x28 Core                        ( 00018652BD10 ModelClassType LimelightCore LimelightCore LimelightCore Pointer )
-            value.SaveDataWasBroken                         = GetBool(new IntPtr(p + 0x030)); // 027003C778F0 0x30 SaveDataWasBroken           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PermanentDataWasBroken                    = GetBool(new IntPtr(p + 0x031)); // 027003C77910 0x31 PermanentDataWasBroken      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Resources                                 = GetObject<ResourceLoader>(new IntPtr(p + 0x038), ReversePrism.DataModels.ResourceLoader.FromPointer); // 027003C77950 0x38 Resources                   ( 00018666F230 ModelClassType ResourceLoader ResourceLoader ResourceLoader Pointer )
-            value.Downloader                                = GetObject<ResourceDownloader>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResourceDownloader.FromPointer); // 027003C77970 0x40 Downloader                  ( 00018666DEB0 ModelClassType ResourceDownloader ResourceDownloader ResourceDownloader Pointer )
-            value.PermanentData                             = GetObject<SavedataDB>(new IntPtr(p + 0x048), ReversePrism.DataModels.SavedataDB.FromPointer); // 027003C77990 0x48 PermanentData               ( 0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
-            value.UserSaveData                              = GetObject<SavedataDB>(new IntPtr(p + 0x050), ReversePrism.DataModels.SavedataDB.FromPointer); // 027003C779B0 0x50 UserSaveData                ( 0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x010)); // 0245A3C77870 0x10 Initialized                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CancelSource                              = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A3C77890 0x18 CancelSource                ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Subscribes                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A3C778B0 0x20 Subscribes                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Core                                      = GetObject<LimelightCore>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimelightCore.FromPointer); // 0245A3C778D0 0x28 Core                        ( 00018652BD10 ModelClassType LimelightCore LimelightCore LimelightCore Pointer )
+            value.SaveDataWasBroken                         = GetBool(new IntPtr(p + 0x030)); // 0245A3C778F0 0x30 SaveDataWasBroken           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PermanentDataWasBroken                    = GetBool(new IntPtr(p + 0x031)); // 0245A3C77910 0x31 PermanentDataWasBroken      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Resources                                 = GetObject<ResourceLoader>(new IntPtr(p + 0x038), ReversePrism.DataModels.ResourceLoader.FromPointer); // 0245A3C77950 0x38 Resources                   ( 00018666F230 ModelClassType ResourceLoader ResourceLoader ResourceLoader Pointer )
+            value.Downloader                                = GetObject<ResourceDownloader>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResourceDownloader.FromPointer); // 0245A3C77970 0x40 Downloader                  ( 00018666DEB0 ModelClassType ResourceDownloader ResourceDownloader ResourceDownloader Pointer )
+            value.PermanentData                             = GetObject<SavedataDB>(new IntPtr(p + 0x048), ReversePrism.DataModels.SavedataDB.FromPointer); // 0245A3C77990 0x48 PermanentData               ( 0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
+            value.UserSaveData                              = GetObject<SavedataDB>(new IntPtr(p + 0x050), ReversePrism.DataModels.SavedataDB.FromPointer); // 0245A3C779B0 0x50 UserSaveData                ( 0001866BF960 ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 RootDepth                                0001865F2F90 ModelPrimitiveType int int int Int32
     // 01C CurDepth                                 0001865F2F90 ModelPrimitiveType int int int Int32
     // 020 IsMatch                                  000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class AxisElement
+    public partial class AxisElement : DataModel
     {
         public DoubleLinkAxis?                          CurNode                                 { get; set; }
         public int                                      RootDepth                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AxisElement();
+            var value   = new AxisElement() { Pointer= p0 };
 
-            value.CurNode                                   = GetObject<DoubleLinkAxis>(new IntPtr(p + 0x010), ReversePrism.DataModels.DoubleLinkAxis.FromPointer); // 0270D74D3FB8 0x10 CurNode                     ( 0001866ED960 ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer )
-            value.RootDepth                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D74D3FD8 0x18 RootDepth                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CurDepth                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D74D3FF8 0x1C CurDepth                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.IsMatch                                   = GetBool(new IntPtr(p + 0x020)); // 0270D74D4018 0x20 IsMatch                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.CurNode                                   = GetObject<DoubleLinkAxis>(new IntPtr(p + 0x010), ReversePrism.DataModels.DoubleLinkAxis.FromPointer); // 02466753BFB8 0x10 CurNode                     ( 0001866ED960 ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer )
+            value.RootDepth                                 = GetInt32(new IntPtr(p + 0x018)); // 02466753BFD8 0x18 RootDepth                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CurDepth                                  = GetInt32(new IntPtr(p + 0x01C)); // 02466753BFF8 0x1C CurDepth                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.IsMatch                                   = GetBool(new IntPtr(p + 0x020)); // 02466753C018 0x20 IsMatch                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

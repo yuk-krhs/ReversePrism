@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Comparer                                 IEqualityComparer`1<string> IL2CPP_TYPE_GENERICINST
     // 018 _dictionary                              Dictionary`2<string, JToken> IL2CPP_TYPE_GENERICINST
-    public partial class JPropertyKeyedCollection
+    public partial class JPropertyKeyedCollection : DataModel
     {
 
         public static JPropertyKeyedCollection? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JPropertyKeyedCollection();
+            var value   = new JPropertyKeyedCollection() { Pointer= p0 };
 
 
             return value;

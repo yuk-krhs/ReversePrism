@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultShadowDistance                  0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptiveShadowDistance
+    public partial class AdaptiveShadowDistance : DataModel
     {
         public float                                    M_DefaultShadowDistance                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveShadowDistance();
+            var value   = new AdaptiveShadowDistance() { Pointer= p0 };
 
-            value.M_DefaultShadowDistance                   = GetSingle(new IntPtr(p + 0x040)); // 0270DB689B78 0x40 M_DefaultShadowDistance     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DefaultShadowDistance                   = GetSingle(new IntPtr(p + 0x040)); // 02466B715E38 0x40 M_DefaultShadowDistance     ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

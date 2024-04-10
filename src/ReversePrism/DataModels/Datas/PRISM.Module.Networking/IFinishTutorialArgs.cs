@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFinishTutorialArgs
+    public partial class IFinishTutorialArgs : DataModel
     {
 
         public static IFinishTutorialArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFinishTutorialArgs();
+            var value   = new IFinishTutorialArgs() { Pointer= p0 };
 
 
             return value;

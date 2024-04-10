@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 IsAnimatorMotion                         0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class Motion
+    public partial class Motion : DataModel
     {
         public bool                                     IsAnimatorMotion                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Motion();
+            var value   = new Motion() { Pointer= p0 };
 
-            value.IsAnimatorMotion                          = GetBool(new IntPtr(p + 0x018)); // 027006942B40 0x18 IsAnimatorMotion            ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsAnimatorMotion                          = GetBool(new IntPtr(p + 0x018)); // 0245A68F5250 0x18 IsAnimatorMotion            ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

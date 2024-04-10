@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstMedalGashaId                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 ExecCountFieldNumber                     int IL2CPP_TYPE_I4
     // 01C ExecCount                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DrawMedalGashaArgs
+    public partial class DrawMedalGashaArgs : DataModel
     {
         public int                                      MstMedalGashaId                         { get; set; }
         public int                                      ExecCount                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawMedalGashaArgs();
+            var value   = new DrawMedalGashaArgs() { Pointer= p0 };
 
-            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D2287B28 0x18 MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExecCount                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270D2287B68 0x1C ExecCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x018)); // 0246621FFA78 0x18 MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExecCount                                 = GetInt32(new IntPtr(p + 0x01C)); // 0246621FFAB8 0x1C ExecCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

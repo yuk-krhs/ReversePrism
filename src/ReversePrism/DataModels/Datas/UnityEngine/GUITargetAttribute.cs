@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DisplayMask                              0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class GUITargetAttribute
+    public partial class GUITargetAttribute : DataModel
     {
         public int                                      DisplayMask                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GUITargetAttribute();
+            var value   = new GUITargetAttribute() { Pointer= p0 };
 
-            value.DisplayMask                               = GetInt32(new IntPtr(p + 0x010)); // 0270021DCD30 0x10 DisplayMask                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.DisplayMask                               = GetInt32(new IntPtr(p + 0x010)); // 0245A21DCD30 0x10 DisplayMask                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 040 NormalMantissaBits                       000186697450 ModelPrimitiveType ushort ushort ushort UInt16
     // 042 DenormalMantissaBits                     000186697450 ModelPrimitiveType ushort ushort ushort UInt16
     // 044 ExponentBits                             000186697450 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class FloatingPointInfo
+    public partial class FloatingPointInfo : DataModel
     {
         public FloatingPointInfo                        Single                                  { get; set; }
         public ulong                                    ZeroBits                                { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FloatingPointInfo();
+            var value   = new FloatingPointInfo() { Pointer= p0 };
 
-            value.Single                                    = (FloatingPointInfo)GetInt32(new IntPtr(p + 0x038)); // 0270DAB1CBB0 0x38 Single                      ( 000186704B60 ModelEnumType FloatingPointInfo FloatingPointInfo FloatingPointInfo Int32 )
-            value.ZeroBits                                  = GetUInt64(new IntPtr(p + 0x010)); // 0270DAB1CBD0 0x10 ZeroBits                    ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.InfinityBits                              = GetUInt64(new IntPtr(p + 0x018)); // 0270DAB1CBF0 0x18 InfinityBits                ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.NormalMantissaMask                        = GetUInt64(new IntPtr(p + 0x020)); // 0270DAB1CC10 0x20 NormalMantissaMask          ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.DenormalMantissaMask                      = GetUInt64(new IntPtr(p + 0x028)); // 0270DAB1CC30 0x28 DenormalMantissaMask        ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.MinBinaryExponent                         = GetInt32(new IntPtr(p + 0x030)); // 0270DAB1CC50 0x30 MinBinaryExponent           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MaxBinaryExponent                         = GetInt32(new IntPtr(p + 0x034)); // 0270DAB1CC70 0x34 MaxBinaryExponent           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExponentBias                              = GetInt32(new IntPtr(p + 0x038)); // 0270DAB1CC90 0x38 ExponentBias                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OverflowDecimalExponent                   = GetInt32(new IntPtr(p + 0x03C)); // 0270DAB1CCB0 0x3C OverflowDecimalExponent     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.NormalMantissaBits                        = GetUInt16(new IntPtr(p + 0x040)); // 0270DAB1CCD0 0x40 NormalMantissaBits          ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.DenormalMantissaBits                      = GetUInt16(new IntPtr(p + 0x042)); // 0270DAB1CCF0 0x42 DenormalMantissaBits        ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.ExponentBits                              = GetUInt16(new IntPtr(p + 0x044)); // 0270DAB1CD10 0x44 ExponentBits                ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Single                                    = (FloatingPointInfo)GetInt32(new IntPtr(p + 0x038)); // 02466AB84BB0 0x38 Single                      ( 000186704B60 ModelEnumType FloatingPointInfo FloatingPointInfo FloatingPointInfo Int32 )
+            value.ZeroBits                                  = GetUInt64(new IntPtr(p + 0x010)); // 02466AB84BD0 0x10 ZeroBits                    ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.InfinityBits                              = GetUInt64(new IntPtr(p + 0x018)); // 02466AB84BF0 0x18 InfinityBits                ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.NormalMantissaMask                        = GetUInt64(new IntPtr(p + 0x020)); // 02466AB84C10 0x20 NormalMantissaMask          ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.DenormalMantissaMask                      = GetUInt64(new IntPtr(p + 0x028)); // 02466AB84C30 0x28 DenormalMantissaMask        ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.MinBinaryExponent                         = GetInt32(new IntPtr(p + 0x030)); // 02466AB84C50 0x30 MinBinaryExponent           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MaxBinaryExponent                         = GetInt32(new IntPtr(p + 0x034)); // 02466AB84C70 0x34 MaxBinaryExponent           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ExponentBias                              = GetInt32(new IntPtr(p + 0x038)); // 02466AB84C90 0x38 ExponentBias                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.OverflowDecimalExponent                   = GetInt32(new IntPtr(p + 0x03C)); // 02466AB84CB0 0x3C OverflowDecimalExponent     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.NormalMantissaBits                        = GetUInt16(new IntPtr(p + 0x040)); // 02466AB84CD0 0x40 NormalMantissaBits          ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.DenormalMantissaBits                      = GetUInt16(new IntPtr(p + 0x042)); // 02466AB84CF0 0x42 DenormalMantissaBits        ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.ExponentBits                              = GetUInt16(new IntPtr(p + 0x044)); // 02466AB84D10 0x44 ExponentBits                ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

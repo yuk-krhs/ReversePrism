@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 080 ListMap                                  000186539E00 ModelClassType ListMap ListMap ListMap Pointer
-    public partial class XmlTypeMapMemberFlatList
+    public partial class XmlTypeMapMemberFlatList : DataModel
     {
         public ListMap?                                 ListMap                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTypeMapMemberFlatList();
+            var value   = new XmlTypeMapMemberFlatList() { Pointer= p0 };
 
-            value.ListMap                                   = GetObject<ListMap>(new IntPtr(p + 0x080), ReversePrism.DataModels.ListMap.FromPointer); // 0270D74D1F60 0x80 ListMap                     ( 000186539E00 ModelClassType ListMap ListMap ListMap Pointer )
+            value.ListMap                                   = GetObject<ListMap>(new IntPtr(p + 0x080), ReversePrism.DataModels.ListMap.FromPointer); // 024667539F60 0x80 ListMap                     ( 000186539E00 ModelClassType ListMap ListMap ListMap Pointer )
 
             return value;
         }

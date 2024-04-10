@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 040 _CreateDate                              000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 IsNewFieldNumber                         int IL2CPP_TYPE_I4
     // 048 IsNew                                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DirectMessageStatus
+    public partial class DirectMessageStatus : DataModel
     {
         public DateTime                                 CreateDate                              { get; set; }
         public string                                   DirectMessageId                         { get; set; }
@@ -36,14 +36,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectMessageStatus();
+            var value   = new DirectMessageStatus() { Pointer= p0 };
 
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D0F49F00 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.DirectMessageId                           = GetString(new IntPtr(p + 0x028)); // 0270D0F49F80 0x28 DirectMessageId             ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x030)); // 0270D0F49FC0 0x30 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Body                                      = GetString(new IntPtr(p + 0x038)); // 0270D0F4A000 0x38 Body                        ( 000186671910 ModelPrimitiveType string string string String )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F4A040 0x40 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x048)); // 0270D0F4A080 0x48 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 024660EE1930 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.DirectMessageId                           = GetString(new IntPtr(p + 0x028)); // 024660EE19B0 0x28 DirectMessageId             ( 000186671910 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x030)); // 024660EE19F0 0x30 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Body                                      = GetString(new IntPtr(p + 0x038)); // 024660EE1A30 0x38 Body                        ( 000186671910 ModelPrimitiveType string string string String )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024660EE1A70 0x40 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x048)); // 024660EE1AB0 0x48 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.CreateDate                    = ToDateTime(value._CreateDate);
 
             return value;

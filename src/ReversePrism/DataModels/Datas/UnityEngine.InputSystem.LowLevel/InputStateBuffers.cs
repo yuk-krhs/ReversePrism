@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 008 s_NoiseMaskBuffer                        IntPtr IL2CPP_TYPE_PTR
     // 010 s_ResetMaskBuffer                        IntPtr IL2CPP_TYPE_PTR
     // 018 S_CurrentBuffers                         00018663A6A0 ModelEnumType DoubleBuffers DoubleBuffers DoubleBuffers Int32
-    public partial class InputStateBuffers
+    public partial class InputStateBuffers : DataModel
     {
         public uint                                     SizePerBuffer                           { get; set; }
         public uint                                     TotalSize                               { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputStateBuffers();
+            var value   = new InputStateBuffers() { Pointer= p0 };
 
-            value.SizePerBuffer                             = GetUInt32(new IntPtr(p + 0x010)); // 02700334C430 0x10 SizePerBuffer               ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.TotalSize                                 = GetUInt32(new IntPtr(p + 0x014)); // 02700334C450 0x14 TotalSize                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_PlayerStateBuffers                      = (DoubleBuffers)GetInt32(new IntPtr(p + 0x038)); // 02700334C4F0 0x38 M_PlayerStateBuffers        ( 00018663A430 ModelEnumType DoubleBuffers DoubleBuffers DoubleBuffers Int32 )
-            value.S_CurrentBuffers                          = (DoubleBuffers)GetInt32(new IntPtr(p + 0x018)); // 02700334C570 0x18 S_CurrentBuffers            ( 00018663A6A0 ModelEnumType DoubleBuffers DoubleBuffers DoubleBuffers Int32 )
+            value.SizePerBuffer                             = GetUInt32(new IntPtr(p + 0x010)); // 0245A334C430 0x10 SizePerBuffer               ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.TotalSize                                 = GetUInt32(new IntPtr(p + 0x014)); // 0245A334C450 0x14 TotalSize                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_PlayerStateBuffers                      = (DoubleBuffers)GetInt32(new IntPtr(p + 0x038)); // 0245A334C4F0 0x38 M_PlayerStateBuffers        ( 00018663A430 ModelEnumType DoubleBuffers DoubleBuffers DoubleBuffers Int32 )
+            value.S_CurrentBuffers                          = (DoubleBuffers)GetInt32(new IntPtr(p + 0x018)); // 0245A334C570 0x18 S_CurrentBuffers            ( 00018663A6A0 ModelEnumType DoubleBuffers DoubleBuffers DoubleBuffers Int32 )
 
             return value;
         }

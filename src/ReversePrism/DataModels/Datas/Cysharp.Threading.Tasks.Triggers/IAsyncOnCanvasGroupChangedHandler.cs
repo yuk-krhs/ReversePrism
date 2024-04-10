@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnCanvasGroupChangedHandler
+    public partial class IAsyncOnCanvasGroupChangedHandler : DataModel
     {
 
         public static IAsyncOnCanvasGroupChangedHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnCanvasGroupChangedHandler();
+            var value   = new IAsyncOnCanvasGroupChangedHandler() { Pointer= p0 };
 
 
             return value;

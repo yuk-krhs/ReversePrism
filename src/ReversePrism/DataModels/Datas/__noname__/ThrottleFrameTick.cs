@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   ThrottleFrame<<var>> IL2CPP_TYPE_GENERICINST
     // 000 currentid                                ulong IL2CPP_TYPE_U8
-    public partial class ThrottleFrameTick
+    public partial class ThrottleFrameTick : DataModel
     {
 
         public static ThrottleFrameTick? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThrottleFrameTick();
+            var value   = new ThrottleFrameTick() { Pointer= p0 };
 
 
             return value;

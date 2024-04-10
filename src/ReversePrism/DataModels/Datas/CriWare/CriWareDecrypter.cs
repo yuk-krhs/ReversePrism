@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 temporalStorage                          ulong IL2CPP_TYPE_U8
-    public partial class CriWareDecrypter
+    public partial class CriWareDecrypter : DataModel
     {
 
         public static CriWareDecrypter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriWareDecrypter();
+            var value   = new CriWareDecrypter() { Pointer= p0 };
 
 
             return value;

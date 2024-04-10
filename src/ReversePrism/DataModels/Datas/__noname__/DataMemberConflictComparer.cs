@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Singleton                                DataMemberConflictComparer IL2CPP_TYPE_CLASS
-    public partial class DataMemberConflictComparer
+    public partial class DataMemberConflictComparer : DataModel
     {
 
         public static DataMemberConflictComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataMemberConflictComparer();
+            var value   = new DataMemberConflictComparer() { Pointer= p0 };
 
 
             return value;

@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 070 ExtenderProviderPropertiesKey            0001865DCA80 ModelEnumType Guid Guid Guid Int32
     // 080 SkipInterfaceAttributeList               000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer
     // 088 _internalSyncObject                      <object> IL2CPP_TYPE_OBJECT
-    public partial class ReflectTypeDescriptionProvider
+    public partial class ReflectTypeDescriptionProvider : DataModel
     {
         public Hashtable?                               TypeData                                { get; set; }
         public Hashtable?                               IntrinsicTypeConverters                 { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectTypeDescriptionProvider();
+            var value   = new ReflectTypeDescriptionProvider() { Pointer= p0 };
 
-            value.TypeData                                  = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027C80 0x20 TypeData                    ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.IntrinsicTypeConverters                   = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027CE0 0x10 IntrinsicTypeConverters     ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.PropertyCache                             = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027D60 0x30 PropertyCache               ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.EventCache                                = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027D80 0x38 EventCache                  ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.AttributeCache                            = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027DA0 0x40 AttributeCache              ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ExtendedPropertyCache                     = GetObject<Hashtable>(new IntPtr(p + 0x048), ReversePrism.DataModels.Hashtable.FromPointer); // 027006027DC0 0x48 ExtendedPropertyCache       ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ExtenderProviderKey                       = (Guid)GetInt32(new IntPtr(p + 0x050)); // 027006027DE0 0x50 ExtenderProviderKey         ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
-            value.ExtenderPropertiesKey                     = (Guid)GetInt32(new IntPtr(p + 0x060)); // 027006027E00 0x60 ExtenderPropertiesKey       ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
-            value.ExtenderProviderPropertiesKey             = (Guid)GetInt32(new IntPtr(p + 0x070)); // 027006027E20 0x70 ExtenderProviderPropertiesKey ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
-            value.SkipInterfaceAttributeList                = GetObjectList<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 027006027E40 0x80 SkipInterfaceAttributeList  ( 000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.TypeData                                  = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A60019E8 0x20 TypeData                    ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.IntrinsicTypeConverters                   = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6001A48 0x10 IntrinsicTypeConverters     ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.PropertyCache                             = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6001AC8 0x30 PropertyCache               ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.EventCache                                = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6001AE8 0x38 EventCache                  ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.AttributeCache                            = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6001B08 0x40 AttributeCache              ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ExtendedPropertyCache                     = GetObject<Hashtable>(new IntPtr(p + 0x048), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6001B28 0x48 ExtendedPropertyCache       ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ExtenderProviderKey                       = (Guid)GetInt32(new IntPtr(p + 0x050)); // 0245A6001B48 0x50 ExtenderProviderKey         ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
+            value.ExtenderPropertiesKey                     = (Guid)GetInt32(new IntPtr(p + 0x060)); // 0245A6001B68 0x60 ExtenderPropertiesKey       ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
+            value.ExtenderProviderPropertiesKey             = (Guid)GetInt32(new IntPtr(p + 0x070)); // 0245A6001B88 0x70 ExtenderProviderPropertiesKey ( 0001865DCA80 ModelEnumType Guid Guid Guid Int32 )
+            value.SkipInterfaceAttributeList                = GetObjectList<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 0245A6001BA8 0x80 SkipInterfaceAttributeList  ( 000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer )
 
             return value;
         }

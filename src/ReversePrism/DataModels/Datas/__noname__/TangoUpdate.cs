@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TangoUpdate
+    public partial class TangoUpdate : DataModel
     {
 
         public static TangoUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TangoUpdate();
+            var value   = new TangoUpdate() { Pointer= p0 };
 
 
             return value;

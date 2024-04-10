@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <DefaultSeed>k__BackingField             ulong IL2CPP_TYPE_U8
-    public partial class Marvin
+    public partial class Marvin : DataModel
     {
 
         public static Marvin? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Marvin();
+            var value   = new Marvin() { Pointer= p0 };
 
 
             return value;

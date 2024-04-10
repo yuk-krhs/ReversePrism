@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 KeywordNames                             string[] IL2CPP_TYPE_SZARRAY
     // 008 EnumNames                                string[] IL2CPP_TYPE_SZARRAY
     // 010 Keywords                                 000185CA37A8 ModelEnumListType ShaderKeyword[] ShaderKeyword[] List<ShaderKeyword> Pointer
-    public partial class MaterialQualityUtilities
+    public partial class MaterialQualityUtilities : DataModel
     {
         public List<ShaderKeyword>?                     Keywords                                { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaterialQualityUtilities();
+            var value   = new MaterialQualityUtilities() { Pointer= p0 };
 
-            value.Keywords                                  = GetEnumList<ShaderKeyword>(new IntPtr(p + 0x010)); // 0270055787B8 0x10 Keywords                    ( 000185CA37A8 ModelEnumListType ShaderKeyword[] ShaderKeyword[] List<ShaderKeyword> Pointer )
+            value.Keywords                                  = GetEnumList<ShaderKeyword>(new IntPtr(p + 0x010)); // 0245A52F1CE0 0x10 Keywords                    ( 000185CA37A8 ModelEnumListType ShaderKeyword[] ShaderKeyword[] List<ShaderKeyword> Pointer )
 
             return value;
         }

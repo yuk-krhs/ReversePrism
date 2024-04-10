@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 EventSourceName                          000186671910 ModelPrimitiveType string string string String
     // 018 DiagnosticTrace                          00018674B5F0 ModelClassType EtwDiagnosticTrace EtwDiagnosticTrace EtwDiagnosticTrace Pointer
-    public partial class ExceptionTrace
+    public partial class ExceptionTrace : DataModel
     {
         public string                                   EventSourceName                         { get; set; }
         public EtwDiagnosticTrace?                      DiagnosticTrace                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExceptionTrace();
+            var value   = new ExceptionTrace() { Pointer= p0 };
 
-            value.EventSourceName                           = GetString(new IntPtr(p + 0x010)); // 0270D7D74A28 0x10 EventSourceName             ( 000186671910 ModelPrimitiveType string string string String )
-            value.DiagnosticTrace                           = GetObject<EtwDiagnosticTrace>(new IntPtr(p + 0x018), ReversePrism.DataModels.EtwDiagnosticTrace.FromPointer); // 0270D7D74A48 0x18 DiagnosticTrace             ( 00018674B5F0 ModelClassType EtwDiagnosticTrace EtwDiagnosticTrace EtwDiagnosticTrace Pointer )
+            value.EventSourceName                           = GetString(new IntPtr(p + 0x010)); // 024667DDCA28 0x10 EventSourceName             ( 000186671910 ModelPrimitiveType string string string String )
+            value.DiagnosticTrace                           = GetObject<EtwDiagnosticTrace>(new IntPtr(p + 0x018), ReversePrism.DataModels.EtwDiagnosticTrace.FromPointer); // 024667DDCA48 0x18 DiagnosticTrace             ( 00018674B5F0 ModelClassType EtwDiagnosticTrace EtwDiagnosticTrace EtwDiagnosticTrace Pointer )
 
             return value;
         }

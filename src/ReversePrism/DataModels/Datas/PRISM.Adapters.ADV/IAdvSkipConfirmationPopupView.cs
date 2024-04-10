@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAdvSkipConfirmationPopupView
+    public partial class IAdvSkipConfirmationPopupView : DataModel
     {
 
         public static IAdvSkipConfirmationPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAdvSkipConfirmationPopupView();
+            var value   = new IAdvSkipConfirmationPopupView() { Pointer= p0 };
 
 
             return value;

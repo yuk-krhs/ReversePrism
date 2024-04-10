@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Locator                                  00018661B960 ModelClassType IResourceLocator IResourceLocator IResourceLocator Pointer
     // 030 FallbackRepo                             00018658CB90 ModelClassType AssetRepository AssetRepository AssetRepository Pointer
     // 038 onMissingBundleDetected                  Action`1<ulong> IL2CPP_TYPE_GENERICINST
-    public partial class AssetRepository
+    public partial class AssetRepository : DataModel
     {
         public List<BundleSlot>?                        Slots                                   { get; set; }
         public int                                      IndexPeek                               { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetRepository();
+            var value   = new AssetRepository() { Pointer= p0 };
 
-            value.Slots                                     = GetEnumList<BundleSlot>(new IntPtr(p + 0x010)); // 027003E11F38 0x10 Slots                       ( 000185CB63D8 ModelEnumListType BundleSlot[] BundleSlot[] List<BundleSlot> Pointer )
-            value.IndexPeek                                 = GetInt32(new IntPtr(p + 0x018)); // 027003E11F58 0x18 IndexPeek                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Locator                                   = GetObject<IResourceLocator>(new IntPtr(p + 0x028), ReversePrism.DataModels.IResourceLocator.FromPointer); // 027003E11F98 0x28 Locator                     ( 00018661B960 ModelClassType IResourceLocator IResourceLocator IResourceLocator Pointer )
-            value.FallbackRepo                              = GetObject<AssetRepository>(new IntPtr(p + 0x030), ReversePrism.DataModels.AssetRepository.FromPointer); // 027003E11FB8 0x30 FallbackRepo                ( 00018658CB90 ModelClassType AssetRepository AssetRepository AssetRepository Pointer )
+            value.Slots                                     = GetEnumList<BundleSlot>(new IntPtr(p + 0x010)); // 0245A3E11F38 0x10 Slots                       ( 000185CB63D8 ModelEnumListType BundleSlot[] BundleSlot[] List<BundleSlot> Pointer )
+            value.IndexPeek                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A3E11F58 0x18 IndexPeek                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Locator                                   = GetObject<IResourceLocator>(new IntPtr(p + 0x028), ReversePrism.DataModels.IResourceLocator.FromPointer); // 0245A3E11F98 0x28 Locator                     ( 00018661B960 ModelClassType IResourceLocator IResourceLocator IResourceLocator Pointer )
+            value.FallbackRepo                              = GetObject<AssetRepository>(new IntPtr(p + 0x030), ReversePrism.DataModels.AssetRepository.FromPointer); // 0245A3E11FB8 0x30 FallbackRepo                ( 00018658CB90 ModelClassType AssetRepository AssetRepository AssetRepository Pointer )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 030 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 038 ViewModel                                00018657D540 ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer
-    public partial class ChallengeTourResultPresenter
+    public partial class ChallengeTourResultPresenter : DataModel
     {
         public ChallengeTourResultArgument?             Argument                                { get; set; }
         public IChallengeTourResultView?                View                                    { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourResultPresenter();
+            var value   = new ChallengeTourResultPresenter() { Pointer= p0 };
 
-            value.Argument                                  = GetObject<ChallengeTourResultArgument>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChallengeTourResultArgument.FromPointer); // 0270D64B0C60 0x10 Argument                    ( 000186579EE0 ModelClassType ChallengeTourResultArgument ChallengeTourResultArgument ChallengeTourResultArgument Pointer )
-            value.View                                      = GetObject<IChallengeTourResultView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IChallengeTourResultView.FromPointer); // 0270D64B0C80 0x18 View                        ( 000186724E40 ModelClassType IChallengeTourResultView IChallengeTourResultView IChallengeTourResultView Pointer )
-            value.OverlayManager                            = GetObject<OverlayManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.OverlayManager.FromPointer); // 0270D64B0CA0 0x20 OverlayManager              ( 0001866FECB0 ModelClassType OverlayManager OverlayManager OverlayManager Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D64B0CC0 0x28 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D64B0CE0 0x30 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.ViewModel                                 = GetObject<ChallengeTourResultViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourResultViewModel.FromPointer); // 0270D64B0D00 0x38 ViewModel                   ( 00018657D540 ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer )
+            value.Argument                                  = GetObject<ChallengeTourResultArgument>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChallengeTourResultArgument.FromPointer); // 0246665174D0 0x10 Argument                    ( 000186579EE0 ModelClassType ChallengeTourResultArgument ChallengeTourResultArgument ChallengeTourResultArgument Pointer )
+            value.View                                      = GetObject<IChallengeTourResultView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IChallengeTourResultView.FromPointer); // 0246665174F0 0x18 View                        ( 000186724E40 ModelClassType IChallengeTourResultView IChallengeTourResultView IChallengeTourResultView Pointer )
+            value.OverlayManager                            = GetObject<OverlayManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.OverlayManager.FromPointer); // 024666517510 0x20 OverlayManager              ( 0001866FECB0 ModelClassType OverlayManager OverlayManager OverlayManager Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024666517530 0x28 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666517550 0x30 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.ViewModel                                 = GetObject<ChallengeTourResultViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourResultViewModel.FromPointer); // 024666517570 0x38 ViewModel                   ( 00018657D540 ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer )
 
             return value;
         }

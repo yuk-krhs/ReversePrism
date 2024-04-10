@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 030 onStateUpdate                            Subject`1<OnStateInfo> IL2CPP_TYPE_GENERICINST
     // 038 onStateMachineEnter                      Subject`1<OnStateMachineInfo> IL2CPP_TYPE_GENERICINST
     // 040 onStateMachineExit                       Subject`1<OnStateMachineInfo> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableStateMachineTrigger
+    public partial class ObservableStateMachineTrigger : DataModel
     {
 
         public static ObservableStateMachineTrigger? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableStateMachineTrigger();
+            var value   = new ObservableStateMachineTrigger() { Pointer= p0 };
 
 
             return value;

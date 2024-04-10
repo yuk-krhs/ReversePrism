@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 000 MIDSIZE_STARTOFFSET                      int IL2CPP_TYPE_I4
     // 000 MIDSIZE_LASTOFFSET                       int IL2CPP_TYPE_I4
     // 000 SECRET_MERGEACCS_START                   int IL2CPP_TYPE_I4
-    public partial class xxHash3
+    public partial class xxHash3 : DataModel
     {
 
         public static xxHash3? FromPointer(IntPtr p0)
@@ -38,7 +38,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new xxHash3();
+            var value   = new xxHash3() { Pointer= p0 };
 
 
             return value;

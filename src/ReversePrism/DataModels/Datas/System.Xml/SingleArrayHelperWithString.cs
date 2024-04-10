@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 SingleArrayHelperWithString IL2CPP_TYPE_CLASS
-    public partial class SingleArrayHelperWithString
+    public partial class SingleArrayHelperWithString : DataModel
     {
 
         public static SingleArrayHelperWithString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleArrayHelperWithString();
+            var value   = new SingleArrayHelperWithString() { Pointer= p0 };
 
 
             return value;

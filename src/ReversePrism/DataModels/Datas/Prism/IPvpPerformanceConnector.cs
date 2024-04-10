@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvpPerformanceConnector
+    public partial class IPvpPerformanceConnector : DataModel
     {
 
         public static IPvpPerformanceConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvpPerformanceConnector();
+            var value   = new IPvpPerformanceConnector() { Pointer= p0 };
 
 
             return value;

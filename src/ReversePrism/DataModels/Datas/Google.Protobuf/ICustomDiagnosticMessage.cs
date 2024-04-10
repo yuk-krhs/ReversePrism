@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomDiagnosticMessage
+    public partial class ICustomDiagnosticMessage : DataModel
     {
 
         public static ICustomDiagnosticMessage? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomDiagnosticMessage();
+            var value   = new ICustomDiagnosticMessage() { Pointer= p0 };
 
 
             return value;

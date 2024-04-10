@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_floatXdr
+    public partial class Datatype_floatXdr : DataModel
     {
 
         public static Datatype_floatXdr? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_floatXdr();
+            var value   = new Datatype_floatXdr() { Pointer= p0 };
 
 
             return value;

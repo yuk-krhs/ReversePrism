@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 JsonContentType                          string IL2CPP_TYPE_STRING
-    public partial class UnityWebRequestUtils
+    public partial class UnityWebRequestUtils : DataModel
     {
 
         public static UnityWebRequestUtils? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityWebRequestUtils();
+            var value   = new UnityWebRequestUtils() { Pointer= p0 };
 
 
             return value;

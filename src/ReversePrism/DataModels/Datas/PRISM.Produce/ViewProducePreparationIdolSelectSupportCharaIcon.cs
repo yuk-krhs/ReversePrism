@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Icon                                     0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer
     // 028 EmptyButton                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    public partial class ViewProducePreparationIdolSelectSupportCharaIcon
+    public partial class ViewProducePreparationIdolSelectSupportCharaIcon : DataModel
     {
         public SCharaIconView?                          Icon                                    { get; set; }
         public UIButton?                                EmptyButton                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewProducePreparationIdolSelectSupportCharaIcon();
+            var value   = new ViewProducePreparationIdolSelectSupportCharaIcon() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0270D5A66958 0x20 Icon                        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.EmptyButton                               = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270D5A66978 0x28 EmptyButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Icon                                      = GetObject<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 024665AD7370 0x20 Icon                        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.EmptyButton                               = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 024665AD7390 0x28 EmptyButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 <GetMentalPercentFunc>k__BackingField    Func`1<int> IL2CPP_TYPE_GENERICINST
     // 040 <GetStatusEffectManagerFunc>k__BackingField Func`1<ProduceInGameEffectManager> IL2CPP_TYPE_GENERICINST
     // 048 ProducePointMaxBase                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IngameProducePointModel
+    public partial class IngameProducePointModel : DataModel
     {
         public int                                      ProducePointValue                       { get; set; }
         public float                                    CurrentPlayerPPRecoveryTime             { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameProducePointModel();
+            var value   = new IngameProducePointModel() { Pointer= p0 };
 
-            value.ProducePointValue                         = GetInt32(new IntPtr(p + 0x028)); // 0270D5B6ED10 0x28 ProducePointValue           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentPlayerPPRecoveryTime               = GetSingle(new IntPtr(p + 0x02C)); // 0270D5B6ED30 0x2C CurrentPlayerPPRecoveryTime ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ProducePointMaxBase                       = GetInt32(new IntPtr(p + 0x048)); // 0270D5B6EDB0 0x48 ProducePointMaxBase         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProducePointValue                         = GetInt32(new IntPtr(p + 0x028)); // 024665BCF4F0 0x28 ProducePointValue           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentPlayerPPRecoveryTime               = GetSingle(new IntPtr(p + 0x02C)); // 024665BCF510 0x2C CurrentPlayerPPRecoveryTime ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ProducePointMaxBase                       = GetInt32(new IntPtr(p + 0x048)); // 024665BCF590 0x48 ProducePointMaxBase         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

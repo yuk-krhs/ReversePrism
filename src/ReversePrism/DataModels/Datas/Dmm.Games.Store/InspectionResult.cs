@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Entry                                    000185CEC818 ModelClassListType List`1<InspectionEntry> List`1<InspectionEntry> List<InspectionEntry> Pointer
     // 018 Data                                     0001866722E0 ModelPrimitiveType string string string String
-    public partial class InspectionResult
+    public partial class InspectionResult : DataModel
     {
         public List<InspectionEntry>?                   Entry                                   { get; set; }
         public string                                   Data                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InspectionResult();
+            var value   = new InspectionResult() { Pointer= p0 };
 
-            value.Entry                                     = GetObjectList<InspectionEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.InspectionEntry.FromPointer); // 0270DB4BC108 0x10 Entry                       ( 000185CEC818 ModelClassListType List`1<InspectionEntry> List`1<InspectionEntry> List<InspectionEntry> Pointer )
-            value.Data                                      = GetString(new IntPtr(p + 0x018)); // 0270DB4BC128 0x18 Data                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Entry                                     = GetObjectList<InspectionEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.InspectionEntry.FromPointer); // 02466B5498D8 0x10 Entry                       ( 000185CEC818 ModelClassListType List`1<InspectionEntry> List`1<InspectionEntry> List<InspectionEntry> Pointer )
+            value.Data                                      = GetString(new IntPtr(p + 0x018)); // 02466B5498F8 0x18 Data                        ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RendererResourceFactoryH264Yuv
+    public partial class RendererResourceFactoryH264Yuv : DataModel
     {
 
         public static RendererResourceFactoryH264Yuv? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RendererResourceFactoryH264Yuv();
+            var value   = new RendererResourceFactoryH264Yuv() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <ProduceParameterTypes>k__BackingField   IEnumerable`1<ProduceParameterType> IL2CPP_TYPE_GENERICINST
     // 018 <SdCharaIconId>k__BackingField           Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class AdvChoiceButtonViewModel
+    public partial class AdvChoiceButtonViewModel : DataModel
     {
 
         public static AdvChoiceButtonViewModel? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvChoiceButtonViewModel();
+            var value   = new AdvChoiceButtonViewModel() { Pointer= p0 };
 
 
             return value;

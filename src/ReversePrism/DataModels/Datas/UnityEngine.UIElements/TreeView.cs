@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 4C8 m_BindItem                               Action`2<VisualElement, int> IL2CPP_TYPE_GENERICINST
     // 4D0 <unbindItem>k__BackingField              Action`2<VisualElement, int> IL2CPP_TYPE_GENERICINST
     // 4D8 <destroyItem>k__BackingField             Action`1<VisualElement> IL2CPP_TYPE_GENERICINST
-    public partial class TreeView
+    public partial class TreeView : DataModel
     {
 
         public static TreeView? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TreeView();
+            var value   = new TreeView() { Pointer= p0 };
 
 
             return value;

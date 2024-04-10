@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 098 <Columns>k__BackingField                 IEnumerable`1<Column> IL2CPP_TYPE_GENERICINST
-    public partial class NotNullConstraintViolationException
+    public partial class NotNullConstraintViolationException : DataModel
     {
 
         public static NotNullConstraintViolationException? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotNullConstraintViolationException();
+            var value   = new NotNullConstraintViolationException() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Target                                 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    public partial class Manipulator
+    public partial class Manipulator : DataModel
     {
         public VisualElement?                           M_Target                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Manipulator();
+            var value   = new Manipulator() { Pointer= p0 };
 
-            value.M_Target                                  = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0270066E2CC8 0x10 M_Target                    ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Target                                  = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66A51D8 0x10 M_Target                    ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

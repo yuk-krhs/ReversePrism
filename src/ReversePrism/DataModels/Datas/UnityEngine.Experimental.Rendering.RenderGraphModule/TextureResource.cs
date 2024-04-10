@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_TextureCreationIndex                   int IL2CPP_TYPE_I4
-    public partial class TextureResource
+    public partial class TextureResource : DataModel
     {
 
         public static TextureResource? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureResource();
+            var value   = new TextureResource() { Pointer= p0 };
 
 
             return value;

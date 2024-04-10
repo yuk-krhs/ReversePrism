@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 OrderId                                  000186671910 ModelPrimitiveType string string string String
-    public partial class CreateRequestModel
+    public partial class CreateRequestModel : DataModel
     {
         public string                                   OrderId                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateRequestModel();
+            var value   = new CreateRequestModel() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x010)); // 0270DB47A6A0 0x10 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x010)); // 02466B4EF518 0x10 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

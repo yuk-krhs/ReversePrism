@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TaskObservableExtensions
+    public partial class TaskObservableExtensions : DataModel
     {
 
         public static TaskObservableExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskObservableExtensions();
+            var value   = new TaskObservableExtensions() { Pointer= p0 };
 
 
             return value;

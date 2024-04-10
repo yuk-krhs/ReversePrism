@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Instance                               ClipperRegistry IL2CPP_TYPE_CLASS
     // 010 m_Clippers                               IndexedSet`1<IClipper> IL2CPP_TYPE_GENERICINST
-    public partial class ClipperRegistry
+    public partial class ClipperRegistry : DataModel
     {
 
         public static ClipperRegistry? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClipperRegistry();
+            var value   = new ClipperRegistry() { Pointer= p0 };
 
 
             return value;

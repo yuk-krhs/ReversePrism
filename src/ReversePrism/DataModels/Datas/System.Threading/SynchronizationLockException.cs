@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SynchronizationLockException
+    public partial class SynchronizationLockException : DataModel
     {
 
         public static SynchronizationLockException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SynchronizationLockException();
+            var value   = new SynchronizationLockException() { Pointer= p0 };
 
 
             return value;

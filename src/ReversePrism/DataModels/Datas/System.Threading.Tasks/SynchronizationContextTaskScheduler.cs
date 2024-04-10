@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 M_synchronizationContext                 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
     // 000 s_postCallback                           SendOrPostCallback IL2CPP_TYPE_CLASS
-    public partial class SynchronizationContextTaskScheduler
+    public partial class SynchronizationContextTaskScheduler : DataModel
     {
         public SynchronizationContext?                  M_synchronizationContext                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SynchronizationContextTaskScheduler();
+            var value   = new SynchronizationContextTaskScheduler() { Pointer= p0 };
 
-            value.M_synchronizationContext                  = GetObject<SynchronizationContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 027003498A60 0x18 M_synchronizationContext    ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.M_synchronizationContext                  = GetObject<SynchronizationContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0245A3498A60 0x18 M_synchronizationContext    ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
 
             return value;
         }

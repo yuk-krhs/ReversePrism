@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     00018673C850 ModelEnumType UnsafeQueueDispose UnsafeQueueDispose UnsafeQueueDispose Int32
-    public partial class UnsafeQueueDisposeJob
+    public partial class UnsafeQueueDisposeJob : DataModel
     {
         public UnsafeQueueDispose                       Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeQueueDisposeJob();
+            var value   = new UnsafeQueueDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (UnsafeQueueDispose)GetInt32(new IntPtr(p + 0x010)); // 0270D0870348 0x10 Data                        ( 00018673C850 ModelEnumType UnsafeQueueDispose UnsafeQueueDispose UnsafeQueueDispose Int32 )
+            value.Data                                      = (UnsafeQueueDispose)GetInt32(new IntPtr(p + 0x010)); // 0246608B82D8 0x10 Data                        ( 00018673C850 ModelEnumType UnsafeQueueDispose UnsafeQueueDispose UnsafeQueueDispose Int32 )
 
             return value;
         }

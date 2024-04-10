@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IErrorButtonStatus
+    public partial class IErrorButtonStatus : DataModel
     {
 
         public static IErrorButtonStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IErrorButtonStatus();
+            var value   = new IErrorButtonStatus() { Pointer= p0 };
 
 
             return value;

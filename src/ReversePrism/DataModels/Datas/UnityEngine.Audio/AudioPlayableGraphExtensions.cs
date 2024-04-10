@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AudioPlayableGraphExtensions
+    public partial class AudioPlayableGraphExtensions : DataModel
     {
 
         public static AudioPlayableGraphExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudioPlayableGraphExtensions();
+            var value   = new AudioPlayableGraphExtensions() { Pointer= p0 };
 
 
             return value;

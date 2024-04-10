@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 factory                                  IPopupViewFactory`1<IRegisterBirthDayPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class RegisterBirthDayPopupSequencer
+    public partial class RegisterBirthDayPopupSequencer : DataModel
     {
 
         public static RegisterBirthDayPopupSequencer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegisterBirthDayPopupSequencer();
+            var value   = new RegisterBirthDayPopupSequencer() { Pointer= p0 };
 
 
             return value;

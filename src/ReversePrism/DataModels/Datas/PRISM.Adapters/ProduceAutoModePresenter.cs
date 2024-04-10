@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 038 FailureResultParam                       000186517780 ModelClassType LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter Pointer
     // 040 IsShowPopup                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceAutoModePresenter
+    public partial class ProduceAutoModePresenter : DataModel
     {
         public IProduceAutoModeView?                    View                                    { get; set; }
         public ProduceAutoModeArgument?                 Argument                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoModePresenter();
+            var value   = new ProduceAutoModePresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceAutoModeView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceAutoModeView.FromPointer); // 0270D6470C28 0x10 View                        ( 0001865E10D0 ModelClassType IProduceAutoModeView IProduceAutoModeView IProduceAutoModeView Pointer )
-            value.Argument                                  = GetObject<ProduceAutoModeArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoModeArgument.FromPointer); // 0270D6470C48 0x18 Argument                    ( 00018652A930 ModelClassType ProduceAutoModeArgument ProduceAutoModeArgument ProduceAutoModeArgument Pointer )
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D6470C88 0x28 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D6470CA8 0x30 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.FailureResultParam                        = GetObject<LegacyProduceFailureResultParameter>(new IntPtr(p + 0x038), ReversePrism.DataModels.LegacyProduceFailureResultParameter.FromPointer); // 0270D6470CC8 0x38 FailureResultParam          ( 000186517780 ModelClassType LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter Pointer )
-            value.IsShowPopup                               = GetBool(new IntPtr(p + 0x040)); // 0270D6470CE8 0x40 IsShowPopup                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.View                                      = GetObject<IProduceAutoModeView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceAutoModeView.FromPointer); // 0246664CFC68 0x10 View                        ( 0001865E10D0 ModelClassType IProduceAutoModeView IProduceAutoModeView IProduceAutoModeView Pointer )
+            value.Argument                                  = GetObject<ProduceAutoModeArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoModeArgument.FromPointer); // 0246664CFC88 0x18 Argument                    ( 00018652A930 ModelClassType ProduceAutoModeArgument ProduceAutoModeArgument ProduceAutoModeArgument Pointer )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246664CFCC8 0x28 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246664CFCE8 0x30 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.FailureResultParam                        = GetObject<LegacyProduceFailureResultParameter>(new IntPtr(p + 0x038), ReversePrism.DataModels.LegacyProduceFailureResultParameter.FromPointer); // 0246664CFD08 0x38 FailureResultParam          ( 000186517780 ModelClassType LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter LegacyProduceFailureResultParameter Pointer )
+            value.IsShowPopup                               = GetBool(new IntPtr(p + 0x040)); // 0246664CFD28 0x40 IsShowPopup                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

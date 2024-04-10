@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 IUniTaskAsyncEnumerator`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class _Empty
+    public partial class _Empty : DataModel
     {
 
         public static _Empty? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Empty();
+            var value   = new _Empty() { Pointer= p0 };
 
 
             return value;

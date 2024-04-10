@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 048 M_rijndael                               00018668FB20 ModelClassType RijndaelManaged RijndaelManaged RijndaelManaged Pointer
-    public partial class AesManaged
+    public partial class AesManaged : DataModel
     {
         public RijndaelManaged?                         M_rijndael                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AesManaged();
+            var value   = new AesManaged() { Pointer= p0 };
 
-            value.M_rijndael                                = GetObject<RijndaelManaged>(new IntPtr(p + 0x048), ReversePrism.DataModels.RijndaelManaged.FromPointer); // 0270D9EB16A0 0x48 M_rijndael                  ( 00018668FB20 ModelClassType RijndaelManaged RijndaelManaged RijndaelManaged Pointer )
+            value.M_rijndael                                = GetObject<RijndaelManaged>(new IntPtr(p + 0x048), ReversePrism.DataModels.RijndaelManaged.FromPointer); // 024669EF6038 0x48 M_rijndael                  ( 00018668FB20 ModelClassType RijndaelManaged RijndaelManaged RijndaelManaged Pointer )
 
             return value;
         }

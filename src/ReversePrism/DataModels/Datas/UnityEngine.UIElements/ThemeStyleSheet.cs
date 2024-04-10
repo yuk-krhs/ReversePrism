@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ThemeStyleSheet
+    public partial class ThemeStyleSheet : DataModel
     {
 
         public static ThemeStyleSheet? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThemeStyleSheet();
+            var value   = new ThemeStyleSheet() { Pointer= p0 };
 
 
             return value;

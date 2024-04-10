@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 034 SpecialUnitCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 <VocalSeparatedOnMusicIds>k__BackingField HashSet`1<int> IL2CPP_TYPE_GENERICINST
     // 040 <CameraModeSettings>k__BackingField      Dictionary`2<int, LiveCameraModeSetting> IL2CPP_TYPE_GENERICINST
-    public partial class LiveUnitConfirmationSaveDataBase
+    public partial class LiveUnitConfirmationSaveDataBase : DataModel
     {
         public List<int>?                               VocalSeparatedOnMusicIds                { get; set; }
         public List<LiveCameraModeSetting>?             CameraModeSettings                      { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitConfirmationSaveDataBase();
+            var value   = new LiveUnitConfirmationSaveDataBase() { Pointer= p0 };
 
-            value.VocalSeparatedOnMusicIds                  = GetInt32List(new IntPtr(p + 0x020)); // 027003A72160 0x20 VocalSeparatedOnMusicIds    ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.CameraModeSettings                        = GetEnumList<LiveCameraModeSetting>(new IntPtr(p + 0x028)); // 027003A72180 0x28 CameraModeSettings          ( 000185B90580 ModelEnumListType LiveCameraModeSetting[] LiveCameraModeSetting[] List<LiveCameraModeSetting> Pointer )
-            value.SelectedUnitIndex                         = GetInt32(new IntPtr(p + 0x030)); // 027003A721A0 0x30 SelectedUnitIndex           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SpecialUnitCount                          = GetInt32(new IntPtr(p + 0x034)); // 027003A721C0 0x34 SpecialUnitCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VocalSeparatedOnMusicIds                  = GetInt32List(new IntPtr(p + 0x020)); // 0245A3A7D098 0x20 VocalSeparatedOnMusicIds    ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.CameraModeSettings                        = GetEnumList<LiveCameraModeSetting>(new IntPtr(p + 0x028)); // 0245A3A7D0B8 0x28 CameraModeSettings          ( 000185B90580 ModelEnumListType LiveCameraModeSetting[] LiveCameraModeSetting[] List<LiveCameraModeSetting> Pointer )
+            value.SelectedUnitIndex                         = GetInt32(new IntPtr(p + 0x030)); // 0245A3A7D0D8 0x30 SelectedUnitIndex           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SpecialUnitCount                          = GetInt32(new IntPtr(p + 0x034)); // 0245A3A7D0F8 0x34 SpecialUnitCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

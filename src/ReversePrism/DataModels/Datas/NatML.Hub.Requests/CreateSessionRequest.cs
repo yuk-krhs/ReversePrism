@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Variables                                000186536480 ModelClassType Variables Variables Variables Pointer
-    public partial class CreateSessionRequest
+    public partial class CreateSessionRequest : DataModel
     {
         public Variables?                               Variables                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateSessionRequest();
+            var value   = new CreateSessionRequest() { Pointer= p0 };
 
-            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 0270DBDC1E18 0x18 Variables                   ( 000186536480 ModelClassType Variables Variables Variables Pointer )
+            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 02466BE41830 0x18 Variables                   ( 000186536480 ModelClassType Variables Variables Variables Pointer )
 
             return value;
         }

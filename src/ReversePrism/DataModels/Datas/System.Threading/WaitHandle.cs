@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 ERROR_NOT_OWNED_BY_CALLER                int IL2CPP_TYPE_I4
     // 000 InvalidHandle                            <int> IL2CPP_TYPE_I
     // 000 MaxWaitHandles                           int IL2CPP_TYPE_I4
-    public partial class WaitHandle
+    public partial class WaitHandle : DataModel
     {
         public SafeWaitHandle?                          SafeWaitHandle                          { get; set; }
         public bool                                     HasThreadAffinity                       { get; set; }
@@ -31,10 +31,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitHandle();
+            var value   = new WaitHandle() { Pointer= p0 };
 
-            value.SafeWaitHandle                            = GetObject<SafeWaitHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeWaitHandle.FromPointer); // 027004D1D6D0 0x20 SafeWaitHandle              ( 00018665F760 ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer )
-            value.HasThreadAffinity                         = GetBool(new IntPtr(p + 0x028)); // 027004D1D6F0 0x28 HasThreadAffinity           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.SafeWaitHandle                            = GetObject<SafeWaitHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeWaitHandle.FromPointer); // 0245A4D5A658 0x20 SafeWaitHandle              ( 00018665F760 ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer )
+            value.HasThreadAffinity                         = GetBool(new IntPtr(p + 0x028)); // 0245A4D5A678 0x28 HasThreadAffinity           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

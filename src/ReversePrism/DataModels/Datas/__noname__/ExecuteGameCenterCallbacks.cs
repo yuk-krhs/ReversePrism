@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExecuteGameCenterCallbacks
+    public partial class ExecuteGameCenterCallbacks : DataModel
     {
 
         public static ExecuteGameCenterCallbacks? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteGameCenterCallbacks();
+            var value   = new ExecuteGameCenterCallbacks() { Pointer= p0 };
 
 
             return value;

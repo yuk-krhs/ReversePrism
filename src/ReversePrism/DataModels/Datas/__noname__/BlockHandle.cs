@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Value                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class BlockHandle
+    public partial class BlockHandle : DataModel
     {
         public ushort                                   Value                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BlockHandle();
+            var value   = new BlockHandle() { Pointer= p0 };
 
-            value.Value                                     = GetUInt16(new IntPtr(p + 0x010)); // 0270D98739F8 0x10 Value                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Value                                     = GetUInt16(new IntPtr(p + 0x010)); // 0246698D0D10 0x10 Value                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

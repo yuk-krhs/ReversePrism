@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorExtensions
+    public partial class ColorExtensions : DataModel
     {
 
         public static ColorExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorExtensions();
+            var value   = new ColorExtensions() { Pointer= p0 };
 
 
             return value;

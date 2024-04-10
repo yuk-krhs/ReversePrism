@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AccountCheckSequence
+    public partial class AccountCheckSequence : DataModel
     {
 
         public static AccountCheckSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AccountCheckSequence();
+            var value   = new AccountCheckSequence() { Pointer= p0 };
 
 
             return value;

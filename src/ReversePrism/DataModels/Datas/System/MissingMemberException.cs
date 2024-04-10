@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 ClassName                                000186671E00 ModelPrimitiveType string string string String
     // 098 MemberName                               000186671E00 ModelPrimitiveType string string string String
     // 0A0 Signature                                000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class MissingMemberException
+    public partial class MissingMemberException : DataModel
     {
         public string                                   ClassName                               { get; set; }
         public string                                   MemberName                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissingMemberException();
+            var value   = new MissingMemberException() { Pointer= p0 };
 
-            value.ClassName                                 = GetString(new IntPtr(p + 0x090)); // 0270D69ED810 0x90 ClassName                   ( 000186671E00 ModelPrimitiveType string string string String )
-            value.MemberName                                = GetString(new IntPtr(p + 0x098)); // 0270D69ED830 0x98 MemberName                  ( 000186671E00 ModelPrimitiveType string string string String )
-            value.Signature                                 = GetSByteList(new IntPtr(p + 0x0A0)); // 0270D69ED850 0xA0 Signature                   ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ClassName                                 = GetString(new IntPtr(p + 0x090)); // 024666A5D810 0x90 ClassName                   ( 000186671E00 ModelPrimitiveType string string string String )
+            value.MemberName                                = GetString(new IntPtr(p + 0x098)); // 024666A5D830 0x98 MemberName                  ( 000186671E00 ModelPrimitiveType string string string String )
+            value.Signature                                 = GetSByteList(new IntPtr(p + 0x0A0)); // 024666A5D850 0xA0 Signature                   ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

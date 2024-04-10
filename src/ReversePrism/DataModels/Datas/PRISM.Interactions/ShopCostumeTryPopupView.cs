@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 050 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 CurrentPopupSize                         00018658C440 ModelEnumType PopupSizeType PopupSizeType PopupSizeType Int32
     // 060 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ShopCostumeTryPopupView
+    public partial class ShopCostumeTryPopupView : DataModel
     {
         public ShopDetailCostumeCell?                   GoCostumeContent                        { get; set; }
         public Transform?                               CostumeParent                           { get; set; }
@@ -32,14 +32,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopCostumeTryPopupView();
+            var value   = new ShopCostumeTryPopupView() { Pointer= p0 };
 
-            value.GoCostumeContent                          = GetObject<ShopDetailCostumeCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopDetailCostumeCell.FromPointer); // 0270DB7E1400 0x20 GoCostumeContent            ( 000186759050 ModelClassType ShopDetailCostumeCell ShopDetailCostumeCell ShopDetailCostumeCell Pointer )
-            value.CostumeParent                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB7E1420 0x28 CostumeParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.BgContent                                 = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DB7E1440 0x30 BgContent                   ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ShadeContent                              = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 0270DB7E1460 0x38 ShadeContent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.CurrentPopupSize                          = (PopupSizeType)GetInt32(new IntPtr(p + 0x058)); // 0270DB7E14E0 0x58 CurrentPopupSize            ( 00018658C440 ModelEnumType PopupSizeType PopupSizeType PopupSizeType Int32 )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB7E1500 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.GoCostumeContent                          = GetObject<ShopDetailCostumeCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopDetailCostumeCell.FromPointer); // 02466B871368 0x20 GoCostumeContent            ( 000186759050 ModelClassType ShopDetailCostumeCell ShopDetailCostumeCell ShopDetailCostumeCell Pointer )
+            value.CostumeParent                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B871388 0x28 CostumeParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.BgContent                                 = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466B8713A8 0x30 BgContent                   ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ShadeContent                              = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 02466B8713C8 0x38 ShadeContent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CurrentPopupSize                          = (PopupSizeType)GetInt32(new IntPtr(p + 0x058)); // 02466B871448 0x58 CurrentPopupSize            ( 00018658C440 ModelEnumType PopupSizeType PopupSizeType PopupSizeType Int32 )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B871468 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

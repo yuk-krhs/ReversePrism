@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 EmptyConsoleKeyInfo                      ConsoleKeyInfo IL2CPP_TYPE_VALUETYPE
-    public partial class NullConsoleDriver
+    public partial class NullConsoleDriver : DataModel
     {
 
         public static NullConsoleDriver? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NullConsoleDriver();
+            var value   = new NullConsoleDriver() { Pointer= p0 };
 
 
             return value;

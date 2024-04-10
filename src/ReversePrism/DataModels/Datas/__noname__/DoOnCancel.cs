@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   DoOnCancelObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 isCompletedCall                          bool IL2CPP_TYPE_BOOLEAN
-    public partial class DoOnCancel
+    public partial class DoOnCancel : DataModel
     {
 
         public static DoOnCancel? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoOnCancel();
+            var value   = new DoOnCancel() { Pointer= p0 };
 
 
             return value;

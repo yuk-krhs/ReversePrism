@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 IndicatorDots                            000185D15058 ModelClassListType List`1<Toggle> List`1<Toggle> List<Toggle> Pointer
     // 038 ToggleClickDisposables                   0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 040 <OnIndicatorChanged>k__BackingField      Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class CarouselIndicator
+    public partial class CarouselIndicator : DataModel
     {
         public Toggle?                                  IndicatorDotPrefab                      { get; set; }
         public ToggleGroup?                             ToggleGroup                             { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CarouselIndicator();
+            var value   = new CarouselIndicator() { Pointer= p0 };
 
-            value.IndicatorDotPrefab                        = GetObject<Toggle>(new IntPtr(p + 0x020), ReversePrism.DataModels.Toggle.FromPointer); // 027004F48450 0x20 IndicatorDotPrefab          ( 000186682710 ModelClassType Toggle Toggle Toggle Pointer )
-            value.ToggleGroup                               = GetObject<ToggleGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleGroup.FromPointer); // 027004F48470 0x28 ToggleGroup                 ( 000186685730 ModelClassType ToggleGroup ToggleGroup ToggleGroup Pointer )
-            value.IndicatorDots                             = GetObjectList<Toggle>(new IntPtr(p + 0x030), ReversePrism.DataModels.Toggle.FromPointer); // 027004F48490 0x30 IndicatorDots               ( 000185D15058 ModelClassListType List`1<Toggle> List`1<Toggle> List<Toggle> Pointer )
-            value.ToggleClickDisposables                    = GetObject<CompositeDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 027004F484B0 0x38 ToggleClickDisposables      ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.IndicatorDotPrefab                        = GetObject<Toggle>(new IntPtr(p + 0x020), ReversePrism.DataModels.Toggle.FromPointer); // 0246630F6270 0x20 IndicatorDotPrefab          ( 000186682710 ModelClassType Toggle Toggle Toggle Pointer )
+            value.ToggleGroup                               = GetObject<ToggleGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleGroup.FromPointer); // 0246630F6290 0x28 ToggleGroup                 ( 000186685730 ModelClassType ToggleGroup ToggleGroup ToggleGroup Pointer )
+            value.IndicatorDots                             = GetObjectList<Toggle>(new IntPtr(p + 0x030), ReversePrism.DataModels.Toggle.FromPointer); // 0246630F62B0 0x30 IndicatorDots               ( 000185D15058 ModelClassListType List`1<Toggle> List`1<Toggle> List<Toggle> Pointer )
+            value.ToggleClickDisposables                    = GetObject<CompositeDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246630F62D0 0x38 ToggleClickDisposables      ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

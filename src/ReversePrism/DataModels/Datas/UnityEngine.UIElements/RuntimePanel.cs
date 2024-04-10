@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_EventDispatcher                        EventDispatcher IL2CPP_TYPE_CLASS
     // 1E8 M_PanelSettings                          000186717CA0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer
-    public partial class RuntimePanel
+    public partial class RuntimePanel : DataModel
     {
         public PanelSettings?                           M_PanelSettings                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimePanel();
+            var value   = new RuntimePanel() { Pointer= p0 };
 
-            value.M_PanelSettings                           = GetObject<PanelSettings>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.PanelSettings.FromPointer); // 0270067DC7D0 0x1E8 M_PanelSettings             ( 000186717CA0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
+            value.M_PanelSettings                           = GetObject<PanelSettings>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.PanelSettings.FromPointer); // 0245A679E8C8 0x1E8 M_PanelSettings             ( 000186717CA0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RegisterReplyTranslator
+    public partial class RegisterReplyTranslator : DataModel
     {
 
         public static RegisterReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegisterReplyTranslator();
+            var value   = new RegisterReplyTranslator() { Pointer= p0 };
 
 
             return value;

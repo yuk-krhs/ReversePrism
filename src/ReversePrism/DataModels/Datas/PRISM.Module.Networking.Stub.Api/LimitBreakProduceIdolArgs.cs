@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 StarFieldNumber                          int IL2CPP_TYPE_I4
     // 01C Star                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LimitBreakProduceIdolArgs
+    public partial class LimitBreakProduceIdolArgs : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      Star                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LimitBreakProduceIdolArgs();
+            var value   = new LimitBreakProduceIdolArgs() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0270D25F8B40 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D25F8B80 0x1C Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024662538880 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246625388C0 0x1C Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TextBytes                                000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 018 ImageBytes                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class DebugScreenshotWithTextSender
+    public partial class DebugScreenshotWithTextSender : DataModel
     {
         public List<sbyte>?                             TextBytes                               { get; set; }
         public List<sbyte>?                             ImageBytes                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugScreenshotWithTextSender();
+            var value   = new DebugScreenshotWithTextSender() { Pointer= p0 };
 
-            value.TextBytes                                 = GetSByteList(new IntPtr(p + 0x010)); // 0270DB6DFBE0 0x10 TextBytes                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.ImageBytes                                = GetSByteList(new IntPtr(p + 0x018)); // 0270DB6DFC00 0x18 ImageBytes                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.TextBytes                                 = GetSByteList(new IntPtr(p + 0x010)); // 02466B76C618 0x10 TextBytes                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ImageBytes                                = GetSByteList(new IntPtr(p + 0x018)); // 02466B76C638 0x18 ImageBytes                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

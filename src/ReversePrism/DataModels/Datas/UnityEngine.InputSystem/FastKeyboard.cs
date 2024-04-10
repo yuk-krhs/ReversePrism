@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 metadata                                 string IL2CPP_TYPE_STRING
-    public partial class FastKeyboard
+    public partial class FastKeyboard : DataModel
     {
 
         public static FastKeyboard? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FastKeyboard();
+            var value   = new FastKeyboard() { Pointer= p0 };
 
 
             return value;

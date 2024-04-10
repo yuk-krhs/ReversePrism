@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 StoryId                                  0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer
     // 000 StoryModeFieldNumber                     int IL2CPP_TYPE_I4
     // 020 StoryMode                                000186598FF0 ModelEnumType StoryMode StoryMode StoryMode Int32
-    public partial class StartStoryArgs
+    public partial class StartStoryArgs : DataModel
     {
         public StoryIDStatus?                           StoryId                                 { get; set; }
         public StoryMode                                StoryMode                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartStoryArgs();
+            var value   = new StartStoryArgs() { Pointer= p0 };
 
-            value.StoryId                                   = GetObject<StoryIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0270D2A2E0C0 0x18 StoryId                     ( 0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
-            value.StoryMode                                 = (StoryMode)GetInt32(new IntPtr(p + 0x020)); // 0270D2A2E100 0x20 StoryMode                   ( 000186598FF0 ModelEnumType StoryMode StoryMode StoryMode Int32 )
+            value.StoryId                                   = GetObject<StoryIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0246629B2E28 0x18 StoryId                     ( 0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
+            value.StoryMode                                 = (StoryMode)GetInt32(new IntPtr(p + 0x020)); // 0246629B2E68 0x20 StoryMode                   ( 000186598FF0 ModelEnumType StoryMode StoryMode StoryMode Int32 )
 
             return value;
         }

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 ChallengeTourViewModel                   00018658D950 ModelClassType ChallengeTourUnitViewModel ChallengeTourUnitViewModel ChallengeTourUnitViewModel Pointer
     // 040 SelectedFUnitIcon                        00018654C680 ModelClassType FUnitIcon FUnitIcon FUnitIcon Pointer
     // 048 InChallengeTourSelected                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ChallengeTourUnitEditViewModel
+    public partial class ChallengeTourUnitEditViewModel : DataModel
     {
         public BoolReactiveProperty?                    DecideReactiveProperty                  { get; set; }
         public List<FUnitIcon>?                         FUnitIcons                              { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourUnitEditViewModel();
+            var value   = new ChallengeTourUnitEditViewModel() { Pointer= p0 };
 
-            value.DecideReactiveProperty                    = GetObject<BoolReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.BoolReactiveProperty.FromPointer); // 0270D64BE4F0 0x10 DecideReactiveProperty      ( 0001867695E0 ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer )
-            value.FUnitIcons                                = GetObjectList<FUnitIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FUnitIcon.FromPointer); // 0270D64BE530 0x20 FUnitIcons                  ( 000185B7E800 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
-            value.DisplayFUnitIcons                         = GetObjectList<FUnitIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitIcon.FromPointer); // 0270D64BE550 0x28 DisplayFUnitIcons           ( 000185B7E800 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
-            value.SortFilterModel                           = GetObject<FUnitSortFilterModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUnitSortFilterModel.FromPointer); // 0270D64BE570 0x30 SortFilterModel             ( 00018654D810 ModelClassType FUnitSortFilterModel FUnitSortFilterModel FUnitSortFilterModel Pointer )
-            value.ChallengeTourViewModel                    = GetObject<ChallengeTourUnitViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourUnitViewModel.FromPointer); // 0270D64BE590 0x38 ChallengeTourViewModel      ( 00018658D950 ModelClassType ChallengeTourUnitViewModel ChallengeTourUnitViewModel ChallengeTourUnitViewModel Pointer )
-            value.SelectedFUnitIcon                         = GetObject<FUnitIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.FUnitIcon.FromPointer); // 0270D64BE5B0 0x40 SelectedFUnitIcon           ( 00018654C680 ModelClassType FUnitIcon FUnitIcon FUnitIcon Pointer )
-            value.InChallengeTourSelected                   = GetBool(new IntPtr(p + 0x048)); // 0270D64BE5D0 0x48 InChallengeTourSelected     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DecideReactiveProperty                    = GetObject<BoolReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.BoolReactiveProperty.FromPointer); // 02466652D128 0x10 DecideReactiveProperty      ( 0001867695E0 ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer )
+            value.FUnitIcons                                = GetObjectList<FUnitIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FUnitIcon.FromPointer); // 02466652D168 0x20 FUnitIcons                  ( 000185B7E800 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
+            value.DisplayFUnitIcons                         = GetObjectList<FUnitIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitIcon.FromPointer); // 02466652D188 0x28 DisplayFUnitIcons           ( 000185B7E800 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
+            value.SortFilterModel                           = GetObject<FUnitSortFilterModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUnitSortFilterModel.FromPointer); // 02466652D1A8 0x30 SortFilterModel             ( 00018654D810 ModelClassType FUnitSortFilterModel FUnitSortFilterModel FUnitSortFilterModel Pointer )
+            value.ChallengeTourViewModel                    = GetObject<ChallengeTourUnitViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourUnitViewModel.FromPointer); // 02466652D1C8 0x38 ChallengeTourViewModel      ( 00018658D950 ModelClassType ChallengeTourUnitViewModel ChallengeTourUnitViewModel ChallengeTourUnitViewModel Pointer )
+            value.SelectedFUnitIcon                         = GetObject<FUnitIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.FUnitIcon.FromPointer); // 02466652D1E8 0x40 SelectedFUnitIcon           ( 00018654C680 ModelClassType FUnitIcon FUnitIcon FUnitIcon Pointer )
+            value.InChallengeTourSelected                   = GetBool(new IntPtr(p + 0x048)); // 02466652D208 0x48 InChallengeTourSelected     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

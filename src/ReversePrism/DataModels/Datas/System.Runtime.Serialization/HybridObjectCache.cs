@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 objectDictionary                         Dictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
     // 018 referencedObjectDictionary               Dictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class HybridObjectCache
+    public partial class HybridObjectCache : DataModel
     {
 
         public static HybridObjectCache? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HybridObjectCache();
+            var value   = new HybridObjectCache() { Pointer= p0 };
 
 
             return value;

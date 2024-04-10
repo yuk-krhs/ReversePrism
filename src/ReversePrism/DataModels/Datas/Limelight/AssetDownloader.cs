@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 02C BackgroundSuppressionRequestCount        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 PauseRequestCount                        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 CSource                                  0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class AssetDownloader
+    public partial class AssetDownloader : DataModel
     {
         public INativeDownloader?                       DownloaderImpl                          { get; set; }
         public List<AssetDownloadError>?                PendingErrors                           { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetDownloader();
+            var value   = new AssetDownloader() { Pointer= p0 };
 
-            value.DownloaderImpl                            = GetObject<INativeDownloader>(new IntPtr(p + 0x010), ReversePrism.DataModels.INativeDownloader.FromPointer); // 027003E1E678 0x10 DownloaderImpl              ( 0001865BE5F0 ModelClassType INativeDownloader INativeDownloader INativeDownloader Pointer )
-            value.PendingErrors                             = GetObjectList<AssetDownloadError>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 027003E1E698 0x18 PendingErrors               ( 000185CCD338 ModelClassListType List`1<AssetDownloadError> List`1<AssetDownloadError> List<AssetDownloadError> Pointer )
-            value.FocusedError                              = GetObject<AssetDownloadError>(new IntPtr(p + 0x020), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 027003E1E6B8 0x20 FocusedError                ( 0001866E5710 ModelClassType AssetDownloadError AssetDownloadError AssetDownloadError Pointer )
-            value.BackgroundErrorIgnoreChance               = GetBool(new IntPtr(p + 0x028)); // 027003E1E6D8 0x28 BackgroundErrorIgnoreChance ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BackgroundSuppressionRequestCount         = GetInt32(new IntPtr(p + 0x02C)); // 027003E1E6F8 0x2C BackgroundSuppressionRequestCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PauseRequestCount                         = GetInt32(new IntPtr(p + 0x030)); // 027003E1E718 0x30 PauseRequestCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CSource                                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 027003E1E738 0x38 CSource                     ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.DownloaderImpl                            = GetObject<INativeDownloader>(new IntPtr(p + 0x010), ReversePrism.DataModels.INativeDownloader.FromPointer); // 0245A3E1E678 0x10 DownloaderImpl              ( 0001865BE5F0 ModelClassType INativeDownloader INativeDownloader INativeDownloader Pointer )
+            value.PendingErrors                             = GetObjectList<AssetDownloadError>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 0245A3E1E698 0x18 PendingErrors               ( 000185CCD338 ModelClassListType List`1<AssetDownloadError> List`1<AssetDownloadError> List<AssetDownloadError> Pointer )
+            value.FocusedError                              = GetObject<AssetDownloadError>(new IntPtr(p + 0x020), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 0245A3E1E6B8 0x20 FocusedError                ( 0001866E5710 ModelClassType AssetDownloadError AssetDownloadError AssetDownloadError Pointer )
+            value.BackgroundErrorIgnoreChance               = GetBool(new IntPtr(p + 0x028)); // 0245A3E1E6D8 0x28 BackgroundErrorIgnoreChance ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BackgroundSuppressionRequestCount         = GetInt32(new IntPtr(p + 0x02C)); // 0245A3E1E6F8 0x2C BackgroundSuppressionRequestCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PauseRequestCount                         = GetInt32(new IntPtr(p + 0x030)); // 0245A3E1E718 0x30 PauseRequestCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CSource                                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A3E1E738 0x38 CSource                     ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

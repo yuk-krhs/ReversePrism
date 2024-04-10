@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICharaSortFilterSaveData
+    public partial class ICharaSortFilterSaveData : DataModel
     {
 
         public static ICharaSortFilterSaveData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICharaSortFilterSaveData();
+            var value   = new ICharaSortFilterSaveData() { Pointer= p0 };
 
 
             return value;

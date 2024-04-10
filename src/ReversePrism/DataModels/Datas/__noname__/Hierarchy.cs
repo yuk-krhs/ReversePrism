@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_InvalidHierarchyChangeMsg              string IL2CPP_TYPE_STRING
     // 010 M_Owner                                  0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    public partial class Hierarchy
+    public partial class Hierarchy : DataModel
     {
         public VisualElement?                           M_Owner                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hierarchy();
+            var value   = new Hierarchy() { Pointer= p0 };
 
-            value.M_Owner                                   = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 027003F09BA0 0x10 M_Owner                     ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Owner                                   = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F09BA0 0x10 M_Owner                     ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

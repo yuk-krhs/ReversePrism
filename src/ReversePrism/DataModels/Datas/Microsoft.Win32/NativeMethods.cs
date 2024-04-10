@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeMethods
+    public partial class NativeMethods : DataModel
     {
 
         public static NativeMethods? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeMethods();
+            var value   = new NativeMethods() { Pointer= p0 };
 
 
             return value;

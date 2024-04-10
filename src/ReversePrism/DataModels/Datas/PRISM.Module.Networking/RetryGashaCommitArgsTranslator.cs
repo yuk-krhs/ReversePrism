@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RetryGashaCommitArgsTranslator
+    public partial class RetryGashaCommitArgsTranslator : DataModel
     {
 
         public static RetryGashaCommitArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RetryGashaCommitArgsTranslator();
+            var value   = new RetryGashaCommitArgsTranslator() { Pointer= p0 };
 
 
             return value;

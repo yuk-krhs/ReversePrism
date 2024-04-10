@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstShinyPartyTokenFormatter
+    public partial class MstShinyPartyTokenFormatter : DataModel
     {
 
         public static MstShinyPartyTokenFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstShinyPartyTokenFormatter();
+            var value   = new MstShinyPartyTokenFormatter() { Pointer= p0 };
 
 
             return value;

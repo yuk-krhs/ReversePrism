@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EncodingExtensions
+    public partial class EncodingExtensions : DataModel
     {
 
         public static EncodingExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncodingExtensions();
+            var value   = new EncodingExtensions() { Pointer= p0 };
 
 
             return value;

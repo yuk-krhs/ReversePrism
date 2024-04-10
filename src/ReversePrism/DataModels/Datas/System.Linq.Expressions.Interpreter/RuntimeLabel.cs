@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Index                                    0001865F4940 ModelPrimitiveType int int int Int32
     // 014 StackDepth                               0001865F4940 ModelPrimitiveType int int int Int32
     // 018 ContinuationStackDepth                   0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class RuntimeLabel
+    public partial class RuntimeLabel : DataModel
     {
         public int                                      Index                                   { get; set; }
         public int                                      StackDepth                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeLabel();
+            var value   = new RuntimeLabel() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D9F873B0 0x10 Index                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.StackDepth                                = GetInt32(new IntPtr(p + 0x014)); // 0270D9F873D0 0x14 StackDepth                  ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ContinuationStackDepth                    = GetInt32(new IntPtr(p + 0x018)); // 0270D9F873F0 0x18 ContinuationStackDepth      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 024669FF71D0 0x10 Index                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.StackDepth                                = GetInt32(new IntPtr(p + 0x014)); // 024669FF71F0 0x14 StackDepth                  ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.ContinuationStackDepth                    = GetInt32(new IntPtr(p + 0x018)); // 024669FF7210 0x18 ContinuationStackDepth      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

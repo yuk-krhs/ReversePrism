@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Table                                    0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer
     // 018 Record                                   0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class DataRowBuilder
+    public partial class DataRowBuilder : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
         public int                                      Record                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataRowBuilder();
+            var value   = new DataRowBuilder() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D88D3140 0x10 Table                       ( 0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer )
-            value.Record                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D88D3160 0x18 Record                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 024668936D40 0x10 Table                       ( 0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Record                                    = GetInt32(new IntPtr(p + 0x018)); // 024668936D60 0x18 Record                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

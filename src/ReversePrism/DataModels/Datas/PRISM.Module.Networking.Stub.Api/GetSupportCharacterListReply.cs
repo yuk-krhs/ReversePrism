@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 SupportCharacterListFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_supportCharacterList_codec     FieldCodec`1<SupportCharacterStatus> IL2CPP_TYPE_GENERICINST
     // 018 SupportCharacterList                     000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer
-    public partial class GetSupportCharacterListReply
+    public partial class GetSupportCharacterListReply : DataModel
     {
         public List<SupportCharacterStatus>?            SupportCharacterList                    { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSupportCharacterListReply();
+            var value   = new GetSupportCharacterListReply() { Pointer= p0 };
 
-            value.SupportCharacterList                      = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 0270D2AF6D88 0x18 SupportCharacterList        ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
+            value.SupportCharacterList                      = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 024662A605E0 0x18 SupportCharacterList        ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
 
             return value;
         }

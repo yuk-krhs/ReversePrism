@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     000186761E70 ModelEnumType BitField64 BitField64 BitField64 Int32
-    public partial class BitField64DebugView
+    public partial class BitField64DebugView : DataModel
     {
         public BitField64                               Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitField64DebugView();
+            var value   = new BitField64DebugView() { Pointer= p0 };
 
-            value.Data                                      = (BitField64)GetInt32(new IntPtr(p + 0x010)); // 0270D988B2E8 0x10 Data                        ( 000186761E70 ModelEnumType BitField64 BitField64 BitField64 Int32 )
+            value.Data                                      = (BitField64)GetInt32(new IntPtr(p + 0x010)); // 0246698D85D0 0x10 Data                        ( 000186761E70 ModelEnumType BitField64 BitField64 BitField64 Int32 )
 
             return value;
         }

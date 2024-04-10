@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceCharacterEffectCharacterStatusTranslator
+    public partial class ProduceCharacterEffectCharacterStatusTranslator : DataModel
     {
 
         public static ProduceCharacterEffectCharacterStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceCharacterEffectCharacterStatusTranslator();
+            var value   = new ProduceCharacterEffectCharacterStatusTranslator() { Pointer= p0 };
 
 
             return value;

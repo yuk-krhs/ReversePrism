@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 Source                                   000186671910 ModelPrimitiveType string string string String
     // 040 Markup                                   000185CB3E78 ModelClassListType XmlNode[] XmlNode[] List<XmlNode> Pointer
-    public partial class XmlSchemaAppInfo
+    public partial class XmlSchemaAppInfo : DataModel
     {
         public string                                   Source                                  { get; set; }
         public List<XmlNode>?                           Markup                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaAppInfo();
+            var value   = new XmlSchemaAppInfo() { Pointer= p0 };
 
-            value.Source                                    = GetString(new IntPtr(p + 0x038)); // 0270D7587F80 0x38 Source                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Markup                                    = GetObjectList<XmlNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D7587FA0 0x40 Markup                      ( 000185CB3E78 ModelClassListType XmlNode[] XmlNode[] List<XmlNode> Pointer )
+            value.Source                                    = GetString(new IntPtr(p + 0x038)); // 0246675FF750 0x38 Source                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Markup                                    = GetObjectList<XmlNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlNode.FromPointer); // 0246675FF770 0x40 Markup                      ( 000185CB3E78 ModelClassListType XmlNode[] XmlNode[] List<XmlNode> Pointer )
 
             return value;
         }

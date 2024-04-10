@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimeSpanConverter
+    public partial class TimeSpanConverter : DataModel
     {
 
         public static TimeSpanConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeSpanConverter();
+            var value   = new TimeSpanConverter() { Pointer= p0 };
 
 
             return value;

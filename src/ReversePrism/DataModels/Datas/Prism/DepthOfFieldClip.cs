@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                0001866C26E0 ModelClassType DepthOfFieldBehaviour DepthOfFieldBehaviour DepthOfFieldBehaviour Pointer
-    public partial class DepthOfFieldClip
+    public partial class DepthOfFieldClip : DataModel
     {
         public DepthOfFieldBehaviour?                   Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DepthOfFieldClip();
+            var value   = new DepthOfFieldClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<DepthOfFieldBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.DepthOfFieldBehaviour.FromPointer); // 027006B64E18 0x18 Behaviour                   ( 0001866C26E0 ModelClassType DepthOfFieldBehaviour DepthOfFieldBehaviour DepthOfFieldBehaviour Pointer )
+            value.Behaviour                                 = GetObject<DepthOfFieldBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.DepthOfFieldBehaviour.FromPointer); // 024664E73A00 0x18 Behaviour                   ( 0001866C26E0 ModelClassType DepthOfFieldBehaviour DepthOfFieldBehaviour DepthOfFieldBehaviour Pointer )
 
             return value;
         }

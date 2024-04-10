@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 StackallocThreshold                      int IL2CPP_TYPE_I4
-    public partial class ParsingPrimitives
+    public partial class ParsingPrimitives : DataModel
     {
 
         public static ParsingPrimitives? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParsingPrimitives();
+            var value   = new ParsingPrimitives() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Profile                                  0001865FF0D0 ModelClassType IProfileStatus IProfileStatus IProfileStatus Pointer
     // 028 SupportCharacter                         00018666A070 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer
     // 030 FriendSupportId                          000186672F10 ModelPrimitiveType string string string String
-    public partial class ProduceFriendSupportViewModel
+    public partial class ProduceFriendSupportViewModel : DataModel
     {
         public FriendState                              FriendState                             { get; set; }
         public IProfileStatus?                          Profile                                 { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceFriendSupportViewModel();
+            var value   = new ProduceFriendSupportViewModel() { Pointer= p0 };
 
-            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x010)); // 0270D64D1D00 0x10 FriendState                 ( 0001865F4E60 ModelEnumType FriendState FriendState FriendState Int32 )
-            value.Profile                                   = GetObject<IProfileStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProfileStatus.FromPointer); // 0270D64D1D40 0x20 Profile                     ( 0001865FF0D0 ModelClassType IProfileStatus IProfileStatus IProfileStatus Pointer )
-            value.SupportCharacter                          = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0270D64D1D60 0x28 SupportCharacter            ( 00018666A070 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
-            value.FriendSupportId                           = GetString(new IntPtr(p + 0x030)); // 0270D64D1D80 0x30 FriendSupportId             ( 000186672F10 ModelPrimitiveType string string string String )
+            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x010)); // 0246665488B8 0x10 FriendState                 ( 0001865F4E60 ModelEnumType FriendState FriendState FriendState Int32 )
+            value.Profile                                   = GetObject<IProfileStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProfileStatus.FromPointer); // 0246665488F8 0x20 Profile                     ( 0001865FF0D0 ModelClassType IProfileStatus IProfileStatus IProfileStatus Pointer )
+            value.SupportCharacter                          = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 024666548918 0x28 SupportCharacter            ( 00018666A070 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
+            value.FriendSupportId                           = GetString(new IntPtr(p + 0x030)); // 024666548938 0x30 FriendSupportId             ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

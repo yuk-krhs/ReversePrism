@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Self                                   <int> IL2CPP_TYPE_I
-    public partial class MeshTransformList
+    public partial class MeshTransformList : DataModel
     {
 
         public static MeshTransformList? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshTransformList();
+            var value   = new MeshTransformList() { Pointer= p0 };
 
 
             return value;

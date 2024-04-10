@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CharacterBaseSelectArgument
+    public partial class CharacterBaseSelectArgument : DataModel
     {
 
         public static CharacterBaseSelectArgument? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterBaseSelectArgument();
+            var value   = new CharacterBaseSelectArgument() { Pointer= p0 };
 
 
             return value;

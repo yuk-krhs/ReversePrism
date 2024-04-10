@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EtceteraPopupViewFactory
+    public partial class EtceteraPopupViewFactory : DataModel
     {
 
         public static EtceteraPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EtceteraPopupViewFactory();
+            var value   = new EtceteraPopupViewFactory() { Pointer= p0 };
 
 
             return value;

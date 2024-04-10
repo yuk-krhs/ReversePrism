@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 ImgMaskedInCircle                        0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 040 Value                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 048 OnChange                                 IObservable`1<ValueTuple`2<bool, int>> IL2CPP_TYPE_GENERICINST
-    public partial class UIIconTextCheckBox
+    public partial class UIIconTextCheckBox : DataModel
     {
         public ToggleButton?                            CheckBox                                { get; set; }
         public UIImage?                                 ImgLabel                                { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIIconTextCheckBox();
+            var value   = new UIIconTextCheckBox() { Pointer= p0 };
 
-            value.CheckBox                                  = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270D548FC58 0x20 CheckBox                    ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.ImgLabel                                  = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0270D548FC78 0x28 ImgLabel                    ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.GoMask                                    = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270D548FC98 0x30 GoMask                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ImgMaskedInCircle                         = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0270D548FCB8 0x38 ImgMaskedInCircle           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Value                                     = GetInt32(new IntPtr(p + 0x040)); // 0270D548FCD8 0x40 Value                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CheckBox                                  = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466550B080 0x20 CheckBox                    ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.ImgLabel                                  = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 02466550B0A0 0x28 ImgLabel                    ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.GoMask                                    = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466550B0C0 0x30 GoMask                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ImgMaskedInCircle                         = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 02466550B0E0 0x38 ImgMaskedInCircle           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.Value                                     = GetInt32(new IntPtr(p + 0x040)); // 02466550B100 0x40 Value                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
     // 018 Schema                                   00018675AFB0 ModelClassType JsonSchema JsonSchema JsonSchema Pointer
-    public partial class TypeSchema
+    public partial class TypeSchema : DataModel
     {
         public Type?                                    Type                                    { get; set; }
         public JsonSchema?                              Schema                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeSchema();
+            var value   = new TypeSchema() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D8787ED8 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.Schema                                    = GetObject<JsonSchema>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonSchema.FromPointer); // 0270D8787EF8 0x18 Schema                      ( 00018675AFB0 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024668813290 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Schema                                    = GetObject<JsonSchema>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonSchema.FromPointer); // 0246688132B0 0x18 Schema                      ( 00018675AFB0 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
 
             return value;
         }

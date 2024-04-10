@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 CostumePuSetListView                     00018662DA00 ModelClassType CostumePUSetListView CostumePUSetListView CostumePUSetListView Pointer
-    public partial class CostumeSetSelectGridViewCell
+    public partial class CostumeSetSelectGridViewCell : DataModel
     {
         public CostumePUSetListView?                    CostumePuSetListView                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeSetSelectGridViewCell();
+            var value   = new CostumeSetSelectGridViewCell() { Pointer= p0 };
 
-            value.CostumePuSetListView                      = GetObject<CostumePUSetListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumePUSetListView.FromPointer); // 0270DA2A73E8 0x30 CostumePuSetListView        ( 00018662DA00 ModelClassType CostumePUSetListView CostumePUSetListView CostumePUSetListView Pointer )
+            value.CostumePuSetListView                      = GetObject<CostumePUSetListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumePUSetListView.FromPointer); // 02466A2FA9D0 0x30 CostumePuSetListView        ( 00018662DA00 ModelClassType CostumePUSetListView CostumePUSetListView CostumePUSetListView Pointer )
 
             return value;
         }

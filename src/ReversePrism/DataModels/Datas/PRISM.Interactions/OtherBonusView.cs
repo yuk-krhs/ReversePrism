@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ContentParent                            0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 028 ContentPrefab                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 OtherBonusContentViews                   000185B99160 ModelClassListType OtherBonusContentView[] OtherBonusContentView[] List<OtherBonusContentView> Pointer
-    public partial class OtherBonusView
+    public partial class OtherBonusView : DataModel
     {
         public Transform?                               ContentParent                           { get; set; }
         public GameObject?                              ContentPrefab                           { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OtherBonusView();
+            var value   = new OtherBonusView() { Pointer= p0 };
 
-            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0270DA3177F8 0x20 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ContentPrefab                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA317818 0x28 ContentPrefab               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OtherBonusContentViews                    = GetObjectList<OtherBonusContentView>(new IntPtr(p + 0x030), ReversePrism.DataModels.OtherBonusContentView.FromPointer); // 0270DA317838 0x30 OtherBonusContentViews      ( 000185B99160 ModelClassListType OtherBonusContentView[] OtherBonusContentView[] List<OtherBonusContentView> Pointer )
+            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 02466A382DD8 0x20 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ContentPrefab                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A382DF8 0x28 ContentPrefab               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.OtherBonusContentViews                    = GetObjectList<OtherBonusContentView>(new IntPtr(p + 0x030), ReversePrism.DataModels.OtherBonusContentView.FromPointer); // 02466A382E18 0x30 OtherBonusContentViews      ( 000185B99160 ModelClassListType OtherBonusContentView[] OtherBonusContentView[] List<OtherBonusContentView> Pointer )
 
             return value;
         }

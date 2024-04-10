@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 048 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 ReleasableDateFieldNumber                int IL2CPP_TYPE_I4
     // 050 _ReleasableDate                          000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class VerifyConnectTokenStatus
+    public partial class VerifyConnectTokenStatus : DataModel
     {
         public DateTime                                 ReleasableDate                          { get; set; }
         public ConnectionResultType                     Result                                  { get; set; }
@@ -39,15 +39,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyConnectTokenStatus();
+            var value   = new VerifyConnectTokenStatus() { Pointer= p0 };
 
-            value.ReleasableDate                            = GetDateTime(new IntPtr(p + 0x010)); // 0270D371C270 0x10 ReleasableDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Result                                    = (ConnectionResultType)GetInt32(new IntPtr(p + 0x028)); // 0270D371C2F0 0x28 Result                      ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
-            value.SearchId                                  = GetString(new IntPtr(p + 0x030)); // 0270D371C330 0x30 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserName                                  = GetString(new IntPtr(p + 0x038)); // 0270D371C370 0x38 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = (TransferProviderType)GetInt32(new IntPtr(p + 0x040)); // 0270D371C3B0 0x40 Type                        ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x048)); // 0270D371C3F0 0x48 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value._ReleasableDate                           = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D371C430 0x50 _ReleasableDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.ReleasableDate                            = GetDateTime(new IntPtr(p + 0x010)); // 0246607EE0D0 0x10 ReleasableDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Result                                    = (ConnectionResultType)GetInt32(new IntPtr(p + 0x028)); // 0246607EE150 0x28 Result                      ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
+            value.SearchId                                  = GetString(new IntPtr(p + 0x030)); // 0246607EE190 0x30 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserName                                  = GetString(new IntPtr(p + 0x038)); // 0246607EE1D0 0x38 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = (TransferProviderType)GetInt32(new IntPtr(p + 0x040)); // 0246607EE210 0x40 Type                        ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x048)); // 0246607EE250 0x48 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value._ReleasableDate                           = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0246607EE290 0x50 _ReleasableDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.ReleasableDate                = ToDateTime(value._ReleasableDate);
 
             return value;

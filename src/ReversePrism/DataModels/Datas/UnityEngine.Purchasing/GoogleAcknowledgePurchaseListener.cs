@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_AndroidAcknowledgePurchaseResponseListenerClassName string IL2CPP_TYPE_STRING
     // 020 m_OnAcknowledgePurchaseResponse          Action`1<IGoogleBillingResult> IL2CPP_TYPE_GENERICINST
-    public partial class GoogleAcknowledgePurchaseListener
+    public partial class GoogleAcknowledgePurchaseListener : DataModel
     {
 
         public static GoogleAcknowledgePurchaseListener? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GoogleAcknowledgePurchaseListener();
+            var value   = new GoogleAcknowledgePurchaseListener() { Pointer= p0 };
 
 
             return value;

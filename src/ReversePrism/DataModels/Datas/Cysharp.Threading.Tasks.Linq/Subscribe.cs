@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 NopError                                 Action`1<Exception> IL2CPP_TYPE_GENERICINST
     // 008 NopCompleted                             Action IL2CPP_TYPE_CLASS
-    public partial class Subscribe
+    public partial class Subscribe : DataModel
     {
 
         public static Subscribe? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Subscribe();
+            var value   = new Subscribe() { Pointer= p0 };
 
 
             return value;

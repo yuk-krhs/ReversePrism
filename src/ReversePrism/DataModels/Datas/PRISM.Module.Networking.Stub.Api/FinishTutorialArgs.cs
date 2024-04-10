@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
     // 000 DisplayNameFieldNumber                   int IL2CPP_TYPE_I4
     // 020 DisplayName                              000186671910 ModelPrimitiveType string string string String
-    public partial class FinishTutorialArgs
+    public partial class FinishTutorialArgs : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   DisplayName                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishTutorialArgs();
+            var value   = new FinishTutorialArgs() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D2C453E8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 0270D2C45428 0x20 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024662BD97E0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 024662BD9820 0x20 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

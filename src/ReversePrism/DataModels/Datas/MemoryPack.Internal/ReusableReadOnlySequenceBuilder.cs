@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 segmentPool                              Stack`1<Segment> IL2CPP_TYPE_GENERICINST
     // 018 List                                     000185D2A828 ModelClassListType List`1<Segment> List`1<Segment> List<Segment> Pointer
-    public partial class ReusableReadOnlySequenceBuilder
+    public partial class ReusableReadOnlySequenceBuilder : DataModel
     {
         public List<Segment>?                           List                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableReadOnlySequenceBuilder();
+            var value   = new ReusableReadOnlySequenceBuilder() { Pointer= p0 };
 
-            value.List                                      = GetObjectList<Segment>(new IntPtr(p + 0x018), ReversePrism.DataModels.Segment.FromPointer); // 0270DAF334E0 0x18 List                        ( 000185D2A828 ModelClassListType List`1<Segment> List`1<Segment> List<Segment> Pointer )
+            value.List                                      = GetObjectList<Segment>(new IntPtr(p + 0x018), ReversePrism.DataModels.Segment.FromPointer); // 02466AFA34E0 0x18 List                        ( 000185D2A828 ModelClassListType List`1<Segment> List`1<Segment> List<Segment> Pointer )
 
             return value;
         }

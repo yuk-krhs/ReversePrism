@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BypassElement
+    public partial class BypassElement : DataModel
     {
 
         public static BypassElement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BypassElement();
+            var value   = new BypassElement() { Pointer= p0 };
 
 
             return value;

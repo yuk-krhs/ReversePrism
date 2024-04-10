@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlTypeMapMemberAnyElement
+    public partial class XmlTypeMapMemberAnyElement : DataModel
     {
 
         public static XmlTypeMapMemberAnyElement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTypeMapMemberAnyElement();
+            var value   = new XmlTypeMapMemberAnyElement() { Pointer= p0 };
 
 
             return value;

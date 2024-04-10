@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 CoreML                                   string IL2CPP_TYPE_STRING
     // 000 ONNX                                     string IL2CPP_TYPE_STRING
     // 000 TensorFlowLite                           string IL2CPP_TYPE_STRING
-    public partial class GraphFormat
+    public partial class GraphFormat : DataModel
     {
 
         public static GraphFormat? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphFormat();
+            var value   = new GraphFormat() { Pointer= p0 };
 
 
             return value;

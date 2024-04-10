@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITypeDescriptorFilterService
+    public partial class ITypeDescriptorFilterService : DataModel
     {
 
         public static ITypeDescriptorFilterService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITypeDescriptorFilterService();
+            var value   = new ITypeDescriptorFilterService() { Pointer= p0 };
 
 
             return value;

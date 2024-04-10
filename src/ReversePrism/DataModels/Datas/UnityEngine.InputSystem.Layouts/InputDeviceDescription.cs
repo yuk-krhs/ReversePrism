@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 M_Serial                                 000186671910 ModelPrimitiveType string string string String
     // 038 M_Version                                000186671910 ModelPrimitiveType string string string String
     // 040 M_Capabilities                           000186671910 ModelPrimitiveType string string string String
-    public partial class InputDeviceDescription
+    public partial class InputDeviceDescription : DataModel
     {
         public string                                   M_InterfaceName                         { get; set; }
         public string                                   M_DeviceClass                           { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputDeviceDescription();
+            var value   = new InputDeviceDescription() { Pointer= p0 };
 
-            value.M_InterfaceName                           = GetString(new IntPtr(p + 0x010)); // 027002E363B8 0x10 M_InterfaceName             ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_DeviceClass                             = GetString(new IntPtr(p + 0x018)); // 027002E363D8 0x18 M_DeviceClass               ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Manufacturer                            = GetString(new IntPtr(p + 0x020)); // 027002E363F8 0x20 M_Manufacturer              ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Product                                 = GetString(new IntPtr(p + 0x028)); // 027002E36418 0x28 M_Product                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Serial                                  = GetString(new IntPtr(p + 0x030)); // 027002E36438 0x30 M_Serial                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Version                                 = GetString(new IntPtr(p + 0x038)); // 027002E36458 0x38 M_Version                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Capabilities                            = GetString(new IntPtr(p + 0x040)); // 027002E36478 0x40 M_Capabilities              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_InterfaceName                           = GetString(new IntPtr(p + 0x010)); // 0245A2E363B8 0x10 M_InterfaceName             ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_DeviceClass                             = GetString(new IntPtr(p + 0x018)); // 0245A2E363D8 0x18 M_DeviceClass               ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Manufacturer                            = GetString(new IntPtr(p + 0x020)); // 0245A2E363F8 0x20 M_Manufacturer              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Product                                 = GetString(new IntPtr(p + 0x028)); // 0245A2E36418 0x28 M_Product                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Serial                                  = GetString(new IntPtr(p + 0x030)); // 0245A2E36438 0x30 M_Serial                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Version                                 = GetString(new IntPtr(p + 0x038)); // 0245A2E36458 0x38 M_Version                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Capabilities                            = GetString(new IntPtr(p + 0x040)); // 0245A2E36478 0x40 M_Capabilities              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

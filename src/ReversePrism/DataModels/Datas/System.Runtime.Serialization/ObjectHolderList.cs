@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_values                                 000185B98BA0 ModelClassListType ObjectHolder[] ObjectHolder[] List<ObjectHolder> Pointer
     // 018 M_count                                  0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class ObjectHolderList
+    public partial class ObjectHolderList : DataModel
     {
         public List<ObjectHolder>?                      M_values                                { get; set; }
         public int                                      M_count                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectHolderList();
+            var value   = new ObjectHolderList() { Pointer= p0 };
 
-            value.M_values                                  = GetObjectList<ObjectHolder>(new IntPtr(p + 0x010), ReversePrism.DataModels.ObjectHolder.FromPointer); // 0270D6C1ED50 0x10 M_values                    ( 000185B98BA0 ModelClassListType ObjectHolder[] ObjectHolder[] List<ObjectHolder> Pointer )
-            value.M_count                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D6C1ED70 0x18 M_count                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_values                                  = GetObjectList<ObjectHolder>(new IntPtr(p + 0x010), ReversePrism.DataModels.ObjectHolder.FromPointer); // 024666C8EEF0 0x10 M_values                    ( 000185B98BA0 ModelClassListType ObjectHolder[] ObjectHolder[] List<ObjectHolder> Pointer )
+            value.M_count                                   = GetInt32(new IntPtr(p + 0x018)); // 024666C8EF10 0x18 M_count                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 StartFrame                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 ArgValue1                                0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C ArgValue2                                0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class ExpressionData
+    public partial class ExpressionData : DataModel
     {
         public MoveType                                 MoveType                                { get; set; }
         public int                                      StartFrame                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpressionData();
+            var value   = new ExpressionData() { Pointer= p0 };
 
-            value.MoveType                                  = (MoveType)GetInt32(new IntPtr(p + 0x010)); // 027006AA3CA0 0x10 MoveType                    ( 00018666F3C0 ModelEnumType MoveType MoveType MoveType Int32 )
-            value.StartFrame                                = GetInt32(new IntPtr(p + 0x014)); // 027006AA3CC0 0x14 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ArgValue1                                 = GetInt32(new IntPtr(p + 0x018)); // 027006AA3CE0 0x18 ArgValue1                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ArgValue2                                 = GetInt32(new IntPtr(p + 0x01C)); // 027006AA3D00 0x1C ArgValue2                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MoveType                                  = (MoveType)GetInt32(new IntPtr(p + 0x010)); // 0245A6A540E0 0x10 MoveType                    ( 00018666F3C0 ModelEnumType MoveType MoveType MoveType Int32 )
+            value.StartFrame                                = GetInt32(new IntPtr(p + 0x014)); // 0245A6A54100 0x14 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ArgValue1                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A6A54120 0x18 ArgValue1                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ArgValue2                                 = GetInt32(new IntPtr(p + 0x01C)); // 0245A6A54140 0x1C ArgValue2                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ChainTalkSeparatorCell
+    public partial class ChainTalkSeparatorCell : DataModel
     {
 
         public static ChainTalkSeparatorCell? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkSeparatorCell();
+            var value   = new ChainTalkSeparatorCell() { Pointer= p0 };
 
 
             return value;

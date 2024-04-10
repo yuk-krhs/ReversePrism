@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 038 __Method_GetFesIdolList                  Method`2<GetFesIdolListArgs, GetFesIdolListReply> IL2CPP_TYPE_GENERICINST
     // 040 __Method_MarkFavoriteFesIdol             Method`2<MarkFavoriteFesIdolArgs, MarkFavoriteFesIdolReply> IL2CPP_TYPE_GENERICINST
     // 048 __Method_TransferFesIdol                 Method`2<TransferFesIdolArgs, TransferFesIdolReply> IL2CPP_TYPE_GENERICINST
-    public partial class FesIdolService
+    public partial class FesIdolService : DataModel
     {
 
         public static FesIdolService? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesIdolService();
+            var value   = new FesIdolService() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITwestaArticleFetcher
+    public partial class ITwestaArticleFetcher : DataModel
     {
 
         public static ITwestaArticleFetcher? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITwestaArticleFetcher();
+            var value   = new ITwestaArticleFetcher() { Pointer= p0 };
 
 
             return value;

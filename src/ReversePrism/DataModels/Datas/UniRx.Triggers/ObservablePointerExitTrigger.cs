@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onPointerExit                            Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservablePointerExitTrigger
+    public partial class ObservablePointerExitTrigger : DataModel
     {
 
         public static ObservablePointerExitTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservablePointerExitTrigger();
+            var value   = new ObservablePointerExitTrigger() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 001 EnforceJapaneseEraYearRanges             bool IL2CPP_TYPE_BOOLEAN
     // 002 FormatJapaneseFirstYearAsANumber         bool IL2CPP_TYPE_BOOLEAN
     // 003 EnforceLegacyJapaneseDateParsing         bool IL2CPP_TYPE_BOOLEAN
-    public partial class AppContextSwitches
+    public partial class AppContextSwitches : DataModel
     {
 
         public static AppContextSwitches? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppContextSwitches();
+            var value   = new AppContextSwitches() { Pointer= p0 };
 
 
             return value;

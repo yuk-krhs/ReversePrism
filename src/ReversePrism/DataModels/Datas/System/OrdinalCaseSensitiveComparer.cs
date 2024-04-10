@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OrdinalCaseSensitiveComparer
+    public partial class OrdinalCaseSensitiveComparer : DataModel
     {
 
         public static OrdinalCaseSensitiveComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OrdinalCaseSensitiveComparer();
+            var value   = new OrdinalCaseSensitiveComparer() { Pointer= p0 };
 
 
             return value;

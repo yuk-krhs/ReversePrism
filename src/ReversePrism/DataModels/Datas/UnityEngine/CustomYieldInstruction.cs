@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CustomYieldInstruction
+    public partial class CustomYieldInstruction : DataModel
     {
 
         public static CustomYieldInstruction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomYieldInstruction();
+            var value   = new CustomYieldInstruction() { Pointer= p0 };
 
 
             return value;

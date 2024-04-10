@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ListView                                 0001865F12F0 ModelClassType PvpRankingListView PvpRankingListView PvpRankingListView Pointer
-    public partial class PvpRankingPanelView
+    public partial class PvpRankingPanelView : DataModel
     {
         public PvpRankingListView?                      ListView                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpRankingPanelView();
+            var value   = new PvpRankingPanelView() { Pointer= p0 };
 
-            value.ListView                                  = GetObject<PvpRankingListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankingListView.FromPointer); // 0270DA14A030 0x20 ListView                    ( 0001865F12F0 ModelClassType PvpRankingListView PvpRankingListView PvpRankingListView Pointer )
+            value.ListView                                  = GetObject<PvpRankingListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankingListView.FromPointer); // 02466A1A5848 0x20 ListView                    ( 0001865F12F0 ModelClassType PvpRankingListView PvpRankingListView PvpRankingListView Pointer )
 
             return value;
         }

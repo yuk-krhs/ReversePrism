@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CultureInfoFormatter
+    public partial class CultureInfoFormatter : DataModel
     {
 
         public static CultureInfoFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CultureInfoFormatter();
+            var value   = new CultureInfoFormatter() { Pointer= p0 };
 
 
             return value;

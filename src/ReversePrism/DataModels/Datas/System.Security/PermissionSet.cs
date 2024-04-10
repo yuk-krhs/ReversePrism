@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 Declsec                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 028 Ignored                                  000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
     // 008 action                                   <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class PermissionSet
+    public partial class PermissionSet : DataModel
     {
         public PermissionState                          State                                   { get; set; }
         public ArrayList?                               List                                    { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PermissionSet();
+            var value   = new PermissionSet() { Pointer= p0 };
 
-            value.State                                     = (PermissionState)GetInt32(new IntPtr(p + 0x010)); // 0270D6B68B30 0x10 State                       ( 000186735B00 ModelEnumType PermissionState PermissionState PermissionState Int32 )
-            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 0270D6B68B50 0x18 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Declsec                                   = GetBool(new IntPtr(p + 0x020)); // 0270D6B68B70 0x20 Declsec                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Ignored                                   = GetBoolList(new IntPtr(p + 0x028)); // 0270D6B68B90 0x28 Ignored                     ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.State                                     = (PermissionState)GetInt32(new IntPtr(p + 0x010)); // 024666BE0B30 0x10 State                       ( 000186735B00 ModelEnumType PermissionState PermissionState PermissionState Int32 )
+            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 024666BE0B50 0x18 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Declsec                                   = GetBool(new IntPtr(p + 0x020)); // 024666BE0B70 0x20 Declsec                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Ignored                                   = GetBoolList(new IntPtr(p + 0x028)); // 024666BE0B90 0x28 Ignored                     ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

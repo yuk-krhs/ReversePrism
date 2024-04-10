@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 kSize                                    int IL2CPP_TYPE_I4
     // 010 _Hashes                                  000186533650 ModelEnumType <hashes>e__FixedBuffer <hashes>e__FixedBuffer <hashes>e__FixedBuffer Int32
-    public partial class Hashes
+    public partial class Hashes : DataModel
     {
         public <hashes>e__FixedBuffer                   _Hashes                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hashes();
+            var value   = new Hashes() { Pointer= p0 };
 
-            value._Hashes                                   = (<hashes>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 0270068411D8 0x10 _Hashes                     ( 000186533650 ModelEnumType <hashes>e__FixedBuffer <hashes>e__FixedBuffer <hashes>e__FixedBuffer Int32 )
+            value._Hashes                                   = (<hashes>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 0245A6802FB8 0x10 _Hashes                     ( 000186533650 ModelEnumType <hashes>e__FixedBuffer <hashes>e__FixedBuffer <hashes>e__FixedBuffer Int32 )
 
             return value;
         }

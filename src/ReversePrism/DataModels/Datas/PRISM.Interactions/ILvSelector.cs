@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILvSelector
+    public partial class ILvSelector : DataModel
     {
 
         public static ILvSelector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILvSelector();
+            var value   = new ILvSelector() { Pointer= p0 };
 
 
             return value;

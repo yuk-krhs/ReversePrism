@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomStyle
+    public partial class ICustomStyle : DataModel
     {
 
         public static ICustomStyle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomStyle();
+            var value   = new ICustomStyle() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 User                                     0001866347C0 ModelClassType ISelfStatus ISelfStatus ISelfStatus Pointer
     // 018 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UserCache
+    public partial class UserCache : DataModel
     {
         public ISelfStatus?                             User                                    { get; set; }
         public bool                                     IsReady                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserCache();
+            var value   = new UserCache() { Pointer= p0 };
 
-            value.User                                      = GetObject<ISelfStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISelfStatus.FromPointer); // 027004A8BA98 0x10 User                        ( 0001866347C0 ModelClassType ISelfStatus ISelfStatus ISelfStatus Pointer )
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 027004A8BAB8 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.User                                      = GetObject<ISelfStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISelfStatus.FromPointer); // 0245A4AE2478 0x10 User                        ( 0001866347C0 ModelClassType ISelfStatus ISelfStatus ISelfStatus Pointer )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0245A4AE2498 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

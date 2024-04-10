@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 0A0 MixerBehaviour                           000186737790 ModelClassType PersonalLightMixerBehaviour PersonalLightMixerBehaviour PersonalLightMixerBehaviour Pointer
-    public partial class PersonalLightTrack
+    public partial class PersonalLightTrack : DataModel
     {
         public PersonalLightMixerBehaviour?             MixerBehaviour                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PersonalLightTrack();
+            var value   = new PersonalLightTrack() { Pointer= p0 };
 
-            value.MixerBehaviour                            = GetObject<PersonalLightMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.PersonalLightMixerBehaviour.FromPointer); // 027005BE1A50 0xA0 MixerBehaviour              ( 000186737790 ModelClassType PersonalLightMixerBehaviour PersonalLightMixerBehaviour PersonalLightMixerBehaviour Pointer )
+            value.MixerBehaviour                            = GetObject<PersonalLightMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.PersonalLightMixerBehaviour.FromPointer); // 024664E727A0 0xA0 MixerBehaviour              ( 000186737790 ModelClassType PersonalLightMixerBehaviour PersonalLightMixerBehaviour PersonalLightMixerBehaviour Pointer )
 
             return value;
         }

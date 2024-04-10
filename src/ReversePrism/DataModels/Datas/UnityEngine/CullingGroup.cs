@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 M_OnStateChanged                         000186567610 ModelClassType StateChanged StateChanged StateChanged Pointer
-    public partial class CullingGroup
+    public partial class CullingGroup : DataModel
     {
         public StateChanged?                            M_OnStateChanged                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CullingGroup();
+            var value   = new CullingGroup() { Pointer= p0 };
 
-            value.M_OnStateChanged                          = GetObject<StateChanged>(new IntPtr(p + 0x018), ReversePrism.DataModels.StateChanged.FromPointer); // 0270023596B0 0x18 M_OnStateChanged            ( 000186567610 ModelClassType StateChanged StateChanged StateChanged Pointer )
+            value.M_OnStateChanged                          = GetObject<StateChanged>(new IntPtr(p + 0x018), ReversePrism.DataModels.StateChanged.FromPointer); // 0245A23596B0 0x18 M_OnStateChanged            ( 000186567610 ModelClassType StateChanged StateChanged StateChanged Pointer )
 
             return value;
         }

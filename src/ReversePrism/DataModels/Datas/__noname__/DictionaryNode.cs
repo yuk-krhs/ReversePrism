@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 key                                      <object> IL2CPP_TYPE_OBJECT
     // 018 value                                    <object> IL2CPP_TYPE_OBJECT
     // 020 Next                                     000186690A20 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer
-    public partial class DictionaryNode
+    public partial class DictionaryNode : DataModel
     {
         public DictionaryNode?                          Next                                    { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DictionaryNode();
+            var value   = new DictionaryNode() { Pointer= p0 };
 
-            value.Next                                      = GetObject<DictionaryNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.DictionaryNode.FromPointer); // 0270D7B6A230 0x20 Next                        ( 000186690A20 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer )
+            value.Next                                      = GetObject<DictionaryNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.DictionaryNode.FromPointer); // 024667BDA230 0x20 Next                        ( 000186690A20 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer )
 
             return value;
         }

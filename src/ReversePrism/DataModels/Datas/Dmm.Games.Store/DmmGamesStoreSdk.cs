@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 _receiveGo                               GameObject IL2CPP_TYPE_CLASS
     // 008 _receiveCode                             DmmSdkReceiveObject IL2CPP_TYPE_CLASS
     // 018 IsEditorInit                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DmmGamesStoreSdk
+    public partial class DmmGamesStoreSdk : DataModel
     {
         public DmmGamesStoreSdkSettings?                Settings                                { get; set; }
         public bool                                     IsEditorInit                            { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesStoreSdk();
+            var value   = new DmmGamesStoreSdk() { Pointer= p0 };
 
-            value.Settings                                  = GetObject<DmmGamesStoreSdkSettings>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesStoreSdkSettings.FromPointer); // 0270DB481B50 0x10 Settings                    ( 0001866E6900 ModelClassType DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings Pointer )
-            value.IsEditorInit                              = GetBool(new IntPtr(p + 0x018)); // 0270DB481BB0 0x18 IsEditorInit                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Settings                                  = GetObject<DmmGamesStoreSdkSettings>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesStoreSdkSettings.FromPointer); // 02466B50EA80 0x10 Settings                    ( 0001866E6900 ModelClassType DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings DmmGamesStoreSdkSettings Pointer )
+            value.IsEditorInit                              = GetBool(new IntPtr(p + 0x018)); // 02466B50EAE0 0x18 IsEditorInit                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

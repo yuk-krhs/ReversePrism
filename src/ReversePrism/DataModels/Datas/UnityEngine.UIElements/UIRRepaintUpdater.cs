@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 DrawStats                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 031 BreakBatches                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 032 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UIRRepaintUpdater
+    public partial class UIRRepaintUpdater : DataModel
     {
         public BaseVisualElementPanel?                  AttachedPanel                           { get; set; }
         public RenderChain?                             RenderChain                             { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRRepaintUpdater();
+            var value   = new UIRRepaintUpdater() { Pointer= p0 };
 
-            value.AttachedPanel                             = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x020), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0270067E91E0 0x20 AttachedPanel               ( 000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
-            value.RenderChain                               = GetObject<RenderChain>(new IntPtr(p + 0x028), ReversePrism.DataModels.RenderChain.FromPointer); // 0270067E9200 0x28 RenderChain                 ( 00018664F8D0 ModelClassType RenderChain RenderChain RenderChain Pointer )
-            value.DrawStats                                 = GetBool(new IntPtr(p + 0x030)); // 0270067E9260 0x30 DrawStats                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BreakBatches                              = GetBool(new IntPtr(p + 0x031)); // 0270067E9280 0x31 BreakBatches                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x032)); // 0270067E92A0 0x32 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AttachedPanel                             = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x020), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0245A67AB370 0x20 AttachedPanel               ( 000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
+            value.RenderChain                               = GetObject<RenderChain>(new IntPtr(p + 0x028), ReversePrism.DataModels.RenderChain.FromPointer); // 0245A67AB390 0x28 RenderChain                 ( 00018664F8D0 ModelClassType RenderChain RenderChain RenderChain Pointer )
+            value.DrawStats                                 = GetBool(new IntPtr(p + 0x030)); // 0245A67AB3F0 0x30 DrawStats                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BreakBatches                              = GetBool(new IntPtr(p + 0x031)); // 0245A67AB410 0x31 BreakBatches                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x032)); // 0245A67AB430 0x32 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

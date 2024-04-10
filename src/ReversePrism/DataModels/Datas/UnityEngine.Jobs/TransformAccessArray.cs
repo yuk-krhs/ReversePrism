@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_TransformArray                         <int> IL2CPP_TYPE_I
-    public partial class TransformAccessArray
+    public partial class TransformAccessArray : DataModel
     {
 
         public static TransformAccessArray? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformAccessArray();
+            var value   = new TransformAccessArray() { Pointer= p0 };
 
 
             return value;

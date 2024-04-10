@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 000 CharacterListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_characterList_codec            FieldCodec`1<SupportCharacterEffectCharacterStatus> IL2CPP_TYPE_GENERICINST
     // 038 CharacterList                            000185CF3B98 ModelClassListType RepeatedField`1<SupportCharacterEffectCharacterStatus> RepeatedField`1<SupportCharacterEffectCharacterStatus> List<SupportCharacterEffectCharacterStatus> Pointer
-    public partial class CreateGashaSupportCharacterEffectArgs
+    public partial class CreateGashaSupportCharacterEffectArgs : DataModel
     {
         public TimeOfDay                                TimeOfDay                               { get; set; }
         public bool                                     DocumentFlag                            { get; set; }
@@ -50,18 +50,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateGashaSupportCharacterEffectArgs();
+            var value   = new CreateGashaSupportCharacterEffectArgs() { Pointer= p0 };
 
-            value.TimeOfDay                                 = (TimeOfDay)GetInt32(new IntPtr(p + 0x018)); // 0270D1A0A638 0x18 TimeOfDay                   ( 000186667A00 ModelEnumType TimeOfDay TimeOfDay TimeOfDay Int32 )
-            value.DocumentFlag                              = GetBool(new IntPtr(p + 0x01C)); // 0270D1A0A678 0x1C DocumentFlag                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CoffeeFlag                                = GetBool(new IntPtr(p + 0x01D)); // 0270D1A0A6B8 0x1D CoffeeFlag                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.VibrationFlag                             = GetBool(new IntPtr(p + 0x01E)); // 0270D1A0A6F8 0x1E VibrationFlag               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x020)); // 0270D1A0A738 0x20 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NoticeType                                = (GashaNoticeType)GetInt32(new IntPtr(p + 0x024)); // 0270D1A0A778 0x24 NoticeType                  ( 00018660A180 ModelEnumType GashaNoticeType GashaNoticeType GashaNoticeType Int32 )
-            value.Month                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D1A0A7B8 0x28 Month                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TvType                                    = (GashaEffectTVType)GetInt32(new IntPtr(p + 0x02C)); // 0270D1A0A7F8 0x2C TvType                      ( 0001865FBE80 ModelEnumType GashaEffectTVType GashaEffectTVType GashaEffectTVType Int32 )
-            value.FlavorTextId                              = GetString(new IntPtr(p + 0x030)); // 0270D1A0A838 0x30 FlavorTextId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.CharacterList                             = GetObjectList<SupportCharacterEffectCharacterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportCharacterEffectCharacterStatus.FromPointer); // 0270D1A0A898 0x38 CharacterList               ( 000185CF3B98 ModelClassListType RepeatedField`1<SupportCharacterEffectCharacterStatus> RepeatedField`1<SupportCharacterEffectCharacterStatus> List<SupportCharacterEffectCharacterStatus> Pointer )
+            value.TimeOfDay                                 = (TimeOfDay)GetInt32(new IntPtr(p + 0x018)); // 024661994AF0 0x18 TimeOfDay                   ( 000186667A00 ModelEnumType TimeOfDay TimeOfDay TimeOfDay Int32 )
+            value.DocumentFlag                              = GetBool(new IntPtr(p + 0x01C)); // 024661994B30 0x1C DocumentFlag                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CoffeeFlag                                = GetBool(new IntPtr(p + 0x01D)); // 024661994B70 0x1D CoffeeFlag                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.VibrationFlag                             = GetBool(new IntPtr(p + 0x01E)); // 024661994BB0 0x1E VibrationFlag               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x020)); // 024661994BF0 0x20 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NoticeType                                = (GashaNoticeType)GetInt32(new IntPtr(p + 0x024)); // 024661994C30 0x24 NoticeType                  ( 00018660A180 ModelEnumType GashaNoticeType GashaNoticeType GashaNoticeType Int32 )
+            value.Month                                     = GetInt32(new IntPtr(p + 0x028)); // 024661994C70 0x28 Month                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TvType                                    = (GashaEffectTVType)GetInt32(new IntPtr(p + 0x02C)); // 024661994CB0 0x2C TvType                      ( 0001865FBE80 ModelEnumType GashaEffectTVType GashaEffectTVType GashaEffectTVType Int32 )
+            value.FlavorTextId                              = GetString(new IntPtr(p + 0x030)); // 024661994CF0 0x30 FlavorTextId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.CharacterList                             = GetObjectList<SupportCharacterEffectCharacterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportCharacterEffectCharacterStatus.FromPointer); // 024661994D50 0x38 CharacterList               ( 000185CF3B98 ModelClassListType RepeatedField`1<SupportCharacterEffectCharacterStatus> RepeatedField`1<SupportCharacterEffectCharacterStatus> List<SupportCharacterEffectCharacterStatus> Pointer )
 
             return value;
         }

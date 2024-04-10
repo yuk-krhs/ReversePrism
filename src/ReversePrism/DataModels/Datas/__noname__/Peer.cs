@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 030 Principal                                000186671910 ModelPrimitiveType string string string String
     // 000 RegionCodeFieldNumber                    int IL2CPP_TYPE_I4
     // 038 RegionCode                               000186671910 ModelPrimitiveType string string string String
-    public partial class Peer
+    public partial class Peer : DataModel
     {
         public string                                   Ip                                      { get; set; }
         public long                                     Port                                    { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Peer();
+            var value   = new Peer() { Pointer= p0 };
 
-            value.Ip                                        = GetString(new IntPtr(p + 0x018)); // 0270DA7169A0 0x18 Ip                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Port                                      = GetInt64(new IntPtr(p + 0x020)); // 0270DA7169E0 0x20 Port                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Principal                                 = GetString(new IntPtr(p + 0x030)); // 0270DA716A80 0x30 Principal                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.RegionCode                                = GetString(new IntPtr(p + 0x038)); // 0270DA716AC0 0x38 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ip                                        = GetString(new IntPtr(p + 0x018)); // 02466A76A500 0x18 Ip                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Port                                      = GetInt64(new IntPtr(p + 0x020)); // 02466A76A540 0x20 Port                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Principal                                 = GetString(new IntPtr(p + 0x030)); // 02466A76A5E0 0x30 Principal                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.RegionCode                                = GetString(new IntPtr(p + 0x038)); // 02466A76A620 0x38 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

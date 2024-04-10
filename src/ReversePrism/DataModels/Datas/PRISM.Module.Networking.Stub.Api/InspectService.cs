@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_CheckErrorReply         Marshaller`1<CheckErrorReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_CheckNGWord                     Method`2<CheckNGWordArgs, CheckNGWordReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_CheckError                      Method`2<CheckErrorArgs, CheckErrorReply> IL2CPP_TYPE_GENERICINST
-    public partial class InspectService
+    public partial class InspectService : DataModel
     {
 
         public static InspectService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InspectService();
+            var value   = new InspectService() { Pointer= p0 };
 
 
             return value;

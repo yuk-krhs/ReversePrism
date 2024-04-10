@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 SpriteRenderer                           000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer
     // 028 FadeOutSeconds                           0001866656B0 ModelPrimitiveType float float float Single
     // 030 tweener                                  TweenerCore`3<Color, Color, ColorOptions> IL2CPP_TYPE_GENERICINST
-    public partial class KeyBeam
+    public partial class KeyBeam : DataModel
     {
         public SpriteRenderer?                          SpriteRenderer                          { get; set; }
         public float                                    FadeOutSeconds                          { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyBeam();
+            var value   = new KeyBeam() { Pointer= p0 };
 
-            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4FA2240 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
-            value.FadeOutSeconds                            = GetSingle(new IntPtr(p + 0x028)); // 0270D4FA2260 0x28 FadeOutSeconds              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024665029BD0 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.FadeOutSeconds                            = GetSingle(new IntPtr(p + 0x028)); // 024665029BF0 0x28 FadeOutSeconds              ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

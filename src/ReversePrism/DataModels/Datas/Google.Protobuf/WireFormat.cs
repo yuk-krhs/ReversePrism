@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 TagTypeBits                              int IL2CPP_TYPE_I4
     // 000 TagTypeMask                              uint IL2CPP_TYPE_U4
-    public partial class WireFormat
+    public partial class WireFormat : DataModel
     {
 
         public static WireFormat? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WireFormat();
+            var value   = new WireFormat() { Pointer= p0 };
 
 
             return value;

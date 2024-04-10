@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class ProductMasterReflection
+    public partial class ProductMasterReflection : DataModel
     {
 
         public static ProductMasterReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductMasterReflection();
+            var value   = new ProductMasterReflection() { Pointer= p0 };
 
 
             return value;

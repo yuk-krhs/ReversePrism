@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   SelectManyObservable`3<<var>, <var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class SelectManyEnumerableObserver
+    public partial class SelectManyEnumerableObserver : DataModel
     {
 
         public static SelectManyEnumerableObserver? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectManyEnumerableObserver();
+            var value   = new SelectManyEnumerableObserver() { Pointer= p0 };
 
 
             return value;

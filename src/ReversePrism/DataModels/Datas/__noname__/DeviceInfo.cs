@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 DeviceFlags                              0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 024 MaxChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 MaxSamplingRate                          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class DeviceInfo
+    public partial class DeviceInfo : DataModel
     {
         public string                                   DeviceId                                { get; set; }
         public string                                   DeviceName                              { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceInfo();
+            var value   = new DeviceInfo() { Pointer= p0 };
 
-            value.DeviceId                                  = GetString(new IntPtr(p + 0x010)); // 0270DAC74888 0x10 DeviceId                    ( 000186674C50 ModelPrimitiveType string string string String )
-            value.DeviceName                                = GetString(new IntPtr(p + 0x018)); // 0270DAC748A8 0x18 DeviceName                  ( 000186674C50 ModelPrimitiveType string string string String )
-            value.DeviceFlags                               = GetUInt32(new IntPtr(p + 0x020)); // 0270DAC748C8 0x20 DeviceFlags                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x024)); // 0270DAC748E8 0x24 MaxChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x028)); // 0270DAC74908 0x28 MaxSamplingRate             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DeviceId                                  = GetString(new IntPtr(p + 0x010)); // 02466ACDC888 0x10 DeviceId                    ( 000186674C50 ModelPrimitiveType string string string String )
+            value.DeviceName                                = GetString(new IntPtr(p + 0x018)); // 02466ACDC8A8 0x18 DeviceName                  ( 000186674C50 ModelPrimitiveType string string string String )
+            value.DeviceFlags                               = GetUInt32(new IntPtr(p + 0x020)); // 02466ACDC8C8 0x20 DeviceFlags                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x024)); // 02466ACDC8E8 0x24 MaxChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x028)); // 02466ACDC908 0x28 MaxSamplingRate             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

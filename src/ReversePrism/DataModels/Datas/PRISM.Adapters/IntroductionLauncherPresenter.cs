@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     000186586500 ModelClassType IIntroductionLauncherView IIntroductionLauncherView IIntroductionLauncherView Pointer
     // 018 Argument                                 000186726340 ModelClassType IntroductionLauncherArgument IntroductionLauncherArgument IntroductionLauncherArgument Pointer
     // 020 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class IntroductionLauncherPresenter
+    public partial class IntroductionLauncherPresenter : DataModel
     {
         public IIntroductionLauncherView?               View                                    { get; set; }
         public IntroductionLauncherArgument?            Argument                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLauncherPresenter();
+            var value   = new IntroductionLauncherPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IIntroductionLauncherView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIntroductionLauncherView.FromPointer); // 0270D63AE4C0 0x10 View                        ( 000186586500 ModelClassType IIntroductionLauncherView IIntroductionLauncherView IIntroductionLauncherView Pointer )
-            value.Argument                                  = GetObject<IntroductionLauncherArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntroductionLauncherArgument.FromPointer); // 0270D63AE4E0 0x18 Argument                    ( 000186726340 ModelClassType IntroductionLauncherArgument IntroductionLauncherArgument IntroductionLauncherArgument Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x020), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D63AE500 0x20 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<IIntroductionLauncherView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIntroductionLauncherView.FromPointer); // 02466640CF88 0x10 View                        ( 000186586500 ModelClassType IIntroductionLauncherView IIntroductionLauncherView IIntroductionLauncherView Pointer )
+            value.Argument                                  = GetObject<IntroductionLauncherArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntroductionLauncherArgument.FromPointer); // 02466640CFA8 0x18 Argument                    ( 000186726340 ModelClassType IntroductionLauncherArgument IntroductionLauncherArgument IntroductionLauncherArgument Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x020), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466640CFC8 0x20 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

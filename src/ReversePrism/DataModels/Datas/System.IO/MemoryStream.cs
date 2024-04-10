@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 042 Exposable                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 043 IsOpen                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 048 _lastReadTask                            Task`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class MemoryStream
+    public partial class MemoryStream : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public int                                      Origin                                  { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryStream();
+            var value   = new MemoryStream() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 0270D197D598 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Origin                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D197D5B8 0x30 Origin                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Position                                  = GetInt32(new IntPtr(p + 0x034)); // 0270D197D5D8 0x34 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x038)); // 0270D197D5F8 0x38 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Capacity                                  = GetInt32(new IntPtr(p + 0x03C)); // 0270D197D618 0x3C Capacity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Expandable                                = GetBool(new IntPtr(p + 0x040)); // 0270D197D638 0x40 Expandable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Writable                                  = GetBool(new IntPtr(p + 0x041)); // 0270D197D658 0x41 Writable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Exposable                                 = GetBool(new IntPtr(p + 0x042)); // 0270D197D678 0x42 Exposable                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsOpen                                    = GetBool(new IntPtr(p + 0x043)); // 0270D197D698 0x43 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 024661922040 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Origin                                    = GetInt32(new IntPtr(p + 0x030)); // 024661922060 0x30 Origin                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Position                                  = GetInt32(new IntPtr(p + 0x034)); // 024661922080 0x34 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x038)); // 0246619220A0 0x38 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Capacity                                  = GetInt32(new IntPtr(p + 0x03C)); // 0246619220C0 0x3C Capacity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Expandable                                = GetBool(new IntPtr(p + 0x040)); // 0246619220E0 0x40 Expandable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Writable                                  = GetBool(new IntPtr(p + 0x041)); // 024661922100 0x41 Writable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Exposable                                 = GetBool(new IntPtr(p + 0x042)); // 024661922120 0x42 Exposable                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsOpen                                    = GetBool(new IntPtr(p + 0x043)); // 024661922140 0x43 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

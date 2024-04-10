@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfilingScope
+    public partial class ProfilingScope : DataModel
     {
 
         public static ProfilingScope? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilingScope();
+            var value   = new ProfilingScope() { Pointer= p0 };
 
 
             return value;

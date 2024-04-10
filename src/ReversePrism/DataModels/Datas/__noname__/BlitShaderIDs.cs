@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 018 BlitPaddingSize                          0001865F50A0 ModelPrimitiveType int int int Int32
     // 01C BlitDecodeInstructions                   0001865F50A0 ModelPrimitiveType int int int Int32
     // 020 InputDepth                               0001865F50A0 ModelPrimitiveType int int int Int32
-    public partial class BlitShaderIDs
+    public partial class BlitShaderIDs : DataModel
     {
         public int                                      BlitMipLevel                            { get; set; }
         public int                                      BlitTextureSize                         { get; set; }
@@ -31,13 +31,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BlitShaderIDs();
+            var value   = new BlitShaderIDs() { Pointer= p0 };
 
-            value.BlitMipLevel                              = GetInt32(new IntPtr(p + 0x010)); // 0270D92A8EE0 0x10 BlitMipLevel                ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.BlitTextureSize                           = GetInt32(new IntPtr(p + 0x014)); // 0270D92A8F00 0x14 BlitTextureSize             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.BlitPaddingSize                           = GetInt32(new IntPtr(p + 0x018)); // 0270D92A8F20 0x18 BlitPaddingSize             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.BlitDecodeInstructions                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D92A8F40 0x1C BlitDecodeInstructions      ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.InputDepth                                = GetInt32(new IntPtr(p + 0x020)); // 0270D92A8F60 0x20 InputDepth                  ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.BlitMipLevel                              = GetInt32(new IntPtr(p + 0x010)); // 02466930B438 0x10 BlitMipLevel                ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.BlitTextureSize                           = GetInt32(new IntPtr(p + 0x014)); // 02466930B458 0x14 BlitTextureSize             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.BlitPaddingSize                           = GetInt32(new IntPtr(p + 0x018)); // 02466930B478 0x18 BlitPaddingSize             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.BlitDecodeInstructions                    = GetInt32(new IntPtr(p + 0x01C)); // 02466930B498 0x1C BlitDecodeInstructions      ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.InputDepth                                = GetInt32(new IntPtr(p + 0x020)); // 02466930B4B8 0x20 InputDepth                  ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

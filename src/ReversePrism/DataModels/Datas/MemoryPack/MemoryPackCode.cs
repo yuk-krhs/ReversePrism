@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 Reserved4                                sbyte IL2CPP_TYPE_U1
     // 000 Reserved5                                sbyte IL2CPP_TYPE_U1
     // 000 NullObject                               sbyte IL2CPP_TYPE_U1
-    public partial class MemoryPackCode
+    public partial class MemoryPackCode : DataModel
     {
 
         public static MemoryPackCode? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackCode();
+            var value   = new MemoryPackCode() { Pointer= p0 };
 
 
             return value;

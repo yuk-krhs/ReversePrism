@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MD5
+    public partial class MD5 : DataModel
     {
 
         public static MD5? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MD5();
+            var value   = new MD5() { Pointer= p0 };
 
 
             return value;

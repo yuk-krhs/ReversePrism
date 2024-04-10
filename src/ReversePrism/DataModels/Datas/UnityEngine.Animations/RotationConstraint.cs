@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RotationConstraint
+    public partial class RotationConstraint : DataModel
     {
 
         public static RotationConstraint? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RotationConstraint();
+            var value   = new RotationConstraint() { Pointer= p0 };
 
 
             return value;

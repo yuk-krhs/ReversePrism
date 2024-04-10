@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LegacyUnityAnalytics
+    public partial class LegacyUnityAnalytics : DataModel
     {
 
         public static LegacyUnityAnalytics? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyUnityAnalytics();
+            var value   = new LegacyUnityAnalytics() { Pointer= p0 };
 
 
             return value;

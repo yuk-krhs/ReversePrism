@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XMLTransferSourceReplacer
+    public partial class XMLTransferSourceReplacer : DataModel
     {
 
         public static XMLTransferSourceReplacer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLTransferSourceReplacer();
+            var value   = new XMLTransferSourceReplacer() { Pointer= p0 };
 
 
             return value;

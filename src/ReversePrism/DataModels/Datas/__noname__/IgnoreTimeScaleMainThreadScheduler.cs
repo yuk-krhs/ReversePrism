@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 scheduleAction                           Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class IgnoreTimeScaleMainThreadScheduler
+    public partial class IgnoreTimeScaleMainThreadScheduler : DataModel
     {
 
         public static IgnoreTimeScaleMainThreadScheduler? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IgnoreTimeScaleMainThreadScheduler();
+            var value   = new IgnoreTimeScaleMainThreadScheduler() { Pointer= p0 };
 
 
             return value;

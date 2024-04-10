@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITransferProviderStatus
+    public partial class ITransferProviderStatus : DataModel
     {
 
         public static ITransferProviderStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITransferProviderStatus();
+            var value   = new ITransferProviderStatus() { Pointer= p0 };
 
 
             return value;

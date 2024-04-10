@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 m_nextIdToTry                            int IL2CPP_TYPE_I4
     // 000 m_freeIds                                List`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class IdManager
+    public partial class IdManager : DataModel
     {
 
         public static IdManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdManager();
+            var value   = new IdManager() { Pointer= p0 };
 
 
             return value;

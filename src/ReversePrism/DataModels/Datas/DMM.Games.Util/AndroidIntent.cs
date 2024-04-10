@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AndroidIntent
+    public partial class AndroidIntent : DataModel
     {
 
         public static AndroidIntent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidIntent();
+            var value   = new AndroidIntent() { Pointer= p0 };
 
 
             return value;

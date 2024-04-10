@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ButtonGotoTypeReference                  000186714D30 ModelClassType IButtonGotoTypeReference IButtonGotoTypeReference IButtonGotoTypeReference Pointer
-    public partial class ButtonGotoTypeProcessor
+    public partial class ButtonGotoTypeProcessor : DataModel
     {
         public IButtonGotoTypeReference?                ButtonGotoTypeReference                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonGotoTypeProcessor();
+            var value   = new ButtonGotoTypeProcessor() { Pointer= p0 };
 
-            value.ButtonGotoTypeReference                   = GetObject<IButtonGotoTypeReference>(new IntPtr(p + 0x010), ReversePrism.DataModels.IButtonGotoTypeReference.FromPointer); // 027003A328D8 0x10 ButtonGotoTypeReference     ( 000186714D30 ModelClassType IButtonGotoTypeReference IButtonGotoTypeReference IButtonGotoTypeReference Pointer )
+            value.ButtonGotoTypeReference                   = GetObject<IButtonGotoTypeReference>(new IntPtr(p + 0x010), ReversePrism.DataModels.IButtonGotoTypeReference.FromPointer); // 0245A3A3D778 0x10 ButtonGotoTypeReference     ( 000186714D30 ModelClassType IButtonGotoTypeReference IButtonGotoTypeReference IButtonGotoTypeReference Pointer )
 
             return value;
         }

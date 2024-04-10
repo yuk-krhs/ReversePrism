@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 028 TotalFrames                              0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 02C CodecType                                0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32
     // 030 AlphaCodecType                           0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32
-    public partial class MovieInfoStruct
+    public partial class MovieInfoStruct : DataModel
     {
         public uint                                     Width                                   { get; set; }
         public uint                                     Height                                  { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MovieInfoStruct();
+            var value   = new MovieInfoStruct() { Pointer= p0 };
 
-            value.Width                                     = GetUInt32(new IntPtr(p + 0x010)); // 0270DACC3578 0x10 Width                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Height                                    = GetUInt32(new IntPtr(p + 0x014)); // 0270DACC3598 0x14 Height                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DispWidth                                 = GetUInt32(new IntPtr(p + 0x018)); // 0270DACC35B8 0x18 DispWidth                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DispHeight                                = GetUInt32(new IntPtr(p + 0x01C)); // 0270DACC35D8 0x1C DispHeight                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.FramerateN                                = GetUInt32(new IntPtr(p + 0x020)); // 0270DACC35F8 0x20 FramerateN                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.FramerateD                                = GetUInt32(new IntPtr(p + 0x024)); // 0270DACC3618 0x24 FramerateD                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.TotalFrames                               = GetUInt32(new IntPtr(p + 0x028)); // 0270DACC3638 0x28 TotalFrames                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.CodecType                                 = (CodecType)GetInt32(new IntPtr(p + 0x02C)); // 0270DACC3658 0x2C CodecType                   ( 0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32 )
-            value.AlphaCodecType                            = (CodecType)GetInt32(new IntPtr(p + 0x030)); // 0270DACC3678 0x30 AlphaCodecType              ( 0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32 )
+            value.Width                                     = GetUInt32(new IntPtr(p + 0x010)); // 02466AD2B578 0x10 Width                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Height                                    = GetUInt32(new IntPtr(p + 0x014)); // 02466AD2B598 0x14 Height                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DispWidth                                 = GetUInt32(new IntPtr(p + 0x018)); // 02466AD2B5B8 0x18 DispWidth                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DispHeight                                = GetUInt32(new IntPtr(p + 0x01C)); // 02466AD2B5D8 0x1C DispHeight                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.FramerateN                                = GetUInt32(new IntPtr(p + 0x020)); // 02466AD2B5F8 0x20 FramerateN                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.FramerateD                                = GetUInt32(new IntPtr(p + 0x024)); // 02466AD2B618 0x24 FramerateD                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.TotalFrames                               = GetUInt32(new IntPtr(p + 0x028)); // 02466AD2B638 0x28 TotalFrames                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.CodecType                                 = (CodecType)GetInt32(new IntPtr(p + 0x02C)); // 02466AD2B658 0x2C CodecType                   ( 0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32 )
+            value.AlphaCodecType                            = (CodecType)GetInt32(new IntPtr(p + 0x030)); // 02466AD2B678 0x30 AlphaCodecType              ( 0001865C0EA0 ModelEnumType CodecType CodecType CodecType Int32 )
 
             return value;
         }

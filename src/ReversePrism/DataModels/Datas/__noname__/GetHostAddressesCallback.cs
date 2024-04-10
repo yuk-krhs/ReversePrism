@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetHostAddressesCallback
+    public partial class GetHostAddressesCallback : DataModel
     {
 
         public static GetHostAddressesCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetHostAddressesCallback();
+            var value   = new GetHostAddressesCallback() { Pointer= p0 };
 
 
             return value;

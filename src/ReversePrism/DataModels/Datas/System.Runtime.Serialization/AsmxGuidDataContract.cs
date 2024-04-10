@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsmxGuidDataContract
+    public partial class AsmxGuidDataContract : DataModel
     {
 
         public static AsmxGuidDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsmxGuidDataContract();
+            var value   = new AsmxGuidDataContract() { Pointer= p0 };
 
 
             return value;

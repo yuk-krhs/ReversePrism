@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 078 VersionHash                              000186674040 ModelPrimitiveType string string string String
     // 080 EncryptionCompress                       000186674040 ModelPrimitiveType string string string String
     // 088 EncryptionMode                           000186674040 ModelPrimitiveType string string string String
-    public partial class WebHeader
+    public partial class WebHeader : DataModel
     {
         public string                                   ApplicationPlatform                     { get; set; }
         public string                                   ApplicationVersion                      { get; set; }
@@ -51,24 +51,24 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WebHeader();
+            var value   = new WebHeader() { Pointer= p0 };
 
-            value.ApplicationPlatform                       = GetString(new IntPtr(p + 0x010)); // 0270DB6B2A00 0x10 ApplicationPlatform         ( 000186674040 ModelPrimitiveType string string string String )
-            value.ApplicationVersion                        = GetString(new IntPtr(p + 0x018)); // 0270DB6B2A20 0x18 ApplicationVersion          ( 000186674040 ModelPrimitiveType string string string String )
-            value.UnityVersion                              = GetString(new IntPtr(p + 0x020)); // 0270DB6B2A40 0x20 UnityVersion                ( 000186674040 ModelPrimitiveType string string string String )
-            value.DeviceTime                                = GetString(new IntPtr(p + 0x028)); // 0270DB6B2A60 0x28 DeviceTime                  ( 000186674040 ModelPrimitiveType string string string String )
-            value.DeviceName                                = GetString(new IntPtr(p + 0x030)); // 0270DB6B2A80 0x30 DeviceName                  ( 000186674040 ModelPrimitiveType string string string String )
-            value.OsName                                    = GetString(new IntPtr(p + 0x038)); // 0270DB6B2AA0 0x38 OsName                      ( 000186674040 ModelPrimitiveType string string string String )
-            value.OsVersion                                 = GetString(new IntPtr(p + 0x040)); // 0270DB6B2AC0 0x40 OsVersion                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.PlatformUserId                            = GetString(new IntPtr(p + 0x048)); // 0270DB6B2AE0 0x48 PlatformUserId              ( 000186674040 ModelPrimitiveType string string string String )
-            value.ApplicationUserId                         = GetString(new IntPtr(p + 0x050)); // 0270DB6B2B00 0x50 ApplicationUserId           ( 000186674040 ModelPrimitiveType string string string String )
-            value.ApplicationUserLanguage                   = GetString(new IntPtr(p + 0x058)); // 0270DB6B2B20 0x58 ApplicationUserLanguage     ( 000186674040 ModelPrimitiveType string string string String )
-            value.ApplicationUserCountry                    = GetString(new IntPtr(p + 0x060)); // 0270DB6B2B40 0x60 ApplicationUserCountry      ( 000186674040 ModelPrimitiveType string string string String )
-            value.Encryption                                = GetString(new IntPtr(p + 0x068)); // 0270DB6B2B60 0x68 Encryption                  ( 000186674040 ModelPrimitiveType string string string String )
-            value.ServerToken                               = GetString(new IntPtr(p + 0x070)); // 0270DB6B2B80 0x70 ServerToken                 ( 000186674040 ModelPrimitiveType string string string String )
-            value.VersionHash                               = GetString(new IntPtr(p + 0x078)); // 0270DB6B2BA0 0x78 VersionHash                 ( 000186674040 ModelPrimitiveType string string string String )
-            value.EncryptionCompress                        = GetString(new IntPtr(p + 0x080)); // 0270DB6B2BC0 0x80 EncryptionCompress          ( 000186674040 ModelPrimitiveType string string string String )
-            value.EncryptionMode                            = GetString(new IntPtr(p + 0x088)); // 0270DB6B2BE0 0x88 EncryptionMode              ( 000186674040 ModelPrimitiveType string string string String )
+            value.ApplicationPlatform                       = GetString(new IntPtr(p + 0x010)); // 02466B736B48 0x10 ApplicationPlatform         ( 000186674040 ModelPrimitiveType string string string String )
+            value.ApplicationVersion                        = GetString(new IntPtr(p + 0x018)); // 02466B736B68 0x18 ApplicationVersion          ( 000186674040 ModelPrimitiveType string string string String )
+            value.UnityVersion                              = GetString(new IntPtr(p + 0x020)); // 02466B736B88 0x20 UnityVersion                ( 000186674040 ModelPrimitiveType string string string String )
+            value.DeviceTime                                = GetString(new IntPtr(p + 0x028)); // 02466B736BA8 0x28 DeviceTime                  ( 000186674040 ModelPrimitiveType string string string String )
+            value.DeviceName                                = GetString(new IntPtr(p + 0x030)); // 02466B736BC8 0x30 DeviceName                  ( 000186674040 ModelPrimitiveType string string string String )
+            value.OsName                                    = GetString(new IntPtr(p + 0x038)); // 02466B736BE8 0x38 OsName                      ( 000186674040 ModelPrimitiveType string string string String )
+            value.OsVersion                                 = GetString(new IntPtr(p + 0x040)); // 02466B736C08 0x40 OsVersion                   ( 000186674040 ModelPrimitiveType string string string String )
+            value.PlatformUserId                            = GetString(new IntPtr(p + 0x048)); // 02466B736C28 0x48 PlatformUserId              ( 000186674040 ModelPrimitiveType string string string String )
+            value.ApplicationUserId                         = GetString(new IntPtr(p + 0x050)); // 02466B736C48 0x50 ApplicationUserId           ( 000186674040 ModelPrimitiveType string string string String )
+            value.ApplicationUserLanguage                   = GetString(new IntPtr(p + 0x058)); // 02466B736C68 0x58 ApplicationUserLanguage     ( 000186674040 ModelPrimitiveType string string string String )
+            value.ApplicationUserCountry                    = GetString(new IntPtr(p + 0x060)); // 02466B736C88 0x60 ApplicationUserCountry      ( 000186674040 ModelPrimitiveType string string string String )
+            value.Encryption                                = GetString(new IntPtr(p + 0x068)); // 02466B736CA8 0x68 Encryption                  ( 000186674040 ModelPrimitiveType string string string String )
+            value.ServerToken                               = GetString(new IntPtr(p + 0x070)); // 02466B736CC8 0x70 ServerToken                 ( 000186674040 ModelPrimitiveType string string string String )
+            value.VersionHash                               = GetString(new IntPtr(p + 0x078)); // 02466B736CE8 0x78 VersionHash                 ( 000186674040 ModelPrimitiveType string string string String )
+            value.EncryptionCompress                        = GetString(new IntPtr(p + 0x080)); // 02466B736D08 0x80 EncryptionCompress          ( 000186674040 ModelPrimitiveType string string string String )
+            value.EncryptionMode                            = GetString(new IntPtr(p + 0x088)); // 02466B736D28 0x88 EncryptionMode              ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

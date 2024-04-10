@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriAtomExRawPcmVoicePool
+    public partial class CriAtomExRawPcmVoicePool : DataModel
     {
 
         public static CriAtomExRawPcmVoicePool? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExRawPcmVoicePool();
+            var value   = new CriAtomExRawPcmVoicePool() { Pointer= p0 };
 
 
             return value;

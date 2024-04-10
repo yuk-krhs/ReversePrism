@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VoicePlayTabListPopupViewFactory
+    public partial class VoicePlayTabListPopupViewFactory : DataModel
     {
 
         public static VoicePlayTabListPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VoicePlayTabListPopupViewFactory();
+            var value   = new VoicePlayTabListPopupViewFactory() { Pointer= p0 };
 
 
             return value;

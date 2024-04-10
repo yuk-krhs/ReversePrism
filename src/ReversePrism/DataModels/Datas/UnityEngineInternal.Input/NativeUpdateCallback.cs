@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeUpdateCallback
+    public partial class NativeUpdateCallback : DataModel
     {
 
         public static NativeUpdateCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeUpdateCallback();
+            var value   = new NativeUpdateCallback() { Pointer= p0 };
 
 
             return value;

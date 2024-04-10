@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<GetProduceAutoPlayProgressArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class GetProduceAutoPlayProgressArgs
+    public partial class GetProduceAutoPlayProgressArgs : DataModel
     {
 
         public static GetProduceAutoPlayProgressArgs? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProduceAutoPlayProgressArgs();
+            var value   = new GetProduceAutoPlayProgressArgs() { Pointer= p0 };
 
 
             return value;

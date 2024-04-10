@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 predicate                                Func`2<<var>, UniTask`1<bool>> IL2CPP_TYPE_GENERICINST
-    public partial class _TakeWhileAwait
+    public partial class _TakeWhileAwait : DataModel
     {
 
         public static _TakeWhileAwait? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TakeWhileAwait();
+            var value   = new _TakeWhileAwait() { Pointer= p0 };
 
 
             return value;

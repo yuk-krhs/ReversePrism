@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WillRenderCanvases
+    public partial class WillRenderCanvases : DataModel
     {
 
         public static WillRenderCanvases? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WillRenderCanvases();
+            var value   = new WillRenderCanvases() { Pointer= p0 };
 
 
             return value;

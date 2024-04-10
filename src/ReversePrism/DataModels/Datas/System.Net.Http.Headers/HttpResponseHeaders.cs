@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HttpResponseHeaders
+    public partial class HttpResponseHeaders : DataModel
     {
 
         public static HttpResponseHeaders? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpResponseHeaders();
+            var value   = new HttpResponseHeaders() { Pointer= p0 };
 
 
             return value;

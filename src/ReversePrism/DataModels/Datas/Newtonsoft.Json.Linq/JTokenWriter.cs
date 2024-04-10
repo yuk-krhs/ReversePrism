@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 068 Parent                                   000186743A20 ModelClassType JContainer JContainer JContainer Pointer
     // 070 Value                                    000186749400 ModelClassType JValue JValue JValue Pointer
     // 078 Current                                  0001865FFEA0 ModelClassType JToken JToken JToken Pointer
-    public partial class JTokenWriter
+    public partial class JTokenWriter : DataModel
     {
         public JContainer?                              Token                                   { get; set; }
         public JContainer?                              Parent                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JTokenWriter();
+            var value   = new JTokenWriter() { Pointer= p0 };
 
-            value.Token                                     = GetObject<JContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.JContainer.FromPointer); // 0270D86D1A10 0x60 Token                       ( 000186743A20 ModelClassType JContainer JContainer JContainer Pointer )
-            value.Parent                                    = GetObject<JContainer>(new IntPtr(p + 0x068), ReversePrism.DataModels.JContainer.FromPointer); // 0270D86D1A30 0x68 Parent                      ( 000186743A20 ModelClassType JContainer JContainer JContainer Pointer )
-            value.Value                                     = GetObject<JValue>(new IntPtr(p + 0x070), ReversePrism.DataModels.JValue.FromPointer); // 0270D86D1A50 0x70 Value                       ( 000186749400 ModelClassType JValue JValue JValue Pointer )
-            value.Current                                   = GetObject<JToken>(new IntPtr(p + 0x078), ReversePrism.DataModels.JToken.FromPointer); // 0270D86D1A70 0x78 Current                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
+            value.Token                                     = GetObject<JContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.JContainer.FromPointer); // 024668739A10 0x60 Token                       ( 000186743A20 ModelClassType JContainer JContainer JContainer Pointer )
+            value.Parent                                    = GetObject<JContainer>(new IntPtr(p + 0x068), ReversePrism.DataModels.JContainer.FromPointer); // 024668739A30 0x68 Parent                      ( 000186743A20 ModelClassType JContainer JContainer JContainer Pointer )
+            value.Value                                     = GetObject<JValue>(new IntPtr(p + 0x070), ReversePrism.DataModels.JValue.FromPointer); // 024668739A50 0x70 Value                       ( 000186749400 ModelClassType JValue JValue JValue Pointer )
+            value.Current                                   = GetObject<JToken>(new IntPtr(p + 0x078), ReversePrism.DataModels.JToken.FromPointer); // 024668739A70 0x78 Current                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
 
             return value;
         }

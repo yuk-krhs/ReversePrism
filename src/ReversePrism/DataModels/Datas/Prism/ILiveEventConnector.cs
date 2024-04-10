@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveEventConnector
+    public partial class ILiveEventConnector : DataModel
     {
 
         public static ILiveEventConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveEventConnector();
+            var value   = new ILiveEventConnector() { Pointer= p0 };
 
 
             return value;

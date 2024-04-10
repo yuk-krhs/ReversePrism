@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 lookupHash                               Dictionary`2<<int>, MonoBtlsX509Lookup> IL2CPP_TYPE_GENERICINST
-    public partial class MonoBtlsX509Store
+    public partial class MonoBtlsX509Store : DataModel
     {
 
         public static MonoBtlsX509Store? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoBtlsX509Store();
+            var value   = new MonoBtlsX509Store() { Pointer= p0 };
 
 
             return value;

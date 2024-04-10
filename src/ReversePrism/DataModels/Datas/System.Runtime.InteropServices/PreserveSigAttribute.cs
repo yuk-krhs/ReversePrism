@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PreserveSigAttribute
+    public partial class PreserveSigAttribute : DataModel
     {
 
         public static PreserveSigAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreserveSigAttribute();
+            var value   = new PreserveSigAttribute() { Pointer= p0 };
 
 
             return value;

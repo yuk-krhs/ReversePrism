@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
     // 050 GoodScheduleDetailType                   0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     // 000 LevelFieldNumber                         int IL2CPP_TYPE_I4
     // 058 Level                                    00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
-    public partial class MaximumSupportCharacterStatus
+    public partial class MaximumSupportCharacterStatus : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public SupportCharacterRarity                   Rarity                                  { get; set; }
@@ -55,19 +55,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaximumSupportCharacterStatus();
+            var value   = new MaximumSupportCharacterStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1A2B248 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x01C)); // 0270D1A2B288 0x1C Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
-            value.Diamond                                   = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1A2B2C8 0x20 Diamond                     ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.SupportSkillSlotAmount                    = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1A2B308 0x28 SupportSkillSlotAmount      ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.SupportEffectList                         = GetObjectList<SupportEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportEffectStatus.FromPointer); // 0270D1A2B368 0x30 SupportEffectList           ( 000185CF44F8 ModelClassListType RepeatedField`1<SupportEffectStatus> RepeatedField`1<SupportEffectStatus> List<SupportEffectStatus> Pointer )
-            value.PotentialSupportSkillList                 = GetObjectList<PotentialSupportSkillStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PotentialSupportSkillStatus.FromPointer); // 0270D1A2B3C8 0x38 PotentialSupportSkillList   ( 000185CE95A8 ModelClassListType RepeatedField`1<PotentialSupportSkillStatus> RepeatedField`1<PotentialSupportSkillStatus> List<PotentialSupportSkillStatus> Pointer )
-            value.SupportCharacterEventList                 = GetObjectList<SupportCharacterEventStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.SupportCharacterEventStatus.FromPointer); // 0270D1A2B428 0x40 SupportCharacterEventList   ( 000185CF3DF8 ModelClassListType RepeatedField`1<SupportCharacterEventStatus> RepeatedField`1<SupportCharacterEventStatus> List<SupportCharacterEventStatus> Pointer )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x048)); // 0270D1A2B468 0x48 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x04C)); // 0270D1A2B4A8 0x4C CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoodScheduleDetailType                    = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x050)); // 0270D1A2B4E8 0x50 GoodScheduleDetailType      ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.Level                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1A2B528 0x58 Level                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0246619BC170 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x01C)); // 0246619BC1B0 0x1C Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
+            value.Diamond                                   = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246619BC1F0 0x20 Diamond                     ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.SupportSkillSlotAmount                    = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246619BC230 0x28 SupportSkillSlotAmount      ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.SupportEffectList                         = GetObjectList<SupportEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportEffectStatus.FromPointer); // 0246619BC290 0x30 SupportEffectList           ( 000185CF44F8 ModelClassListType RepeatedField`1<SupportEffectStatus> RepeatedField`1<SupportEffectStatus> List<SupportEffectStatus> Pointer )
+            value.PotentialSupportSkillList                 = GetObjectList<PotentialSupportSkillStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PotentialSupportSkillStatus.FromPointer); // 0246619BC2F0 0x38 PotentialSupportSkillList   ( 000185CE95A8 ModelClassListType RepeatedField`1<PotentialSupportSkillStatus> RepeatedField`1<PotentialSupportSkillStatus> List<PotentialSupportSkillStatus> Pointer )
+            value.SupportCharacterEventList                 = GetObjectList<SupportCharacterEventStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.SupportCharacterEventStatus.FromPointer); // 0246619BC350 0x40 SupportCharacterEventList   ( 000185CF3DF8 ModelClassListType RepeatedField`1<SupportCharacterEventStatus> RepeatedField`1<SupportCharacterEventStatus> List<SupportCharacterEventStatus> Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x048)); // 0246619BC390 0x48 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x04C)); // 0246619BC3D0 0x4C CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoodScheduleDetailType                    = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x050)); // 0246619BC410 0x50 GoodScheduleDetailType      ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.Level                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246619BC450 0x58 Level                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
 
             return value;
         }

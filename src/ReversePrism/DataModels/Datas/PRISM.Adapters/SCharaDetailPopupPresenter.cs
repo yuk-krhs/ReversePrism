@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Vm                                       0001866A4C60 ModelClassType SCharaDetailPopupViewModel SCharaDetailPopupViewModel SCharaDetailPopupViewModel Pointer
     // 020 SCharaDetailPopupViewFactory             000186622C10 ModelClassType ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory Pointer
     // 028 onChangeFavoriteMark                     Subject`1<ISupportCharacterStatus> IL2CPP_TYPE_GENERICINST
-    public partial class SCharaDetailPopupPresenter
+    public partial class SCharaDetailPopupPresenter : DataModel
     {
         public ISCharaDetailPopupView?                  View                                    { get; set; }
         public SCharaDetailPopupViewModel?              Vm                                      { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaDetailPopupPresenter();
+            var value   = new SCharaDetailPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ISCharaDetailPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISCharaDetailPopupView.FromPointer); // 0270D5F8F798 0x10 View                        ( 000186622760 ModelClassType ISCharaDetailPopupView ISCharaDetailPopupView ISCharaDetailPopupView Pointer )
-            value.Vm                                        = GetObject<SCharaDetailPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaDetailPopupViewModel.FromPointer); // 0270D5F8F7B8 0x18 Vm                          ( 0001866A4C60 ModelClassType SCharaDetailPopupViewModel SCharaDetailPopupViewModel SCharaDetailPopupViewModel Pointer )
-            value.SCharaDetailPopupViewFactory              = GetObject<ISCharaDetailPopupViewFactory>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISCharaDetailPopupViewFactory.FromPointer); // 0270D5F8F7D8 0x20 SCharaDetailPopupViewFactory ( 000186622C10 ModelClassType ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory Pointer )
+            value.View                                      = GetObject<ISCharaDetailPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISCharaDetailPopupView.FromPointer); // 024666007798 0x10 View                        ( 000186622760 ModelClassType ISCharaDetailPopupView ISCharaDetailPopupView ISCharaDetailPopupView Pointer )
+            value.Vm                                        = GetObject<SCharaDetailPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaDetailPopupViewModel.FromPointer); // 0246660077B8 0x18 Vm                          ( 0001866A4C60 ModelClassType SCharaDetailPopupViewModel SCharaDetailPopupViewModel SCharaDetailPopupViewModel Pointer )
+            value.SCharaDetailPopupViewFactory              = GetObject<ISCharaDetailPopupViewFactory>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISCharaDetailPopupViewFactory.FromPointer); // 0246660077D8 0x20 SCharaDetailPopupViewFactory ( 000186622C10 ModelClassType ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory ISCharaDetailPopupViewFactory Pointer )
 
             return value;
         }

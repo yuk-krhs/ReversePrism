@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DiagnosticsHandler
+    public partial class DiagnosticsHandler : DataModel
     {
 
         public static DiagnosticsHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiagnosticsHandler();
+            var value   = new DiagnosticsHandler() { Pointer= p0 };
 
 
             return value;

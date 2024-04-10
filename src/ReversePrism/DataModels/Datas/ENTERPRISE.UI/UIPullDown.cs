@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Dropdown                                 000186706F50 ModelClassType Dropdown Dropdown Dropdown Pointer
     // 028 dropdownIndex                            ReactiveProperty`1<int> IL2CPP_TYPE_GENERICINST
     // 030 Items                                    000185D2F228 ModelClassListType List`1<Item> List`1<Item> List<Item> Pointer
-    public partial class UIPullDown
+    public partial class UIPullDown : DataModel
     {
         public Dropdown?                                Dropdown                                { get; set; }
         public List<Item>?                              Items                                   { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIPullDown();
+            var value   = new UIPullDown() { Pointer= p0 };
 
-            value.Dropdown                                  = GetObject<Dropdown>(new IntPtr(p + 0x020), ReversePrism.DataModels.Dropdown.FromPointer); // 0270DB038F08 0x20 Dropdown                    ( 000186706F50 ModelClassType Dropdown Dropdown Dropdown Pointer )
-            value.Items                                     = GetObjectList<Item>(new IntPtr(p + 0x030), ReversePrism.DataModels.Item.FromPointer); // 0270DB038F48 0x30 Items                       ( 000185D2F228 ModelClassListType List`1<Item> List`1<Item> List<Item> Pointer )
+            value.Dropdown                                  = GetObject<Dropdown>(new IntPtr(p + 0x020), ReversePrism.DataModels.Dropdown.FromPointer); // 02466B098F08 0x20 Dropdown                    ( 000186706F50 ModelClassType Dropdown Dropdown Dropdown Pointer )
+            value.Items                                     = GetObjectList<Item>(new IntPtr(p + 0x030), ReversePrism.DataModels.Item.FromPointer); // 02466B098F48 0x30 Items                       ( 000185D2F228 ModelClassListType List`1<Item> List`1<Item> List<Item> Pointer )
 
             return value;
         }

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 AchievementId                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 068 onClick                                  Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 070 onLongPress                              Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class AchievementDetailPanelView
+    public partial class AchievementDetailPanelView : DataModel
     {
         public AchievementIcon?                         Icon                                    { get; set; }
         public UIButton?                                Button                                  { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AchievementDetailPanelView();
+            var value   = new AchievementDetailPanelView() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<AchievementIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIcon.FromPointer); // 0270DBEE8490 0x20 Icon                        ( 000186675550 ModelClassType AchievementIcon AchievementIcon AchievementIcon Pointer )
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DBEE84B0 0x28 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.SelectFrame                               = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBEE84D0 0x30 SelectFrame                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NormalFrame                               = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBEE84F0 0x38 NormalFrame                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AchievementName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBEE8510 0x40 AchievementName             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GetCondtionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBEE8530 0x48 GetCondtionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.InformationRoot                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBEE8550 0x50 InformationRoot             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EmptyText                                 = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBEE8570 0x58 EmptyText                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AchievementId                             = GetInt32(new IntPtr(p + 0x060)); // 0270DBEE8590 0x60 AchievementId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Icon                                      = GetObject<AchievementIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIcon.FromPointer); // 02466BF784C8 0x20 Icon                        ( 000186675550 ModelClassType AchievementIcon AchievementIcon AchievementIcon Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466BF784E8 0x28 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.SelectFrame                               = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466BF78508 0x30 SelectFrame                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.NormalFrame                               = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466BF78528 0x38 NormalFrame                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AchievementName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF78548 0x40 AchievementName             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GetCondtionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF78568 0x48 GetCondtionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.InformationRoot                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466BF78588 0x50 InformationRoot             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EmptyText                                 = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466BF785A8 0x58 EmptyText                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AchievementId                             = GetInt32(new IntPtr(p + 0x060)); // 02466BF785C8 0x60 AchievementId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

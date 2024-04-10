@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Terrain
+    public partial class Terrain : DataModel
     {
 
         public static Terrain? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Terrain();
+            var value   = new Terrain() { Pointer= p0 };
 
 
             return value;

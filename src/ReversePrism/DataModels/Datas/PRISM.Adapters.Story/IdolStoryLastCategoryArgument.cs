@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Legacy                                   0001866C6B50 ModelClassType IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy Pointer
-    public partial class IdolStoryLastCategoryArgument
+    public partial class IdolStoryLastCategoryArgument : DataModel
     {
         public IdolStoryLastCategoryArgumentForLegacy?  Legacy                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolStoryLastCategoryArgument();
+            var value   = new IdolStoryLastCategoryArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<IdolStoryLastCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolStoryLastCategoryArgumentForLegacy.FromPointer); // 0270D679F030 0x10 Legacy                      ( 0001866C6B50 ModelClassType IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy Pointer )
+            value.Legacy                                    = GetObject<IdolStoryLastCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolStoryLastCategoryArgumentForLegacy.FromPointer); // 0246667FF030 0x10 Legacy                      ( 0001866C6B50 ModelClassType IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy IdolStoryLastCategoryArgumentForLegacy Pointer )
 
             return value;
         }

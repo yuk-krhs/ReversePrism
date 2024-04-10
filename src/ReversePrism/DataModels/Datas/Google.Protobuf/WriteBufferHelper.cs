@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 bufferWriter                             IBufferWriter`1<sbyte> IL2CPP_TYPE_GENERICINST
     // 018 CodedOutputStream                        0001865C1AA0 ModelClassType CodedOutputStream CodedOutputStream CodedOutputStream Pointer
-    public partial class WriteBufferHelper
+    public partial class WriteBufferHelper : DataModel
     {
         public CodedOutputStream?                       CodedOutputStream                       { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WriteBufferHelper();
+            var value   = new WriteBufferHelper() { Pointer= p0 };
 
-            value.CodedOutputStream                         = GetObject<CodedOutputStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.CodedOutputStream.FromPointer); // 0270015FB398 0x18 CodedOutputStream           ( 0001865C1AA0 ModelClassType CodedOutputStream CodedOutputStream CodedOutputStream Pointer )
+            value.CodedOutputStream                         = GetObject<CodedOutputStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.CodedOutputStream.FromPointer); // 0245A15FB398 0x18 CodedOutputStream           ( 0001865C1AA0 ModelClassType CodedOutputStream CodedOutputStream CodedOutputStream Pointer )
 
             return value;
         }

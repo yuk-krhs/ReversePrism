@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 010 F                                        000186666050 ModelPrimitiveType float float float Single
     // 010 D                                        0001865C2E50 ModelPrimitiveType double double double Double
     // 010 l                                        <int> IL2CPP_TYPE_I
-    public partial class jvalue
+    public partial class jvalue : DataModel
     {
         public bool                                     Z                                       { get; set; }
         public sbyte                                    B                                       { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new jvalue();
+            var value   = new jvalue() { Pointer= p0 };
 
-            value.Z                                         = GetBool(new IntPtr(p + 0x010)); // 027006945238 0x10 Z                           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.B                                         = GetSByte(new IntPtr(p + 0x010)); // 027006945258 0x10 B                           ( 00018665D780 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.S                                         = GetInt16(new IntPtr(p + 0x010)); // 027006945298 0x10 S                           ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.I                                         = GetInt32(new IntPtr(p + 0x010)); // 0270069452B8 0x10 I                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.J                                         = GetInt64(new IntPtr(p + 0x010)); // 0270069452D8 0x10 J                           ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.F                                         = GetSingle(new IntPtr(p + 0x010)); // 0270069452F8 0x10 F                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.D                                         = GetDouble(new IntPtr(p + 0x010)); // 027006945318 0x10 D                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.Z                                         = GetBool(new IntPtr(p + 0x010)); // 0245A68F7948 0x10 Z                           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.B                                         = GetSByte(new IntPtr(p + 0x010)); // 0245A68F7968 0x10 B                           ( 00018665D780 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.S                                         = GetInt16(new IntPtr(p + 0x010)); // 0245A68F79A8 0x10 S                           ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.I                                         = GetInt32(new IntPtr(p + 0x010)); // 0245A68F79C8 0x10 I                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.J                                         = GetInt64(new IntPtr(p + 0x010)); // 0245A68F79E8 0x10 J                           ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.F                                         = GetSingle(new IntPtr(p + 0x010)); // 0245A68F7A08 0x10 F                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.D                                         = GetDouble(new IntPtr(p + 0x010)); // 0245A68F7A28 0x10 D                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
 
             return value;
         }

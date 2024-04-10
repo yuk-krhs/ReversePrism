@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypeHandleRefEqualityComparer
+    public partial class TypeHandleRefEqualityComparer : DataModel
     {
 
         public static TypeHandleRefEqualityComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeHandleRefEqualityComparer();
+            var value   = new TypeHandleRefEqualityComparer() { Pointer= p0 };
 
 
             return value;

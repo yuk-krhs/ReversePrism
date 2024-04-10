@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DownloadDataCompletedEventHandler
+    public partial class DownloadDataCompletedEventHandler : DataModel
     {
 
         public static DownloadDataCompletedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadDataCompletedEventHandler();
+            var value   = new DownloadDataCompletedEventHandler() { Pointer= p0 };
 
 
             return value;

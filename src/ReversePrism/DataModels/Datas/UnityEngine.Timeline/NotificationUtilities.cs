@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotificationUtilities
+    public partial class NotificationUtilities : DataModel
     {
 
         public static NotificationUtilities? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotificationUtilities();
+            var value   = new NotificationUtilities() { Pointer= p0 };
 
 
             return value;

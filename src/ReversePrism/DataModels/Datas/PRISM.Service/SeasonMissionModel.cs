@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SeasonMissionReply                       000186700550 ModelClassType SeasonMission SeasonMission SeasonMission Pointer
     // 018 SeasonMissionTabIndex                    0001867426B0 ModelEnumType SeaasonMissionTab SeaasonMissionTab SeaasonMissionTab Int32
-    public partial class SeasonMissionModel
+    public partial class SeasonMissionModel : DataModel
     {
         public SeasonMission?                           SeasonMissionReply                      { get; set; }
         public SeaasonMissionTab                        SeasonMissionTabIndex                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionModel();
+            var value   = new SeasonMissionModel() { Pointer= p0 };
 
-            value.SeasonMissionReply                        = GetObject<SeasonMission>(new IntPtr(p + 0x010), ReversePrism.DataModels.SeasonMission.FromPointer); // 0270D66DDCD0 0x10 SeasonMissionReply          ( 000186700550 ModelClassType SeasonMission SeasonMission SeasonMission Pointer )
-            value.SeasonMissionTabIndex                     = (SeaasonMissionTab)GetInt32(new IntPtr(p + 0x018)); // 0270D66DDCF0 0x18 SeasonMissionTabIndex       ( 0001867426B0 ModelEnumType SeaasonMissionTab SeaasonMissionTab SeaasonMissionTab Int32 )
+            value.SeasonMissionReply                        = GetObject<SeasonMission>(new IntPtr(p + 0x010), ReversePrism.DataModels.SeasonMission.FromPointer); // 02466674DCD0 0x10 SeasonMissionReply          ( 000186700550 ModelClassType SeasonMission SeasonMission SeasonMission Pointer )
+            value.SeasonMissionTabIndex                     = (SeaasonMissionTab)GetInt32(new IntPtr(p + 0x018)); // 02466674DCF0 0x18 SeasonMissionTabIndex       ( 0001867426B0 ModelEnumType SeaasonMissionTab SeaasonMissionTab SeaasonMissionTab Int32 )
 
             return value;
         }

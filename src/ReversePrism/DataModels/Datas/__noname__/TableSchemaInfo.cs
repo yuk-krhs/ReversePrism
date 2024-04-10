@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TableSchema                              0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer
     // 018 ColumnsSchemaMap                         000186748FC0 ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer
-    public partial class TableSchemaInfo
+    public partial class TableSchemaInfo : DataModel
     {
         public DataTable?                               TableSchema                             { get; set; }
         public XmlNodeIdHashtable?                      ColumnsSchemaMap                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TableSchemaInfo();
+            var value   = new TableSchemaInfo() { Pointer= p0 };
 
-            value.TableSchema                               = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D8979898 0x10 TableSchema                 ( 0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer )
-            value.ColumnsSchemaMap                          = GetObject<XmlNodeIdHashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNodeIdHashtable.FromPointer); // 0270D89798B8 0x18 ColumnsSchemaMap            ( 000186748FC0 ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer )
+            value.TableSchema                               = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0246689E42E8 0x10 TableSchema                 ( 0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer )
+            value.ColumnsSchemaMap                          = GetObject<XmlNodeIdHashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNodeIdHashtable.FromPointer); // 0246689E4308 0x18 ColumnsSchemaMap            ( 000186748FC0 ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer )
 
             return value;
         }

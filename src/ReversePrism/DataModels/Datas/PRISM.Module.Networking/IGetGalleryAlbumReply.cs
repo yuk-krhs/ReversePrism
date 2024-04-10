@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetGalleryAlbumReply
+    public partial class IGetGalleryAlbumReply : DataModel
     {
 
         public static IGetGalleryAlbumReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetGalleryAlbumReply();
+            var value   = new IGetGalleryAlbumReply() { Pointer= p0 };
 
 
             return value;

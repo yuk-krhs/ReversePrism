@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 AtmosphericPressure                      000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
     // 000 <current>k__BackingField                 PressureSensor IL2CPP_TYPE_CLASS
-    public partial class PressureSensor
+    public partial class PressureSensor : DataModel
     {
         public AxisControl?                             AtmosphericPressure                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PressureSensor();
+            var value   = new PressureSensor() { Pointer= p0 };
 
-            value.AtmosphericPressure                       = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0270033B1CE8 0x170 AtmosphericPressure         ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.AtmosphericPressure                       = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33B1CE8 0x170 AtmosphericPressure         ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

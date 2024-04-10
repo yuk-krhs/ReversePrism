@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFesUnitAttachedSupportSkillStatus
+    public partial class IFesUnitAttachedSupportSkillStatus : DataModel
     {
 
         public static IFesUnitAttachedSupportSkillStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFesUnitAttachedSupportSkillStatus();
+            var value   = new IFesUnitAttachedSupportSkillStatus() { Pointer= p0 };
 
 
             return value;

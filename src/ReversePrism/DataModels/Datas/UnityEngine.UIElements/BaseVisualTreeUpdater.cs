@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 panelChanged                             Action`1<BaseVisualElementPanel> IL2CPP_TYPE_GENERICINST
     // 018 M_Panel                                  000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer
-    public partial class BaseVisualTreeUpdater
+    public partial class BaseVisualTreeUpdater : DataModel
     {
         public BaseVisualElementPanel?                  M_Panel                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseVisualTreeUpdater();
+            var value   = new BaseVisualTreeUpdater() { Pointer= p0 };
 
-            value.M_Panel                                   = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x018), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0270066E1BF8 0x18 M_Panel                     ( 000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
+            value.M_Panel                                   = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x018), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0245A66A4108 0x18 M_Panel                     ( 000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
 
             return value;
         }

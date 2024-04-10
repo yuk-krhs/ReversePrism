@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ReferencedAssembly                       00018658BE80 ModelClassType Assembly Assembly Assembly Pointer
     // 018 FileName                                 000186672F10 ModelPrimitiveType string string string String
     // 020 ResourceLocation                         000186670310 ModelEnumType ResourceLocation ResourceLocation ResourceLocation Int32
-    public partial class ManifestResourceInfo
+    public partial class ManifestResourceInfo : DataModel
     {
         public Assembly?                                ReferencedAssembly                      { get; set; }
         public string                                   FileName                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ManifestResourceInfo();
+            var value   = new ManifestResourceInfo() { Pointer= p0 };
 
-            value.ReferencedAssembly                        = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0270D0E92518 0x10 ReferencedAssembly          ( 00018658BE80 ModelClassType Assembly Assembly Assembly Pointer )
-            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0270D0E92538 0x18 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ResourceLocation                          = (ResourceLocation)GetInt32(new IntPtr(p + 0x020)); // 0270D0E92558 0x20 ResourceLocation            ( 000186670310 ModelEnumType ResourceLocation ResourceLocation ResourceLocation Int32 )
+            value.ReferencedAssembly                        = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0245A410A9F0 0x10 ReferencedAssembly          ( 00018658BE80 ModelClassType Assembly Assembly Assembly Pointer )
+            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0245A410AA10 0x18 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ResourceLocation                          = (ResourceLocation)GetInt32(new IntPtr(p + 0x020)); // 0245A410AA30 0x20 ResourceLocation            ( 000186670310 ModelEnumType ResourceLocation ResourceLocation ResourceLocation Int32 )
 
             return value;
         }

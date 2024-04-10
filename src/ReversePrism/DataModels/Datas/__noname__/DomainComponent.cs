@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DomainComponent
+    public partial class DomainComponent : DataModel
     {
 
         public static DomainComponent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DomainComponent();
+            var value   = new DomainComponent() { Pointer= p0 };
 
 
             return value;

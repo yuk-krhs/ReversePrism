@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186549B80 ModelClassType LiveCostumeChangeView LiveCostumeChangeView LiveCostumeChangeView Pointer
-    public partial class LiveCostumeChangeBuilder
+    public partial class LiveCostumeChangeBuilder : DataModel
     {
         public LiveCostumeChangeView?                   View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumeChangeBuilder();
+            var value   = new LiveCostumeChangeBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<LiveCostumeChangeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveCostumeChangeView.FromPointer); // 0270DB61CB78 0x20 View                        ( 000186549B80 ModelClassType LiveCostumeChangeView LiveCostumeChangeView LiveCostumeChangeView Pointer )
+            value.View                                      = GetObject<LiveCostumeChangeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveCostumeChangeView.FromPointer); // 02466B698C18 0x20 View                        ( 000186549B80 ModelClassType LiveCostumeChangeView LiveCostumeChangeView LiveCostumeChangeView Pointer )
 
             return value;
         }

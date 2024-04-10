@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProviderTypeFieldNumber                  int IL2CPP_TYPE_I4
     // 018 ProviderType                             0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32
-    public partial class GetConnectURLArgs
+    public partial class GetConnectURLArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetConnectURLArgs();
+            var value   = new GetConnectURLArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0270D2C3F9D0 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 024662BBC7F8 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
 
             return value;
         }

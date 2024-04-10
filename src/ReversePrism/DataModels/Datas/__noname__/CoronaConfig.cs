@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 011 NonAlpha                                 000186595960 ModelPrimitiveType bool bool bool Bool
     // 014 OnAlphaIntensity                         000186666050 ModelPrimitiveType float float float Single
     // 018 Intensity                                000186666050 ModelPrimitiveType float float float Single
-    public partial class CoronaConfig
+    public partial class CoronaConfig : DataModel
     {
         public bool                                     Enable                                  { get; set; }
         public bool                                     NonAlpha                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoronaConfig();
+            var value   = new CoronaConfig() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0270D4E393B8 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NonAlpha                                  = GetBool(new IntPtr(p + 0x011)); // 0270D4E393D8 0x11 NonAlpha                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.OnAlphaIntensity                          = GetSingle(new IntPtr(p + 0x014)); // 0270D4E393F8 0x14 OnAlphaIntensity            ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Intensity                                 = GetSingle(new IntPtr(p + 0x018)); // 0270D4E39418 0x18 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 024664EAE8B8 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NonAlpha                                  = GetBool(new IntPtr(p + 0x011)); // 024664EAE8D8 0x11 NonAlpha                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.OnAlphaIntensity                          = GetSingle(new IntPtr(p + 0x014)); // 024664EAE8F8 0x14 OnAlphaIntensity            ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Intensity                                 = GetSingle(new IntPtr(p + 0x018)); // 024664EAE918 0x18 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

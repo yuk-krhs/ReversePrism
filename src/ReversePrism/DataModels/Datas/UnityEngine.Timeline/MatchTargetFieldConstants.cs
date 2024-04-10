@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 None                                     MatchTargetFields IL2CPP_TYPE_VALUETYPE
     // 008 Position                                 MatchTargetFields IL2CPP_TYPE_VALUETYPE
     // 00C Rotation                                 MatchTargetFields IL2CPP_TYPE_VALUETYPE
-    public partial class MatchTargetFieldConstants
+    public partial class MatchTargetFieldConstants : DataModel
     {
 
         public static MatchTargetFieldConstants? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MatchTargetFieldConstants();
+            var value   = new MatchTargetFieldConstants() { Pointer= p0 };
 
 
             return value;

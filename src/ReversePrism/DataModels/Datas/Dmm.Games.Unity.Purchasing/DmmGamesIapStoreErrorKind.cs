@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 GetDetailItems                           string IL2CPP_TYPE_STRING
     // 000 DeletePurchasedItem                      string IL2CPP_TYPE_STRING
     // 000 PurchasedProcess                         string IL2CPP_TYPE_STRING
-    public partial class DmmGamesIapStoreErrorKind
+    public partial class DmmGamesIapStoreErrorKind : DataModel
     {
 
         public static DmmGamesIapStoreErrorKind? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesIapStoreErrorKind();
+            var value   = new DmmGamesIapStoreErrorKind() { Pointer= p0 };
 
 
             return value;

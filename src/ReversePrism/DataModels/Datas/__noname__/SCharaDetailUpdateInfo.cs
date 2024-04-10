@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <OnChangeFavoriteMark>k__BackingField    IObservable`1<ISupportCharacterStatus> IL2CPP_TYPE_GENERICINST
     // 018 <DeferTask>k__BackingField               UniTask`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class SCharaDetailUpdateInfo
+    public partial class SCharaDetailUpdateInfo : DataModel
     {
 
         public static SCharaDetailUpdateInfo? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaDetailUpdateInfo();
+            var value   = new SCharaDetailUpdateInfo() { Pointer= p0 };
 
 
             return value;

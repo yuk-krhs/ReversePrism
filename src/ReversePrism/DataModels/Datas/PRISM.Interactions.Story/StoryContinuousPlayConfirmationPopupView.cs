@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     // 048 ViewModel                                000186595E80 ModelClassType StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel Pointer
     // 050 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
-    public partial class StoryContinuousPlayConfirmationPopupView
+    public partial class StoryContinuousPlayConfirmationPopupView : DataModel
     {
         public StoryLastCategoryCell?                   Cell                                    { get; set; }
         public UITextMeshProUGUI?                       MainText                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryContinuousPlayConfirmationPopupView();
+            var value   = new StoryContinuousPlayConfirmationPopupView() { Pointer= p0 };
 
-            value.Cell                                      = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 0270DB952768 0x20 Cell                        ( 000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
-            value.MainText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB952788 0x28 MainText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DownloadRecommendationText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB9527A8 0x30 DownloadRecommendationText  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB9527E8 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
-            value.ViewModel                                 = GetObject<StoryContinuousPlayConfirmationPopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.StoryContinuousPlayConfirmationPopupViewModel.FromPointer); // 0270DB952808 0x48 ViewModel                   ( 000186595E80 ModelClassType StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel Pointer )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270DB952828 0x50 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.Cell                                      = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 02466B9E9B98 0x20 Cell                        ( 000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
+            value.MainText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9E9BB8 0x28 MainText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DownloadRecommendationText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9E9BD8 0x30 DownloadRecommendationText  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B9E9C18 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ViewModel                                 = GetObject<StoryContinuousPlayConfirmationPopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.StoryContinuousPlayConfirmationPopupViewModel.FromPointer); // 02466B9E9C38 0x48 ViewModel                   ( 000186595E80 ModelClassType StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel StoryContinuousPlayConfirmationPopupViewModel Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceLoader.FromPointer); // 02466B9E9C58 0x50 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

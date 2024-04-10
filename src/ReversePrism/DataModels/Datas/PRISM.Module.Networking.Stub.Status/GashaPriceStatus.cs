@@ -55,7 +55,7 @@ namespace ReversePrism.DataModels
     // 0C0 ButtonColor                              000186671910 ModelPrimitiveType string string string String
     // 000 IsCompensationFieldNumber                int IL2CPP_TYPE_I4
     // 0C8 IsCompensation                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class GashaPriceStatus
+    public partial class GashaPriceStatus : DataModel
     {
         public DateTime                                 ResetDate                               { get; set; }
         public DateTime                                 BeginDate                               { get; set; }
@@ -88,32 +88,32 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaPriceStatus();
+            var value   = new GashaPriceStatus() { Pointer= p0 };
 
-            value.ResetDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D1596E98 0x10 ResetDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0270D1596EB8 0x20 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x030)); // 0270D1596ED8 0x30 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.GashaPriceId                              = GetString(new IntPtr(p + 0x048)); // 0270D1596F58 0x48 GashaPriceId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ExecCount                                 = GetInt32(new IntPtr(p + 0x050)); // 0270D1596F98 0x50 ExecCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PriceProduct                              = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1596FD8 0x58 PriceProduct                ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.UseRange                                  = GetObject<RangeStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.RangeStatus.FromPointer); // 0270D1597018 0x60 UseRange                    ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
-            value.IsRetry                                   = GetBool(new IntPtr(p + 0x068)); // 0270D1597058 0x68 IsRetry                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LimitType                                 = (GashaLimitType)GetInt32(new IntPtr(p + 0x06C)); // 0270D1597098 0x6C LimitType                   ( 000186606410 ModelEnumType GashaLimitType GashaLimitType GashaLimitType Int32 )
-            value.LimitCountType                            = (GashaLimitCountType)GetInt32(new IntPtr(p + 0x070)); // 0270D15970D8 0x70 LimitCountType              ( 000186605D80 ModelEnumType GashaLimitCountType GashaLimitCountType GashaLimitCountType Int32 )
-            value.LimitValue                                = GetInt32(new IntPtr(p + 0x074)); // 0270D1597118 0x74 LimitValue                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x078)); // 0270D1597158 0x78 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value._ResetDate                                = GetObject<Timestamp>(new IntPtr(p + 0x080), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1597198 0x80 _ResetDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.RemainingExecCount                        = GetInt32(new IntPtr(p + 0x088)); // 0270D15971D8 0x88 RemainingExecCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DiscountAmount                            = GetInt32(new IntPtr(p + 0x08C)); // 0270D1597218 0x8C DiscountAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x090), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1597258 0x90 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x098), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1597298 0x98 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Pop                                       = GetString(new IntPtr(p + 0x0A0)); // 0270D15972D8 0xA0 Pop                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.ButtonType                                = (GashaButtonType)GetInt32(new IntPtr(p + 0x0A8)); // 0270D1597318 0xA8 ButtonType                  ( 0001865F36E0 ModelEnumType GashaButtonType GashaButtonType GashaButtonType Int32 )
-            value.ButtonText                                = GetString(new IntPtr(p + 0x0B0)); // 0270D1597358 0xB0 ButtonText                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsEmphasis                                = GetBool(new IntPtr(p + 0x0B8)); // 0270D1597398 0xB8 IsEmphasis                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x0BC)); // 0270D15973D8 0xBC SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ButtonColor                               = GetString(new IntPtr(p + 0x0C0)); // 0270D1597418 0xC0 ButtonColor                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsCompensation                            = GetBool(new IntPtr(p + 0x0C8)); // 0270D1597458 0xC8 IsCompensation              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ResetDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024661538730 0x10 ResetDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 024661538750 0x20 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x030)); // 024661538770 0x30 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.GashaPriceId                              = GetString(new IntPtr(p + 0x048)); // 0246615387F0 0x48 GashaPriceId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.ExecCount                                 = GetInt32(new IntPtr(p + 0x050)); // 024661538830 0x50 ExecCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PriceProduct                              = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024661538870 0x58 PriceProduct                ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.UseRange                                  = GetObject<RangeStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.RangeStatus.FromPointer); // 0246615388B0 0x60 UseRange                    ( 00018660C9D0 ModelClassType RangeStatus RangeStatus RangeStatus Pointer )
+            value.IsRetry                                   = GetBool(new IntPtr(p + 0x068)); // 0246615388F0 0x68 IsRetry                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LimitType                                 = (GashaLimitType)GetInt32(new IntPtr(p + 0x06C)); // 024661538930 0x6C LimitType                   ( 000186606410 ModelEnumType GashaLimitType GashaLimitType GashaLimitType Int32 )
+            value.LimitCountType                            = (GashaLimitCountType)GetInt32(new IntPtr(p + 0x070)); // 024661538970 0x70 LimitCountType              ( 000186605D80 ModelEnumType GashaLimitCountType GashaLimitCountType GashaLimitCountType Int32 )
+            value.LimitValue                                = GetInt32(new IntPtr(p + 0x074)); // 0246615389B0 0x74 LimitValue                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x078)); // 0246615389F0 0x78 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value._ResetDate                                = GetObject<Timestamp>(new IntPtr(p + 0x080), ReversePrism.DataModels.Timestamp.FromPointer); // 024661538A30 0x80 _ResetDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.RemainingExecCount                        = GetInt32(new IntPtr(p + 0x088)); // 024661538A70 0x88 RemainingExecCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DiscountAmount                            = GetInt32(new IntPtr(p + 0x08C)); // 024661538AB0 0x8C DiscountAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x090), ReversePrism.DataModels.Timestamp.FromPointer); // 024661538AF0 0x90 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x098), ReversePrism.DataModels.Timestamp.FromPointer); // 024661538B30 0x98 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Pop                                       = GetString(new IntPtr(p + 0x0A0)); // 024661538B70 0xA0 Pop                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.ButtonType                                = (GashaButtonType)GetInt32(new IntPtr(p + 0x0A8)); // 024661538BB0 0xA8 ButtonType                  ( 0001865F36E0 ModelEnumType GashaButtonType GashaButtonType GashaButtonType Int32 )
+            value.ButtonText                                = GetString(new IntPtr(p + 0x0B0)); // 024661538BF0 0xB0 ButtonText                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsEmphasis                                = GetBool(new IntPtr(p + 0x0B8)); // 024661538C30 0xB8 IsEmphasis                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x0BC)); // 024661538C70 0xBC SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ButtonColor                               = GetString(new IntPtr(p + 0x0C0)); // 024661538CB0 0xC0 ButtonColor                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsCompensation                            = GetBool(new IntPtr(p + 0x0C8)); // 024661538CF0 0xC8 IsCompensation              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.ResetDate                     = ToDateTime(value._ResetDate);
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);

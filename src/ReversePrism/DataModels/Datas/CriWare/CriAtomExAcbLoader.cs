@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 handle                                   <int> IL2CPP_TYPE_I
     // 028 gch                                      Nullable`1<GCHandle> IL2CPP_TYPE_GENERICINST
-    public partial class CriAtomExAcbLoader
+    public partial class CriAtomExAcbLoader : DataModel
     {
 
         public static CriAtomExAcbLoader? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExAcbLoader();
+            var value   = new CriAtomExAcbLoader() { Pointer= p0 };
 
 
             return value;

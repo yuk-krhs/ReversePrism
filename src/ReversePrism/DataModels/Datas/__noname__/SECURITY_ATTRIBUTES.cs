@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 NLength                                  000186698DF0 ModelPrimitiveType uint uint uint UInt32
     // 018 lpSecurityDescriptor                     <int> IL2CPP_TYPE_I
     // 020 BInheritHandle                           000186643FD0 ModelEnumType BOOL BOOL BOOL Int32
-    public partial class SECURITY_ATTRIBUTES
+    public partial class SECURITY_ATTRIBUTES : DataModel
     {
         public uint                                     NLength                                 { get; set; }
         public BOOL                                     BInheritHandle                          { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SECURITY_ATTRIBUTES();
+            var value   = new SECURITY_ATTRIBUTES() { Pointer= p0 };
 
-            value.NLength                                   = GetUInt32(new IntPtr(p + 0x010)); // 0270D6928EF8 0x10 NLength                     ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.BInheritHandle                            = (BOOL)GetInt32(new IntPtr(p + 0x020)); // 0270D6928F38 0x20 BInheritHandle              ( 000186643FD0 ModelEnumType BOOL BOOL BOOL Int32 )
+            value.NLength                                   = GetUInt32(new IntPtr(p + 0x010)); // 0246669A0EF8 0x10 NLength                     ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.BInheritHandle                            = (BOOL)GetInt32(new IntPtr(p + 0x020)); // 0246669A0F38 0x20 BInheritHandle              ( 000186643FD0 ModelEnumType BOOL BOOL BOOL Int32 )
 
             return value;
         }

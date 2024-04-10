@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 UseHashtable                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 Xml                                      000186671910 ModelPrimitiveType string string string String
     // 048 XmlNs                                    000186671910 ModelPrimitiveType string string string String
-    public partial class XmlNamespaceManager
+    public partial class XmlNamespaceManager : DataModel
     {
         public List<NamespaceDeclaration>?              Nsdecls                                 { get; set; }
         public int                                      LastDecl                                { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNamespaceManager();
+            var value   = new XmlNamespaceManager() { Pointer= p0 };
 
-            value.Nsdecls                                   = GetEnumList<NamespaceDeclaration>(new IntPtr(p + 0x010)); // 0270D7383DC8 0x10 Nsdecls                     ( 000185CC7748 ModelEnumListType NamespaceDeclaration[] NamespaceDeclaration[] List<NamespaceDeclaration> Pointer )
-            value.LastDecl                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D7383DE8 0x18 LastDecl                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0270D7383E08 0x20 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
-            value.ScopeId                                   = GetInt32(new IntPtr(p + 0x028)); // 0270D7383E28 0x28 ScopeId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseHashtable                              = GetBool(new IntPtr(p + 0x038)); // 0270D7383E68 0x38 UseHashtable                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Xml                                       = GetString(new IntPtr(p + 0x040)); // 0270D7383E88 0x40 Xml                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlNs                                     = GetString(new IntPtr(p + 0x048)); // 0270D7383EA8 0x48 XmlNs                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Nsdecls                                   = GetEnumList<NamespaceDeclaration>(new IntPtr(p + 0x010)); // 0246673DBDC8 0x10 Nsdecls                     ( 000185CC7748 ModelEnumListType NamespaceDeclaration[] NamespaceDeclaration[] List<NamespaceDeclaration> Pointer )
+            value.LastDecl                                  = GetInt32(new IntPtr(p + 0x018)); // 0246673DBDE8 0x18 LastDecl                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0246673DBE08 0x20 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.ScopeId                                   = GetInt32(new IntPtr(p + 0x028)); // 0246673DBE28 0x28 ScopeId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UseHashtable                              = GetBool(new IntPtr(p + 0x038)); // 0246673DBE68 0x38 UseHashtable                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Xml                                       = GetString(new IntPtr(p + 0x040)); // 0246673DBE88 0x40 Xml                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.XmlNs                                     = GetString(new IntPtr(p + 0x048)); // 0246673DBEA8 0x48 XmlNs                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

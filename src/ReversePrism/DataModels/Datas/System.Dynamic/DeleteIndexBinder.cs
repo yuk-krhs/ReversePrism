@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeleteIndexBinder
+    public partial class DeleteIndexBinder : DataModel
     {
 
         public static DeleteIndexBinder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeleteIndexBinder();
+            var value   = new DeleteIndexBinder() { Pointer= p0 };
 
 
             return value;

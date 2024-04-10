@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Enable                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 RarityFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Rarity                                   0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32
-    public partial class GalleryAlbumSupportCharacterStatus
+    public partial class GalleryAlbumSupportCharacterStatus : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public bool                                     Enable                                  { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryAlbumSupportCharacterStatus();
+            var value   = new GalleryAlbumSupportCharacterStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 02700420A2D0 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x01C)); // 02700420A310 0x1C Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x020)); // 02700420A350 0x20 Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 02466151B588 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x01C)); // 02466151B5C8 0x1C Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x020)); // 02466151B608 0x20 Rarity                      ( 0001865EB1C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
 
             return value;
         }

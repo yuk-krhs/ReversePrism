@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateMasterServerInterface
+    public partial class UpdateMasterServerInterface : DataModel
     {
 
         public static UpdateMasterServerInterface? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateMasterServerInterface();
+            var value   = new UpdateMasterServerInterface() { Pointer= p0 };
 
 
             return value;

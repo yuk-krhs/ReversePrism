@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UISystemProfilerApi
+    public partial class UISystemProfilerApi : DataModel
     {
 
         public static UISystemProfilerApi? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UISystemProfilerApi();
+            var value   = new UISystemProfilerApi() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 000 <disableInPlaceEditing>k__BackingField   bool IL2CPP_TYPE_BOOLEAN
-    public partial class TouchScreenKeyboard
+    public partial class TouchScreenKeyboard : DataModel
     {
 
         public static TouchScreenKeyboard? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchScreenKeyboard();
+            var value   = new TouchScreenKeyboard() { Pointer= p0 };
 
 
             return value;

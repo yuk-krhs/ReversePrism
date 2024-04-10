@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ChainProfileScreenModel
+    public partial class ChainProfileScreenModel : DataModel
     {
 
         public static ChainProfileScreenModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainProfileScreenModel();
+            var value   = new ChainProfileScreenModel() { Pointer= p0 };
 
 
             return value;

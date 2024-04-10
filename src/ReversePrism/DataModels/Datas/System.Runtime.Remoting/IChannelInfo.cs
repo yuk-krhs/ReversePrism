@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChannelInfo
+    public partial class IChannelInfo : DataModel
     {
 
         public static IChannelInfo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChannelInfo();
+            var value   = new IChannelInfo() { Pointer= p0 };
 
 
             return value;

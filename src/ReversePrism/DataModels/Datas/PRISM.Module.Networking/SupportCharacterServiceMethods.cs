@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 TrainingSupportCharacter                 Method`2<ITrainingSupportCharacterArgs, ITrainingSupportCharacterReply> IL2CPP_TYPE_GENERICINST
     // 030 MasterTrainingSupportCharacter           Method`2<IMasterTrainingSupportCharacterArgs, IMasterTrainingSupportCharacterReply> IL2CPP_TYPE_GENERICINST
     // 048 MarkFavoriteSupportCharacter             Method`2<IMarkFavoriteSupportCharacterArgs, IMarkFavoriteSupportCharacterReply> IL2CPP_TYPE_GENERICINST
-    public partial class SupportCharacterServiceMethods
+    public partial class SupportCharacterServiceMethods : DataModel
     {
 
         public static SupportCharacterServiceMethods? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharacterServiceMethods();
+            var value   = new SupportCharacterServiceMethods() { Pointer= p0 };
 
 
             return value;

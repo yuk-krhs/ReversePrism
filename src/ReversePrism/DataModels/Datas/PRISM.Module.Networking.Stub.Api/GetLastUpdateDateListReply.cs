@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 UnreadListFieldNumber                    int IL2CPP_TYPE_I4
     // 010 _repeated_unreadList_codec               FieldCodec`1<UnreadStatus> IL2CPP_TYPE_GENERICINST
     // 020 UnreadList                               000185CF64E8 ModelClassListType RepeatedField`1<UnreadStatus> RepeatedField`1<UnreadStatus> List<UnreadStatus> Pointer
-    public partial class GetLastUpdateDateListReply
+    public partial class GetLastUpdateDateListReply : DataModel
     {
         public List<LastUpdateDateStatus>?              LastUpdateDateList                      { get; set; }
         public List<UnreadStatus>?                      UnreadList                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetLastUpdateDateListReply();
+            var value   = new GetLastUpdateDateListReply() { Pointer= p0 };
 
-            value.LastUpdateDateList                        = GetObjectList<LastUpdateDateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LastUpdateDateStatus.FromPointer); // 0270D0B3A0C8 0x18 LastUpdateDateList          ( 000185CE29F8 ModelClassListType RepeatedField`1<LastUpdateDateStatus> RepeatedField`1<LastUpdateDateStatus> List<LastUpdateDateStatus> Pointer )
-            value.UnreadList                                = GetObjectList<UnreadStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnreadStatus.FromPointer); // 0270D0B3A128 0x20 UnreadList                  ( 000185CF64E8 ModelClassListType RepeatedField`1<UnreadStatus> RepeatedField`1<UnreadStatus> List<UnreadStatus> Pointer )
+            value.LastUpdateDateList                        = GetObjectList<LastUpdateDateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LastUpdateDateStatus.FromPointer); // 024660B23C90 0x18 LastUpdateDateList          ( 000185CE29F8 ModelClassListType RepeatedField`1<LastUpdateDateStatus> RepeatedField`1<LastUpdateDateStatus> List<LastUpdateDateStatus> Pointer )
+            value.UnreadList                                = GetObjectList<UnreadStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnreadStatus.FromPointer); // 024660B23CF0 0x20 UnreadList                  ( 000185CF64E8 ModelClassListType RepeatedField`1<UnreadStatus> RepeatedField`1<UnreadStatus> List<UnreadStatus> Pointer )
 
             return value;
         }

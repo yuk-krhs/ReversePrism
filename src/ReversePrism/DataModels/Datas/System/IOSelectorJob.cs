@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Operation                                0001865C64A0 ModelEnumType IOOperation IOOperation IOOperation Int32
     // 018 Callback                                 0001865C4A40 ModelClassType IOAsyncCallback IOAsyncCallback IOAsyncCallback Pointer
     // 020 State                                    0001865C53D0 ModelClassType IOAsyncResult IOAsyncResult IOAsyncResult Pointer
-    public partial class IOSelectorJob
+    public partial class IOSelectorJob : DataModel
     {
         public IOOperation                              Operation                               { get; set; }
         public IOAsyncCallback?                         Callback                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOSelectorJob();
+            var value   = new IOSelectorJob() { Pointer= p0 };
 
-            value.Operation                                 = (IOOperation)GetInt32(new IntPtr(p + 0x010)); // 0270D7986E60 0x10 Operation                   ( 0001865C64A0 ModelEnumType IOOperation IOOperation IOOperation Int32 )
-            value.Callback                                  = GetObject<IOAsyncCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.IOAsyncCallback.FromPointer); // 0270D7986E80 0x18 Callback                    ( 0001865C4A40 ModelClassType IOAsyncCallback IOAsyncCallback IOAsyncCallback Pointer )
-            value.State                                     = GetObject<IOAsyncResult>(new IntPtr(p + 0x020), ReversePrism.DataModels.IOAsyncResult.FromPointer); // 0270D7986EA0 0x20 State                       ( 0001865C53D0 ModelClassType IOAsyncResult IOAsyncResult IOAsyncResult Pointer )
+            value.Operation                                 = (IOOperation)GetInt32(new IntPtr(p + 0x010)); // 0246679EEE60 0x10 Operation                   ( 0001865C64A0 ModelEnumType IOOperation IOOperation IOOperation Int32 )
+            value.Callback                                  = GetObject<IOAsyncCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.IOAsyncCallback.FromPointer); // 0246679EEE80 0x18 Callback                    ( 0001865C4A40 ModelClassType IOAsyncCallback IOAsyncCallback IOAsyncCallback Pointer )
+            value.State                                     = GetObject<IOAsyncResult>(new IntPtr(p + 0x020), ReversePrism.DataModels.IOAsyncResult.FromPointer); // 0246679EEEA0 0x20 State                       ( 0001865C53D0 ModelClassType IOAsyncResult IOAsyncResult IOAsyncResult Pointer )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 PhoneCallListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_phoneCallList_codec            FieldCodec`1<PhoneCallStatus> IL2CPP_TYPE_GENERICINST
     // 038 PhoneCallList                            000185CE8828 ModelClassListType RepeatedField`1<PhoneCallStatus> RepeatedField`1<PhoneCallStatus> List<PhoneCallStatus> Pointer
-    public partial class PhoneInfoStatus
+    public partial class PhoneInfoStatus : DataModel
     {
         public DateTime                                 PostDate                                { get; set; }
         public int                                      MstPhoneUserId                          { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhoneInfoStatus();
+            var value   = new PhoneInfoStatus() { Pointer= p0 };
 
-            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D2311D10 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstPhoneUserId                            = GetInt32(new IntPtr(p + 0x028)); // 0270D2311D90 0x28 MstPhoneUserId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x02C)); // 0270D2311DD0 0x2C IsUnread                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2311E10 0x30 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.PhoneCallList                             = GetObjectList<PhoneCallStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PhoneCallStatus.FromPointer); // 0270D2311E70 0x38 PhoneCallList               ( 000185CE8828 ModelClassListType RepeatedField`1<PhoneCallStatus> RepeatedField`1<PhoneCallStatus> List<PhoneCallStatus> Pointer )
+            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 02466228D540 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstPhoneUserId                            = GetInt32(new IntPtr(p + 0x028)); // 02466228D5C0 0x28 MstPhoneUserId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x02C)); // 02466228D600 0x2C IsUnread                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 02466228D640 0x30 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PhoneCallList                             = GetObjectList<PhoneCallStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PhoneCallStatus.FromPointer); // 02466228D6A0 0x38 PhoneCallList               ( 000185CE8828 ModelClassListType RepeatedField`1<PhoneCallStatus> RepeatedField`1<PhoneCallStatus> List<PhoneCallStatus> Pointer )
             value.PostDate                      = ToDateTime(value._PostDate);
 
             return value;

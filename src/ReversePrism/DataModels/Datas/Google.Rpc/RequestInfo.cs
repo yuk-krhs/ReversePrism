@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 RequestId                                000186671910 ModelPrimitiveType string string string String
     // 000 ServingDataFieldNumber                   int IL2CPP_TYPE_I4
     // 020 ServingData                              000186671910 ModelPrimitiveType string string string String
-    public partial class RequestInfo
+    public partial class RequestInfo : DataModel
     {
         public string                                   RequestId                               { get; set; }
         public string                                   ServingData                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestInfo();
+            var value   = new RequestInfo() { Pointer= p0 };
 
-            value.RequestId                                 = GetString(new IntPtr(p + 0x018)); // 0270DA6F9768 0x18 RequestId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.ServingData                               = GetString(new IntPtr(p + 0x020)); // 0270DA6F97A8 0x20 ServingData                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.RequestId                                 = GetString(new IntPtr(p + 0x018)); // 02466A74C4C8 0x18 RequestId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ServingData                               = GetString(new IntPtr(p + 0x020)); // 02466A74C508 0x20 ServingData                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

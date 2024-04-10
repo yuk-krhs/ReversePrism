@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class grpcsharp_channel_get_target_delegate
+    public partial class grpcsharp_channel_get_target_delegate : DataModel
     {
 
         public static grpcsharp_channel_get_target_delegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new grpcsharp_channel_get_target_delegate();
+            var value   = new grpcsharp_channel_get_target_delegate() { Pointer= p0 };
 
 
             return value;

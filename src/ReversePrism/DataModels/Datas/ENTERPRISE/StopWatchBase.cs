@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StopWatchBase
+    public partial class StopWatchBase : DataModel
     {
 
         public static StopWatchBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StopWatchBase();
+            var value   = new StopWatchBase() { Pointer= p0 };
 
 
             return value;

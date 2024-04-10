@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 GridView                                 000186675A00 ModelClassType MusicSelectionGridView MusicSelectionGridView MusicSelectionGridView Pointer
     // 068 SelectedMusic                            000186664B50 ModelClassType MusicData MusicData MusicData Pointer
-    public partial class MusicSelectionGridViewPopupContent
+    public partial class MusicSelectionGridViewPopupContent : DataModel
     {
         public MusicSelectionGridView?                  GridView                                { get; set; }
         public MusicData?                               SelectedMusic                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicSelectionGridViewPopupContent();
+            var value   = new MusicSelectionGridViewPopupContent() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<MusicSelectionGridView>(new IntPtr(p + 0x060), ReversePrism.DataModels.MusicSelectionGridView.FromPointer); // 0270D5223780 0x60 GridView                    ( 000186675A00 ModelClassType MusicSelectionGridView MusicSelectionGridView MusicSelectionGridView Pointer )
-            value.SelectedMusic                             = GetObject<MusicData>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicData.FromPointer); // 0270D52237A0 0x68 SelectedMusic               ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
+            value.GridView                                  = GetObject<MusicSelectionGridView>(new IntPtr(p + 0x060), ReversePrism.DataModels.MusicSelectionGridView.FromPointer); // 024665298828 0x60 GridView                    ( 000186675A00 ModelClassType MusicSelectionGridView MusicSelectionGridView MusicSelectionGridView Pointer )
+            value.SelectedMusic                             = GetObject<MusicData>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicData.FromPointer); // 024665298848 0x68 SelectedMusic               ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
 
             return value;
         }

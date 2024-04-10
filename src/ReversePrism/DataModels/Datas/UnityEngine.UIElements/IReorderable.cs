@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IReorderable
+    public partial class IReorderable : DataModel
     {
 
         public static IReorderable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IReorderable();
+            var value   = new IReorderable() { Pointer= p0 };
 
 
             return value;

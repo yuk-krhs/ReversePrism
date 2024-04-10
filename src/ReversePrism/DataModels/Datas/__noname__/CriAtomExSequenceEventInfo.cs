@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 02C Type                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 Id                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 034 Reserved                                 000186698B70 ModelPrimitiveType uint uint uint UInt32
-    public partial class CriAtomExSequenceEventInfo
+    public partial class CriAtomExSequenceEventInfo : DataModel
     {
         public ulong                                    Position                                { get; set; }
         public string                                   Tag                                     { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExSequenceEventInfo();
+            var value   = new CriAtomExSequenceEventInfo() { Pointer= p0 };
 
-            value.Position                                  = GetUInt64(new IntPtr(p + 0x010)); // 0270DAC33170 0x10 Position                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Tag                                       = GetString(new IntPtr(p + 0x020)); // 0270DAC331B0 0x20 Tag                         ( 000186675150 ModelPrimitiveType string string string String )
-            value.PlaybackId                                = GetUInt32(new IntPtr(p + 0x028)); // 0270DAC331D0 0x28 PlaybackId                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Type                                      = GetInt32(new IntPtr(p + 0x02C)); // 0270DAC331F0 0x2C Type                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Id                                        = GetUInt32(new IntPtr(p + 0x030)); // 0270DAC33210 0x30 Id                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Reserved                                  = GetUInt32(new IntPtr(p + 0x034)); // 0270DAC33230 0x34 Reserved                    ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Position                                  = GetUInt64(new IntPtr(p + 0x010)); // 02466AC8B170 0x10 Position                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Tag                                       = GetString(new IntPtr(p + 0x020)); // 02466AC8B1B0 0x20 Tag                         ( 000186675150 ModelPrimitiveType string string string String )
+            value.PlaybackId                                = GetUInt32(new IntPtr(p + 0x028)); // 02466AC8B1D0 0x28 PlaybackId                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Type                                      = GetInt32(new IntPtr(p + 0x02C)); // 02466AC8B1F0 0x2C Type                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetUInt32(new IntPtr(p + 0x030)); // 02466AC8B210 0x30 Id                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Reserved                                  = GetUInt32(new IntPtr(p + 0x034)); // 02466AC8B230 0x34 Reserved                    ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

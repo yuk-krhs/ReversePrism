@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SplineParameter
+    public partial class SplineParameter : DataModel
     {
 
         public static SplineParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SplineParameter();
+            var value   = new SplineParameter() { Pointer= p0 };
 
 
             return value;

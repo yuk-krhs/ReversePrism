@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 StarImage                                0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    public partial class StarView
+    public partial class StarView : DataModel
     {
         public UIImage?                                 StarImage                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StarView();
+            var value   = new StarView() { Pointer= p0 };
 
-            value.StarImage                                 = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 027005B21ED0 0x20 StarImage                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.StarImage                                 = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0245A5B23A40 0x20 StarImage                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

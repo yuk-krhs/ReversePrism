@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 03C AutoSelectionScore                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 GrantSkillBufferDisplayFieldNumber       int IL2CPP_TYPE_I4
     // 040 GrantSkillBufferDisplay                  0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer
-    public partial class InProducePotentialSupportSkillStatus
+    public partial class InProducePotentialSupportSkillStatus : DataModel
     {
         public int                                      MstPotentialSkillId                     { get; set; }
         public List<int>?                               ValueList                               { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InProducePotentialSupportSkillStatus();
+            var value   = new InProducePotentialSupportSkillStatus() { Pointer= p0 };
 
-            value.MstPotentialSkillId                       = GetInt32(new IntPtr(p + 0x018)); // 0270D10DB790 0x18 MstPotentialSkillId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 0270D10DB7F0 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.MstSupportSkillTypeId                     = GetInt32(new IntPtr(p + 0x028)); // 0270D10DB830 0x28 MstSupportSkillTypeId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D10DB870 0x30 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
-            value.IsInheritance                             = GetBool(new IntPtr(p + 0x038)); // 0270D10DB8B0 0x38 IsInheritance               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoSelectionScore                        = GetInt32(new IntPtr(p + 0x03C)); // 0270D10DB8F0 0x3C AutoSelectionScore          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D10DB930 0x40 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.MstPotentialSkillId                       = GetInt32(new IntPtr(p + 0x018)); // 024661066E68 0x18 MstPotentialSkillId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 024661066EC8 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstSupportSkillTypeId                     = GetInt32(new IntPtr(p + 0x028)); // 024661066F08 0x28 MstSupportSkillTypeId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 024661066F48 0x30 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.IsInheritance                             = GetBool(new IntPtr(p + 0x038)); // 024661066F88 0x38 IsInheritance               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AutoSelectionScore                        = GetInt32(new IntPtr(p + 0x03C)); // 024661066FC8 0x3C AutoSelectionScore          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 024661067008 0x40 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
 
             return value;
         }

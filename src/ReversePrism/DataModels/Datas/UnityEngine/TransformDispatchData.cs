@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 040 positions                                NativeArray`1<Vector3> IL2CPP_TYPE_GENERICINST
     // 050 rotations                                NativeArray`1<Quaternion> IL2CPP_TYPE_GENERICINST
     // 060 scales                                   NativeArray`1<Vector3> IL2CPP_TYPE_GENERICINST
-    public partial class TransformDispatchData
+    public partial class TransformDispatchData : DataModel
     {
 
         public static TransformDispatchData? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformDispatchData();
+            var value   = new TransformDispatchData() { Pointer= p0 };
 
 
             return value;

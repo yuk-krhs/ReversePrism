@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _perCoreStacks                           LockedStack<<var>>[] IL2CPP_TYPE_SZARRAY
-    public partial class PerCoreLockedStacks
+    public partial class PerCoreLockedStacks : DataModel
     {
 
         public static PerCoreLockedStacks? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PerCoreLockedStacks();
+            var value   = new PerCoreLockedStacks() { Pointer= p0 };
 
 
             return value;

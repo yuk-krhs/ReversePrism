@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Qnames                                   000186671910 ModelPrimitiveType string string string String
     // 028 LineNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 02C LinePosition                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class XmlElementEventArgs
+    public partial class XmlElementEventArgs : DataModel
     {
         public XmlElement?                              Elem                                    { get; set; }
         public string                                   Qnames                                  { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlElementEventArgs();
+            var value   = new XmlElementEventArgs() { Pointer= p0 };
 
-            value.Elem                                      = GetObject<XmlElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlElement.FromPointer); // 0270D749EB48 0x18 Elem                        ( 000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer )
-            value.Qnames                                    = GetString(new IntPtr(p + 0x020)); // 0270D749EB68 0x20 Qnames                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x028)); // 0270D749EB88 0x28 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x02C)); // 0270D749EBA8 0x2C LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Elem                                      = GetObject<XmlElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlElement.FromPointer); // 024667506B48 0x18 Elem                        ( 000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer )
+            value.Qnames                                    = GetString(new IntPtr(p + 0x020)); // 024667506B68 0x20 Qnames                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x028)); // 024667506B88 0x28 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x02C)); // 024667506BA8 0x2C LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

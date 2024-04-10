@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 030 PublicId                                 000186671910 ModelPrimitiveType string string string String
     // 038 SystemId                                 000186671910 ModelPrimitiveType string string string String
     // 040 InternalSubset                           000186671910 ModelPrimitiveType string string string String
-    public partial class XDocumentType
+    public partial class XDocumentType : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   PublicId                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XDocumentType();
+            var value   = new XDocumentType() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270D886E108 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.PublicId                                  = GetString(new IntPtr(p + 0x030)); // 0270D886E128 0x30 PublicId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.SystemId                                  = GetString(new IntPtr(p + 0x038)); // 0270D886E148 0x38 SystemId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.InternalSubset                            = GetString(new IntPtr(p + 0x040)); // 0270D886E168 0x40 InternalSubset              ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0246688C1E20 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.PublicId                                  = GetString(new IntPtr(p + 0x030)); // 0246688C1E40 0x30 PublicId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.SystemId                                  = GetString(new IntPtr(p + 0x038)); // 0246688C1E60 0x38 SystemId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.InternalSubset                            = GetString(new IntPtr(p + 0x040)); // 0246688C1E80 0x40 InternalSubset              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

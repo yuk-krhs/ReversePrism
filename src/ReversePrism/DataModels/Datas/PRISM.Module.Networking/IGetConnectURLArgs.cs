@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetConnectURLArgs
+    public partial class IGetConnectURLArgs : DataModel
     {
 
         public static IGetConnectURLArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetConnectURLArgs();
+            var value   = new IGetConnectURLArgs() { Pointer= p0 };
 
 
             return value;

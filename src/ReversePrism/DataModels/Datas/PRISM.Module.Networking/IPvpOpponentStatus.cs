@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvpOpponentStatus
+    public partial class IPvpOpponentStatus : DataModel
     {
 
         public static IPvpOpponentStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvpOpponentStatus();
+            var value   = new IPvpOpponentStatus() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceConfirmConnector
+    public partial class IProduceConfirmConnector : DataModel
     {
 
         public static IProduceConfirmConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceConfirmConnector();
+            var value   = new IProduceConfirmConnector() { Pointer= p0 };
 
 
             return value;

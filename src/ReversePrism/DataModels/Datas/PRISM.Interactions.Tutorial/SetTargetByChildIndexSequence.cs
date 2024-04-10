@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SetTargetByChildIndexSequence
+    public partial class SetTargetByChildIndexSequence : DataModel
     {
         public int                                      Index                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetTargetByChildIndexSequence();
+            var value   = new SetTargetByChildIndexSequence() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0270DBC10E78 0x10 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466BCA81E0 0x10 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

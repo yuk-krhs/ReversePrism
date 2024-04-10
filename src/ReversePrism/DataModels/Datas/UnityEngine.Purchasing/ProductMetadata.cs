@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 LocalizedDescription                     000186671910 ModelPrimitiveType string string string String
     // 028 IsoCurrencyCode                          000186671910 ModelPrimitiveType string string string String
     // 030 LocalizedPrice                           0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
-    public partial class ProductMetadata
+    public partial class ProductMetadata : DataModel
     {
         public string                                   LocalizedPriceString                    { get; set; }
         public string                                   LocalizedTitle                          { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductMetadata();
+            var value   = new ProductMetadata() { Pointer= p0 };
 
-            value.LocalizedPriceString                      = GetString(new IntPtr(p + 0x010)); // 027004BFE108 0x10 LocalizedPriceString        ( 000186671910 ModelPrimitiveType string string string String )
-            value.LocalizedTitle                            = GetString(new IntPtr(p + 0x018)); // 027004BFE128 0x18 LocalizedTitle              ( 000186671910 ModelPrimitiveType string string string String )
-            value.LocalizedDescription                      = GetString(new IntPtr(p + 0x020)); // 027004BFE148 0x20 LocalizedDescription        ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsoCurrencyCode                           = GetString(new IntPtr(p + 0x028)); // 027004BFE168 0x28 IsoCurrencyCode             ( 000186671910 ModelPrimitiveType string string string String )
-            value.LocalizedPrice                            = (Decimal)GetInt32(new IntPtr(p + 0x030)); // 027004BFE188 0x30 LocalizedPrice              ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
+            value.LocalizedPriceString                      = GetString(new IntPtr(p + 0x010)); // 0245A4C24B98 0x10 LocalizedPriceString        ( 000186671910 ModelPrimitiveType string string string String )
+            value.LocalizedTitle                            = GetString(new IntPtr(p + 0x018)); // 0245A4C24BB8 0x18 LocalizedTitle              ( 000186671910 ModelPrimitiveType string string string String )
+            value.LocalizedDescription                      = GetString(new IntPtr(p + 0x020)); // 0245A4C24BD8 0x20 LocalizedDescription        ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsoCurrencyCode                           = GetString(new IntPtr(p + 0x028)); // 0245A4C24BF8 0x28 IsoCurrencyCode             ( 000186671910 ModelPrimitiveType string string string String )
+            value.LocalizedPrice                            = (Decimal)GetInt32(new IntPtr(p + 0x030)); // 0245A4C24C18 0x30 LocalizedPrice              ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
 
             return value;
         }

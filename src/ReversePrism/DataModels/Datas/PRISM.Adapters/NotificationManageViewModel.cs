@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 notificationViewModels                   Dictionary`2<int, NotificationViewModel> IL2CPP_TYPE_GENERICINST
-    public partial class NotificationManageViewModel
+    public partial class NotificationManageViewModel : DataModel
     {
 
         public static NotificationManageViewModel? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotificationManageViewModel();
+            var value   = new NotificationManageViewModel() { Pointer= p0 };
 
 
             return value;

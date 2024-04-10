@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 IsShowUnlockedCostumeOnly                000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveCostumeChangeSaveData
+    public partial class LiveCostumeChangeSaveData : DataModel
     {
         public bool                                     IsShowUnlockedCostumeOnly               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumeChangeSaveData();
+            var value   = new LiveCostumeChangeSaveData() { Pointer= p0 };
 
-            value.IsShowUnlockedCostumeOnly                 = GetBool(new IntPtr(p + 0x020)); // 027003A71B98 0x20 IsShowUnlockedCostumeOnly   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsShowUnlockedCostumeOnly                 = GetBool(new IntPtr(p + 0x020)); // 0245A3A7CAD0 0x20 IsShowUnlockedCostumeOnly   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

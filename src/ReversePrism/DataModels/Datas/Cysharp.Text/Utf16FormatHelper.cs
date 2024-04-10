@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 sp                                       char IL2CPP_TYPE_CHAR
-    public partial class Utf16FormatHelper
+    public partial class Utf16FormatHelper : DataModel
     {
 
         public static Utf16FormatHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Utf16FormatHelper();
+            var value   = new Utf16FormatHelper() { Pointer= p0 };
 
 
             return value;

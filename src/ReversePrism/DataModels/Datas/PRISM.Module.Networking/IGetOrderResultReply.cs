@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetOrderResultReply
+    public partial class IGetOrderResultReply : DataModel
     {
 
         public static IGetOrderResultReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetOrderResultReply();
+            var value   = new IGetOrderResultReply() { Pointer= p0 };
 
 
             return value;

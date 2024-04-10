@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TrackAssetUpgrade
+    public partial class TrackAssetUpgrade : DataModel
     {
 
         public static TrackAssetUpgrade? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TrackAssetUpgrade();
+            var value   = new TrackAssetUpgrade() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 visualUssClassName                       string IL2CPP_TYPE_STRING
-    public partial class MultiColumnHeaderColumnResizePreview
+    public partial class MultiColumnHeaderColumnResizePreview : DataModel
     {
 
         public static MultiColumnHeaderColumnResizePreview? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MultiColumnHeaderColumnResizePreview();
+            var value   = new MultiColumnHeaderColumnResizePreview() { Pointer= p0 };
 
 
             return value;

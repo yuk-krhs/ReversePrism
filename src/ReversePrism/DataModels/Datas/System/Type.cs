@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultLookup                            BindingFlags IL2CPP_TYPE_VALUETYPE
     // 010 Impl                                     0001866A0050 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
     // 000 DefaultTypeNameWhenMissingMetadata       string IL2CPP_TYPE_STRING
-    public partial class Type
+    public partial class Type : DataModel
     {
         public List<Type>?                              EmptyTypes                              { get; set; }
         public MemberFilter?                            FilterAttribute                         { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Type();
+            var value   = new Type() { Pointer= p0 };
 
-            value.EmptyTypes                                = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 02700154AA38 0x10 EmptyTypes                  ( 000185B83450 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.FilterAttribute                           = GetObject<MemberFilter>(new IntPtr(p + 0x020), ReversePrism.DataModels.MemberFilter.FromPointer); // 02700154AA78 0x20 FilterAttribute             ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
-            value.FilterName                                = GetObject<MemberFilter>(new IntPtr(p + 0x028), ReversePrism.DataModels.MemberFilter.FromPointer); // 02700154AA98 0x28 FilterName                  ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
-            value.FilterNameIgnoreCase                      = GetObject<MemberFilter>(new IntPtr(p + 0x030), ReversePrism.DataModels.MemberFilter.FromPointer); // 02700154AAB8 0x30 FilterNameIgnoreCase        ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
-            value.Impl                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 02700154AAF8 0x10 Impl                        ( 0001866A0050 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.EmptyTypes                                = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A154AA38 0x10 EmptyTypes                  ( 000185B83450 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.FilterAttribute                           = GetObject<MemberFilter>(new IntPtr(p + 0x020), ReversePrism.DataModels.MemberFilter.FromPointer); // 0245A154AA78 0x20 FilterAttribute             ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
+            value.FilterName                                = GetObject<MemberFilter>(new IntPtr(p + 0x028), ReversePrism.DataModels.MemberFilter.FromPointer); // 0245A154AA98 0x28 FilterName                  ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
+            value.FilterNameIgnoreCase                      = GetObject<MemberFilter>(new IntPtr(p + 0x030), ReversePrism.DataModels.MemberFilter.FromPointer); // 0245A154AAB8 0x30 FilterNameIgnoreCase        ( 0001865F1540 ModelClassType MemberFilter MemberFilter MemberFilter Pointer )
+            value.Impl                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A154AAF8 0x10 Impl                        ( 0001866A0050 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStylePainter
+    public partial class IStylePainter : DataModel
     {
 
         public static IStylePainter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStylePainter();
+            var value   = new IStylePainter() { Pointer= p0 };
 
 
             return value;

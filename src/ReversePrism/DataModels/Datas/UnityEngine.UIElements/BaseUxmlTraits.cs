@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CanHaveAnyAttribute                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BaseUxmlTraits
+    public partial class BaseUxmlTraits : DataModel
     {
         public bool                                     CanHaveAnyAttribute                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseUxmlTraits();
+            var value   = new BaseUxmlTraits() { Pointer= p0 };
 
-            value.CanHaveAnyAttribute                       = GetBool(new IntPtr(p + 0x010)); // 0270050E63B0 0x10 CanHaveAnyAttribute         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanHaveAnyAttribute                       = GetBool(new IntPtr(p + 0x010)); // 0245A50E7508 0x10 CanHaveAnyAttribute         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

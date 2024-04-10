@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMarkFavoriteSupportCharacterArgs
+    public partial class IMarkFavoriteSupportCharacterArgs : DataModel
     {
 
         public static IMarkFavoriteSupportCharacterArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMarkFavoriteSupportCharacterArgs();
+            var value   = new IMarkFavoriteSupportCharacterArgs() { Pointer= p0 };
 
 
             return value;

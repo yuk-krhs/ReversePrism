@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 ProductRewardList                        000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
     // 030 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class FinishStoryReply
+    public partial class FinishStoryReply : DataModel
     {
         public List<StoryStatus>?                       UpdatedStoryList                        { get; set; }
         public StoryIDStatus?                           NextStoryId                             { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishStoryReply();
+            var value   = new FinishStoryReply() { Pointer= p0 };
 
-            value.UpdatedStoryList                          = GetObjectList<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0270D2A29CA8 0x18 UpdatedStoryList            ( 000185CF3248 ModelClassListType RepeatedField`1<StoryStatus> RepeatedField`1<StoryStatus> List<StoryStatus> Pointer )
-            value.NextStoryId                               = GetObject<StoryIDStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0270D2A29CE8 0x20 NextStoryId                 ( 0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
-            value.ProductRewardList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D2A29D48 0x28 ProductRewardList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D2A29D88 0x30 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.UpdatedStoryList                          = GetObjectList<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629AED28 0x18 UpdatedStoryList            ( 000185CF3248 ModelClassListType RepeatedField`1<StoryStatus> RepeatedField`1<StoryStatus> List<StoryStatus> Pointer )
+            value.NextStoryId                               = GetObject<StoryIDStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0246629AED68 0x20 NextStoryId                 ( 0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
+            value.ProductRewardList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246629AEDC8 0x28 ProductRewardList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0246629AEE08 0x30 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFollowUserArgs
+    public partial class IFollowUserArgs : DataModel
     {
 
         public static IFollowUserArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFollowUserArgs();
+            var value   = new IFollowUserArgs() { Pointer= p0 };
 
 
             return value;

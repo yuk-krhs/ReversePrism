@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DOTweenModuleUnityVersion
+    public partial class DOTweenModuleUnityVersion : DataModel
     {
 
         public static DOTweenModuleUnityVersion? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DOTweenModuleUnityVersion();
+            var value   = new DOTweenModuleUnityVersion() { Pointer= p0 };
 
 
             return value;

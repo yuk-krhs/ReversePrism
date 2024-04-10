@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceAutoSettingGetterImplement
+    public partial class ProduceAutoSettingGetterImplement : DataModel
     {
 
         public static ProduceAutoSettingGetterImplement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoSettingGetterImplement();
+            var value   = new ProduceAutoSettingGetterImplement() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Group                                    00018669A8B0 ModelClassType Group Group Group Pointer
     // 018 Capcount                                 0001865F4260 ModelPrimitiveType int int int Int32
     // 020 Captures                                 000185B73600 ModelClassListType Capture[] Capture[] List<Capture> Pointer
-    public partial class CaptureCollection
+    public partial class CaptureCollection : DataModel
     {
         public Group?                                   Group                                   { get; set; }
         public int                                      Capcount                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CaptureCollection();
+            var value   = new CaptureCollection() { Pointer= p0 };
 
-            value.Group                                     = GetObject<Group>(new IntPtr(p + 0x010), ReversePrism.DataModels.Group.FromPointer); // 0270D79A07E0 0x10 Group                       ( 00018669A8B0 ModelClassType Group Group Group Pointer )
-            value.Capcount                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D79A0800 0x18 Capcount                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Captures                                  = GetObjectList<Capture>(new IntPtr(p + 0x020), ReversePrism.DataModels.Capture.FromPointer); // 0270D79A0820 0x20 Captures                    ( 000185B73600 ModelClassListType Capture[] Capture[] List<Capture> Pointer )
+            value.Group                                     = GetObject<Group>(new IntPtr(p + 0x010), ReversePrism.DataModels.Group.FromPointer); // 024667A087E0 0x10 Group                       ( 00018669A8B0 ModelClassType Group Group Group Pointer )
+            value.Capcount                                  = GetInt32(new IntPtr(p + 0x018)); // 024667A08800 0x18 Capcount                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Captures                                  = GetObjectList<Capture>(new IntPtr(p + 0x020), ReversePrism.DataModels.Capture.FromPointer); // 024667A08820 0x20 Captures                    ( 000185B73600 ModelClassListType Capture[] Capture[] List<Capture> Pointer )
 
             return value;
         }

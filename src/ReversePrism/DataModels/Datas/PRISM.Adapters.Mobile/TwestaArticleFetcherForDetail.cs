@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <CachedArticles>k__BackingField          IEnumerable`1<ITwestaArticleStatus> IL2CPP_TYPE_GENERICINST
-    public partial class TwestaArticleFetcherForDetail
+    public partial class TwestaArticleFetcherForDetail : DataModel
     {
 
         public static TwestaArticleFetcherForDetail? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaArticleFetcherForDetail();
+            var value   = new TwestaArticleFetcherForDetail() { Pointer= p0 };
 
 
             return value;

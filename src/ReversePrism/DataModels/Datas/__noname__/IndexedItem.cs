@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Value                                    <var> IL2CPP_TYPE_VAR
     // 000 Id                                       long IL2CPP_TYPE_I8
-    public partial class IndexedItem
+    public partial class IndexedItem : DataModel
     {
 
         public static IndexedItem? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IndexedItem();
+            var value   = new IndexedItem() { Pointer= p0 };
 
 
             return value;

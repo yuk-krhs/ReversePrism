@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AccessShopServiceUnityEditor
+    public partial class AccessShopServiceUnityEditor : DataModel
     {
 
         public static AccessShopServiceUnityEditor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AccessShopServiceUnityEditor();
+            var value   = new AccessShopServiceUnityEditor() { Pointer= p0 };
 
 
             return value;

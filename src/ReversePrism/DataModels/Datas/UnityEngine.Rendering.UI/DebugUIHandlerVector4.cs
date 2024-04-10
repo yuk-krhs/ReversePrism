@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 088 FieldW                                   0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer
     // 090 M_Field                                  00018658B990 ModelClassType Vector4Field Vector4Field Vector4Field Pointer
     // 098 M_Container                              0001866A1D00 ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer
-    public partial class DebugUIHandlerVector4
+    public partial class DebugUIHandlerVector4 : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public UIFoldout?                               ValueToggle                             { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerVector4();
+            var value   = new DebugUIHandlerVector4() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D9344A50 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueToggle                               = GetObject<UIFoldout>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIFoldout.FromPointer); // 0270D9344A70 0x68 ValueToggle                 ( 0001866E9A80 ModelClassType UIFoldout UIFoldout UIFoldout Pointer )
-            value.FieldX                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x070), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 0270D9344A90 0x70 FieldX                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
-            value.FieldY                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x078), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 0270D9344AB0 0x78 FieldY                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
-            value.FieldZ                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x080), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 0270D9344AD0 0x80 FieldZ                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
-            value.FieldW                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x088), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 0270D9344AF0 0x88 FieldW                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
-            value.M_Field                                   = GetObject<Vector4Field>(new IntPtr(p + 0x090), ReversePrism.DataModels.Vector4Field.FromPointer); // 0270D9344B10 0x90 M_Field                     ( 00018658B990 ModelClassType Vector4Field Vector4Field Vector4Field Pointer )
-            value.M_Container                               = GetObject<DebugUIHandlerContainer>(new IntPtr(p + 0x098), ReversePrism.DataModels.DebugUIHandlerContainer.FromPointer); // 0270D9344B30 0x98 M_Container                 ( 0001866A1D00 ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466939E558 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueToggle                               = GetObject<UIFoldout>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIFoldout.FromPointer); // 02466939E578 0x68 ValueToggle                 ( 0001866E9A80 ModelClassType UIFoldout UIFoldout UIFoldout Pointer )
+            value.FieldX                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x070), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 02466939E598 0x70 FieldX                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
+            value.FieldY                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x078), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 02466939E5B8 0x78 FieldY                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
+            value.FieldZ                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x080), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 02466939E5D8 0x80 FieldZ                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
+            value.FieldW                                    = GetObject<DebugUIHandlerIndirectFloatField>(new IntPtr(p + 0x088), ReversePrism.DataModels.DebugUIHandlerIndirectFloatField.FromPointer); // 02466939E5F8 0x88 FieldW                      ( 0001866A3550 ModelClassType DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField DebugUIHandlerIndirectFloatField Pointer )
+            value.M_Field                                   = GetObject<Vector4Field>(new IntPtr(p + 0x090), ReversePrism.DataModels.Vector4Field.FromPointer); // 02466939E618 0x90 M_Field                     ( 00018658B990 ModelClassType Vector4Field Vector4Field Vector4Field Pointer )
+            value.M_Container                               = GetObject<DebugUIHandlerContainer>(new IntPtr(p + 0x098), ReversePrism.DataModels.DebugUIHandlerContainer.FromPointer); // 02466939E638 0x98 M_Container                 ( 0001866A1D00 ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 TotalTypes                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 TotalFiles                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 IsEditorOnly                             000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class MonoScriptData
+    public partial class MonoScriptData : DataModel
     {
         public List<sbyte>?                             FilePathsData                           { get; set; }
         public List<sbyte>?                             TypesData                               { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoScriptData();
+            var value   = new MonoScriptData() { Pointer= p0 };
 
-            value.FilePathsData                             = GetSByteList(new IntPtr(p + 0x010)); // 0270DBF69F68 0x10 FilePathsData               ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.TypesData                                 = GetSByteList(new IntPtr(p + 0x018)); // 0270DBF69F88 0x18 TypesData                   ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.TotalTypes                                = GetInt32(new IntPtr(p + 0x020)); // 0270DBF69FA8 0x20 TotalTypes                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TotalFiles                                = GetInt32(new IntPtr(p + 0x024)); // 0270DBF69FC8 0x24 TotalFiles                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IsEditorOnly                              = GetBool(new IntPtr(p + 0x028)); // 0270DBF69FE8 0x28 IsEditorOnly                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.FilePathsData                             = GetSByteList(new IntPtr(p + 0x010)); // 02466BFE1BF8 0x10 FilePathsData               ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.TypesData                                 = GetSByteList(new IntPtr(p + 0x018)); // 02466BFE1C18 0x18 TypesData                   ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.TotalTypes                                = GetInt32(new IntPtr(p + 0x020)); // 02466BFE1C38 0x20 TotalTypes                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TotalFiles                                = GetInt32(new IntPtr(p + 0x024)); // 02466BFE1C58 0x24 TotalFiles                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.IsEditorOnly                              = GetBool(new IntPtr(p + 0x028)); // 02466BFE1C78 0x28 IsEditorOnly                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

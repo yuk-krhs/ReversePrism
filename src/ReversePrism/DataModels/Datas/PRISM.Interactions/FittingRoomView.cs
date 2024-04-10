@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 CgBlackFade                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 028 ScenarioManager                          0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
     // 030 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class FittingRoomView
+    public partial class FittingRoomView : DataModel
     {
         public CanvasGroup?                             CgBlackFade                             { get; set; }
         public ScenarioManager?                         ScenarioManager                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FittingRoomView();
+            var value   = new FittingRoomView() { Pointer= p0 };
 
-            value.CgBlackFade                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB615250 0x20 CgBlackFade                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0270DB615270 0x28 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270DB615290 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.CgBlackFade                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B691C48 0x20 CgBlackFade                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScenarioManager.FromPointer); // 02466B691C68 0x28 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466B691C88 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

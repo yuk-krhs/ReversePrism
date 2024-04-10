@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ParaffinRenderer
+    public partial class ParaffinRenderer : DataModel
     {
 
         public static ParaffinRenderer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParaffinRenderer();
+            var value   = new ParaffinRenderer() { Pointer= p0 };
 
 
             return value;

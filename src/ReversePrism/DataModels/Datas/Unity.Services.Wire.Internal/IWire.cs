@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IWire
+    public partial class IWire : DataModel
     {
 
         public static IWire? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IWire();
+            var value   = new IWire() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 trackingLost                             Action`1<XRNodeState> IL2CPP_TYPE_GENERICINST
     // 010 nodeAdded                                Action`1<XRNodeState> IL2CPP_TYPE_GENERICINST
     // 018 nodeRemoved                              Action`1<XRNodeState> IL2CPP_TYPE_GENERICINST
-    public partial class InputTracking
+    public partial class InputTracking : DataModel
     {
 
         public static InputTracking? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputTracking();
+            var value   = new InputTracking() { Pointer= p0 };
 
 
             return value;

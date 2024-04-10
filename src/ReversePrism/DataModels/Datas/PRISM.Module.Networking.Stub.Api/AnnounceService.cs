@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 __Method_GetAnnouncePopUp                Method`2<GetAnnouncePopUpArgs, GetAnnouncePopUpReply> IL2CPP_TYPE_GENERICINST
     // 058 __Method_ConfirmedAnnounce               Method`2<ConfirmedAnnounceArgs, ConfirmedAnnounceReply> IL2CPP_TYPE_GENERICINST
     // 060 __Method_GetAnnounceDetail               Method`2<GetAnnounceDetailArgs, GetAnnounceDetailReply> IL2CPP_TYPE_GENERICINST
-    public partial class AnnounceService
+    public partial class AnnounceService : DataModel
     {
 
         public static AnnounceService? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceService();
+            var value   = new AnnounceService() { Pointer= p0 };
 
 
             return value;

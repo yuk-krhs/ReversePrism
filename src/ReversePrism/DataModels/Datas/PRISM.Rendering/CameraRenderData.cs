@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 070 onBufferConstructed                      Action`1<CameraRenderData> IL2CPP_TYPE_GENERICINST
     // 078 PreviewBuffer                            000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
     // 080 ReservedBuffer                           000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
-    public partial class CameraRenderData
+    public partial class CameraRenderData : DataModel
     {
         public Camera?                                  TargetCamera                            { get; set; }
         public RenderTextureDescriptor                  PreviewBufferDesc                       { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CameraRenderData();
+            var value   = new CameraRenderData() { Pointer= p0 };
 
-            value.TargetCamera                              = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 027003FC1BD8 0x20 TargetCamera                ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.PreviewBufferDesc                         = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x028)); // 027003FC1BF8 0x28 PreviewBufferDesc           ( 000186657320 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
-            value.TargetObject                              = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 027003FC1C18 0x60 TargetObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EyeTarget                                 = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 027003FC1C38 0x68 EyeTarget                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PreviewBuffer                             = GetObject<RenderTexture>(new IntPtr(p + 0x078), ReversePrism.DataModels.RenderTexture.FromPointer); // 027003FC1C78 0x78 PreviewBuffer               ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
-            value.ReservedBuffer                            = GetObject<RenderTexture>(new IntPtr(p + 0x080), ReversePrism.DataModels.RenderTexture.FromPointer); // 027003FC1C98 0x80 ReservedBuffer              ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.TargetCamera                              = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0245A3FD16E8 0x20 TargetCamera                ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.PreviewBufferDesc                         = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x028)); // 0245A3FD1708 0x28 PreviewBufferDesc           ( 000186657320 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
+            value.TargetObject                              = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0245A3FD1728 0x60 TargetObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EyeTarget                                 = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0245A3FD1748 0x68 EyeTarget                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PreviewBuffer                             = GetObject<RenderTexture>(new IntPtr(p + 0x078), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A3FD1788 0x78 PreviewBuffer               ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.ReservedBuffer                            = GetObject<RenderTexture>(new IntPtr(p + 0x080), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A3FD17A8 0x80 ReservedBuffer              ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
 
             return value;
         }

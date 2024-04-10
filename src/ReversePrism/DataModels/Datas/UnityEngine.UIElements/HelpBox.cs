@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 3D0 M_Icon                                   0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 3D8 M_IconClass                              000186671910 ModelPrimitiveType string string string String
     // 3E0 M_Label                                  000186774D80 ModelClassType Label Label Label Pointer
-    public partial class HelpBox
+    public partial class HelpBox : DataModel
     {
         public string                                   IconUssClassName                        { get; set; }
         public string                                   IconInfoUssClassName                    { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HelpBox();
+            var value   = new HelpBox() { Pointer= p0 };
 
-            value.IconUssClassName                          = GetString(new IntPtr(p + 0x010)); // 027006714958 0x10 IconUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
-            value.IconInfoUssClassName                      = GetString(new IntPtr(p + 0x018)); // 027006714978 0x18 IconInfoUssClassName        ( 000186674040 ModelPrimitiveType string string string String )
-            value.IconwarningUssClassName                   = GetString(new IntPtr(p + 0x020)); // 027006714998 0x20 IconwarningUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
-            value.IconErrorUssClassName                     = GetString(new IntPtr(p + 0x028)); // 0270067149B8 0x28 IconErrorUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.M_HelpBoxMessageType                      = (HelpBoxMessageType)GetInt32(new IntPtr(p + 0x3C8)); // 0270067149D8 0x3C8 M_HelpBoxMessageType        ( 0001866B03E0 ModelEnumType HelpBoxMessageType HelpBoxMessageType HelpBoxMessageType Int32 )
-            value.M_Icon                                    = GetObject<VisualElement>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.VisualElement.FromPointer); // 0270067149F8 0x3D0 M_Icon                      ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_IconClass                               = GetString(new IntPtr(p + 0x3D8)); // 027006714A18 0x3D8 M_IconClass                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Label                                   = GetObject<Label>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.Label.FromPointer); // 027006714A38 0x3E0 M_Label                     ( 000186774D80 ModelClassType Label Label Label Pointer )
+            value.IconUssClassName                          = GetString(new IntPtr(p + 0x010)); // 0245A66D6950 0x10 IconUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
+            value.IconInfoUssClassName                      = GetString(new IntPtr(p + 0x018)); // 0245A66D6970 0x18 IconInfoUssClassName        ( 000186674040 ModelPrimitiveType string string string String )
+            value.IconwarningUssClassName                   = GetString(new IntPtr(p + 0x020)); // 0245A66D6990 0x20 IconwarningUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
+            value.IconErrorUssClassName                     = GetString(new IntPtr(p + 0x028)); // 0245A66D69B0 0x28 IconErrorUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
+            value.M_HelpBoxMessageType                      = (HelpBoxMessageType)GetInt32(new IntPtr(p + 0x3C8)); // 0245A66D69D0 0x3C8 M_HelpBoxMessageType        ( 0001866B03E0 ModelEnumType HelpBoxMessageType HelpBoxMessageType HelpBoxMessageType Int32 )
+            value.M_Icon                                    = GetObject<VisualElement>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66D69F0 0x3D0 M_Icon                      ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_IconClass                               = GetString(new IntPtr(p + 0x3D8)); // 0245A66D6A10 0x3D8 M_IconClass                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Label                                   = GetObject<Label>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.Label.FromPointer); // 0245A66D6A30 0x3E0 M_Label                     ( 000186774D80 ModelClassType Label Label Label Pointer )
 
             return value;
         }

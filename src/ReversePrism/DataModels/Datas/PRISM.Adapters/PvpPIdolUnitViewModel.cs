@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 PIdolIcon                                00018670C310 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
     // 028 IdolSkill                                0001865780F0 ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer
     // 030 VoDaViMeParameter                        0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
-    public partial class PvpPIdolUnitViewModel
+    public partial class PvpPIdolUnitViewModel : DataModel
     {
         public IPvpProduceIdolUnitStatus?               IdolStatus                              { get; set; }
         public ProduceIdol?                             ProduceIdol                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpPIdolUnitViewModel();
+            var value   = new PvpPIdolUnitViewModel() { Pointer= p0 };
 
-            value.IdolStatus                                = GetObject<IPvpProduceIdolUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpProduceIdolUnitStatus.FromPointer); // 0270D6615588 0x10 IdolStatus                  ( 000186608ED0 ModelClassType IPvpProduceIdolUnitStatus IPvpProduceIdolUnitStatus IPvpProduceIdolUnitStatus Pointer )
-            value.ProduceIdol                               = GetObject<ProduceIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdol.FromPointer); // 0270D66155A8 0x18 ProduceIdol                 ( 0001865467F0 ModelClassType ProduceIdol ProduceIdol ProduceIdol Pointer )
-            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0270D66155C8 0x20 PIdolIcon                   ( 00018670C310 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
-            value.IdolSkill                                 = GetObject<IIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 0270D66155E8 0x28 IdolSkill                   ( 0001865780F0 ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer )
-            value.VoDaViMeParameter                         = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0270D6615608 0x30 VoDaViMeParameter           ( 0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
+            value.IdolStatus                                = GetObject<IPvpProduceIdolUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpProduceIdolUnitStatus.FromPointer); // 0246666865E8 0x10 IdolStatus                  ( 000186608ED0 ModelClassType IPvpProduceIdolUnitStatus IPvpProduceIdolUnitStatus IPvpProduceIdolUnitStatus Pointer )
+            value.ProduceIdol                               = GetObject<ProduceIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdol.FromPointer); // 024666686608 0x18 ProduceIdol                 ( 0001865467F0 ModelClassType ProduceIdol ProduceIdol ProduceIdol Pointer )
+            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PIdolIcon.FromPointer); // 024666686628 0x20 PIdolIcon                   ( 00018670C310 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
+            value.IdolSkill                                 = GetObject<IIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 024666686648 0x28 IdolSkill                   ( 0001865780F0 ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer )
+            value.VoDaViMeParameter                         = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 024666686668 0x30 VoDaViMeParameter           ( 0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
 
             return value;
         }

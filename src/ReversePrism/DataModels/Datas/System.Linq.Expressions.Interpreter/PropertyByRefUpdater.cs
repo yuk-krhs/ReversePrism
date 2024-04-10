@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 _object                                  Nullable`1<LocalDefinition> IL2CPP_TYPE_GENERICINST
     // 030 Property                                 0001865D48B0 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer
-    public partial class PropertyByRefUpdater
+    public partial class PropertyByRefUpdater : DataModel
     {
         public PropertyInfo?                            Property                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropertyByRefUpdater();
+            var value   = new PropertyByRefUpdater() { Pointer= p0 };
 
-            value.Property                                  = GetObject<PropertyInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0270DA00D108 0x30 Property                    ( 0001865D48B0 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
+            value.Property                                  = GetObject<PropertyInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.PropertyInfo.FromPointer); // 02466A070E88 0x30 Property                    ( 0001865D48B0 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
 
             return value;
         }

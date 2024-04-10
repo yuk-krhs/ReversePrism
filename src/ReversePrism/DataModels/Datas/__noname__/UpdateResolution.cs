@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateResolution
+    public partial class UpdateResolution : DataModel
     {
 
         public static UpdateResolution? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateResolution();
+            var value   = new UpdateResolution() { Pointer= p0 };
 
 
             return value;

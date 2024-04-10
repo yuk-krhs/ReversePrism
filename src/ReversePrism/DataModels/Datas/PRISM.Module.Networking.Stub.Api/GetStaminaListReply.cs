@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 StaminaListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_staminaList_codec              FieldCodec`1<StaminaStatus> IL2CPP_TYPE_GENERICINST
     // 018 StaminaList                              000185CF2678 ModelClassListType RepeatedField`1<StaminaStatus> RepeatedField`1<StaminaStatus> List<StaminaStatus> Pointer
-    public partial class GetStaminaListReply
+    public partial class GetStaminaListReply : DataModel
     {
         public List<StaminaStatus>?                     StaminaList                             { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStaminaListReply();
+            var value   = new GetStaminaListReply() { Pointer= p0 };
 
-            value.StaminaList                               = GetObjectList<StaminaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D29606B0 0x18 StaminaList                 ( 000185CF2678 ModelClassListType RepeatedField`1<StaminaStatus> RepeatedField`1<StaminaStatus> List<StaminaStatus> Pointer )
+            value.StaminaList                               = GetObjectList<StaminaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246628CDE18 0x18 StaminaList                 ( 000185CF2678 ModelClassListType RepeatedField`1<StaminaStatus> RepeatedField`1<StaminaStatus> List<StaminaStatus> Pointer )
 
             return value;
         }

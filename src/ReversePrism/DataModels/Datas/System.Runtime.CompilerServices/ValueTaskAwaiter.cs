@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_invokeActionDelegate                   Action`1<<object>> IL2CPP_TYPE_GENERICINST
     // 010 Value                                    00018676B380 ModelEnumType ValueTask ValueTask ValueTask Int32
-    public partial class ValueTaskAwaiter
+    public partial class ValueTaskAwaiter : DataModel
     {
         public ValueTask                                Value                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueTaskAwaiter();
+            var value   = new ValueTaskAwaiter() { Pointer= p0 };
 
-            value.Value                                     = (ValueTask)GetInt32(new IntPtr(p + 0x010)); // 0270D199AF48 0x10 Value                       ( 00018676B380 ModelEnumType ValueTask ValueTask ValueTask Int32 )
+            value.Value                                     = (ValueTask)GetInt32(new IntPtr(p + 0x010)); // 024661953788 0x10 Value                       ( 00018676B380 ModelEnumType ValueTask ValueTask ValueTask Int32 )
 
             return value;
         }

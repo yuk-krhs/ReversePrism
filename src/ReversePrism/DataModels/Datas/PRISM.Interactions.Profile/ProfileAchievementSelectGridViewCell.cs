@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 038 SettingsObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 040 SelectedDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 048 SettingsDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class ProfileAchievementSelectGridViewCell
+    public partial class ProfileAchievementSelectGridViewCell : DataModel
     {
         public AchievementIcon?                         AchievementIcon                         { get; set; }
         public GameObject?                              SettingsObject                          { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileAchievementSelectGridViewCell();
+            var value   = new ProfileAchievementSelectGridViewCell() { Pointer= p0 };
 
-            value.AchievementIcon                           = GetObject<AchievementIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.AchievementIcon.FromPointer); // 0270DB741938 0x30 AchievementIcon             ( 000186675550 ModelClassType AchievementIcon AchievementIcon AchievementIcon Pointer )
-            value.SettingsObject                            = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB741958 0x38 SettingsObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SelectedDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x040), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB741978 0x40 SelectedDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.SettingsDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB741998 0x48 SettingsDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.AchievementIcon                           = GetObject<AchievementIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.AchievementIcon.FromPointer); // 02466B7C5FA8 0x30 AchievementIcon             ( 000186675550 ModelClassType AchievementIcon AchievementIcon AchievementIcon Pointer )
+            value.SettingsObject                            = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466B7C5FC8 0x38 SettingsObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SelectedDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x040), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B7C5FE8 0x40 SelectedDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.SettingsDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B7C6008 0x48 SettingsDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

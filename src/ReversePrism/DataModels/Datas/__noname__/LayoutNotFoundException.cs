@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 Layout                                   000186672F10 ModelPrimitiveType string string string String
-    public partial class LayoutNotFoundException
+    public partial class LayoutNotFoundException : DataModel
     {
         public string                                   Layout                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LayoutNotFoundException();
+            var value   = new LayoutNotFoundException() { Pointer= p0 };
 
-            value.Layout                                    = GetString(new IntPtr(p + 0x090)); // 0270D7866BB0 0x90 Layout                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Layout                                    = GetString(new IntPtr(p + 0x090)); // 0246678BEBB0 0x90 Layout                      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

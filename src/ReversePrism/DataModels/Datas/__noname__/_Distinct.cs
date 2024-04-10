@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 set                                      HashSet`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 keySelector                              Func`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class _Distinct
+    public partial class _Distinct : DataModel
     {
 
         public static _Distinct? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Distinct();
+            var value   = new _Distinct() { Pointer= p0 };
 
 
             return value;

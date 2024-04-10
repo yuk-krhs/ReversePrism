@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IdolSkillIcon
+    public partial class IdolSkillIcon : DataModel
     {
 
         public static IdolSkillIcon? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillIcon();
+            var value   = new IdolSkillIcon() { Pointer= p0 };
 
 
             return value;

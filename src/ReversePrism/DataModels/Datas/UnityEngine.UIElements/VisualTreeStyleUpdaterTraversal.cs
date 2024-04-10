@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 M_StyleMatchingContext                   0001865C8C80 ModelClassType StyleMatchingContext StyleMatchingContext StyleMatchingContext Pointer
     // 040 M_StylePropertyReader                    0001865CAE30 ModelClassType StylePropertyReader StylePropertyReader StylePropertyReader Pointer
     // 048 M_AnimatedProperties                     000185D0DE68 ModelEnumListType List`1<StylePropertyId> List`1<StylePropertyId> List<StylePropertyId> Pointer
-    public partial class VisualTreeStyleUpdaterTraversal
+    public partial class VisualTreeStyleUpdaterTraversal : DataModel
     {
         public StyleVariableContext?                    M_ProcessVarContext                     { get; set; }
         public List<SelectorMatchRecord>?               M_TempMatchResults                      { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualTreeStyleUpdaterTraversal();
+            var value   = new VisualTreeStyleUpdaterTraversal() { Pointer= p0 };
 
-            value.M_ProcessVarContext                       = GetObject<StyleVariableContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleVariableContext.FromPointer); // 02700685E8A0 0x10 M_ProcessVarContext         ( 00018667D370 ModelClassType StyleVariableContext StyleVariableContext StyleVariableContext Pointer )
-            value.M_TempMatchResults                        = GetEnumList<SelectorMatchRecord>(new IntPtr(p + 0x028)); // 02700685E900 0x28 M_TempMatchResults          ( 000185D076D8 ModelEnumListType List`1<SelectorMatchRecord> List`1<SelectorMatchRecord> List<SelectorMatchRecord> Pointer )
-            value.CurrentPixelsPerPoint                     = GetSingle(new IntPtr(p + 0x030)); // 02700685E920 0x30 CurrentPixelsPerPoint       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_StyleMatchingContext                    = GetObject<StyleMatchingContext>(new IntPtr(p + 0x038), ReversePrism.DataModels.StyleMatchingContext.FromPointer); // 02700685E940 0x38 M_StyleMatchingContext      ( 0001865C8C80 ModelClassType StyleMatchingContext StyleMatchingContext StyleMatchingContext Pointer )
-            value.M_StylePropertyReader                     = GetObject<StylePropertyReader>(new IntPtr(p + 0x040), ReversePrism.DataModels.StylePropertyReader.FromPointer); // 02700685E960 0x40 M_StylePropertyReader       ( 0001865CAE30 ModelClassType StylePropertyReader StylePropertyReader StylePropertyReader Pointer )
-            value.M_AnimatedProperties                      = GetEnumList<StylePropertyId>(new IntPtr(p + 0x048)); // 02700685E980 0x48 M_AnimatedProperties        ( 000185D0DE68 ModelEnumListType List`1<StylePropertyId> List`1<StylePropertyId> List<StylePropertyId> Pointer )
+            value.M_ProcessVarContext                       = GetObject<StyleVariableContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleVariableContext.FromPointer); // 0245A6820730 0x10 M_ProcessVarContext         ( 00018667D370 ModelClassType StyleVariableContext StyleVariableContext StyleVariableContext Pointer )
+            value.M_TempMatchResults                        = GetEnumList<SelectorMatchRecord>(new IntPtr(p + 0x028)); // 0245A6820790 0x28 M_TempMatchResults          ( 000185D076D8 ModelEnumListType List`1<SelectorMatchRecord> List`1<SelectorMatchRecord> List<SelectorMatchRecord> Pointer )
+            value.CurrentPixelsPerPoint                     = GetSingle(new IntPtr(p + 0x030)); // 0245A68207B0 0x30 CurrentPixelsPerPoint       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_StyleMatchingContext                    = GetObject<StyleMatchingContext>(new IntPtr(p + 0x038), ReversePrism.DataModels.StyleMatchingContext.FromPointer); // 0245A68207D0 0x38 M_StyleMatchingContext      ( 0001865C8C80 ModelClassType StyleMatchingContext StyleMatchingContext StyleMatchingContext Pointer )
+            value.M_StylePropertyReader                     = GetObject<StylePropertyReader>(new IntPtr(p + 0x040), ReversePrism.DataModels.StylePropertyReader.FromPointer); // 0245A68207F0 0x40 M_StylePropertyReader       ( 0001865CAE30 ModelClassType StylePropertyReader StylePropertyReader StylePropertyReader Pointer )
+            value.M_AnimatedProperties                      = GetEnumList<StylePropertyId>(new IntPtr(p + 0x048)); // 0245A6820810 0x48 M_AnimatedProperties        ( 000185D0DE68 ModelEnumListType List`1<StylePropertyId> List`1<StylePropertyId> List<StylePropertyId> Pointer )
 
             return value;
         }

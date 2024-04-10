@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class TitleAnnounceReflection
+    public partial class TitleAnnounceReflection : DataModel
     {
 
         public static TitleAnnounceReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TitleAnnounceReflection();
+            var value   = new TitleAnnounceReflection() { Pointer= p0 };
 
 
             return value;

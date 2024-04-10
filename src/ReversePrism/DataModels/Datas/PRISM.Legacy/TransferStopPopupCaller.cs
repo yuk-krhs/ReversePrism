@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TransferStopPopupCaller
+    public partial class TransferStopPopupCaller : DataModel
     {
 
         public static TransferStopPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferStopPopupCaller();
+            var value   = new TransferStopPopupCaller() { Pointer= p0 };
 
 
             return value;

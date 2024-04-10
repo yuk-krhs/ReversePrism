@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_EnumData                               Dictionary`2<ValueTuple`2<CachedType, Type>, EnumData> IL2CPP_TYPE_GENERICINST
-    public partial class EnumDataUtility
+    public partial class EnumDataUtility : DataModel
     {
 
         public static EnumDataUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumDataUtility();
+            var value   = new EnumDataUtility() { Pointer= p0 };
 
 
             return value;

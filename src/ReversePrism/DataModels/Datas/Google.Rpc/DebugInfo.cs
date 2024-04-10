@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 StackEntries                             000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 DetailFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Detail                                   000186671910 ModelPrimitiveType string string string String
-    public partial class DebugInfo
+    public partial class DebugInfo : DataModel
     {
         public List<string>?                            StackEntries                            { get; set; }
         public string                                   Detail                                  { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugInfo();
+            var value   = new DebugInfo() { Pointer= p0 };
 
-            value.StackEntries                              = GetStringList(new IntPtr(p + 0x018)); // 0270DA6B4D40 0x18 StackEntries                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Detail                                    = GetString(new IntPtr(p + 0x020)); // 0270DA6B4D80 0x20 Detail                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.StackEntries                              = GetStringList(new IntPtr(p + 0x018)); // 02466A718498 0x18 StackEntries                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Detail                                    = GetString(new IntPtr(p + 0x020)); // 02466A7184D8 0x20 Detail                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

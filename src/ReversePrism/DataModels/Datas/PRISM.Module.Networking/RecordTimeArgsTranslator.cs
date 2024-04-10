@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RecordTimeArgsTranslator
+    public partial class RecordTimeArgsTranslator : DataModel
     {
 
         public static RecordTimeArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecordTimeArgsTranslator();
+            var value   = new RecordTimeArgsTranslator() { Pointer= p0 };
 
 
             return value;

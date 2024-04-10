@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DoesNotReturnAttribute
+    public partial class DoesNotReturnAttribute : DataModel
     {
 
         public static DoesNotReturnAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoesNotReturnAttribute();
+            var value   = new DoesNotReturnAttribute() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
     // 020 BeginDate                                0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 028 EndDate                                  0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class MstEvent
+    public partial class MstEvent : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      EventType                               { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstEvent();
+            var value   = new MstEvent() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270046455F0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EventType                                 = GetInt32(new IntPtr(p + 0x014)); // 027004645610 0x14 EventType                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 027004645630 0x18 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 027004645650 0x20 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 027004645670 0x28 EndDate                     ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46C1798 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventType                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A46C17B8 0x14 EventType                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A46C17D8 0x18 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0245A46C17F8 0x20 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0245A46C1818 0x28 EndDate                     ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

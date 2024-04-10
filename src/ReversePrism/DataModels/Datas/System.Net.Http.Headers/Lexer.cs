@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 Dt_formats                               000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 010 S                                        000186672F10 ModelPrimitiveType string string string String
     // 018 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Lexer
+    public partial class Lexer : DataModel
     {
         public List<string>?                            Dt_formats                              { get; set; }
         public string                                   S                                       { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Lexer();
+            var value   = new Lexer() { Pointer= p0 };
 
-            value.Dt_formats                                = GetStringList(new IntPtr(p + 0x010)); // 0270DB842CE0 0x10 Dt_formats                  ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.S                                         = GetString(new IntPtr(p + 0x010)); // 0270DB842D00 0x10 S                           ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x018)); // 0270DB842D20 0x18 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dt_formats                                = GetStringList(new IntPtr(p + 0x010)); // 02466B8B2948 0x10 Dt_formats                  ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.S                                         = GetString(new IntPtr(p + 0x010)); // 02466B8B2968 0x10 S                           ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x018)); // 02466B8B2988 0x18 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

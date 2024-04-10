@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAssetWatcher
+    public partial class IAssetWatcher : DataModel
     {
 
         public static IAssetWatcher? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAssetWatcher();
+            var value   = new IAssetWatcher() { Pointer= p0 };
 
 
             return value;

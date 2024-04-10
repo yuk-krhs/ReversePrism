@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 008 s_CachedPowersDecimalExponent            short[] IL2CPP_TYPE_SZARRAY
     // 010 S_CachedPowersSignificand                000185B84A20 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
     // 018 S_SmallPowersOfTen                       000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    public partial class Grisu3
+    public partial class Grisu3 : DataModel
     {
         public List<ulong>?                             S_CachedPowersSignificand               { get; set; }
         public List<uint>?                              S_SmallPowersOfTen                      { get; set; }
@@ -30,10 +30,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Grisu3();
+            var value   = new Grisu3() { Pointer= p0 };
 
-            value.S_CachedPowersSignificand                 = GetUInt64List(new IntPtr(p + 0x010)); // 0270DAB1C1C0 0x10 S_CachedPowersSignificand   ( 000185B84A20 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
-            value.S_SmallPowersOfTen                        = GetUInt32List(new IntPtr(p + 0x018)); // 0270DAB1C1E0 0x18 S_SmallPowersOfTen          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.S_CachedPowersSignificand                 = GetUInt64List(new IntPtr(p + 0x010)); // 02466AB841C0 0x10 S_CachedPowersSignificand   ( 000185B84A20 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.S_SmallPowersOfTen                        = GetUInt32List(new IntPtr(p + 0x018)); // 02466AB841E0 0x18 S_SmallPowersOfTen          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HumanTrait
+    public partial class HumanTrait : DataModel
     {
 
         public static HumanTrait? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HumanTrait();
+            var value   = new HumanTrait() { Pointer= p0 };
 
 
             return value;

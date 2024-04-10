@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Secret                                   000186671910 ModelPrimitiveType string string string String
     // 000 ProviderTypeFieldNumber                  int IL2CPP_TYPE_I4
     // 028 ProviderType                             0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32
-    public partial class GetConnectURLAndTokenArgs
+    public partial class GetConnectURLAndTokenArgs : DataModel
     {
         public string                                   UserId                                  { get; set; }
         public string                                   Secret                                  { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetConnectURLAndTokenArgs();
+            var value   = new GetConnectURLAndTokenArgs() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 0270D0B491C8 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 0270D0B49208 0x20 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x028)); // 0270D0B49248 0x28 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 024660B3AF40 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 024660B3AF80 0x20 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x028)); // 024660B3AFC0 0x28 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
 
             return value;
         }

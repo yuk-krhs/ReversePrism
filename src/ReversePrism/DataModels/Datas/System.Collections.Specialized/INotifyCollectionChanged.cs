@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INotifyCollectionChanged
+    public partial class INotifyCollectionChanged : DataModel
     {
 
         public static INotifyCollectionChanged? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INotifyCollectionChanged();
+            var value   = new INotifyCollectionChanged() { Pointer= p0 };
 
 
             return value;

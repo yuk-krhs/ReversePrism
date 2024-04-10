@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 m_FreeIds                                Stack`1<TextureId> IL2CPP_TYPE_GENERICINST
     // 000 maxTextures                              int IL2CPP_TYPE_I4
     // 000 <instance>k__BackingField                TextureRegistry IL2CPP_TYPE_CLASS
-    public partial class TextureRegistry
+    public partial class TextureRegistry : DataModel
     {
         public List<TextureInfo>?                       M_Textures                              { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureRegistry();
+            var value   = new TextureRegistry() { Pointer= p0 };
 
-            value.M_Textures                                = GetEnumList<TextureInfo>(new IntPtr(p + 0x010)); // 0270067E9758 0x10 M_Textures                  ( 000185D2E578 ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer )
+            value.M_Textures                                = GetEnumList<TextureInfo>(new IntPtr(p + 0x010)); // 0245A67AB8E8 0x10 M_Textures                  ( 000185D2E578 ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer )
 
             return value;
         }

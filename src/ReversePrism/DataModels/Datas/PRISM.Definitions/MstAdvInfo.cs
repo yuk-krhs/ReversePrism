@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       000186672F10 ModelPrimitiveType string string string String
     // 018 UseIrregularSubTitle                     0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class MstAdvInfo
+    public partial class MstAdvInfo : DataModel
     {
         public string                                   Id                                      { get; set; }
         public bool                                     UseIrregularSubTitle                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstAdvInfo();
+            var value   = new MstAdvInfo() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 02700466F788 0x10 Id                          ( 000186672F10 ModelPrimitiveType string string string String )
-            value.UseIrregularSubTitle                      = GetBool(new IntPtr(p + 0x018)); // 02700466F7A8 0x18 UseIrregularSubTitle        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0245A46FB920 0x10 Id                          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.UseIrregularSubTitle                      = GetBool(new IntPtr(p + 0x018)); // 0245A46FB940 0x18 UseIrregularSubTitle        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 CrossContextSink                         00018665E290 ModelClassType CrossContextChannel CrossContextChannel CrossContextChannel Pointer
     // 018 CrossContextUrl                          0001866727E0 ModelPrimitiveType string string string String
     // 020 OldStartModeTypes                        000186591FC0 ModelClassType IList IList IList Pointer
-    public partial class ChannelServices
+    public partial class ChannelServices : DataModel
     {
         public CrossContextChannel?                     CrossContextSink                        { get; set; }
         public string                                   CrossContextUrl                         { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChannelServices();
+            var value   = new ChannelServices() { Pointer= p0 };
 
-            value.CrossContextSink                          = GetObject<CrossContextChannel>(new IntPtr(p + 0x010), ReversePrism.DataModels.CrossContextChannel.FromPointer); // 0270D6BE3CC0 0x10 CrossContextSink            ( 00018665E290 ModelClassType CrossContextChannel CrossContextChannel CrossContextChannel Pointer )
-            value.CrossContextUrl                           = GetString(new IntPtr(p + 0x018)); // 0270D6BE3CE0 0x18 CrossContextUrl             ( 0001866727E0 ModelPrimitiveType string string string String )
-            value.OldStartModeTypes                         = GetObject<IList>(new IntPtr(p + 0x020), ReversePrism.DataModels.IList.FromPointer); // 0270D6BE3D00 0x20 OldStartModeTypes           ( 000186591FC0 ModelClassType IList IList IList Pointer )
+            value.CrossContextSink                          = GetObject<CrossContextChannel>(new IntPtr(p + 0x010), ReversePrism.DataModels.CrossContextChannel.FromPointer); // 024666C5BCC0 0x10 CrossContextSink            ( 00018665E290 ModelClassType CrossContextChannel CrossContextChannel CrossContextChannel Pointer )
+            value.CrossContextUrl                           = GetString(new IntPtr(p + 0x018)); // 024666C5BCE0 0x18 CrossContextUrl             ( 0001866727E0 ModelPrimitiveType string string string String )
+            value.OldStartModeTypes                         = GetObject<IList>(new IntPtr(p + 0x020), ReversePrism.DataModels.IList.FromPointer); // 024666C5BD00 0x20 OldStartModeTypes           ( 000186591FC0 ModelClassType IList IList IList Pointer )
 
             return value;
         }

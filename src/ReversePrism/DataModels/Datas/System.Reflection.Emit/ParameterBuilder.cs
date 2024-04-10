@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ParameterBuilder
+    public partial class ParameterBuilder : DataModel
     {
 
         public static ParameterBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParameterBuilder();
+            var value   = new ParameterBuilder() { Pointer= p0 };
 
 
             return value;

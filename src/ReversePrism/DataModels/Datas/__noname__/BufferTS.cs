@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 nextShift                                TimeSpan IL2CPP_TYPE_VALUETYPE
     // 000 nextSpan                                 TimeSpan IL2CPP_TYPE_VALUETYPE
     // 000 timerD                                   SerialDisposable IL2CPP_TYPE_CLASS
-    public partial class BufferTS
+    public partial class BufferTS : DataModel
     {
 
         public static BufferTS? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BufferTS();
+            var value   = new BufferTS() { Pointer= p0 };
 
 
             return value;

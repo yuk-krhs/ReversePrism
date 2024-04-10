@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Table                                    0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer
     // 018 Constraint                               0001865B81B0 ModelClassType XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint Pointer
-    public partial class ConstraintTable
+    public partial class ConstraintTable : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
         public XmlSchemaIdentityConstraint?             Constraint                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstraintTable();
+            var value   = new ConstraintTable() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D8968750 0x10 Table                       ( 0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer )
-            value.Constraint                                = GetObject<XmlSchemaIdentityConstraint>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchemaIdentityConstraint.FromPointer); // 0270D8968770 0x18 Constraint                  ( 0001865B81B0 ModelClassType XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0246689D3598 0x10 Table                       ( 0001865B82E0 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Constraint                                = GetObject<XmlSchemaIdentityConstraint>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchemaIdentityConstraint.FromPointer); // 0246689D35B8 0x18 Constraint                  ( 0001865B81B0 ModelClassType XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint XmlSchemaIdentityConstraint Pointer )
 
             return value;
         }

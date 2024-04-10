@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReceiveMissionGaugeRewardArgsTranslator
+    public partial class ReceiveMissionGaugeRewardArgsTranslator : DataModel
     {
 
         public static ReceiveMissionGaugeRewardArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiveMissionGaugeRewardArgsTranslator();
+            var value   = new ReceiveMissionGaugeRewardArgsTranslator() { Pointer= p0 };
 
 
             return value;

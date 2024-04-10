@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnmanagedReadOrWrite
+    public partial class UnmanagedReadOrWrite : DataModel
     {
 
         public static UnmanagedReadOrWrite? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnmanagedReadOrWrite();
+            var value   = new UnmanagedReadOrWrite() { Pointer= p0 };
 
 
             return value;

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 044 M_2SidePadding                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 s_MarkerTryAllocate                      ProfilerMarker IL2CPP_TYPE_VALUETYPE
     // 048 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UIRAtlasAllocator
+    public partial class UIRAtlasAllocator : DataModel
     {
         public int                                      MaxAtlasSize                            { get; set; }
         public int                                      MaxImageWidth                           { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRAtlasAllocator();
+            var value   = new UIRAtlasAllocator() { Pointer= p0 };
 
-            value.MaxAtlasSize                              = GetInt32(new IntPtr(p + 0x010)); // 0270067E2010 0x10 MaxAtlasSize                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MaxImageWidth                             = GetInt32(new IntPtr(p + 0x014)); // 0270067E2030 0x14 MaxImageWidth               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MaxImageHeight                            = GetInt32(new IntPtr(p + 0x018)); // 0270067E2050 0x18 MaxImageHeight              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.VirtualWidth                              = GetInt32(new IntPtr(p + 0x01C)); // 0270067E2070 0x1C VirtualWidth                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VirtualHeight                             = GetInt32(new IntPtr(p + 0x020)); // 0270067E2090 0x20 VirtualHeight               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PhysicalWidth                             = GetInt32(new IntPtr(p + 0x024)); // 0270067E20B0 0x24 PhysicalWidth               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PhysicalHeight                            = GetInt32(new IntPtr(p + 0x028)); // 0270067E20D0 0x28 PhysicalHeight              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_FirstUnpartitionedArea                  = GetObject<AreaNode>(new IntPtr(p + 0x030), ReversePrism.DataModels.AreaNode.FromPointer); // 0270067E20F0 0x30 M_FirstUnpartitionedArea    ( 00018665FF30 ModelClassType AreaNode AreaNode AreaNode Pointer )
-            value.M_OpenRows                                = GetObjectList<Row>(new IntPtr(p + 0x038), ReversePrism.DataModels.Row.FromPointer); // 0270067E2110 0x38 M_OpenRows                  ( 000185CC4A38 ModelClassListType Row[] Row[] List<Row> Pointer )
-            value.M_1SidePadding                            = GetInt32(new IntPtr(p + 0x040)); // 0270067E2130 0x40 M_1SidePadding              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_2SidePadding                            = GetInt32(new IntPtr(p + 0x044)); // 0270067E2150 0x44 M_2SidePadding              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x048)); // 0270067E2190 0x48 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaxAtlasSize                              = GetInt32(new IntPtr(p + 0x010)); // 0245A67A4108 0x10 MaxAtlasSize                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MaxImageWidth                             = GetInt32(new IntPtr(p + 0x014)); // 0245A67A4128 0x14 MaxImageWidth               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MaxImageHeight                            = GetInt32(new IntPtr(p + 0x018)); // 0245A67A4148 0x18 MaxImageHeight              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.VirtualWidth                              = GetInt32(new IntPtr(p + 0x01C)); // 0245A67A4168 0x1C VirtualWidth                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VirtualHeight                             = GetInt32(new IntPtr(p + 0x020)); // 0245A67A4188 0x20 VirtualHeight               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PhysicalWidth                             = GetInt32(new IntPtr(p + 0x024)); // 0245A67A41A8 0x24 PhysicalWidth               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PhysicalHeight                            = GetInt32(new IntPtr(p + 0x028)); // 0245A67A41C8 0x28 PhysicalHeight              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_FirstUnpartitionedArea                  = GetObject<AreaNode>(new IntPtr(p + 0x030), ReversePrism.DataModels.AreaNode.FromPointer); // 0245A67A41E8 0x30 M_FirstUnpartitionedArea    ( 00018665FF30 ModelClassType AreaNode AreaNode AreaNode Pointer )
+            value.M_OpenRows                                = GetObjectList<Row>(new IntPtr(p + 0x038), ReversePrism.DataModels.Row.FromPointer); // 0245A67A4208 0x38 M_OpenRows                  ( 000185CC4A38 ModelClassListType Row[] Row[] List<Row> Pointer )
+            value.M_1SidePadding                            = GetInt32(new IntPtr(p + 0x040)); // 0245A67A4228 0x40 M_1SidePadding              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_2SidePadding                            = GetInt32(new IntPtr(p + 0x044)); // 0245A67A4248 0x44 M_2SidePadding              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x048)); // 0245A67A4288 0x48 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

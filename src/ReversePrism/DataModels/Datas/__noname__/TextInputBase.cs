@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 m_ScrollViewWasClamped                   bool IL2CPP_TYPE_BOOLEAN
     // 000 lastCursorPos                            Vector2 IL2CPP_TYPE_VALUETYPE
     // 000 m_VerticalScrollerVisibility             ScrollerVisibility IL2CPP_TYPE_VALUETYPE
-    public partial class TextInputBase
+    public partial class TextInputBase : DataModel
     {
 
         public static TextInputBase? FromPointer(IntPtr p0)
@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextInputBase();
+            var value   = new TextInputBase() { Pointer= p0 };
 
 
             return value;

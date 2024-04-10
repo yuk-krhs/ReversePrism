@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _LocalAddresses                          IPAddress[] IL2CPP_TYPE_SZARRAY
     // 008 _LocalAddressesLock                      <object> IL2CPP_TYPE_OBJECT
     // 010 LocalDomainName                          0001866727E0 ModelPrimitiveType string string string String
-    public partial class NclUtilities
+    public partial class NclUtilities : DataModel
     {
         public string                                   LocalDomainName                         { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NclUtilities();
+            var value   = new NclUtilities() { Pointer= p0 };
 
-            value.LocalDomainName                           = GetString(new IntPtr(p + 0x010)); // 0270D7A2BCF8 0x10 LocalDomainName             ( 0001866727E0 ModelPrimitiveType string string string String )
+            value.LocalDomainName                           = GetString(new IntPtr(p + 0x010)); // 024667A8BCF8 0x10 LocalDomainName             ( 0001866727E0 ModelPrimitiveType string string string String )
 
             return value;
         }

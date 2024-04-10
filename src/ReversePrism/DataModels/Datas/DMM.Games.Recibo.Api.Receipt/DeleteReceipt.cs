@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 PurchaseToken                            000186672F10 ModelPrimitiveType string string string String
-    public partial class DeleteReceipt
+    public partial class DeleteReceipt : DataModel
     {
         public string                                   PurchaseToken                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeleteReceipt();
+            var value   = new DeleteReceipt() { Pointer= p0 };
 
-            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 0270DB47AA28 0x38 PurchaseToken               ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 02466B4EF8A0 0x38 PurchaseToken               ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

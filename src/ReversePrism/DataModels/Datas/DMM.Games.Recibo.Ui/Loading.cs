@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Rot                                      0001866AC430 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 008 _instance                                Loading IL2CPP_TYPE_CLASS
     // 038 Logo                                     0001866CCDB0 ModelClassType Image Image Image Pointer
-    public partial class Loading
+    public partial class Loading : DataModel
     {
         public RectTransform?                           Rt                                      { get; set; }
         public Vector3                                  Rot                                     { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Loading();
+            var value   = new Loading() { Pointer= p0 };
 
-            value.Rt                                        = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DB45A168 0x20 Rt                          ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.Rot                                       = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0270DB45A188 0x28 Rot                         ( 0001866AC430 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 0270DB45A1C8 0x38 Logo                        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.Rt                                        = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B4E7158 0x20 Rt                          ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Rot                                       = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 02466B4E7178 0x28 Rot                         ( 0001866AC430 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 02466B4E71B8 0x38 Logo                        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
 
             return value;
         }

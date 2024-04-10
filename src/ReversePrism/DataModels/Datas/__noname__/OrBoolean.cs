@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OrBoolean
+    public partial class OrBoolean : DataModel
     {
 
         public static OrBoolean? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OrBoolean();
+            var value   = new OrBoolean() { Pointer= p0 };
 
 
             return value;

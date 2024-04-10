@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ZProperty
+    public partial class ZProperty : DataModel
     {
 
         public static ZProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ZProperty();
+            var value   = new ZProperty() { Pointer= p0 };
 
 
             return value;

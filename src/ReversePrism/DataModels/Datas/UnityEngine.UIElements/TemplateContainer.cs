@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 3D8 TemplateId                               000186671910 ModelPrimitiveType string string string String
     // 3E0 M_ContentContainer                       0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 3E8 M_TemplateSource                         00018652C200 ModelClassType VisualTreeAsset VisualTreeAsset VisualTreeAsset Pointer
-    public partial class TemplateContainer
+    public partial class TemplateContainer : DataModel
     {
         public string                                   TemplateId                              { get; set; }
         public VisualElement?                           M_ContentContainer                      { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TemplateContainer();
+            var value   = new TemplateContainer() { Pointer= p0 };
 
-            value.TemplateId                                = GetString(new IntPtr(p + 0x3D8)); // 027006844718 0x3D8 TemplateId                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.VisualElement.FromPointer); // 027006844738 0x3E0 M_ContentContainer          ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_TemplateSource                          = GetObject<VisualTreeAsset>(new IntPtr(p + 0x3E8), ReversePrism.DataModels.VisualTreeAsset.FromPointer); // 027006844758 0x3E8 M_TemplateSource            ( 00018652C200 ModelClassType VisualTreeAsset VisualTreeAsset VisualTreeAsset Pointer )
+            value.TemplateId                                = GetString(new IntPtr(p + 0x3D8)); // 0245A68064F8 0x3D8 TemplateId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A6806518 0x3E0 M_ContentContainer          ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_TemplateSource                          = GetObject<VisualTreeAsset>(new IntPtr(p + 0x3E8), ReversePrism.DataModels.VisualTreeAsset.FromPointer); // 0245A6806538 0x3E8 M_TemplateSource            ( 00018652C200 ModelClassType VisualTreeAsset VisualTreeAsset VisualTreeAsset Pointer )
 
             return value;
         }

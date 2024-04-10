@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOurStreamTopScreenView
+    public partial class IOurStreamTopScreenView : DataModel
     {
 
         public static IOurStreamTopScreenView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOurStreamTopScreenView();
+            var value   = new IOurStreamTopScreenView() { Pointer= p0 };
 
 
             return value;

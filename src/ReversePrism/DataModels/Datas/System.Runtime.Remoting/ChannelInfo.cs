@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 channelData                              <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class ChannelInfo
+    public partial class ChannelInfo : DataModel
     {
 
         public static ChannelInfo? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChannelInfo();
+            var value   = new ChannelInfo() { Pointer= p0 };
 
 
             return value;

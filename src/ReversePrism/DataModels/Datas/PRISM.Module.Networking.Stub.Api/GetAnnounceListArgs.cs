@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Limit                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 CategoryFieldNumber                      int IL2CPP_TYPE_I4
     // 024 Category                                 0001866BDDB0 ModelEnumType AnnounceCategory AnnounceCategory AnnounceCategory Int32
-    public partial class GetAnnounceListArgs
+    public partial class GetAnnounceListArgs : DataModel
     {
         public string                                   Cursor                                  { get; set; }
         public int                                      Limit                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAnnounceListArgs();
+            var value   = new GetAnnounceListArgs() { Pointer= p0 };
 
-            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0270D0B23A68 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Limit                                     = GetInt32(new IntPtr(p + 0x020)); // 0270D0B23AA8 0x20 Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Category                                  = (AnnounceCategory)GetInt32(new IntPtr(p + 0x024)); // 0270D0B23AE8 0x24 Category                    ( 0001866BDDB0 ModelEnumType AnnounceCategory AnnounceCategory AnnounceCategory Int32 )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 024660B1C948 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Limit                                     = GetInt32(new IntPtr(p + 0x020)); // 024660B1C988 0x20 Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Category                                  = (AnnounceCategory)GetInt32(new IntPtr(p + 0x024)); // 024660B1C9C8 0x24 Category                    ( 0001866BDDB0 ModelEnumType AnnounceCategory AnnounceCategory AnnounceCategory Int32 )
 
             return value;
         }

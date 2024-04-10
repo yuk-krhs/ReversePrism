@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 030 ViewModels                               000185B9E990 ModelClassListType ProfileProduceCardSummaryViewModel[] ProfileProduceCardSummaryViewModel[] List<ProfileProduceCardSummaryViewModel> Pointer
     // 038 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ProfileProduceCardSummaryPopupView
+    public partial class ProfileProduceCardSummaryPopupView : DataModel
     {
         public ProfileProduceCardSummaryListView?       ListView                                { get; set; }
         public List<ProfileProduceCardSummaryViewModel>? ViewModels                              { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileProduceCardSummaryPopupView();
+            var value   = new ProfileProduceCardSummaryPopupView() { Pointer= p0 };
 
-            value.ListView                                  = GetObject<ProfileProduceCardSummaryListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileProduceCardSummaryListView.FromPointer); // 0270DB719B30 0x20 ListView                    ( 0001865BD960 ModelClassType ProfileProduceCardSummaryListView ProfileProduceCardSummaryListView ProfileProduceCardSummaryListView Pointer )
-            value.ViewModels                                = GetObjectList<ProfileProduceCardSummaryViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProfileProduceCardSummaryViewModel.FromPointer); // 0270DB719B70 0x30 ViewModels                  ( 000185B9E990 ModelClassListType ProfileProduceCardSummaryViewModel[] ProfileProduceCardSummaryViewModel[] List<ProfileProduceCardSummaryViewModel> Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB719B90 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ListView                                  = GetObject<ProfileProduceCardSummaryListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileProduceCardSummaryListView.FromPointer); // 02466B7AD9E0 0x20 ListView                    ( 0001865BD960 ModelClassType ProfileProduceCardSummaryListView ProfileProduceCardSummaryListView ProfileProduceCardSummaryListView Pointer )
+            value.ViewModels                                = GetObjectList<ProfileProduceCardSummaryViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProfileProduceCardSummaryViewModel.FromPointer); // 02466B7ADA20 0x30 ViewModels                  ( 000185B9E990 ModelClassListType ProfileProduceCardSummaryViewModel[] ProfileProduceCardSummaryViewModel[] List<ProfileProduceCardSummaryViewModel> Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B7ADA40 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

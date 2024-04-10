@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MaybeNullAttribute
+    public partial class MaybeNullAttribute : DataModel
     {
 
         public static MaybeNullAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaybeNullAttribute();
+            var value   = new MaybeNullAttribute() { Pointer= p0 };
 
 
             return value;

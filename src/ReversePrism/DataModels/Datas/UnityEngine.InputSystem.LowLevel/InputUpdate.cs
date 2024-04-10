@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_UpdateStepCount                        uint IL2CPP_TYPE_U4
     // 004 s_LatestUpdateType                       InputUpdateType IL2CPP_TYPE_VALUETYPE
     // 008 s_PlayerUpdateStepCount                  UpdateStepCount IL2CPP_TYPE_VALUETYPE
-    public partial class InputUpdate
+    public partial class InputUpdate : DataModel
     {
 
         public static InputUpdate? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputUpdate();
+            var value   = new InputUpdate() { Pointer= p0 };
 
 
             return value;

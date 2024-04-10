@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_dateTimeTimeZone
+    public partial class Datatype_dateTimeTimeZone : DataModel
     {
 
         public static Datatype_dateTimeTimeZone? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_dateTimeTimeZone();
+            var value   = new Datatype_dateTimeTimeZone() { Pointer= p0 };
 
 
             return value;

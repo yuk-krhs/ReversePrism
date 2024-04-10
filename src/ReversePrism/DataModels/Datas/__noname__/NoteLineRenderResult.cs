@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 011 IsJudging                                000186596AF0 ModelPrimitiveType bool bool bool Bool
     // 014 JudgePosition                            000186666F40 ModelPrimitiveType float float float Single
     // 000 NotRendering                             NoteLineRenderResult IL2CPP_TYPE_VALUETYPE
-    public partial class NoteLineRenderResult
+    public partial class NoteLineRenderResult : DataModel
     {
         public bool                                     IsRendering                             { get; set; }
         public bool                                     IsJudging                               { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoteLineRenderResult();
+            var value   = new NoteLineRenderResult() { Pointer= p0 };
 
-            value.IsRendering                               = GetBool(new IntPtr(p + 0x010)); // 0270D4FAF8E8 0x10 IsRendering                 ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.IsJudging                                 = GetBool(new IntPtr(p + 0x011)); // 0270D4FAF908 0x11 IsJudging                   ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.JudgePosition                             = GetSingle(new IntPtr(p + 0x014)); // 0270D4FAF928 0x14 JudgePosition               ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.IsRendering                               = GetBool(new IntPtr(p + 0x010)); // 02466502F260 0x10 IsRendering                 ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.IsJudging                                 = GetBool(new IntPtr(p + 0x011)); // 02466502F280 0x11 IsJudging                   ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.JudgePosition                             = GetSingle(new IntPtr(p + 0x014)); // 02466502F2A0 0x14 JudgePosition               ( 000186666F40 ModelPrimitiveType float float float Single )
 
             return value;
         }

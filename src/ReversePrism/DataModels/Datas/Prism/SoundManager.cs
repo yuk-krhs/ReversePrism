@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 008 initializeState                          InitializeState IL2CPP_TYPE_VALUETYPE
     // 080 SelectorsInfos                           000185D07948 ModelClassListType List`1<SelectorsInfo> List`1<SelectorsInfo> List<SelectorsInfo> Pointer
     // 088 atomCache                                Dictionary`2<string, CriAtomCache> IL2CPP_TYPE_GENERICINST
-    public partial class SoundManager
+    public partial class SoundManager : DataModel
     {
         public CriAtom?                                 CriAtom                                 { get; set; }
         public List<CriAtomSource>?                     AtomSources                             { get; set; }
@@ -47,17 +47,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoundManager();
+            var value   = new SoundManager() { Pointer= p0 };
 
-            value.CriAtom                                   = GetObject<CriAtom>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtom.FromPointer); // 02700414F318 0x20 CriAtom                     ( 0001866409E0 ModelClassType CriAtom CriAtom CriAtom Pointer )
-            value.AtomSources                               = GetObjectList<CriAtomSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtomSource.FromPointer); // 02700414F338 0x28 AtomSources                 ( 000185B78050 ModelClassListType CriAtomSource[] CriAtomSource[] List<CriAtomSource> Pointer )
-            value.CurrentBgm                                = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x030)); // 02700414F358 0x30 CurrentBgm                  ( 0001866481C0 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
-            value.CriAtomExOutPut                           = GetObject<CriAtomExOutputAnalyzer>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriAtomExOutputAnalyzer.FromPointer); // 02700414F378 0x38 CriAtomExOutPut             ( 000186647BE0 ModelClassType CriAtomExOutputAnalyzer CriAtomExOutputAnalyzer CriAtomExOutputAnalyzer Pointer )
-            value.SeDisposable                              = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 02700414F3B8 0x48 SeDisposable                ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.CriAtomExPlayer                           = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x058), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 02700414F3F8 0x58 CriAtomExPlayer             ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.CriAtomExPlayerFader                      = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x060), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 02700414F418 0x60 CriAtomExPlayerFader        ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.BgmPlayer                                 = GetObject<BgmPlayer>(new IntPtr(p + 0x078), ReversePrism.DataModels.BgmPlayer.FromPointer); // 02700414F478 0x78 BgmPlayer                   ( 00018674F3C0 ModelClassType BgmPlayer BgmPlayer BgmPlayer Pointer )
-            value.SelectorsInfos                            = GetObjectList<SelectorsInfo>(new IntPtr(p + 0x080), ReversePrism.DataModels.SelectorsInfo.FromPointer); // 02700414F4B8 0x80 SelectorsInfos              ( 000185D07948 ModelClassListType List`1<SelectorsInfo> List`1<SelectorsInfo> List<SelectorsInfo> Pointer )
+            value.CriAtom                                   = GetObject<CriAtom>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtom.FromPointer); // 0245A416A4C0 0x20 CriAtom                     ( 0001866409E0 ModelClassType CriAtom CriAtom CriAtom Pointer )
+            value.AtomSources                               = GetObjectList<CriAtomSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtomSource.FromPointer); // 0245A416A4E0 0x28 AtomSources                 ( 000185B78050 ModelClassListType CriAtomSource[] CriAtomSource[] List<CriAtomSource> Pointer )
+            value.CurrentBgm                                = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x030)); // 0245A416A500 0x30 CurrentBgm                  ( 0001866481C0 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
+            value.CriAtomExOutPut                           = GetObject<CriAtomExOutputAnalyzer>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriAtomExOutputAnalyzer.FromPointer); // 0245A416A520 0x38 CriAtomExOutPut             ( 000186647BE0 ModelClassType CriAtomExOutputAnalyzer CriAtomExOutputAnalyzer CriAtomExOutputAnalyzer Pointer )
+            value.SeDisposable                              = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A416A560 0x48 SeDisposable                ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.CriAtomExPlayer                           = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x058), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0245A416A5A0 0x58 CriAtomExPlayer             ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.CriAtomExPlayerFader                      = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x060), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0245A416A5C0 0x60 CriAtomExPlayerFader        ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.BgmPlayer                                 = GetObject<BgmPlayer>(new IntPtr(p + 0x078), ReversePrism.DataModels.BgmPlayer.FromPointer); // 0245A416A620 0x78 BgmPlayer                   ( 00018674F3C0 ModelClassType BgmPlayer BgmPlayer BgmPlayer Pointer )
+            value.SelectorsInfos                            = GetObjectList<SelectorsInfo>(new IntPtr(p + 0x080), ReversePrism.DataModels.SelectorsInfo.FromPointer); // 0245A416A660 0x80 SelectorsInfos              ( 000185D07948 ModelClassListType List`1<SelectorsInfo> List`1<SelectorsInfo> List<SelectorsInfo> Pointer )
 
             return value;
         }

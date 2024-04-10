@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 <userData>k__BackingField                <object> IL2CPP_TYPE_OBJECT
     // 030 actionCallback                           Action`1<DropdownMenuAction> IL2CPP_TYPE_GENERICINST
     // 038 actionStatusCallback                     Func`2<DropdownMenuAction, Status> IL2CPP_TYPE_GENERICINST
-    public partial class DropdownMenuAction
+    public partial class DropdownMenuAction : DataModel
     {
         public string                                   Name                                    { get; set; }
         public Status                                   Status                                  { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DropdownMenuAction();
+            var value   = new DropdownMenuAction() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027006758180 0x10 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x018)); // 0270067581A0 0x18 Status                      ( 0001865C3600 ModelEnumType Status Status Status Int32 )
-            value.EventInfo                                 = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0270067581C0 0x20 EventInfo                   ( 000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A671A0E8 0x10 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x018)); // 0245A671A108 0x18 Status                      ( 0001865C3600 ModelEnumType Status Status Status Int32 )
+            value.EventInfo                                 = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0245A671A128 0x20 EventInfo                   ( 000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
 
             return value;
         }

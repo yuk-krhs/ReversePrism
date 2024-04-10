@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 refList                                  List`1<ObjectRef> IL2CPP_TYPE_GENERICINST
-    public partial class CriDisposableObjectManager
+    public partial class CriDisposableObjectManager : DataModel
     {
 
         public static CriDisposableObjectManager? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriDisposableObjectManager();
+            var value   = new CriDisposableObjectManager() { Pointer= p0 };
 
 
             return value;

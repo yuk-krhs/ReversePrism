@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Obfuscator
+    public partial class Obfuscator : DataModel
     {
 
         public static Obfuscator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Obfuscator();
+            var value   = new Obfuscator() { Pointer= p0 };
 
 
             return value;

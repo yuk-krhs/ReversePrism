@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Intensity                                000186666050 ModelPrimitiveType float float float Single
     // 014 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    public partial class LightingBehaviour
+    public partial class LightingBehaviour : DataModel
     {
         public float                                    Intensity                               { get; set; }
         public Color                                    Color                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LightingBehaviour();
+            var value   = new LightingBehaviour() { Pointer= p0 };
 
-            value.Intensity                                 = GetSingle(new IntPtr(p + 0x010)); // 027006B651F0 0x10 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 027006B65210 0x14 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Intensity                                 = GetSingle(new IntPtr(p + 0x010)); // 024664E733F0 0x10 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 024664E73410 0x14 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

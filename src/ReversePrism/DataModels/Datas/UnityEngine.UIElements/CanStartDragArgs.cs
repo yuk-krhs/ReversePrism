@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 DraggedElement                           0001866B39A0 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 018 Id                                       0001865F4940 ModelPrimitiveType int int int Int32
     // 020 selectedIds                              IEnumerable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class CanStartDragArgs
+    public partial class CanStartDragArgs : DataModel
     {
         public VisualElement?                           DraggedElement                          { get; set; }
         public int                                      Id                                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CanStartDragArgs();
+            var value   = new CanStartDragArgs() { Pointer= p0 };
 
-            value.DraggedElement                            = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 027006755948 0x10 DraggedElement              ( 0001866B39A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 027006755968 0x18 Id                          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.DraggedElement                            = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A67178B0 0x10 DraggedElement              ( 0001866B39A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 0245A67178D0 0x18 Id                          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

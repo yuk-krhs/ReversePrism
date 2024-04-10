@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 ArchiveIndexUrl                          000186671910 ModelPrimitiveType string string string String
     // 000 CreatedAtFieldNumber                     int IL2CPP_TYPE_I4
     // 028 _CreatedAt                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class ArchiveIndex
+    public partial class ArchiveIndex : DataModel
     {
         public string                                   StreamingId                             { get; set; }
         public string                                   ArchiveIndexUrl                         { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArchiveIndex();
+            var value   = new ArchiveIndex() { Pointer= p0 };
 
-            value.StreamingId                               = GetString(new IntPtr(p + 0x018)); // 0270D4B75878 0x18 StreamingId                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ArchiveIndexUrl                           = GetString(new IntPtr(p + 0x020)); // 0270D4B758B8 0x20 ArchiveIndexUrl             ( 000186671910 ModelPrimitiveType string string string String )
-            value._CreatedAt                                = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D4B758F8 0x28 _CreatedAt                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.StreamingId                               = GetString(new IntPtr(p + 0x018)); // 024664BE8D20 0x18 StreamingId                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArchiveIndexUrl                           = GetString(new IntPtr(p + 0x020)); // 024664BE8D60 0x20 ArchiveIndexUrl             ( 000186671910 ModelPrimitiveType string string string String )
+            value._CreatedAt                                = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 024664BE8DA0 0x28 _CreatedAt                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
 
             return value;
         }

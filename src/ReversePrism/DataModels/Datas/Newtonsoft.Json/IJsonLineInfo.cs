@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IJsonLineInfo
+    public partial class IJsonLineInfo : DataModel
     {
 
         public static IJsonLineInfo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IJsonLineInfo();
+            var value   = new IJsonLineInfo() { Pointer= p0 };
 
 
             return value;

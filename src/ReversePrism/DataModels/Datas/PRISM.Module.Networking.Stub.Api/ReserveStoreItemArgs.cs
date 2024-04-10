@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstStoreItemIdFieldNumber                int IL2CPP_TYPE_I4
     // 018 MstStoreItemId                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ReserveStoreItemArgs
+    public partial class ReserveStoreItemArgs : DataModel
     {
         public int                                      MstStoreItemId                          { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReserveStoreItemArgs();
+            var value   = new ReserveStoreItemArgs() { Pointer= p0 };
 
-            value.MstStoreItemId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D0B45310 0x18 MstStoreItemId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstStoreItemId                            = GetInt32(new IntPtr(p + 0x018)); // 024660B38E20 0x18 MstStoreItemId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

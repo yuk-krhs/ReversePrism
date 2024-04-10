@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILayoutIgnorer
+    public partial class ILayoutIgnorer : DataModel
     {
 
         public static ILayoutIgnorer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILayoutIgnorer();
+            var value   = new ILayoutIgnorer() { Pointer= p0 };
 
 
             return value;

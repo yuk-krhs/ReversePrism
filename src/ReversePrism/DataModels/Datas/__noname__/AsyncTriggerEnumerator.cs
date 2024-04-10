@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
     // 000 <Cysharp.Threading.Tasks.ITriggerHandler<T>.Prev>k__BackingField ITriggerHandler`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Cysharp.Threading.Tasks.ITriggerHandler<T>.Next>k__BackingField ITriggerHandler`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncTriggerEnumerator
+    public partial class AsyncTriggerEnumerator : DataModel
     {
 
         public static AsyncTriggerEnumerator? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncTriggerEnumerator();
+            var value   = new AsyncTriggerEnumerator() { Pointer= p0 };
 
 
             return value;

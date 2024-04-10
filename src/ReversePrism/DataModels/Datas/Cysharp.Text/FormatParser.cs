@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ArgLengthLimit                           int IL2CPP_TYPE_I4
     // 000 WidthLimit                               int IL2CPP_TYPE_I4
-    public partial class FormatParser
+    public partial class FormatParser : DataModel
     {
 
         public static FormatParser? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FormatParser();
+            var value   = new FormatParser() { Pointer= p0 };
 
 
             return value;

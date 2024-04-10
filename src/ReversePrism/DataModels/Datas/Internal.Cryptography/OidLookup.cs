@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 s_friendlyNameToOid                      Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 018 s_oidToFriendlyName                      Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 020 s_compatOids                             Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class OidLookup
+    public partial class OidLookup : DataModel
     {
 
         public static OidLookup? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OidLookup();
+            var value   = new OidLookup() { Pointer= p0 };
 
 
             return value;

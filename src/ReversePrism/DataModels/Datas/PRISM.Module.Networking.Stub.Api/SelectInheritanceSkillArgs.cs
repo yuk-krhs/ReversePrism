@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectionSupportSkillFieldNumber         int IL2CPP_TYPE_I4
     // 018 SelectionSupportSkill                    000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer
-    public partial class SelectInheritanceSkillArgs
+    public partial class SelectInheritanceSkillArgs : DataModel
     {
         public SelectionSupportSkillStatus?             SelectionSupportSkill                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectInheritanceSkillArgs();
+            var value   = new SelectInheritanceSkillArgs() { Pointer= p0 };
 
-            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 0270D2597868 0x18 SelectionSupportSkill       ( 000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
+            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 02466255E480 0x18 SelectionSupportSkill       ( 000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
 
             return value;
         }

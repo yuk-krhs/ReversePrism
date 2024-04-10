@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Stack                                    0001866CFFD0 ModelClassType SceneStack SceneStack SceneStack Pointer
-    public partial class ReactivationScope
+    public partial class ReactivationScope : DataModel
     {
         public SceneStack?                              Stack                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReactivationScope();
+            var value   = new ReactivationScope() { Pointer= p0 };
 
-            value.Stack                                     = GetObject<SceneStack>(new IntPtr(p + 0x010), ReversePrism.DataModels.SceneStack.FromPointer); // 0270DB6B1E48 0x10 Stack                       ( 0001866CFFD0 ModelClassType SceneStack SceneStack SceneStack Pointer )
+            value.Stack                                     = GetObject<SceneStack>(new IntPtr(p + 0x010), ReversePrism.DataModels.SceneStack.FromPointer); // 02466B735F90 0x10 Stack                       ( 0001866CFFD0 ModelClassType SceneStack SceneStack SceneStack Pointer )
 
             return value;
         }

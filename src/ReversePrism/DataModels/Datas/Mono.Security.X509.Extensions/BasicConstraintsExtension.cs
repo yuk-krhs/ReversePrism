@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 CA                                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 02C PathLenConstraint                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class BasicConstraintsExtension
+    public partial class BasicConstraintsExtension : DataModel
     {
         public bool                                     CA                                      { get; set; }
         public int                                      PathLenConstraint                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BasicConstraintsExtension();
+            var value   = new BasicConstraintsExtension() { Pointer= p0 };
 
-            value.CA                                        = GetBool(new IntPtr(p + 0x028)); // 0270DB37DF90 0x28 CA                          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PathLenConstraint                         = GetInt32(new IntPtr(p + 0x02C)); // 0270DB37DFB0 0x2C PathLenConstraint           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CA                                        = GetBool(new IntPtr(p + 0x028)); // 02466B40BD60 0x28 CA                          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PathLenConstraint                         = GetInt32(new IntPtr(p + 0x02C)); // 02466B40BD80 0x2C PathLenConstraint           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

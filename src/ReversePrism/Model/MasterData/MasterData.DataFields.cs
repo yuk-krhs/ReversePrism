@@ -46,8 +46,9 @@ namespace ReversePrism
         public MstBirthdayVoice[]?                                         BirthdayVoice;
         public MstHelpGroup[]?                                             HelpGroups;
         public Dictionary<int, MstIdolStory>?                              IdolStories;
+        public MstTitleImage[]?                                            TitleImages;
         public Dictionary<int, MstSong>?                                   Songs;
-        public MstAdvInfo[]?                                               AdvInfos;
+        public Dictionary<string, MstAdvInfo>?                             AdvInfos;
         public Dictionary<int, MstTwestaUser>?                             TwestaUsers;
         public Dictionary<int, MstChainUser>?                              ChainUsers;
         public Dictionary<int, MstBannerGenre>?                            BannerGenre;
@@ -101,6 +102,7 @@ namespace ReversePrism
         public Dictionary<int, MstChainTalk>?                              ChainTalks;
         public MstSubSeasonOpeningAdvOption[]?                             SubSeasonOpeningAdvOption;
         public MstCostumeShopItemGroup[]?                                  CostumeShopItems;
+        public MstTutorial[]?                                              Tutorials;
 
         private void Load(BinaryReader r)
         {
@@ -144,7 +146,7 @@ namespace ReversePrism
             Load(r, nameof(BirthdayVoice),                      out BirthdayVoice);
             Load(r, nameof(HelpGroups),                         out HelpGroups);
             Load(r, nameof(IdolStories),                        out IdolStories);
-            Load(r, "TitleImages");
+            Load(r, nameof(TitleImages),                        out TitleImages);
             Load(r, nameof(Songs),                              out Songs);
             Load(r, nameof(AdvInfos),                           out AdvInfos);
             Load(r, nameof(TwestaUsers),                        out TwestaUsers);
@@ -200,6 +202,7 @@ namespace ReversePrism
             Load(r, nameof(ChainTalks),                         out ChainTalks);
             Load(r, nameof(SubSeasonOpeningAdvOption),          out SubSeasonOpeningAdvOption);
             Load(r, nameof(CostumeShopItems),                   out CostumeShopItems);
+            Load(r, nameof(Tutorials),                          out Tutorials);
         }
     }
 }

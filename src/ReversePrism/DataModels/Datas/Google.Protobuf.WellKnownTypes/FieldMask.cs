@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 Paths                                    000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 FIELD_PATH_SEPARATOR                     char IL2CPP_TYPE_CHAR
     // 000 FIELD_SEPARATOR_REGEX                    char IL2CPP_TYPE_CHAR
-    public partial class FieldMask
+    public partial class FieldMask : DataModel
     {
         public List<string>?                            Paths                                   { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldMask();
+            var value   = new FieldMask() { Pointer= p0 };
 
-            value.Paths                                     = GetStringList(new IntPtr(p + 0x018)); // 0270DA3F97E8 0x18 Paths                       ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Paths                                     = GetStringList(new IntPtr(p + 0x018)); // 02466A45D060 0x18 Paths                       ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

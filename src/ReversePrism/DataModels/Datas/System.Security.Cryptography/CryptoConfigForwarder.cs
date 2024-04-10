@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CryptoConfigForwarder
+    public partial class CryptoConfigForwarder : DataModel
     {
 
         public static CryptoConfigForwarder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CryptoConfigForwarder();
+            var value   = new CryptoConfigForwarder() { Pointer= p0 };
 
 
             return value;

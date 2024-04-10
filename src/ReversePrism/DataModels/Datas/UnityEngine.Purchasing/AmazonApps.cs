@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Name                                     string IL2CPP_TYPE_STRING
-    public partial class AmazonApps
+    public partial class AmazonApps : DataModel
     {
 
         public static AmazonApps? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AmazonApps();
+            var value   = new AmazonApps() { Pointer= p0 };
 
 
             return value;

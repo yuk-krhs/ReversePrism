@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 ProduceIdol                              0001865EB580 ModelClassType IProduceIdolStatus IProduceIdolStatus IProduceIdolStatus Pointer
     // 038 IsShowDetail                             0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 040 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class LiveEventBonusListCellViewModel
+    public partial class LiveEventBonusListCellViewModel : DataModel
     {
         public ILimitedValueStatus?                     BaseEffect                              { get; set; }
         public ILimitedValueStatus?                     EffectByStar                            { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventBonusListCellViewModel();
+            var value   = new LiveEventBonusListCellViewModel() { Pointer= p0 };
 
-            value.BaseEffect                                = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0270D627D930 0x10 BaseEffect                  ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.EffectByStar                              = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0270D627D950 0x18 EffectByStar                ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.EffectByLevel                             = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0270D627D970 0x20 EffectByLevel               ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.Bonus                                     = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0270D627D990 0x28 Bonus                       ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.ProduceIdol                               = GetObject<IProduceIdolStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceIdolStatus.FromPointer); // 0270D627D9B0 0x30 ProduceIdol                 ( 0001865EB580 ModelClassType IProduceIdolStatus IProduceIdolStatus IProduceIdolStatus Pointer )
-            value.IsShowDetail                              = GetBool(new IntPtr(p + 0x038)); // 0270D627D9D0 0x38 IsShowDetail                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270D627D9F0 0x40 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.BaseEffect                                = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0246662DD930 0x10 BaseEffect                  ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.EffectByStar                              = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0246662DD950 0x18 EffectByStar                ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.EffectByLevel                             = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0246662DD970 0x20 EffectByLevel               ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.Bonus                                     = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0246662DD990 0x28 Bonus                       ( 000186591600 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.ProduceIdol                               = GetObject<IProduceIdolStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceIdolStatus.FromPointer); // 0246662DD9B0 0x30 ProduceIdol                 ( 0001865EB580 ModelClassType IProduceIdolStatus IProduceIdolStatus IProduceIdolStatus Pointer )
+            value.IsShowDetail                              = GetBool(new IntPtr(p + 0x038)); // 0246662DD9D0 0x38 IsShowDetail                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.IResourceTag.FromPointer); // 0246662DD9F0 0x40 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

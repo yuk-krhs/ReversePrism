@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 InGameSkill                              0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer
     // 000 StrengthScoreFieldNumber                 int IL2CPP_TYPE_I4
     // 028 StrengthScore                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class InProduceIdolSkillStatus
+    public partial class InProduceIdolSkillStatus : DataModel
     {
         public int                                      MstIdolSkillId                          { get; set; }
         public int                                      Level                                   { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InProduceIdolSkillStatus();
+            var value   = new InProduceIdolSkillStatus() { Pointer= p0 };
 
-            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D10D5D90 0x18 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D10D5DD0 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InGameSkill                               = GetObject<InGameSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameSkillStatus.FromPointer); // 0270D10D5E10 0x20 InGameSkill                 ( 0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer )
-            value.StrengthScore                             = GetInt32(new IntPtr(p + 0x028)); // 0270D10D5E50 0x28 StrengthScore               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x018)); // 024661062178 0x18 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246610621B8 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.InGameSkill                               = GetObject<InGameSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameSkillStatus.FromPointer); // 0246610621F8 0x20 InGameSkill                 ( 0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer )
+            value.StrengthScore                             = GetInt32(new IntPtr(p + 0x028)); // 024661062238 0x28 StrengthScore               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

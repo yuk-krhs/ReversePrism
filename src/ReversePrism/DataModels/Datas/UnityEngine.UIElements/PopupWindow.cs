@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 4A0 M_ContentContainer                       0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 contentUssClassName                      string IL2CPP_TYPE_STRING
-    public partial class PopupWindow
+    public partial class PopupWindow : DataModel
     {
         public VisualElement?                           M_ContentContainer                      { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupWindow();
+            var value   = new PopupWindow() { Pointer= p0 };
 
-            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.VisualElement.FromPointer); // 02700672E448 0x4A0 M_ContentContainer          ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F0428 0x4A0 M_ContentContainer          ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Message                                  000186671910 ModelPrimitiveType string string string String
     // 018 Error                                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ObsoleteAttribute
+    public partial class ObsoleteAttribute : DataModel
     {
         public string                                   Message                                 { get; set; }
         public bool                                     Error                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObsoleteAttribute();
+            var value   = new ObsoleteAttribute() { Pointer= p0 };
 
-            value.Message                                   = GetString(new IntPtr(p + 0x010)); // 0270D69EF330 0x10 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Error                                     = GetBool(new IntPtr(p + 0x018)); // 0270D69EF350 0x18 Error                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Message                                   = GetString(new IntPtr(p + 0x010)); // 024666A5F330 0x10 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Error                                     = GetBool(new IntPtr(p + 0x018)); // 024666A5F350 0x18 Error                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

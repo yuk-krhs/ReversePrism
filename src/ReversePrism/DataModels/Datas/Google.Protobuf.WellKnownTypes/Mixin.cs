@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
     // 000 RootFieldNumber                          int IL2CPP_TYPE_I4
     // 020 Root                                     000186671910 ModelPrimitiveType string string string String
-    public partial class Mixin
+    public partial class Mixin : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Root                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Mixin();
+            var value   = new Mixin() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA482B08 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Root                                      = GetString(new IntPtr(p + 0x020)); // 0270DA482B48 0x20 Root                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A4C6310 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Root                                      = GetString(new IntPtr(p + 0x020)); // 02466A4C6350 0x20 Root                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

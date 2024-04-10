@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnlinkForDmmGamesArgsTranslator
+    public partial class UnlinkForDmmGamesArgsTranslator : DataModel
     {
 
         public static UnlinkForDmmGamesArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnlinkForDmmGamesArgsTranslator();
+            var value   = new UnlinkForDmmGamesArgsTranslator() { Pointer= p0 };
 
 
             return value;

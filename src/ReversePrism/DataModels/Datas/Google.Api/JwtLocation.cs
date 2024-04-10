@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 018 ValuePrefix                              000186671910 ModelPrimitiveType string string string String
     // 020 in_                                      <object> IL2CPP_TYPE_OBJECT
     // 028 InCase                                   0001866764E0 ModelEnumType InOneofCase InOneofCase InOneofCase Int32
-    public partial class JwtLocation
+    public partial class JwtLocation : DataModel
     {
         public string                                   ValuePrefix                             { get; set; }
         public InOneofCase                              InCase                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JwtLocation();
+            var value   = new JwtLocation() { Pointer= p0 };
 
-            value.ValuePrefix                               = GetString(new IntPtr(p + 0x018)); // 0270DA745F18 0x18 ValuePrefix                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.InCase                                    = (InOneofCase)GetInt32(new IntPtr(p + 0x028)); // 0270DA745F58 0x28 InCase                      ( 0001866764E0 ModelEnumType InOneofCase InOneofCase InOneofCase Int32 )
+            value.ValuePrefix                               = GetString(new IntPtr(p + 0x018)); // 02466A79A250 0x18 ValuePrefix                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.InCase                                    = (InOneofCase)GetInt32(new IntPtr(p + 0x028)); // 02466A79A290 0x28 InCase                      ( 0001866764E0 ModelEnumType InOneofCase InOneofCase InOneofCase Int32 )
 
             return value;
         }

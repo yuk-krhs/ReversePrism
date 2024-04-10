@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 030 LeaveOpen                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 LargeByteBuffer                          000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 040 MaxChars                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class BinaryWriter
+    public partial class BinaryWriter : DataModel
     {
         public Stream?                                  OutStream                               { get; set; }
         public List<sbyte>?                             Buffer                                  { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryWriter();
+            var value   = new BinaryWriter() { Pointer= p0 };
 
-            value.OutStream                                 = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 0270D6C53CE0 0x10 OutStream                   ( 000186670700 ModelClassType Stream Stream Stream Pointer )
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x018)); // 0270D6C53D00 0x18 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0270D6C53D20 0x20 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.Encoder                                   = GetObject<Encoder>(new IntPtr(p + 0x028), ReversePrism.DataModels.Encoder.FromPointer); // 0270D6C53D40 0x28 Encoder                     ( 00018672B2A0 ModelClassType Encoder Encoder Encoder Pointer )
-            value.LeaveOpen                                 = GetBool(new IntPtr(p + 0x030)); // 0270D6C53D60 0x30 LeaveOpen                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LargeByteBuffer                           = GetSByteList(new IntPtr(p + 0x038)); // 0270D6C53D80 0x38 LargeByteBuffer             ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.MaxChars                                  = GetInt32(new IntPtr(p + 0x040)); // 0270D6C53DA0 0x40 MaxChars                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OutStream                                 = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 024666CC3CE0 0x10 OutStream                   ( 000186670700 ModelClassType Stream Stream Stream Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x018)); // 024666CC3D00 0x18 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 024666CC3D20 0x20 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
+            value.Encoder                                   = GetObject<Encoder>(new IntPtr(p + 0x028), ReversePrism.DataModels.Encoder.FromPointer); // 024666CC3D40 0x28 Encoder                     ( 00018672B2A0 ModelClassType Encoder Encoder Encoder Pointer )
+            value.LeaveOpen                                 = GetBool(new IntPtr(p + 0x030)); // 024666CC3D60 0x30 LeaveOpen                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LargeByteBuffer                           = GetSByteList(new IntPtr(p + 0x038)); // 024666CC3D80 0x38 LargeByteBuffer             ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.MaxChars                                  = GetInt32(new IntPtr(p + 0x040)); // 024666CC3DA0 0x40 MaxChars                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

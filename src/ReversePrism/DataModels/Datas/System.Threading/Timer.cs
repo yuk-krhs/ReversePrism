@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 041 Is_dead                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 042 Is_added                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 MaxValue                                 long IL2CPP_TYPE_I8
-    public partial class Timer
+    public partial class Timer : DataModel
     {
         public TimerCallback?                           Callback                                { get; set; }
         public long                                     Due_time_ms                             { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Timer();
+            var value   = new Timer() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<TimerCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimerCallback.FromPointer); // 0270D6AC56D8 0x18 Callback                    ( 0001866735E0 ModelClassType TimerCallback TimerCallback TimerCallback Pointer )
-            value.Due_time_ms                               = GetInt64(new IntPtr(p + 0x028)); // 0270D6AC5718 0x28 Due_time_ms                 ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Period_ms                                 = GetInt64(new IntPtr(p + 0x030)); // 0270D6AC5738 0x30 Period_ms                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Next_run                                  = GetInt64(new IntPtr(p + 0x038)); // 0270D6AC5758 0x38 Next_run                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x040)); // 0270D6AC5778 0x40 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Is_dead                                   = GetBool(new IntPtr(p + 0x041)); // 0270D6AC5798 0x41 Is_dead                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Is_added                                  = GetBool(new IntPtr(p + 0x042)); // 0270D6AC57B8 0x42 Is_added                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Callback                                  = GetObject<TimerCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimerCallback.FromPointer); // 024666B256D8 0x18 Callback                    ( 0001866735E0 ModelClassType TimerCallback TimerCallback TimerCallback Pointer )
+            value.Due_time_ms                               = GetInt64(new IntPtr(p + 0x028)); // 024666B25718 0x28 Due_time_ms                 ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Period_ms                                 = GetInt64(new IntPtr(p + 0x030)); // 024666B25738 0x30 Period_ms                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Next_run                                  = GetInt64(new IntPtr(p + 0x038)); // 024666B25758 0x38 Next_run                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x040)); // 024666B25778 0x40 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Is_dead                                   = GetBool(new IntPtr(p + 0x041)); // 024666B25798 0x41 Is_dead                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Is_added                                  = GetBool(new IntPtr(p + 0x042)); // 024666B257B8 0x42 Is_added                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 ChapterTitle                             000186672F10 ModelPrimitiveType string string string String
     // 020 Summary                                  000186672F10 ModelPrimitiveType string string string String
     // 028 ScenarioId                               0001866C4FD0 ModelClassType ScenarioID ScenarioID ScenarioID Pointer
-    public partial class AdvScenarioInfo
+    public partial class AdvScenarioInfo : DataModel
     {
         public string                                   Title                                   { get; set; }
         public string                                   ChapterTitle                            { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvScenarioInfo();
+            var value   = new AdvScenarioInfo() { Pointer= p0 };
 
-            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 0270D5DD8590 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ChapterTitle                              = GetString(new IntPtr(p + 0x018)); // 0270D5DD85B0 0x18 ChapterTitle                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Summary                                   = GetString(new IntPtr(p + 0x020)); // 0270D5DD85D0 0x20 Summary                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ScenarioId                                = GetObject<ScenarioID>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScenarioID.FromPointer); // 0270D5DD85F0 0x28 ScenarioId                  ( 0001866C4FD0 ModelClassType ScenarioID ScenarioID ScenarioID Pointer )
+            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 024665E48EA0 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ChapterTitle                              = GetString(new IntPtr(p + 0x018)); // 024665E48EC0 0x18 ChapterTitle                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Summary                                   = GetString(new IntPtr(p + 0x020)); // 024665E48EE0 0x20 Summary                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ScenarioId                                = GetObject<ScenarioID>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScenarioID.FromPointer); // 024665E48F00 0x28 ScenarioId                  ( 0001866C4FD0 ModelClassType ScenarioID ScenarioID ScenarioID Pointer )
 
             return value;
         }

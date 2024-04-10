@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 pfCancel                                 <int> IL2CPP_TYPE_I
     // 020 pProgressRoutine                         <int> IL2CPP_TYPE_I
     // 028 pvCallbackContext                        <int> IL2CPP_TYPE_I
-    public partial class COPYFILE2_EXTENDED_PARAMETERS
+    public partial class COPYFILE2_EXTENDED_PARAMETERS : DataModel
     {
         public uint                                     DwSize                                  { get; set; }
         public uint                                     DwCopyFlags                             { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new COPYFILE2_EXTENDED_PARAMETERS();
+            var value   = new COPYFILE2_EXTENDED_PARAMETERS() { Pointer= p0 };
 
-            value.DwSize                                    = GetUInt32(new IntPtr(p + 0x010)); // 0270D69289F8 0x10 DwSize                      ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DwCopyFlags                               = GetUInt32(new IntPtr(p + 0x014)); // 0270D6928A18 0x14 DwCopyFlags                 ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DwSize                                    = GetUInt32(new IntPtr(p + 0x010)); // 0246669A09F8 0x10 DwSize                      ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DwCopyFlags                               = GetUInt32(new IntPtr(p + 0x014)); // 0246669A0A18 0x14 DwCopyFlags                 ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

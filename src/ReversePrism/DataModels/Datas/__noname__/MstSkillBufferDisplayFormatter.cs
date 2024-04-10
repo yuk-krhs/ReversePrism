@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSkillBufferDisplayFormatter
+    public partial class MstSkillBufferDisplayFormatter : DataModel
     {
 
         public static MstSkillBufferDisplayFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSkillBufferDisplayFormatter();
+            var value   = new MstSkillBufferDisplayFormatter() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Cursor                                   000186671910 ModelPrimitiveType string string string String
     // 000 SortOrderTypeFieldNumber                 int IL2CPP_TYPE_I4
     // 020 SortOrderType                            000186531D00 ModelEnumType SortOrderType SortOrderType SortOrderType Int32
-    public partial class GetFollowerListArgs
+    public partial class GetFollowerListArgs : DataModel
     {
         public string                                   Cursor                                  { get; set; }
         public SortOrderType                            SortOrderType                           { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFollowerListArgs();
+            var value   = new GetFollowerListArgs() { Pointer= p0 };
 
-            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0270D1416418 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.SortOrderType                             = (SortOrderType)GetInt32(new IntPtr(p + 0x020)); // 0270D1416458 0x20 SortOrderType               ( 000186531D00 ModelEnumType SortOrderType SortOrderType SortOrderType Int32 )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 024661399EC8 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.SortOrderType                             = (SortOrderType)GetInt32(new IntPtr(p + 0x020)); // 024661399F08 0x20 SortOrderType               ( 000186531D00 ModelEnumType SortOrderType SortOrderType SortOrderType Int32 )
 
             return value;
         }

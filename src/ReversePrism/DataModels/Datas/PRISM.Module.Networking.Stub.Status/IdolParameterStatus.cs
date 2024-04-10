@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 Visual                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MentalFieldNumber                        int IL2CPP_TYPE_I4
     // 024 Mental                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IdolParameterStatus
+    public partial class IdolParameterStatus : DataModel
     {
         public int                                      Vocal                                   { get; set; }
         public int                                      Dance                                   { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolParameterStatus();
+            var value   = new IdolParameterStatus() { Pointer= p0 };
 
-            value.Vocal                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D0F55110 0x18 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Dance                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D0F55150 0x1C Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Visual                                    = GetInt32(new IntPtr(p + 0x020)); // 0270D0F55190 0x20 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Mental                                    = GetInt32(new IntPtr(p + 0x024)); // 0270D0F551D0 0x24 Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Vocal                                     = GetInt32(new IntPtr(p + 0x018)); // 024660EE35F0 0x18 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dance                                     = GetInt32(new IntPtr(p + 0x01C)); // 024660EE3630 0x1C Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Visual                                    = GetInt32(new IntPtr(p + 0x020)); // 024660EE3670 0x20 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Mental                                    = GetInt32(new IntPtr(p + 0x024)); // 024660EE36B0 0x24 Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

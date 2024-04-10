@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 PositiveInfinity                         double IL2CPP_TYPE_R8
     // 000 NaN                                      double IL2CPP_TYPE_R8
     // 000 NegativeZero                             double IL2CPP_TYPE_R8
-    public partial class Double
+    public partial class Double : DataModel
     {
         public double                                   M_value                                 { get; set; }
 
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Double();
+            var value   = new Double() { Pointer= p0 };
 
-            value.M_value                                   = GetDouble(new IntPtr(p + 0x010)); // 027003388BE0 0x10 M_value                     ( 0001865C35C0 ModelPrimitiveType double double double Double )
+            value.M_value                                   = GetDouble(new IntPtr(p + 0x010)); // 0245A3388BE0 0x10 M_value                     ( 0001865C35C0 ModelPrimitiveType double double double Double )
 
             return value;
         }

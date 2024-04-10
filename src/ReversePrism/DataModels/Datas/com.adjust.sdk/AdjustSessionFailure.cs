@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Timestamp                                000186671910 ModelPrimitiveType string string string String
     // 028 WillRetry                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 030 <JsonResponse>k__BackingField            Dictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class AdjustSessionFailure
+    public partial class AdjustSessionFailure : DataModel
     {
         public string                                   Adid                                    { get; set; }
         public string                                   Message                                 { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustSessionFailure();
+            var value   = new AdjustSessionFailure() { Pointer= p0 };
 
-            value.Adid                                      = GetString(new IntPtr(p + 0x010)); // 0270D4C2D1F8 0x10 Adid                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0270D4C2D218 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Timestamp                                 = GetString(new IntPtr(p + 0x020)); // 0270D4C2D238 0x20 Timestamp                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.WillRetry                                 = GetBool(new IntPtr(p + 0x028)); // 0270D4C2D258 0x28 WillRetry                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Adid                                      = GetString(new IntPtr(p + 0x010)); // 024664C90320 0x10 Adid                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 024664C90340 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Timestamp                                 = GetString(new IntPtr(p + 0x020)); // 024664C90360 0x20 Timestamp                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.WillRetry                                 = GetBool(new IntPtr(p + 0x028)); // 024664C90380 0x28 WillRetry                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

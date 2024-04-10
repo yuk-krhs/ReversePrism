@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 leftSubscription                         SingleAssignmentDisposable IL2CPP_TYPE_CLASS
     // 000 rightSubscription                        SingleAssignmentDisposable IL2CPP_TYPE_CLASS
     // 000 choice                                   AmbState<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class AmbOuterObserver
+    public partial class AmbOuterObserver : DataModel
     {
 
         public static AmbOuterObserver? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AmbOuterObserver();
+            var value   = new AmbOuterObserver() { Pointer= p0 };
 
 
             return value;

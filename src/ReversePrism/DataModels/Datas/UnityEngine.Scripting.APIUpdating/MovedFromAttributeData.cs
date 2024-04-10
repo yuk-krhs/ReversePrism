@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 029 NameSpaceHasChanged                      000186595960 ModelPrimitiveType bool bool bool Bool
     // 02A AssemblyHasChanged                       000186595960 ModelPrimitiveType bool bool bool Bool
     // 02B AutoUdpateAPI                            000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class MovedFromAttributeData
+    public partial class MovedFromAttributeData : DataModel
     {
         public string                                   ClassName                               { get; set; }
         public string                                   NameSpace                               { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MovedFromAttributeData();
+            var value   = new MovedFromAttributeData() { Pointer= p0 };
 
-            value.ClassName                                 = GetString(new IntPtr(p + 0x010)); // 027004FA95F8 0x10 ClassName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.NameSpace                                 = GetString(new IntPtr(p + 0x018)); // 027004FA9618 0x18 NameSpace                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Assembly                                  = GetString(new IntPtr(p + 0x020)); // 027004FA9638 0x20 Assembly                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ClassHasChanged                           = GetBool(new IntPtr(p + 0x028)); // 027004FA9658 0x28 ClassHasChanged             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NameSpaceHasChanged                       = GetBool(new IntPtr(p + 0x029)); // 027004FA9678 0x29 NameSpaceHasChanged         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AssemblyHasChanged                        = GetBool(new IntPtr(p + 0x02A)); // 027004FA9698 0x2A AssemblyHasChanged          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AutoUdpateAPI                             = GetBool(new IntPtr(p + 0x02B)); // 027004FA96B8 0x2B AutoUdpateAPI               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ClassName                                 = GetString(new IntPtr(p + 0x010)); // 0245A4FAABF8 0x10 ClassName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.NameSpace                                 = GetString(new IntPtr(p + 0x018)); // 0245A4FAAC18 0x18 NameSpace                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Assembly                                  = GetString(new IntPtr(p + 0x020)); // 0245A4FAAC38 0x20 Assembly                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ClassHasChanged                           = GetBool(new IntPtr(p + 0x028)); // 0245A4FAAC58 0x28 ClassHasChanged             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NameSpaceHasChanged                       = GetBool(new IntPtr(p + 0x029)); // 0245A4FAAC78 0x29 NameSpaceHasChanged         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AssemblyHasChanged                        = GetBool(new IntPtr(p + 0x02A)); // 0245A4FAAC98 0x2A AssemblyHasChanged          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AutoUdpateAPI                             = GetBool(new IntPtr(p + 0x02B)); // 0245A4FAACB8 0x2B AutoUdpateAPI               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

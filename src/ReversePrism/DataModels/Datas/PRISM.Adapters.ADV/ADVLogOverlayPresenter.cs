@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Model                                    000186665030 ModelClassType ADVLogModel ADVLogModel ADVLogModel Pointer
     // 018 ViewModel                                000186666890 ModelClassType ADVLogOverlayViewModel ADVLogOverlayViewModel ADVLogOverlayViewModel Pointer
-    public partial class ADVLogOverlayPresenter
+    public partial class ADVLogOverlayPresenter : DataModel
     {
         public ADVLogModel?                             Model                                   { get; set; }
         public ADVLogOverlayViewModel?                  ViewModel                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogOverlayPresenter();
+            var value   = new ADVLogOverlayPresenter() { Pointer= p0 };
 
-            value.Model                                     = GetObject<ADVLogModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ADVLogModel.FromPointer); // 0270D6919748 0x10 Model                       ( 000186665030 ModelClassType ADVLogModel ADVLogModel ADVLogModel Pointer )
-            value.ViewModel                                 = GetObject<ADVLogOverlayViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ADVLogOverlayViewModel.FromPointer); // 0270D6919768 0x18 ViewModel                   ( 000186666890 ModelClassType ADVLogOverlayViewModel ADVLogOverlayViewModel ADVLogOverlayViewModel Pointer )
+            value.Model                                     = GetObject<ADVLogModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ADVLogModel.FromPointer); // 024666989748 0x10 Model                       ( 000186665030 ModelClassType ADVLogModel ADVLogModel ADVLogModel Pointer )
+            value.ViewModel                                 = GetObject<ADVLogOverlayViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ADVLogOverlayViewModel.FromPointer); // 024666989768 0x18 ViewModel                   ( 000186666890 ModelClassType ADVLogOverlayViewModel ADVLogOverlayViewModel ADVLogOverlayViewModel Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnCollisionEnterHandler
+    public partial class IAsyncOnCollisionEnterHandler : DataModel
     {
 
         public static IAsyncOnCollisionEnterHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnCollisionEnterHandler();
+            var value   = new IAsyncOnCollisionEnterHandler() { Pointer= p0 };
 
 
             return value;

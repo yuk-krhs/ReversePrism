@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 GetFriendInvitationTop                   Method`2<IGetFriendInvitationTopArgs, IGetFriendInvitationTopReply> IL2CPP_TYPE_GENERICINST
     // 018 IssueInviteCode                          Method`2<IIssueInviteCodeArgs, IIssueInviteCodeReply> IL2CPP_TYPE_GENERICINST
     // 030 ReceiveInviteCode                        Method`2<IReceiveInviteCodeArgs, IReceiveInviteCodeReply> IL2CPP_TYPE_GENERICINST
-    public partial class FriendInvitationServiceMethods
+    public partial class FriendInvitationServiceMethods : DataModel
     {
 
         public static FriendInvitationServiceMethods? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendInvitationServiceMethods();
+            var value   = new FriendInvitationServiceMethods() { Pointer= p0 };
 
 
             return value;

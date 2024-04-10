@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 S2AUTH_RESULT_SUCCESS                    int IL2CPP_TYPE_I4
     // 000 S2AUTH_RESULT_RETRY                      int IL2CPP_TYPE_I4
     // 000 S2AUTH_RESULT_FAIL                       int IL2CPP_TYPE_I4
-    public partial class S2Auth
+    public partial class S2Auth : DataModel
     {
 
         public static S2Auth? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new S2Auth();
+            var value   = new S2Auth() { Pointer= p0 };
 
 
             return value;

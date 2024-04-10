@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 FrameCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 CancellationToken                        00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     // 028 core                                     UniTaskCompletionSourceCore`1<AsyncUnit> IL2CPP_TYPE_GENERICINST
-    public partial class NextFramePromise
+    public partial class NextFramePromise : DataModel
     {
         public NextFramePromise?                        NextNode                                { get; set; }
         public int                                      FrameCount                              { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NextFramePromise();
+            var value   = new NextFramePromise() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<NextFramePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.NextFramePromise.FromPointer); // 0270D8BE9958 0x10 NextNode                    ( 000186719150 ModelClassType NextFramePromise NextFramePromise NextFramePromise Pointer )
-            value.FrameCount                                = GetInt32(new IntPtr(p + 0x018)); // 0270D8BE9978 0x18 FrameCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 0270D8BE9998 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.NextNode                                  = GetObject<NextFramePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.NextFramePromise.FromPointer); // 024668C3C638 0x10 NextNode                    ( 000186719150 ModelClassType NextFramePromise NextFramePromise NextFramePromise Pointer )
+            value.FrameCount                                = GetInt32(new IntPtr(p + 0x018)); // 024668C3C658 0x18 FrameCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 024668C3C678 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

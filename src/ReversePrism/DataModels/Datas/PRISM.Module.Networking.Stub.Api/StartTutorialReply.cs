@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 FesIdolListFieldNumber                   int IL2CPP_TYPE_I4
     // 010 _repeated_fesIdolList_codec              FieldCodec`1<FesIdolStatus> IL2CPP_TYPE_GENERICINST
     // 020 FesIdolList                              000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer
-    public partial class StartTutorialReply
+    public partial class StartTutorialReply : DataModel
     {
         public List<ProduceIdolStatus>?                 ProduceIdolList                         { get; set; }
         public List<FesIdolStatus>?                     FesIdolList                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartTutorialReply();
+            var value   = new StartTutorialReply() { Pointer= p0 };
 
-            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0270D2C592B0 0x18 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
-            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 0270D2C59310 0x20 FesIdolList                 ( 000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
+            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 024662BE9788 0x18 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
+            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 024662BE97E8 0x20 FesIdolList                 ( 000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
 
             return value;
         }

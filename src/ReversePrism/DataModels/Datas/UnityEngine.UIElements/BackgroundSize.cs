@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_SizeType                               000186734DE0 ModelEnumType BackgroundSizeType BackgroundSizeType BackgroundSizeType Int32
     // 014 M_X                                      0001866061D0 ModelEnumType Length Length Length Int32
     // 01C M_Y                                      0001866061D0 ModelEnumType Length Length Length Int32
-    public partial class BackgroundSize
+    public partial class BackgroundSize : DataModel
     {
         public BackgroundSizeType                       M_SizeType                              { get; set; }
         public Length                                   M_X                                     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BackgroundSize();
+            var value   = new BackgroundSize() { Pointer= p0 };
 
-            value.M_SizeType                                = (BackgroundSizeType)GetInt32(new IntPtr(p + 0x010)); // 027003F2D4A0 0x10 M_SizeType                  ( 000186734DE0 ModelEnumType BackgroundSizeType BackgroundSizeType BackgroundSizeType Int32 )
-            value.M_X                                       = (Length)GetInt32(new IntPtr(p + 0x014)); // 027003F2D4C0 0x14 M_X                         ( 0001866061D0 ModelEnumType Length Length Length Int32 )
-            value.M_Y                                       = (Length)GetInt32(new IntPtr(p + 0x01C)); // 027003F2D4E0 0x1C M_Y                         ( 0001866061D0 ModelEnumType Length Length Length Int32 )
+            value.M_SizeType                                = (BackgroundSizeType)GetInt32(new IntPtr(p + 0x010)); // 0245A3F2D4A0 0x10 M_SizeType                  ( 000186734DE0 ModelEnumType BackgroundSizeType BackgroundSizeType BackgroundSizeType Int32 )
+            value.M_X                                       = (Length)GetInt32(new IntPtr(p + 0x014)); // 0245A3F2D4C0 0x14 M_X                         ( 0001866061D0 ModelEnumType Length Length Length Int32 )
+            value.M_Y                                       = (Length)GetInt32(new IntPtr(p + 0x01C)); // 0245A3F2D4E0 0x1C M_Y                         ( 0001866061D0 ModelEnumType Length Length Length Int32 )
 
             return value;
         }

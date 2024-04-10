@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_defaultValue                           uint IL2CPP_TYPE_U4
     // 050 Values                                   000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    public partial class UInt32Storage
+    public partial class UInt32Storage : DataModel
     {
         public List<uint>?                              Values                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UInt32Storage();
+            var value   = new UInt32Storage() { Pointer= p0 };
 
-            value.Values                                    = GetUInt32List(new IntPtr(p + 0x050)); // 0270D8A05FF8 0x50 Values                      ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Values                                    = GetUInt32List(new IntPtr(p + 0x050)); // 024668A60EB8 0x50 Values                      ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

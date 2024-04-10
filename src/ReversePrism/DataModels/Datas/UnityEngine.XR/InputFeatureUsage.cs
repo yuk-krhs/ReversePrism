@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Name                                   000186671BA0 ModelPrimitiveType string string string String
     // 018 M_InternalType                           0001866FE7A0 ModelEnumType InputFeatureType InputFeatureType InputFeatureType Int32
-    public partial class InputFeatureUsage
+    public partial class InputFeatureUsage : DataModel
     {
         public string                                   M_Name                                  { get; set; }
         public InputFeatureType                         M_InternalType                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputFeatureUsage();
+            var value   = new InputFeatureUsage() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0270021009C8 0x10 M_Name                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_InternalType                            = (InputFeatureType)GetInt32(new IntPtr(p + 0x018)); // 0270021009E8 0x18 M_InternalType              ( 0001866FE7A0 ModelEnumType InputFeatureType InputFeatureType InputFeatureType Int32 )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0245A21009C8 0x10 M_Name                      ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.M_InternalType                            = (InputFeatureType)GetInt32(new IntPtr(p + 0x018)); // 0245A21009E8 0x18 M_InternalType              ( 0001866FE7A0 ModelEnumType InputFeatureType InputFeatureType InputFeatureType Int32 )
 
             return value;
         }

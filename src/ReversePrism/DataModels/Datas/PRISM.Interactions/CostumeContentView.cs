@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 DressIconParent                          0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 038 IconBase                                 00018662D530 ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer
     // 040 <OnClick>k__BackingField                 IObservable`1<ValueTuple`2<CostumePartType, int>> IL2CPP_TYPE_GENERICINST
-    public partial class CostumeContentView
+    public partial class CostumeContentView : DataModel
     {
         public UITextMeshProUGUI?                       TxtStarLv                               { get; set; }
         public UITextMeshProUGUI?                       TxtDressSetName                         { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeContentView();
+            var value   = new CostumeContentView() { Pointer= p0 };
 
-            value.TxtStarLv                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7C30 0x20 TxtStarLv                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtDressSetName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2A7C50 0x28 TxtDressSetName             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DressIconParent                           = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DA2A7C70 0x30 DressIconParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.IconBase                                  = GetObject<CostumeIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeIconView.FromPointer); // 0270DA2A7C90 0x38 IconBase                    ( 00018662D530 ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer )
+            value.TxtStarLv                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB218 0x20 TxtStarLv                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtDressSetName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FB238 0x28 TxtDressSetName             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DressIconParent                           = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466A2FB258 0x30 DressIconParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.IconBase                                  = GetObject<CostumeIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeIconView.FromPointer); // 02466A2FB278 0x38 IconBase                    ( 00018662D530 ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer )
 
             return value;
         }

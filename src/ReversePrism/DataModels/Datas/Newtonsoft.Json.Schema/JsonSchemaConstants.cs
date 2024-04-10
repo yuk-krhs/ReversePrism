@@ -41,7 +41,7 @@ namespace ReversePrism.DataModels
     // 000 OptionValuePropertyName                  string IL2CPP_TYPE_STRING
     // 000 OptionLabelPropertyName                  string IL2CPP_TYPE_STRING
     // 000 JsonSchemaTypeMapping                    IDictionary`2<string, JsonSchemaType> IL2CPP_TYPE_GENERICINST
-    public partial class JsonSchemaConstants
+    public partial class JsonSchemaConstants : DataModel
     {
 
         public static JsonSchemaConstants? FromPointer(IntPtr p0)
@@ -50,7 +50,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSchemaConstants();
+            var value   = new JsonSchemaConstants() { Pointer= p0 };
 
 
             return value;

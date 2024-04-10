@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GenerateTypeScriptAttribute
+    public partial class GenerateTypeScriptAttribute : DataModel
     {
 
         public static GenerateTypeScriptAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GenerateTypeScriptAttribute();
+            var value   = new GenerateTypeScriptAttribute() { Pointer= p0 };
 
 
             return value;

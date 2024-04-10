@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 CacheBaseIngameSkillDetailKeywordContent 00018673EBE0 ModelClassType BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent Pointer
     // 038 TempLinkInfos                            000185D12428 ModelEnumListType List`1<TMP_LinkInfo> List`1<TMP_LinkInfo> List<TMP_LinkInfo> Pointer
     // 040 TempLinkIDs                              000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class DetailDisplayBase
+    public partial class DetailDisplayBase : DataModel
     {
         public UITextMeshProUGUI?                       NameText                                { get; set; }
         public UITextMeshProUGUI?                       DescriptionText                         { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DetailDisplayBase();
+            var value   = new DetailDisplayBase() { Pointer= p0 };
 
-            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C48F80 0x20 NameText                    ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C48FA0 0x28 DescriptionText             ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CacheBaseIngameSkillDetailKeywordContent  = GetObject<BaseIngameSkillDetailKeywordContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.BaseIngameSkillDetailKeywordContent.FromPointer); // 0270D5C48FC0 0x30 CacheBaseIngameSkillDetailKeywordContent ( 00018673EBE0 ModelClassType BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent Pointer )
-            value.TempLinkInfos                             = GetEnumList<TMP_LinkInfo>(new IntPtr(p + 0x038)); // 0270D5C48FE0 0x38 TempLinkInfos               ( 000185D12428 ModelEnumListType List`1<TMP_LinkInfo> List`1<TMP_LinkInfo> List<TMP_LinkInfo> Pointer )
-            value.TempLinkIDs                               = GetStringList(new IntPtr(p + 0x040)); // 0270D5C49000 0x40 TempLinkIDs                 ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CB98C0 0x20 NameText                    ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CB98E0 0x28 DescriptionText             ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CacheBaseIngameSkillDetailKeywordContent  = GetObject<BaseIngameSkillDetailKeywordContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.BaseIngameSkillDetailKeywordContent.FromPointer); // 024665CB9900 0x30 CacheBaseIngameSkillDetailKeywordContent ( 00018673EBE0 ModelClassType BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent BaseIngameSkillDetailKeywordContent Pointer )
+            value.TempLinkInfos                             = GetEnumList<TMP_LinkInfo>(new IntPtr(p + 0x038)); // 024665CB9920 0x38 TempLinkInfos               ( 000185D12428 ModelEnumListType List`1<TMP_LinkInfo> List`1<TMP_LinkInfo> List<TMP_LinkInfo> Pointer )
+            value.TempLinkIDs                               = GetStringList(new IntPtr(p + 0x040)); // 024665CB9940 0x40 TempLinkIDs                 ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 030 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 ProductFieldNumber                       int IL2CPP_TYPE_I4
     // 038 Product                                  0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer
-    public partial class CostumeSetStatus
+    public partial class CostumeSetStatus : DataModel
     {
         public int                                      MstCostumeSetId                         { get; set; }
         public int                                      MstCostumeId                            { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeSetStatus();
+            var value   = new CostumeSetStatus() { Pointer= p0 };
 
-            value.MstCostumeSetId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D0F526D8 0x18 MstCostumeSetId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x01C)); // 0270D0F52718 0x1C MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x020)); // 0270D0F52758 0x20 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 0270D0F527B8 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D0F527F8 0x30 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductStatus.FromPointer); // 0270D0F52838 0x38 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
+            value.MstCostumeSetId                           = GetInt32(new IntPtr(p + 0x018)); // 024660EFDE50 0x18 MstCostumeSetId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x01C)); // 024660EFDE90 0x1C MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x020)); // 024660EFDED0 0x20 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 024660EFDF30 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x030)); // 024660EFDF70 0x30 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductStatus.FromPointer); // 024660EFDFB0 0x38 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
 
             return value;
         }

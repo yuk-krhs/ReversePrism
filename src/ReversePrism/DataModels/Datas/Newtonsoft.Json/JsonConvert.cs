@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 PositiveInfinity                         000186674040 ModelPrimitiveType string string string String
     // 030 NegativeInfinity                         000186674040 ModelPrimitiveType string string string String
     // 038 NaN                                      000186674040 ModelPrimitiveType string string string String
-    public partial class JsonConvert
+    public partial class JsonConvert : DataModel
     {
         public string                                   False                                   { get; set; }
         public string                                   Null                                    { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonConvert();
+            var value   = new JsonConvert() { Pointer= p0 };
 
-            value.False                                     = GetString(new IntPtr(p + 0x010)); // 027005FCCB60 0x10 False                       ( 000186674040 ModelPrimitiveType string string string String )
-            value.Null                                      = GetString(new IntPtr(p + 0x018)); // 027005FCCB80 0x18 Null                        ( 000186674040 ModelPrimitiveType string string string String )
-            value.Undefined                                 = GetString(new IntPtr(p + 0x020)); // 027005FCCBA0 0x20 Undefined                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.PositiveInfinity                          = GetString(new IntPtr(p + 0x028)); // 027005FCCBC0 0x28 PositiveInfinity            ( 000186674040 ModelPrimitiveType string string string String )
-            value.NegativeInfinity                          = GetString(new IntPtr(p + 0x030)); // 027005FCCBE0 0x30 NegativeInfinity            ( 000186674040 ModelPrimitiveType string string string String )
-            value.NaN                                       = GetString(new IntPtr(p + 0x038)); // 027005FCCC00 0x38 NaN                         ( 000186674040 ModelPrimitiveType string string string String )
+            value.False                                     = GetString(new IntPtr(p + 0x010)); // 0245A5FA8230 0x10 False                       ( 000186674040 ModelPrimitiveType string string string String )
+            value.Null                                      = GetString(new IntPtr(p + 0x018)); // 0245A5FA8250 0x18 Null                        ( 000186674040 ModelPrimitiveType string string string String )
+            value.Undefined                                 = GetString(new IntPtr(p + 0x020)); // 0245A5FA8270 0x20 Undefined                   ( 000186674040 ModelPrimitiveType string string string String )
+            value.PositiveInfinity                          = GetString(new IntPtr(p + 0x028)); // 0245A5FA8290 0x28 PositiveInfinity            ( 000186674040 ModelPrimitiveType string string string String )
+            value.NegativeInfinity                          = GetString(new IntPtr(p + 0x030)); // 0245A5FA82B0 0x30 NegativeInfinity            ( 000186674040 ModelPrimitiveType string string string String )
+            value.NaN                                       = GetString(new IntPtr(p + 0x038)); // 0245A5FA82D0 0x38 NaN                         ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

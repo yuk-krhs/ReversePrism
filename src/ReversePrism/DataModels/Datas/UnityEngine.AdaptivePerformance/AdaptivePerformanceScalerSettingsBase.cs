@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 M_MaxLevel                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 02C M_MinBound                               0001866656B0 ModelPrimitiveType float float float Single
     // 030 M_MaxBound                               0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptivePerformanceScalerSettingsBase
+    public partial class AdaptivePerformanceScalerSettingsBase : DataModel
     {
         public string                                   M_Name                                  { get; set; }
         public bool                                     M_Enabled                               { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceScalerSettingsBase();
+            var value   = new AdaptivePerformanceScalerSettingsBase() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0270032DADB0 0x10 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Enabled                                 = GetBool(new IntPtr(p + 0x018)); // 0270032DADD0 0x18 M_Enabled                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Scale                                   = GetSingle(new IntPtr(p + 0x01C)); // 0270032DADF0 0x1C M_Scale                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_VisualImpact                            = (ScalerVisualImpact)GetInt32(new IntPtr(p + 0x020)); // 0270032DAE10 0x20 M_VisualImpact              ( 0001866C3340 ModelEnumType ScalerVisualImpact ScalerVisualImpact ScalerVisualImpact Int32 )
-            value.M_Target                                  = (ScalerTarget)GetInt32(new IntPtr(p + 0x024)); // 0270032DAE30 0x24 M_Target                    ( 0001866C2BF0 ModelEnumType ScalerTarget ScalerTarget ScalerTarget Int32 )
-            value.M_MaxLevel                                = GetInt32(new IntPtr(p + 0x028)); // 0270032DAE50 0x28 M_MaxLevel                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MinBound                                = GetSingle(new IntPtr(p + 0x02C)); // 0270032DAE70 0x2C M_MinBound                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_MaxBound                                = GetSingle(new IntPtr(p + 0x030)); // 0270032DAE90 0x30 M_MaxBound                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0245A32DADB0 0x10 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Enabled                                 = GetBool(new IntPtr(p + 0x018)); // 0245A32DADD0 0x18 M_Enabled                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Scale                                   = GetSingle(new IntPtr(p + 0x01C)); // 0245A32DADF0 0x1C M_Scale                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_VisualImpact                            = (ScalerVisualImpact)GetInt32(new IntPtr(p + 0x020)); // 0245A32DAE10 0x20 M_VisualImpact              ( 0001866C3340 ModelEnumType ScalerVisualImpact ScalerVisualImpact ScalerVisualImpact Int32 )
+            value.M_Target                                  = (ScalerTarget)GetInt32(new IntPtr(p + 0x024)); // 0245A32DAE30 0x24 M_Target                    ( 0001866C2BF0 ModelEnumType ScalerTarget ScalerTarget ScalerTarget Int32 )
+            value.M_MaxLevel                                = GetInt32(new IntPtr(p + 0x028)); // 0245A32DAE50 0x28 M_MaxLevel                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_MinBound                                = GetSingle(new IntPtr(p + 0x02C)); // 0245A32DAE70 0x2C M_MinBound                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_MaxBound                                = GetSingle(new IntPtr(p + 0x030)); // 0245A32DAE90 0x30 M_MaxBound                  ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

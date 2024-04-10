@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_WriteEnabled                           00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 011 M_CompareFunction                        00018665D2C0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class DepthState
+    public partial class DepthState : DataModel
     {
         public sbyte                                    M_WriteEnabled                          { get; set; }
         public sbyte                                    M_CompareFunction                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DepthState();
+            var value   = new DepthState() { Pointer= p0 };
 
-            value.M_WriteEnabled                            = GetSByte(new IntPtr(p + 0x010)); // 0270068CDAA0 0x10 M_WriteEnabled              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_CompareFunction                         = GetSByte(new IntPtr(p + 0x011)); // 0270068CDAC0 0x11 M_CompareFunction           ( 00018665D2C0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_WriteEnabled                            = GetSByte(new IntPtr(p + 0x010)); // 0245A6890A30 0x10 M_WriteEnabled              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_CompareFunction                         = GetSByte(new IntPtr(p + 0x011)); // 0245A6890A50 0x11 M_CompareFunction           ( 00018665D2C0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

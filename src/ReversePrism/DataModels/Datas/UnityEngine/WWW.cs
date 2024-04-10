@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Uwr                                      00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
     // 018 AssetBundle                              0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer
     // 020 _responseHeaders                         Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class WWW
+    public partial class WWW : DataModel
     {
         public UnityWebRequest?                         Uwr                                     { get; set; }
         public AssetBundle?                             AssetBundle                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WWW();
+            var value   = new WWW() { Pointer= p0 };
 
-            value.Uwr                                       = GetObject<UnityWebRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 02700697A580 0x10 Uwr                         ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
-            value.AssetBundle                               = GetObject<AssetBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundle.FromPointer); // 02700697A5A0 0x18 AssetBundle                 ( 0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
+            value.Uwr                                       = GetObject<UnityWebRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0245A692CD18 0x10 Uwr                         ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
+            value.AssetBundle                               = GetObject<AssetBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundle.FromPointer); // 0245A692CD38 0x18 AssetBundle                 ( 0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
 
             return value;
         }

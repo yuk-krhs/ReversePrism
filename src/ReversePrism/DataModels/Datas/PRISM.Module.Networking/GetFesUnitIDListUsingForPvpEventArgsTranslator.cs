@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetFesUnitIDListUsingForPvpEventArgsTranslator
+    public partial class GetFesUnitIDListUsingForPvpEventArgsTranslator : DataModel
     {
 
         public static GetFesUnitIDListUsingForPvpEventArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFesUnitIDListUsingForPvpEventArgsTranslator();
+            var value   = new GetFesUnitIDListUsingForPvpEventArgsTranslator() { Pointer= p0 };
 
 
             return value;

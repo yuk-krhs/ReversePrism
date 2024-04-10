@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 040 onClick                                  Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 onLongPressed                            Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ClickObservableIntContext
+    public partial class ClickObservableIntContext : DataModel
     {
 
         public static ClickObservableIntContext? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClickObservableIntContext();
+            var value   = new ClickObservableIntContext() { Pointer= p0 };
 
 
             return value;

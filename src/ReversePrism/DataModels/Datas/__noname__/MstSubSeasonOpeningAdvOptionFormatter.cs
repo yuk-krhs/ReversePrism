@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSubSeasonOpeningAdvOptionFormatter
+    public partial class MstSubSeasonOpeningAdvOptionFormatter : DataModel
     {
 
         public static MstSubSeasonOpeningAdvOptionFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSubSeasonOpeningAdvOptionFormatter();
+            var value   = new MstSubSeasonOpeningAdvOptionFormatter() { Pointer= p0 };
 
 
             return value;

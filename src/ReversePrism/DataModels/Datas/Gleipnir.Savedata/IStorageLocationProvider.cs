@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStorageLocationProvider
+    public partial class IStorageLocationProvider : DataModel
     {
 
         public static IStorageLocationProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStorageLocationProvider();
+            var value   = new IStorageLocationProvider() { Pointer= p0 };
 
 
             return value;

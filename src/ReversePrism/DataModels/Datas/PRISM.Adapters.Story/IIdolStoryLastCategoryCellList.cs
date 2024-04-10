@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIdolStoryLastCategoryCellList
+    public partial class IIdolStoryLastCategoryCellList : DataModel
     {
 
         public static IIdolStoryLastCategoryCellList? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIdolStoryLastCategoryCellList();
+            var value   = new IIdolStoryLastCategoryCellList() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 tableNoStencil                           GraphicsFormat[] IL2CPP_TYPE_SZARRAY
     // 008 tableStencil                             GraphicsFormat[] IL2CPP_TYPE_SZARRAY
-    public partial class GraphicsFormatUtility
+    public partial class GraphicsFormatUtility : DataModel
     {
 
         public static GraphicsFormatUtility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphicsFormatUtility();
+            var value   = new GraphicsFormatUtility() { Pointer= p0 };
 
 
             return value;

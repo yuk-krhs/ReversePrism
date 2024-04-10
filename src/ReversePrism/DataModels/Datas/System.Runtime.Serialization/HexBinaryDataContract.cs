@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HexBinaryDataContract
+    public partial class HexBinaryDataContract : DataModel
     {
 
         public static HexBinaryDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HexBinaryDataContract();
+            var value   = new HexBinaryDataContract() { Pointer= p0 };
 
 
             return value;

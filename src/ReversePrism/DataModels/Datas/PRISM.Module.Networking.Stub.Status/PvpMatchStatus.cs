@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 OpponentUnit                             0001865E6360 ModelClassType PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus Pointer
     // 000 PvpEventEffectFieldNumber                int IL2CPP_TYPE_I4
     // 038 PvpEventEffect                           0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer
-    public partial class PvpMatchStatus
+    public partial class PvpMatchStatus : DataModel
     {
         public PvpMatchProfileStatus?                   SelfProfile                             { get; set; }
         public PvpInGameSelfUnitStatus?                 SelfUnit                                { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpMatchStatus();
+            var value   = new PvpMatchStatus() { Pointer= p0 };
 
-            value.SelfProfile                               = GetObject<PvpMatchProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchProfileStatus.FromPointer); // 0270D1440F98 0x18 SelfProfile                 ( 0001865E9970 ModelClassType PvpMatchProfileStatus PvpMatchProfileStatus PvpMatchProfileStatus Pointer )
-            value.SelfUnit                                  = GetObject<PvpInGameSelfUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpInGameSelfUnitStatus.FromPointer); // 0270D1440FD8 0x20 SelfUnit                    ( 0001865E78E0 ModelClassType PvpInGameSelfUnitStatus PvpInGameSelfUnitStatus PvpInGameSelfUnitStatus Pointer )
-            value.OpponentProfile                           = GetObject<PvpMatchProfileStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpMatchProfileStatus.FromPointer); // 0270D1441018 0x28 OpponentProfile             ( 0001865E9970 ModelClassType PvpMatchProfileStatus PvpMatchProfileStatus PvpMatchProfileStatus Pointer )
-            value.OpponentUnit                              = GetObject<PvpInGameOpponentUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpInGameOpponentUnitStatus.FromPointer); // 0270D1441058 0x30 OpponentUnit                ( 0001865E6360 ModelClassType PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus Pointer )
-            value.PvpEventEffect                            = GetObject<PvpEventEffectStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpEventEffectStatus.FromPointer); // 0270D1441098 0x38 PvpEventEffect              ( 0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer )
+            value.SelfProfile                               = GetObject<PvpMatchProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchProfileStatus.FromPointer); // 02466139D3E0 0x18 SelfProfile                 ( 0001865E9970 ModelClassType PvpMatchProfileStatus PvpMatchProfileStatus PvpMatchProfileStatus Pointer )
+            value.SelfUnit                                  = GetObject<PvpInGameSelfUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpInGameSelfUnitStatus.FromPointer); // 02466139D420 0x20 SelfUnit                    ( 0001865E78E0 ModelClassType PvpInGameSelfUnitStatus PvpInGameSelfUnitStatus PvpInGameSelfUnitStatus Pointer )
+            value.OpponentProfile                           = GetObject<PvpMatchProfileStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpMatchProfileStatus.FromPointer); // 02466139D460 0x28 OpponentProfile             ( 0001865E9970 ModelClassType PvpMatchProfileStatus PvpMatchProfileStatus PvpMatchProfileStatus Pointer )
+            value.OpponentUnit                              = GetObject<PvpInGameOpponentUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpInGameOpponentUnitStatus.FromPointer); // 02466139D4A0 0x30 OpponentUnit                ( 0001865E6360 ModelClassType PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus PvpInGameOpponentUnitStatus Pointer )
+            value.PvpEventEffect                            = GetObject<PvpEventEffectStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpEventEffectStatus.FromPointer); // 02466139D4E0 0x38 PvpEventEffect              ( 0001865E39A0 ModelClassType PvpEventEffectStatus PvpEventEffectStatus PvpEventEffectStatus Pointer )
 
             return value;
         }

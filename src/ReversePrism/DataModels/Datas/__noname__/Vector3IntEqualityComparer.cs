@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  Vector3IntEqualityComparer IL2CPP_TYPE_CLASS
-    public partial class Vector3IntEqualityComparer
+    public partial class Vector3IntEqualityComparer : DataModel
     {
 
         public static Vector3IntEqualityComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector3IntEqualityComparer();
+            var value   = new Vector3IntEqualityComparer() { Pointer= p0 };
 
 
             return value;

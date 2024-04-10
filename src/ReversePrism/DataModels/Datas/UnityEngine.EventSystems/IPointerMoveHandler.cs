@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPointerMoveHandler
+    public partial class IPointerMoveHandler : DataModel
     {
 
         public static IPointerMoveHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPointerMoveHandler();
+            var value   = new IPointerMoveHandler() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ProductType                              0001865F4260 ModelPrimitiveType int int int Int32
     // 014 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstGeneralItem
+    public partial class MstGeneralItem : DataModel
     {
         public int                                      ProductType                             { get; set; }
         public int                                      Id                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstGeneralItem();
+            var value   = new MstGeneralItem() { Pointer= p0 };
 
-            value.ProductType                               = GetInt32(new IntPtr(p + 0x010)); // 02700459E718 0x10 ProductType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x014)); // 02700459E738 0x14 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = GetInt32(new IntPtr(p + 0x010)); // 0245A461AA88 0x10 ProductType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x014)); // 0245A461AAA8 0x14 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

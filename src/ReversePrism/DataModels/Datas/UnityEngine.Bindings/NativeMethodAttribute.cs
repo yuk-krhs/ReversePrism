@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 019 IsFreeFunction                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 01A ThrowsException                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 01B HasExplicitThis                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class NativeMethodAttribute
+    public partial class NativeMethodAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
         public bool                                     IsThreadSafe                            { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeMethodAttribute();
+            var value   = new NativeMethodAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270069791A0 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsThreadSafe                              = GetBool(new IntPtr(p + 0x018)); // 0270069791C0 0x18 IsThreadSafe                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsFreeFunction                            = GetBool(new IntPtr(p + 0x019)); // 0270069791E0 0x19 IsFreeFunction              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ThrowsException                           = GetBool(new IntPtr(p + 0x01A)); // 027006979200 0x1A ThrowsException             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasExplicitThis                           = GetBool(new IntPtr(p + 0x01B)); // 027006979220 0x1B HasExplicitThis             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A692B938 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsThreadSafe                              = GetBool(new IntPtr(p + 0x018)); // 0245A692B958 0x18 IsThreadSafe                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsFreeFunction                            = GetBool(new IntPtr(p + 0x019)); // 0245A692B978 0x19 IsFreeFunction              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ThrowsException                           = GetBool(new IntPtr(p + 0x01A)); // 0245A692B998 0x1A ThrowsException             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasExplicitThis                           = GetBool(new IntPtr(p + 0x01B)); // 0245A692B9B8 0x1B HasExplicitThis             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DebugManager
+    public partial class DebugManager : DataModel
     {
 
         public static DebugManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugManager();
+            var value   = new DebugManager() { Pointer= p0 };
 
 
             return value;

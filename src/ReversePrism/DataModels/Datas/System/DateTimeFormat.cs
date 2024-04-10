@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 InvariantAbbreviatedMonthNames           000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 020 InvariantAbbreviatedDayNames             000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 028 FixedNumberFormats                       000185B81B90 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class DateTimeFormat
+    public partial class DateTimeFormat : DataModel
     {
         public DateTimeFormatInfo?                      InvariantFormatInfo                     { get; set; }
         public List<string>?                            InvariantAbbreviatedMonthNames          { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeFormat();
+            var value   = new DateTimeFormat() { Pointer= p0 };
 
-            value.InvariantFormatInfo                       = GetObject<DateTimeFormatInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.DateTimeFormatInfo.FromPointer); // 027003CAFEB0 0x10 InvariantFormatInfo         ( 0001865BBAA0 ModelClassType DateTimeFormatInfo DateTimeFormatInfo DateTimeFormatInfo Pointer )
-            value.InvariantAbbreviatedMonthNames            = GetStringList(new IntPtr(p + 0x018)); // 027003CAFED0 0x18 InvariantAbbreviatedMonthNames ( 000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.InvariantAbbreviatedDayNames              = GetStringList(new IntPtr(p + 0x020)); // 027003CAFEF0 0x20 InvariantAbbreviatedDayNames ( 000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.FixedNumberFormats                        = GetStringList(new IntPtr(p + 0x028)); // 027003CAFF10 0x28 FixedNumberFormats          ( 000185B81B90 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.InvariantFormatInfo                       = GetObject<DateTimeFormatInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.DateTimeFormatInfo.FromPointer); // 0245A3CAFEB0 0x10 InvariantFormatInfo         ( 0001865BBAA0 ModelClassType DateTimeFormatInfo DateTimeFormatInfo DateTimeFormatInfo Pointer )
+            value.InvariantAbbreviatedMonthNames            = GetStringList(new IntPtr(p + 0x018)); // 0245A3CAFED0 0x18 InvariantAbbreviatedMonthNames ( 000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.InvariantAbbreviatedDayNames              = GetStringList(new IntPtr(p + 0x020)); // 0245A3CAFEF0 0x20 InvariantAbbreviatedDayNames ( 000185B821B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.FixedNumberFormats                        = GetStringList(new IntPtr(p + 0x028)); // 0245A3CAFF10 0x28 FixedNumberFormats          ( 000185B81B90 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
-    public partial class SetSelfProfileNameArgs
+    public partial class SetSelfProfileNameArgs : DataModel
     {
         public string                                   Name                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetSelfProfileNameArgs();
+            var value   = new SetSelfProfileNameArgs() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D270DA40 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466267B540 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 MorphTargetType                          00018655EC10 ModelEnumType MorphTargetType MorphTargetType MorphTargetType Int32
     // 018 DataReadoutMode                          00018655D040 ModelEnumType DataReadoutMode DataReadoutMode DataReadoutMode Int32
     // 01C BehaviourParamsPreset                    00018655E490 ModelEnumType BehaviourParamsPreset BehaviourParamsPreset BehaviourParamsPreset Int32
-    public partial class Config
+    public partial class Config : DataModel
     {
         public int                                      MaxInputSamplingRate                    { get; set; }
         public MorphTargetType                          MorphTargetType                         { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Config();
+            var value   = new Config() { Pointer= p0 };
 
-            value.MaxInputSamplingRate                      = GetInt32(new IntPtr(p + 0x010)); // 0270DBBAA810 0x10 MaxInputSamplingRate        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MorphTargetType                           = (MorphTargetType)GetInt32(new IntPtr(p + 0x014)); // 0270DBBAA830 0x14 MorphTargetType             ( 00018655EC10 ModelEnumType MorphTargetType MorphTargetType MorphTargetType Int32 )
-            value.DataReadoutMode                           = (DataReadoutMode)GetInt32(new IntPtr(p + 0x018)); // 0270DBBAA850 0x18 DataReadoutMode             ( 00018655D040 ModelEnumType DataReadoutMode DataReadoutMode DataReadoutMode Int32 )
-            value.BehaviourParamsPreset                     = (BehaviourParamsPreset)GetInt32(new IntPtr(p + 0x01C)); // 0270DBBAA870 0x1C BehaviourParamsPreset       ( 00018655E490 ModelEnumType BehaviourParamsPreset BehaviourParamsPreset BehaviourParamsPreset Int32 )
+            value.MaxInputSamplingRate                      = GetInt32(new IntPtr(p + 0x010)); // 02466BC41CD0 0x10 MaxInputSamplingRate        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MorphTargetType                           = (MorphTargetType)GetInt32(new IntPtr(p + 0x014)); // 02466BC41CF0 0x14 MorphTargetType             ( 00018655EC10 ModelEnumType MorphTargetType MorphTargetType MorphTargetType Int32 )
+            value.DataReadoutMode                           = (DataReadoutMode)GetInt32(new IntPtr(p + 0x018)); // 02466BC41D10 0x18 DataReadoutMode             ( 00018655D040 ModelEnumType DataReadoutMode DataReadoutMode DataReadoutMode Int32 )
+            value.BehaviourParamsPreset                     = (BehaviourParamsPreset)GetInt32(new IntPtr(p + 0x01C)); // 02466BC41D30 0x1C BehaviourParamsPreset       ( 00018655E490 ModelEnumType BehaviourParamsPreset BehaviourParamsPreset BehaviourParamsPreset Int32 )
 
             return value;
         }

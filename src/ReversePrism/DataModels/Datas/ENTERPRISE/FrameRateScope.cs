@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Dish                                     0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer
     // 000 stack                                    ActivationStack`1<FrameRateDish> IL2CPP_TYPE_GENERICINST
-    public partial class FrameRateScope
+    public partial class FrameRateScope : DataModel
     {
         public FrameRateDish?                           Dish                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameRateScope();
+            var value   = new FrameRateScope() { Pointer= p0 };
 
-            value.Dish                                      = GetObject<FrameRateDish>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameRateDish.FromPointer); // 0270DB695B58 0x10 Dish                        ( 0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer )
+            value.Dish                                      = GetObject<FrameRateDish>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameRateDish.FromPointer); // 02466B731E18 0x10 Dish                        ( 0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer )
 
             return value;
         }

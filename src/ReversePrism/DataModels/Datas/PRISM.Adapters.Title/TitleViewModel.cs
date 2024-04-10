@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AppVersion                               0001866736C0 ModelPrimitiveType string string string String
     // 018 UserData                                 0001865BC9A0 ModelClassType LoginUserData LoginUserData LoginUserData Pointer
-    public partial class TitleViewModel
+    public partial class TitleViewModel : DataModel
     {
         public string                                   AppVersion                              { get; set; }
         public LoginUserData?                           UserData                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TitleViewModel();
+            var value   = new TitleViewModel() { Pointer= p0 };
 
-            value.AppVersion                                = GetString(new IntPtr(p + 0x010)); // 027004426948 0x10 AppVersion                  ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.UserData                                  = GetObject<LoginUserData>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginUserData.FromPointer); // 027004426968 0x18 UserData                    ( 0001865BC9A0 ModelClassType LoginUserData LoginUserData LoginUserData Pointer )
+            value.AppVersion                                = GetString(new IntPtr(p + 0x010)); // 0245A44A1860 0x10 AppVersion                  ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.UserData                                  = GetObject<LoginUserData>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginUserData.FromPointer); // 0245A44A1880 0x18 UserData                    ( 0001865BC9A0 ModelClassType LoginUserData LoginUserData LoginUserData Pointer )
 
             return value;
         }

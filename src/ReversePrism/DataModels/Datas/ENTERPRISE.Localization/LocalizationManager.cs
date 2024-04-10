@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 localizeSubject                          Subject`1<GameObject> IL2CPP_TYPE_GENERICINST
     // 010 dic                                      Dictionary`2<string, Dictionary`2<int, string>> IL2CPP_TYPE_GENERICINST
-    public partial class LocalizationManager
+    public partial class LocalizationManager : DataModel
     {
 
         public static LocalizationManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalizationManager();
+            var value   = new LocalizationManager() { Pointer= p0 };
 
 
             return value;

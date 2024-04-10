@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C K_ScaleBiasRt                            0001865F4BC0 ModelPrimitiveType int int int Int32
     // 020 K_SRGBRead                               0001865F4BC0 ModelPrimitiveType int int int Int32
     // 024 K_SRGBWrite                              0001865F4BC0 ModelPrimitiveType int int int Int32
-    public partial class XRMirrorView
+    public partial class XRMirrorView : DataModel
     {
         public int                                      K_SourceTex                             { get; set; }
         public int                                      K_SourceTexArraySlice                   { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRMirrorView();
+            var value   = new XRMirrorView() { Pointer= p0 };
 
-            value.K_SourceTex                               = GetInt32(new IntPtr(p + 0x010)); // 0270D90775E0 0x10 K_SourceTex                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.K_SourceTexArraySlice                     = GetInt32(new IntPtr(p + 0x014)); // 0270D9077600 0x14 K_SourceTexArraySlice       ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.K_ScaleBias                               = GetInt32(new IntPtr(p + 0x018)); // 0270D9077620 0x18 K_ScaleBias                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.K_ScaleBiasRt                             = GetInt32(new IntPtr(p + 0x01C)); // 0270D9077640 0x1C K_ScaleBiasRt               ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.K_SRGBRead                                = GetInt32(new IntPtr(p + 0x020)); // 0270D9077660 0x20 K_SRGBRead                  ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.K_SRGBWrite                               = GetInt32(new IntPtr(p + 0x024)); // 0270D9077680 0x24 K_SRGBWrite                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_SourceTex                               = GetInt32(new IntPtr(p + 0x010)); // 0246690BA6F0 0x10 K_SourceTex                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_SourceTexArraySlice                     = GetInt32(new IntPtr(p + 0x014)); // 0246690BA710 0x14 K_SourceTexArraySlice       ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_ScaleBias                               = GetInt32(new IntPtr(p + 0x018)); // 0246690BA730 0x18 K_ScaleBias                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_ScaleBiasRt                             = GetInt32(new IntPtr(p + 0x01C)); // 0246690BA750 0x1C K_ScaleBiasRt               ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_SRGBRead                                = GetInt32(new IntPtr(p + 0x020)); // 0246690BA770 0x20 K_SRGBRead                  ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.K_SRGBWrite                               = GetInt32(new IntPtr(p + 0x024)); // 0246690BA790 0x24 K_SRGBWrite                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

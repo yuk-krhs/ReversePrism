@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 120 ReadServerTypeElement                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 124 ScopeDepth                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 128 Scopes                                   000185B8F180 ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer
-    public partial class XmlJsonReader
+    public partial class XmlJsonReader : DataModel
     {
         public bool                                     Buffered                                { get; set; }
         public List<sbyte>?                             CharactersToSkipOnNextRead              { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlJsonReader();
+            var value   = new XmlJsonReader() { Pointer= p0 };
 
-            value.Buffered                                  = GetBool(new IntPtr(p + 0x0F8)); // 027004C4D9C8 0xF8 Buffered                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CharactersToSkipOnNextRead                = GetSByteList(new IntPtr(p + 0x100)); // 027004C4D9E8 0x100 CharactersToSkipOnNextRead  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.ComplexTextMode                           = (JsonComplexTextMode)GetInt32(new IntPtr(p + 0x108)); // 027004C4DA08 0x108 ComplexTextMode             ( 000186737A50 ModelEnumType JsonComplexTextMode JsonComplexTextMode JsonComplexTextMode Int32 )
-            value.ExpectingFirstElementInNonPrimitiveChild  = GetBool(new IntPtr(p + 0x10C)); // 027004C4DA28 0x10C ExpectingFirstElementInNonPrimitiveChild ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MaxBytesPerRead                           = GetInt32(new IntPtr(p + 0x110)); // 027004C4DA48 0x110 MaxBytesPerRead             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnReaderClose                             = GetObject<OnXmlDictionaryReaderClose>(new IntPtr(p + 0x118), ReversePrism.DataModels.OnXmlDictionaryReaderClose.FromPointer); // 027004C4DA68 0x118 OnReaderClose               ( 0001866DD0C0 ModelClassType OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose Pointer )
-            value.ReadServerTypeElement                     = GetBool(new IntPtr(p + 0x120)); // 027004C4DA88 0x120 ReadServerTypeElement       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ScopeDepth                                = GetInt32(new IntPtr(p + 0x124)); // 027004C4DAA8 0x124 ScopeDepth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Scopes                                    = GetEnumList<JsonNodeType>(new IntPtr(p + 0x128)); // 027004C4DAC8 0x128 Scopes                      ( 000185B8F180 ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer )
+            value.Buffered                                  = GetBool(new IntPtr(p + 0x0F8)); // 0245A4C81D30 0xF8 Buffered                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CharactersToSkipOnNextRead                = GetSByteList(new IntPtr(p + 0x100)); // 0245A4C81D50 0x100 CharactersToSkipOnNextRead  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ComplexTextMode                           = (JsonComplexTextMode)GetInt32(new IntPtr(p + 0x108)); // 0245A4C81D70 0x108 ComplexTextMode             ( 000186737A50 ModelEnumType JsonComplexTextMode JsonComplexTextMode JsonComplexTextMode Int32 )
+            value.ExpectingFirstElementInNonPrimitiveChild  = GetBool(new IntPtr(p + 0x10C)); // 0245A4C81D90 0x10C ExpectingFirstElementInNonPrimitiveChild ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaxBytesPerRead                           = GetInt32(new IntPtr(p + 0x110)); // 0245A4C81DB0 0x110 MaxBytesPerRead             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnReaderClose                             = GetObject<OnXmlDictionaryReaderClose>(new IntPtr(p + 0x118), ReversePrism.DataModels.OnXmlDictionaryReaderClose.FromPointer); // 0245A4C81DD0 0x118 OnReaderClose               ( 0001866DD0C0 ModelClassType OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose Pointer )
+            value.ReadServerTypeElement                     = GetBool(new IntPtr(p + 0x120)); // 0245A4C81DF0 0x120 ReadServerTypeElement       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ScopeDepth                                = GetInt32(new IntPtr(p + 0x124)); // 0245A4C81E10 0x124 ScopeDepth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Scopes                                    = GetEnumList<JsonNodeType>(new IntPtr(p + 0x128)); // 0245A4C81E30 0x128 Scopes                      ( 000185B8F180 ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer )
 
             return value;
         }

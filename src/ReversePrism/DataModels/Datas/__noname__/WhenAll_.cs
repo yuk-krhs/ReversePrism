@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 030 CompletedCount                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 034 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class WhenAll_
+    public partial class WhenAll_ : DataModel
     {
         public int                                      CompletedCount                          { get; set; }
         public int                                      Length                                  { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WhenAll_();
+            var value   = new WhenAll_() { Pointer= p0 };
 
-            value.CompletedCount                            = GetInt32(new IntPtr(p + 0x030)); // 0270D97B02A8 0x30 CompletedCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x034)); // 0270D97B02C8 0x34 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CompletedCount                            = GetInt32(new IntPtr(p + 0x030)); // 024669815410 0x30 CompletedCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x034)); // 024669815430 0x34 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

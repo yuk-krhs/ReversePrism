@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBindingList
+    public partial class IBindingList : DataModel
     {
 
         public static IBindingList? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBindingList();
+            var value   = new IBindingList() { Pointer= p0 };
 
 
             return value;

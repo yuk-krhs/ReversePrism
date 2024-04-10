@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IntrinsicAttribute
+    public partial class IntrinsicAttribute : DataModel
     {
 
         public static IntrinsicAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntrinsicAttribute();
+            var value   = new IntrinsicAttribute() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 JumpFieldNumber                          int IL2CPP_TYPE_I4
     // 018 Jump                                     000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer
-    public partial class JumpToLinkArgs
+    public partial class JumpToLinkArgs : DataModel
     {
         public JumpStatus?                              Jump                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JumpToLinkArgs();
+            var value   = new JumpToLinkArgs() { Pointer= p0 };
 
-            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.JumpStatus.FromPointer); // 0270D22E2B80 0x18 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
+            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.JumpStatus.FromPointer); // 024662250358 0x18 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
 
             return value;
         }

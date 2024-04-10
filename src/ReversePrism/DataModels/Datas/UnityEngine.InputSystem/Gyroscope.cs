@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 AngularVelocity                          000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer
     // 000 <current>k__BackingField                 Gyroscope IL2CPP_TYPE_CLASS
-    public partial class Gyroscope
+    public partial class Gyroscope : DataModel
     {
         public Vector3Control?                          AngularVelocity                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Gyroscope();
+            var value   = new Gyroscope() { Pointer= p0 };
 
-            value.AngularVelocity                           = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0270033B0638 0x170 AngularVelocity             ( 000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
+            value.AngularVelocity                           = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0245A33B0638 0x170 AngularVelocity             ( 000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
 
             return value;
         }

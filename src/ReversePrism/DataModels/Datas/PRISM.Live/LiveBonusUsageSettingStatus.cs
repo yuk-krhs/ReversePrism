@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 SaveData                                 00018658A720 ModelClassType LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData Pointer
     // 020 MinUsageCount                            0001865F4260 ModelPrimitiveType int int int Int32
     // 024 MaxUsageCount                            0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class LiveBonusUsageSettingStatus
+    public partial class LiveBonusUsageSettingStatus : DataModel
     {
         public StaminaModel?                            LbModel                                 { get; set; }
         public LiveUnitConfirmationSaveData?            SaveData                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveBonusUsageSettingStatus();
+            var value   = new LiveBonusUsageSettingStatus() { Pointer= p0 };
 
-            value.LbModel                                   = GetObject<StaminaModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaModel.FromPointer); // 0270D526DA30 0x10 LbModel                     ( 000186565050 ModelClassType StaminaModel StaminaModel StaminaModel Pointer )
-            value.SaveData                                  = GetObject<LiveUnitConfirmationSaveData>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveUnitConfirmationSaveData.FromPointer); // 0270D526DA50 0x18 SaveData                    ( 00018658A720 ModelClassType LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData Pointer )
-            value.MinUsageCount                             = GetInt32(new IntPtr(p + 0x020)); // 0270D526DA70 0x20 MinUsageCount               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MaxUsageCount                             = GetInt32(new IntPtr(p + 0x024)); // 0270D526DA90 0x24 MaxUsageCount               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.LbModel                                   = GetObject<StaminaModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaModel.FromPointer); // 0246652E1220 0x10 LbModel                     ( 000186565050 ModelClassType StaminaModel StaminaModel StaminaModel Pointer )
+            value.SaveData                                  = GetObject<LiveUnitConfirmationSaveData>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveUnitConfirmationSaveData.FromPointer); // 0246652E1240 0x18 SaveData                    ( 00018658A720 ModelClassType LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData Pointer )
+            value.MinUsageCount                             = GetInt32(new IntPtr(p + 0x020)); // 0246652E1260 0x20 MinUsageCount               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MaxUsageCount                             = GetInt32(new IntPtr(p + 0x024)); // 0246652E1280 0x24 MaxUsageCount               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

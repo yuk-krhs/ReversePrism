@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Index                                    000186699A20 ModelPrimitiveType uint uint uint UInt32
-    public partial class LoadCachedObjectInstruction
+    public partial class LoadCachedObjectInstruction : DataModel
     {
         public uint                                     Index                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadCachedObjectInstruction();
+            var value   = new LoadCachedObjectInstruction() { Pointer= p0 };
 
-            value.Index                                     = GetUInt32(new IntPtr(p + 0x010)); // 0270DA036EB0 0x10 Index                       ( 000186699A20 ModelPrimitiveType uint uint uint UInt32 )
+            value.Index                                     = GetUInt32(new IntPtr(p + 0x010)); // 02466A0A2BE0 0x10 Index                       ( 000186699A20 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

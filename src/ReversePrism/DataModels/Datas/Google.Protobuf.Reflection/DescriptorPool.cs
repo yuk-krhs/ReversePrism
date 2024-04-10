@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 enumValuesByNumber                       IDictionary`2<ObjectIntPair`1<IDescriptor>, EnumValueDescriptor> IL2CPP_TYPE_GENERICINST
     // 028 dependencies                             HashSet`1<FileDescriptor> IL2CPP_TYPE_GENERICINST
     // 000 ValidationRegex                          Regex IL2CPP_TYPE_CLASS
-    public partial class DescriptorPool
+    public partial class DescriptorPool : DataModel
     {
 
         public static DescriptorPool? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DescriptorPool();
+            var value   = new DescriptorPool() { Pointer= p0 };
 
 
             return value;

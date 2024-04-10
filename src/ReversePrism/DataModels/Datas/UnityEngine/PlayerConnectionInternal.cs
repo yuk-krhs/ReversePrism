@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerConnectionInternal
+    public partial class PlayerConnectionInternal : DataModel
     {
 
         public static PlayerConnectionInternal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerConnectionInternal();
+            var value   = new PlayerConnectionInternal() { Pointer= p0 };
 
 
             return value;

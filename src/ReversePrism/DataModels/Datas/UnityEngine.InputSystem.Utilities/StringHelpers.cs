@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StringHelpers
+    public partial class StringHelpers : DataModel
     {
 
         public static StringHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringHelpers();
+            var value   = new StringHelpers() { Pointer= p0 };
 
 
             return value;

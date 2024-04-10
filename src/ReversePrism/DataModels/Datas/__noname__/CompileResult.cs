@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 <CommandText>k__BackingField             string IL2CPP_TYPE_STRING
     // 000 <Value>k__BackingField                   <object> IL2CPP_TYPE_OBJECT
-    public partial class CompileResult
+    public partial class CompileResult : DataModel
     {
 
         public static CompileResult? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompileResult();
+            var value   = new CompileResult() { Pointer= p0 };
 
 
             return value;

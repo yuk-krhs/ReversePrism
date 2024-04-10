@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 char2val                                 sbyte[] IL2CPP_TYPE_SZARRAY
     // 008 val2char                                 string IL2CPP_TYPE_STRING
-    public partial class BinHexEncoding
+    public partial class BinHexEncoding : DataModel
     {
 
         public static BinHexEncoding? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinHexEncoding();
+            var value   = new BinHexEncoding() { Pointer= p0 };
 
 
             return value;

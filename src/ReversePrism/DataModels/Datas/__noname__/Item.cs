@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Key                                      0001866722E0 ModelPrimitiveType string string string String
     // 018 DisplayName                              0001866722E0 ModelPrimitiveType string string string String
     // 020 Sprite                                   00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer
-    public partial class Item
+    public partial class Item : DataModel
     {
         public string                                   Key                                     { get; set; }
         public string                                   DisplayName                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Item();
+            var value   = new Item() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0270DB038C58 0x10 Key                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 0270DB038C78 0x18 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x020), ReversePrism.DataModels.Sprite.FromPointer); // 0270DB038C98 0x20 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
+            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 02466B098C58 0x10 Key                         ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 02466B098C78 0x18 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x020), ReversePrism.DataModels.Sprite.FromPointer); // 02466B098C98 0x20 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
 
             return value;
         }

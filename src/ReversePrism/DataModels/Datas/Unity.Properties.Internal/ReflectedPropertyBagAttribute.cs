@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReflectedPropertyBagAttribute
+    public partial class ReflectedPropertyBagAttribute : DataModel
     {
 
         public static ReflectedPropertyBagAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectedPropertyBagAttribute();
+            var value   = new ReflectedPropertyBagAttribute() { Pointer= p0 };
 
 
             return value;

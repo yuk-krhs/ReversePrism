@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Value                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 000 zero                                     half IL2CPP_TYPE_VALUETYPE
-    public partial class half
+    public partial class half : DataModel
     {
         public ushort                                   Value                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new half();
+            var value   = new half() { Pointer= p0 };
 
-            value.Value                                     = GetUInt16(new IntPtr(p + 0x010)); // 0270015A5D28 0x10 Value                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Value                                     = GetUInt16(new IntPtr(p + 0x010)); // 0245A15A5D28 0x10 Value                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

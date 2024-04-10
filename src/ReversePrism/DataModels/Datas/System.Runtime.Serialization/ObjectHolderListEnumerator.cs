@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 M_list                                   0001866C8560 ModelClassType ObjectHolderList ObjectHolderList ObjectHolderList Pointer
     // 020 M_startingVersion                        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 M_currPos                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ObjectHolderListEnumerator
+    public partial class ObjectHolderListEnumerator : DataModel
     {
         public bool                                     M_isFixupEnumerator                     { get; set; }
         public ObjectHolderList?                        M_list                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectHolderListEnumerator();
+            var value   = new ObjectHolderListEnumerator() { Pointer= p0 };
 
-            value.M_isFixupEnumerator                       = GetBool(new IntPtr(p + 0x010)); // 0270D6C28748 0x10 M_isFixupEnumerator         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_list                                    = GetObject<ObjectHolderList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ObjectHolderList.FromPointer); // 0270D6C28768 0x18 M_list                      ( 0001866C8560 ModelClassType ObjectHolderList ObjectHolderList ObjectHolderList Pointer )
-            value.M_startingVersion                         = GetInt32(new IntPtr(p + 0x020)); // 0270D6C28788 0x20 M_startingVersion           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_currPos                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D6C287A8 0x24 M_currPos                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_isFixupEnumerator                       = GetBool(new IntPtr(p + 0x010)); // 024666C98748 0x10 M_isFixupEnumerator         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_list                                    = GetObject<ObjectHolderList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ObjectHolderList.FromPointer); // 024666C98768 0x18 M_list                      ( 0001866C8560 ModelClassType ObjectHolderList ObjectHolderList ObjectHolderList Pointer )
+            value.M_startingVersion                         = GetInt32(new IntPtr(p + 0x020)); // 024666C98788 0x20 M_startingVersion           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_currPos                                 = GetInt32(new IntPtr(p + 0x024)); // 024666C987A8 0x24 M_currPos                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

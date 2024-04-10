@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 progress                                 IProgress`1<float> IL2CPP_TYPE_GENERICINST
     // 028 CancellationToken                        00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     // 030 core                                     UniTaskCompletionSourceCore`1<AsyncUnit> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncOperationConfiguredSource
+    public partial class AsyncOperationConfiguredSource : DataModel
     {
         public AsyncOperationConfiguredSource?          NextNode                                { get; set; }
         public AsyncOperation?                          AsyncOperation                          { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationConfiguredSource();
+            var value   = new AsyncOperationConfiguredSource() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<AsyncOperationConfiguredSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncOperationConfiguredSource.FromPointer); // 027003F86E38 0x10 NextNode                    ( 00018671E0C0 ModelClassType AsyncOperationConfiguredSource AsyncOperationConfiguredSource AsyncOperationConfiguredSource Pointer )
-            value.AsyncOperation                            = GetObject<AsyncOperation>(new IntPtr(p + 0x018), ReversePrism.DataModels.AsyncOperation.FromPointer); // 027003F86E58 0x18 AsyncOperation              ( 0001866FAA20 ModelClassType AsyncOperation AsyncOperation AsyncOperation Pointer )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 027003F86E98 0x28 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.NextNode                                  = GetObject<AsyncOperationConfiguredSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncOperationConfiguredSource.FromPointer); // 0245A3F97770 0x10 NextNode                    ( 00018671E0C0 ModelClassType AsyncOperationConfiguredSource AsyncOperationConfiguredSource AsyncOperationConfiguredSource Pointer )
+            value.AsyncOperation                            = GetObject<AsyncOperation>(new IntPtr(p + 0x018), ReversePrism.DataModels.AsyncOperation.FromPointer); // 0245A3F97790 0x18 AsyncOperation              ( 0001866FAA20 ModelClassType AsyncOperation AsyncOperation AsyncOperation Pointer )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 0245A3F977D0 0x28 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

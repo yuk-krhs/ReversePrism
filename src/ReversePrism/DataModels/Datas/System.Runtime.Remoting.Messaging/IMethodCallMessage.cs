@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMethodCallMessage
+    public partial class IMethodCallMessage : DataModel
     {
 
         public static IMethodCallMessage? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMethodCallMessage();
+            var value   = new IMethodCallMessage() { Pointer= p0 };
 
 
             return value;

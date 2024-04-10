@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 030 M_GradientSettingsAtlas                  00018668FDE0 ModelClassType GradientSettingsAtlas GradientSettingsAtlas GradientSettingsAtlas Pointer
     // 038 M_LoggedExhaustedSettingsAtlas           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 039 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class VectorImageManager
+    public partial class VectorImageManager : DataModel
     {
         public ProfilerMarker                           S_MarkerUnregister                      { get; set; }
         public AtlasBase?                               M_Atlas                                 { get; set; }
@@ -34,15 +34,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VectorImageManager();
+            var value   = new VectorImageManager() { Pointer= p0 };
 
-            value.S_MarkerUnregister                        = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 02700687C618 0x10 S_MarkerUnregister          ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.M_Atlas                                   = GetObject<AtlasBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.AtlasBase.FromPointer); // 02700687C638 0x10 M_Atlas                     ( 00018670C1E0 ModelClassType AtlasBase AtlasBase AtlasBase Pointer )
-            value.M_RenderInfoPool                          = GetObject<VectorImageRenderInfoPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.VectorImageRenderInfoPool.FromPointer); // 02700687C678 0x20 M_RenderInfoPool            ( 00018650A000 ModelClassType VectorImageRenderInfoPool VectorImageRenderInfoPool VectorImageRenderInfoPool Pointer )
-            value.M_GradientRemapPool                       = GetObject<GradientRemapPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.GradientRemapPool.FromPointer); // 02700687C698 0x28 M_GradientRemapPool         ( 00018668F720 ModelClassType GradientRemapPool GradientRemapPool GradientRemapPool Pointer )
-            value.M_GradientSettingsAtlas                   = GetObject<GradientSettingsAtlas>(new IntPtr(p + 0x030), ReversePrism.DataModels.GradientSettingsAtlas.FromPointer); // 02700687C6B8 0x30 M_GradientSettingsAtlas     ( 00018668FDE0 ModelClassType GradientSettingsAtlas GradientSettingsAtlas GradientSettingsAtlas Pointer )
-            value.M_LoggedExhaustedSettingsAtlas            = GetBool(new IntPtr(p + 0x038)); // 02700687C6D8 0x38 M_LoggedExhaustedSettingsAtlas ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x039)); // 02700687C6F8 0x39 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.S_MarkerUnregister                        = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0245A683E488 0x10 S_MarkerUnregister          ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.M_Atlas                                   = GetObject<AtlasBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.AtlasBase.FromPointer); // 0245A683E4A8 0x10 M_Atlas                     ( 00018670C1E0 ModelClassType AtlasBase AtlasBase AtlasBase Pointer )
+            value.M_RenderInfoPool                          = GetObject<VectorImageRenderInfoPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.VectorImageRenderInfoPool.FromPointer); // 0245A683E4E8 0x20 M_RenderInfoPool            ( 00018650A000 ModelClassType VectorImageRenderInfoPool VectorImageRenderInfoPool VectorImageRenderInfoPool Pointer )
+            value.M_GradientRemapPool                       = GetObject<GradientRemapPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.GradientRemapPool.FromPointer); // 0245A683E508 0x28 M_GradientRemapPool         ( 00018668F720 ModelClassType GradientRemapPool GradientRemapPool GradientRemapPool Pointer )
+            value.M_GradientSettingsAtlas                   = GetObject<GradientSettingsAtlas>(new IntPtr(p + 0x030), ReversePrism.DataModels.GradientSettingsAtlas.FromPointer); // 0245A683E528 0x30 M_GradientSettingsAtlas     ( 00018668FDE0 ModelClassType GradientSettingsAtlas GradientSettingsAtlas GradientSettingsAtlas Pointer )
+            value.M_LoggedExhaustedSettingsAtlas            = GetBool(new IntPtr(p + 0x038)); // 0245A683E548 0x38 M_LoggedExhaustedSettingsAtlas ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x039)); // 0245A683E568 0x39 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

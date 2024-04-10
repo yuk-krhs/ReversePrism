@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AsyncOperation                           0001866E4080 ModelClassType AssetBundleRequest AssetBundleRequest AssetBundleRequest Pointer
     // 018 continuationAction                       Action`1<AsyncOperation> IL2CPP_TYPE_GENERICINST
-    public partial class AssetBundleRequestAllAssetsAwaiter
+    public partial class AssetBundleRequestAllAssetsAwaiter : DataModel
     {
         public AssetBundleRequest?                      AsyncOperation                          { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetBundleRequestAllAssetsAwaiter();
+            var value   = new AssetBundleRequestAllAssetsAwaiter() { Pointer= p0 };
 
-            value.AsyncOperation                            = GetObject<AssetBundleRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundleRequest.FromPointer); // 0270D8F871D0 0x10 AsyncOperation              ( 0001866E4080 ModelClassType AssetBundleRequest AssetBundleRequest AssetBundleRequest Pointer )
+            value.AsyncOperation                            = GetObject<AssetBundleRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundleRequest.FromPointer); // 024668FEADA8 0x10 AsyncOperation              ( 0001866E4080 ModelClassType AssetBundleRequest AssetBundleRequest AssetBundleRequest Pointer )
 
             return value;
         }

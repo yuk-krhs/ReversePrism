@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 DisplayPriority                          0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstGalleryEtcCategory
+    public partial class MstGalleryEtcCategory : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      DisplayPriority                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstGalleryEtcCategory();
+            var value   = new MstGalleryEtcCategory() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 02700459F4E0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x014)); // 02700459F500 0x14 DisplayPriority             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A461B850 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x014)); // 0245A461B870 0x14 DisplayPriority             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

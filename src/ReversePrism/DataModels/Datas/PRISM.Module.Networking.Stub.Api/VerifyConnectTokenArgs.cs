@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 AuthorizationCodeFieldNumber             int IL2CPP_TYPE_I4
     // 028 AuthorizationCode                        000186671910 ModelPrimitiveType string string string String
-    public partial class VerifyConnectTokenArgs
+    public partial class VerifyConnectTokenArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
         public string                                   Token                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyConnectTokenArgs();
+            var value   = new VerifyConnectTokenArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0270D2C43460 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 0270D2C434A0 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.AuthorizationCode                         = GetString(new IntPtr(p + 0x028)); // 0270D2C434E0 0x28 AuthorizationCode           ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 024662BBFFC8 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 024662BC0008 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.AuthorizationCode                         = GetString(new IntPtr(p + 0x028)); // 024662BC0048 0x28 AuthorizationCode           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

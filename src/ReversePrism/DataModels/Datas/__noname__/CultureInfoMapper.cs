@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_cultureInfoNameMap                     Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class CultureInfoMapper
+    public partial class CultureInfoMapper : DataModel
     {
 
         public static CultureInfoMapper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CultureInfoMapper();
+            var value   = new CultureInfoMapper() { Pointer= p0 };
 
 
             return value;

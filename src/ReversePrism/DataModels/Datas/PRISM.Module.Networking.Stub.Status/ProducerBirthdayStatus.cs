@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 AdvListFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_advList_codec                  FieldCodec`1<ProducerBirthdayADVStatus> IL2CPP_TYPE_GENERICINST
     // 020 AdvList                                  000185CEC8D8 ModelClassListType RepeatedField`1<ProducerBirthdayADVStatus> RepeatedField`1<ProducerBirthdayADVStatus> List<ProducerBirthdayADVStatus> Pointer
-    public partial class ProducerBirthdayStatus
+    public partial class ProducerBirthdayStatus : DataModel
     {
         public int                                      MstProducerBirthdayAdvGroupId           { get; set; }
         public List<ProducerBirthdayADVStatus>?         AdvList                                 { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducerBirthdayStatus();
+            var value   = new ProducerBirthdayStatus() { Pointer= p0 };
 
-            value.MstProducerBirthdayAdvGroupId             = GetInt32(new IntPtr(p + 0x018)); // 0270D198AA20 0x18 MstProducerBirthdayAdvGroupId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AdvList                                   = GetObjectList<ProducerBirthdayADVStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducerBirthdayADVStatus.FromPointer); // 0270D198AA80 0x20 AdvList                     ( 000185CEC8D8 ModelClassListType RepeatedField`1<ProducerBirthdayADVStatus> RepeatedField`1<ProducerBirthdayADVStatus> List<ProducerBirthdayADVStatus> Pointer )
+            value.MstProducerBirthdayAdvGroupId             = GetInt32(new IntPtr(p + 0x018)); // 0246619084C8 0x18 MstProducerBirthdayAdvGroupId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AdvList                                   = GetObjectList<ProducerBirthdayADVStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducerBirthdayADVStatus.FromPointer); // 024661908528 0x20 AdvList                     ( 000185CEC8D8 ModelClassListType RepeatedField`1<ProducerBirthdayADVStatus> RepeatedField`1<ProducerBirthdayADVStatus> List<ProducerBirthdayADVStatus> Pointer )
 
             return value;
         }

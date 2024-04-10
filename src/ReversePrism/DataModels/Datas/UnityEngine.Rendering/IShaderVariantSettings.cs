@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IShaderVariantSettings
+    public partial class IShaderVariantSettings : DataModel
     {
 
         public static IShaderVariantSettings? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IShaderVariantSettings();
+            var value   = new IShaderVariantSettings() { Pointer= p0 };
 
 
             return value;

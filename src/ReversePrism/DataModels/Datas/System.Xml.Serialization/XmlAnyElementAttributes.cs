@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlAnyElementAttributes
+    public partial class XmlAnyElementAttributes : DataModel
     {
 
         public static XmlAnyElementAttributes? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlAnyElementAttributes();
+            var value   = new XmlAnyElementAttributes() { Pointer= p0 };
 
 
             return value;

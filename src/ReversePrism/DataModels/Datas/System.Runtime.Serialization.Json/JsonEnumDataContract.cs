@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Helper                                   000186660610 ModelClassType JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper Pointer
-    public partial class JsonEnumDataContract
+    public partial class JsonEnumDataContract : DataModel
     {
         public JsonEnumDataContractCriticalHelper?      Helper                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonEnumDataContract();
+            var value   = new JsonEnumDataContract() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<JsonEnumDataContractCriticalHelper>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonEnumDataContractCriticalHelper.FromPointer); // 027004D3AD18 0x18 Helper                      ( 000186660610 ModelClassType JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper Pointer )
+            value.Helper                                    = GetObject<JsonEnumDataContractCriticalHelper>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonEnumDataContractCriticalHelper.FromPointer); // 0245A4D784C0 0x18 Helper                      ( 000186660610 ModelClassType JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper JsonEnumDataContractCriticalHelper Pointer )
 
             return value;
         }

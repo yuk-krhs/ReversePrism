@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TreeViewController
+    public partial class TreeViewController : DataModel
     {
 
         public static TreeViewController? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TreeViewController();
+            var value   = new TreeViewController() { Pointer= p0 };
 
 
             return value;

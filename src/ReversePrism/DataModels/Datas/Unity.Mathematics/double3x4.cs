@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 040 C2                                       0001866C40F0 ModelEnumType double3 double3 double3 Int32
     // 058 C3                                       0001866C40F0 ModelEnumType double3 double3 double3 Int32
     // 000 zero                                     double3x4 IL2CPP_TYPE_VALUETYPE
-    public partial class double3x4
+    public partial class double3x4 : DataModel
     {
         public double3                                  C0                                      { get; set; }
         public double3                                  C1                                      { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new double3x4();
+            var value   = new double3x4() { Pointer= p0 };
 
-            value.C0                                        = (double3)GetInt32(new IntPtr(p + 0x010)); // 0270D7E78058 0x10 C0                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
-            value.C1                                        = (double3)GetInt32(new IntPtr(p + 0x028)); // 0270D7E78078 0x28 C1                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
-            value.C2                                        = (double3)GetInt32(new IntPtr(p + 0x040)); // 0270D7E78098 0x40 C2                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
-            value.C3                                        = (double3)GetInt32(new IntPtr(p + 0x058)); // 0270D7E780B8 0x58 C3                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
+            value.C0                                        = (double3)GetInt32(new IntPtr(p + 0x010)); // 024667EE0058 0x10 C0                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
+            value.C1                                        = (double3)GetInt32(new IntPtr(p + 0x028)); // 024667EE0078 0x28 C1                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
+            value.C2                                        = (double3)GetInt32(new IntPtr(p + 0x040)); // 024667EE0098 0x40 C2                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
+            value.C3                                        = (double3)GetInt32(new IntPtr(p + 0x058)); // 024667EE00B8 0x58 C3                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
 
             return value;
         }

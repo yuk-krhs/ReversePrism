@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IArgumentProvider
+    public partial class IArgumentProvider : DataModel
     {
 
         public static IArgumentProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IArgumentProvider();
+            var value   = new IArgumentProvider() { Pointer= p0 };
 
 
             return value;

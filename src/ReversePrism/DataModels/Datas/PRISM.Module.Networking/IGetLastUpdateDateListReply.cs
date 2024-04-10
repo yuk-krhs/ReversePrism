@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetLastUpdateDateListReply
+    public partial class IGetLastUpdateDateListReply : DataModel
     {
 
         public static IGetLastUpdateDateListReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetLastUpdateDateListReply();
+            var value   = new IGetLastUpdateDateListReply() { Pointer= p0 };
 
 
             return value;

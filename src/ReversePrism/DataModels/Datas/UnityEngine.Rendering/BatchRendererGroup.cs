@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_GroupHandle                            <int> IL2CPP_TYPE_I
     // 018 M_PerformCulling                         0001866F8300 ModelClassType OnPerformCulling OnPerformCulling OnPerformCulling Pointer
-    public partial class BatchRendererGroup
+    public partial class BatchRendererGroup : DataModel
     {
         public OnPerformCulling?                        M_PerformCulling                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchRendererGroup();
+            var value   = new BatchRendererGroup() { Pointer= p0 };
 
-            value.M_PerformCulling                          = GetObject<OnPerformCulling>(new IntPtr(p + 0x018), ReversePrism.DataModels.OnPerformCulling.FromPointer); // 027002456260 0x18 M_PerformCulling            ( 0001866F8300 ModelClassType OnPerformCulling OnPerformCulling OnPerformCulling Pointer )
+            value.M_PerformCulling                          = GetObject<OnPerformCulling>(new IntPtr(p + 0x018), ReversePrism.DataModels.OnPerformCulling.FromPointer); // 0245A2456260 0x18 M_PerformCulling            ( 0001866F8300 ModelClassType OnPerformCulling OnPerformCulling OnPerformCulling Pointer )
 
             return value;
         }

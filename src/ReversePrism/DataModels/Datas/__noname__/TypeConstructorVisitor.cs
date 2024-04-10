@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TypeConstructor                          000186653E80 ModelClassType ITypeConstructor ITypeConstructor ITypeConstructor Pointer
-    public partial class TypeConstructorVisitor
+    public partial class TypeConstructorVisitor : DataModel
     {
         public ITypeConstructor?                        TypeConstructor                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeConstructorVisitor();
+            var value   = new TypeConstructorVisitor() { Pointer= p0 };
 
-            value.TypeConstructor                           = GetObject<ITypeConstructor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITypeConstructor.FromPointer); // 027006958430 0x10 TypeConstructor             ( 000186653E80 ModelClassType ITypeConstructor ITypeConstructor ITypeConstructor Pointer )
+            value.TypeConstructor                           = GetObject<ITypeConstructor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITypeConstructor.FromPointer); // 0245A690AB60 0x10 TypeConstructor             ( 000186653E80 ModelClassType ITypeConstructor ITypeConstructor ITypeConstructor Pointer )
 
             return value;
         }

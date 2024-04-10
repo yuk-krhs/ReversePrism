@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Assembly                                 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer
     // 018 Type                                     000186692850 ModelClassType Type Type Type Pointer
-    public partial class XmlObjectDataContractTypeInfo
+    public partial class XmlObjectDataContractTypeInfo : DataModel
     {
         public Assembly?                                Assembly                                { get; set; }
         public Type?                                    Type                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlObjectDataContractTypeInfo();
+            var value   = new XmlObjectDataContractTypeInfo() { Pointer= p0 };
 
-            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0270D7D71370 0x10 Assembly                    ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D7D71390 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 024667DD9370 0x10 Assembly                    ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024667DD9390 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

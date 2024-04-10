@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 000 FittingRoomScenarioName                  string IL2CPP_TYPE_STRING
     // 000 VoiceCueSheetSuffix                      string IL2CPP_TYPE_STRING
     // 000 FittingRoomMotionStartTime               float IL2CPP_TYPE_R4
-    public partial class DressUpRoomConst
+    public partial class DressUpRoomConst : DataModel
     {
 
         public static DressUpRoomConst? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressUpRoomConst();
+            var value   = new DressUpRoomConst() { Pointer= p0 };
 
 
             return value;

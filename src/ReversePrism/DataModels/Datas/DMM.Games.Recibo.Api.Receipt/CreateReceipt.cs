@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 RequestModel                             00018663E2C0 ModelEnumType CreateRequestModel CreateRequestModel CreateRequestModel Int32
-    public partial class CreateReceipt
+    public partial class CreateReceipt : DataModel
     {
         public CreateRequestModel                       RequestModel                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateReceipt();
+            var value   = new CreateReceipt() { Pointer= p0 };
 
-            value.RequestModel                              = (CreateRequestModel)GetInt32(new IntPtr(p + 0x038)); // 0270DB47A680 0x38 RequestModel                ( 00018663E2C0 ModelEnumType CreateRequestModel CreateRequestModel CreateRequestModel Int32 )
+            value.RequestModel                              = (CreateRequestModel)GetInt32(new IntPtr(p + 0x038)); // 02466B4EF4F8 0x38 RequestModel                ( 00018663E2C0 ModelEnumType CreateRequestModel CreateRequestModel CreateRequestModel Int32 )
 
             return value;
         }

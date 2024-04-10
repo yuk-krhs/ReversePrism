@@ -39,7 +39,7 @@ namespace ReversePrism.DataModels
     // 03A OverridesLightProbeSystem                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 03B SupportsHDR                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 OverridesLightProbeSystemWarningMessage  000186671910 ModelPrimitiveType string string string String
-    public partial class SupportedRenderingFeatures
+    public partial class SupportedRenderingFeatures : DataModel
     {
         public ReflectionProbeModes                     ReflectionProbeModes                    { get; set; }
         public LightmapMixedBakeModes                   DefaultMixedLightingModes               { get; set; }
@@ -78,38 +78,38 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportedRenderingFeatures();
+            var value   = new SupportedRenderingFeatures() { Pointer= p0 };
 
-            value.ReflectionProbeModes                      = (ReflectionProbeModes)GetInt32(new IntPtr(p + 0x010)); // 02700247BC60 0x10 ReflectionProbeModes        ( 0001865D4B40 ModelEnumType ReflectionProbeModes ReflectionProbeModes ReflectionProbeModes Int32 )
-            value.DefaultMixedLightingModes                 = (LightmapMixedBakeModes)GetInt32(new IntPtr(p + 0x014)); // 02700247BC80 0x14 DefaultMixedLightingModes   ( 0001865D4400 ModelEnumType LightmapMixedBakeModes LightmapMixedBakeModes LightmapMixedBakeModes Int32 )
-            value.MixedLightingModes                        = (LightmapMixedBakeModes)GetInt32(new IntPtr(p + 0x018)); // 02700247BCA0 0x18 MixedLightingModes          ( 0001865D4400 ModelEnumType LightmapMixedBakeModes LightmapMixedBakeModes LightmapMixedBakeModes Int32 )
-            value.LightmapBakeTypes                         = (LightmapBakeType)GetInt32(new IntPtr(p + 0x01C)); // 02700247BCC0 0x1C LightmapBakeTypes           ( 000186529CC0 ModelEnumType LightmapBakeType LightmapBakeType LightmapBakeType Int32 )
-            value.LightmapsModes                            = (LightmapsMode)GetInt32(new IntPtr(p + 0x020)); // 02700247BCE0 0x20 LightmapsModes              ( 00018652AE10 ModelEnumType LightmapsMode LightmapsMode LightmapsMode Int32 )
-            value.EnlightenLightmapper                      = GetBool(new IntPtr(p + 0x024)); // 02700247BD00 0x24 EnlightenLightmapper        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Enlighten                                 = GetBool(new IntPtr(p + 0x025)); // 02700247BD20 0x25 Enlighten                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LightProbeProxyVolumes                    = GetBool(new IntPtr(p + 0x026)); // 02700247BD40 0x26 LightProbeProxyVolumes      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MotionVectors                             = GetBool(new IntPtr(p + 0x027)); // 02700247BD60 0x27 MotionVectors               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReceiveShadows                            = GetBool(new IntPtr(p + 0x028)); // 02700247BD80 0x28 ReceiveShadows              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReflectionProbes                          = GetBool(new IntPtr(p + 0x029)); // 02700247BDA0 0x29 ReflectionProbes            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReflectionProbesBlendDistance             = GetBool(new IntPtr(p + 0x02A)); // 02700247BDC0 0x2A ReflectionProbesBlendDistance ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RendererPriority                          = GetBool(new IntPtr(p + 0x02B)); // 02700247BDE0 0x2B RendererPriority            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RendersUIOverlay                          = GetBool(new IntPtr(p + 0x02C)); // 02700247BE00 0x2C RendersUIOverlay            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesEnvironmentLighting              = GetBool(new IntPtr(p + 0x02D)); // 02700247BE20 0x2D OverridesEnvironmentLighting ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesFog                              = GetBool(new IntPtr(p + 0x02E)); // 02700247BE40 0x2E OverridesFog                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesRealtimeReflectionProbes         = GetBool(new IntPtr(p + 0x02F)); // 02700247BE60 0x2F OverridesRealtimeReflectionProbes ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesOtherLightingSettings            = GetBool(new IntPtr(p + 0x030)); // 02700247BE80 0x30 OverridesOtherLightingSettings ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EditableMaterialRenderQueue               = GetBool(new IntPtr(p + 0x031)); // 02700247BEA0 0x31 EditableMaterialRenderQueue ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesLODBias                          = GetBool(new IntPtr(p + 0x032)); // 02700247BEC0 0x32 OverridesLODBias            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesMaximumLODLevel                  = GetBool(new IntPtr(p + 0x033)); // 02700247BEE0 0x33 OverridesMaximumLODLevel    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesEnableLODCrossFade               = GetBool(new IntPtr(p + 0x034)); // 02700247BF00 0x34 OverridesEnableLODCrossFade ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RendererProbes                            = GetBool(new IntPtr(p + 0x035)); // 02700247BF20 0x35 RendererProbes              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ParticleSystemInstancing                  = GetBool(new IntPtr(p + 0x036)); // 02700247BF40 0x36 ParticleSystemInstancing    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoAmbientProbeBaking                    = GetBool(new IntPtr(p + 0x037)); // 02700247BF60 0x37 AutoAmbientProbeBaking      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoDefaultReflectionProbeBaking          = GetBool(new IntPtr(p + 0x038)); // 02700247BF80 0x38 AutoDefaultReflectionProbeBaking ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesShadowmask                       = GetBool(new IntPtr(p + 0x039)); // 02700247BFA0 0x39 OverridesShadowmask         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesLightProbeSystem                 = GetBool(new IntPtr(p + 0x03A)); // 02700247BFC0 0x3A OverridesLightProbeSystem   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SupportsHDR                               = GetBool(new IntPtr(p + 0x03B)); // 02700247BFE0 0x3B SupportsHDR                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverridesLightProbeSystemWarningMessage   = GetString(new IntPtr(p + 0x040)); // 02700247C000 0x40 OverridesLightProbeSystemWarningMessage ( 000186671910 ModelPrimitiveType string string string String )
+            value.ReflectionProbeModes                      = (ReflectionProbeModes)GetInt32(new IntPtr(p + 0x010)); // 0245A247BC60 0x10 ReflectionProbeModes        ( 0001865D4B40 ModelEnumType ReflectionProbeModes ReflectionProbeModes ReflectionProbeModes Int32 )
+            value.DefaultMixedLightingModes                 = (LightmapMixedBakeModes)GetInt32(new IntPtr(p + 0x014)); // 0245A247BC80 0x14 DefaultMixedLightingModes   ( 0001865D4400 ModelEnumType LightmapMixedBakeModes LightmapMixedBakeModes LightmapMixedBakeModes Int32 )
+            value.MixedLightingModes                        = (LightmapMixedBakeModes)GetInt32(new IntPtr(p + 0x018)); // 0245A247BCA0 0x18 MixedLightingModes          ( 0001865D4400 ModelEnumType LightmapMixedBakeModes LightmapMixedBakeModes LightmapMixedBakeModes Int32 )
+            value.LightmapBakeTypes                         = (LightmapBakeType)GetInt32(new IntPtr(p + 0x01C)); // 0245A247BCC0 0x1C LightmapBakeTypes           ( 000186529CC0 ModelEnumType LightmapBakeType LightmapBakeType LightmapBakeType Int32 )
+            value.LightmapsModes                            = (LightmapsMode)GetInt32(new IntPtr(p + 0x020)); // 0245A247BCE0 0x20 LightmapsModes              ( 00018652AE10 ModelEnumType LightmapsMode LightmapsMode LightmapsMode Int32 )
+            value.EnlightenLightmapper                      = GetBool(new IntPtr(p + 0x024)); // 0245A247BD00 0x24 EnlightenLightmapper        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Enlighten                                 = GetBool(new IntPtr(p + 0x025)); // 0245A247BD20 0x25 Enlighten                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LightProbeProxyVolumes                    = GetBool(new IntPtr(p + 0x026)); // 0245A247BD40 0x26 LightProbeProxyVolumes      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MotionVectors                             = GetBool(new IntPtr(p + 0x027)); // 0245A247BD60 0x27 MotionVectors               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReceiveShadows                            = GetBool(new IntPtr(p + 0x028)); // 0245A247BD80 0x28 ReceiveShadows              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReflectionProbes                          = GetBool(new IntPtr(p + 0x029)); // 0245A247BDA0 0x29 ReflectionProbes            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReflectionProbesBlendDistance             = GetBool(new IntPtr(p + 0x02A)); // 0245A247BDC0 0x2A ReflectionProbesBlendDistance ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RendererPriority                          = GetBool(new IntPtr(p + 0x02B)); // 0245A247BDE0 0x2B RendererPriority            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RendersUIOverlay                          = GetBool(new IntPtr(p + 0x02C)); // 0245A247BE00 0x2C RendersUIOverlay            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesEnvironmentLighting              = GetBool(new IntPtr(p + 0x02D)); // 0245A247BE20 0x2D OverridesEnvironmentLighting ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesFog                              = GetBool(new IntPtr(p + 0x02E)); // 0245A247BE40 0x2E OverridesFog                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesRealtimeReflectionProbes         = GetBool(new IntPtr(p + 0x02F)); // 0245A247BE60 0x2F OverridesRealtimeReflectionProbes ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesOtherLightingSettings            = GetBool(new IntPtr(p + 0x030)); // 0245A247BE80 0x30 OverridesOtherLightingSettings ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EditableMaterialRenderQueue               = GetBool(new IntPtr(p + 0x031)); // 0245A247BEA0 0x31 EditableMaterialRenderQueue ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesLODBias                          = GetBool(new IntPtr(p + 0x032)); // 0245A247BEC0 0x32 OverridesLODBias            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesMaximumLODLevel                  = GetBool(new IntPtr(p + 0x033)); // 0245A247BEE0 0x33 OverridesMaximumLODLevel    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesEnableLODCrossFade               = GetBool(new IntPtr(p + 0x034)); // 0245A247BF00 0x34 OverridesEnableLODCrossFade ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RendererProbes                            = GetBool(new IntPtr(p + 0x035)); // 0245A247BF20 0x35 RendererProbes              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ParticleSystemInstancing                  = GetBool(new IntPtr(p + 0x036)); // 0245A247BF40 0x36 ParticleSystemInstancing    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AutoAmbientProbeBaking                    = GetBool(new IntPtr(p + 0x037)); // 0245A247BF60 0x37 AutoAmbientProbeBaking      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AutoDefaultReflectionProbeBaking          = GetBool(new IntPtr(p + 0x038)); // 0245A247BF80 0x38 AutoDefaultReflectionProbeBaking ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesShadowmask                       = GetBool(new IntPtr(p + 0x039)); // 0245A247BFA0 0x39 OverridesShadowmask         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesLightProbeSystem                 = GetBool(new IntPtr(p + 0x03A)); // 0245A247BFC0 0x3A OverridesLightProbeSystem   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SupportsHDR                               = GetBool(new IntPtr(p + 0x03B)); // 0245A247BFE0 0x3B SupportsHDR                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverridesLightProbeSystemWarningMessage   = GetString(new IntPtr(p + 0x040)); // 0245A247C000 0x40 OverridesLightProbeSystemWarningMessage ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

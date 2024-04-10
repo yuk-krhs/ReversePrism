@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ConcreteType                             000186692F60 ModelClassType Type Type Type Pointer
-    public partial class RegisterGenericJobTypeAttribute
+    public partial class RegisterGenericJobTypeAttribute : DataModel
     {
         public Type?                                    ConcreteType                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegisterGenericJobTypeAttribute();
+            var value   = new RegisterGenericJobTypeAttribute() { Pointer= p0 };
 
-            value.ConcreteType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027005268B50 0x10 ConcreteType                ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.ConcreteType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A5171F00 0x10 ConcreteType                ( 000186692F60 ModelClassType Type Type Type Pointer )
 
             return value;
         }

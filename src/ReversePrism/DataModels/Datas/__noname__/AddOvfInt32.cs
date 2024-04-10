@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AddOvfInt32
+    public partial class AddOvfInt32 : DataModel
     {
 
         public static AddOvfInt32? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AddOvfInt32();
+            var value   = new AddOvfInt32() { Pointer= p0 };
 
 
             return value;

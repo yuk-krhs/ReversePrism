@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INativeDownloadRequestListener
+    public partial class INativeDownloadRequestListener : DataModel
     {
 
         public static INativeDownloadRequestListener? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INativeDownloadRequestListener();
+            var value   = new INativeDownloadRequestListener() { Pointer= p0 };
 
 
             return value;

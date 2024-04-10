@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 genericFormatterFactory                  ConcurrentDictionary`2<Type, Type> IL2CPP_TYPE_GENERICINST
     // 028 genericCollectionFormatterFactory        ConcurrentDictionary`2<Type, Type> IL2CPP_TYPE_GENERICINST
     // 030 KnownGenericTypeFormatters               Dictionary`2<Type, Type> IL2CPP_TYPE_GENERICINST
-    public partial class MemoryPackFormatterProvider
+    public partial class MemoryPackFormatterProvider : DataModel
     {
 
         public static MemoryPackFormatterProvider? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackFormatterProvider();
+            var value   = new MemoryPackFormatterProvider() { Pointer= p0 };
 
 
             return value;

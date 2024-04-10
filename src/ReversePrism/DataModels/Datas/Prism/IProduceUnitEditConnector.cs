@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceUnitEditConnector
+    public partial class IProduceUnitEditConnector : DataModel
     {
 
         public static IProduceUnitEditConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceUnitEditConnector();
+            var value   = new IProduceUnitEditConnector() { Pointer= p0 };
 
 
             return value;

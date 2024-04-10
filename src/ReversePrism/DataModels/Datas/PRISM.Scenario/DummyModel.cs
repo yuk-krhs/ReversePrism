@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 AnimClip                                 0001866B2300 ModelClassType AnimationClip AnimationClip AnimationClip Pointer
-    public partial class DummyModel
+    public partial class DummyModel : DataModel
     {
         public AnimationClip?                           AnimClip                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DummyModel();
+            var value   = new DummyModel() { Pointer= p0 };
 
-            value.AnimClip                                  = GetObject<AnimationClip>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationClip.FromPointer); // 027006B25F38 0x20 AnimClip                    ( 0001866B2300 ModelClassType AnimationClip AnimationClip AnimationClip Pointer )
+            value.AnimClip                                  = GetObject<AnimationClip>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationClip.FromPointer); // 0245A6AEF618 0x20 AnimClip                    ( 0001866B2300 ModelClassType AnimationClip AnimationClip AnimationClip Pointer )
 
             return value;
         }

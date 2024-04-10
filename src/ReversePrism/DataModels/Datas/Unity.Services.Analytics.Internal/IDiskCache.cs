@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDiskCache
+    public partial class IDiskCache : DataModel
     {
 
         public static IDiskCache? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDiskCache();
+            var value   = new IDiskCache() { Pointer= p0 };
 
 
             return value;

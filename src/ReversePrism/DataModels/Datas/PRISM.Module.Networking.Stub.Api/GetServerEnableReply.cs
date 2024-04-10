@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IsServerEnableFieldNumber                int IL2CPP_TYPE_I4
     // 018 IsServerEnable                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class GetServerEnableReply
+    public partial class GetServerEnableReply : DataModel
     {
         public bool                                     IsServerEnable                          { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetServerEnableReply();
+            var value   = new GetServerEnableReply() { Pointer= p0 };
 
-            value.IsServerEnable                            = GetBool(new IntPtr(p + 0x018)); // 0270D0B52B98 0x18 IsServerEnable              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsServerEnable                            = GetBool(new IntPtr(p + 0x018)); // 024660B43BD0 0x18 IsServerEnable              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

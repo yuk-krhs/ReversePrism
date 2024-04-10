@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_View                                   000186745A50 ModelClassType BaseVerticalCollectionView BaseVerticalCollectionView BaseVerticalCollectionView Pointer
     // 018 M_SortedSelectedIds                      000185CED038 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     // 020 EnableReordering                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BaseReorderableDragAndDropController
+    public partial class BaseReorderableDragAndDropController : DataModel
     {
         public BaseVerticalCollectionView?              M_View                                  { get; set; }
         public List<int>?                               M_SortedSelectedIds                     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseReorderableDragAndDropController();
+            var value   = new BaseReorderableDragAndDropController() { Pointer= p0 };
 
-            value.M_View                                    = GetObject<BaseVerticalCollectionView>(new IntPtr(p + 0x010), ReversePrism.DataModels.BaseVerticalCollectionView.FromPointer); // 027006753998 0x10 M_View                      ( 000186745A50 ModelClassType BaseVerticalCollectionView BaseVerticalCollectionView BaseVerticalCollectionView Pointer )
-            value.M_SortedSelectedIds                       = GetInt32List(new IntPtr(p + 0x018)); // 0270067539B8 0x18 M_SortedSelectedIds         ( 000185CED038 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.EnableReordering                          = GetBool(new IntPtr(p + 0x020)); // 0270067539D8 0x20 EnableReordering            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_View                                    = GetObject<BaseVerticalCollectionView>(new IntPtr(p + 0x010), ReversePrism.DataModels.BaseVerticalCollectionView.FromPointer); // 0245A6715900 0x10 M_View                      ( 000186745A50 ModelClassType BaseVerticalCollectionView BaseVerticalCollectionView BaseVerticalCollectionView Pointer )
+            value.M_SortedSelectedIds                       = GetInt32List(new IntPtr(p + 0x018)); // 0245A6715920 0x18 M_SortedSelectedIds         ( 000185CED038 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.EnableReordering                          = GetBool(new IntPtr(p + 0x020)); // 0245A6715940 0x20 EnableReordering            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

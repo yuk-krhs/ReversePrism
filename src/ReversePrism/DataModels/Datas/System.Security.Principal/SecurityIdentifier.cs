@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 000 MaxBinaryLength                          int IL2CPP_TYPE_I4
     // 004 MinBinaryLength                          int IL2CPP_TYPE_I4
-    public partial class SecurityIdentifier
+    public partial class SecurityIdentifier : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SecurityIdentifier();
+            var value   = new SecurityIdentifier() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0270D6BB1660 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 024666C29660 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

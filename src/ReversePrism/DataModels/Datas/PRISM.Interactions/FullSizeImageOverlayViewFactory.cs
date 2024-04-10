@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FullSizeImageOverlayViewFactory
+    public partial class FullSizeImageOverlayViewFactory : DataModel
     {
 
         public static FullSizeImageOverlayViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FullSizeImageOverlayViewFactory();
+            var value   = new FullSizeImageOverlayViewFactory() { Pointer= p0 };
 
 
             return value;

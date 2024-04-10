@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ProviderType                             0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32
     // 000 PassPhraseFieldNumber                    int IL2CPP_TYPE_I4
     // 020 PassPhrase                               000186671910 ModelPrimitiveType string string string String
-    public partial class GetTransferURLArgs
+    public partial class GetTransferURLArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
         public string                                   PassPhrase                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTransferURLArgs();
+            var value   = new GetTransferURLArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0270D0B67E08 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.PassPhrase                                = GetString(new IntPtr(p + 0x020)); // 0270D0B67E48 0x20 PassPhrase                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 024660B59508 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.PassPhrase                                = GetString(new IntPtr(p + 0x020)); // 024660B59548 0x20 PassPhrase                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

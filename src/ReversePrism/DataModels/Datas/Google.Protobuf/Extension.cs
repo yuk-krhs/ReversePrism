@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 FieldNumber                              0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class Extension
+    public partial class Extension : DataModel
     {
         public int                                      FieldNumber                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Extension();
+            var value   = new Extension() { Pointer= p0 };
 
-            value.FieldNumber                               = GetInt32(new IntPtr(p + 0x010)); // 0270D0B4A2D8 0x10 FieldNumber                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.FieldNumber                               = GetInt32(new IntPtr(p + 0x010)); // 024660B43388 0x10 FieldNumber                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

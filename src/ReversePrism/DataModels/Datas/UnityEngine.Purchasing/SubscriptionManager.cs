@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Receipt                                  000186672F10 ModelPrimitiveType string string string String
     // 018 ProductId                                000186672F10 ModelPrimitiveType string string string String
     // 020 Intro_json                               000186672F10 ModelPrimitiveType string string string String
-    public partial class SubscriptionManager
+    public partial class SubscriptionManager : DataModel
     {
         public string                                   Receipt                                 { get; set; }
         public string                                   ProductId                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubscriptionManager();
+            var value   = new SubscriptionManager() { Pointer= p0 };
 
-            value.Receipt                                   = GetString(new IntPtr(p + 0x010)); // 02700691D1A8 0x10 Receipt                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ProductId                                 = GetString(new IntPtr(p + 0x018)); // 02700691D1C8 0x18 ProductId                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Intro_json                                = GetString(new IntPtr(p + 0x020)); // 02700691D1E8 0x20 Intro_json                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Receipt                                   = GetString(new IntPtr(p + 0x010)); // 0245A68E0070 0x10 Receipt                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ProductId                                 = GetString(new IntPtr(p + 0x018)); // 0245A68E0090 0x18 ProductId                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Intro_json                                = GetString(new IntPtr(p + 0x020)); // 0245A68E00B0 0x20 Intro_json                  ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

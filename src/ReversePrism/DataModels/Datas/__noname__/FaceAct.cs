@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 050 EyeCloseSmile                            000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
     // 058 PositionList                             000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
     // 060 PositionIndex                            000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    public partial class FaceAct
+    public partial class FaceAct : DataModel
     {
         public string                                   ActionID                                { get; set; }
         public string                                   Explain                                 { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FaceAct();
+            var value   = new FaceAct() { Pointer= p0 };
 
-            value.ActionID                                  = GetString(new IntPtr(p + 0x010)); // 0270060F02A0 0x10 ActionID                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Explain                                   = GetString(new IntPtr(p + 0x018)); // 0270060F02C0 0x18 Explain                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Duration                                  = GetInt32(new IntPtr(p + 0x020)); // 0270060F02E0 0x20 Duration                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FaceAnim                                  = GetObjectList<FaceAnimData>(new IntPtr(p + 0x028), ReversePrism.DataModels.FaceAnimData.FromPointer); // 0270060F0300 0x28 FaceAnim                    ( 000185B85EB0 ModelClassListType FaceAnimData[] FaceAnimData[] List<FaceAnimData> Pointer )
-            value.NeckVertical                              = GetObject<AnimationCurve>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F0320 0x30 NeckVertical                ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.NeckHorizontal                            = GetObject<AnimationCurve>(new IntPtr(p + 0x038), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F0340 0x38 NeckHorizontal              ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.NeckRoll                                  = GetObject<AnimationCurve>(new IntPtr(p + 0x040), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F0360 0x40 NeckRoll                    ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.EyeClose                                  = GetObject<AnimationCurve>(new IntPtr(p + 0x048), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F0380 0x48 EyeClose                    ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.EyeCloseSmile                             = GetObject<AnimationCurve>(new IntPtr(p + 0x050), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F03A0 0x50 EyeCloseSmile               ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.PositionList                              = GetEnumList<Vector3>(new IntPtr(p + 0x058)); // 0270060F03C0 0x58 PositionList                ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.PositionIndex                             = GetObject<AnimationCurve>(new IntPtr(p + 0x060), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270060F03E0 0x60 PositionIndex               ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.ActionID                                  = GetString(new IntPtr(p + 0x010)); // 0245A60C99A8 0x10 ActionID                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Explain                                   = GetString(new IntPtr(p + 0x018)); // 0245A60C99C8 0x18 Explain                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Duration                                  = GetInt32(new IntPtr(p + 0x020)); // 0245A60C99E8 0x20 Duration                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FaceAnim                                  = GetObjectList<FaceAnimData>(new IntPtr(p + 0x028), ReversePrism.DataModels.FaceAnimData.FromPointer); // 0245A60C9A08 0x28 FaceAnim                    ( 000185B85EB0 ModelClassListType FaceAnimData[] FaceAnimData[] List<FaceAnimData> Pointer )
+            value.NeckVertical                              = GetObject<AnimationCurve>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9A28 0x30 NeckVertical                ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.NeckHorizontal                            = GetObject<AnimationCurve>(new IntPtr(p + 0x038), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9A48 0x38 NeckHorizontal              ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.NeckRoll                                  = GetObject<AnimationCurve>(new IntPtr(p + 0x040), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9A68 0x40 NeckRoll                    ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.EyeClose                                  = GetObject<AnimationCurve>(new IntPtr(p + 0x048), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9A88 0x48 EyeClose                    ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.EyeCloseSmile                             = GetObject<AnimationCurve>(new IntPtr(p + 0x050), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9AA8 0x50 EyeCloseSmile               ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.PositionList                              = GetEnumList<Vector3>(new IntPtr(p + 0x058)); // 0245A60C9AC8 0x58 PositionList                ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.PositionIndex                             = GetObject<AnimationCurve>(new IntPtr(p + 0x060), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60C9AE8 0x60 PositionIndex               ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Recognizer                             <int> IL2CPP_TYPE_I
     // 018 OnPhraseRecognized                       00018656B3E0 ModelClassType PhraseRecognizedDelegate PhraseRecognizedDelegate PhraseRecognizedDelegate Pointer
-    public partial class PhraseRecognizer
+    public partial class PhraseRecognizer : DataModel
     {
         public PhraseRecognizedDelegate?                OnPhraseRecognized                      { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhraseRecognizer();
+            var value   = new PhraseRecognizer() { Pointer= p0 };
 
-            value.OnPhraseRecognized                        = GetObject<PhraseRecognizedDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.PhraseRecognizedDelegate.FromPointer); // 0270024D2518 0x18 OnPhraseRecognized          ( 00018656B3E0 ModelClassType PhraseRecognizedDelegate PhraseRecognizedDelegate PhraseRecognizedDelegate Pointer )
+            value.OnPhraseRecognized                        = GetObject<PhraseRecognizedDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.PhraseRecognizedDelegate.FromPointer); // 0245A24D2518 0x18 OnPhraseRecognized          ( 00018656B3E0 ModelClassType PhraseRecognizedDelegate PhraseRecognizedDelegate PhraseRecognizedDelegate Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Instance                               IInputRuntime IL2CPP_TYPE_CLASS
     // 008 s_CurrentTimeOffsetToRealtimeSinceStartup double IL2CPP_TYPE_R8
-    public partial class InputRuntime
+    public partial class InputRuntime : DataModel
     {
 
         public static InputRuntime? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputRuntime();
+            var value   = new InputRuntime() { Pointer= p0 };
 
 
             return value;

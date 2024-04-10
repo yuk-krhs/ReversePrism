@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 040 Unloading                                000186679C50 ModelClassType Action Action Action Pointer
     // 048 S_currentCancellationTokenSource         0001865A40D0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 S_RegisterLogCallbackDeprecated          0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer
-    public partial class Application
+    public partial class Application : DataModel
     {
         public LogCallback?                             S_LogCallbackHandler                    { get; set; }
         public LogCallback?                             S_LogCallbackHandlerThreaded            { get; set; }
@@ -34,14 +34,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Application();
+            var value   = new Application() { Pointer= p0 };
 
-            value.S_LogCallbackHandler                      = GetObject<LogCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.LogCallback.FromPointer); // 02700231EF68 0x10 S_LogCallbackHandler        ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
-            value.S_LogCallbackHandlerThreaded              = GetObject<LogCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.LogCallback.FromPointer); // 02700231EF88 0x18 S_LogCallbackHandlerThreaded ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
-            value.Quitting                                  = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 02700231F008 0x38 Quitting                    ( 000186679C50 ModelClassType Action Action Action Pointer )
-            value.Unloading                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 02700231F028 0x40 Unloading                   ( 000186679C50 ModelClassType Action Action Action Pointer )
-            value.S_currentCancellationTokenSource          = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02700231F048 0x48 S_currentCancellationTokenSource ( 0001865A40D0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.S_RegisterLogCallbackDeprecated           = GetObject<LogCallback>(new IntPtr(p + 0x050), ReversePrism.DataModels.LogCallback.FromPointer); // 02700231F068 0x50 S_RegisterLogCallbackDeprecated ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
+            value.S_LogCallbackHandler                      = GetObject<LogCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.LogCallback.FromPointer); // 0245A231EF68 0x10 S_LogCallbackHandler        ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
+            value.S_LogCallbackHandlerThreaded              = GetObject<LogCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.LogCallback.FromPointer); // 0245A231EF88 0x18 S_LogCallbackHandlerThreaded ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
+            value.Quitting                                  = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0245A231F008 0x38 Quitting                    ( 000186679C50 ModelClassType Action Action Action Pointer )
+            value.Unloading                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A231F028 0x40 Unloading                   ( 000186679C50 ModelClassType Action Action Action Pointer )
+            value.S_currentCancellationTokenSource          = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A231F048 0x48 S_currentCancellationTokenSource ( 0001865A40D0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.S_RegisterLogCallbackDeprecated           = GetObject<LogCallback>(new IntPtr(p + 0x050), ReversePrism.DataModels.LogCallback.FromPointer); // 0245A231F068 0x50 S_RegisterLogCallbackDeprecated ( 0001866B6470 ModelClassType LogCallback LogCallback LogCallback Pointer )
 
             return value;
         }

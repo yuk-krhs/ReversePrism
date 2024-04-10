@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Value                                    00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class BitField64
+    public partial class BitField64 : DataModel
     {
         public ulong                                    Value                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitField64();
+            var value   = new BitField64() { Pointer= p0 };
 
-            value.Value                                     = GetUInt64(new IntPtr(p + 0x010)); // 0270D988AD60 0x10 Value                       ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Value                                     = GetUInt64(new IntPtr(p + 0x010)); // 0246698D8048 0x10 Value                       ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 RawImage                                 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    public partial class HowToPlayCarouselCell
+    public partial class HowToPlayCarouselCell : DataModel
     {
         public UIRawImage?                              RawImage                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HowToPlayCarouselCell();
+            var value   = new HowToPlayCarouselCell() { Pointer= p0 };
 
-            value.RawImage                                  = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D4C6CCD0 0x38 RawImage                    ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.RawImage                                  = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 024664CCFBA8 0x38 RawImage                    ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
 
             return value;
         }

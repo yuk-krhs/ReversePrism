@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 058 Attributes                               0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer
     // 060 AnyAttribute                             0001865ADBC0 ModelClassType XmlSchemaAnyAttribute XmlSchemaAnyAttribute XmlSchemaAnyAttribute Pointer
     // 068 BaseTypeName                             0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    public partial class XmlSchemaComplexContentRestriction
+    public partial class XmlSchemaComplexContentRestriction : DataModel
     {
         public XmlSchemaParticle?                       Particle                                { get; set; }
         public XmlSchemaObjectCollection?               Attributes                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaComplexContentRestriction();
+            var value   = new XmlSchemaComplexContentRestriction() { Pointer= p0 };
 
-            value.Particle                                  = GetObject<XmlSchemaParticle>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaParticle.FromPointer); // 0270D7552F30 0x50 Particle                    ( 0001865BD330 ModelClassType XmlSchemaParticle XmlSchemaParticle XmlSchemaParticle Pointer )
-            value.Attributes                                = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 0270D7552F50 0x58 Attributes                  ( 0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
-            value.AnyAttribute                              = GetObject<XmlSchemaAnyAttribute>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchemaAnyAttribute.FromPointer); // 0270D7552F70 0x60 AnyAttribute                ( 0001865ADBC0 ModelClassType XmlSchemaAnyAttribute XmlSchemaAnyAttribute XmlSchemaAnyAttribute Pointer )
-            value.BaseTypeName                              = GetObject<XmlQualifiedName>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7552F90 0x68 BaseTypeName                ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Particle                                  = GetObject<XmlSchemaParticle>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaParticle.FromPointer); // 0246675B2F30 0x50 Particle                    ( 0001865BD330 ModelClassType XmlSchemaParticle XmlSchemaParticle XmlSchemaParticle Pointer )
+            value.Attributes                                = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 0246675B2F50 0x58 Attributes                  ( 0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
+            value.AnyAttribute                              = GetObject<XmlSchemaAnyAttribute>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchemaAnyAttribute.FromPointer); // 0246675B2F70 0x60 AnyAttribute                ( 0001865ADBC0 ModelClassType XmlSchemaAnyAttribute XmlSchemaAnyAttribute XmlSchemaAnyAttribute Pointer )
+            value.BaseTypeName                              = GetObject<XmlQualifiedName>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246675B2F90 0x68 BaseTypeName                ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
 
             return value;
         }

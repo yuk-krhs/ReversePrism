@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ComboInfoViewSaveData
+    public partial class ComboInfoViewSaveData : DataModel
     {
 
         public static ComboInfoViewSaveData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComboInfoViewSaveData();
+            var value   = new ComboInfoViewSaveData() { Pointer= p0 };
 
 
             return value;

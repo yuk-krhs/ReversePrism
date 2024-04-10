@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onDrop                                   Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableDropTrigger
+    public partial class ObservableDropTrigger : DataModel
     {
 
         public static ObservableDropTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableDropTrigger();
+            var value   = new ObservableDropTrigger() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 BeforeLoad                               0001866792B0 ModelClassType Action Action Action Pointer
     // 040 AfterLoad                                0001866792B0 ModelClassType Action Action Action Pointer
     // 048 _SceneStack                              000185D2B3B8 ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer
-    public partial class SceneStack
+    public partial class SceneStack : DataModel
     {
         public bool                                     UseEditorLoader                         { get; set; }
         public bool                                     IsReactivating                          { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneStack();
+            var value   = new SceneStack() { Pointer= p0 };
 
-            value.UseEditorLoader                           = GetBool(new IntPtr(p + 0x020)); // 027003EE4608 0x20 UseEditorLoader             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReactivating                            = GetBool(new IntPtr(p + 0x021)); // 027003EE4628 0x21 IsReactivating              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InAction                                  = GetBool(new IntPtr(p + 0x022)); // 027003EE4648 0x22 InAction                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PrepareUnload                             = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 027003EE4688 0x30 PrepareUnload               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.BeforeLoad                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 027003EE46A8 0x38 BeforeLoad                  ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.AfterLoad                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 027003EE46C8 0x40 AfterLoad                   ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value._SceneStack                               = GetObjectList<SceneDish>(new IntPtr(p + 0x048), ReversePrism.DataModels.SceneDish.FromPointer); // 027003EE46E8 0x48 _SceneStack                 ( 000185D2B3B8 ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer )
+            value.UseEditorLoader                           = GetBool(new IntPtr(p + 0x020)); // 0245A3EE4608 0x20 UseEditorLoader             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReactivating                            = GetBool(new IntPtr(p + 0x021)); // 0245A3EE4628 0x21 IsReactivating              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.InAction                                  = GetBool(new IntPtr(p + 0x022)); // 0245A3EE4648 0x22 InAction                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PrepareUnload                             = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE4688 0x30 PrepareUnload               ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.BeforeLoad                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE46A8 0x38 BeforeLoad                  ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.AfterLoad                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE46C8 0x40 AfterLoad                   ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value._SceneStack                               = GetObjectList<SceneDish>(new IntPtr(p + 0x048), ReversePrism.DataModels.SceneDish.FromPointer); // 0245A3EE46E8 0x48 _SceneStack                 ( 000185D2B3B8 ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CharacterIds                             000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 000 DefaultCharacterId                       int IL2CPP_TYPE_I4
-    public partial class LoadingMiniCharaViewModel
+    public partial class LoadingMiniCharaViewModel : DataModel
     {
         public List<int>?                               CharacterIds                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadingMiniCharaViewModel();
+            var value   = new LoadingMiniCharaViewModel() { Pointer= p0 };
 
-            value.CharacterIds                              = GetInt32List(new IntPtr(p + 0x010)); // 027001E9DBB0 0x10 CharacterIds                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.CharacterIds                              = GetInt32List(new IntPtr(p + 0x010)); // 0245A1EA09A8 0x10 CharacterIds                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

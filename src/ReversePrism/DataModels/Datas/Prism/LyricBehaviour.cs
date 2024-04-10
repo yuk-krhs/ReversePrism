@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Text                                     0001866722E0 ModelPrimitiveType string string string String
-    public partial class LyricBehaviour
+    public partial class LyricBehaviour : DataModel
     {
         public string                                   Text                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LyricBehaviour();
+            var value   = new LyricBehaviour() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0270D4DFE560 0x10 Text                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 024664E736B0 0x10 Text                        ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

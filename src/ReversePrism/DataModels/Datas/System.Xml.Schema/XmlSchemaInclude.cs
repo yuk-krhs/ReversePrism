@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 068 Annotation                               0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer
-    public partial class XmlSchemaInclude
+    public partial class XmlSchemaInclude : DataModel
     {
         public XmlSchemaAnnotation?                     Annotation                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaInclude();
+            var value   = new XmlSchemaInclude() { Pointer= p0 };
 
-            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 0270D75B1238 0x68 Annotation                  ( 0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
+            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 024667621238 0x68 Annotation                  ( 0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
 
             return value;
         }

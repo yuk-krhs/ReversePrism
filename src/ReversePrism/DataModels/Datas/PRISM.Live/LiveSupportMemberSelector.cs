@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveSupportMemberSelector
+    public partial class LiveSupportMemberSelector : DataModel
     {
 
         public static LiveSupportMemberSelector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveSupportMemberSelector();
+            var value   = new LiveSupportMemberSelector() { Pointer= p0 };
 
 
             return value;

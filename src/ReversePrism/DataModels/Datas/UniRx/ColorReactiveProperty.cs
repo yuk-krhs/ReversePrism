@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorReactiveProperty
+    public partial class ColorReactiveProperty : DataModel
     {
 
         public static ColorReactiveProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorReactiveProperty();
+            var value   = new ColorReactiveProperty() { Pointer= p0 };
 
 
             return value;

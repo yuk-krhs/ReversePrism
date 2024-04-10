@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ADVLogCaller
+    public partial class ADVLogCaller : DataModel
     {
 
         public static ADVLogCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogCaller();
+            var value   = new ADVLogCaller() { Pointer= p0 };
 
 
             return value;

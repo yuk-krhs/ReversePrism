@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Scheduler                                TaskScheduler IL2CPP_TYPE_CLASS
     // 018 M_Task                                   000186680E70 ModelClassType Task Task Task Pointer
-    public partial class TaskAsyncOperation
+    public partial class TaskAsyncOperation : DataModel
     {
         public Task?                                    M_Task                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskAsyncOperation();
+            var value   = new TaskAsyncOperation() { Pointer= p0 };
 
-            value.M_Task                                    = GetObject<Task>(new IntPtr(p + 0x018), ReversePrism.DataModels.Task.FromPointer); // 027003B63E00 0x18 M_Task                      ( 000186680E70 ModelClassType Task Task Task Pointer )
+            value.M_Task                                    = GetObject<Task>(new IntPtr(p + 0x018), ReversePrism.DataModels.Task.FromPointer); // 0245A3B63E00 0x18 M_Task                      ( 000186680E70 ModelClassType Task Task Task Pointer )
 
             return value;
         }

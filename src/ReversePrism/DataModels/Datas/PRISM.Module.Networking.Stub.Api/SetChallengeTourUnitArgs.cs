@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C UnitType                                 00018658CBB0 ModelEnumType ChallengeTourUnitType ChallengeTourUnitType ChallengeTourUnitType Int32
     // 000 FesUnitIdFieldNumber                     int IL2CPP_TYPE_I4
     // 020 FesUnitId                                000186671910 ModelPrimitiveType string string string String
-    public partial class SetChallengeTourUnitArgs
+    public partial class SetChallengeTourUnitArgs : DataModel
     {
         public int                                      ChallengeTourId                         { get; set; }
         public ChallengeTourUnitType                    UnitType                                { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetChallengeTourUnitArgs();
+            var value   = new SetChallengeTourUnitArgs() { Pointer= p0 };
 
-            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D0B4F510 0x18 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitType                                  = (ChallengeTourUnitType)GetInt32(new IntPtr(p + 0x01C)); // 0270D0B4F550 0x1C UnitType                    ( 00018658CBB0 ModelEnumType ChallengeTourUnitType ChallengeTourUnitType ChallengeTourUnitType Int32 )
-            value.FesUnitId                                 = GetString(new IntPtr(p + 0x020)); // 0270D0B4F590 0x20 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 024660B3E118 0x18 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitType                                  = (ChallengeTourUnitType)GetInt32(new IntPtr(p + 0x01C)); // 024660B3E158 0x1C UnitType                    ( 00018658CBB0 ModelEnumType ChallengeTourUnitType ChallengeTourUnitType ChallengeTourUnitType Int32 )
+            value.FesUnitId                                 = GetString(new IntPtr(p + 0x020)); // 024660B3E198 0x20 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

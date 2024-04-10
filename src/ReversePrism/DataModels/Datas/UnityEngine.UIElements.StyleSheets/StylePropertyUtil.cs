@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 s_IdToName                               Dictionary`2<StylePropertyId, string> IL2CPP_TYPE_GENERICINST
     // 010 s_AnimatableProperties                   HashSet`1<StylePropertyId> IL2CPP_TYPE_GENERICINST
     // 018 s_AnimatableWithUsageHintProperties      Dictionary`2<StylePropertyId, UsageHints> IL2CPP_TYPE_GENERICINST
-    public partial class StylePropertyUtil
+    public partial class StylePropertyUtil : DataModel
     {
 
         public static StylePropertyUtil? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StylePropertyUtil();
+            var value   = new StylePropertyUtil() { Pointer= p0 };
 
 
             return value;

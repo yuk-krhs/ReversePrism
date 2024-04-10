@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 PotentialSupportSkillContentView         000186770FA0 ModelClassType PotentialSupportSkillContentView PotentialSupportSkillContentView PotentialSupportSkillContentView Pointer
     // 028 SCharaEditSDCharaIconListView            0001866A7890 ModelClassType SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView Pointer
-    public partial class SCharaEditPotentialSupportSkillContentView
+    public partial class SCharaEditPotentialSupportSkillContentView : DataModel
     {
         public PotentialSupportSkillContentView?        PotentialSupportSkillContentView        { get; set; }
         public SCharaEditSDCharaIconListView?           SCharaEditSDCharaIconListView           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaEditPotentialSupportSkillContentView();
+            var value   = new SCharaEditPotentialSupportSkillContentView() { Pointer= p0 };
 
-            value.PotentialSupportSkillContentView          = GetObject<PotentialSupportSkillContentView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PotentialSupportSkillContentView.FromPointer); // 0270DB57FD58 0x20 PotentialSupportSkillContentView ( 000186770FA0 ModelClassType PotentialSupportSkillContentView PotentialSupportSkillContentView PotentialSupportSkillContentView Pointer )
-            value.SCharaEditSDCharaIconListView             = GetObject<SCharaEditSDCharaIconListView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaEditSDCharaIconListView.FromPointer); // 0270DB57FD78 0x28 SCharaEditSDCharaIconListView ( 0001866A7890 ModelClassType SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView Pointer )
+            value.PotentialSupportSkillContentView          = GetObject<PotentialSupportSkillContentView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PotentialSupportSkillContentView.FromPointer); // 02466B60BE88 0x20 PotentialSupportSkillContentView ( 000186770FA0 ModelClassType PotentialSupportSkillContentView PotentialSupportSkillContentView PotentialSupportSkillContentView Pointer )
+            value.SCharaEditSDCharaIconListView             = GetObject<SCharaEditSDCharaIconListView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaEditSDCharaIconListView.FromPointer); // 02466B60BEA8 0x28 SCharaEditSDCharaIconListView ( 0001866A7890 ModelClassType SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView SCharaEditSDCharaIconListView Pointer )
 
             return value;
         }

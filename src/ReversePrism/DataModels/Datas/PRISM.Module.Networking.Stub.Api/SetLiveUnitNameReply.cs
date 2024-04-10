@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UpdateUnitFieldNumber                    int IL2CPP_TYPE_I4
     // 018 UpdateUnit                               00018658CE20 ModelClassType LiveUnitDetailStatus LiveUnitDetailStatus LiveUnitDetailStatus Pointer
-    public partial class SetLiveUnitNameReply
+    public partial class SetLiveUnitNameReply : DataModel
     {
         public LiveUnitDetailStatus?                    UpdateUnit                              { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetLiveUnitNameReply();
+            var value   = new SetLiveUnitNameReply() { Pointer= p0 };
 
-            value.UpdateUnit                                = GetObject<LiveUnitDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveUnitDetailStatus.FromPointer); // 0270D21EE750 0x18 UpdateUnit                  ( 00018658CE20 ModelClassType LiveUnitDetailStatus LiveUnitDetailStatus LiveUnitDetailStatus Pointer )
+            value.UpdateUnit                                = GetObject<LiveUnitDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveUnitDetailStatus.FromPointer); // 024662199CA8 0x18 UpdateUnit                  ( 00018658CE20 ModelClassType LiveUnitDetailStatus LiveUnitDetailStatus LiveUnitDetailStatus Pointer )
 
             return value;
         }

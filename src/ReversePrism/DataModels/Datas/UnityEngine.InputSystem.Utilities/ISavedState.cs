@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISavedState
+    public partial class ISavedState : DataModel
     {
 
         public static ISavedState? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISavedState();
+            var value   = new ISavedState() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITwestaDetailScreenView
+    public partial class ITwestaDetailScreenView : DataModel
     {
 
         public static ITwestaDetailScreenView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITwestaDetailScreenView();
+            var value   = new ITwestaDetailScreenView() { Pointer= p0 };
 
 
             return value;

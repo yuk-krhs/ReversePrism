@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 PieceType                                000186610E80 ModelEnumType ProductType ProductType ProductType Int32
-    public partial class ExchangePieceSortFilterModel
+    public partial class ExchangePieceSortFilterModel : DataModel
     {
         public ProductType                              PieceType                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangePieceSortFilterModel();
+            var value   = new ExchangePieceSortFilterModel() { Pointer= p0 };
 
-            value.PieceType                                 = (ProductType)GetInt32(new IntPtr(p + 0x050)); // 0270D54EC5D8 0x50 PieceType                   ( 000186610E80 ModelEnumType ProductType ProductType ProductType Int32 )
+            value.PieceType                                 = (ProductType)GetInt32(new IntPtr(p + 0x050)); // 02466554E468 0x50 PieceType                   ( 000186610E80 ModelEnumType ProductType ProductType ProductType Int32 )
 
             return value;
         }

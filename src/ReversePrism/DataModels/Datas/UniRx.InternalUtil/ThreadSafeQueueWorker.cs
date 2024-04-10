@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 030 WaitingListCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 waitingList                              Action`1<<object>>[] IL2CPP_TYPE_SZARRAY
     // 040 waitingStates                            <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class ThreadSafeQueueWorker
+    public partial class ThreadSafeQueueWorker : DataModel
     {
         public bool                                     Dequing                                 { get; set; }
         public int                                      ActionListCount                         { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThreadSafeQueueWorker();
+            var value   = new ThreadSafeQueueWorker() { Pointer= p0 };
 
-            value.Dequing                                   = GetBool(new IntPtr(p + 0x018)); // 027003C22230 0x18 Dequing                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ActionListCount                           = GetInt32(new IntPtr(p + 0x01C)); // 027003C22250 0x1C ActionListCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.WaitingListCount                          = GetInt32(new IntPtr(p + 0x030)); // 027003C222B0 0x30 WaitingListCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dequing                                   = GetBool(new IntPtr(p + 0x018)); // 0245A3C22230 0x18 Dequing                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ActionListCount                           = GetInt32(new IntPtr(p + 0x01C)); // 0245A3C22250 0x1C ActionListCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.WaitingListCount                          = GetInt32(new IntPtr(p + 0x030)); // 0245A3C222B0 0x30 WaitingListCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

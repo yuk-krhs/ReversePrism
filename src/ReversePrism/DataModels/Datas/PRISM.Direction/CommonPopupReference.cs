@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 GlobalMenuSequencer                      00018667DB50 ModelClassType GlobalMenuSequencer GlobalMenuSequencer GlobalMenuSequencer Pointer
     // 068 ReceiveRewardPopupSequencer              000186625C80 ModelClassType ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer Pointer
     // 070 Announce                                 0001866F6530 ModelClassType IAnnounceSequencer IAnnounceSequencer IAnnounceSequencer Pointer
-    public partial class CommonPopupReference
+    public partial class CommonPopupReference : DataModel
     {
         public MessagePopupSequencer?                   MessagePopupSequencer                   { get; set; }
         public ItemDetailPopupSequencer?                ItemDetailSequencer                     { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonPopupReference();
+            var value   = new CommonPopupReference() { Pointer= p0 };
 
-            value.MessagePopupSequencer                     = GetObject<MessagePopupSequencer>(new IntPtr(p + 0x050), ReversePrism.DataModels.MessagePopupSequencer.FromPointer); // 027001E9A078 0x50 MessagePopupSequencer       ( 00018660A720 ModelClassType MessagePopupSequencer MessagePopupSequencer MessagePopupSequencer Pointer )
-            value.ItemDetailSequencer                       = GetObject<ItemDetailPopupSequencer>(new IntPtr(p + 0x058), ReversePrism.DataModels.ItemDetailPopupSequencer.FromPointer); // 027001E9A098 0x58 ItemDetailSequencer         ( 00018673D040 ModelClassType ItemDetailPopupSequencer ItemDetailPopupSequencer ItemDetailPopupSequencer Pointer )
-            value.GlobalMenuSequencer                       = GetObject<GlobalMenuSequencer>(new IntPtr(p + 0x060), ReversePrism.DataModels.GlobalMenuSequencer.FromPointer); // 027001E9A0B8 0x60 GlobalMenuSequencer         ( 00018667DB50 ModelClassType GlobalMenuSequencer GlobalMenuSequencer GlobalMenuSequencer Pointer )
-            value.ReceiveRewardPopupSequencer               = GetObject<ReceiveRewardPopupSequencer>(new IntPtr(p + 0x068), ReversePrism.DataModels.ReceiveRewardPopupSequencer.FromPointer); // 027001E9A0D8 0x68 ReceiveRewardPopupSequencer ( 000186625C80 ModelClassType ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer Pointer )
-            value.Announce                                  = GetObject<IAnnounceSequencer>(new IntPtr(p + 0x070), ReversePrism.DataModels.IAnnounceSequencer.FromPointer); // 027001E9A0F8 0x70 Announce                    ( 0001866F6530 ModelClassType IAnnounceSequencer IAnnounceSequencer IAnnounceSequencer Pointer )
+            value.MessagePopupSequencer                     = GetObject<MessagePopupSequencer>(new IntPtr(p + 0x050), ReversePrism.DataModels.MessagePopupSequencer.FromPointer); // 0245A1E9CE70 0x50 MessagePopupSequencer       ( 00018660A720 ModelClassType MessagePopupSequencer MessagePopupSequencer MessagePopupSequencer Pointer )
+            value.ItemDetailSequencer                       = GetObject<ItemDetailPopupSequencer>(new IntPtr(p + 0x058), ReversePrism.DataModels.ItemDetailPopupSequencer.FromPointer); // 0245A1E9CE90 0x58 ItemDetailSequencer         ( 00018673D040 ModelClassType ItemDetailPopupSequencer ItemDetailPopupSequencer ItemDetailPopupSequencer Pointer )
+            value.GlobalMenuSequencer                       = GetObject<GlobalMenuSequencer>(new IntPtr(p + 0x060), ReversePrism.DataModels.GlobalMenuSequencer.FromPointer); // 0245A1E9CEB0 0x60 GlobalMenuSequencer         ( 00018667DB50 ModelClassType GlobalMenuSequencer GlobalMenuSequencer GlobalMenuSequencer Pointer )
+            value.ReceiveRewardPopupSequencer               = GetObject<ReceiveRewardPopupSequencer>(new IntPtr(p + 0x068), ReversePrism.DataModels.ReceiveRewardPopupSequencer.FromPointer); // 0245A1E9CED0 0x68 ReceiveRewardPopupSequencer ( 000186625C80 ModelClassType ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer ReceiveRewardPopupSequencer Pointer )
+            value.Announce                                  = GetObject<IAnnounceSequencer>(new IntPtr(p + 0x070), ReversePrism.DataModels.IAnnounceSequencer.FromPointer); // 0245A1E9CEF0 0x70 Announce                    ( 0001866F6530 ModelClassType IAnnounceSequencer IAnnounceSequencer IAnnounceSequencer Pointer )
 
             return value;
         }

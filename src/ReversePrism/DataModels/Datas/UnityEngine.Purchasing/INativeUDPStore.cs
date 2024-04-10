@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INativeUDPStore
+    public partial class INativeUDPStore : DataModel
     {
 
         public static INativeUDPStore? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INativeUDPStore();
+            var value   = new INativeUDPStore() { Pointer= p0 };
 
 
             return value;

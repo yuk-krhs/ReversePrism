@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 MainTitle                                000186672F10 ModelPrimitiveType string string string String
     // 018 SubTitle                                 000186672F10 ModelPrimitiveType string string string String
     // 020 IsStoryTitle                             0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class AdvTitleViewModel
+    public partial class AdvTitleViewModel : DataModel
     {
         public string                                   MainTitle                               { get; set; }
         public string                                   SubTitle                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvTitleViewModel();
+            var value   = new AdvTitleViewModel() { Pointer= p0 };
 
-            value.MainTitle                                 = GetString(new IntPtr(p + 0x010)); // 0270D5DD29F8 0x10 MainTitle                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.SubTitle                                  = GetString(new IntPtr(p + 0x018)); // 0270D5DD2A18 0x18 SubTitle                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IsStoryTitle                              = GetBool(new IntPtr(p + 0x020)); // 0270D5DD2A38 0x20 IsStoryTitle                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.MainTitle                                 = GetString(new IntPtr(p + 0x010)); // 024665E43308 0x10 MainTitle                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.SubTitle                                  = GetString(new IntPtr(p + 0x018)); // 024665E43328 0x18 SubTitle                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.IsStoryTitle                              = GetBool(new IntPtr(p + 0x020)); // 024665E43348 0x20 IsStoryTitle                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

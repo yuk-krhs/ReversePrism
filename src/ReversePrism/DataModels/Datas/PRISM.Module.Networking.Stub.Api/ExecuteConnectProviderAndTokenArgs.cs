@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 AuthenticationTypeFieldNumber            int IL2CPP_TYPE_I4
     // 038 AuthenticationType                       0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32
-    public partial class ExecuteConnectProviderAndTokenArgs
+    public partial class ExecuteConnectProviderAndTokenArgs : DataModel
     {
         public string                                   UserId                                  { get; set; }
         public string                                   Secret                                  { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteConnectProviderAndTokenArgs();
+            var value   = new ExecuteConnectProviderAndTokenArgs() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 0270D0B3AF88 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 0270D0B3AFC8 0x20 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x028)); // 0270D0B3B008 0x28 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x030)); // 0270D0B3B048 0x30 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x038)); // 0270D0B3B088 0x38 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
+            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 024660B20080 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 024660B200C0 0x20 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x028)); // 024660B20100 0x28 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x030)); // 024660B20140 0x30 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x038)); // 024660B20180 0x38 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 OpenExchangeExpiryDateCheckTime          0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class GashaCashe
+    public partial class GashaCashe : DataModel
     {
         public DateTime                                 OpenExchangeExpiryDateCheckTime         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaCashe();
+            var value   = new GashaCashe() { Pointer= p0 };
 
-            value.OpenExchangeExpiryDateCheckTime           = GetDateTime(new IntPtr(p + 0x010)); // 027004A87978 0x10 OpenExchangeExpiryDateCheckTime ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.OpenExchangeExpiryDateCheckTime           = GetDateTime(new IntPtr(p + 0x010)); // 0245A4ADE358 0x10 OpenExchangeExpiryDateCheckTime ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

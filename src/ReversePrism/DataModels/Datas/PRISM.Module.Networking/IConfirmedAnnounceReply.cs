@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IConfirmedAnnounceReply
+    public partial class IConfirmedAnnounceReply : DataModel
     {
 
         public static IConfirmedAnnounceReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IConfirmedAnnounceReply();
+            var value   = new IConfirmedAnnounceReply() { Pointer= p0 };
 
 
             return value;

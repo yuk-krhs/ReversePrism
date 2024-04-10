@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 FalseLiteral                             string IL2CPP_TYPE_STRING
     // 000 TrueString                               string IL2CPP_TYPE_STRING
     // 008 FalseString                              string IL2CPP_TYPE_STRING
-    public partial class Boolean
+    public partial class Boolean : DataModel
     {
         public bool                                     M_value                                 { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Boolean();
+            var value   = new Boolean() { Pointer= p0 };
 
-            value.M_value                                   = GetBool(new IntPtr(p + 0x010)); // 0270015327B8 0x10 M_value                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetBool(new IntPtr(p + 0x010)); // 0245A15327B8 0x10 M_value                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

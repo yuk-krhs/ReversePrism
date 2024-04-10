@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnsignedLongInput
+    public partial class UnsignedLongInput : DataModel
     {
 
         public static UnsignedLongInput? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsignedLongInput();
+            var value   = new UnsignedLongInput() { Pointer= p0 };
 
 
             return value;

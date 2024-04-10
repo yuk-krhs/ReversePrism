@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 01E IsAllGreat                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 IsAllPerfectFieldNumber                  int IL2CPP_TYPE_I4
     // 01F IsAllPerfect                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveClearInfoStatus
+    public partial class LiveClearInfoStatus : DataModel
     {
         public SongDifficultyLevel                      DifficultyLevel                         { get; set; }
         public bool                                     IsCleared                               { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveClearInfoStatus();
+            var value   = new LiveClearInfoStatus() { Pointer= p0 };
 
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x018)); // 0270D1348F60 0x18 DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.IsCleared                                 = GetBool(new IntPtr(p + 0x01C)); // 0270D1348FA0 0x1C IsCleared                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsFullCombo                               = GetBool(new IntPtr(p + 0x01D)); // 0270D1348FE0 0x1D IsFullCombo                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAllGreat                                = GetBool(new IntPtr(p + 0x01E)); // 0270D1349020 0x1E IsAllGreat                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAllPerfect                              = GetBool(new IntPtr(p + 0x01F)); // 0270D1349060 0x1F IsAllPerfect                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x018)); // 0246612CAA70 0x18 DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.IsCleared                                 = GetBool(new IntPtr(p + 0x01C)); // 0246612CAAB0 0x1C IsCleared                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsFullCombo                               = GetBool(new IntPtr(p + 0x01D)); // 0246612CAAF0 0x1D IsFullCombo                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsAllGreat                                = GetBool(new IntPtr(p + 0x01E)); // 0246612CAB30 0x1E IsAllGreat                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsAllPerfect                              = GetBool(new IntPtr(p + 0x01F)); // 0246612CAB70 0x1F IsAllPerfect                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

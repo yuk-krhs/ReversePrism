@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 0B0 __Method_ResumePvpMatch                  Method`2<ResumePvpMatchArgs, ResumePvpMatchReply> IL2CPP_TYPE_GENERICINST
     // 0B8 __Method_FinishPvpMatch                  Method`2<FinishPvpMatchArgs, FinishPvpMatchReply> IL2CPP_TYPE_GENERICINST
     // 0C0 __Method_BreakPvpMatch                   Method`2<BreakPvpMatchArgs, BreakPvpMatchReply> IL2CPP_TYPE_GENERICINST
-    public partial class PvpService
+    public partial class PvpService : DataModel
     {
 
         public static PvpService? FromPointer(IntPtr p0)
@@ -42,7 +42,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpService();
+            var value   = new PvpService() { Pointer= p0 };
 
 
             return value;

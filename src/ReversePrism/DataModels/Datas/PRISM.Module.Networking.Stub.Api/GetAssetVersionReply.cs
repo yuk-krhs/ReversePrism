@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 AssetIndexName                           000186671910 ModelPrimitiveType string string string String
     // 000 AssetVersionFieldNumber                  int IL2CPP_TYPE_I4
     // 028 AssetVersion                             000186671910 ModelPrimitiveType string string string String
-    public partial class GetAssetVersionReply
+    public partial class GetAssetVersionReply : DataModel
     {
         public string                                   AssetUrl                                { get; set; }
         public string                                   AssetIndexName                          { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAssetVersionReply();
+            var value   = new GetAssetVersionReply() { Pointer= p0 };
 
-            value.AssetUrl                                  = GetString(new IntPtr(p + 0x018)); // 0270D0B1F980 0x18 AssetUrl                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.AssetIndexName                            = GetString(new IntPtr(p + 0x020)); // 0270D0B1F9C0 0x20 AssetIndexName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.AssetVersion                              = GetString(new IntPtr(p + 0x028)); // 0270D0B1FA00 0x28 AssetVersion                ( 000186671910 ModelPrimitiveType string string string String )
+            value.AssetUrl                                  = GetString(new IntPtr(p + 0x018)); // 024660B11EB8 0x18 AssetUrl                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.AssetIndexName                            = GetString(new IntPtr(p + 0x020)); // 024660B11EF8 0x20 AssetIndexName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.AssetVersion                              = GetString(new IntPtr(p + 0x028)); // 024660B11F38 0x28 AssetVersion                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

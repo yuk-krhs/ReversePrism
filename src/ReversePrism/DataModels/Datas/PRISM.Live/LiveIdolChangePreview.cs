@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 PIdolDetailPopupCaller                   000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
     // 048 FIdolDetailPopupCaller                   000186541E70 ModelClassType FIdolDetailPopupCaller FIdolDetailPopupCaller FIdolDetailPopupCaller Pointer
     // 050 AfterIconCanceller                       000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    public partial class LiveIdolChangePreview
+    public partial class LiveIdolChangePreview : DataModel
     {
         public PFIdolIconRectEmptyView?                 BeforeEmpty                             { get; set; }
         public PFIdolIconRectView?                      BeforeIcon                              { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveIdolChangePreview();
+            var value   = new LiveIdolChangePreview() { Pointer= p0 };
 
-            value.BeforeEmpty                               = GetObject<PFIdolIconRectEmptyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconRectEmptyView.FromPointer); // 0270D51D8C00 0x20 BeforeEmpty                 ( 0001867037B0 ModelClassType PFIdolIconRectEmptyView PFIdolIconRectEmptyView PFIdolIconRectEmptyView Pointer )
-            value.BeforeIcon                                = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 0270D51D8C20 0x28 BeforeIcon                  ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
-            value.AfterEmpty                                = GetObject<PFIdolIconRectEmptyView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PFIdolIconRectEmptyView.FromPointer); // 0270D51D8C40 0x30 AfterEmpty                  ( 0001867037B0 ModelClassType PFIdolIconRectEmptyView PFIdolIconRectEmptyView PFIdolIconRectEmptyView Pointer )
-            value.AfterIcon                                 = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 0270D51D8C60 0x38 AfterIcon                   ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
-            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x040), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0270D51D8C80 0x40 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
-            value.FIdolDetailPopupCaller                    = GetObject<FIdolDetailPopupCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.FIdolDetailPopupCaller.FromPointer); // 0270D51D8CA0 0x48 FIdolDetailPopupCaller      ( 000186541E70 ModelClassType FIdolDetailPopupCaller FIdolDetailPopupCaller FIdolDetailPopupCaller Pointer )
-            value.AfterIconCanceller                        = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x050)); // 0270D51D8CC0 0x50 AfterIconCanceller          ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.BeforeEmpty                               = GetObject<PFIdolIconRectEmptyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconRectEmptyView.FromPointer); // 02466522B828 0x20 BeforeEmpty                 ( 0001867037B0 ModelClassType PFIdolIconRectEmptyView PFIdolIconRectEmptyView PFIdolIconRectEmptyView Pointer )
+            value.BeforeIcon                                = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 02466522B848 0x28 BeforeIcon                  ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
+            value.AfterEmpty                                = GetObject<PFIdolIconRectEmptyView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PFIdolIconRectEmptyView.FromPointer); // 02466522B868 0x30 AfterEmpty                  ( 0001867037B0 ModelClassType PFIdolIconRectEmptyView PFIdolIconRectEmptyView PFIdolIconRectEmptyView Pointer )
+            value.AfterIcon                                 = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 02466522B888 0x38 AfterIcon                   ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
+            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x040), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 02466522B8A8 0x40 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
+            value.FIdolDetailPopupCaller                    = GetObject<FIdolDetailPopupCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.FIdolDetailPopupCaller.FromPointer); // 02466522B8C8 0x48 FIdolDetailPopupCaller      ( 000186541E70 ModelClassType FIdolDetailPopupCaller FIdolDetailPopupCaller FIdolDetailPopupCaller Pointer )
+            value.AfterIconCanceller                        = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x050)); // 02466522B8E8 0x50 AfterIconCanceller          ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SharedBetweenAnimatorsAttribute
+    public partial class SharedBetweenAnimatorsAttribute : DataModel
     {
 
         public static SharedBetweenAnimatorsAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SharedBetweenAnimatorsAttribute();
+            var value   = new SharedBetweenAnimatorsAttribute() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CreatePropertyAttribute
+    public partial class CreatePropertyAttribute : DataModel
     {
 
         public static CreatePropertyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreatePropertyAttribute();
+            var value   = new CreatePropertyAttribute() { Pointer= p0 };
 
 
             return value;

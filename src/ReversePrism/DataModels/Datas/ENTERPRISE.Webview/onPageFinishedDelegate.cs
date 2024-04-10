@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class onPageFinishedDelegate
+    public partial class onPageFinishedDelegate : DataModel
     {
 
         public static onPageFinishedDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new onPageFinishedDelegate();
+            var value   = new onPageFinishedDelegate() { Pointer= p0 };
 
 
             return value;

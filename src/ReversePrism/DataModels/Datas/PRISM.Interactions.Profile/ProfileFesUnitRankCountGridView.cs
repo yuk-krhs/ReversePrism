@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 CellPrefab                               0001865B3F90 ModelClassType ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell Pointer
-    public partial class ProfileFesUnitRankCountGridView
+    public partial class ProfileFesUnitRankCountGridView : DataModel
     {
         public ProfileFesUnitRankCountGridViewCell?     CellPrefab                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileFesUnitRankCountGridView();
+            var value   = new ProfileFesUnitRankCountGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<ProfileFesUnitRankCountGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProfileFesUnitRankCountGridViewCell.FromPointer); // 0270DB712A78 0x90 CellPrefab                  ( 0001865B3F90 ModelClassType ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<ProfileFesUnitRankCountGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProfileFesUnitRankCountGridViewCell.FromPointer); // 02466B79E888 0x90 CellPrefab                  ( 0001865B3F90 ModelClassType ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell ProfileFesUnitRankCountGridViewCell Pointer )
 
             return value;
         }

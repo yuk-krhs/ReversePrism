@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
     // 018 Value                                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BoolValue
+    public partial class BoolValue : DataModel
     {
         public bool                                     Value                                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoolValue();
+            var value   = new BoolValue() { Pointer= p0 };
 
-            value.Value                                     = GetBool(new IntPtr(p + 0x018)); // 0270DA4D70C0 0x18 Value                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Value                                     = GetBool(new IntPtr(p + 0x018)); // 02466A5428C8 0x18 Value                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

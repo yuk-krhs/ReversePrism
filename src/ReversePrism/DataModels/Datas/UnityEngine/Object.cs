@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 OffsetOfInstanceIDInCPlusPlusObject      int IL2CPP_TYPE_I4
     // 000 objectIsNullMessage                      string IL2CPP_TYPE_STRING
     // 000 cloneDestroyedMessage                    string IL2CPP_TYPE_STRING
-    public partial class Object
+    public partial class Object : DataModel
     {
 
         public static Object? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Object();
+            var value   = new Object() { Pointer= p0 };
 
 
             return value;

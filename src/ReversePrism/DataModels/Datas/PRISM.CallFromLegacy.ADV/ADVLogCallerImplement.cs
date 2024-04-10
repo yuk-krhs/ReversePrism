@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Builder                                  000186663A40 ModelClassType ADVLogBuilder ADVLogBuilder ADVLogBuilder Pointer
-    public partial class ADVLogCallerImplement
+    public partial class ADVLogCallerImplement : DataModel
     {
         public ADVLogBuilder?                           Builder                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogCallerImplement();
+            var value   = new ADVLogCallerImplement() { Pointer= p0 };
 
-            value.Builder                                   = GetObject<ADVLogBuilder>(new IntPtr(p + 0x020), ReversePrism.DataModels.ADVLogBuilder.FromPointer); // 0270DB9DE408 0x20 Builder                     ( 000186663A40 ModelClassType ADVLogBuilder ADVLogBuilder ADVLogBuilder Pointer )
+            value.Builder                                   = GetObject<ADVLogBuilder>(new IntPtr(p + 0x020), ReversePrism.DataModels.ADVLogBuilder.FromPointer); // 02466BA6DA08 0x20 Builder                     ( 000186663A40 ModelClassType ADVLogBuilder ADVLogBuilder ADVLogBuilder Pointer )
 
             return value;
         }

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 StoreItem                                000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer
     // 000 OrderStateFieldNumber                    int IL2CPP_TYPE_I4
     // 028 OrderState                               0001866E92E0 ModelEnumType OrderState OrderState OrderState Int32
-    public partial class VerifyReceiptForDmmGamesReply
+    public partial class VerifyReceiptForDmmGamesReply : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public StoreItemStatus?                         StoreItem                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptForDmmGamesReply();
+            var value   = new VerifyReceiptForDmmGamesReply() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B63350 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 0270D0B63390 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
-            value.OrderState                                = (OrderState)GetInt32(new IntPtr(p + 0x028)); // 0270D0B633D0 0x28 OrderState                  ( 0001866E92E0 ModelEnumType OrderState OrderState OrderState Int32 )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B55998 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 024660B559D8 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
+            value.OrderState                                = (OrderState)GetInt32(new IntPtr(p + 0x028)); // 024660B55A18 0x28 OrderState                  ( 0001866E92E0 ModelEnumType OrderState OrderState OrderState Int32 )
 
             return value;
         }

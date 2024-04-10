@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ThreadSafeAttribute
+    public partial class ThreadSafeAttribute : DataModel
     {
 
         public static ThreadSafeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThreadSafeAttribute();
+            var value   = new ThreadSafeAttribute() { Pointer= p0 };
 
 
             return value;

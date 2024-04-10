@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceTermStatus
+    public partial class IProduceTermStatus : DataModel
     {
 
         public static IProduceTermStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceTermStatus();
+            var value   = new IProduceTermStatus() { Pointer= p0 };
 
 
             return value;

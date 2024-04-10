@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C HighScore                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IsNewRecordFieldNumber                   int IL2CPP_TYPE_I4
     // 020 IsNewRecord                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveTechnicalScoreInfoStatus
+    public partial class LiveTechnicalScoreInfoStatus : DataModel
     {
         public int                                      TechnicalScore                          { get; set; }
         public int                                      HighScore                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveTechnicalScoreInfoStatus();
+            var value   = new LiveTechnicalScoreInfoStatus() { Pointer= p0 };
 
-            value.TechnicalScore                            = GetInt32(new IntPtr(p + 0x018)); // 0270D135D818 0x18 TechnicalScore              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270D135D858 0x1C HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsNewRecord                               = GetBool(new IntPtr(p + 0x020)); // 0270D135D898 0x20 IsNewRecord                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TechnicalScore                            = GetInt32(new IntPtr(p + 0x018)); // 0246612E6CB0 0x18 TechnicalScore              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0246612E6CF0 0x1C HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsNewRecord                               = GetBool(new IntPtr(p + 0x020)); // 0246612E6D30 0x20 IsNewRecord                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

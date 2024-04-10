@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 Video                                    string IL2CPP_TYPE_STRING
     // 000 Audio                                    string IL2CPP_TYPE_STRING
     // 000 Binary                                   string IL2CPP_TYPE_STRING
-    public partial class DataType
+    public partial class DataType : DataModel
     {
 
         public static DataType? FromPointer(IntPtr p0)
@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataType();
+            var value   = new DataType() { Pointer= p0 };
 
 
             return value;

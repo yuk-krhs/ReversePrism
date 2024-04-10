@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 ServerStreamingFieldNumber               int IL2CPP_TYPE_I4
     // 021 ServerStreamingDefaultValue              000186596D40 ModelPrimitiveType bool bool bool Bool
     // 041 ServerStreaming                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MethodDescriptorProto
+    public partial class MethodDescriptorProto : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public string                                   Name                                    { get; set; }
@@ -48,19 +48,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MethodDescriptorProto();
+            var value   = new MethodDescriptorProto() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D0BC5830 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D0BC5890 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.InputTypeDefaultValue                     = GetString(new IntPtr(p + 0x010)); // 0270D0BC58D0 0x10 InputTypeDefaultValue       ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.InputType                                 = GetString(new IntPtr(p + 0x028)); // 0270D0BC58F0 0x28 InputType                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.OutputTypeDefaultValue                    = GetString(new IntPtr(p + 0x018)); // 0270D0BC5930 0x18 OutputTypeDefaultValue      ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.OutputType                                = GetString(new IntPtr(p + 0x030)); // 0270D0BC5950 0x30 OutputType                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Options                                   = GetObject<MethodOptions>(new IntPtr(p + 0x038), ReversePrism.DataModels.MethodOptions.FromPointer); // 0270D0BC5990 0x38 Options                     ( 000186611FC0 ModelClassType MethodOptions MethodOptions MethodOptions Pointer )
-            value.ClientStreamingDefaultValue               = GetBool(new IntPtr(p + 0x020)); // 0270D0BC59D0 0x20 ClientStreamingDefaultValue ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.ClientStreaming                           = GetBool(new IntPtr(p + 0x040)); // 0270D0BC59F0 0x40 ClientStreaming             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ServerStreamingDefaultValue               = GetBool(new IntPtr(p + 0x021)); // 0270D0BC5A30 0x21 ServerStreamingDefaultValue ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.ServerStreaming                           = GetBool(new IntPtr(p + 0x041)); // 0270D0BC5A50 0x41 ServerStreaming             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 024660B9DC78 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 024660B9DCD8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.InputTypeDefaultValue                     = GetString(new IntPtr(p + 0x010)); // 024660B9DD18 0x10 InputTypeDefaultValue       ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.InputType                                 = GetString(new IntPtr(p + 0x028)); // 024660B9DD38 0x28 InputType                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.OutputTypeDefaultValue                    = GetString(new IntPtr(p + 0x018)); // 024660B9DD78 0x18 OutputTypeDefaultValue      ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.OutputType                                = GetString(new IntPtr(p + 0x030)); // 024660B9DD98 0x30 OutputType                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Options                                   = GetObject<MethodOptions>(new IntPtr(p + 0x038), ReversePrism.DataModels.MethodOptions.FromPointer); // 024660B9DDD8 0x38 Options                     ( 000186611FC0 ModelClassType MethodOptions MethodOptions MethodOptions Pointer )
+            value.ClientStreamingDefaultValue               = GetBool(new IntPtr(p + 0x020)); // 024660B9DE18 0x20 ClientStreamingDefaultValue ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.ClientStreaming                           = GetBool(new IntPtr(p + 0x040)); // 024660B9DE38 0x40 ClientStreaming             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ServerStreamingDefaultValue               = GetBool(new IntPtr(p + 0x021)); // 024660B9DE78 0x21 ServerStreamingDefaultValue ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.ServerStreaming                           = GetBool(new IntPtr(p + 0x041)); // 024660B9DE98 0x41 ServerStreaming             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

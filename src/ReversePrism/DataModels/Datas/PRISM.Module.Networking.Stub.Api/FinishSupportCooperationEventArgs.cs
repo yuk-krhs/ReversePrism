@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 SelectProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 SelectionSupportSkillFieldNumber         int IL2CPP_TYPE_I4
     // 020 SelectionSupportSkill                    000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer
-    public partial class FinishSupportCooperationEventArgs
+    public partial class FinishSupportCooperationEventArgs : DataModel
     {
         public List<string>?                            SelectProduceCardIdList                 { get; set; }
         public SelectionSupportSkillStatus?             SelectionSupportSkill                   { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishSupportCooperationEventArgs();
+            var value   = new FinishSupportCooperationEventArgs() { Pointer= p0 };
 
-            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 0270D255F1E8 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 0270D255F228 0x20 SelectionSupportSkill       ( 000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
+            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 024662533FB8 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 024662533FF8 0x20 SelectionSupportSkill       ( 000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
 
             return value;
         }

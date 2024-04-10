@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICampaignIconStatus
+    public partial class ICampaignIconStatus : DataModel
     {
 
         public static ICampaignIconStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICampaignIconStatus();
+            var value   = new ICampaignIconStatus() { Pointer= p0 };
 
 
             return value;

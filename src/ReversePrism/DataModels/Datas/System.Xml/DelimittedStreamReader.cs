@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 MatchBuffer                              000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 030 Scratch                                  000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 038 Stream                                   00018650CA60 ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer
-    public partial class DelimittedStreamReader
+    public partial class DelimittedStreamReader : DataModel
     {
         public bool                                     CanGetNextStream                        { get; set; }
         public DelimittedReadStream?                    CurrentStream                           { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DelimittedStreamReader();
+            var value   = new DelimittedStreamReader() { Pointer= p0 };
 
-            value.CanGetNextStream                          = GetBool(new IntPtr(p + 0x010)); // 0270D7C91260 0x10 CanGetNextStream            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentStream                             = GetObject<DelimittedReadStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.DelimittedReadStream.FromPointer); // 0270D7C91280 0x18 CurrentStream               ( 00018659C590 ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer )
-            value.Delimitter                                = GetSByteList(new IntPtr(p + 0x020)); // 0270D7C912A0 0x20 Delimitter                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.MatchBuffer                               = GetSByteList(new IntPtr(p + 0x028)); // 0270D7C912C0 0x28 MatchBuffer                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Scratch                                   = GetSByteList(new IntPtr(p + 0x030)); // 0270D7C912E0 0x30 Scratch                     ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Stream                                    = GetObject<BufferedReadStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.BufferedReadStream.FromPointer); // 0270D7C91300 0x38 Stream                      ( 00018650CA60 ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer )
+            value.CanGetNextStream                          = GetBool(new IntPtr(p + 0x010)); // 024667CF1260 0x10 CanGetNextStream            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentStream                             = GetObject<DelimittedReadStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.DelimittedReadStream.FromPointer); // 024667CF1280 0x18 CurrentStream               ( 00018659C590 ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer )
+            value.Delimitter                                = GetSByteList(new IntPtr(p + 0x020)); // 024667CF12A0 0x20 Delimitter                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.MatchBuffer                               = GetSByteList(new IntPtr(p + 0x028)); // 024667CF12C0 0x28 MatchBuffer                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Scratch                                   = GetSByteList(new IntPtr(p + 0x030)); // 024667CF12E0 0x30 Scratch                     ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Stream                                    = GetObject<BufferedReadStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.BufferedReadStream.FromPointer); // 024667CF1300 0x38 Stream                      ( 00018650CA60 ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer )
 
             return value;
         }

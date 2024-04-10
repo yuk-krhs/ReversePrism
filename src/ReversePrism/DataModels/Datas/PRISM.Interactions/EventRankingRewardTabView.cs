@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 RewardListView                           00018660EBF0 ModelClassType RankingRewardListView RankingRewardListView RankingRewardListView Pointer
     // 028 EventId                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class EventRankingRewardTabView
+    public partial class EventRankingRewardTabView : DataModel
     {
         public RankingRewardListView?                   RewardListView                          { get; set; }
         public int                                      EventId                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventRankingRewardTabView();
+            var value   = new EventRankingRewardTabView() { Pointer= p0 };
 
-            value.RewardListView                            = GetObject<RankingRewardListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.RankingRewardListView.FromPointer); // 0270DB90B4A0 0x20 RewardListView              ( 00018660EBF0 ModelClassType RankingRewardListView RankingRewardListView RankingRewardListView Pointer )
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x028)); // 0270DB90B4C0 0x28 EventId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RewardListView                            = GetObject<RankingRewardListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.RankingRewardListView.FromPointer); // 02466B992778 0x20 RewardListView              ( 00018660EBF0 ModelClassType RankingRewardListView RankingRewardListView RankingRewardListView Pointer )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x028)); // 02466B992798 0x28 EventId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

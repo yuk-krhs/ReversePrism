@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185B71900 ModelEnumListType BigInteger[] BigInteger[] List<BigInteger> Pointer
-    public partial class BigIntegerStorage
+    public partial class BigIntegerStorage : DataModel
     {
         public List<BigInteger>?                        Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BigIntegerStorage();
+            var value   = new BigIntegerStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<BigInteger>(new IntPtr(p + 0x050)); // 0270D89A68C8 0x50 Values                      ( 000185B71900 ModelEnumListType BigInteger[] BigInteger[] List<BigInteger> Pointer )
+            value.Values                                    = GetEnumList<BigInteger>(new IntPtr(p + 0x050)); // 024668A117E0 0x50 Values                      ( 000185B71900 ModelEnumListType BigInteger[] BigInteger[] List<BigInteger> Pointer )
 
             return value;
         }

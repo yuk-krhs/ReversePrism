@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITitleConnector
+    public partial class ITitleConnector : DataModel
     {
 
         public static ITitleConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITitleConnector();
+            var value   = new ITitleConnector() { Pointer= p0 };
 
 
             return value;

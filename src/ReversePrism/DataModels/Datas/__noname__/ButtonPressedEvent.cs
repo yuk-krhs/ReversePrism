@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ButtonPressedEvent
+    public partial class ButtonPressedEvent : DataModel
     {
 
         public static ButtonPressedEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonPressedEvent();
+            var value   = new ButtonPressedEvent() { Pointer= p0 };
 
 
             return value;

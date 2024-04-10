@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 LeadingDetachedCommentsFieldNumber       int IL2CPP_TYPE_I4
     // 028 _repeated_leadingDetachedComments_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 038 LeadingDetachedComments                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class Location
+    public partial class Location : DataModel
     {
         public List<int>?                               Path                                    { get; set; }
         public List<int>?                               Span                                    { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Location();
+            var value   = new Location() { Pointer= p0 };
 
-            value.Path                                      = GetInt32List(new IntPtr(p + 0x018)); // 0270D0BC14F8 0x18 Path                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.Span                                      = GetInt32List(new IntPtr(p + 0x020)); // 0270D0BC1558 0x20 Span                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.LeadingCommentsDefaultValue               = GetString(new IntPtr(p + 0x018)); // 0270D0BC1598 0x18 LeadingCommentsDefaultValue ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.LeadingComments                           = GetString(new IntPtr(p + 0x028)); // 0270D0BC15B8 0x28 LeadingComments             ( 000186671910 ModelPrimitiveType string string string String )
-            value.TrailingCommentsDefaultValue              = GetString(new IntPtr(p + 0x020)); // 0270D0BC15F8 0x20 TrailingCommentsDefaultValue ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.TrailingComments                          = GetString(new IntPtr(p + 0x030)); // 0270D0BC1618 0x30 TrailingComments            ( 000186671910 ModelPrimitiveType string string string String )
-            value.LeadingDetachedComments                   = GetStringList(new IntPtr(p + 0x038)); // 0270D0BC1678 0x38 LeadingDetachedComments     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Path                                      = GetInt32List(new IntPtr(p + 0x018)); // 024660B964A0 0x18 Path                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Span                                      = GetInt32List(new IntPtr(p + 0x020)); // 024660B96500 0x20 Span                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.LeadingCommentsDefaultValue               = GetString(new IntPtr(p + 0x018)); // 024660B96540 0x18 LeadingCommentsDefaultValue ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.LeadingComments                           = GetString(new IntPtr(p + 0x028)); // 024660B96560 0x28 LeadingComments             ( 000186671910 ModelPrimitiveType string string string String )
+            value.TrailingCommentsDefaultValue              = GetString(new IntPtr(p + 0x020)); // 024660B965A0 0x20 TrailingCommentsDefaultValue ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.TrailingComments                          = GetString(new IntPtr(p + 0x030)); // 024660B965C0 0x30 TrailingComments            ( 000186671910 ModelPrimitiveType string string string String )
+            value.LeadingDetachedComments                   = GetStringList(new IntPtr(p + 0x038)); // 024660B96620 0x38 LeadingDetachedComments     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

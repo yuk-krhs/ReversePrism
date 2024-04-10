@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 moveNextAction                           Action IL2CPP_TYPE_CLASS
     // 000 index                                    int IL2CPP_TYPE_I4
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _Where
+    public partial class _Where : DataModel
     {
 
         public static _Where? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Where();
+            var value   = new _Where() { Pointer= p0 };
 
 
             return value;

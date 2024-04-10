@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 UnlockClickEvent                         000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 UICamera                                 0001865A2380 ModelClassType Camera Camera Camera Pointer
     // 048 ClickedButton                            00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer
-    public partial class UIManager
+    public partial class UIManager : DataModel
     {
         public GameObject?                              DisplayGroup                            { get; set; }
         public Transform?                               TutorialGroup                           { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIManager();
+            var value   = new UIManager() { Pointer= p0 };
 
-            value.DisplayGroup                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0A63EA8 0x20 DisplayGroup                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TutorialGroup                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270D0A63EC8 0x28 TutorialGroup               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.PauseReturnBackDisableTween               = GetObject<Tween>(new IntPtr(p + 0x030), ReversePrism.DataModels.Tween.FromPointer); // 0270D0A63EE8 0x30 PauseReturnBackDisableTween ( 0001866BEFF0 ModelClassType Tween Tween Tween Pointer )
-            value.UnlockClickEvent                          = GetBool(new IntPtr(p + 0x038)); // 0270D0A63F08 0x38 UnlockClickEvent            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UICamera                                  = GetObject<Camera>(new IntPtr(p + 0x040), ReversePrism.DataModels.Camera.FromPointer); // 0270D0A63F28 0x40 UICamera                    ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
-            value.ClickedButton                             = GetObject<MonoBehaviour>(new IntPtr(p + 0x048), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 0270D0A63F48 0x48 ClickedButton               ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
+            value.DisplayGroup                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024660A535E8 0x20 DisplayGroup                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TutorialGroup                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 024660A53608 0x28 TutorialGroup               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.PauseReturnBackDisableTween               = GetObject<Tween>(new IntPtr(p + 0x030), ReversePrism.DataModels.Tween.FromPointer); // 024660A53628 0x30 PauseReturnBackDisableTween ( 0001866BEFF0 ModelClassType Tween Tween Tween Pointer )
+            value.UnlockClickEvent                          = GetBool(new IntPtr(p + 0x038)); // 024660A53648 0x38 UnlockClickEvent            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UICamera                                  = GetObject<Camera>(new IntPtr(p + 0x040), ReversePrism.DataModels.Camera.FromPointer); // 024660A53668 0x40 UICamera                    ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
+            value.ClickedButton                             = GetObject<MonoBehaviour>(new IntPtr(p + 0x048), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 024660A53688 0x48 ClickedButton               ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
 
             return value;
         }

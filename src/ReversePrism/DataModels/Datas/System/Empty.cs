@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Value                                    Empty IL2CPP_TYPE_CLASS
-    public partial class Empty
+    public partial class Empty : DataModel
     {
 
         public static Empty? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Empty();
+            var value   = new Empty() { Pointer= p0 };
 
 
             return value;

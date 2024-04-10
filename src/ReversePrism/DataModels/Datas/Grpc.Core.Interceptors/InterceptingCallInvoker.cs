@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Invoker                                  00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer
     // 018 Interceptor                              000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer
-    public partial class InterceptingCallInvoker
+    public partial class InterceptingCallInvoker : DataModel
     {
         public CallInvoker?                             Invoker                                 { get; set; }
         public Interceptor?                             Interceptor                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InterceptingCallInvoker();
+            var value   = new InterceptingCallInvoker() { Pointer= p0 };
 
-            value.Invoker                                   = GetObject<CallInvoker>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallInvoker.FromPointer); // 0270DBB7E0D8 0x10 Invoker                     ( 00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
-            value.Interceptor                               = GetObject<Interceptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interceptor.FromPointer); // 0270DBB7E0F8 0x18 Interceptor                 ( 000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer )
+            value.Invoker                                   = GetObject<CallInvoker>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallInvoker.FromPointer); // 02466BBEDEF0 0x10 Invoker                     ( 00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
+            value.Interceptor                               = GetObject<Interceptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interceptor.FromPointer); // 02466BBEDF10 0x18 Interceptor                 ( 000186716C60 ModelClassType Interceptor Interceptor Interceptor Pointer )
 
             return value;
         }

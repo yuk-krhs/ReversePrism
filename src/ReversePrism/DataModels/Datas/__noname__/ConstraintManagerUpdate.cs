@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConstraintManagerUpdate
+    public partial class ConstraintManagerUpdate : DataModel
     {
 
         public static ConstraintManagerUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstraintManagerUpdate();
+            var value   = new ConstraintManagerUpdate() { Pointer= p0 };
 
 
             return value;

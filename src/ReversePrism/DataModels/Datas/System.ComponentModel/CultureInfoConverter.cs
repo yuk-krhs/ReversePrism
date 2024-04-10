@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Values                                   00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
     // 000 DefaultInvariantCultureString            string IL2CPP_TYPE_STRING
-    public partial class CultureInfoConverter
+    public partial class CultureInfoConverter : DataModel
     {
         public StandardValuesCollection?                Values                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CultureInfoConverter();
+            var value   = new CultureInfoConverter() { Pointer= p0 };
 
-            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0270D7B18548 0x10 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
+            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 024667B80548 0x10 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
 
             return value;
         }

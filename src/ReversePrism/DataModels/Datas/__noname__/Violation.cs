@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Subject                                  000186671910 ModelPrimitiveType string string string String
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
     // 028 Description                              000186671910 ModelPrimitiveType string string string String
-    public partial class Violation
+    public partial class Violation : DataModel
     {
         public string                                   Type                                    { get; set; }
         public string                                   Subject                                 { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Violation();
+            var value   = new Violation() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270DA6DF338 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Subject                                   = GetString(new IntPtr(p + 0x020)); // 0270DA6DF378 0x20 Subject                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x028)); // 0270DA6DF3B8 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466A732260 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Subject                                   = GetString(new IntPtr(p + 0x020)); // 02466A7322A0 0x20 Subject                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x028)); // 02466A7322E0 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

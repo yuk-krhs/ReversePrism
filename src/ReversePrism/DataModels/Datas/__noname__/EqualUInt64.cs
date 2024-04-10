@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EqualUInt64
+    public partial class EqualUInt64 : DataModel
     {
 
         public static EqualUInt64? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EqualUInt64();
+            var value   = new EqualUInt64() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 098 BytesUnknown                             000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 0A0 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DecoderFallbackException
+    public partial class DecoderFallbackException : DataModel
     {
         public List<sbyte>?                             BytesUnknown                            { get; set; }
         public int                                      Index                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecoderFallbackException();
+            var value   = new DecoderFallbackException() { Pointer= p0 };
 
-            value.BytesUnknown                              = GetSByteList(new IntPtr(p + 0x098)); // 0270D6B62438 0x98 BytesUnknown                ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x0A0)); // 0270D6B62458 0xA0 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BytesUnknown                              = GetSByteList(new IntPtr(p + 0x098)); // 024666BDA438 0x98 BytesUnknown                ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x0A0)); // 024666BDA458 0xA0 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

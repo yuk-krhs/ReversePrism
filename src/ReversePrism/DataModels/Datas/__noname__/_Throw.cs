@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 exception                                Exception IL2CPP_TYPE_CLASS
     // 000 cancellationToken                        CancellationToken IL2CPP_TYPE_VALUETYPE
-    public partial class _Throw
+    public partial class _Throw : DataModel
     {
 
         public static _Throw? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Throw();
+            var value   = new _Throw() { Pointer= p0 };
 
 
             return value;

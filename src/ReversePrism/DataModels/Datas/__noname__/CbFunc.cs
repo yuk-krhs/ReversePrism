@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CbFunc
+    public partial class CbFunc : DataModel
     {
 
         public static CbFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CbFunc();
+            var value   = new CbFunc() { Pointer= p0 };
 
 
             return value;

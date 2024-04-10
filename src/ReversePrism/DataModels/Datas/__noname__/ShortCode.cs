@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 RegionCode                               000186671910 ModelPrimitiveType string string string String
     // 000 NumberFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Number                                   000186671910 ModelPrimitiveType string string string String
-    public partial class ShortCode
+    public partial class ShortCode : DataModel
     {
         public string                                   RegionCode                              { get; set; }
         public string                                   Number                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShortCode();
+            var value   = new ShortCode() { Pointer= p0 };
 
-            value.RegionCode                                = GetString(new IntPtr(p + 0x018)); // 0270DA6AB338 0x18 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Number                                    = GetString(new IntPtr(p + 0x020)); // 0270DA6AB378 0x20 Number                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.RegionCode                                = GetString(new IntPtr(p + 0x018)); // 02466A706A70 0x18 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Number                                    = GetString(new IntPtr(p + 0x020)); // 02466A706AB0 0x20 Number                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

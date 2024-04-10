@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstProduceCardContentGroupFormatter
+    public partial class MstProduceCardContentGroupFormatter : DataModel
     {
 
         public static MstProduceCardContentGroupFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstProduceCardContentGroupFormatter();
+            var value   = new MstProduceCardContentGroupFormatter() { Pointer= p0 };
 
 
             return value;

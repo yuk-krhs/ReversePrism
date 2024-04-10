@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 PIdolViewModels                          000185C9F858 ModelClassListType PvpPIdolUnitViewModel[] PvpPIdolUnitViewModel[] List<PvpPIdolUnitViewModel> Pointer
     // 060 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
     // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class PvpPIdolUnitEditPopupView
+    public partial class PvpPIdolUnitEditPopupView : DataModel
     {
         public List<PvpPIdolUnitPanelView>?             PIdolUnitPanelViews                     { get; set; }
         public List<PvpPIdolUnitViewModel>?             PIdolViewModels                         { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpPIdolUnitEditPopupView();
+            var value   = new PvpPIdolUnitEditPopupView() { Pointer= p0 };
 
-            value.PIdolUnitPanelViews                       = GetObjectList<PvpPIdolUnitPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpPIdolUnitPanelView.FromPointer); // 0270DA148A98 0x20 PIdolUnitPanelViews         ( 000185C9F688 ModelClassListType PvpPIdolUnitPanelView[] PvpPIdolUnitPanelView[] List<PvpPIdolUnitPanelView> Pointer )
-            value.PIdolViewModels                           = GetObjectList<PvpPIdolUnitViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PvpPIdolUnitViewModel.FromPointer); // 0270DA148B78 0x58 PIdolViewModels             ( 000185C9F858 ModelClassListType PvpPIdolUnitViewModel[] PvpPIdolUnitViewModel[] List<PvpPIdolUnitViewModel> Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DA148B98 0x60 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA148BB8 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.PIdolUnitPanelViews                       = GetObjectList<PvpPIdolUnitPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpPIdolUnitPanelView.FromPointer); // 02466A1A42B0 0x20 PIdolUnitPanelViews         ( 000185C9F688 ModelClassListType PvpPIdolUnitPanelView[] PvpPIdolUnitPanelView[] List<PvpPIdolUnitPanelView> Pointer )
+            value.PIdolViewModels                           = GetObjectList<PvpPIdolUnitViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PvpPIdolUnitViewModel.FromPointer); // 02466A1A4390 0x58 PIdolViewModels             ( 000185C9F858 ModelClassListType PvpPIdolUnitViewModel[] PvpPIdolUnitViewModel[] List<PvpPIdolUnitViewModel> Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A1A43B0 0x60 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A1A43D0 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

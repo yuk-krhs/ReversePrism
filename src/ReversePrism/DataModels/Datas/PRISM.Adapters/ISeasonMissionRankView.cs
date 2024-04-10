@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISeasonMissionRankView
+    public partial class ISeasonMissionRankView : DataModel
     {
 
         public static ISeasonMissionRankView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISeasonMissionRankView();
+            var value   = new ISeasonMissionRankView() { Pointer= p0 };
 
 
             return value;

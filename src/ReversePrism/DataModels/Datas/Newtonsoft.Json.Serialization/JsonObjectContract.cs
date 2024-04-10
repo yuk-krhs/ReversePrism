@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 110 _parameterizedCreator                    ObjectConstructor`1<<object>> IL2CPP_TYPE_GENERICINST
     // 118 CreatorParameters                        0001867593A0 ModelClassType JsonPropertyCollection JsonPropertyCollection JsonPropertyCollection Pointer
     // 120 ExtensionDataValueType                   000186692850 ModelClassType Type Type Type Pointer
-    public partial class JsonObjectContract
+    public partial class JsonObjectContract : DataModel
     {
         public MemberSerialization                      MemberSerialization                     { get; set; }
         public JsonPropertyCollection?                  Properties                              { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonObjectContract();
+            var value   = new JsonObjectContract() { Pointer= p0 };
 
-            value.MemberSerialization                       = (MemberSerialization)GetInt32(new IntPtr(p + 0x0C0)); // 0270060334A8 0xC0 MemberSerialization         ( 0001865F42A0 ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32 )
-            value.Properties                                = GetObject<JsonPropertyCollection>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.JsonPropertyCollection.FromPointer); // 027006033528 0xE0 Properties                  ( 000186759680 ModelClassType JsonPropertyCollection JsonPropertyCollection JsonPropertyCollection Pointer )
-            value.ExtensionDataSetter                       = GetObject<ExtensionDataSetter>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.ExtensionDataSetter.FromPointer); // 027006033548 0xE8 ExtensionDataSetter         ( 000186531B80 ModelClassType ExtensionDataSetter ExtensionDataSetter ExtensionDataSetter Pointer )
-            value.ExtensionDataGetter                       = GetObject<ExtensionDataGetter>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.ExtensionDataGetter.FromPointer); // 027006033568 0xF0 ExtensionDataGetter         ( 000186530F20 ModelClassType ExtensionDataGetter ExtensionDataGetter ExtensionDataGetter Pointer )
-            value.ExtensionDataIsJToken                     = GetBool(new IntPtr(p + 0x100)); // 0270060335A8 0x100 ExtensionDataIsJToken       ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.CreatorParameters                         = GetObject<JsonPropertyCollection>(new IntPtr(p + 0x118), ReversePrism.DataModels.JsonPropertyCollection.FromPointer); // 027006033628 0x118 CreatorParameters           ( 0001867593A0 ModelClassType JsonPropertyCollection JsonPropertyCollection JsonPropertyCollection Pointer )
-            value.ExtensionDataValueType                    = GetObject<Type>(new IntPtr(p + 0x120), ReversePrism.DataModels.Type.FromPointer); // 027006033648 0x120 ExtensionDataValueType      ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.MemberSerialization                       = (MemberSerialization)GetInt32(new IntPtr(p + 0x0C0)); // 0245A600C150 0xC0 MemberSerialization         ( 0001865F42A0 ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32 )
+            value.Properties                                = GetObject<JsonPropertyCollection>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.JsonPropertyCollection.FromPointer); // 0245A600C1D0 0xE0 Properties                  ( 000186759680 ModelClassType JsonPropertyCollection JsonPropertyCollection JsonPropertyCollection Pointer )
+            value.ExtensionDataSetter                       = GetObject<ExtensionDataSetter>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.ExtensionDataSetter.FromPointer); // 0245A600C1F0 0xE8 ExtensionDataSetter         ( 000186531B80 ModelClassType ExtensionDataSetter ExtensionDataSetter ExtensionDataSetter Pointer )
+            value.ExtensionDataGetter                       = GetObject<ExtensionDataGetter>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.ExtensionDataGetter.FromPointer); // 0245A600C210 0xF0 ExtensionDataGetter         ( 000186530F20 ModelClassType ExtensionDataGetter ExtensionDataGetter ExtensionDataGetter Pointer )
+            value.ExtensionDataIsJToken                     = GetBool(new IntPtr(p + 0x100)); // 0245A600C250 0x100 ExtensionDataIsJToken       ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.CreatorParameters                         = GetObject<JsonPropertyCollection>(new IntPtr(p + 0x118), ReversePrism.DataModels.JsonPropertyCollection.FromPointer); // 0245A600C2D0 0x118 CreatorParameters           ( 0001867593A0 ModelClassType JsonPropertyCollection JsonPropertyCollection JsonPropertyCollection Pointer )
+            value.ExtensionDataValueType                    = GetObject<Type>(new IntPtr(p + 0x120), ReversePrism.DataModels.Type.FromPointer); // 0245A600C2F0 0x120 ExtensionDataValueType      ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

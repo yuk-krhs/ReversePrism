@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ProviderId                               000186671910 ModelPrimitiveType string string string String
     // 000 AudiencesFieldNumber                     int IL2CPP_TYPE_I4
     // 020 Audiences                                000186671910 ModelPrimitiveType string string string String
-    public partial class AuthRequirement
+    public partial class AuthRequirement : DataModel
     {
         public string                                   ProviderId                              { get; set; }
         public string                                   Audiences                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthRequirement();
+            var value   = new AuthRequirement() { Pointer= p0 };
 
-            value.ProviderId                                = GetString(new IntPtr(p + 0x018)); // 0270DA73FBB8 0x18 ProviderId                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Audiences                                 = GetString(new IntPtr(p + 0x020)); // 0270DA73FBF8 0x20 Audiences                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderId                                = GetString(new IntPtr(p + 0x018)); // 02466A793EF0 0x18 ProviderId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Audiences                                 = GetString(new IntPtr(p + 0x020)); // 02466A793F30 0x20 Audiences                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

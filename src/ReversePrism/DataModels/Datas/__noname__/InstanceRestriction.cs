@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Expression                               0001865CF210 ModelClassType Expression Expression Expression Pointer
     // 018 _instance                                <object> IL2CPP_TYPE_OBJECT
-    public partial class InstanceRestriction
+    public partial class InstanceRestriction : DataModel
     {
         public Expression?                              Expression                              { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InstanceRestriction();
+            var value   = new InstanceRestriction() { Pointer= p0 };
 
-            value.Expression                                = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0270DA06C918 0x10 Expression                  ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Expression                                = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 02466A0D0678 0x10 Expression                  ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

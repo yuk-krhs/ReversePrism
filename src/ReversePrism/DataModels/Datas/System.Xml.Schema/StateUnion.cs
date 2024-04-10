@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 AllElementsRequired                      0001865F36C0 ModelPrimitiveType int int int Int32
     // 010 CurPosIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 010 NumberOfRunningPos                       0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class StateUnion
+    public partial class StateUnion : DataModel
     {
         public int                                      State                                   { get; set; }
         public int                                      AllElementsRequired                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StateUnion();
+            var value   = new StateUnion() { Pointer= p0 };
 
-            value.State                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D74F8830 0x10 State                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.AllElementsRequired                       = GetInt32(new IntPtr(p + 0x010)); // 0270D74F8850 0x10 AllElementsRequired         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CurPosIndex                               = GetInt32(new IntPtr(p + 0x010)); // 0270D74F8870 0x10 CurPosIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NumberOfRunningPos                        = GetInt32(new IntPtr(p + 0x010)); // 0270D74F8890 0x10 NumberOfRunningPos          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = GetInt32(new IntPtr(p + 0x010)); // 024667558830 0x10 State                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.AllElementsRequired                       = GetInt32(new IntPtr(p + 0x010)); // 024667558850 0x10 AllElementsRequired         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CurPosIndex                               = GetInt32(new IntPtr(p + 0x010)); // 024667558870 0x10 CurPosIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NumberOfRunningPos                        = GetInt32(new IntPtr(p + 0x010)); // 024667558890 0x10 NumberOfRunningPos          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

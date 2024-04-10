@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 Target                                   000186671910 ModelPrimitiveType string string string String
     // 000 AllowCorsFieldNumber                     int IL2CPP_TYPE_I4
     // 030 AllowCors                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class Endpoint
+    public partial class Endpoint : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<string>?                            Aliases                                 { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Endpoint();
+            var value   = new Endpoint() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA7C99F8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Aliases                                   = GetStringList(new IntPtr(p + 0x020)); // 0270DA7C9A58 0x20 Aliases                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Target                                    = GetString(new IntPtr(p + 0x028)); // 0270DA7C9A98 0x28 Target                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.AllowCors                                 = GetBool(new IntPtr(p + 0x030)); // 0270DA7C9AD8 0x30 AllowCors                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A82E0B0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Aliases                                   = GetStringList(new IntPtr(p + 0x020)); // 02466A82E110 0x20 Aliases                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Target                                    = GetString(new IntPtr(p + 0x028)); // 02466A82E150 0x28 Target                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.AllowCors                                 = GetBool(new IntPtr(p + 0x030)); // 02466A82E190 0x30 AllowCors                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

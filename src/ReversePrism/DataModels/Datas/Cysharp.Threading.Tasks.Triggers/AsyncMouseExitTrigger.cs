@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncMouseExitTrigger
+    public partial class AsyncMouseExitTrigger : DataModel
     {
 
         public static AsyncMouseExitTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncMouseExitTrigger();
+            var value   = new AsyncMouseExitTrigger() { Pointer= p0 };
 
 
             return value;

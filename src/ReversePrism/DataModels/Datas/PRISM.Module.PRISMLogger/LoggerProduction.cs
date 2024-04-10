@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Formatter                                0001865AFBD0 ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer
     // 018 LoggerAnalysis                           0001865A23A0 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer
-    public partial class LoggerProduction
+    public partial class LoggerProduction : DataModel
     {
         public IMessageFormatter?                       Formatter                               { get; set; }
         public ILoggerAnalysis?                         LoggerAnalysis                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggerProduction();
+            var value   = new LoggerProduction() { Pointer= p0 };
 
-            value.Formatter                                 = GetObject<IMessageFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageFormatter.FromPointer); // 027003C9D5B0 0x10 Formatter                   ( 0001865AFBD0 ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer )
-            value.LoggerAnalysis                            = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 027003C9D5D0 0x18 LoggerAnalysis              ( 0001865A23A0 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
+            value.Formatter                                 = GetObject<IMessageFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageFormatter.FromPointer); // 0245A3C9D5B0 0x10 Formatter                   ( 0001865AFBD0 ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer )
+            value.LoggerAnalysis                            = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 0245A3C9D5D0 0x18 LoggerAnalysis              ( 0001865A23A0 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
 
             return value;
         }

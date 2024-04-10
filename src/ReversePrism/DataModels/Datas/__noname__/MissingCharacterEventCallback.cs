@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MissingCharacterEventCallback
+    public partial class MissingCharacterEventCallback : DataModel
     {
 
         public static MissingCharacterEventCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissingCharacterEventCallback();
+            var value   = new MissingCharacterEventCallback() { Pointer= p0 };
 
 
             return value;

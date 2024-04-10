@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SupportsVibration                        0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class RhythmGameVibrateService
+    public partial class RhythmGameVibrateService : DataModel
     {
         public bool                                     SupportsVibration                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameVibrateService();
+            var value   = new RhythmGameVibrateService() { Pointer= p0 };
 
-            value.SupportsVibration                         = GetBool(new IntPtr(p + 0x010)); // 0270D500E1D8 0x10 SupportsVibration           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SupportsVibration                         = GetBool(new IntPtr(p + 0x010)); // 02466508A030 0x10 SupportsVibration           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

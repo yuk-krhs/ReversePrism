@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDispatcher
+    public partial class IDispatcher : DataModel
     {
 
         public static IDispatcher? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDispatcher();
+            var value   = new IDispatcher() { Pointer= p0 };
 
 
             return value;

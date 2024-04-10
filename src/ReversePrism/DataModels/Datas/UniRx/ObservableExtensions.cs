@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ObservableExtensions
+    public partial class ObservableExtensions : DataModel
     {
 
         public static ObservableExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableExtensions();
+            var value   = new ObservableExtensions() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 InvokeControllerCallback                 0001866792B0 ModelClassType Action Action Action Pointer
     // 058 End2EndActivityTracingEnabled            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class EtwProvider
+    public partial class EtwProvider : DataModel
     {
         public Action?                                  InvokeControllerCallback                { get; set; }
         public bool                                     End2EndActivityTracingEnabled           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EtwProvider();
+            var value   = new EtwProvider() { Pointer= p0 };
 
-            value.InvokeControllerCallback                  = GetObject<Action>(new IntPtr(p + 0x050), ReversePrism.DataModels.Action.FromPointer); // 027004D05A10 0x50 InvokeControllerCallback    ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.End2EndActivityTracingEnabled             = GetBool(new IntPtr(p + 0x058)); // 027004D05A30 0x58 End2EndActivityTracingEnabled ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.InvokeControllerCallback                  = GetObject<Action>(new IntPtr(p + 0x050), ReversePrism.DataModels.Action.FromPointer); // 0245A4D41C78 0x50 InvokeControllerCallback    ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.End2EndActivityTracingEnabled             = GetBool(new IntPtr(p + 0x058)); // 0245A4D41C98 0x58 End2EndActivityTracingEnabled ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

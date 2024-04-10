@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 070 M_EnumType                               000186692850 ModelClassType Type Type Type Pointer
-    public partial class BitField
+    public partial class BitField : DataModel
     {
         public Type?                                    M_EnumType                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitField();
+            var value   = new BitField() { Pointer= p0 };
 
-            value.M_EnumType                                = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0270D918CB40 0x70 M_EnumType                  ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.M_EnumType                                = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0246691DF398 0x70 M_EnumType                  ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

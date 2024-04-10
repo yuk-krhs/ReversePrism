@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 AllowUnregisteredCalls                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 SkipServiceControlFieldNumber            int IL2CPP_TYPE_I4
     // 021 SkipServiceControl                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UsageRule
+    public partial class UsageRule : DataModel
     {
         public string                                   Selector                                { get; set; }
         public bool                                     AllowUnregisteredCalls                  { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UsageRule();
+            var value   = new UsageRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0270DA89F550 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.AllowUnregisteredCalls                    = GetBool(new IntPtr(p + 0x020)); // 0270DA89F590 0x20 AllowUnregisteredCalls      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkipServiceControl                        = GetBool(new IntPtr(p + 0x021)); // 0270DA89F5D0 0x21 SkipServiceControl          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A904500 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.AllowUnregisteredCalls                    = GetBool(new IntPtr(p + 0x020)); // 02466A904540 0x20 AllowUnregisteredCalls      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkipServiceControl                        = GetBool(new IntPtr(p + 0x021)); // 02466A904580 0x21 SkipServiceControl          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

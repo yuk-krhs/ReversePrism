@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 FilterTypeName                           TypeFilter IL2CPP_TYPE_CLASS
     // 008 FilterTypeNameIgnoreCase                 TypeFilter IL2CPP_TYPE_CLASS
     // 000 DefaultLookup                            BindingFlags IL2CPP_TYPE_VALUETYPE
-    public partial class Module
+    public partial class Module : DataModel
     {
 
         public static Module? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Module();
+            var value   = new Module() { Pointer= p0 };
 
 
             return value;

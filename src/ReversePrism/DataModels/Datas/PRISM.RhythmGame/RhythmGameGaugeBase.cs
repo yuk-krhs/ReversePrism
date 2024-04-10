@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 PreloadCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 AddedScoreTextPool                       00018668B530 ModelClassType AddedTextAnimationPool AddedTextAnimationPool AddedTextAnimationPool Pointer
     // 040 BeforeText                               00018668ADA0 ModelClassType AddedScoreText AddedScoreText AddedScoreText Pointer
-    public partial class RhythmGameGaugeBase
+    public partial class RhythmGameGaugeBase : DataModel
     {
         public AddedScoreText?                          AddedScoreTextPrefab                    { get; set; }
         public GameObject?                              AddedScoreTextRoot                      { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameGaugeBase();
+            var value   = new RhythmGameGaugeBase() { Pointer= p0 };
 
-            value.AddedScoreTextPrefab                      = GetObject<AddedScoreText>(new IntPtr(p + 0x020), ReversePrism.DataModels.AddedScoreText.FromPointer); // 0270D50546E8 0x20 AddedScoreTextPrefab        ( 00018668ADA0 ModelClassType AddedScoreText AddedScoreText AddedScoreText Pointer )
-            value.AddedScoreTextRoot                        = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5054708 0x28 AddedScoreTextRoot          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PreloadCount                              = GetInt32(new IntPtr(p + 0x030)); // 0270D5054728 0x30 PreloadCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AddedScoreTextPool                        = GetObject<AddedTextAnimationPool>(new IntPtr(p + 0x038), ReversePrism.DataModels.AddedTextAnimationPool.FromPointer); // 0270D5054748 0x38 AddedScoreTextPool          ( 00018668B530 ModelClassType AddedTextAnimationPool AddedTextAnimationPool AddedTextAnimationPool Pointer )
-            value.BeforeText                                = GetObject<AddedScoreText>(new IntPtr(p + 0x040), ReversePrism.DataModels.AddedScoreText.FromPointer); // 0270D5054768 0x40 BeforeText                  ( 00018668ADA0 ModelClassType AddedScoreText AddedScoreText AddedScoreText Pointer )
+            value.AddedScoreTextPrefab                      = GetObject<AddedScoreText>(new IntPtr(p + 0x020), ReversePrism.DataModels.AddedScoreText.FromPointer); // 0246650BF620 0x20 AddedScoreTextPrefab        ( 00018668ADA0 ModelClassType AddedScoreText AddedScoreText AddedScoreText Pointer )
+            value.AddedScoreTextRoot                        = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0246650BF640 0x28 AddedScoreTextRoot          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PreloadCount                              = GetInt32(new IntPtr(p + 0x030)); // 0246650BF660 0x30 PreloadCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AddedScoreTextPool                        = GetObject<AddedTextAnimationPool>(new IntPtr(p + 0x038), ReversePrism.DataModels.AddedTextAnimationPool.FromPointer); // 0246650BF680 0x38 AddedScoreTextPool          ( 00018668B530 ModelClassType AddedTextAnimationPool AddedTextAnimationPool AddedTextAnimationPool Pointer )
+            value.BeforeText                                = GetObject<AddedScoreText>(new IntPtr(p + 0x040), ReversePrism.DataModels.AddedScoreText.FromPointer); // 0246650BF6A0 0x40 BeforeText                  ( 00018668ADA0 ModelClassType AddedScoreText AddedScoreText AddedScoreText Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DownloadAssetsSequence
+    public partial class DownloadAssetsSequence : DataModel
     {
 
         public static DownloadAssetsSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadAssetsSequence();
+            var value   = new DownloadAssetsSequence() { Pointer= p0 };
 
 
             return value;

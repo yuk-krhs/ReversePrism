@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Reloadable                               0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 020 SerializerTypeName                       000186672F10 ModelPrimitiveType string string string String
     // 028 SerializerBaseTypeName                   000186672F10 ModelPrimitiveType string string string String
-    public partial class RootDesignerSerializerAttribute
+    public partial class RootDesignerSerializerAttribute : DataModel
     {
         public string                                   TypeId                                  { get; set; }
         public bool                                     Reloadable                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RootDesignerSerializerAttribute();
+            var value   = new RootDesignerSerializerAttribute() { Pointer= p0 };
 
-            value.TypeId                                    = GetString(new IntPtr(p + 0x010)); // 0270D7B3F3C0 0x10 TypeId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Reloadable                                = GetBool(new IntPtr(p + 0x018)); // 0270D7B3F3E0 0x18 Reloadable                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.SerializerTypeName                        = GetString(new IntPtr(p + 0x020)); // 0270D7B3F400 0x20 SerializerTypeName          ( 000186672F10 ModelPrimitiveType string string string String )
-            value.SerializerBaseTypeName                    = GetString(new IntPtr(p + 0x028)); // 0270D7B3F420 0x28 SerializerBaseTypeName      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.TypeId                                    = GetString(new IntPtr(p + 0x010)); // 024667BA73C0 0x10 TypeId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Reloadable                                = GetBool(new IntPtr(p + 0x018)); // 024667BA73E0 0x18 Reloadable                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SerializerTypeName                        = GetString(new IntPtr(p + 0x020)); // 024667BA7400 0x20 SerializerTypeName          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.SerializerBaseTypeName                    = GetString(new IntPtr(p + 0x028)); // 024667BA7420 0x28 SerializerBaseTypeName      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

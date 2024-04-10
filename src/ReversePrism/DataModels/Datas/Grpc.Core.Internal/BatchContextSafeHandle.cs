@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 Logger                                   ILogger IL2CPP_TYPE_CLASS
     // 020 returnToPoolAction                       Action`1<BatchContextSafeHandle> IL2CPP_TYPE_GENERICINST
     // 028 CompletionCallbackData                   0001866F76C0 ModelEnumType CompletionCallbackData CompletionCallbackData CompletionCallbackData Int32
-    public partial class BatchContextSafeHandle
+    public partial class BatchContextSafeHandle : DataModel
     {
         public CompletionCallbackData                   CompletionCallbackData                  { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchContextSafeHandle();
+            var value   = new BatchContextSafeHandle() { Pointer= p0 };
 
-            value.CompletionCallbackData                    = (CompletionCallbackData)GetInt32(new IntPtr(p + 0x028)); // 02700409DE10 0x28 CompletionCallbackData      ( 0001866F76C0 ModelEnumType CompletionCallbackData CompletionCallbackData CompletionCallbackData Int32 )
+            value.CompletionCallbackData                    = (CompletionCallbackData)GetInt32(new IntPtr(p + 0x028)); // 024660E36FB8 0x28 CompletionCallbackData      ( 0001866F76C0 ModelEnumType CompletionCallbackData CompletionCallbackData CompletionCallbackData Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_UndoSetParentTrackText                 string IL2CPP_TYPE_STRING
-    public partial class TimelineClipExtensions
+    public partial class TimelineClipExtensions : DataModel
     {
 
         public static TimelineClipExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineClipExtensions();
+            var value   = new TimelineClipExtensions() { Pointer= p0 };
 
 
             return value;

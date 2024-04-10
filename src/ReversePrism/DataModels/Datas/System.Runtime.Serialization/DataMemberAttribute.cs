@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C Order                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 IsRequired                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 021 EmitDefaultValue                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DataMemberAttribute
+    public partial class DataMemberAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
         public bool                                     IsNameSetExplicitly                     { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataMemberAttribute();
+            var value   = new DataMemberAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027004CC31E8 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x018)); // 027004CC3208 0x18 IsNameSetExplicitly         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Order                                     = GetInt32(new IntPtr(p + 0x01C)); // 027004CC3228 0x1C Order                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsRequired                                = GetBool(new IntPtr(p + 0x020)); // 027004CC3248 0x20 IsRequired                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EmitDefaultValue                          = GetBool(new IntPtr(p + 0x021)); // 027004CC3268 0x21 EmitDefaultValue            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A4CEEF30 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x018)); // 0245A4CEEF50 0x18 IsNameSetExplicitly         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Order                                     = GetInt32(new IntPtr(p + 0x01C)); // 0245A4CEEF70 0x1C Order                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsRequired                                = GetBool(new IntPtr(p + 0x020)); // 0245A4CEEF90 0x20 IsRequired                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EmitDefaultValue                          = GetBool(new IntPtr(p + 0x021)); // 0245A4CEEFB0 0x21 EmitDefaultValue            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

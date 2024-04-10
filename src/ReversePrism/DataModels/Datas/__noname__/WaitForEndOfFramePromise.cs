@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 core                                     UniTaskCompletionSourceCore`1<<object>> IL2CPP_TYPE_GENERICINST
     // 010 WaitForEndOfFrameYieldInstruction        000186541450 ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer
     // 048 IsFirst                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class WaitForEndOfFramePromise
+    public partial class WaitForEndOfFramePromise : DataModel
     {
         public WaitForEndOfFramePromise?                NextNode                                { get; set; }
         public CancellationToken                        CancellationToken                       { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitForEndOfFramePromise();
+            var value   = new WaitForEndOfFramePromise() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<WaitForEndOfFramePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitForEndOfFramePromise.FromPointer); // 0270D8BEA4B8 0x10 NextNode                    ( 000186719860 ModelClassType WaitForEndOfFramePromise WaitForEndOfFramePromise WaitForEndOfFramePromise Pointer )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x018)); // 0270D8BEA4D8 0x18 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.WaitForEndOfFrameYieldInstruction         = GetObject<WaitForEndOfFrame>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitForEndOfFrame.FromPointer); // 0270D8BEA518 0x10 WaitForEndOfFrameYieldInstruction ( 000186541450 ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer )
-            value.IsFirst                                   = GetBool(new IntPtr(p + 0x048)); // 0270D8BEA538 0x48 IsFirst                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NextNode                                  = GetObject<WaitForEndOfFramePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitForEndOfFramePromise.FromPointer); // 024668C3D198 0x10 NextNode                    ( 000186719860 ModelClassType WaitForEndOfFramePromise WaitForEndOfFramePromise WaitForEndOfFramePromise Pointer )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x018)); // 024668C3D1B8 0x18 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.WaitForEndOfFrameYieldInstruction         = GetObject<WaitForEndOfFrame>(new IntPtr(p + 0x010), ReversePrism.DataModels.WaitForEndOfFrame.FromPointer); // 024668C3D1F8 0x10 WaitForEndOfFrameYieldInstruction ( 000186541450 ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer )
+            value.IsFirst                                   = GetBool(new IntPtr(p + 0x048)); // 024668C3D218 0x48 IsFirst                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

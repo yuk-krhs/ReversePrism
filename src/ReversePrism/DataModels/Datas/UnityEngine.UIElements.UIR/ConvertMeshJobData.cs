@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 098 IndexCount                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 09C IndexOffset                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 0A0 FlipIndices                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class ConvertMeshJobData
+    public partial class ConvertMeshJobData : DataModel
     {
         public int                                      VertCount                               { get; set; }
         public Matrix4x4                                Transform                               { get; set; }
@@ -47,21 +47,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConvertMeshJobData();
+            var value   = new ConvertMeshJobData() { Pointer= p0 };
 
-            value.VertCount                                 = GetInt32(new IntPtr(p + 0x020)); // 027006864430 0x20 VertCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Transform                                 = (Matrix4x4)GetInt32(new IntPtr(p + 0x024)); // 027006864450 0x24 Transform                   ( 00018660DFD0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
-            value.TransformUVs                              = GetInt32(new IntPtr(p + 0x064)); // 027006864470 0x64 TransformUVs                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.XformClipPages                            = (Color32)GetInt32(new IntPtr(p + 0x068)); // 027006864490 0x68 XformClipPages              ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Ids                                       = (Color32)GetInt32(new IntPtr(p + 0x06C)); // 0270068644B0 0x6C Ids                         ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.AddFlags                                  = (Color32)GetInt32(new IntPtr(p + 0x070)); // 0270068644D0 0x70 AddFlags                    ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.OpacityPage                               = (Color32)GetInt32(new IntPtr(p + 0x074)); // 0270068644F0 0x74 OpacityPage                 ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.TextCoreSettingsPage                      = (Color32)GetInt32(new IntPtr(p + 0x078)); // 027006864510 0x78 TextCoreSettingsPage        ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.IsText                                    = GetInt32(new IntPtr(p + 0x07C)); // 027006864530 0x7C IsText                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TextureId                                 = GetSingle(new IntPtr(p + 0x080)); // 027006864550 0x80 TextureId                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.IndexCount                                = GetInt32(new IntPtr(p + 0x098)); // 0270068645B0 0x98 IndexCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IndexOffset                               = GetInt32(new IntPtr(p + 0x09C)); // 0270068645D0 0x9C IndexOffset                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FlipIndices                               = GetInt32(new IntPtr(p + 0x0A0)); // 0270068645F0 0xA0 FlipIndices                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.VertCount                                 = GetInt32(new IntPtr(p + 0x020)); // 0245A68262C0 0x20 VertCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Transform                                 = (Matrix4x4)GetInt32(new IntPtr(p + 0x024)); // 0245A68262E0 0x24 Transform                   ( 00018660DFD0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
+            value.TransformUVs                              = GetInt32(new IntPtr(p + 0x064)); // 0245A6826300 0x64 TransformUVs                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.XformClipPages                            = (Color32)GetInt32(new IntPtr(p + 0x068)); // 0245A6826320 0x68 XformClipPages              ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Ids                                       = (Color32)GetInt32(new IntPtr(p + 0x06C)); // 0245A6826340 0x6C Ids                         ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.AddFlags                                  = (Color32)GetInt32(new IntPtr(p + 0x070)); // 0245A6826360 0x70 AddFlags                    ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.OpacityPage                               = (Color32)GetInt32(new IntPtr(p + 0x074)); // 0245A6826380 0x74 OpacityPage                 ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.TextCoreSettingsPage                      = (Color32)GetInt32(new IntPtr(p + 0x078)); // 0245A68263A0 0x78 TextCoreSettingsPage        ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.IsText                                    = GetInt32(new IntPtr(p + 0x07C)); // 0245A68263C0 0x7C IsText                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TextureId                                 = GetSingle(new IntPtr(p + 0x080)); // 0245A68263E0 0x80 TextureId                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.IndexCount                                = GetInt32(new IntPtr(p + 0x098)); // 0245A6826440 0x98 IndexCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.IndexOffset                               = GetInt32(new IntPtr(p + 0x09C)); // 0245A6826460 0x9C IndexOffset                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FlipIndices                               = GetInt32(new IntPtr(p + 0x0A0)); // 0245A6826480 0xA0 FlipIndices                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

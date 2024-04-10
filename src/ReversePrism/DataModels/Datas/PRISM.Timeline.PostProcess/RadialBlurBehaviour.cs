@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C RadialCenterX                            000186666050 ModelPrimitiveType float float float Single
     // 020 RadialCenterY                            000186666050 ModelPrimitiveType float float float Single
     // 024 RotateIntensity                          000186666050 ModelPrimitiveType float float float Single
-    public partial class RadialBlurBehaviour
+    public partial class RadialBlurBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
         public RadialBlurQuality                        QualityLevel                            { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RadialBlurBehaviour();
+            var value   = new RadialBlurBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0270D5075A88 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.QualityLevel                              = (RadialBlurQuality)GetInt32(new IntPtr(p + 0x014)); // 0270D5075AA8 0x14 QualityLevel                ( 000186607E40 ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32 )
-            value.BlurRadius                                = GetSingle(new IntPtr(p + 0x018)); // 0270D5075AC8 0x18 BlurRadius                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RadialCenterX                             = GetSingle(new IntPtr(p + 0x01C)); // 0270D5075AE8 0x1C RadialCenterX               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RadialCenterY                             = GetSingle(new IntPtr(p + 0x020)); // 0270D5075B08 0x20 RadialCenterY               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RotateIntensity                           = GetSingle(new IntPtr(p + 0x024)); // 0270D5075B28 0x24 RotateIntensity             ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D93E0 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.QualityLevel                              = (RadialBlurQuality)GetInt32(new IntPtr(p + 0x014)); // 0246650D9400 0x14 QualityLevel                ( 000186607E40 ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32 )
+            value.BlurRadius                                = GetSingle(new IntPtr(p + 0x018)); // 0246650D9420 0x18 BlurRadius                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RadialCenterX                             = GetSingle(new IntPtr(p + 0x01C)); // 0246650D9440 0x1C RadialCenterX               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RadialCenterY                             = GetSingle(new IntPtr(p + 0x020)); // 0246650D9460 0x20 RadialCenterY               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RotateIntensity                           = GetSingle(new IntPtr(p + 0x024)); // 0246650D9480 0x24 RotateIntensity             ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

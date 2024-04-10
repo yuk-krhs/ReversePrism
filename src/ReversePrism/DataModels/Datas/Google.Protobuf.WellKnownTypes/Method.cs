@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 040 Options                                  000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer
     // 000 SyntaxFieldNumber                        int IL2CPP_TYPE_I4
     // 048 Syntax                                   000186604390 ModelEnumType Syntax Syntax Syntax Int32
-    public partial class Method
+    public partial class Method : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   RequestTypeUrl                          { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Method();
+            var value   = new Method() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA4542E0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.RequestTypeUrl                            = GetString(new IntPtr(p + 0x020)); // 0270DA454320 0x20 RequestTypeUrl              ( 000186671910 ModelPrimitiveType string string string String )
-            value.RequestStreaming                          = GetBool(new IntPtr(p + 0x028)); // 0270DA454360 0x28 RequestStreaming            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ResponseTypeUrl                           = GetString(new IntPtr(p + 0x030)); // 0270DA4543A0 0x30 ResponseTypeUrl             ( 000186671910 ModelPrimitiveType string string string String )
-            value.ResponseStreaming                         = GetBool(new IntPtr(p + 0x038)); // 0270DA4543E0 0x38 ResponseStreaming           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x040), ReversePrism.DataModels.Option.FromPointer); // 0270DA454440 0x40 Options                     ( 000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
-            value.Syntax                                    = (Syntax)GetInt32(new IntPtr(p + 0x048)); // 0270DA454480 0x48 Syntax                      ( 000186604390 ModelEnumType Syntax Syntax Syntax Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A4AFAF8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.RequestTypeUrl                            = GetString(new IntPtr(p + 0x020)); // 02466A4AFB38 0x20 RequestTypeUrl              ( 000186671910 ModelPrimitiveType string string string String )
+            value.RequestStreaming                          = GetBool(new IntPtr(p + 0x028)); // 02466A4AFB78 0x28 RequestStreaming            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ResponseTypeUrl                           = GetString(new IntPtr(p + 0x030)); // 02466A4AFBB8 0x30 ResponseTypeUrl             ( 000186671910 ModelPrimitiveType string string string String )
+            value.ResponseStreaming                         = GetBool(new IntPtr(p + 0x038)); // 02466A4AFBF8 0x38 ResponseStreaming           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x040), ReversePrism.DataModels.Option.FromPointer); // 02466A4AFC58 0x40 Options                     ( 000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
+            value.Syntax                                    = (Syntax)GetInt32(new IntPtr(p + 0x048)); // 02466A4AFC98 0x48 Syntax                      ( 000186604390 ModelEnumType Syntax Syntax Syntax Int32 )
 
             return value;
         }

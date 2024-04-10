@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 010 knownDataContracts                       Dictionary`2<XmlQualifiedName, DataContract> IL2CPP_TYPE_GENERICINST
     // 018 TraditionalDataContract                  0001865B6200 ModelClassType DataContract DataContract DataContract Pointer
     // 020 TypeName                                 000186671910 ModelPrimitiveType string string string String
-    public partial class JsonDataContractCriticalHelper
+    public partial class JsonDataContractCriticalHelper : DataModel
     {
         public List<JsonDataContract>?                  DataContractCache                       { get; set; }
         public int                                      DataContractID                          { get; set; }
@@ -31,13 +31,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonDataContractCriticalHelper();
+            var value   = new JsonDataContractCriticalHelper() { Pointer= p0 };
 
-            value.DataContractCache                         = GetObjectList<JsonDataContract>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonDataContract.FromPointer); // 027004D37CA0 0x10 DataContractCache           ( 000185B8EFB0 ModelClassListType JsonDataContract[] JsonDataContract[] List<JsonDataContract> Pointer )
-            value.DataContractID                            = GetInt32(new IntPtr(p + 0x018)); // 027004D37CC0 0x18 DataContractID              ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.TypeHandleRef                             = GetObject<TypeHandleRef>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeHandleRef.FromPointer); // 027004D37CE0 0x20 TypeHandleRef               ( 0001866D6940 ModelClassType TypeHandleRef TypeHandleRef TypeHandleRef Pointer )
-            value.TraditionalDataContract                   = GetObject<DataContract>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataContract.FromPointer); // 027004D37D40 0x18 TraditionalDataContract     ( 0001865B6200 ModelClassType DataContract DataContract DataContract Pointer )
-            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 027004D37D60 0x20 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.DataContractCache                         = GetObjectList<JsonDataContract>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonDataContract.FromPointer); // 0245A4D75448 0x10 DataContractCache           ( 000185B8EFB0 ModelClassListType JsonDataContract[] JsonDataContract[] List<JsonDataContract> Pointer )
+            value.DataContractID                            = GetInt32(new IntPtr(p + 0x018)); // 0245A4D75468 0x18 DataContractID              ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.TypeHandleRef                             = GetObject<TypeHandleRef>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeHandleRef.FromPointer); // 0245A4D75488 0x20 TypeHandleRef               ( 0001866D6940 ModelClassType TypeHandleRef TypeHandleRef TypeHandleRef Pointer )
+            value.TraditionalDataContract                   = GetObject<DataContract>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataContract.FromPointer); // 0245A4D754E8 0x18 TraditionalDataContract     ( 0001865B6200 ModelClassType DataContract DataContract DataContract Pointer )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 0245A4D75508 0x20 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 False                                    Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 008 True                                     Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 010 CompletedTask                            000186681D40 ModelClassType Task Task Task Pointer
-    public partial class AsyncUtils
+    public partial class AsyncUtils : DataModel
     {
         public Task?                                    CompletedTask                           { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncUtils();
+            var value   = new AsyncUtils() { Pointer= p0 };
 
-            value.CompletedTask                             = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 0270D86E9808 0x10 CompletedTask               ( 000186681D40 ModelClassType Task Task Task Pointer )
+            value.CompletedTask                             = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 024668751808 0x10 CompletedTask               ( 000186681D40 ModelClassType Task Task Task Pointer )
 
             return value;
         }

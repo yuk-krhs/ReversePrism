@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 SlotListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_slotList_codec                 FieldCodec`1<LiveUnitSlotStatus> IL2CPP_TYPE_GENERICINST
     // 020 SlotList                                 000185CE4778 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer
-    public partial class SetLiveUnitArgs
+    public partial class SetLiveUnitArgs : DataModel
     {
         public int                                      UnitNumber                              { get; set; }
         public List<LiveUnitSlotStatus>?                SlotList                                { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetLiveUnitArgs();
+            var value   = new SetLiveUnitArgs() { Pointer= p0 };
 
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 0270D21E6300 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SlotList                                  = GetObjectList<LiveUnitSlotStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitSlotStatus.FromPointer); // 0270D21E6360 0x20 SlotList                    ( 000185CE4778 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 024662198128 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SlotList                                  = GetObjectList<LiveUnitSlotStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitSlotStatus.FromPointer); // 024662198188 0x20 SlotList                    ( 000185CE4778 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer )
 
             return value;
         }

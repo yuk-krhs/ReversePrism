@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 StaticLock                               <object> IL2CPP_TYPE_OBJECT
     // 010 Configured                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 NativeCredentials                        0001865914B0 ModelClassType ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle Pointer
-    public partial class DefaultChannelCredentialsConfigurator
+    public partial class DefaultChannelCredentialsConfigurator : DataModel
     {
         public bool                                     Configured                              { get; set; }
         public ChannelCredentialsSafeHandle?            NativeCredentials                       { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultChannelCredentialsConfigurator();
+            var value   = new DefaultChannelCredentialsConfigurator() { Pointer= p0 };
 
-            value.Configured                                = GetBool(new IntPtr(p + 0x010)); // 027004129A78 0x10 Configured                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NativeCredentials                         = GetObject<ChannelCredentialsSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChannelCredentialsSafeHandle.FromPointer); // 027004129A98 0x18 NativeCredentials           ( 0001865914B0 ModelClassType ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle Pointer )
+            value.Configured                                = GetBool(new IntPtr(p + 0x010)); // 0245A414D400 0x10 Configured                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NativeCredentials                         = GetObject<ChannelCredentialsSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChannelCredentialsSafeHandle.FromPointer); // 0245A414D420 0x18 NativeCredentials           ( 0001865914B0 ModelClassType ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle ChannelCredentialsSafeHandle Pointer )
 
             return value;
         }

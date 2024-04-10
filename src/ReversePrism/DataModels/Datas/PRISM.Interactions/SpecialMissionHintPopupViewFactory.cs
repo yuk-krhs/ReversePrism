@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SpecialMissionHintPopupViewFactory
+    public partial class SpecialMissionHintPopupViewFactory : DataModel
     {
 
         public static SpecialMissionHintPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialMissionHintPopupViewFactory();
+            var value   = new SpecialMissionHintPopupViewFactory() { Pointer= p0 };
 
 
             return value;

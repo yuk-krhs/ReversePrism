@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GashaServiceBase
+    public partial class GashaServiceBase : DataModel
     {
 
         public static GashaServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaServiceBase();
+            var value   = new GashaServiceBase() { Pointer= p0 };
 
 
             return value;

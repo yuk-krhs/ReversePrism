@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_id                                     0001865F79C0 ModelPrimitiveType long long long Int64
     // 018 m_fixupInfo                              <object> IL2CPP_TYPE_OBJECT
     // 020 M_fixupType                              0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class FixupHolder
+    public partial class FixupHolder : DataModel
     {
         public long                                     M_id                                    { get; set; }
         public int                                      M_fixupType                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixupHolder();
+            var value   = new FixupHolder() { Pointer= p0 };
 
-            value.M_id                                      = GetInt64(new IntPtr(p + 0x010)); // 0270D6C1FB30 0x10 M_id                        ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.M_fixupType                               = GetInt32(new IntPtr(p + 0x020)); // 0270D6C1FB70 0x20 M_fixupType                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_id                                      = GetInt64(new IntPtr(p + 0x010)); // 024666C8FCD0 0x10 M_id                        ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.M_fixupType                               = GetInt32(new IntPtr(p + 0x020)); // 024666C8FD10 0x20 M_fixupType                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

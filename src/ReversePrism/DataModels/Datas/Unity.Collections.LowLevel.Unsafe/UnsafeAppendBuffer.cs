@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C Capacity                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 Allocator                                0001866996D0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     // 024 Alignment                                0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class UnsafeAppendBuffer
+    public partial class UnsafeAppendBuffer : DataModel
     {
         public int                                      Length                                  { get; set; }
         public int                                      Capacity                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeAppendBuffer();
+            var value   = new UnsafeAppendBuffer() { Pointer= p0 };
 
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D9C84638 0x18 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Capacity                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D9C84658 0x1C Capacity                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 0270D9C84678 0x20 Allocator                   ( 0001866996D0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.Alignment                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D9C84698 0x24 Alignment                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 024669CE9AD8 0x18 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Capacity                                  = GetInt32(new IntPtr(p + 0x01C)); // 024669CE9AF8 0x1C Capacity                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 024669CE9B18 0x20 Allocator                   ( 0001866996D0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.Alignment                                 = GetInt32(new IntPtr(p + 0x024)); // 024669CE9B38 0x24 Alignment                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

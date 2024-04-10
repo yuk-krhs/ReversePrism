@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 068 UnitEditCarousel                         0001865604E0 ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer
     // 070 MVOriginalMemberView                     00018655BD80 ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer
-    public partial class LiveMVUnitConfirmationUnitEditView
+    public partial class LiveMVUnitConfirmationUnitEditView : DataModel
     {
         public LiveMVUnitEditCarousel?                  UnitEditCarousel                        { get; set; }
         public LiveMVOriginalMemberView?                MVOriginalMemberView                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVUnitConfirmationUnitEditView();
+            var value   = new LiveMVUnitConfirmationUnitEditView() { Pointer= p0 };
 
-            value.UnitEditCarousel                          = GetObject<LiveMVUnitEditCarousel>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveMVUnitEditCarousel.FromPointer); // 0270D51B2160 0x68 UnitEditCarousel            ( 0001865604E0 ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer )
-            value.MVOriginalMemberView                      = GetObject<LiveMVOriginalMemberView>(new IntPtr(p + 0x070), ReversePrism.DataModels.LiveMVOriginalMemberView.FromPointer); // 0270D51B2180 0x70 MVOriginalMemberView        ( 00018655BD80 ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer )
+            value.UnitEditCarousel                          = GetObject<LiveMVUnitEditCarousel>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveMVUnitEditCarousel.FromPointer); // 024665214D78 0x68 UnitEditCarousel            ( 0001865604E0 ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer )
+            value.MVOriginalMemberView                      = GetObject<LiveMVOriginalMemberView>(new IntPtr(p + 0x070), ReversePrism.DataModels.LiveMVOriginalMemberView.FromPointer); // 024665214D98 0x70 MVOriginalMemberView        ( 00018655BD80 ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer )
 
             return value;
         }

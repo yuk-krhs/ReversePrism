@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ProductType                              0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32
     // 000 ProductMstIdFieldNumber                  int IL2CPP_TYPE_I4
     // 01C ProductMstId                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GetExchangeShinyPartyTokenListArgs
+    public partial class GetExchangeShinyPartyTokenListArgs : DataModel
     {
         public ProductType                              ProductType                             { get; set; }
         public int                                      ProductMstId                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeShinyPartyTokenListArgs();
+            var value   = new GetExchangeShinyPartyTokenListArgs() { Pointer= p0 };
 
-            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x018)); // 0270D12225B0 0x18 ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
-            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x01C)); // 0270D12225F0 0x1C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x018)); // 024661199008 0x18 ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
+            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x01C)); // 024661199048 0x1C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

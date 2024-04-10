@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Texture2DAssetKeyAttribute
+    public partial class Texture2DAssetKeyAttribute : DataModel
     {
 
         public static Texture2DAssetKeyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2DAssetKeyAttribute();
+            var value   = new Texture2DAssetKeyAttribute() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Empty                                    BindingRestrictions IL2CPP_TYPE_CLASS
-    public partial class BindingRestrictions
+    public partial class BindingRestrictions : DataModel
     {
 
         public static BindingRestrictions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BindingRestrictions();
+            var value   = new BindingRestrictions() { Pointer= p0 };
 
 
             return value;

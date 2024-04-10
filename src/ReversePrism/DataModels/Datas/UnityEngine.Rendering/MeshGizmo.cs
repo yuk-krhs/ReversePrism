@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 030 WireMaterial                             00018660BDD0 ModelClassType Material Material Material Pointer
     // 038 DottedWireMaterial                       00018660BDD0 ModelClassType Material Material Material Pointer
     // 040 SolidMaterial                            00018660BDD0 ModelClassType Material Material Material Pointer
-    public partial class MeshGizmo
+    public partial class MeshGizmo : DataModel
     {
         public Mesh?                                    Mesh                                    { get; set; }
         public List<Vector3>?                           Vertices                                { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshGizmo();
+            var value   = new MeshGizmo() { Pointer= p0 };
 
-            value.Mesh                                      = GetObject<Mesh>(new IntPtr(p + 0x010), ReversePrism.DataModels.Mesh.FromPointer); // 0270D92B7E18 0x10 Mesh                        ( 0001866109A0 ModelClassType Mesh Mesh Mesh Pointer )
-            value.Vertices                                  = GetEnumList<Vector3>(new IntPtr(p + 0x018)); // 0270D92B7E38 0x18 Vertices                    ( 000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
-            value.Indices                                   = GetInt32List(new IntPtr(p + 0x020)); // 0270D92B7E58 0x20 Indices                     ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.Colors                                    = GetEnumList<Color>(new IntPtr(p + 0x028)); // 0270D92B7E78 0x28 Colors                      ( 000185CD3358 ModelEnumListType List`1<Color> List`1<Color> List<Color> Pointer )
-            value.WireMaterial                              = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0270D92B7E98 0x30 WireMaterial                ( 00018660BDD0 ModelClassType Material Material Material Pointer )
-            value.DottedWireMaterial                        = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 0270D92B7EB8 0x38 DottedWireMaterial          ( 00018660BDD0 ModelClassType Material Material Material Pointer )
-            value.SolidMaterial                             = GetObject<Material>(new IntPtr(p + 0x040), ReversePrism.DataModels.Material.FromPointer); // 0270D92B7ED8 0x40 SolidMaterial               ( 00018660BDD0 ModelClassType Material Material Material Pointer )
+            value.Mesh                                      = GetObject<Mesh>(new IntPtr(p + 0x010), ReversePrism.DataModels.Mesh.FromPointer); // 024669322378 0x10 Mesh                        ( 0001866109A0 ModelClassType Mesh Mesh Mesh Pointer )
+            value.Vertices                                  = GetEnumList<Vector3>(new IntPtr(p + 0x018)); // 024669322398 0x18 Vertices                    ( 000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
+            value.Indices                                   = GetInt32List(new IntPtr(p + 0x020)); // 0246693223B8 0x20 Indices                     ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.Colors                                    = GetEnumList<Color>(new IntPtr(p + 0x028)); // 0246693223D8 0x28 Colors                      ( 000185CD3358 ModelEnumListType List`1<Color> List`1<Color> List<Color> Pointer )
+            value.WireMaterial                              = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0246693223F8 0x30 WireMaterial                ( 00018660BDD0 ModelClassType Material Material Material Pointer )
+            value.DottedWireMaterial                        = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 024669322418 0x38 DottedWireMaterial          ( 00018660BDD0 ModelClassType Material Material Material Pointer )
+            value.SolidMaterial                             = GetObject<Material>(new IntPtr(p + 0x040), ReversePrism.DataModels.Material.FromPointer); // 024669322438 0x40 SolidMaterial               ( 00018660BDD0 ModelClassType Material Material Material Pointer )
 
             return value;
         }

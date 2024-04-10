@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Service                                  000186635D00 ModelClassType MobileService MobileService MobileService Pointer
-    public partial class ChainTalkScreenModel
+    public partial class ChainTalkScreenModel : DataModel
     {
         public MobileService?                           Service                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkScreenModel();
+            var value   = new ChainTalkScreenModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 0270D686E028 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
+            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 0246668CE028 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 CurrentLv                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 MaxLv                                    0001865F4260 ModelPrimitiveType int int int Int32
     // 01C LvRange                                  0001865C1F60 ModelEnumType LvRange LvRange LvRange Int32
-    public partial class LvSelectorModel
+    public partial class LvSelectorModel : DataModel
     {
         public int                                      TargetLv                                { get; set; }
         public int                                      CurrentLv                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LvSelectorModel();
+            var value   = new LvSelectorModel() { Pointer= p0 };
 
-            value.TargetLv                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D5F18588 0x10 TargetLv                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CurrentLv                                 = GetInt32(new IntPtr(p + 0x014)); // 0270D5F185A8 0x14 CurrentLv                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D5F185C8 0x18 MaxLv                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.LvRange                                   = (LvRange)GetInt32(new IntPtr(p + 0x01C)); // 0270D5F185E8 0x1C LvRange                     ( 0001865C1F60 ModelEnumType LvRange LvRange LvRange Int32 )
+            value.TargetLv                                  = GetInt32(new IntPtr(p + 0x010)); // 024665F78588 0x10 TargetLv                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CurrentLv                                 = GetInt32(new IntPtr(p + 0x014)); // 024665F785A8 0x14 CurrentLv                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x018)); // 024665F785C8 0x18 MaxLv                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.LvRange                                   = (LvRange)GetInt32(new IntPtr(p + 0x01C)); // 024665F785E8 0x1C LvRange                     ( 0001865C1F60 ModelEnumType LvRange LvRange LvRange Int32 )
 
             return value;
         }

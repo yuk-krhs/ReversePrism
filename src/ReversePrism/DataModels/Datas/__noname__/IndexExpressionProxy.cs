@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IndexExpressionProxy
+    public partial class IndexExpressionProxy : DataModel
     {
 
         public static IndexExpressionProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IndexExpressionProxy();
+            var value   = new IndexExpressionProxy() { Pointer= p0 };
 
 
             return value;

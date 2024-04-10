@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncMessageReceiver
+    public partial class IAsyncMessageReceiver : DataModel
     {
 
         public static IAsyncMessageReceiver? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncMessageReceiver();
+            var value   = new IAsyncMessageReceiver() { Pointer= p0 };
 
 
             return value;

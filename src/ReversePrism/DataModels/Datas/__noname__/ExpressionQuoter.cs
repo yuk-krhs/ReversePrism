@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 _variables                               Dictionary`2<ParameterExpression, LocalVariable> IL2CPP_TYPE_GENERICINST
     // 018 Frame                                    000186721110 ModelClassType InterpretedFrame InterpretedFrame InterpretedFrame Pointer
     // 020 _shadowedVars                            Stack`1<HashSet`1<ParameterExpression>> IL2CPP_TYPE_GENERICINST
-    public partial class ExpressionQuoter
+    public partial class ExpressionQuoter : DataModel
     {
         public InterpretedFrame?                        Frame                                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpressionQuoter();
+            var value   = new ExpressionQuoter() { Pointer= p0 };
 
-            value.Frame                                     = GetObject<InterpretedFrame>(new IntPtr(p + 0x018), ReversePrism.DataModels.InterpretedFrame.FromPointer); // 0270DA03A710 0x18 Frame                       ( 000186721110 ModelClassType InterpretedFrame InterpretedFrame InterpretedFrame Pointer )
+            value.Frame                                     = GetObject<InterpretedFrame>(new IntPtr(p + 0x018), ReversePrism.DataModels.InterpretedFrame.FromPointer); // 02466A0A6440 0x18 Frame                       ( 000186721110 ModelClassType InterpretedFrame InterpretedFrame InterpretedFrame Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 instance                                 SystemDependencyProvider IL2CPP_TYPE_CLASS
     // 008 syncRoot                                 <object> IL2CPP_TYPE_OBJECT
     // 010 CertificateProvider                      000186605F80 ModelClassType SystemCertificateProvider SystemCertificateProvider SystemCertificateProvider Pointer
-    public partial class SystemDependencyProvider
+    public partial class SystemDependencyProvider : DataModel
     {
         public SystemCertificateProvider?               CertificateProvider                     { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemDependencyProvider();
+            var value   = new SystemDependencyProvider() { Pointer= p0 };
 
-            value.CertificateProvider                       = GetObject<SystemCertificateProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.SystemCertificateProvider.FromPointer); // 0270D78E8A58 0x10 CertificateProvider         ( 000186605F80 ModelClassType SystemCertificateProvider SystemCertificateProvider SystemCertificateProvider Pointer )
+            value.CertificateProvider                       = GetObject<SystemCertificateProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.SystemCertificateProvider.FromPointer); // 024667950A58 0x10 CertificateProvider         ( 000186605F80 ModelClassType SystemCertificateProvider SystemCertificateProvider SystemCertificateProvider Pointer )
 
             return value;
         }

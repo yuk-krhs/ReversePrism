@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Value                                    000186671910 ModelPrimitiveType string string string String
     // 018 IsValueSetExplicitly                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class EnumMemberAttribute
+    public partial class EnumMemberAttribute : DataModel
     {
         public string                                   Value                                   { get; set; }
         public bool                                     IsValueSetExplicitly                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumMemberAttribute();
+            var value   = new EnumMemberAttribute() { Pointer= p0 };
 
-            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 0270066A0D08 0x10 Value                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsValueSetExplicitly                      = GetBool(new IntPtr(p + 0x018)); // 0270066A0D28 0x18 IsValueSetExplicitly        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 0245A66698E0 0x10 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsValueSetExplicitly                      = GetBool(new IntPtr(p + 0x018)); // 0245A6669900 0x18 IsValueSetExplicitly        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

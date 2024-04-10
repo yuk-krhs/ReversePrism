@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 errorInvalidHandle                       string IL2CPP_TYPE_STRING
     // 020 handle                                   <int> IL2CPP_TYPE_I
     // 028 InputReadStream                          00018664EA10 ModelClassType CriAudioReadStream CriAudioReadStream CriAudioReadStream Pointer
-    public partial class CriAtomExAuxIn
+    public partial class CriAtomExAuxIn : DataModel
     {
         public CriAudioReadStream?                      InputReadStream                         { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExAuxIn();
+            var value   = new CriAtomExAuxIn() { Pointer= p0 };
 
-            value.InputReadStream                           = GetObject<CriAudioReadStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAudioReadStream.FromPointer); // 0270DAC73E28 0x28 InputReadStream             ( 00018664EA10 ModelClassType CriAudioReadStream CriAudioReadStream CriAudioReadStream Pointer )
+            value.InputReadStream                           = GetObject<CriAudioReadStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAudioReadStream.FromPointer); // 02466ACDBE28 0x28 InputReadStream             ( 00018664EA10 ModelClassType CriAudioReadStream CriAudioReadStream CriAudioReadStream Pointer )
 
             return value;
         }

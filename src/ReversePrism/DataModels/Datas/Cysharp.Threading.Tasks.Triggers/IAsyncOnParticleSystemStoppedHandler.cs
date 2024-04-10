@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnParticleSystemStoppedHandler
+    public partial class IAsyncOnParticleSystemStoppedHandler : DataModel
     {
 
         public static IAsyncOnParticleSystemStoppedHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnParticleSystemStoppedHandler();
+            var value   = new IAsyncOnParticleSystemStoppedHandler() { Pointer= p0 };
 
 
             return value;

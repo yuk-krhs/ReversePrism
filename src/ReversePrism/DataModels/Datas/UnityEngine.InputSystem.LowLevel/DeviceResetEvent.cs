@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Type                                     int IL2CPP_TYPE_I4
     // 010 BaseEvent                                0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32
     // 018 HardReset                                000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class DeviceResetEvent
+    public partial class DeviceResetEvent : DataModel
     {
         public InputEvent                               BaseEvent                               { get; set; }
         public bool                                     HardReset                               { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceResetEvent();
+            var value   = new DeviceResetEvent() { Pointer= p0 };
 
-            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0270D77FFFB8 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
-            value.HardReset                                 = GetBool(new IntPtr(p + 0x018)); // 0270D77FFFD8 0x18 HardReset                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 024667857FB8 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
+            value.HardReset                                 = GetBool(new IntPtr(p + 0x018)); // 024667857FD8 0x18 HardReset                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

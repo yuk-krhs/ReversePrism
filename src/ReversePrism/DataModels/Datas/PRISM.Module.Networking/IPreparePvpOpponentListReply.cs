@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPreparePvpOpponentListReply
+    public partial class IPreparePvpOpponentListReply : DataModel
     {
 
         public static IPreparePvpOpponentListReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPreparePvpOpponentListReply();
+            var value   = new IPreparePvpOpponentListReply() { Pointer= p0 };
 
 
             return value;

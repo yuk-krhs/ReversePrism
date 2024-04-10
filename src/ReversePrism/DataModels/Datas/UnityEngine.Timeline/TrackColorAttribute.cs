@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Color                                  0001865AA8E0 ModelEnumType Color Color Color Int32
-    public partial class TrackColorAttribute
+    public partial class TrackColorAttribute : DataModel
     {
         public Color                                    M_Color                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TrackColorAttribute();
+            var value   = new TrackColorAttribute() { Pointer= p0 };
 
-            value.M_Color                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 0270DB24C328 0x10 M_Color                     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_Color                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 02466B2CB138 0x10 M_Color                     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FileCachePersister
+    public partial class FileCachePersister : DataModel
     {
 
         public static FileCachePersister? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileCachePersister();
+            var value   = new FileCachePersister() { Pointer= p0 };
 
 
             return value;

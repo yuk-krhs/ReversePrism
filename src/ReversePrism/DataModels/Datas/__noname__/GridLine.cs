@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BaseOffset                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Line                                     0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class GridLine
+    public partial class GridLine : DataModel
     {
         public int                                      BaseOffset                              { get; set; }
         public GameObject?                              Line                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GridLine();
+            var value   = new GridLine() { Pointer= p0 };
 
-            value.BaseOffset                                = GetInt32(new IntPtr(p + 0x010)); // 0270DB03E3F0 0x10 BaseOffset                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Line                                      = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB03E410 0x18 Line                        ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BaseOffset                                = GetInt32(new IntPtr(p + 0x010)); // 02466B09E3F0 0x10 BaseOffset                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Line                                      = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 02466B09E410 0x18 Line                        ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

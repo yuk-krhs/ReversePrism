@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_GooglePlayConfigurationInternal        00018655D2D0 ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer
-    public partial class GooglePlayProductCallback
+    public partial class GooglePlayProductCallback : DataModel
     {
         public IGooglePlayConfigurationInternal?        M_GooglePlayConfigurationInternal       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GooglePlayProductCallback();
+            var value   = new GooglePlayProductCallback() { Pointer= p0 };
 
-            value.M_GooglePlayConfigurationInternal         = GetObject<IGooglePlayConfigurationInternal>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGooglePlayConfigurationInternal.FromPointer); // 0270069096F8 0x10 M_GooglePlayConfigurationInternal ( 00018655D2D0 ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer )
+            value.M_GooglePlayConfigurationInternal         = GetObject<IGooglePlayConfigurationInternal>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGooglePlayConfigurationInternal.FromPointer); // 0245A68CC358 0x10 M_GooglePlayConfigurationInternal ( 00018655D2D0 ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer )
 
             return value;
         }

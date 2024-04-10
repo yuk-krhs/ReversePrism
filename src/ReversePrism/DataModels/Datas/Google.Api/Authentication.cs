@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 ProvidersFieldNumber                     int IL2CPP_TYPE_I4
     // 010 _repeated_providers_codec                FieldCodec`1<AuthProvider> IL2CPP_TYPE_GENERICINST
     // 020 Providers                                000185CCF028 ModelClassListType RepeatedField`1<AuthProvider> RepeatedField`1<AuthProvider> List<AuthProvider> Pointer
-    public partial class Authentication
+    public partial class Authentication : DataModel
     {
         public List<AuthenticationRule>?                Rules                                   { get; set; }
         public List<AuthProvider>?                      Providers                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Authentication();
+            var value   = new Authentication() { Pointer= p0 };
 
-            value.Rules                                     = GetObjectList<AuthenticationRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.AuthenticationRule.FromPointer); // 0270DA72DA28 0x18 Rules                       ( 000185CCF4D8 ModelClassListType RepeatedField`1<AuthenticationRule> RepeatedField`1<AuthenticationRule> List<AuthenticationRule> Pointer )
-            value.Providers                                 = GetObjectList<AuthProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.AuthProvider.FromPointer); // 0270DA72DA88 0x20 Providers                   ( 000185CCF028 ModelClassListType RepeatedField`1<AuthProvider> RepeatedField`1<AuthProvider> List<AuthProvider> Pointer )
+            value.Rules                                     = GetObjectList<AuthenticationRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.AuthenticationRule.FromPointer); // 02466A781B40 0x18 Rules                       ( 000185CCF4D8 ModelClassListType RepeatedField`1<AuthenticationRule> RepeatedField`1<AuthenticationRule> List<AuthenticationRule> Pointer )
+            value.Providers                                 = GetObjectList<AuthProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.AuthProvider.FromPointer); // 02466A781BA0 0x20 Providers                   ( 000185CCF028 ModelClassListType RepeatedField`1<AuthProvider> RepeatedField`1<AuthProvider> List<AuthProvider> Pointer )
 
             return value;
         }

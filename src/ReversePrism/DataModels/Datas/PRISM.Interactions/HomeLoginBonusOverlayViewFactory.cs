@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HomeLoginBonusOverlayViewFactory
+    public partial class HomeLoginBonusOverlayViewFactory : DataModel
     {
 
         public static HomeLoginBonusOverlayViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeLoginBonusOverlayViewFactory();
+            var value   = new HomeLoginBonusOverlayViewFactory() { Pointer= p0 };
 
 
             return value;

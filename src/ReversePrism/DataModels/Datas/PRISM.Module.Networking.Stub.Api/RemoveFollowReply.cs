@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FriendStateFieldNumber                   int IL2CPP_TYPE_I4
     // 018 FriendState                              0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32
-    public partial class RemoveFollowReply
+    public partial class RemoveFollowReply : DataModel
     {
         public FriendState                              FriendState                             { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoveFollowReply();
+            var value   = new RemoveFollowReply() { Pointer= p0 };
 
-            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x018)); // 0270D141B9D0 0x18 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
+            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x018)); // 0246613A6A40 0x18 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
 
             return value;
         }

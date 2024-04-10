@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_untypedAtomicType
+    public partial class Datatype_untypedAtomicType : DataModel
     {
 
         public static Datatype_untypedAtomicType? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_untypedAtomicType();
+            var value   = new Datatype_untypedAtomicType() { Pointer= p0 };
 
 
             return value;

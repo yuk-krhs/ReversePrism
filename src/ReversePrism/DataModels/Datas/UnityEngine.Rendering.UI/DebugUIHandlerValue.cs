@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 070 M_Field                                  000186589F70 ModelClassType Value Value Value Pointer
     // 078 M_Timer                                  000186665DE0 ModelPrimitiveType float float float Single
     // 000 k_ZeroColor                              Color IL2CPP_TYPE_VALUETYPE
-    public partial class DebugUIHandlerValue
+    public partial class DebugUIHandlerValue : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public Text?                                    ValueLabel                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerValue();
+            var value   = new DebugUIHandlerValue() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D93379F8 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0270D9337A18 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.M_Field                                   = GetObject<Value>(new IntPtr(p + 0x070), ReversePrism.DataModels.Value.FromPointer); // 0270D9337A38 0x70 M_Field                     ( 000186589F70 ModelClassType Value Value Value Pointer )
-            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x078)); // 0270D9337A58 0x78 M_Timer                     ( 000186665DE0 ModelPrimitiveType float float float Single )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466938A728 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 02466938A748 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.M_Field                                   = GetObject<Value>(new IntPtr(p + 0x070), ReversePrism.DataModels.Value.FromPointer); // 02466938A768 0x70 M_Field                     ( 000186589F70 ModelClassType Value Value Value Pointer )
+            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x078)); // 02466938A788 0x78 M_Timer                     ( 000186665DE0 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 letterOverlayFactory                     OverlayViewFactory`1<IIntroductionLetterOverlayView> IL2CPP_TYPE_GENERICINST
-    public partial class IntroductionLauncherView
+    public partial class IntroductionLauncherView : DataModel
     {
 
         public static IntroductionLauncherView? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLauncherView();
+            var value   = new IntroductionLauncherView() { Pointer= p0 };
 
 
             return value;

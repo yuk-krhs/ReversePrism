@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 014 PageLine                                 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 016 BitIndex                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 017 OwnedState                               000186700230 ModelEnumType OwnedState OwnedState OwnedState Int32
-    public partial class BMPAlloc
+    public partial class BMPAlloc : DataModel
     {
         public int                                      Page                                    { get; set; }
         public ushort                                   PageLine                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BMPAlloc();
+            var value   = new BMPAlloc() { Pointer= p0 };
 
-            value.Page                                      = GetInt32(new IntPtr(p + 0x010)); // 027003F08F30 0x10 Page                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PageLine                                  = GetUInt16(new IntPtr(p + 0x014)); // 027003F08F50 0x14 PageLine                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.BitIndex                                  = GetSByte(new IntPtr(p + 0x016)); // 027003F08F70 0x16 BitIndex                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.OwnedState                                = (OwnedState)GetInt32(new IntPtr(p + 0x017)); // 027003F08F90 0x17 OwnedState                  ( 000186700230 ModelEnumType OwnedState OwnedState OwnedState Int32 )
+            value.Page                                      = GetInt32(new IntPtr(p + 0x010)); // 0245A3F08F30 0x10 Page                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PageLine                                  = GetUInt16(new IntPtr(p + 0x014)); // 0245A3F08F50 0x14 PageLine                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.BitIndex                                  = GetSByte(new IntPtr(p + 0x016)); // 0245A3F08F70 0x16 BitIndex                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.OwnedState                                = (OwnedState)GetInt32(new IntPtr(p + 0x017)); // 0245A3F08F90 0x17 OwnedState                  ( 000186700230 ModelEnumType OwnedState OwnedState OwnedState Int32 )
 
             return value;
         }

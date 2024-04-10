@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGlobalMenuPanelView
+    public partial class IGlobalMenuPanelView : DataModel
     {
 
         public static IGlobalMenuPanelView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGlobalMenuPanelView();
+            var value   = new IGlobalMenuPanelView() { Pointer= p0 };
 
 
             return value;

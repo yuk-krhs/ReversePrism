@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 elementPropertyQueuedEvents              Dictionary`2<ElementPropertyPair, Queue`1<EventBase>> IL2CPP_TYPE_GENERICINST
     // 000 panel                                    IPanel IL2CPP_TYPE_CLASS
     // 000 m_ChangesCount                           int IL2CPP_TYPE_I4
-    public partial class TransitionEventsFrameState
+    public partial class TransitionEventsFrameState : DataModel
     {
 
         public static TransitionEventsFrameState? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransitionEventsFrameState();
+            var value   = new TransitionEventsFrameState() { Pointer= p0 };
 
 
             return value;

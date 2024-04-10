@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 onActivated                              Action`1<ISceneLoader> IL2CPP_TYPE_GENERICINST
     // 028 onUnloaded                               Action`1<ISceneLoader> IL2CPP_TYPE_GENERICINST
     // 030 Loader                                   0001866CD290 ModelClassType SceneLoaderAsync SceneLoaderAsync SceneLoaderAsync Pointer
-    public partial class SceneLoaderAddressable
+    public partial class SceneLoaderAddressable : DataModel
     {
         public SceneLoaderAsync?                        Loader                                  { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneLoaderAddressable();
+            var value   = new SceneLoaderAddressable() { Pointer= p0 };
 
-            value.Loader                                    = GetObject<SceneLoaderAsync>(new IntPtr(p + 0x030), ReversePrism.DataModels.SceneLoaderAsync.FromPointer); // 027003EF0F48 0x30 Loader                      ( 0001866CD290 ModelClassType SceneLoaderAsync SceneLoaderAsync SceneLoaderAsync Pointer )
+            value.Loader                                    = GetObject<SceneLoaderAsync>(new IntPtr(p + 0x030), ReversePrism.DataModels.SceneLoaderAsync.FromPointer); // 0245A3EF0F48 0x30 Loader                      ( 0001866CD290 ModelClassType SceneLoaderAsync SceneLoaderAsync SceneLoaderAsync Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
     // 018 ReportId                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 019 Payload                                  00018670A890 ModelEnumType DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload Int32
-    public partial class DualSenseHIDUSBOutputReport
+    public partial class DualSenseHIDUSBOutputReport : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public sbyte                                    ReportId                                { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DualSenseHIDUSBOutputReport();
+            var value   = new DualSenseHIDUSBOutputReport() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77F9978 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.ReportId                                  = GetSByte(new IntPtr(p + 0x018)); // 0270D77F9998 0x18 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Payload                                   = (DualSenseHIDOutputReportPayload)GetInt32(new IntPtr(p + 0x019)); // 0270D77F99B8 0x19 Payload                     ( 00018670A890 ModelEnumType DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667851978 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.ReportId                                  = GetSByte(new IntPtr(p + 0x018)); // 024667851998 0x18 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Payload                                   = (DualSenseHIDOutputReportPayload)GetInt32(new IntPtr(p + 0x019)); // 0246678519B8 0x19 Payload                     ( 00018670A890 ModelEnumType DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload DualSenseHIDOutputReportPayload Int32 )
 
             return value;
         }

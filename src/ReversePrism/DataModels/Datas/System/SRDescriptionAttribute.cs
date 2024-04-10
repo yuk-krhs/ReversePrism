@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 IsReplaced                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SRDescriptionAttribute
+    public partial class SRDescriptionAttribute : DataModel
     {
         public bool                                     IsReplaced                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SRDescriptionAttribute();
+            var value   = new SRDescriptionAttribute() { Pointer= p0 };
 
-            value.IsReplaced                                = GetBool(new IntPtr(p + 0x018)); // 0270D7987140 0x18 IsReplaced                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReplaced                                = GetBool(new IntPtr(p + 0x018)); // 0246679EF140 0x18 IsReplaced                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

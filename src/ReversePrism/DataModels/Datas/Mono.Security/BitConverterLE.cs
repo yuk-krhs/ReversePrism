@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BitConverterLE
+    public partial class BitConverterLE : DataModel
     {
 
         public static BitConverterLE? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitConverterLE();
+            var value   = new BitConverterLE() { Pointer= p0 };
 
 
             return value;

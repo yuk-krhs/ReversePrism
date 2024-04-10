@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 sourceObserver                           TakeUntil<<var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 subscription                             IDisposable IL2CPP_TYPE_CLASS
-    public partial class TakeUntilOther
+    public partial class TakeUntilOther : DataModel
     {
 
         public static TakeUntilOther? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TakeUntilOther();
+            var value   = new TakeUntilOther() { Pointer= p0 };
 
 
             return value;

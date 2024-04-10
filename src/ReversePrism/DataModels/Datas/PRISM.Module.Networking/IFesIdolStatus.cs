@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFesIdolStatus
+    public partial class IFesIdolStatus : DataModel
     {
 
         public static IFesIdolStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFesIdolStatus();
+            var value   = new IFesIdolStatus() { Pointer= p0 };
 
 
             return value;

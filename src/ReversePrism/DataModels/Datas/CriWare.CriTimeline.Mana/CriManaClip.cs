@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 0A8 M_moviePath                              0001866722E0 ModelPrimitiveType string string string String
     // 0B0 M_movieData                              0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer
-    public partial class CriManaClip
+    public partial class CriManaClip : DataModel
     {
         public string                                   M_moviePath                             { get; set; }
         public TextAsset?                               M_movieData                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriManaClip();
+            var value   = new CriManaClip() { Pointer= p0 };
 
-            value.M_moviePath                               = GetString(new IntPtr(p + 0x0A8)); // 0270DACC3698 0xA8 M_moviePath                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.M_movieData                               = GetObject<TextAsset>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.TextAsset.FromPointer); // 0270DACC36B8 0xB0 M_movieData                 ( 0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.M_moviePath                               = GetString(new IntPtr(p + 0x0A8)); // 02466AD2B698 0xA8 M_moviePath                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.M_movieData                               = GetObject<TextAsset>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.TextAsset.FromPointer); // 02466AD2B6B8 0xB0 M_movieData                 ( 0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer )
 
             return value;
         }

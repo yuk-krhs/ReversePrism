@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Builder                                  000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer
     // 018 HasArgs                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CommandBuilder
+    public partial class CommandBuilder : DataModel
     {
         public StringBuilder?                           Builder                                 { get; set; }
         public bool                                     HasArgs                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommandBuilder();
+            var value   = new CommandBuilder() { Pointer= p0 };
 
-            value.Builder                                   = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 0270DA8A6A58 0x10 Builder                     ( 000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
-            value.HasArgs                                   = GetBool(new IntPtr(p + 0x018)); // 0270DA8A6A78 0x18 HasArgs                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Builder                                   = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 02466A90B8B0 0x10 Builder                     ( 000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
+            value.HasArgs                                   = GetBool(new IntPtr(p + 0x018)); // 02466A90B8D0 0x18 HasArgs                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

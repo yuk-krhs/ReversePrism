@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onCanvasGroupChanged                     Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableCanvasGroupChangedTrigger
+    public partial class ObservableCanvasGroupChangedTrigger : DataModel
     {
 
         public static ObservableCanvasGroupChangedTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableCanvasGroupChangedTrigger();
+            var value   = new ObservableCanvasGroupChangedTrigger() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 RecoverFieldNumber                       int IL2CPP_TYPE_I4
     // 020 Recover                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class RecoverSettingStatus
+    public partial class RecoverSettingStatus : DataModel
     {
         public StaminaType                              StaminaType                             { get; set; }
         public int                                      Amount                                  { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverSettingStatus();
+            var value   = new RecoverSettingStatus() { Pointer= p0 };
 
-            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0270D198B5B0 0x18 StaminaType                 ( 00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D198B5F0 0x1C Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Recover                                   = GetInt32(new IntPtr(p + 0x020)); // 0270D198B630 0x20 Recover                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 024661909078 0x18 StaminaType                 ( 00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 0246619090B8 0x1C Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Recover                                   = GetInt32(new IntPtr(p + 0x020)); // 0246619090F8 0x20 Recover                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

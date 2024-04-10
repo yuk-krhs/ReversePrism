@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetSuspendedLiveArgs
+    public partial class IGetSuspendedLiveArgs : DataModel
     {
 
         public static IGetSuspendedLiveArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetSuspendedLiveArgs();
+            var value   = new IGetSuspendedLiveArgs() { Pointer= p0 };
 
 
             return value;

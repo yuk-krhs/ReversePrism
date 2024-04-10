@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DecimalDecCalc
+    public partial class DecimalDecCalc : DataModel
     {
 
         public static DecimalDecCalc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecimalDecCalc();
+            var value   = new DecimalDecCalc() { Pointer= p0 };
 
 
             return value;

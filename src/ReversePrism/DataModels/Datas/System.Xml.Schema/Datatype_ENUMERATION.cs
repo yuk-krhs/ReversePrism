@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_ENUMERATION
+    public partial class Datatype_ENUMERATION : DataModel
     {
 
         public static Datatype_ENUMERATION? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_ENUMERATION();
+            var value   = new Datatype_ENUMERATION() { Pointer= p0 };
 
 
             return value;

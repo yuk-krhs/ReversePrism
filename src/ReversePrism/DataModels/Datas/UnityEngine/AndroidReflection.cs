@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 s_ReflectionHelperNewProxyInstance       <int> IL2CPP_TYPE_I
     // 030 s_ReflectionHelperSetNativeExceptionOnProxy <int> IL2CPP_TYPE_I
     // 038 s_FieldGetDeclaringClass                 <int> IL2CPP_TYPE_I
-    public partial class AndroidReflection
+    public partial class AndroidReflection : DataModel
     {
 
         public static AndroidReflection? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidReflection();
+            var value   = new AndroidReflection() { Pointer= p0 };
 
 
             return value;

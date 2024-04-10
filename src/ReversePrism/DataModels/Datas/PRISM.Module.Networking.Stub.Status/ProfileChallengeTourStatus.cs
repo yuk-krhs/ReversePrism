@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 UnitStatusFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_unitStatus_codec               FieldCodec`1<ProfileChallengeTourUnitStatus> IL2CPP_TYPE_GENERICINST
     // 020 UnitStatus                               000185CECD88 ModelClassListType RepeatedField`1<ProfileChallengeTourUnitStatus> RepeatedField`1<ProfileChallengeTourUnitStatus> List<ProfileChallengeTourUnitStatus> Pointer
-    public partial class ProfileChallengeTourStatus
+    public partial class ProfileChallengeTourStatus : DataModel
     {
         public int                                      MstChallengeTourId                      { get; set; }
         public List<ProfileChallengeTourUnitStatus>?    UnitStatus                              { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileChallengeTourStatus();
+            var value   = new ProfileChallengeTourStatus() { Pointer= p0 };
 
-            value.MstChallengeTourId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D2717438 0x18 MstChallengeTourId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitStatus                                = GetObjectList<ProfileChallengeTourUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileChallengeTourUnitStatus.FromPointer); // 0270D2717498 0x20 UnitStatus                  ( 000185CECD88 ModelClassListType RepeatedField`1<ProfileChallengeTourUnitStatus> RepeatedField`1<ProfileChallengeTourUnitStatus> List<ProfileChallengeTourUnitStatus> Pointer )
+            value.MstChallengeTourId                        = GetInt32(new IntPtr(p + 0x018)); // 024662684058 0x18 MstChallengeTourId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitStatus                                = GetObjectList<ProfileChallengeTourUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileChallengeTourUnitStatus.FromPointer); // 0246626840B8 0x20 UnitStatus                  ( 000185CECD88 ModelClassListType RepeatedField`1<ProfileChallengeTourUnitStatus> RepeatedField`1<ProfileChallengeTourUnitStatus> List<ProfileChallengeTourUnitStatus> Pointer )
 
             return value;
         }

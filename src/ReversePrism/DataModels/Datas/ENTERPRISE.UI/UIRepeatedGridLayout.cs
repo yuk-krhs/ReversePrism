@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 0D0 gridLines                                Dictionary`2<int, GridLine> IL2CPP_TYPE_GENERICINST
     // 0D8 DrawHeaderIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 0DC RowColumnSize                            0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
-    public partial class UIRepeatedGridLayout
+    public partial class UIRepeatedGridLayout : DataModel
     {
         public bool                                     IsOnGridUpdateParallel                  { get; set; }
         public GameObject?                              GridItem                                { get; set; }
@@ -32,14 +32,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRepeatedGridLayout();
+            var value   = new UIRepeatedGridLayout() { Pointer= p0 };
 
-            value.IsOnGridUpdateParallel                    = GetBool(new IntPtr(p + 0x0B0)); // 0270D4CAEEA0 0xB0 IsOnGridUpdateParallel      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GridItem                                  = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4CAEEE0 0xB8 GridItem                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BufferSize                                = GetInt32(new IntPtr(p + 0x0C0)); // 0270D4CAEF00 0xC0 BufferSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GridItemReference                         = GetString(new IntPtr(p + 0x0C8)); // 0270D4CAEF20 0xC8 GridItemReference           ( 000186671910 ModelPrimitiveType string string string String )
-            value.DrawHeaderIndex                           = GetInt32(new IntPtr(p + 0x0D8)); // 0270D4CAEF60 0xD8 DrawHeaderIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RowColumnSize                             = (Vector2Int)GetInt32(new IntPtr(p + 0x0DC)); // 0270D4CAEF80 0xDC RowColumnSize               ( 0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.IsOnGridUpdateParallel                    = GetBool(new IntPtr(p + 0x0B0)); // 024664D22EA0 0xB0 IsOnGridUpdateParallel      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.GridItem                                  = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 024664D22EE0 0xB8 GridItem                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BufferSize                                = GetInt32(new IntPtr(p + 0x0C0)); // 024664D22F00 0xC0 BufferSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GridItemReference                         = GetString(new IntPtr(p + 0x0C8)); // 024664D22F20 0xC8 GridItemReference           ( 000186671910 ModelPrimitiveType string string string String )
+            value.DrawHeaderIndex                           = GetInt32(new IntPtr(p + 0x0D8)); // 024664D22F60 0xD8 DrawHeaderIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RowColumnSize                             = (Vector2Int)GetInt32(new IntPtr(p + 0x0DC)); // 024664D22F80 0xDC RowColumnSize               ( 0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
 
             return value;
         }

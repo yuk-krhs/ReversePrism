@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 DisableSuccess                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 014 OldMode                                  000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 000 useUWPFallback                           bool IL2CPP_TYPE_BOOLEAN
-    public partial class DisableMediaInsertionPrompt
+    public partial class DisableMediaInsertionPrompt : DataModel
     {
         public bool                                     DisableSuccess                          { get; set; }
         public uint                                     OldMode                                 { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisableMediaInsertionPrompt();
+            var value   = new DisableMediaInsertionPrompt() { Pointer= p0 };
 
-            value.DisableSuccess                            = GetBool(new IntPtr(p + 0x010)); // 027003D01CE0 0x10 DisableSuccess              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OldMode                                   = GetUInt32(new IntPtr(p + 0x014)); // 027003D01D00 0x14 OldMode                     ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.DisableSuccess                            = GetBool(new IntPtr(p + 0x010)); // 0245A3D01CE0 0x10 DisableSuccess              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OldMode                                   = GetUInt32(new IntPtr(p + 0x014)); // 0245A3D01D00 0x14 OldMode                     ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdjustTrackingFactory
+    public partial class AdjustTrackingFactory : DataModel
     {
 
         public static AdjustTrackingFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustTrackingFactory();
+            var value   = new AdjustTrackingFactory() { Pointer= p0 };
 
 
             return value;

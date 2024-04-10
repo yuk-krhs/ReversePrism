@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 038 ActionEffectList                         000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer
     // 000 ActionConditionFieldNumber               int IL2CPP_TYPE_I4
     // 040 ActionCondition                          0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer
-    public partial class IdolSkillEffectStatus
+    public partial class IdolSkillEffectStatus : DataModel
     {
         public int                                      Level                                   { get; set; }
         public int                                      UnlockPremiseStar                       { get; set; }
@@ -45,16 +45,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillEffectStatus();
+            var value   = new IdolSkillEffectStatus() { Pointer= p0 };
 
-            value.Level                                     = GetInt32(new IntPtr(p + 0x018)); // 0270041BB178 0x18 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseStar                         = GetInt32(new IntPtr(p + 0x01C)); // 0270041BB1B8 0x1C UnlockPremiseStar           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 0270041BB1F8 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Cost                                      = GetInt32(new IntPtr(p + 0x024)); // 0270041BB238 0x24 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductRecipeList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270041BB298 0x28 ProductRecipeList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.Money                                     = GetInt32(new IntPtr(p + 0x030)); // 0270041BB2D8 0x30 Money                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ActionEffectList                          = GetObjectList<IdolSkillActionEffectStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolSkillActionEffectStatus.FromPointer); // 0270041BB338 0x38 ActionEffectList            ( 000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer )
-            value.ActionCondition                           = GetObject<IdolSkillActionConditionStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolSkillActionConditionStatus.FromPointer); // 0270041BB378 0x40 ActionCondition             ( 0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x018)); // 024660FB6E20 0x18 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseStar                         = GetInt32(new IntPtr(p + 0x01C)); // 024660FB6E60 0x1C UnlockPremiseStar           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 024660FB6EA0 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Cost                                      = GetInt32(new IntPtr(p + 0x024)); // 024660FB6EE0 0x24 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductRecipeList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024660FB6F40 0x28 ProductRecipeList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.Money                                     = GetInt32(new IntPtr(p + 0x030)); // 024660FB6F80 0x30 Money                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ActionEffectList                          = GetObjectList<IdolSkillActionEffectStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolSkillActionEffectStatus.FromPointer); // 024660FB6FE0 0x38 ActionEffectList            ( 000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer )
+            value.ActionCondition                           = GetObject<IdolSkillActionConditionStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolSkillActionConditionStatus.FromPointer); // 024660FB7020 0x40 ActionCondition             ( 0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer )
 
             return value;
         }

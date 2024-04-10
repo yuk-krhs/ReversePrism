@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 selectorNamePtr                          <int> IL2CPP_TYPE_I
     // 018 labelNamePtr                             <int> IL2CPP_TYPE_I
-    public partial class SelectorLabelInfoForMarshaling
+    public partial class SelectorLabelInfoForMarshaling : DataModel
     {
 
         public static SelectorLabelInfoForMarshaling? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectorLabelInfoForMarshaling();
+            var value   = new SelectorLabelInfoForMarshaling() { Pointer= p0 };
 
 
             return value;

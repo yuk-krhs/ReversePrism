@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 PresentList                              000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Cursor                                   000186671910 ModelPrimitiveType string string string String
-    public partial class GetPresentListReply
+    public partial class GetPresentListReply : DataModel
     {
         public List<PresentStatus>?                     PresentList                             { get; set; }
         public string                                   Cursor                                  { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetPresentListReply();
+            var value   = new GetPresentListReply() { Pointer= p0 };
 
-            value.PresentList                               = GetObjectList<PresentStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentStatus.FromPointer); // 0270D246C5D8 0x18 PresentList                 ( 000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer )
-            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0270D246C618 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.PresentList                               = GetObjectList<PresentStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentStatus.FromPointer); // 0246623F70F8 0x18 PresentList                 ( 000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0246623F7138 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

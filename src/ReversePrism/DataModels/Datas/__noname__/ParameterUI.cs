@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Text                                     0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 018 ReleaseEffectAnimator                    0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    public partial class ParameterUI
+    public partial class ParameterUI : DataModel
     {
         public UITextMeshProUGUI?                       Text                                    { get; set; }
         public Animator?                                ReleaseEffectAnimator                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParameterUI();
+            var value   = new ParameterUI() { Pointer= p0 };
 
-            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x010), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC5ED8 0x10 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ReleaseEffectAnimator                     = GetObject<Animator>(new IntPtr(p + 0x018), ReversePrism.DataModels.Animator.FromPointer); // 0270D5BC5EF8 0x18 ReleaseEffectAnimator       ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x010), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C36750 0x10 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ReleaseEffectAnimator                     = GetObject<Animator>(new IntPtr(p + 0x018), ReversePrism.DataModels.Animator.FromPointer); // 024665C36770 0x18 ReleaseEffectAnimator       ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

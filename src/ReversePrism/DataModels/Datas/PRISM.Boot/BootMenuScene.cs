@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 048 Model3DScene                             000186671910 ModelPrimitiveType string string string String
     // 050 PrismMainPrefab                          000186671910 ModelPrimitiveType string string string String
     // 058 OverlayManagerCaller                     0001866FF170 ModelClassType OverlayManagerCaller OverlayManagerCaller OverlayManagerCaller Pointer
-    public partial class BootMenuScene
+    public partial class BootMenuScene : DataModel
     {
         public List<ViewBundle>?                        ViewReferences                          { get; set; }
         public string                                   CurrentViewName                         { get; set; }
@@ -32,14 +32,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BootMenuScene();
+            var value   = new BootMenuScene() { Pointer= p0 };
 
-            value.ViewReferences                            = GetObjectList<ViewBundle>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewBundle.FromPointer); // 0270D0A4B240 0x28 ViewReferences              ( 000185CB1B08 ModelClassListType ViewBundle[] ViewBundle[] List<ViewBundle> Pointer )
-            value.CurrentViewName                           = GetString(new IntPtr(p + 0x038)); // 0270D0A4B280 0x38 CurrentViewName             ( 000186671910 ModelPrimitiveType string string string String )
-            value.ParameterState                            = (ParameterState)GetInt32(new IntPtr(p + 0x040)); // 0270D0A4B2C0 0x40 ParameterState              ( 000186704410 ModelEnumType ParameterState ParameterState ParameterState Int32 )
-            value.Model3DScene                              = GetString(new IntPtr(p + 0x048)); // 0270D0A4B2E0 0x48 Model3DScene                ( 000186671910 ModelPrimitiveType string string string String )
-            value.PrismMainPrefab                           = GetString(new IntPtr(p + 0x050)); // 0270D0A4B300 0x50 PrismMainPrefab             ( 000186671910 ModelPrimitiveType string string string String )
-            value.OverlayManagerCaller                      = GetObject<OverlayManagerCaller>(new IntPtr(p + 0x058), ReversePrism.DataModels.OverlayManagerCaller.FromPointer); // 0270D0A4B320 0x58 OverlayManagerCaller        ( 0001866FF170 ModelClassType OverlayManagerCaller OverlayManagerCaller OverlayManagerCaller Pointer )
+            value.ViewReferences                            = GetObjectList<ViewBundle>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewBundle.FromPointer); // 0246609E1358 0x28 ViewReferences              ( 000185CB1B08 ModelClassListType ViewBundle[] ViewBundle[] List<ViewBundle> Pointer )
+            value.CurrentViewName                           = GetString(new IntPtr(p + 0x038)); // 0246609E1398 0x38 CurrentViewName             ( 000186671910 ModelPrimitiveType string string string String )
+            value.ParameterState                            = (ParameterState)GetInt32(new IntPtr(p + 0x040)); // 0246609E13D8 0x40 ParameterState              ( 000186704410 ModelEnumType ParameterState ParameterState ParameterState Int32 )
+            value.Model3DScene                              = GetString(new IntPtr(p + 0x048)); // 0246609E13F8 0x48 Model3DScene                ( 000186671910 ModelPrimitiveType string string string String )
+            value.PrismMainPrefab                           = GetString(new IntPtr(p + 0x050)); // 0246609E1418 0x50 PrismMainPrefab             ( 000186671910 ModelPrimitiveType string string string String )
+            value.OverlayManagerCaller                      = GetObject<OverlayManagerCaller>(new IntPtr(p + 0x058), ReversePrism.DataModels.OverlayManagerCaller.FromPointer); // 0246609E1438 0x58 OverlayManagerCaller        ( 0001866FF170 ModelClassType OverlayManagerCaller OverlayManagerCaller OverlayManagerCaller Pointer )
 
             return value;
         }

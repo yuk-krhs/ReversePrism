@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Release                                  string IL2CPP_TYPE_STRING
     // 000 Sandbox                                  string IL2CPP_TYPE_STRING
-    public partial class DevelopmentMode
+    public partial class DevelopmentMode : DataModel
     {
 
         public static DevelopmentMode? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DevelopmentMode();
+            var value   = new DevelopmentMode() { Pointer= p0 };
 
 
             return value;

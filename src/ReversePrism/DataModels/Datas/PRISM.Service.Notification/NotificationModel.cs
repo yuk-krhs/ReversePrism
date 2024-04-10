@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Message                                  000186672F10 ModelPrimitiveType string string string String
     // 020 Kind                                     000186514890 ModelEnumType Kind Kind Kind Int32
     // 028 NotificationTime                         000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    public partial class NotificationModel
+    public partial class NotificationModel : DataModel
     {
         public string                                   Title                                   { get; set; }
         public string                                   Message                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotificationModel();
+            var value   = new NotificationModel() { Pointer= p0 };
 
-            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 0270D30AECF0 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0270D30AED10 0x18 Message                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Kind                                      = (Kind)GetInt32(new IntPtr(p + 0x020)); // 0270D30AED30 0x20 Kind                        ( 000186514890 ModelEnumType Kind Kind Kind Int32 )
-            value.NotificationTime                          = GetDateTime(new IntPtr(p + 0x028)); // 0270D30AED50 0x28 NotificationTime            ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 024663059880 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0246630598A0 0x18 Message                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Kind                                      = (Kind)GetInt32(new IntPtr(p + 0x020)); // 0246630598C0 0x20 Kind                        ( 000186514890 ModelEnumType Kind Kind Kind Int32 )
+            value.NotificationTime                          = GetDateTime(new IntPtr(p + 0x028)); // 0246630598E0 0x28 NotificationTime            ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
 
             return value;
         }

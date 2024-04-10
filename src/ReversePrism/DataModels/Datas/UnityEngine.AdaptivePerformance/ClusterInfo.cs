@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 BigCore                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 MediumCore                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 LittleCore                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ClusterInfo
+    public partial class ClusterInfo : DataModel
     {
         public int                                      BigCore                                 { get; set; }
         public int                                      MediumCore                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClusterInfo();
+            var value   = new ClusterInfo() { Pointer= p0 };
 
-            value.BigCore                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D090A428 0x10 BigCore                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MediumCore                                = GetInt32(new IntPtr(p + 0x014)); // 0270D090A448 0x14 MediumCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LittleCore                                = GetInt32(new IntPtr(p + 0x018)); // 0270D090A468 0x18 LittleCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BigCore                                   = GetInt32(new IntPtr(p + 0x010)); // 02466090A428 0x10 BigCore                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MediumCore                                = GetInt32(new IntPtr(p + 0x014)); // 02466090A448 0x14 MediumCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LittleCore                                = GetInt32(new IntPtr(p + 0x018)); // 02466090A468 0x18 LittleCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

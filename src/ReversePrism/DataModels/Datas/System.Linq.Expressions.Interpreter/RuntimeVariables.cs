@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Boxes                                    000185B89810 ModelClassListType IStrongBox[] IStrongBox[] List<IStrongBox> Pointer
-    public partial class RuntimeVariables
+    public partial class RuntimeVariables : DataModel
     {
         public List<IStrongBox>?                        Boxes                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeVariables();
+            var value   = new RuntimeVariables() { Pointer= p0 };
 
-            value.Boxes                                     = GetObjectList<IStrongBox>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStrongBox.FromPointer); // 0270DA036B60 0x10 Boxes                       ( 000185B89810 ModelClassListType IStrongBox[] IStrongBox[] List<IStrongBox> Pointer )
+            value.Boxes                                     = GetObjectList<IStrongBox>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStrongBox.FromPointer); // 02466A0A2890 0x10 Boxes                       ( 000185B89810 ModelClassListType IStrongBox[] IStrongBox[] List<IStrongBox> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OurStreamFavoriteListParameter
+    public partial class OurStreamFavoriteListParameter : DataModel
     {
 
         public static OurStreamFavoriteListParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamFavoriteListParameter();
+            var value   = new OurStreamFavoriteListParameter() { Pointer= p0 };
 
 
             return value;

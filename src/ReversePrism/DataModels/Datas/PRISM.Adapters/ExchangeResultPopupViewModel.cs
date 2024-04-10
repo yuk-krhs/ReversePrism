@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 058 ConvertProduct                           0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
     // 060 RequireProduct                           0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
     // 068 LimitStatus                              00018676AFA0 ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer
-    public partial class ExchangeResultPopupViewModel
+    public partial class ExchangeResultPopupViewModel : DataModel
     {
         public ExchangeProductViewModel?                GoodsModel                              { get; set; }
         public int                                      ExchangeCount                           { get; set; }
@@ -45,22 +45,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeResultPopupViewModel();
+            var value   = new ExchangeResultPopupViewModel() { Pointer= p0 };
 
-            value.GoodsModel                                = GetObject<ExchangeProductViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExchangeProductViewModel.FromPointer); // 0270D62BA6D0 0x10 GoodsModel                  ( 0001865146E0 ModelClassType ExchangeProductViewModel ExchangeProductViewModel ExchangeProductViewModel Pointer )
-            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x018)); // 0270D62BA6F0 0x18 ExchangeCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsGoToButtonActive                        = GetBool(new IntPtr(p + 0x01C)); // 0270D62BA710 0x1C IsGoToButtonActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PieceCharaID                              = GetInt32(new IntPtr(p + 0x020)); // 0270D62BA730 0x20 PieceCharaID                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BeforePurchaseProductAmount               = GetInt64(new IntPtr(p + 0x028)); // 0270D62BA750 0x28 BeforePurchaseProductAmount ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.AfterPurchaseProductAmount                = GetInt64(new IntPtr(p + 0x030)); // 0270D62BA770 0x30 AfterPurchaseProductAmount  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.BeforeGoodsAmount                         = GetInt64(new IntPtr(p + 0x038)); // 0270D62BA790 0x38 BeforeGoodsAmount           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.AfterGoodsAmount                          = GetInt64(new IntPtr(p + 0x040)); // 0270D62BA7B0 0x40 AfterGoodsAmount            ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.BeforeExchangeLimit                       = GetInt32(new IntPtr(p + 0x048)); // 0270D62BA7D0 0x48 BeforeExchangeLimit         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AfterExchangeLimit                        = GetInt32(new IntPtr(p + 0x04C)); // 0270D62BA7F0 0x4C AfterExchangeLimit          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoodsProduct                              = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D62BA810 0x50 GoodsProduct                ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.ConvertProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D62BA830 0x58 ConvertProduct              ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.RequireProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D62BA850 0x60 RequireProduct              ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.LimitStatus                               = GetObject<IExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IExchangeProductPurchaseLimitStatus.FromPointer); // 0270D62BA870 0x68 LimitStatus                 ( 00018676AFA0 ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer )
+            value.GoodsModel                                = GetObject<ExchangeProductViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExchangeProductViewModel.FromPointer); // 02466632A6D0 0x10 GoodsModel                  ( 0001865146E0 ModelClassType ExchangeProductViewModel ExchangeProductViewModel ExchangeProductViewModel Pointer )
+            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x018)); // 02466632A6F0 0x18 ExchangeCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsGoToButtonActive                        = GetBool(new IntPtr(p + 0x01C)); // 02466632A710 0x1C IsGoToButtonActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PieceCharaID                              = GetInt32(new IntPtr(p + 0x020)); // 02466632A730 0x20 PieceCharaID                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BeforePurchaseProductAmount               = GetInt64(new IntPtr(p + 0x028)); // 02466632A750 0x28 BeforePurchaseProductAmount ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.AfterPurchaseProductAmount                = GetInt64(new IntPtr(p + 0x030)); // 02466632A770 0x30 AfterPurchaseProductAmount  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.BeforeGoodsAmount                         = GetInt64(new IntPtr(p + 0x038)); // 02466632A790 0x38 BeforeGoodsAmount           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.AfterGoodsAmount                          = GetInt64(new IntPtr(p + 0x040)); // 02466632A7B0 0x40 AfterGoodsAmount            ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.BeforeExchangeLimit                       = GetInt32(new IntPtr(p + 0x048)); // 02466632A7D0 0x48 BeforeExchangeLimit         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AfterExchangeLimit                        = GetInt32(new IntPtr(p + 0x04C)); // 02466632A7F0 0x4C AfterExchangeLimit          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoodsProduct                              = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 02466632A810 0x50 GoodsProduct                ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.ConvertProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 02466632A830 0x58 ConvertProduct              ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.RequireProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 02466632A850 0x60 RequireProduct              ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.LimitStatus                               = GetObject<IExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IExchangeProductPurchaseLimitStatus.FromPointer); // 02466632A870 0x68 LimitStatus                 ( 00018676AFA0 ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer )
 
             return value;
         }

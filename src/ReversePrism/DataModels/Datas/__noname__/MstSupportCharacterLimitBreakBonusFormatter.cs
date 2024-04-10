@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSupportCharacterLimitBreakBonusFormatter
+    public partial class MstSupportCharacterLimitBreakBonusFormatter : DataModel
     {
 
         public static MstSupportCharacterLimitBreakBonusFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSupportCharacterLimitBreakBonusFormatter();
+            var value   = new MstSupportCharacterLimitBreakBonusFormatter() { Pointer= p0 };
 
 
             return value;

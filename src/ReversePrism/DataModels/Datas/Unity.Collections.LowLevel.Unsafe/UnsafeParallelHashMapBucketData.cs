@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 next                                     IntPtr IL2CPP_TYPE_PTR
     // 028 buckets                                  IntPtr IL2CPP_TYPE_PTR
     // 030 BucketCapacityMask                       0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class UnsafeParallelHashMapBucketData
+    public partial class UnsafeParallelHashMapBucketData : DataModel
     {
         public int                                      BucketCapacityMask                      { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeParallelHashMapBucketData();
+            var value   = new UnsafeParallelHashMapBucketData() { Pointer= p0 };
 
-            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x030)); // 0270D9AE2960 0x30 BucketCapacityMask          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x030)); // 024669B3A280 0x30 BucketCapacityMask          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Version                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class AssemblyFileVersionAttribute
+    public partial class AssemblyFileVersionAttribute : DataModel
     {
         public string                                   Version                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyFileVersionAttribute();
+            var value   = new AssemblyFileVersionAttribute() { Pointer= p0 };
 
-            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 0270D6CE8A70 0x10 Version                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 024666D38A70 0x10 Version                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

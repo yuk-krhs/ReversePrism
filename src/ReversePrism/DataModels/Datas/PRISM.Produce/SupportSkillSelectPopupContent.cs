@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 098 Prm                                      0001865D27D0 ModelClassType SupportSkillSelectPopupParam SupportSkillSelectPopupParam SupportSkillSelectPopupParam Pointer
     // 0A0 RemoveSkillData                          0001865DBC80 ModelClassType IPotentialSupportSkillStatus IPotentialSupportSkillStatus IPotentialSupportSkillStatus Pointer
     // 0A8 RemoveIndex                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SupportSkillSelectPopupContent
+    public partial class SupportSkillSelectPopupContent : DataModel
     {
         public SupportSkillNode?                        RemoveSkill                             { get; set; }
         public SupportSkillNode?                        GetSkill                                { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportSkillSelectPopupContent();
+            var value   = new SupportSkillSelectPopupContent() { Pointer= p0 };
 
-            value.RemoveSkill                               = GetObject<SupportSkillNode>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 0270D5CF57E8 0x60 RemoveSkill                 ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
-            value.GetSkill                                  = GetObject<SupportSkillNode>(new IntPtr(p + 0x068), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 0270D5CF5808 0x68 GetSkill                    ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
-            value.SkillNodeListParent                       = GetObject<Transform>(new IntPtr(p + 0x070), ReversePrism.DataModels.Transform.FromPointer); // 0270D5CF5828 0x70 SkillNodeListParent         ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.SkillNodePrefab                           = GetObject<SupportSkillNode>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 0270D5CF5848 0x78 SkillNodePrefab             ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
-            value.NumText                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5CF5868 0x80 NumText                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ConfirmSkillListButton                    = GetObject<UIButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIButton.FromPointer); // 0270D5CF5888 0x88 ConfirmSkillListButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.SkillNodeList                             = GetObjectList<SupportSkillNode>(new IntPtr(p + 0x090), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 0270D5CF58A8 0x90 SkillNodeList               ( 000185D10F88 ModelClassListType List`1<SupportSkillNode> List`1<SupportSkillNode> List<SupportSkillNode> Pointer )
-            value.Prm                                       = GetObject<SupportSkillSelectPopupParam>(new IntPtr(p + 0x098), ReversePrism.DataModels.SupportSkillSelectPopupParam.FromPointer); // 0270D5CF58C8 0x98 Prm                         ( 0001865D27D0 ModelClassType SupportSkillSelectPopupParam SupportSkillSelectPopupParam SupportSkillSelectPopupParam Pointer )
-            value.RemoveSkillData                           = GetObject<IPotentialSupportSkillStatus>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IPotentialSupportSkillStatus.FromPointer); // 0270D5CF58E8 0xA0 RemoveSkillData             ( 0001865DBC80 ModelClassType IPotentialSupportSkillStatus IPotentialSupportSkillStatus IPotentialSupportSkillStatus Pointer )
-            value.RemoveIndex                               = GetInt32(new IntPtr(p + 0x0A8)); // 0270D5CF5908 0xA8 RemoveIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RemoveSkill                               = GetObject<SupportSkillNode>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 024665D463C0 0x60 RemoveSkill                 ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
+            value.GetSkill                                  = GetObject<SupportSkillNode>(new IntPtr(p + 0x068), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 024665D463E0 0x68 GetSkill                    ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
+            value.SkillNodeListParent                       = GetObject<Transform>(new IntPtr(p + 0x070), ReversePrism.DataModels.Transform.FromPointer); // 024665D46400 0x70 SkillNodeListParent         ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.SkillNodePrefab                           = GetObject<SupportSkillNode>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 024665D46420 0x78 SkillNodePrefab             ( 0001865F52E0 ModelClassType SupportSkillNode SupportSkillNode SupportSkillNode Pointer )
+            value.NumText                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D46440 0x80 NumText                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ConfirmSkillListButton                    = GetObject<UIButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIButton.FromPointer); // 024665D46460 0x88 ConfirmSkillListButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.SkillNodeList                             = GetObjectList<SupportSkillNode>(new IntPtr(p + 0x090), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 024665D46480 0x90 SkillNodeList               ( 000185D10F88 ModelClassListType List`1<SupportSkillNode> List`1<SupportSkillNode> List<SupportSkillNode> Pointer )
+            value.Prm                                       = GetObject<SupportSkillSelectPopupParam>(new IntPtr(p + 0x098), ReversePrism.DataModels.SupportSkillSelectPopupParam.FromPointer); // 024665D464A0 0x98 Prm                         ( 0001865D27D0 ModelClassType SupportSkillSelectPopupParam SupportSkillSelectPopupParam SupportSkillSelectPopupParam Pointer )
+            value.RemoveSkillData                           = GetObject<IPotentialSupportSkillStatus>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IPotentialSupportSkillStatus.FromPointer); // 024665D464C0 0xA0 RemoveSkillData             ( 0001865DBC80 ModelClassType IPotentialSupportSkillStatus IPotentialSupportSkillStatus IPotentialSupportSkillStatus Pointer )
+            value.RemoveIndex                               = GetInt32(new IntPtr(p + 0x0A8)); // 024665D464E0 0xA8 RemoveIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

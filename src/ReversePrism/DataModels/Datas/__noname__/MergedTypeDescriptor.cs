@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Primary                                  000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer
     // 018 Secondary                                000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer
-    public partial class MergedTypeDescriptor
+    public partial class MergedTypeDescriptor : DataModel
     {
         public ICustomTypeDescriptor?                   Primary                                 { get; set; }
         public ICustomTypeDescriptor?                   Secondary                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MergedTypeDescriptor();
+            var value   = new MergedTypeDescriptor() { Pointer= p0 };
 
-            value.Primary                                   = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 0270D7B3C8B8 0x10 Primary                     ( 000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
-            value.Secondary                                 = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 0270D7B3C8D8 0x18 Secondary                   ( 000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
+            value.Primary                                   = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 024667BA48B8 0x10 Primary                     ( 000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
+            value.Secondary                                 = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 024667BA48D8 0x18 Secondary                   ( 000186749070 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
 
             return value;
         }

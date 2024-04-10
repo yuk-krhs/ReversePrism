@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Exception                              0001865CA820 ModelClassType Exception Exception Exception Pointer
     // 018 m_stackTrace                             <object> IL2CPP_TYPE_OBJECT
-    public partial class ExceptionDispatchInfo
+    public partial class ExceptionDispatchInfo : DataModel
     {
         public Exception?                               M_Exception                             { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExceptionDispatchInfo();
+            var value   = new ExceptionDispatchInfo() { Pointer= p0 };
 
-            value.M_Exception                               = GetObject<Exception>(new IntPtr(p + 0x010), ReversePrism.DataModels.Exception.FromPointer); // 0270D6962BB8 0x10 M_Exception                 ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.M_Exception                               = GetObject<Exception>(new IntPtr(p + 0x010), ReversePrism.DataModels.Exception.FromPointer); // 0246669DABB8 0x10 M_Exception                 ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

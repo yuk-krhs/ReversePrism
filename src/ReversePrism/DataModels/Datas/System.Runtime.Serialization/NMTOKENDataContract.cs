@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NMTOKENDataContract
+    public partial class NMTOKENDataContract : DataModel
     {
 
         public static NMTOKENDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NMTOKENDataContract();
+            var value   = new NMTOKENDataContract() { Pointer= p0 };
 
 
             return value;

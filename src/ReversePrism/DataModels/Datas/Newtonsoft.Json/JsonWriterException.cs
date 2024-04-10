@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 Path                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class JsonWriterException
+    public partial class JsonWriterException : DataModel
     {
         public string                                   Path                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonWriterException();
+            var value   = new JsonWriterException() { Pointer= p0 };
 
-            value.Path                                      = GetString(new IntPtr(p + 0x090)); // 0270D86E8CE8 0x90 Path                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x090)); // 024668750CE8 0x90 Path                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

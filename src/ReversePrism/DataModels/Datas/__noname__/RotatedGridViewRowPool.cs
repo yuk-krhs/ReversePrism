@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 RowBase                                  0001866F1650 ModelClassType UIRotatedGridRowView UIRotatedGridRowView UIRotatedGridRowView Pointer
     // 028 PoolParent                               0001866AADB0 ModelClassType Transform Transform Transform Pointer
-    public partial class RotatedGridViewRowPool
+    public partial class RotatedGridViewRowPool : DataModel
     {
         public UIRotatedGridRowView?                    RowBase                                 { get; set; }
         public Transform?                               PoolParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RotatedGridViewRowPool();
+            var value   = new RotatedGridViewRowPool() { Pointer= p0 };
 
-            value.RowBase                                   = GetObject<UIRotatedGridRowView>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRotatedGridRowView.FromPointer); // 0270D54AAF40 0x20 RowBase                     ( 0001866F1650 ModelClassType UIRotatedGridRowView UIRotatedGridRowView UIRotatedGridRowView Pointer )
-            value.PoolParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270D54AAF60 0x28 PoolParent                  ( 0001866AADB0 ModelClassType Transform Transform Transform Pointer )
+            value.RowBase                                   = GetObject<UIRotatedGridRowView>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRotatedGridRowView.FromPointer); // 02466550DB28 0x20 RowBase                     ( 0001866F1650 ModelClassType UIRotatedGridRowView UIRotatedGridRowView UIRotatedGridRowView Pointer )
+            value.PoolParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466550DB48 0x28 PoolParent                  ( 0001866AADB0 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CloudProjectId
+    public partial class CloudProjectId : DataModel
     {
 
         public static CloudProjectId? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CloudProjectId();
+            var value   = new CloudProjectId() { Pointer= p0 };
 
 
             return value;

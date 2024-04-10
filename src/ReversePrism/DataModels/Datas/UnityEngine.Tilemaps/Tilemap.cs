@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 tilemapTileChanged                       Action`2<Tilemap, SyncTile[]> IL2CPP_TYPE_GENERICINST
     // 008 tilemapPositionsChanged                  Action`2<Tilemap, NativeArray`1<Vector3Int>> IL2CPP_TYPE_GENERICINST
     // 018 M_BufferSyncTile                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class Tilemap
+    public partial class Tilemap : DataModel
     {
         public bool                                     M_BufferSyncTile                        { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Tilemap();
+            var value   = new Tilemap() { Pointer= p0 };
 
-            value.M_BufferSyncTile                          = GetBool(new IntPtr(p + 0x018)); // 02700221E4E8 0x18 M_BufferSyncTile            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_BufferSyncTile                          = GetBool(new IntPtr(p + 0x018)); // 0245A221E4E8 0x18 M_BufferSyncTile            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

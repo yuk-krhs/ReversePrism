@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimerStateScheduledItem
+    public partial class TimerStateScheduledItem : DataModel
     {
 
         public static TimerStateScheduledItem? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimerStateScheduledItem();
+            var value   = new TimerStateScheduledItem() { Pointer= p0 };
 
 
             return value;

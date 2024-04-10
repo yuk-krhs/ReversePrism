@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISerializationSurrogateProvider
+    public partial class ISerializationSurrogateProvider : DataModel
     {
 
         public static ISerializationSurrogateProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISerializationSurrogateProvider();
+            var value   = new ISerializationSurrogateProvider() { Pointer= p0 };
 
 
             return value;

@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 040 m_TextureHashes                          Dictionary`2<int, int> IL2CPP_TYPE_GENERICINST
     // 000 fullScaleOffset                          Vector4 IL2CPP_TYPE_VALUETYPE
     // 010 S_MaxMipLevelPadding                     0001865F4BC0 ModelPrimitiveType int int int Int32
-    public partial class Texture2DAtlas
+    public partial class Texture2DAtlas : DataModel
     {
         public RTHandle?                                M_AtlasTexture                          { get; set; }
         public int                                      M_Width                                 { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2DAtlas();
+            var value   = new Texture2DAtlas() { Pointer= p0 };
 
-            value.M_AtlasTexture                            = GetObject<RTHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.RTHandle.FromPointer); // 0270D9271980 0x10 M_AtlasTexture              ( 00018664B2F0 ModelClassType RTHandle RTHandle RTHandle Pointer )
-            value.M_Width                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D92719A0 0x18 M_Width                     ( 0001865F2D90 ModelPrimitiveType int int int Int32 )
-            value.M_Height                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D92719C0 0x1C M_Height                    ( 0001865F2D90 ModelPrimitiveType int int int Int32 )
-            value.M_Format                                  = (GraphicsFormat)GetInt32(new IntPtr(p + 0x020)); // 0270D92719E0 0x20 M_Format                    ( 000186696410 ModelEnumType GraphicsFormat GraphicsFormat GraphicsFormat Int32 )
-            value.M_UseMipMaps                              = GetBool(new IntPtr(p + 0x024)); // 0270D9271A00 0x24 M_UseMipMaps                ( 000186594FA0 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsAtlasTextureOwner                     = GetBool(new IntPtr(p + 0x025)); // 0270D9271A20 0x25 M_IsAtlasTextureOwner       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AtlasAllocator                          = GetObject<AtlasAllocator>(new IntPtr(p + 0x028), ReversePrism.DataModels.AtlasAllocator.FromPointer); // 0270D9271A40 0x28 M_AtlasAllocator            ( 00018670B570 ModelClassType AtlasAllocator AtlasAllocator AtlasAllocator Pointer )
-            value.S_MaxMipLevelPadding                      = GetInt32(new IntPtr(p + 0x010)); // 0270D9271AE0 0x10 S_MaxMipLevelPadding        ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.M_AtlasTexture                            = GetObject<RTHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.RTHandle.FromPointer); // 0246692D3DA8 0x10 M_AtlasTexture              ( 00018664B2F0 ModelClassType RTHandle RTHandle RTHandle Pointer )
+            value.M_Width                                   = GetInt32(new IntPtr(p + 0x018)); // 0246692D3DC8 0x18 M_Width                     ( 0001865F2D90 ModelPrimitiveType int int int Int32 )
+            value.M_Height                                  = GetInt32(new IntPtr(p + 0x01C)); // 0246692D3DE8 0x1C M_Height                    ( 0001865F2D90 ModelPrimitiveType int int int Int32 )
+            value.M_Format                                  = (GraphicsFormat)GetInt32(new IntPtr(p + 0x020)); // 0246692D3E08 0x20 M_Format                    ( 000186696410 ModelEnumType GraphicsFormat GraphicsFormat GraphicsFormat Int32 )
+            value.M_UseMipMaps                              = GetBool(new IntPtr(p + 0x024)); // 0246692D3E28 0x24 M_UseMipMaps                ( 000186594FA0 ModelPrimitiveType bool bool bool Bool )
+            value.M_IsAtlasTextureOwner                     = GetBool(new IntPtr(p + 0x025)); // 0246692D3E48 0x25 M_IsAtlasTextureOwner       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_AtlasAllocator                          = GetObject<AtlasAllocator>(new IntPtr(p + 0x028), ReversePrism.DataModels.AtlasAllocator.FromPointer); // 0246692D3E68 0x28 M_AtlasAllocator            ( 00018670B570 ModelClassType AtlasAllocator AtlasAllocator AtlasAllocator Pointer )
+            value.S_MaxMipLevelPadding                      = GetInt32(new IntPtr(p + 0x010)); // 0246692D3F08 0x10 S_MaxMipLevelPadding        ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NullLogger
+    public partial class NullLogger : DataModel
     {
 
         public static NullLogger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NullLogger();
+            var value   = new NullLogger() { Pointer= p0 };
 
 
             return value;

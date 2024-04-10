@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NameInputSequence
+    public partial class NameInputSequence : DataModel
     {
 
         public static NameInputSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NameInputSequence();
+            var value   = new NameInputSequence() { Pointer= p0 };
 
 
             return value;

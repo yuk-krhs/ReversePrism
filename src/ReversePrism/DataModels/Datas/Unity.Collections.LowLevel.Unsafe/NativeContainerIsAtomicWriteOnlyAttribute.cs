@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeContainerIsAtomicWriteOnlyAttribute
+    public partial class NativeContainerIsAtomicWriteOnlyAttribute : DataModel
     {
 
         public static NativeContainerIsAtomicWriteOnlyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeContainerIsAtomicWriteOnlyAttribute();
+            var value   = new NativeContainerIsAtomicWriteOnlyAttribute() { Pointer= p0 };
 
 
             return value;

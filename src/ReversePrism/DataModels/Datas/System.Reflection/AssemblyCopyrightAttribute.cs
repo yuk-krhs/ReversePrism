@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Copyright                                000186672F10 ModelPrimitiveType string string string String
-    public partial class AssemblyCopyrightAttribute
+    public partial class AssemblyCopyrightAttribute : DataModel
     {
         public string                                   Copyright                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyCopyrightAttribute();
+            var value   = new AssemblyCopyrightAttribute() { Pointer= p0 };
 
-            value.Copyright                                 = GetString(new IntPtr(p + 0x010)); // 0270D6CE8850 0x10 Copyright                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Copyright                                 = GetString(new IntPtr(p + 0x010)); // 024666D38850 0x10 Copyright                   ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

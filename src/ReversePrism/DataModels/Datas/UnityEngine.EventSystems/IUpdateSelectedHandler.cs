@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUpdateSelectedHandler
+    public partial class IUpdateSelectedHandler : DataModel
     {
 
         public static IUpdateSelectedHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUpdateSelectedHandler();
+            var value   = new IUpdateSelectedHandler() { Pointer= p0 };
 
 
             return value;

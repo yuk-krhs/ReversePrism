@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 m_completeCallback                       Action`1<AsyncOperation> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncOperation
+    public partial class AsyncOperation : DataModel
     {
 
         public static AsyncOperation? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperation();
+            var value   = new AsyncOperation() { Pointer= p0 };
 
 
             return value;

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 CostumeList                              000185CD9D08 ModelClassListType RepeatedField`1<GalleryCostumeStatus> RepeatedField`1<GalleryCostumeStatus> List<GalleryCostumeStatus> Pointer
     // 000 EnableFieldNumber                        int IL2CPP_TYPE_I4
     // 030 Enable                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class GalleryCostumeSetStatus
+    public partial class GalleryCostumeSetStatus : DataModel
     {
         public string                                   Name                                    { get; set; }
         public CostumeType                              CostumeType                             { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryCostumeSetStatus();
+            var value   = new GalleryCostumeSetStatus() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02700420AFC8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x020)); // 02700420B008 0x20 CostumeType                 ( 000186637B40 ModelEnumType CostumeType CostumeType CostumeType Int32 )
-            value.CostumeList                               = GetObjectList<GalleryCostumeStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryCostumeStatus.FromPointer); // 02700420B068 0x28 CostumeList                 ( 000185CD9D08 ModelClassListType RepeatedField`1<GalleryCostumeStatus> RepeatedField`1<GalleryCostumeStatus> List<GalleryCostumeStatus> Pointer )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x030)); // 02700420B0A8 0x30 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466151C220 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x020)); // 02466151C260 0x20 CostumeType                 ( 000186637B40 ModelEnumType CostumeType CostumeType CostumeType Int32 )
+            value.CostumeList                               = GetObjectList<GalleryCostumeStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryCostumeStatus.FromPointer); // 02466151C2C0 0x28 CostumeList                 ( 000185CD9D08 ModelClassListType RepeatedField`1<GalleryCostumeStatus> RepeatedField`1<GalleryCostumeStatus> List<GalleryCostumeStatus> Pointer )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x030)); // 02466151C300 0x30 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

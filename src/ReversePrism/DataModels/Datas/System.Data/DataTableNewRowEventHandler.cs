@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DataTableNewRowEventHandler
+    public partial class DataTableNewRowEventHandler : DataModel
     {
 
         public static DataTableNewRowEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataTableNewRowEventHandler();
+            var value   = new DataTableNewRowEventHandler() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IapTelemetryException
+    public partial class IapTelemetryException : DataModel
     {
 
         public static IapTelemetryException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IapTelemetryException();
+            var value   = new IapTelemetryException() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Used                                   000186595480 ModelPrimitiveType bool bool bool Bool
-    public partial class AbstractEventData
+    public partial class AbstractEventData : DataModel
     {
         public bool                                     M_Used                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AbstractEventData();
+            var value   = new AbstractEventData() { Pointer= p0 };
 
-            value.M_Used                                    = GetBool(new IntPtr(p + 0x010)); // 027003EBC918 0x10 M_Used                      ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_Used                                    = GetBool(new IntPtr(p + 0x010)); // 0245A3EBC918 0x10 M_Used                      ( 000186595480 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 088 orderedClassSelectors                    Dictionary`2<string, StyleComplexSelector> IL2CPP_TYPE_GENERICINST
     // 090 M_IsDefaultStyleSheet                    0001865974C0 ModelPrimitiveType bool bool bool Bool
     // 000 kCustomPropertyMarker                    string IL2CPP_TYPE_STRING
-    public partial class StyleSheet
+    public partial class StyleSheet : DataModel
     {
         public bool                                     M_ImportedWithErrors                    { get; set; }
         public bool                                     M_ImportedWithWarnings                  { get; set; }
@@ -49,22 +49,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleSheet();
+            var value   = new StyleSheet() { Pointer= p0 };
 
-            value.M_ImportedWithErrors                      = GetBool(new IntPtr(p + 0x018)); // 027006842998 0x18 M_ImportedWithErrors        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ImportedWithWarnings                    = GetBool(new IntPtr(p + 0x019)); // 0270068429B8 0x19 M_ImportedWithWarnings      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Rules                                   = GetObjectList<StyleRule>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleRule.FromPointer); // 0270068429D8 0x20 M_Rules                     ( 000185CA7BE8 ModelClassListType StyleRule[] StyleRule[] List<StyleRule> Pointer )
-            value.M_ComplexSelectors                        = GetObjectList<StyleComplexSelector>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleComplexSelector.FromPointer); // 0270068429F8 0x28 M_ComplexSelectors          ( 000185CA7528 ModelClassListType StyleComplexSelector[] StyleComplexSelector[] List<StyleComplexSelector> Pointer )
-            value.Floats                                    = GetSingleList(new IntPtr(p + 0x030)); // 027006842A18 0x30 Floats                      ( 000185B80710 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Dimensions                                = GetEnumList<Dimension>(new IntPtr(p + 0x038)); // 027006842A38 0x38 Dimensions                  ( 000185B7A4D0 ModelEnumListType Dimension[] Dimension[] List<Dimension> Pointer )
-            value.Colors                                    = GetEnumList<Color>(new IntPtr(p + 0x040)); // 027006842A58 0x40 Colors                      ( 000185B75980 ModelEnumListType Color[] Color[] List<Color> Pointer )
-            value.Strings                                   = GetStringList(new IntPtr(p + 0x048)); // 027006842A78 0x48 Strings                     ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Assets                                    = GetObjectList<Object>(new IntPtr(p + 0x050), ReversePrism.DataModels.Object.FromPointer); // 027006842A98 0x50 Assets                      ( 000185B989C0 ModelClassListType Object[] Object[] List<Object> Pointer )
-            value.Imports                                   = GetEnumList<ImportStruct>(new IntPtr(p + 0x058)); // 027006842AB8 0x58 Imports                     ( 000185CC3398 ModelEnumListType ImportStruct[] ImportStruct[] List<ImportStruct> Pointer )
-            value.M_FlattenedImportedStyleSheets            = GetObjectList<StyleSheet>(new IntPtr(p + 0x060), ReversePrism.DataModels.StyleSheet.FromPointer); // 027006842AD8 0x60 M_FlattenedImportedStyleSheets ( 000185D0EC28 ModelClassListType List`1<StyleSheet> List`1<StyleSheet> List<StyleSheet> Pointer )
-            value.M_ContentHash                             = GetInt32(new IntPtr(p + 0x068)); // 027006842AF8 0x68 M_ContentHash               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScalableImages                            = GetEnumList<ScalableImage>(new IntPtr(p + 0x070)); // 027006842B18 0x70 ScalableImages              ( 000185CA2B68 ModelEnumListType ScalableImage[] ScalableImage[] List<ScalableImage> Pointer )
-            value.M_IsDefaultStyleSheet                     = GetBool(new IntPtr(p + 0x090)); // 027006842B98 0x90 M_IsDefaultStyleSheet       ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.M_ImportedWithErrors                      = GetBool(new IntPtr(p + 0x018)); // 0245A6804778 0x18 M_ImportedWithErrors        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ImportedWithWarnings                    = GetBool(new IntPtr(p + 0x019)); // 0245A6804798 0x19 M_ImportedWithWarnings      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Rules                                   = GetObjectList<StyleRule>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleRule.FromPointer); // 0245A68047B8 0x20 M_Rules                     ( 000185CA7BE8 ModelClassListType StyleRule[] StyleRule[] List<StyleRule> Pointer )
+            value.M_ComplexSelectors                        = GetObjectList<StyleComplexSelector>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleComplexSelector.FromPointer); // 0245A68047D8 0x28 M_ComplexSelectors          ( 000185CA7528 ModelClassListType StyleComplexSelector[] StyleComplexSelector[] List<StyleComplexSelector> Pointer )
+            value.Floats                                    = GetSingleList(new IntPtr(p + 0x030)); // 0245A68047F8 0x30 Floats                      ( 000185B80710 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Dimensions                                = GetEnumList<Dimension>(new IntPtr(p + 0x038)); // 0245A6804818 0x38 Dimensions                  ( 000185B7A4D0 ModelEnumListType Dimension[] Dimension[] List<Dimension> Pointer )
+            value.Colors                                    = GetEnumList<Color>(new IntPtr(p + 0x040)); // 0245A6804838 0x40 Colors                      ( 000185B75980 ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.Strings                                   = GetStringList(new IntPtr(p + 0x048)); // 0245A6804858 0x48 Strings                     ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Assets                                    = GetObjectList<Object>(new IntPtr(p + 0x050), ReversePrism.DataModels.Object.FromPointer); // 0245A6804878 0x50 Assets                      ( 000185B989C0 ModelClassListType Object[] Object[] List<Object> Pointer )
+            value.Imports                                   = GetEnumList<ImportStruct>(new IntPtr(p + 0x058)); // 0245A6804898 0x58 Imports                     ( 000185CC3398 ModelEnumListType ImportStruct[] ImportStruct[] List<ImportStruct> Pointer )
+            value.M_FlattenedImportedStyleSheets            = GetObjectList<StyleSheet>(new IntPtr(p + 0x060), ReversePrism.DataModels.StyleSheet.FromPointer); // 0245A68048B8 0x60 M_FlattenedImportedStyleSheets ( 000185D0EC28 ModelClassListType List`1<StyleSheet> List`1<StyleSheet> List<StyleSheet> Pointer )
+            value.M_ContentHash                             = GetInt32(new IntPtr(p + 0x068)); // 0245A68048D8 0x68 M_ContentHash               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScalableImages                            = GetEnumList<ScalableImage>(new IntPtr(p + 0x070)); // 0245A68048F8 0x70 ScalableImages              ( 000185CA2B68 ModelEnumListType ScalableImage[] ScalableImage[] List<ScalableImage> Pointer )
+            value.M_IsDefaultStyleSheet                     = GetBool(new IntPtr(p + 0x090)); // 0245A6804978 0x90 M_IsDefaultStyleSheet       ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

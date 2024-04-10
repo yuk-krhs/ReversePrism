@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 048 _MaintenanceTime                         000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 ErrorCodeFieldNumber                     int IL2CPP_TYPE_I4
     // 050 ErrorCode                                000186671910 ModelPrimitiveType string string string String
-    public partial class ErrorDialogStatus
+    public partial class ErrorDialogStatus : DataModel
     {
         public DateTime                                 MaintenanceTime                         { get; set; }
         public string                                   Title                                   { get; set; }
@@ -40,15 +40,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorDialogStatus();
+            var value   = new ErrorDialogStatus() { Pointer= p0 };
 
-            value.MaintenanceTime                           = GetDateTime(new IntPtr(p + 0x010)); // 0270D3517428 0x10 MaintenanceTime             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Title                                     = GetString(new IntPtr(p + 0x028)); // 0270D35174A8 0x28 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x030)); // 0270D35174E8 0x30 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ConnectionRetryCount                      = GetInt64(new IntPtr(p + 0x038)); // 0270D3517528 0x38 ConnectionRetryCount        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Buttons                                   = GetObjectList<ErrorButtonStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ErrorButtonStatus.FromPointer); // 0270D3517588 0x40 Buttons                     ( 000185CD5258 ModelClassListType RepeatedField`1<ErrorButtonStatus> RepeatedField`1<ErrorButtonStatus> List<ErrorButtonStatus> Pointer )
-            value._MaintenanceTime                          = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D35175C8 0x48 _MaintenanceTime            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.ErrorCode                                 = GetString(new IntPtr(p + 0x050)); // 0270D3517608 0x50 ErrorCode                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MaintenanceTime                           = GetDateTime(new IntPtr(p + 0x010)); // 0246605D6288 0x10 MaintenanceTime             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Title                                     = GetString(new IntPtr(p + 0x028)); // 0246605D6308 0x28 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x030)); // 0246605D6348 0x30 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.ConnectionRetryCount                      = GetInt64(new IntPtr(p + 0x038)); // 0246605D6388 0x38 ConnectionRetryCount        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Buttons                                   = GetObjectList<ErrorButtonStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ErrorButtonStatus.FromPointer); // 0246605D63E8 0x40 Buttons                     ( 000185CD5258 ModelClassListType RepeatedField`1<ErrorButtonStatus> RepeatedField`1<ErrorButtonStatus> List<ErrorButtonStatus> Pointer )
+            value._MaintenanceTime                          = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0246605D6428 0x48 _MaintenanceTime            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.ErrorCode                                 = GetString(new IntPtr(p + 0x050)); // 0246605D6468 0x50 ErrorCode                   ( 000186671910 ModelPrimitiveType string string string String )
             value.MaintenanceTime               = ToDateTime(value._MaintenanceTime);
 
             return value;

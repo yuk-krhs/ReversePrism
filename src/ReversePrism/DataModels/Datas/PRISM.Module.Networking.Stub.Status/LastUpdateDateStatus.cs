@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 02C SubType                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DateFieldNumber                          int IL2CPP_TYPE_I4
     // 030 _Date                                    000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class LastUpdateDateStatus
+    public partial class LastUpdateDateStatus : DataModel
     {
         public DateTime                                 Date                                    { get; set; }
         public LastUpdateDateType                       LastUpdateDateType                      { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LastUpdateDateStatus();
+            var value   = new LastUpdateDateStatus() { Pointer= p0 };
 
-            value.Date                                      = GetDateTime(new IntPtr(p + 0x010)); // 0270D0B53678 0x10 Date                        ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.LastUpdateDateType                        = (LastUpdateDateType)GetInt32(new IntPtr(p + 0x028)); // 0270D0B536F8 0x28 LastUpdateDateType          ( 00018677A280 ModelEnumType LastUpdateDateType LastUpdateDateType LastUpdateDateType Int32 )
-            value.SubType                                   = GetInt32(new IntPtr(p + 0x02C)); // 0270D0B53738 0x2C SubType                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._Date                                     = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B53778 0x30 _Date                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Date                                      = GetDateTime(new IntPtr(p + 0x010)); // 024660B51810 0x10 Date                        ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.LastUpdateDateType                        = (LastUpdateDateType)GetInt32(new IntPtr(p + 0x028)); // 024660B51890 0x28 LastUpdateDateType          ( 00018677A280 ModelEnumType LastUpdateDateType LastUpdateDateType LastUpdateDateType Int32 )
+            value.SubType                                   = GetInt32(new IntPtr(p + 0x02C)); // 024660B518D0 0x2C SubType                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._Date                                     = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B51910 0x30 _Date                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.Date                          = ToDateTime(value._Date);
 
             return value;

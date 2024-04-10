@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncReadRequest
+    public partial class AsyncReadRequest : DataModel
     {
 
         public static AsyncReadRequest? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncReadRequest();
+            var value   = new AsyncReadRequest() { Pointer= p0 };
 
 
             return value;

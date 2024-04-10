@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 060 MainContext                              000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
     // 068 IsRender                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 06C Frame                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Render3DManager
+    public partial class Render3DManager : DataModel
     {
         public CameraController?                        MainCamera                              { get; set; }
         public DropShadow?                              DropShadow                              { get; set; }
@@ -46,22 +46,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Render3DManager();
+            var value   = new Render3DManager() { Pointer= p0 };
 
-            value.MainCamera                                = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 0270D3307C00 0x20 MainCamera                  ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.DropShadow                                = GetObject<DropShadow>(new IntPtr(p + 0x028), ReversePrism.DataModels.DropShadow.FromPointer); // 0270D3307C20 0x28 DropShadow                  ( 000186706850 ModelClassType DropShadow DropShadow DropShadow Pointer )
-            value.FrameDebug                                = GetBool(new IntPtr(p + 0x030)); // 0270D3307C40 0x30 FrameDebug                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentDrawCamera                         = GetObject<Camera>(new IntPtr(p + 0x038), ReversePrism.DataModels.Camera.FromPointer); // 0270D3307C60 0x38 CurrentDrawCamera           ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.UpdateAnimation                           = GetBool(new IntPtr(p + 0x010)); // 0270D3307C80 0x10 UpdateAnimation             ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.ForcedDraw                                = GetBool(new IntPtr(p + 0x011)); // 0270D3307CA0 0x11 ForcedDraw                  ( 000186596380 ModelPrimitiveType bool bool bool Bool )
-            value.BlockUpdate                               = GetBool(new IntPtr(p + 0x012)); // 0270D3307CC0 0x12 BlockUpdate                 ( 000186596380 ModelPrimitiveType bool bool bool Bool )
-            value.Sway                                      = GetObject<SwayBoneManager>(new IntPtr(p + 0x040), ReversePrism.DataModels.SwayBoneManager.FromPointer); // 0270D3307CE0 0x40 Sway                        ( 0001865FA8D0 ModelClassType SwayBoneManager SwayBoneManager SwayBoneManager Pointer )
-            value.LastProcTime                              = GetSingle(new IntPtr(p + 0x048)); // 0270D3307D00 0x48 LastProcTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.DeltaTimes                                = GetSingleList(new IntPtr(p + 0x050)); // 0270D3307D20 0x50 DeltaTimes                  ( 000185B80D30 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x058)); // 0270D3307D40 0x58 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MainContext                               = GetObject<SynchronizationContext>(new IntPtr(p + 0x060), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0270D3307D60 0x60 MainContext                 ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
-            value.IsRender                                  = GetBool(new IntPtr(p + 0x068)); // 0270D3307D80 0x68 IsRender                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Frame                                     = GetInt32(new IntPtr(p + 0x06C)); // 0270D3307DA0 0x6C Frame                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MainCamera                                = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 0246633269C8 0x20 MainCamera                  ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
+            value.DropShadow                                = GetObject<DropShadow>(new IntPtr(p + 0x028), ReversePrism.DataModels.DropShadow.FromPointer); // 0246633269E8 0x28 DropShadow                  ( 000186706850 ModelClassType DropShadow DropShadow DropShadow Pointer )
+            value.FrameDebug                                = GetBool(new IntPtr(p + 0x030)); // 024663326A08 0x30 FrameDebug                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentDrawCamera                         = GetObject<Camera>(new IntPtr(p + 0x038), ReversePrism.DataModels.Camera.FromPointer); // 024663326A28 0x38 CurrentDrawCamera           ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.UpdateAnimation                           = GetBool(new IntPtr(p + 0x010)); // 024663326A48 0x10 UpdateAnimation             ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.ForcedDraw                                = GetBool(new IntPtr(p + 0x011)); // 024663326A68 0x11 ForcedDraw                  ( 000186596380 ModelPrimitiveType bool bool bool Bool )
+            value.BlockUpdate                               = GetBool(new IntPtr(p + 0x012)); // 024663326A88 0x12 BlockUpdate                 ( 000186596380 ModelPrimitiveType bool bool bool Bool )
+            value.Sway                                      = GetObject<SwayBoneManager>(new IntPtr(p + 0x040), ReversePrism.DataModels.SwayBoneManager.FromPointer); // 024663326AA8 0x40 Sway                        ( 0001865FA8D0 ModelClassType SwayBoneManager SwayBoneManager SwayBoneManager Pointer )
+            value.LastProcTime                              = GetSingle(new IntPtr(p + 0x048)); // 024663326AC8 0x48 LastProcTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.DeltaTimes                                = GetSingleList(new IntPtr(p + 0x050)); // 024663326AE8 0x50 DeltaTimes                  ( 000185B80D30 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x058)); // 024663326B08 0x58 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MainContext                               = GetObject<SynchronizationContext>(new IntPtr(p + 0x060), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 024663326B28 0x60 MainContext                 ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.IsRender                                  = GetBool(new IntPtr(p + 0x068)); // 024663326B48 0x68 IsRender                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Frame                                     = GetInt32(new IntPtr(p + 0x06C)); // 024663326B68 0x6C Frame                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

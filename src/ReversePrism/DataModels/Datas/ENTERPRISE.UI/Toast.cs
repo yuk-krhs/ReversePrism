@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Toast
+    public partial class Toast : DataModel
     {
 
         public static Toast? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Toast();
+            var value   = new Toast() { Pointer= p0 };
 
 
             return value;

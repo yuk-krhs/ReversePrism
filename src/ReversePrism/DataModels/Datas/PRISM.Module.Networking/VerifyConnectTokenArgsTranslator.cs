@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VerifyConnectTokenArgsTranslator
+    public partial class VerifyConnectTokenArgsTranslator : DataModel
     {
 
         public static VerifyConnectTokenArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyConnectTokenArgsTranslator();
+            var value   = new VerifyConnectTokenArgsTranslator() { Pointer= p0 };
 
 
             return value;

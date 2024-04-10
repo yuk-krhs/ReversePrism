@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidProtocolBufferException
+    public partial class InvalidProtocolBufferException : DataModel
     {
 
         public static InvalidProtocolBufferException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidProtocolBufferException();
+            var value   = new InvalidProtocolBufferException() { Pointer= p0 };
 
 
             return value;

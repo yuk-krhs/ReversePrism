@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 fields                                   IDictionary`2<int, UnknownField> IL2CPP_TYPE_GENERICINST
     // 018 lastFieldNumber                          int IL2CPP_TYPE_I4
     // 020 LastField                                000186731440 ModelClassType UnknownField UnknownField UnknownField Pointer
-    public partial class UnknownFieldSet
+    public partial class UnknownFieldSet : DataModel
     {
         public UnknownField?                            LastField                               { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnknownFieldSet();
+            var value   = new UnknownFieldSet() { Pointer= p0 };
 
-            value.LastField                                 = GetObject<UnknownField>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnknownField.FromPointer); // 0270D3947320 0x20 LastField                   ( 000186731440 ModelClassType UnknownField UnknownField UnknownField Pointer )
+            value.LastField                                 = GetObject<UnknownField>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnknownField.FromPointer); // 0246639950E0 0x20 LastField                   ( 000186731440 ModelClassType UnknownField UnknownField UnknownField Pointer )
 
             return value;
         }

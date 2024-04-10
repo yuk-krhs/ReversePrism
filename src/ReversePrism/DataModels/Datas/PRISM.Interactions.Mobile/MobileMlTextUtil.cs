@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MobileMlTextUtil
+    public partial class MobileMlTextUtil : DataModel
     {
 
         public static MobileMlTextUtil? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileMlTextUtil();
+            var value   = new MobileMlTextUtil() { Pointer= p0 };
 
 
             return value;

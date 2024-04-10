@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 touch                                    string IL2CPP_TYPE_STRING
     // 010 Pen                                      000186674040 ModelPrimitiveType string string string String
     // 018 Unknown                                  000186674040 ModelPrimitiveType string string string String
-    public partial class PointerType
+    public partial class PointerType : DataModel
     {
         public string                                   Pen                                     { get; set; }
         public string                                   Unknown                                 { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerType();
+            var value   = new PointerType() { Pointer= p0 };
 
-            value.Pen                                       = GetString(new IntPtr(p + 0x010)); // 0270067AB610 0x10 Pen                         ( 000186674040 ModelPrimitiveType string string string String )
-            value.Unknown                                   = GetString(new IntPtr(p + 0x018)); // 0270067AB630 0x18 Unknown                     ( 000186674040 ModelPrimitiveType string string string String )
+            value.Pen                                       = GetString(new IntPtr(p + 0x010)); // 0245A676D6E8 0x10 Pen                         ( 000186674040 ModelPrimitiveType string string string String )
+            value.Unknown                                   = GetString(new IntPtr(p + 0x018)); // 0245A676D708 0x18 Unknown                     ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

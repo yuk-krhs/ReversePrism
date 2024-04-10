@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 SlotArray                                LinkedSlotVolatile<<var>>[] IL2CPP_TYPE_SZARRAY
     // 000 m_trackAllValues                         bool IL2CPP_TYPE_BOOLEAN
-    public partial class FinalizationHelper
+    public partial class FinalizationHelper : DataModel
     {
 
         public static FinalizationHelper? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinalizationHelper();
+            var value   = new FinalizationHelper() { Pointer= p0 };
 
 
             return value;

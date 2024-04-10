@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsFeatured                               000186595960 ModelPrimitiveType bool bool bool Bool
     // 018 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class MedalGashaRewardHeaderData
+    public partial class MedalGashaRewardHeaderData : DataModel
     {
         public bool                                     IsFeatured                              { get; set; }
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardHeaderData();
+            var value   = new MedalGashaRewardHeaderData() { Pointer= p0 };
 
-            value.IsFeatured                                = GetBool(new IntPtr(p + 0x010)); // 0270D629E3B0 0x10 IsFeatured                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270D629E3D0 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.IsFeatured                                = GetBool(new IntPtr(p + 0x010)); // 02466630EBE0 0x10 IsFeatured                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466630EC00 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

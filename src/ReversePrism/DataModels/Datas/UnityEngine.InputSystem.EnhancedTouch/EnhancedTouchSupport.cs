@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Enabled                                int IL2CPP_TYPE_I4
     // 004 s_UpdateMode                             UpdateMode IL2CPP_TYPE_VALUETYPE
-    public partial class EnhancedTouchSupport
+    public partial class EnhancedTouchSupport : DataModel
     {
 
         public static EnhancedTouchSupport? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnhancedTouchSupport();
+            var value   = new EnhancedTouchSupport() { Pointer= p0 };
 
 
             return value;

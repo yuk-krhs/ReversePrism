@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CreateGashaSupportCharacterEffectReplyTranslator
+    public partial class CreateGashaSupportCharacterEffectReplyTranslator : DataModel
     {
 
         public static CreateGashaSupportCharacterEffectReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateGashaSupportCharacterEffectReplyTranslator();
+            var value   = new CreateGashaSupportCharacterEffectReplyTranslator() { Pointer= p0 };
 
 
             return value;

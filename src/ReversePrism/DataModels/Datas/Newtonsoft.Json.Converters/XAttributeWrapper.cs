@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XAttributeWrapper
+    public partial class XAttributeWrapper : DataModel
     {
 
         public static XAttributeWrapper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XAttributeWrapper();
+            var value   = new XAttributeWrapper() { Pointer= p0 };
 
 
             return value;

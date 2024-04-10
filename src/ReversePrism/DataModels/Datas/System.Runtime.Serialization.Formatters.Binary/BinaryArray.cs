@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 AssemId                                  0001865F2F90 ModelPrimitiveType int int int Int32
     // 03C BinaryHeaderEnum                         000186758040 ModelEnumType BinaryHeaderEnum BinaryHeaderEnum BinaryHeaderEnum Int32
     // 040 BinaryArrayTypeEnum                      000186754E30 ModelEnumType BinaryArrayTypeEnum BinaryArrayTypeEnum BinaryArrayTypeEnum Int32
-    public partial class BinaryArray
+    public partial class BinaryArray : DataModel
     {
         public int                                      ObjectId                                { get; set; }
         public int                                      Rank                                    { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryArray();
+            var value   = new BinaryArray() { Pointer= p0 };
 
-            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D6C32A30 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x014)); // 0270D6C32A50 0x14 Rank                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.LengthA                                   = GetInt32List(new IntPtr(p + 0x018)); // 0270D6C32A70 0x18 LengthA                     ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.LowerBoundA                               = GetInt32List(new IntPtr(p + 0x020)); // 0270D6C32A90 0x20 LowerBoundA                 ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.BinaryTypeEnum                            = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x028)); // 0270D6C32AB0 0x28 BinaryTypeEnum              ( 000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
-            value.AssemId                                   = GetInt32(new IntPtr(p + 0x038)); // 0270D6C32AF0 0x38 AssemId                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BinaryHeaderEnum                          = (BinaryHeaderEnum)GetInt32(new IntPtr(p + 0x03C)); // 0270D6C32B10 0x3C BinaryHeaderEnum            ( 000186758040 ModelEnumType BinaryHeaderEnum BinaryHeaderEnum BinaryHeaderEnum Int32 )
-            value.BinaryArrayTypeEnum                       = (BinaryArrayTypeEnum)GetInt32(new IntPtr(p + 0x040)); // 0270D6C32B30 0x40 BinaryArrayTypeEnum         ( 000186754E30 ModelEnumType BinaryArrayTypeEnum BinaryArrayTypeEnum BinaryArrayTypeEnum Int32 )
+            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 024666CA2A30 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x014)); // 024666CA2A50 0x14 Rank                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LengthA                                   = GetInt32List(new IntPtr(p + 0x018)); // 024666CA2A70 0x18 LengthA                     ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.LowerBoundA                               = GetInt32List(new IntPtr(p + 0x020)); // 024666CA2A90 0x20 LowerBoundA                 ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.BinaryTypeEnum                            = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x028)); // 024666CA2AB0 0x28 BinaryTypeEnum              ( 000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
+            value.AssemId                                   = GetInt32(new IntPtr(p + 0x038)); // 024666CA2AF0 0x38 AssemId                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.BinaryHeaderEnum                          = (BinaryHeaderEnum)GetInt32(new IntPtr(p + 0x03C)); // 024666CA2B10 0x3C BinaryHeaderEnum            ( 000186758040 ModelEnumType BinaryHeaderEnum BinaryHeaderEnum BinaryHeaderEnum Int32 )
+            value.BinaryArrayTypeEnum                       = (BinaryArrayTypeEnum)GetInt32(new IntPtr(p + 0x040)); // 024666CA2B30 0x40 BinaryArrayTypeEnum         ( 000186754E30 ModelEnumType BinaryArrayTypeEnum BinaryArrayTypeEnum BinaryArrayTypeEnum Int32 )
 
             return value;
         }

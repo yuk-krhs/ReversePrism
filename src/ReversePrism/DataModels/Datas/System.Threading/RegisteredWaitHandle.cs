@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 048 CallsInProcess                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 04C ExecuteOnlyOnce                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 04D Unregistered                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class RegisteredWaitHandle
+    public partial class RegisteredWaitHandle : DataModel
     {
         public WaitHandle?                              WaitObject                              { get; set; }
         public WaitOrTimerCallback?                     Callback                                { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegisteredWaitHandle();
+            var value   = new RegisteredWaitHandle() { Pointer= p0 };
 
-            value.WaitObject                                = GetObject<WaitHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.WaitHandle.FromPointer); // 0270D6AEDE20 0x18 WaitObject                  ( 000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
-            value.Callback                                  = GetObject<WaitOrTimerCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.WaitOrTimerCallback.FromPointer); // 0270D6AEDE40 0x20 Callback                    ( 000186543C20 ModelClassType WaitOrTimerCallback WaitOrTimerCallback WaitOrTimerCallback Pointer )
-            value.FinalEvent                                = GetObject<WaitHandle>(new IntPtr(p + 0x030), ReversePrism.DataModels.WaitHandle.FromPointer); // 0270D6AEDE80 0x30 FinalEvent                  ( 000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
-            value.CancelEvent                               = GetObject<ManualResetEvent>(new IntPtr(p + 0x038), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0270D6AEDEA0 0x38 CancelEvent                 ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
-            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x040)); // 0270D6AEDEC0 0x40 Timeout                     ( 00018668A8A0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.CallsInProcess                            = GetInt32(new IntPtr(p + 0x048)); // 0270D6AEDEE0 0x48 CallsInProcess              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExecuteOnlyOnce                           = GetBool(new IntPtr(p + 0x04C)); // 0270D6AEDF00 0x4C ExecuteOnlyOnce             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Unregistered                              = GetBool(new IntPtr(p + 0x04D)); // 0270D6AEDF20 0x4D Unregistered                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WaitObject                                = GetObject<WaitHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.WaitHandle.FromPointer); // 024666B4DE20 0x18 WaitObject                  ( 000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
+            value.Callback                                  = GetObject<WaitOrTimerCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.WaitOrTimerCallback.FromPointer); // 024666B4DE40 0x20 Callback                    ( 000186543C20 ModelClassType WaitOrTimerCallback WaitOrTimerCallback WaitOrTimerCallback Pointer )
+            value.FinalEvent                                = GetObject<WaitHandle>(new IntPtr(p + 0x030), ReversePrism.DataModels.WaitHandle.FromPointer); // 024666B4DE80 0x30 FinalEvent                  ( 000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
+            value.CancelEvent                               = GetObject<ManualResetEvent>(new IntPtr(p + 0x038), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 024666B4DEA0 0x38 CancelEvent                 ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
+            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x040)); // 024666B4DEC0 0x40 Timeout                     ( 00018668A8A0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.CallsInProcess                            = GetInt32(new IntPtr(p + 0x048)); // 024666B4DEE0 0x48 CallsInProcess              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExecuteOnlyOnce                           = GetBool(new IntPtr(p + 0x04C)); // 024666B4DF00 0x4C ExecuteOnlyOnce             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Unregistered                              = GetBool(new IntPtr(p + 0x04D)); // 024666B4DF20 0x4D Unregistered                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

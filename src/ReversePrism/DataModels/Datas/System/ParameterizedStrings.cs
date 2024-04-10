@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // FFFFFFFF _cachedStack                             LowLevelStack IL2CPP_TYPE_CLASS
-    public partial class ParameterizedStrings
+    public partial class ParameterizedStrings : DataModel
     {
 
         public static ParameterizedStrings? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParameterizedStrings();
+            var value   = new ParameterizedStrings() { Pointer= p0 };
 
 
             return value;

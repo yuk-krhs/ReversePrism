@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InfiniteTimerQueue
+    public partial class InfiniteTimerQueue : DataModel
     {
 
         public static InfiniteTimerQueue? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InfiniteTimerQueue();
+            var value   = new InfiniteTimerQueue() { Pointer= p0 };
 
 
             return value;

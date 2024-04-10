@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 Index                                    0001866E0300 ModelClassType Index Index Index Pointer
-    public partial class IndexTree
+    public partial class IndexTree : DataModel
     {
         public Index?                                   Index                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IndexTree();
+            var value   = new IndexTree() { Pointer= p0 };
 
-            value.Index                                     = GetObject<Index>(new IntPtr(p + 0x040), ReversePrism.DataModels.Index.FromPointer); // 0270D894EAD0 0x40 Index                       ( 0001866E0300 ModelClassType Index Index Index Pointer )
+            value.Index                                     = GetObject<Index>(new IntPtr(p + 0x040), ReversePrism.DataModels.Index.FromPointer); // 0246689B1990 0x40 Index                       ( 0001866E0300 ModelClassType Index Index Index Pointer )
 
             return value;
         }

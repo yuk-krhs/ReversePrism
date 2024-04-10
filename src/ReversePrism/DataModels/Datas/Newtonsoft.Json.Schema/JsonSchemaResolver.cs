@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <LoadedSchemas>k__BackingField           IList`1<JsonSchema> IL2CPP_TYPE_GENERICINST
-    public partial class JsonSchemaResolver
+    public partial class JsonSchemaResolver : DataModel
     {
 
         public static JsonSchemaResolver? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSchemaResolver();
+            var value   = new JsonSchemaResolver() { Pointer= p0 };
 
 
             return value;

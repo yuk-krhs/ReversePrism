@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 JwtLocationsFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_jwtLocations_codec             FieldCodec`1<JwtLocation> IL2CPP_TYPE_GENERICINST
     // 040 JwtLocations                             000185CE25B8 ModelClassListType RepeatedField`1<JwtLocation> RepeatedField`1<JwtLocation> List<JwtLocation> Pointer
-    public partial class AuthProvider
+    public partial class AuthProvider : DataModel
     {
         public string                                   Id                                      { get; set; }
         public string                                   Issuer                                  { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthProvider();
+            var value   = new AuthProvider() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0270DA736BA0 0x18 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Issuer                                    = GetString(new IntPtr(p + 0x020)); // 0270DA736BE0 0x20 Issuer                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.JwksUri                                   = GetString(new IntPtr(p + 0x028)); // 0270DA736C20 0x28 JwksUri                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Audiences                                 = GetString(new IntPtr(p + 0x030)); // 0270DA736C60 0x30 Audiences                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.AuthorizationUrl                          = GetString(new IntPtr(p + 0x038)); // 0270DA736CA0 0x38 AuthorizationUrl            ( 000186671910 ModelPrimitiveType string string string String )
-            value.JwtLocations                              = GetObjectList<JwtLocation>(new IntPtr(p + 0x040), ReversePrism.DataModels.JwtLocation.FromPointer); // 0270DA736D00 0x40 JwtLocations                ( 000185CE25B8 ModelClassListType RepeatedField`1<JwtLocation> RepeatedField`1<JwtLocation> List<JwtLocation> Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 02466A78ACB8 0x18 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Issuer                                    = GetString(new IntPtr(p + 0x020)); // 02466A78ACF8 0x20 Issuer                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.JwksUri                                   = GetString(new IntPtr(p + 0x028)); // 02466A78AD38 0x28 JwksUri                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Audiences                                 = GetString(new IntPtr(p + 0x030)); // 02466A78AD78 0x30 Audiences                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.AuthorizationUrl                          = GetString(new IntPtr(p + 0x038)); // 02466A78ADB8 0x38 AuthorizationUrl            ( 000186671910 ModelPrimitiveType string string string String )
+            value.JwtLocations                              = GetObjectList<JwtLocation>(new IntPtr(p + 0x040), ReversePrism.DataModels.JwtLocation.FromPointer); // 02466A78AE18 0x40 JwtLocations                ( 000185CE25B8 ModelClassListType RepeatedField`1<JwtLocation> RepeatedField`1<JwtLocation> List<JwtLocation> Pointer )
 
             return value;
         }

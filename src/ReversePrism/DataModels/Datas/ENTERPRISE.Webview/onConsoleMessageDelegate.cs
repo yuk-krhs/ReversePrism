@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class onConsoleMessageDelegate
+    public partial class onConsoleMessageDelegate : DataModel
     {
 
         public static onConsoleMessageDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new onConsoleMessageDelegate();
+            var value   = new onConsoleMessageDelegate() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetSuspendedPvpReply
+    public partial class IGetSuspendedPvpReply : DataModel
     {
 
         public static IGetSuspendedPvpReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetSuspendedPvpReply();
+            var value   = new IGetSuspendedPvpReply() { Pointer= p0 };
 
 
             return value;

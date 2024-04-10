@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CheckTexFieldInput
+    public partial class CheckTexFieldInput : DataModel
     {
 
         public static CheckTexFieldInput? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CheckTexFieldInput();
+            var value   = new CheckTexFieldInput() { Pointer= p0 };
 
 
             return value;

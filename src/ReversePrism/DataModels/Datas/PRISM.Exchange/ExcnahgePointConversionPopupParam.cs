@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 CurConversionItemCount                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 098 PointAndConversionItemCountPairs         ICollection`1<KeyValuePair`2<int, int>> IL2CPP_TYPE_GENERICINST
-    public partial class ExcnahgePointConversionPopupParam
+    public partial class ExcnahgePointConversionPopupParam : DataModel
     {
         public int                                      CurConversionItemCount                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExcnahgePointConversionPopupParam();
+            var value   = new ExcnahgePointConversionPopupParam() { Pointer= p0 };
 
-            value.CurConversionItemCount                    = GetInt32(new IntPtr(p + 0x090)); // 0270D55070F8 0x90 CurConversionItemCount      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CurConversionItemCount                    = GetInt32(new IntPtr(p + 0x090)); // 024665570790 0x90 CurConversionItemCount      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

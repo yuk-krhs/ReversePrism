@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Ref                                      SharedStatic`1<Long1024> IL2CPP_TYPE_GENERICINST
-    public partial class IsAutoDispose
+    public partial class IsAutoDispose : DataModel
     {
 
         public static IsAutoDispose? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsAutoDispose();
+            var value   = new IsAutoDispose() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 040 CellPrefab                               00018654CB40 ModelClassType LiveEventBonusListCell LiveEventBonusListCell LiveEventBonusListCell Pointer
     // 048 CellArea                                 0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class LiveEventBonusListRow
+    public partial class LiveEventBonusListRow : DataModel
     {
         public LiveEventBonusListCell?                  CellPrefab                              { get; set; }
         public Transform?                               CellArea                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventBonusListRow();
+            var value   = new LiveEventBonusListRow() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<LiveEventBonusListCell>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveEventBonusListCell.FromPointer); // 0270DB93D0A8 0x40 CellPrefab                  ( 00018654CB40 ModelClassType LiveEventBonusListCell LiveEventBonusListCell LiveEventBonusListCell Pointer )
-            value.CellArea                                  = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 0270DB93D0C8 0x48 CellArea                    ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CellPrefab                                = GetObject<LiveEventBonusListCell>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveEventBonusListCell.FromPointer); // 02466B9CC4C8 0x40 CellPrefab                  ( 00018654CB40 ModelClassType LiveEventBonusListCell LiveEventBonusListCell LiveEventBonusListCell Pointer )
+            value.CellArea                                  = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 02466B9CC4E8 0x48 CellArea                    ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

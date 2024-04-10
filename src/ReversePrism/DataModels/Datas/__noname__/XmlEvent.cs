@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 S2                                       000186671910 ModelPrimitiveType string string string String
     // 028 S3                                       000186671910 ModelPrimitiveType string string string String
     // 030 o                                        <object> IL2CPP_TYPE_OBJECT
-    public partial class XmlEvent
+    public partial class XmlEvent : DataModel
     {
         public XmlEventType                             EventType                               { get; set; }
         public string                                   S1                                      { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlEvent();
+            var value   = new XmlEvent() { Pointer= p0 };
 
-            value.EventType                                 = (XmlEventType)GetInt32(new IntPtr(p + 0x010)); // 0270D73A5E48 0x10 EventType                   ( 000186735FE0 ModelEnumType XmlEventType XmlEventType XmlEventType Int32 )
-            value.S1                                        = GetString(new IntPtr(p + 0x018)); // 0270D73A5E68 0x18 S1                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.S2                                        = GetString(new IntPtr(p + 0x020)); // 0270D73A5E88 0x20 S2                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.S3                                        = GetString(new IntPtr(p + 0x028)); // 0270D73A5EA8 0x28 S3                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.EventType                                 = (XmlEventType)GetInt32(new IntPtr(p + 0x010)); // 0246673F5E48 0x10 EventType                   ( 000186735FE0 ModelEnumType XmlEventType XmlEventType XmlEventType Int32 )
+            value.S1                                        = GetString(new IntPtr(p + 0x018)); // 0246673F5E68 0x18 S1                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.S2                                        = GetString(new IntPtr(p + 0x020)); // 0246673F5E88 0x20 S2                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.S3                                        = GetString(new IntPtr(p + 0x028)); // 0246673F5EA8 0x28 S3                          ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

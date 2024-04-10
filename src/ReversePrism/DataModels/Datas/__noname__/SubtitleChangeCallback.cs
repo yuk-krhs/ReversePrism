@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SubtitleChangeCallback
+    public partial class SubtitleChangeCallback : DataModel
     {
 
         public static SubtitleChangeCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubtitleChangeCallback();
+            var value   = new SubtitleChangeCallback() { Pointer= p0 };
 
 
             return value;

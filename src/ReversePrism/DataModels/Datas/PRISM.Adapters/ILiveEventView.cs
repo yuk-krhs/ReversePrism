@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveEventView
+    public partial class ILiveEventView : DataModel
     {
 
         public static ILiveEventView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveEventView();
+            var value   = new ILiveEventView() { Pointer= p0 };
 
 
             return value;

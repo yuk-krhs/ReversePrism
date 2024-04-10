@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 _inUseCount                              int IL2CPP_TYPE_I4
     // 000 _pageId                                  int IL2CPP_TYPE_I4
     // 000 _nextFreeSlotLine                        int IL2CPP_TYPE_I4
-    public partial class TreePage
+    public partial class TreePage : DataModel
     {
 
         public static TreePage? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TreePage();
+            var value   = new TreePage() { Pointer= p0 };
 
 
             return value;

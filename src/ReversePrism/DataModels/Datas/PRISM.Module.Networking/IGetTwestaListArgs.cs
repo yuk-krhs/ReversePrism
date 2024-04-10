@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetTwestaListArgs
+    public partial class IGetTwestaListArgs : DataModel
     {
 
         public static IGetTwestaListArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetTwestaListArgs();
+            var value   = new IGetTwestaListArgs() { Pointer= p0 };
 
 
             return value;

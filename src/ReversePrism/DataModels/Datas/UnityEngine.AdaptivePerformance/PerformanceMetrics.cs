@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C CpuPerformanceBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
     // 01D GpuPerformanceBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
     // 020 ClusterInfo                              0001865BB6C0 ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32
-    public partial class PerformanceMetrics
+    public partial class PerformanceMetrics : DataModel
     {
         public int                                      CurrentCpuLevel                         { get; set; }
         public int                                      CurrentGpuLevel                         { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PerformanceMetrics();
+            var value   = new PerformanceMetrics() { Pointer= p0 };
 
-            value.CurrentCpuLevel                           = GetInt32(new IntPtr(p + 0x010)); // 0270D090A368 0x10 CurrentCpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentGpuLevel                           = GetInt32(new IntPtr(p + 0x014)); // 0270D090A388 0x14 CurrentGpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x018)); // 0270D090A3A8 0x18 PerformanceBottleneck       ( 000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
-            value.CpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01C)); // 0270D090A3C8 0x1C CpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01D)); // 0270D090A3E8 0x1D GpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ClusterInfo                               = (ClusterInfo)GetInt32(new IntPtr(p + 0x020)); // 0270D090A408 0x20 ClusterInfo                 ( 0001865BB6C0 ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32 )
+            value.CurrentCpuLevel                           = GetInt32(new IntPtr(p + 0x010)); // 02466090A368 0x10 CurrentCpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentGpuLevel                           = GetInt32(new IntPtr(p + 0x014)); // 02466090A388 0x14 CurrentGpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x018)); // 02466090A3A8 0x18 PerformanceBottleneck       ( 000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
+            value.CpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01C)); // 02466090A3C8 0x1C CpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.GpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01D)); // 02466090A3E8 0x1D GpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ClusterInfo                               = (ClusterInfo)GetInt32(new IntPtr(p + 0x020)); // 02466090A408 0x20 ClusterInfo                 ( 0001865BB6C0 ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 StatusCode                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Body                                     000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class RawResult
+    public partial class RawResult : DataModel
     {
         public int                                      StatusCode                              { get; set; }
         public List<sbyte>?                             Body                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RawResult();
+            var value   = new RawResult() { Pointer= p0 };
 
-            value.StatusCode                                = GetInt32(new IntPtr(p + 0x010)); // 0270DB482CA0 0x10 StatusCode                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Body                                      = GetSByteList(new IntPtr(p + 0x018)); // 0270DB482CC0 0x18 Body                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.StatusCode                                = GetInt32(new IntPtr(p + 0x010)); // 02466B50FBD0 0x10 StatusCode                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Body                                      = GetSByteList(new IntPtr(p + 0x018)); // 02466B50FBF0 0x18 Body                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

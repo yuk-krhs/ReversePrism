@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 PanelViewFadeTimeDisposable              0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 068 MessageWindowFadeTimeDisposable          0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 070 CueSheetName                             000186671910 ModelPrimitiveType string string string String
-    public partial class HomeCharacterMessagePanelView
+    public partial class HomeCharacterMessagePanelView : DataModel
     {
         public UITextMeshProUGUI?                       NameText                                { get; set; }
         public UITextMeshProUGUI?                       MessageText                             { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeCharacterMessagePanelView();
+            var value   = new HomeCharacterMessagePanelView() { Pointer= p0 };
 
-            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004FA8D50 0x20 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004FA8D70 0x28 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027004FA8D90 0x30 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.MessageWindowCanvasGroup                  = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027004FA8DB0 0x38 MessageWindowCanvasGroup    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.WindowObject                              = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 027004FA8DD0 0x40 WindowObject                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.WindowImage                               = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 027004FA8DF0 0x48 WindowImage                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x050), ReversePrism.DataModels.AnimationCurve.FromPointer); // 027004FA8E10 0x50 FadeCurve                   ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.WindowSprites                             = GetObjectList<Sprite>(new IntPtr(p + 0x058), ReversePrism.DataModels.Sprite.FromPointer); // 027004FA8E30 0x58 WindowSprites               ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
-            value.PanelViewFadeTimeDisposable               = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 027004FA8E50 0x60 PanelViewFadeTimeDisposable ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.MessageWindowFadeTimeDisposable           = GetObject<IDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.IDisposable.FromPointer); // 027004FA8E70 0x68 MessageWindowFadeTimeDisposable ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x070)); // 027004FA8E90 0x70 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4FAA350 0x20 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4FAA370 0x28 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A4FAA390 0x30 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.MessageWindowCanvasGroup                  = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A4FAA3B0 0x38 MessageWindowCanvasGroup    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.WindowObject                              = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0245A4FAA3D0 0x40 WindowObject                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.WindowImage                               = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 0245A4FAA3F0 0x48 WindowImage                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x050), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A4FAA410 0x50 FadeCurve                   ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.WindowSprites                             = GetObjectList<Sprite>(new IntPtr(p + 0x058), ReversePrism.DataModels.Sprite.FromPointer); // 0245A4FAA430 0x58 WindowSprites               ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value.PanelViewFadeTimeDisposable               = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A4FAA450 0x60 PanelViewFadeTimeDisposable ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.MessageWindowFadeTimeDisposable           = GetObject<IDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A4FAA470 0x68 MessageWindowFadeTimeDisposable ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x070)); // 0245A4FAA490 0x70 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 MaxNameLength                            uint IL2CPP_TYPE_U4
     // 020 <NativeHandle>k__BackingField            <int> IL2CPP_TYPE_I
     // 028 HasExistingNativeHandle                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriAtomExOutputPort
+    public partial class CriAtomExOutputPort : DataModel
     {
         public bool                                     HasExistingNativeHandle                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExOutputPort();
+            var value   = new CriAtomExOutputPort() { Pointer= p0 };
 
-            value.HasExistingNativeHandle                   = GetBool(new IntPtr(p + 0x028)); // 0270DAC73360 0x28 HasExistingNativeHandle     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasExistingNativeHandle                   = GetBool(new IntPtr(p + 0x028)); // 02466ACDB360 0x28 HasExistingNativeHandle     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 FIdolIconList                            000185CF0348 ModelClassListType IReadOnlyList`1<FIdolIcon> IReadOnlyList`1<FIdolIcon> List<FIdolIcon> Pointer
     // 028 UnitTransferProductList                  000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
     // 030 IdolTransferProductList                  000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
-    public partial class ProduceResultTransferConfirmedPopupViewModel
+    public partial class ProduceResultTransferConfirmedPopupViewModel : DataModel
     {
         public IFesUnitStatus?                          FesUnitStatus                           { get; set; }
         public FUnitIcon?                               FUnitIcon                               { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceResultTransferConfirmedPopupViewModel();
+            var value   = new ProduceResultTransferConfirmedPopupViewModel() { Pointer= p0 };
 
-            value.FesUnitStatus                             = GetObject<IFesUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFesUnitStatus.FromPointer); // 0270D5F97D90 0x10 FesUnitStatus               ( 00018650A0D0 ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer )
-            value.FUnitIcon                                 = GetObject<FUnitIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.FUnitIcon.FromPointer); // 0270D5F97DB0 0x18 FUnitIcon                   ( 00018654C900 ModelClassType FUnitIcon FUnitIcon FUnitIcon Pointer )
-            value.FIdolIconList                             = GetObjectList<FIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FIdolIcon.FromPointer); // 0270D5F97DD0 0x20 FIdolIconList               ( 000185CF0348 ModelClassListType IReadOnlyList`1<FIdolIcon> IReadOnlyList`1<FIdolIcon> List<FIdolIcon> Pointer )
-            value.UnitTransferProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D5F97DF0 0x28 UnitTransferProductList     ( 000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
-            value.IdolTransferProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D5F97E10 0x30 IdolTransferProductList     ( 000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
+            value.FesUnitStatus                             = GetObject<IFesUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFesUnitStatus.FromPointer); // 02466600FD90 0x10 FesUnitStatus               ( 00018650A0D0 ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer )
+            value.FUnitIcon                                 = GetObject<FUnitIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.FUnitIcon.FromPointer); // 02466600FDB0 0x18 FUnitIcon                   ( 00018654C900 ModelClassType FUnitIcon FUnitIcon FUnitIcon Pointer )
+            value.FIdolIconList                             = GetObjectList<FIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FIdolIcon.FromPointer); // 02466600FDD0 0x20 FIdolIconList               ( 000185CF0348 ModelClassListType IReadOnlyList`1<FIdolIcon> IReadOnlyList`1<FIdolIcon> List<FIdolIcon> Pointer )
+            value.UnitTransferProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 02466600FDF0 0x28 UnitTransferProductList     ( 000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
+            value.IdolTransferProductList                   = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 02466600FE10 0x30 IdolTransferProductList     ( 000185D07628 ModelClassListType IReadOnlyList`1<IProductWithAmountStatus> IReadOnlyList`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
 
             return value;
         }

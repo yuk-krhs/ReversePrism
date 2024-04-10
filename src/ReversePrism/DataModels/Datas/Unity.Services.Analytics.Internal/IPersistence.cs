@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPersistence
+    public partial class IPersistence : DataModel
     {
 
         public static IPersistence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPersistence();
+            var value   = new IPersistence() { Pointer= p0 };
 
 
             return value;

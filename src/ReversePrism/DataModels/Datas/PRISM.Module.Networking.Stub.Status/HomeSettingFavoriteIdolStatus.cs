@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 FavoriteMstIdolIdListFieldNumber         int IL2CPP_TYPE_I4
     // 008 _repeated_favoriteMstIdolIdList_codec    FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 020 FavoriteMstIdolIdList                    000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class HomeSettingFavoriteIdolStatus
+    public partial class HomeSettingFavoriteIdolStatus : DataModel
     {
         public HomeSettingFavoriteIdolDrawType          FavoriteIdolDrawType                    { get; set; }
         public List<int>?                               FavoriteMstIdolIdList                   { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSettingFavoriteIdolStatus();
+            var value   = new HomeSettingFavoriteIdolStatus() { Pointer= p0 };
 
-            value.FavoriteIdolDrawType                      = (HomeSettingFavoriteIdolDrawType)GetInt32(new IntPtr(p + 0x018)); // 0270D2061D78 0x18 FavoriteIdolDrawType        ( 0001866CBBC0 ModelEnumType HomeSettingFavoriteIdolDrawType HomeSettingFavoriteIdolDrawType HomeSettingFavoriteIdolDrawType Int32 )
-            value.FavoriteMstIdolIdList                     = GetInt32List(new IntPtr(p + 0x020)); // 0270D2061DD8 0x20 FavoriteMstIdolIdList       ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.FavoriteIdolDrawType                      = (HomeSettingFavoriteIdolDrawType)GetInt32(new IntPtr(p + 0x018)); // 024662029038 0x18 FavoriteIdolDrawType        ( 0001866CBBC0 ModelEnumType HomeSettingFavoriteIdolDrawType HomeSettingFavoriteIdolDrawType HomeSettingFavoriteIdolDrawType Int32 )
+            value.FavoriteMstIdolIdList                     = GetInt32List(new IntPtr(p + 0x020)); // 024662029098 0x20 FavoriteMstIdolIdList       ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

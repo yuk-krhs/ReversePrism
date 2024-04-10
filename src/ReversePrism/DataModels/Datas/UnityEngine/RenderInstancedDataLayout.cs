@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 OffsetObjectToWorld                      0001865F4260 ModelPrimitiveType int int int Int32
     // 018 OffsetPrevObjectToWorld                  0001865F4260 ModelPrimitiveType int int int Int32
     // 01C OffsetRenderingLayerMask                 0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class RenderInstancedDataLayout
+    public partial class RenderInstancedDataLayout : DataModel
     {
         public int                                      Size                                    { get; set; }
         public int                                      OffsetObjectToWorld                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderInstancedDataLayout();
+            var value   = new RenderInstancedDataLayout() { Pointer= p0 };
 
-            value.Size                                      = GetInt32(new IntPtr(p + 0x010)); // 0270065F4330 0x10 Size                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OffsetObjectToWorld                       = GetInt32(new IntPtr(p + 0x014)); // 0270065F4350 0x14 OffsetObjectToWorld         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OffsetPrevObjectToWorld                   = GetInt32(new IntPtr(p + 0x018)); // 0270065F4370 0x18 OffsetPrevObjectToWorld     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OffsetRenderingLayerMask                  = GetInt32(new IntPtr(p + 0x01C)); // 0270065F4390 0x1C OffsetRenderingLayerMask    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x010)); // 0245A65C2688 0x10 Size                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.OffsetObjectToWorld                       = GetInt32(new IntPtr(p + 0x014)); // 0245A65C26A8 0x14 OffsetObjectToWorld         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.OffsetPrevObjectToWorld                   = GetInt32(new IntPtr(p + 0x018)); // 0245A65C26C8 0x18 OffsetPrevObjectToWorld     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.OffsetRenderingLayerMask                  = GetInt32(new IntPtr(p + 0x01C)); // 0245A65C26E8 0x1C OffsetRenderingLayerMask    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

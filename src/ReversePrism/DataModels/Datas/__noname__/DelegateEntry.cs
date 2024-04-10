@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 TargetTypeName                           000186671910 ModelPrimitiveType string string string String
     // 038 MethodName                               000186671910 ModelPrimitiveType string string string String
     // 040 _DelegateEntry                           00018659B280 ModelClassType DelegateEntry DelegateEntry DelegateEntry Pointer
-    public partial class DelegateEntry
+    public partial class DelegateEntry : DataModel
     {
         public string                                   Type                                    { get; set; }
         public string                                   Assembly                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DelegateEntry();
+            var value   = new DelegateEntry() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x010)); // 0270D6A66718 0x10 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Assembly                                  = GetString(new IntPtr(p + 0x018)); // 0270D6A66738 0x18 Assembly                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.TargetTypeAssembly                        = GetString(new IntPtr(p + 0x028)); // 0270D6A66778 0x28 TargetTypeAssembly          ( 000186671910 ModelPrimitiveType string string string String )
-            value.TargetTypeName                            = GetString(new IntPtr(p + 0x030)); // 0270D6A66798 0x30 TargetTypeName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.MethodName                                = GetString(new IntPtr(p + 0x038)); // 0270D6A667B8 0x38 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value._DelegateEntry                            = GetObject<DelegateEntry>(new IntPtr(p + 0x040), ReversePrism.DataModels.DelegateEntry.FromPointer); // 0270D6A667D8 0x40 _DelegateEntry              ( 00018659B280 ModelClassType DelegateEntry DelegateEntry DelegateEntry Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x010)); // 024666AC6718 0x10 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Assembly                                  = GetString(new IntPtr(p + 0x018)); // 024666AC6738 0x18 Assembly                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.TargetTypeAssembly                        = GetString(new IntPtr(p + 0x028)); // 024666AC6778 0x28 TargetTypeAssembly          ( 000186671910 ModelPrimitiveType string string string String )
+            value.TargetTypeName                            = GetString(new IntPtr(p + 0x030)); // 024666AC6798 0x30 TargetTypeName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.MethodName                                = GetString(new IntPtr(p + 0x038)); // 024666AC67B8 0x38 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value._DelegateEntry                            = GetObject<DelegateEntry>(new IntPtr(p + 0x040), ReversePrism.DataModels.DelegateEntry.FromPointer); // 024666AC67D8 0x40 _DelegateEntry              ( 00018659B280 ModelClassType DelegateEntry DelegateEntry DelegateEntry Pointer )
 
             return value;
         }

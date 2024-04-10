@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Y                                        0001865C2E50 ModelPrimitiveType double double double Double
     // 020 Z                                        0001865C2E50 ModelPrimitiveType double double double Double
     // 000 zero                                     double3 IL2CPP_TYPE_VALUETYPE
-    public partial class double3
+    public partial class double3 : DataModel
     {
         public double                                   X                                       { get; set; }
         public double                                   Y                                       { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new double3();
+            var value   = new double3() { Pointer= p0 };
 
-            value.X                                         = GetDouble(new IntPtr(p + 0x010)); // 027001564720 0x10 X                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Y                                         = GetDouble(new IntPtr(p + 0x018)); // 027001564740 0x18 Y                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Z                                         = GetDouble(new IntPtr(p + 0x020)); // 027001564760 0x20 Z                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.X                                         = GetDouble(new IntPtr(p + 0x010)); // 0245A1564720 0x10 X                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.Y                                         = GetDouble(new IntPtr(p + 0x018)); // 0245A1564740 0x18 Y                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.Z                                         = GetDouble(new IntPtr(p + 0x020)); // 0245A1564760 0x20 Z                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
 
             return value;
         }

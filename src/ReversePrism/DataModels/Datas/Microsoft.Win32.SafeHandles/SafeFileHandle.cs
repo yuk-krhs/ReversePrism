@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SafeFileHandle
+    public partial class SafeFileHandle : DataModel
     {
 
         public static SafeFileHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeFileHandle();
+            var value   = new SafeFileHandle() { Pointer= p0 };
 
 
             return value;

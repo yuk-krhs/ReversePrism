@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <TestValues>k__BackingField              ReadOnlyCollection`1<Expression> IL2CPP_TYPE_GENERICINST
     // 018 Body                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
-    public partial class SwitchCase
+    public partial class SwitchCase : DataModel
     {
         public Expression?                              Body                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchCase();
+            var value   = new SwitchCase() { Pointer= p0 };
 
-            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F80520 0x18 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 024669FF0340 0x18 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 FriendSupportListFieldNumber             int IL2CPP_TYPE_I4
     // 008 _repeated_friendSupportList_codec        FieldCodec`1<FriendSupportStatus> IL2CPP_TYPE_GENERICINST
     // 018 FriendSupportList                        000185CD9448 ModelClassListType RepeatedField`1<FriendSupportStatus> RepeatedField`1<FriendSupportStatus> List<FriendSupportStatus> Pointer
-    public partial class GetFriendSupportCharacterListReply
+    public partial class GetFriendSupportCharacterListReply : DataModel
     {
         public List<FriendSupportStatus>?               FriendSupportList                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFriendSupportCharacterListReply();
+            var value   = new GetFriendSupportCharacterListReply() { Pointer= p0 };
 
-            value.FriendSupportList                         = GetObjectList<FriendSupportStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FriendSupportStatus.FromPointer); // 0270D2562F08 0x18 FriendSupportList           ( 000185CD9448 ModelClassListType RepeatedField`1<FriendSupportStatus> RepeatedField`1<FriendSupportStatus> List<FriendSupportStatus> Pointer )
+            value.FriendSupportList                         = GetObjectList<FriendSupportStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FriendSupportStatus.FromPointer); // 02466253AE50 0x18 FriendSupportList           ( 000185CD9448 ModelClassListType RepeatedField`1<FriendSupportStatus> RepeatedField`1<FriendSupportStatus> List<FriendSupportStatus> Pointer )
 
             return value;
         }

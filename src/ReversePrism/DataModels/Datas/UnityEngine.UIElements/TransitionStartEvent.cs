@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TransitionStartEvent
+    public partial class TransitionStartEvent : DataModel
     {
 
         public static TransitionStartEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransitionStartEvent();
+            var value   = new TransitionStartEvent() { Pointer= p0 };
 
 
             return value;

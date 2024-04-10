@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C M_capacity                               0001865F44E0 ModelPrimitiveType int int int Int32
     // 020 Allocator                                000186699920 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     // 024 Padding                                  0001865F44E0 ModelPrimitiveType int int int Int32
-    public partial class UntypedUnsafeList
+    public partial class UntypedUnsafeList : DataModel
     {
         public int                                      M_length                                { get; set; }
         public int                                      M_capacity                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UntypedUnsafeList();
+            var value   = new UntypedUnsafeList() { Pointer= p0 };
 
-            value.M_length                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D99E25D0 0x18 M_length                    ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.M_capacity                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D99E25F0 0x1C M_capacity                  ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 0270D99E2610 0x20 Allocator                   ( 000186699920 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.Padding                                   = GetInt32(new IntPtr(p + 0x024)); // 0270D99E2630 0x24 Padding                     ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.M_length                                  = GetInt32(new IntPtr(p + 0x018)); // 024669A39CB0 0x18 M_length                    ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.M_capacity                                = GetInt32(new IntPtr(p + 0x01C)); // 024669A39CD0 0x1C M_capacity                  ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 024669A39CF0 0x20 Allocator                   ( 000186699920 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.Padding                                   = GetInt32(new IntPtr(p + 0x024)); // 024669A39D10 0x24 Padding                     ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

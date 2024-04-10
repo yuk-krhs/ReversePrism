@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CustomSignalEventDrawer
+    public partial class CustomSignalEventDrawer : DataModel
     {
 
         public static CustomSignalEventDrawer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomSignalEventDrawer();
+            var value   = new CustomSignalEventDrawer() { Pointer= p0 };
 
 
             return value;

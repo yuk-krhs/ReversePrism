@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 Min                                      000186666050 ModelPrimitiveType float float float Single
     // 064 Max                                      000186666050 ModelPrimitiveType float float float Single
-    public partial class ProgressBarValue
+    public partial class ProgressBarValue : DataModel
     {
         public float                                    Min                                     { get; set; }
         public float                                    Max                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProgressBarValue();
+            var value   = new ProgressBarValue() { Pointer= p0 };
 
-            value.Min                                       = GetSingle(new IntPtr(p + 0x060)); // 0270D9189CA8 0x60 Min                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Max                                       = GetSingle(new IntPtr(p + 0x064)); // 0270D9189CC8 0x64 Max                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Min                                       = GetSingle(new IntPtr(p + 0x060)); // 0246691DC500 0x60 Min                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Max                                       = GetSingle(new IntPtr(p + 0x064)); // 0246691DC520 0x64 Max                         ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 <SameFunc>k__BackingField                Func`3<BackgroundSize, BackgroundSize, bool> IL2CPP_TYPE_GENERICINST
-    public partial class ValuesBackgroundSize
+    public partial class ValuesBackgroundSize : DataModel
     {
 
         public static ValuesBackgroundSize? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesBackgroundSize();
+            var value   = new ValuesBackgroundSize() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 Star                                     0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Amount                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstProduceIdolLimitBreakRecipe
+    public partial class MstProduceIdolLimitBreakRecipe : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      Star                                    { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstProduceIdolLimitBreakRecipe();
+            var value   = new MstProduceIdolLimitBreakRecipe() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045CD4C8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x014)); // 0270045CD4E8 0x14 Star                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x018)); // 0270045CD508 0x18 Amount                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4659518 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x014)); // 0245A4659538 0x14 Star                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A4659558 0x18 Amount                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GashaExchangeConfirmationPopupViewFactory
+    public partial class GashaExchangeConfirmationPopupViewFactory : DataModel
     {
 
         public static GashaExchangeConfirmationPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeConfirmationPopupViewFactory();
+            var value   = new GashaExchangeConfirmationPopupViewFactory() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 Signature                                000186672F10 ModelPrimitiveType string string string String
     // 040 OriginalJson                             000186672F10 ModelPrimitiveType string string string String
     // 048 PurchaseToken                            000186672F10 ModelPrimitiveType string string string String
-    public partial class GooglePurchase
+    public partial class GooglePurchase : DataModel
     {
         public IAndroidJavaObjectWrapper?               JavaPurchase                            { get; set; }
         public int                                      PurchaseState                           { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GooglePurchase();
+            var value   = new GooglePurchase() { Pointer= p0 };
 
-            value.JavaPurchase                              = GetObject<IAndroidJavaObjectWrapper>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAndroidJavaObjectWrapper.FromPointer); // 0270069252C0 0x10 JavaPurchase                ( 0001866F4580 ModelClassType IAndroidJavaObjectWrapper IAndroidJavaObjectWrapper IAndroidJavaObjectWrapper Pointer )
-            value.PurchaseState                             = GetInt32(new IntPtr(p + 0x018)); // 0270069252E0 0x18 PurchaseState               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Skus                                      = GetStringList(new IntPtr(p + 0x020)); // 027006925300 0x20 Skus                        ( 000185D0D798 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 027006925320 0x28 OrderId                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Receipt                                   = GetString(new IntPtr(p + 0x030)); // 027006925340 0x30 Receipt                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Signature                                 = GetString(new IntPtr(p + 0x038)); // 027006925360 0x38 Signature                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.OriginalJson                              = GetString(new IntPtr(p + 0x040)); // 027006925380 0x40 OriginalJson                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PurchaseToken                             = GetString(new IntPtr(p + 0x048)); // 0270069253A0 0x48 PurchaseToken               ( 000186672F10 ModelPrimitiveType string string string String )
+            value.JavaPurchase                              = GetObject<IAndroidJavaObjectWrapper>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAndroidJavaObjectWrapper.FromPointer); // 0245A68E8198 0x10 JavaPurchase                ( 0001866F4580 ModelClassType IAndroidJavaObjectWrapper IAndroidJavaObjectWrapper IAndroidJavaObjectWrapper Pointer )
+            value.PurchaseState                             = GetInt32(new IntPtr(p + 0x018)); // 0245A68E81B8 0x18 PurchaseState               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Skus                                      = GetStringList(new IntPtr(p + 0x020)); // 0245A68E81D8 0x20 Skus                        ( 000185D0D798 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 0245A68E81F8 0x28 OrderId                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Receipt                                   = GetString(new IntPtr(p + 0x030)); // 0245A68E8218 0x30 Receipt                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Signature                                 = GetString(new IntPtr(p + 0x038)); // 0245A68E8238 0x38 Signature                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.OriginalJson                              = GetString(new IntPtr(p + 0x040)); // 0245A68E8258 0x40 OriginalJson                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PurchaseToken                             = GetString(new IntPtr(p + 0x048)); // 0245A68E8278 0x48 PurchaseToken               ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

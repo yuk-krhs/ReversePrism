@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Seed                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IngameRandomModel
+    public partial class IngameRandomModel : DataModel
     {
         public int                                      Seed                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameRandomModel();
+            var value   = new IngameRandomModel() { Pointer= p0 };
 
-            value.Seed                                      = GetInt32(new IntPtr(p + 0x010)); // 0270D5A91678 0x10 Seed                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Seed                                      = GetInt32(new IntPtr(p + 0x010)); // 024665B020F8 0x10 Seed                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

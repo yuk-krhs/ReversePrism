@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FirstChanceExceptionEventArgs
+    public partial class FirstChanceExceptionEventArgs : DataModel
     {
 
         public static FirstChanceExceptionEventArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirstChanceExceptionEventArgs();
+            var value   = new FirstChanceExceptionEventArgs() { Pointer= p0 };
 
 
             return value;

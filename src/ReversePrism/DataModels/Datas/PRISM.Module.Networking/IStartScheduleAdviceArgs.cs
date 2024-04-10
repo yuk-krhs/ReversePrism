@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStartScheduleAdviceArgs
+    public partial class IStartScheduleAdviceArgs : DataModel
     {
 
         public static IStartScheduleAdviceArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStartScheduleAdviceArgs();
+            var value   = new IStartScheduleAdviceArgs() { Pointer= p0 };
 
 
             return value;

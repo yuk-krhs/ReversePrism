@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IsLocked                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class MusicRankingCategoryData
+    public partial class MusicRankingCategoryData : DataModel
     {
         public bool                                     IsLocked                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRankingCategoryData();
+            var value   = new MusicRankingCategoryData() { Pointer= p0 };
 
-            value.IsLocked                                  = GetBool(new IntPtr(p + 0x010)); // 0270D51EC258 0x10 IsLocked                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsLocked                                  = GetBool(new IntPtr(p + 0x010)); // 02466523EF40 0x10 IsLocked                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

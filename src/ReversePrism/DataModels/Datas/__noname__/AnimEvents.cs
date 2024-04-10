@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DefaultCharacterID                       0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Events                                   000185CBA428 ModelClassListType AnimEvent[] AnimEvent[] List<AnimEvent> Pointer
-    public partial class AnimEvents
+    public partial class AnimEvents : DataModel
     {
         public int                                      DefaultCharacterID                      { get; set; }
         public List<AnimEvent>?                         Events                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimEvents();
+            var value   = new AnimEvents() { Pointer= p0 };
 
-            value.DefaultCharacterID                        = GetInt32(new IntPtr(p + 0x010)); // 0270D4B18F10 0x10 DefaultCharacterID          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Events                                    = GetObjectList<AnimEvent>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnimEvent.FromPointer); // 0270D4B18F30 0x18 Events                      ( 000185CBA428 ModelClassListType AnimEvent[] AnimEvent[] List<AnimEvent> Pointer )
+            value.DefaultCharacterID                        = GetInt32(new IntPtr(p + 0x010)); // 0245A5CE3898 0x10 DefaultCharacterID          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Events                                    = GetObjectList<AnimEvent>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnimEvent.FromPointer); // 0245A5CE38B8 0x18 Events                      ( 000185CBA428 ModelClassListType AnimEvent[] AnimEvent[] List<AnimEvent> Pointer )
 
             return value;
         }

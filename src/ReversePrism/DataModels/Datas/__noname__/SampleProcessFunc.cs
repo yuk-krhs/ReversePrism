@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SampleProcessFunc
+    public partial class SampleProcessFunc : DataModel
     {
 
         public static SampleProcessFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SampleProcessFunc();
+            var value   = new SampleProcessFunc() { Pointer= p0 };
 
 
             return value;

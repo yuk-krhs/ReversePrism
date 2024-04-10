@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 True                                     BooleanDisposable IL2CPP_TYPE_CLASS
     // 010 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 018 Current                                  0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class MultipleAssignmentDisposable
+    public partial class MultipleAssignmentDisposable : DataModel
     {
         public IDisposable?                             Current                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MultipleAssignmentDisposable();
+            var value   = new MultipleAssignmentDisposable() { Pointer= p0 };
 
-            value.Current                                   = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D9470270 0x18 Current                     ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Current                                   = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0246694D6010 0x18 Current                     ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

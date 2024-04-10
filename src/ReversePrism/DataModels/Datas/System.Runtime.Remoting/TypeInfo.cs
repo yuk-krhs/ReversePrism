@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ServerType                               000186671910 ModelPrimitiveType string string string String
     // 018 ServerHierarchy                          000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 020 InterfacesImplemented                    000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class TypeInfo
+    public partial class TypeInfo : DataModel
     {
         public string                                   ServerType                              { get; set; }
         public List<string>?                            ServerHierarchy                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeInfo();
+            var value   = new TypeInfo() { Pointer= p0 };
 
-            value.ServerType                                = GetString(new IntPtr(p + 0x010)); // 0270D6BB9D18 0x10 ServerType                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.ServerHierarchy                           = GetStringList(new IntPtr(p + 0x018)); // 0270D6BB9D38 0x18 ServerHierarchy             ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.InterfacesImplemented                     = GetStringList(new IntPtr(p + 0x020)); // 0270D6BB9D58 0x20 InterfacesImplemented       ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.ServerType                                = GetString(new IntPtr(p + 0x010)); // 024666C31D18 0x10 ServerType                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ServerHierarchy                           = GetStringList(new IntPtr(p + 0x018)); // 024666C31D38 0x18 ServerHierarchy             ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.InterfacesImplemented                     = GetStringList(new IntPtr(p + 0x020)); // 024666C31D58 0x20 InterfacesImplemented       ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

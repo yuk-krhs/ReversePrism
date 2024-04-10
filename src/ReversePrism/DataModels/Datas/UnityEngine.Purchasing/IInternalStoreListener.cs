@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IInternalStoreListener
+    public partial class IInternalStoreListener : DataModel
     {
 
         public static IInternalStoreListener? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IInternalStoreListener();
+            var value   = new IInternalStoreListener() { Pointer= p0 };
 
 
             return value;

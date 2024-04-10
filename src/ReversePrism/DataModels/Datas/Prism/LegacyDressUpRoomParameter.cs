@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SelectedCharacterInfoId                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LegacyDressUpRoomParameter
+    public partial class LegacyDressUpRoomParameter : DataModel
     {
         public int                                      SelectedCharacterInfoId                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyDressUpRoomParameter();
+            var value   = new LegacyDressUpRoomParameter() { Pointer= p0 };
 
-            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x010)); // 0270D4EF2B48 0x10 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x010)); // 024664F586E0 0x10 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

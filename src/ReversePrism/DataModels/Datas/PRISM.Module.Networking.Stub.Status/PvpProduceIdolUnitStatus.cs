@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 IdolBaseList                             000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer
     // 000 CardDeckFieldNumber                      int IL2CPP_TYPE_I4
     // 030 CardDeck                                 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
-    public partial class PvpProduceIdolUnitStatus
+    public partial class PvpProduceIdolUnitStatus : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
         public List<ProduceIdolStatus>?                 ProduceIdolList                         { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpProduceIdolUnitStatus();
+            var value   = new PvpProduceIdolUnitStatus() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D1442E28 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0270D1442E88 0x20 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
-            value.IdolBaseList                              = GetObjectList<IdolBaseStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 0270D1442EE8 0x28 IdolBaseList                ( 000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer )
-            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0270D1442F28 0x30 CardDeck                    ( 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0246613A1F70 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0246613A1FD0 0x20 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
+            value.IdolBaseList                              = GetObjectList<IdolBaseStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 0246613A2030 0x28 IdolBaseList                ( 000185CDF648 ModelClassListType RepeatedField`1<IdolBaseStatus> RepeatedField`1<IdolBaseStatus> List<IdolBaseStatus> Pointer )
+            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0246613A2070 0x30 CardDeck                    ( 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
 
             return value;
         }

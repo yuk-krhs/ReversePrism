@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncTriggerExitTrigger
+    public partial class AsyncTriggerExitTrigger : DataModel
     {
 
         public static AsyncTriggerExitTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncTriggerExitTrigger();
+            var value   = new AsyncTriggerExitTrigger() { Pointer= p0 };
 
 
             return value;

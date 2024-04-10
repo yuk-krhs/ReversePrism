@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReapplyDrivenProperties
+    public partial class ReapplyDrivenProperties : DataModel
     {
 
         public static ReapplyDrivenProperties? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReapplyDrivenProperties();
+            var value   = new ReapplyDrivenProperties() { Pointer= p0 };
 
 
             return value;

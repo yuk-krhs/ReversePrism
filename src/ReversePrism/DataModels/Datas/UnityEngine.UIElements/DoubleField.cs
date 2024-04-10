@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 labelUssClassName                        string IL2CPP_TYPE_STRING
     // 010 InputUssClassName                        000186674040 ModelPrimitiveType string string string String
-    public partial class DoubleField
+    public partial class DoubleField : DataModel
     {
         public string                                   InputUssClassName                       { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleField();
+            var value   = new DoubleField() { Pointer= p0 };
 
-            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0270050A9770 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
+            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0245A50AA7F0 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

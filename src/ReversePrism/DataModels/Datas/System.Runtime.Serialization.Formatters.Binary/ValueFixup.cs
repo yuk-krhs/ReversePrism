@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 valueInfo                                MemberInfo IL2CPP_TYPE_CLASS
     // 038 ObjectInfo                               0001866181E0 ModelClassType ReadObjectInfo ReadObjectInfo ReadObjectInfo Pointer
     // 040 MemberName                               000186671BA0 ModelPrimitiveType string string string String
-    public partial class ValueFixup
+    public partial class ValueFixup : DataModel
     {
         public ValueFixupEnum                           ValueFixupEnum                          { get; set; }
         public Array?                                   ArrayObj                                { get; set; }
@@ -30,13 +30,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueFixup();
+            var value   = new ValueFixup() { Pointer= p0 };
 
-            value.ValueFixupEnum                            = (ValueFixupEnum)GetInt32(new IntPtr(p + 0x010)); // 0270D6C595D0 0x10 ValueFixupEnum              ( 000186768300 ModelEnumType ValueFixupEnum ValueFixupEnum ValueFixupEnum Int32 )
-            value.ArrayObj                                  = GetObject<Array>(new IntPtr(p + 0x018), ReversePrism.DataModels.Array.FromPointer); // 0270D6C595F0 0x18 ArrayObj                    ( 000186589620 ModelClassType Array Array Array Pointer )
-            value.IndexMap                                  = GetInt32List(new IntPtr(p + 0x020)); // 0270D6C59610 0x20 IndexMap                    ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.ObjectInfo                                = GetObject<ReadObjectInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.ReadObjectInfo.FromPointer); // 0270D6C59690 0x38 ObjectInfo                  ( 0001866181E0 ModelClassType ReadObjectInfo ReadObjectInfo ReadObjectInfo Pointer )
-            value.MemberName                                = GetString(new IntPtr(p + 0x040)); // 0270D6C596B0 0x40 MemberName                  ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.ValueFixupEnum                            = (ValueFixupEnum)GetInt32(new IntPtr(p + 0x010)); // 024666CC95D0 0x10 ValueFixupEnum              ( 000186768300 ModelEnumType ValueFixupEnum ValueFixupEnum ValueFixupEnum Int32 )
+            value.ArrayObj                                  = GetObject<Array>(new IntPtr(p + 0x018), ReversePrism.DataModels.Array.FromPointer); // 024666CC95F0 0x18 ArrayObj                    ( 000186589620 ModelClassType Array Array Array Pointer )
+            value.IndexMap                                  = GetInt32List(new IntPtr(p + 0x020)); // 024666CC9610 0x20 IndexMap                    ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.ObjectInfo                                = GetObject<ReadObjectInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.ReadObjectInfo.FromPointer); // 024666CC9690 0x38 ObjectInfo                  ( 0001866181E0 ModelClassType ReadObjectInfo ReadObjectInfo ReadObjectInfo Pointer )
+            value.MemberName                                = GetString(new IntPtr(p + 0x040)); // 024666CC96B0 0x40 MemberName                  ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

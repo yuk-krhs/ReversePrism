@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_lambdaDelegateCache                    CacheDict`2<Type, MethodInfo> IL2CPP_TYPE_GENERICINST
     // 008 s_lambdaFactories                        CacheDict`2<Type, Func`5<Expression, string, bool, ReadOnlyCollection`1<ParameterExpression>, LambdaExpression>> IL2CPP_TYPE_GENERICINST
     // 010 s_legacyCtorSupportTable                 ConditionalWeakTable`2<Expression, ExtensionInfo> IL2CPP_TYPE_GENERICINST
-    public partial class Expression
+    public partial class Expression : DataModel
     {
 
         public static Expression? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Expression();
+            var value   = new Expression() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 078 CurSelectTabData                         00018664D250 ModelClassType TabData TabData TabData Pointer
     // 080 GoodsGridView                            000186509BA0 ModelClassType ExchangeGoodsGridView ExchangeGoodsGridView ExchangeGoodsGridView Pointer
     // 088 SaveData                                 000186516CF0 ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer
-    public partial class ExchangePopupWindow
+    public partial class ExchangePopupWindow : DataModel
     {
         public UITabButton?                             TabPrefab                               { get; set; }
         public UITabGroup?                              TabGroup                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangePopupWindow();
+            var value   = new ExchangePopupWindow() { Pointer= p0 };
 
-            value.TabPrefab                                 = GetObject<UITabButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITabButton.FromPointer); // 0270D54B85F8 0x60 TabPrefab                   ( 0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer )
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270D54B8618 0x68 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.TabDatas                                  = GetObjectList<TabData>(new IntPtr(p + 0x070), ReversePrism.DataModels.TabData.FromPointer); // 0270D54B8638 0x70 TabDatas                    ( 000185D23198 ModelClassListType List`1<TabData> List`1<TabData> List<TabData> Pointer )
-            value.CurSelectTabData                          = GetObject<TabData>(new IntPtr(p + 0x078), ReversePrism.DataModels.TabData.FromPointer); // 0270D54B8658 0x78 CurSelectTabData            ( 00018664D250 ModelClassType TabData TabData TabData Pointer )
-            value.GoodsGridView                             = GetObject<ExchangeGoodsGridView>(new IntPtr(p + 0x080), ReversePrism.DataModels.ExchangeGoodsGridView.FromPointer); // 0270D54B8678 0x80 GoodsGridView               ( 000186509BA0 ModelClassType ExchangeGoodsGridView ExchangeGoodsGridView ExchangeGoodsGridView Pointer )
-            value.SaveData                                  = GetObject<ExchangeSaveData>(new IntPtr(p + 0x088), ReversePrism.DataModels.ExchangeSaveData.FromPointer); // 0270D54B8698 0x88 SaveData                    ( 000186516CF0 ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer )
+            value.TabPrefab                                 = GetObject<UITabButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITabButton.FromPointer); // 0246655235D0 0x60 TabPrefab                   ( 0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITabGroup.FromPointer); // 0246655235F0 0x68 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.TabDatas                                  = GetObjectList<TabData>(new IntPtr(p + 0x070), ReversePrism.DataModels.TabData.FromPointer); // 024665523610 0x70 TabDatas                    ( 000185D23198 ModelClassListType List`1<TabData> List`1<TabData> List<TabData> Pointer )
+            value.CurSelectTabData                          = GetObject<TabData>(new IntPtr(p + 0x078), ReversePrism.DataModels.TabData.FromPointer); // 024665523630 0x78 CurSelectTabData            ( 00018664D250 ModelClassType TabData TabData TabData Pointer )
+            value.GoodsGridView                             = GetObject<ExchangeGoodsGridView>(new IntPtr(p + 0x080), ReversePrism.DataModels.ExchangeGoodsGridView.FromPointer); // 024665523650 0x80 GoodsGridView               ( 000186509BA0 ModelClassType ExchangeGoodsGridView ExchangeGoodsGridView ExchangeGoodsGridView Pointer )
+            value.SaveData                                  = GetObject<ExchangeSaveData>(new IntPtr(p + 0x088), ReversePrism.DataModels.ExchangeSaveData.FromPointer); // 024665523670 0x88 SaveData                    ( 000186516CF0 ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer )
 
             return value;
         }

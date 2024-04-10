@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 080 incStepGetter                            Func`1<float> IL2CPP_TYPE_GENERICINST
     // 088 incStepMultGetter                        Func`1<float> IL2CPP_TYPE_GENERICINST
     // 090 decimalsGetter                           Func`1<float> IL2CPP_TYPE_GENERICINST
-    public partial class DebugUIHandlerIndirectFloatField
+    public partial class DebugUIHandlerIndirectFloatField : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public Text?                                    ValueLabel                              { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerIndirectFloatField();
+            var value   = new DebugUIHandlerIndirectFloatField() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D9330A40 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0270D9330A60 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 024669383770 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 024669383790 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
 
             return value;
         }

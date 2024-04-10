@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ToString                                 Func`2<<object>, string> IL2CPP_TYPE_GENERICINST
-    public partial class DateTime
+    public partial class DateTime : DataModel
     {
 
         public static DateTime? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTime();
+            var value   = new DateTime() { Pointer= p0 };
 
 
             return value;

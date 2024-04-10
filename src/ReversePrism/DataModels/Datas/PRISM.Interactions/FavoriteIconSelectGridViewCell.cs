@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 FavoriteIconView                         00018655B1C0 ModelClassType FavoriteIconView FavoriteIconView FavoriteIconView Pointer
-    public partial class FavoriteIconSelectGridViewCell
+    public partial class FavoriteIconSelectGridViewCell : DataModel
     {
         public FavoriteIconView?                        FavoriteIconView                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FavoriteIconSelectGridViewCell();
+            var value   = new FavoriteIconSelectGridViewCell() { Pointer= p0 };
 
-            value.FavoriteIconView                          = GetObject<FavoriteIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FavoriteIconView.FromPointer); // 0270DA338AE8 0x30 FavoriteIconView            ( 00018655B1C0 ModelClassType FavoriteIconView FavoriteIconView FavoriteIconView Pointer )
+            value.FavoriteIconView                          = GetObject<FavoriteIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FavoriteIconView.FromPointer); // 02466A39C1F8 0x30 FavoriteIconView            ( 00018655B1C0 ModelClassType FavoriteIconView FavoriteIconView FavoriteIconView Pointer )
 
             return value;
         }

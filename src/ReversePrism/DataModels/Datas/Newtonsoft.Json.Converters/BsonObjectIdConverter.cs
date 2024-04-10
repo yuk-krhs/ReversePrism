@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BsonObjectIdConverter
+    public partial class BsonObjectIdConverter : DataModel
     {
 
         public static BsonObjectIdConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BsonObjectIdConverter();
+            var value   = new BsonObjectIdConverter() { Pointer= p0 };
 
 
             return value;

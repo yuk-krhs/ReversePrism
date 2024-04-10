@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 UnitId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 EpisodeModels                            000185B9D540 ModelClassListType ProducePreparationEpisodeSelectEpisodeModel[] ProducePreparationEpisodeSelectEpisodeModel[] List<ProducePreparationEpisodeSelectEpisodeModel> Pointer
-    public partial class ProducePreparationEpisodeSelectUnitEpisodeModel
+    public partial class ProducePreparationEpisodeSelectUnitEpisodeModel : DataModel
     {
         public int                                      UnitId                                  { get; set; }
         public List<ProducePreparationEpisodeSelectEpisodeModel>? EpisodeModels                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProducePreparationEpisodeSelectUnitEpisodeModel();
+            var value   = new ProducePreparationEpisodeSelectUnitEpisodeModel() { Pointer= p0 };
 
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D59F0E58 0x10 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EpisodeModels                             = GetObjectList<ProducePreparationEpisodeSelectEpisodeModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProducePreparationEpisodeSelectEpisodeModel.FromPointer); // 0270D59F0E78 0x18 EpisodeModels               ( 000185B9D540 ModelClassListType ProducePreparationEpisodeSelectEpisodeModel[] ProducePreparationEpisodeSelectEpisodeModel[] List<ProducePreparationEpisodeSelectEpisodeModel> Pointer )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 024665A51BC8 0x10 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EpisodeModels                             = GetObjectList<ProducePreparationEpisodeSelectEpisodeModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProducePreparationEpisodeSelectEpisodeModel.FromPointer); // 024665A51BE8 0x18 EpisodeModels               ( 000185B9D540 ModelClassListType ProducePreparationEpisodeSelectEpisodeModel[] ProducePreparationEpisodeSelectEpisodeModel[] List<ProducePreparationEpisodeSelectEpisodeModel> Pointer )
 
             return value;
         }

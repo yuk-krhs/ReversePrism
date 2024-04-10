@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IShopGridSellingView
+    public partial class IShopGridSellingView : DataModel
     {
 
         public static IShopGridSellingView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IShopGridSellingView();
+            var value   = new IShopGridSellingView() { Pointer= p0 };
 
 
             return value;

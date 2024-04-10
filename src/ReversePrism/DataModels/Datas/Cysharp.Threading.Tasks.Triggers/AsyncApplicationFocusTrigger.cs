@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncApplicationFocusTrigger
+    public partial class AsyncApplicationFocusTrigger : DataModel
     {
 
         public static AsyncApplicationFocusTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncApplicationFocusTrigger();
+            var value   = new AsyncApplicationFocusTrigger() { Pointer= p0 };
 
 
             return value;

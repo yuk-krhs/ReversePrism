@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileAchievementSortFilterModel
+    public partial class ProfileAchievementSortFilterModel : DataModel
     {
 
         public static ProfileAchievementSortFilterModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileAchievementSortFilterModel();
+            var value   = new ProfileAchievementSortFilterModel() { Pointer= p0 };
 
 
             return value;

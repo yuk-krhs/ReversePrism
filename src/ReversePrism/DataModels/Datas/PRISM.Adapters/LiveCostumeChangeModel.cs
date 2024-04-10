@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 Idol                                     00018656E740 ModelClassType IIdol IIdol IIdol Pointer
     // 080 CurrentSelectedTab                       0001866293F0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32
     // 084 IsTryOnMode                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveCostumeChangeModel
+    public partial class LiveCostumeChangeModel : DataModel
     {
         public LiveCostumeChangeSaveData?               SaveData                                { get; set; }
         public IdolCostumeId                            InitialCostumeId                        { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumeChangeModel();
+            var value   = new LiveCostumeChangeModel() { Pointer= p0 };
 
-            value.SaveData                                  = GetObject<LiveCostumeChangeSaveData>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveCostumeChangeSaveData.FromPointer); // 0270D63EB9F8 0x28 SaveData                    ( 000186549350 ModelClassType LiveCostumeChangeSaveData LiveCostumeChangeSaveData LiveCostumeChangeSaveData Pointer )
-            value.InitialCostumeId                          = (IdolCostumeId)GetInt32(new IntPtr(p + 0x030)); // 0270D63EBA18 0x30 InitialCostumeId            ( 0001866AE0B0 ModelEnumType IdolCostumeId IdolCostumeId IdolCostumeId Int32 )
-            value.DefaultCostumeIdArray                     = GetEnumList<IdolCostumeId>(new IntPtr(p + 0x048)); // 0270D63EBA38 0x48 DefaultCostumeIdArray       ( 000185B8A810 ModelEnumListType IdolCostumeId[] IdolCostumeId[] List<IdolCostumeId> Pointer )
-            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x070)); // 0270D63EBAD8 0x70 CostumeType                 ( 0001865EEEA0 ModelEnumType CostumeType CostumeType CostumeType Int32 )
-            value.Idol                                      = GetObject<IIdol>(new IntPtr(p + 0x078), ReversePrism.DataModels.IIdol.FromPointer); // 0270D63EBAF8 0x78 Idol                        ( 00018656E740 ModelClassType IIdol IIdol IIdol Pointer )
-            value.CurrentSelectedTab                        = (CostumeCategory)GetInt32(new IntPtr(p + 0x080)); // 0270D63EBB18 0x80 CurrentSelectedTab          ( 0001866293F0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32 )
-            value.IsTryOnMode                               = GetBool(new IntPtr(p + 0x084)); // 0270D63EBB38 0x84 IsTryOnMode                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SaveData                                  = GetObject<LiveCostumeChangeSaveData>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveCostumeChangeSaveData.FromPointer); // 02466643A568 0x28 SaveData                    ( 000186549350 ModelClassType LiveCostumeChangeSaveData LiveCostumeChangeSaveData LiveCostumeChangeSaveData Pointer )
+            value.InitialCostumeId                          = (IdolCostumeId)GetInt32(new IntPtr(p + 0x030)); // 02466643A588 0x30 InitialCostumeId            ( 0001866AE0B0 ModelEnumType IdolCostumeId IdolCostumeId IdolCostumeId Int32 )
+            value.DefaultCostumeIdArray                     = GetEnumList<IdolCostumeId>(new IntPtr(p + 0x048)); // 02466643A5A8 0x48 DefaultCostumeIdArray       ( 000185B8A810 ModelEnumListType IdolCostumeId[] IdolCostumeId[] List<IdolCostumeId> Pointer )
+            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x070)); // 02466643A648 0x70 CostumeType                 ( 0001865EEEA0 ModelEnumType CostumeType CostumeType CostumeType Int32 )
+            value.Idol                                      = GetObject<IIdol>(new IntPtr(p + 0x078), ReversePrism.DataModels.IIdol.FromPointer); // 02466643A668 0x78 Idol                        ( 00018656E740 ModelClassType IIdol IIdol IIdol Pointer )
+            value.CurrentSelectedTab                        = (CostumeCategory)GetInt32(new IntPtr(p + 0x080)); // 02466643A688 0x80 CurrentSelectedTab          ( 0001866293F0 ModelEnumType CostumeCategory CostumeCategory CostumeCategory Int32 )
+            value.IsTryOnMode                               = GetBool(new IntPtr(p + 0x084)); // 02466643A6A8 0x84 IsTryOnMode                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

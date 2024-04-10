@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Cancelled                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class InfiniteTimer
+    public partial class InfiniteTimer : DataModel
     {
         public int                                      Cancelled                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InfiniteTimer();
+            var value   = new InfiniteTimer() { Pointer= p0 };
 
-            value.Cancelled                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D7A31E68 0x18 Cancelled                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Cancelled                                 = GetInt32(new IntPtr(p + 0x018)); // 024667A91E68 0x18 Cancelled                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

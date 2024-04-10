@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class $BurstDirectCallInitializer
+    public partial class $BurstDirectCallInitializer : DataModel
     {
 
         public static $BurstDirectCallInitializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new $BurstDirectCallInitializer();
+            var value   = new $BurstDirectCallInitializer() { Pointer= p0 };
 
 
             return value;

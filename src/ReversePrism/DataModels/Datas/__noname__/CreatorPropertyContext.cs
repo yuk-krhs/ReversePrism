@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Presence                                 Nullable`1<PropertyPresence> IL2CPP_TYPE_GENERICINST
     // 030 Value                                    <object> IL2CPP_TYPE_OBJECT
     // 038 Used                                     000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class CreatorPropertyContext
+    public partial class CreatorPropertyContext : DataModel
     {
         public string                                   Name                                    { get; set; }
         public JsonProperty?                            Property                                { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreatorPropertyContext();
+            var value   = new CreatorPropertyContext() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D877BBE0 0x10 Name                        ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.Property                                  = GetObject<JsonProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonProperty.FromPointer); // 0270D877BC00 0x18 Property                    ( 000186602EA0 ModelClassType JsonProperty JsonProperty JsonProperty Pointer )
-            value.ConstructorProperty                       = GetObject<JsonProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonProperty.FromPointer); // 0270D877BC20 0x20 ConstructorProperty         ( 000186602EA0 ModelClassType JsonProperty JsonProperty JsonProperty Pointer )
-            value.Used                                      = GetBool(new IntPtr(p + 0x038)); // 0270D877BC80 0x38 Used                        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246687E5D90 0x10 Name                        ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Property                                  = GetObject<JsonProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonProperty.FromPointer); // 0246687E5DB0 0x18 Property                    ( 000186602EA0 ModelClassType JsonProperty JsonProperty JsonProperty Pointer )
+            value.ConstructorProperty                       = GetObject<JsonProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonProperty.FromPointer); // 0246687E5DD0 0x20 ConstructorProperty         ( 000186602EA0 ModelClassType JsonProperty JsonProperty JsonProperty Pointer )
+            value.Used                                      = GetBool(new IntPtr(p + 0x038)); // 0246687E5E30 0x38 Used                        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

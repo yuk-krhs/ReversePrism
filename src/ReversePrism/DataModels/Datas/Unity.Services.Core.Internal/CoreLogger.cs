@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Tag                                      string IL2CPP_TYPE_STRING
     // 000 VerboseLoggingDefine                     string IL2CPP_TYPE_STRING
     // 000 k_TelemetryLoggingDefine                 string IL2CPP_TYPE_STRING
-    public partial class CoreLogger
+    public partial class CoreLogger : DataModel
     {
 
         public static CoreLogger? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreLogger();
+            var value   = new CoreLogger() { Pointer= p0 };
 
 
             return value;

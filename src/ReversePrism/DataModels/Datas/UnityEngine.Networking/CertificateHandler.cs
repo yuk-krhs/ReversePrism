@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
-    public partial class CertificateHandler
+    public partial class CertificateHandler : DataModel
     {
 
         public static CertificateHandler? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CertificateHandler();
+            var value   = new CertificateHandler() { Pointer= p0 };
 
 
             return value;

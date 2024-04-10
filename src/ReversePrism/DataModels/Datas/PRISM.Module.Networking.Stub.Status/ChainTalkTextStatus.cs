@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 02C TypingRate                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 TextTypeFieldNumber                      int IL2CPP_TYPE_I4
     // 030 TextType                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChainTalkTextStatus
+    public partial class ChainTalkTextStatus : DataModel
     {
         public int                                      MstChainTalkTextId                      { get; set; }
         public int                                      MstChainUserId                          { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkTextStatus();
+            var value   = new ChainTalkTextStatus() { Pointer= p0 };
 
-            value.MstChainTalkTextId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D2308E88 0x18 MstChainTalkTextId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstChainUserId                            = GetInt32(new IntPtr(p + 0x01C)); // 0270D2308EC8 0x1C MstChainUserId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NextTalkTextIdList                        = GetInt32List(new IntPtr(p + 0x020)); // 0270D2308F28 0x20 NextTalkTextIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.ThinkingRate                              = GetInt32(new IntPtr(p + 0x028)); // 0270D2308F68 0x28 ThinkingRate                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TypingRate                                = GetInt32(new IntPtr(p + 0x02C)); // 0270D2308FA8 0x2C TypingRate                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TextType                                  = GetInt32(new IntPtr(p + 0x030)); // 0270D2308FE8 0x30 TextType                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstChainTalkTextId                        = GetInt32(new IntPtr(p + 0x018)); // 024662289A78 0x18 MstChainTalkTextId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstChainUserId                            = GetInt32(new IntPtr(p + 0x01C)); // 024662289AB8 0x1C MstChainUserId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NextTalkTextIdList                        = GetInt32List(new IntPtr(p + 0x020)); // 024662289B18 0x20 NextTalkTextIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.ThinkingRate                              = GetInt32(new IntPtr(p + 0x028)); // 024662289B58 0x28 ThinkingRate                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TypingRate                                = GetInt32(new IntPtr(p + 0x02C)); // 024662289B98 0x2C TypingRate                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TextType                                  = GetInt32(new IntPtr(p + 0x030)); // 024662289BD8 0x30 TextType                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 isChangeCloth                            bool IL2CPP_TYPE_BOOLEAN
     // 008 changeClothDic                           Dictionary`2<string, UnitIdol> IL2CPP_TYPE_GENERICINST
     // 010 changeBaseDic                            Dictionary`2<string, UnitIdol> IL2CPP_TYPE_GENERICINST
-    public partial class UnitIdolDataIO
+    public partial class UnitIdolDataIO : DataModel
     {
 
         public static UnitIdolDataIO? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnitIdolDataIO();
+            var value   = new UnitIdolDataIO() { Pointer= p0 };
 
 
             return value;

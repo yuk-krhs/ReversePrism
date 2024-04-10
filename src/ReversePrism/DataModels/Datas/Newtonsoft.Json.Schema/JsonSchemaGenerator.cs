@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Resolver                                 00018675D010 ModelClassType JsonSchemaResolver JsonSchemaResolver JsonSchemaResolver Pointer
     // 028 _stack                                   IList`1<TypeSchema> IL2CPP_TYPE_GENERICINST
     // 030 CurrentSchema                            00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer
-    public partial class JsonSchemaGenerator
+    public partial class JsonSchemaGenerator : DataModel
     {
         public UndefinedSchemaIdHandling                UndefinedSchemaIdHandling               { get; set; }
         public IContractResolver?                       ContractResolver                        { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSchemaGenerator();
+            var value   = new JsonSchemaGenerator() { Pointer= p0 };
 
-            value.UndefinedSchemaIdHandling                 = (UndefinedSchemaIdHandling)GetInt32(new IntPtr(p + 0x010)); // 0270D87B0B08 0x10 UndefinedSchemaIdHandling   ( 000186701F30 ModelEnumType UndefinedSchemaIdHandling UndefinedSchemaIdHandling UndefinedSchemaIdHandling Int32 )
-            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x018), ReversePrism.DataModels.IContractResolver.FromPointer); // 0270D87B0B28 0x18 ContractResolver            ( 00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
-            value.Resolver                                  = GetObject<JsonSchemaResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonSchemaResolver.FromPointer); // 0270D87B0B48 0x20 Resolver                    ( 00018675D010 ModelClassType JsonSchemaResolver JsonSchemaResolver JsonSchemaResolver Pointer )
-            value.CurrentSchema                             = GetObject<JsonSchema>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonSchema.FromPointer); // 0270D87B0B88 0x30 CurrentSchema               ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
+            value.UndefinedSchemaIdHandling                 = (UndefinedSchemaIdHandling)GetInt32(new IntPtr(p + 0x010)); // 024668813EB8 0x10 UndefinedSchemaIdHandling   ( 000186701F30 ModelEnumType UndefinedSchemaIdHandling UndefinedSchemaIdHandling UndefinedSchemaIdHandling Int32 )
+            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x018), ReversePrism.DataModels.IContractResolver.FromPointer); // 024668813ED8 0x18 ContractResolver            ( 00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
+            value.Resolver                                  = GetObject<JsonSchemaResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonSchemaResolver.FromPointer); // 024668813EF8 0x20 Resolver                    ( 00018675D010 ModelClassType JsonSchemaResolver JsonSchemaResolver JsonSchemaResolver Pointer )
+            value.CurrentSchema                             = GetObject<JsonSchema>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonSchema.FromPointer); // 024668813F38 0x30 CurrentSchema               ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
 
             return value;
         }

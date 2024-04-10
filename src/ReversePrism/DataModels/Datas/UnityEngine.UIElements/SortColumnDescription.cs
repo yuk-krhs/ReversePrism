@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_SortDirection                          00018652F220 ModelEnumType SortDirection SortDirection SortDirection Int32
     // 028 Column                                   0001865D5780 ModelClassType Column Column Column Pointer
     // 030 changed                                  Action`1<SortColumnDescription> IL2CPP_TYPE_GENERICINST
-    public partial class SortColumnDescription
+    public partial class SortColumnDescription : DataModel
     {
         public int                                      M_ColumnIndex                           { get; set; }
         public string                                   M_ColumnName                            { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SortColumnDescription();
+            var value   = new SortColumnDescription() { Pointer= p0 };
 
-            value.M_ColumnIndex                             = GetInt32(new IntPtr(p + 0x010)); // 02700672C548 0x10 M_ColumnIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_ColumnName                              = GetString(new IntPtr(p + 0x018)); // 02700672C568 0x18 M_ColumnName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_SortDirection                           = (SortDirection)GetInt32(new IntPtr(p + 0x020)); // 02700672C588 0x20 M_SortDirection             ( 00018652F220 ModelEnumType SortDirection SortDirection SortDirection Int32 )
-            value.Column                                    = GetObject<Column>(new IntPtr(p + 0x028), ReversePrism.DataModels.Column.FromPointer); // 02700672C5A8 0x28 Column                      ( 0001865D5780 ModelClassType Column Column Column Pointer )
+            value.M_ColumnIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0245A66EE528 0x10 M_ColumnIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ColumnName                              = GetString(new IntPtr(p + 0x018)); // 0245A66EE548 0x18 M_ColumnName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_SortDirection                           = (SortDirection)GetInt32(new IntPtr(p + 0x020)); // 0245A66EE568 0x20 M_SortDirection             ( 00018652F220 ModelEnumType SortDirection SortDirection SortDirection Int32 )
+            value.Column                                    = GetObject<Column>(new IntPtr(p + 0x028), ReversePrism.DataModels.Column.FromPointer); // 0245A66EE588 0x28 Column                      ( 0001865D5780 ModelClassType Column Column Column Pointer )
 
             return value;
         }

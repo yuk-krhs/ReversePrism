@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncAwakeTrigger
+    public partial class AsyncAwakeTrigger : DataModel
     {
 
         public static AsyncAwakeTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncAwakeTrigger();
+            var value   = new AsyncAwakeTrigger() { Pointer= p0 };
 
 
             return value;

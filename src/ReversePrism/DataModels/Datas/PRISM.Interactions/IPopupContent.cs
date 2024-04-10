@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPopupContent
+    public partial class IPopupContent : DataModel
     {
 
         public static IPopupContent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPopupContent();
+            var value   = new IPopupContent() { Pointer= p0 };
 
 
             return value;

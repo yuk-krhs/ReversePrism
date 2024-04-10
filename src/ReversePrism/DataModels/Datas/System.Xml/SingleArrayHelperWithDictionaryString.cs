@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 SingleArrayHelperWithDictionaryString IL2CPP_TYPE_CLASS
-    public partial class SingleArrayHelperWithDictionaryString
+    public partial class SingleArrayHelperWithDictionaryString : DataModel
     {
 
         public static SingleArrayHelperWithDictionaryString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleArrayHelperWithDictionaryString();
+            var value   = new SingleArrayHelperWithDictionaryString() { Pointer= p0 };
 
 
             return value;

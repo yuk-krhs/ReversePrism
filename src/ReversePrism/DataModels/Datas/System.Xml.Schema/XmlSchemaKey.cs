@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaKey
+    public partial class XmlSchemaKey : DataModel
     {
 
         public static XmlSchemaKey? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaKey();
+            var value   = new XmlSchemaKey() { Pointer= p0 };
 
 
             return value;

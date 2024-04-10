@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Callback                                 000186531CE0 ModelClassType Callback Callback Callback Pointer
-    public partial class GameEngineParameter
+    public partial class GameEngineParameter : DataModel
     {
         public Callback?                                Callback                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameEngineParameter();
+            var value   = new GameEngineParameter() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x010), ReversePrism.DataModels.Callback.FromPointer); // 0270DB484C68 0x10 Callback                    ( 000186531CE0 ModelClassType Callback Callback Callback Pointer )
+            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x010), ReversePrism.DataModels.Callback.FromPointer); // 02466B511B98 0x10 Callback                    ( 000186531CE0 ModelClassType Callback Callback Callback Pointer )
 
             return value;
         }

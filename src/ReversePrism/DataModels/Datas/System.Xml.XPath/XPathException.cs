@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 Res                                      000186671910 ModelPrimitiveType string string string String
     // 098 Args                                     000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 0A0 Message                                  000186671910 ModelPrimitiveType string string string String
-    public partial class XPathException
+    public partial class XPathException : DataModel
     {
         public string                                   Res                                     { get; set; }
         public List<string>?                            Args                                    { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XPathException();
+            var value   = new XPathException() { Pointer= p0 };
 
-            value.Res                                       = GetString(new IntPtr(p + 0x090)); // 0270D749D9E8 0x90 Res                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Args                                      = GetStringList(new IntPtr(p + 0x098)); // 0270D749DA08 0x98 Args                        ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Message                                   = GetString(new IntPtr(p + 0x0A0)); // 0270D749DA28 0xA0 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Res                                       = GetString(new IntPtr(p + 0x090)); // 0246675059E8 0x90 Res                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Args                                      = GetStringList(new IntPtr(p + 0x098)); // 024667505A08 0x98 Args                        ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Message                                   = GetString(new IntPtr(p + 0x0A0)); // 024667505A28 0xA0 Message                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Cc                                       00018663C700 ModelClassType RegexCharClass RegexCharClass RegexCharClass Pointer
     // 018 Nullable                                 000186595960 ModelPrimitiveType bool bool bool Bool
     // 019 CaseInsensitive                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class RegexFC
+    public partial class RegexFC : DataModel
     {
         public RegexCharClass?                          Cc                                      { get; set; }
         public bool                                     Nullable                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexFC();
+            var value   = new RegexFC() { Pointer= p0 };
 
-            value.Cc                                        = GetObject<RegexCharClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.RegexCharClass.FromPointer); // 027003428F38 0x10 Cc                          ( 00018663C700 ModelClassType RegexCharClass RegexCharClass RegexCharClass Pointer )
-            value.Nullable                                  = GetBool(new IntPtr(p + 0x018)); // 027003428F58 0x18 Nullable                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x019)); // 027003428F78 0x19 CaseInsensitive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Cc                                        = GetObject<RegexCharClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.RegexCharClass.FromPointer); // 0245A3428F38 0x10 Cc                          ( 00018663C700 ModelClassType RegexCharClass RegexCharClass RegexCharClass Pointer )
+            value.Nullable                                  = GetBool(new IntPtr(p + 0x018)); // 0245A3428F58 0x18 Nullable                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x019)); // 0245A3428F78 0x19 CaseInsensitive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

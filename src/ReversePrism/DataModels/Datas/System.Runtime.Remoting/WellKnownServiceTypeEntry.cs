@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Obj_type                                 000186692850 ModelClassType Type Type Type Pointer
     // 028 Obj_uri                                  000186671910 ModelPrimitiveType string string string String
     // 030 Obj_mode                                 000186555B00 ModelEnumType WellKnownObjectMode WellKnownObjectMode WellKnownObjectMode Int32
-    public partial class WellKnownServiceTypeEntry
+    public partial class WellKnownServiceTypeEntry : DataModel
     {
         public Type?                                    Obj_type                                { get; set; }
         public string                                   Obj_uri                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WellKnownServiceTypeEntry();
+            var value   = new WellKnownServiceTypeEntry() { Pointer= p0 };
 
-            value.Obj_type                                  = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D6BB4A20 0x20 Obj_type                    ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.Obj_uri                                   = GetString(new IntPtr(p + 0x028)); // 0270D6BB4A40 0x28 Obj_uri                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Obj_mode                                  = (WellKnownObjectMode)GetInt32(new IntPtr(p + 0x030)); // 0270D6BB4A60 0x30 Obj_mode                    ( 000186555B00 ModelEnumType WellKnownObjectMode WellKnownObjectMode WellKnownObjectMode Int32 )
+            value.Obj_type                                  = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024666C2CA20 0x20 Obj_type                    ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Obj_uri                                   = GetString(new IntPtr(p + 0x028)); // 024666C2CA40 0x28 Obj_uri                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Obj_mode                                  = (WellKnownObjectMode)GetInt32(new IntPtr(p + 0x030)); // 024666C2CA60 0x30 Obj_mode                    ( 000186555B00 ModelEnumType WellKnownObjectMode WellKnownObjectMode WellKnownObjectMode Int32 )
 
             return value;
         }

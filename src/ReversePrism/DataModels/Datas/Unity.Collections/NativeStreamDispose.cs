@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_StreamData                             0001866A33A0 ModelEnumType UnsafeStream UnsafeStream UnsafeStream Int32
-    public partial class NativeStreamDispose
+    public partial class NativeStreamDispose : DataModel
     {
         public UnsafeStream                             M_StreamData                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeStreamDispose();
+            var value   = new NativeStreamDispose() { Pointer= p0 };
 
-            value.M_StreamData                              = (UnsafeStream)GetInt32(new IntPtr(p + 0x010)); // 0270D086EA48 0x10 M_StreamData                ( 0001866A33A0 ModelEnumType UnsafeStream UnsafeStream UnsafeStream Int32 )
+            value.M_StreamData                              = (UnsafeStream)GetInt32(new IntPtr(p + 0x010)); // 0246608B69D8 0x10 M_StreamData                ( 0001866A33A0 ModelEnumType UnsafeStream UnsafeStream UnsafeStream Int32 )
 
             return value;
         }

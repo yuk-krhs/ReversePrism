@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DictationCompletedDelegate
+    public partial class DictationCompletedDelegate : DataModel
     {
 
         public static DictationCompletedDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DictationCompletedDelegate();
+            var value   = new DictationCompletedDelegate() { Pointer= p0 };
 
 
             return value;

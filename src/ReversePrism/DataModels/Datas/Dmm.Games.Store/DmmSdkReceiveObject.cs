@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _callbackInitialize                      Action`1<InitializeData> IL2CPP_TYPE_GENERICINST
     // 008 _callbackPayment                         Action`1<OpenTransactionDialogData> IL2CPP_TYPE_GENERICINST
     // 010 PaymentId                                000186672530 ModelPrimitiveType string string string String
-    public partial class DmmSdkReceiveObject
+    public partial class DmmSdkReceiveObject : DataModel
     {
         public string                                   PaymentId                               { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmSdkReceiveObject();
+            var value   = new DmmSdkReceiveObject() { Pointer= p0 };
 
-            value.PaymentId                                 = GetString(new IntPtr(p + 0x010)); // 0270DB484B48 0x10 PaymentId                   ( 000186672530 ModelPrimitiveType string string string String )
+            value.PaymentId                                 = GetString(new IntPtr(p + 0x010)); // 02466B511A78 0x10 PaymentId                   ( 000186672530 ModelPrimitiveType string string string String )
 
             return value;
         }

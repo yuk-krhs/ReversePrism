@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
-    public partial class CStringSafeHandle
+    public partial class CStringSafeHandle : DataModel
     {
 
         public static CStringSafeHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CStringSafeHandle();
+            var value   = new CStringSafeHandle() { Pointer= p0 };
 
 
             return value;

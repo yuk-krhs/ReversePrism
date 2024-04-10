@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ThreadAbortException
+    public partial class ThreadAbortException : DataModel
     {
 
         public static ThreadAbortException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThreadAbortException();
+            var value   = new ThreadAbortException() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NormalizeVector3Processor
+    public partial class NormalizeVector3Processor : DataModel
     {
 
         public static NormalizeVector3Processor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NormalizeVector3Processor();
+            var value   = new NormalizeVector3Processor() { Pointer= p0 };
 
 
             return value;

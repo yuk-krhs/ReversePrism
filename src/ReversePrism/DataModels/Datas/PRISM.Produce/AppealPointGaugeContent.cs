@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 0B0 AppealLowerMilStoneColor                 0001865AA8E0 ModelEnumType Color Color Color Int32
     // 0C0 EffectParticle                           0001866EC400 ModelClassType UIParticle UIParticle UIParticle Pointer
     // 0C8 milstoneTextPairs                        Dictionary`2<int, UITextMeshProUGUI> IL2CPP_TYPE_GENERICINST
-    public partial class AppealPointGaugeContent
+    public partial class AppealPointGaugeContent : DataModel
     {
         public GameObject?                              ValueTextArea                           { get; set; }
         public GameObject?                              BaseAppealMilestone                     { get; set; }
@@ -36,15 +36,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppealPointGaugeContent();
+            var value   = new AppealPointGaugeContent() { Pointer= p0 };
 
-            value.ValueTextArea                             = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5AC58E8 0x78 ValueTextArea               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BaseAppealMilestone                       = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5AC5928 0x88 BaseAppealMilestone         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MaxAppealMilestone                        = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5AC5948 0x90 MaxAppealMilestone          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.AppealMilestoneArea                       = GetObject<RectTransform>(new IntPtr(p + 0x098), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5AC5968 0x98 AppealMilestoneArea         ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.AppealHigherMilStoneColor                 = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 0270D5AC5988 0xA0 AppealHigherMilStoneColor   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.AppealLowerMilStoneColor                  = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 0270D5AC59A8 0xB0 AppealLowerMilStoneColor    ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.EffectParticle                            = GetObject<UIParticle>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UIParticle.FromPointer); // 0270D5AC59C8 0xC0 EffectParticle              ( 0001866EC400 ModelClassType UIParticle UIParticle UIParticle Pointer )
+            value.ValueTextArea                             = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 024665B362C8 0x78 ValueTextArea               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BaseAppealMilestone                       = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 024665B36308 0x88 BaseAppealMilestone         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MaxAppealMilestone                        = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 024665B36328 0x90 MaxAppealMilestone          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.AppealMilestoneArea                       = GetObject<RectTransform>(new IntPtr(p + 0x098), ReversePrism.DataModels.RectTransform.FromPointer); // 024665B36348 0x98 AppealMilestoneArea         ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.AppealHigherMilStoneColor                 = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 024665B36368 0xA0 AppealHigherMilStoneColor   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.AppealLowerMilStoneColor                  = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 024665B36388 0xB0 AppealLowerMilStoneColor    ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.EffectParticle                            = GetObject<UIParticle>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UIParticle.FromPointer); // 024665B363A8 0xC0 EffectParticle              ( 0001866EC400 ModelClassType UIParticle UIParticle UIParticle Pointer )
 
             return value;
         }

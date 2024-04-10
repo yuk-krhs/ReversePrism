@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TweenCallback
+    public partial class TweenCallback : DataModel
     {
 
         public static TweenCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TweenCallback();
+            var value   = new TweenCallback() { Pointer= p0 };
 
 
             return value;

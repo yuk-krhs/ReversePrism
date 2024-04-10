@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 <parameters>k__BackingField              ReadOnlyArray`1<NamedValue> IL2CPP_TYPE_GENERICINST
-    public partial class NameAndParameters
+    public partial class NameAndParameters : DataModel
     {
         public string                                   Name                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NameAndParameters();
+            var value   = new NameAndParameters() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D7694918 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246676FC918 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

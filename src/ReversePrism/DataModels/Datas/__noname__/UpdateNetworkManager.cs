@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateNetworkManager
+    public partial class UpdateNetworkManager : DataModel
     {
 
         public static UpdateNetworkManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateNetworkManager();
+            var value   = new UpdateNetworkManager() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class X509Helper2
+    public partial class X509Helper2 : DataModel
     {
 
         public static X509Helper2? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509Helper2();
+            var value   = new X509Helper2() { Pointer= p0 };
 
 
             return value;

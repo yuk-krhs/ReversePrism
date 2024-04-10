@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ObjRefSurrogate
+    public partial class ObjRefSurrogate : DataModel
     {
 
         public static ObjRefSurrogate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjRefSurrogate();
+            var value   = new ObjRefSurrogate() { Pointer= p0 };
 
 
             return value;

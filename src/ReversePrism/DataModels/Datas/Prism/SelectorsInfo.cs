@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 SelectorName                             0001866722E0 ModelPrimitiveType string string string String
     // 018 LabelCount                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 LabelNames                               000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class SelectorsInfo
+    public partial class SelectorsInfo : DataModel
     {
         public string                                   SelectorName                            { get; set; }
         public int                                      LabelCount                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectorsInfo();
+            var value   = new SelectorsInfo() { Pointer= p0 };
 
-            value.SelectorName                              = GetString(new IntPtr(p + 0x010)); // 0270D11474E0 0x10 SelectorName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.LabelCount                                = GetInt32(new IntPtr(p + 0x018)); // 0270D1147500 0x18 LabelCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LabelNames                                = GetStringList(new IntPtr(p + 0x020)); // 0270D1147520 0x20 LabelNames                  ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.SelectorName                              = GetString(new IntPtr(p + 0x010)); // 0245A424A8D8 0x10 SelectorName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.LabelCount                                = GetInt32(new IntPtr(p + 0x018)); // 0245A424A8F8 0x18 LabelCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LabelNames                                = GetStringList(new IntPtr(p + 0x020)); // 0245A424A918 0x20 LabelNames                  ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

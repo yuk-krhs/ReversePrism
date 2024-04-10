@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProgressChangedEventArgs
+    public partial class ProgressChangedEventArgs : DataModel
     {
 
         public static ProgressChangedEventArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProgressChangedEventArgs();
+            var value   = new ProgressChangedEventArgs() { Pointer= p0 };
 
 
             return value;

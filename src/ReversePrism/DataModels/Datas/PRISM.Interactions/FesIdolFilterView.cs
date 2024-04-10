@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 LiveSkillFilterRow                       0001866E8E30 ModelClassType UIFilterGroup UIFilterGroup UIFilterGroup Pointer
     // 038 BtnRest                                  0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 040 Vm                                       000186563970 ModelClassType FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel Pointer
-    public partial class FesIdolFilterView
+    public partial class FesIdolFilterView : DataModel
     {
         public UIFilterGroup?                           FavoriteFilterRow                       { get; set; }
         public UIFilterCharacterGroup?                  IdolFilterRow                           { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesIdolFilterView();
+            var value   = new FesIdolFilterView() { Pointer= p0 };
 
-            value.FavoriteFilterRow                         = GetObject<UIFilterGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIFilterGroup.FromPointer); // 0270DA2AB3C8 0x20 FavoriteFilterRow           ( 0001866E8E30 ModelClassType UIFilterGroup UIFilterGroup UIFilterGroup Pointer )
-            value.IdolFilterRow                             = GetObject<UIFilterCharacterGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIFilterCharacterGroup.FromPointer); // 0270DA2AB3E8 0x28 IdolFilterRow               ( 0001866E8700 ModelClassType UIFilterCharacterGroup UIFilterCharacterGroup UIFilterCharacterGroup Pointer )
-            value.LiveSkillFilterRow                        = GetObject<UIFilterGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIFilterGroup.FromPointer); // 0270DA2AB408 0x30 LiveSkillFilterRow          ( 0001866E8E30 ModelClassType UIFilterGroup UIFilterGroup UIFilterGroup Pointer )
-            value.BtnRest                                   = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2AB428 0x38 BtnRest                     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Vm                                        = GetObject<FesIdolSearchPopupViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.FesIdolSearchPopupViewModel.FromPointer); // 0270DA2AB448 0x40 Vm                          ( 000186563970 ModelClassType FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel Pointer )
+            value.FavoriteFilterRow                         = GetObject<UIFilterGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIFilterGroup.FromPointer); // 02466A2FE9B0 0x20 FavoriteFilterRow           ( 0001866E8E30 ModelClassType UIFilterGroup UIFilterGroup UIFilterGroup Pointer )
+            value.IdolFilterRow                             = GetObject<UIFilterCharacterGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIFilterCharacterGroup.FromPointer); // 02466A2FE9D0 0x28 IdolFilterRow               ( 0001866E8700 ModelClassType UIFilterCharacterGroup UIFilterCharacterGroup UIFilterCharacterGroup Pointer )
+            value.LiveSkillFilterRow                        = GetObject<UIFilterGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIFilterGroup.FromPointer); // 02466A2FE9F0 0x30 LiveSkillFilterRow          ( 0001866E8E30 ModelClassType UIFilterGroup UIFilterGroup UIFilterGroup Pointer )
+            value.BtnRest                                   = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2FEA10 0x38 BtnRest                     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Vm                                        = GetObject<FesIdolSearchPopupViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.FesIdolSearchPopupViewModel.FromPointer); // 02466A2FEA30 0x40 Vm                          ( 000186563970 ModelClassType FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel FesIdolSearchPopupViewModel Pointer )
 
             return value;
         }

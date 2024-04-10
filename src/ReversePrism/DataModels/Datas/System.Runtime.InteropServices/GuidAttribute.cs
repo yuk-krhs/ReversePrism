@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Val                                      000186671BA0 ModelPrimitiveType string string string String
-    public partial class GuidAttribute
+    public partial class GuidAttribute : DataModel
     {
         public string                                   Val                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GuidAttribute();
+            var value   = new GuidAttribute() { Pointer= p0 };
 
-            value.Val                                       = GetString(new IntPtr(p + 0x010)); // 0270D6C83010 0x10 Val                         ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Val                                       = GetString(new IntPtr(p + 0x010)); // 024666CF3010 0x10 Val                         ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

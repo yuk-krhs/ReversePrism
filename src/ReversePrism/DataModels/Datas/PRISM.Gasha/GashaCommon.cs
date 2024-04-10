@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 UICharacterContentAddress                string IL2CPP_TYPE_STRING
     // 000 ResourcesTag                             string IL2CPP_TYPE_STRING
     // 000 DetailPopupTag                           string IL2CPP_TYPE_STRING
-    public partial class GashaCommon
+    public partial class GashaCommon : DataModel
     {
 
         public static GashaCommon? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaCommon();
+            var value   = new GashaCommon() { Pointer= p0 };
 
 
             return value;

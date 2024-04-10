@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 012 Minor                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 014 Build                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 016 Revision                                 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class AssemblyVersion
+    public partial class AssemblyVersion : DataModel
     {
         public ushort                                   Major                                   { get; set; }
         public ushort                                   Minor                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyVersion();
+            var value   = new AssemblyVersion() { Pointer= p0 };
 
-            value.Major                                     = GetUInt16(new IntPtr(p + 0x010)); // 027002321138 0x10 Major                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Minor                                     = GetUInt16(new IntPtr(p + 0x012)); // 027002321158 0x12 Minor                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Build                                     = GetUInt16(new IntPtr(p + 0x014)); // 027002321178 0x14 Build                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Revision                                  = GetUInt16(new IntPtr(p + 0x016)); // 027002321198 0x16 Revision                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Major                                     = GetUInt16(new IntPtr(p + 0x010)); // 0245A2321138 0x10 Major                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Minor                                     = GetUInt16(new IntPtr(p + 0x012)); // 0245A2321158 0x12 Minor                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Build                                     = GetUInt16(new IntPtr(p + 0x014)); // 0245A2321178 0x14 Build                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Revision                                  = GetUInt16(new IntPtr(p + 0x016)); // 0245A2321198 0x16 Revision                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

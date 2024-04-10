@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVisualTreeUpdater
+    public partial class IVisualTreeUpdater : DataModel
     {
 
         public static IVisualTreeUpdater? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVisualTreeUpdater();
+            var value   = new IVisualTreeUpdater() { Pointer= p0 };
 
 
             return value;

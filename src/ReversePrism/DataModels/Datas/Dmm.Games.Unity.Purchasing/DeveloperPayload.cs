@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DmmGamesTerms                            0001866E72C0 ModelClassType DmmGamesTerms DmmGamesTerms DmmGamesTerms Pointer
-    public partial class DeveloperPayload
+    public partial class DeveloperPayload : DataModel
     {
         public DmmGamesTerms?                           DmmGamesTerms                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeveloperPayload();
+            var value   = new DeveloperPayload() { Pointer= p0 };
 
-            value.DmmGamesTerms                             = GetObject<DmmGamesTerms>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesTerms.FromPointer); // 0270DB45ED68 0x10 DmmGamesTerms               ( 0001866E72C0 ModelClassType DmmGamesTerms DmmGamesTerms DmmGamesTerms Pointer )
+            value.DmmGamesTerms                             = GetObject<DmmGamesTerms>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesTerms.FromPointer); // 02466B4EBD58 0x10 DmmGamesTerms               ( 0001866E72C0 ModelClassType DmmGamesTerms DmmGamesTerms DmmGamesTerms Pointer )
 
             return value;
         }

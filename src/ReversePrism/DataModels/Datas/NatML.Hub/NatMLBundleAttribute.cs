@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Identifier                               0001866736C0 ModelPrimitiveType string string string String
-    public partial class NatMLBundleAttribute
+    public partial class NatMLBundleAttribute : DataModel
     {
         public string                                   Identifier                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NatMLBundleAttribute();
+            var value   = new NatMLBundleAttribute() { Pointer= p0 };
 
-            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 0270DBDC0240 0x10 Identifier                  ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 02466BE3FC58 0x10 Identifier                  ( 0001866736C0 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Chapter                                  0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstEpisode
+    public partial class MstEpisode : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstUnitId                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstEpisode();
+            var value   = new MstEpisode() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045A7060 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0270045A7080 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Chapter                                   = GetInt32(new IntPtr(p + 0x018)); // 0270045A70A0 0x18 Chapter                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46226F0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A4622710 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Chapter                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A4622730 0x18 Chapter                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

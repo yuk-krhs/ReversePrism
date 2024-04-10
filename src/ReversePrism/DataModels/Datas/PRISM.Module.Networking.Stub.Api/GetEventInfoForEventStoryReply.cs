@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 EventPointFieldNumber                    int IL2CPP_TYPE_I4
     // 020 EventPoint                               0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class GetEventInfoForEventStoryReply
+    public partial class GetEventInfoForEventStoryReply : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public long                                     EventPoint                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetEventInfoForEventStoryReply();
+            var value   = new GetEventInfoForEventStoryReply() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D2A2BCB8 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EventPoint                                = GetInt64(new IntPtr(p + 0x020)); // 0270D2A2BCF8 0x20 EventPoint                  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0246629B0330 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventPoint                                = GetInt64(new IntPtr(p + 0x020)); // 0246629B0370 0x20 EventPoint                  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

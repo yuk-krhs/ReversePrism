@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_CategoryId                             000186697450 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class ProfilerCategory
+    public partial class ProfilerCategory : DataModel
     {
         public ushort                                   M_CategoryId                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilerCategory();
+            var value   = new ProfilerCategory() { Pointer= p0 };
 
-            value.M_CategoryId                              = GetUInt16(new IntPtr(p + 0x010)); // 02700230A920 0x10 M_CategoryId                ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.M_CategoryId                              = GetUInt16(new IntPtr(p + 0x010)); // 0245A230A920 0x10 M_CategoryId                ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

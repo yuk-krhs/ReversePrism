@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnRemoveWriter
+    public partial class OnRemoveWriter : DataModel
     {
 
         public static OnRemoveWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnRemoveWriter();
+            var value   = new OnRemoveWriter() { Pointer= p0 };
 
 
             return value;

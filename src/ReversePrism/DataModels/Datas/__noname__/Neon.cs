@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Neon
+    public partial class Neon : DataModel
     {
 
         public static Neon? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Neon();
+            var value   = new Neon() { Pointer= p0 };
 
 
             return value;

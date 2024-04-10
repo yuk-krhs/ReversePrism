@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 030 MusicData                                000186664B50 ModelClassType MusicData MusicData MusicData Pointer
     // 038 <SetCarouselDraggable>k__BackingField    Action`1<bool> IL2CPP_TYPE_GENERICINST
     // 040 CameraModeSetting                        000186543310 ModelEnumType LiveCameraModeSetting LiveCameraModeSetting LiveCameraModeSetting Int32
-    public partial class LiveUnitEditCarouselContextBase
+    public partial class LiveUnitEditCarouselContextBase : DataModel
     {
         public MusicData?                               MusicData                               { get; set; }
         public LiveCameraModeSetting                    CameraModeSetting                       { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitEditCarouselContextBase();
+            var value   = new LiveUnitEditCarouselContextBase() { Pointer= p0 };
 
-            value.MusicData                                 = GetObject<MusicData>(new IntPtr(p + 0x030), ReversePrism.DataModels.MusicData.FromPointer); // 0270D5113538 0x30 MusicData                   ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
-            value.CameraModeSetting                         = (LiveCameraModeSetting)GetInt32(new IntPtr(p + 0x040)); // 0270D5113578 0x40 CameraModeSetting           ( 000186543310 ModelEnumType LiveCameraModeSetting LiveCameraModeSetting LiveCameraModeSetting Int32 )
+            value.MusicData                                 = GetObject<MusicData>(new IntPtr(p + 0x030), ReversePrism.DataModels.MusicData.FromPointer); // 02466517EA18 0x30 MusicData                   ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
+            value.CameraModeSetting                         = (LiveCameraModeSetting)GetInt32(new IntPtr(p + 0x040)); // 02466517EA58 0x40 CameraModeSetting           ( 000186543310 ModelEnumType LiveCameraModeSetting LiveCameraModeSetting LiveCameraModeSetting Int32 )
 
             return value;
         }

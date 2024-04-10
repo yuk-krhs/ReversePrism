@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InitializeSdk
+    public partial class InitializeSdk : DataModel
     {
 
         public static InitializeSdk? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitializeSdk();
+            var value   = new InitializeSdk() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 locker                                   <object> IL2CPP_TYPE_OBJECT
     // 008 systemDependency                         ISystemDependencyProvider IL2CPP_TYPE_CLASS
-    public partial class DependencyInjector
+    public partial class DependencyInjector : DataModel
     {
 
         public static DependencyInjector? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DependencyInjector();
+            var value   = new DependencyInjector() { Pointer= p0 };
 
 
             return value;

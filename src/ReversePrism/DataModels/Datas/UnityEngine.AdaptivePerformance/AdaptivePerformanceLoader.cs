@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdaptivePerformanceLoader
+    public partial class AdaptivePerformanceLoader : DataModel
     {
 
         public static AdaptivePerformanceLoader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceLoader();
+            var value   = new AdaptivePerformanceLoader() { Pointer= p0 };
 
 
             return value;

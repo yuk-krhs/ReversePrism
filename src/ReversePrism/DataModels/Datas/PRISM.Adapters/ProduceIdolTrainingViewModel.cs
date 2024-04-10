@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 088 <AfterParameterRP>k__BackingField        ReactiveProperty`1<IIdolParameterStatus> IL2CPP_TYPE_GENERICINST
     // 090 <OnChangeOtherBonus>k__BackingField      Subject`1<OtherBonusViewModel> IL2CPP_TYPE_GENERICINST
     // 098 <ReachedMaxLv>k__BackingField            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceIdolTrainingViewModel
+    public partial class ProduceIdolTrainingViewModel : DataModel
     {
         public int                                      CurrentRequiredPieceCount               { get; set; }
         public OtherBonusModel?                         OtherBonusModel                         { get; set; }
@@ -47,18 +47,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolTrainingViewModel();
+            var value   = new ProduceIdolTrainingViewModel() { Pointer= p0 };
 
-            value.CurrentRequiredPieceCount                 = GetInt32(new IntPtr(p + 0x028)); // 0270D5FBCF40 0x28 CurrentRequiredPieceCount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OtherBonusModel                           = GetObject<OtherBonusModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.OtherBonusModel.FromPointer); // 0270D5FBCF60 0x30 OtherBonusModel             ( 0001866EE330 ModelClassType OtherBonusModel OtherBonusModel OtherBonusModel Pointer )
-            value.IdolSkillLvLimit                          = GetInt32(new IntPtr(p + 0x038)); // 0270D5FBCF80 0x38 IdolSkillLvLimit            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PotentialLiveSkillLimit                   = GetInt32(new IntPtr(p + 0x03C)); // 0270D5FBCFA0 0x3C PotentialLiveSkillLimit     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectedTrainingLv                        = GetInt32(new IntPtr(p + 0x040)); // 0270D5FBCFC0 0x40 SelectedTrainingLv          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentLv                                 = GetInt32(new IntPtr(p + 0x044)); // 0270D5FBCFE0 0x44 CurrentLv                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x048)); // 0270D5FBD000 0x48 MaxLv                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PieceProductKey                           = (ProductKey)GetInt32(new IntPtr(p + 0x04C)); // 0270D5FBD020 0x4C PieceProductKey             ( 0001865A2170 ModelEnumType ProductKey ProductKey ProductKey Int32 )
-            value.PieceCount                                = GetInt64(new IntPtr(p + 0x058)); // 0270D5FBD040 0x58 PieceCount                  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.MaxOtherBonusContentNum                   = GetInt32(new IntPtr(p + 0x060)); // 0270D5FBD060 0x60 MaxOtherBonusContentNum     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CurrentRequiredPieceCount                 = GetInt32(new IntPtr(p + 0x028)); // 024666034F40 0x28 CurrentRequiredPieceCount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OtherBonusModel                           = GetObject<OtherBonusModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.OtherBonusModel.FromPointer); // 024666034F60 0x30 OtherBonusModel             ( 0001866EE330 ModelClassType OtherBonusModel OtherBonusModel OtherBonusModel Pointer )
+            value.IdolSkillLvLimit                          = GetInt32(new IntPtr(p + 0x038)); // 024666034F80 0x38 IdolSkillLvLimit            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PotentialLiveSkillLimit                   = GetInt32(new IntPtr(p + 0x03C)); // 024666034FA0 0x3C PotentialLiveSkillLimit     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedTrainingLv                        = GetInt32(new IntPtr(p + 0x040)); // 024666034FC0 0x40 SelectedTrainingLv          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentLv                                 = GetInt32(new IntPtr(p + 0x044)); // 024666034FE0 0x44 CurrentLv                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x048)); // 024666035000 0x48 MaxLv                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PieceProductKey                           = (ProductKey)GetInt32(new IntPtr(p + 0x04C)); // 024666035020 0x4C PieceProductKey             ( 0001865A2170 ModelEnumType ProductKey ProductKey ProductKey Int32 )
+            value.PieceCount                                = GetInt64(new IntPtr(p + 0x058)); // 024666035040 0x58 PieceCount                  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.MaxOtherBonusContentNum                   = GetInt32(new IntPtr(p + 0x060)); // 024666035060 0x60 MaxOtherBonusContentNum     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

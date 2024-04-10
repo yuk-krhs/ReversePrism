@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 0D0 PassName                                 000186664410 ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32
     // 0D8 PassNames                                000185CA3AB8 ModelEnumListType ShaderTagId[] ShaderTagId[] List<ShaderTagId> Pointer
     // 000 s_EmptyName                              ShaderTagId IL2CPP_TYPE_VALUETYPE
-    public partial class RendererListDesc
+    public partial class RendererListDesc : DataModel
     {
         public SortingCriteria                          SortingCriteria                         { get; set; }
         public PerObjectData                            RendererConfiguration                   { get; set; }
@@ -47,22 +47,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RendererListDesc();
+            var value   = new RendererListDesc() { Pointer= p0 };
 
-            value.SortingCriteria                           = (SortingCriteria)GetInt32(new IntPtr(p + 0x010)); // 0270068D58A8 0x10 SortingCriteria             ( 000186534080 ModelEnumType SortingCriteria SortingCriteria SortingCriteria Int32 )
-            value.RendererConfiguration                     = (PerObjectData)GetInt32(new IntPtr(p + 0x014)); // 0270068D58C8 0x14 RendererConfiguration       ( 00018672F390 ModelEnumType PerObjectData PerObjectData PerObjectData Int32 )
-            value.RenderQueueRange                          = (RenderQueueRange)GetInt32(new IntPtr(p + 0x018)); // 0270068D58E8 0x18 RenderQueueRange            ( 000186659540 ModelEnumType RenderQueueRange RenderQueueRange RenderQueueRange Int32 )
-            value.OverrideShader                            = GetObject<Shader>(new IntPtr(p + 0x090), ReversePrism.DataModels.Shader.FromPointer); // 0270068D5928 0x90 OverrideShader              ( 00018674CC40 ModelClassType Shader Shader Shader Pointer )
-            value.OverrideMaterial                          = GetObject<Material>(new IntPtr(p + 0x098), ReversePrism.DataModels.Material.FromPointer); // 0270068D5948 0x98 OverrideMaterial            ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.ExcludeObjectMotionVectors                = GetBool(new IntPtr(p + 0x0A0)); // 0270068D5968 0xA0 ExcludeObjectMotionVectors  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LayerMask                                 = GetInt32(new IntPtr(p + 0x0A4)); // 0270068D5988 0xA4 LayerMask                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.RenderingLayerMask                        = GetUInt32(new IntPtr(p + 0x0A8)); // 0270068D59A8 0xA8 RenderingLayerMask          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.OverrideMaterialPassIndex                 = GetInt32(new IntPtr(p + 0x0AC)); // 0270068D59C8 0xAC OverrideMaterialPassIndex   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.OverrideShaderPassIndex                   = GetInt32(new IntPtr(p + 0x0B0)); // 0270068D59E8 0xB0 OverrideShaderPassIndex     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CullingResult                             = (CullingResults)GetInt32(new IntPtr(p + 0x0B8)); // 0270068D5A08 0xB8 CullingResult               ( 0001866656C0 ModelEnumType CullingResults CullingResults CullingResults Int32 )
-            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Camera.FromPointer); // 0270068D5A28 0xC8 Camera                      ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.PassName                                  = (ShaderTagId)GetInt32(new IntPtr(p + 0x0D0)); // 0270068D5A48 0xD0 PassName                    ( 000186664410 ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32 )
-            value.PassNames                                 = GetEnumList<ShaderTagId>(new IntPtr(p + 0x0D8)); // 0270068D5A68 0xD8 PassNames                   ( 000185CA3AB8 ModelEnumListType ShaderTagId[] ShaderTagId[] List<ShaderTagId> Pointer )
+            value.SortingCriteria                           = (SortingCriteria)GetInt32(new IntPtr(p + 0x010)); // 0245A6897FA8 0x10 SortingCriteria             ( 000186534080 ModelEnumType SortingCriteria SortingCriteria SortingCriteria Int32 )
+            value.RendererConfiguration                     = (PerObjectData)GetInt32(new IntPtr(p + 0x014)); // 0245A6897FC8 0x14 RendererConfiguration       ( 00018672F390 ModelEnumType PerObjectData PerObjectData PerObjectData Int32 )
+            value.RenderQueueRange                          = (RenderQueueRange)GetInt32(new IntPtr(p + 0x018)); // 0245A6897FE8 0x18 RenderQueueRange            ( 000186659540 ModelEnumType RenderQueueRange RenderQueueRange RenderQueueRange Int32 )
+            value.OverrideShader                            = GetObject<Shader>(new IntPtr(p + 0x090), ReversePrism.DataModels.Shader.FromPointer); // 0245A6898028 0x90 OverrideShader              ( 00018674CC40 ModelClassType Shader Shader Shader Pointer )
+            value.OverrideMaterial                          = GetObject<Material>(new IntPtr(p + 0x098), ReversePrism.DataModels.Material.FromPointer); // 0245A6898048 0x98 OverrideMaterial            ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.ExcludeObjectMotionVectors                = GetBool(new IntPtr(p + 0x0A0)); // 0245A6898068 0xA0 ExcludeObjectMotionVectors  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.LayerMask                                 = GetInt32(new IntPtr(p + 0x0A4)); // 0245A6898088 0xA4 LayerMask                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RenderingLayerMask                        = GetUInt32(new IntPtr(p + 0x0A8)); // 0245A68980A8 0xA8 RenderingLayerMask          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.OverrideMaterialPassIndex                 = GetInt32(new IntPtr(p + 0x0AC)); // 0245A68980C8 0xAC OverrideMaterialPassIndex   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.OverrideShaderPassIndex                   = GetInt32(new IntPtr(p + 0x0B0)); // 0245A68980E8 0xB0 OverrideShaderPassIndex     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CullingResult                             = (CullingResults)GetInt32(new IntPtr(p + 0x0B8)); // 0245A6898108 0xB8 CullingResult               ( 0001866656C0 ModelEnumType CullingResults CullingResults CullingResults Int32 )
+            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Camera.FromPointer); // 0245A6898128 0xC8 Camera                      ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.PassName                                  = (ShaderTagId)GetInt32(new IntPtr(p + 0x0D0)); // 0245A6898148 0xD0 PassName                    ( 000186664410 ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32 )
+            value.PassNames                                 = GetEnumList<ShaderTagId>(new IntPtr(p + 0x0D8)); // 0245A6898168 0xD8 PassNames                   ( 000185CA3AB8 ModelEnumListType ShaderTagId[] ShaderTagId[] List<ShaderTagId> Pointer )
 
             return value;
         }

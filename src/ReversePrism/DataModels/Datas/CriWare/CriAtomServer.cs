@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 038 onApplicationPausePostProcess            Action`1<bool> IL2CPP_TYPE_GENERICINST
     // 008 KeepPlayingSoundOnPause                  bool IL2CPP_TYPE_BOOLEAN
     // 009 EnableAutoConsumePcmOutput               bool IL2CPP_TYPE_BOOLEAN
-    public partial class CriAtomServer
+    public partial class CriAtomServer : DataModel
     {
 
         public static CriAtomServer? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomServer();
+            var value   = new CriAtomServer() { Pointer= p0 };
 
 
             return value;

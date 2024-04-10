@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Scene                                    000186671910 ModelPrimitiveType string string string String
-    public partial class InitialScene
+    public partial class InitialScene : DataModel
     {
         public string                                   Scene                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitialScene();
+            var value   = new InitialScene() { Pointer= p0 };
 
-            value.Scene                                     = GetString(new IntPtr(p + 0x020)); // 0270D0909AF0 0x20 Scene                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Scene                                     = GetString(new IntPtr(p + 0x020)); // 024660909AF0 0x20 Scene                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

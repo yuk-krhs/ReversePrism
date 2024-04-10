@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 EtwProvider                              00018674BAD0 ModelClassType EtwProvider EtwProvider EtwProvider Pointer
     // 048 EtwProviderId                            0001865DBED0 ModelEnumType Guid Guid Guid Int32
     // 038 TransferEventDescriptor                  0001865C8E80 ModelEnumType EventDescriptor EventDescriptor EventDescriptor Int32
-    public partial class EtwDiagnosticTrace
+    public partial class EtwDiagnosticTrace : DataModel
     {
         public Guid                                     DefaultEtwProviderId                    { get; set; }
         public Hashtable?                               EtwProviderCache                        { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EtwDiagnosticTrace();
+            var value   = new EtwDiagnosticTrace() { Pointer= p0 };
 
-            value.DefaultEtwProviderId                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 027004CF93E0 0x10 DefaultEtwProviderId        ( 0001865DC5C0 ModelEnumType Guid Guid Guid Int32 )
-            value.EtwProviderCache                          = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 027004CF9400 0x20 EtwProviderCache            ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.IsVistaOrGreater                          = GetBool(new IntPtr(p + 0x028)); // 027004CF9420 0x28 IsVistaOrGreater            ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.EtwProvider                               = GetObject<EtwProvider>(new IntPtr(p + 0x040), ReversePrism.DataModels.EtwProvider.FromPointer); // 027004CF9460 0x40 EtwProvider                 ( 00018674BAD0 ModelClassType EtwProvider EtwProvider EtwProvider Pointer )
-            value.EtwProviderId                             = (Guid)GetInt32(new IntPtr(p + 0x048)); // 027004CF9480 0x48 EtwProviderId               ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
-            value.TransferEventDescriptor                   = (EventDescriptor)GetInt32(new IntPtr(p + 0x038)); // 027004CF94A0 0x38 TransferEventDescriptor     ( 0001865C8E80 ModelEnumType EventDescriptor EventDescriptor EventDescriptor Int32 )
+            value.DefaultEtwProviderId                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0245A4D35EC8 0x10 DefaultEtwProviderId        ( 0001865DC5C0 ModelEnumType Guid Guid Guid Int32 )
+            value.EtwProviderCache                          = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A4D35EE8 0x20 EtwProviderCache            ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.IsVistaOrGreater                          = GetBool(new IntPtr(p + 0x028)); // 0245A4D35F08 0x28 IsVistaOrGreater            ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.EtwProvider                               = GetObject<EtwProvider>(new IntPtr(p + 0x040), ReversePrism.DataModels.EtwProvider.FromPointer); // 0245A4D35F48 0x40 EtwProvider                 ( 00018674BAD0 ModelClassType EtwProvider EtwProvider EtwProvider Pointer )
+            value.EtwProviderId                             = (Guid)GetInt32(new IntPtr(p + 0x048)); // 0245A4D35F68 0x48 EtwProviderId               ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
+            value.TransferEventDescriptor                   = (EventDescriptor)GetInt32(new IntPtr(p + 0x038)); // 0245A4D35F88 0x38 TransferEventDescriptor     ( 0001865C8E80 ModelEnumType EventDescriptor EventDescriptor EventDescriptor Int32 )
 
             return value;
         }

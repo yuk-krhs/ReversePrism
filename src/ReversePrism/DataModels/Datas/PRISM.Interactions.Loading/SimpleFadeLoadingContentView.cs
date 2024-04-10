@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Image                                    0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 028 ShowDuration                             0001866656B0 ModelPrimitiveType float float float Single
     // 02C HideDuration                             0001866656B0 ModelPrimitiveType float float float Single
-    public partial class SimpleFadeLoadingContentView
+    public partial class SimpleFadeLoadingContentView : DataModel
     {
         public UIImage?                                 Image                                   { get; set; }
         public float                                    ShowDuration                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SimpleFadeLoadingContentView();
+            var value   = new SimpleFadeLoadingContentView() { Pointer= p0 };
 
-            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 027001E95798 0x20 Image                       ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ShowDuration                              = GetSingle(new IntPtr(p + 0x028)); // 027001E957B8 0x28 ShowDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.HideDuration                              = GetSingle(new IntPtr(p + 0x02C)); // 027001E957D8 0x2C HideDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0245A1E98590 0x20 Image                       ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.ShowDuration                              = GetSingle(new IntPtr(p + 0x028)); // 0245A1E985B0 0x28 ShowDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.HideDuration                              = GetSingle(new IntPtr(p + 0x02C)); // 0245A1E985D0 0x2C HideDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

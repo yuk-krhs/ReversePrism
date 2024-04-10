@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 default                                  Unit IL2CPP_TYPE_VALUETYPE
-    public partial class Unit
+    public partial class Unit : DataModel
     {
 
         public static Unit? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Unit();
+            var value   = new Unit() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Icon                                     000186675B10 ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer
     // 028 IconDisposable                           0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class RankingRewardAchievementIcon
+    public partial class RankingRewardAchievementIcon : DataModel
     {
         public AchievementIconView?                     Icon                                    { get; set; }
         public IDisposable?                             IconDisposable                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RankingRewardAchievementIcon();
+            var value   = new RankingRewardAchievementIcon() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<AchievementIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconView.FromPointer); // 0270DB57B348 0x20 Icon                        ( 000186675B10 ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer )
-            value.IconDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB57B368 0x28 IconDisposable              ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Icon                                      = GetObject<AchievementIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconView.FromPointer); // 02466B5FF430 0x20 Icon                        ( 000186675B10 ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer )
+            value.IconDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B5FF450 0x28 IconDisposable              ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

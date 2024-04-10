@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDualShockHaptics
+    public partial class IDualShockHaptics : DataModel
     {
 
         public static IDualShockHaptics? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDualShockHaptics();
+            var value   = new IDualShockHaptics() { Pointer= p0 };
 
 
             return value;

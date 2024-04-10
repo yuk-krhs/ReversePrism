@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 038 SoftMask                                 000186526680 ModelClassType SoftMask SoftMask SoftMask Pointer
     // 040 EffectMaterialHash                       0001865DD790 ModelEnumType Hash128 Hash128 Hash128 Int32
     // 050 ModifiedMaterial                         00018660BDD0 ModelClassType Material Material Material Pointer
-    public partial class SoftMaskable
+    public partial class SoftMaskable : DataModel
     {
         public int                                      S_SoftMaskTexId                         { get; set; }
         public int                                      S_StencilCompId                         { get; set; }
@@ -50,23 +50,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoftMaskable();
+            var value   = new SoftMaskable() { Pointer= p0 };
 
-            value.S_SoftMaskTexId                           = GetInt32(new IntPtr(p + 0x010)); // 0270DBE0B3E0 0x10 S_SoftMaskTexId             ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_StencilCompId                           = GetInt32(new IntPtr(p + 0x014)); // 0270DBE0B400 0x14 S_StencilCompId             ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_MaskInteractionId                       = GetInt32(new IntPtr(p + 0x018)); // 0270DBE0B420 0x18 S_MaskInteractionId         ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_GameVPId                                = GetInt32(new IntPtr(p + 0x01C)); // 0270DBE0B440 0x1C S_GameVPId                  ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_GameTVPId                               = GetInt32(new IntPtr(p + 0x020)); // 0270DBE0B460 0x20 S_GameTVPId                 ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.S_ActiveSoftMaskables                     = GetObjectList<SoftMaskable>(new IntPtr(p + 0x028), ReversePrism.DataModels.SoftMaskable.FromPointer); // 0270DBE0B480 0x28 S_ActiveSoftMaskables       ( 000185D0A628 ModelClassListType List`1<SoftMaskable> List`1<SoftMaskable> List<SoftMaskable> Pointer )
-            value.S_Interactions                            = GetInt32List(new IntPtr(p + 0x030)); // 0270DBE0B4A0 0x30 S_Interactions              ( 000185B7D6C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.M_Inverse                                 = GetBool(new IntPtr(p + 0x020)); // 0270DBE0B4C0 0x20 M_Inverse                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_MaskInteraction                         = GetInt32(new IntPtr(p + 0x024)); // 0270DBE0B4E0 0x24 M_MaskInteraction           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_UseStencil                              = GetBool(new IntPtr(p + 0x028)); // 0270DBE0B500 0x28 M_UseStencil                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_RaycastFilter                           = GetBool(new IntPtr(p + 0x029)); // 0270DBE0B520 0x29 M_RaycastFilter             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Graphic                                   = GetObject<Graphic>(new IntPtr(p + 0x030), ReversePrism.DataModels.Graphic.FromPointer); // 0270DBE0B540 0x30 Graphic                     ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
-            value.SoftMask                                  = GetObject<SoftMask>(new IntPtr(p + 0x038), ReversePrism.DataModels.SoftMask.FromPointer); // 0270DBE0B560 0x38 SoftMask                    ( 000186526680 ModelClassType SoftMask SoftMask SoftMask Pointer )
-            value.EffectMaterialHash                        = (Hash128)GetInt32(new IntPtr(p + 0x040)); // 0270DBE0B580 0x40 EffectMaterialHash          ( 0001865DD790 ModelEnumType Hash128 Hash128 Hash128 Int32 )
-            value.ModifiedMaterial                          = GetObject<Material>(new IntPtr(p + 0x050), ReversePrism.DataModels.Material.FromPointer); // 0270DBE0B5A0 0x50 ModifiedMaterial            ( 00018660BDD0 ModelClassType Material Material Material Pointer )
+            value.S_SoftMaskTexId                           = GetInt32(new IntPtr(p + 0x010)); // 02466BE92F10 0x10 S_SoftMaskTexId             ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_StencilCompId                           = GetInt32(new IntPtr(p + 0x014)); // 02466BE92F30 0x14 S_StencilCompId             ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_MaskInteractionId                       = GetInt32(new IntPtr(p + 0x018)); // 02466BE92F50 0x18 S_MaskInteractionId         ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_GameVPId                                = GetInt32(new IntPtr(p + 0x01C)); // 02466BE92F70 0x1C S_GameVPId                  ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_GameTVPId                               = GetInt32(new IntPtr(p + 0x020)); // 02466BE92F90 0x20 S_GameTVPId                 ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.S_ActiveSoftMaskables                     = GetObjectList<SoftMaskable>(new IntPtr(p + 0x028), ReversePrism.DataModels.SoftMaskable.FromPointer); // 02466BE92FB0 0x28 S_ActiveSoftMaskables       ( 000185D0A628 ModelClassListType List`1<SoftMaskable> List`1<SoftMaskable> List<SoftMaskable> Pointer )
+            value.S_Interactions                            = GetInt32List(new IntPtr(p + 0x030)); // 02466BE92FD0 0x30 S_Interactions              ( 000185B7D6C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_Inverse                                 = GetBool(new IntPtr(p + 0x020)); // 02466BE92FF0 0x20 M_Inverse                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_MaskInteraction                         = GetInt32(new IntPtr(p + 0x024)); // 02466BE93010 0x24 M_MaskInteraction           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_UseStencil                              = GetBool(new IntPtr(p + 0x028)); // 02466BE93030 0x28 M_UseStencil                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_RaycastFilter                           = GetBool(new IntPtr(p + 0x029)); // 02466BE93050 0x29 M_RaycastFilter             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Graphic                                   = GetObject<Graphic>(new IntPtr(p + 0x030), ReversePrism.DataModels.Graphic.FromPointer); // 02466BE93070 0x30 Graphic                     ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
+            value.SoftMask                                  = GetObject<SoftMask>(new IntPtr(p + 0x038), ReversePrism.DataModels.SoftMask.FromPointer); // 02466BE93090 0x38 SoftMask                    ( 000186526680 ModelClassType SoftMask SoftMask SoftMask Pointer )
+            value.EffectMaterialHash                        = (Hash128)GetInt32(new IntPtr(p + 0x040)); // 02466BE930B0 0x40 EffectMaterialHash          ( 0001865DD790 ModelEnumType Hash128 Hash128 Hash128 Int32 )
+            value.ModifiedMaterial                          = GetObject<Material>(new IntPtr(p + 0x050), ReversePrism.DataModels.Material.FromPointer); // 02466BE930D0 0x50 ModifiedMaterial            ( 00018660BDD0 ModelClassType Material Material Material Pointer )
 
             return value;
         }

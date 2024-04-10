@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsFromTitle                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 IsFromOurStream                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class HomeArgument
+    public partial class HomeArgument : DataModel
     {
         public bool                                     IsFromTitle                             { get; set; }
         public bool                                     IsFromOurStream                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeArgument();
+            var value   = new HomeArgument() { Pointer= p0 };
 
-            value.IsFromTitle                               = GetBool(new IntPtr(p + 0x010)); // 027004FD7EA0 0x10 IsFromTitle                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsFromOurStream                           = GetBool(new IntPtr(p + 0x011)); // 027004FD7EC0 0x11 IsFromOurStream             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsFromTitle                               = GetBool(new IntPtr(p + 0x010)); // 0245A5B39B10 0x10 IsFromTitle                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsFromOurStream                           = GetBool(new IntPtr(p + 0x011)); // 0245A5B39B30 0x11 IsFromOurStream             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

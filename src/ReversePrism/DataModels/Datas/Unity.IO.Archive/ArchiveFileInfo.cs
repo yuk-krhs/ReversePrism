@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Filename                                 0001866722E0 ModelPrimitiveType string string string String
     // 018 FileSize                                 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class ArchiveFileInfo
+    public partial class ArchiveFileInfo : DataModel
     {
         public string                                   Filename                                { get; set; }
         public ulong                                    FileSize                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArchiveFileInfo();
+            var value   = new ArchiveFileInfo() { Pointer= p0 };
 
-            value.Filename                                  = GetString(new IntPtr(p + 0x010)); // 0270022F3468 0x10 Filename                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FileSize                                  = GetUInt64(new IntPtr(p + 0x018)); // 0270022F3488 0x18 FileSize                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Filename                                  = GetString(new IntPtr(p + 0x010)); // 0245A22F3468 0x10 Filename                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.FileSize                                  = GetUInt64(new IntPtr(p + 0x018)); // 0245A22F3488 0x18 FileSize                    ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 pluginName                               string IL2CPP_TYPE_STRING
     // 000 pluginCallingConvention                  CallingConvention IL2CPP_TYPE_VALUETYPE
     // 000 _managerObject                           GameObject IL2CPP_TYPE_CLASS
-    public partial class Common
+    public partial class Common : DataModel
     {
 
         public static Common? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Common();
+            var value   = new Common() { Pointer= p0 };
 
 
             return value;

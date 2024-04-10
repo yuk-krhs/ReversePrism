@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186764160 ModelClassType ShopLoginBonusPassView ShopLoginBonusPassView ShopLoginBonusPassView Pointer
-    public partial class ShopLoginBonusPassBuilder
+    public partial class ShopLoginBonusPassBuilder : DataModel
     {
         public ShopLoginBonusPassView?                  View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopLoginBonusPassBuilder();
+            var value   = new ShopLoginBonusPassBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ShopLoginBonusPassView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopLoginBonusPassView.FromPointer); // 0270DB61F630 0x20 View                        ( 000186764160 ModelClassType ShopLoginBonusPassView ShopLoginBonusPassView ShopLoginBonusPassView Pointer )
+            value.View                                      = GetObject<ShopLoginBonusPassView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopLoginBonusPassView.FromPointer); // 02466B6B2FB8 0x20 View                        ( 000186764160 ModelClassType ShopLoginBonusPassView ShopLoginBonusPassView ShopLoginBonusPassView Pointer )
 
             return value;
         }

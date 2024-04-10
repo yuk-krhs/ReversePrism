@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ResultAnimGet                            string IL2CPP_TYPE_STRING
     // 000 ResultAnimStar                           string IL2CPP_TYPE_STRING
     // 000 ShilhouettePosition                      Vector2[][] IL2CPP_TYPE_SZARRAY
-    public partial class ChallengeTourConst
+    public partial class ChallengeTourConst : DataModel
     {
 
         public static ChallengeTourConst? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourConst();
+            var value   = new ChallengeTourConst() { Pointer= p0 };
 
 
             return value;

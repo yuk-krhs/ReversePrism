@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 EpisodeEventMissionBannerListFieldNumber int IL2CPP_TYPE_I4
     // 010 _repeated_episodeEventMissionBannerList_codec FieldCodec`1<EpisodeEventMissionBannerStatus> IL2CPP_TYPE_GENERICINST
     // 020 EpisodeEventMissionBannerList            000185CD4E18 ModelClassListType RepeatedField`1<EpisodeEventMissionBannerStatus> RepeatedField`1<EpisodeEventMissionBannerStatus> List<EpisodeEventMissionBannerStatus> Pointer
-    public partial class GetEpisodeListReply
+    public partial class GetEpisodeListReply : DataModel
     {
         public List<EpisodeStatus>?                     EpisodeList                             { get; set; }
         public List<EpisodeEventMissionBannerStatus>?   EpisodeEventMissionBannerList           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetEpisodeListReply();
+            var value   = new GetEpisodeListReply() { Pointer= p0 };
 
-            value.EpisodeList                               = GetObjectList<EpisodeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EpisodeStatus.FromPointer); // 0270D25614B0 0x18 EpisodeList                 ( 000185CD5048 ModelClassListType RepeatedField`1<EpisodeStatus> RepeatedField`1<EpisodeStatus> List<EpisodeStatus> Pointer )
-            value.EpisodeEventMissionBannerList             = GetObjectList<EpisodeEventMissionBannerStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.EpisodeEventMissionBannerStatus.FromPointer); // 0270D2561510 0x20 EpisodeEventMissionBannerList ( 000185CD4E18 ModelClassListType RepeatedField`1<EpisodeEventMissionBannerStatus> RepeatedField`1<EpisodeEventMissionBannerStatus> List<EpisodeEventMissionBannerStatus> Pointer )
+            value.EpisodeList                               = GetObjectList<EpisodeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EpisodeStatus.FromPointer); // 024662537DF0 0x18 EpisodeList                 ( 000185CD5048 ModelClassListType RepeatedField`1<EpisodeStatus> RepeatedField`1<EpisodeStatus> List<EpisodeStatus> Pointer )
+            value.EpisodeEventMissionBannerList             = GetObjectList<EpisodeEventMissionBannerStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.EpisodeEventMissionBannerStatus.FromPointer); // 024662537E50 0x20 EpisodeEventMissionBannerList ( 000185CD4E18 ModelClassListType RepeatedField`1<EpisodeEventMissionBannerStatus> RepeatedField`1<EpisodeEventMissionBannerStatus> List<EpisodeEventMissionBannerStatus> Pointer )
 
             return value;
         }

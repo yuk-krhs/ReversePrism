@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 TimeZoneFieldNumber                      int IL2CPP_TYPE_I4
     // 038 timeOffset_                              <object> IL2CPP_TYPE_OBJECT
     // 040 TimeOffsetCase                           00018657BAE0 ModelEnumType TimeOffsetOneofCase TimeOffsetOneofCase TimeOffsetOneofCase Int32
-    public partial class DateTime
+    public partial class DateTime : DataModel
     {
         public int                                      Year                                    { get; set; }
         public int                                      Month                                   { get; set; }
@@ -45,16 +45,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTime();
+            var value   = new DateTime() { Pointer= p0 };
 
-            value.Year                                      = GetInt32(new IntPtr(p + 0x018)); // 0270DA68B960 0x18 Year                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Month                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270DA68B9A0 0x1C Month                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Day                                       = GetInt32(new IntPtr(p + 0x020)); // 0270DA68B9E0 0x20 Day                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Hours                                     = GetInt32(new IntPtr(p + 0x024)); // 0270DA68BA20 0x24 Hours                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Minutes                                   = GetInt32(new IntPtr(p + 0x028)); // 0270DA68BA60 0x28 Minutes                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Seconds                                   = GetInt32(new IntPtr(p + 0x02C)); // 0270DA68BAA0 0x2C Seconds                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Nanos                                     = GetInt32(new IntPtr(p + 0x030)); // 0270DA68BAE0 0x30 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TimeOffsetCase                            = (TimeOffsetOneofCase)GetInt32(new IntPtr(p + 0x040)); // 0270DA68BB60 0x40 TimeOffsetCase              ( 00018657BAE0 ModelEnumType TimeOffsetOneofCase TimeOffsetOneofCase TimeOffsetOneofCase Int32 )
+            value.Year                                      = GetInt32(new IntPtr(p + 0x018)); // 02466A6D7080 0x18 Year                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Month                                     = GetInt32(new IntPtr(p + 0x01C)); // 02466A6D70C0 0x1C Month                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Day                                       = GetInt32(new IntPtr(p + 0x020)); // 02466A6D7100 0x20 Day                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Hours                                     = GetInt32(new IntPtr(p + 0x024)); // 02466A6D7140 0x24 Hours                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Minutes                                   = GetInt32(new IntPtr(p + 0x028)); // 02466A6D7180 0x28 Minutes                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Seconds                                   = GetInt32(new IntPtr(p + 0x02C)); // 02466A6D71C0 0x2C Seconds                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Nanos                                     = GetInt32(new IntPtr(p + 0x030)); // 02466A6D7200 0x30 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TimeOffsetCase                            = (TimeOffsetOneofCase)GetInt32(new IntPtr(p + 0x040)); // 02466A6D7280 0x40 TimeOffsetCase              ( 00018657BAE0 ModelEnumType TimeOffsetOneofCase TimeOffsetOneofCase TimeOffsetOneofCase Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UniTaskAsyncEnumerableExtensions
+    public partial class UniTaskAsyncEnumerableExtensions : DataModel
     {
 
         public static UniTaskAsyncEnumerableExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniTaskAsyncEnumerableExtensions();
+            var value   = new UniTaskAsyncEnumerableExtensions() { Pointer= p0 };
 
 
             return value;

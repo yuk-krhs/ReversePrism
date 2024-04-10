@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 M_Time                                   0001865C2950 ModelPrimitiveType double double double Double
     // 020 Parent                                   00018669B680 ModelClassType TrackAsset TrackAsset TrackAsset Pointer
-    public partial class Marker
+    public partial class Marker : DataModel
     {
         public double                                   M_Time                                  { get; set; }
         public TrackAsset?                              Parent                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Marker();
+            var value   = new Marker() { Pointer= p0 };
 
-            value.M_Time                                    = GetDouble(new IntPtr(p + 0x018)); // 027006B66850 0x18 M_Time                      ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Parent                                    = GetObject<TrackAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TrackAsset.FromPointer); // 027006B66870 0x20 Parent                      ( 00018669B680 ModelClassType TrackAsset TrackAsset TrackAsset Pointer )
+            value.M_Time                                    = GetDouble(new IntPtr(p + 0x018)); // 024664E1B4E0 0x18 M_Time                      ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Parent                                    = GetObject<TrackAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TrackAsset.FromPointer); // 024664E1B500 0x20 Parent                      ( 00018669B680 ModelClassType TrackAsset TrackAsset TrackAsset Pointer )
 
             return value;
         }

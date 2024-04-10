@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 048 AdRevenuePlacement                       000186671BA0 ModelPrimitiveType string string string String
     // 050 PartnerList                              000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     // 058 CallbackList                             000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class AdjustAdRevenue
+    public partial class AdjustAdRevenue : DataModel
     {
         public string                                   Source                                  { get; set; }
         public string                                   Currency                                { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustAdRevenue();
+            var value   = new AdjustAdRevenue() { Pointer= p0 };
 
-            value.Source                                    = GetString(new IntPtr(p + 0x010)); // 0270DBB0D8C8 0x10 Source                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Currency                                  = GetString(new IntPtr(p + 0x028)); // 0270DBB0D908 0x28 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.AdRevenueNetwork                          = GetString(new IntPtr(p + 0x038)); // 0270DBB0D948 0x38 AdRevenueNetwork            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.AdRevenueUnit                             = GetString(new IntPtr(p + 0x040)); // 0270DBB0D968 0x40 AdRevenueUnit               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.AdRevenuePlacement                        = GetString(new IntPtr(p + 0x048)); // 0270DBB0D988 0x48 AdRevenuePlacement          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 0270DBB0D9A8 0x50 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 0270DBB0D9C8 0x58 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Source                                    = GetString(new IntPtr(p + 0x010)); // 02466BB94DA8 0x10 Source                      ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Currency                                  = GetString(new IntPtr(p + 0x028)); // 02466BB94DE8 0x28 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.AdRevenueNetwork                          = GetString(new IntPtr(p + 0x038)); // 02466BB94E28 0x38 AdRevenueNetwork            ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.AdRevenueUnit                             = GetString(new IntPtr(p + 0x040)); // 02466BB94E48 0x40 AdRevenueUnit               ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.AdRevenuePlacement                        = GetString(new IntPtr(p + 0x048)); // 02466BB94E68 0x48 AdRevenuePlacement          ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 02466BB94E88 0x50 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 02466BB94EA8 0x58 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

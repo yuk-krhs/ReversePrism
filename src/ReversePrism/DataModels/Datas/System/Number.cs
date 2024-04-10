@@ -42,7 +42,7 @@ namespace ReversePrism.DataModels
     // 000 FloatingPointMinExponent                 int IL2CPP_TYPE_I4
     // 000 SingleMaxExponent                        int IL2CPP_TYPE_I4
     // 000 SingleMinExponent                        int IL2CPP_TYPE_I4
-    public partial class Number
+    public partial class Number : DataModel
     {
         public List<string>?                            S_negCurrencyFormats                    { get; set; }
         public List<string>?                            S_posPercentFormats                     { get; set; }
@@ -57,14 +57,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Number();
+            var value   = new Number() { Pointer= p0 };
 
-            value.S_negCurrencyFormats                      = GetStringList(new IntPtr(p + 0x010)); // 0270DAAAB8D8 0x10 S_negCurrencyFormats        ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.S_posPercentFormats                       = GetStringList(new IntPtr(p + 0x018)); // 0270DAAAB8F8 0x18 S_posPercentFormats         ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.S_negPercentFormats                       = GetStringList(new IntPtr(p + 0x020)); // 0270DAAAB918 0x20 S_negPercentFormats         ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.S_negNumberFormats                        = GetStringList(new IntPtr(p + 0x028)); // 0270DAAAB938 0x28 S_negNumberFormats          ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.S_Pow10SingleTable                        = GetSingleList(new IntPtr(p + 0x030)); // 0270DAAABA38 0x30 S_Pow10SingleTable          ( 000185B80E40 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.S_Pow10DoubleTable                        = GetDoubleList(new IntPtr(p + 0x038)); // 0270DAAABA58 0x38 S_Pow10DoubleTable          ( 000185B7CC40 ModelPrimitiveListType double[] double[] List<double> Pointer )
+            value.S_negCurrencyFormats                      = GetStringList(new IntPtr(p + 0x010)); // 02466AB138D8 0x10 S_negCurrencyFormats        ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.S_posPercentFormats                       = GetStringList(new IntPtr(p + 0x018)); // 02466AB138F8 0x18 S_posPercentFormats         ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.S_negPercentFormats                       = GetStringList(new IntPtr(p + 0x020)); // 02466AB13918 0x20 S_negPercentFormats         ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.S_negNumberFormats                        = GetStringList(new IntPtr(p + 0x028)); // 02466AB13938 0x28 S_negNumberFormats          ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.S_Pow10SingleTable                        = GetSingleList(new IntPtr(p + 0x030)); // 02466AB13A38 0x30 S_Pow10SingleTable          ( 000185B80E40 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.S_Pow10DoubleTable                        = GetDoubleList(new IntPtr(p + 0x038)); // 02466AB13A58 0x38 S_Pow10DoubleTable          ( 000185B7CC40 ModelPrimitiveListType double[] double[] List<double> Pointer )
 
             return value;
         }

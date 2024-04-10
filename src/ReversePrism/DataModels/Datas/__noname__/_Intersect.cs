@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 second                                   IUniTaskAsyncEnumerable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 set                                      HashSet`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 awaiter                                  Awaiter<HashSet`1<<var>>> IL2CPP_TYPE_GENERICINST
-    public partial class _Intersect
+    public partial class _Intersect : DataModel
     {
 
         public static _Intersect? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Intersect();
+            var value   = new _Intersect() { Pointer= p0 };
 
 
             return value;

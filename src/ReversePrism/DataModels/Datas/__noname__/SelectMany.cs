@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 parent                                   SelectManyOuterObserver<<var>, <var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 sourceValue                              <var> IL2CPP_TYPE_VAR
     // 000 cancel                                   IDisposable IL2CPP_TYPE_CLASS
-    public partial class SelectMany
+    public partial class SelectMany : DataModel
     {
 
         public static SelectMany? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectMany();
+            var value   = new SelectMany() { Pointer= p0 };
 
 
             return value;

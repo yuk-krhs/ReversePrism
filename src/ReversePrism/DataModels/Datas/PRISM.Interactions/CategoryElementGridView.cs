@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 categoryCellPrefab                       FancyGridViewCell`2<ICategoryElementGridCellViewModel, CategoryElementGridContext> IL2CPP_TYPE_GENERICINST
     // 098 elementCellPrefab                        FancyGridViewCell`2<ICategoryElementGridCellViewModel, CategoryElementGridContext> IL2CPP_TYPE_GENERICINST
     // 0A0 EmptyView                                0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class CategoryElementGridView
+    public partial class CategoryElementGridView : DataModel
     {
         public GameObject?                              EmptyView                               { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CategoryElementGridView();
+            var value   = new CategoryElementGridView() { Pointer= p0 };
 
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA305148 0xA0 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3586A0 0xA0 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

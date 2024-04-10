@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Cts                                      0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 030 Disposables                              0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 038 Vm                                       00018659BBB0 ModelClassType CharacterBaseSelectViewModel CharacterBaseSelectViewModel CharacterBaseSelectViewModel Pointer
-    public partial class CharacterBaseSelectPresenter
+    public partial class CharacterBaseSelectPresenter : DataModel
     {
         public ICharacterBaseSelectView?                View                                    { get; set; }
         public CommonTitleView?                         TitleView                               { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterBaseSelectPresenter();
+            var value   = new CharacterBaseSelectPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ICharacterBaseSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICharacterBaseSelectView.FromPointer); // 0270D5E91DC0 0x10 View                        ( 00018672B180 ModelClassType ICharacterBaseSelectView ICharacterBaseSelectView ICharacterBaseSelectView Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x018), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0270D5E91DE0 0x18 TitleView                   ( 0001865EA1D0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D5E91E20 0x28 Cts                         ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D5E91E40 0x30 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Vm                                        = GetObject<CharacterBaseSelectViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.CharacterBaseSelectViewModel.FromPointer); // 0270D5E91E60 0x38 Vm                          ( 00018659BBB0 ModelClassType CharacterBaseSelectViewModel CharacterBaseSelectViewModel CharacterBaseSelectViewModel Pointer )
+            value.View                                      = GetObject<ICharacterBaseSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICharacterBaseSelectView.FromPointer); // 024665F02420 0x10 View                        ( 00018672B180 ModelClassType ICharacterBaseSelectView ICharacterBaseSelectView ICharacterBaseSelectView Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x018), ReversePrism.DataModels.CommonTitleView.FromPointer); // 024665F02440 0x18 TitleView                   ( 0001865EA1D0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024665F02480 0x28 Cts                         ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024665F024A0 0x30 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Vm                                        = GetObject<CharacterBaseSelectViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.CharacterBaseSelectViewModel.FromPointer); // 024665F024C0 0x38 Vm                          ( 00018659BBB0 ModelClassType CharacterBaseSelectViewModel CharacterBaseSelectViewModel CharacterBaseSelectViewModel Pointer )
 
             return value;
         }

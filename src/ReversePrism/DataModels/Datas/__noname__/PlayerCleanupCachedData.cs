@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerCleanupCachedData
+    public partial class PlayerCleanupCachedData : DataModel
     {
 
         public static PlayerCleanupCachedData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerCleanupCachedData();
+            var value   = new PlayerCleanupCachedData() { Pointer= p0 };
 
 
             return value;

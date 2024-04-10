@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Brotli
+    public partial class Brotli : DataModel
     {
 
         public static Brotli? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Brotli();
+            var value   = new Brotli() { Pointer= p0 };
 
 
             return value;

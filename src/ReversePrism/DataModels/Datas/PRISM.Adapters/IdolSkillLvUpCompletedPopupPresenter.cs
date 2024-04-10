@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     000186577820 ModelClassType IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView Pointer
     // 018 Vm                                       0001866C0580 ModelClassType IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel Pointer
     // 020 onDetail                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class IdolSkillLvUpCompletedPopupPresenter
+    public partial class IdolSkillLvUpCompletedPopupPresenter : DataModel
     {
         public IIdolSkillLvUpCompletedPopupView?        View                                    { get; set; }
         public IdolSkillLvUpCompletedPopupViewModel?    Vm                                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillLvUpCompletedPopupPresenter();
+            var value   = new IdolSkillLvUpCompletedPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IIdolSkillLvUpCompletedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIdolSkillLvUpCompletedPopupView.FromPointer); // 0270D5F6E9F8 0x10 View                        ( 000186577820 ModelClassType IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView Pointer )
-            value.Vm                                        = GetObject<IdolSkillLvUpCompletedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolSkillLvUpCompletedPopupViewModel.FromPointer); // 0270D5F6EA18 0x18 Vm                          ( 0001866C0580 ModelClassType IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel Pointer )
+            value.View                                      = GetObject<IIdolSkillLvUpCompletedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIdolSkillLvUpCompletedPopupView.FromPointer); // 024665FCE9F8 0x10 View                        ( 000186577820 ModelClassType IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView IIdolSkillLvUpCompletedPopupView Pointer )
+            value.Vm                                        = GetObject<IdolSkillLvUpCompletedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolSkillLvUpCompletedPopupViewModel.FromPointer); // 024665FCEA18 0x18 Vm                          ( 0001866C0580 ModelClassType IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel IdolSkillLvUpCompletedPopupViewModel Pointer )
 
             return value;
         }

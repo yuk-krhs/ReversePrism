@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SqlTruncateException
+    public partial class SqlTruncateException : DataModel
     {
 
         public static SqlTruncateException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlTruncateException();
+            var value   = new SqlTruncateException() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SceneAssetKeyAttribute
+    public partial class SceneAssetKeyAttribute : DataModel
     {
 
         public static SceneAssetKeyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneAssetKeyAttribute();
+            var value   = new SceneAssetKeyAttribute() { Pointer= p0 };
 
 
             return value;

@@ -39,7 +39,7 @@ namespace ReversePrism.DataModels
     // 028 M_State1                                 00018651DAA0 ModelClassType ProbeBrickPool ProbeBrickPool ProbeBrickPool Pointer
     // 030 M_MemoryBudget                           000186523340 ModelEnumType ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget Int32
     // 034 M_ShBands                                000186521B60 ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32
-    public partial class ProbeBrickBlendingPool
+    public partial class ProbeBrickBlendingPool : DataModel
     {
         public int                                      ChunkList                               { get; set; }
         public int                                      State0_L0_L1Rx                          { get; set; }
@@ -76,36 +76,36 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProbeBrickBlendingPool();
+            var value   = new ProbeBrickBlendingPool() { Pointer= p0 };
 
-            value.ChunkList                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D91E4108 0x10 ChunkList                   ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L0_L1Rx                            = GetInt32(new IntPtr(p + 0x014)); // 0270D91E4128 0x14 State0_L0_L1Rx              ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L1G_L1Ry                           = GetInt32(new IntPtr(p + 0x018)); // 0270D91E4148 0x18 State0_L1G_L1Ry             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L1B_L1Rz                           = GetInt32(new IntPtr(p + 0x01C)); // 0270D91E4168 0x1C State0_L1B_L1Rz             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L2_0                               = GetInt32(new IntPtr(p + 0x020)); // 0270D91E4188 0x20 State0_L2_0                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L2_1                               = GetInt32(new IntPtr(p + 0x024)); // 0270D91E41A8 0x24 State0_L2_1                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L2_2                               = GetInt32(new IntPtr(p + 0x028)); // 0270D91E41C8 0x28 State0_L2_2                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State0_L2_3                               = GetInt32(new IntPtr(p + 0x02C)); // 0270D91E41E8 0x2C State0_L2_3                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L0_L1Rx                            = GetInt32(new IntPtr(p + 0x030)); // 0270D91E4208 0x30 State1_L0_L1Rx              ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L1G_L1Ry                           = GetInt32(new IntPtr(p + 0x034)); // 0270D91E4228 0x34 State1_L1G_L1Ry             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L1B_L1Rz                           = GetInt32(new IntPtr(p + 0x038)); // 0270D91E4248 0x38 State1_L1B_L1Rz             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L2_0                               = GetInt32(new IntPtr(p + 0x03C)); // 0270D91E4268 0x3C State1_L2_0                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L2_1                               = GetInt32(new IntPtr(p + 0x040)); // 0270D91E4288 0x40 State1_L2_1                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L2_2                               = GetInt32(new IntPtr(p + 0x044)); // 0270D91E42A8 0x44 State1_L2_2                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.State1_L2_3                               = GetInt32(new IntPtr(p + 0x048)); // 0270D91E42C8 0x48 State1_L2_3                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L0_L1Rx                               = GetInt32(new IntPtr(p + 0x04C)); // 0270D91E42E8 0x4C Out_L0_L1Rx                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L1G_L1Ry                              = GetInt32(new IntPtr(p + 0x050)); // 0270D91E4308 0x50 Out_L1G_L1Ry                ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L1B_L1Rz                              = GetInt32(new IntPtr(p + 0x054)); // 0270D91E4328 0x54 Out_L1B_L1Rz                ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L2_0                                  = GetInt32(new IntPtr(p + 0x058)); // 0270D91E4348 0x58 Out_L2_0                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L2_1                                  = GetInt32(new IntPtr(p + 0x05C)); // 0270D91E4368 0x5C Out_L2_1                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L2_2                                  = GetInt32(new IntPtr(p + 0x060)); // 0270D91E4388 0x60 Out_L2_2                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Out_L2_3                                  = GetInt32(new IntPtr(p + 0x064)); // 0270D91E43A8 0x64 Out_L2_3                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.M_ChunkList                               = GetEnumList<Vector4>(new IntPtr(p + 0x010)); // 0270D91E43C8 0x10 M_ChunkList                 ( 000185CB1478 ModelEnumListType Vector4[] Vector4[] List<Vector4> Pointer )
-            value.M_MappedChunks                            = GetInt32(new IntPtr(p + 0x018)); // 0270D91E43E8 0x18 M_MappedChunks              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_State0                                  = GetObject<ProbeBrickPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProbeBrickPool.FromPointer); // 0270D91E4408 0x20 M_State0                    ( 00018651DAA0 ModelClassType ProbeBrickPool ProbeBrickPool ProbeBrickPool Pointer )
-            value.M_State1                                  = GetObject<ProbeBrickPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProbeBrickPool.FromPointer); // 0270D91E4428 0x28 M_State1                    ( 00018651DAA0 ModelClassType ProbeBrickPool ProbeBrickPool ProbeBrickPool Pointer )
-            value.M_MemoryBudget                            = (ProbeVolumeTextureMemoryBudget)GetInt32(new IntPtr(p + 0x030)); // 0270D91E4448 0x30 M_MemoryBudget              ( 000186523340 ModelEnumType ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget Int32 )
-            value.M_ShBands                                 = (ProbeVolumeSHBands)GetInt32(new IntPtr(p + 0x034)); // 0270D91E4468 0x34 M_ShBands                   ( 000186521B60 ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32 )
+            value.ChunkList                                 = GetInt32(new IntPtr(p + 0x010)); // 024669236898 0x10 ChunkList                   ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L0_L1Rx                            = GetInt32(new IntPtr(p + 0x014)); // 0246692368B8 0x14 State0_L0_L1Rx              ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L1G_L1Ry                           = GetInt32(new IntPtr(p + 0x018)); // 0246692368D8 0x18 State0_L1G_L1Ry             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L1B_L1Rz                           = GetInt32(new IntPtr(p + 0x01C)); // 0246692368F8 0x1C State0_L1B_L1Rz             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L2_0                               = GetInt32(new IntPtr(p + 0x020)); // 024669236918 0x20 State0_L2_0                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L2_1                               = GetInt32(new IntPtr(p + 0x024)); // 024669236938 0x24 State0_L2_1                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L2_2                               = GetInt32(new IntPtr(p + 0x028)); // 024669236958 0x28 State0_L2_2                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State0_L2_3                               = GetInt32(new IntPtr(p + 0x02C)); // 024669236978 0x2C State0_L2_3                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L0_L1Rx                            = GetInt32(new IntPtr(p + 0x030)); // 024669236998 0x30 State1_L0_L1Rx              ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L1G_L1Ry                           = GetInt32(new IntPtr(p + 0x034)); // 0246692369B8 0x34 State1_L1G_L1Ry             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L1B_L1Rz                           = GetInt32(new IntPtr(p + 0x038)); // 0246692369D8 0x38 State1_L1B_L1Rz             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L2_0                               = GetInt32(new IntPtr(p + 0x03C)); // 0246692369F8 0x3C State1_L2_0                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L2_1                               = GetInt32(new IntPtr(p + 0x040)); // 024669236A18 0x40 State1_L2_1                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L2_2                               = GetInt32(new IntPtr(p + 0x044)); // 024669236A38 0x44 State1_L2_2                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.State1_L2_3                               = GetInt32(new IntPtr(p + 0x048)); // 024669236A58 0x48 State1_L2_3                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L0_L1Rx                               = GetInt32(new IntPtr(p + 0x04C)); // 024669236A78 0x4C Out_L0_L1Rx                 ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L1G_L1Ry                              = GetInt32(new IntPtr(p + 0x050)); // 024669236A98 0x50 Out_L1G_L1Ry                ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L1B_L1Rz                              = GetInt32(new IntPtr(p + 0x054)); // 024669236AB8 0x54 Out_L1B_L1Rz                ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L2_0                                  = GetInt32(new IntPtr(p + 0x058)); // 024669236AD8 0x58 Out_L2_0                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L2_1                                  = GetInt32(new IntPtr(p + 0x05C)); // 024669236AF8 0x5C Out_L2_1                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L2_2                                  = GetInt32(new IntPtr(p + 0x060)); // 024669236B18 0x60 Out_L2_2                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Out_L2_3                                  = GetInt32(new IntPtr(p + 0x064)); // 024669236B38 0x64 Out_L2_3                    ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.M_ChunkList                               = GetEnumList<Vector4>(new IntPtr(p + 0x010)); // 024669236B58 0x10 M_ChunkList                 ( 000185CB1478 ModelEnumListType Vector4[] Vector4[] List<Vector4> Pointer )
+            value.M_MappedChunks                            = GetInt32(new IntPtr(p + 0x018)); // 024669236B78 0x18 M_MappedChunks              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_State0                                  = GetObject<ProbeBrickPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProbeBrickPool.FromPointer); // 024669236B98 0x20 M_State0                    ( 00018651DAA0 ModelClassType ProbeBrickPool ProbeBrickPool ProbeBrickPool Pointer )
+            value.M_State1                                  = GetObject<ProbeBrickPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProbeBrickPool.FromPointer); // 024669236BB8 0x28 M_State1                    ( 00018651DAA0 ModelClassType ProbeBrickPool ProbeBrickPool ProbeBrickPool Pointer )
+            value.M_MemoryBudget                            = (ProbeVolumeTextureMemoryBudget)GetInt32(new IntPtr(p + 0x030)); // 024669236BD8 0x30 M_MemoryBudget              ( 000186523340 ModelEnumType ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget ProbeVolumeTextureMemoryBudget Int32 )
+            value.M_ShBands                                 = (ProbeVolumeSHBands)GetInt32(new IntPtr(p + 0x034)); // 024669236BF8 0x34 M_ShBands                   ( 000186521B60 ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32 )
 
             return value;
         }

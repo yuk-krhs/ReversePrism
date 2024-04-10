@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IgnoreCase                               0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class OrdinalComparer
+    public partial class OrdinalComparer : DataModel
     {
         public bool                                     IgnoreCase                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OrdinalComparer();
+            var value   = new OrdinalComparer() { Pointer= p0 };
 
-            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x010)); // 027003CC88E8 0x10 IgnoreCase                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x010)); // 0245A3CC88E8 0x10 IgnoreCase                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

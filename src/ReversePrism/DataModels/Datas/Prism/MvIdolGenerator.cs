@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MvIdolGenerator
+    public partial class MvIdolGenerator : DataModel
     {
 
         public static MvIdolGenerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MvIdolGenerator();
+            var value   = new MvIdolGenerator() { Pointer= p0 };
 
 
             return value;

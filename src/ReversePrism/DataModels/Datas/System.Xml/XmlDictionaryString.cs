@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 Key                                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 000 emptyStringDictionary                    EmptyStringDictionary IL2CPP_TYPE_CLASS
-    public partial class XmlDictionaryString
+    public partial class XmlDictionaryString : DataModel
     {
         public IXmlDictionary?                          Dictionary                              { get; set; }
         public string                                   Value                                   { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlDictionaryString();
+            var value   = new XmlDictionaryString() { Pointer= p0 };
 
-            value.Dictionary                                = GetObject<IXmlDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlDictionary.FromPointer); // 027004C66A08 0x10 Dictionary                  ( 00018669E7C0 ModelClassType IXmlDictionary IXmlDictionary IXmlDictionary Pointer )
-            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 027004C66A28 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Key                                       = GetInt32(new IntPtr(p + 0x020)); // 027004C66A48 0x20 Key                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 027004C66A68 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Dictionary                                = GetObject<IXmlDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlDictionary.FromPointer); // 0245A4CA2508 0x10 Dictionary                  ( 00018669E7C0 ModelClassType IXmlDictionary IXmlDictionary IXmlDictionary Pointer )
+            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0245A4CA2528 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Key                                       = GetInt32(new IntPtr(p + 0x020)); // 0245A4CA2548 0x20 Key                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 0245A4CA2568 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

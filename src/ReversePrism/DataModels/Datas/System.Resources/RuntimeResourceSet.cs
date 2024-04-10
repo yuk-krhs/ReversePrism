@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 DefaultReader                            0001866714B0 ModelClassType ResourceReader ResourceReader ResourceReader Pointer
     // 038 _caseInsensitiveTable                    Dictionary`2<string, ResourceLocator> IL2CPP_TYPE_GENERICINST
     // 040 HaveReadFromReader                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class RuntimeResourceSet
+    public partial class RuntimeResourceSet : DataModel
     {
         public ResourceReader?                          DefaultReader                           { get; set; }
         public bool                                     HaveReadFromReader                      { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeResourceSet();
+            var value   = new RuntimeResourceSet() { Pointer= p0 };
 
-            value.DefaultReader                             = GetObject<ResourceReader>(new IntPtr(p + 0x030), ReversePrism.DataModels.ResourceReader.FromPointer); // 0270D6CC24D8 0x30 DefaultReader               ( 0001866714B0 ModelClassType ResourceReader ResourceReader ResourceReader Pointer )
-            value.HaveReadFromReader                        = GetBool(new IntPtr(p + 0x040)); // 0270D6CC2518 0x40 HaveReadFromReader          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultReader                             = GetObject<ResourceReader>(new IntPtr(p + 0x030), ReversePrism.DataModels.ResourceReader.FromPointer); // 024666D224D8 0x30 DefaultReader               ( 0001866714B0 ModelClassType ResourceReader ResourceReader ResourceReader Pointer )
+            value.HaveReadFromReader                        = GetBool(new IntPtr(p + 0x040)); // 024666D22518 0x40 HaveReadFromReader          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

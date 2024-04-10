@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 0D0 FallbackSpriteAssets                     000185D0BA98 ModelClassListType List`1<SpriteAsset> List`1<SpriteAsset> List<SpriteAsset> Pointer
     // 0D8 M_IsSpriteAssetLookupTablesDirty         000186595210 ModelPrimitiveType bool bool bool Bool
     // 000 k_searchedSpriteAssets                   HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class SpriteAsset
+    public partial class SpriteAsset : DataModel
     {
         public FaceInfo                                 M_FaceInfo                              { get; set; }
         public Texture?                                 M_SpriteAtlasTexture                    { get; set; }
@@ -34,14 +34,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpriteAsset();
+            var value   = new SpriteAsset() { Pointer= p0 };
 
-            value.M_FaceInfo                                = (FaceInfo)GetInt32(new IntPtr(p + 0x048)); // 0270068EA6F0 0x48 M_FaceInfo                  ( 0001865D05C0 ModelEnumType FaceInfo FaceInfo FaceInfo Int32 )
-            value.M_SpriteAtlasTexture                      = GetObject<Texture>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Texture.FromPointer); // 0270068EA710 0xA8 M_SpriteAtlasTexture        ( 00018664D240 ModelClassType Texture Texture Texture Pointer )
-            value.M_SpriteCharacterTable                    = GetObjectList<SpriteCharacter>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.SpriteCharacter.FromPointer); // 0270068EA730 0xB0 M_SpriteCharacterTable      ( 000185D0BCF8 ModelClassListType List`1<SpriteCharacter> List`1<SpriteCharacter> List<SpriteCharacter> Pointer )
-            value.M_SpriteGlyphTable                        = GetObjectList<SpriteGlyph>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.SpriteGlyph.FromPointer); // 0270068EA770 0xC0 M_SpriteGlyphTable          ( 000185D0BF68 ModelClassListType List`1<SpriteGlyph> List`1<SpriteGlyph> List<SpriteGlyph> Pointer )
-            value.FallbackSpriteAssets                      = GetObjectList<SpriteAsset>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0270068EA7B0 0xD0 FallbackSpriteAssets        ( 000185D0BA98 ModelClassListType List`1<SpriteAsset> List`1<SpriteAsset> List<SpriteAsset> Pointer )
-            value.M_IsSpriteAssetLookupTablesDirty          = GetBool(new IntPtr(p + 0x0D8)); // 0270068EA7D0 0xD8 M_IsSpriteAssetLookupTablesDirty ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.M_FaceInfo                                = (FaceInfo)GetInt32(new IntPtr(p + 0x048)); // 0245A68AD3B8 0x48 M_FaceInfo                  ( 0001865D05C0 ModelEnumType FaceInfo FaceInfo FaceInfo Int32 )
+            value.M_SpriteAtlasTexture                      = GetObject<Texture>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Texture.FromPointer); // 0245A68AD3D8 0xA8 M_SpriteAtlasTexture        ( 00018664D240 ModelClassType Texture Texture Texture Pointer )
+            value.M_SpriteCharacterTable                    = GetObjectList<SpriteCharacter>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.SpriteCharacter.FromPointer); // 0245A68AD3F8 0xB0 M_SpriteCharacterTable      ( 000185D0BCF8 ModelClassListType List`1<SpriteCharacter> List`1<SpriteCharacter> List<SpriteCharacter> Pointer )
+            value.M_SpriteGlyphTable                        = GetObjectList<SpriteGlyph>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.SpriteGlyph.FromPointer); // 0245A68AD438 0xC0 M_SpriteGlyphTable          ( 000185D0BF68 ModelClassListType List`1<SpriteGlyph> List`1<SpriteGlyph> List<SpriteGlyph> Pointer )
+            value.FallbackSpriteAssets                      = GetObjectList<SpriteAsset>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0245A68AD478 0xD0 FallbackSpriteAssets        ( 000185D0BA98 ModelClassListType List`1<SpriteAsset> List`1<SpriteAsset> List<SpriteAsset> Pointer )
+            value.M_IsSpriteAssetLookupTablesDirty          = GetBool(new IntPtr(p + 0x0D8)); // 0245A68AD498 0xD8 M_IsSpriteAssetLookupTablesDirty ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

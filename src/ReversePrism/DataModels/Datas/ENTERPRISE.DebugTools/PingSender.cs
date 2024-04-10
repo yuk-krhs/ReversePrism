@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PingSender
+    public partial class PingSender : DataModel
     {
 
         public static PingSender? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PingSender();
+            var value   = new PingSender() { Pointer= p0 };
 
 
             return value;

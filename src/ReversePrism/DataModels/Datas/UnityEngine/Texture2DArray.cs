@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Texture2DArray
+    public partial class Texture2DArray : DataModel
     {
 
         public static Texture2DArray? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2DArray();
+            var value   = new Texture2DArray() { Pointer= p0 };
 
 
             return value;

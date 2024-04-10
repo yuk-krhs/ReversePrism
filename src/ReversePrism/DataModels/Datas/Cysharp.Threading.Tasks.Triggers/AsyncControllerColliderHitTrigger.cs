@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncControllerColliderHitTrigger
+    public partial class AsyncControllerColliderHitTrigger : DataModel
     {
 
         public static AsyncControllerColliderHitTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncControllerColliderHitTrigger();
+            var value   = new AsyncControllerColliderHitTrigger() { Pointer= p0 };
 
 
             return value;

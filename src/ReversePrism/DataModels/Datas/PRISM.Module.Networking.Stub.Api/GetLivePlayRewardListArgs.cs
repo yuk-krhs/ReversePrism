@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DifficultyLevelFieldNumber               int IL2CPP_TYPE_I4
     // 01C DifficultyLevel                          000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
-    public partial class GetLivePlayRewardListArgs
+    public partial class GetLivePlayRewardListArgs : DataModel
     {
         public int                                      MstSongId                               { get; set; }
         public SongDifficultyLevel                      DifficultyLevel                         { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetLivePlayRewardListArgs();
+            var value   = new GetLivePlayRewardListArgs() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D21D2D78 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 0270D21D2DB8 0x1C DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466217CBA0 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 02466217CBE0 0x1C DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
 
             return value;
         }

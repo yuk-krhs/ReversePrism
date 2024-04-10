@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsUnLockedHashSetIds                     000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 018 isUnLockedHashSet                        HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class MedalGashaSaveData
+    public partial class MedalGashaSaveData : DataModel
     {
         public List<int>?                               IsUnLockedHashSetIds                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaSaveData();
+            var value   = new MedalGashaSaveData() { Pointer= p0 };
 
-            value.IsUnLockedHashSetIds                      = GetInt32List(new IntPtr(p + 0x010)); // 027003A6DEB0 0x10 IsUnLockedHashSetIds        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.IsUnLockedHashSetIds                      = GetInt32List(new IntPtr(p + 0x010)); // 0245A3A78DE8 0x10 IsUnLockedHashSetIds        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

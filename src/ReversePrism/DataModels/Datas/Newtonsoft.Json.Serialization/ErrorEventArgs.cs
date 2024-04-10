@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <CurrentObject>k__BackingField           <object> IL2CPP_TYPE_OBJECT
     // 018 ErrorContext                             000186744AD0 ModelClassType ErrorContext ErrorContext ErrorContext Pointer
-    public partial class ErrorEventArgs
+    public partial class ErrorEventArgs : DataModel
     {
         public ErrorContext?                            ErrorContext                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorEventArgs();
+            var value   = new ErrorEventArgs() { Pointer= p0 };
 
-            value.ErrorContext                              = GetObject<ErrorContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.ErrorContext.FromPointer); // 0270D86940B8 0x18 ErrorContext                ( 000186744AD0 ModelClassType ErrorContext ErrorContext ErrorContext Pointer )
+            value.ErrorContext                              = GetObject<ErrorContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.ErrorContext.FromPointer); // 0246686FC0B8 0x18 ErrorContext                ( 000186744AD0 ModelClassType ErrorContext ErrorContext ErrorContext Pointer )
 
             return value;
         }

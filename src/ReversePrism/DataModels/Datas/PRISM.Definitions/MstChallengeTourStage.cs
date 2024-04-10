@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 StageNumber                              0001865F4260 ModelPrimitiveType int int int Int32
     // 01C StageType                                0001865F4260 ModelPrimitiveType int int int Int32
     // 020 MstRivalUnitId                           0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstChallengeTourStage
+    public partial class MstChallengeTourStage : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstChallengeTourId                      { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstChallengeTourStage();
+            var value   = new MstChallengeTourStage() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004625578 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstChallengeTourId                        = GetInt32(new IntPtr(p + 0x014)); // 027004625598 0x14 MstChallengeTourId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.StageNumber                               = GetInt32(new IntPtr(p + 0x018)); // 0270046255B8 0x18 StageNumber                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.StageType                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270046255D8 0x1C StageType                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstRivalUnitId                            = GetInt32(new IntPtr(p + 0x020)); // 0270046255F8 0x20 MstRivalUnitId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46A1728 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstChallengeTourId                        = GetInt32(new IntPtr(p + 0x014)); // 0245A46A1748 0x14 MstChallengeTourId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.StageNumber                               = GetInt32(new IntPtr(p + 0x018)); // 0245A46A1768 0x18 StageNumber                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.StageType                                 = GetInt32(new IntPtr(p + 0x01C)); // 0245A46A1788 0x1C StageType                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstRivalUnitId                            = GetInt32(new IntPtr(p + 0x020)); // 0245A46A17A8 0x20 MstRivalUnitId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

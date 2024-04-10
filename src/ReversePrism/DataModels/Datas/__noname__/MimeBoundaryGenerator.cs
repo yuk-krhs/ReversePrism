@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 id                                       long IL2CPP_TYPE_I8
     // 008 prefix                                   string IL2CPP_TYPE_STRING
-    public partial class MimeBoundaryGenerator
+    public partial class MimeBoundaryGenerator : DataModel
     {
 
         public static MimeBoundaryGenerator? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MimeBoundaryGenerator();
+            var value   = new MimeBoundaryGenerator() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 024 RequestedSize                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 WriteRequested                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 locker                                   <object> IL2CPP_TYPE_OBJECT
-    public partial class AsyncProtocolRequest
+    public partial class AsyncProtocolRequest : DataModel
     {
         public MobileAuthenticatedStream?               Parent                                  { get; set; }
         public bool                                     RunSynchronously                        { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncProtocolRequest();
+            var value   = new AsyncProtocolRequest() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<MobileAuthenticatedStream>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileAuthenticatedStream.FromPointer); // 0270D790DC70 0x10 Parent                      ( 00018662CBA0 ModelClassType MobileAuthenticatedStream MobileAuthenticatedStream MobileAuthenticatedStream Pointer )
-            value.RunSynchronously                          = GetBool(new IntPtr(p + 0x018)); // 0270D790DC90 0x18 RunSynchronously            ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.UserResult                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D790DCB0 0x1C UserResult                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Started                                   = GetInt32(new IntPtr(p + 0x020)); // 0270D790DCD0 0x20 Started                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequestedSize                             = GetInt32(new IntPtr(p + 0x024)); // 0270D790DCF0 0x24 RequestedSize               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.WriteRequested                            = GetInt32(new IntPtr(p + 0x028)); // 0270D790DD10 0x28 WriteRequested              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parent                                    = GetObject<MobileAuthenticatedStream>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileAuthenticatedStream.FromPointer); // 024667975C70 0x10 Parent                      ( 00018662CBA0 ModelClassType MobileAuthenticatedStream MobileAuthenticatedStream MobileAuthenticatedStream Pointer )
+            value.RunSynchronously                          = GetBool(new IntPtr(p + 0x018)); // 024667975C90 0x18 RunSynchronously            ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.UserResult                                = GetInt32(new IntPtr(p + 0x01C)); // 024667975CB0 0x1C UserResult                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Started                                   = GetInt32(new IntPtr(p + 0x020)); // 024667975CD0 0x20 Started                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RequestedSize                             = GetInt32(new IntPtr(p + 0x024)); // 024667975CF0 0x24 RequestedSize               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.WriteRequested                            = GetInt32(new IntPtr(p + 0x028)); // 024667975D10 0x28 WriteRequested              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

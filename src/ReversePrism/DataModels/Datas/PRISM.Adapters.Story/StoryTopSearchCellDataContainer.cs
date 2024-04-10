@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StoryTopSearchCellDataContainer
+    public partial class StoryTopSearchCellDataContainer : DataModel
     {
 
         public static StoryTopSearchCellDataContainer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopSearchCellDataContainer();
+            var value   = new StoryTopSearchCellDataContainer() { Pointer= p0 };
 
 
             return value;

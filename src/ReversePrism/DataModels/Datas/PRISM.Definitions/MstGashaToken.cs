@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstGashaToken
+    public partial class MstGashaToken : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      SortId                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstGashaToken();
+            var value   = new MstGashaToken() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045F3010 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0270045F3030 0x14 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A466F2F8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A466F318 0x14 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

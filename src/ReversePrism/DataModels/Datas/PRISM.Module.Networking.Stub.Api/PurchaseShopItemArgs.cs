@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstShopItemId                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 AmountFieldNumber                        int IL2CPP_TYPE_I4
     // 01C Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class PurchaseShopItemArgs
+    public partial class PurchaseShopItemArgs : DataModel
     {
         public int                                      MstShopItemId                           { get; set; }
         public int                                      Amount                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchaseShopItemArgs();
+            var value   = new PurchaseShopItemArgs() { Pointer= p0 };
 
-            value.MstShopItemId                             = GetInt32(new IntPtr(p + 0x018)); // 0270D27F0E60 0x18 MstShopItemId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D27F0EA0 0x1C Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstShopItemId                             = GetInt32(new IntPtr(p + 0x018)); // 02466274CB90 0x18 MstShopItemId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 02466274CBD0 0x1C Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

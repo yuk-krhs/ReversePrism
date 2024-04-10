@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AudienceControllerMixerBehaviour
+    public partial class AudienceControllerMixerBehaviour : DataModel
     {
 
         public static AudienceControllerMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudienceControllerMixerBehaviour();
+            var value   = new AudienceControllerMixerBehaviour() { Pointer= p0 };
 
 
             return value;

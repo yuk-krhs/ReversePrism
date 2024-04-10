@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProfileUserSelfOverlayView
+    public partial class IProfileUserSelfOverlayView : DataModel
     {
 
         public static IProfileUserSelfOverlayView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProfileUserSelfOverlayView();
+            var value   = new IProfileUserSelfOverlayView() { Pointer= p0 };
 
 
             return value;

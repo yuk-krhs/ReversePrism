@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 SourceFilesFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_sourceFiles_codec              FieldCodec`1<Any> IL2CPP_TYPE_GENERICINST
     // 018 SourceFiles                              000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer
-    public partial class SourceInfo
+    public partial class SourceInfo : DataModel
     {
         public List<Any>?                               SourceFiles                             { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SourceInfo();
+            var value   = new SourceInfo() { Pointer= p0 };
 
-            value.SourceFiles                               = GetObjectList<Any>(new IntPtr(p + 0x018), ReversePrism.DataModels.Any.FromPointer); // 0270DA882C60 0x18 SourceFiles                 ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
+            value.SourceFiles                               = GetObjectList<Any>(new IntPtr(p + 0x018), ReversePrism.DataModels.Any.FromPointer); // 02466A8E8208 0x18 SourceFiles                 ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FesIdolFieldNumber                       int IL2CPP_TYPE_I4
     // 018 FesIdol                                  000186565F50 ModelClassType FesIdolStatus FesIdolStatus FesIdolStatus Pointer
-    public partial class MarkFavoriteFesIdolReply
+    public partial class MarkFavoriteFesIdolReply : DataModel
     {
         public FesIdolStatus?                           FesIdol                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarkFavoriteFesIdolReply();
+            var value   = new MarkFavoriteFesIdolReply() { Pointer= p0 };
 
-            value.FesIdol                                   = GetObject<FesIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 0270D12A61B0 0x18 FesIdol                     ( 000186565F50 ModelClassType FesIdolStatus FesIdolStatus FesIdolStatus Pointer )
+            value.FesIdol                                   = GetObject<FesIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 024661222388 0x18 FesIdol                     ( 000186565F50 ModelClassType FesIdolStatus FesIdolStatus FesIdolStatus Pointer )
 
             return value;
         }

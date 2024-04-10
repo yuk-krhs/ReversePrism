@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <Quality>k__BackingField                 Nullable`1<double> IL2CPP_TYPE_GENERICINST
     // 020 Value                                    000186671910 ModelPrimitiveType string string string String
-    public partial class StringWithQualityHeaderValue
+    public partial class StringWithQualityHeaderValue : DataModel
     {
         public string                                   Value                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringWithQualityHeaderValue();
+            var value   = new StringWithQualityHeaderValue() { Pointer= p0 };
 
-            value.Value                                     = GetString(new IntPtr(p + 0x020)); // 0270DB89D7A0 0x20 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x020)); // 02466B925D50 0x20 Value                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

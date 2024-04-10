@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultMaxStringLength                   int IL2CPP_TYPE_I4
     // 000 ImplicitPkName                           string IL2CPP_TYPE_STRING
     // 000 ImplicitIndexSuffix                      string IL2CPP_TYPE_STRING
-    public partial class Orm
+    public partial class Orm : DataModel
     {
 
         public static Orm? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Orm();
+            var value   = new Orm() { Pointer= p0 };
 
 
             return value;

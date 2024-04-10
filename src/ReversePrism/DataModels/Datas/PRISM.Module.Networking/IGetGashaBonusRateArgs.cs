@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetGashaBonusRateArgs
+    public partial class IGetGashaBonusRateArgs : DataModel
     {
 
         public static IGetGashaBonusRateArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetGashaBonusRateArgs();
+            var value   = new IGetGashaBonusRateArgs() { Pointer= p0 };
 
 
             return value;

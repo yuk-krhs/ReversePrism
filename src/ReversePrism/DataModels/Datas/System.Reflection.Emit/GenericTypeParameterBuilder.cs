@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GenericTypeParameterBuilder
+    public partial class GenericTypeParameterBuilder : DataModel
     {
 
         public static GenericTypeParameterBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GenericTypeParameterBuilder();
+            var value   = new GenericTypeParameterBuilder() { Pointer= p0 };
 
 
             return value;

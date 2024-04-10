@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VersionConverter
+    public partial class VersionConverter : DataModel
     {
 
         public static VersionConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VersionConverter();
+            var value   = new VersionConverter() { Pointer= p0 };
 
 
             return value;

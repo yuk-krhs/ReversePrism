@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISchedulerQueueing
+    public partial class ISchedulerQueueing : DataModel
     {
 
         public static ISchedulerQueueing? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISchedulerQueueing();
+            var value   = new ISchedulerQueueing() { Pointer= p0 };
 
 
             return value;

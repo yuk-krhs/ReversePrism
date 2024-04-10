@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_CompletedCallback                      Action`1<IAsyncOperation> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncOperationBase
+    public partial class AsyncOperationBase : DataModel
     {
 
         public static AsyncOperationBase? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationBase();
+            var value   = new AsyncOperationBase() { Pointer= p0 };
 
 
             return value;

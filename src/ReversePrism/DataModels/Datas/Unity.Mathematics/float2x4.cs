@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 C2                                       0001866C5E10 ModelEnumType float2 float2 float2 Int32
     // 028 C3                                       0001866C5E10 ModelEnumType float2 float2 float2 Int32
     // 000 zero                                     float2x4 IL2CPP_TYPE_VALUETYPE
-    public partial class float2x4
+    public partial class float2x4 : DataModel
     {
         public float2                                   C0                                      { get; set; }
         public float2                                   C1                                      { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new float2x4();
+            var value   = new float2x4() { Pointer= p0 };
 
-            value.C0                                        = (float2)GetInt32(new IntPtr(p + 0x010)); // 0270D7E692A0 0x10 C0                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
-            value.C1                                        = (float2)GetInt32(new IntPtr(p + 0x018)); // 0270D7E692C0 0x18 C1                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
-            value.C2                                        = (float2)GetInt32(new IntPtr(p + 0x020)); // 0270D7E692E0 0x20 C2                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
-            value.C3                                        = (float2)GetInt32(new IntPtr(p + 0x028)); // 0270D7E69300 0x28 C3                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
+            value.C0                                        = (float2)GetInt32(new IntPtr(p + 0x010)); // 024667ED12A0 0x10 C0                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
+            value.C1                                        = (float2)GetInt32(new IntPtr(p + 0x018)); // 024667ED12C0 0x18 C1                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
+            value.C2                                        = (float2)GetInt32(new IntPtr(p + 0x020)); // 024667ED12E0 0x20 C2                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
+            value.C3                                        = (float2)GetInt32(new IntPtr(p + 0x028)); // 024667ED1300 0x28 C3                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ApplicationException
+    public partial class ApplicationException : DataModel
     {
 
         public static ApplicationException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ApplicationException();
+            var value   = new ApplicationException() { Pointer= p0 };
 
 
             return value;

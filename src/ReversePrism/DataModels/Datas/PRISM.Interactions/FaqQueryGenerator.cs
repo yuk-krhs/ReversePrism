@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 LinkKey                                  string IL2CPP_TYPE_STRING
     // 000 Format                                   string IL2CPP_TYPE_STRING
     // 000 SaltLength                               int IL2CPP_TYPE_I4
-    public partial class FaqQueryGenerator
+    public partial class FaqQueryGenerator : DataModel
     {
 
         public static FaqQueryGenerator? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FaqQueryGenerator();
+            var value   = new FaqQueryGenerator() { Pointer= p0 };
 
 
             return value;

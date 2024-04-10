@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_InternalSyncObject                     <object> IL2CPP_TYPE_OBJECT
     // 008 s_providers                              EncodingProvider[] IL2CPP_TYPE_SZARRAY
-    public partial class EncodingProvider
+    public partial class EncodingProvider : DataModel
     {
 
         public static EncodingProvider? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncodingProvider();
+            var value   = new EncodingProvider() { Pointer= p0 };
 
 
             return value;

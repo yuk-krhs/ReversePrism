@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_oldName                                000186671910 ModelPrimitiveType string string string String
-    public partial class FormerlySerializedAsAttribute
+    public partial class FormerlySerializedAsAttribute : DataModel
     {
         public string                                   M_oldName                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FormerlySerializedAsAttribute();
+            var value   = new FormerlySerializedAsAttribute() { Pointer= p0 };
 
-            value.M_oldName                                 = GetString(new IntPtr(p + 0x010)); // 027002493400 0x10 M_oldName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_oldName                                 = GetString(new IntPtr(p + 0x010)); // 0245A2493400 0x10 M_oldName                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

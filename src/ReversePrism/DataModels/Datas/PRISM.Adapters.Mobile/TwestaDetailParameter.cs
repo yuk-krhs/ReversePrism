@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TwestaArticleStatus                      000186684330 ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer
-    public partial class TwestaDetailParameter
+    public partial class TwestaDetailParameter : DataModel
     {
         public ITwestaArticleStatus?                    TwestaArticleStatus                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaDetailParameter();
+            var value   = new TwestaDetailParameter() { Pointer= p0 };
 
-            value.TwestaArticleStatus                       = GetObject<ITwestaArticleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITwestaArticleStatus.FromPointer); // 0270D68D8318 0x10 TwestaArticleStatus         ( 000186684330 ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer )
+            value.TwestaArticleStatus                       = GetObject<ITwestaArticleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITwestaArticleStatus.FromPointer); // 024666948318 0x10 TwestaArticleStatus         ( 000186684330 ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer )
 
             return value;
         }

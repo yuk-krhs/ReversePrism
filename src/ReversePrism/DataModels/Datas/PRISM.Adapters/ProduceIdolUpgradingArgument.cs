@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 JumpParam                                000186556190 ModelClassType ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter Pointer
-    public partial class ProduceIdolUpgradingArgument
+    public partial class ProduceIdolUpgradingArgument : DataModel
     {
         public ProduceIdolUpgradingViewParameter?       JumpParam                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolUpgradingArgument();
+            var value   = new ProduceIdolUpgradingArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<ProduceIdolUpgradingViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceIdolUpgradingViewParameter.FromPointer); // 0270D5FC9770 0x10 JumpParam                   ( 000186556190 ModelClassType ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter Pointer )
+            value.JumpParam                                 = GetObject<ProduceIdolUpgradingViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceIdolUpgradingViewParameter.FromPointer); // 024666041770 0x10 JumpParam                   ( 000186556190 ModelClassType ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter ProduceIdolUpgradingViewParameter Pointer )
 
             return value;
         }

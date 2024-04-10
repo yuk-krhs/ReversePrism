@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 090 _scheduler                               <object> IL2CPP_TYPE_OBJECT
     // 098 Token                                    0001865F1060 ModelPrimitiveType short short short Int16
     // 09A WrapExceptionsInIOExceptions             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AwaitableSocketAsyncEventArgs
+    public partial class AwaitableSocketAsyncEventArgs : DataModel
     {
         public ExecutionContext?                        ExecutionContext                        { get; set; }
         public short                                    Token                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AwaitableSocketAsyncEventArgs();
+            var value   = new AwaitableSocketAsyncEventArgs() { Pointer= p0 };
 
-            value.ExecutionContext                          = GetObject<ExecutionContext>(new IntPtr(p + 0x088), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0270D7AE6DF0 0x88 ExecutionContext            ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.Token                                     = GetInt16(new IntPtr(p + 0x098)); // 0270D7AE6E30 0x98 Token                       ( 0001865F1060 ModelPrimitiveType short short short Int16 )
-            value.WrapExceptionsInIOExceptions              = GetBool(new IntPtr(p + 0x09A)); // 0270D7AE6E50 0x9A WrapExceptionsInIOExceptions ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ExecutionContext                          = GetObject<ExecutionContext>(new IntPtr(p + 0x088), ReversePrism.DataModels.ExecutionContext.FromPointer); // 024667B4EDF0 0x88 ExecutionContext            ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.Token                                     = GetInt16(new IntPtr(p + 0x098)); // 024667B4EE30 0x98 Token                       ( 0001865F1060 ModelPrimitiveType short short short Int16 )
+            value.WrapExceptionsInIOExceptions              = GetBool(new IntPtr(p + 0x09A)); // 024667B4EE50 0x9A WrapExceptionsInIOExceptions ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

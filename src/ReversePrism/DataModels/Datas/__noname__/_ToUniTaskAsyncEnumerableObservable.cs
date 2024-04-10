@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 error                                    Exception IL2CPP_TYPE_CLASS
     // 000 subscription                             IDisposable IL2CPP_TYPE_CLASS
     // 000 cancellationTokenRegistration            CancellationTokenRegistration IL2CPP_TYPE_VALUETYPE
-    public partial class _ToUniTaskAsyncEnumerableObservable
+    public partial class _ToUniTaskAsyncEnumerableObservable : DataModel
     {
 
         public static _ToUniTaskAsyncEnumerableObservable? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _ToUniTaskAsyncEnumerableObservable();
+            var value   = new _ToUniTaskAsyncEnumerableObservable() { Pointer= p0 };
 
 
             return value;

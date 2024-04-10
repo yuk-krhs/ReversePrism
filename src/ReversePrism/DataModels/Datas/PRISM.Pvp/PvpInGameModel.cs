@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 168 EnemySkillExecuteTime                    000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
     // 170 EventEffect                              0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
-    public partial class PvpInGameModel
+    public partial class PvpInGameModel : DataModel
     {
         public List<float>?                             EnemySkillExecuteTime                   { get; set; }
         public IPvpEventEffectStatus?                   EventEffect                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpInGameModel();
+            var value   = new PvpInGameModel() { Pointer= p0 };
 
-            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 0270D5077198 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0270D50771B8 0x170 EventEffect                 ( 0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
+            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 0246650DAAF0 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0246650DAB10 0x170 EventEffect                 ( 0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
 
             return value;
         }

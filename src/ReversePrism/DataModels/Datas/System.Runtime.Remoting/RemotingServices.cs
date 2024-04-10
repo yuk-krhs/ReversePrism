@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 Next_id                                  0001865F38E0 ModelPrimitiveType int int int Int32
     // 030 FieldSetterMethod                        0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 038 FieldGetterMethod                        0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    public partial class RemotingServices
+    public partial class RemotingServices : DataModel
     {
         public BinaryFormatter?                         DeserializationFormatter                { get; set; }
         public string                                   App_id                                  { get; set; }
@@ -30,13 +30,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemotingServices();
+            var value   = new RemotingServices() { Pointer= p0 };
 
-            value.DeserializationFormatter                  = GetObject<BinaryFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.BinaryFormatter.FromPointer); // 0270D6BB5D98 0x10 DeserializationFormatter    ( 000186757B80 ModelClassType BinaryFormatter BinaryFormatter BinaryFormatter Pointer )
-            value.App_id                                    = GetString(new IntPtr(p + 0x018)); // 0270D6BB5DB8 0x18 App_id                      ( 000186672530 ModelPrimitiveType string string string String )
-            value.Next_id                                   = GetInt32(new IntPtr(p + 0x028)); // 0270D6BB5DF8 0x28 Next_id                     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.FieldSetterMethod                         = GetObject<MethodInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.MethodInfo.FromPointer); // 0270D6BB5E18 0x30 FieldSetterMethod           ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.FieldGetterMethod                         = GetObject<MethodInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.MethodInfo.FromPointer); // 0270D6BB5E38 0x38 FieldGetterMethod           ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.DeserializationFormatter                  = GetObject<BinaryFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.BinaryFormatter.FromPointer); // 024666C2DD98 0x10 DeserializationFormatter    ( 000186757B80 ModelClassType BinaryFormatter BinaryFormatter BinaryFormatter Pointer )
+            value.App_id                                    = GetString(new IntPtr(p + 0x018)); // 024666C2DDB8 0x18 App_id                      ( 000186672530 ModelPrimitiveType string string string String )
+            value.Next_id                                   = GetInt32(new IntPtr(p + 0x028)); // 024666C2DDF8 0x28 Next_id                     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.FieldSetterMethod                         = GetObject<MethodInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.MethodInfo.FromPointer); // 024666C2DE18 0x30 FieldSetterMethod           ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.FieldGetterMethod                         = GetObject<MethodInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.MethodInfo.FromPointer); // 024666C2DE38 0x38 FieldGetterMethod           ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
 
             return value;
         }

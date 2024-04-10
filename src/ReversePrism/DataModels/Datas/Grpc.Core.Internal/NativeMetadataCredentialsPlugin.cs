@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 010 Interceptor                              0001866EBED0 ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer
     // 018 Credentials                              000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer
     // 020 CallbackRegistration                     0001866830E0 ModelClassType NativeCallbackRegistration NativeCallbackRegistration NativeCallbackRegistration Pointer
-    public partial class NativeMetadataCredentialsPlugin
+    public partial class NativeMetadataCredentialsPlugin : DataModel
     {
         public AsyncAuthInterceptor?                    Interceptor                             { get; set; }
         public CallCredentialsSafeHandle?               Credentials                             { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeMetadataCredentialsPlugin();
+            var value   = new NativeMetadataCredentialsPlugin() { Pointer= p0 };
 
-            value.Interceptor                               = GetObject<AsyncAuthInterceptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncAuthInterceptor.FromPointer); // 0270D93B2370 0x10 Interceptor                 ( 0001866EBED0 ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer )
-            value.Credentials                               = GetObject<CallCredentialsSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallCredentialsSafeHandle.FromPointer); // 0270D93B2390 0x18 Credentials                 ( 000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer )
-            value.CallbackRegistration                      = GetObject<NativeCallbackRegistration>(new IntPtr(p + 0x020), ReversePrism.DataModels.NativeCallbackRegistration.FromPointer); // 0270D93B23B0 0x20 CallbackRegistration        ( 0001866830E0 ModelClassType NativeCallbackRegistration NativeCallbackRegistration NativeCallbackRegistration Pointer )
+            value.Interceptor                               = GetObject<AsyncAuthInterceptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncAuthInterceptor.FromPointer); // 024669414670 0x10 Interceptor                 ( 0001866EBED0 ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer )
+            value.Credentials                               = GetObject<CallCredentialsSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallCredentialsSafeHandle.FromPointer); // 024669414690 0x18 Credentials                 ( 000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer )
+            value.CallbackRegistration                      = GetObject<NativeCallbackRegistration>(new IntPtr(p + 0x020), ReversePrism.DataModels.NativeCallbackRegistration.FromPointer); // 0246694146B0 0x20 CallbackRegistration        ( 0001866830E0 ModelClassType NativeCallbackRegistration NativeCallbackRegistration NativeCallbackRegistration Pointer )
 
             return value;
         }

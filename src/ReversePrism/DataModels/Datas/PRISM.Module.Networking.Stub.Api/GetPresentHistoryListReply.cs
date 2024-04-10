@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 PresentHistory                           000185CE9A48 ModelClassListType RepeatedField`1<PresentHistoryStatus> RepeatedField`1<PresentHistoryStatus> List<PresentHistoryStatus> Pointer
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Cursor                                   000186671910 ModelPrimitiveType string string string String
-    public partial class GetPresentHistoryListReply
+    public partial class GetPresentHistoryListReply : DataModel
     {
         public List<PresentHistoryStatus>?              PresentHistory                          { get; set; }
         public string                                   Cursor                                  { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetPresentHistoryListReply();
+            var value   = new GetPresentHistoryListReply() { Pointer= p0 };
 
-            value.PresentHistory                            = GetObjectList<PresentHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentHistoryStatus.FromPointer); // 0270D24684C0 0x18 PresentHistory              ( 000185CE9A48 ModelClassListType RepeatedField`1<PresentHistoryStatus> RepeatedField`1<PresentHistoryStatus> List<PresentHistoryStatus> Pointer )
-            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0270D2468500 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.PresentHistory                            = GetObjectList<PresentHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentHistoryStatus.FromPointer); // 0246623F5418 0x18 PresentHistory              ( 000185CE9A48 ModelClassListType RepeatedField`1<PresentHistoryStatus> RepeatedField`1<PresentHistoryStatus> List<PresentHistoryStatus> Pointer )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0246623F5458 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

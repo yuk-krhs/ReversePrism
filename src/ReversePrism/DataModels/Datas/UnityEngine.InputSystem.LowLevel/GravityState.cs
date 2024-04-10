@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Gravity                                  0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class GravityState
+    public partial class GravityState : DataModel
     {
         public Vector3                                  Gravity                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GravityState();
+            var value   = new GravityState() { Pointer= p0 };
 
-            value.Gravity                                   = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0270D77FEA30 0x10 Gravity                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Gravity                                   = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 024667856A30 0x10 Gravity                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RecoveryItemModel                        0001865660D0 ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer
     // 018 UseAmount                                0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class StaminaRecoveryUseItemModel
+    public partial class StaminaRecoveryUseItemModel : DataModel
     {
         public StaminaRecoveryItemModel?                RecoveryItemModel                       { get; set; }
         public long                                     UseAmount                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StaminaRecoveryUseItemModel();
+            var value   = new StaminaRecoveryUseItemModel() { Pointer= p0 };
 
-            value.RecoveryItemModel                         = GetObject<StaminaRecoveryItemModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaRecoveryItemModel.FromPointer); // 0270D56108B0 0x10 RecoveryItemModel           ( 0001865660D0 ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer )
-            value.UseAmount                                 = GetInt64(new IntPtr(p + 0x018)); // 0270D56108D0 0x18 UseAmount                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.RecoveryItemModel                         = GetObject<StaminaRecoveryItemModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaRecoveryItemModel.FromPointer); // 024665671A78 0x10 RecoveryItemModel           ( 0001865660D0 ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer )
+            value.UseAmount                                 = GetInt64(new IntPtr(p + 0x018)); // 024665671A98 0x18 UseAmount                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 __Marshaller_api_GetAssetVersionArgs     Marshaller`1<GetAssetVersionArgs> IL2CPP_TYPE_GENERICINST
     // 010 __Marshaller_api_GetAssetVersionReply    Marshaller`1<GetAssetVersionReply> IL2CPP_TYPE_GENERICINST
     // 018 __Method_GetAssetVersion                 Method`2<GetAssetVersionArgs, GetAssetVersionReply> IL2CPP_TYPE_GENERICINST
-    public partial class AssetService
+    public partial class AssetService : DataModel
     {
 
         public static AssetService? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetService();
+            var value   = new AssetService() { Pointer= p0 };
 
 
             return value;

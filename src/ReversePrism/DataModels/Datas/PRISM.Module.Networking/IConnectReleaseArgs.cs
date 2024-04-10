@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IConnectReleaseArgs
+    public partial class IConnectReleaseArgs : DataModel
     {
 
         public static IConnectReleaseArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IConnectReleaseArgs();
+            var value   = new IConnectReleaseArgs() { Pointer= p0 };
 
 
             return value;

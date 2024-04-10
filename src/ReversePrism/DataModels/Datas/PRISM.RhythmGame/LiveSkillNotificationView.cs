@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 SkillViews                               000185CF0958 ModelClassListType List`1<LiveSkillView> List`1<LiveSkillView> List<LiveSkillView> Pointer
     // 038 activeSkillViews                         Queue`1<LiveSkillView> IL2CPP_TYPE_GENERICINST
     // 040 idolTextureDic                           Dictionary`2<string, Texture2D> IL2CPP_TYPE_GENERICINST
-    public partial class LiveSkillNotificationView
+    public partial class LiveSkillNotificationView : DataModel
     {
         public LiveSkillView?                           SkillView                               { get; set; }
         public float                                    Margin                                  { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveSkillNotificationView();
+            var value   = new LiveSkillNotificationView() { Pointer= p0 };
 
-            value.SkillView                                 = GetObject<LiveSkillView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveSkillView.FromPointer); // 0270D5049B80 0x20 SkillView                   ( 00018657F540 ModelClassType LiveSkillView LiveSkillView LiveSkillView Pointer )
-            value.Margin                                    = GetSingle(new IntPtr(p + 0x028)); // 0270D5049BA0 0x28 Margin                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SkillViews                                = GetObjectList<LiveSkillView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveSkillView.FromPointer); // 0270D5049BC0 0x30 SkillViews                  ( 000185CF0958 ModelClassListType List`1<LiveSkillView> List`1<LiveSkillView> List<LiveSkillView> Pointer )
+            value.SkillView                                 = GetObject<LiveSkillView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveSkillView.FromPointer); // 0246650A5A88 0x20 SkillView                   ( 00018657F540 ModelClassType LiveSkillView LiveSkillView LiveSkillView Pointer )
+            value.Margin                                    = GetSingle(new IntPtr(p + 0x028)); // 0246650A5AA8 0x28 Margin                      ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SkillViews                                = GetObjectList<LiveSkillView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveSkillView.FromPointer); // 0246650A5AC8 0x30 SkillViews                  ( 000185CF0958 ModelClassListType List`1<LiveSkillView> List`1<LiveSkillView> List<LiveSkillView> Pointer )
 
             return value;
         }

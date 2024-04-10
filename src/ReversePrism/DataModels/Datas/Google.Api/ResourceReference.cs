@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Type                                     000186671910 ModelPrimitiveType string string string String
     // 000 ChildTypeFieldNumber                     int IL2CPP_TYPE_I4
     // 020 ChildType                                000186671910 ModelPrimitiveType string string string String
-    public partial class ResourceReference
+    public partial class ResourceReference : DataModel
     {
         public string                                   Type                                    { get; set; }
         public string                                   ChildType                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceReference();
+            var value   = new ResourceReference() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270DA83EED8 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ChildType                                 = GetString(new IntPtr(p + 0x020)); // 0270DA83EF18 0x20 ChildType                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466A893D10 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ChildType                                 = GetString(new IntPtr(p + 0x020)); // 02466A893D50 0x20 ChildType                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

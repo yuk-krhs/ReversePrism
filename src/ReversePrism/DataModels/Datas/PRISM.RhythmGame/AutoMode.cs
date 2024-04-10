@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Image                                    0001866CCDB0 ModelClassType Image Image Image Pointer
     // 028 BlinkSeconds                             0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AutoMode
+    public partial class AutoMode : DataModel
     {
         public Image?                                   Image                                   { get; set; }
         public float                                    BlinkSeconds                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AutoMode();
+            var value   = new AutoMode() { Pointer= p0 };
 
-            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0270D50274A0 0x20 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.BlinkSeconds                              = GetSingle(new IntPtr(p + 0x028)); // 0270D50274C0 0x28 BlinkSeconds                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 02466509B3B8 0x20 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.BlinkSeconds                              = GetSingle(new IntPtr(p + 0x028)); // 02466509B3D8 0x28 BlinkSeconds                ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

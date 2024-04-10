@@ -46,7 +46,7 @@ namespace ReversePrism.DataModels
     // 048 s_IsTaskContinuationNullPredicate        Predicate`1<<object>> IL2CPP_TYPE_GENERICINST
     // 050 s_currentActiveTasks                     Dictionary`2<int, Task> IL2CPP_TYPE_GENERICINST
     // 058 s_activeTasksLock                        <object> IL2CPP_TYPE_OBJECT
-    public partial class Task
+    public partial class Task : DataModel
     {
         public int                                      M_taskId                                { get; set; }
         public Delegate?                                M_action                                { get; set; }
@@ -65,18 +65,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Task();
+            var value   = new Task() { Pointer= p0 };
 
-            value.M_taskId                                  = GetInt32(new IntPtr(p + 0x010)); // 027003C2F320 0x10 M_taskId                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_action                                  = GetObject<Delegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.Delegate.FromPointer); // 027003C2F340 0x18 M_action                    ( 0001866BAB20 ModelClassType Delegate Delegate Delegate Pointer )
-            value.M_taskScheduler                           = GetObject<TaskScheduler>(new IntPtr(p + 0x028), ReversePrism.DataModels.TaskScheduler.FromPointer); // 027003C2F380 0x28 M_taskScheduler             ( 0001866249C0 ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer )
-            value.M_parent                                  = GetObject<Task>(new IntPtr(p + 0x030), ReversePrism.DataModels.Task.FromPointer); // 027003C2F3A0 0x30 M_parent                    ( 000186681890 ModelClassType Task Task Task Pointer )
-            value.M_stateFlags                              = GetInt32(new IntPtr(p + 0x038)); // 027003C2F3C0 0x38 M_stateFlags                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.S_asyncDebuggingEnabled                   = GetBool(new IntPtr(p + 0x010)); // 027003C2F620 0x10 S_asyncDebuggingEnabled     ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.M_contingentProperties                    = GetObject<ContingentProperties>(new IntPtr(p + 0x048), ReversePrism.DataModels.ContingentProperties.FromPointer); // 027003C2F640 0x48 M_contingentProperties      ( 0001865EE6B0 ModelClassType ContingentProperties ContingentProperties ContingentProperties Pointer )
-            value.Factory                                   = GetObject<TaskFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.TaskFactory.FromPointer); // 027003C2F6E0 0x28 Factory                     ( 000186623950 ModelClassType TaskFactory TaskFactory TaskFactory Pointer )
-            value.CompletedTask                             = GetObject<Task>(new IntPtr(p + 0x030), ReversePrism.DataModels.Task.FromPointer); // 027003C2F700 0x30 CompletedTask               ( 000186681AE0 ModelClassType Task Task Task Pointer )
-            value.S_ecCallback                              = GetObject<ContextCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.ContextCallback.FromPointer); // 027003C2F740 0x40 S_ecCallback                ( 000186614570 ModelClassType ContextCallback ContextCallback ContextCallback Pointer )
+            value.M_taskId                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A3C2F320 0x10 M_taskId                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_action                                  = GetObject<Delegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.Delegate.FromPointer); // 0245A3C2F340 0x18 M_action                    ( 0001866BAB20 ModelClassType Delegate Delegate Delegate Pointer )
+            value.M_taskScheduler                           = GetObject<TaskScheduler>(new IntPtr(p + 0x028), ReversePrism.DataModels.TaskScheduler.FromPointer); // 0245A3C2F380 0x28 M_taskScheduler             ( 0001866249C0 ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer )
+            value.M_parent                                  = GetObject<Task>(new IntPtr(p + 0x030), ReversePrism.DataModels.Task.FromPointer); // 0245A3C2F3A0 0x30 M_parent                    ( 000186681890 ModelClassType Task Task Task Pointer )
+            value.M_stateFlags                              = GetInt32(new IntPtr(p + 0x038)); // 0245A3C2F3C0 0x38 M_stateFlags                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.S_asyncDebuggingEnabled                   = GetBool(new IntPtr(p + 0x010)); // 0245A3C2F620 0x10 S_asyncDebuggingEnabled     ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.M_contingentProperties                    = GetObject<ContingentProperties>(new IntPtr(p + 0x048), ReversePrism.DataModels.ContingentProperties.FromPointer); // 0245A3C2F640 0x48 M_contingentProperties      ( 0001865EE6B0 ModelClassType ContingentProperties ContingentProperties ContingentProperties Pointer )
+            value.Factory                                   = GetObject<TaskFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.TaskFactory.FromPointer); // 0245A3C2F6E0 0x28 Factory                     ( 000186623950 ModelClassType TaskFactory TaskFactory TaskFactory Pointer )
+            value.CompletedTask                             = GetObject<Task>(new IntPtr(p + 0x030), ReversePrism.DataModels.Task.FromPointer); // 0245A3C2F700 0x30 CompletedTask               ( 000186681AE0 ModelClassType Task Task Task Pointer )
+            value.S_ecCallback                              = GetObject<ContextCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.ContextCallback.FromPointer); // 0245A3C2F740 0x40 S_ecCallback                ( 000186614570 ModelClassType ContextCallback ContextCallback ContextCallback Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 ExpandoVersion                           0001865F4260 ModelPrimitiveType int int int Int32
     // 01C ExpandoCount                             0001865F4260 ModelPrimitiveType int int int Int32
     // 020 ExpandoData                              000186665B70 ModelClassType ExpandoData ExpandoData ExpandoData Pointer
-    public partial class ValueCollection
+    public partial class ValueCollection : DataModel
     {
         public ExpandoObject?                           Expando                                 { get; set; }
         public int                                      ExpandoVersion                          { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueCollection();
+            var value   = new ValueCollection() { Pointer= p0 };
 
-            value.Expando                                   = GetObject<ExpandoObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExpandoObject.FromPointer); // 0270DA072FF8 0x10 Expando                     ( 0001865277A0 ModelClassType ExpandoObject ExpandoObject ExpandoObject Pointer )
-            value.ExpandoVersion                            = GetInt32(new IntPtr(p + 0x018)); // 0270DA073018 0x18 ExpandoVersion              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExpandoCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0270DA073038 0x1C ExpandoCount                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExpandoData                               = GetObject<ExpandoData>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExpandoData.FromPointer); // 0270DA073058 0x20 ExpandoData                 ( 000186665B70 ModelClassType ExpandoData ExpandoData ExpandoData Pointer )
+            value.Expando                                   = GetObject<ExpandoObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExpandoObject.FromPointer); // 02466A0D6D58 0x10 Expando                     ( 0001865277A0 ModelClassType ExpandoObject ExpandoObject ExpandoObject Pointer )
+            value.ExpandoVersion                            = GetInt32(new IntPtr(p + 0x018)); // 02466A0D6D78 0x18 ExpandoVersion              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ExpandoCount                              = GetInt32(new IntPtr(p + 0x01C)); // 02466A0D6D98 0x1C ExpandoCount                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ExpandoData                               = GetObject<ExpandoData>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExpandoData.FromPointer); // 02466A0D6DB8 0x20 ExpandoData                 ( 000186665B70 ModelClassType ExpandoData ExpandoData ExpandoData Pointer )
 
             return value;
         }

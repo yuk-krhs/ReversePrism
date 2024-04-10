@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 AnnounceDetail                           0001866F5950 ModelClassType IAnnounceDetailStatus IAnnounceDetailStatus IAnnounceDetailStatus Pointer
-    public partial class AnnounceDetailPopupViewModel
+    public partial class AnnounceDetailPopupViewModel : DataModel
     {
         public IAnnounceDetailStatus?                   AnnounceDetail                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceDetailPopupViewModel();
+            var value   = new AnnounceDetailPopupViewModel() { Pointer= p0 };
 
-            value.AnnounceDetail                            = GetObject<IAnnounceDetailStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnnounceDetailStatus.FromPointer); // 0270D5E58FB0 0x10 AnnounceDetail              ( 0001866F5950 ModelClassType IAnnounceDetailStatus IAnnounceDetailStatus IAnnounceDetailStatus Pointer )
+            value.AnnounceDetail                            = GetObject<IAnnounceDetailStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnnounceDetailStatus.FromPointer); // 024665EC96E0 0x10 AnnounceDetail              ( 0001866F5950 ModelClassType IAnnounceDetailStatus IAnnounceDetailStatus IAnnounceDetailStatus Pointer )
 
             return value;
         }

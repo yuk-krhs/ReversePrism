@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Condition                                000186671910 ModelPrimitiveType string string string String
-    public partial class PreserveDependencyAttribute
+    public partial class PreserveDependencyAttribute : DataModel
     {
         public string                                   Condition                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreserveDependencyAttribute();
+            var value   = new PreserveDependencyAttribute() { Pointer= p0 };
 
-            value.Condition                                 = GetString(new IntPtr(p + 0x010)); // 0270DBF13920 0x10 Condition                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Condition                                 = GetString(new IntPtr(p + 0x010)); // 02466BF83780 0x10 Condition                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

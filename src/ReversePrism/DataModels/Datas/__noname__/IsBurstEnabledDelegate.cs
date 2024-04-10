@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IsBurstEnabledDelegate
+    public partial class IsBurstEnabledDelegate : DataModel
     {
 
         public static IsBurstEnabledDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsBurstEnabledDelegate();
+            var value   = new IsBurstEnabledDelegate() { Pointer= p0 };
 
 
             return value;

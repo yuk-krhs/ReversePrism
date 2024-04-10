@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 IsSkip                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 030 SkipCancellationTokenSource              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 038 IsSetuped                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ScreenTapSkipAnimationPlayer
+    public partial class ScreenTapSkipAnimationPlayer : DataModel
     {
         public UIButton?                                SkipButton                              { get; set; }
         public bool                                     IsSkip                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenTapSkipAnimationPlayer();
+            var value   = new ScreenTapSkipAnimationPlayer() { Pointer= p0 };
 
-            value.SkipButton                                = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA1D4300 0x20 SkipButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.IsSkip                                    = GetBool(new IntPtr(p + 0x028)); // 0270DA1D4320 0x28 IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkipCancellationTokenSource               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270DA1D4340 0x30 SkipCancellationTokenSource ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.IsSetuped                                 = GetBool(new IntPtr(p + 0x038)); // 0270DA1D4360 0x38 IsSetuped                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkipButton                                = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466A23F970 0x20 SkipButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.IsSkip                                    = GetBool(new IntPtr(p + 0x028)); // 02466A23F990 0x28 IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkipCancellationTokenSource               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466A23F9B0 0x30 SkipCancellationTokenSource ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.IsSetuped                                 = GetBool(new IntPtr(p + 0x038)); // 02466A23F9D0 0x38 IsSetuped                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

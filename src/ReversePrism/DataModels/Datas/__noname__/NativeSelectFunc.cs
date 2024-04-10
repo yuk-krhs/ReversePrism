@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeSelectFunc
+    public partial class NativeSelectFunc : DataModel
     {
 
         public static NativeSelectFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeSelectFunc();
+            var value   = new NativeSelectFunc() { Pointer= p0 };
 
 
             return value;

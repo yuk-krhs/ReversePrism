@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 020 RewardList                               000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
-    public partial class LoginBonusStepStatus
+    public partial class LoginBonusStepStatus : DataModel
     {
         public int                                      Num                                     { get; set; }
         public LoginBonusStepState                      State                                   { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoginBonusStepStatus();
+            var value   = new LoginBonusStepStatus() { Pointer= p0 };
 
-            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D220A8D0 0x18 Num                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (LoginBonusStepState)GetInt32(new IntPtr(p + 0x01C)); // 0270D220A910 0x1C State                       ( 0001865BA410 ModelEnumType LoginBonusStepState LoginBonusStepState LoginBonusStepState Int32 )
-            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D220A970 0x20 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 02466218B518 0x18 Num                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (LoginBonusStepState)GetInt32(new IntPtr(p + 0x01C)); // 02466218B558 0x1C State                       ( 0001865BA410 ModelEnumType LoginBonusStepState LoginBonusStepState LoginBonusStepState Int32 )
+            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466218B5B8 0x20 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

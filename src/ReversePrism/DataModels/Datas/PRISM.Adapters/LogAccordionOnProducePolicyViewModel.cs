@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 ProducePolicyID                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C ProducePolicyTypeID                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LogAccordionOnProducePolicyViewModel
+    public partial class LogAccordionOnProducePolicyViewModel : DataModel
     {
         public int                                      ProducePolicyID                         { get; set; }
         public int                                      ProducePolicyTypeID                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogAccordionOnProducePolicyViewModel();
+            var value   = new LogAccordionOnProducePolicyViewModel() { Pointer= p0 };
 
-            value.ProducePolicyID                           = GetInt32(new IntPtr(p + 0x018)); // 0270D65071C8 0x18 ProducePolicyID             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProducePolicyTypeID                       = GetInt32(new IntPtr(p + 0x01C)); // 0270D65071E8 0x1C ProducePolicyTypeID         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProducePolicyID                           = GetInt32(new IntPtr(p + 0x018)); // 024666576810 0x18 ProducePolicyID             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProducePolicyTypeID                       = GetInt32(new IntPtr(p + 0x01C)); // 024666576830 0x1C ProducePolicyTypeID         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

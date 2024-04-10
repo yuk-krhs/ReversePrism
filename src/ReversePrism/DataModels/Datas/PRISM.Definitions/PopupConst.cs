@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 TextKeyCancel                            string IL2CPP_TYPE_STRING
     // 000 TextKeyNo                                string IL2CPP_TYPE_STRING
     // 000 TextKeyYes                               string IL2CPP_TYPE_STRING
-    public partial class PopupConst
+    public partial class PopupConst : DataModel
     {
 
         public static PopupConst? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupConst();
+            var value   = new PopupConst() { Pointer= p0 };
 
 
             return value;

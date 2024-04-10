@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 088 _activation                              <object> IL2CPP_TYPE_OBJECT
     // 090 _applicationIdentity                     <object> IL2CPP_TYPE_OBJECT
     // 098 Compatibility_switch                     000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class AppDomain
+    public partial class AppDomain : DataModel
     {
         public int                                      PrincipalPolicy                         { get; set; }
         public AssemblyLoadEventHandler?                AssemblyLoad                            { get; set; }
@@ -48,18 +48,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppDomain();
+            var value   = new AppDomain() { Pointer= p0 };
 
-            value.PrincipalPolicy                           = GetInt32(new IntPtr(p + 0x030)); // 02700028D998 0x30 PrincipalPolicy             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AssemblyLoad                              = GetObject<AssemblyLoadEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.AssemblyLoadEventHandler.FromPointer); // 02700028D9B8 0x38 AssemblyLoad                ( 0001866E08B0 ModelClassType AssemblyLoadEventHandler AssemblyLoadEventHandler AssemblyLoadEventHandler Pointer )
-            value.AssemblyResolve                           = GetObject<ResolveEventHandler>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 02700028D9D8 0x40 AssemblyResolve             ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
-            value.DomainUnload                              = GetObject<EventHandler>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventHandler.FromPointer); // 02700028D9F8 0x48 DomainUnload                ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
-            value.ProcessExit                               = GetObject<EventHandler>(new IntPtr(p + 0x050), ReversePrism.DataModels.EventHandler.FromPointer); // 02700028DA18 0x50 ProcessExit                 ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
-            value.ResourceResolve                           = GetObject<ResolveEventHandler>(new IntPtr(p + 0x058), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 02700028DA38 0x58 ResourceResolve             ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
-            value.TypeResolve                               = GetObject<ResolveEventHandler>(new IntPtr(p + 0x060), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 02700028DA58 0x60 TypeResolve                 ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
-            value.UnhandledException                        = GetObject<UnhandledExceptionEventHandler>(new IntPtr(p + 0x068), ReversePrism.DataModels.UnhandledExceptionEventHandler.FromPointer); // 02700028DA78 0x68 UnhandledException          ( 0001867032C0 ModelClassType UnhandledExceptionEventHandler UnhandledExceptionEventHandler UnhandledExceptionEventHandler Pointer )
-            value.ReflectionOnlyAssemblyResolve             = GetObject<ResolveEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 02700028DAD8 0x80 ReflectionOnlyAssemblyResolve ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
-            value.Compatibility_switch                      = GetStringList(new IntPtr(p + 0x098)); // 02700028DB38 0x98 Compatibility_switch        ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.PrincipalPolicy                           = GetInt32(new IntPtr(p + 0x030)); // 0245A028D998 0x30 PrincipalPolicy             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AssemblyLoad                              = GetObject<AssemblyLoadEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.AssemblyLoadEventHandler.FromPointer); // 0245A028D9B8 0x38 AssemblyLoad                ( 0001866E08B0 ModelClassType AssemblyLoadEventHandler AssemblyLoadEventHandler AssemblyLoadEventHandler Pointer )
+            value.AssemblyResolve                           = GetObject<ResolveEventHandler>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 0245A028D9D8 0x40 AssemblyResolve             ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
+            value.DomainUnload                              = GetObject<EventHandler>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventHandler.FromPointer); // 0245A028D9F8 0x48 DomainUnload                ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
+            value.ProcessExit                               = GetObject<EventHandler>(new IntPtr(p + 0x050), ReversePrism.DataModels.EventHandler.FromPointer); // 0245A028DA18 0x50 ProcessExit                 ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
+            value.ResourceResolve                           = GetObject<ResolveEventHandler>(new IntPtr(p + 0x058), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 0245A028DA38 0x58 ResourceResolve             ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
+            value.TypeResolve                               = GetObject<ResolveEventHandler>(new IntPtr(p + 0x060), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 0245A028DA58 0x60 TypeResolve                 ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
+            value.UnhandledException                        = GetObject<UnhandledExceptionEventHandler>(new IntPtr(p + 0x068), ReversePrism.DataModels.UnhandledExceptionEventHandler.FromPointer); // 0245A028DA78 0x68 UnhandledException          ( 0001867032C0 ModelClassType UnhandledExceptionEventHandler UnhandledExceptionEventHandler UnhandledExceptionEventHandler Pointer )
+            value.ReflectionOnlyAssemblyResolve             = GetObject<ResolveEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.ResolveEventHandler.FromPointer); // 0245A028DAD8 0x80 ReflectionOnlyAssemblyResolve ( 00018666D4F0 ModelClassType ResolveEventHandler ResolveEventHandler ResolveEventHandler Pointer )
+            value.Compatibility_switch                      = GetStringList(new IntPtr(p + 0x098)); // 0245A028DB38 0x98 Compatibility_switch        ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

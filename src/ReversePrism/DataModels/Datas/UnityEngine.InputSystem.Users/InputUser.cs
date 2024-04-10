@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 InvalidId                                uint IL2CPP_TYPE_U4
     // 010 M_Id                                     000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 000 s_GlobalState                            GlobalState IL2CPP_TYPE_VALUETYPE
-    public partial class InputUser
+    public partial class InputUser : DataModel
     {
         public uint                                     M_Id                                    { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputUser();
+            var value   = new InputUser() { Pointer= p0 };
 
-            value.M_Id                                      = GetUInt32(new IntPtr(p + 0x010)); // 0270D7723D58 0x10 M_Id                        ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_Id                                      = GetUInt32(new IntPtr(p + 0x010)); // 02466777BD58 0x10 M_Id                        ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

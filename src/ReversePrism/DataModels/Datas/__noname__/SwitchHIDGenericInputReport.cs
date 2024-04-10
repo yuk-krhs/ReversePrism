@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ReportId                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class SwitchHIDGenericInputReport
+    public partial class SwitchHIDGenericInputReport : DataModel
     {
         public sbyte                                    ReportId                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchHIDGenericInputReport();
+            var value   = new SwitchHIDGenericInputReport() { Pointer= p0 };
 
-            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 0270D77BBA58 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 024667813A58 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

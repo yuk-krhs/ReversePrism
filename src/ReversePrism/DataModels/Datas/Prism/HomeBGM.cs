@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 004 currentWeather                           Weather IL2CPP_TYPE_VALUETYPE
     // 008 timeOfDayPrefixDict                      Dictionary`2<TimeOfDay, string> IL2CPP_TYPE_GENERICINST
     // 010 weatherPrefixDict                        Dictionary`2<Weather, string> IL2CPP_TYPE_GENERICINST
-    public partial class HomeBGM
+    public partial class HomeBGM : DataModel
     {
 
         public static HomeBGM? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeBGM();
+            var value   = new HomeBGM() { Pointer= p0 };
 
 
             return value;

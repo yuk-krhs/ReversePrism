@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DepthOfFieldMixerBehaviour
+    public partial class DepthOfFieldMixerBehaviour : DataModel
     {
 
         public static DepthOfFieldMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DepthOfFieldMixerBehaviour();
+            var value   = new DepthOfFieldMixerBehaviour() { Pointer= p0 };
 
 
             return value;

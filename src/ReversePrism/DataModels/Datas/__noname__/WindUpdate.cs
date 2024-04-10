@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WindUpdate
+    public partial class WindUpdate : DataModel
     {
 
         public static WindUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WindUpdate();
+            var value   = new WindUpdate() { Pointer= p0 };
 
 
             return value;

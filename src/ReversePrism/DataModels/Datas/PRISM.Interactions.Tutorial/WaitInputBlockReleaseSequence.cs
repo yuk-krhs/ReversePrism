@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WaitInputBlockReleaseSequence
+    public partial class WaitInputBlockReleaseSequence : DataModel
     {
 
         public static WaitInputBlockReleaseSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitInputBlockReleaseSequence();
+            var value   = new WaitInputBlockReleaseSequence() { Pointer= p0 };
 
 
             return value;

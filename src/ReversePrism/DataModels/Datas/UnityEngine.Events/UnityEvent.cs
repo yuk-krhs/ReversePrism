@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 m_InvokeArray                            <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class UnityEvent
+    public partial class UnityEvent : DataModel
     {
 
         public static UnityEvent? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityEvent();
+            var value   = new UnityEvent() { Pointer= p0 };
 
 
             return value;

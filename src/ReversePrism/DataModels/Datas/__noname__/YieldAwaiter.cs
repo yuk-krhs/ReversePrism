@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_waitCallbackRunAction                  WaitCallback IL2CPP_TYPE_CLASS
     // 008 s_sendOrPostCallbackRunAction            SendOrPostCallback IL2CPP_TYPE_CLASS
-    public partial class YieldAwaiter
+    public partial class YieldAwaiter : DataModel
     {
 
         public static YieldAwaiter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new YieldAwaiter();
+            var value   = new YieldAwaiter() { Pointer= p0 };
 
 
             return value;

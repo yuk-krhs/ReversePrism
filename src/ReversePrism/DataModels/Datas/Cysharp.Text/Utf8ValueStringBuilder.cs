@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 010 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 018 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C DisposeImmediately                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class Utf8ValueStringBuilder
+    public partial class Utf8ValueStringBuilder : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public int                                      Index                                   { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Utf8ValueStringBuilder();
+            var value   = new Utf8ValueStringBuilder() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 027003F58E68 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 027003F58E88 0x18 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DisposeImmediately                        = GetBool(new IntPtr(p + 0x01C)); // 027003F58EA8 0x1C DisposeImmediately          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0245A3F58E68 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A3F58E88 0x18 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DisposeImmediately                        = GetBool(new IntPtr(p + 0x01C)); // 0245A3F58EA8 0x1C DisposeImmediately          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

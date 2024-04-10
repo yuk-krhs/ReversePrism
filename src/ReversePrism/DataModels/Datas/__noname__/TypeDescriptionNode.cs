@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Next                                     000186650FC0 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer
     // 028 Provider                                 0001866D3680 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer
-    public partial class TypeDescriptionNode
+    public partial class TypeDescriptionNode : DataModel
     {
         public TypeDescriptionNode?                     Next                                    { get; set; }
         public TypeDescriptionProvider?                 Provider                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeDescriptionNode();
+            var value   = new TypeDescriptionNode() { Pointer= p0 };
 
-            value.Next                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 0270060281C8 0x20 Next                        ( 000186650FC0 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
-            value.Provider                                  = GetObject<TypeDescriptionProvider>(new IntPtr(p + 0x028), ReversePrism.DataModels.TypeDescriptionProvider.FromPointer); // 0270060281E8 0x28 Provider                    ( 0001866D3680 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer )
+            value.Next                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 0245A6001F30 0x20 Next                        ( 000186650FC0 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
+            value.Provider                                  = GetObject<TypeDescriptionProvider>(new IntPtr(p + 0x028), ReversePrism.DataModels.TypeDescriptionProvider.FromPointer); // 0245A6001F50 0x28 Provider                    ( 0001866D3680 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer )
 
             return value;
         }

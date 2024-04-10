@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 MJavaStackTrace                          000186671910 ModelPrimitiveType string string string String
-    public partial class AndroidJavaException
+    public partial class AndroidJavaException : DataModel
     {
         public string                                   MJavaStackTrace                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidJavaException();
+            var value   = new AndroidJavaException() { Pointer= p0 };
 
-            value.MJavaStackTrace                           = GetString(new IntPtr(p + 0x090)); // 0270069446B8 0x90 MJavaStackTrace             ( 000186671910 ModelPrimitiveType string string string String )
+            value.MJavaStackTrace                           = GetString(new IntPtr(p + 0x090)); // 0245A68F6DC8 0x90 MJavaStackTrace             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

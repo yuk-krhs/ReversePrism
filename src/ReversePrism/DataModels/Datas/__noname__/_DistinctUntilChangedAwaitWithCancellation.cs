@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 enumeratorCurrent                        <var> IL2CPP_TYPE_VAR
     // 000 prev                                     <var> IL2CPP_TYPE_VAR
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _DistinctUntilChangedAwaitWithCancellation
+    public partial class _DistinctUntilChangedAwaitWithCancellation : DataModel
     {
 
         public static _DistinctUntilChangedAwaitWithCancellation? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _DistinctUntilChangedAwaitWithCancellation();
+            var value   = new _DistinctUntilChangedAwaitWithCancellation() { Pointer= p0 };
 
 
             return value;

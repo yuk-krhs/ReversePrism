@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 List                                     000185CF6A48 ModelClassListType List`1<Oid> List`1<Oid> List<Oid> Pointer
-    public partial class OidCollection
+    public partial class OidCollection : DataModel
     {
         public List<Oid>?                               List                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OidCollection();
+            var value   = new OidCollection() { Pointer= p0 };
 
-            value.List                                      = GetObjectList<Oid>(new IntPtr(p + 0x010), ReversePrism.DataModels.Oid.FromPointer); // 0270D79A4D80 0x10 List                        ( 000185CF6A48 ModelClassListType List`1<Oid> List`1<Oid> List<Oid> Pointer )
+            value.List                                      = GetObjectList<Oid>(new IntPtr(p + 0x010), ReversePrism.DataModels.Oid.FromPointer); // 024667A0CD80 0x10 List                        ( 000185CF6A48 ModelClassListType List`1<Oid> List`1<Oid> List<Oid> Pointer )
 
             return value;
         }

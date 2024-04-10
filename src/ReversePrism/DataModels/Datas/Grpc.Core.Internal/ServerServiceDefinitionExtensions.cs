@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ServerServiceDefinitionExtensions
+    public partial class ServerServiceDefinitionExtensions : DataModel
     {
 
         public static ServerServiceDefinitionExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerServiceDefinitionExtensions();
+            var value   = new ServerServiceDefinitionExtensions() { Pointer= p0 };
 
 
             return value;

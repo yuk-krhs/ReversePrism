@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_DefaultDelegate                        RequestLightsDelegate IL2CPP_TYPE_CLASS
     // 008 s_RequestLightsDelegate                  RequestLightsDelegate IL2CPP_TYPE_CLASS
-    public partial class Lightmapping
+    public partial class Lightmapping : DataModel
     {
 
         public static Lightmapping? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Lightmapping();
+            var value   = new Lightmapping() { Pointer= p0 };
 
 
             return value;

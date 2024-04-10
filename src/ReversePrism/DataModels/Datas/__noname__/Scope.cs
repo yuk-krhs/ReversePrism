@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 XmlnsAttributeCount                      0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 XmlnsOffset                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Scope
+    public partial class Scope : DataModel
     {
         public int                                      XmlnsAttributeCount                     { get; set; }
         public int                                      XmlnsOffset                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Scope();
+            var value   = new Scope() { Pointer= p0 };
 
-            value.XmlnsAttributeCount                       = GetInt32(new IntPtr(p + 0x010)); // 0270D7C61058 0x10 XmlnsAttributeCount         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.XmlnsOffset                               = GetInt32(new IntPtr(p + 0x014)); // 0270D7C61078 0x14 XmlnsOffset                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.XmlnsAttributeCount                       = GetInt32(new IntPtr(p + 0x010)); // 024667CB9058 0x10 XmlnsAttributeCount         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.XmlnsOffset                               = GetInt32(new IntPtr(p + 0x014)); // 024667CB9078 0x14 XmlnsOffset                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

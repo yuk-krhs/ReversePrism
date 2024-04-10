@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 DefaultCharacterPrefab                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 028 HeadTopName                              000186671910 ModelPrimitiveType string string string String
     // 030 EyeCleraName                             000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class CharacterRendering
+    public partial class CharacterRendering : DataModel
     {
         public GameObject?                              DefaultCharacterPrefab                  { get; set; }
         public string                                   HeadTopName                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterRendering();
+            var value   = new CharacterRendering() { Pointer= p0 };
 
-            value.DefaultCharacterPrefab                    = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D67018 0x20 DefaultCharacterPrefab      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.HeadTopName                               = GetString(new IntPtr(p + 0x028)); // 0270D4D67038 0x28 HeadTopName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.EyeCleraName                              = GetStringList(new IntPtr(p + 0x030)); // 0270D4D67058 0x30 EyeCleraName                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.DefaultCharacterPrefab                    = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664DD2688 0x20 DefaultCharacterPrefab      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.HeadTopName                               = GetString(new IntPtr(p + 0x028)); // 024664DD26A8 0x28 HeadTopName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.EyeCleraName                              = GetStringList(new IntPtr(p + 0x030)); // 024664DD26C8 0x30 EyeCleraName                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

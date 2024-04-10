@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 DeflateStream                            0001866B87A0 ModelClassType DeflateStream DeflateStream DeflateStream Pointer
-    public partial class GZipStream
+    public partial class GZipStream : DataModel
     {
         public DeflateStream?                           DeflateStream                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GZipStream();
+            var value   = new GZipStream() { Pointer= p0 };
 
-            value.DeflateStream                             = GetObject<DeflateStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.DeflateStream.FromPointer); // 0270D7BDAF48 0x28 DeflateStream               ( 0001866B87A0 ModelClassType DeflateStream DeflateStream DeflateStream Pointer )
+            value.DeflateStream                             = GetObject<DeflateStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.DeflateStream.FromPointer); // 024667C396B8 0x28 DeflateStream               ( 0001866B87A0 ModelClassType DeflateStream DeflateStream DeflateStream Pointer )
 
             return value;
         }

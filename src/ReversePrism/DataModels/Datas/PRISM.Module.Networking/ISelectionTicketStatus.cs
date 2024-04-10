@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISelectionTicketStatus
+    public partial class ISelectionTicketStatus : DataModel
     {
 
         public static ISelectionTicketStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISelectionTicketStatus();
+            var value   = new ISelectionTicketStatus() { Pointer= p0 };
 
 
             return value;

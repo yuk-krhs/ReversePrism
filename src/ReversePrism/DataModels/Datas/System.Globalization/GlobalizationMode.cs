@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Invariant>k__BackingField               bool IL2CPP_TYPE_BOOLEAN
-    public partial class GlobalizationMode
+    public partial class GlobalizationMode : DataModel
     {
 
         public static GlobalizationMode? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalizationMode();
+            var value   = new GlobalizationMode() { Pointer= p0 };
 
 
             return value;

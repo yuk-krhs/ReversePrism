@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventReciever
+    public partial class EventReciever : DataModel
     {
 
         public static EventReciever? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventReciever();
+            var value   = new EventReciever() { Pointer= p0 };
 
 
             return value;

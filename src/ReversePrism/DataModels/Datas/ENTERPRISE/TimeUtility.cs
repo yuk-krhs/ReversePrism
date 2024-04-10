@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 028 ExpiredTimeString                        Dictionary`2<NameType, string> IL2CPP_TYPE_GENERICINST
     // 030 ExpiredTimeStringKey                     Dictionary`2<NameType, string> IL2CPP_TYPE_GENERICINST
     // 038 LastLoginTimeStringKey                   Dictionary`2<LastLoginTimeType, string> IL2CPP_TYPE_GENERICINST
-    public partial class TimeUtility
+    public partial class TimeUtility : DataModel
     {
         public DateTime                                 BaseTime                                { get; set; }
         public Regex?                                   FormatCheck                             { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeUtility();
+            var value   = new TimeUtility() { Pointer= p0 };
 
-            value.BaseTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 027004B2C268 0x10 BaseTime                    ( 0001865B9A10 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.FormatCheck                               = GetObject<Regex>(new IntPtr(p + 0x018), ReversePrism.DataModels.Regex.FromPointer); // 027004B2C288 0x18 FormatCheck                 ( 00018663B620 ModelClassType Regex Regex Regex Pointer )
-            value.W3cDTFCheck                               = GetObject<Regex>(new IntPtr(p + 0x020), ReversePrism.DataModels.Regex.FromPointer); // 027004B2C2A8 0x20 W3cDTFCheck                 ( 00018663B620 ModelClassType Regex Regex Regex Pointer )
+            value.BaseTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 0245A4B843D8 0x10 BaseTime                    ( 0001865B9A10 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.FormatCheck                               = GetObject<Regex>(new IntPtr(p + 0x018), ReversePrism.DataModels.Regex.FromPointer); // 0245A4B843F8 0x18 FormatCheck                 ( 00018663B620 ModelClassType Regex Regex Regex Pointer )
+            value.W3cDTFCheck                               = GetObject<Regex>(new IntPtr(p + 0x020), ReversePrism.DataModels.Regex.FromPointer); // 0245A4B84418 0x20 W3cDTFCheck                 ( 00018663B620 ModelClassType Regex Regex Regex Pointer )
 
             return value;
         }

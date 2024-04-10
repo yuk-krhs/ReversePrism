@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
-    public partial class Datatype_QNameXdr
+    public partial class Datatype_QNameXdr : DataModel
     {
 
         public static Datatype_QNameXdr? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_QNameXdr();
+            var value   = new Datatype_QNameXdr() { Pointer= p0 };
 
 
             return value;

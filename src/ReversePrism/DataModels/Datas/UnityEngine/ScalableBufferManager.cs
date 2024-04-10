@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScalableBufferManager
+    public partial class ScalableBufferManager : DataModel
     {
 
         public static ScalableBufferManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScalableBufferManager();
+            var value   = new ScalableBufferManager() { Pointer= p0 };
 
 
             return value;

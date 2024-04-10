@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 TxtPuls                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 040 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 048 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class GashaExchangeExpiryDateConversionPopupView
+    public partial class GashaExchangeExpiryDateConversionPopupView : DataModel
     {
         public GashaExchangeExpiryDateConversionItemCell? GoTemplate                              { get; set; }
         public UITextMeshProUGUI?                       TxtNow                                  { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeExpiryDateConversionPopupView();
+            var value   = new GashaExchangeExpiryDateConversionPopupView() { Pointer= p0 };
 
-            value.GoTemplate                                = GetObject<GashaExchangeExpiryDateConversionItemCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaExchangeExpiryDateConversionItemCell.FromPointer); // 0270DB9F6F88 0x20 GoTemplate                  ( 0001865FE560 ModelClassType GashaExchangeExpiryDateConversionItemCell GashaExchangeExpiryDateConversionItemCell GashaExchangeExpiryDateConversionItemCell Pointer )
-            value.TxtNow                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB9F6FA8 0x28 TxtNow                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtOld                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB9F6FC8 0x30 TxtOld                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtPuls                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB9F6FE8 0x38 TxtPuls                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB9F7028 0x48 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.GoTemplate                                = GetObject<GashaExchangeExpiryDateConversionItemCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaExchangeExpiryDateConversionItemCell.FromPointer); // 02466BA76450 0x20 GoTemplate                  ( 0001865FE560 ModelClassType GashaExchangeExpiryDateConversionItemCell GashaExchangeExpiryDateConversionItemCell GashaExchangeExpiryDateConversionItemCell Pointer )
+            value.TxtNow                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BA76470 0x28 TxtNow                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtOld                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BA76490 0x30 TxtOld                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtPuls                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BA764B0 0x38 TxtPuls                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BA764F0 0x48 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

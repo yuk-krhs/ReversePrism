@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 utf8MaxLengthInBytes                     ushort IL2CPP_TYPE_U2
     // 010 Utf8LengthInBytes                        000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16
     // 012 Bytes                                    00018659E410 ModelEnumType FixedBytes62 FixedBytes62 FixedBytes62 Int32
-    public partial class FixedString64Bytes
+    public partial class FixedString64Bytes : DataModel
     {
         public ushort                                   Utf8LengthInBytes                       { get; set; }
         public FixedBytes62                             Bytes                                   { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedString64Bytes();
+            var value   = new FixedString64Bytes() { Pointer= p0 };
 
-            value.Utf8LengthInBytes                         = GetUInt16(new IntPtr(p + 0x010)); // 0270D98A8350 0x10 Utf8LengthInBytes           ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Bytes                                     = (FixedBytes62)GetInt32(new IntPtr(p + 0x012)); // 0270D98A8370 0x12 Bytes                       ( 00018659E410 ModelEnumType FixedBytes62 FixedBytes62 FixedBytes62 Int32 )
+            value.Utf8LengthInBytes                         = GetUInt16(new IntPtr(p + 0x010)); // 02466990DE40 0x10 Utf8LengthInBytes           ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Bytes                                     = (FixedBytes62)GetInt32(new IntPtr(p + 0x012)); // 02466990DE60 0x12 Bytes                       ( 00018659E410 ModelEnumType FixedBytes62 FixedBytes62 FixedBytes62 Int32 )
 
             return value;
         }

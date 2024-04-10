@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LightProbeProxyVolume
+    public partial class LightProbeProxyVolume : DataModel
     {
 
         public static LightProbeProxyVolume? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LightProbeProxyVolume();
+            var value   = new LightProbeProxyVolume() { Pointer= p0 };
 
 
             return value;

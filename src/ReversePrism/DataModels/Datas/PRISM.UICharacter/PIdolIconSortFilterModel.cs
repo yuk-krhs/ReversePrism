@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PIdolIconSortFilterModel
+    public partial class PIdolIconSortFilterModel : DataModel
     {
 
         public static PIdolIconSortFilterModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PIdolIconSortFilterModel();
+            var value   = new PIdolIconSortFilterModel() { Pointer= p0 };
 
 
             return value;

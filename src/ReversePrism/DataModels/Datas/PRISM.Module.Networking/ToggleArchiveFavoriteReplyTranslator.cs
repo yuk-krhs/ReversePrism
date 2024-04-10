@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ToggleArchiveFavoriteReplyTranslator
+    public partial class ToggleArchiveFavoriteReplyTranslator : DataModel
     {
 
         public static ToggleArchiveFavoriteReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToggleArchiveFavoriteReplyTranslator();
+            var value   = new ToggleArchiveFavoriteReplyTranslator() { Pointer= p0 };
 
 
             return value;

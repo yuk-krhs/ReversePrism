@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Fallback                                 00018672C120 ModelClassType EncoderFallback EncoderFallback EncoderFallback Pointer
     // 018 FallbackBuffer                           00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer
-    public partial class Encoder
+    public partial class Encoder : DataModel
     {
         public EncoderFallback?                         Fallback                                { get; set; }
         public EncoderFallbackBuffer?                   FallbackBuffer                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Encoder();
+            var value   = new Encoder() { Pointer= p0 };
 
-            value.Fallback                                  = GetObject<EncoderFallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.EncoderFallback.FromPointer); // 027003CA5470 0x10 Fallback                    ( 00018672C120 ModelClassType EncoderFallback EncoderFallback EncoderFallback Pointer )
-            value.FallbackBuffer                            = GetObject<EncoderFallbackBuffer>(new IntPtr(p + 0x018), ReversePrism.DataModels.EncoderFallbackBuffer.FromPointer); // 027003CA5490 0x18 FallbackBuffer              ( 00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer )
+            value.Fallback                                  = GetObject<EncoderFallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.EncoderFallback.FromPointer); // 0245A3CA5470 0x10 Fallback                    ( 00018672C120 ModelClassType EncoderFallback EncoderFallback EncoderFallback Pointer )
+            value.FallbackBuffer                            = GetObject<EncoderFallbackBuffer>(new IntPtr(p + 0x018), ReversePrism.DataModels.EncoderFallbackBuffer.FromPointer); // 0245A3CA5490 0x18 FallbackBuffer              ( 00018672C7E0 ModelClassType EncoderFallbackBuffer EncoderFallbackBuffer EncoderFallbackBuffer Pointer )
 
             return value;
         }

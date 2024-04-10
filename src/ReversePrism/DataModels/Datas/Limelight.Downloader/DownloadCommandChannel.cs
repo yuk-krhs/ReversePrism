@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 commandQueue                             Queue`1<DownloadCommand> IL2CPP_TYPE_GENERICINST
-    public partial class DownloadCommandChannel
+    public partial class DownloadCommandChannel : DataModel
     {
 
         public static DownloadCommandChannel? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadCommandChannel();
+            var value   = new DownloadCommandChannel() { Pointer= p0 };
 
 
             return value;

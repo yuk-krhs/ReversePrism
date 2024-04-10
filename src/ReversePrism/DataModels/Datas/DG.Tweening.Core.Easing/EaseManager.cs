@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _PiOver2                                 float IL2CPP_TYPE_R4
     // 000 _TwoPi                                   float IL2CPP_TYPE_R4
-    public partial class EaseManager
+    public partial class EaseManager : DataModel
     {
 
         public static EaseManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EaseManager();
+            var value   = new EaseManager() { Pointer= p0 };
 
 
             return value;

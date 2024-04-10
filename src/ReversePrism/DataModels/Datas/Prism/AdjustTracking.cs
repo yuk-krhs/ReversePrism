@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 isTracked                                bool IL2CPP_TYPE_BOOLEAN
     // 008 userIdCache                              string IL2CPP_TYPE_STRING
-    public partial class AdjustTracking
+    public partial class AdjustTracking : DataModel
     {
 
         public static AdjustTracking? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustTracking();
+            var value   = new AdjustTracking() { Pointer= p0 };
 
 
             return value;

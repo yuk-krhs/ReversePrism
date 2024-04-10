@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICoreStatsHelper
+    public partial class ICoreStatsHelper : DataModel
     {
 
         public static ICoreStatsHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICoreStatsHelper();
+            var value   = new ICoreStatsHelper() { Pointer= p0 };
 
 
             return value;

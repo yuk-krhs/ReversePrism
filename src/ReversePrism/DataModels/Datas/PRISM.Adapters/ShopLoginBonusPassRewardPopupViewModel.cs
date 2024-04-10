@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 IsNotShowLoginPassReward                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 PassEffectEndPULastViewedDateTime        000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 050 ValidPeriodText                          000186671910 ModelPrimitiveType string string string String
-    public partial class ShopLoginBonusPassRewardPopupViewModel
+    public partial class ShopLoginBonusPassRewardPopupViewModel : DataModel
     {
         public DateTime                                 StartValidDateText                      { get; set; }
         public DateTime                                 EndValidDateText                        { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopLoginBonusPassRewardPopupViewModel();
+            var value   = new ShopLoginBonusPassRewardPopupViewModel() { Pointer= p0 };
 
-            value.StartValidDateText                        = GetDateTime(new IntPtr(p + 0x010)); // 027003664A60 0x10 StartValidDateText          ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndValidDateText                          = GetDateTime(new IntPtr(p + 0x020)); // 027003664A80 0x20 EndValidDateText            ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.RewardItemProductAmount                   = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 027003664AA0 0x30 RewardItemProductAmount     ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.IsNotShowLoginPassReward                  = GetBool(new IntPtr(p + 0x038)); // 027003664AC0 0x38 IsNotShowLoginPassReward    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PassEffectEndPULastViewedDateTime         = GetDateTime(new IntPtr(p + 0x040)); // 027003664AE0 0x40 PassEffectEndPULastViewedDateTime ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ValidPeriodText                           = GetString(new IntPtr(p + 0x050)); // 027003664B00 0x50 ValidPeriodText             ( 000186671910 ModelPrimitiveType string string string String )
+            value.StartValidDateText                        = GetDateTime(new IntPtr(p + 0x010)); // 0245A5B53500 0x10 StartValidDateText          ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndValidDateText                          = GetDateTime(new IntPtr(p + 0x020)); // 0245A5B53520 0x20 EndValidDateText            ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.RewardItemProductAmount                   = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0245A5B53540 0x30 RewardItemProductAmount     ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.IsNotShowLoginPassReward                  = GetBool(new IntPtr(p + 0x038)); // 0245A5B53560 0x38 IsNotShowLoginPassReward    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PassEffectEndPULastViewedDateTime         = GetDateTime(new IntPtr(p + 0x040)); // 0245A5B53580 0x40 PassEffectEndPULastViewedDateTime ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ValidPeriodText                           = GetString(new IntPtr(p + 0x050)); // 0245A5B535A0 0x50 ValidPeriodText             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

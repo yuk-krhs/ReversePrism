@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 CertSelectionCallback                    0001865A2760 ModelClassType LocalCertSelectionCallback LocalCertSelectionCallback LocalCertSelectionCallback Pointer
     // 038 TlsStream                                00018664DCE0 ModelClassType MonoTlsStream MonoTlsStream MonoTlsStream Pointer
     // 040 Request                                  0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer
-    public partial class ChainValidationHelper
+    public partial class ChainValidationHelper : DataModel
     {
         public MonoTlsSettings?                         Settings                                { get; set; }
         public MobileTlsProvider?                       Provider                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainValidationHelper();
+            var value   = new ChainValidationHelper() { Pointer= p0 };
 
-            value.Settings                                  = GetObject<MonoTlsSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoTlsSettings.FromPointer); // 0270D78F5108 0x18 Settings                    ( 000186617640 ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer )
-            value.Provider                                  = GetObject<MobileTlsProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 0270D78F5128 0x20 Provider                    ( 000186638170 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
-            value.CertValidationCallback                    = GetObject<ServerCertValidationCallback>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServerCertValidationCallback.FromPointer); // 0270D78F5148 0x28 CertValidationCallback      ( 000186733120 ModelClassType ServerCertValidationCallback ServerCertValidationCallback ServerCertValidationCallback Pointer )
-            value.CertSelectionCallback                     = GetObject<LocalCertSelectionCallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.LocalCertSelectionCallback.FromPointer); // 0270D78F5168 0x30 CertSelectionCallback       ( 0001865A2760 ModelClassType LocalCertSelectionCallback LocalCertSelectionCallback LocalCertSelectionCallback Pointer )
-            value.TlsStream                                 = GetObject<MonoTlsStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.MonoTlsStream.FromPointer); // 0270D78F5188 0x38 TlsStream                   ( 00018664DCE0 ModelClassType MonoTlsStream MonoTlsStream MonoTlsStream Pointer )
-            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x040), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 0270D78F51A8 0x40 Request                     ( 0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
+            value.Settings                                  = GetObject<MonoTlsSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoTlsSettings.FromPointer); // 02466795D108 0x18 Settings                    ( 000186617640 ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer )
+            value.Provider                                  = GetObject<MobileTlsProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 02466795D128 0x20 Provider                    ( 000186638170 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
+            value.CertValidationCallback                    = GetObject<ServerCertValidationCallback>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServerCertValidationCallback.FromPointer); // 02466795D148 0x28 CertValidationCallback      ( 000186733120 ModelClassType ServerCertValidationCallback ServerCertValidationCallback ServerCertValidationCallback Pointer )
+            value.CertSelectionCallback                     = GetObject<LocalCertSelectionCallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.LocalCertSelectionCallback.FromPointer); // 02466795D168 0x30 CertSelectionCallback       ( 0001865A2760 ModelClassType LocalCertSelectionCallback LocalCertSelectionCallback LocalCertSelectionCallback Pointer )
+            value.TlsStream                                 = GetObject<MonoTlsStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.MonoTlsStream.FromPointer); // 02466795D188 0x38 TlsStream                   ( 00018664DCE0 ModelClassType MonoTlsStream MonoTlsStream MonoTlsStream Pointer )
+            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x040), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 02466795D1A8 0x40 Request                     ( 0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
 
             return value;
         }

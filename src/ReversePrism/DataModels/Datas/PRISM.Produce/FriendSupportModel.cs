@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Data                                     00018651C270 ModelClassType IFriendSupportStatus IFriendSupportStatus IFriendSupportStatus Pointer
     // 018 SCharaIcon                               0001866A9EE0 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer
-    public partial class FriendSupportModel
+    public partial class FriendSupportModel : DataModel
     {
         public IFriendSupportStatus?                    Data                                    { get; set; }
         public SCharaIcon?                              SCharaIcon                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendSupportModel();
+            var value   = new FriendSupportModel() { Pointer= p0 };
 
-            value.Data                                      = GetObject<IFriendSupportStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendSupportStatus.FromPointer); // 0270D5472C60 0x10 Data                        ( 00018651C270 ModelClassType IFriendSupportStatus IFriendSupportStatus IFriendSupportStatus Pointer )
-            value.SCharaIcon                                = GetObject<SCharaIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaIcon.FromPointer); // 0270D5472C80 0x18 SCharaIcon                  ( 0001866A9EE0 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer )
+            value.Data                                      = GetObject<IFriendSupportStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendSupportStatus.FromPointer); // 0246654E5800 0x10 Data                        ( 00018651C270 ModelClassType IFriendSupportStatus IFriendSupportStatus IFriendSupportStatus Pointer )
+            value.SCharaIcon                                = GetObject<SCharaIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaIcon.FromPointer); // 0246654E5820 0x18 SCharaIcon                  ( 0001866A9EE0 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer )
 
             return value;
         }

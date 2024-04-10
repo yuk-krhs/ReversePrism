@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 scissor                                  Stack`1<Rect> IL2CPP_TYPE_GENERICINST
     // 020 RenderTexture                            000185D020D8 ModelClassListType List`1<RenderTexture> List`1<RenderTexture> List<RenderTexture> Pointer
     // 028 DefaultMaterial                          000185CF21B8 ModelClassListType List`1<Material> List`1<Material> List<Material> Pointer
-    public partial class DrawParams
+    public partial class DrawParams : DataModel
     {
         public Rect                                     K_FullNormalizedRect                    { get; set; }
         public List<RenderTexture>?                     RenderTexture                           { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawParams();
+            var value   = new DrawParams() { Pointer= p0 };
 
-            value.K_FullNormalizedRect                      = (Rect)GetInt32(new IntPtr(p + 0x010)); // 027006862EC8 0x10 K_FullNormalizedRect        ( 0001866504C0 ModelEnumType Rect Rect Rect Int32 )
-            value.RenderTexture                             = GetObjectList<RenderTexture>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderTexture.FromPointer); // 027006862F28 0x20 RenderTexture               ( 000185D020D8 ModelClassListType List`1<RenderTexture> List`1<RenderTexture> List<RenderTexture> Pointer )
-            value.DefaultMaterial                           = GetObjectList<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 027006862F48 0x28 DefaultMaterial             ( 000185CF21B8 ModelClassListType List`1<Material> List`1<Material> List<Material> Pointer )
+            value.K_FullNormalizedRect                      = (Rect)GetInt32(new IntPtr(p + 0x010)); // 0245A6824D58 0x10 K_FullNormalizedRect        ( 0001866504C0 ModelEnumType Rect Rect Rect Int32 )
+            value.RenderTexture                             = GetObjectList<RenderTexture>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A6824DB8 0x20 RenderTexture               ( 000185D020D8 ModelClassListType List`1<RenderTexture> List`1<RenderTexture> List<RenderTexture> Pointer )
+            value.DefaultMaterial                           = GetObjectList<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0245A6824DD8 0x28 DefaultMaterial             ( 000185CF21B8 ModelClassListType List`1<Material> List`1<Material> List<Material> Pointer )
 
             return value;
         }

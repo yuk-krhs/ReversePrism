@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 LeftArea                                 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 038 RightArea                                000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    public partial class EnemySkillContentListView
+    public partial class EnemySkillContentListView : DataModel
     {
         public RectTransform?                           LeftArea                                { get; set; }
         public RectTransform?                           RightArea                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnemySkillContentListView();
+            var value   = new EnemySkillContentListView() { Pointer= p0 };
 
-            value.LeftArea                                  = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5B08E60 0x30 LeftArea                    ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.RightArea                                 = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5B08E80 0x38 RightArea                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.LeftArea                                  = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 024665B697A0 0x30 LeftArea                    ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.RightArea                                 = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 024665B697C0 0x38 RightArea                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

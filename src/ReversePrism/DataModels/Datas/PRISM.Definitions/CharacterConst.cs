@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
     // 000 GalleryEtcImageWidth                     float IL2CPP_TYPE_R4
     // 000 FixedBonusNum                            int IL2CPP_TYPE_I4
     // 000 AdditionalBonusNum                       int IL2CPP_TYPE_I4
-    public partial class CharacterConst
+    public partial class CharacterConst : DataModel
     {
 
         public static CharacterConst? FromPointer(IntPtr p0)
@@ -41,7 +41,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterConst();
+            var value   = new CharacterConst() { Pointer= p0 };
 
 
             return value;

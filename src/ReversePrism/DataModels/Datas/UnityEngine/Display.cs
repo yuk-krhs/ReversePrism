@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 008 _mainDisplay                             Display IL2CPP_TYPE_CLASS
     // 010 M_ActiveEditorGameViewTarget             0001865F38E0 ModelPrimitiveType int int int Int32
     // 018 OnDisplaysUpdated                        0001865A9360 ModelClassType DisplaysUpdatedDelegate DisplaysUpdatedDelegate DisplaysUpdatedDelegate Pointer
-    public partial class Display
+    public partial class Display : DataModel
     {
         public int                                      M_ActiveEditorGameViewTarget            { get; set; }
         public DisplaysUpdatedDelegate?                 OnDisplaysUpdated                       { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Display();
+            var value   = new Display() { Pointer= p0 };
 
-            value.M_ActiveEditorGameViewTarget              = GetInt32(new IntPtr(p + 0x010)); // 02700236CCF8 0x10 M_ActiveEditorGameViewTarget ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.OnDisplaysUpdated                         = GetObject<DisplaysUpdatedDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplaysUpdatedDelegate.FromPointer); // 02700236CD18 0x18 OnDisplaysUpdated           ( 0001865A9360 ModelClassType DisplaysUpdatedDelegate DisplaysUpdatedDelegate DisplaysUpdatedDelegate Pointer )
+            value.M_ActiveEditorGameViewTarget              = GetInt32(new IntPtr(p + 0x010)); // 0245A236CCF8 0x10 M_ActiveEditorGameViewTarget ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.OnDisplaysUpdated                         = GetObject<DisplaysUpdatedDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplaysUpdatedDelegate.FromPointer); // 0245A236CD18 0x18 OnDisplaysUpdated           ( 0001865A9360 ModelClassType DisplaysUpdatedDelegate DisplaysUpdatedDelegate DisplaysUpdatedDelegate Pointer )
 
             return value;
         }

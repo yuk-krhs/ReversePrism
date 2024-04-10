@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 058 ContextMenuItems                         000185D31C58 ModelEnumListType List`1<ContextMenuItem> List`1<ContextMenuItem> List<ContextMenuItem> Pointer
     // 060 ColumnLabels                             000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 068 ColumnTooltips                           000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class Foldout
+    public partial class Foldout : DataModel
     {
         public bool                                     Opened                                  { get; set; }
         public bool                                     IsHeader                                { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Foldout();
+            var value   = new Foldout() { Pointer= p0 };
 
-            value.Opened                                    = GetBool(new IntPtr(p + 0x050)); // 0270D9151448 0x50 Opened                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsHeader                                  = GetBool(new IntPtr(p + 0x051)); // 0270D9151468 0x51 IsHeader                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ContextMenuItems                          = GetEnumList<ContextMenuItem>(new IntPtr(p + 0x058)); // 0270D9151488 0x58 ContextMenuItems            ( 000185D31C58 ModelEnumListType List`1<ContextMenuItem> List`1<ContextMenuItem> List<ContextMenuItem> Pointer )
-            value.ColumnLabels                              = GetStringList(new IntPtr(p + 0x060)); // 0270D91514A8 0x60 ColumnLabels                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.ColumnTooltips                            = GetStringList(new IntPtr(p + 0x068)); // 0270D91514C8 0x68 ColumnTooltips              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Opened                                    = GetBool(new IntPtr(p + 0x050)); // 0246691BA788 0x50 Opened                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsHeader                                  = GetBool(new IntPtr(p + 0x051)); // 0246691BA7A8 0x51 IsHeader                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ContextMenuItems                          = GetEnumList<ContextMenuItem>(new IntPtr(p + 0x058)); // 0246691BA7C8 0x58 ContextMenuItems            ( 000185D31C58 ModelEnumListType List`1<ContextMenuItem> List`1<ContextMenuItem> List<ContextMenuItem> Pointer )
+            value.ColumnLabels                              = GetStringList(new IntPtr(p + 0x060)); // 0246691BA7E8 0x60 ColumnLabels                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.ColumnTooltips                            = GetStringList(new IntPtr(p + 0x068)); // 0246691BA808 0x68 ColumnTooltips              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

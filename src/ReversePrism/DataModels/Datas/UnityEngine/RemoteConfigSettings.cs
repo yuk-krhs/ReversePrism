@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 Updated                                  Action`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class RemoteConfigSettings
+    public partial class RemoteConfigSettings : DataModel
     {
 
         public static RemoteConfigSettings? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoteConfigSettings();
+            var value   = new RemoteConfigSettings() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Writer                                   00018658EFD0 ModelClassType XmlCanonicalWriter XmlCanonicalWriter XmlCanonicalWriter Pointer
-    public partial class AttributeSorter
+    public partial class AttributeSorter : DataModel
     {
         public XmlCanonicalWriter?                      Writer                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttributeSorter();
+            var value   = new AttributeSorter() { Pointer= p0 };
 
-            value.Writer                                    = GetObject<XmlCanonicalWriter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlCanonicalWriter.FromPointer); // 0270D7C60F00 0x10 Writer                      ( 00018658EFD0 ModelClassType XmlCanonicalWriter XmlCanonicalWriter XmlCanonicalWriter Pointer )
+            value.Writer                                    = GetObject<XmlCanonicalWriter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlCanonicalWriter.FromPointer); // 024667CB8F00 0x10 Writer                      ( 00018658EFD0 ModelClassType XmlCanonicalWriter XmlCanonicalWriter XmlCanonicalWriter Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveComboInfoStatus
+    public partial class ILiveComboInfoStatus : DataModel
     {
 
         public static ILiveComboInfoStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveComboInfoStatus();
+            var value   = new ILiveComboInfoStatus() { Pointer= p0 };
 
 
             return value;

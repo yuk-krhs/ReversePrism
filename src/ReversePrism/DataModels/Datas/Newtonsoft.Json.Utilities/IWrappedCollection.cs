@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IWrappedCollection
+    public partial class IWrappedCollection : DataModel
     {
 
         public static IWrappedCollection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IWrappedCollection();
+            var value   = new IWrappedCollection() { Pointer= p0 };
 
 
             return value;

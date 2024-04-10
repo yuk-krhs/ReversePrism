@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Next                                     IntPtr IL2CPP_TYPE_PTR
     // 018 Data                                     0001866BC160 ModelEnumType <Data>e__FixedBuffer <Data>e__FixedBuffer <Data>e__FixedBuffer Int32
-    public partial class UnsafeStreamBlock
+    public partial class UnsafeStreamBlock : DataModel
     {
         public <Data>e__FixedBuffer                     Data                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeStreamBlock();
+            var value   = new UnsafeStreamBlock() { Pointer= p0 };
 
-            value.Data                                      = (<Data>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 0270D9E94688 0x18 Data                        ( 0001866BC160 ModelEnumType <Data>e__FixedBuffer <Data>e__FixedBuffer <Data>e__FixedBuffer Int32 )
+            value.Data                                      = (<Data>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 024669EEE758 0x18 Data                        ( 0001866BC160 ModelEnumType <Data>e__FixedBuffer <Data>e__FixedBuffer <Data>e__FixedBuffer Int32 )
 
             return value;
         }

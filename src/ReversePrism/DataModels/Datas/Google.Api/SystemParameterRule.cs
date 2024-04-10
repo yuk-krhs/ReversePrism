@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ParametersFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_parameters_codec               FieldCodec`1<SystemParameter> IL2CPP_TYPE_GENERICINST
     // 020 Parameters                               000185CF4738 ModelClassListType RepeatedField`1<SystemParameter> RepeatedField`1<SystemParameter> List<SystemParameter> Pointer
-    public partial class SystemParameterRule
+    public partial class SystemParameterRule : DataModel
     {
         public string                                   Selector                                { get; set; }
         public List<SystemParameter>?                   Parameters                              { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemParameterRule();
+            var value   = new SystemParameterRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0270DA8888F8 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parameters                                = GetObjectList<SystemParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.SystemParameter.FromPointer); // 0270DA888958 0x20 Parameters                  ( 000185CF4738 ModelClassListType RepeatedField`1<SystemParameter> RepeatedField`1<SystemParameter> List<SystemParameter> Pointer )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A8EDEA0 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parameters                                = GetObjectList<SystemParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.SystemParameter.FromPointer); // 02466A8EDF00 0x20 Parameters                  ( 000185CF4738 ModelClassListType RepeatedField`1<SystemParameter> RepeatedField`1<SystemParameter> List<SystemParameter> Pointer )
 
             return value;
         }

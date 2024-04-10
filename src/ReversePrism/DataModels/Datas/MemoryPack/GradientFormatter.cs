@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GradientFormatter
+    public partial class GradientFormatter : DataModel
     {
 
         public static GradientFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GradientFormatter();
+            var value   = new GradientFormatter() { Pointer= p0 };
 
 
             return value;

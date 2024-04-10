@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISimpleFadeLoadingContentBuilder
+    public partial class ISimpleFadeLoadingContentBuilder : DataModel
     {
 
         public static ISimpleFadeLoadingContentBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISimpleFadeLoadingContentBuilder();
+            var value   = new ISimpleFadeLoadingContentBuilder() { Pointer= p0 };
 
 
             return value;

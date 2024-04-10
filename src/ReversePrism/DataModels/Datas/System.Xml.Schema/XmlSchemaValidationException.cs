@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaValidationException
+    public partial class XmlSchemaValidationException : DataModel
     {
 
         public static XmlSchemaValidationException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaValidationException();
+            var value   = new XmlSchemaValidationException() { Pointer= p0 };
 
 
             return value;

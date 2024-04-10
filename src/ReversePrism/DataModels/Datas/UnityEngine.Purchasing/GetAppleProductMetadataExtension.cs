@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetAppleProductMetadataExtension
+    public partial class GetAppleProductMetadataExtension : DataModel
     {
 
         public static GetAppleProductMetadataExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAppleProductMetadataExtension();
+            var value   = new GetAppleProductMetadataExtension() { Pointer= p0 };
 
 
             return value;

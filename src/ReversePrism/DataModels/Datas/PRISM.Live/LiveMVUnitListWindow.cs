@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveMVUnitListWindow
+    public partial class LiveMVUnitListWindow : DataModel
     {
 
         public static LiveMVUnitListWindow? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVUnitListWindow();
+            var value   = new LiveMVUnitListWindow() { Pointer= p0 };
 
 
             return value;

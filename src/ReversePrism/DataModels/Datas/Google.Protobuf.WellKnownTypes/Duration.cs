@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 MinSeconds                               long IL2CPP_TYPE_I8
     // 000 MaxNanoseconds                           int IL2CPP_TYPE_I4
     // 000 MinNanoseconds                           int IL2CPP_TYPE_I4
-    public partial class Duration
+    public partial class Duration : DataModel
     {
         public long                                     Seconds                                 { get; set; }
         public int                                      Nanos                                   { get; set; }
@@ -31,10 +31,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Duration();
+            var value   = new Duration() { Pointer= p0 };
 
-            value.Seconds                                   = GetInt64(new IntPtr(p + 0x018)); // 0270DA48B6D8 0x18 Seconds                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Nanos                                     = GetInt32(new IntPtr(p + 0x020)); // 0270DA48B718 0x20 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Seconds                                   = GetInt64(new IntPtr(p + 0x018)); // 02466A4CE6A8 0x18 Seconds                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Nanos                                     = GetInt32(new IntPtr(p + 0x020)); // 02466A4CE6E8 0x20 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

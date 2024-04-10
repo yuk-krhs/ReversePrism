@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 __Method_CreateContainerChunk            Method`2<Container, Empty> IL2CPP_TYPE_GENERICINST
     // 030 __Method_CreateArchiveIndex              Method`2<CreateArchiveIndexRequest, Empty> IL2CPP_TYPE_GENERICINST
     // 038 __Method_ListArchiveIndex                Method`2<Empty, ListArchiveIndexResponse> IL2CPP_TYPE_GENERICINST
-    public partial class IngestService
+    public partial class IngestService : DataModel
     {
 
         public static IngestService? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngestService();
+            var value   = new IngestService() { Pointer= p0 };
 
 
             return value;

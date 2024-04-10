@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class unitytls_tlsctx_set_supported_ciphersuites_t
+    public partial class unitytls_tlsctx_set_supported_ciphersuites_t : DataModel
     {
 
         public static unitytls_tlsctx_set_supported_ciphersuites_t? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new unitytls_tlsctx_set_supported_ciphersuites_t();
+            var value   = new unitytls_tlsctx_set_supported_ciphersuites_t() { Pointer= p0 };
 
 
             return value;

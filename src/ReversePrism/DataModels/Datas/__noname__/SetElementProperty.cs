@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_Value                                  <var> IL2CPP_TYPE_VAR
-    public partial class SetElementProperty
+    public partial class SetElementProperty : DataModel
     {
 
         public static SetElementProperty? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetElementProperty();
+            var value   = new SetElementProperty() { Pointer= p0 };
 
 
             return value;

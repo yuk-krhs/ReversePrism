@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 038 M_EffectDistance                         0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 040 M_UseGraphicAlpha                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 kMaxEffectDistance                       float IL2CPP_TYPE_R4
-    public partial class Shadow
+    public partial class Shadow : DataModel
     {
         public Color                                    M_EffectColor                           { get; set; }
         public Vector2                                  M_EffectDistance                        { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Shadow();
+            var value   = new Shadow() { Pointer= p0 };
 
-            value.M_EffectColor                             = (Color)GetInt32(new IntPtr(p + 0x028)); // 0270068E1F10 0x28 M_EffectColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_EffectDistance                          = (Vector2)GetInt32(new IntPtr(p + 0x038)); // 0270068E1F30 0x38 M_EffectDistance            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_UseGraphicAlpha                         = GetBool(new IntPtr(p + 0x040)); // 0270068E1F50 0x40 M_UseGraphicAlpha           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_EffectColor                             = (Color)GetInt32(new IntPtr(p + 0x028)); // 0245A68A4C40 0x28 M_EffectColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_EffectDistance                          = (Vector2)GetInt32(new IntPtr(p + 0x038)); // 0245A68A4C60 0x38 M_EffectDistance            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_UseGraphicAlpha                         = GetBool(new IntPtr(p + 0x040)); // 0245A68A4C80 0x40 M_UseGraphicAlpha           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Code                                     0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 SortKey                                  IntPtr IL2CPP_TYPE_PTR
-    public partial class PreviousInfo
+    public partial class PreviousInfo : DataModel
     {
         public int                                      Code                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreviousInfo();
+            var value   = new PreviousInfo() { Pointer= p0 };
 
-            value.Code                                      = GetInt32(new IntPtr(p + 0x010)); // 0270D6933258 0x10 Code                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Code                                      = GetInt32(new IntPtr(p + 0x010)); // 0246669AB258 0x10 Code                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 C1                                       0001866C9B90 ModelEnumType int4 int4 int4 Int32
     // 030 C2                                       0001866C9B90 ModelEnumType int4 int4 int4 Int32
     // 000 zero                                     int4x3 IL2CPP_TYPE_VALUETYPE
-    public partial class int4x3
+    public partial class int4x3 : DataModel
     {
         public int4                                     C0                                      { get; set; }
         public int4                                     C1                                      { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new int4x3();
+            var value   = new int4x3() { Pointer= p0 };
 
-            value.C0                                        = (int4)GetInt32(new IntPtr(p + 0x010)); // 0270D7E9E2A8 0x10 C0                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
-            value.C1                                        = (int4)GetInt32(new IntPtr(p + 0x020)); // 0270D7E9E2C8 0x20 C1                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
-            value.C2                                        = (int4)GetInt32(new IntPtr(p + 0x030)); // 0270D7E9E2E8 0x30 C2                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
+            value.C0                                        = (int4)GetInt32(new IntPtr(p + 0x010)); // 024667F062A8 0x10 C0                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
+            value.C1                                        = (int4)GetInt32(new IntPtr(p + 0x020)); // 024667F062C8 0x20 C1                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
+            value.C2                                        = (int4)GetInt32(new IntPtr(p + 0x030)); // 024667F062E8 0x30 C2                          ( 0001866C9B90 ModelEnumType int4 int4 int4 Int32 )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 BonusFactory                             00018654E4A0 ModelClassType LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory Pointer
     // 038 ShopFactory                              000186774550 ModelClassType ShopViewFactory ShopViewFactory ShopViewFactory Pointer
     // 040 ResultFactory                            000186552D60 ModelClassType LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory Pointer
-    public partial class LiveEventBuilder
+    public partial class LiveEventBuilder : DataModel
     {
         public LiveEventView?                           View                                    { get; set; }
         public LiveEventRankingOverlayViewFactory?      RankingFactory                          { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventBuilder();
+            var value   = new LiveEventBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<LiveEventView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveEventView.FromPointer); // 0270DB6152D0 0x20 View                        ( 000186554E10 ModelClassType LiveEventView LiveEventView LiveEventView Pointer )
-            value.RankingFactory                            = GetObject<LiveEventRankingOverlayViewFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveEventRankingOverlayViewFactory.FromPointer); // 0270DB6152F0 0x28 RankingFactory              ( 000186551470 ModelClassType LiveEventRankingOverlayViewFactory LiveEventRankingOverlayViewFactory LiveEventRankingOverlayViewFactory Pointer )
-            value.BonusFactory                              = GetObject<LiveEventBonusOverlayViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveEventBonusOverlayViewFactory.FromPointer); // 0270DB615310 0x30 BonusFactory                ( 00018654E4A0 ModelClassType LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory Pointer )
-            value.ShopFactory                               = GetObject<ShopViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopViewFactory.FromPointer); // 0270DB615330 0x38 ShopFactory                 ( 000186774550 ModelClassType ShopViewFactory ShopViewFactory ShopViewFactory Pointer )
-            value.ResultFactory                             = GetObject<LiveEventResultPopupViewFactory>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveEventResultPopupViewFactory.FromPointer); // 0270DB615350 0x40 ResultFactory               ( 000186552D60 ModelClassType LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory Pointer )
+            value.View                                      = GetObject<LiveEventView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveEventView.FromPointer); // 02466B691CC8 0x20 View                        ( 000186554E10 ModelClassType LiveEventView LiveEventView LiveEventView Pointer )
+            value.RankingFactory                            = GetObject<LiveEventRankingOverlayViewFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveEventRankingOverlayViewFactory.FromPointer); // 02466B691CE8 0x28 RankingFactory              ( 000186551470 ModelClassType LiveEventRankingOverlayViewFactory LiveEventRankingOverlayViewFactory LiveEventRankingOverlayViewFactory Pointer )
+            value.BonusFactory                              = GetObject<LiveEventBonusOverlayViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveEventBonusOverlayViewFactory.FromPointer); // 02466B691D08 0x30 BonusFactory                ( 00018654E4A0 ModelClassType LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory LiveEventBonusOverlayViewFactory Pointer )
+            value.ShopFactory                               = GetObject<ShopViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopViewFactory.FromPointer); // 02466B691D28 0x38 ShopFactory                 ( 000186774550 ModelClassType ShopViewFactory ShopViewFactory ShopViewFactory Pointer )
+            value.ResultFactory                             = GetObject<LiveEventResultPopupViewFactory>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveEventResultPopupViewFactory.FromPointer); // 02466B691D48 0x40 ResultFactory               ( 000186552D60 ModelClassType LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory LiveEventResultPopupViewFactory Pointer )
 
             return value;
         }

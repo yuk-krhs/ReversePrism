@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidProductTypeException
+    public partial class InvalidProductTypeException : DataModel
     {
 
         public static InvalidProductTypeException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidProductTypeException();
+            var value   = new InvalidProductTypeException() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlFormatClassWriterDelegate
+    public partial class XmlFormatClassWriterDelegate : DataModel
     {
 
         public static XmlFormatClassWriterDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlFormatClassWriterDelegate();
+            var value   = new XmlFormatClassWriterDelegate() { Pointer= p0 };
 
 
             return value;

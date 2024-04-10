@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AbstractStore
+    public partial class AbstractStore : DataModel
     {
 
         public static AbstractStore? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AbstractStore();
+            var value   = new AbstractStore() { Pointer= p0 };
 
 
             return value;

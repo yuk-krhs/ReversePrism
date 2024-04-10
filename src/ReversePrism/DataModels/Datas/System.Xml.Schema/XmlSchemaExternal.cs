@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 050 Id                                       000186671910 ModelPrimitiveType string string string String
     // 058 MoreAttributes                           000185CB3608 ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer
     // 060 Compositor                               0001865F4050 ModelEnumType Compositor Compositor Compositor Int32
-    public partial class XmlSchemaExternal
+    public partial class XmlSchemaExternal : DataModel
     {
         public string                                   Location                                { get; set; }
         public Uri?                                     BaseUri                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaExternal();
+            var value   = new XmlSchemaExternal() { Pointer= p0 };
 
-            value.Location                                  = GetString(new IntPtr(p + 0x038)); // 0270D752BB40 0x38 Location                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.BaseUri                                   = GetObject<Uri>(new IntPtr(p + 0x040), ReversePrism.DataModels.Uri.FromPointer); // 0270D752BB60 0x40 BaseUri                     ( 0001866A4270 ModelClassType Uri Uri Uri Pointer )
-            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlSchema.FromPointer); // 0270D752BB80 0x48 Schema                      ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.Id                                        = GetString(new IntPtr(p + 0x050)); // 0270D752BBA0 0x50 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.MoreAttributes                            = GetObjectList<XmlAttribute>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlAttribute.FromPointer); // 0270D752BBC0 0x58 MoreAttributes              ( 000185CB3608 ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer )
-            value.Compositor                                = (Compositor)GetInt32(new IntPtr(p + 0x060)); // 0270D752BBE0 0x60 Compositor                  ( 0001865F4050 ModelEnumType Compositor Compositor Compositor Int32 )
+            value.Location                                  = GetString(new IntPtr(p + 0x038)); // 024667593B40 0x38 Location                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.BaseUri                                   = GetObject<Uri>(new IntPtr(p + 0x040), ReversePrism.DataModels.Uri.FromPointer); // 024667593B60 0x40 BaseUri                     ( 0001866A4270 ModelClassType Uri Uri Uri Pointer )
+            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlSchema.FromPointer); // 024667593B80 0x48 Schema                      ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x050)); // 024667593BA0 0x50 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.MoreAttributes                            = GetObjectList<XmlAttribute>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlAttribute.FromPointer); // 024667593BC0 0x58 MoreAttributes              ( 000185CB3608 ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer )
+            value.Compositor                                = (Compositor)GetInt32(new IntPtr(p + 0x060)); // 024667593BE0 0x60 Compositor                  ( 0001865F4050 ModelEnumType Compositor Compositor Compositor Int32 )
 
             return value;
         }

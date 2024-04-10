@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 PermissionState                          000186671910 ModelPrimitiveType string string string String
-    public partial class SecurityException
+    public partial class SecurityException : DataModel
     {
         public string                                   PermissionState                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SecurityException();
+            var value   = new SecurityException() { Pointer= p0 };
 
-            value.PermissionState                           = GetString(new IntPtr(p + 0x090)); // 0270D6B69D38 0x90 PermissionState             ( 000186671910 ModelPrimitiveType string string string String )
+            value.PermissionState                           = GetString(new IntPtr(p + 0x090)); // 024666BE1D38 0x90 PermissionState             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

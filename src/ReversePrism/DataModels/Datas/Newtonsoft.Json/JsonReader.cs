@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 068 Stack                                    000185CEEAC8 ModelEnumListType List`1<JsonPosition> List`1<JsonPosition> List<JsonPosition> Pointer
     // 070 CloseInput                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 071 SupportMultipleContent                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonReader
+    public partial class JsonReader : DataModel
     {
         public JsonToken                                TokenType                               { get; set; }
         public State                                    CurrentState                            { get; set; }
@@ -44,20 +44,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonReader();
+            var value   = new JsonReader() { Pointer= p0 };
 
-            value.TokenType                                 = (JsonToken)GetInt32(new IntPtr(p + 0x010)); // 027005FCEDB8 0x10 TokenType                   ( 000186762350 ModelEnumType JsonToken JsonToken JsonToken Int32 )
-            value.CurrentState                              = (State)GetInt32(new IntPtr(p + 0x024)); // 027005FCEE18 0x24 CurrentState                ( 000186664F80 ModelEnumType State State State Int32 )
-            value.CurrentPosition                           = (JsonPosition)GetInt32(new IntPtr(p + 0x028)); // 027005FCEE38 0x28 CurrentPosition             ( 000186758540 ModelEnumType JsonPosition JsonPosition JsonPosition Int32 )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.CultureInfo.FromPointer); // 027005FCEE58 0x40 Culture                     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.DateTimeZoneHandling                      = (DateTimeZoneHandling)GetInt32(new IntPtr(p + 0x048)); // 027005FCEE78 0x48 DateTimeZoneHandling        ( 0001866970F0 ModelEnumType DateTimeZoneHandling DateTimeZoneHandling DateTimeZoneHandling Int32 )
-            value.HasExceededMaxDepth                       = GetBool(new IntPtr(p + 0x054)); // 027005FCEEB8 0x54 HasExceededMaxDepth         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DateParseHandling                         = (DateParseHandling)GetInt32(new IntPtr(p + 0x058)); // 027005FCEED8 0x58 DateParseHandling           ( 000186692BF0 ModelEnumType DateParseHandling DateParseHandling DateParseHandling Int32 )
-            value.FloatParseHandling                        = (FloatParseHandling)GetInt32(new IntPtr(p + 0x05C)); // 027005FCEEF8 0x5C FloatParseHandling          ( 0001865A7330 ModelEnumType FloatParseHandling FloatParseHandling FloatParseHandling Int32 )
-            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 027005FCEF18 0x60 DateFormatString            ( 000186671910 ModelPrimitiveType string string string String )
-            value.Stack                                     = GetEnumList<JsonPosition>(new IntPtr(p + 0x068)); // 027005FCEF38 0x68 Stack                       ( 000185CEEAC8 ModelEnumListType List`1<JsonPosition> List`1<JsonPosition> List<JsonPosition> Pointer )
-            value.CloseInput                                = GetBool(new IntPtr(p + 0x070)); // 027005FCEF58 0x70 CloseInput                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SupportMultipleContent                    = GetBool(new IntPtr(p + 0x071)); // 027005FCEF78 0x71 SupportMultipleContent      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TokenType                                 = (JsonToken)GetInt32(new IntPtr(p + 0x010)); // 0245A5FAA488 0x10 TokenType                   ( 000186762350 ModelEnumType JsonToken JsonToken JsonToken Int32 )
+            value.CurrentState                              = (State)GetInt32(new IntPtr(p + 0x024)); // 0245A5FAA4E8 0x24 CurrentState                ( 000186664F80 ModelEnumType State State State Int32 )
+            value.CurrentPosition                           = (JsonPosition)GetInt32(new IntPtr(p + 0x028)); // 0245A5FAA508 0x28 CurrentPosition             ( 000186758540 ModelEnumType JsonPosition JsonPosition JsonPosition Int32 )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A5FAA528 0x40 Culture                     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.DateTimeZoneHandling                      = (DateTimeZoneHandling)GetInt32(new IntPtr(p + 0x048)); // 0245A5FAA548 0x48 DateTimeZoneHandling        ( 0001866970F0 ModelEnumType DateTimeZoneHandling DateTimeZoneHandling DateTimeZoneHandling Int32 )
+            value.HasExceededMaxDepth                       = GetBool(new IntPtr(p + 0x054)); // 0245A5FAA588 0x54 HasExceededMaxDepth         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DateParseHandling                         = (DateParseHandling)GetInt32(new IntPtr(p + 0x058)); // 0245A5FAA5A8 0x58 DateParseHandling           ( 000186692BF0 ModelEnumType DateParseHandling DateParseHandling DateParseHandling Int32 )
+            value.FloatParseHandling                        = (FloatParseHandling)GetInt32(new IntPtr(p + 0x05C)); // 0245A5FAA5C8 0x5C FloatParseHandling          ( 0001865A7330 ModelEnumType FloatParseHandling FloatParseHandling FloatParseHandling Int32 )
+            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 0245A5FAA5E8 0x60 DateFormatString            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Stack                                     = GetEnumList<JsonPosition>(new IntPtr(p + 0x068)); // 0245A5FAA608 0x68 Stack                       ( 000185CEEAC8 ModelEnumListType List`1<JsonPosition> List`1<JsonPosition> List<JsonPosition> Pointer )
+            value.CloseInput                                = GetBool(new IntPtr(p + 0x070)); // 0245A5FAA628 0x70 CloseInput                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SupportMultipleContent                    = GetBool(new IntPtr(p + 0x071)); // 0245A5FAA648 0x71 SupportMultipleContent      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

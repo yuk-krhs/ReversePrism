@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvPRankingView
+    public partial class IPvPRankingView : DataModel
     {
 
         public static IPvPRankingView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvPRankingView();
+            var value   = new IPvPRankingView() { Pointer= p0 };
 
 
             return value;

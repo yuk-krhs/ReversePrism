@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SelectFavoriteMarkPopupViewFactory
+    public partial class SelectFavoriteMarkPopupViewFactory : DataModel
     {
 
         public static SelectFavoriteMarkPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectFavoriteMarkPopupViewFactory();
+            var value   = new SelectFavoriteMarkPopupViewFactory() { Pointer= p0 };
 
 
             return value;

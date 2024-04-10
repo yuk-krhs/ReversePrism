@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
     // 038 Types                                    000185CB4AA8 ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer
-    public partial class Datatype_union
+    public partial class Datatype_union : DataModel
     {
         public List<XmlSchemaSimpleType>?               Types                                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_union();
+            var value   = new Datatype_union() { Pointer= p0 };
 
-            value.Types                                     = GetObjectList<XmlSchemaSimpleType>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0270D75039A0 0x38 Types                       ( 000185CB4AA8 ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer )
+            value.Types                                     = GetObjectList<XmlSchemaSimpleType>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0246675639A0 0x38 Types                       ( 000185CB4AA8 ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer )
 
             return value;
         }

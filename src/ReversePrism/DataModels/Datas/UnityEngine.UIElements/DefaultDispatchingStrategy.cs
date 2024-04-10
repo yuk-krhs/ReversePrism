@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DefaultDispatchingStrategy
+    public partial class DefaultDispatchingStrategy : DataModel
     {
 
         public static DefaultDispatchingStrategy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultDispatchingStrategy();
+            var value   = new DefaultDispatchingStrategy() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 RarityEffect                             0001866B8FF0 ModelClassType Animator Animator Animator Pointer
     // 050 Ct                                       00018653D040 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     // 058 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SCharaIconViewBase
+    public partial class SCharaIconViewBase : DataModel
     {
         public UITextMeshProUGUI?                       TxtCharaLv                              { get; set; }
         public DiamondDisplay?                          DiamondDisplay                          { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaIconViewBase();
+            var value   = new SCharaIconViewBase() { Pointer= p0 };
 
-            value.TxtCharaLv                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027005B21A48 0x20 TxtCharaLv                  ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DiamondDisplay                            = GetObject<DiamondDisplay>(new IntPtr(p + 0x028), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 027005B21A68 0x28 DiamondDisplay              ( 0001866CFB10 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
-            value.CgBlank                                   = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027005B21A88 0x30 CgBlank                     ( 000186541150 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ImgFavoriteMark                           = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 027005B21AA8 0x38 ImgFavoriteMark             ( 000186613440 ModelClassType RawImage RawImage RawImage Pointer )
-            value.CgFavoriteMark                            = GetObject<CanvasGroup>(new IntPtr(p + 0x040), ReversePrism.DataModels.CanvasGroup.FromPointer); // 027005B21AC8 0x40 CgFavoriteMark              ( 000186541150 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.RarityEffect                              = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 027005B21AE8 0x48 RarityEffect                ( 0001866B8FF0 ModelClassType Animator Animator Animator Pointer )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x050)); // 027005B21B08 0x50 Ct                          ( 00018653D040 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x058)); // 027005B21B28 0x58 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TxtCharaLv                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A5B235B8 0x20 TxtCharaLv                  ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DiamondDisplay                            = GetObject<DiamondDisplay>(new IntPtr(p + 0x028), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 0245A5B235D8 0x28 DiamondDisplay              ( 0001866CFB10 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
+            value.CgBlank                                   = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A5B235F8 0x30 CgBlank                     ( 000186541150 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ImgFavoriteMark                           = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0245A5B23618 0x38 ImgFavoriteMark             ( 000186613440 ModelClassType RawImage RawImage RawImage Pointer )
+            value.CgFavoriteMark                            = GetObject<CanvasGroup>(new IntPtr(p + 0x040), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A5B23638 0x40 CgFavoriteMark              ( 000186541150 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.RarityEffect                              = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 0245A5B23658 0x48 RarityEffect                ( 0001866B8FF0 ModelClassType Animator Animator Animator Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x050)); // 0245A5B23678 0x50 Ct                          ( 00018653D040 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x058)); // 0245A5B23698 0x58 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

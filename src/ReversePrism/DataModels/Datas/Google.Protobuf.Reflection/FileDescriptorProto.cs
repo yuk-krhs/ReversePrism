@@ -44,7 +44,7 @@ namespace ReversePrism.DataModels
     // 000 SyntaxFieldNumber                        int IL2CPP_TYPE_I4
     // 050 SyntaxDefaultValue                       0001866738F0 ModelPrimitiveType string string string String
     // 070 Syntax                                   000186671910 ModelPrimitiveType string string string String
-    public partial class FileDescriptorProto
+    public partial class FileDescriptorProto : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   PackageDefaultValue                     { get; set; }
@@ -67,22 +67,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileDescriptorProto();
+            var value   = new FileDescriptorProto() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D0BB80C0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.PackageDefaultValue                       = GetString(new IntPtr(p + 0x010)); // 0270D0BB8100 0x10 PackageDefaultValue         ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.Package                                   = GetString(new IntPtr(p + 0x020)); // 0270D0BB8120 0x20 Package                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Dependency                                = GetStringList(new IntPtr(p + 0x028)); // 0270D0BB8180 0x28 Dependency                  ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.PublicDependency                          = GetInt32List(new IntPtr(p + 0x030)); // 0270D0BB81E0 0x30 PublicDependency            ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.WeakDependency                            = GetInt32List(new IntPtr(p + 0x038)); // 0270D0BB8240 0x38 WeakDependency              ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.MessageType                               = GetObjectList<DescriptorProto>(new IntPtr(p + 0x040), ReversePrism.DataModels.DescriptorProto.FromPointer); // 0270D0BB82A0 0x40 MessageType                 ( 000185CD3518 ModelClassListType RepeatedField`1<DescriptorProto> RepeatedField`1<DescriptorProto> List<DescriptorProto> Pointer )
-            value.EnumType                                  = GetObjectList<EnumDescriptorProto>(new IntPtr(p + 0x048), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 0270D0BB8300 0x48 EnumType                    ( 000185CD4528 ModelClassListType RepeatedField`1<EnumDescriptorProto> RepeatedField`1<EnumDescriptorProto> List<EnumDescriptorProto> Pointer )
-            value.Service                                   = GetObjectList<ServiceDescriptorProto>(new IntPtr(p + 0x050), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 0270D0BB8360 0x50 Service                     ( 000185CF0A98 ModelClassListType RepeatedField`1<ServiceDescriptorProto> RepeatedField`1<ServiceDescriptorProto> List<ServiceDescriptorProto> Pointer )
-            value.Extension                                 = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x058), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 0270D0BB83C0 0x58 Extension                   ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
-            value.Options                                   = GetObject<FileOptions>(new IntPtr(p + 0x060), ReversePrism.DataModels.FileOptions.FromPointer); // 0270D0BB8400 0x60 Options                     ( 00018657B5A0 ModelClassType FileOptions FileOptions FileOptions Pointer )
-            value.SourceCodeInfo                            = GetObject<SourceCodeInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.SourceCodeInfo.FromPointer); // 0270D0BB8440 0x68 SourceCodeInfo              ( 0001865394D0 ModelClassType SourceCodeInfo SourceCodeInfo SourceCodeInfo Pointer )
-            value.SyntaxDefaultValue                        = GetString(new IntPtr(p + 0x050)); // 0270D0BB8480 0x50 SyntaxDefaultValue          ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.Syntax                                    = GetString(new IntPtr(p + 0x070)); // 0270D0BB84A0 0x70 Syntax                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A3B17228 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.PackageDefaultValue                       = GetString(new IntPtr(p + 0x010)); // 0245A3B17268 0x10 PackageDefaultValue         ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.Package                                   = GetString(new IntPtr(p + 0x020)); // 0245A3B17288 0x20 Package                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Dependency                                = GetStringList(new IntPtr(p + 0x028)); // 0245A3B172E8 0x28 Dependency                  ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.PublicDependency                          = GetInt32List(new IntPtr(p + 0x030)); // 0245A3B17348 0x30 PublicDependency            ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.WeakDependency                            = GetInt32List(new IntPtr(p + 0x038)); // 0245A3B173A8 0x38 WeakDependency              ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MessageType                               = GetObjectList<DescriptorProto>(new IntPtr(p + 0x040), ReversePrism.DataModels.DescriptorProto.FromPointer); // 0245A3B17408 0x40 MessageType                 ( 000185CD3518 ModelClassListType RepeatedField`1<DescriptorProto> RepeatedField`1<DescriptorProto> List<DescriptorProto> Pointer )
+            value.EnumType                                  = GetObjectList<EnumDescriptorProto>(new IntPtr(p + 0x048), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 0245A3B17468 0x48 EnumType                    ( 000185CD4528 ModelClassListType RepeatedField`1<EnumDescriptorProto> RepeatedField`1<EnumDescriptorProto> List<EnumDescriptorProto> Pointer )
+            value.Service                                   = GetObjectList<ServiceDescriptorProto>(new IntPtr(p + 0x050), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 0245A3B174C8 0x50 Service                     ( 000185CF0A98 ModelClassListType RepeatedField`1<ServiceDescriptorProto> RepeatedField`1<ServiceDescriptorProto> List<ServiceDescriptorProto> Pointer )
+            value.Extension                                 = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x058), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 0245A3B17528 0x58 Extension                   ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
+            value.Options                                   = GetObject<FileOptions>(new IntPtr(p + 0x060), ReversePrism.DataModels.FileOptions.FromPointer); // 0245A3B17568 0x60 Options                     ( 00018657B5A0 ModelClassType FileOptions FileOptions FileOptions Pointer )
+            value.SourceCodeInfo                            = GetObject<SourceCodeInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.SourceCodeInfo.FromPointer); // 0245A3B175A8 0x68 SourceCodeInfo              ( 0001865394D0 ModelClassType SourceCodeInfo SourceCodeInfo SourceCodeInfo Pointer )
+            value.SyntaxDefaultValue                        = GetString(new IntPtr(p + 0x050)); // 0245A3B175E8 0x50 SyntaxDefaultValue          ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.Syntax                                    = GetString(new IntPtr(p + 0x070)); // 0245A3B17608 0x70 Syntax                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

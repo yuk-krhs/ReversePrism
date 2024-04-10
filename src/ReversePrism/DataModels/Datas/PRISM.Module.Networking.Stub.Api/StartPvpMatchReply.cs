@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 PvpStamina                               00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     // 000 IsChangedOpponentUnitFieldNumber         int IL2CPP_TYPE_I4
     // 028 IsChangedOpponentUnit                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class StartPvpMatchReply
+    public partial class StartPvpMatchReply : DataModel
     {
         public PvpMatchStatus?                          Match                                   { get; set; }
         public StaminaStatus?                           PvpStamina                              { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartPvpMatchReply();
+            var value   = new StartPvpMatchReply() { Pointer= p0 };
 
-            value.Match                                     = GetObject<PvpMatchStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchStatus.FromPointer); // 0270D274F310 0x18 Match                       ( 0001865EA7A0 ModelClassType PvpMatchStatus PvpMatchStatus PvpMatchStatus Pointer )
-            value.PvpStamina                                = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0270D274F350 0x20 PvpStamina                  ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.IsChangedOpponentUnit                     = GetBool(new IntPtr(p + 0x028)); // 0270D274F390 0x28 IsChangedOpponentUnit       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Match                                     = GetObject<PvpMatchStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpMatchStatus.FromPointer); // 0246626C88C8 0x18 Match                       ( 0001865EA7A0 ModelClassType PvpMatchStatus PvpMatchStatus PvpMatchStatus Pointer )
+            value.PvpStamina                                = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246626C8908 0x20 PvpStamina                  ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.IsChangedOpponentUnit                     = GetBool(new IntPtr(p + 0x028)); // 0246626C8948 0x28 IsChangedOpponentUnit       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

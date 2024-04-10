@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Value                                    <var> IL2CPP_TYPE_VAR
     // 000 HashCode                                 int IL2CPP_TYPE_I4
     // 000 Next                                     int IL2CPP_TYPE_I4
-    public partial class Entry
+    public partial class Entry : DataModel
     {
 
         public static Entry? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Entry();
+            var value   = new Entry() { Pointer= p0 };
 
 
             return value;

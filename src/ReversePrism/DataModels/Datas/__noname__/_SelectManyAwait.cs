@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 collectionSelectorAwaiter                Awaiter<IUniTaskAsyncEnumerable`1<<var>>> IL2CPP_TYPE_GENERICINST
     // 000 resultSelectorAwaiter                    Awaiter<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _SelectManyAwait
+    public partial class _SelectManyAwait : DataModel
     {
 
         public static _SelectManyAwait? FromPointer(IntPtr p0)
@@ -37,7 +37,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _SelectManyAwait();
+            var value   = new _SelectManyAwait() { Pointer= p0 };
 
 
             return value;

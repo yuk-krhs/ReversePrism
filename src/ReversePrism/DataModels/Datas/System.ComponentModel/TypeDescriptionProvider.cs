@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Parent                                   0001866D38B0 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer
     // 018 EmptyDescriptor                          00018664F9F0 ModelClassType EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor Pointer
-    public partial class TypeDescriptionProvider
+    public partial class TypeDescriptionProvider : DataModel
     {
         public TypeDescriptionProvider?                 Parent                                  { get; set; }
         public EmptyCustomTypeDescriptor?               EmptyDescriptor                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeDescriptionProvider();
+            var value   = new TypeDescriptionProvider() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<TypeDescriptionProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionProvider.FromPointer); // 0270060266C8 0x10 Parent                      ( 0001866D38B0 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer )
-            value.EmptyDescriptor                           = GetObject<EmptyCustomTypeDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.EmptyCustomTypeDescriptor.FromPointer); // 0270060266E8 0x18 EmptyDescriptor             ( 00018664F9F0 ModelClassType EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor Pointer )
+            value.Parent                                    = GetObject<TypeDescriptionProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionProvider.FromPointer); // 0245A6000430 0x10 Parent                      ( 0001866D38B0 ModelClassType TypeDescriptionProvider TypeDescriptionProvider TypeDescriptionProvider Pointer )
+            value.EmptyDescriptor                           = GetObject<EmptyCustomTypeDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.EmptyCustomTypeDescriptor.FromPointer); // 0245A6000450 0x18 EmptyDescriptor             ( 00018664F9F0 ModelClassType EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor EmptyCustomTypeDescriptor Pointer )
 
             return value;
         }

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 010 ExistsRequestBody                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 ExistsResponseBody                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
-    public partial class Method
+    public partial class Method : DataModel
     {
         public Method?                                  DELETE                                  { get; set; }
         public Method?                                  PUT                                     { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Method();
+            var value   = new Method() { Pointer= p0 };
 
-            value.DELETE                                    = GetObject<Method>(new IntPtr(p + 0x010), ReversePrism.DataModels.Method.FromPointer); // 027004C0F5C0 0x10 DELETE                      ( 00018660E270 ModelClassType Method Method Method Pointer )
-            value.PUT                                       = GetObject<Method>(new IntPtr(p + 0x018), ReversePrism.DataModels.Method.FromPointer); // 027004C0F5E0 0x18 PUT                         ( 00018660E270 ModelClassType Method Method Method Pointer )
-            value.ExistsRequestBody                         = GetBool(new IntPtr(p + 0x010)); // 027004C0F600 0x10 ExistsRequestBody           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ExistsResponseBody                        = GetBool(new IntPtr(p + 0x011)); // 027004C0F620 0x11 ExistsResponseBody          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 027004C0F640 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.DELETE                                    = GetObject<Method>(new IntPtr(p + 0x010), ReversePrism.DataModels.Method.FromPointer); // 0245A4C46530 0x10 DELETE                      ( 00018660E270 ModelClassType Method Method Method Pointer )
+            value.PUT                                       = GetObject<Method>(new IntPtr(p + 0x018), ReversePrism.DataModels.Method.FromPointer); // 0245A4C46550 0x18 PUT                         ( 00018660E270 ModelClassType Method Method Method Pointer )
+            value.ExistsRequestBody                         = GetBool(new IntPtr(p + 0x010)); // 0245A4C46570 0x10 ExistsRequestBody           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ExistsResponseBody                        = GetBool(new IntPtr(p + 0x011)); // 0245A4C46590 0x11 ExistsResponseBody          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A4C465B0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

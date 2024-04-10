@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Units                                    0001865F7700 ModelPrimitiveType long long long Int64
     // 000 NanosFieldNumber                         int IL2CPP_TYPE_I4
     // 028 Nanos                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Money
+    public partial class Money : DataModel
     {
         public string                                   CurrencyCode                            { get; set; }
         public long                                     Units                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Money();
+            var value   = new Money() { Pointer= p0 };
 
-            value.CurrencyCode                              = GetString(new IntPtr(p + 0x018)); // 0270DA6A89E8 0x18 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Units                                     = GetInt64(new IntPtr(p + 0x020)); // 0270DA6A8A28 0x20 Units                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Nanos                                     = GetInt32(new IntPtr(p + 0x028)); // 0270DA6A8A68 0x28 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrencyCode                              = GetString(new IntPtr(p + 0x018)); // 02466A704120 0x18 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Units                                     = GetInt64(new IntPtr(p + 0x020)); // 02466A704160 0x20 Units                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Nanos                                     = GetInt32(new IntPtr(p + 0x028)); // 02466A7041A0 0x28 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

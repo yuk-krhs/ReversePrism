@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Rarity                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 018 PickUpRateList                           000185D0CB78 ModelClassListType List`1<StepUpRateModel> List`1<StepUpRateModel> List<StepUpRateModel> Pointer
     // 020 PromisedRateName                         000186672F10 ModelPrimitiveType string string string String
-    public partial class StepUpGashaRatesPickUpRateTableCellViewModel
+    public partial class StepUpGashaRatesPickUpRateTableCellViewModel : DataModel
     {
         public int                                      Rarity                                  { get; set; }
         public List<StepUpRateModel>?                   PickUpRateList                          { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StepUpGashaRatesPickUpRateTableCellViewModel();
+            var value   = new StepUpGashaRatesPickUpRateTableCellViewModel() { Pointer= p0 };
 
-            value.Rarity                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D53DD498 0x10 Rarity                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.PickUpRateList                            = GetObjectList<StepUpRateModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.StepUpRateModel.FromPointer); // 0270D53DD4B8 0x18 PickUpRateList              ( 000185D0CB78 ModelClassListType List`1<StepUpRateModel> List`1<StepUpRateModel> List<StepUpRateModel> Pointer )
-            value.PromisedRateName                          = GetString(new IntPtr(p + 0x020)); // 0270D53DD4D8 0x20 PromisedRateName            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Rarity                                    = GetInt32(new IntPtr(p + 0x010)); // 024665458E48 0x10 Rarity                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.PickUpRateList                            = GetObjectList<StepUpRateModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.StepUpRateModel.FromPointer); // 024665458E68 0x18 PickUpRateList              ( 000185D0CB78 ModelClassListType List`1<StepUpRateModel> List`1<StepUpRateModel> List<StepUpRateModel> Pointer )
+            value.PromisedRateName                          = GetString(new IntPtr(p + 0x020)); // 024665458E88 0x20 PromisedRateName            ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

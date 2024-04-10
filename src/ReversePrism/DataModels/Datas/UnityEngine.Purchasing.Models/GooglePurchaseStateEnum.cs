@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_AndroidPurchaseStateClassName          string IL2CPP_TYPE_STRING
-    public partial class GooglePurchaseStateEnum
+    public partial class GooglePurchaseStateEnum : DataModel
     {
 
         public static GooglePurchaseStateEnum? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GooglePurchaseStateEnum();
+            var value   = new GooglePurchaseStateEnum() { Pointer= p0 };
 
 
             return value;

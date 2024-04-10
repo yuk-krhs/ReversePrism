@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 ErrorDialogButtonType                    0001867451E0 ModelEnumType ErrorDialogButtonType ErrorDialogButtonType ErrorDialogButtonType Int32
     // 000 ButtonTextFieldNumber                    int IL2CPP_TYPE_I4
     // 028 ButtonText                               000186671910 ModelPrimitiveType string string string String
-    public partial class ErrorButtonStatus
+    public partial class ErrorButtonStatus : DataModel
     {
         public string                                   ButtonValue                             { get; set; }
         public ErrorDialogButtonType                    ErrorDialogButtonType                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorButtonStatus();
+            var value   = new ErrorButtonStatus() { Pointer= p0 };
 
-            value.ButtonValue                               = GetString(new IntPtr(p + 0x018)); // 0270D374A0F8 0x18 ButtonValue                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ErrorDialogButtonType                     = (ErrorDialogButtonType)GetInt32(new IntPtr(p + 0x020)); // 0270D374A138 0x20 ErrorDialogButtonType       ( 0001867451E0 ModelEnumType ErrorDialogButtonType ErrorDialogButtonType ErrorDialogButtonType Int32 )
-            value.ButtonText                                = GetString(new IntPtr(p + 0x028)); // 0270D374A178 0x28 ButtonText                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ButtonValue                               = GetString(new IntPtr(p + 0x018)); // 02466080BDC0 0x18 ButtonValue                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ErrorDialogButtonType                     = (ErrorDialogButtonType)GetInt32(new IntPtr(p + 0x020)); // 02466080BE00 0x20 ErrorDialogButtonType       ( 0001867451E0 ModelEnumType ErrorDialogButtonType ErrorDialogButtonType ErrorDialogButtonType Int32 )
+            value.ButtonText                                = GetString(new IntPtr(p + 0x028)); // 02466080BE40 0x28 ButtonText                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

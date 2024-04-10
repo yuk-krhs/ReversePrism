@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 07C DefaultValueChecked                      000186594D10 ModelPrimitiveType bool bool bool Bool
     // 080 SchemaAttribute                          0001865AE470 ModelClassType XmlSchemaAttribute XmlSchemaAttribute XmlSchemaAttribute Pointer
     // 000 Empty                                    SchemaAttDef IL2CPP_TYPE_CLASS
-    public partial class SchemaAttDef
+    public partial class SchemaAttDef : DataModel
     {
         public string                                   DefExpanded                             { get; set; }
         public int                                      LineNum                                 { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SchemaAttDef();
+            var value   = new SchemaAttDef() { Pointer= p0 };
 
-            value.DefExpanded                               = GetString(new IntPtr(p + 0x060)); // 0270D73E5A08 0x60 DefExpanded                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.LineNum                                   = GetInt32(new IntPtr(p + 0x068)); // 0270D73E5A28 0x68 LineNum                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePos                                   = GetInt32(new IntPtr(p + 0x06C)); // 0270D73E5A48 0x6C LinePos                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueLineNum                              = GetInt32(new IntPtr(p + 0x070)); // 0270D73E5A68 0x70 ValueLineNum                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueLinePos                              = GetInt32(new IntPtr(p + 0x074)); // 0270D73E5A88 0x74 ValueLinePos                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Reserved                                  = (Reserve)GetInt32(new IntPtr(p + 0x078)); // 0270D73E5AA8 0x78 Reserved                    ( 000186732A00 ModelEnumType Reserve Reserve Reserve Int32 )
-            value.DefaultValueChecked                       = GetBool(new IntPtr(p + 0x07C)); // 0270D73E5AC8 0x7C DefaultValueChecked         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SchemaAttribute                           = GetObject<XmlSchemaAttribute>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlSchemaAttribute.FromPointer); // 0270D73E5AE8 0x80 SchemaAttribute             ( 0001865AE470 ModelClassType XmlSchemaAttribute XmlSchemaAttribute XmlSchemaAttribute Pointer )
+            value.DefExpanded                               = GetString(new IntPtr(p + 0x060)); // 024667445A08 0x60 DefExpanded                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.LineNum                                   = GetInt32(new IntPtr(p + 0x068)); // 024667445A28 0x68 LineNum                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LinePos                                   = GetInt32(new IntPtr(p + 0x06C)); // 024667445A48 0x6C LinePos                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueLineNum                              = GetInt32(new IntPtr(p + 0x070)); // 024667445A68 0x70 ValueLineNum                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueLinePos                              = GetInt32(new IntPtr(p + 0x074)); // 024667445A88 0x74 ValueLinePos                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Reserved                                  = (Reserve)GetInt32(new IntPtr(p + 0x078)); // 024667445AA8 0x78 Reserved                    ( 000186732A00 ModelEnumType Reserve Reserve Reserve Int32 )
+            value.DefaultValueChecked                       = GetBool(new IntPtr(p + 0x07C)); // 024667445AC8 0x7C DefaultValueChecked         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SchemaAttribute                           = GetObject<XmlSchemaAttribute>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlSchemaAttribute.FromPointer); // 024667445AE8 0x80 SchemaAttribute             ( 0001865AE470 ModelClassType XmlSchemaAttribute XmlSchemaAttribute XmlSchemaAttribute Pointer )
 
             return value;
         }

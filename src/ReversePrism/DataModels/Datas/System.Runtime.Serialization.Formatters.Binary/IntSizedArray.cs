@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Objects                                  000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 018 NegObjects                               000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class IntSizedArray
+    public partial class IntSizedArray : DataModel
     {
         public List<int>?                               Objects                                 { get; set; }
         public List<int>?                               NegObjects                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntSizedArray();
+            var value   = new IntSizedArray() { Pointer= p0 };
 
-            value.Objects                                   = GetInt32List(new IntPtr(p + 0x010)); // 0270D6C54D78 0x10 Objects                     ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.NegObjects                                = GetInt32List(new IntPtr(p + 0x018)); // 0270D6C54D98 0x18 NegObjects                  ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Objects                                   = GetInt32List(new IntPtr(p + 0x010)); // 024666CC4D78 0x10 Objects                     ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.NegObjects                                = GetInt32List(new IntPtr(p + 0x018)); // 024666CC4D98 0x18 NegObjects                  ( 000185B7D3F0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

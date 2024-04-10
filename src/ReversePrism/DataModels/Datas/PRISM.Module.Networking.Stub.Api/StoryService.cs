@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 080 __Method_TouchStoryList                  Method`2<TouchStoryListArgs, TouchStoryListReply> IL2CPP_TYPE_GENERICINST
     // 088 __Method_ToggleStoryFavorite             Method`2<ToggleStoryFavoriteArgs, ToggleStoryFavoriteReply> IL2CPP_TYPE_GENERICINST
     // 090 __Method_GetEventInfoForEventStory       Method`2<GetEventInfoForEventStoryArgs, GetEventInfoForEventStoryReply> IL2CPP_TYPE_GENERICINST
-    public partial class StoryService
+    public partial class StoryService : DataModel
     {
 
         public static StoryService? FromPointer(IntPtr p0)
@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryService();
+            var value   = new StoryService() { Pointer= p0 };
 
 
             return value;

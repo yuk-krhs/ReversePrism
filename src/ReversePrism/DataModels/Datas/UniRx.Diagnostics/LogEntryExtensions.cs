@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LogEntryExtensions
+    public partial class LogEntryExtensions : DataModel
     {
 
         public static LogEntryExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogEntryExtensions();
+            var value   = new LogEntryExtensions() { Pointer= p0 };
 
 
             return value;

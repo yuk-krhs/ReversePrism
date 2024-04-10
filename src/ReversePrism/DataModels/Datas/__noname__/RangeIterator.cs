@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 index                                    int IL2CPP_TYPE_I4
     // 000 first                                    int IL2CPP_TYPE_I4
     // 000 last                                     int IL2CPP_TYPE_I4
-    public partial class RangeIterator
+    public partial class RangeIterator : DataModel
     {
 
         public static RangeIterator? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RangeIterator();
+            var value   = new RangeIterator() { Pointer= p0 };
 
 
             return value;

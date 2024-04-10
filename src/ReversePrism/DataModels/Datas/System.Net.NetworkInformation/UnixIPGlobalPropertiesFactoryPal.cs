@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnixIPGlobalPropertiesFactoryPal
+    public partial class UnixIPGlobalPropertiesFactoryPal : DataModel
     {
 
         public static UnixIPGlobalPropertiesFactoryPal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnixIPGlobalPropertiesFactoryPal();
+            var value   = new UnixIPGlobalPropertiesFactoryPal() { Pointer= p0 };
 
 
             return value;

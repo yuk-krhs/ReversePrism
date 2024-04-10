@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SkipLiveReplyTranslator
+    public partial class SkipLiveReplyTranslator : DataModel
     {
 
         public static SkipLiveReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkipLiveReplyTranslator();
+            var value   = new SkipLiveReplyTranslator() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 UnitNameText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 CharacterIcons                           000185B91990 ModelClassListType LiveUnitEditCharacterIcon[] LiveUnitEditCharacterIcon[] List<LiveUnitEditCharacterIcon> Pointer
-    public partial class LiveMVOriginalMemberView
+    public partial class LiveMVOriginalMemberView : DataModel
     {
         public UITextMeshProUGUI?                       UnitNameText                            { get; set; }
         public List<LiveUnitEditCharacterIcon>?         CharacterIcons                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVOriginalMemberView();
+            var value   = new LiveMVOriginalMemberView() { Pointer= p0 };
 
-            value.UnitNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D518A160 0x20 UnitNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CharacterIcons                            = GetObjectList<LiveUnitEditCharacterIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveUnitEditCharacterIcon.FromPointer); // 0270D518A180 0x28 CharacterIcons              ( 000185B91990 ModelClassListType LiveUnitEditCharacterIcon[] LiveUnitEditCharacterIcon[] List<LiveUnitEditCharacterIcon> Pointer )
+            value.UnitNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FD540 0x20 UnitNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CharacterIcons                            = GetObjectList<LiveUnitEditCharacterIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveUnitEditCharacterIcon.FromPointer); // 0246651FD560 0x28 CharacterIcons              ( 000185B91990 ModelClassListType LiveUnitEditCharacterIcon[] LiveUnitEditCharacterIcon[] List<LiveUnitEditCharacterIcon> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TypeCounters                             000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 018 onUpdateCounterSubject                   Subject`1<ValueTuple`2<ProduceParameterType, int>> IL2CPP_TYPE_GENERICINST
-    public partial class IngameTypeCounterModel
+    public partial class IngameTypeCounterModel : DataModel
     {
         public List<int>?                               TypeCounters                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameTypeCounterModel();
+            var value   = new IngameTypeCounterModel() { Pointer= p0 };
 
-            value.TypeCounters                              = GetInt32List(new IntPtr(p + 0x010)); // 0270D5B6FBD0 0x10 TypeCounters                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.TypeCounters                              = GetInt32List(new IntPtr(p + 0x010)); // 024665BD8458 0x10 TypeCounters                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

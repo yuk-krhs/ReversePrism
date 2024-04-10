@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Metrics                                  000185CF3768 ModelEnumListType List`1<Metric> List`1<Metric> List<Metric> Pointer
     // 018 CommonTags                               Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 020 MetricsCommonTags                        Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class MetricsPayload
+    public partial class MetricsPayload : DataModel
     {
         public List<Metric>?                            Metrics                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetricsPayload();
+            var value   = new MetricsPayload() { Pointer= p0 };
 
-            value.Metrics                                   = GetEnumList<Metric>(new IntPtr(p + 0x010)); // 0270066AA310 0x10 Metrics                     ( 000185CF3768 ModelEnumListType List`1<Metric> List`1<Metric> List<Metric> Pointer )
+            value.Metrics                                   = GetEnumList<Metric>(new IntPtr(p + 0x010)); // 0245A66739B8 0x10 Metrics                     ( 000185CF3768 ModelEnumListType List`1<Metric> List`1<Metric> List<Metric> Pointer )
 
             return value;
         }

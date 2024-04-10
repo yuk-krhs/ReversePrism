@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   MergeConcurrentObserver<<var>> IL2CPP_TYPE_GENERICINST
     // 000 cancel                                   IDisposable IL2CPP_TYPE_CLASS
-    public partial class Merge
+    public partial class Merge : DataModel
     {
 
         public static Merge? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Merge();
+            var value   = new Merge() { Pointer= p0 };
 
 
             return value;

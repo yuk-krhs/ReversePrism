@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_list                                   000186532E70 ModelClassType SortedList SortedList SortedList Pointer
-    public partial class PathList
+    public partial class PathList : DataModel
     {
         public SortedList?                              M_list                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PathList();
+            var value   = new PathList() { Pointer= p0 };
 
-            value.M_list                                    = GetObject<SortedList>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortedList.FromPointer); // 0270D7A37D40 0x10 M_list                      ( 000186532E70 ModelClassType SortedList SortedList SortedList Pointer )
+            value.M_list                                    = GetObject<SortedList>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortedList.FromPointer); // 024667A97D40 0x10 M_list                      ( 000186532E70 ModelClassType SortedList SortedList SortedList Pointer )
 
             return value;
         }

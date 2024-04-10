@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Expression                               0001865FCF10 ModelClassType QueryExpression QueryExpression QueryExpression Pointer
-    public partial class QueryFilter
+    public partial class QueryFilter : DataModel
     {
         public QueryExpression?                         Expression                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueryFilter();
+            var value   = new QueryFilter() { Pointer= p0 };
 
-            value.Expression                                = GetObject<QueryExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueryExpression.FromPointer); // 0270D8862CD0 0x10 Expression                  ( 0001865FCF10 ModelClassType QueryExpression QueryExpression QueryExpression Pointer )
+            value.Expression                                = GetObject<QueryExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueryExpression.FromPointer); // 0246688A6330 0x10 Expression                  ( 0001865FCF10 ModelClassType QueryExpression QueryExpression QueryExpression Pointer )
 
             return value;
         }

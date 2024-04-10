@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITextSelection
+    public partial class ITextSelection : DataModel
     {
 
         public static ITextSelection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITextSelection();
+            var value   = new ITextSelection() { Pointer= p0 };
 
 
             return value;

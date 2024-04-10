@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Condition                                000186755450 ModelClassType Condition Condition Condition Pointer
     // 018 ObjectsRoot                              0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class SelectObjectData
+    public partial class SelectObjectData : DataModel
     {
         public Condition?                               Condition                               { get; set; }
         public GameObject?                              ObjectsRoot                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectObjectData();
+            var value   = new SelectObjectData() { Pointer= p0 };
 
-            value.Condition                                 = GetObject<Condition>(new IntPtr(p + 0x010), ReversePrism.DataModels.Condition.FromPointer); // 0270D4D61680 0x10 Condition                   ( 000186755450 ModelClassType Condition Condition Condition Pointer )
-            value.ObjectsRoot                               = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D616A0 0x18 ObjectsRoot                 ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Condition                                 = GetObject<Condition>(new IntPtr(p + 0x010), ReversePrism.DataModels.Condition.FromPointer); // 024664DCCD90 0x10 Condition                   ( 000186755450 ModelClassType Condition Condition Condition Pointer )
+            value.ObjectsRoot                               = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 024664DCCDB0 0x18 ObjectsRoot                 ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

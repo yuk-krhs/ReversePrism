@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 ScenarioManager                          0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
     // 058 IsSelected                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AdvChoiceButtonGroup
+    public partial class AdvChoiceButtonGroup : DataModel
     {
         public List<AdvChoiceButton>?                   ButtonList                              { get; set; }
         public List<int>?                               FourChoiceButtonsIndices                { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvChoiceButtonGroup();
+            var value   = new AdvChoiceButtonGroup() { Pointer= p0 };
 
-            value.ButtonList                                = GetObjectList<AdvChoiceButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdvChoiceButton.FromPointer); // 0270D5DB3528 0x20 ButtonList                  ( 000185CCBFF8 ModelClassListType List`1<AdvChoiceButton> List`1<AdvChoiceButton> List<AdvChoiceButton> Pointer )
-            value.FourChoiceButtonsIndices                  = GetInt32List(new IntPtr(p + 0x028)); // 0270D5DB3548 0x28 FourChoiceButtonsIndices    ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D5DB3568 0x30 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D5DB35C8 0x48 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0270D5DB35E8 0x50 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
-            value.IsSelected                                = GetBool(new IntPtr(p + 0x058)); // 0270D5DB3608 0x58 IsSelected                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ButtonList                                = GetObjectList<AdvChoiceButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdvChoiceButton.FromPointer); // 024665E23EF0 0x20 ButtonList                  ( 000185CCBFF8 ModelClassListType List`1<AdvChoiceButton> List`1<AdvChoiceButton> List<AdvChoiceButton> Pointer )
+            value.FourChoiceButtonsIndices                  = GetInt32List(new IntPtr(p + 0x028)); // 024665E23F10 0x28 FourChoiceButtonsIndices    ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024665E23F30 0x30 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024665E23F90 0x48 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScenarioManager.FromPointer); // 024665E23FB0 0x50 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
+            value.IsSelected                                = GetBool(new IntPtr(p + 0x058)); // 024665E23FD0 0x58 IsSelected                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

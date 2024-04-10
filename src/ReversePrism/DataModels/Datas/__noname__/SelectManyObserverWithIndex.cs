@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 isStopped                                bool IL2CPP_TYPE_BOOLEAN
     // 000 sourceDisposable                         SingleAssignmentDisposable IL2CPP_TYPE_CLASS
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class SelectManyObserverWithIndex
+    public partial class SelectManyObserverWithIndex : DataModel
     {
 
         public static SelectManyObserverWithIndex? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectManyObserverWithIndex();
+            var value   = new SelectManyObserverWithIndex() { Pointer= p0 };
 
 
             return value;

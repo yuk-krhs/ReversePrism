@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUnreadStatus
+    public partial class IUnreadStatus : DataModel
     {
 
         public static IUnreadStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUnreadStatus();
+            var value   = new IUnreadStatus() { Pointer= p0 };
 
 
             return value;

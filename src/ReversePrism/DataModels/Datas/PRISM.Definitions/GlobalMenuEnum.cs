@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GlobalMenuEnum
+    public partial class GlobalMenuEnum : DataModel
     {
 
         public static GlobalMenuEnum? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalMenuEnum();
+            var value   = new GlobalMenuEnum() { Pointer= p0 };
 
 
             return value;

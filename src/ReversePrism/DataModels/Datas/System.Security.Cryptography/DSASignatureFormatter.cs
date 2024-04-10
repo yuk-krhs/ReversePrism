@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Oid                                      000186671910 ModelPrimitiveType string string string String
-    public partial class DSASignatureFormatter
+    public partial class DSASignatureFormatter : DataModel
     {
         public string                                   Oid                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DSASignatureFormatter();
+            var value   = new DSASignatureFormatter() { Pointer= p0 };
 
-            value.Oid                                       = GetString(new IntPtr(p + 0x010)); // 02700422F440 0x10 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Oid                                       = GetString(new IntPtr(p + 0x010)); // 02466192C448 0x10 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

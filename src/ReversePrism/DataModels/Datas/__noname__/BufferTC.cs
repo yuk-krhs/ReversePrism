@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 list                                     List`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 timerId                                  long IL2CPP_TYPE_I8
     // 000 timerD                                   SerialDisposable IL2CPP_TYPE_CLASS
-    public partial class BufferTC
+    public partial class BufferTC : DataModel
     {
 
         public static BufferTC? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BufferTC();
+            var value   = new BufferTC() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIssueInviteCodeArgs
+    public partial class IIssueInviteCodeArgs : DataModel
     {
 
         public static IIssueInviteCodeArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIssueInviteCodeArgs();
+            var value   = new IIssueInviteCodeArgs() { Pointer= p0 };
 
 
             return value;

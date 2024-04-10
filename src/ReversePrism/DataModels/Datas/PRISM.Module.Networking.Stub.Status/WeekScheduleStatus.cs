@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 ScheduleListFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_scheduleList_codec             FieldCodec`1<ScheduleStatus> IL2CPP_TYPE_GENERICINST
     // 028 ScheduleList                             000185CEF808 ModelClassListType RepeatedField`1<ScheduleStatus> RepeatedField`1<ScheduleStatus> List<ScheduleStatus> Pointer
-    public partial class WeekScheduleStatus
+    public partial class WeekScheduleStatus : DataModel
     {
         public int                                      Season                                  { get; set; }
         public int                                      Week                                    { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WeekScheduleStatus();
+            var value   = new WeekScheduleStatus() { Pointer= p0 };
 
-            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D1169440 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Week                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D1169480 0x1C Week                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsDone                                    = GetBool(new IntPtr(p + 0x020)); // 0270D11694C0 0x20 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ScheduleList                              = GetObjectList<ScheduleStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScheduleStatus.FromPointer); // 0270D1169520 0x28 ScheduleList                ( 000185CEF808 ModelClassListType RepeatedField`1<ScheduleStatus> RepeatedField`1<ScheduleStatus> List<ScheduleStatus> Pointer )
+            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 0246610D2C70 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Week                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246610D2CB0 0x1C Week                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsDone                                    = GetBool(new IntPtr(p + 0x020)); // 0246610D2CF0 0x20 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ScheduleList                              = GetObjectList<ScheduleStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScheduleStatus.FromPointer); // 0246610D2D50 0x28 ScheduleList                ( 000185CEF808 ModelClassListType RepeatedField`1<ScheduleStatus> RepeatedField`1<ScheduleStatus> List<ScheduleStatus> Pointer )
 
             return value;
         }

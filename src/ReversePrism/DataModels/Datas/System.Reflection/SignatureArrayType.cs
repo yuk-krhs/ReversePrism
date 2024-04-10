@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Rank                                     0001865F4260 ModelPrimitiveType int int int Int32
     // 024 IsMultiDim                               0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class SignatureArrayType
+    public partial class SignatureArrayType : DataModel
     {
         public int                                      Rank                                    { get; set; }
         public bool                                     IsMultiDim                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignatureArrayType();
+            var value   = new SignatureArrayType() { Pointer= p0 };
 
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D6CEA500 0x20 Rank                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsMultiDim                                = GetBool(new IntPtr(p + 0x024)); // 0270D6CEA520 0x24 IsMultiDim                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x020)); // 024666D3A500 0x20 Rank                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsMultiDim                                = GetBool(new IntPtr(p + 0x024)); // 024666D3A520 0x24 IsMultiDim                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

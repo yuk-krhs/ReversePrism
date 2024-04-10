@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LoadResourceFunction
+    public partial class LoadResourceFunction : DataModel
     {
 
         public static LoadResourceFunction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadResourceFunction();
+            var value   = new LoadResourceFunction() { Pointer= p0 };
 
 
             return value;

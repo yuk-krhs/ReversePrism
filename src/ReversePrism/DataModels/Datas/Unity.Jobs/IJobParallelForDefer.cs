@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IJobParallelForDefer
+    public partial class IJobParallelForDefer : DataModel
     {
 
         public static IJobParallelForDefer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IJobParallelForDefer();
+            var value   = new IJobParallelForDefer() { Pointer= p0 };
 
 
             return value;

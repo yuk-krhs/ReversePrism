@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 DrawProductList                          000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer
     // 000 ProduceIdolEffectFieldNumber             int IL2CPP_TYPE_I4
     // 020 ProduceIdolEffect                        00018661CBC0 ModelClassType GashaStageEffectStatus GashaStageEffectStatus GashaStageEffectStatus Pointer
-    public partial class CreateGashaProduceIdolEffectReply
+    public partial class CreateGashaProduceIdolEffectReply : DataModel
     {
         public List<GashaRewardProductStatus>?          DrawProductList                         { get; set; }
         public GashaStageEffectStatus?                  ProduceIdolEffect                       { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateGashaProduceIdolEffectReply();
+            var value   = new CreateGashaProduceIdolEffectReply() { Pointer= p0 };
 
-            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 0270D1A07DE8 0x18 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
-            value.ProduceIdolEffect                         = GetObject<GashaStageEffectStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaStageEffectStatus.FromPointer); // 0270D1A07E28 0x20 ProduceIdolEffect           ( 00018661CBC0 ModelClassType GashaStageEffectStatus GashaStageEffectStatus GashaStageEffectStatus Pointer )
+            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 024661993928 0x18 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
+            value.ProduceIdolEffect                         = GetObject<GashaStageEffectStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaStageEffectStatus.FromPointer); // 024661993968 0x20 ProduceIdolEffect           ( 00018661CBC0 ModelClassType GashaStageEffectStatus GashaStageEffectStatus GashaStageEffectStatus Pointer )
 
             return value;
         }

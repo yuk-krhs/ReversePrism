@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 048 GetStreamArchiveList                     Method`2<IGetStreamArchiveListArgs, IGetStreamArchiveListReply> IL2CPP_TYPE_GENERICINST
     // 060 GetStreamArchiveLiveURL                  Method`2<IGetStreamArchiveLiveURLArgs, IGetStreamArchiveLiveURLReply> IL2CPP_TYPE_GENERICINST
     // 078 ToggleArchiveFavorite                    Method`2<IToggleArchiveFavoriteArgs, IToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
-    public partial class StreamProgramServiceMethods
+    public partial class StreamProgramServiceMethods : DataModel
     {
 
         public static StreamProgramServiceMethods? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StreamProgramServiceMethods();
+            var value   = new StreamProgramServiceMethods() { Pointer= p0 };
 
 
             return value;

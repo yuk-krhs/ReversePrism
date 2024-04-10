@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ChildType                                000186693B90 ModelClassType Type Type Type Pointer
     // 018 Levels                                   0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class SupportsChildTracksAttribute
+    public partial class SupportsChildTracksAttribute : DataModel
     {
         public Type?                                    ChildType                               { get; set; }
         public int                                      Levels                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportsChildTracksAttribute();
+            var value   = new SupportsChildTracksAttribute() { Pointer= p0 };
 
-            value.ChildType                                 = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270DB2A4790 0x10 ChildType                   ( 000186693B90 ModelClassType Type Type Type Pointer )
-            value.Levels                                    = GetInt32(new IntPtr(p + 0x018)); // 0270DB2A47B0 0x18 Levels                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.ChildType                                 = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 02466B3111D0 0x10 ChildType                   ( 000186693B90 ModelClassType Type Type Type Pointer )
+            value.Levels                                    = GetInt32(new IntPtr(p + 0x018)); // 02466B3111F0 0x18 Levels                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

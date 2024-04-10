@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 OnUI                                     000186679A00 ModelClassType Action Action Action Pointer
     // 028 OffUI                                    000186679A00 ModelClassType Action Action Action Pointer
     // 030 onUIAct                                  Action`1<string> IL2CPP_TYPE_GENERICINST
-    public partial class CallbackActionSet
+    public partial class CallbackActionSet : DataModel
     {
         public Action?                                  OffScene                                { get; set; }
         public Action?                                  OnUI                                    { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallbackActionSet();
+            var value   = new CallbackActionSet() { Pointer= p0 };
 
-            value.OffScene                                  = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270D4DC11E0 0x18 OffScene                    ( 000186679A00 ModelClassType Action Action Action Pointer )
-            value.OnUI                                      = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0270D4DC1200 0x20 OnUI                        ( 000186679A00 ModelClassType Action Action Action Pointer )
-            value.OffUI                                     = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0270D4DC1220 0x28 OffUI                       ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.OffScene                                  = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 024664E25EF0 0x18 OffScene                    ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.OnUI                                      = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 024664E25F10 0x20 OnUI                        ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.OffUI                                     = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 024664E25F30 0x28 OffUI                       ( 000186679A00 ModelClassType Action Action Action Pointer )
 
             return value;
         }

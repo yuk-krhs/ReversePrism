@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MissionTab                               000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer
     // 000 RankRewardTabFieldNumber                 int IL2CPP_TYPE_I4
     // 020 RankRewardTab                            000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer
-    public partial class UpdateLastDisplayDateReply
+    public partial class UpdateLastDisplayDateReply : DataModel
     {
         public SeasonMissionTabStatus?                  MissionTab                              { get; set; }
         public SeasonMissionTabStatus?                  RankRewardTab                           { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateLastDisplayDateReply();
+            var value   = new UpdateLastDisplayDateReply() { Pointer= p0 };
 
-            value.MissionTab                                = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0270D278FFC8 0x18 MissionTab                  ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
-            value.RankRewardTab                             = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0270D2790008 0x20 RankRewardTab               ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
+            value.MissionTab                                = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0246626E9308 0x18 MissionTab                  ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
+            value.RankRewardTab                             = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0246626E9348 0x20 RankRewardTab               ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
 
             return value;
         }

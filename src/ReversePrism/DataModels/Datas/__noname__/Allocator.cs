@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Allocator
+    public partial class Allocator : DataModel
     {
 
         public static Allocator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Allocator();
+            var value   = new Allocator() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 098 AssemblyName                             000186671910 ModelPrimitiveType string string string String
     // 0A0 MessageArg                               000186671910 ModelPrimitiveType string string string String
     // 0A8 ResourceId                               0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class TypeLoadException
+    public partial class TypeLoadException : DataModel
     {
         public string                                   ClassName                               { get; set; }
         public string                                   AssemblyName                            { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeLoadException();
+            var value   = new TypeLoadException() { Pointer= p0 };
 
-            value.ClassName                                 = GetString(new IntPtr(p + 0x090)); // 0270D6993118 0x90 ClassName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.AssemblyName                              = GetString(new IntPtr(p + 0x098)); // 0270D6993138 0x98 AssemblyName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MessageArg                                = GetString(new IntPtr(p + 0x0A0)); // 0270D6993158 0xA0 MessageArg                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.ResourceId                                = GetInt32(new IntPtr(p + 0x0A8)); // 0270D6993178 0xA8 ResourceId                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.ClassName                                 = GetString(new IntPtr(p + 0x090)); // 024666A0B118 0x90 ClassName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.AssemblyName                              = GetString(new IntPtr(p + 0x098)); // 024666A0B138 0x98 AssemblyName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MessageArg                                = GetString(new IntPtr(p + 0x0A0)); // 024666A0B158 0xA0 MessageArg                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ResourceId                                = GetInt32(new IntPtr(p + 0x0A8)); // 024666A0B178 0xA8 ResourceId                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

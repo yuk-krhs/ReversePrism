@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IThermalStatus
+    public partial class IThermalStatus : DataModel
     {
 
         public static IThermalStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IThermalStatus();
+            var value   = new IThermalStatus() { Pointer= p0 };
 
 
             return value;

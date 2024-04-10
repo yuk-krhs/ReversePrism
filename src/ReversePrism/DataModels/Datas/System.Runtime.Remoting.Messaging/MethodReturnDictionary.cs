@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 InternalReturnKeys                       string[] IL2CPP_TYPE_SZARRAY
     // 008 InternalExceptionKeys                    string[] IL2CPP_TYPE_SZARRAY
-    public partial class MethodReturnDictionary
+    public partial class MethodReturnDictionary : DataModel
     {
 
         public static MethodReturnDictionary? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MethodReturnDictionary();
+            var value   = new MethodReturnDictionary() { Pointer= p0 };
 
 
             return value;

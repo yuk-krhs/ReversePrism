@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 PressPoint                               000186666050 ModelPrimitiveType float float float Single
     // 014 Behavior                                 000186510830 ModelEnumType PressBehavior PressBehavior PressBehavior Int32
     // 018 M_WaitingForRelease                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class PressInteraction
+    public partial class PressInteraction : DataModel
     {
         public float                                    PressPoint                              { get; set; }
         public PressBehavior                            Behavior                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PressInteraction();
+            var value   = new PressInteraction() { Pointer= p0 };
 
-            value.PressPoint                                = GetSingle(new IntPtr(p + 0x010)); // 0270D787A870 0x10 PressPoint                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Behavior                                  = (PressBehavior)GetInt32(new IntPtr(p + 0x014)); // 0270D787A890 0x14 Behavior                    ( 000186510830 ModelEnumType PressBehavior PressBehavior PressBehavior Int32 )
-            value.M_WaitingForRelease                       = GetBool(new IntPtr(p + 0x018)); // 0270D787A8B0 0x18 M_WaitingForRelease         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PressPoint                                = GetSingle(new IntPtr(p + 0x010)); // 0246678E30A0 0x10 PressPoint                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Behavior                                  = (PressBehavior)GetInt32(new IntPtr(p + 0x014)); // 0246678E30C0 0x14 Behavior                    ( 000186510830 ModelEnumType PressBehavior PressBehavior PressBehavior Int32 )
+            value.M_WaitingForRelease                       = GetBool(new IntPtr(p + 0x018)); // 0246678E30E0 0x18 M_WaitingForRelease         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

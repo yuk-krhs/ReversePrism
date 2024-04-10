@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GPUDetector
+    public partial class GPUDetector : DataModel
     {
 
         public static GPUDetector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GPUDetector();
+            var value   = new GPUDetector() { Pointer= p0 };
 
 
             return value;

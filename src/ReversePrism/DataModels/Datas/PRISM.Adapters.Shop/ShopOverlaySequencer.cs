@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 shopOverlayViewFactory                   IOverlayViewFactory`1<IShopView> IL2CPP_TYPE_GENERICINST
     // 018 ViewModel                                000186774F10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer
-    public partial class ShopOverlaySequencer
+    public partial class ShopOverlaySequencer : DataModel
     {
         public ShopViewModel?                           ViewModel                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopOverlaySequencer();
+            var value   = new ShopOverlaySequencer() { Pointer= p0 };
 
-            value.ViewModel                                 = GetObject<ShopViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopViewModel.FromPointer); // 0270D6819AC8 0x18 ViewModel                   ( 000186774F10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer )
+            value.ViewModel                                 = GetObject<ShopViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopViewModel.FromPointer); // 024666879AC8 0x18 ViewModel                   ( 000186774F10 ModelClassType ShopViewModel ShopViewModel ShopViewModel Pointer )
 
             return value;
         }

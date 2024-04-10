@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 TokenString                              000186671BA0 ModelPrimitiveType string string string String
     // 018 TokenType                                00018668DA40 ModelEnumType TokenType TokenType TokenType Int32
     // 01C TokenValue                               0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class TokenHashValue
+    public partial class TokenHashValue : DataModel
     {
         public string                                   TokenString                             { get; set; }
         public TokenType                                TokenType                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TokenHashValue();
+            var value   = new TokenHashValue() { Pointer= p0 };
 
-            value.TokenString                               = GetString(new IntPtr(p + 0x010)); // 0270D3066BD8 0x10 TokenString                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TokenType                                 = (TokenType)GetInt32(new IntPtr(p + 0x018)); // 0270D3066BF8 0x18 TokenType                   ( 00018668DA40 ModelEnumType TokenType TokenType TokenType Int32 )
-            value.TokenValue                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D3066C18 0x1C TokenValue                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.TokenString                               = GetString(new IntPtr(p + 0x010)); // 024662FD2568 0x10 TokenString                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.TokenType                                 = (TokenType)GetInt32(new IntPtr(p + 0x018)); // 024662FD2588 0x18 TokenType                   ( 00018668DA40 ModelEnumType TokenType TokenType TokenType Int32 )
+            value.TokenValue                                = GetInt32(new IntPtr(p + 0x01C)); // 024662FD25A8 0x1C TokenValue                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

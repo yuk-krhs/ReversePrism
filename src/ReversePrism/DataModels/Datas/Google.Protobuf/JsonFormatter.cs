@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 010 CommonRepresentations                    000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 010 Settings                                 0001866623A0 ModelClassType Settings Settings Settings Pointer
     // 000 Hex                                      string IL2CPP_TYPE_STRING
-    public partial class JsonFormatter
+    public partial class JsonFormatter : DataModel
     {
         public List<string>?                            CommonRepresentations                   { get; set; }
         public Settings?                                Settings                                { get; set; }
@@ -30,10 +30,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonFormatter();
+            var value   = new JsonFormatter() { Pointer= p0 };
 
-            value.CommonRepresentations                     = GetStringList(new IntPtr(p + 0x010)); // 0270D0D13318 0x10 CommonRepresentations       ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Settings                                  = GetObject<Settings>(new IntPtr(p + 0x010), ReversePrism.DataModels.Settings.FromPointer); // 0270D0D13338 0x10 Settings                    ( 0001866623A0 ModelClassType Settings Settings Settings Pointer )
+            value.CommonRepresentations                     = GetStringList(new IntPtr(p + 0x010)); // 024660D19B50 0x10 CommonRepresentations       ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Settings                                  = GetObject<Settings>(new IntPtr(p + 0x010), ReversePrism.DataModels.Settings.FromPointer); // 024660D19B70 0x10 Settings                    ( 0001866623A0 ModelClassType Settings Settings Settings Pointer )
 
             return value;
         }

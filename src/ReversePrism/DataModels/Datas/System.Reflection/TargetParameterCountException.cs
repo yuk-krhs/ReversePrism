@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TargetParameterCountException
+    public partial class TargetParameterCountException : DataModel
     {
 
         public static TargetParameterCountException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TargetParameterCountException();
+            var value   = new TargetParameterCountException() { Pointer= p0 };
 
 
             return value;

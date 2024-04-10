@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 MstProduceCardId                         0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstProduceCardContentGroupTypeId         0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstProduceCardContentGroup
+    public partial class MstProduceCardContentGroup : DataModel
     {
         public int                                      MstProduceCardId                        { get; set; }
         public int                                      MstProduceCardContentGroupTypeId        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstProduceCardContentGroup();
+            var value   = new MstProduceCardContentGroup() { Pointer= p0 };
 
-            value.MstProduceCardId                          = GetInt32(new IntPtr(p + 0x010)); // 02700459D950 0x10 MstProduceCardId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x014)); // 02700459D970 0x14 MstProduceCardContentGroupTypeId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstProduceCardId                          = GetInt32(new IntPtr(p + 0x010)); // 0245A4618F08 0x10 MstProduceCardId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x014)); // 0245A4618F28 0x14 MstProduceCardContentGroupTypeId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

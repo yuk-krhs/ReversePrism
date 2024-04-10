@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 UiTabGroup                               0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
     // 028 CgTabBadges                              000185B734E0 ModelClassListType CanvasGroup[] CanvasGroup[] List<CanvasGroup> Pointer
-    public partial class TabBadgeView
+    public partial class TabBadgeView : DataModel
     {
         public UITabGroup?                              UiTabGroup                              { get; set; }
         public List<CanvasGroup>?                       CgTabBadges                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TabBadgeView();
+            var value   = new TabBadgeView() { Pointer= p0 };
 
-            value.UiTabGroup                                = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DA34F068 0x20 UiTabGroup                  ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.CgTabBadges                               = GetObjectList<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA34F088 0x28 CgTabBadges                 ( 000185B734E0 ModelClassListType CanvasGroup[] CanvasGroup[] List<CanvasGroup> Pointer )
+            value.UiTabGroup                                = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A3C1F50 0x20 UiTabGroup                  ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.CgTabBadges                               = GetObjectList<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A3C1F70 0x28 CgTabBadges                 ( 000185B734E0 ModelClassListType CanvasGroup[] CanvasGroup[] List<CanvasGroup> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HttpClientFactory
+    public partial class HttpClientFactory : DataModel
     {
 
         public static HttpClientFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpClientFactory();
+            var value   = new HttpClientFactory() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LdrBloomTrack
+    public partial class LdrBloomTrack : DataModel
     {
 
         public static LdrBloomTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LdrBloomTrack();
+            var value   = new LdrBloomTrack() { Pointer= p0 };
 
 
             return value;

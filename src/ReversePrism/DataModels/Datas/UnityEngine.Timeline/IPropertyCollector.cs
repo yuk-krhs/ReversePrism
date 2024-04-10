@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPropertyCollector
+    public partial class IPropertyCollector : DataModel
     {
 
         public static IPropertyCollector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPropertyCollector();
+            var value   = new IPropertyCollector() { Pointer= p0 };
 
 
             return value;

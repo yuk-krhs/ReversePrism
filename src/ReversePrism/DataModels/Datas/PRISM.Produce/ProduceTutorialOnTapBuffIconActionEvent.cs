@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
     // 018 Action                                   0001866792B0 ModelClassType Action Action Action Pointer
-    public partial class ProduceTutorialOnTapBuffIconActionEvent
+    public partial class ProduceTutorialOnTapBuffIconActionEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public Action?                                  Action                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialOnTapBuffIconActionEvent();
+            var value   = new ProduceTutorialOnTapBuffIconActionEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D48CD0 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270D5D48CF0 0x18 Action                      ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DB99E8 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 024665DB9A08 0x18 Action                      ( 0001866792B0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

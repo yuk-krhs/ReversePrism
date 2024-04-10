@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 MethodBuilder                            000186705530 ModelEnumType AsyncTaskMethodBuilder AsyncTaskMethodBuilder AsyncTaskMethodBuilder Int32
     // 028 HaveResult                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 UseBuilder                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AsyncValueTaskMethodBuilder
+    public partial class AsyncValueTaskMethodBuilder : DataModel
     {
         public AsyncTaskMethodBuilder                   MethodBuilder                           { get; set; }
         public bool                                     HaveResult                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncValueTaskMethodBuilder();
+            var value   = new AsyncValueTaskMethodBuilder() { Pointer= p0 };
 
-            value.MethodBuilder                             = (AsyncTaskMethodBuilder)GetInt32(new IntPtr(p + 0x010)); // 0270D6CA3368 0x10 MethodBuilder               ( 000186705530 ModelEnumType AsyncTaskMethodBuilder AsyncTaskMethodBuilder AsyncTaskMethodBuilder Int32 )
-            value.HaveResult                                = GetBool(new IntPtr(p + 0x028)); // 0270D6CA3388 0x28 HaveResult                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UseBuilder                                = GetBool(new IntPtr(p + 0x029)); // 0270D6CA33A8 0x29 UseBuilder                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MethodBuilder                             = (AsyncTaskMethodBuilder)GetInt32(new IntPtr(p + 0x010)); // 024666D02B38 0x10 MethodBuilder               ( 000186705530 ModelEnumType AsyncTaskMethodBuilder AsyncTaskMethodBuilder AsyncTaskMethodBuilder Int32 )
+            value.HaveResult                                = GetBool(new IntPtr(p + 0x028)); // 024666D02B58 0x28 HaveResult                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UseBuilder                                = GetBool(new IntPtr(p + 0x029)); // 024666D02B78 0x29 UseBuilder                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

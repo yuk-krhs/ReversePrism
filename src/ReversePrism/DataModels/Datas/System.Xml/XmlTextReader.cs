@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Impl                                     0001865CD480 ModelClassType XmlTextReaderImpl XmlTextReaderImpl XmlTextReaderImpl Pointer
-    public partial class XmlTextReader
+    public partial class XmlTextReader : DataModel
     {
         public XmlTextReaderImpl?                       Impl                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTextReader();
+            var value   = new XmlTextReader() { Pointer= p0 };
 
-            value.Impl                                      = GetObject<XmlTextReaderImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlTextReaderImpl.FromPointer); // 0270D73C31D0 0x10 Impl                        ( 0001865CD480 ModelClassType XmlTextReaderImpl XmlTextReaderImpl XmlTextReaderImpl Pointer )
+            value.Impl                                      = GetObject<XmlTextReaderImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlTextReaderImpl.FromPointer); // 024667423A00 0x10 Impl                        ( 0001865CD480 ModelClassType XmlTextReaderImpl XmlTextReaderImpl XmlTextReaderImpl Pointer )
 
             return value;
         }

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 034 IsDoublePhaseMode                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 getGameTimeFunc                          Func`1<float> IL2CPP_TYPE_GENERICINST
     // 040 IsPhaseMatchCallback                     Func`2<int, bool> IL2CPP_TYPE_GENERICINST
-    public partial class IngamePhaseModel
+    public partial class IngamePhaseModel : DataModel
     {
         public int                                      StartPhase                              { get; set; }
         public int                                      Phase                                   { get; set; }
@@ -35,15 +35,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngamePhaseModel();
+            var value   = new IngamePhaseModel() { Pointer= p0 };
 
-            value.StartPhase                                = GetInt32(new IntPtr(p + 0x010)); // 0270D5B63358 0x10 StartPhase                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Phase                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D5B63378 0x14 Phase                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PhaseChangeCount                          = GetInt32(new IntPtr(p + 0x018)); // 0270D5B63398 0x18 PhaseChangeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SetDoublePhaseModeCount                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D5B633B8 0x1C SetDoublePhaseModeCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardUseCount                              = GetInt32List(new IntPtr(p + 0x020)); // 0270D5B633D8 0x20 CardUseCount                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.LastPhaseChangeTime                       = GetSingle(new IntPtr(p + 0x030)); // 0270D5B63418 0x30 LastPhaseChangeTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsDoublePhaseMode                         = GetBool(new IntPtr(p + 0x034)); // 0270D5B63438 0x34 IsDoublePhaseMode           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StartPhase                                = GetInt32(new IntPtr(p + 0x010)); // 024665BC3B38 0x10 StartPhase                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Phase                                     = GetInt32(new IntPtr(p + 0x014)); // 024665BC3B58 0x14 Phase                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PhaseChangeCount                          = GetInt32(new IntPtr(p + 0x018)); // 024665BC3B78 0x18 PhaseChangeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SetDoublePhaseModeCount                   = GetInt32(new IntPtr(p + 0x01C)); // 024665BC3B98 0x1C SetDoublePhaseModeCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardUseCount                              = GetInt32List(new IntPtr(p + 0x020)); // 024665BC3BB8 0x20 CardUseCount                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.LastPhaseChangeTime                       = GetSingle(new IntPtr(p + 0x030)); // 024665BC3BF8 0x30 LastPhaseChangeTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsDoublePhaseMode                         = GetBool(new IntPtr(p + 0x034)); // 024665BC3C18 0x34 IsDoublePhaseMode           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

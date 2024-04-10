@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 AppealType                               000186562FD0 ModelEnumType ProduceParameterType ProduceParameterType ProduceParameterType Int32
     // 000 ScoreFieldNumber                         int IL2CPP_TYPE_I4
     // 01C Score                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceEntrustStatus
+    public partial class ProduceEntrustStatus : DataModel
     {
         public ProduceParameterType                     AppealType                              { get; set; }
         public int                                      Score                                   { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceEntrustStatus();
+            var value   = new ProduceEntrustStatus() { Pointer= p0 };
 
-            value.AppealType                                = (ProduceParameterType)GetInt32(new IntPtr(p + 0x018)); // 0270D1436A58 0x18 AppealType                  ( 000186562FD0 ModelEnumType ProduceParameterType ProduceParameterType ProduceParameterType Int32 )
-            value.Score                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D1436A98 0x1C Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AppealType                                = (ProduceParameterType)GetInt32(new IntPtr(p + 0x018)); // 02466139E840 0x18 AppealType                  ( 000186562FD0 ModelEnumType ProduceParameterType ProduceParameterType ProduceParameterType Int32 )
+            value.Score                                     = GetInt32(new IntPtr(p + 0x01C)); // 02466139E880 0x1C Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 errorPurchaseStateUnspecified            string IL2CPP_TYPE_STRING
     // 000 errorUserCancelled                       string IL2CPP_TYPE_STRING
     // 000 errorItemAlreadyOwned                    string IL2CPP_TYPE_STRING
-    public partial class GoogleBillingStrings
+    public partial class GoogleBillingStrings : DataModel
     {
 
         public static GoogleBillingStrings? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GoogleBillingStrings();
+            var value   = new GoogleBillingStrings() { Pointer= p0 };
 
 
             return value;

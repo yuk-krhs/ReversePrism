@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 ValueBytes                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 020 LazyValue                                000186671910 ModelPrimitiveType string string string String
-    public partial class AuthProperty
+    public partial class AuthProperty : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<sbyte>?                             ValueBytes                              { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthProperty();
+            var value   = new AuthProperty() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D9395220 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValueBytes                                = GetSByteList(new IntPtr(p + 0x018)); // 0270D9395240 0x18 ValueBytes                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.LazyValue                                 = GetString(new IntPtr(p + 0x020)); // 0270D9395260 0x20 LazyValue                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246693F7D38 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ValueBytes                                = GetSByteList(new IntPtr(p + 0x018)); // 0246693F7D58 0x18 ValueBytes                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.LazyValue                                 = GetString(new IntPtr(p + 0x020)); // 0246693F7D78 0x20 LazyValue                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

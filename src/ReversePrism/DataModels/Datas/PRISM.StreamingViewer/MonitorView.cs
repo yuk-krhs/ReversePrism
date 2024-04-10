@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 CurrentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 048 MonitorTextures                          000185CAB058 ModelClassListType Texture[] Texture[] List<Texture> Pointer
     // 050 IsViewPaused                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MonitorView
+    public partial class MonitorView : DataModel
     {
         public MeshRenderer?                            MeshRenderer                            { get; set; }
         public bool                                     InitializedMonitor                      { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonitorView();
+            var value   = new MonitorView() { Pointer= p0 };
 
-            value.MeshRenderer                              = GetObject<MeshRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MeshRenderer.FromPointer); // 0270D4F4A630 0x20 MeshRenderer                ( 000186603F80 ModelClassType MeshRenderer MeshRenderer MeshRenderer Pointer )
-            value.InitializedMonitor                        = GetBool(new IntPtr(p + 0x030)); // 0270D4F4A670 0x30 InitializedMonitor          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MonitorTextureFilePath                    = GetStringList(new IntPtr(p + 0x038)); // 0270D4F4A690 0x38 MonitorTextureFilePath      ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 0270D4F4A6B0 0x40 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MonitorTextures                           = GetObjectList<Texture>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture.FromPointer); // 0270D4F4A6D0 0x48 MonitorTextures             ( 000185CAB058 ModelClassListType Texture[] Texture[] List<Texture> Pointer )
-            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x050)); // 0270D4F4A6F0 0x50 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MeshRenderer                              = GetObject<MeshRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MeshRenderer.FromPointer); // 024664FB9150 0x20 MeshRenderer                ( 000186603F80 ModelClassType MeshRenderer MeshRenderer MeshRenderer Pointer )
+            value.InitializedMonitor                        = GetBool(new IntPtr(p + 0x030)); // 024664FB9190 0x30 InitializedMonitor          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MonitorTextureFilePath                    = GetStringList(new IntPtr(p + 0x038)); // 024664FB91B0 0x38 MonitorTextureFilePath      ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 024664FB91D0 0x40 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MonitorTextures                           = GetObjectList<Texture>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture.FromPointer); // 024664FB91F0 0x48 MonitorTextures             ( 000185CAB058 ModelClassListType Texture[] Texture[] List<Texture> Pointer )
+            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x050)); // 024664FB9210 0x50 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

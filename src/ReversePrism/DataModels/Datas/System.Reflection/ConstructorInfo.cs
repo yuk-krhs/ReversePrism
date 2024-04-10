@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ConstructorName                          string IL2CPP_TYPE_STRING
     // 008 TypeConstructorName                      string IL2CPP_TYPE_STRING
-    public partial class ConstructorInfo
+    public partial class ConstructorInfo : DataModel
     {
 
         public static ConstructorInfo? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstructorInfo();
+            var value   = new ConstructorInfo() { Pointer= p0 };
 
 
             return value;

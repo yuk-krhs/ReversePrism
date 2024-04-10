@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IServerChannelSinkProvider
+    public partial class IServerChannelSinkProvider : DataModel
     {
 
         public static IServerChannelSinkProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IServerChannelSinkProvider();
+            var value   = new IServerChannelSinkProvider() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFancyGridViewContext
+    public partial class IFancyGridViewContext : DataModel
     {
 
         public static IFancyGridViewContext? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFancyGridViewContext();
+            var value   = new IFancyGridViewContext() { Pointer= p0 };
 
 
             return value;

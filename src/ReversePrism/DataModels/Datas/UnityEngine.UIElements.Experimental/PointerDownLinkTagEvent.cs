@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 110 LinkID                                   000186671910 ModelPrimitiveType string string string String
     // 118 LinkText                                 000186671910 ModelPrimitiveType string string string String
-    public partial class PointerDownLinkTagEvent
+    public partial class PointerDownLinkTagEvent : DataModel
     {
         public string                                   LinkID                                  { get; set; }
         public string                                   LinkText                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerDownLinkTagEvent();
+            var value   = new PointerDownLinkTagEvent() { Pointer= p0 };
 
-            value.LinkID                                    = GetString(new IntPtr(p + 0x110)); // 027006896308 0x110 LinkID                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.LinkText                                  = GetString(new IntPtr(p + 0x118)); // 027006896328 0x118 LinkText                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.LinkID                                    = GetString(new IntPtr(p + 0x110)); // 0245A68582A0 0x110 LinkID                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.LinkText                                  = GetString(new IntPtr(p + 0x118)); // 0245A68582C0 0x118 LinkText                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

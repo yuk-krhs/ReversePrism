@@ -41,7 +41,7 @@ namespace ReversePrism.DataModels
     // 000 k_UserInfoChannelProp                    string IL2CPP_TYPE_STRING
     // 000 k_UserInfoIdProp                         string IL2CPP_TYPE_STRING
     // 000 k_UserInfoLoginTokenProp                 string IL2CPP_TYPE_STRING
-    public partial class UDPReflectionConsts
+    public partial class UDPReflectionConsts : DataModel
     {
 
         public static UDPReflectionConsts? FromPointer(IntPtr p0)
@@ -50,7 +50,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UDPReflectionConsts();
+            var value   = new UDPReflectionConsts() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIdolSkillLvUpCompletedPopupView
+    public partial class IIdolSkillLvUpCompletedPopupView : DataModel
     {
 
         public static IIdolSkillLvUpCompletedPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIdolSkillLvUpCompletedPopupView();
+            var value   = new IIdolSkillLvUpCompletedPopupView() { Pointer= p0 };
 
 
             return value;

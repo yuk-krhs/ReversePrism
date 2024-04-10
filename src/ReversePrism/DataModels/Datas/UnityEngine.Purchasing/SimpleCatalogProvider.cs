@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Func                                   Action`1<Action`1<HashSet`1<ProductDefinition>>> IL2CPP_TYPE_GENERICINST
-    public partial class SimpleCatalogProvider
+    public partial class SimpleCatalogProvider : DataModel
     {
 
         public static SimpleCatalogProvider? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SimpleCatalogProvider();
+            var value   = new SimpleCatalogProvider() { Pointer= p0 };
 
 
             return value;

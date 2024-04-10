@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotSByte
+    public partial class NotSByte : DataModel
     {
 
         public static NotSByte? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotSByte();
+            var value   = new NotSByte() { Pointer= p0 };
 
 
             return value;

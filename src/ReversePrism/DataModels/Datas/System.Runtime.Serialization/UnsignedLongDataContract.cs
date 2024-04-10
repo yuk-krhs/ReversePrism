@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnsignedLongDataContract
+    public partial class UnsignedLongDataContract : DataModel
     {
 
         public static UnsignedLongDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsignedLongDataContract();
+            var value   = new UnsignedLongDataContract() { Pointer= p0 };
 
 
             return value;

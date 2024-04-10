@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 isDisposed                               bool IL2CPP_TYPE_BOOLEAN
     // 000 isFirstSubscribe                         bool IL2CPP_TYPE_BOOLEAN
     // 000 stopper                                  IDisposable IL2CPP_TYPE_CLASS
-    public partial class RepeatUntil
+    public partial class RepeatUntil : DataModel
     {
 
         public static RepeatUntil? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RepeatUntil();
+            var value   = new RepeatUntil() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 041 IsAlwaysSerious                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 042 IsSeriousCloseReverse                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 043 IsOverwrite                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LipSyncController
+    public partial class LipSyncController : DataModel
     {
         public LipSyncTable?                            LipSyncTable                            { get; set; }
         public Animator?                                Animator                                { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LipSyncController();
+            var value   = new LipSyncController() { Pointer= p0 };
 
-            value.LipSyncTable                              = GetObject<LipSyncTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.LipSyncTable.FromPointer); // 0270D34E10B8 0x20 LipSyncTable                ( 000186534210 ModelClassType LipSyncTable LipSyncTable LipSyncTable Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0270D34E10D8 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.CharaID                                   = GetInt32(new IntPtr(p + 0x030)); // 0270D34E10F8 0x30 CharaID                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Lips                                      = GetObjectList<LipData>(new IntPtr(p + 0x038), ReversePrism.DataModels.LipData.FromPointer); // 0270D34E1118 0x38 Lips                        ( 000185CF0268 ModelClassListType List`1<LipData> List`1<LipData> List<LipData> Pointer )
-            value.IsSerious                                 = GetBool(new IntPtr(p + 0x040)); // 0270D34E1138 0x40 IsSerious                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAlwaysSerious                           = GetBool(new IntPtr(p + 0x041)); // 0270D34E1158 0x41 IsAlwaysSerious             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsSeriousCloseReverse                     = GetBool(new IntPtr(p + 0x042)); // 0270D34E1178 0x42 IsSeriousCloseReverse       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsOverwrite                               = GetBool(new IntPtr(p + 0x043)); // 0270D34E1198 0x43 IsOverwrite                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LipSyncTable                              = GetObject<LipSyncTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.LipSyncTable.FromPointer); // 0245A7089250 0x20 LipSyncTable                ( 000186534210 ModelClassType LipSyncTable LipSyncTable LipSyncTable Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0245A7089270 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.CharaID                                   = GetInt32(new IntPtr(p + 0x030)); // 0245A7089290 0x30 CharaID                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Lips                                      = GetObjectList<LipData>(new IntPtr(p + 0x038), ReversePrism.DataModels.LipData.FromPointer); // 0245A70892B0 0x38 Lips                        ( 000185CF0268 ModelClassListType List`1<LipData> List`1<LipData> List<LipData> Pointer )
+            value.IsSerious                                 = GetBool(new IntPtr(p + 0x040)); // 0245A70892D0 0x40 IsSerious                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsAlwaysSerious                           = GetBool(new IntPtr(p + 0x041)); // 0245A70892F0 0x41 IsAlwaysSerious             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsSeriousCloseReverse                     = GetBool(new IntPtr(p + 0x042)); // 0245A7089310 0x42 IsSeriousCloseReverse       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsOverwrite                               = GetBool(new IntPtr(p + 0x043)); // 0245A7089330 0x43 IsOverwrite                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

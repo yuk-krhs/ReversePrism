@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 IsConvertProduct                         000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 ChangeTime                               float IL2CPP_TYPE_R4
     // 060 Model                                    0001865E9E00 ModelClassType MedalGashaResultViewCellModel MedalGashaResultViewCellModel MedalGashaResultViewCellModel Pointer
-    public partial class MedalGashaResultViewCell
+    public partial class MedalGashaResultViewCell : DataModel
     {
         public Animator?                                Anim                                    { get; set; }
         public RewardItemIcon?                          RewardItemIcon                          { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaResultViewCell();
+            var value   = new MedalGashaResultViewCell() { Pointer= p0 };
 
-            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0270DB932180 0x20 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.RewardItemIcon                            = GetObject<RewardItemIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 0270DB9321A0 0x28 RewardItemIcon              ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
-            value.ObjectNew                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB9321C0 0x30 ObjectNew                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ImageConvertItem                          = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0270DB9321E0 0x38 ImageConvertItem            ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.TextConvertAmount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB932200 0x40 TextConvertAmount           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CanvasGroupReward                         = GetObject<CanvasGroup>(new IntPtr(p + 0x048), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB932220 0x48 CanvasGroupReward           ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CanvasGroupConvert                        = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB932240 0x50 CanvasGroupConvert          ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.IsConvertProduct                          = GetBool(new IntPtr(p + 0x058)); // 0270DB932260 0x58 IsConvertProduct            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Model                                     = GetObject<MedalGashaResultViewCellModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.MedalGashaResultViewCellModel.FromPointer); // 0270DB9322A0 0x60 Model                       ( 0001865E9E00 ModelClassType MedalGashaResultViewCellModel MedalGashaResultViewCellModel MedalGashaResultViewCellModel Pointer )
+            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 02466B9B1418 0x20 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.RewardItemIcon                            = GetObject<RewardItemIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 02466B9B1438 0x28 RewardItemIcon              ( 00018667FAC0 ModelClassType RewardItemIcon RewardItemIcon RewardItemIcon Pointer )
+            value.ObjectNew                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9B1458 0x30 ObjectNew                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ImageConvertItem                          = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 02466B9B1478 0x38 ImageConvertItem            ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.TextConvertAmount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9B1498 0x40 TextConvertAmount           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CanvasGroupReward                         = GetObject<CanvasGroup>(new IntPtr(p + 0x048), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B9B14B8 0x48 CanvasGroupReward           ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CanvasGroupConvert                        = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B9B14D8 0x50 CanvasGroupConvert          ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.IsConvertProduct                          = GetBool(new IntPtr(p + 0x058)); // 02466B9B14F8 0x58 IsConvertProduct            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Model                                     = GetObject<MedalGashaResultViewCellModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.MedalGashaResultViewCellModel.FromPointer); // 02466B9B1538 0x60 Model                       ( 0001865E9E00 ModelClassType MedalGashaResultViewCellModel MedalGashaResultViewCellModel MedalGashaResultViewCellModel Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 FloatMinNormal                           float IL2CPP_TYPE_R4
     // 004 FloatMinDenormal                         float IL2CPP_TYPE_R4
     // 008 IsFlushToZeroEnabled                     bool IL2CPP_TYPE_BOOLEAN
-    public partial class MathfInternal
+    public partial class MathfInternal : DataModel
     {
 
         public static MathfInternal? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MathfInternal();
+            var value   = new MathfInternal() { Pointer= p0 };
 
 
             return value;

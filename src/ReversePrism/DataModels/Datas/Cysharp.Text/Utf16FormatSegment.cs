@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 014 Count                                    0001865F4940 ModelPrimitiveType int int int Int32
     // 018 FormatIndex                              0001865F4940 ModelPrimitiveType int int int Int32
     // 01C Alignment                                0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class Utf16FormatSegment
+    public partial class Utf16FormatSegment : DataModel
     {
         public int                                      Offset                                  { get; set; }
         public int                                      Count                                   { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Utf16FormatSegment();
+            var value   = new Utf16FormatSegment() { Pointer= p0 };
 
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 0270DAB60448 0x10 Offset                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x014)); // 0270DAB60468 0x14 Count                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.FormatIndex                               = GetInt32(new IntPtr(p + 0x018)); // 0270DAB60488 0x18 FormatIndex                 ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Alignment                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270DAB604A8 0x1C Alignment                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 02466ABC8448 0x10 Offset                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x014)); // 02466ABC8468 0x14 Count                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.FormatIndex                               = GetInt32(new IntPtr(p + 0x018)); // 02466ABC8488 0x18 FormatIndex                 ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Alignment                                 = GetInt32(new IntPtr(p + 0x01C)); // 02466ABC84A8 0x1C Alignment                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

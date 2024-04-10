@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonConstructorAttribute
+    public partial class JsonConstructorAttribute : DataModel
     {
 
         public static JsonConstructorAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonConstructorAttribute();
+            var value   = new JsonConstructorAttribute() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 038 DeviceType                               0001865555D0 ModelEnumType OutputDeviceType OutputDeviceType OutputDeviceType Int32
     // 000 instance                                 CriAtomOutputDeviceObserver IL2CPP_TYPE_CLASS
     // 008 _onDeviceConnectionChanged               DeviceConnectionChangeCallback IL2CPP_TYPE_CLASS
-    public partial class CriAtomOutputDeviceObserver
+    public partial class CriAtomOutputDeviceObserver : DataModel
     {
         public bool                                     DontDestroyOnLoad                       { get; set; }
         public bool                                     LastIsConnected                         { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomOutputDeviceObserver();
+            var value   = new CriAtomOutputDeviceObserver() { Pointer= p0 };
 
-            value.DontDestroyOnLoad                         = GetBool(new IntPtr(p + 0x030)); // 0270DAC33528 0x30 DontDestroyOnLoad           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LastIsConnected                           = GetBool(new IntPtr(p + 0x031)); // 0270DAC33548 0x31 LastIsConnected             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsConnected                               = GetBool(new IntPtr(p + 0x032)); // 0270DAC33568 0x32 IsConnected                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LastDeviceType                            = (OutputDeviceType)GetInt32(new IntPtr(p + 0x034)); // 0270DAC33588 0x34 LastDeviceType              ( 0001865555D0 ModelEnumType OutputDeviceType OutputDeviceType OutputDeviceType Int32 )
-            value.DeviceType                                = (OutputDeviceType)GetInt32(new IntPtr(p + 0x038)); // 0270DAC335A8 0x38 DeviceType                  ( 0001865555D0 ModelEnumType OutputDeviceType OutputDeviceType OutputDeviceType Int32 )
+            value.DontDestroyOnLoad                         = GetBool(new IntPtr(p + 0x030)); // 02466AC8B528 0x30 DontDestroyOnLoad           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LastIsConnected                           = GetBool(new IntPtr(p + 0x031)); // 02466AC8B548 0x31 LastIsConnected             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsConnected                               = GetBool(new IntPtr(p + 0x032)); // 02466AC8B568 0x32 IsConnected                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LastDeviceType                            = (OutputDeviceType)GetInt32(new IntPtr(p + 0x034)); // 02466AC8B588 0x34 LastDeviceType              ( 0001865555D0 ModelEnumType OutputDeviceType OutputDeviceType OutputDeviceType Int32 )
+            value.DeviceType                                = (OutputDeviceType)GetInt32(new IntPtr(p + 0x038)); // 02466AC8B5A8 0x38 DeviceType                  ( 0001865555D0 ModelEnumType OutputDeviceType OutputDeviceType OutputDeviceType Int32 )
 
             return value;
         }

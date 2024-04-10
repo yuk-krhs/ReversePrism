@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceAutoSettingPopupCaller
+    public partial class ProduceAutoSettingPopupCaller : DataModel
     {
 
         public static ProduceAutoSettingPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoSettingPopupCaller();
+            var value   = new ProduceAutoSettingPopupCaller() { Pointer= p0 };
 
 
             return value;

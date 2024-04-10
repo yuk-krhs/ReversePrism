@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 ReadChainInfoList                        000185CD16C8 ModelClassListType List`1<ChainInfo> List`1<ChainInfo> List<ChainInfo> Pointer
     // 020 <OldestUnreadChainInfo>k__BackingField   Dictionary`2<int, ChainInfo> IL2CPP_TYPE_GENERICINST
     // 028 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ChainCache
+    public partial class ChainCache : DataModel
     {
         public List<ChainInfo>?                         AllChainInfo                            { get; set; }
         public List<ChainInfo>?                         ReadChainInfoList                       { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainCache();
+            var value   = new ChainCache() { Pointer= p0 };
 
-            value.AllChainInfo                              = GetObjectList<ChainInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChainInfo.FromPointer); // 027004A85C38 0x10 AllChainInfo                ( 000185CD16C8 ModelClassListType List`1<ChainInfo> List`1<ChainInfo> List<ChainInfo> Pointer )
-            value.ReadChainInfoList                         = GetObjectList<ChainInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChainInfo.FromPointer); // 027004A85C58 0x18 ReadChainInfoList           ( 000185CD16C8 ModelClassListType List`1<ChainInfo> List`1<ChainInfo> List<ChainInfo> Pointer )
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x028)); // 027004A85C98 0x28 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AllChainInfo                              = GetObjectList<ChainInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChainInfo.FromPointer); // 0245A4ADC618 0x10 AllChainInfo                ( 000185CD16C8 ModelClassListType List`1<ChainInfo> List`1<ChainInfo> List<ChainInfo> Pointer )
+            value.ReadChainInfoList                         = GetObjectList<ChainInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChainInfo.FromPointer); // 0245A4ADC638 0x18 ReadChainInfoList           ( 000185CD16C8 ModelClassListType List`1<ChainInfo> List`1<ChainInfo> List<ChainInfo> Pointer )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x028)); // 0245A4ADC678 0x28 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 SeasonText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 068 ScheduleContents                         000185B9C780 ModelClassListType ProduceAutoOneWeekScheduleContent[] ProduceAutoOneWeekScheduleContent[] List<ProduceAutoOneWeekScheduleContent> Pointer
-    public partial class ProduceAutoOneSeasonScheduleListCell
+    public partial class ProduceAutoOneSeasonScheduleListCell : DataModel
     {
         public UITextMeshProUGUI?                       SeasonText                              { get; set; }
         public List<ProduceAutoOneWeekScheduleContent>? ScheduleContents                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoOneSeasonScheduleListCell();
+            var value   = new ProduceAutoOneSeasonScheduleListCell() { Pointer= p0 };
 
-            value.SeasonText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA0CE290 0x60 SeasonText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScheduleContents                          = GetObjectList<ProduceAutoOneWeekScheduleContent>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProduceAutoOneWeekScheduleContent.FromPointer); // 0270DA0CE2B0 0x68 ScheduleContents            ( 000185B9C780 ModelClassListType ProduceAutoOneWeekScheduleContent[] ProduceAutoOneWeekScheduleContent[] List<ProduceAutoOneWeekScheduleContent> Pointer )
+            value.SeasonText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1225D8 0x60 SeasonText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScheduleContents                          = GetObjectList<ProduceAutoOneWeekScheduleContent>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProduceAutoOneWeekScheduleContent.FromPointer); // 02466A1225F8 0x68 ScheduleContents            ( 000185B9C780 ModelClassListType ProduceAutoOneWeekScheduleContent[] ProduceAutoOneWeekScheduleContent[] List<ProduceAutoOneWeekScheduleContent> Pointer )
 
             return value;
         }

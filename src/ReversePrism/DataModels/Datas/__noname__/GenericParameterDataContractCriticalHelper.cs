@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 060 ParameterPosition                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GenericParameterDataContractCriticalHelper
+    public partial class GenericParameterDataContractCriticalHelper : DataModel
     {
         public int                                      ParameterPosition                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GenericParameterDataContractCriticalHelper();
+            var value   = new GenericParameterDataContractCriticalHelper() { Pointer= p0 };
 
-            value.ParameterPosition                         = GetInt32(new IntPtr(p + 0x060)); // 0270D7D3DDA0 0x60 ParameterPosition           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ParameterPosition                         = GetInt32(new IntPtr(p + 0x060)); // 024667DA5DA0 0x60 ParameterPosition           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

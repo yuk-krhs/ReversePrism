@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_GetTitleAnnounceDetailReply Marshaller`1<GetTitleAnnounceDetailReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetTitleAnnounceList            Method`2<GetTitleAnnounceListArgs, GetTitleAnnounceListReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_GetTitleAnnounceDetail          Method`2<GetTitleAnnounceDetailArgs, GetTitleAnnounceDetailReply> IL2CPP_TYPE_GENERICINST
-    public partial class TitleAnnounceService
+    public partial class TitleAnnounceService : DataModel
     {
 
         public static TitleAnnounceService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TitleAnnounceService();
+            var value   = new TitleAnnounceService() { Pointer= p0 };
 
 
             return value;

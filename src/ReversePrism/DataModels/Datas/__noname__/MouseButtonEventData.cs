@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ButtonState                              000186584290 ModelEnumType FramePressState FramePressState FramePressState Int32
     // 018 ButtonData                               000186642720 ModelClassType PointerEventData PointerEventData PointerEventData Pointer
-    public partial class MouseButtonEventData
+    public partial class MouseButtonEventData : DataModel
     {
         public FramePressState                          ButtonState                             { get; set; }
         public PointerEventData?                        ButtonData                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MouseButtonEventData();
+            var value   = new MouseButtonEventData() { Pointer= p0 };
 
-            value.ButtonState                               = (FramePressState)GetInt32(new IntPtr(p + 0x010)); // 027004A4EA40 0x10 ButtonState                 ( 000186584290 ModelEnumType FramePressState FramePressState FramePressState Int32 )
-            value.ButtonData                                = GetObject<PointerEventData>(new IntPtr(p + 0x018), ReversePrism.DataModels.PointerEventData.FromPointer); // 027004A4EA60 0x18 ButtonData                  ( 000186642720 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
+            value.ButtonState                               = (FramePressState)GetInt32(new IntPtr(p + 0x010)); // 0245A43DD020 0x10 ButtonState                 ( 000186584290 ModelEnumType FramePressState FramePressState FramePressState Int32 )
+            value.ButtonData                                = GetObject<PointerEventData>(new IntPtr(p + 0x018), ReversePrism.DataModels.PointerEventData.FromPointer); // 0245A43DD040 0x18 ButtonData                  ( 000186642720 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
 
             return value;
         }

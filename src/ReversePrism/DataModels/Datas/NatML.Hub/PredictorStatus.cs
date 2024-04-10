@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 Review                                   string IL2CPP_TYPE_STRING
     // 000 Published                                string IL2CPP_TYPE_STRING
     // 000 Archived                                 string IL2CPP_TYPE_STRING
-    public partial class PredictorStatus
+    public partial class PredictorStatus : DataModel
     {
 
         public static PredictorStatus? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PredictorStatus();
+            var value   = new PredictorStatus() { Pointer= p0 };
 
 
             return value;

@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 038 SettingIndex                             0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32
     // 03C Circle                                   0001866AEB50 ModelEnumType Vector4 Vector4 Vector4 Int32
     // 04C TextureId                                000186665900 ModelPrimitiveType float float float Single
-    public partial class Vertex
+    public partial class Vertex : DataModel
     {
         public Vector3                                  Position                                { get; set; }
         public Color32                                  Tint                                    { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vertex();
+            var value   = new Vertex() { Pointer= p0 };
 
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0270067E3798 0x10 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Tint                                      = (Color32)GetInt32(new IntPtr(p + 0x01C)); // 0270067E37B8 0x1C Tint                        ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Uv                                        = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0270067E37D8 0x20 Uv                          ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.XformClipPages                            = (Color32)GetInt32(new IntPtr(p + 0x028)); // 0270067E37F8 0x28 XformClipPages              ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Ids                                       = (Color32)GetInt32(new IntPtr(p + 0x02C)); // 0270067E3818 0x2C Ids                         ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Flags                                     = (Color32)GetInt32(new IntPtr(p + 0x030)); // 0270067E3838 0x30 Flags                       ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.OpacityColorPages                         = (Color32)GetInt32(new IntPtr(p + 0x034)); // 0270067E3858 0x34 OpacityColorPages           ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.SettingIndex                              = (Color32)GetInt32(new IntPtr(p + 0x038)); // 0270067E3878 0x38 SettingIndex                ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Circle                                    = (Vector4)GetInt32(new IntPtr(p + 0x03C)); // 0270067E3898 0x3C Circle                      ( 0001866AEB50 ModelEnumType Vector4 Vector4 Vector4 Int32 )
-            value.TextureId                                 = GetSingle(new IntPtr(p + 0x04C)); // 0270067E38B8 0x4C TextureId                   ( 000186665900 ModelPrimitiveType float float float Single )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A67A5890 0x10 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Tint                                      = (Color32)GetInt32(new IntPtr(p + 0x01C)); // 0245A67A58B0 0x1C Tint                        ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Uv                                        = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0245A67A58D0 0x20 Uv                          ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.XformClipPages                            = (Color32)GetInt32(new IntPtr(p + 0x028)); // 0245A67A58F0 0x28 XformClipPages              ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Ids                                       = (Color32)GetInt32(new IntPtr(p + 0x02C)); // 0245A67A5910 0x2C Ids                         ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Flags                                     = (Color32)GetInt32(new IntPtr(p + 0x030)); // 0245A67A5930 0x30 Flags                       ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.OpacityColorPages                         = (Color32)GetInt32(new IntPtr(p + 0x034)); // 0245A67A5950 0x34 OpacityColorPages           ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.SettingIndex                              = (Color32)GetInt32(new IntPtr(p + 0x038)); // 0245A67A5970 0x38 SettingIndex                ( 0001865ACA60 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Circle                                    = (Vector4)GetInt32(new IntPtr(p + 0x03C)); // 0245A67A5990 0x3C Circle                      ( 0001866AEB50 ModelEnumType Vector4 Vector4 Vector4 Int32 )
+            value.TextureId                                 = GetSingle(new IntPtr(p + 0x04C)); // 0245A67A59B0 0x4C TextureId                   ( 000186665900 ModelPrimitiveType float float float Single )
 
             return value;
         }

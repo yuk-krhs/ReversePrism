@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 0A0 ExtraTab                                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 0B0 FavoriteTab                              ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 0C0 SearchTab                                ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    public partial class StoryLocalizeTextKeyConst
+    public partial class StoryLocalizeTextKeyConst : DataModel
     {
 
         public static StoryLocalizeTextKeyConst? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryLocalizeTextKeyConst();
+            var value   = new StoryLocalizeTextKeyConst() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 RelativeHumidity                         000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
     // 000 <current>k__BackingField                 HumiditySensor IL2CPP_TYPE_CLASS
-    public partial class HumiditySensor
+    public partial class HumiditySensor : DataModel
     {
         public AxisControl?                             RelativeHumidity                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HumiditySensor();
+            var value   = new HumiditySensor() { Pointer= p0 };
 
-            value.RelativeHumidity                          = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0270033B20B0 0x170 RelativeHumidity            ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.RelativeHumidity                          = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33B20B0 0x170 RelativeHumidity            ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

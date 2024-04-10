@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_MaterialMap                            Dictionary`2<Hash128, MaterialEntry> IL2CPP_TYPE_GENERICINST
-    public partial class MaterialCache
+    public partial class MaterialCache : DataModel
     {
 
         public static MaterialCache? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaterialCache();
+            var value   = new MaterialCache() { Pointer= p0 };
 
 
             return value;

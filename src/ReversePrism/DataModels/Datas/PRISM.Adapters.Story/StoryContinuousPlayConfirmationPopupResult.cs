@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsVoicePlayActive                        0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 011 IsPopupCanceled                          0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class StoryContinuousPlayConfirmationPopupResult
+    public partial class StoryContinuousPlayConfirmationPopupResult : DataModel
     {
         public bool                                     IsVoicePlayActive                       { get; set; }
         public bool                                     IsPopupCanceled                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryContinuousPlayConfirmationPopupResult();
+            var value   = new StoryContinuousPlayConfirmationPopupResult() { Pointer= p0 };
 
-            value.IsVoicePlayActive                         = GetBool(new IntPtr(p + 0x010)); // 0270D67C3BA0 0x10 IsVoicePlayActive           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsPopupCanceled                           = GetBool(new IntPtr(p + 0x011)); // 0270D67C3BC0 0x11 IsPopupCanceled             ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsVoicePlayActive                         = GetBool(new IntPtr(p + 0x010)); // 024666823BA0 0x10 IsVoicePlayActive           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsPopupCanceled                           = GetBool(new IntPtr(p + 0x011)); // 024666823BC0 0x11 IsPopupCanceled             ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

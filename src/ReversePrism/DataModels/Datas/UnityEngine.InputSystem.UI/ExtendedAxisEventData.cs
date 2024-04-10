@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExtendedAxisEventData
+    public partial class ExtendedAxisEventData : DataModel
     {
 
         public static ExtendedAxisEventData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtendedAxisEventData();
+            var value   = new ExtendedAxisEventData() { Pointer= p0 };
 
 
             return value;

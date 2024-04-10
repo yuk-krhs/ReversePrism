@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 034 M_LastVersion                            000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 000 s_Description                            string IL2CPP_TYPE_STRING
     // 008 s_ProfilerMarker                         ProfilerMarker IL2CPP_TYPE_VALUETYPE
-    public partial class VisualTreeViewDataUpdater
+    public partial class VisualTreeViewDataUpdater : DataModel
     {
         public uint                                     M_Version                               { get; set; }
         public uint                                     M_LastVersion                           { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualTreeViewDataUpdater();
+            var value   = new VisualTreeViewDataUpdater() { Pointer= p0 };
 
-            value.M_Version                                 = GetUInt32(new IntPtr(p + 0x030)); // 02700685F298 0x30 M_Version                   ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_LastVersion                             = GetUInt32(new IntPtr(p + 0x034)); // 02700685F2B8 0x34 M_LastVersion               ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_Version                                 = GetUInt32(new IntPtr(p + 0x030)); // 0245A6821128 0x30 M_Version                   ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_LastVersion                             = GetUInt32(new IntPtr(p + 0x034)); // 0245A6821148 0x34 M_LastVersion               ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

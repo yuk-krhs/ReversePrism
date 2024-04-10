@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DelayedAttribute
+    public partial class DelayedAttribute : DataModel
     {
 
         public static DelayedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DelayedAttribute();
+            var value   = new DelayedAttribute() { Pointer= p0 };
 
 
             return value;

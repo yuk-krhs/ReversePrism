@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IExchangeSelectionConfirmPopupView
+    public partial class IExchangeSelectionConfirmPopupView : DataModel
     {
 
         public static IExchangeSelectionConfirmPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IExchangeSelectionConfirmPopupView();
+            var value   = new IExchangeSelectionConfirmPopupView() { Pointer= p0 };
 
 
             return value;

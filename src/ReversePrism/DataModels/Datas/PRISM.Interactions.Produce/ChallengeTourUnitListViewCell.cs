@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 040 UnitIconImage                            0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 048 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    public partial class ChallengeTourUnitListViewCell
+    public partial class ChallengeTourUnitListViewCell : DataModel
     {
         public UIImage?                                 UnitIconImage                           { get; set; }
         public AutoCancellationTokenSource              Canceller                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourUnitListViewCell();
+            var value   = new ChallengeTourUnitListViewCell() { Pointer= p0 };
 
-            value.UnitIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA1D2208 0x40 UnitIconImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 0270DA1D2228 0x48 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.UnitIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 02466A23D878 0x40 UnitIconImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 02466A23D898 0x48 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

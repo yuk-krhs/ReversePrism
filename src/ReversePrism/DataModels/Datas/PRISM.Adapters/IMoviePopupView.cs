@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMoviePopupView
+    public partial class IMoviePopupView : DataModel
     {
 
         public static IMoviePopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMoviePopupView();
+            var value   = new IMoviePopupView() { Pointer= p0 };
 
 
             return value;

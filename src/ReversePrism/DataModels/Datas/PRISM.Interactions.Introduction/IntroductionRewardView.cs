@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 ViewModel                                000186730E20 ModelClassType IntroductionViewModel IntroductionViewModel IntroductionViewModel Pointer
     // 048 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 050 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class IntroductionRewardView
+    public partial class IntroductionRewardView : DataModel
     {
         public IntroductionRewardBackgroundView?        BackgroundView                          { get; set; }
         public IntroductionRewardPanelView?             PanelView                               { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionRewardView();
+            var value   = new IntroductionRewardView() { Pointer= p0 };
 
-            value.BackgroundView                            = GetObject<IntroductionRewardBackgroundView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionRewardBackgroundView.FromPointer); // 0270DB61C9E8 0x20 BackgroundView              ( 000186728E70 ModelClassType IntroductionRewardBackgroundView IntroductionRewardBackgroundView IntroductionRewardBackgroundView Pointer )
-            value.PanelView                                 = GetObject<IntroductionRewardPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IntroductionRewardPanelView.FromPointer); // 0270DB61CA08 0x28 PanelView                   ( 00018672A1C0 ModelClassType IntroductionRewardPanelView IntroductionRewardPanelView IntroductionRewardPanelView Pointer )
-            value.UiCharacterView                           = GetObject<IntroductionUICharacterView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IntroductionUICharacterView.FromPointer); // 0270DB61CA28 0x30 UiCharacterView             ( 00018672CFB0 ModelClassType IntroductionUICharacterView IntroductionUICharacterView IntroductionUICharacterView Pointer )
-            value.WindowTapButton                           = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB61CA48 0x38 WindowTapButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ViewModel                                 = GetObject<IntroductionViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IntroductionViewModel.FromPointer); // 0270DB61CA68 0x40 ViewModel                   ( 000186730E20 ModelClassType IntroductionViewModel IntroductionViewModel IntroductionViewModel Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB61CA88 0x48 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB61CAA8 0x50 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.BackgroundView                            = GetObject<IntroductionRewardBackgroundView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionRewardBackgroundView.FromPointer); // 02466B698A88 0x20 BackgroundView              ( 000186728E70 ModelClassType IntroductionRewardBackgroundView IntroductionRewardBackgroundView IntroductionRewardBackgroundView Pointer )
+            value.PanelView                                 = GetObject<IntroductionRewardPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IntroductionRewardPanelView.FromPointer); // 02466B698AA8 0x28 PanelView                   ( 00018672A1C0 ModelClassType IntroductionRewardPanelView IntroductionRewardPanelView IntroductionRewardPanelView Pointer )
+            value.UiCharacterView                           = GetObject<IntroductionUICharacterView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IntroductionUICharacterView.FromPointer); // 02466B698AC8 0x30 UiCharacterView             ( 00018672CFB0 ModelClassType IntroductionUICharacterView IntroductionUICharacterView IntroductionUICharacterView Pointer )
+            value.WindowTapButton                           = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466B698AE8 0x38 WindowTapButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ViewModel                                 = GetObject<IntroductionViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IntroductionViewModel.FromPointer); // 02466B698B08 0x40 ViewModel                   ( 000186730E20 ModelClassType IntroductionViewModel IntroductionViewModel IntroductionViewModel Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B698B28 0x48 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B698B48 0x50 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

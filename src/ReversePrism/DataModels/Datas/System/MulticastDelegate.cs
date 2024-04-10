@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 078 Delegates                                000185B7A080 ModelClassListType Delegate[] Delegate[] List<Delegate> Pointer
-    public partial class MulticastDelegate
+    public partial class MulticastDelegate : DataModel
     {
         public List<Delegate>?                          Delegates                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MulticastDelegate();
+            var value   = new MulticastDelegate() { Pointer= p0 };
 
-            value.Delegates                                 = GetObjectList<Delegate>(new IntPtr(p + 0x078), ReversePrism.DataModels.Delegate.FromPointer); // 027001540C18 0x78 Delegates                   ( 000185B7A080 ModelClassListType Delegate[] Delegate[] List<Delegate> Pointer )
+            value.Delegates                                 = GetObjectList<Delegate>(new IntPtr(p + 0x078), ReversePrism.DataModels.Delegate.FromPointer); // 0245A1540C18 0x78 Delegates                   ( 000185B7A080 ModelClassListType Delegate[] Delegate[] List<Delegate> Pointer )
 
             return value;
         }

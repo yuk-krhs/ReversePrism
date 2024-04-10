@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HideInInspector
+    public partial class HideInInspector : DataModel
     {
 
         public static HideInInspector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HideInInspector();
+            var value   = new HideInInspector() { Pointer= p0 };
 
 
             return value;

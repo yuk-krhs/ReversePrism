@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 TabButtonPrefab                          0001865AF1F0 ModelClassType StoryTopTabButton StoryTopTabButton StoryTopTabButton Pointer
     // 030 Tabs                                     000185D18778 ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer
     // 038 onClickTabButtonSubject                  Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class StoryTopTabGroup
+    public partial class StoryTopTabGroup : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
         public StoryTopTabButton?                       TabButtonPrefab                         { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopTabGroup();
+            var value   = new StoryTopTabGroup() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DB9A6A48 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.TabButtonPrefab                           = GetObject<StoryTopTabButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryTopTabButton.FromPointer); // 0270DB9A6A68 0x28 TabButtonPrefab             ( 0001865AF1F0 ModelClassType StoryTopTabButton StoryTopTabButton StoryTopTabButton Pointer )
-            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabButton.FromPointer); // 0270DB9A6A88 0x30 Tabs                        ( 000185D18778 ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466BA1DEA8 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.TabButtonPrefab                           = GetObject<StoryTopTabButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryTopTabButton.FromPointer); // 02466BA1DEC8 0x28 TabButtonPrefab             ( 0001865AF1F0 ModelClassType StoryTopTabButton StoryTopTabButton StoryTopTabButton Pointer )
+            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabButton.FromPointer); // 02466BA1DEE8 0x30 Tabs                        ( 000185D18778 ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer )
 
             return value;
         }

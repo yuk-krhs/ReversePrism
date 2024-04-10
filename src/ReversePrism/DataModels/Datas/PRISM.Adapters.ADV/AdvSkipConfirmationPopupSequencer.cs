@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 factory                                  IPopupViewFactory`1<IAdvSkipConfirmationPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class AdvSkipConfirmationPopupSequencer
+    public partial class AdvSkipConfirmationPopupSequencer : DataModel
     {
 
         public static AdvSkipConfirmationPopupSequencer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvSkipConfirmationPopupSequencer();
+            var value   = new AdvSkipConfirmationPopupSequencer() { Pointer= p0 };
 
 
             return value;

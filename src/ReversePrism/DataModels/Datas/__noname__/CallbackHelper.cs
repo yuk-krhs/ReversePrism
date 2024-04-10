@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 invokeWithoutContextCallback             Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class CallbackHelper
+    public partial class CallbackHelper : DataModel
     {
 
         public static CallbackHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallbackHelper();
+            var value   = new CallbackHelper() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetPrismGaugeDetailArgs
+    public partial class IGetPrismGaugeDetailArgs : DataModel
     {
 
         public static IGetPrismGaugeDetailArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetPrismGaugeDetailArgs();
+            var value   = new IGetPrismGaugeDetailArgs() { Pointer= p0 };
 
 
             return value;

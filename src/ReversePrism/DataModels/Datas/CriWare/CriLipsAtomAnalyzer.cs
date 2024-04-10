@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 handle                                   <int> IL2CPP_TYPE_I
     // 030 AttachedPlayer                           000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer
     // 038 MaxSamplingRate                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CriLipsAtomAnalyzer
+    public partial class CriLipsAtomAnalyzer : DataModel
     {
         public CriLipsMouth?                            Mouth                                   { get; set; }
         public CriAtomExPlayer?                         AttachedPlayer                          { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsAtomAnalyzer();
+            var value   = new CriLipsAtomAnalyzer() { Pointer= p0 };
 
-            value.Mouth                                     = GetObject<CriLipsMouth>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriLipsMouth.FromPointer); // 0270DBBA60C0 0x20 Mouth                       ( 000186656F50 ModelClassType CriLipsMouth CriLipsMouth CriLipsMouth Pointer )
-            value.AttachedPlayer                            = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x030), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0270DBBA6100 0x30 AttachedPlayer              ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x038)); // 0270DBBA6120 0x38 MaxSamplingRate             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Mouth                                     = GetObject<CriLipsMouth>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriLipsMouth.FromPointer); // 02466BC265E0 0x20 Mouth                       ( 000186656F50 ModelClassType CriLipsMouth CriLipsMouth CriLipsMouth Pointer )
+            value.AttachedPlayer                            = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x030), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 02466BC26620 0x30 AttachedPlayer              ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x038)); // 02466BC26640 0x38 MaxSamplingRate             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

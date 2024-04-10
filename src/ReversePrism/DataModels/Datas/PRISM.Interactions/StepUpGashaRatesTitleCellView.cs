@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 BaseHeight                               0001866656B0 ModelPrimitiveType float float float Single
     // 040 TxtTitle                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class StepUpGashaRatesTitleCellView
+    public partial class StepUpGashaRatesTitleCellView : DataModel
     {
         public float                                    BaseHeight                              { get; set; }
         public UITextMeshProUGUI?                       TxtTitle                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StepUpGashaRatesTitleCellView();
+            var value   = new StepUpGashaRatesTitleCellView() { Pointer= p0 };
 
-            value.BaseHeight                                = GetSingle(new IntPtr(p + 0x038)); // 0270DBA28C58 0x38 BaseHeight                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TxtTitle                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA28C78 0x40 TxtTitle                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BaseHeight                                = GetSingle(new IntPtr(p + 0x038)); // 02466BAB00F8 0x38 BaseHeight                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TxtTitle                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAB0118 0x40 TxtTitle                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

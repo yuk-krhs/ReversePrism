@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IServerEnvironmentId
+    public partial class IServerEnvironmentId : DataModel
     {
 
         public static IServerEnvironmentId? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IServerEnvironmentId();
+            var value   = new IServerEnvironmentId() { Pointer= p0 };
 
 
             return value;

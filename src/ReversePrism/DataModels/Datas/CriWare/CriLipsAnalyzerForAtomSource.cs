@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 080 AtomAnalyzer                             000186654E90 ModelClassType CriLipsAtomAnalyzer CriLipsAtomAnalyzer CriLipsAtomAnalyzer Pointer
     // 088 StartupSamplingRate                      0001865F3220 ModelPrimitiveType int int int Int32
     // 08C ShouldRetryInternalAttach                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriLipsAnalyzerForAtomSource
+    public partial class CriLipsAnalyzerForAtomSource : DataModel
     {
         public CriAtomSource?                           AtomSource                              { get; set; }
         public CriLipsAtomAnalyzer?                     AtomAnalyzer                            { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsAnalyzerForAtomSource();
+            var value   = new CriLipsAnalyzerForAtomSource() { Pointer= p0 };
 
-            value.AtomSource                                = GetObject<CriAtomSource>(new IntPtr(p + 0x078), ReversePrism.DataModels.CriAtomSource.FromPointer); // 0270DBBA52C8 0x78 AtomSource                  ( 00018664CF70 ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer )
-            value.AtomAnalyzer                              = GetObject<CriLipsAtomAnalyzer>(new IntPtr(p + 0x080), ReversePrism.DataModels.CriLipsAtomAnalyzer.FromPointer); // 0270DBBA52E8 0x80 AtomAnalyzer                ( 000186654E90 ModelClassType CriLipsAtomAnalyzer CriLipsAtomAnalyzer CriLipsAtomAnalyzer Pointer )
-            value.StartupSamplingRate                       = GetInt32(new IntPtr(p + 0x088)); // 0270DBBA5308 0x88 StartupSamplingRate         ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.ShouldRetryInternalAttach                 = GetBool(new IntPtr(p + 0x08C)); // 0270DBBA5328 0x8C ShouldRetryInternalAttach   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AtomSource                                = GetObject<CriAtomSource>(new IntPtr(p + 0x078), ReversePrism.DataModels.CriAtomSource.FromPointer); // 02466BC257E8 0x78 AtomSource                  ( 00018664CF70 ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer )
+            value.AtomAnalyzer                              = GetObject<CriLipsAtomAnalyzer>(new IntPtr(p + 0x080), ReversePrism.DataModels.CriLipsAtomAnalyzer.FromPointer); // 02466BC25808 0x80 AtomAnalyzer                ( 000186654E90 ModelClassType CriLipsAtomAnalyzer CriLipsAtomAnalyzer CriLipsAtomAnalyzer Pointer )
+            value.StartupSamplingRate                       = GetInt32(new IntPtr(p + 0x088)); // 02466BC25828 0x88 StartupSamplingRate         ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.ShouldRetryInternalAttach                 = GetBool(new IntPtr(p + 0x08C)); // 02466BC25848 0x8C ShouldRetryInternalAttach   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 050 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 ViewModel                                0001865BCAB0 ModelClassType ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel Pointer
     // 060 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ProfilePIdolSelectPopupView
+    public partial class ProfilePIdolSelectPopupView : DataModel
     {
         public ProfilePIdolSelectGridView?              GridView                                { get; set; }
         public FilterAndSortView?                       SortFilterView                          { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilePIdolSelectPopupView();
+            var value   = new ProfilePIdolSelectPopupView() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<ProfilePIdolSelectGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfilePIdolSelectGridView.FromPointer); // 0270DB712C18 0x20 GridView                    ( 0001865BB460 ModelClassType ProfilePIdolSelectGridView ProfilePIdolSelectGridView ProfilePIdolSelectGridView Pointer )
-            value.SortFilterView                            = GetObject<FilterAndSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 0270DB712C38 0x28 SortFilterView              ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
-            value.SortSwitch                                = GetObject<UISwitch>(new IntPtr(p + 0x030), ReversePrism.DataModels.UISwitch.FromPointer); // 0270DB712C58 0x30 SortSwitch                  ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
-            value.ViewModel                                 = GetObject<ProfilePIdolSelectViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfilePIdolSelectViewModel.FromPointer); // 0270DB712CF8 0x58 ViewModel                   ( 0001865BCAB0 ModelClassType ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB712D18 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.GridView                                  = GetObject<ProfilePIdolSelectGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfilePIdolSelectGridView.FromPointer); // 02466B79EA28 0x20 GridView                    ( 0001865BB460 ModelClassType ProfilePIdolSelectGridView ProfilePIdolSelectGridView ProfilePIdolSelectGridView Pointer )
+            value.SortFilterView                            = GetObject<FilterAndSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 02466B79EA48 0x28 SortFilterView              ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
+            value.SortSwitch                                = GetObject<UISwitch>(new IntPtr(p + 0x030), ReversePrism.DataModels.UISwitch.FromPointer); // 02466B79EA68 0x30 SortSwitch                  ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
+            value.ViewModel                                 = GetObject<ProfilePIdolSelectViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfilePIdolSelectViewModel.FromPointer); // 02466B79EB08 0x58 ViewModel                   ( 0001865BCAB0 ModelClassType ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel ProfilePIdolSelectViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B79EB28 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 060 M_serializedNameType                     000186671910 ModelPrimitiveType string string string String
     // 068 M_serializedRoleType                     000186671910 ModelPrimitiveType string string string String
     // 070 M_serializedClaims                       000186671910 ModelPrimitiveType string string string String
-    public partial class ClaimsIdentity
+    public partial class ClaimsIdentity : DataModel
     {
         public List<sbyte>?                             M_userSerializationData                 { get; set; }
         public List<Claim>?                             M_instanceClaims                        { get; set; }
@@ -41,19 +41,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClaimsIdentity();
+            var value   = new ClaimsIdentity() { Pointer= p0 };
 
-            value.M_userSerializationData                   = GetSByteList(new IntPtr(p + 0x010)); // 027004D1B020 0x10 M_userSerializationData     ( 000185B7A5B0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.M_instanceClaims                          = GetObjectList<Claim>(new IntPtr(p + 0x018), ReversePrism.DataModels.Claim.FromPointer); // 027004D1B040 0x18 M_instanceClaims            ( 000185CD2678 ModelClassListType List`1<Claim> List`1<Claim> List<Claim> Pointer )
-            value.M_nameType                                = GetString(new IntPtr(p + 0x028)); // 027004D1B080 0x28 M_nameType                  ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.M_roleType                                = GetString(new IntPtr(p + 0x030)); // 027004D1B0A0 0x30 M_roleType                  ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.M_version                                 = GetString(new IntPtr(p + 0x038)); // 027004D1B0C0 0x38 M_version                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_actor                                   = GetObject<ClaimsIdentity>(new IntPtr(p + 0x040), ReversePrism.DataModels.ClaimsIdentity.FromPointer); // 027004D1B0E0 0x40 M_actor                     ( 0001865AEA70 ModelClassType ClaimsIdentity ClaimsIdentity ClaimsIdentity Pointer )
-            value.M_authenticationType                      = GetString(new IntPtr(p + 0x048)); // 027004D1B100 0x48 M_authenticationType        ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_label                                   = GetString(new IntPtr(p + 0x058)); // 027004D1B140 0x58 M_label                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_serializedNameType                      = GetString(new IntPtr(p + 0x060)); // 027004D1B160 0x60 M_serializedNameType        ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_serializedRoleType                      = GetString(new IntPtr(p + 0x068)); // 027004D1B180 0x68 M_serializedRoleType        ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_serializedClaims                        = GetString(new IntPtr(p + 0x070)); // 027004D1B1A0 0x70 M_serializedClaims          ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_userSerializationData                   = GetSByteList(new IntPtr(p + 0x010)); // 0245A4D57FA8 0x10 M_userSerializationData     ( 000185B7A5B0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.M_instanceClaims                          = GetObjectList<Claim>(new IntPtr(p + 0x018), ReversePrism.DataModels.Claim.FromPointer); // 0245A4D57FC8 0x18 M_instanceClaims            ( 000185CD2678 ModelClassListType List`1<Claim> List`1<Claim> List<Claim> Pointer )
+            value.M_nameType                                = GetString(new IntPtr(p + 0x028)); // 0245A4D58008 0x28 M_nameType                  ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.M_roleType                                = GetString(new IntPtr(p + 0x030)); // 0245A4D58028 0x30 M_roleType                  ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.M_version                                 = GetString(new IntPtr(p + 0x038)); // 0245A4D58048 0x38 M_version                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_actor                                   = GetObject<ClaimsIdentity>(new IntPtr(p + 0x040), ReversePrism.DataModels.ClaimsIdentity.FromPointer); // 0245A4D58068 0x40 M_actor                     ( 0001865AEA70 ModelClassType ClaimsIdentity ClaimsIdentity ClaimsIdentity Pointer )
+            value.M_authenticationType                      = GetString(new IntPtr(p + 0x048)); // 0245A4D58088 0x48 M_authenticationType        ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_label                                   = GetString(new IntPtr(p + 0x058)); // 0245A4D580C8 0x58 M_label                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_serializedNameType                      = GetString(new IntPtr(p + 0x060)); // 0245A4D580E8 0x60 M_serializedNameType        ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_serializedRoleType                      = GetString(new IntPtr(p + 0x068)); // 0245A4D58108 0x68 M_serializedRoleType        ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_serializedClaims                        = GetString(new IntPtr(p + 0x070)); // 0245A4D58128 0x70 M_serializedClaims          ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

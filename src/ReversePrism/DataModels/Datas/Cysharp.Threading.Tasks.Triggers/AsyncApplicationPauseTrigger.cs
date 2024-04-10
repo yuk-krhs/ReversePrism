@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncApplicationPauseTrigger
+    public partial class AsyncApplicationPauseTrigger : DataModel
     {
 
         public static AsyncApplicationPauseTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncApplicationPauseTrigger();
+            var value   = new AsyncApplicationPauseTrigger() { Pointer= p0 };
 
 
             return value;

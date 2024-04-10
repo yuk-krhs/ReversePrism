@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 058 ChallengeTour                            0001865AB320 ModelClassType ProfileChallengeTourStatus ProfileChallengeTourStatus ProfileChallengeTourStatus Pointer
     // 000 PvpFieldNumber                           int IL2CPP_TYPE_I4
     // 060 Pvp                                      00018674DF50 ModelClassType UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus Pointer
-    public partial class ProfileEventDetailStatus
+    public partial class ProfileEventDetailStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -44,17 +44,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileEventDetailStatus();
+            var value   = new ProfileEventDetailStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D2719D90 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D2719DB0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x038)); // 0270D2719E30 0x38 EventType                   ( 0001865B3340 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x03C)); // 0270D2719E70 0x3C MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2719EB0 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2719EF0 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Live                                      = GetObject<UserProfileEventDetailLiveStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.UserProfileEventDetailLiveStatus.FromPointer); // 0270D2719F30 0x50 Live                        ( 00018674D810 ModelClassType UserProfileEventDetailLiveStatus UserProfileEventDetailLiveStatus UserProfileEventDetailLiveStatus Pointer )
-            value.ChallengeTour                             = GetObject<ProfileChallengeTourStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfileChallengeTourStatus.FromPointer); // 0270D2719F70 0x58 ChallengeTour               ( 0001865AB320 ModelClassType ProfileChallengeTourStatus ProfileChallengeTourStatus ProfileChallengeTourStatus Pointer )
-            value.Pvp                                       = GetObject<UserProfileEventDetailPvpStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.UserProfileEventDetailPvpStatus.FromPointer); // 0270D2719FB0 0x60 Pvp                         ( 00018674DF50 ModelClassType UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024662687730 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024662687750 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x038)); // 0246626877D0 0x38 EventType                   ( 0001865B3340 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x03C)); // 024662687810 0x3C MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024662687850 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024662687890 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Live                                      = GetObject<UserProfileEventDetailLiveStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.UserProfileEventDetailLiveStatus.FromPointer); // 0246626878D0 0x50 Live                        ( 00018674D810 ModelClassType UserProfileEventDetailLiveStatus UserProfileEventDetailLiveStatus UserProfileEventDetailLiveStatus Pointer )
+            value.ChallengeTour                             = GetObject<ProfileChallengeTourStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfileChallengeTourStatus.FromPointer); // 024662687910 0x58 ChallengeTour               ( 0001865AB320 ModelClassType ProfileChallengeTourStatus ProfileChallengeTourStatus ProfileChallengeTourStatus Pointer )
+            value.Pvp                                       = GetObject<UserProfileEventDetailPvpStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.UserProfileEventDetailPvpStatus.FromPointer); // 024662687950 0x60 Pvp                         ( 00018674DF50 ModelClassType UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus UserProfileEventDetailPvpStatus Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ClearHeader                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 028 FailedHeader                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class LiveResultHeaderView
+    public partial class LiveResultHeaderView : DataModel
     {
         public GameObject?                              ClearHeader                             { get; set; }
         public GameObject?                              FailedHeader                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveResultHeaderView();
+            var value   = new LiveResultHeaderView() { Pointer= p0 };
 
-            value.ClearHeader                               = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5248E50 0x20 ClearHeader                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.FailedHeader                              = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5248E70 0x28 FailedHeader                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ClearHeader                               = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0246652BC608 0x20 ClearHeader                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.FailedHeader                              = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0246652BC628 0x28 FailedHeader                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

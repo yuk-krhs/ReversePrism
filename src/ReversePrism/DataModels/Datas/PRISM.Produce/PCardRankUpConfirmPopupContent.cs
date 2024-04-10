@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 RankUpProduceCardPrefab                  00018660D7C0 ModelClassType RankUpProduceCardContent RankUpProduceCardContent RankUpProduceCardContent Pointer
     // 068 ProduceCardArea                          000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    public partial class PCardRankUpConfirmPopupContent
+    public partial class PCardRankUpConfirmPopupContent : DataModel
     {
         public RankUpProduceCardContent?                RankUpProduceCardPrefab                 { get; set; }
         public RectTransform?                           ProduceCardArea                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardRankUpConfirmPopupContent();
+            var value   = new PCardRankUpConfirmPopupContent() { Pointer= p0 };
 
-            value.RankUpProduceCardPrefab                   = GetObject<RankUpProduceCardContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.RankUpProduceCardContent.FromPointer); // 0270D5CEB440 0x60 RankUpProduceCardPrefab     ( 00018660D7C0 ModelClassType RankUpProduceCardContent RankUpProduceCardContent RankUpProduceCardContent Pointer )
-            value.ProduceCardArea                           = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5CEB460 0x68 ProduceCardArea             ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.RankUpProduceCardPrefab                   = GetObject<RankUpProduceCardContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.RankUpProduceCardContent.FromPointer); // 024665D3C018 0x60 RankUpProduceCardPrefab     ( 00018660D7C0 ModelClassType RankUpProduceCardContent RankUpProduceCardContent RankUpProduceCardContent Pointer )
+            value.ProduceCardArea                           = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 024665D3C038 0x68 ProduceCardArea             ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

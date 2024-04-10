@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     0001865AFE60 ModelClassType StoryTopView StoryTopView StoryTopView Pointer
-    public partial class StoryTopBuilder
+    public partial class StoryTopBuilder : DataModel
     {
         public StoryTopView?                            View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopBuilder();
+            var value   = new StoryTopBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<StoryTopView>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryTopView.FromPointer); // 0270DB646D38 0x20 View                        ( 0001865AFE60 ModelClassType StoryTopView StoryTopView StoryTopView Pointer )
+            value.View                                      = GetObject<StoryTopView>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryTopView.FromPointer); // 02466B6D2E98 0x20 View                        ( 0001865AFE60 ModelClassType StoryTopView StoryTopView StoryTopView Pointer )
 
             return value;
         }

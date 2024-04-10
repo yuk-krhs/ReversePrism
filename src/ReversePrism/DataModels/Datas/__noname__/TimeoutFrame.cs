@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 isTimeout                                bool IL2CPP_TYPE_BOOLEAN
     // 000 sourceSubscription                       SingleAssignmentDisposable IL2CPP_TYPE_CLASS
     // 000 timerSubscription                        SerialDisposable IL2CPP_TYPE_CLASS
-    public partial class TimeoutFrame
+    public partial class TimeoutFrame : DataModel
     {
 
         public static TimeoutFrame? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeoutFrame();
+            var value   = new TimeoutFrame() { Pointer= p0 };
 
 
             return value;

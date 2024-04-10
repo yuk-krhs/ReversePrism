@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SampleFramesAvailable                    0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer
     // 018 SampleFramesOverflow                     0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer
-    public partial class AudioSampleProvider
+    public partial class AudioSampleProvider : DataModel
     {
         public SampleFramesHandler?                     SampleFramesAvailable                   { get; set; }
         public SampleFramesHandler?                     SampleFramesOverflow                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudioSampleProvider();
+            var value   = new AudioSampleProvider() { Pointer= p0 };
 
-            value.SampleFramesAvailable                     = GetObject<SampleFramesHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.SampleFramesHandler.FromPointer); // 0270021BEDC0 0x10 SampleFramesAvailable       ( 0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer )
-            value.SampleFramesOverflow                      = GetObject<SampleFramesHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.SampleFramesHandler.FromPointer); // 0270021BEDE0 0x18 SampleFramesOverflow        ( 0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer )
+            value.SampleFramesAvailable                     = GetObject<SampleFramesHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.SampleFramesHandler.FromPointer); // 0245A21BEDC0 0x10 SampleFramesAvailable       ( 0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer )
+            value.SampleFramesOverflow                      = GetObject<SampleFramesHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.SampleFramesHandler.FromPointer); // 0245A21BEDE0 0x18 SampleFramesOverflow        ( 0001866D5280 ModelClassType SampleFramesHandler SampleFramesHandler SampleFramesHandler Pointer )
 
             return value;
         }

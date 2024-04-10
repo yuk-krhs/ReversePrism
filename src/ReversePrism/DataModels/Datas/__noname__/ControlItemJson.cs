@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 098 DefaultState                             0001866722E0 ModelPrimitiveType string string string String
     // 0A0 MinValue                                 0001866722E0 ModelPrimitiveType string string string String
     // 0A8 MaxValue                                 0001866722E0 ModelPrimitiveType string string string String
-    public partial class ControlItemJson
+    public partial class ControlItemJson : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Layout                                  { get; set; }
@@ -63,31 +63,31 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ControlItemJson();
+            var value   = new ControlItemJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D7860BB0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Layout                                    = GetString(new IntPtr(p + 0x018)); // 0270D7860BD0 0x18 Layout                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Variants                                  = GetString(new IntPtr(p + 0x020)); // 0270D7860BF0 0x20 Variants                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Usage                                     = GetString(new IntPtr(p + 0x028)); // 0270D7860C10 0x28 Usage                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Alias                                     = GetString(new IntPtr(p + 0x030)); // 0270D7860C30 0x30 Alias                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.UseStateFrom                              = GetString(new IntPtr(p + 0x038)); // 0270D7860C50 0x38 UseStateFrom                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Offset                                    = GetUInt32(new IntPtr(p + 0x040)); // 0270D7860C70 0x40 Offset                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Bit                                       = GetUInt32(new IntPtr(p + 0x044)); // 0270D7860C90 0x44 Bit                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.SizeInBits                                = GetUInt32(new IntPtr(p + 0x048)); // 0270D7860CB0 0x48 SizeInBits                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Format                                    = GetString(new IntPtr(p + 0x050)); // 0270D7860CD0 0x50 Format                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x058)); // 0270D7860CF0 0x58 ArraySize                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Usages                                    = GetStringList(new IntPtr(p + 0x060)); // 0270D7860D10 0x60 Usages                      ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Aliases                                   = GetStringList(new IntPtr(p + 0x068)); // 0270D7860D30 0x68 Aliases                     ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Parameters                                = GetString(new IntPtr(p + 0x070)); // 0270D7860D50 0x70 Parameters                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x078)); // 0270D7860D70 0x78 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x080)); // 0270D7860D90 0x80 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ShortDisplayName                          = GetString(new IntPtr(p + 0x088)); // 0270D7860DB0 0x88 ShortDisplayName            ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Noisy                                     = GetBool(new IntPtr(p + 0x090)); // 0270D7860DD0 0x90 Noisy                       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DontReset                                 = GetBool(new IntPtr(p + 0x091)); // 0270D7860DF0 0x91 DontReset                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Synthetic                                 = GetBool(new IntPtr(p + 0x092)); // 0270D7860E10 0x92 Synthetic                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultState                              = GetString(new IntPtr(p + 0x098)); // 0270D7860E30 0x98 DefaultState                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.MinValue                                  = GetString(new IntPtr(p + 0x0A0)); // 0270D7860E50 0xA0 MinValue                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.MaxValue                                  = GetString(new IntPtr(p + 0x0A8)); // 0270D7860E70 0xA8 MaxValue                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246678B8BB0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Layout                                    = GetString(new IntPtr(p + 0x018)); // 0246678B8BD0 0x18 Layout                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Variants                                  = GetString(new IntPtr(p + 0x020)); // 0246678B8BF0 0x20 Variants                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Usage                                     = GetString(new IntPtr(p + 0x028)); // 0246678B8C10 0x28 Usage                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Alias                                     = GetString(new IntPtr(p + 0x030)); // 0246678B8C30 0x30 Alias                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.UseStateFrom                              = GetString(new IntPtr(p + 0x038)); // 0246678B8C50 0x38 UseStateFrom                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Offset                                    = GetUInt32(new IntPtr(p + 0x040)); // 0246678B8C70 0x40 Offset                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Bit                                       = GetUInt32(new IntPtr(p + 0x044)); // 0246678B8C90 0x44 Bit                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.SizeInBits                                = GetUInt32(new IntPtr(p + 0x048)); // 0246678B8CB0 0x48 SizeInBits                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Format                                    = GetString(new IntPtr(p + 0x050)); // 0246678B8CD0 0x50 Format                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x058)); // 0246678B8CF0 0x58 ArraySize                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Usages                                    = GetStringList(new IntPtr(p + 0x060)); // 0246678B8D10 0x60 Usages                      ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Aliases                                   = GetStringList(new IntPtr(p + 0x068)); // 0246678B8D30 0x68 Aliases                     ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Parameters                                = GetString(new IntPtr(p + 0x070)); // 0246678B8D50 0x70 Parameters                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x078)); // 0246678B8D70 0x78 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x080)); // 0246678B8D90 0x80 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ShortDisplayName                          = GetString(new IntPtr(p + 0x088)); // 0246678B8DB0 0x88 ShortDisplayName            ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Noisy                                     = GetBool(new IntPtr(p + 0x090)); // 0246678B8DD0 0x90 Noisy                       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DontReset                                 = GetBool(new IntPtr(p + 0x091)); // 0246678B8DF0 0x91 DontReset                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Synthetic                                 = GetBool(new IntPtr(p + 0x092)); // 0246678B8E10 0x92 Synthetic                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultState                              = GetString(new IntPtr(p + 0x098)); // 0246678B8E30 0x98 DefaultState                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.MinValue                                  = GetString(new IntPtr(p + 0x0A0)); // 0246678B8E50 0xA0 MinValue                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.MaxValue                                  = GetString(new IntPtr(p + 0x0A8)); // 0246678B8E70 0xA8 MaxValue                    ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

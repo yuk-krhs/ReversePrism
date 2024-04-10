@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_Enumerator                             UnsafeParallelHashMapDataEnumerator IL2CPP_TYPE_VALUETYPE
-    public partial class KeyValueEnumerator
+    public partial class KeyValueEnumerator : DataModel
     {
 
         public static KeyValueEnumerator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyValueEnumerator();
+            var value   = new KeyValueEnumerator() { Pointer= p0 };
 
 
             return value;

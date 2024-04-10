@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 MstChainTalkText                         00018661A050 ModelClassType MstChainTalkText MstChainTalkText MstChainTalkText Pointer
     // 018 NextTalkTextIds                          000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class ChainTalkNode
+    public partial class ChainTalkNode : DataModel
     {
         public MstChainTalkText?                        MstChainTalkText                        { get; set; }
         public List<int>?                               NextTalkTextIds                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkNode();
+            var value   = new ChainTalkNode() { Pointer= p0 };
 
-            value.MstChainTalkText                          = GetObject<MstChainTalkText>(new IntPtr(p + 0x010), ReversePrism.DataModels.MstChainTalkText.FromPointer); // 0270D68674C0 0x10 MstChainTalkText            ( 00018661A050 ModelClassType MstChainTalkText MstChainTalkText MstChainTalkText Pointer )
-            value.NextTalkTextIds                           = GetInt32List(new IntPtr(p + 0x018)); // 0270D68674E0 0x18 NextTalkTextIds             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.MstChainTalkText                          = GetObject<MstChainTalkText>(new IntPtr(p + 0x010), ReversePrism.DataModels.MstChainTalkText.FromPointer); // 0246668C74C0 0x10 MstChainTalkText            ( 00018661A050 ModelClassType MstChainTalkText MstChainTalkText MstChainTalkText Pointer )
+            value.NextTalkTextIds                           = GetInt32List(new IntPtr(p + 0x018)); // 0246668C74E0 0x18 NextTalkTextIds             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

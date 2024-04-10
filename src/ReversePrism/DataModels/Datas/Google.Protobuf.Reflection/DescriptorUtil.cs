@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DescriptorUtil
+    public partial class DescriptorUtil : DataModel
     {
 
         public static DescriptorUtil? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DescriptorUtil();
+            var value   = new DescriptorUtil() { Pointer= p0 };
 
 
             return value;

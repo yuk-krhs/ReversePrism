@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               000186530170 ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class CallTopScreenBuilder
+    public partial class CallTopScreenBuilder : DataModel
     {
         public CallTopScreenView?                       ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallTopScreenBuilder();
+            var value   = new CallTopScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<CallTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallTopScreenView.FromPointer); // 0270DB6475C8 0x20 ViewPrefab                  ( 000186530170 ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB6475E8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<CallTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallTopScreenView.FromPointer); // 02466B6D3728 0x20 ViewPrefab                  ( 000186530170 ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3748 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

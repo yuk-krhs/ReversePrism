@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Pointer                                  <int> IL2CPP_TYPE_I
     // 008 DeferredCompilation                      <int> IL2CPP_TYPE_I
-    public partial class Hash64Long_00000A66$BurstDirectCall
+    public partial class Hash64Long_00000A66$BurstDirectCall : DataModel
     {
 
         public static Hash64Long_00000A66$BurstDirectCall? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hash64Long_00000A66$BurstDirectCall();
+            var value   = new Hash64Long_00000A66$BurstDirectCall() { Pointer= p0 };
 
 
             return value;

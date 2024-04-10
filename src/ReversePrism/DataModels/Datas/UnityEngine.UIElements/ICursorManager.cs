@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICursorManager
+    public partial class ICursorManager : DataModel
     {
 
         public static ICursorManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICursorManager();
+            var value   = new ICursorManager() { Pointer= p0 };
 
 
             return value;

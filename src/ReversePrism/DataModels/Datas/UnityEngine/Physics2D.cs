@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_LastDisabledRigidbody2D                List`1<Rigidbody2D> IL2CPP_TYPE_GENERICINST
-    public partial class Physics2D
+    public partial class Physics2D : DataModel
     {
 
         public static Physics2D? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Physics2D();
+            var value   = new Physics2D() { Pointer= p0 };
 
 
             return value;

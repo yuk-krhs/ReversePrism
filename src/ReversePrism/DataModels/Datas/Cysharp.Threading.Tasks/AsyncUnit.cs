@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  AsyncUnit IL2CPP_TYPE_VALUETYPE
-    public partial class AsyncUnit
+    public partial class AsyncUnit : DataModel
     {
 
         public static AsyncUnit? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncUnit();
+            var value   = new AsyncUnit() { Pointer= p0 };
 
 
             return value;

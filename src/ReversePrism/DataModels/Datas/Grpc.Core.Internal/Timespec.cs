@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 010 Tv_sec                                   0001865F7700 ModelPrimitiveType long long long Int64
     // 018 Tv_nsec                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C Clock_type                               0001865BA550 ModelEnumType ClockType ClockType ClockType Int32
-    public partial class Timespec
+    public partial class Timespec : DataModel
     {
         public long                                     Tv_sec                                  { get; set; }
         public int                                      Tv_nsec                                 { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Timespec();
+            var value   = new Timespec() { Pointer= p0 };
 
-            value.Tv_sec                                    = GetInt64(new IntPtr(p + 0x010)); // 0270D0ED9DD0 0x10 Tv_sec                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Tv_nsec                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D0ED9DF0 0x18 Tv_nsec                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Clock_type                                = (ClockType)GetInt32(new IntPtr(p + 0x01C)); // 0270D0ED9E10 0x1C Clock_type                  ( 0001865BA550 ModelEnumType ClockType ClockType ClockType Int32 )
+            value.Tv_sec                                    = GetInt64(new IntPtr(p + 0x010)); // 0245A4153360 0x10 Tv_sec                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Tv_nsec                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A4153380 0x18 Tv_nsec                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Clock_type                                = (ClockType)GetInt32(new IntPtr(p + 0x01C)); // 0245A41533A0 0x1C Clock_type                  ( 0001865BA550 ModelEnumType ClockType ClockType ClockType Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 PerfectSeconds                           000186666050 ModelPrimitiveType float float float Single
     // 014 GreatSeconds                             000186666050 ModelPrimitiveType float float float Single
     // 018 GoodSeconds                              000186666050 ModelPrimitiveType float float float Single
-    public partial class JudgementRange
+    public partial class JudgementRange : DataModel
     {
         public float                                    PerfectSeconds                          { get; set; }
         public float                                    GreatSeconds                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JudgementRange();
+            var value   = new JudgementRange() { Pointer= p0 };
 
-            value.PerfectSeconds                            = GetSingle(new IntPtr(p + 0x010)); // 0270D4F715D8 0x10 PerfectSeconds              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.GreatSeconds                              = GetSingle(new IntPtr(p + 0x014)); // 0270D4F715F8 0x14 GreatSeconds                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.GoodSeconds                               = GetSingle(new IntPtr(p + 0x018)); // 0270D4F71618 0x18 GoodSeconds                 ( 000186666050 ModelPrimitiveType float float float Single )
+            value.PerfectSeconds                            = GetSingle(new IntPtr(p + 0x010)); // 024664FE8F18 0x10 PerfectSeconds              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.GreatSeconds                              = GetSingle(new IntPtr(p + 0x014)); // 024664FE8F38 0x14 GreatSeconds                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.GoodSeconds                               = GetSingle(new IntPtr(p + 0x018)); // 024664FE8F58 0x18 GoodSeconds                 ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

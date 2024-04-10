@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 TitleView                                0001865E9EF0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
     // 060 Model                                    0001865483B0 ModelClassType LiveCostumeChangeModel LiveCostumeChangeModel LiveCostumeChangeModel Pointer
     // 068 Argument                                 000186546A20 ModelClassType LiveCostumeChangeArgument LiveCostumeChangeArgument LiveCostumeChangeArgument Pointer
-    public partial class LiveCostumeChangeView
+    public partial class LiveCostumeChangeView : DataModel
     {
         public LiveCostumeChangeIdolView?               IdolView                                { get; set; }
         public UICharacterViewer?                       UiCharacterViewer                       { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumeChangeView();
+            var value   = new LiveCostumeChangeView() { Pointer= p0 };
 
-            value.IdolView                                  = GetObject<LiveCostumeChangeIdolView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveCostumeChangeIdolView.FromPointer); // 0270DB3AFD68 0x20 IdolView                    ( 000186547930 ModelClassType LiveCostumeChangeIdolView LiveCostumeChangeIdolView LiveCostumeChangeIdolView Pointer )
-            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 0270DB3AFD88 0x28 UiCharacterViewer           ( 0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
-            value.MainView                                  = GetObject<LiveCostumeChangeMainView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveCostumeChangeMainView.FromPointer); // 0270DB3AFDA8 0x30 MainView                    ( 000186547E70 ModelClassType LiveCostumeChangeMainView LiveCostumeChangeMainView LiveCostumeChangeMainView Pointer )
-            value.PresetView                                = GetObject<LiveCostumePresetWindow>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveCostumePresetWindow.FromPointer); // 0270DB3AFDC8 0x38 PresetView                  ( 00018654B270 ModelClassType LiveCostumePresetWindow LiveCostumePresetWindow LiveCostumePresetWindow Pointer )
-            value.CostumeSetListView                        = GetObject<CostumeSetListView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeSetListView.FromPointer); // 0270DB3AFDE8 0x40 CostumeSetListView          ( 000186633EA0 ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer )
-            value.CostumeGridView                           = GetObject<CostumeGridView>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeGridView.FromPointer); // 0270DB3AFE08 0x48 CostumeGridView             ( 00018662C860 ModelClassType CostumeGridView CostumeGridView CostumeGridView Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0270DB3AFE48 0x58 TitleView                   ( 0001865E9EF0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.Model                                     = GetObject<LiveCostumeChangeModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveCostumeChangeModel.FromPointer); // 0270DB3AFE68 0x60 Model                       ( 0001865483B0 ModelClassType LiveCostumeChangeModel LiveCostumeChangeModel LiveCostumeChangeModel Pointer )
-            value.Argument                                  = GetObject<LiveCostumeChangeArgument>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveCostumeChangeArgument.FromPointer); // 0270DB3AFE88 0x68 Argument                    ( 000186546A20 ModelClassType LiveCostumeChangeArgument LiveCostumeChangeArgument LiveCostumeChangeArgument Pointer )
+            value.IdolView                                  = GetObject<LiveCostumeChangeIdolView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveCostumeChangeIdolView.FromPointer); // 02466B43F500 0x20 IdolView                    ( 000186547930 ModelClassType LiveCostumeChangeIdolView LiveCostumeChangeIdolView LiveCostumeChangeIdolView Pointer )
+            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 02466B43F520 0x28 UiCharacterViewer           ( 0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
+            value.MainView                                  = GetObject<LiveCostumeChangeMainView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveCostumeChangeMainView.FromPointer); // 02466B43F540 0x30 MainView                    ( 000186547E70 ModelClassType LiveCostumeChangeMainView LiveCostumeChangeMainView LiveCostumeChangeMainView Pointer )
+            value.PresetView                                = GetObject<LiveCostumePresetWindow>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveCostumePresetWindow.FromPointer); // 02466B43F560 0x38 PresetView                  ( 00018654B270 ModelClassType LiveCostumePresetWindow LiveCostumePresetWindow LiveCostumePresetWindow Pointer )
+            value.CostumeSetListView                        = GetObject<CostumeSetListView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeSetListView.FromPointer); // 02466B43F580 0x40 CostumeSetListView          ( 000186633EA0 ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer )
+            value.CostumeGridView                           = GetObject<CostumeGridView>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeGridView.FromPointer); // 02466B43F5A0 0x48 CostumeGridView             ( 00018662C860 ModelClassType CostumeGridView CostumeGridView CostumeGridView Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466B43F5E0 0x58 TitleView                   ( 0001865E9EF0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.Model                                     = GetObject<LiveCostumeChangeModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveCostumeChangeModel.FromPointer); // 02466B43F600 0x60 Model                       ( 0001865483B0 ModelClassType LiveCostumeChangeModel LiveCostumeChangeModel LiveCostumeChangeModel Pointer )
+            value.Argument                                  = GetObject<LiveCostumeChangeArgument>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveCostumeChangeArgument.FromPointer); // 02466B43F620 0x68 Argument                    ( 000186546A20 ModelClassType LiveCostumeChangeArgument LiveCostumeChangeArgument LiveCostumeChangeArgument Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Value                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class VolatileObject
+    public partial class VolatileObject : DataModel
     {
 
         public static VolatileObject? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolatileObject();
+            var value   = new VolatileObject() { Pointer= p0 };
 
 
             return value;

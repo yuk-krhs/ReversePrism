@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 0B0 mvad                                     NativeArray`1<MeshVertexData> IL2CPP_TYPE_GENERICINST
     // 0C0 miad                                     NativeArray`1<ushort> IL2CPP_TYPE_GENERICINST
     // 0D0 msh                                      NativeArray`1<MeshOut> IL2CPP_TYPE_GENERICINST
-    public partial class CreateMeshJob
+    public partial class CreateMeshJob : DataModel
     {
 
         public static CreateMeshJob? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateMeshJob();
+            var value   = new CreateMeshJob() { Pointer= p0 };
 
 
             return value;

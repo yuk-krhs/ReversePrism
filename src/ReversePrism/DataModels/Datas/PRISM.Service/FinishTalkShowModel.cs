@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NextOrder                                0001865EE670 ModelClassType IProduceNextOrderStatus IProduceNextOrderStatus IProduceNextOrderStatus Pointer
-    public partial class FinishTalkShowModel
+    public partial class FinishTalkShowModel : DataModel
     {
         public IProduceNextOrderStatus?                 NextOrder                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishTalkShowModel();
+            var value   = new FinishTalkShowModel() { Pointer= p0 };
 
-            value.NextOrder                                 = GetObject<IProduceNextOrderStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceNextOrderStatus.FromPointer); // 0270D65BE510 0x10 NextOrder                   ( 0001865EE670 ModelClassType IProduceNextOrderStatus IProduceNextOrderStatus IProduceNextOrderStatus Pointer )
+            value.NextOrder                                 = GetObject<IProduceNextOrderStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceNextOrderStatus.FromPointer); // 02466661ED40 0x10 NextOrder                   ( 0001865EE670 ModelClassType IProduceNextOrderStatus IProduceNextOrderStatus IProduceNextOrderStatus Pointer )
 
             return value;
         }

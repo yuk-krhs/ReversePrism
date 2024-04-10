@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 HeadwearName                             0001866722E0 ModelPrimitiveType string string string String
     // 038 DressName                                0001866722E0 ModelPrimitiveType string string string String
     // 040 AccessoryName                            000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class AssembleInfo
+    public partial class AssembleInfo : DataModel
     {
         public string                                   IdName                                  { get; set; }
         public string                                   AllinName                               { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssembleInfo();
+            var value   = new AssembleInfo() { Pointer= p0 };
 
-            value.IdName                                    = GetString(new IntPtr(p + 0x010)); // 0270060E88B8 0x10 IdName                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AllinName                                 = GetString(new IntPtr(p + 0x018)); // 0270060E88D8 0x18 AllinName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FaceName                                  = GetString(new IntPtr(p + 0x020)); // 0270060E88F8 0x20 FaceName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HairName                                  = GetString(new IntPtr(p + 0x028)); // 0270060E8918 0x28 HairName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HeadwearName                              = GetString(new IntPtr(p + 0x030)); // 0270060E8938 0x30 HeadwearName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DressName                                 = GetString(new IntPtr(p + 0x038)); // 0270060E8958 0x38 DressName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AccessoryName                             = GetStringList(new IntPtr(p + 0x040)); // 0270060E8978 0x40 AccessoryName               ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.IdName                                    = GetString(new IntPtr(p + 0x010)); // 0245A60C1770 0x10 IdName                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AllinName                                 = GetString(new IntPtr(p + 0x018)); // 0245A60C1790 0x18 AllinName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.FaceName                                  = GetString(new IntPtr(p + 0x020)); // 0245A60C17B0 0x20 FaceName                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.HairName                                  = GetString(new IntPtr(p + 0x028)); // 0245A60C17D0 0x28 HairName                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.HeadwearName                              = GetString(new IntPtr(p + 0x030)); // 0245A60C17F0 0x30 HeadwearName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DressName                                 = GetString(new IntPtr(p + 0x038)); // 0245A60C1810 0x38 DressName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AccessoryName                             = GetStringList(new IntPtr(p + 0x040)); // 0245A60C1830 0x40 AccessoryName               ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

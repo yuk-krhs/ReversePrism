@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISceneReactivator
+    public partial class ISceneReactivator : DataModel
     {
 
         public static ISceneReactivator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISceneReactivator();
+            var value   = new ISceneReactivator() { Pointer= p0 };
 
 
             return value;

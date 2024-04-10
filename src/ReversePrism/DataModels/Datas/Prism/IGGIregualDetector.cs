@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGGIregualDetector
+    public partial class IGGIregualDetector : DataModel
     {
 
         public static IGGIregualDetector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGGIregualDetector();
+            var value   = new IGGIregualDetector() { Pointer= p0 };
 
 
             return value;

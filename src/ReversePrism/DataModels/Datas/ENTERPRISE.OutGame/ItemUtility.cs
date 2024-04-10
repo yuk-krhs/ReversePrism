@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 000 MusicProductNameKey                      ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 000 MusicNameKey                             string IL2CPP_TYPE_STRING
     // 000 EventStoryNameKey                        string IL2CPP_TYPE_STRING
-    public partial class ItemUtility
+    public partial class ItemUtility : DataModel
     {
 
         public static ItemUtility? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ItemUtility();
+            var value   = new ItemUtility() { Pointer= p0 };
 
 
             return value;

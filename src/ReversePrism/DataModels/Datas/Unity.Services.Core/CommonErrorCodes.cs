@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 000 InvalidRequest                           int IL2CPP_TYPE_I4
     // 000 ProjectPolicyAccessDenied                int IL2CPP_TYPE_I4
     // 000 PlayerPolicyAccessDenied                 int IL2CPP_TYPE_I4
-    public partial class CommonErrorCodes
+    public partial class CommonErrorCodes : DataModel
     {
 
         public static CommonErrorCodes? FromPointer(IntPtr p0)
@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonErrorCodes();
+            var value   = new CommonErrorCodes() { Pointer= p0 };
 
 
             return value;

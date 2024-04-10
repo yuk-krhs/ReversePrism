@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Ucs4Decoder2143
+    public partial class Ucs4Decoder2143 : DataModel
     {
 
         public static Ucs4Decoder2143? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Ucs4Decoder2143();
+            var value   = new Ucs4Decoder2143() { Pointer= p0 };
 
 
             return value;

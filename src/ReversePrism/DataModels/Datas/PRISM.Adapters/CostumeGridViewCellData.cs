@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 028 IsUnlocked                               0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 030 CostumeName                              000186671910 ModelPrimitiveType string string string String
     // 038 UnlockCondition                          000186671910 ModelPrimitiveType string string string String
-    public partial class CostumeGridViewCellData
+    public partial class CostumeGridViewCellData : DataModel
     {
         public bool                                     IsUnlocked                              { get; set; }
         public string                                   CostumeName                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeGridViewCellData();
+            var value   = new CostumeGridViewCellData() { Pointer= p0 };
 
-            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x028)); // 0270D623DDA0 0x28 IsUnlocked                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CostumeName                               = GetString(new IntPtr(p + 0x030)); // 0270D623DDC0 0x30 CostumeName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnlockCondition                           = GetString(new IntPtr(p + 0x038)); // 0270D623DDE0 0x38 UnlockCondition             ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x028)); // 02466629DDA0 0x28 IsUnlocked                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CostumeName                               = GetString(new IntPtr(p + 0x030)); // 02466629DDC0 0x30 CostumeName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnlockCondition                           = GetString(new IntPtr(p + 0x038)); // 02466629DDE0 0x38 UnlockCondition             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

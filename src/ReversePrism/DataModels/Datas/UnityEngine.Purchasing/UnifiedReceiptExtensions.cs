@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnifiedReceiptExtensions
+    public partial class UnifiedReceiptExtensions : DataModel
     {
 
         public static UnifiedReceiptExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnifiedReceiptExtensions();
+            var value   = new UnifiedReceiptExtensions() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 sCharaEditConfirmPopupViewFactory        PopupViewFactory`1<IProduceSCharaEditConfirmPopupView> IL2CPP_TYPE_GENERICINST
     // 050 onClickFriendSupportCell                 Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 058 onClickReloadButton                      Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceFriendSupportSelectView
+    public partial class ProduceFriendSupportSelectView : DataModel
     {
         public UIButton?                                ReloadButton                            { get; set; }
         public Animator?                                ReloadButtonAnimator                    { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceFriendSupportSelectView();
+            var value   = new ProduceFriendSupportSelectView() { Pointer= p0 };
 
-            value.ReloadButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA0DCD00 0x20 ReloadButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ReloadButtonAnimator                      = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0270DA0DCD20 0x28 ReloadButtonAnimator        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ListView                                  = GetObject<ProduceFriendSupportListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceFriendSupportListView.FromPointer); // 0270DA0DCD40 0x30 ListView                    ( 000186542770 ModelClassType ProduceFriendSupportListView ProduceFriendSupportListView ProduceFriendSupportListView Pointer )
+            value.ReloadButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466A138840 0x20 ReloadButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ReloadButtonAnimator                      = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 02466A138860 0x28 ReloadButtonAnimator        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.ListView                                  = GetObject<ProduceFriendSupportListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceFriendSupportListView.FromPointer); // 02466A138880 0x30 ListView                    ( 000186542770 ModelClassType ProduceFriendSupportListView ProduceFriendSupportListView ProduceFriendSupportListView Pointer )
 
             return value;
         }

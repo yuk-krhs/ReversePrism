@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 runEventSubject                          Subject`1<string> IL2CPP_TYPE_GENERICINST
     // 028 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    public partial class AnimatorWithEvent
+    public partial class AnimatorWithEvent : DataModel
     {
         public Animator?                                Animator                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimatorWithEvent();
+            var value   = new AnimatorWithEvent() { Pointer= p0 };
 
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0270D530AD40 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 02466537E508 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

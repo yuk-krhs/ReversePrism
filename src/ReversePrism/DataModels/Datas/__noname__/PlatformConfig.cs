@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Reserved                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class PlatformConfig
+    public partial class PlatformConfig : DataModel
     {
         public sbyte                                    Reserved                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlatformConfig();
+            var value   = new PlatformConfig() { Pointer= p0 };
 
-            value.Reserved                                  = GetSByte(new IntPtr(p + 0x010)); // 0270DAC2AC08 0x10 Reserved                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Reserved                                  = GetSByte(new IntPtr(p + 0x010)); // 02466AC82C08 0x10 Reserved                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

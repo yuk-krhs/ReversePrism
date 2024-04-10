@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstHairstyleFormatter
+    public partial class MstHairstyleFormatter : DataModel
     {
 
         public static MstHairstyleFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstHairstyleFormatter();
+            var value   = new MstHairstyleFormatter() { Pointer= p0 };
 
 
             return value;

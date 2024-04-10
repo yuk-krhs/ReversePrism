@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 CgWhite                                  000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 028 FadeDuration                             0001866656B0 ModelPrimitiveType float float float Single
-    public partial class PerformanceFader
+    public partial class PerformanceFader : DataModel
     {
         public CanvasGroup?                             CgWhite                                 { get; set; }
         public float                                    FadeDuration                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PerformanceFader();
+            var value   = new PerformanceFader() { Pointer= p0 };
 
-            value.CgWhite                                   = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270D5408EC0 0x20 CgWhite                     ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x028)); // 0270D5408EE0 0x28 FadeDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CgWhite                                   = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466547BBE8 0x20 CgWhite                     ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x028)); // 02466547BC08 0x28 FadeDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

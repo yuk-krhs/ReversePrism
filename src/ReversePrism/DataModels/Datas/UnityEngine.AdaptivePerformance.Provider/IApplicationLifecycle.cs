@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IApplicationLifecycle
+    public partial class IApplicationLifecycle : DataModel
     {
 
         public static IApplicationLifecycle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IApplicationLifecycle();
+            var value   = new IApplicationLifecycle() { Pointer= p0 };
 
 
             return value;

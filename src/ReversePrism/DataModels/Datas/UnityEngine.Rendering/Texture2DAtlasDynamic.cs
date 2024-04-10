@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 024 M_Format                                 000186696180 ModelEnumType GraphicsFormat GraphicsFormat GraphicsFormat Int32
     // 028 M_AtlasAllocator                         00018670BA90 ModelClassType AtlasAllocatorDynamic AtlasAllocatorDynamic AtlasAllocatorDynamic Pointer
     // 030 m_AllocationCache                        Dictionary`2<int, Vector4> IL2CPP_TYPE_GENERICINST
-    public partial class Texture2DAtlasDynamic
+    public partial class Texture2DAtlasDynamic : DataModel
     {
         public RTHandle?                                M_AtlasTexture                          { get; set; }
         public bool                                     IsAtlasTextureOwner                     { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2DAtlasDynamic();
+            var value   = new Texture2DAtlasDynamic() { Pointer= p0 };
 
-            value.M_AtlasTexture                            = GetObject<RTHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.RTHandle.FromPointer); // 0270D9294E30 0x10 M_AtlasTexture              ( 00018664B080 ModelClassType RTHandle RTHandle RTHandle Pointer )
-            value.IsAtlasTextureOwner                       = GetBool(new IntPtr(p + 0x018)); // 0270D9294E50 0x18 IsAtlasTextureOwner         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Width                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D9294E70 0x1C M_Width                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Height                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D9294E90 0x20 M_Height                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Format                                  = (GraphicsFormat)GetInt32(new IntPtr(p + 0x024)); // 0270D9294EB0 0x24 M_Format                    ( 000186696180 ModelEnumType GraphicsFormat GraphicsFormat GraphicsFormat Int32 )
-            value.M_AtlasAllocator                          = GetObject<AtlasAllocatorDynamic>(new IntPtr(p + 0x028), ReversePrism.DataModels.AtlasAllocatorDynamic.FromPointer); // 0270D9294ED0 0x28 M_AtlasAllocator            ( 00018670BA90 ModelClassType AtlasAllocatorDynamic AtlasAllocatorDynamic AtlasAllocatorDynamic Pointer )
+            value.M_AtlasTexture                            = GetObject<RTHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.RTHandle.FromPointer); // 0246692F7320 0x10 M_AtlasTexture              ( 00018664B080 ModelClassType RTHandle RTHandle RTHandle Pointer )
+            value.IsAtlasTextureOwner                       = GetBool(new IntPtr(p + 0x018)); // 0246692F7340 0x18 IsAtlasTextureOwner         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Width                                   = GetInt32(new IntPtr(p + 0x01C)); // 0246692F7360 0x1C M_Width                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Height                                  = GetInt32(new IntPtr(p + 0x020)); // 0246692F7380 0x20 M_Height                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Format                                  = (GraphicsFormat)GetInt32(new IntPtr(p + 0x024)); // 0246692F73A0 0x24 M_Format                    ( 000186696180 ModelEnumType GraphicsFormat GraphicsFormat GraphicsFormat Int32 )
+            value.M_AtlasAllocator                          = GetObject<AtlasAllocatorDynamic>(new IntPtr(p + 0x028), ReversePrism.DataModels.AtlasAllocatorDynamic.FromPointer); // 0246692F73C0 0x28 M_AtlasAllocator            ( 00018670BA90 ModelClassType AtlasAllocatorDynamic AtlasAllocatorDynamic AtlasAllocatorDynamic Pointer )
 
             return value;
         }

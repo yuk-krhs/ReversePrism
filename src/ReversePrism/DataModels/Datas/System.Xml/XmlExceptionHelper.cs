@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlExceptionHelper
+    public partial class XmlExceptionHelper : DataModel
     {
 
         public static XmlExceptionHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlExceptionHelper();
+            var value   = new XmlExceptionHelper() { Pointer= p0 };
 
 
             return value;

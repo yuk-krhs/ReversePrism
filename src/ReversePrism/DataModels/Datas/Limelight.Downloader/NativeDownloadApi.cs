@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 RequestPoolSize                          0001865F4260 ModelPrimitiveType int int int Int32
     // 030 alreadyCreatedDirectories                HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 038 CurrentSoftStreamLimit                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class NativeDownloadApi
+    public partial class NativeDownloadApi : DataModel
     {
         public SonicboomConfig?                         Config                                  { get; set; }
         public int                                      RequestPoolSize                         { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeDownloadApi();
+            var value   = new NativeDownloadApi() { Pointer= p0 };
 
-            value.Config                                    = GetObject<SonicboomConfig>(new IntPtr(p + 0x020), ReversePrism.DataModels.SonicboomConfig.FromPointer); // 027003E2C848 0x20 Config                      ( 00018652B810 ModelClassType SonicboomConfig SonicboomConfig SonicboomConfig Pointer )
-            value.RequestPoolSize                           = GetInt32(new IntPtr(p + 0x028)); // 027003E2C868 0x28 RequestPoolSize             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CurrentSoftStreamLimit                    = GetInt32(new IntPtr(p + 0x038)); // 027003E2C8A8 0x38 CurrentSoftStreamLimit      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Config                                    = GetObject<SonicboomConfig>(new IntPtr(p + 0x020), ReversePrism.DataModels.SonicboomConfig.FromPointer); // 0245A3E2C848 0x20 Config                      ( 00018652B810 ModelClassType SonicboomConfig SonicboomConfig SonicboomConfig Pointer )
+            value.RequestPoolSize                           = GetInt32(new IntPtr(p + 0x028)); // 0245A3E2C868 0x28 RequestPoolSize             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CurrentSoftStreamLimit                    = GetInt32(new IntPtr(p + 0x038)); // 0245A3E2C8A8 0x38 CurrentSoftStreamLimit      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 UIArea                                   0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
     // 018 CostText                                 0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class CostUI
+    public partial class CostUI : DataModel
     {
         public GameObject?                              UIArea                                  { get; set; }
         public UITextMeshProUGUI?                       CostText                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostUI();
+            var value   = new CostUI() { Pointer= p0 };
 
-            value.UIArea                                    = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BC04F0 0x10 UIArea                      ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CostText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x018), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5BC0510 0x18 CostText                    ( 0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UIArea                                    = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 024665C30D68 0x10 UIArea                      ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CostText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x018), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665C30D88 0x18 CostText                    ( 0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

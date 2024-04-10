@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFittingRoomConnector
+    public partial class IFittingRoomConnector : DataModel
     {
 
         public static IFittingRoomConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFittingRoomConnector();
+            var value   = new IFittingRoomConnector() { Pointer= p0 };
 
 
             return value;

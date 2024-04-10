@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 050 ScriptController                         0001866D8C40 ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer
     // 058 ScheduleDetailType                       000186614E40 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     // 060 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class ProduceFailureResultView
+    public partial class ProduceFailureResultView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public ProduceFailureResultRewardView?          RewardView                              { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceFailureResultView();
+            var value   = new ProduceFailureResultView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA1D7518 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.RewardView                                = GetObject<ProduceFailureResultRewardView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceFailureResultRewardView.FromPointer); // 0270DA1D7538 0x28 RewardView                  ( 000186540DA0 ModelClassType ProduceFailureResultRewardView ProduceFailureResultRewardView ProduceFailureResultRewardView Pointer )
-            value.IdolBaseRewardContentView                 = GetObject<ResultIdolBaseRewardContentView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ResultIdolBaseRewardContentView.FromPointer); // 0270DA1D7558 0x30 IdolBaseRewardContentView   ( 000186675B30 ModelClassType ResultIdolBaseRewardContentView ResultIdolBaseRewardContentView ResultIdolBaseRewardContentView Pointer )
-            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA1D7578 0x38 NextButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.AnimationPlayer                           = GetObject<ScreenTapSkipAnimationPlayer>(new IntPtr(p + 0x048), ReversePrism.DataModels.ScreenTapSkipAnimationPlayer.FromPointer); // 0270DA1D75B8 0x48 AnimationPlayer             ( 0001866F3450 ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer )
-            value.ScriptController                          = GetObject<InGameResultScriptController>(new IntPtr(p + 0x050), ReversePrism.DataModels.InGameResultScriptController.FromPointer); // 0270DA1D75D8 0x50 ScriptController            ( 0001866D8C40 ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x058)); // 0270DA1D75F8 0x58 ScheduleDetailType          ( 000186614E40 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DA1D7618 0x60 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A242B88 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.RewardView                                = GetObject<ProduceFailureResultRewardView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceFailureResultRewardView.FromPointer); // 02466A242BA8 0x28 RewardView                  ( 000186540DA0 ModelClassType ProduceFailureResultRewardView ProduceFailureResultRewardView ProduceFailureResultRewardView Pointer )
+            value.IdolBaseRewardContentView                 = GetObject<ResultIdolBaseRewardContentView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ResultIdolBaseRewardContentView.FromPointer); // 02466A242BC8 0x30 IdolBaseRewardContentView   ( 000186675B30 ModelClassType ResultIdolBaseRewardContentView ResultIdolBaseRewardContentView ResultIdolBaseRewardContentView Pointer )
+            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A242BE8 0x38 NextButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.AnimationPlayer                           = GetObject<ScreenTapSkipAnimationPlayer>(new IntPtr(p + 0x048), ReversePrism.DataModels.ScreenTapSkipAnimationPlayer.FromPointer); // 02466A242C28 0x48 AnimationPlayer             ( 0001866F3450 ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer )
+            value.ScriptController                          = GetObject<InGameResultScriptController>(new IntPtr(p + 0x050), ReversePrism.DataModels.InGameResultScriptController.FromPointer); // 02466A242C48 0x50 ScriptController            ( 0001866D8C40 ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x058)); // 02466A242C68 0x58 ScheduleDetailType          ( 000186614E40 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A242C88 0x60 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

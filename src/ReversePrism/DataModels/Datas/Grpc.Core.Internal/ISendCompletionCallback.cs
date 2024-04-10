@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISendCompletionCallback
+    public partial class ISendCompletionCallback : DataModel
     {
 
         public static ISendCompletionCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISendCompletionCallback();
+            var value   = new ISendCompletionCallback() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGooglePurchase
+    public partial class IGooglePurchase : DataModel
     {
 
         public static IGooglePurchase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGooglePurchase();
+            var value   = new IGooglePurchase() { Pointer= p0 };
 
 
             return value;

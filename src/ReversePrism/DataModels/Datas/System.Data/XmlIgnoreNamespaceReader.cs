@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 NamespacesToIgnore                       000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class XmlIgnoreNamespaceReader
+    public partial class XmlIgnoreNamespaceReader : DataModel
     {
         public List<string>?                            NamespacesToIgnore                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlIgnoreNamespaceReader();
+            var value   = new XmlIgnoreNamespaceReader() { Pointer= p0 };
 
-            value.NamespacesToIgnore                        = GetStringList(new IntPtr(p + 0x030)); // 0270D896F718 0x30 NamespacesToIgnore          ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.NamespacesToIgnore                        = GetStringList(new IntPtr(p + 0x030)); // 0246689E2588 0x30 NamespacesToIgnore          ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

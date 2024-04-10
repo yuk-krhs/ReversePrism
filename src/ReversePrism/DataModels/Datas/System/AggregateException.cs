@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 m_innerExceptions                        ReadOnlyCollection`1<Exception> IL2CPP_TYPE_GENERICINST
-    public partial class AggregateException
+    public partial class AggregateException : DataModel
     {
 
         public static AggregateException? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AggregateException();
+            var value   = new AggregateException() { Pointer= p0 };
 
 
             return value;

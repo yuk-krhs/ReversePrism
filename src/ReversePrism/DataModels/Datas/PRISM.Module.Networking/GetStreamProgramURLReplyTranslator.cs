@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetStreamProgramURLReplyTranslator
+    public partial class GetStreamProgramURLReplyTranslator : DataModel
     {
 
         public static GetStreamProgramURLReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStreamProgramURLReplyTranslator();
+            var value   = new GetStreamProgramURLReplyTranslator() { Pointer= p0 };
 
 
             return value;

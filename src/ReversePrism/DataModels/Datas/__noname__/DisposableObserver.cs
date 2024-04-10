@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 observer                                 IObserver`1<InputEventPtr> IL2CPP_TYPE_GENERICINST
-    public partial class DisposableObserver
+    public partial class DisposableObserver : DataModel
     {
 
         public static DisposableObserver? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisposableObserver();
+            var value   = new DisposableObserver() { Pointer= p0 };
 
 
             return value;

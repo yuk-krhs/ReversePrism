@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               000186565970 ModelClassType ChainTalkScreenView ChainTalkScreenView ChainTalkScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class ChainTalkScreenBuilder
+    public partial class ChainTalkScreenBuilder : DataModel
     {
         public ChainTalkScreenView?                     ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkScreenBuilder();
+            var value   = new ChainTalkScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<ChainTalkScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTalkScreenView.FromPointer); // 0270DB6476C8 0x20 ViewPrefab                  ( 000186565970 ModelClassType ChainTalkScreenView ChainTalkScreenView ChainTalkScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB6476E8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<ChainTalkScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTalkScreenView.FromPointer); // 02466B6D3828 0x20 ViewPrefab                  ( 000186565970 ModelClassType ChainTalkScreenView ChainTalkScreenView ChainTalkScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3848 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

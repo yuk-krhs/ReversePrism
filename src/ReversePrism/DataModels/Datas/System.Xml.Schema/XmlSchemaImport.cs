@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 068 Ns                                       000186671910 ModelPrimitiveType string string string String
     // 070 Annotation                               0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer
-    public partial class XmlSchemaImport
+    public partial class XmlSchemaImport : DataModel
     {
         public string                                   Ns                                      { get; set; }
         public XmlSchemaAnnotation?                     Annotation                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaImport();
+            var value   = new XmlSchemaImport() { Pointer= p0 };
 
-            value.Ns                                        = GetString(new IntPtr(p + 0x068)); // 0270D75B1040 0x68 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 0270D75B1060 0x70 Annotation                  ( 0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
+            value.Ns                                        = GetString(new IntPtr(p + 0x068)); // 024667621040 0x68 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 024667621060 0x70 Annotation                  ( 0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
 
             return value;
         }

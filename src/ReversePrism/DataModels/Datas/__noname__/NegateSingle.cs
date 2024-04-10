@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NegateSingle
+    public partial class NegateSingle : DataModel
     {
 
         public static NegateSingle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NegateSingle();
+            var value   = new NegateSingle() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Rigidbody
+    public partial class Rigidbody : DataModel
     {
 
         public static Rigidbody? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Rigidbody();
+            var value   = new Rigidbody() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceAutoPlaySettingsStatus
+    public partial class IProduceAutoPlaySettingsStatus : DataModel
     {
 
         public static IProduceAutoPlaySettingsStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceAutoPlaySettingsStatus();
+            var value   = new IProduceAutoPlaySettingsStatus() { Pointer= p0 };
 
 
             return value;

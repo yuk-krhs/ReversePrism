@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IParameterProvider
+    public partial class IParameterProvider : DataModel
     {
 
         public static IParameterProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IParameterProvider();
+            var value   = new IParameterProvider() { Pointer= p0 };
 
 
             return value;

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 SlotListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_slotList_codec                 FieldCodec`1<LiveUnitSlotDetailStatus> IL2CPP_TYPE_GENERICINST
     // 028 SlotList                                 000185CE4548 ModelClassListType RepeatedField`1<LiveUnitSlotDetailStatus> RepeatedField`1<LiveUnitSlotDetailStatus> List<LiveUnitSlotDetailStatus> Pointer
-    public partial class LiveUnitDetailStatus
+    public partial class LiveUnitDetailStatus : DataModel
     {
         public int                                      UnitNumber                              { get; set; }
         public string                                   Name                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitDetailStatus();
+            var value   = new LiveUnitDetailStatus() { Pointer= p0 };
 
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 0270D135FAB8 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D135FAF8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.SlotList                                  = GetObjectList<LiveUnitSlotDetailStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveUnitSlotDetailStatus.FromPointer); // 0270D135FB58 0x28 SlotList                    ( 000185CE4548 ModelClassListType RepeatedField`1<LiveUnitSlotDetailStatus> RepeatedField`1<LiveUnitSlotDetailStatus> List<LiveUnitSlotDetailStatus> Pointer )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 0246612EA2D8 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246612EA318 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.SlotList                                  = GetObjectList<LiveUnitSlotDetailStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveUnitSlotDetailStatus.FromPointer); // 0246612EA378 0x28 SlotList                    ( 000185CE4548 ModelClassListType RepeatedField`1<LiveUnitSlotDetailStatus> RepeatedField`1<LiveUnitSlotDetailStatus> List<LiveUnitSlotDetailStatus> Pointer )
 
             return value;
         }

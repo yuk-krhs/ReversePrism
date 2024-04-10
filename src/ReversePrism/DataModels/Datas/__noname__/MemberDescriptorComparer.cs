@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 MemberDescriptorComparer IL2CPP_TYPE_CLASS
-    public partial class MemberDescriptorComparer
+    public partial class MemberDescriptorComparer : DataModel
     {
 
         public static MemberDescriptorComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberDescriptorComparer();
+            var value   = new MemberDescriptorComparer() { Pointer= p0 };
 
 
             return value;

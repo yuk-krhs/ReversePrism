@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_BitArray                               IntPtr IL2CPP_TYPE_PTR
-    public partial class NativeBitArray
+    public partial class NativeBitArray : DataModel
     {
 
         public static NativeBitArray? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeBitArray();
+            var value   = new NativeBitArray() { Pointer= p0 };
 
 
             return value;

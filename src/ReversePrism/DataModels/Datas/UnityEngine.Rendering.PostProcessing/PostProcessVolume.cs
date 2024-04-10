@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 03C M_PreviousPriority                       0001866656B0 ModelPrimitiveType float float float Single
     // 040 M_TempColliders                          000185CD3048 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer
     // 048 M_InternalProfile                        00018676CCB0 ModelClassType PostProcessProfile PostProcessProfile PostProcessProfile Pointer
-    public partial class PostProcessVolume
+    public partial class PostProcessVolume : DataModel
     {
         public PostProcessProfile?                      SharedProfile                           { get; set; }
         public bool                                     IsGlobal                                { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostProcessVolume();
+            var value   = new PostProcessVolume() { Pointer= p0 };
 
-            value.SharedProfile                             = GetObject<PostProcessProfile>(new IntPtr(p + 0x020), ReversePrism.DataModels.PostProcessProfile.FromPointer); // 0270D3307A48 0x20 SharedProfile               ( 00018676CF70 ModelClassType PostProcessProfile PostProcessProfile PostProcessProfile Pointer )
-            value.IsGlobal                                  = GetBool(new IntPtr(p + 0x028)); // 0270D3307A68 0x28 IsGlobal                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BlendDistance                             = GetSingle(new IntPtr(p + 0x02C)); // 0270D3307A88 0x2C BlendDistance               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Weight                                    = GetSingle(new IntPtr(p + 0x030)); // 0270D3307AA8 0x30 Weight                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Priority                                  = GetSingle(new IntPtr(p + 0x034)); // 0270D3307AC8 0x34 Priority                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.M_PreviousLayer                           = GetInt32(new IntPtr(p + 0x038)); // 0270D3307AE8 0x38 M_PreviousLayer             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_PreviousPriority                        = GetSingle(new IntPtr(p + 0x03C)); // 0270D3307B08 0x3C M_PreviousPriority          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x040), ReversePrism.DataModels.Collider.FromPointer); // 0270D3307B28 0x40 M_TempColliders             ( 000185CD3048 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
-            value.M_InternalProfile                         = GetObject<PostProcessProfile>(new IntPtr(p + 0x048), ReversePrism.DataModels.PostProcessProfile.FromPointer); // 0270D3307B48 0x48 M_InternalProfile           ( 00018676CCB0 ModelClassType PostProcessProfile PostProcessProfile PostProcessProfile Pointer )
+            value.SharedProfile                             = GetObject<PostProcessProfile>(new IntPtr(p + 0x020), ReversePrism.DataModels.PostProcessProfile.FromPointer); // 024663326810 0x20 SharedProfile               ( 00018676CF70 ModelClassType PostProcessProfile PostProcessProfile PostProcessProfile Pointer )
+            value.IsGlobal                                  = GetBool(new IntPtr(p + 0x028)); // 024663326830 0x28 IsGlobal                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BlendDistance                             = GetSingle(new IntPtr(p + 0x02C)); // 024663326850 0x2C BlendDistance               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Weight                                    = GetSingle(new IntPtr(p + 0x030)); // 024663326870 0x30 Weight                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Priority                                  = GetSingle(new IntPtr(p + 0x034)); // 024663326890 0x34 Priority                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.M_PreviousLayer                           = GetInt32(new IntPtr(p + 0x038)); // 0246633268B0 0x38 M_PreviousLayer             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_PreviousPriority                        = GetSingle(new IntPtr(p + 0x03C)); // 0246633268D0 0x3C M_PreviousPriority          ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x040), ReversePrism.DataModels.Collider.FromPointer); // 0246633268F0 0x40 M_TempColliders             ( 000185CD3048 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
+            value.M_InternalProfile                         = GetObject<PostProcessProfile>(new IntPtr(p + 0x048), ReversePrism.DataModels.PostProcessProfile.FromPointer); // 024663326910 0x48 M_InternalProfile           ( 00018676CCB0 ModelClassType PostProcessProfile PostProcessProfile PostProcessProfile Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class grpcsharp_slice_buffer_destroy_delegate
+    public partial class grpcsharp_slice_buffer_destroy_delegate : DataModel
     {
 
         public static grpcsharp_slice_buffer_destroy_delegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new grpcsharp_slice_buffer_destroy_delegate();
+            var value   = new grpcsharp_slice_buffer_destroy_delegate() { Pointer= p0 };
 
 
             return value;

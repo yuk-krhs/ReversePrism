@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetSuspendedLiveReplyTranslator
+    public partial class GetSuspendedLiveReplyTranslator : DataModel
     {
 
         public static GetSuspendedLiveReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSuspendedLiveReplyTranslator();
+            var value   = new GetSuspendedLiveReplyTranslator() { Pointer= p0 };
 
 
             return value;

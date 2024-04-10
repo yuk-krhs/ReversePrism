@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 M_Delegates                              000185D22FA8 ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer
-    public partial class EventTrigger
+    public partial class EventTrigger : DataModel
     {
         public List<Entry>?                             M_Delegates                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventTrigger();
+            var value   = new EventTrigger() { Pointer= p0 };
 
-            value.M_Delegates                               = GetObjectList<Entry>(new IntPtr(p + 0x020), ReversePrism.DataModels.Entry.FromPointer); // 0270068E5C98 0x20 M_Delegates                 ( 000185D22FA8 ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
+            value.M_Delegates                               = GetObjectList<Entry>(new IntPtr(p + 0x020), ReversePrism.DataModels.Entry.FromPointer); // 0245A68A8960 0x20 M_Delegates                 ( 000185D22FA8 ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
 
             return value;
         }

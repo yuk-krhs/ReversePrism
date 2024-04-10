@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 024 M_NormalizedTime                         0001866656B0 ModelPrimitiveType float float float Single
     // 028 M_AnyState                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 02C M_TransitionType                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AnimatorTransitionInfo
+    public partial class AnimatorTransitionInfo : DataModel
     {
         public int                                      M_FullPath                              { get; set; }
         public int                                      M_UserName                              { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimatorTransitionInfo();
+            var value   = new AnimatorTransitionInfo() { Pointer= p0 };
 
-            value.M_FullPath                                = GetInt32(new IntPtr(p + 0x010)); // 0270022783D0 0x10 M_FullPath                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_UserName                                = GetInt32(new IntPtr(p + 0x014)); // 0270022783F0 0x14 M_UserName                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Name                                    = GetInt32(new IntPtr(p + 0x018)); // 027002278410 0x18 M_Name                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_HasFixedDuration                        = GetBool(new IntPtr(p + 0x01C)); // 027002278430 0x1C M_HasFixedDuration          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Duration                                = GetSingle(new IntPtr(p + 0x020)); // 027002278450 0x20 M_Duration                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_NormalizedTime                          = GetSingle(new IntPtr(p + 0x024)); // 027002278470 0x24 M_NormalizedTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_AnyState                                = GetBool(new IntPtr(p + 0x028)); // 027002278490 0x28 M_AnyState                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_TransitionType                          = GetInt32(new IntPtr(p + 0x02C)); // 0270022784B0 0x2C M_TransitionType            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_FullPath                                = GetInt32(new IntPtr(p + 0x010)); // 0245A22783D0 0x10 M_FullPath                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_UserName                                = GetInt32(new IntPtr(p + 0x014)); // 0245A22783F0 0x14 M_UserName                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Name                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A2278410 0x18 M_Name                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_HasFixedDuration                        = GetBool(new IntPtr(p + 0x01C)); // 0245A2278430 0x1C M_HasFixedDuration          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Duration                                = GetSingle(new IntPtr(p + 0x020)); // 0245A2278450 0x20 M_Duration                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_NormalizedTime                          = GetSingle(new IntPtr(p + 0x024)); // 0245A2278470 0x24 M_NormalizedTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_AnyState                                = GetBool(new IntPtr(p + 0x028)); // 0245A2278490 0x28 M_AnyState                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_TransitionType                          = GetInt32(new IntPtr(p + 0x02C)); // 0245A22784B0 0x2C M_TransitionType            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

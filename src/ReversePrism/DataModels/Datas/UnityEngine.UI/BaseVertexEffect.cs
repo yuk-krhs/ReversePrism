@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BaseVertexEffect
+    public partial class BaseVertexEffect : DataModel
     {
 
         public static BaseVertexEffect? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseVertexEffect();
+            var value   = new BaseVertexEffect() { Pointer= p0 };
 
 
             return value;

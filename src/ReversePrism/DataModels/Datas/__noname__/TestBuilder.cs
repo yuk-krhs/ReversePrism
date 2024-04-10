@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _unique                                  HashSet`1<BindingRestrictions> IL2CPP_TYPE_GENERICINST
     // 018 _tests                                   Stack`1<AndNode> IL2CPP_TYPE_GENERICINST
-    public partial class TestBuilder
+    public partial class TestBuilder : DataModel
     {
 
         public static TestBuilder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TestBuilder();
+            var value   = new TestBuilder() { Pointer= p0 };
 
 
             return value;

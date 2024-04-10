@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SkillType                                000186694580 ModelEnumType SkillType SkillType SkillType Int32
     // 014 CardId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AiComboData
+    public partial class AiComboData : DataModel
     {
         public SkillType                                SkillType                               { get; set; }
         public int                                      CardId                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AiComboData();
+            var value   = new AiComboData() { Pointer= p0 };
 
-            value.SkillType                                 = (SkillType)GetInt32(new IntPtr(p + 0x010)); // 0270D5A6E928 0x10 SkillType                   ( 000186694580 ModelEnumType SkillType SkillType SkillType Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x014)); // 0270D5A6E948 0x14 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SkillType                                 = (SkillType)GetInt32(new IntPtr(p + 0x010)); // 024665ADF340 0x10 SkillType                   ( 000186694580 ModelEnumType SkillType SkillType SkillType Int32 )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x014)); // 024665ADF360 0x14 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

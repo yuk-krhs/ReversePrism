@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRhythmGameNoteDesign
+    public partial class IRhythmGameNoteDesign : DataModel
     {
 
         public static IRhythmGameNoteDesign? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRhythmGameNoteDesign();
+            var value   = new IRhythmGameNoteDesign() { Pointer= p0 };
 
 
             return value;

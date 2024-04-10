@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DirectoryNotFoundException
+    public partial class DirectoryNotFoundException : DataModel
     {
 
         public static DirectoryNotFoundException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectoryNotFoundException();
+            var value   = new DirectoryNotFoundException() { Pointer= p0 };
 
 
             return value;

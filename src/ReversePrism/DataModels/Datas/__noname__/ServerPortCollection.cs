@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Server                                   000186731B80 ModelClassType Server Server Server Pointer
-    public partial class ServerPortCollection
+    public partial class ServerPortCollection : DataModel
     {
         public Server?                                  Server                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerPortCollection();
+            var value   = new ServerPortCollection() { Pointer= p0 };
 
-            value.Server                                    = GetObject<Server>(new IntPtr(p + 0x010), ReversePrism.DataModels.Server.FromPointer); // 0270D9363590 0x10 Server                      ( 000186731B80 ModelClassType Server Server Server Pointer )
+            value.Server                                    = GetObject<Server>(new IntPtr(p + 0x010), ReversePrism.DataModels.Server.FromPointer); // 0246693B5798 0x10 Server                      ( 000186731B80 ModelClassType Server Server Server Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<ReadChainTalkReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class ReadChainTalkReply
+    public partial class ReadChainTalkReply : DataModel
     {
 
         public static ReadChainTalkReply? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadChainTalkReply();
+            var value   = new ReadChainTalkReply() { Pointer= p0 };
 
 
             return value;

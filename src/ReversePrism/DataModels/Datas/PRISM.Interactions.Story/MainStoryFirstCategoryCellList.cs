@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 onClickCellSubject                       Subject`1<MainStoryFirstCategoryCellData> IL2CPP_TYPE_GENERICINST
     // 048 ReadCells                                000185CF1278 ModelClassListType List`1<MainStoryFirstCategoryCell> List`1<MainStoryFirstCategoryCell> List<MainStoryFirstCategoryCell> Pointer
     // 050 UnreadCellExists                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MainStoryFirstCategoryCellList
+    public partial class MainStoryFirstCategoryCellList : DataModel
     {
         public MainStoryFirstCategoryCell?              CellPrefab                              { get; set; }
         public Transform?                               CellPos                                 { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainStoryFirstCategoryCellList();
+            var value   = new MainStoryFirstCategoryCellList() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<MainStoryFirstCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.MainStoryFirstCategoryCell.FromPointer); // 0270DB99EB50 0x20 CellPrefab                  ( 0001865C8510 ModelClassType MainStoryFirstCategoryCell MainStoryFirstCategoryCell MainStoryFirstCategoryCell Pointer )
-            value.CellPos                                   = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB99EB70 0x28 CellPos                     ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Scroller                                  = GetObject<StoryScroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.StoryScroller.FromPointer); // 0270DB99EB90 0x30 Scroller                    ( 00018659B950 ModelClassType StoryScroller StoryScroller StoryScroller Pointer )
-            value.EmptyView                                 = GetObject<StoryEmptyView>(new IntPtr(p + 0x038), ReversePrism.DataModels.StoryEmptyView.FromPointer); // 0270DB99EBB0 0x38 EmptyView                   ( 0001865965E0 ModelClassType StoryEmptyView StoryEmptyView StoryEmptyView Pointer )
-            value.ReadCells                                 = GetObjectList<MainStoryFirstCategoryCell>(new IntPtr(p + 0x048), ReversePrism.DataModels.MainStoryFirstCategoryCell.FromPointer); // 0270DB99EBF0 0x48 ReadCells                   ( 000185CF1278 ModelClassListType List`1<MainStoryFirstCategoryCell> List`1<MainStoryFirstCategoryCell> List<MainStoryFirstCategoryCell> Pointer )
-            value.UnreadCellExists                          = GetBool(new IntPtr(p + 0x050)); // 0270DB99EC10 0x50 UnreadCellExists            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CellPrefab                                = GetObject<MainStoryFirstCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.MainStoryFirstCategoryCell.FromPointer); // 02466BA167E0 0x20 CellPrefab                  ( 0001865C8510 ModelClassType MainStoryFirstCategoryCell MainStoryFirstCategoryCell MainStoryFirstCategoryCell Pointer )
+            value.CellPos                                   = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466BA16800 0x28 CellPos                     ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.Scroller                                  = GetObject<StoryScroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.StoryScroller.FromPointer); // 02466BA16820 0x30 Scroller                    ( 00018659B950 ModelClassType StoryScroller StoryScroller StoryScroller Pointer )
+            value.EmptyView                                 = GetObject<StoryEmptyView>(new IntPtr(p + 0x038), ReversePrism.DataModels.StoryEmptyView.FromPointer); // 02466BA16840 0x38 EmptyView                   ( 0001865965E0 ModelClassType StoryEmptyView StoryEmptyView StoryEmptyView Pointer )
+            value.ReadCells                                 = GetObjectList<MainStoryFirstCategoryCell>(new IntPtr(p + 0x048), ReversePrism.DataModels.MainStoryFirstCategoryCell.FromPointer); // 02466BA16880 0x48 ReadCells                   ( 000185CF1278 ModelClassListType List`1<MainStoryFirstCategoryCell> List`1<MainStoryFirstCategoryCell> List<MainStoryFirstCategoryCell> Pointer )
+            value.UnreadCellExists                          = GetBool(new IntPtr(p + 0x050)); // 02466BA168A0 0x50 UnreadCellExists            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

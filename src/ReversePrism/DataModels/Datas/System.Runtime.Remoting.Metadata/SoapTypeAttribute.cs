@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 048 XmlTypeNamespace                         000186671910 ModelPrimitiveType string string string String
     // 050 IsType                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 051 IsElement                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SoapTypeAttribute
+    public partial class SoapTypeAttribute : DataModel
     {
         public bool                                     UseAttribute                            { get; set; }
         public string                                   XmlElementName                          { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoapTypeAttribute();
+            var value   = new SoapTypeAttribute() { Pointer= p0 };
 
-            value.UseAttribute                              = GetBool(new IntPtr(p + 0x028)); // 0270D6BE7268 0x28 UseAttribute                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.XmlElementName                            = GetString(new IntPtr(p + 0x030)); // 0270D6BE7288 0x30 XmlElementName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlNamespace                              = GetString(new IntPtr(p + 0x038)); // 0270D6BE72A8 0x38 XmlNamespace                ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlTypeName                               = GetString(new IntPtr(p + 0x040)); // 0270D6BE72C8 0x40 XmlTypeName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlTypeNamespace                          = GetString(new IntPtr(p + 0x048)); // 0270D6BE72E8 0x48 XmlTypeNamespace            ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsType                                    = GetBool(new IntPtr(p + 0x050)); // 0270D6BE7308 0x50 IsType                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsElement                                 = GetBool(new IntPtr(p + 0x051)); // 0270D6BE7328 0x51 IsElement                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UseAttribute                              = GetBool(new IntPtr(p + 0x028)); // 024666C5F268 0x28 UseAttribute                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.XmlElementName                            = GetString(new IntPtr(p + 0x030)); // 024666C5F288 0x30 XmlElementName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.XmlNamespace                              = GetString(new IntPtr(p + 0x038)); // 024666C5F2A8 0x38 XmlNamespace                ( 000186671910 ModelPrimitiveType string string string String )
+            value.XmlTypeName                               = GetString(new IntPtr(p + 0x040)); // 024666C5F2C8 0x40 XmlTypeName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.XmlTypeNamespace                          = GetString(new IntPtr(p + 0x048)); // 024666C5F2E8 0x48 XmlTypeNamespace            ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsType                                    = GetBool(new IntPtr(p + 0x050)); // 024666C5F308 0x50 IsType                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsElement                                 = GetBool(new IntPtr(p + 0x051)); // 024666C5F328 0x51 IsElement                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

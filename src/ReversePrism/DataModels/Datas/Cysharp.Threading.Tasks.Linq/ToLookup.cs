@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ToLookup
+    public partial class ToLookup : DataModel
     {
 
         public static ToLookup? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToLookup();
+            var value   = new ToLookup() { Pointer= p0 };
 
 
             return value;

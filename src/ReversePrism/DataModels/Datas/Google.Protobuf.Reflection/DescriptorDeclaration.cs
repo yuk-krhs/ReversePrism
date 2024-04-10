@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 LeadingComments                          000186672F10 ModelPrimitiveType string string string String
     // 030 TrailingComments                         000186672F10 ModelPrimitiveType string string string String
     // 038 LeadingDetachedComments                  000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer
-    public partial class DescriptorDeclaration
+    public partial class DescriptorDeclaration : DataModel
     {
         public IDescriptor?                             Descriptor                              { get; set; }
         public int                                      StartLine                               { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DescriptorDeclaration();
+            var value   = new DescriptorDeclaration() { Pointer= p0 };
 
-            value.Descriptor                                = GetObject<IDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDescriptor.FromPointer); // 0270DA577A18 0x10 Descriptor                  ( 00018674D200 ModelClassType IDescriptor IDescriptor IDescriptor Pointer )
-            value.StartLine                                 = GetInt32(new IntPtr(p + 0x018)); // 0270DA577A38 0x18 StartLine                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.StartColumn                               = GetInt32(new IntPtr(p + 0x01C)); // 0270DA577A58 0x1C StartColumn                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EndLine                                   = GetInt32(new IntPtr(p + 0x020)); // 0270DA577A78 0x20 EndLine                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EndColumn                                 = GetInt32(new IntPtr(p + 0x024)); // 0270DA577A98 0x24 EndColumn                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.LeadingComments                           = GetString(new IntPtr(p + 0x028)); // 0270DA577AB8 0x28 LeadingComments             ( 000186672F10 ModelPrimitiveType string string string String )
-            value.TrailingComments                          = GetString(new IntPtr(p + 0x030)); // 0270DA577AD8 0x30 TrailingComments            ( 000186672F10 ModelPrimitiveType string string string String )
-            value.LeadingDetachedComments                   = GetStringList(new IntPtr(p + 0x038)); // 0270DA577AF8 0x38 LeadingDetachedComments     ( 000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
+            value.Descriptor                                = GetObject<IDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDescriptor.FromPointer); // 02466A5CAEC0 0x10 Descriptor                  ( 00018674D200 ModelClassType IDescriptor IDescriptor IDescriptor Pointer )
+            value.StartLine                                 = GetInt32(new IntPtr(p + 0x018)); // 02466A5CAEE0 0x18 StartLine                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.StartColumn                               = GetInt32(new IntPtr(p + 0x01C)); // 02466A5CAF00 0x1C StartColumn                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EndLine                                   = GetInt32(new IntPtr(p + 0x020)); // 02466A5CAF20 0x20 EndLine                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EndColumn                                 = GetInt32(new IntPtr(p + 0x024)); // 02466A5CAF40 0x24 EndColumn                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.LeadingComments                           = GetString(new IntPtr(p + 0x028)); // 02466A5CAF60 0x28 LeadingComments             ( 000186672F10 ModelPrimitiveType string string string String )
+            value.TrailingComments                          = GetString(new IntPtr(p + 0x030)); // 02466A5CAF80 0x30 TrailingComments            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.LeadingDetachedComments                   = GetStringList(new IntPtr(p + 0x038)); // 02466A5CAFA0 0x38 LeadingDetachedComments     ( 000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
 
             return value;
         }

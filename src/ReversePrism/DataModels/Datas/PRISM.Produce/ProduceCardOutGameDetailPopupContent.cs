@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 0A0 EfficacyDetailListPopupCaller            00018675DD00 ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer
     // 0A8 ProduceCard                              0001865E4640 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer
     // 0B0 PhaseCharaNames                          000185D16F48 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer
-    public partial class ProduceCardOutGameDetailPopupContent
+    public partial class ProduceCardOutGameDetailPopupContent : DataModel
     {
         public UIRawImage?                              UnitIcon                                { get; set; }
         public VoDaViMeMultiView?                       VoDaViMeMultiView                       { get; set; }
@@ -40,19 +40,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceCardOutGameDetailPopupContent();
+            var value   = new ProduceCardOutGameDetailPopupContent() { Pointer= p0 };
 
-            value.UnitIcon                                  = GetObject<UIRawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D5CE92A8 0x60 UnitIcon                    ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.VoDaViMeMultiView                         = GetObject<VoDaViMeMultiView>(new IntPtr(p + 0x068), ReversePrism.DataModels.VoDaViMeMultiView.FromPointer); // 0270D5CE92C8 0x68 VoDaViMeMultiView           ( 000186530920 ModelClassType VoDaViMeMultiView VoDaViMeMultiView VoDaViMeMultiView Pointer )
-            value.CardNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5CE92E8 0x70 CardNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CardInfoText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5CE9308 0x78 CardInfoText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ProduceCardContent                        = GetObject<ProduceCardContent>(new IntPtr(p + 0x080), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 0270D5CE9328 0x80 ProduceCardContent          ( 0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
-            value.UiTabGroup                                = GetObject<UITabGroup>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270D5CE9348 0x88 UiTabGroup                  ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.UnitIconObject                            = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5CE9368 0x90 UnitIconObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CurrentRankBalloonObjectList              = GetObjectList<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5CE9388 0x98 CurrentRankBalloonObjectList ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.EfficacyDetailListPopupCaller             = GetObject<IEfficacyDetailListPopupCaller>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IEfficacyDetailListPopupCaller.FromPointer); // 0270D5CE93A8 0xA0 EfficacyDetailListPopupCaller ( 00018675DD00 ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer )
-            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0270D5CE93C8 0xA8 ProduceCard                 ( 0001865E4640 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
-            value.PhaseCharaNames                           = GetStringList(new IntPtr(p + 0x0B0)); // 0270D5CE93E8 0xB0 PhaseCharaNames             ( 000185D16F48 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
+            value.UnitIcon                                  = GetObject<UIRawImage>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRawImage.FromPointer); // 024665D39E80 0x60 UnitIcon                    ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.VoDaViMeMultiView                         = GetObject<VoDaViMeMultiView>(new IntPtr(p + 0x068), ReversePrism.DataModels.VoDaViMeMultiView.FromPointer); // 024665D39EA0 0x68 VoDaViMeMultiView           ( 000186530920 ModelClassType VoDaViMeMultiView VoDaViMeMultiView VoDaViMeMultiView Pointer )
+            value.CardNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D39EC0 0x70 CardNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CardInfoText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D39EE0 0x78 CardInfoText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProduceCardContent                        = GetObject<ProduceCardContent>(new IntPtr(p + 0x080), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 024665D39F00 0x80 ProduceCardContent          ( 0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
+            value.UiTabGroup                                = GetObject<UITabGroup>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITabGroup.FromPointer); // 024665D39F20 0x88 UiTabGroup                  ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.UnitIconObject                            = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 024665D39F40 0x90 UnitIconObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CurrentRankBalloonObjectList              = GetObjectList<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 024665D39F60 0x98 CurrentRankBalloonObjectList ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.EfficacyDetailListPopupCaller             = GetObject<IEfficacyDetailListPopupCaller>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IEfficacyDetailListPopupCaller.FromPointer); // 024665D39F80 0xA0 EfficacyDetailListPopupCaller ( 00018675DD00 ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer )
+            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D39FA0 0xA8 ProduceCard                 ( 0001865E4640 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
+            value.PhaseCharaNames                           = GetStringList(new IntPtr(p + 0x0B0)); // 024665D39FC0 0xB0 PhaseCharaNames             ( 000185D16F48 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
 
             return value;
         }

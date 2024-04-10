@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DrawOpaqueAfterCharacterPass
+    public partial class DrawOpaqueAfterCharacterPass : DataModel
     {
 
         public static DrawOpaqueAfterCharacterPass? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawOpaqueAfterCharacterPass();
+            var value   = new DrawOpaqueAfterCharacterPass() { Pointer= p0 };
 
 
             return value;

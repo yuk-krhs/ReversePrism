@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 queuedKeys                               HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 008 tagNames                                 List`1<string> IL2CPP_TYPE_GENERICINST
     // 010 TagCount                                 0001865F38E0 ModelPrimitiveType int int int Int32
-    public partial class DataFile
+    public partial class DataFile : DataModel
     {
         public int                                      TagCount                                { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataFile();
+            var value   = new DataFile() { Pointer= p0 };
 
-            value.TagCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D0E623A8 0x10 TagCount                    ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.TagCount                                  = GetInt32(new IntPtr(p + 0x010)); // 024660DE8058 0x10 TagCount                    ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

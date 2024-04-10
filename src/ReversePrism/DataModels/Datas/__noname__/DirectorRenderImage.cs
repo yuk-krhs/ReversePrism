@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DirectorRenderImage
+    public partial class DirectorRenderImage : DataModel
     {
 
         public static DirectorRenderImage? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectorRenderImage();
+            var value   = new DirectorRenderImage() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 BitsFilled                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 CharsBase64                              string IL2CPP_TYPE_STRING
     // 008 MapBase64                                sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class Base64Decoder
+    public partial class Base64Decoder : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public int                                      StartIndex                              { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Base64Decoder();
+            var value   = new Base64Decoder() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0270D7347450 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x018)); // 0270D7347470 0x18 StartIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurIndex                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D7347490 0x1C CurIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D73474B0 0x20 EndIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Bits                                      = GetInt32(new IntPtr(p + 0x024)); // 0270D73474D0 0x24 Bits                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BitsFilled                                = GetInt32(new IntPtr(p + 0x028)); // 0270D73474F0 0x28 BitsFilled                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 024667397450 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x018)); // 024667397470 0x18 StartIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurIndex                                  = GetInt32(new IntPtr(p + 0x01C)); // 024667397490 0x1C CurIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x020)); // 0246673974B0 0x20 EndIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Bits                                      = GetInt32(new IntPtr(p + 0x024)); // 0246673974D0 0x24 Bits                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BitsFilled                                = GetInt32(new IntPtr(p + 0x028)); // 0246673974F0 0x28 BitsFilled                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     000186693E40 ModelEnumType NativeTextDispose NativeTextDispose NativeTextDispose Int32
-    public partial class NativeTextDisposeJob
+    public partial class NativeTextDisposeJob : DataModel
     {
         public NativeTextDispose                        Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeTextDisposeJob();
+            var value   = new NativeTextDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (NativeTextDispose)GetInt32(new IntPtr(p + 0x010)); // 0270D086F720 0x10 Data                        ( 000186693E40 ModelEnumType NativeTextDispose NativeTextDispose NativeTextDispose Int32 )
+            value.Data                                      = (NativeTextDispose)GetInt32(new IntPtr(p + 0x010)); // 0246608B7730 0x10 Data                        ( 000186693E40 ModelEnumType NativeTextDispose NativeTextDispose NativeTextDispose Int32 )
 
             return value;
         }

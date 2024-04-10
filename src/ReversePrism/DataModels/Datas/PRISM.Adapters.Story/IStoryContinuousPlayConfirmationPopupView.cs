@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStoryContinuousPlayConfirmationPopupView
+    public partial class IStoryContinuousPlayConfirmationPopupView : DataModel
     {
 
         public static IStoryContinuousPlayConfirmationPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStoryContinuousPlayConfirmationPopupView();
+            var value   = new IStoryContinuousPlayConfirmationPopupView() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SemaphoreFullException
+    public partial class SemaphoreFullException : DataModel
     {
 
         public static SemaphoreFullException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SemaphoreFullException();
+            var value   = new SemaphoreFullException() { Pointer= p0 };
 
 
             return value;

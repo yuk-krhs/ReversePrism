@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 UnitListWindow                           000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer
     // 028 onCellClicked                            Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class UnitListWindowView
+    public partial class UnitListWindowView : DataModel
     {
         public LiveUnitListWindow?                      UnitListWindow                          { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnitListWindowView();
+            var value   = new UnitListWindowView() { Pointer= p0 };
 
-            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 0270DA290478 0x20 UnitListWindow              ( 000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
+            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 02466A2E3A48 0x20 UnitListWindow              ( 000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
 
             return value;
         }

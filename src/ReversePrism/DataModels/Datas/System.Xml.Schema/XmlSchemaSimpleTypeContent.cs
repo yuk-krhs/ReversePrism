@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaSimpleTypeContent
+    public partial class XmlSchemaSimpleTypeContent : DataModel
     {
 
         public static XmlSchemaSimpleTypeContent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaSimpleTypeContent();
+            var value   = new XmlSchemaSimpleTypeContent() { Pointer= p0 };
 
 
             return value;

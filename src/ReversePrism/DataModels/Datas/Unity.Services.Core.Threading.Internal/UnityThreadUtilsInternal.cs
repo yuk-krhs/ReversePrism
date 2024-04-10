@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityThreadUtilsInternal
+    public partial class UnityThreadUtilsInternal : DataModel
     {
 
         public static UnityThreadUtilsInternal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityThreadUtilsInternal();
+            var value   = new UnityThreadUtilsInternal() { Pointer= p0 };
 
 
             return value;

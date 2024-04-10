@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetTwestaAllArgsTranslator
+    public partial class GetTwestaAllArgsTranslator : DataModel
     {
 
         public static GetTwestaAllArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTwestaAllArgsTranslator();
+            var value   = new GetTwestaAllArgsTranslator() { Pointer= p0 };
 
 
             return value;

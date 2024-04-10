@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01A M_AutomaticRunning                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 020 M_Loaders                                000185CCB638 ModelClassListType List`1<AdaptivePerformanceLoader> List`1<AdaptivePerformanceLoader> List<AdaptivePerformanceLoader> Pointer
     // 000 s_ActiveLoader                           AdaptivePerformanceLoader IL2CPP_TYPE_CLASS
-    public partial class AdaptivePerformanceManagerSettings
+    public partial class AdaptivePerformanceManagerSettings : DataModel
     {
         public bool                                     M_InitializationComplete                { get; set; }
         public bool                                     M_AutomaticLoading                      { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceManagerSettings();
+            var value   = new AdaptivePerformanceManagerSettings() { Pointer= p0 };
 
-            value.M_InitializationComplete                  = GetBool(new IntPtr(p + 0x018)); // 0270DB674868 0x18 M_InitializationComplete    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutomaticLoading                        = GetBool(new IntPtr(p + 0x019)); // 0270DB674888 0x19 M_AutomaticLoading          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutomaticRunning                        = GetBool(new IntPtr(p + 0x01A)); // 0270DB6748A8 0x1A M_AutomaticRunning          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Loaders                                 = GetObjectList<AdaptivePerformanceLoader>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceLoader.FromPointer); // 0270DB6748C8 0x20 M_Loaders                   ( 000185CCB638 ModelClassListType List`1<AdaptivePerformanceLoader> List`1<AdaptivePerformanceLoader> List<AdaptivePerformanceLoader> Pointer )
+            value.M_InitializationComplete                  = GetBool(new IntPtr(p + 0x018)); // 02466B708C28 0x18 M_InitializationComplete    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_AutomaticLoading                        = GetBool(new IntPtr(p + 0x019)); // 02466B708C48 0x19 M_AutomaticLoading          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_AutomaticRunning                        = GetBool(new IntPtr(p + 0x01A)); // 02466B708C68 0x1A M_AutomaticRunning          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Loaders                                 = GetObjectList<AdaptivePerformanceLoader>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceLoader.FromPointer); // 02466B708C88 0x20 M_Loaders                   ( 000185CCB638 ModelClassListType List`1<AdaptivePerformanceLoader> List`1<AdaptivePerformanceLoader> List<AdaptivePerformanceLoader> Pointer )
 
             return value;
         }

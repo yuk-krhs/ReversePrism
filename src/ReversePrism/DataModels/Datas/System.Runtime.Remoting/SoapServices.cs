@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 SoapActions                              0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer
     // 018 SoapActionsMethods                       0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer
     // 020 TypeInfos                                0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer
-    public partial class SoapServices
+    public partial class SoapServices : DataModel
     {
         public Hashtable?                               SoapActions                             { get; set; }
         public Hashtable?                               SoapActionsMethods                      { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoapServices();
+            var value   = new SoapServices() { Pointer= p0 };
 
-            value.SoapActions                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6BB9590 0x10 SoapActions                 ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.SoapActionsMethods                        = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6BB95B0 0x18 SoapActionsMethods          ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.TypeInfos                                 = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6BB95D0 0x20 TypeInfos                   ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.SoapActions                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C31590 0x10 SoapActions                 ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.SoapActionsMethods                        = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C315B0 0x18 SoapActionsMethods          ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.TypeInfos                                 = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C315D0 0x20 TypeInfos                   ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

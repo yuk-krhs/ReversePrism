@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 CaseInsensitive                          0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 000 <Empty>k__BackingField                   RegexPrefix IL2CPP_TYPE_VALUETYPE
     // 018 Prefix                                   000186672F10 ModelPrimitiveType string string string String
-    public partial class RegexPrefix
+    public partial class RegexPrefix : DataModel
     {
         public bool                                     CaseInsensitive                         { get; set; }
         public string                                   Prefix                                  { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexPrefix();
+            var value   = new RegexPrefix() { Pointer= p0 };
 
-            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x010)); // 0270034241C8 0x10 CaseInsensitive             ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x018)); // 027003424208 0x18 Prefix                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x010)); // 0245A34241C8 0x10 CaseInsensitive             ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x018)); // 0245A3424208 0x18 Prefix                      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

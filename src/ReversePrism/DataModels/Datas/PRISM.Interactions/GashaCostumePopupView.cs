@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 <OnClickDressUpRoom>k__BackingField      IObservable`1<ValueTuple`2<int, int>> IL2CPP_TYPE_GENERICINST
     // 048 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 050 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class GashaCostumePopupView
+    public partial class GashaCostumePopupView : DataModel
     {
         public GashaDetailCostumeCell?                  GoCostumeContent                        { get; set; }
         public Transform?                               CostumeParent                           { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaCostumePopupView();
+            var value   = new GashaCostumePopupView() { Pointer= p0 };
 
-            value.GoCostumeContent                          = GetObject<GashaDetailCostumeCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaDetailCostumeCell.FromPointer); // 0270DB9DF8B0 0x20 GoCostumeContent            ( 0001865F73D0 ModelClassType GashaDetailCostumeCell GashaDetailCostumeCell GashaDetailCostumeCell Pointer )
-            value.CostumeParent                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB9DF8D0 0x28 CostumeParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB9DF970 0x50 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.GoCostumeContent                          = GetObject<GashaDetailCostumeCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaDetailCostumeCell.FromPointer); // 02466BA6EEB0 0x20 GoCostumeContent            ( 0001865F73D0 ModelClassType GashaDetailCostumeCell GashaDetailCostumeCell GashaDetailCostumeCell Pointer )
+            value.CostumeParent                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466BA6EED0 0x28 CostumeParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BA6EF70 0x50 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

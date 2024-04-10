@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 m_FontAssetReferenceLookup               Dictionary`2<int, TMP_FontAsset> IL2CPP_TYPE_GENERICINST
     // 020 m_SpriteAssetReferenceLookup             Dictionary`2<int, TMP_SpriteAsset> IL2CPP_TYPE_GENERICINST
     // 028 m_ColorGradientReferenceLookup           Dictionary`2<int, TMP_ColorGradient> IL2CPP_TYPE_GENERICINST
-    public partial class MaterialReferenceManager
+    public partial class MaterialReferenceManager : DataModel
     {
 
         public static MaterialReferenceManager? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaterialReferenceManager();
+            var value   = new MaterialReferenceManager() { Pointer= p0 };
 
 
             return value;

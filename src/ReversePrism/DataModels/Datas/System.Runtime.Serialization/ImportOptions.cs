@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ImportOptions
+    public partial class ImportOptions : DataModel
     {
 
         public static ImportOptions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImportOptions();
+            var value   = new ImportOptions() { Pointer= p0 };
 
 
             return value;

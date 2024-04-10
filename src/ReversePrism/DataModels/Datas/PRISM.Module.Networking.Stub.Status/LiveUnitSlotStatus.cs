@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DressFieldNumber                         int IL2CPP_TYPE_I4
     // 030 Dress                                    0001866FC540 ModelClassType DressStatus DressStatus DressStatus Pointer
-    public partial class LiveUnitSlotStatus
+    public partial class LiveUnitSlotStatus : DataModel
     {
         public int                                      Slot                                    { get; set; }
         public string                                   FesIdolId                               { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitSlotStatus();
+            var value   = new LiveUnitSlotStatus() { Pointer= p0 };
 
-            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0270D1366A30 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FesIdolId                                 = GetString(new IntPtr(p + 0x020)); // 0270D1366A70 0x20 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x028)); // 0270D1366AB0 0x28 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Dress                                     = GetObject<DressStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.DressStatus.FromPointer); // 0270D1366AF0 0x30 Dress                       ( 0001866FC540 ModelClassType DressStatus DressStatus DressStatus Pointer )
+            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0246612EFE18 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesIdolId                                 = GetString(new IntPtr(p + 0x020)); // 0246612EFE58 0x20 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x028)); // 0246612EFE98 0x28 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dress                                     = GetObject<DressStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.DressStatus.FromPointer); // 0246612EFED8 0x30 Dress                       ( 0001866FC540 ModelClassType DressStatus DressStatus DressStatus Pointer )
 
             return value;
         }

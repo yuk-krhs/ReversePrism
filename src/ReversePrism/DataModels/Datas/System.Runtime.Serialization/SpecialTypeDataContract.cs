@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Helper                                   000186560530 ModelClassType SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper Pointer
-    public partial class SpecialTypeDataContract
+    public partial class SpecialTypeDataContract : DataModel
     {
         public SpecialTypeDataContractCriticalHelper?   Helper                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialTypeDataContract();
+            var value   = new SpecialTypeDataContract() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<SpecialTypeDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpecialTypeDataContractCriticalHelper.FromPointer); // 027004C8F500 0x28 Helper                      ( 000186560530 ModelClassType SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper Pointer )
+            value.Helper                                    = GetObject<SpecialTypeDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpecialTypeDataContractCriticalHelper.FromPointer); // 0245A4CCBC30 0x28 Helper                      ( 000186560530 ModelClassType SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper SpecialTypeDataContractCriticalHelper Pointer )
 
             return value;
         }

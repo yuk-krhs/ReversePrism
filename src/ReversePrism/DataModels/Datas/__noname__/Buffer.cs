@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 parent                                   BufferObservable`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 000 list                                     List`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class Buffer
+    public partial class Buffer : DataModel
     {
 
         public static Buffer? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Buffer();
+            var value   = new Buffer() { Pointer= p0 };
 
 
             return value;

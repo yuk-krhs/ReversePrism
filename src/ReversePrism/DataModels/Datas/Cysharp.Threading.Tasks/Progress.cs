@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Progress
+    public partial class Progress : DataModel
     {
 
         public static Progress? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Progress();
+            var value   = new Progress() { Pointer= p0 };
 
 
             return value;

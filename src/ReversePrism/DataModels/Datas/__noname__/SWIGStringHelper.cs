@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 stringDelegate                           SWIGStringDelegate IL2CPP_TYPE_CLASS
-    public partial class SWIGStringHelper
+    public partial class SWIGStringHelper : DataModel
     {
 
         public static SWIGStringHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SWIGStringHelper();
+            var value   = new SWIGStringHelper() { Pointer= p0 };
 
 
             return value;

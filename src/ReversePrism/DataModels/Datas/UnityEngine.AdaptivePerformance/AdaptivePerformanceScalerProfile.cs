@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 M_Name                                   000186671910 ModelPrimitiveType string string string String
-    public partial class AdaptivePerformanceScalerProfile
+    public partial class AdaptivePerformanceScalerProfile : DataModel
     {
         public string                                   M_Name                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceScalerProfile();
+            var value   = new AdaptivePerformanceScalerProfile() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x090)); // 0270032D6C50 0x90 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x090)); // 0245A32D6C50 0x90 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvpPIdolSelectPopupView
+    public partial class IPvpPIdolSelectPopupView : DataModel
     {
 
         public static IPvpPIdolSelectPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvpPIdolSelectPopupView();
+            var value   = new IPvpPIdolSelectPopupView() { Pointer= p0 };
 
 
             return value;

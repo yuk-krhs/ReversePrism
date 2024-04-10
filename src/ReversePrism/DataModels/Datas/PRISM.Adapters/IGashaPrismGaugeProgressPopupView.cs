@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaPrismGaugeProgressPopupView
+    public partial class IGashaPrismGaugeProgressPopupView : DataModel
     {
 
         public static IGashaPrismGaugeProgressPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaPrismGaugeProgressPopupView();
+            var value   = new IGashaPrismGaugeProgressPopupView() { Pointer= p0 };
 
 
             return value;

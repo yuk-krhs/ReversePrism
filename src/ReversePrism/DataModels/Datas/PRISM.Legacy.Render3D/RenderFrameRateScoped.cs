@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SavedFPS                                 0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class RenderFrameRateScoped
+    public partial class RenderFrameRateScoped : DataModel
     {
         public int                                      SavedFPS                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderFrameRateScoped();
+            var value   = new RenderFrameRateScoped() { Pointer= p0 };
 
-            value.SavedFPS                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D5E40C28 0x10 SavedFPS                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SavedFPS                                  = GetInt32(new IntPtr(p + 0x010)); // 024665EB13A0 0x10 SavedFPS                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 View                                     000186765140 ModelClassType IEventListOverlayView IEventListOverlayView IEventListOverlayView Pointer
     // 028 saveData                                 SavableJsonObject`1<EventListSaveData> IL2CPP_TYPE_GENERICINST
     // 030 IsJumpView                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class EventListOverlayPresenter
+    public partial class EventListOverlayPresenter : DataModel
     {
         public CompositeDisposable?                     Disposable                              { get; set; }
         public EventListOverlayModel?                   Model                                   { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventListOverlayPresenter();
+            var value   = new EventListOverlayPresenter() { Pointer= p0 };
 
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D629FE18 0x10 Disposable                  ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Model                                     = GetObject<EventListOverlayModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventListOverlayModel.FromPointer); // 0270D629FE38 0x18 Model                       ( 00018675C9E0 ModelClassType EventListOverlayModel EventListOverlayModel EventListOverlayModel Pointer )
-            value.View                                      = GetObject<IEventListOverlayView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventListOverlayView.FromPointer); // 0270D629FE58 0x20 View                        ( 000186765140 ModelClassType IEventListOverlayView IEventListOverlayView IEventListOverlayView Pointer )
-            value.IsJumpView                                = GetBool(new IntPtr(p + 0x030)); // 0270D629FE98 0x30 IsJumpView                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666310648 0x10 Disposable                  ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Model                                     = GetObject<EventListOverlayModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventListOverlayModel.FromPointer); // 024666310668 0x18 Model                       ( 00018675C9E0 ModelClassType EventListOverlayModel EventListOverlayModel EventListOverlayModel Pointer )
+            value.View                                      = GetObject<IEventListOverlayView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventListOverlayView.FromPointer); // 024666310688 0x20 View                        ( 000186765140 ModelClassType IEventListOverlayView IEventListOverlayView IEventListOverlayView Pointer )
+            value.IsJumpView                                = GetBool(new IntPtr(p + 0x030)); // 0246663106C8 0x30 IsJumpView                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

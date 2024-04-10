@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HashtableDebugView
+    public partial class HashtableDebugView : DataModel
     {
 
         public static HashtableDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HashtableDebugView();
+            var value   = new HashtableDebugView() { Pointer= p0 };
 
 
             return value;

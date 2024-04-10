@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DefaultCellGroup
+    public partial class DefaultCellGroup : DataModel
     {
 
         public static DefaultCellGroup? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultCellGroup();
+            var value   = new DefaultCellGroup() { Pointer= p0 };
 
 
             return value;

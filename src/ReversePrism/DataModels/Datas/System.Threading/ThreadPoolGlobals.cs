@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 vmTpInitialized                          bool IL2CPP_TYPE_BOOLEAN
     // 005 enableWorkerTracking                     bool IL2CPP_TYPE_BOOLEAN
     // 008 workQueue                                ThreadPoolWorkQueue IL2CPP_TYPE_CLASS
-    public partial class ThreadPoolGlobals
+    public partial class ThreadPoolGlobals : DataModel
     {
 
         public static ThreadPoolGlobals? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThreadPoolGlobals();
+            var value   = new ThreadPoolGlobals() { Pointer= p0 };
 
 
             return value;

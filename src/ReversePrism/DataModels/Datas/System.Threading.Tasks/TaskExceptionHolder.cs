@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 m_faultExceptions                        LowLevelListWithIList`1<ExceptionDispatchInfo> IL2CPP_TYPE_GENERICINST
     // 020 M_cancellationException                  0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer
     // 028 M_isHandled                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TaskExceptionHolder
+    public partial class TaskExceptionHolder : DataModel
     {
         public Task?                                    M_task                                  { get; set; }
         public ExceptionDispatchInfo?                   M_cancellationException                 { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskExceptionHolder();
+            var value   = new TaskExceptionHolder() { Pointer= p0 };
 
-            value.M_task                                    = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 0270D6B24A28 0x10 M_task                      ( 000186681620 ModelClassType Task Task Task Pointer )
-            value.M_cancellationException                   = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 0270D6B24A68 0x20 M_cancellationException     ( 0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
-            value.M_isHandled                               = GetBool(new IntPtr(p + 0x028)); // 0270D6B24A88 0x28 M_isHandled                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_task                                    = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 024666B84A28 0x10 M_task                      ( 000186681620 ModelClassType Task Task Task Pointer )
+            value.M_cancellationException                   = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 024666B84A68 0x20 M_cancellationException     ( 0001865CBD80 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
+            value.M_isHandled                               = GetBool(new IntPtr(p + 0x028)); // 024666B84A88 0x28 M_isHandled                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

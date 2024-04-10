@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DisconnectMsg
+    public partial class DisconnectMsg : DataModel
     {
 
         public static DisconnectMsg? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisconnectMsg();
+            var value   = new DisconnectMsg() { Pointer= p0 };
 
 
             return value;

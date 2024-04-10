@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 DecimalArrayHelperWithString IL2CPP_TYPE_CLASS
-    public partial class DecimalArrayHelperWithString
+    public partial class DecimalArrayHelperWithString : DataModel
     {
 
         public static DecimalArrayHelperWithString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecimalArrayHelperWithString();
+            var value   = new DecimalArrayHelperWithString() { Pointer= p0 };
 
 
             return value;

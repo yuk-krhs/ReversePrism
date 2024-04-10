@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   DematerializeObservable`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class Dematerialize
+    public partial class Dematerialize : DataModel
     {
 
         public static Dematerialize? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Dematerialize();
+            var value   = new Dematerialize() { Pointer= p0 };
 
 
             return value;

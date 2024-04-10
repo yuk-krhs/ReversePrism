@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Min                                      0001866C6DB0 ModelEnumType float3 float3 float3 Int32
     // 01C Max                                      0001866C6DB0 ModelEnumType float3 float3 float3 Int32
-    public partial class MinMaxAABB
+    public partial class MinMaxAABB : DataModel
     {
         public float3                                   Min                                     { get; set; }
         public float3                                   Max                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MinMaxAABB();
+            var value   = new MinMaxAABB() { Pointer= p0 };
 
-            value.Min                                       = (float3)GetInt32(new IntPtr(p + 0x010)); // 0270D7EA5990 0x10 Min                         ( 0001866C6DB0 ModelEnumType float3 float3 float3 Int32 )
-            value.Max                                       = (float3)GetInt32(new IntPtr(p + 0x01C)); // 0270D7EA59B0 0x1C Max                         ( 0001866C6DB0 ModelEnumType float3 float3 float3 Int32 )
+            value.Min                                       = (float3)GetInt32(new IntPtr(p + 0x010)); // 024667F0D990 0x10 Min                         ( 0001866C6DB0 ModelEnumType float3 float3 float3 Int32 )
+            value.Max                                       = (float3)GetInt32(new IntPtr(p + 0x01C)); // 024667F0D9B0 0x1C Max                         ( 0001866C6DB0 ModelEnumType float3 float3 float3 Int32 )
 
             return value;
         }

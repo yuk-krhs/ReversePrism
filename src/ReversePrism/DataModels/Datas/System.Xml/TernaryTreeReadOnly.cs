@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NodeBuffer                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class TernaryTreeReadOnly
+    public partial class TernaryTreeReadOnly : DataModel
     {
         public List<sbyte>?                             NodeBuffer                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TernaryTreeReadOnly();
+            var value   = new TernaryTreeReadOnly() { Pointer= p0 };
 
-            value.NodeBuffer                                = GetSByteList(new IntPtr(p + 0x010)); // 0270D7369728 0x10 NodeBuffer                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.NodeBuffer                                = GetSByteList(new IntPtr(p + 0x010)); // 0246673B9728 0x10 NodeBuffer                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

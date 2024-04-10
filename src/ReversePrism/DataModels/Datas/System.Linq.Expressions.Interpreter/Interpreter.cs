@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 050 Name                                     000186672F10 ModelPrimitiveType string string string String
     // 058 LocalCount                               0001865F4260 ModelPrimitiveType int int int Int32
     // 060 <ClosureVariables>k__BackingField        Dictionary`2<ParameterExpression, LocalVariable> IL2CPP_TYPE_GENERICINST
-    public partial class Interpreter
+    public partial class Interpreter : DataModel
     {
         public InstructionArray                         Instructions                            { get; set; }
         public List<RuntimeLabel>?                      Labels                                  { get; set; }
@@ -30,13 +30,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Interpreter();
+            var value   = new Interpreter() { Pointer= p0 };
 
-            value.Instructions                              = (InstructionArray)GetInt32(new IntPtr(p + 0x010)); // 0270D9FD6F58 0x10 Instructions                ( 00018670EF50 ModelEnumType InstructionArray InstructionArray InstructionArray Int32 )
-            value.Labels                                    = GetEnumList<RuntimeLabel>(new IntPtr(p + 0x040)); // 0270D9FD6F98 0x40 Labels                      ( 000185CA1E18 ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer )
-            value.DebugInfos                                = GetObjectList<DebugInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugInfo.FromPointer); // 0270D9FD6FB8 0x48 DebugInfos                  ( 000185B79E80 ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x050)); // 0270D9FD6FD8 0x50 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.LocalCount                                = GetInt32(new IntPtr(p + 0x058)); // 0270D9FD6FF8 0x58 LocalCount                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Instructions                              = (InstructionArray)GetInt32(new IntPtr(p + 0x010)); // 02466A04A3D0 0x10 Instructions                ( 00018670EF50 ModelEnumType InstructionArray InstructionArray InstructionArray Int32 )
+            value.Labels                                    = GetEnumList<RuntimeLabel>(new IntPtr(p + 0x040)); // 02466A04A410 0x40 Labels                      ( 000185CA1E18 ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer )
+            value.DebugInfos                                = GetObjectList<DebugInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugInfo.FromPointer); // 02466A04A430 0x48 DebugInfos                  ( 000185B79E80 ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x050)); // 02466A04A450 0x50 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.LocalCount                                = GetInt32(new IntPtr(p + 0x058)); // 02466A04A470 0x58 LocalCount                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

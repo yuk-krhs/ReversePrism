@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ObjectId                                 0001865F2F90 ModelPrimitiveType int int int Int32
     // 014 Value                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class BinaryCrossAppDomainString
+    public partial class BinaryCrossAppDomainString : DataModel
     {
         public int                                      ObjectId                                { get; set; }
         public int                                      Value                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryCrossAppDomainString();
+            var value   = new BinaryCrossAppDomainString() { Pointer= p0 };
 
-            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D6C31EA8 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Value                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D6C31EC8 0x14 Value                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 024666CA1EA8 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Value                                     = GetInt32(new IntPtr(p + 0x014)); // 024666CA1EC8 0x14 Value                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

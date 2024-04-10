@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGroupManager
+    public partial class IGroupManager : DataModel
     {
 
         public static IGroupManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGroupManager();
+            var value   = new IGroupManager() { Pointer= p0 };
 
 
             return value;

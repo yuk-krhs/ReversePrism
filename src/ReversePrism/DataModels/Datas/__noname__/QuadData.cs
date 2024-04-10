@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CyalumeBaseObject                        0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
     // 018 CyalumeSubObjects                        000185B81700 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    public partial class QuadData
+    public partial class QuadData : DataModel
     {
         public GameObject?                              CyalumeBaseObject                       { get; set; }
         public List<GameObject>?                        CyalumeSubObjects                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QuadData();
+            var value   = new QuadData() { Pointer= p0 };
 
-            value.CyalumeBaseObject                         = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4E4C070 0x10 CyalumeBaseObject           ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CyalumeSubObjects                         = GetObjectList<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4E4C090 0x18 CyalumeSubObjects           ( 000185B81700 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.CyalumeBaseObject                         = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 024664EC1378 0x10 CyalumeBaseObject           ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CyalumeSubObjects                         = GetObjectList<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 024664EC1398 0x18 CyalumeSubObjects           ( 000185B81700 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

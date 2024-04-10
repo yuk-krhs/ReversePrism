@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 SeasonGaugeUp                            SoundKey IL2CPP_TYPE_VALUETYPE
     // 010 SeasonRankUp                             000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 020 SeasonMissionEnd                         000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class SeasonMissionSeConst
+    public partial class SeasonMissionSeConst : DataModel
     {
         public SoundKey                                 SeasonRankUp                            { get; set; }
         public SoundKey                                 SeasonMissionEnd                        { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionSeConst();
+            var value   = new SeasonMissionSeConst() { Pointer= p0 };
 
-            value.SeasonRankUp                              = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270D5E58220 0x10 SeasonRankUp                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.SeasonMissionEnd                          = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 0270D5E58240 0x20 SeasonMissionEnd            ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.SeasonRankUp                              = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 024665EC8950 0x10 SeasonRankUp                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.SeasonMissionEnd                          = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 024665EC8970 0x20 SeasonMissionEnd            ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

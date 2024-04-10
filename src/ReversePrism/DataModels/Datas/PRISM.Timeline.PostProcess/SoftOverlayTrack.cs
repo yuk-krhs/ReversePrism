@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SoftOverlayTrack
+    public partial class SoftOverlayTrack : DataModel
     {
 
         public static SoftOverlayTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoftOverlayTrack();
+            var value   = new SoftOverlayTrack() { Pointer= p0 };
 
 
             return value;

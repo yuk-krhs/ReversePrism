@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 070 JointNotesEffectPool                     000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer
     // 078 SkillNotesEffectPool                     000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer
     // 080 playingLongNotesEffectIds                Dictionary`2<int, ParticleSystem> IL2CPP_TYPE_GENERICINST
-    public partial class JudgeEffectView
+    public partial class JudgeEffectView : DataModel
     {
         public List<ParticleSystem>?                    TapEffects                              { get; set; }
         public List<ParticleSystem>?                    FlickEffects                            { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JudgeEffectView();
+            var value   = new JudgeEffectView() { Pointer= p0 };
 
-            value.TapEffects                                = GetObjectList<ParticleSystem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1F48 0x20 TapEffects                  ( 000185B9AC50 ModelClassListType ParticleSystem[] ParticleSystem[] List<ParticleSystem> Pointer )
-            value.FlickEffects                              = GetObjectList<ParticleSystem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1F68 0x28 FlickEffects                ( 000185B9AC50 ModelClassListType ParticleSystem[] ParticleSystem[] List<ParticleSystem> Pointer )
-            value.KimeEffect                                = GetObject<ParticleSystem>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1F88 0x30 KimeEffect                  ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
-            value.LongNotesEffect                           = GetObject<ParticleSystem>(new IntPtr(p + 0x038), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1FA8 0x38 LongNotesEffect             ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
-            value.JointNotesEffect                          = GetObject<ParticleSystem>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1FC8 0x40 JointNotesEffect            ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
-            value.SkillNotesEffect                          = GetObject<ParticleSystem>(new IntPtr(p + 0x048), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0270D4FE1FE8 0x48 SkillNotesEffect            ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
-            value.TapEffectPools                            = GetObjectList<ParticlePool>(new IntPtr(p + 0x050), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE2008 0x50 TapEffectPools              ( 000185B9AA50 ModelClassListType ParticlePool[] ParticlePool[] List<ParticlePool> Pointer )
-            value.FlickEffectPools                          = GetObjectList<ParticlePool>(new IntPtr(p + 0x058), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE2028 0x58 FlickEffectPools            ( 000185B9AA50 ModelClassListType ParticlePool[] ParticlePool[] List<ParticlePool> Pointer )
-            value.KimeEffectPool                            = GetObject<ParticlePool>(new IntPtr(p + 0x060), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE2048 0x60 KimeEffectPool              ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
-            value.LongNotesEffectPool                       = GetObject<ParticlePool>(new IntPtr(p + 0x068), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE2068 0x68 LongNotesEffectPool         ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
-            value.JointNotesEffectPool                      = GetObject<ParticlePool>(new IntPtr(p + 0x070), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE2088 0x70 JointNotesEffectPool        ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
-            value.SkillNotesEffectPool                      = GetObject<ParticlePool>(new IntPtr(p + 0x078), ReversePrism.DataModels.ParticlePool.FromPointer); // 0270D4FE20A8 0x78 SkillNotesEffectPool        ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
+            value.TapEffects                                = GetObjectList<ParticleSystem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062A68 0x20 TapEffects                  ( 000185B9AC50 ModelClassListType ParticleSystem[] ParticleSystem[] List<ParticleSystem> Pointer )
+            value.FlickEffects                              = GetObjectList<ParticleSystem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062A88 0x28 FlickEffects                ( 000185B9AC50 ModelClassListType ParticleSystem[] ParticleSystem[] List<ParticleSystem> Pointer )
+            value.KimeEffect                                = GetObject<ParticleSystem>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062AA8 0x30 KimeEffect                  ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.LongNotesEffect                           = GetObject<ParticleSystem>(new IntPtr(p + 0x038), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062AC8 0x38 LongNotesEffect             ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.JointNotesEffect                          = GetObject<ParticleSystem>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062AE8 0x40 JointNotesEffect            ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.SkillNotesEffect                          = GetObject<ParticleSystem>(new IntPtr(p + 0x048), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024665062B08 0x48 SkillNotesEffect            ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.TapEffectPools                            = GetObjectList<ParticlePool>(new IntPtr(p + 0x050), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062B28 0x50 TapEffectPools              ( 000185B9AA50 ModelClassListType ParticlePool[] ParticlePool[] List<ParticlePool> Pointer )
+            value.FlickEffectPools                          = GetObjectList<ParticlePool>(new IntPtr(p + 0x058), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062B48 0x58 FlickEffectPools            ( 000185B9AA50 ModelClassListType ParticlePool[] ParticlePool[] List<ParticlePool> Pointer )
+            value.KimeEffectPool                            = GetObject<ParticlePool>(new IntPtr(p + 0x060), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062B68 0x60 KimeEffectPool              ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
+            value.LongNotesEffectPool                       = GetObject<ParticlePool>(new IntPtr(p + 0x068), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062B88 0x68 LongNotesEffectPool         ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
+            value.JointNotesEffectPool                      = GetObject<ParticlePool>(new IntPtr(p + 0x070), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062BA8 0x70 JointNotesEffectPool        ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
+            value.SkillNotesEffectPool                      = GetObject<ParticlePool>(new IntPtr(p + 0x078), ReversePrism.DataModels.ParticlePool.FromPointer); // 024665062BC8 0x78 SkillNotesEffectPool        ( 000186723880 ModelClassType ParticlePool ParticlePool ParticlePool Pointer )
 
             return value;
         }

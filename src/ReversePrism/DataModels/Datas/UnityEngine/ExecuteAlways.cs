@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExecuteAlways
+    public partial class ExecuteAlways : DataModel
     {
 
         public static ExecuteAlways? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteAlways();
+            var value   = new ExecuteAlways() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 3C8 Binding                                  0001867102A0 ModelClassType IBinding IBinding IBinding Pointer
     // 3D0 BindingPath                              000186671910 ModelPrimitiveType string string string String
-    public partial class BindableElement
+    public partial class BindableElement : DataModel
     {
         public IBinding?                                Binding                                 { get; set; }
         public string                                   BindingPath                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BindableElement();
+            var value   = new BindableElement() { Pointer= p0 };
 
-            value.Binding                                   = GetObject<IBinding>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.IBinding.FromPointer); // 027004FB18C0 0x3C8 Binding                     ( 0001867102A0 ModelClassType IBinding IBinding IBinding Pointer )
-            value.BindingPath                               = GetString(new IntPtr(p + 0x3D0)); // 027004FB18E0 0x3D0 BindingPath                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Binding                                   = GetObject<IBinding>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.IBinding.FromPointer); // 0245A5022FC8 0x3C8 Binding                     ( 0001867102A0 ModelClassType IBinding IBinding IBinding Pointer )
+            value.BindingPath                               = GetString(new IntPtr(p + 0x3D0)); // 0245A5022FE8 0x3D0 BindingPath                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

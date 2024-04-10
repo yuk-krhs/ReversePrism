@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FixedList4096BytesExtensions
+    public partial class FixedList4096BytesExtensions : DataModel
     {
 
         public static FixedList4096BytesExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedList4096BytesExtensions();
+            var value   = new FixedList4096BytesExtensions() { Pointer= p0 };
 
 
             return value;

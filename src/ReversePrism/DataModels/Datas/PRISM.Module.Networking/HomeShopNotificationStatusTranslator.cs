@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HomeShopNotificationStatusTranslator
+    public partial class HomeShopNotificationStatusTranslator : DataModel
     {
 
         public static HomeShopNotificationStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeShopNotificationStatusTranslator();
+            var value   = new HomeShopNotificationStatusTranslator() { Pointer= p0 };
 
 
             return value;

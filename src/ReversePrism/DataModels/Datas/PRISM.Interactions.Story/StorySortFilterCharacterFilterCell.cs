@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 UiGrayOutController                      0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
     // 038 SelectFrame                              0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 040 Data                                     00018659E440 ModelClassType StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData Pointer
-    public partial class StorySortFilterCharacterFilterCell
+    public partial class StorySortFilterCharacterFilterCell : DataModel
     {
         public CharacterBaseIcon?                       CharacterBaseIcon                       { get; set; }
         public UIButton?                                Button                                  { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StorySortFilterCharacterFilterCell();
+            var value   = new StorySortFilterCharacterFilterCell() { Pointer= p0 };
 
-            value.CharacterBaseIcon                         = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 0270DB94B1B8 0x20 CharacterBaseIcon           ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB94B1D8 0x28 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.UiGrayOutController                       = GetObject<UIGrayOutController>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0270DB94B1F8 0x30 UiGrayOutController         ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.SelectFrame                               = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB94B218 0x38 SelectFrame                 ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Data                                      = GetObject<StorySortFilterCharacterFilterCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.StorySortFilterCharacterFilterCellData.FromPointer); // 0270DB94B238 0x40 Data                        ( 00018659E440 ModelClassType StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData Pointer )
+            value.CharacterBaseIcon                         = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 02466B9D25C8 0x20 CharacterBaseIcon           ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B9D25E8 0x28 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.UiGrayOutController                       = GetObject<UIGrayOutController>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 02466B9D2608 0x30 UiGrayOutController         ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.SelectFrame                               = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 02466B9D2628 0x38 SelectFrame                 ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.Data                                      = GetObject<StorySortFilterCharacterFilterCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.StorySortFilterCharacterFilterCellData.FromPointer); // 02466B9D2648 0x40 Data                        ( 00018659E440 ModelClassType StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData StorySortFilterCharacterFilterCellData Pointer )
 
             return value;
         }

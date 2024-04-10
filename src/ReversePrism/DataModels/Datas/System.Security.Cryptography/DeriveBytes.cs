@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeriveBytes
+    public partial class DeriveBytes : DataModel
     {
 
         public static DeriveBytes? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeriveBytes();
+            var value   = new DeriveBytes() { Pointer= p0 };
 
 
             return value;

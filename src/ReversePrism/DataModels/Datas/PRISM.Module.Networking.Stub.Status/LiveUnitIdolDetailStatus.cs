@@ -47,7 +47,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultCostumeSetListFieldNumber         int IL2CPP_TYPE_I4
     // 010 _repeated_defaultCostumeSetList_codec    FieldCodec`1<LiveUnitIdolCostumeSetStatus> IL2CPP_TYPE_GENERICINST
     // 080 DefaultCostumeSetList                    000185CE42E8 ModelClassListType RepeatedField`1<LiveUnitIdolCostumeSetStatus> RepeatedField`1<LiveUnitIdolCostumeSetStatus> List<LiveUnitIdolCostumeSetStatus> Pointer
-    public partial class LiveUnitIdolDetailStatus
+    public partial class LiveUnitIdolDetailStatus : DataModel
     {
         public DateTime                                 CreateDate                              { get; set; }
         public LiveUnitIdolType                         UnitIdolType                            { get; set; }
@@ -74,26 +74,26 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitIdolDetailStatus();
+            var value   = new LiveUnitIdolDetailStatus() { Pointer= p0 };
 
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D1363878 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.UnitIdolType                              = (LiveUnitIdolType)GetInt32(new IntPtr(p + 0x028)); // 0270D13638F8 0x28 UnitIdolType                ( 000186593720 ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32 )
-            value.FesIdolId                                 = GetString(new IntPtr(p + 0x030)); // 0270D1363938 0x30 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x038)); // 0270D1363978 0x38 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x03C)); // 0270D13639B8 0x3C MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x040)); // 0270D13639F8 0x40 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x044)); // 0270D1363A38 0x44 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InitialStar                               = GetInt32(new IntPtr(p + 0x048)); // 0270D1363A78 0x48 InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x04C)); // 0270D1363AB8 0x4C CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PotentialLiveSkill                        = GetObject<LivePotentialLiveSkillStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LivePotentialLiveSkillStatus.FromPointer); // 0270D1363AF8 0x50 PotentialLiveSkill          ( 000186568ED0 ModelClassType LivePotentialLiveSkillStatus LivePotentialLiveSkillStatus LivePotentialLiveSkillStatus Pointer )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1363B38 0x58 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x060)); // 0270D1363B78 0x60 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x064)); // 0270D1363BB8 0x64 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x068)); // 0270D1363BF8 0x68 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x06C)); // 0270D1363C38 0x6C MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x070)); // 0270D1363C98 0x70 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.StarIdolParameter                         = GetObject<StarIdolParameterStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.StarIdolParameterStatus.FromPointer); // 0270D1363CD8 0x78 StarIdolParameter           ( 00018656E480 ModelClassType StarIdolParameterStatus StarIdolParameterStatus StarIdolParameterStatus Pointer )
-            value.DefaultCostumeSetList                     = GetObjectList<LiveUnitIdolCostumeSetStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveUnitIdolCostumeSetStatus.FromPointer); // 0270D1363D38 0x80 DefaultCostumeSetList       ( 000185CE42E8 ModelClassListType RepeatedField`1<LiveUnitIdolCostumeSetStatus> RepeatedField`1<LiveUnitIdolCostumeSetStatus> List<LiveUnitIdolCostumeSetStatus> Pointer )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0246612EDCC8 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.UnitIdolType                              = (LiveUnitIdolType)GetInt32(new IntPtr(p + 0x028)); // 0246612EDD48 0x28 UnitIdolType                ( 000186593720 ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32 )
+            value.FesIdolId                                 = GetString(new IntPtr(p + 0x030)); // 0246612EDD88 0x30 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x038)); // 0246612EDDC8 0x38 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x03C)); // 0246612EDE08 0x3C MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x040)); // 0246612EDE48 0x40 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x044)); // 0246612EDE88 0x44 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.InitialStar                               = GetInt32(new IntPtr(p + 0x048)); // 0246612EDEC8 0x48 InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x04C)); // 0246612EDF08 0x4C CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PotentialLiveSkill                        = GetObject<LivePotentialLiveSkillStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LivePotentialLiveSkillStatus.FromPointer); // 0246612EDF48 0x50 PotentialLiveSkill          ( 000186568ED0 ModelClassType LivePotentialLiveSkillStatus LivePotentialLiveSkillStatus LivePotentialLiveSkillStatus Pointer )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0246612EDF88 0x58 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x060)); // 0246612EDFC8 0x60 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x064)); // 0246612EE008 0x64 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x068)); // 0246612EE048 0x68 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x06C)); // 0246612EE088 0x6C MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x070)); // 0246612EE0E8 0x70 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.StarIdolParameter                         = GetObject<StarIdolParameterStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.StarIdolParameterStatus.FromPointer); // 0246612EE128 0x78 StarIdolParameter           ( 00018656E480 ModelClassType StarIdolParameterStatus StarIdolParameterStatus StarIdolParameterStatus Pointer )
+            value.DefaultCostumeSetList                     = GetObjectList<LiveUnitIdolCostumeSetStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveUnitIdolCostumeSetStatus.FromPointer); // 0246612EE188 0x80 DefaultCostumeSetList       ( 000185CE42E8 ModelClassListType RepeatedField`1<LiveUnitIdolCostumeSetStatus> RepeatedField`1<LiveUnitIdolCostumeSetStatus> List<LiveUnitIdolCostumeSetStatus> Pointer )
             value.CreateDate                    = ToDateTime(value._CreateDate);
 
             return value;

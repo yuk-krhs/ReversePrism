@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScrollerSlider
+    public partial class ScrollerSlider : DataModel
     {
 
         public static ScrollerSlider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScrollerSlider();
+            var value   = new ScrollerSlider() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ServerConfigFactory
+    public partial class ServerConfigFactory : DataModel
     {
 
         public static ServerConfigFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerConfigFactory();
+            var value   = new ServerConfigFactory() { Pointer= p0 };
 
 
             return value;

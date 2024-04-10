@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 010 S_Pow10BigNumTable                       000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 010 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 Blocks                                   000186566240 ModelEnumType <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer Int32
-    public partial class BigInteger
+    public partial class BigInteger : DataModel
     {
         public List<uint>?                              S_Pow10BigNumTable                      { get; set; }
         public int                                      Length                                  { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BigInteger();
+            var value   = new BigInteger() { Pointer= p0 };
 
-            value.S_Pow10BigNumTable                        = GetUInt32List(new IntPtr(p + 0x010)); // 0270DAAA9A58 0x10 S_Pow10BigNumTable          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 0270DAAA9A78 0x10 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Blocks                                    = (<_blocks>e__FixedBuffer)GetInt32(new IntPtr(p + 0x014)); // 0270DAAA9A98 0x14 Blocks                      ( 000186566240 ModelEnumType <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer Int32 )
+            value.S_Pow10BigNumTable                        = GetUInt32List(new IntPtr(p + 0x010)); // 02466AB0F278 0x10 S_Pow10BigNumTable          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 02466AB0F298 0x10 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Blocks                                    = (<_blocks>e__FixedBuffer)GetInt32(new IntPtr(p + 0x014)); // 02466AB0F2B8 0x14 Blocks                      ( 000186566240 ModelEnumType <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer <_blocks>e__FixedBuffer Int32 )
 
             return value;
         }

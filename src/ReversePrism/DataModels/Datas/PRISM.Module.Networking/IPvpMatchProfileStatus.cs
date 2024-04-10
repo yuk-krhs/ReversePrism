@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvpMatchProfileStatus
+    public partial class IPvpMatchProfileStatus : DataModel
     {
 
         public static IPvpMatchProfileStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvpMatchProfileStatus();
+            var value   = new IPvpMatchProfileStatus() { Pointer= p0 };
 
 
             return value;

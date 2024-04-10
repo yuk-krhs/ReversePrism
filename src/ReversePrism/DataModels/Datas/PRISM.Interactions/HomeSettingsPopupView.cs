@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 onSelectClothesConfirmPopup              Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 080 onSelectIdolButton                       Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 088 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class HomeSettingsPopupView
+    public partial class HomeSettingsPopupView : DataModel
     {
         public ToggleButtonGroup?                       IdolCheckButtonGroup                    { get; set; }
         public List<HomeSettingsIdolIconContent>?       IdolIconContents                        { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSettingsPopupView();
+            var value   = new HomeSettingsPopupView() { Pointer= p0 };
 
-            value.IdolCheckButtonGroup                      = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 0270DB5326B8 0x20 IdolCheckButtonGroup        ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
-            value.IdolIconContents                          = GetObjectList<HomeSettingsIdolIconContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeSettingsIdolIconContent.FromPointer); // 0270DB5326D8 0x28 IdolIconContents            ( 000185B851B0 ModelClassListType HomeSettingsIdolIconContent[] HomeSettingsIdolIconContent[] List<HomeSettingsIdolIconContent> Pointer )
-            value.ButtonSave                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB5326F8 0x30 ButtonSave                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ButtonClose                               = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB532718 0x38 ButtonClose                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PopupFrame                                = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB532738 0x40 PopupFrame                  ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
-            value.ViewModel                                 = GetObject<HomeSettingsViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.HomeSettingsViewModel.FromPointer); // 0270DB532758 0x48 ViewModel                   ( 0001866D0370 ModelClassType HomeSettingsViewModel HomeSettingsViewModel HomeSettingsViewModel Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x088), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB532858 0x88 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.IdolCheckButtonGroup                      = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 02466B5A67B0 0x20 IdolCheckButtonGroup        ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
+            value.IdolIconContents                          = GetObjectList<HomeSettingsIdolIconContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeSettingsIdolIconContent.FromPointer); // 02466B5A67D0 0x28 IdolIconContents            ( 000185B851B0 ModelClassListType HomeSettingsIdolIconContent[] HomeSettingsIdolIconContent[] List<HomeSettingsIdolIconContent> Pointer )
+            value.ButtonSave                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466B5A67F0 0x30 ButtonSave                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ButtonClose                               = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466B5A6810 0x38 ButtonClose                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.PopupFrame                                = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B5A6830 0x40 PopupFrame                  ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ViewModel                                 = GetObject<HomeSettingsViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.HomeSettingsViewModel.FromPointer); // 02466B5A6850 0x48 ViewModel                   ( 0001866D0370 ModelClassType HomeSettingsViewModel HomeSettingsViewModel HomeSettingsViewModel Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x088), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B5A6950 0x88 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

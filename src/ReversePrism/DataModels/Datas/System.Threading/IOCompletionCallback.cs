@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOCompletionCallback
+    public partial class IOCompletionCallback : DataModel
     {
 
         public static IOCompletionCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOCompletionCallback();
+            var value   = new IOCompletionCallback() { Pointer= p0 };
 
 
             return value;

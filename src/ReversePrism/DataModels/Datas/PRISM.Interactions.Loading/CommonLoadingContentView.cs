@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 MiniCharaView                            00018659E6C0 ModelClassType LoadingMiniCharaView LoadingMiniCharaView LoadingMiniCharaView Pointer
     // 028 TipsView                                 00018659FA60 ModelClassType LoadingTipsView LoadingTipsView LoadingTipsView Pointer
     // 030 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
-    public partial class CommonLoadingContentView
+    public partial class CommonLoadingContentView : DataModel
     {
         public LoadingMiniCharaView?                    MiniCharaView                           { get; set; }
         public LoadingTipsView?                         TipsView                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonLoadingContentView();
+            var value   = new CommonLoadingContentView() { Pointer= p0 };
 
-            value.MiniCharaView                             = GetObject<LoadingMiniCharaView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoadingMiniCharaView.FromPointer); // 027001E9D9C0 0x20 MiniCharaView               ( 00018659E6C0 ModelClassType LoadingMiniCharaView LoadingMiniCharaView LoadingMiniCharaView Pointer )
-            value.TipsView                                  = GetObject<LoadingTipsView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LoadingTipsView.FromPointer); // 027001E9D9E0 0x28 TipsView                    ( 00018659FA60 ModelClassType LoadingTipsView LoadingTipsView LoadingTipsView Pointer )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x030), ReversePrism.DataModels.IResourceLoader.FromPointer); // 027001E9DA00 0x30 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.MiniCharaView                             = GetObject<LoadingMiniCharaView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoadingMiniCharaView.FromPointer); // 0245A1EA07B8 0x20 MiniCharaView               ( 00018659E6C0 ModelClassType LoadingMiniCharaView LoadingMiniCharaView LoadingMiniCharaView Pointer )
+            value.TipsView                                  = GetObject<LoadingTipsView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LoadingTipsView.FromPointer); // 0245A1EA07D8 0x28 TipsView                    ( 00018659FA60 ModelClassType LoadingTipsView LoadingTipsView LoadingTipsView Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x030), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0245A1EA07F8 0x30 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

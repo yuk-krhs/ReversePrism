@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 listPool                                 List`1<KeyValuePair`2<IUniTaskSource, ValueTuple`4<string, int, DateTime, string>>> IL2CPP_TYPE_GENERICINST
     // 008 tracking                                 WeakDictionary`2<IUniTaskSource, ValueTuple`4<string, int, DateTime, string>> IL2CPP_TYPE_GENERICINST
     // 010 Dirty                                    000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class TaskTracker
+    public partial class TaskTracker : DataModel
     {
         public bool                                     Dirty                                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskTracker();
+            var value   = new TaskTracker() { Pointer= p0 };
 
-            value.Dirty                                     = GetBool(new IntPtr(p + 0x010)); // 0270D8BD0E68 0x10 Dirty                       ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.Dirty                                     = GetBool(new IntPtr(p + 0x010)); // 024668C24470 0x10 Dirty                       ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

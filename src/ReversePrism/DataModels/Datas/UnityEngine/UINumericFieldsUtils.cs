@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 K_DoubleFieldFormatString                000186674040 ModelPrimitiveType string string string String
     // 018 K_FloatFieldFormatString                 000186674040 ModelPrimitiveType string string string String
     // 020 K_IntFieldFormatString                   000186674040 ModelPrimitiveType string string string String
-    public partial class UINumericFieldsUtils
+    public partial class UINumericFieldsUtils : DataModel
     {
         public string                                   K_DoubleFieldFormatString               { get; set; }
         public string                                   K_FloatFieldFormatString                { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UINumericFieldsUtils();
+            var value   = new UINumericFieldsUtils() { Pointer= p0 };
 
-            value.K_DoubleFieldFormatString                 = GetString(new IntPtr(p + 0x010)); // 0270068BF478 0x10 K_DoubleFieldFormatString   ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_FloatFieldFormatString                  = GetString(new IntPtr(p + 0x018)); // 0270068BF498 0x18 K_FloatFieldFormatString    ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_IntFieldFormatString                    = GetString(new IntPtr(p + 0x020)); // 0270068BF4B8 0x20 K_IntFieldFormatString      ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_DoubleFieldFormatString                 = GetString(new IntPtr(p + 0x010)); // 0245A6881B80 0x10 K_DoubleFieldFormatString   ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_FloatFieldFormatString                  = GetString(new IntPtr(p + 0x018)); // 0245A6881BA0 0x18 K_FloatFieldFormatString    ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_IntFieldFormatString                    = GetString(new IntPtr(p + 0x020)); // 0245A6881BC0 0x20 K_IntFieldFormatString      ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

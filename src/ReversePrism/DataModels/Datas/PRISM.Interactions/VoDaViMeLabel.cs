@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ImgBase                                  0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 028 TxtSkillType                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class VoDaViMeLabel
+    public partial class VoDaViMeLabel : DataModel
     {
         public UIImage?                                 ImgBase                                 { get; set; }
         public UITextMeshProUGUI?                       TxtSkillType                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VoDaViMeLabel();
+            var value   = new VoDaViMeLabel() { Pointer= p0 };
 
-            value.ImgBase                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB597368 0x20 ImgBase                     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.TxtSkillType                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB597388 0x28 TxtSkillType                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgBase                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B6234A8 0x20 ImgBase                     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.TxtSkillType                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B6234C8 0x28 TxtSkillType                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DebuggerStepThroughAttribute
+    public partial class DebuggerStepThroughAttribute : DataModel
     {
 
         public static DebuggerStepThroughAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebuggerStepThroughAttribute();
+            var value   = new DebuggerStepThroughAttribute() { Pointer= p0 };
 
 
             return value;

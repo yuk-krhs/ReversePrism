@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 044 RimFeather                               000186666050 ModelPrimitiveType float float float Single
     // 048 RimDiffuseRate                           000186666050 ModelPrimitiveType float float float Single
     // 000 CharacterLightingList                    List`1<CharacterLighting> IL2CPP_TYPE_GENERICINST
-    public partial class CharacterLighting
+    public partial class CharacterLighting : DataModel
     {
         public float                                    RimPower                                { get; set; }
         public float                                    RimIntensity                            { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterLighting();
+            var value   = new CharacterLighting() { Pointer= p0 };
 
-            value.RimPower                                  = GetSingle(new IntPtr(p + 0x020)); // 0270D0E71DA8 0x20 RimPower                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RimIntensity                              = GetSingle(new IntPtr(p + 0x024)); // 0270D0E71DC8 0x24 RimIntensity                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RimColor                                  = (Color)GetInt32(new IntPtr(p + 0x028)); // 0270D0E71DE8 0x28 RimColor                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.RimLightDirection                         = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0270D0E71E08 0x38 RimLightDirection           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.RimFeather                                = GetSingle(new IntPtr(p + 0x044)); // 0270D0E71E28 0x44 RimFeather                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RimDiffuseRate                            = GetSingle(new IntPtr(p + 0x048)); // 0270D0E71E48 0x48 RimDiffuseRate              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RimPower                                  = GetSingle(new IntPtr(p + 0x020)); // 024660DFB2B0 0x20 RimPower                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RimIntensity                              = GetSingle(new IntPtr(p + 0x024)); // 024660DFB2D0 0x24 RimIntensity                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RimColor                                  = (Color)GetInt32(new IntPtr(p + 0x028)); // 024660DFB2F0 0x28 RimColor                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.RimLightDirection                         = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 024660DFB310 0x38 RimLightDirection           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.RimFeather                                = GetSingle(new IntPtr(p + 0x044)); // 024660DFB330 0x44 RimFeather                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RimDiffuseRate                            = GetSingle(new IntPtr(p + 0x048)); // 024660DFB350 0x48 RimDiffuseRate              ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

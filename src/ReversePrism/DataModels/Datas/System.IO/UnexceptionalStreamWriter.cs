@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnexceptionalStreamWriter
+    public partial class UnexceptionalStreamWriter : DataModel
     {
 
         public static UnexceptionalStreamWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnexceptionalStreamWriter();
+            var value   = new UnexceptionalStreamWriter() { Pointer= p0 };
 
 
             return value;

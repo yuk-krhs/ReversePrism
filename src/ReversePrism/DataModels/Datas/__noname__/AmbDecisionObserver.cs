@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 me                                       AmbState<<var>> IL2CPP_TYPE_GENERICINST
     // 000 otherSubscription                        IDisposable IL2CPP_TYPE_CLASS
     // 000 self                                     Amb<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class AmbDecisionObserver
+    public partial class AmbDecisionObserver : DataModel
     {
 
         public static AmbDecisionObserver? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AmbDecisionObserver();
+            var value   = new AmbDecisionObserver() { Pointer= p0 };
 
 
             return value;

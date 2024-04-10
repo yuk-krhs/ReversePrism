@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPvpTopView
+    public partial class IPvpTopView : DataModel
     {
 
         public static IPvpTopView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPvpTopView();
+            var value   = new IPvpTopView() { Pointer= p0 };
 
 
             return value;

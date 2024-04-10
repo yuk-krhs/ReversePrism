@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 Put_method                               0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer
     // 030 Trace_method                             0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer
     // 010 Method                                   000186672F10 ModelPrimitiveType string string string String
-    public partial class HttpMethod
+    public partial class HttpMethod : DataModel
     {
         public HttpMethod?                              Head_method                             { get; set; }
         public HttpMethod?                              Options_method                          { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpMethod();
+            var value   = new HttpMethod() { Pointer= p0 };
 
-            value.Head_method                               = GetObject<HttpMethod>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpMethod.FromPointer); // 0270DB82BF70 0x10 Head_method                 ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
-            value.Options_method                            = GetObject<HttpMethod>(new IntPtr(p + 0x018), ReversePrism.DataModels.HttpMethod.FromPointer); // 0270DB82BF90 0x18 Options_method              ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
-            value.Post_method                               = GetObject<HttpMethod>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpMethod.FromPointer); // 0270DB82BFB0 0x20 Post_method                 ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
-            value.Put_method                                = GetObject<HttpMethod>(new IntPtr(p + 0x028), ReversePrism.DataModels.HttpMethod.FromPointer); // 0270DB82BFD0 0x28 Put_method                  ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
-            value.Trace_method                              = GetObject<HttpMethod>(new IntPtr(p + 0x030), ReversePrism.DataModels.HttpMethod.FromPointer); // 0270DB82BFF0 0x30 Trace_method                ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
-            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 0270DB82C010 0x10 Method                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Head_method                               = GetObject<HttpMethod>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpMethod.FromPointer); // 02466B8ABE48 0x10 Head_method                 ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
+            value.Options_method                            = GetObject<HttpMethod>(new IntPtr(p + 0x018), ReversePrism.DataModels.HttpMethod.FromPointer); // 02466B8ABE68 0x18 Options_method              ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
+            value.Post_method                               = GetObject<HttpMethod>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpMethod.FromPointer); // 02466B8ABE88 0x20 Post_method                 ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
+            value.Put_method                                = GetObject<HttpMethod>(new IntPtr(p + 0x028), ReversePrism.DataModels.HttpMethod.FromPointer); // 02466B8ABEA8 0x28 Put_method                  ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
+            value.Trace_method                              = GetObject<HttpMethod>(new IntPtr(p + 0x030), ReversePrism.DataModels.HttpMethod.FromPointer); // 02466B8ABEC8 0x30 Trace_method                ( 0001866E0CD0 ModelClassType HttpMethod HttpMethod HttpMethod Pointer )
+            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 02466B8ABEE8 0x10 Method                      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _enumerable                              FileSystemEnumerable`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class DelegateEnumerator
+    public partial class DelegateEnumerator : DataModel
     {
 
         public static DelegateEnumerator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DelegateEnumerator();
+            var value   = new DelegateEnumerator() { Pointer= p0 };
 
 
             return value;

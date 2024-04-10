@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_RenderFrameInterval                    int IL2CPP_TYPE_I4
-    public partial class OnDemandRendering
+    public partial class OnDemandRendering : DataModel
     {
 
         public static OnDemandRendering? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnDemandRendering();
+            var value   = new OnDemandRendering() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DelayTime                                00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 018 IsPlaying                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class WordOnSePlayer
+    public partial class WordOnSePlayer : DataModel
     {
         public TimeSpan                                 DelayTime                               { get; set; }
         public bool                                     IsPlaying                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WordOnSePlayer();
+            var value   = new WordOnSePlayer() { Pointer= p0 };
 
-            value.DelayTime                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0270DB0E2E38 0x10 DelayTime                   ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.IsPlaying                                 = GetBool(new IntPtr(p + 0x018)); // 0270DB0E2E58 0x18 IsPlaying                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DelayTime                                 = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 02466B14AE38 0x10 DelayTime                   ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.IsPlaying                                 = GetBool(new IntPtr(p + 0x018)); // 02466B14AE58 0x18 IsPlaying                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

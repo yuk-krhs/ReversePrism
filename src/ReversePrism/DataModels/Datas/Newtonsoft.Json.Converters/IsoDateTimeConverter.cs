@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 DateTimeStyles                           0001865BE5C0 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32
     // 018 DateTimeFormat                           000186671910 ModelPrimitiveType string string string String
     // 020 Culture                                  0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
-    public partial class IsoDateTimeConverter
+    public partial class IsoDateTimeConverter : DataModel
     {
         public DateTimeStyles                           DateTimeStyles                          { get; set; }
         public string                                   DateTimeFormat                          { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsoDateTimeConverter();
+            var value   = new IsoDateTimeConverter() { Pointer= p0 };
 
-            value.DateTimeStyles                            = (DateTimeStyles)GetInt32(new IntPtr(p + 0x010)); // 0270D8869708 0x10 DateTimeStyles              ( 0001865BE5C0 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
-            value.DateTimeFormat                            = GetString(new IntPtr(p + 0x018)); // 0270D8869728 0x18 DateTimeFormat              ( 000186671910 ModelPrimitiveType string string string String )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.CultureInfo.FromPointer); // 0270D8869748 0x20 Culture                     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.DateTimeStyles                            = (DateTimeStyles)GetInt32(new IntPtr(p + 0x010)); // 0246688ACD68 0x10 DateTimeStyles              ( 0001865BE5C0 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
+            value.DateTimeFormat                            = GetString(new IntPtr(p + 0x018)); // 0246688ACD88 0x18 DateTimeFormat              ( 000186671910 ModelPrimitiveType string string string String )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.CultureInfo.FromPointer); // 0246688ACDA8 0x20 Culture                     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
 
             return value;
         }

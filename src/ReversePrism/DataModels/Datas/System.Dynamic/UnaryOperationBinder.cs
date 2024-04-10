@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnaryOperationBinder
+    public partial class UnaryOperationBinder : DataModel
     {
 
         public static UnaryOperationBinder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnaryOperationBinder();
+            var value   = new UnaryOperationBinder() { Pointer= p0 };
 
 
             return value;

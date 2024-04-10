@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceActionConditionStatus
+    public partial class IProduceActionConditionStatus : DataModel
     {
 
         public static IProduceActionConditionStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceActionConditionStatus();
+            var value   = new IProduceActionConditionStatus() { Pointer= p0 };
 
 
             return value;

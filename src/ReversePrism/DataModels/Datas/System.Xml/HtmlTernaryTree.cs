@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 htmlElements                             sbyte[] IL2CPP_TYPE_SZARRAY
     // 008 htmlAttributes                           sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class HtmlTernaryTree
+    public partial class HtmlTernaryTree : DataModel
     {
 
         public static HtmlTernaryTree? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HtmlTernaryTree();
+            var value   = new HtmlTernaryTree() { Pointer= p0 };
 
 
             return value;

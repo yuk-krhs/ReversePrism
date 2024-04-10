@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
-    public partial class ServerSafeHandle
+    public partial class ServerSafeHandle : DataModel
     {
 
         public static ServerSafeHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerSafeHandle();
+            var value   = new ServerSafeHandle() { Pointer= p0 };
 
 
             return value;

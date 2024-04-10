@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 018 AccessToken                              000186671910 ModelPrimitiveType string string string String
     // 020 OpenId                                   000186671910 ModelPrimitiveType string string string String
     // 028 OnetimeToken                             000186671910 ModelPrimitiveType string string string String
-    public partial class DmmGamesInitializeArgsModel
+    public partial class DmmGamesInitializeArgsModel : DataModel
     {
         public string                                   KeyOnetimeToken                         { get; set; }
         public string                                   KeyOpenId                               { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesInitializeArgsModel();
+            var value   = new DmmGamesInitializeArgsModel() { Pointer= p0 };
 
-            value.KeyOnetimeToken                           = GetString(new IntPtr(p + 0x010)); // 027003C77350 0x10 KeyOnetimeToken             ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.KeyOpenId                                 = GetString(new IntPtr(p + 0x018)); // 027003C77370 0x18 KeyOpenId                   ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.KeyAccessToken                            = GetString(new IntPtr(p + 0x020)); // 027003C77390 0x20 KeyAccessToken              ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.ViewerId                                  = GetString(new IntPtr(p + 0x010)); // 027003C773B0 0x10 ViewerId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.AccessToken                               = GetString(new IntPtr(p + 0x018)); // 027003C773D0 0x18 AccessToken                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.OpenId                                    = GetString(new IntPtr(p + 0x020)); // 027003C773F0 0x20 OpenId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.OnetimeToken                              = GetString(new IntPtr(p + 0x028)); // 027003C77410 0x28 OnetimeToken                ( 000186671910 ModelPrimitiveType string string string String )
+            value.KeyOnetimeToken                           = GetString(new IntPtr(p + 0x010)); // 0245A3C77350 0x10 KeyOnetimeToken             ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.KeyOpenId                                 = GetString(new IntPtr(p + 0x018)); // 0245A3C77370 0x18 KeyOpenId                   ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.KeyAccessToken                            = GetString(new IntPtr(p + 0x020)); // 0245A3C77390 0x20 KeyAccessToken              ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.ViewerId                                  = GetString(new IntPtr(p + 0x010)); // 0245A3C773B0 0x10 ViewerId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.AccessToken                               = GetString(new IntPtr(p + 0x018)); // 0245A3C773D0 0x18 AccessToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.OpenId                                    = GetString(new IntPtr(p + 0x020)); // 0245A3C773F0 0x20 OpenId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.OnetimeToken                              = GetString(new IntPtr(p + 0x028)); // 0245A3C77410 0x28 OnetimeToken                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

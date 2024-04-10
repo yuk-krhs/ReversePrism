@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 GoInheritanceIcon                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 TxtSkillName                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 038 TxtSKillDetail                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class SupportSkillContentView
+    public partial class SupportSkillContentView : DataModel
     {
         public RawImage?                                ImgSkillIcon                            { get; set; }
         public GameObject?                              GoInheritanceIcon                       { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportSkillContentView();
+            var value   = new SupportSkillContentView() { Pointer= p0 };
 
-            value.ImgSkillIcon                              = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA2CCDA0 0x20 ImgSkillIcon                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.GoInheritanceIcon                         = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2CCDC0 0x28 GoInheritanceIcon           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TxtSkillName                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2CCDE0 0x30 TxtSkillName                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtSKillDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2CCE00 0x38 TxtSKillDetail              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgSkillIcon                              = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3203B0 0x20 ImgSkillIcon                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.GoInheritanceIcon                         = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3203D0 0x28 GoInheritanceIcon           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtSkillName                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3203F0 0x30 TxtSkillName                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSKillDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A320410 0x38 TxtSKillDetail              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

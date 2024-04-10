@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 Class                                    0001865CE520 ModelClassType ExpandoClass ExpandoClass ExpandoClass Pointer
     // 018 _dataArray                               <object>[] IL2CPP_TYPE_SZARRAY
     // 020 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ExpandoData
+    public partial class ExpandoData : DataModel
     {
         public ExpandoClass?                            Class                                   { get; set; }
         public int                                      Version                                 { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpandoData();
+            var value   = new ExpandoData() { Pointer= p0 };
 
-            value.Class                                     = GetObject<ExpandoClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExpandoClass.FromPointer); // 0270DA072A00 0x10 Class                       ( 0001865CE520 ModelClassType ExpandoClass ExpandoClass ExpandoClass Pointer )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 0270DA072A40 0x20 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Class                                     = GetObject<ExpandoClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExpandoClass.FromPointer); // 02466A0D6760 0x10 Class                       ( 0001865CE520 ModelClassType ExpandoClass ExpandoClass ExpandoClass Pointer )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 02466A0D67A0 0x20 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

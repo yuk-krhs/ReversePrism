@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 024 RemainCount                              0001865F4260 ModelPrimitiveType int int int Int32
     // 028 BoxNumber                                0001865F8300 ModelPrimitiveType long long long Int64
     // 030 IsLoop                                   0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class MedalGashaRewardAllListViewModel
+    public partial class MedalGashaRewardAllListViewModel : DataModel
     {
         public List<IMedalGashaRewardListData>?         DataListRefHeaderAndRow                 { get; set; }
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardAllListViewModel();
+            var value   = new MedalGashaRewardAllListViewModel() { Pointer= p0 };
 
-            value.DataListRefHeaderAndRow                   = GetObjectList<IMedalGashaRewardListData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardListData.FromPointer); // 0270D6292458 0x10 DataListRefHeaderAndRow     ( 000185CE6458 ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270D6292498 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.HasRemainFeatured                         = GetBool(new IntPtr(p + 0x020)); // 0270D62924B8 0x20 HasRemainFeatured           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.RemainCount                               = GetInt32(new IntPtr(p + 0x024)); // 0270D62924D8 0x24 RemainCount                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.BoxNumber                                 = GetInt64(new IntPtr(p + 0x028)); // 0270D62924F8 0x28 BoxNumber                   ( 0001865F8300 ModelPrimitiveType long long long Int64 )
-            value.IsLoop                                    = GetBool(new IntPtr(p + 0x030)); // 0270D6292518 0x30 IsLoop                      ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.DataListRefHeaderAndRow                   = GetObjectList<IMedalGashaRewardListData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardListData.FromPointer); // 024666302C88 0x10 DataListRefHeaderAndRow     ( 000185CE6458 ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 024666302CC8 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.HasRemainFeatured                         = GetBool(new IntPtr(p + 0x020)); // 024666302CE8 0x20 HasRemainFeatured           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.RemainCount                               = GetInt32(new IntPtr(p + 0x024)); // 024666302D08 0x24 RemainCount                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.BoxNumber                                 = GetInt64(new IntPtr(p + 0x028)); // 024666302D28 0x28 BoxNumber                   ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.IsLoop                                    = GetBool(new IntPtr(p + 0x030)); // 024666302D48 0x30 IsLoop                      ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

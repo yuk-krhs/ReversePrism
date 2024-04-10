@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 enumerator                               IUniTaskAsyncEnumerator`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 awaiter                                  Awaiter<bool> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _TakeUntilCanceled
+    public partial class _TakeUntilCanceled : DataModel
     {
 
         public static _TakeUntilCanceled? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TakeUntilCanceled();
+            var value   = new _TakeUntilCanceled() { Pointer= p0 };
 
 
             return value;

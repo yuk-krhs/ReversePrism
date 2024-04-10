@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriAtomExSequencer
+    public partial class CriAtomExSequencer : DataModel
     {
 
         public static CriAtomExSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExSequencer();
+            var value   = new CriAtomExSequencer() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 InitURL                                  0001866722E0 ModelPrimitiveType string string string String
     // 030 CameraObject                             0001865A2380 ModelClassType Camera Camera Camera Pointer
     // 038 Webviewrect                              00018664F620 ModelEnumType Rect Rect Rect Int32
-    public partial class NativeWebview
+    public partial class NativeWebview : DataModel
     {
         public NativeWebviewObject?                     Webview                                 { get; set; }
         public string                                   InitURL                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeWebview();
+            var value   = new NativeWebview() { Pointer= p0 };
 
-            value.Webview                                   = GetObject<NativeWebviewObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.NativeWebviewObject.FromPointer); // 027004404068 0x20 Webview                     ( 000186695400 ModelClassType NativeWebviewObject NativeWebviewObject NativeWebviewObject Pointer )
-            value.InitURL                                   = GetString(new IntPtr(p + 0x028)); // 027004404088 0x28 InitURL                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CameraObject                              = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0270044040A8 0x30 CameraObject                ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
-            value.Webviewrect                               = (Rect)GetInt32(new IntPtr(p + 0x038)); // 0270044040C8 0x38 Webviewrect                 ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
+            value.Webview                                   = GetObject<NativeWebviewObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.NativeWebviewObject.FromPointer); // 0245A4434C40 0x20 Webview                     ( 000186695400 ModelClassType NativeWebviewObject NativeWebviewObject NativeWebviewObject Pointer )
+            value.InitURL                                   = GetString(new IntPtr(p + 0x028)); // 0245A4434C60 0x28 InitURL                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CameraObject                              = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0245A4434C80 0x30 CameraObject                ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
+            value.Webviewrect                               = (Rect)GetInt32(new IntPtr(p + 0x038)); // 0245A4434CA0 0x38 Webviewrect                 ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
 
             return value;
         }

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 Title                                    000186671910 ModelPrimitiveType string string string String
     // 040 BeginDate                                000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 050 ViewStacks                               000185CC58D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
-    public partial class LegacyOurStreamLiveViewingParameter
+    public partial class LegacyOurStreamLiveViewingParameter : DataModel
     {
         public bool                                     IsLive                                  { get; set; }
         public string                                   RoomName                                { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyOurStreamLiveViewingParameter();
+            var value   = new LegacyOurStreamLiveViewingParameter() { Pointer= p0 };
 
-            value.IsLive                                    = GetBool(new IntPtr(p + 0x010)); // 0270D4ECEAF8 0x10 IsLive                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RoomName                                  = GetString(new IntPtr(p + 0x018)); // 0270D4ECEB18 0x18 RoomName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.CdnURL                                    = GetString(new IntPtr(p + 0x020)); // 0270D4ECEB38 0x20 CdnURL                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.MovieURL                                  = GetString(new IntPtr(p + 0x028)); // 0270D4ECEB58 0x28 MovieURL                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsPMode                                   = GetBool(new IntPtr(p + 0x030)); // 0270D4ECEB78 0x30 IsPMode                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Title                                     = GetString(new IntPtr(p + 0x038)); // 0270D4ECEB98 0x38 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x040)); // 0270D4ECEBB8 0x40 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x050), ReversePrism.DataModels.ViewValue.FromPointer); // 0270D4ECEBD8 0x50 ViewStacks                  ( 000185CC58D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
+            value.IsLive                                    = GetBool(new IntPtr(p + 0x010)); // 024664F34710 0x10 IsLive                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RoomName                                  = GetString(new IntPtr(p + 0x018)); // 024664F34730 0x18 RoomName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.CdnURL                                    = GetString(new IntPtr(p + 0x020)); // 024664F34750 0x20 CdnURL                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.MovieURL                                  = GetString(new IntPtr(p + 0x028)); // 024664F34770 0x28 MovieURL                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsPMode                                   = GetBool(new IntPtr(p + 0x030)); // 024664F34790 0x30 IsPMode                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Title                                     = GetString(new IntPtr(p + 0x038)); // 024664F347B0 0x38 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x040)); // 024664F347D0 0x40 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x050), ReversePrism.DataModels.ViewValue.FromPointer); // 024664F347F0 0x50 ViewStacks                  ( 000185CC58D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
 
             return value;
         }

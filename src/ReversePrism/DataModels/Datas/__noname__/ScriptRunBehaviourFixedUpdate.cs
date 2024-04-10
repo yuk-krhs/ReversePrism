@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScriptRunBehaviourFixedUpdate
+    public partial class ScriptRunBehaviourFixedUpdate : DataModel
     {
 
         public static ScriptRunBehaviourFixedUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScriptRunBehaviourFixedUpdate();
+            var value   = new ScriptRunBehaviourFixedUpdate() { Pointer= p0 };
 
 
             return value;

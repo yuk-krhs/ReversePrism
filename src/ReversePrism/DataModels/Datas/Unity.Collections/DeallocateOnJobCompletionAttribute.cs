@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeallocateOnJobCompletionAttribute
+    public partial class DeallocateOnJobCompletionAttribute : DataModel
     {
 
         public static DeallocateOnJobCompletionAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeallocateOnJobCompletionAttribute();
+            var value   = new DeallocateOnJobCompletionAttribute() { Pointer= p0 };
 
 
             return value;

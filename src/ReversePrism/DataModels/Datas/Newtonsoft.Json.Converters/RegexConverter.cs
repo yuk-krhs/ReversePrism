@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 PatternName                              string IL2CPP_TYPE_STRING
     // 000 OptionsName                              string IL2CPP_TYPE_STRING
-    public partial class RegexConverter
+    public partial class RegexConverter : DataModel
     {
 
         public static RegexConverter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexConverter();
+            var value   = new RegexConverter() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 IsLittleEndian                           bool IL2CPP_TYPE_BOOLEAN
-    public partial class BitConverter
+    public partial class BitConverter : DataModel
     {
 
         public static BitConverter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitConverter();
+            var value   = new BitConverter() { Pointer= p0 };
 
 
             return value;

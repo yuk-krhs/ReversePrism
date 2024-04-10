@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 000 ExemplarsFieldNumber                     int IL2CPP_TYPE_I4
     // 010 _repeated_exemplars_codec                FieldCodec`1<Exemplar> IL2CPP_TYPE_GENERICINST
     // 048 Exemplars                                000185CF8908 ModelClassListType RepeatedField`1<Exemplar> RepeatedField`1<Exemplar> List<Exemplar> Pointer
-    public partial class Distribution
+    public partial class Distribution : DataModel
     {
         public long                                     Count                                   { get; set; }
         public double                                   Mean                                    { get; set; }
@@ -42,15 +42,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Distribution();
+            var value   = new Distribution() { Pointer= p0 };
 
-            value.Count                                     = GetInt64(new IntPtr(p + 0x018)); // 0270DA7928E8 0x18 Count                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Mean                                      = GetDouble(new IntPtr(p + 0x020)); // 0270DA792928 0x20 Mean                        ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.SumOfSquaredDeviation                     = GetDouble(new IntPtr(p + 0x028)); // 0270DA792968 0x28 SumOfSquaredDeviation       ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Range                                     = GetObject<Range>(new IntPtr(p + 0x030), ReversePrism.DataModels.Range.FromPointer); // 0270DA7929A8 0x30 Range                       ( 00018677A050 ModelClassType Range Range Range Pointer )
-            value.BucketOptions                             = GetObject<BucketOptions>(new IntPtr(p + 0x038), ReversePrism.DataModels.BucketOptions.FromPointer); // 0270DA7929E8 0x38 BucketOptions               ( 0001867798D0 ModelClassType BucketOptions BucketOptions BucketOptions Pointer )
-            value.BucketCounts                              = GetInt64List(new IntPtr(p + 0x040)); // 0270DA792A48 0x40 BucketCounts                ( 000185CE1F28 ModelPrimitiveListType RepeatedField`1<long> RepeatedField`1<long> List<long> Pointer )
-            value.Exemplars                                 = GetObjectList<Exemplar>(new IntPtr(p + 0x048), ReversePrism.DataModels.Exemplar.FromPointer); // 0270DA792AA8 0x48 Exemplars                   ( 000185CF8908 ModelClassListType RepeatedField`1<Exemplar> RepeatedField`1<Exemplar> List<Exemplar> Pointer )
+            value.Count                                     = GetInt64(new IntPtr(p + 0x018)); // 02466A7F7138 0x18 Count                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Mean                                      = GetDouble(new IntPtr(p + 0x020)); // 02466A7F7178 0x20 Mean                        ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.SumOfSquaredDeviation                     = GetDouble(new IntPtr(p + 0x028)); // 02466A7F71B8 0x28 SumOfSquaredDeviation       ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Range                                     = GetObject<Range>(new IntPtr(p + 0x030), ReversePrism.DataModels.Range.FromPointer); // 02466A7F71F8 0x30 Range                       ( 00018677A050 ModelClassType Range Range Range Pointer )
+            value.BucketOptions                             = GetObject<BucketOptions>(new IntPtr(p + 0x038), ReversePrism.DataModels.BucketOptions.FromPointer); // 02466A7F7238 0x38 BucketOptions               ( 0001867798D0 ModelClassType BucketOptions BucketOptions BucketOptions Pointer )
+            value.BucketCounts                              = GetInt64List(new IntPtr(p + 0x040)); // 02466A7F7298 0x40 BucketCounts                ( 000185CE1F28 ModelPrimitiveListType RepeatedField`1<long> RepeatedField`1<long> List<long> Pointer )
+            value.Exemplars                                 = GetObjectList<Exemplar>(new IntPtr(p + 0x048), ReversePrism.DataModels.Exemplar.FromPointer); // 02466A7F72F8 0x48 Exemplars                   ( 000185CF8908 ModelClassListType RepeatedField`1<Exemplar> RepeatedField`1<Exemplar> List<Exemplar> Pointer )
 
             return value;
         }

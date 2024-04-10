@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBannerStatus
+    public partial class IBannerStatus : DataModel
     {
 
         public static IBannerStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBannerStatus();
+            var value   = new IBannerStatus() { Pointer= p0 };
 
 
             return value;

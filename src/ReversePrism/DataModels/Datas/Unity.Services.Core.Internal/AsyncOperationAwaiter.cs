@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Operation                              000186707F50 ModelClassType IAsyncOperation IAsyncOperation IAsyncOperation Pointer
-    public partial class AsyncOperationAwaiter
+    public partial class AsyncOperationAwaiter : DataModel
     {
         public IAsyncOperation?                         M_Operation                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationAwaiter();
+            var value   = new AsyncOperationAwaiter() { Pointer= p0 };
 
-            value.M_Operation                               = GetObject<IAsyncOperation>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAsyncOperation.FromPointer); // 0270DBA5F878 0x10 M_Operation                 ( 000186707F50 ModelClassType IAsyncOperation IAsyncOperation IAsyncOperation Pointer )
+            value.M_Operation                               = GetObject<IAsyncOperation>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAsyncOperation.FromPointer); // 02466BAE6D58 0x10 M_Operation                 ( 000186707F50 ModelClassType IAsyncOperation IAsyncOperation IAsyncOperation Pointer )
 
             return value;
         }

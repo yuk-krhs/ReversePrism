@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MaxUnitNameLength                        int IL2CPP_TYPE_I4
     // 000 RestScenarioIDSuffix                     string IL2CPP_TYPE_STRING
     // 000 AdviceScenarioIDSuffix                   string IL2CPP_TYPE_STRING
-    public partial class ProduceConst
+    public partial class ProduceConst : DataModel
     {
 
         public static ProduceConst? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceConst();
+            var value   = new ProduceConst() { Pointer= p0 };
 
 
             return value;

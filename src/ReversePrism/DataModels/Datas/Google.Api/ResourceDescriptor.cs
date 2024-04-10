@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 000 StyleFieldNumber                         int IL2CPP_TYPE_I4
     // 010 _repeated_style_codec                    FieldCodec`1<Style> IL2CPP_TYPE_GENERICINST
     // 048 Style                                    000185CF9B48 ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer
-    public partial class ResourceDescriptor
+    public partial class ResourceDescriptor : DataModel
     {
         public string                                   Type                                    { get; set; }
         public List<string>?                            Pattern                                 { get; set; }
@@ -42,15 +42,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceDescriptor();
+            var value   = new ResourceDescriptor() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270DA848B50 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetStringList(new IntPtr(p + 0x020)); // 0270DA848BB0 0x20 Pattern                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.NameField                                 = GetString(new IntPtr(p + 0x028)); // 0270DA848BF0 0x28 NameField                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.History                                   = (History)GetInt32(new IntPtr(p + 0x030)); // 0270DA848C30 0x30 History                     ( 000186572690 ModelEnumType History History History Int32 )
-            value.Plural                                    = GetString(new IntPtr(p + 0x038)); // 0270DA848C70 0x38 Plural                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Singular                                  = GetString(new IntPtr(p + 0x040)); // 0270DA848CB0 0x40 Singular                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Style                                     = GetEnumList<Style>(new IntPtr(p + 0x048)); // 0270DA848D10 0x48 Style                       ( 000185CF9B48 ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466A896048 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetStringList(new IntPtr(p + 0x020)); // 02466A8960A8 0x20 Pattern                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.NameField                                 = GetString(new IntPtr(p + 0x028)); // 02466A8960E8 0x28 NameField                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.History                                   = (History)GetInt32(new IntPtr(p + 0x030)); // 02466A896128 0x30 History                     ( 000186572690 ModelEnumType History History History Int32 )
+            value.Plural                                    = GetString(new IntPtr(p + 0x038)); // 02466A896168 0x38 Plural                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Singular                                  = GetString(new IntPtr(p + 0x040)); // 02466A8961A8 0x40 Singular                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Style                                     = GetEnumList<Style>(new IntPtr(p + 0x048)); // 02466A896208 0x48 Style                       ( 000185CF9B48 ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer )
 
             return value;
         }

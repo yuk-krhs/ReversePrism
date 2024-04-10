@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ArgumentLabel                            000186671910 ModelPrimitiveType string string string String
-    public partial class InitViewParameter
+    public partial class InitViewParameter : DataModel
     {
         public string                                   ArgumentLabel                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitViewParameter();
+            var value   = new InitViewParameter() { Pointer= p0 };
 
-            value.ArgumentLabel                             = GetString(new IntPtr(p + 0x010)); // 0270DAFEEF40 0x10 ArgumentLabel               ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArgumentLabel                             = GetString(new IntPtr(p + 0x010)); // 02466B05AF40 0x10 ArgumentLabel               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

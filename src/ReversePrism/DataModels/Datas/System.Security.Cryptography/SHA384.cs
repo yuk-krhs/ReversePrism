@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SHA384
+    public partial class SHA384 : DataModel
     {
 
         public static SHA384? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SHA384();
+            var value   = new SHA384() { Pointer= p0 };
 
 
             return value;

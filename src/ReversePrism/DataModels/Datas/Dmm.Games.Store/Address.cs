@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Formatted                                0001866722E0 ModelPrimitiveType string string string String
-    public partial class Address
+    public partial class Address : DataModel
     {
         public string                                   Formatted                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Address();
+            var value   = new Address() { Pointer= p0 };
 
-            value.Formatted                                 = GetString(new IntPtr(p + 0x010)); // 0270DB4C6730 0x10 Formatted                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Formatted                                 = GetString(new IntPtr(p + 0x010)); // 02466B553D18 0x10 Formatted                   ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

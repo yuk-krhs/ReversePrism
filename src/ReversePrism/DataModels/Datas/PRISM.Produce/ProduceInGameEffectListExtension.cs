@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceInGameEffectListExtension
+    public partial class ProduceInGameEffectListExtension : DataModel
     {
 
         public static ProduceInGameEffectListExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceInGameEffectListExtension();
+            var value   = new ProduceInGameEffectListExtension() { Pointer= p0 };
 
 
             return value;

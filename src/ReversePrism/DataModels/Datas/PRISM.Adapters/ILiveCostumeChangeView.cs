@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveCostumeChangeView
+    public partial class ILiveCostumeChangeView : DataModel
     {
 
         public static ILiveCostumeChangeView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveCostumeChangeView();
+            var value   = new ILiveCostumeChangeView() { Pointer= p0 };
 
 
             return value;

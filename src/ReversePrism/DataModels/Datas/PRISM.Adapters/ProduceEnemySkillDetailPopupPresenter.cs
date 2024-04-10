@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     0001865E61F0 ModelClassType IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView Pointer
     // 018 ViewModel                                00018653DAE0 ModelClassType ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel Pointer
     // 020 Disposable                               0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    public partial class ProduceEnemySkillDetailPopupPresenter
+    public partial class ProduceEnemySkillDetailPopupPresenter : DataModel
     {
         public IProduceEnemySkillDetailPopupView?       View                                    { get; set; }
         public ProduceEnemySkillDetailPopupViewModel?   ViewModel                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceEnemySkillDetailPopupPresenter();
+            var value   = new ProduceEnemySkillDetailPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceEnemySkillDetailPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceEnemySkillDetailPopupView.FromPointer); // 0270D648C598 0x10 View                        ( 0001865E61F0 ModelClassType IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView Pointer )
-            value.ViewModel                                 = GetObject<ProduceEnemySkillDetailPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceEnemySkillDetailPopupViewModel.FromPointer); // 0270D648C5B8 0x18 ViewModel                   ( 00018653DAE0 ModelClassType ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel Pointer )
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D648C5D8 0x20 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.View                                      = GetObject<IProduceEnemySkillDetailPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceEnemySkillDetailPopupView.FromPointer); // 0246664FB650 0x10 View                        ( 0001865E61F0 ModelClassType IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView IProduceEnemySkillDetailPopupView Pointer )
+            value.ViewModel                                 = GetObject<ProduceEnemySkillDetailPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceEnemySkillDetailPopupViewModel.FromPointer); // 0246664FB670 0x18 ViewModel                   ( 00018653DAE0 ModelClassType ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel ProduceEnemySkillDetailPopupViewModel Pointer )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246664FB690 0x20 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

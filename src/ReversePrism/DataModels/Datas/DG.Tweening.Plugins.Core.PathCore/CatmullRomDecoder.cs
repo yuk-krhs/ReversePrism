@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _PartialControlPs                        ControlPoint[] IL2CPP_TYPE_SZARRAY
     // 008 _PartialWps                              Vector3[] IL2CPP_TYPE_SZARRAY
-    public partial class CatmullRomDecoder
+    public partial class CatmullRomDecoder : DataModel
     {
 
         public static CatmullRomDecoder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatmullRomDecoder();
+            var value   = new CatmullRomDecoder() { Pointer= p0 };
 
 
             return value;

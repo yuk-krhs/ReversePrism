@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NonDrawingGraphic
+    public partial class NonDrawingGraphic : DataModel
     {
 
         public static NonDrawingGraphic? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NonDrawingGraphic();
+            var value   = new NonDrawingGraphic() { Pointer= p0 };
 
 
             return value;

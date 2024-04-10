@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 080 LiveBonusUsageSettingStatus              0001866A8B40 ModelClassType NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus Pointer
     // 088 SkipLiveStatus                           0001865178E0 ModelClassType SkipLiveStatus SkipLiveStatus SkipLiveStatus Pointer
     // 090 IsEvent                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveUnitConfirmationModel
+    public partial class LiveUnitConfirmationModel : DataModel
     {
         public LiveUnitConfirmationSaveData?            SaveData                                { get; set; }
         public RhythmGameOption?                        Option                                  { get; set; }
@@ -40,18 +40,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitConfirmationModel();
+            var value   = new LiveUnitConfirmationModel() { Pointer= p0 };
 
-            value.SaveData                                  = GetObject<LiveUnitConfirmationSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveUnitConfirmationSaveData.FromPointer); // 0270D522A7F8 0x30 SaveData                    ( 00018658A490 ModelClassType LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData Pointer )
-            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x038), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 0270D522A818 0x38 Option                      ( 000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
-            value.IdolService                               = GetObject<ICachedIdolService>(new IntPtr(p + 0x040), ReversePrism.DataModels.ICachedIdolService.FromPointer); // 0270D522A838 0x40 IdolService                 ( 000186716AD0 ModelClassType ICachedIdolService ICachedIdolService ICachedIdolService Pointer )
-            value.EventPeriodStatus                         = GetObject<IPeriodStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPeriodStatus.FromPointer); // 0270D522A898 0x58 EventPeriodStatus           ( 0001865D4260 ModelClassType IPeriodStatus IPeriodStatus IPeriodStatus Pointer )
-            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x060)); // 0270D522A8B8 0x60 MusicDifficulty             ( 00018661C990 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.LBModel                                   = GetObject<StaminaModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.StaminaModel.FromPointer); // 0270D522A8D8 0x68 LBModel                     ( 000186565050 ModelClassType StaminaModel StaminaModel StaminaModel Pointer )
-            value.AutoLiveStatus                            = GetObject<AutoLiveStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.AutoLiveStatus.FromPointer); // 0270D522A918 0x78 AutoLiveStatus              ( 000186726BE0 ModelClassType AutoLiveStatus AutoLiveStatus AutoLiveStatus Pointer )
-            value.LiveBonusUsageSettingStatus               = GetObject<NormalLiveLiveBonusUsageSettingStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.NormalLiveLiveBonusUsageSettingStatus.FromPointer); // 0270D522A938 0x80 LiveBonusUsageSettingStatus ( 0001866A8B40 ModelClassType NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus Pointer )
-            value.SkipLiveStatus                            = GetObject<SkipLiveStatus>(new IntPtr(p + 0x088), ReversePrism.DataModels.SkipLiveStatus.FromPointer); // 0270D522A958 0x88 SkipLiveStatus              ( 0001865178E0 ModelClassType SkipLiveStatus SkipLiveStatus SkipLiveStatus Pointer )
-            value.IsEvent                                   = GetBool(new IntPtr(p + 0x090)); // 0270D522A978 0x90 IsEvent                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SaveData                                  = GetObject<LiveUnitConfirmationSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveUnitConfirmationSaveData.FromPointer); // 02466529F8A0 0x30 SaveData                    ( 00018658A490 ModelClassType LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData LiveUnitConfirmationSaveData Pointer )
+            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x038), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 02466529F8C0 0x38 Option                      ( 000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
+            value.IdolService                               = GetObject<ICachedIdolService>(new IntPtr(p + 0x040), ReversePrism.DataModels.ICachedIdolService.FromPointer); // 02466529F8E0 0x40 IdolService                 ( 000186716AD0 ModelClassType ICachedIdolService ICachedIdolService ICachedIdolService Pointer )
+            value.EventPeriodStatus                         = GetObject<IPeriodStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPeriodStatus.FromPointer); // 02466529F940 0x58 EventPeriodStatus           ( 0001865D4260 ModelClassType IPeriodStatus IPeriodStatus IPeriodStatus Pointer )
+            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x060)); // 02466529F960 0x60 MusicDifficulty             ( 00018661C990 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.LBModel                                   = GetObject<StaminaModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.StaminaModel.FromPointer); // 02466529F980 0x68 LBModel                     ( 000186565050 ModelClassType StaminaModel StaminaModel StaminaModel Pointer )
+            value.AutoLiveStatus                            = GetObject<AutoLiveStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.AutoLiveStatus.FromPointer); // 02466529F9C0 0x78 AutoLiveStatus              ( 000186726BE0 ModelClassType AutoLiveStatus AutoLiveStatus AutoLiveStatus Pointer )
+            value.LiveBonusUsageSettingStatus               = GetObject<NormalLiveLiveBonusUsageSettingStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.NormalLiveLiveBonusUsageSettingStatus.FromPointer); // 02466529F9E0 0x80 LiveBonusUsageSettingStatus ( 0001866A8B40 ModelClassType NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus NormalLiveLiveBonusUsageSettingStatus Pointer )
+            value.SkipLiveStatus                            = GetObject<SkipLiveStatus>(new IntPtr(p + 0x088), ReversePrism.DataModels.SkipLiveStatus.FromPointer); // 02466529FA00 0x88 SkipLiveStatus              ( 0001865178E0 ModelClassType SkipLiveStatus SkipLiveStatus SkipLiveStatus Pointer )
+            value.IsEvent                                   = GetBool(new IntPtr(p + 0x090)); // 02466529FA20 0x90 IsEvent                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

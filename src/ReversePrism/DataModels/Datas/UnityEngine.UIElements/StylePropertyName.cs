@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865C9D50 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
     // 018 Name                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class StylePropertyName
+    public partial class StylePropertyName : DataModel
     {
         public StylePropertyId                          Id                                      { get; set; }
         public string                                   Name                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StylePropertyName();
+            var value   = new StylePropertyName() { Pointer= p0 };
 
-            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0270067D1D08 0x10 Id                          ( 0001865C9D50 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270067D1D28 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0245A6793DF8 0x10 Id                          ( 0001865C9D50 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A6793E18 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

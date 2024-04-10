@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 HaveFreeJewel                            0001865F7700 ModelPrimitiveType long long long Int64
     // 020 HavePaidJewel                            0001865F7700 ModelPrimitiveType long long long Int64
     // 028 PersonalLocalSave                        000186737EF0 ModelClassType PersonalLocalSave PersonalLocalSave PersonalLocalSave Pointer
-    public partial class ShopPopupModel
+    public partial class ShopPopupModel : DataModel
     {
         public List<ShopProductParam>?                  ProductParams                           { get; set; }
         public long                                     HaveFreeJewel                           { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopPopupModel();
+            var value   = new ShopPopupModel() { Pointer= p0 };
 
-            value.ProductParams                             = GetObjectList<ShopProductParam>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopProductParam.FromPointer); // 0270D5537350 0x10 ProductParams               ( 000185D093B8 ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer )
-            value.HaveFreeJewel                             = GetInt64(new IntPtr(p + 0x018)); // 0270D5537370 0x18 HaveFreeJewel               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.HavePaidJewel                             = GetInt64(new IntPtr(p + 0x020)); // 0270D5537390 0x20 HavePaidJewel               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.PersonalLocalSave                         = GetObject<PersonalLocalSave>(new IntPtr(p + 0x028), ReversePrism.DataModels.PersonalLocalSave.FromPointer); // 0270D55373B0 0x28 PersonalLocalSave           ( 000186737EF0 ModelClassType PersonalLocalSave PersonalLocalSave PersonalLocalSave Pointer )
+            value.ProductParams                             = GetObjectList<ShopProductParam>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopProductParam.FromPointer); // 0246655A91D8 0x10 ProductParams               ( 000185D093B8 ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer )
+            value.HaveFreeJewel                             = GetInt64(new IntPtr(p + 0x018)); // 0246655A91F8 0x18 HaveFreeJewel               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.HavePaidJewel                             = GetInt64(new IntPtr(p + 0x020)); // 0246655A9218 0x20 HavePaidJewel               ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.PersonalLocalSave                         = GetObject<PersonalLocalSave>(new IntPtr(p + 0x028), ReversePrism.DataModels.PersonalLocalSave.FromPointer); // 0246655A9238 0x28 PersonalLocalSave           ( 000186737EF0 ModelClassType PersonalLocalSave PersonalLocalSave PersonalLocalSave Pointer )
 
             return value;
         }

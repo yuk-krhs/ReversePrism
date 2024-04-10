@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 CacheLabel                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 03C CacheIsSubSeason                         000186594D10 ModelPrimitiveType bool bool bool Bool
     // 03D IsGetAdvOptionResponse                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class PlayScenarioController
+    public partial class PlayScenarioController : DataModel
     {
         public VitalityGauge?                           VitalityGauge                           { get; set; }
         public SupportEffectDemonstrateUIContent?       SupportEffectDemonstrateUIContent       { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayScenarioController();
+            var value   = new PlayScenarioController() { Pointer= p0 };
 
-            value.VitalityGauge                             = GetObject<VitalityGauge>(new IntPtr(p + 0x010), ReversePrism.DataModels.VitalityGauge.FromPointer); // 0270D4CF5248 0x10 VitalityGauge               ( 00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer )
-            value.SupportEffectDemonstrateUIContent         = GetObject<SupportEffectDemonstrateUIContent>(new IntPtr(p + 0x018), ReversePrism.DataModels.SupportEffectDemonstrateUIContent.FromPointer); // 0270D4CF5268 0x18 SupportEffectDemonstrateUIContent ( 0001865F0A00 ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer )
-            value.StartProduceAdvReply                      = GetObject<IStartProduceAdvReply>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStartProduceAdvReply.FromPointer); // 0270D4CF5288 0x20 StartProduceAdvReply        ( 0001866505E0 ModelClassType IStartProduceAdvReply IStartProduceAdvReply IStartProduceAdvReply Pointer )
-            value.AdvOptionReply                            = GetObject<ISelectProduceAdvOptionReply>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISelectProduceAdvOptionReply.FromPointer); // 0270D4CF52A8 0x28 AdvOptionReply              ( 000186631230 ModelClassType ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply Pointer )
-            value.CacheCueName                              = GetString(new IntPtr(p + 0x030)); // 0270D4CF52C8 0x30 CacheCueName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.CacheLabel                                = GetInt32(new IntPtr(p + 0x038)); // 0270D4CF52E8 0x38 CacheLabel                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CacheIsSubSeason                          = GetBool(new IntPtr(p + 0x03C)); // 0270D4CF5308 0x3C CacheIsSubSeason            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsGetAdvOptionResponse                    = GetBool(new IntPtr(p + 0x03D)); // 0270D4CF5328 0x3D IsGetAdvOptionResponse      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.VitalityGauge                             = GetObject<VitalityGauge>(new IntPtr(p + 0x010), ReversePrism.DataModels.VitalityGauge.FromPointer); // 024664D69248 0x10 VitalityGauge               ( 00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer )
+            value.SupportEffectDemonstrateUIContent         = GetObject<SupportEffectDemonstrateUIContent>(new IntPtr(p + 0x018), ReversePrism.DataModels.SupportEffectDemonstrateUIContent.FromPointer); // 024664D69268 0x18 SupportEffectDemonstrateUIContent ( 0001865F0A00 ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer )
+            value.StartProduceAdvReply                      = GetObject<IStartProduceAdvReply>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStartProduceAdvReply.FromPointer); // 024664D69288 0x20 StartProduceAdvReply        ( 0001866505E0 ModelClassType IStartProduceAdvReply IStartProduceAdvReply IStartProduceAdvReply Pointer )
+            value.AdvOptionReply                            = GetObject<ISelectProduceAdvOptionReply>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISelectProduceAdvOptionReply.FromPointer); // 024664D692A8 0x28 AdvOptionReply              ( 000186631230 ModelClassType ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply Pointer )
+            value.CacheCueName                              = GetString(new IntPtr(p + 0x030)); // 024664D692C8 0x30 CacheCueName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.CacheLabel                                = GetInt32(new IntPtr(p + 0x038)); // 024664D692E8 0x38 CacheLabel                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CacheIsSubSeason                          = GetBool(new IntPtr(p + 0x03C)); // 024664D69308 0x3C CacheIsSubSeason            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsGetAdvOptionResponse                    = GetBool(new IntPtr(p + 0x03D)); // 024664D69328 0x3D IsGetAdvOptionResponse      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

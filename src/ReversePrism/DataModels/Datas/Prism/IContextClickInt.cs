@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IContextClickInt
+    public partial class IContextClickInt : DataModel
     {
 
         public static IContextClickInt? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IContextClickInt();
+            var value   = new IContextClickInt() { Pointer= p0 };
 
 
             return value;

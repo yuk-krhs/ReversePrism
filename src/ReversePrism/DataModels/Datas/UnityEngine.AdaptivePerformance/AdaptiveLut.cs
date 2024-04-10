@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultLutBias                         0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptiveLut
+    public partial class AdaptiveLut : DataModel
     {
         public float                                    M_DefaultLutBias                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveLut();
+            var value   = new AdaptiveLut() { Pointer= p0 };
 
-            value.M_DefaultLutBias                          = GetSingle(new IntPtr(p + 0x040)); // 0270DB689AD8 0x40 M_DefaultLutBias            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DefaultLutBias                          = GetSingle(new IntPtr(p + 0x040)); // 02466B715D98 0x40 M_DefaultLutBias            ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

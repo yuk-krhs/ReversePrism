@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AssemblyIsEditorAssembly
+    public partial class AssemblyIsEditorAssembly : DataModel
     {
 
         public static AssemblyIsEditorAssembly? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyIsEditorAssembly();
+            var value   = new AssemblyIsEditorAssembly() { Pointer= p0 };
 
 
             return value;

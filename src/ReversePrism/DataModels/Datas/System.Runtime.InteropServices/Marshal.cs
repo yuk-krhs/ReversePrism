@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 SystemDefaultCharSize                    int IL2CPP_TYPE_I4
     // 008 MarshalerInstanceCache                   Dictionary`2<ValueTuple`2<Type, string>, ICustomMarshaler> IL2CPP_TYPE_GENERICINST
     // 010 MarshalerInstanceCacheLock               <object> IL2CPP_TYPE_OBJECT
-    public partial class Marshal
+    public partial class Marshal : DataModel
     {
 
         public static Marshal? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Marshal();
+            var value   = new Marshal() { Pointer= p0 };
 
 
             return value;

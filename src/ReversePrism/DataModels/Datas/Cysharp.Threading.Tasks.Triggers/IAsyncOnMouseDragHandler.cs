@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnMouseDragHandler
+    public partial class IAsyncOnMouseDragHandler : DataModel
     {
 
         public static IAsyncOnMouseDragHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnMouseDragHandler();
+            var value   = new IAsyncOnMouseDragHandler() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 <Response>k__BackingField                <var> IL2CPP_TYPE_VAR
     // 000 <WriteFlags>k__BackingField              WriteFlags IL2CPP_TYPE_VALUETYPE
-    public partial class ResponseWithFlags
+    public partial class ResponseWithFlags : DataModel
     {
 
         public static ResponseWithFlags? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResponseWithFlags();
+            var value   = new ResponseWithFlags() { Pointer= p0 };
 
 
             return value;

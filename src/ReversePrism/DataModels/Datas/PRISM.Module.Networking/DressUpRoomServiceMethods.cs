@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 GetDressUpRoomCostumeList                Method`2<IGetDressUpRoomCostumeListArgs, IGetDressUpRoomCostumeListReply> IL2CPP_TYPE_GENERICINST
     // 018 SetDressUpRoomCostume                    Method`2<ISetDressUpRoomCostumeArgs, ISetDressUpRoomCostumeReply> IL2CPP_TYPE_GENERICINST
-    public partial class DressUpRoomServiceMethods
+    public partial class DressUpRoomServiceMethods : DataModel
     {
 
         public static DressUpRoomServiceMethods? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressUpRoomServiceMethods();
+            var value   = new DressUpRoomServiceMethods() { Pointer= p0 };
 
 
             return value;

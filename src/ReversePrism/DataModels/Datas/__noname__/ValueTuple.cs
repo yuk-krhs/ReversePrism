@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 048 Values                                   000185CB9068 ModelClassListType Value[] Value[] List<Value> Pointer
     // 050 PinnedElementIndex                       0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class ValueTuple
+    public partial class ValueTuple : DataModel
     {
         public List<Value>?                             Values                                  { get; set; }
         public int                                      PinnedElementIndex                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueTuple();
+            var value   = new ValueTuple() { Pointer= p0 };
 
-            value.Values                                    = GetObjectList<Value>(new IntPtr(p + 0x048), ReversePrism.DataModels.Value.FromPointer); // 0270D9189E28 0x48 Values                      ( 000185CB9068 ModelClassListType Value[] Value[] List<Value> Pointer )
-            value.PinnedElementIndex                        = GetInt32(new IntPtr(p + 0x050)); // 0270D9189E48 0x50 PinnedElementIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Values                                    = GetObjectList<Value>(new IntPtr(p + 0x048), ReversePrism.DataModels.Value.FromPointer); // 0246691DC680 0x48 Values                      ( 000185CB9068 ModelClassListType Value[] Value[] List<Value> Pointer )
+            value.PinnedElementIndex                        = GetInt32(new IntPtr(p + 0x050)); // 0246691DC6A0 0x50 PinnedElementIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

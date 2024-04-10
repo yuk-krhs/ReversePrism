@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlIgnoreAttribute
+    public partial class XmlIgnoreAttribute : DataModel
     {
 
         public static XmlIgnoreAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlIgnoreAttribute();
+            var value   = new XmlIgnoreAttribute() { Pointer= p0 };
 
 
             return value;

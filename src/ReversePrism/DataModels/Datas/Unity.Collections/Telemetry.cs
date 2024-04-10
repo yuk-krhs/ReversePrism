@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 k_MaxEventsPerHour                       int IL2CPP_TYPE_I4
     // 000 k_MaxNumberOfElements                    int IL2CPP_TYPE_I4
     // 000 k_Version                                int IL2CPP_TYPE_I4
-    public partial class Telemetry
+    public partial class Telemetry : DataModel
     {
 
         public static Telemetry? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Telemetry();
+            var value   = new Telemetry() { Pointer= p0 };
 
 
             return value;

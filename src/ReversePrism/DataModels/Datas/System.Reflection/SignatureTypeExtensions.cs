@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SignatureTypeExtensions
+    public partial class SignatureTypeExtensions : DataModel
     {
 
         public static SignatureTypeExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignatureTypeExtensions();
+            var value   = new SignatureTypeExtensions() { Pointer= p0 };
 
 
             return value;

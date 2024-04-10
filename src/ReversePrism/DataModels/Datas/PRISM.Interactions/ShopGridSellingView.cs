@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 GridView                                 00018675B4B0 ModelClassType ShopGoodsGridView ShopGoodsGridView ShopGoodsGridView Pointer
     // 028 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    public partial class ShopGridSellingView
+    public partial class ShopGridSellingView : DataModel
     {
         public ShopGoodsGridView?                       GridView                                { get; set; }
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopGridSellingView();
+            var value   = new ShopGridSellingView() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<ShopGoodsGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopGoodsGridView.FromPointer); // 0270DB7E1C48 0x20 GridView                    ( 00018675B4B0 ModelClassType ShopGoodsGridView ShopGoodsGridView ShopGoodsGridView Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB7E1C68 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GridView                                  = GetObject<ShopGoodsGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopGoodsGridView.FromPointer); // 02466B871BB0 0x20 GridView                    ( 00018675B4B0 ModelClassType ShopGoodsGridView ShopGoodsGridView ShopGoodsGridView Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B871BD0 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
 
             return value;
         }

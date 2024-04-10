@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 SongId                                   000186672F10 ModelPrimitiveType string string string String
     // 018 StageZ                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 01C DelayFrame                               0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstAuditionSettings
+    public partial class MstAuditionSettings : DataModel
     {
         public string                                   SongId                                  { get; set; }
         public int                                      StageZ                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstAuditionSettings();
+            var value   = new MstAuditionSettings() { Pointer= p0 };
 
-            value.SongId                                    = GetString(new IntPtr(p + 0x010)); // 02700459CB68 0x10 SongId                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.StageZ                                    = GetInt32(new IntPtr(p + 0x018)); // 02700459CB88 0x18 StageZ                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DelayFrame                                = GetInt32(new IntPtr(p + 0x01C)); // 02700459CBA8 0x1C DelayFrame                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SongId                                    = GetString(new IntPtr(p + 0x010)); // 0245A4618120 0x10 SongId                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.StageZ                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A4618140 0x18 StageZ                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DelayFrame                                = GetInt32(new IntPtr(p + 0x01C)); // 0245A4618160 0x1C DelayFrame                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

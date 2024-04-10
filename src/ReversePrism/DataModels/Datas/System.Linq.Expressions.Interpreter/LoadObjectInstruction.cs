@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _value                                   <object> IL2CPP_TYPE_OBJECT
-    public partial class LoadObjectInstruction
+    public partial class LoadObjectInstruction : DataModel
     {
 
         public static LoadObjectInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadObjectInstruction();
+            var value   = new LoadObjectInstruction() { Pointer= p0 };
 
 
             return value;

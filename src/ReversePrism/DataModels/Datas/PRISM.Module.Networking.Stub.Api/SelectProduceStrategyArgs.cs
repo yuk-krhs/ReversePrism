@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstProduceStrategyIdFieldNumber          int IL2CPP_TYPE_I4
     // 018 MstProduceStrategyId                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SelectProduceStrategyArgs
+    public partial class SelectProduceStrategyArgs : DataModel
     {
         public int                                      MstProduceStrategyId                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectProduceStrategyArgs();
+            var value   = new SelectProduceStrategyArgs() { Pointer= p0 };
 
-            value.MstProduceStrategyId                      = GetInt32(new IntPtr(p + 0x018)); // 0270D259C2F0 0x18 MstProduceStrategyId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceStrategyId                      = GetInt32(new IntPtr(p + 0x018)); // 0246625645C0 0x18 MstProduceStrategyId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

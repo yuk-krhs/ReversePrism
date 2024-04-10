@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Container                                000186736390 ModelClassType ServerServiceContainer ServerServiceContainer ServerServiceContainer Pointer
-    public partial class ResettableServiceContainer
+    public partial class ResettableServiceContainer : DataModel
     {
         public ServerServiceContainer?                  Container                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResettableServiceContainer();
+            var value   = new ResettableServiceContainer() { Pointer= p0 };
 
-            value.Container                                 = GetObject<ServerServiceContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServerServiceContainer.FromPointer); // 027003A344C0 0x10 Container                   ( 000186736390 ModelClassType ServerServiceContainer ServerServiceContainer ServerServiceContainer Pointer )
+            value.Container                                 = GetObject<ServerServiceContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServerServiceContainer.FromPointer); // 0245A3A3F360 0x10 Container                   ( 000186736390 ModelClassType ServerServiceContainer ServerServiceContainer ServerServiceContainer Pointer )
 
             return value;
         }

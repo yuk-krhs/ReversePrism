@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 NsOffset                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C NsLength                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 Referred                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class XmlnsAttribute
+    public partial class XmlnsAttribute : DataModel
     {
         public int                                      PrefixOffset                            { get; set; }
         public int                                      PrefixLength                            { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlnsAttribute();
+            var value   = new XmlnsAttribute() { Pointer= p0 };
 
-            value.PrefixOffset                              = GetInt32(new IntPtr(p + 0x010)); // 0270D7C61098 0x10 PrefixOffset                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PrefixLength                              = GetInt32(new IntPtr(p + 0x014)); // 0270D7C610B8 0x14 PrefixLength                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NsOffset                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D7C610D8 0x18 NsOffset                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NsLength                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D7C610F8 0x1C NsLength                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Referred                                  = GetBool(new IntPtr(p + 0x020)); // 0270D7C61118 0x20 Referred                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.PrefixOffset                              = GetInt32(new IntPtr(p + 0x010)); // 024667CB9098 0x10 PrefixOffset                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PrefixLength                              = GetInt32(new IntPtr(p + 0x014)); // 024667CB90B8 0x14 PrefixLength                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NsOffset                                  = GetInt32(new IntPtr(p + 0x018)); // 024667CB90D8 0x18 NsOffset                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NsLength                                  = GetInt32(new IntPtr(p + 0x01C)); // 024667CB90F8 0x1C NsLength                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Referred                                  = GetBool(new IntPtr(p + 0x020)); // 024667CB9118 0x20 Referred                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

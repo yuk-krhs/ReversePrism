@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 projectFolder                            string IL2CPP_TYPE_STRING
-    public partial class StackTraceUtility
+    public partial class StackTraceUtility : DataModel
     {
 
         public static StackTraceUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StackTraceUtility();
+            var value   = new StackTraceUtility() { Pointer= p0 };
 
 
             return value;

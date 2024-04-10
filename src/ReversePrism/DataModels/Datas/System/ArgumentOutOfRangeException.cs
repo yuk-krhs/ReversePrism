@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 098 _actualValue                             <object> IL2CPP_TYPE_OBJECT
-    public partial class ArgumentOutOfRangeException
+    public partial class ArgumentOutOfRangeException : DataModel
     {
 
         public static ArgumentOutOfRangeException? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArgumentOutOfRangeException();
+            var value   = new ArgumentOutOfRangeException() { Pointer= p0 };
 
 
             return value;

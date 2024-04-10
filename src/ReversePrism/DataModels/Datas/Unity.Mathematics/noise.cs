@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class noise
+    public partial class noise : DataModel
     {
 
         public static noise? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new noise();
+            var value   = new noise() { Pointer= p0 };
 
 
             return value;

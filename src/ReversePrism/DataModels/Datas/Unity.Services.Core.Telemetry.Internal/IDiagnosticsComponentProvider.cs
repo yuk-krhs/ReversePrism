@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDiagnosticsComponentProvider
+    public partial class IDiagnosticsComponentProvider : DataModel
     {
 
         public static IDiagnosticsComponentProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDiagnosticsComponentProvider();
+            var value   = new IDiagnosticsComponentProvider() { Pointer= p0 };
 
 
             return value;

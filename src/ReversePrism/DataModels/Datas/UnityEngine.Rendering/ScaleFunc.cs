@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScaleFunc
+    public partial class ScaleFunc : DataModel
     {
 
         public static ScaleFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScaleFunc();
+            var value   = new ScaleFunc() { Pointer= p0 };
 
 
             return value;

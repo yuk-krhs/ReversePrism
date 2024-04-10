@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 068 SerializeReadOnlyTypes                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 070 DateTimeFormat                           000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
     // 078 UseSimpleDictionaryFormat                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DataContractJsonSerializer
+    public partial class DataContractJsonSerializer : DataModel
     {
         public EmitTypeInformation                      EmitTypeInformation                     { get; set; }
         public IDataContractSurrogate?                  DataContractSurrogate                   { get; set; }
@@ -42,19 +42,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataContractJsonSerializer();
+            var value   = new DataContractJsonSerializer() { Pointer= p0 };
 
-            value.EmitTypeInformation                       = (EmitTypeInformation)GetInt32(new IntPtr(p + 0x020)); // 027004C34EE0 0x20 EmitTypeInformation         ( 000186726330 ModelEnumType EmitTypeInformation EmitTypeInformation EmitTypeInformation Int32 )
-            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 027004C34F00 0x28 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
-            value.IgnoreExtensionDataObject                 = GetBool(new IntPtr(p + 0x030)); // 027004C34F20 0x30 IgnoreExtensionDataObject   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MaxItemsInObjectGraph                     = GetInt32(new IntPtr(p + 0x040)); // 027004C34F60 0x40 MaxItemsInObjectGraph       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RootContract                              = GetObject<DataContract>(new IntPtr(p + 0x048), ReversePrism.DataModels.DataContract.FromPointer); // 027004C34F80 0x48 RootContract                ( 0001865B6200 ModelClassType DataContract DataContract DataContract Pointer )
-            value.RootName                                  = GetObject<XmlDictionaryString>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 027004C34FA0 0x50 RootName                    ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
-            value.RootNameRequiresMapping                   = GetBool(new IntPtr(p + 0x058)); // 027004C34FC0 0x58 RootNameRequiresMapping     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RootType                                  = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 027004C34FE0 0x60 RootType                    ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.SerializeReadOnlyTypes                    = GetBool(new IntPtr(p + 0x068)); // 027004C35000 0x68 SerializeReadOnlyTypes      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x070), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 027004C35020 0x70 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
-            value.UseSimpleDictionaryFormat                 = GetBool(new IntPtr(p + 0x078)); // 027004C35040 0x78 UseSimpleDictionaryFormat   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EmitTypeInformation                       = (EmitTypeInformation)GetInt32(new IntPtr(p + 0x020)); // 0245A4C70DE8 0x20 EmitTypeInformation         ( 000186726330 ModelEnumType EmitTypeInformation EmitTypeInformation EmitTypeInformation Int32 )
+            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 0245A4C70E08 0x28 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
+            value.IgnoreExtensionDataObject                 = GetBool(new IntPtr(p + 0x030)); // 0245A4C70E28 0x30 IgnoreExtensionDataObject   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaxItemsInObjectGraph                     = GetInt32(new IntPtr(p + 0x040)); // 0245A4C70E68 0x40 MaxItemsInObjectGraph       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RootContract                              = GetObject<DataContract>(new IntPtr(p + 0x048), ReversePrism.DataModels.DataContract.FromPointer); // 0245A4C70E88 0x48 RootContract                ( 0001865B6200 ModelClassType DataContract DataContract DataContract Pointer )
+            value.RootName                                  = GetObject<XmlDictionaryString>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0245A4C70EA8 0x50 RootName                    ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.RootNameRequiresMapping                   = GetBool(new IntPtr(p + 0x058)); // 0245A4C70EC8 0x58 RootNameRequiresMapping     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RootType                                  = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0245A4C70EE8 0x60 RootType                    ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.SerializeReadOnlyTypes                    = GetBool(new IntPtr(p + 0x068)); // 0245A4C70F08 0x68 SerializeReadOnlyTypes      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x070), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0245A4C70F28 0x70 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
+            value.UseSimpleDictionaryFormat                 = GetBool(new IntPtr(p + 0x078)); // 0245A4C70F48 0x78 UseSimpleDictionaryFormat   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

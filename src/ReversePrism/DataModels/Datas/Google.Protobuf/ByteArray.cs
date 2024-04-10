@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 CopyThreshold                            int IL2CPP_TYPE_I4
-    public partial class ByteArray
+    public partial class ByteArray : DataModel
     {
 
         public static ByteArray? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteArray();
+            var value   = new ByteArray() { Pointer= p0 };
 
 
             return value;

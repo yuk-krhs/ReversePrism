@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CurrentValue                             0001865F4940 ModelPrimitiveType int int int Int32
     // 014 AddValue                                 0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class IdolLevelUpParamViewModel
+    public partial class IdolLevelUpParamViewModel : DataModel
     {
         public int                                      CurrentValue                            { get; set; }
         public int                                      AddValue                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolLevelUpParamViewModel();
+            var value   = new IdolLevelUpParamViewModel() { Pointer= p0 };
 
-            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x010)); // 0270D4C52C70 0x10 CurrentValue                ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.AddValue                                  = GetInt32(new IntPtr(p + 0x014)); // 0270D4C52C90 0x14 AddValue                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x010)); // 024664CACB38 0x10 CurrentValue                ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.AddValue                                  = GetInt32(new IntPtr(p + 0x014)); // 024664CACB58 0x14 AddValue                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

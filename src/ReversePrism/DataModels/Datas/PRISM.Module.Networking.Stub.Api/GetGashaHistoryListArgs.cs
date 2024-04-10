@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 GashaIdFieldNumber                       int IL2CPP_TYPE_I4
     // 018 GashaId                                  000186671910 ModelPrimitiveType string string string String
-    public partial class GetGashaHistoryListArgs
+    public partial class GetGashaHistoryListArgs : DataModel
     {
         public string                                   GashaId                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGashaHistoryListArgs();
+            var value   = new GetGashaHistoryListArgs() { Pointer= p0 };
 
-            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 0270D1A12BC8 0x18 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 02466199D6E8 0x18 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

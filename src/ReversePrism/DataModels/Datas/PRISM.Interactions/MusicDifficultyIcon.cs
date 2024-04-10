@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 MusicDifficulties                        000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    public partial class MusicDifficultyIcon
+    public partial class MusicDifficultyIcon : DataModel
     {
         public List<GameObject>?                        MusicDifficulties                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicDifficultyIcon();
+            var value   = new MusicDifficultyIcon() { Pointer= p0 };
 
-            value.MusicDifficulties                         = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB90C6D8 0x20 MusicDifficulties           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.MusicDifficulties                         = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9939B0 0x20 MusicDifficulties           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

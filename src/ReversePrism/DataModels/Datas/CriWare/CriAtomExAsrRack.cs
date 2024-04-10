@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 IllegalRackId                            int IL2CPP_TYPE_I4
     // 020 RackId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 HasExistingRackId                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriAtomExAsrRack
+    public partial class CriAtomExAsrRack : DataModel
     {
         public int                                      RackId                                  { get; set; }
         public bool                                     HasExistingRackId                       { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExAsrRack();
+            var value   = new CriAtomExAsrRack() { Pointer= p0 };
 
-            value.RackId                                    = GetInt32(new IntPtr(p + 0x020)); // 0270DAC2A440 0x20 RackId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HasExistingRackId                         = GetBool(new IntPtr(p + 0x024)); // 0270DAC2A460 0x24 HasExistingRackId           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RackId                                    = GetInt32(new IntPtr(p + 0x020)); // 02466AC82440 0x20 RackId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HasExistingRackId                         = GetBool(new IntPtr(p + 0x024)); // 02466AC82460 0x24 HasExistingRackId           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

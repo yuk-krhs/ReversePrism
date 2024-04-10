@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Data                                     0001866D1E60 ModelClassType ResponseData ResponseData ResponseData Pointer
-    public partial class RequestPredictionResponse
+    public partial class RequestPredictionResponse : DataModel
     {
         public ResponseData?                            Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestPredictionResponse();
+            var value   = new RequestPredictionResponse() { Pointer= p0 };
 
-            value.Data                                      = GetObject<ResponseData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ResponseData.FromPointer); // 0270DBDD9370 0x18 Data                        ( 0001866D1E60 ModelClassType ResponseData ResponseData ResponseData Pointer )
+            value.Data                                      = GetObject<ResponseData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ResponseData.FromPointer); // 02466BE60D08 0x18 Data                        ( 0001866D1E60 ModelClassType ResponseData ResponseData ResponseData Pointer )
 
             return value;
         }

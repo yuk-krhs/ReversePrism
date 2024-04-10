@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 Parameter                                0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     // 000 SupportSkillFieldNumber                  int IL2CPP_TYPE_I4
     // 030 SupportSkill                             0001865F7560 ModelClassType SupportSkillStatus SupportSkillStatus SupportSkillStatus Pointer
-    public partial class ProduceUnitStatus
+    public partial class ProduceUnitStatus : DataModel
     {
         public List<InProduceIdolStatus>?               ProduceIdolList                         { get; set; }
         public VitalityStatus?                          Vitality                                { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceUnitStatus();
+            var value   = new ProduceUnitStatus() { Pointer= p0 };
 
-            value.ProduceIdolList                           = GetObjectList<InProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProduceIdolStatus.FromPointer); // 0270D1130808 0x18 ProduceIdolList             ( 000185CE0B08 ModelClassListType RepeatedField`1<InProduceIdolStatus> RepeatedField`1<InProduceIdolStatus> List<InProduceIdolStatus> Pointer )
-            value.Vitality                                  = GetObject<VitalityStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.VitalityStatus.FromPointer); // 0270D1130848 0x20 Vitality                    ( 00018652EBF0 ModelClassType VitalityStatus VitalityStatus VitalityStatus Pointer )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D1130888 0x28 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.SupportSkill                              = GetObject<SupportSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportSkillStatus.FromPointer); // 0270D11308C8 0x30 SupportSkill                ( 0001865F7560 ModelClassType SupportSkillStatus SupportSkillStatus SupportSkillStatus Pointer )
+            value.ProduceIdolList                           = GetObjectList<InProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProduceIdolStatus.FromPointer); // 0246610A3B20 0x18 ProduceIdolList             ( 000185CE0B08 ModelClassListType RepeatedField`1<InProduceIdolStatus> RepeatedField`1<InProduceIdolStatus> List<InProduceIdolStatus> Pointer )
+            value.Vitality                                  = GetObject<VitalityStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.VitalityStatus.FromPointer); // 0246610A3B60 0x20 Vitality                    ( 00018652EBF0 ModelClassType VitalityStatus VitalityStatus VitalityStatus Pointer )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0246610A3BA0 0x28 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.SupportSkill                              = GetObject<SupportSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportSkillStatus.FromPointer); // 0246610A3BE0 0x30 SupportSkill                ( 0001865F7560 ModelClassType SupportSkillStatus SupportSkillStatus SupportSkillStatus Pointer )
 
             return value;
         }

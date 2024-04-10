@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 040 ListDisplayType                          000186668640 ModelEnumType MusicListSwitchDisplayType MusicListSwitchDisplayType MusicListSwitchDisplayType Int32
     // 044 RateViewType                             000186670EE0 ModelEnumType MusicRateType MusicRateType MusicRateType Int32
     // 048 AlreadyReadMusicIds                      000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class LiveMusicSelectionSaveData
+    public partial class LiveMusicSelectionSaveData : DataModel
     {
         public int                                      CategoryIndex                           { get; set; }
         public int                                      MusicId                                 { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMusicSelectionSaveData();
+            var value   = new LiveMusicSelectionSaveData() { Pointer= p0 };
 
-            value.CategoryIndex                             = GetInt32(new IntPtr(p + 0x020)); // 027003A728C8 0x20 CategoryIndex               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MusicId                                   = GetInt32(new IntPtr(p + 0x024)); // 027003A728E8 0x24 MusicId                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x028)); // 027003A72908 0x28 MusicDifficulty             ( 00018661C730 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.SwitchDisplayIndex                        = GetInt32(new IntPtr(p + 0x02C)); // 027003A72928 0x2C SwitchDisplayIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x030), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 027003A72948 0x30 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
-            value.ListDisplayType                           = (MusicListSwitchDisplayType)GetInt32(new IntPtr(p + 0x040)); // 027003A72988 0x40 ListDisplayType             ( 000186668640 ModelEnumType MusicListSwitchDisplayType MusicListSwitchDisplayType MusicListSwitchDisplayType Int32 )
-            value.RateViewType                              = (MusicRateType)GetInt32(new IntPtr(p + 0x044)); // 027003A729A8 0x44 RateViewType                ( 000186670EE0 ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
-            value.AlreadyReadMusicIds                       = GetInt32List(new IntPtr(p + 0x048)); // 027003A729C8 0x48 AlreadyReadMusicIds         ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.CategoryIndex                             = GetInt32(new IntPtr(p + 0x020)); // 0245A3A7D800 0x20 CategoryIndex               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MusicId                                   = GetInt32(new IntPtr(p + 0x024)); // 0245A3A7D820 0x24 MusicId                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x028)); // 0245A3A7D840 0x28 MusicDifficulty             ( 00018661C730 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.SwitchDisplayIndex                        = GetInt32(new IntPtr(p + 0x02C)); // 0245A3A7D860 0x2C SwitchDisplayIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x030), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 0245A3A7D880 0x30 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
+            value.ListDisplayType                           = (MusicListSwitchDisplayType)GetInt32(new IntPtr(p + 0x040)); // 0245A3A7D8C0 0x40 ListDisplayType             ( 000186668640 ModelEnumType MusicListSwitchDisplayType MusicListSwitchDisplayType MusicListSwitchDisplayType Int32 )
+            value.RateViewType                              = (MusicRateType)GetInt32(new IntPtr(p + 0x044)); // 0245A3A7D8E0 0x44 RateViewType                ( 000186670EE0 ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
+            value.AlreadyReadMusicIds                       = GetInt32List(new IntPtr(p + 0x048)); // 0245A3A7D900 0x48 AlreadyReadMusicIds         ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

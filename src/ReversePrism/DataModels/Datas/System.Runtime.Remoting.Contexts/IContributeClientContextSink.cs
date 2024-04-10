@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IContributeClientContextSink
+    public partial class IContributeClientContextSink : DataModel
     {
 
         public static IContributeClientContextSink? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IContributeClientContextSink();
+            var value   = new IContributeClientContextSink() { Pointer= p0 };
 
 
             return value;

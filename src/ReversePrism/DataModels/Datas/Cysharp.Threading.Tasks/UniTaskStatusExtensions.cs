@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UniTaskStatusExtensions
+    public partial class UniTaskStatusExtensions : DataModel
     {
 
         public static UniTaskStatusExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniTaskStatusExtensions();
+            var value   = new UniTaskStatusExtensions() { Pointer= p0 };
 
 
             return value;

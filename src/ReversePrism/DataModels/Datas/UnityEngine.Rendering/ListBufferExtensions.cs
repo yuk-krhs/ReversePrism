@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ListBufferExtensions
+    public partial class ListBufferExtensions : DataModel
     {
 
         public static ListBufferExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ListBufferExtensions();
+            var value   = new ListBufferExtensions() { Pointer= p0 };
 
 
             return value;

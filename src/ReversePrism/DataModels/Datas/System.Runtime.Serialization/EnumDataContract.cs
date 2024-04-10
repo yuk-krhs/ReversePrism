@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Helper                                   0001865E0310 ModelClassType EnumDataContractCriticalHelper EnumDataContractCriticalHelper EnumDataContractCriticalHelper Pointer
-    public partial class EnumDataContract
+    public partial class EnumDataContract : DataModel
     {
         public EnumDataContractCriticalHelper?          Helper                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumDataContract();
+            var value   = new EnumDataContract() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<EnumDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDataContractCriticalHelper.FromPointer); // 027004C858A0 0x28 Helper                      ( 0001865E0310 ModelClassType EnumDataContractCriticalHelper EnumDataContractCriticalHelper EnumDataContractCriticalHelper Pointer )
+            value.Helper                                    = GetObject<EnumDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDataContractCriticalHelper.FromPointer); // 0245A4CC2818 0x28 Helper                      ( 0001865E0310 ModelClassType EnumDataContractCriticalHelper EnumDataContractCriticalHelper EnumDataContractCriticalHelper Pointer )
 
             return value;
         }

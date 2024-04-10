@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlNameTable
+    public partial class XmlNameTable : DataModel
     {
 
         public static XmlNameTable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNameTable();
+            var value   = new XmlNameTable() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                000186715EF0 ModelClassType AudienceControllerBehaviour AudienceControllerBehaviour AudienceControllerBehaviour Pointer
-    public partial class AudienceControllerClip
+    public partial class AudienceControllerClip : DataModel
     {
         public AudienceControllerBehaviour?             Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudienceControllerClip();
+            var value   = new AudienceControllerClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<AudienceControllerBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.AudienceControllerBehaviour.FromPointer); // 0270D4DFDA38 0x18 Behaviour                   ( 000186715EF0 ModelClassType AudienceControllerBehaviour AudienceControllerBehaviour AudienceControllerBehaviour Pointer )
+            value.Behaviour                                 = GetObject<AudienceControllerBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.AudienceControllerBehaviour.FromPointer); // 024664E720B8 0x18 Behaviour                   ( 000186715EF0 ModelClassType AudienceControllerBehaviour AudienceControllerBehaviour AudienceControllerBehaviour Pointer )
 
             return value;
         }

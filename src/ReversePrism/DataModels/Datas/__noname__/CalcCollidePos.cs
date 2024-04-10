@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 044 HandCalcedPos                            0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 050 HitFlag                                  000186595960 ModelPrimitiveType bool bool bool Bool
     // 054 HandLerpCount                            000186666050 ModelPrimitiveType float float float Single
-    public partial class CalcCollidePos
+    public partial class CalcCollidePos : DataModel
     {
         public ConeInfo?                                CollideCone                             { get; set; }
         public ConeInfo?                                LastCollideCone                         { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CalcCollidePos();
+            var value   = new CalcCollidePos() { Pointer= p0 };
 
-            value.CollideCone                               = GetObject<ConeInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ConeInfo.FromPointer); // 0270069DC3C8 0x10 CollideCone                 ( 0001866D1CC0 ModelClassType ConeInfo ConeInfo ConeInfo Pointer )
-            value.LastCollideCone                           = GetObject<ConeInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ConeInfo.FromPointer); // 0270069DC3E8 0x18 LastCollideCone             ( 0001866D1CC0 ModelClassType ConeInfo ConeInfo ConeInfo Pointer )
-            value.HandPos                                   = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0270069DC408 0x20 HandPos                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.HandPosSave                               = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0270069DC428 0x2C HandPosSave                 ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.HandCurrentPos                            = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0270069DC448 0x38 HandCurrentPos              ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.HandCalcedPos                             = (Vector3)GetInt32(new IntPtr(p + 0x044)); // 0270069DC468 0x44 HandCalcedPos               ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.HitFlag                                   = GetBool(new IntPtr(p + 0x050)); // 0270069DC488 0x50 HitFlag                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.HandLerpCount                             = GetSingle(new IntPtr(p + 0x054)); // 0270069DC4A8 0x54 HandLerpCount               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CollideCone                               = GetObject<ConeInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.ConeInfo.FromPointer); // 0245A69999C8 0x10 CollideCone                 ( 0001866D1CC0 ModelClassType ConeInfo ConeInfo ConeInfo Pointer )
+            value.LastCollideCone                           = GetObject<ConeInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ConeInfo.FromPointer); // 0245A69999E8 0x18 LastCollideCone             ( 0001866D1CC0 ModelClassType ConeInfo ConeInfo ConeInfo Pointer )
+            value.HandPos                                   = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0245A6999A08 0x20 HandPos                     ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.HandPosSave                               = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0245A6999A28 0x2C HandPosSave                 ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.HandCurrentPos                            = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0245A6999A48 0x38 HandCurrentPos              ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.HandCalcedPos                             = (Vector3)GetInt32(new IntPtr(p + 0x044)); // 0245A6999A68 0x44 HandCalcedPos               ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.HitFlag                                   = GetBool(new IntPtr(p + 0x050)); // 0245A6999A88 0x50 HitFlag                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.HandLerpCount                             = GetSingle(new IntPtr(p + 0x054)); // 0245A6999AA8 0x54 HandLerpCount               ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

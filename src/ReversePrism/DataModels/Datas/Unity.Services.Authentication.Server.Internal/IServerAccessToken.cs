@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IServerAccessToken
+    public partial class IServerAccessToken : DataModel
     {
 
         public static IServerAccessToken? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IServerAccessToken();
+            var value   = new IServerAccessToken() { Pointer= p0 };
 
 
             return value;

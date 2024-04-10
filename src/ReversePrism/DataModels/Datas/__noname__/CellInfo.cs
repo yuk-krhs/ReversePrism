@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 098 StreamingScore                           000186666050 ModelPrimitiveType float float float Single
     // 09C ReferenceCount                           0001865F36C0 ModelPrimitiveType int int int Int32
     // 0A0 DebugProbes                              0001865B6870 ModelClassType CellInstancedDebugProbes CellInstancedDebugProbes CellInstancedDebugProbes Pointer
-    public partial class CellInfo
+    public partial class CellInfo : DataModel
     {
         public Cell?                                    Cell                                    { get; set; }
         public BlendingCellInfo?                        BlendingCell                            { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CellInfo();
+            var value   = new CellInfo() { Pointer= p0 };
 
-            value.Cell                                      = GetObject<Cell>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cell.FromPointer); // 0270D91E2EF0 0x10 Cell                        ( 0001865B5C00 ModelClassType Cell Cell Cell Pointer )
-            value.BlendingCell                              = GetObject<BlendingCellInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.BlendingCellInfo.FromPointer); // 0270D91E2F10 0x18 BlendingCell                ( 0001865B5860 ModelClassType BlendingCellInfo BlendingCellInfo BlendingCellInfo Pointer )
-            value.ChunkList                                 = GetEnumList<BrickChunkAlloc>(new IntPtr(p + 0x020)); // 0270D91E2F30 0x20 ChunkList                   ( 000185D28AB8 ModelEnumListType List`1<BrickChunkAlloc> List`1<BrickChunkAlloc> List<BrickChunkAlloc> Pointer )
-            value.FlatIdxInCellIndices                      = GetInt32(new IntPtr(p + 0x028)); // 0270D91E2F50 0x28 FlatIdxInCellIndices        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Loaded                                    = GetBool(new IntPtr(p + 0x02C)); // 0270D91E2F70 0x2C Loaded                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.UpdateInfo                                = (CellIndexUpdateInfo)GetInt32(new IntPtr(p + 0x030)); // 0270D91E2F90 0x30 UpdateInfo                  ( 00018670A380 ModelEnumType CellIndexUpdateInfo CellIndexUpdateInfo CellIndexUpdateInfo Int32 )
-            value.IndexUpdated                              = GetBool(new IntPtr(p + 0x060)); // 0270D91E2FB0 0x60 IndexUpdated                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.TempUpdateInfo                            = (CellIndexUpdateInfo)GetInt32(new IntPtr(p + 0x064)); // 0270D91E2FD0 0x64 TempUpdateInfo              ( 00018670A380 ModelEnumType CellIndexUpdateInfo CellIndexUpdateInfo CellIndexUpdateInfo Int32 )
-            value.SourceAssetInstanceID                     = GetInt32(new IntPtr(p + 0x094)); // 0270D91E2FF0 0x94 SourceAssetInstanceID       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.StreamingScore                            = GetSingle(new IntPtr(p + 0x098)); // 0270D91E3010 0x98 StreamingScore              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x09C)); // 0270D91E3030 0x9C ReferenceCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.DebugProbes                               = GetObject<CellInstancedDebugProbes>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.CellInstancedDebugProbes.FromPointer); // 0270D91E3050 0xA0 DebugProbes                 ( 0001865B6870 ModelClassType CellInstancedDebugProbes CellInstancedDebugProbes CellInstancedDebugProbes Pointer )
+            value.Cell                                      = GetObject<Cell>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cell.FromPointer); // 024669235680 0x10 Cell                        ( 0001865B5C00 ModelClassType Cell Cell Cell Pointer )
+            value.BlendingCell                              = GetObject<BlendingCellInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.BlendingCellInfo.FromPointer); // 0246692356A0 0x18 BlendingCell                ( 0001865B5860 ModelClassType BlendingCellInfo BlendingCellInfo BlendingCellInfo Pointer )
+            value.ChunkList                                 = GetEnumList<BrickChunkAlloc>(new IntPtr(p + 0x020)); // 0246692356C0 0x20 ChunkList                   ( 000185D28AB8 ModelEnumListType List`1<BrickChunkAlloc> List`1<BrickChunkAlloc> List<BrickChunkAlloc> Pointer )
+            value.FlatIdxInCellIndices                      = GetInt32(new IntPtr(p + 0x028)); // 0246692356E0 0x28 FlatIdxInCellIndices        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Loaded                                    = GetBool(new IntPtr(p + 0x02C)); // 024669235700 0x2C Loaded                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.UpdateInfo                                = (CellIndexUpdateInfo)GetInt32(new IntPtr(p + 0x030)); // 024669235720 0x30 UpdateInfo                  ( 00018670A380 ModelEnumType CellIndexUpdateInfo CellIndexUpdateInfo CellIndexUpdateInfo Int32 )
+            value.IndexUpdated                              = GetBool(new IntPtr(p + 0x060)); // 024669235740 0x60 IndexUpdated                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.TempUpdateInfo                            = (CellIndexUpdateInfo)GetInt32(new IntPtr(p + 0x064)); // 024669235760 0x64 TempUpdateInfo              ( 00018670A380 ModelEnumType CellIndexUpdateInfo CellIndexUpdateInfo CellIndexUpdateInfo Int32 )
+            value.SourceAssetInstanceID                     = GetInt32(new IntPtr(p + 0x094)); // 024669235780 0x94 SourceAssetInstanceID       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.StreamingScore                            = GetSingle(new IntPtr(p + 0x098)); // 0246692357A0 0x98 StreamingScore              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x09C)); // 0246692357C0 0x9C ReferenceCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DebugProbes                               = GetObject<CellInstancedDebugProbes>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.CellInstancedDebugProbes.FromPointer); // 0246692357E0 0xA0 DebugProbes                 ( 0001865B6870 ModelClassType CellInstancedDebugProbes CellInstancedDebugProbes CellInstancedDebugProbes Pointer )
 
             return value;
         }

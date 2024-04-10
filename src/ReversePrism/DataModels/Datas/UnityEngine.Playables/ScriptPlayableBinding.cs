@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScriptPlayableBinding
+    public partial class ScriptPlayableBinding : DataModel
     {
 
         public static ScriptPlayableBinding? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScriptPlayableBinding();
+            var value   = new ScriptPlayableBinding() { Pointer= p0 };
 
 
             return value;

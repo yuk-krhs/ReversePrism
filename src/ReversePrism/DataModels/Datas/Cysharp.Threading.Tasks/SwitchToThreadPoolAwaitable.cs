@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SwitchToThreadPoolAwaitable
+    public partial class SwitchToThreadPoolAwaitable : DataModel
     {
 
         public static SwitchToThreadPoolAwaitable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchToThreadPoolAwaitable();
+            var value   = new SwitchToThreadPoolAwaitable() { Pointer= p0 };
 
 
             return value;

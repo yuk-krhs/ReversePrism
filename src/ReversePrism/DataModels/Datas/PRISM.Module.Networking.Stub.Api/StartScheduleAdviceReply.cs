@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 DeletableProduceCardAmount               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnitParameterVariationFieldNumber        int IL2CPP_TYPE_I4
     // 030 UnitParameterVariation                   00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer
-    public partial class StartScheduleAdviceReply
+    public partial class StartScheduleAdviceReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
         public int                                      DisplayMstIdolId                        { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartScheduleAdviceReply();
+            var value   = new StartScheduleAdviceReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D25B6830 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.DisplayMstIdolId                          = GetInt32(new IntPtr(p + 0x020)); // 0270D25B6870 0x20 DisplayMstIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x024)); // 0270D25B68B0 0x24 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.DeletableProduceCardAmount                = GetInt32(new IntPtr(p + 0x028)); // 0270D25B68F0 0x28 DeletableProduceCardAmount  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitParameterVariation                    = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 0270D25B6930 0x30 UnitParameterVariation      ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 024662585B80 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.DisplayMstIdolId                          = GetInt32(new IntPtr(p + 0x020)); // 024662585BC0 0x20 DisplayMstIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x024)); // 024662585C00 0x24 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.DeletableProduceCardAmount                = GetInt32(new IntPtr(p + 0x028)); // 024662585C40 0x28 DeletableProduceCardAmount  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitParameterVariation                    = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 024662585C80 0x30 UnitParameterVariation      ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
 
             return value;
         }

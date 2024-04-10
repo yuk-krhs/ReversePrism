@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonSerializerInternalReader
+    public partial class JsonSerializerInternalReader : DataModel
     {
 
         public static JsonSerializerInternalReader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSerializerInternalReader();
+            var value   = new JsonSerializerInternalReader() { Pointer= p0 };
 
 
             return value;

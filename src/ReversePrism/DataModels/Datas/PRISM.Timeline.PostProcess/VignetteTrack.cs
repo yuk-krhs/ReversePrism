@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VignetteTrack
+    public partial class VignetteTrack : DataModel
     {
 
         public static VignetteTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VignetteTrack();
+            var value   = new VignetteTrack() { Pointer= p0 };
 
 
             return value;

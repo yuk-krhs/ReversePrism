@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 X                                        00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
     // 018 Y                                        00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class ulong2
+    public partial class ulong2 : DataModel
     {
         public ulong                                    X                                       { get; set; }
         public ulong                                    Y                                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ulong2();
+            var value   = new ulong2() { Pointer= p0 };
 
-            value.X                                         = GetUInt64(new IntPtr(p + 0x010)); // 0270D9C65070 0x10 X                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Y                                         = GetUInt64(new IntPtr(p + 0x018)); // 0270D9C65090 0x18 Y                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.X                                         = GetUInt64(new IntPtr(p + 0x010)); // 024669CBD698 0x10 X                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Y                                         = GetUInt64(new IntPtr(p + 0x018)); // 024669CBD6B8 0x18 Y                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

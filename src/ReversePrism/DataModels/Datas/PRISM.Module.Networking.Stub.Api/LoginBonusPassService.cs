@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 __Marshaller_api_ExecuteLoginBonusPassArgs Marshaller`1<ExecuteLoginBonusPassArgs> IL2CPP_TYPE_GENERICINST
     // 010 __Marshaller_api_ExecuteLoginBonusPassReply Marshaller`1<ExecuteLoginBonusPassReply> IL2CPP_TYPE_GENERICINST
     // 018 __Method_ExecuteLoginBonusPass           Method`2<ExecuteLoginBonusPassArgs, ExecuteLoginBonusPassReply> IL2CPP_TYPE_GENERICINST
-    public partial class LoginBonusPassService
+    public partial class LoginBonusPassService : DataModel
     {
 
         public static LoginBonusPassService? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoginBonusPassService();
+            var value   = new LoginBonusPassService() { Pointer= p0 };
 
 
             return value;

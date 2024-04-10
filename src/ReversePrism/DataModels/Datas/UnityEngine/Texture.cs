@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 GenerateAllMips                          int IL2CPP_TYPE_I4
-    public partial class Texture
+    public partial class Texture : DataModel
     {
 
         public static Texture? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture();
+            var value   = new Texture() { Pointer= p0 };
 
 
             return value;

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 030 m_ContextStack                           Stack`1<ResolveContext> IL2CPP_TYPE_GENERICINST
     // 038 M_CurrentContext                         0001865A3A20 ModelEnumType ResolveContext ResolveContext ResolveContext Int32
     // 048 VariableContext                          00018667D370 ModelClassType StyleVariableContext StyleVariableContext StyleVariableContext Pointer
-    public partial class StyleVariableResolver
+    public partial class StyleVariableResolver : DataModel
     {
         public StylePropertyValueMatcher?               M_Matcher                               { get; set; }
         public List<StylePropertyValue>?                M_ResolvedValues                        { get; set; }
@@ -31,13 +31,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleVariableResolver();
+            var value   = new StyleVariableResolver() { Pointer= p0 };
 
-            value.M_Matcher                                 = GetObject<StylePropertyValueMatcher>(new IntPtr(p + 0x010), ReversePrism.DataModels.StylePropertyValueMatcher.FromPointer); // 027006843FC8 0x10 M_Matcher                   ( 0001865CB7B0 ModelClassType StylePropertyValueMatcher StylePropertyValueMatcher StylePropertyValueMatcher Pointer )
-            value.M_ResolvedValues                          = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x018)); // 027006843FE8 0x18 M_ResolvedValues            ( 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
-            value.M_Property                                = GetObject<StyleProperty>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleProperty.FromPointer); // 027006844028 0x28 M_Property                  ( 0001865C9050 ModelClassType StyleProperty StyleProperty StyleProperty Pointer )
-            value.M_CurrentContext                          = (ResolveContext)GetInt32(new IntPtr(p + 0x038)); // 027006844068 0x38 M_CurrentContext            ( 0001865A3A20 ModelEnumType ResolveContext ResolveContext ResolveContext Int32 )
-            value.VariableContext                           = GetObject<StyleVariableContext>(new IntPtr(p + 0x048), ReversePrism.DataModels.StyleVariableContext.FromPointer); // 027006844088 0x48 VariableContext             ( 00018667D370 ModelClassType StyleVariableContext StyleVariableContext StyleVariableContext Pointer )
+            value.M_Matcher                                 = GetObject<StylePropertyValueMatcher>(new IntPtr(p + 0x010), ReversePrism.DataModels.StylePropertyValueMatcher.FromPointer); // 0245A6805DA8 0x10 M_Matcher                   ( 0001865CB7B0 ModelClassType StylePropertyValueMatcher StylePropertyValueMatcher StylePropertyValueMatcher Pointer )
+            value.M_ResolvedValues                          = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x018)); // 0245A6805DC8 0x18 M_ResolvedValues            ( 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
+            value.M_Property                                = GetObject<StyleProperty>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleProperty.FromPointer); // 0245A6805E08 0x28 M_Property                  ( 0001865C9050 ModelClassType StyleProperty StyleProperty StyleProperty Pointer )
+            value.M_CurrentContext                          = (ResolveContext)GetInt32(new IntPtr(p + 0x038)); // 0245A6805E48 0x38 M_CurrentContext            ( 0001865A3A20 ModelEnumType ResolveContext ResolveContext ResolveContext Int32 )
+            value.VariableContext                           = GetObject<StyleVariableContext>(new IntPtr(p + 0x048), ReversePrism.DataModels.StyleVariableContext.FromPointer); // 0245A6805E68 0x48 VariableContext             ( 00018667D370 ModelClassType StyleVariableContext StyleVariableContext StyleVariableContext Pointer )
 
             return value;
         }

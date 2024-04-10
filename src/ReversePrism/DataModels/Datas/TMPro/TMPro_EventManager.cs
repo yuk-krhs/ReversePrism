@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 048 RESOURCE_LOAD_EVENT                      000186556EB0 ModelClassType FastAction FastAction FastAction Pointer
     // 050 TEXTMESHPRO_UGUI_PROPERTY_EVENT          FastAction`2<bool, Object> IL2CPP_TYPE_GENERICINST
     // 058 TEXT_CHANGED_EVENT                       FastAction`1<Object> IL2CPP_TYPE_GENERICINST
-    public partial class TMPro_EventManager
+    public partial class TMPro_EventManager : DataModel
     {
         public FastAction?                              TMP_SETTINGS_PROPERTY_EVENT             { get; set; }
         public FastAction?                              RESOURCE_LOAD_EVENT                     { get; set; }
@@ -31,10 +31,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMPro_EventManager();
+            var value   = new TMPro_EventManager() { Pointer= p0 };
 
-            value.TMP_SETTINGS_PROPERTY_EVENT               = GetObject<FastAction>(new IntPtr(p + 0x040), ReversePrism.DataModels.FastAction.FromPointer); // 0270D0FB3BA0 0x40 TMP_SETTINGS_PROPERTY_EVENT ( 000186556EB0 ModelClassType FastAction FastAction FastAction Pointer )
-            value.RESOURCE_LOAD_EVENT                       = GetObject<FastAction>(new IntPtr(p + 0x048), ReversePrism.DataModels.FastAction.FromPointer); // 0270D0FB3BC0 0x48 RESOURCE_LOAD_EVENT         ( 000186556EB0 ModelClassType FastAction FastAction FastAction Pointer )
+            value.TMP_SETTINGS_PROPERTY_EVENT               = GetObject<FastAction>(new IntPtr(p + 0x040), ReversePrism.DataModels.FastAction.FromPointer); // 0245A41A5FF0 0x40 TMP_SETTINGS_PROPERTY_EVENT ( 000186556EB0 ModelClassType FastAction FastAction FastAction Pointer )
+            value.RESOURCE_LOAD_EVENT                       = GetObject<FastAction>(new IntPtr(p + 0x048), ReversePrism.DataModels.FastAction.FromPointer); // 0245A41A6010 0x48 RESOURCE_LOAD_EVENT         ( 000186556EB0 ModelClassType FastAction FastAction FastAction Pointer )
 
             return value;
         }

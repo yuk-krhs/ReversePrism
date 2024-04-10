@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DualShockSupport
+    public partial class DualShockSupport : DataModel
     {
 
         public static DualShockSupport? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DualShockSupport();
+            var value   = new DualShockSupport() { Pointer= p0 };
 
 
             return value;

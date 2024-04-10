@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 UseCount                                 0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 014 Limit                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    public partial class ResourceUsage
+    public partial class ResourceUsage : DataModel
     {
         public uint                                     UseCount                                { get; set; }
         public uint                                     Limit                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceUsage();
+            var value   = new ResourceUsage() { Pointer= p0 };
 
-            value.UseCount                                  = GetUInt32(new IntPtr(p + 0x010)); // 0270DAC6CA80 0x10 UseCount                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Limit                                     = GetUInt32(new IntPtr(p + 0x014)); // 0270DAC6CAA0 0x14 Limit                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.UseCount                                  = GetUInt32(new IntPtr(p + 0x010)); // 02466ACD4A80 0x10 UseCount                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Limit                                     = GetUInt32(new IntPtr(p + 0x014)); // 02466ACD4AA0 0x14 Limit                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

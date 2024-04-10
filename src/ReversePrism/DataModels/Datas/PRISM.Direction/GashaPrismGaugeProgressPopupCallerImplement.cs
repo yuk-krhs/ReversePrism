@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 gashaBonusAcquisitionPopupViewFactory    PopupViewFactory`1<IGashaPrismGaugeProgressPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class GashaPrismGaugeProgressPopupCallerImplement
+    public partial class GashaPrismGaugeProgressPopupCallerImplement : DataModel
     {
 
         public static GashaPrismGaugeProgressPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaPrismGaugeProgressPopupCallerImplement();
+            var value   = new GashaPrismGaugeProgressPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IExchangeSelectionTicketArgs
+    public partial class IExchangeSelectionTicketArgs : DataModel
     {
 
         public static IExchangeSelectionTicketArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IExchangeSelectionTicketArgs();
+            var value   = new IExchangeSelectionTicketArgs() { Pointer= p0 };
 
 
             return value;

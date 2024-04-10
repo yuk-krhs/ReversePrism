@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 DownloadErrorFileMask                    SonicboomDownloadErrorFlag IL2CPP_TYPE_VALUETYPE
     // 000 DownloadErrorChecksumMask                SonicboomDownloadErrorFlag IL2CPP_TYPE_VALUETYPE
     // 000 DownloadErrorCurlMask                    SonicboomDownloadErrorFlag IL2CPP_TYPE_VALUETYPE
-    public partial class Define
+    public partial class Define : DataModel
     {
 
         public static Define? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Define();
+            var value   = new Define() { Pointer= p0 };
 
 
             return value;

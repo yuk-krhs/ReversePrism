@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 SRDebug IL2CPP_TYPE_VALUETYPE
-    public partial class SRDebug
+    public partial class SRDebug : DataModel
     {
 
         public static SRDebug? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SRDebug();
+            var value   = new SRDebug() { Pointer= p0 };
 
 
             return value;

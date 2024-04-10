@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 130 Component                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DpadAxisControl
+    public partial class DpadAxisControl : DataModel
     {
         public int                                      Component                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DpadAxisControl();
+            var value   = new DpadAxisControl() { Pointer= p0 };
 
-            value.Component                                 = GetInt32(new IntPtr(p + 0x130)); // 027003395718 0x130 Component                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Component                                 = GetInt32(new IntPtr(p + 0x130)); // 0245A3395718 0x130 Component                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GradientRemapPool
+    public partial class GradientRemapPool : DataModel
     {
 
         public static GradientRemapPool? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GradientRemapPool();
+            var value   = new GradientRemapPool() { Pointer= p0 };
 
 
             return value;

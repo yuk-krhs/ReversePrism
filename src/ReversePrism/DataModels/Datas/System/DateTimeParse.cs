@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 m_hebrewNumberParser                     MatchNumberDelegate IL2CPP_TYPE_CLASS
     // 008 dateParsingStates                        DS[][] IL2CPP_TYPE_SZARRAY
-    public partial class DateTimeParse
+    public partial class DateTimeParse : DataModel
     {
 
         public static DateTimeParse? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeParse();
+            var value   = new DateTimeParse() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSupportCharacterId                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstSupportEffectIdFieldNumber            int IL2CPP_TYPE_I4
     // 01C MstSupportEffectId                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ExertSupportEffectStatus
+    public partial class ExertSupportEffectStatus : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public int                                      MstSupportEffectId                      { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExertSupportEffectStatus();
+            var value   = new ExertSupportEffectStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D10BA5D0 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSupportEffectId                        = GetInt32(new IntPtr(p + 0x01C)); // 0270D10BA610 0x1C MstSupportEffectId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 024661050F00 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSupportEffectId                        = GetInt32(new IntPtr(p + 0x01C)); // 024661050F40 0x1C MstSupportEffectId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

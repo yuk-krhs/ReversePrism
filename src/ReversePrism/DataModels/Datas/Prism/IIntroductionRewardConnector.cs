@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IIntroductionRewardConnector
+    public partial class IIntroductionRewardConnector : DataModel
     {
 
         public static IIntroductionRewardConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IIntroductionRewardConnector();
+            var value   = new IIntroductionRewardConnector() { Pointer= p0 };
 
 
             return value;

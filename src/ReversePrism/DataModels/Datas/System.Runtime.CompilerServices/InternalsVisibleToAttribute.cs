@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AssemblyName                             000186671910 ModelPrimitiveType string string string String
     // 018 AllInternalsVisible                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class InternalsVisibleToAttribute
+    public partial class InternalsVisibleToAttribute : DataModel
     {
         public string                                   AssemblyName                            { get; set; }
         public bool                                     AllInternalsVisible                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalsVisibleToAttribute();
+            var value   = new InternalsVisibleToAttribute() { Pointer= p0 };
 
-            value.AssemblyName                              = GetString(new IntPtr(p + 0x010)); // 0270D6CB0140 0x10 AssemblyName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.AllInternalsVisible                       = GetBool(new IntPtr(p + 0x018)); // 0270D6CB0160 0x18 AllInternalsVisible         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AssemblyName                              = GetString(new IntPtr(p + 0x010)); // 024666D0F910 0x10 AssemblyName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.AllInternalsVisible                       = GetBool(new IntPtr(p + 0x018)); // 024666D0F930 0x18 AllInternalsVisible         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

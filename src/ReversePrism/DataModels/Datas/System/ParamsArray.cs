@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 _arg1                                    <object> IL2CPP_TYPE_OBJECT
     // 020 _arg2                                    <object> IL2CPP_TYPE_OBJECT
     // 028 _args                                    <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class ParamsArray
+    public partial class ParamsArray : DataModel
     {
 
         public static ParamsArray? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParamsArray();
+            var value   = new ParamsArray() { Pointer= p0 };
 
 
             return value;

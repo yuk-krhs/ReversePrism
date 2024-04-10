@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 CacheLineSize                            int IL2CPP_TYPE_I4
-    public partial class CollectionHelper
+    public partial class CollectionHelper : DataModel
     {
 
         public static CollectionHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CollectionHelper();
+            var value   = new CollectionHelper() { Pointer= p0 };
 
 
             return value;

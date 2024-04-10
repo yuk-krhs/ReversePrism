@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 090 CellOffsetX                              0001866656B0 ModelPrimitiveType float float float Single
     // 098 SeasonThemeThemeColorData                00018657E5F0 ModelClassType ProduceSeasonThemeColorData ProduceSeasonThemeColorData ProduceSeasonThemeColorData Pointer
     // 0A0 ScrollResetButton                        0001867224E0 ModelClassType ScrollResetButton ScrollResetButton ScrollResetButton Pointer
-    public partial class ScheduleSelectionScheduleCarouselView
+    public partial class ScheduleSelectionScheduleCarouselView : DataModel
     {
         public float                                    ScrollAreaSize                          { get; set; }
         public float                                    CellReductionRate                       { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleSelectionScheduleCarouselView();
+            var value   = new ScheduleSelectionScheduleCarouselView() { Pointer= p0 };
 
-            value.ScrollAreaSize                            = GetSingle(new IntPtr(p + 0x088)); // 0270DA180778 0x88 ScrollAreaSize              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CellReductionRate                         = GetSingle(new IntPtr(p + 0x08C)); // 0270DA180798 0x8C CellReductionRate           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CellOffsetX                               = GetSingle(new IntPtr(p + 0x090)); // 0270DA1807B8 0x90 CellOffsetX                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SeasonThemeThemeColorData                 = GetObject<ProduceSeasonThemeColorData>(new IntPtr(p + 0x098), ReversePrism.DataModels.ProduceSeasonThemeColorData.FromPointer); // 0270DA1807D8 0x98 SeasonThemeThemeColorData   ( 00018657E5F0 ModelClassType ProduceSeasonThemeColorData ProduceSeasonThemeColorData ProduceSeasonThemeColorData Pointer )
-            value.ScrollResetButton                         = GetObject<ScrollResetButton>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ScrollResetButton.FromPointer); // 0270DA1807F8 0xA0 ScrollResetButton           ( 0001867224E0 ModelClassType ScrollResetButton ScrollResetButton ScrollResetButton Pointer )
+            value.ScrollAreaSize                            = GetSingle(new IntPtr(p + 0x088)); // 02466A1EB848 0x88 ScrollAreaSize              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CellReductionRate                         = GetSingle(new IntPtr(p + 0x08C)); // 02466A1EB868 0x8C CellReductionRate           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CellOffsetX                               = GetSingle(new IntPtr(p + 0x090)); // 02466A1EB888 0x90 CellOffsetX                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SeasonThemeThemeColorData                 = GetObject<ProduceSeasonThemeColorData>(new IntPtr(p + 0x098), ReversePrism.DataModels.ProduceSeasonThemeColorData.FromPointer); // 02466A1EB8A8 0x98 SeasonThemeThemeColorData   ( 00018657E5F0 ModelClassType ProduceSeasonThemeColorData ProduceSeasonThemeColorData ProduceSeasonThemeColorData Pointer )
+            value.ScrollResetButton                         = GetObject<ScrollResetButton>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ScrollResetButton.FromPointer); // 02466A1EB8C8 0xA0 ScrollResetButton           ( 0001867224E0 ModelClassType ScrollResetButton ScrollResetButton ScrollResetButton Pointer )
 
             return value;
         }

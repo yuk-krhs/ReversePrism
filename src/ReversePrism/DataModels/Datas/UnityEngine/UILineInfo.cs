@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Height                                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 TopY                                     000186666050 ModelPrimitiveType float float float Single
     // 01C Leading                                  000186666050 ModelPrimitiveType float float float Single
-    public partial class UILineInfo
+    public partial class UILineInfo : DataModel
     {
         public int                                      StartCharIdx                            { get; set; }
         public int                                      Height                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UILineInfo();
+            var value   = new UILineInfo() { Pointer= p0 };
 
-            value.StartCharIdx                              = GetInt32(new IntPtr(p + 0x010)); // 027002181440 0x10 StartCharIdx                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Height                                    = GetInt32(new IntPtr(p + 0x014)); // 027002181460 0x14 Height                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TopY                                      = GetSingle(new IntPtr(p + 0x018)); // 027002181480 0x18 TopY                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Leading                                   = GetSingle(new IntPtr(p + 0x01C)); // 0270021814A0 0x1C Leading                     ( 000186666050 ModelPrimitiveType float float float Single )
+            value.StartCharIdx                              = GetInt32(new IntPtr(p + 0x010)); // 0245A2181440 0x10 StartCharIdx                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Height                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A2181460 0x14 Height                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TopY                                      = GetSingle(new IntPtr(p + 0x018)); // 0245A2181480 0x18 TopY                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Leading                                   = GetSingle(new IntPtr(p + 0x01C)); // 0245A21814A0 0x1C Leading                     ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

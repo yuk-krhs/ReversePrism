@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Position                                 0001866ADBF0 ModelEnumType Vector3Int Vector3Int Vector3Int Int32
     // 01C SubdivisionLevel                         0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Brick
+    public partial class Brick : DataModel
     {
         public Vector3Int                               Position                                { get; set; }
         public int                                      SubdivisionLevel                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Brick();
+            var value   = new Brick() { Pointer= p0 };
 
-            value.Position                                  = (Vector3Int)GetInt32(new IntPtr(p + 0x010)); // 0270D91B63E0 0x10 Position                    ( 0001866ADBF0 ModelEnumType Vector3Int Vector3Int Vector3Int Int32 )
-            value.SubdivisionLevel                          = GetInt32(new IntPtr(p + 0x01C)); // 0270D91B6400 0x1C SubdivisionLevel            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Position                                  = (Vector3Int)GetInt32(new IntPtr(p + 0x010)); // 024669208B38 0x10 Position                    ( 0001866ADBF0 ModelEnumType Vector3Int Vector3Int Vector3Int Int32 )
+            value.SubdivisionLevel                          = GetInt32(new IntPtr(p + 0x01C)); // 024669208B58 0x1C SubdivisionLevel            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

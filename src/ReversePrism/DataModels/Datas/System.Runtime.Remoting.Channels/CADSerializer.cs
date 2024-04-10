@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CADSerializer
+    public partial class CADSerializer : DataModel
     {
 
         public static CADSerializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CADSerializer();
+            var value   = new CADSerializer() { Pointer= p0 };
 
 
             return value;

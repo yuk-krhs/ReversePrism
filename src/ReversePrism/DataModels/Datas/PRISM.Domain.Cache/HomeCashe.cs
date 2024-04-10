@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 HomeReply                                000186675B20 ModelClassType ITmpGetHomeReply ITmpGetHomeReply ITmpGetHomeReply Pointer
     // 018 CacheDateTime                            000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 028 IsCutSceneDone                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class HomeCashe
+    public partial class HomeCashe : DataModel
     {
         public ITmpGetHomeReply?                        HomeReply                               { get; set; }
         public DateTime                                 CacheDateTime                           { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeCashe();
+            var value   = new HomeCashe() { Pointer= p0 };
 
-            value.HomeReply                                 = GetObject<ITmpGetHomeReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITmpGetHomeReply.FromPointer); // 027004A881E8 0x10 HomeReply                   ( 000186675B20 ModelClassType ITmpGetHomeReply ITmpGetHomeReply ITmpGetHomeReply Pointer )
-            value.CacheDateTime                             = GetDateTime(new IntPtr(p + 0x018)); // 027004A88208 0x18 CacheDateTime               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.IsCutSceneDone                            = GetBool(new IntPtr(p + 0x028)); // 027004A88228 0x28 IsCutSceneDone              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HomeReply                                 = GetObject<ITmpGetHomeReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITmpGetHomeReply.FromPointer); // 0245A4ADEBC8 0x10 HomeReply                   ( 000186675B20 ModelClassType ITmpGetHomeReply ITmpGetHomeReply ITmpGetHomeReply Pointer )
+            value.CacheDateTime                             = GetDateTime(new IntPtr(p + 0x018)); // 0245A4ADEBE8 0x18 CacheDateTime               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.IsCutSceneDone                            = GetBool(new IntPtr(p + 0x028)); // 0245A4ADEC08 0x28 IsCutSceneDone              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

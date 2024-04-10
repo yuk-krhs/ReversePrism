@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 034 IsUniqueArray                            0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 038 <UniqueArrayItems>k__BackingField        IList`1<JToken> IL2CPP_TYPE_GENERICINST
     // 040 CurrentItemWriter                        000186748F70 ModelClassType JTokenWriter JTokenWriter JTokenWriter Pointer
-    public partial class SchemaScope
+    public partial class SchemaScope : DataModel
     {
         public JTokenType                               TokenType                               { get; set; }
         public string                                   CurrentPropertyName                     { get; set; }
@@ -30,13 +30,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SchemaScope();
+            var value   = new SchemaScope() { Pointer= p0 };
 
-            value.TokenType                                 = (JTokenType)GetInt32(new IntPtr(p + 0x010)); // 0270D86CBBD0 0x10 TokenType                   ( 000186748850 ModelEnumType JTokenType JTokenType JTokenType Int32 )
-            value.CurrentPropertyName                       = GetString(new IntPtr(p + 0x028)); // 0270D86CBC30 0x28 CurrentPropertyName         ( 000186671910 ModelPrimitiveType string string string String )
-            value.ArrayItemCount                            = GetInt32(new IntPtr(p + 0x030)); // 0270D86CBC50 0x30 ArrayItemCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsUniqueArray                             = GetBool(new IntPtr(p + 0x034)); // 0270D86CBC70 0x34 IsUniqueArray               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentItemWriter                         = GetObject<JTokenWriter>(new IntPtr(p + 0x040), ReversePrism.DataModels.JTokenWriter.FromPointer); // 0270D86CBCB0 0x40 CurrentItemWriter           ( 000186748F70 ModelClassType JTokenWriter JTokenWriter JTokenWriter Pointer )
+            value.TokenType                                 = (JTokenType)GetInt32(new IntPtr(p + 0x010)); // 024668733BD0 0x10 TokenType                   ( 000186748850 ModelEnumType JTokenType JTokenType JTokenType Int32 )
+            value.CurrentPropertyName                       = GetString(new IntPtr(p + 0x028)); // 024668733C30 0x28 CurrentPropertyName         ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArrayItemCount                            = GetInt32(new IntPtr(p + 0x030)); // 024668733C50 0x30 ArrayItemCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsUniqueArray                             = GetBool(new IntPtr(p + 0x034)); // 024668733C70 0x34 IsUniqueArray               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentItemWriter                         = GetObject<JTokenWriter>(new IntPtr(p + 0x040), ReversePrism.DataModels.JTokenWriter.FromPointer); // 024668733CB0 0x40 CurrentItemWriter           ( 000186748F70 ModelClassType JTokenWriter JTokenWriter JTokenWriter Pointer )
 
             return value;
         }

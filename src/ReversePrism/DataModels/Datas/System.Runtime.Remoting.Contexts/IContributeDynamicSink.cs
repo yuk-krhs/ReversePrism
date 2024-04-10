@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IContributeDynamicSink
+    public partial class IContributeDynamicSink : DataModel
     {
 
         public static IContributeDynamicSink? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IContributeDynamicSink();
+            var value   = new IContributeDynamicSink() { Pointer= p0 };
 
 
             return value;

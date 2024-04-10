@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 CharaMessageCloseTime                    float IL2CPP_TYPE_R4
     // 000 CharaMessageLeaveActionTime              float IL2CPP_TYPE_R4
     // 000 FirstCharaMessageOpenTime                float IL2CPP_TYPE_R4
-    public partial class HomeConst
+    public partial class HomeConst : DataModel
     {
 
         public static HomeConst? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeConst();
+            var value   = new HomeConst() { Pointer= p0 };
 
 
             return value;

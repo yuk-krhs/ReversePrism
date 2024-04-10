@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncScrollTrigger
+    public partial class AsyncScrollTrigger : DataModel
     {
 
         public static AsyncScrollTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncScrollTrigger();
+            var value   = new AsyncScrollTrigger() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_value                                  00018665D9F0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 000 MaxValue                                 sbyte IL2CPP_TYPE_I1
     // 000 MinValue                                 sbyte IL2CPP_TYPE_I1
-    public partial class SByte
+    public partial class SByte : DataModel
     {
         public sbyte                                    M_value                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SByte();
+            var value   = new SByte() { Pointer= p0 };
 
-            value.M_value                                   = GetSByte(new IntPtr(p + 0x010)); // 0270033EC5C0 0x10 M_value                     ( 00018665D9F0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_value                                   = GetSByte(new IntPtr(p + 0x010)); // 0245A33EC5C0 0x10 M_value                     ( 00018665D9F0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

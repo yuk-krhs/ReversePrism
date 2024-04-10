@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AxisConstraint                           0001867305B0 ModelEnumType AxisConstraint AxisConstraint AxisConstraint Int32
     // 014 Snapping                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class VectorOptions
+    public partial class VectorOptions : DataModel
     {
         public AxisConstraint                           AxisConstraint                          { get; set; }
         public bool                                     Snapping                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VectorOptions();
+            var value   = new VectorOptions() { Pointer= p0 };
 
-            value.AxisConstraint                            = (AxisConstraint)GetInt32(new IntPtr(p + 0x010)); // 0270075662B0 0x10 AxisConstraint              ( 0001867305B0 ModelEnumType AxisConstraint AxisConstraint AxisConstraint Int32 )
-            value.Snapping                                  = GetBool(new IntPtr(p + 0x014)); // 0270075662D0 0x14 Snapping                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AxisConstraint                            = (AxisConstraint)GetInt32(new IntPtr(p + 0x010)); // 0245A72A54B0 0x10 AxisConstraint              ( 0001867305B0 ModelEnumType AxisConstraint AxisConstraint AxisConstraint Int32 )
+            value.Snapping                                  = GetBool(new IntPtr(p + 0x014)); // 0245A72A54D0 0x14 Snapping                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

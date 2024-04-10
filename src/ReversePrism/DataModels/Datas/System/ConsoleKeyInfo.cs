@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 _keyChar                                 char IL2CPP_TYPE_CHAR
     // 014 Key                                      000186609090 ModelEnumType ConsoleKey ConsoleKey ConsoleKey Int32
     // 018 Mods                                     000186609F50 ModelEnumType ConsoleModifiers ConsoleModifiers ConsoleModifiers Int32
-    public partial class ConsoleKeyInfo
+    public partial class ConsoleKeyInfo : DataModel
     {
         public ConsoleKey                               Key                                     { get; set; }
         public ConsoleModifiers                         Mods                                    { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConsoleKeyInfo();
+            var value   = new ConsoleKeyInfo() { Pointer= p0 };
 
-            value.Key                                       = (ConsoleKey)GetInt32(new IntPtr(p + 0x014)); // 0270D6A34078 0x14 Key                         ( 000186609090 ModelEnumType ConsoleKey ConsoleKey ConsoleKey Int32 )
-            value.Mods                                      = (ConsoleModifiers)GetInt32(new IntPtr(p + 0x018)); // 0270D6A34098 0x18 Mods                        ( 000186609F50 ModelEnumType ConsoleModifiers ConsoleModifiers ConsoleModifiers Int32 )
+            value.Key                                       = (ConsoleKey)GetInt32(new IntPtr(p + 0x014)); // 024666AA4078 0x14 Key                         ( 000186609090 ModelEnumType ConsoleKey ConsoleKey ConsoleKey Int32 )
+            value.Mods                                      = (ConsoleModifiers)GetInt32(new IntPtr(p + 0x018)); // 024666AA4098 0x18 Mods                        ( 000186609F50 ModelEnumType ConsoleModifiers ConsoleModifiers ConsoleModifiers Int32 )
 
             return value;
         }

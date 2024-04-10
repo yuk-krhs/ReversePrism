@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 popupViewFactory                         PopupViewFactory`1<IEndTutorialConfirmPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class EndTutorialConfirmPopupViewCallerImplement
+    public partial class EndTutorialConfirmPopupViewCallerImplement : DataModel
     {
 
         public static EndTutorialConfirmPopupViewCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EndTutorialConfirmPopupViewCallerImplement();
+            var value   = new EndTutorialConfirmPopupViewCallerImplement() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 NegativeInfinity                         float IL2CPP_TYPE_R4
     // 000 NaN                                      float IL2CPP_TYPE_R4
     // 000 NegativeZero                             float IL2CPP_TYPE_R4
-    public partial class Single
+    public partial class Single : DataModel
     {
         public float                                    M_value                                 { get; set; }
 
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Single();
+            var value   = new Single() { Pointer= p0 };
 
-            value.M_value                                   = GetSingle(new IntPtr(p + 0x010)); // 0270020A26A0 0x10 M_value                     ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.M_value                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A20A26A0 0x10 M_value                     ( 000186666CB0 ModelPrimitiveType float float float Single )
 
             return value;
         }

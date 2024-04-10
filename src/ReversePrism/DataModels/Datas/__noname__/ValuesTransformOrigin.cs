@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 <SameFunc>k__BackingField                Func`3<TransformOrigin, TransformOrigin, bool> IL2CPP_TYPE_GENERICINST
-    public partial class ValuesTransformOrigin
+    public partial class ValuesTransformOrigin : DataModel
     {
 
         public static ValuesTransformOrigin? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesTransformOrigin();
+            var value   = new ValuesTransformOrigin() { Pointer= p0 };
 
 
             return value;

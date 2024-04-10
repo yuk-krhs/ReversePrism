@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChainTalkCellDataExtensions
+    public partial class IChainTalkCellDataExtensions : DataModel
     {
 
         public static IChainTalkCellDataExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChainTalkCellDataExtensions();
+            var value   = new IChainTalkCellDataExtensions() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ADVLogOverlayFactory
+    public partial class ADVLogOverlayFactory : DataModel
     {
 
         public static ADVLogOverlayFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogOverlayFactory();
+            var value   = new ADVLogOverlayFactory() { Pointer= p0 };
 
 
             return value;

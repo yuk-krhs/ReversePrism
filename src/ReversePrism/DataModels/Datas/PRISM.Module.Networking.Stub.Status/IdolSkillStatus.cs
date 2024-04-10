@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 IdolSkillActionEffectListFieldNumber     int IL2CPP_TYPE_I4
     // 010 _repeated_idolSkillActionEffectList_codec FieldCodec`1<IdolSkillEffectStatus> IL2CPP_TYPE_GENERICINST
     // 040 IdolSkillActionEffectList                000185CE01E8 ModelClassListType RepeatedField`1<IdolSkillEffectStatus> RepeatedField`1<IdolSkillEffectStatus> List<IdolSkillEffectStatus> Pointer
-    public partial class IdolSkillStatus
+    public partial class IdolSkillStatus : DataModel
     {
         public List<ProduceParameterType>?              AppealTypeList                          { get; set; }
         public int                                      MstIdolSkillId                          { get; set; }
@@ -37,13 +37,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillStatus();
+            var value   = new IdolSkillStatus() { Pointer= p0 };
 
-            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x038)); // 0270D103BF20 0x38 AppealTypeList              ( 000185CEC248 ModelEnumListType RepeatedField`1<ProduceParameterType> RepeatedField`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x020)); // 0270D103BE40 0x20 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Level                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D103BE80 0x28 Level                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.UnlockPremiseEvolutionLevel               = GetInt32(new IntPtr(p + 0x030)); // 0270D103BEC0 0x30 UnlockPremiseEvolutionLevel ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillActionEffectList                 = GetObjectList<IdolSkillEffectStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolSkillEffectStatus.FromPointer); // 0270D103BF80 0x40 IdolSkillActionEffectList   ( 000185CE01E8 ModelClassListType RepeatedField`1<IdolSkillEffectStatus> RepeatedField`1<IdolSkillEffectStatus> List<IdolSkillEffectStatus> Pointer )
+            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x038)); // 024660FBACC0 0x38 AppealTypeList              ( 000185CEC248 ModelEnumListType RepeatedField`1<ProduceParameterType> RepeatedField`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x020)); // 024660FBABE0 0x20 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Level                                     = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024660FBAC20 0x28 Level                       ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.UnlockPremiseEvolutionLevel               = GetInt32(new IntPtr(p + 0x030)); // 024660FBAC60 0x30 UnlockPremiseEvolutionLevel ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolSkillActionEffectList                 = GetObjectList<IdolSkillEffectStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolSkillEffectStatus.FromPointer); // 024660FBAD20 0x40 IdolSkillActionEffectList   ( 000185CE01E8 ModelClassListType RepeatedField`1<IdolSkillEffectStatus> RepeatedField`1<IdolSkillEffectStatus> List<IdolSkillEffectStatus> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExitGUIException
+    public partial class ExitGUIException : DataModel
     {
 
         public static ExitGUIException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExitGUIException();
+            var value   = new ExitGUIException() { Pointer= p0 };
 
 
             return value;

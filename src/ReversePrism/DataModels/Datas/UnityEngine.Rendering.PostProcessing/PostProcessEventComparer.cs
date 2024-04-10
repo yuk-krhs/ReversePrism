@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PostProcessEventComparer
+    public partial class PostProcessEventComparer : DataModel
     {
 
         public static PostProcessEventComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostProcessEventComparer();
+            var value   = new PostProcessEventComparer() { Pointer= p0 };
 
 
             return value;

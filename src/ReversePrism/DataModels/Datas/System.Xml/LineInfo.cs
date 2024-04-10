@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 LineNo                                   0001865F2F90 ModelPrimitiveType int int int Int32
     // 014 LinePos                                  0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class LineInfo
+    public partial class LineInfo : DataModel
     {
         public int                                      LineNo                                  { get; set; }
         public int                                      LinePos                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LineInfo();
+            var value   = new LineInfo() { Pointer= p0 };
 
-            value.LineNo                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D736F448 0x10 LineNo                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.LinePos                                   = GetInt32(new IntPtr(p + 0x014)); // 0270D736F468 0x14 LinePos                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LineNo                                    = GetInt32(new IntPtr(p + 0x010)); // 0246673BF448 0x10 LineNo                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LinePos                                   = GetInt32(new IntPtr(p + 0x014)); // 0246673BF468 0x14 LinePos                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

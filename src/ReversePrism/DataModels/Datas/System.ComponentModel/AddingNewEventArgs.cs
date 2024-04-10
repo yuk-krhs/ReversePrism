@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <NewObject>k__BackingField               <object> IL2CPP_TYPE_OBJECT
-    public partial class AddingNewEventArgs
+    public partial class AddingNewEventArgs : DataModel
     {
 
         public static AddingNewEventArgs? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AddingNewEventArgs();
+            var value   = new AddingNewEventArgs() { Pointer= p0 };
 
 
             return value;

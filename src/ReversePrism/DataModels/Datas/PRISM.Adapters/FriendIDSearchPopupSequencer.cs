@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FriendIDSearchPopupSequencer
+    public partial class FriendIDSearchPopupSequencer : DataModel
     {
 
         public static FriendIDSearchPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendIDSearchPopupSequencer();
+            var value   = new FriendIDSearchPopupSequencer() { Pointer= p0 };
 
 
             return value;

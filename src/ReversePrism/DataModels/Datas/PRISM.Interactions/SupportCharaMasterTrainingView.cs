@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 080 Vm                                       0001865E10E0 ModelClassType SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel Pointer
     // 088 toExchange                               Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 090 exeMasterTraining                        Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class SupportCharaMasterTrainingView
+    public partial class SupportCharaMasterTrainingView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public GameObject?                              GoNormal                                { get; set; }
@@ -45,21 +45,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharaMasterTrainingView();
+            var value   = new SupportCharaMasterTrainingView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA37A120 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.GoNormal                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA37A140 0x28 GoNormal                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA37A160 0x30 GoMax                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnPieceExchange                          = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA37A180 0x38 BtnPieceExchange            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TxtRequiredPieceAmount                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA37A1A0 0x40 TxtRequiredPieceAmount      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtPieceAmount                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA37A1C0 0x48 TxtPieceAmount              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ImgPieceFillColor                         = GetObject<Image>(new IntPtr(p + 0x050), ReversePrism.DataModels.Image.FromPointer); // 0270DA37A1E0 0x50 ImgPieceFillColor           ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.GoAlert                                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA37A200 0x58 GoAlert                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnExecute                                = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA37A220 0x60 BtnExecute                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.DiamondLvSelector                         = GetObject<DiamondLvSelector>(new IntPtr(p + 0x068), ReversePrism.DataModels.DiamondLvSelector.FromPointer); // 0270DA37A240 0x68 DiamondLvSelector           ( 0001866D0710 ModelClassType DiamondLvSelector DiamondLvSelector DiamondLvSelector Pointer )
-            value.PieceIconView                             = GetObject<PieceIconView>(new IntPtr(p + 0x070), ReversePrism.DataModels.PieceIconView.FromPointer); // 0270DA37A260 0x70 PieceIconView               ( 0001867433E0 ModelClassType PieceIconView PieceIconView PieceIconView Pointer )
-            value.LimitLvView                               = GetObject<LimitLvView>(new IntPtr(p + 0x078), ReversePrism.DataModels.LimitLvView.FromPointer); // 0270DA37A280 0x78 LimitLvView                 ( 00018652DAD0 ModelClassType LimitLvView LimitLvView LimitLvView Pointer )
-            value.Vm                                        = GetObject<SupportCharaMasterTrainingViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.SupportCharaMasterTrainingViewModel.FromPointer); // 0270DA37A2A0 0x80 Vm                          ( 0001865E10E0 ModelClassType SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A3C5718 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GoNormal                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C5738 0x28 GoNormal                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C5758 0x30 GoMax                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnPieceExchange                          = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C5778 0x38 BtnPieceExchange            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TxtRequiredPieceAmount                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3C5798 0x40 TxtRequiredPieceAmount      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtPieceAmount                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3C57B8 0x48 TxtPieceAmount              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgPieceFillColor                         = GetObject<Image>(new IntPtr(p + 0x050), ReversePrism.DataModels.Image.FromPointer); // 02466A3C57D8 0x50 ImgPieceFillColor           ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.GoAlert                                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C57F8 0x58 GoAlert                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnExecute                                = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C5818 0x60 BtnExecute                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.DiamondLvSelector                         = GetObject<DiamondLvSelector>(new IntPtr(p + 0x068), ReversePrism.DataModels.DiamondLvSelector.FromPointer); // 02466A3C5838 0x68 DiamondLvSelector           ( 0001866D0710 ModelClassType DiamondLvSelector DiamondLvSelector DiamondLvSelector Pointer )
+            value.PieceIconView                             = GetObject<PieceIconView>(new IntPtr(p + 0x070), ReversePrism.DataModels.PieceIconView.FromPointer); // 02466A3C5858 0x70 PieceIconView               ( 0001867433E0 ModelClassType PieceIconView PieceIconView PieceIconView Pointer )
+            value.LimitLvView                               = GetObject<LimitLvView>(new IntPtr(p + 0x078), ReversePrism.DataModels.LimitLvView.FromPointer); // 02466A3C5878 0x78 LimitLvView                 ( 00018652DAD0 ModelClassType LimitLvView LimitLvView LimitLvView Pointer )
+            value.Vm                                        = GetObject<SupportCharaMasterTrainingViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.SupportCharaMasterTrainingViewModel.FromPointer); // 02466A3C5898 0x80 Vm                          ( 0001865E10E0 ModelClassType SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel SupportCharaMasterTrainingViewModel Pointer )
 
             return value;
         }

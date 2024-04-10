@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 008 Zero                                     SqlInt16 IL2CPP_TYPE_VALUETYPE
     // 00C MinValue                                 SqlInt16 IL2CPP_TYPE_VALUETYPE
     // 010 MaxValue                                 000186558730 ModelEnumType SqlInt16 SqlInt16 SqlInt16 Int32
-    public partial class SqlInt16
+    public partial class SqlInt16 : DataModel
     {
         public bool                                     M_fNotNull                              { get; set; }
         public short                                    M_value                                 { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlInt16();
+            var value   = new SqlInt16() { Pointer= p0 };
 
-            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0270D89A0E40 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_value                                   = GetInt16(new IntPtr(p + 0x012)); // 0270D89A0E60 0x12 M_value                     ( 0001865F1060 ModelPrimitiveType short short short Int16 )
-            value.MaxValue                                  = (SqlInt16)GetInt32(new IntPtr(p + 0x010)); // 0270D89A0F00 0x10 MaxValue                    ( 000186558730 ModelEnumType SqlInt16 SqlInt16 SqlInt16 Int32 )
+            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 024668A0BD58 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetInt16(new IntPtr(p + 0x012)); // 024668A0BD78 0x12 M_value                     ( 0001865F1060 ModelPrimitiveType short short short Int16 )
+            value.MaxValue                                  = (SqlInt16)GetInt32(new IntPtr(p + 0x010)); // 024668A0BE18 0x10 MaxValue                    ( 000186558730 ModelEnumType SqlInt16 SqlInt16 SqlInt16 Int32 )
 
             return value;
         }

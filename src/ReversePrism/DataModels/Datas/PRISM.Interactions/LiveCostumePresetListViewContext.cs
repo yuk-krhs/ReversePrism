@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 040 OnClickApplyButton                       Action`1<int> IL2CPP_TYPE_GENERICINST
     // 048 OnClickDeleteButton                      Action`1<int> IL2CPP_TYPE_GENERICINST
     // 050 OnEndEditPresetName                      Action`1<ValueTuple`2<int, string>> IL2CPP_TYPE_GENERICINST
-    public partial class LiveCostumePresetListViewContext
+    public partial class LiveCostumePresetListViewContext : DataModel
     {
 
         public static LiveCostumePresetListViewContext? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCostumePresetListViewContext();
+            var value   = new LiveCostumePresetListViewContext() { Pointer= p0 };
 
 
             return value;

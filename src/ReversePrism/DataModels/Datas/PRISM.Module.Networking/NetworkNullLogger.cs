@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NetworkNullLogger
+    public partial class NetworkNullLogger : DataModel
     {
 
         public static NetworkNullLogger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NetworkNullLogger();
+            var value   = new NetworkNullLogger() { Pointer= p0 };
 
 
             return value;

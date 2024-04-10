@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 024 ArgumentCount                            0001865F2F90 ModelPrimitiveType int int int Int32
     // 028 Arguments                                000185B7DA40 ModelClassListType ExpressionNode[] ExpressionNode[] List<ExpressionNode> Pointer
     // 000 s_funcs                                  Function[] IL2CPP_TYPE_SZARRAY
-    public partial class FunctionNode
+    public partial class FunctionNode : DataModel
     {
         public string                                   Name                                    { get; set; }
         public int                                      Info                                    { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FunctionNode();
+            var value   = new FunctionNode() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D892C5F0 0x18 Name                        ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.Info                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D892C610 0x20 Info                        ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.ArgumentCount                             = GetInt32(new IntPtr(p + 0x024)); // 0270D892C630 0x24 ArgumentCount               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Arguments                                 = GetObjectList<ExpressionNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExpressionNode.FromPointer); // 0270D892C650 0x28 Arguments                   ( 000185B7DA40 ModelClassListType ExpressionNode[] ExpressionNode[] List<ExpressionNode> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024668997200 0x18 Name                        ( 0001866731A0 ModelPrimitiveType string string string String )
+            value.Info                                      = GetInt32(new IntPtr(p + 0x020)); // 024668997220 0x20 Info                        ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.ArgumentCount                             = GetInt32(new IntPtr(p + 0x024)); // 024668997240 0x24 ArgumentCount               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Arguments                                 = GetObjectList<ExpressionNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExpressionNode.FromPointer); // 024668997260 0x28 Arguments                   ( 000185B7DA40 ModelClassListType ExpressionNode[] ExpressionNode[] List<ExpressionNode> Pointer )
 
             return value;
         }

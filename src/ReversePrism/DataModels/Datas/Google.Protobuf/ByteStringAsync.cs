@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ByteStringAsync
+    public partial class ByteStringAsync : DataModel
     {
 
         public static ByteStringAsync? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteStringAsync();
+            var value   = new ByteStringAsync() { Pointer= p0 };
 
 
             return value;

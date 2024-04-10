@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 024 NsLength                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 Offset                                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 02C Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Attribute
+    public partial class Attribute : DataModel
     {
         public int                                      PrefixOffset                            { get; set; }
         public int                                      PrefixLength                            { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Attribute();
+            var value   = new Attribute() { Pointer= p0 };
 
-            value.PrefixOffset                              = GetInt32(new IntPtr(p + 0x010)); // 0270D7C15FD8 0x10 PrefixOffset                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PrefixLength                              = GetInt32(new IntPtr(p + 0x014)); // 0270D7C15FF8 0x14 PrefixLength                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LocalNameOffset                           = GetInt32(new IntPtr(p + 0x018)); // 0270D7C16018 0x18 LocalNameOffset             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LocalNameLength                           = GetInt32(new IntPtr(p + 0x01C)); // 0270D7C16038 0x1C LocalNameLength             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NsOffset                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D7C16058 0x20 NsOffset                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NsLength                                  = GetInt32(new IntPtr(p + 0x024)); // 0270D7C16078 0x24 NsLength                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x028)); // 0270D7C16098 0x28 Offset                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x02C)); // 0270D7C160B8 0x2C Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PrefixOffset                              = GetInt32(new IntPtr(p + 0x010)); // 024667C6DFD8 0x10 PrefixOffset                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PrefixLength                              = GetInt32(new IntPtr(p + 0x014)); // 024667C6DFF8 0x14 PrefixLength                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LocalNameOffset                           = GetInt32(new IntPtr(p + 0x018)); // 024667C6E018 0x18 LocalNameOffset             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LocalNameLength                           = GetInt32(new IntPtr(p + 0x01C)); // 024667C6E038 0x1C LocalNameLength             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NsOffset                                  = GetInt32(new IntPtr(p + 0x020)); // 024667C6E058 0x20 NsOffset                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NsLength                                  = GetInt32(new IntPtr(p + 0x024)); // 024667C6E078 0x24 NsLength                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x028)); // 024667C6E098 0x28 Offset                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x02C)); // 024667C6E0B8 0x2C Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

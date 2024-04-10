@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DefaultAlias                             000186672F10 ModelPrimitiveType string string string String
-    public partial class AssemblyDefaultAliasAttribute
+    public partial class AssemblyDefaultAliasAttribute : DataModel
     {
         public string                                   DefaultAlias                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyDefaultAliasAttribute();
+            var value   = new AssemblyDefaultAliasAttribute() { Pointer= p0 };
 
-            value.DefaultAlias                              = GetString(new IntPtr(p + 0x010)); // 0270D6CE88D8 0x10 DefaultAlias                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DefaultAlias                              = GetString(new IntPtr(p + 0x010)); // 024666D388D8 0x10 DefaultAlias                ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

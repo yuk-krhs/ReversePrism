@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 StartFrame                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 Target                                   00018667B9F0 ModelEnumType Target Target Target Int32
-    public partial class EyeTargetData
+    public partial class EyeTargetData : DataModel
     {
         public int                                      StartFrame                              { get; set; }
         public Target                                   Target                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EyeTargetData();
+            var value   = new EyeTargetData() { Pointer= p0 };
 
-            value.StartFrame                                = GetInt32(new IntPtr(p + 0x010)); // 0270D4D86050 0x10 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Target                                    = (Target)GetInt32(new IntPtr(p + 0x014)); // 0270D4D86070 0x14 Target                      ( 00018667B9F0 ModelEnumType Target Target Target Int32 )
+            value.StartFrame                                = GetInt32(new IntPtr(p + 0x010)); // 0245A70927F0 0x10 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Target                                    = (Target)GetInt32(new IntPtr(p + 0x014)); // 0245A7092810 0x14 Target                      ( 00018667B9F0 ModelEnumType Target Target Target Int32 )
 
             return value;
         }

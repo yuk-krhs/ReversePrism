@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
     // 020 Name                                     000186671910 ModelPrimitiveType string string string String
-    public partial class SetLiveUnitNameArgs
+    public partial class SetLiveUnitNameArgs : DataModel
     {
         public int                                      UnitNumber                              { get; set; }
         public string                                   Name                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetLiveUnitNameArgs();
+            var value   = new SetLiveUnitNameArgs() { Pointer= p0 };
 
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 0270D21EC888 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D21EC8C8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 024662198E20 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 024662198E60 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

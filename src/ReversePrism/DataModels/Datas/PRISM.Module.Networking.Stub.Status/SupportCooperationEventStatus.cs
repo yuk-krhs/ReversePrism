@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 ProduceCard                              000186537F90 ModelClassType ProduceCardStatus ProduceCardStatus ProduceCardStatus Pointer
     // 000 VitalityFieldNumber                      int IL2CPP_TYPE_I4
     // 038 Vitality                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SupportCooperationEventStatus
+    public partial class SupportCooperationEventStatus : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
         public BuildUpParameterStatus?                  BuildUpParameter                        { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCooperationEventStatus();
+            var value   = new SupportCooperationEventStatus() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D115DFD8 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BuildUpParameter                          = GetObject<BuildUpParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.BuildUpParameterStatus.FromPointer); // 0270D115E018 0x20 BuildUpParameter            ( 00018650F070 ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer )
-            value.PotentialSupportSkill                     = GetObject<InProducePotentialSupportSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.InProducePotentialSupportSkillStatus.FromPointer); // 0270D115E058 0x28 PotentialSupportSkill       ( 0001866DBF40 ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer )
-            value.ProduceCard                               = GetObject<ProduceCardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 0270D115E098 0x30 ProduceCard                 ( 000186537F90 ModelClassType ProduceCardStatus ProduceCardStatus ProduceCardStatus Pointer )
-            value.Vitality                                  = GetInt32(new IntPtr(p + 0x038)); // 0270D115E0D8 0x38 Vitality                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0246610C37E0 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BuildUpParameter                          = GetObject<BuildUpParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.BuildUpParameterStatus.FromPointer); // 0246610C3820 0x20 BuildUpParameter            ( 00018650F070 ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer )
+            value.PotentialSupportSkill                     = GetObject<InProducePotentialSupportSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.InProducePotentialSupportSkillStatus.FromPointer); // 0246610C3860 0x28 PotentialSupportSkill       ( 0001866DBF40 ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer )
+            value.ProduceCard                               = GetObject<ProduceCardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 0246610C38A0 0x30 ProduceCard                 ( 000186537F90 ModelClassType ProduceCardStatus ProduceCardStatus ProduceCardStatus Pointer )
+            value.Vitality                                  = GetInt32(new IntPtr(p + 0x038)); // 0246610C38E0 0x38 Vitality                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

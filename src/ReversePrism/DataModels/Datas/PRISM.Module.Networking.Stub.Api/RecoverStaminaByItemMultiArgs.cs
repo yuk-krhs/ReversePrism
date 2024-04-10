@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 UseProductListFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_useProductList_codec           FieldCodec`1<UseProductStatus> IL2CPP_TYPE_GENERICINST
     // 018 UseProductList                           000185CF6978 ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer
-    public partial class RecoverStaminaByItemMultiArgs
+    public partial class RecoverStaminaByItemMultiArgs : DataModel
     {
         public List<UseProductStatus>?                  UseProductList                          { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverStaminaByItemMultiArgs();
+            var value   = new RecoverStaminaByItemMultiArgs() { Pointer= p0 };
 
-            value.UseProductList                            = GetObjectList<UseProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UseProductStatus.FromPointer); // 0270D29631D8 0x18 UseProductList              ( 000185CF6978 ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer )
+            value.UseProductList                            = GetObjectList<UseProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UseProductStatus.FromPointer); // 0246628D0AC0 0x18 UseProductList              ( 000185CF6978 ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer )
 
             return value;
         }

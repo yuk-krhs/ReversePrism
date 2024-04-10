@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BaseTableQuery
+    public partial class BaseTableQuery : DataModel
     {
 
         public static BaseTableQuery? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseTableQuery();
+            var value   = new BaseTableQuery() { Pointer= p0 };
 
 
             return value;

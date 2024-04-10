@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 scheduler                                ISchedulerQueueing IL2CPP_TYPE_CLASS
     // 000 isDisposed                               BooleanDisposable IL2CPP_TYPE_CLASS
     // 000 onNext                                   Action`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ObserveOn_
+    public partial class ObserveOn_ : DataModel
     {
 
         public static ObserveOn_? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObserveOn_();
+            var value   = new ObserveOn_() { Pointer= p0 };
 
 
             return value;

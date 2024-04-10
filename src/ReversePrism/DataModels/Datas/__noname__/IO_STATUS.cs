@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Status                                   0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 010 Pointer                                  <int> IL2CPP_TYPE_I
-    public partial class IO_STATUS
+    public partial class IO_STATUS : DataModel
     {
         public uint                                     Status                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IO_STATUS();
+            var value   = new IO_STATUS() { Pointer= p0 };
 
-            value.Status                                    = GetUInt32(new IntPtr(p + 0x010)); // 0270D692A630 0x10 Status                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Status                                    = GetUInt32(new IntPtr(p + 0x010)); // 0246669A2630 0x10 Status                      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

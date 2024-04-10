@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 DeviceToken                              000186671910 ModelPrimitiveType string string string String
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
     // 028 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StartPvpMatchArgs
+    public partial class StartPvpMatchArgs : DataModel
     {
         public string                                   OpponentUserId                          { get; set; }
         public string                                   DeviceToken                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartPvpMatchArgs();
+            var value   = new StartPvpMatchArgs() { Pointer= p0 };
 
-            value.OpponentUserId                            = GetString(new IntPtr(p + 0x018)); // 0270D274E268 0x18 OpponentUserId              ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0270D274E2A8 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x028)); // 0270D274E2E8 0x28 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OpponentUserId                            = GetString(new IntPtr(p + 0x018)); // 0246626C70D0 0x18 OpponentUserId              ( 000186671910 ModelPrimitiveType string string string String )
+            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0246626C7110 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x028)); // 0246626C7150 0x28 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

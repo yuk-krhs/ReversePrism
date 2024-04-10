@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VideoClip
+    public partial class VideoClip : DataModel
     {
 
         public static VideoClip? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VideoClip();
+            var value   = new VideoClip() { Pointer= p0 };
 
 
             return value;

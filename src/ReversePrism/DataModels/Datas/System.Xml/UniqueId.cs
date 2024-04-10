@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 uuidLength                               int IL2CPP_TYPE_I4
     // 000 char2val                                 short[] IL2CPP_TYPE_SZARRAY
     // 000 val2char                                 string IL2CPP_TYPE_STRING
-    public partial class UniqueId
+    public partial class UniqueId : DataModel
     {
         public long                                     IdLow                                   { get; set; }
         public long                                     IdHigh                                  { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniqueId();
+            var value   = new UniqueId() { Pointer= p0 };
 
-            value.IdLow                                     = GetInt64(new IntPtr(p + 0x010)); // 0270D7C0BBC0 0x10 IdLow                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.IdHigh                                    = GetInt64(new IntPtr(p + 0x018)); // 0270D7C0BBE0 0x18 IdHigh                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.S                                         = GetString(new IntPtr(p + 0x020)); // 0270D7C0BC00 0x20 S                           ( 000186671910 ModelPrimitiveType string string string String )
+            value.IdLow                                     = GetInt64(new IntPtr(p + 0x010)); // 024667C63BC0 0x10 IdLow                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.IdHigh                                    = GetInt64(new IntPtr(p + 0x018)); // 024667C63BE0 0x18 IdHigh                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.S                                         = GetString(new IntPtr(p + 0x020)); // 024667C63C00 0x20 S                           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

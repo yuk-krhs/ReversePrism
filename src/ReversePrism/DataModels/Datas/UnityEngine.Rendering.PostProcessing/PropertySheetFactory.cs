@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Sheets                                 Dictionary`2<Shader, PropertySheet> IL2CPP_TYPE_GENERICINST
-    public partial class PropertySheetFactory
+    public partial class PropertySheetFactory : DataModel
     {
 
         public static PropertySheetFactory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropertySheetFactory();
+            var value   = new PropertySheetFactory() { Pointer= p0 };
 
 
             return value;

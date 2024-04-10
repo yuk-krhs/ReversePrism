@@ -39,7 +39,7 @@ namespace ReversePrism.DataModels
     // 000 ReservedNameFieldNumber                  int IL2CPP_TYPE_I4
     // 048 _repeated_reservedName_codec             FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 060 ReservedName                             000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class DescriptorProto
+    public partial class DescriptorProto : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<FieldDescriptorProto>?              Field                                   { get; set; }
@@ -58,18 +58,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DescriptorProto();
+            var value   = new DescriptorProto() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D0B8A7E8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Field                                     = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 0270D0B8A848 0x20 Field                       ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
-            value.Extension                                 = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 0270D0B8A8A8 0x28 Extension                   ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
-            value.NestedType                                = GetObjectList<DescriptorProto>(new IntPtr(p + 0x030), ReversePrism.DataModels.DescriptorProto.FromPointer); // 0270D0B8A908 0x30 NestedType                  ( 000185CD3518 ModelClassListType RepeatedField`1<DescriptorProto> RepeatedField`1<DescriptorProto> List<DescriptorProto> Pointer )
-            value.EnumType                                  = GetObjectList<EnumDescriptorProto>(new IntPtr(p + 0x038), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 0270D0B8A968 0x38 EnumType                    ( 000185CD4528 ModelClassListType RepeatedField`1<EnumDescriptorProto> RepeatedField`1<EnumDescriptorProto> List<EnumDescriptorProto> Pointer )
-            value.ExtensionRange                            = GetObjectList<ExtensionRange>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExtensionRange.FromPointer); // 0270D0B8A9C8 0x40 ExtensionRange              ( 000185CF84A8 ModelClassListType RepeatedField`1<ExtensionRange> RepeatedField`1<ExtensionRange> List<ExtensionRange> Pointer )
-            value.OneofDecl                                 = GetObjectList<OneofDescriptorProto>(new IntPtr(p + 0x048), ReversePrism.DataModels.OneofDescriptorProto.FromPointer); // 0270D0B8AA28 0x48 OneofDecl                   ( 000185CE8168 ModelClassListType RepeatedField`1<OneofDescriptorProto> RepeatedField`1<OneofDescriptorProto> List<OneofDescriptorProto> Pointer )
-            value.Options                                   = GetObject<MessageOptions>(new IntPtr(p + 0x050), ReversePrism.DataModels.MessageOptions.FromPointer); // 0270D0B8AA68 0x50 Options                     ( 0001866089F0 ModelClassType MessageOptions MessageOptions MessageOptions Pointer )
-            value.ReservedRange                             = GetObjectList<ReservedRange>(new IntPtr(p + 0x058), ReversePrism.DataModels.ReservedRange.FromPointer); // 0270D0B8AAC8 0x58 ReservedRange               ( 000185CF86E8 ModelClassListType RepeatedField`1<ReservedRange> RepeatedField`1<ReservedRange> List<ReservedRange> Pointer )
-            value.ReservedName                              = GetStringList(new IntPtr(p + 0x060)); // 0270D0B8AB28 0x60 ReservedName                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024660B75048 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Field                                     = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 024660B750A8 0x20 Field                       ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
+            value.Extension                                 = GetObjectList<FieldDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 024660B75108 0x28 Extension                   ( 000185CD8B38 ModelClassListType RepeatedField`1<FieldDescriptorProto> RepeatedField`1<FieldDescriptorProto> List<FieldDescriptorProto> Pointer )
+            value.NestedType                                = GetObjectList<DescriptorProto>(new IntPtr(p + 0x030), ReversePrism.DataModels.DescriptorProto.FromPointer); // 024660B75168 0x30 NestedType                  ( 000185CD3518 ModelClassListType RepeatedField`1<DescriptorProto> RepeatedField`1<DescriptorProto> List<DescriptorProto> Pointer )
+            value.EnumType                                  = GetObjectList<EnumDescriptorProto>(new IntPtr(p + 0x038), ReversePrism.DataModels.EnumDescriptorProto.FromPointer); // 024660B751C8 0x38 EnumType                    ( 000185CD4528 ModelClassListType RepeatedField`1<EnumDescriptorProto> RepeatedField`1<EnumDescriptorProto> List<EnumDescriptorProto> Pointer )
+            value.ExtensionRange                            = GetObjectList<ExtensionRange>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExtensionRange.FromPointer); // 024660B75228 0x40 ExtensionRange              ( 000185CF84A8 ModelClassListType RepeatedField`1<ExtensionRange> RepeatedField`1<ExtensionRange> List<ExtensionRange> Pointer )
+            value.OneofDecl                                 = GetObjectList<OneofDescriptorProto>(new IntPtr(p + 0x048), ReversePrism.DataModels.OneofDescriptorProto.FromPointer); // 024660B75288 0x48 OneofDecl                   ( 000185CE8168 ModelClassListType RepeatedField`1<OneofDescriptorProto> RepeatedField`1<OneofDescriptorProto> List<OneofDescriptorProto> Pointer )
+            value.Options                                   = GetObject<MessageOptions>(new IntPtr(p + 0x050), ReversePrism.DataModels.MessageOptions.FromPointer); // 024660B752C8 0x50 Options                     ( 0001866089F0 ModelClassType MessageOptions MessageOptions MessageOptions Pointer )
+            value.ReservedRange                             = GetObjectList<ReservedRange>(new IntPtr(p + 0x058), ReversePrism.DataModels.ReservedRange.FromPointer); // 024660B75328 0x58 ReservedRange               ( 000185CF86E8 ModelClassListType RepeatedField`1<ReservedRange> RepeatedField`1<ReservedRange> List<ReservedRange> Pointer )
+            value.ReservedName                              = GetStringList(new IntPtr(p + 0x060)); // 024660B75388 0x60 ReservedName                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetSettingArgsTranslator
+    public partial class GetSettingArgsTranslator : DataModel
     {
 
         public static GetSettingArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSettingArgsTranslator();
+            var value   = new GetSettingArgsTranslator() { Pointer= p0 };
 
 
             return value;

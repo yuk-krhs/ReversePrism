@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 UseEditMode                              000186603580 ModelEnumType UseEditMode UseEditMode UseEditMode Int32
-    public partial class TimeFieldAttribute
+    public partial class TimeFieldAttribute : DataModel
     {
         public UseEditMode                              UseEditMode                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeFieldAttribute();
+            var value   = new TimeFieldAttribute() { Pointer= p0 };
 
-            value.UseEditMode                               = (UseEditMode)GetInt32(new IntPtr(p + 0x010)); // 0270DB2A4860 0x10 UseEditMode                 ( 000186603580 ModelEnumType UseEditMode UseEditMode UseEditMode Int32 )
+            value.UseEditMode                               = (UseEditMode)GetInt32(new IntPtr(p + 0x010)); // 02466B311368 0x10 UseEditMode                 ( 000186603580 ModelEnumType UseEditMode UseEditMode UseEditMode Int32 )
 
             return value;
         }

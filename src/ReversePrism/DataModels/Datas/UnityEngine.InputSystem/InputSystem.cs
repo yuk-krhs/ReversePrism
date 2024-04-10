@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 kDocUrl                                  string IL2CPP_TYPE_STRING
     // 000 s_Manager                                InputManager IL2CPP_TYPE_CLASS
     // 008 s_Remote                                 InputRemoting IL2CPP_TYPE_CLASS
-    public partial class InputSystem
+    public partial class InputSystem : DataModel
     {
 
         public static InputSystem? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputSystem();
+            var value   = new InputSystem() { Pointer= p0 };
 
 
             return value;

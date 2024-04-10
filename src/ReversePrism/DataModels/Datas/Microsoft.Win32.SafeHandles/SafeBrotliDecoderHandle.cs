@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SafeBrotliDecoderHandle
+    public partial class SafeBrotliDecoderHandle : DataModel
     {
 
         public static SafeBrotliDecoderHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeBrotliDecoderHandle();
+            var value   = new SafeBrotliDecoderHandle() { Pointer= p0 };
 
 
             return value;

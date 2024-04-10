@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C RankingType                              000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32
     // 000 RankingViewTypeFieldNumber               int IL2CPP_TYPE_I4
     // 020 RankingViewType                          000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32
-    public partial class GetRankingArgs
+    public partial class GetRankingArgs : DataModel
     {
         public int                                      MstEventId                              { get; set; }
         public EventRankingType                         RankingType                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetRankingArgs();
+            var value   = new GetRankingArgs() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0270D1011220 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RankingType                               = (EventRankingType)GetInt32(new IntPtr(p + 0x01C)); // 0270D1011260 0x1C RankingType                 ( 000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32 )
-            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x020)); // 0270D10112A0 0x20 RankingViewType             ( 000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 024660FA76F8 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RankingType                               = (EventRankingType)GetInt32(new IntPtr(p + 0x01C)); // 024660FA7738 0x1C RankingType                 ( 000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32 )
+            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x020)); // 024660FA7778 0x20 RankingViewType             ( 000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
 
             return value;
         }

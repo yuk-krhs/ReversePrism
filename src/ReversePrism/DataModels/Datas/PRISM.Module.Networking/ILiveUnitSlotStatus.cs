@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILiveUnitSlotStatus
+    public partial class ILiveUnitSlotStatus : DataModel
     {
 
         public static ILiveUnitSlotStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILiveUnitSlotStatus();
+            var value   = new ILiveUnitSlotStatus() { Pointer= p0 };
 
 
             return value;

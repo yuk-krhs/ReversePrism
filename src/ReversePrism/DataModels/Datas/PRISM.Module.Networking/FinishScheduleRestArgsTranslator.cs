@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FinishScheduleRestArgsTranslator
+    public partial class FinishScheduleRestArgsTranslator : DataModel
     {
 
         public static FinishScheduleRestArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishScheduleRestArgsTranslator();
+            var value   = new FinishScheduleRestArgsTranslator() { Pointer= p0 };
 
 
             return value;

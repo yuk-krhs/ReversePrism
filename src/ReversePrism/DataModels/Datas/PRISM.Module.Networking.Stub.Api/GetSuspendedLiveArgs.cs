@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 LiveToken                                000186671910 ModelPrimitiveType string string string String
     // 000 DeviceTokenFieldNumber                   int IL2CPP_TYPE_I4
     // 020 DeviceToken                              000186671910 ModelPrimitiveType string string string String
-    public partial class GetSuspendedLiveArgs
+    public partial class GetSuspendedLiveArgs : DataModel
     {
         public string                                   LiveToken                               { get; set; }
         public string                                   DeviceToken                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSuspendedLiveArgs();
+            var value   = new GetSuspendedLiveArgs() { Pointer= p0 };
 
-            value.LiveToken                                 = GetString(new IntPtr(p + 0x018)); // 0270D20517E8 0x18 LiveToken                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0270D2051828 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.LiveToken                                 = GetString(new IntPtr(p + 0x018)); // 0246620124B8 0x18 LiveToken                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0246620124F8 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 StartScript                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 LabelName                                0001866722E0 ModelPrimitiveType string string string String
-    public partial class SceneData
+    public partial class SceneData : DataModel
     {
         public int                                      StartScript                             { get; set; }
         public string                                   LabelName                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneData();
+            var value   = new SceneData() { Pointer= p0 };
 
-            value.StartScript                               = GetInt32(new IntPtr(p + 0x010)); // 027005FB9B28 0x10 StartScript                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LabelName                                 = GetString(new IntPtr(p + 0x018)); // 027005FB9B48 0x18 LabelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.StartScript                               = GetInt32(new IntPtr(p + 0x010)); // 0245A5F951F8 0x10 StartScript                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LabelName                                 = GetString(new IntPtr(p + 0x018)); // 0245A5F95218 0x18 LabelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

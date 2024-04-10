@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 Version10                                Version IL2CPP_TYPE_CLASS
     // 010 Version11                                0001866B1190 ModelClassType Version Version Version Pointer
     // 018 Version20                                0001866B1190 ModelClassType Version Version Version Pointer
-    public partial class HttpVersion
+    public partial class HttpVersion : DataModel
     {
         public Version?                                 Version11                               { get; set; }
         public Version?                                 Version20                               { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpVersion();
+            var value   = new HttpVersion() { Pointer= p0 };
 
-            value.Version11                                 = GetObject<Version>(new IntPtr(p + 0x010), ReversePrism.DataModels.Version.FromPointer); // 0270D7A09D90 0x10 Version11                   ( 0001866B1190 ModelClassType Version Version Version Pointer )
-            value.Version20                                 = GetObject<Version>(new IntPtr(p + 0x018), ReversePrism.DataModels.Version.FromPointer); // 0270D7A09DB0 0x18 Version20                   ( 0001866B1190 ModelClassType Version Version Version Pointer )
+            value.Version11                                 = GetObject<Version>(new IntPtr(p + 0x010), ReversePrism.DataModels.Version.FromPointer); // 024667A61D90 0x10 Version11                   ( 0001866B1190 ModelClassType Version Version Version Pointer )
+            value.Version20                                 = GetObject<Version>(new IntPtr(p + 0x018), ReversePrism.DataModels.Version.FromPointer); // 024667A61DB0 0x18 Version20                   ( 0001866B1190 ModelClassType Version Version Version Pointer )
 
             return value;
         }

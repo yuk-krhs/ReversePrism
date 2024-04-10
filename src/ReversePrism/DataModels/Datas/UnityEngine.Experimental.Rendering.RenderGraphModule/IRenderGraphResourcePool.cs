@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRenderGraphResourcePool
+    public partial class IRenderGraphResourcePool : DataModel
     {
 
         public static IRenderGraphResourcePool? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRenderGraphResourcePool();
+            var value   = new IRenderGraphResourcePool() { Pointer= p0 };
 
 
             return value;

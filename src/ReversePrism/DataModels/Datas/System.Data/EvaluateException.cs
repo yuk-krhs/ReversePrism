@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EvaluateException
+    public partial class EvaluateException : DataModel
     {
 
         public static EvaluateException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EvaluateException();
+            var value   = new EvaluateException() { Pointer= p0 };
 
 
             return value;

@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 06C MissionGroupType                         0001866240E0 ModelEnumType MissionGroupType MissionGroupType MissionGroupType Int32
     // 000 GameEventFieldNumber                     int IL2CPP_TYPE_I4
     // 070 GameEvent                                0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer
-    public partial class MissionGroupStatus
+    public partial class MissionGroupStatus : DataModel
     {
         public DateTime                                 LastDisplayDate                         { get; set; }
         public DateTime                                 ReceiveEndDate                          { get; set; }
@@ -54,20 +54,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionGroupStatus();
+            var value   = new MissionGroupStatus() { Pointer= p0 };
 
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 0270D22F3348 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ReceiveEndDate                            = GetDateTime(new IntPtr(p + 0x020)); // 0270D22F3368 0x20 ReceiveEndDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x038)); // 0270D22F33E8 0x38 MstMissionGroupId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D22F3428 0x40 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._ReceiveEndDate                           = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D22F3468 0x48 _ReceiveEndDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.MissionList                               = GetObjectList<MissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.MissionStatus.FromPointer); // 0270D22F34C8 0x50 MissionList                 ( 000185CE70D8 ModelClassListType RepeatedField`1<MissionStatus> RepeatedField`1<MissionStatus> List<MissionStatus> Pointer )
-            value.Gauge                                     = GetObject<MissionGaugeStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.MissionGaugeStatus.FromPointer); // 0270D22F3508 0x58 Gauge                       ( 000186622DD0 ModelClassType MissionGaugeStatus MissionGaugeStatus MissionGaugeStatus Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x060)); // 0270D22F3548 0x60 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x064)); // 0270D22F3588 0x64 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x068)); // 0270D22F35C8 0x68 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MissionGroupType                          = (MissionGroupType)GetInt32(new IntPtr(p + 0x06C)); // 0270D22F3608 0x6C MissionGroupType            ( 0001866240E0 ModelEnumType MissionGroupType MissionGroupType MissionGroupType Int32 )
-            value.GameEvent                                 = GetObject<GameEventStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0270D22F3648 0x70 GameEvent                   ( 0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 024662262990 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ReceiveEndDate                            = GetDateTime(new IntPtr(p + 0x020)); // 0246622629B0 0x20 ReceiveEndDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x038)); // 024662262A30 0x38 MstMissionGroupId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024662262A70 0x40 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._ReceiveEndDate                           = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024662262AB0 0x48 _ReceiveEndDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.MissionList                               = GetObjectList<MissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.MissionStatus.FromPointer); // 024662262B10 0x50 MissionList                 ( 000185CE70D8 ModelClassListType RepeatedField`1<MissionStatus> RepeatedField`1<MissionStatus> List<MissionStatus> Pointer )
+            value.Gauge                                     = GetObject<MissionGaugeStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.MissionGaugeStatus.FromPointer); // 024662262B50 0x58 Gauge                       ( 000186622DD0 ModelClassType MissionGaugeStatus MissionGaugeStatus MissionGaugeStatus Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x060)); // 024662262B90 0x60 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x064)); // 024662262BD0 0x64 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x068)); // 024662262C10 0x68 IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MissionGroupType                          = (MissionGroupType)GetInt32(new IntPtr(p + 0x06C)); // 024662262C50 0x6C MissionGroupType            ( 0001866240E0 ModelEnumType MissionGroupType MissionGroupType MissionGroupType Int32 )
+            value.GameEvent                                 = GetObject<GameEventStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameEventStatus.FromPointer); // 024662262C90 0x70 GameEvent                   ( 0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
             value.LastDisplayDate               = ToDateTime(value._LastDisplayDate);
             value.ReceiveEndDate                = ToDateTime(value._ReceiveEndDate);
 

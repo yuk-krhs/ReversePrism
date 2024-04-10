@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Punycode
+    public partial class Punycode : DataModel
     {
 
         public static Punycode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Punycode();
+            var value   = new Punycode() { Pointer= p0 };
 
 
             return value;

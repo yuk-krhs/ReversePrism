@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetConnectURLAndTokenReplyTranslator
+    public partial class GetConnectURLAndTokenReplyTranslator : DataModel
     {
 
         public static GetConnectURLAndTokenReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetConnectURLAndTokenReplyTranslator();
+            var value   = new GetConnectURLAndTokenReplyTranslator() { Pointer= p0 };
 
 
             return value;

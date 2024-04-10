@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     000186625F50 ModelEnumType Type Type Type Int32
     // 014 StartPosition                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 EndPosition                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Token
+    public partial class Token : DataModel
     {
         public Type                                     Type                                    { get; set; }
         public int                                      StartPosition                           { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Token();
+            var value   = new Token() { Pointer= p0 };
 
-            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 0270DB843118 0x10 Type                        ( 000186625F50 ModelEnumType Type Type Type Int32 )
-            value.StartPosition                             = GetInt32(new IntPtr(p + 0x014)); // 0270DB843138 0x14 StartPosition               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndPosition                               = GetInt32(new IntPtr(p + 0x018)); // 0270DB843158 0x18 EndPosition                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 02466B8B2D80 0x10 Type                        ( 000186625F50 ModelEnumType Type Type Type Int32 )
+            value.StartPosition                             = GetInt32(new IntPtr(p + 0x014)); // 02466B8B2DA0 0x14 StartPosition               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EndPosition                               = GetInt32(new IntPtr(p + 0x018)); // 02466B8B2DC0 0x18 EndPosition                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

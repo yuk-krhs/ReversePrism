@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LogConst
+    public partial class LogConst : DataModel
     {
 
         public static LogConst? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogConst();
+            var value   = new LogConst() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 EnumSeparatorString                      string IL2CPP_TYPE_STRING
     // 000 ValuesAndNamesPerEnum                    ThreadSafeStore`2<StructMultiKey`2<Type, NamingStrategy>, EnumInfo> IL2CPP_TYPE_GENERICINST
     // 008 _camelCaseNamingStrategy                 CamelCaseNamingStrategy IL2CPP_TYPE_CLASS
-    public partial class EnumUtils
+    public partial class EnumUtils : DataModel
     {
 
         public static EnumUtils? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumUtils();
+            var value   = new EnumUtils() { Pointer= p0 };
 
 
             return value;

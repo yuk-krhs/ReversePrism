@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IResourceTag
+    public partial class IResourceTag : DataModel
     {
 
         public static IResourceTag? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IResourceTag();
+            var value   = new IResourceTag() { Pointer= p0 };
 
 
             return value;

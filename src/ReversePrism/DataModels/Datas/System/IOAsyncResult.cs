@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Wait_handle                              00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer
     // 028 Completed_synchronously                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 Completed                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class IOAsyncResult
+    public partial class IOAsyncResult : DataModel
     {
         public AsyncCallback?                           Async_callback                          { get; set; }
         public ManualResetEvent?                        Wait_handle                             { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOAsyncResult();
+            var value   = new IOAsyncResult() { Pointer= p0 };
 
-            value.Async_callback                            = GetObject<AsyncCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncCallback.FromPointer); // 0270D7986CF8 0x10 Async_callback              ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
-            value.Wait_handle                               = GetObject<ManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0270D7986D38 0x20 Wait_handle                 ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
-            value.Completed_synchronously                   = GetBool(new IntPtr(p + 0x028)); // 0270D7986D58 0x28 Completed_synchronously     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Completed                                 = GetBool(new IntPtr(p + 0x029)); // 0270D7986D78 0x29 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Async_callback                            = GetObject<AsyncCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncCallback.FromPointer); // 0246679EECF8 0x10 Async_callback              ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
+            value.Wait_handle                               = GetObject<ManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0246679EED38 0x20 Wait_handle                 ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
+            value.Completed_synchronously                   = GetBool(new IntPtr(p + 0x028)); // 0246679EED58 0x28 Completed_synchronously     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Completed                                 = GetBool(new IntPtr(p + 0x029)); // 0246679EED78 0x29 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

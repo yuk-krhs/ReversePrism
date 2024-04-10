@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 LocalName                                0001866722E0 ModelPrimitiveType string string string String
     // 018 NamespaceURI                             0001866722E0 ModelPrimitiveType string string string String
-    public partial class XmlNodeIdentety
+    public partial class XmlNodeIdentety : DataModel
     {
         public string                                   LocalName                               { get; set; }
         public string                                   NamespaceURI                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNodeIdentety();
+            var value   = new XmlNodeIdentety() { Pointer= p0 };
 
-            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 0270D8979458 0x10 LocalName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.NamespaceURI                              = GetString(new IntPtr(p + 0x018)); // 0270D8979478 0x18 NamespaceURI                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 0246689E3EA8 0x10 LocalName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.NamespaceURI                              = GetString(new IntPtr(p + 0x018)); // 0246689E3EC8 0x18 NamespaceURI                ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

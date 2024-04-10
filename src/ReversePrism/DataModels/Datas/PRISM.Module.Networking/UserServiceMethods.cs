@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 GetSelf                                  Method`2<IGetSelfArgs, IGetSelfReply> IL2CPP_TYPE_GENERICINST
     // 030 GetProfile                               Method`2<IGetProfileArgs, IGetProfileReply> IL2CPP_TYPE_GENERICINST
     // 048 SearchUser                               Method`2<ISearchUserArgs, ISearchUserReply> IL2CPP_TYPE_GENERICINST
-    public partial class UserServiceMethods
+    public partial class UserServiceMethods : DataModel
     {
 
         public static UserServiceMethods? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserServiceMethods();
+            var value   = new UserServiceMethods() { Pointer= p0 };
 
 
             return value;

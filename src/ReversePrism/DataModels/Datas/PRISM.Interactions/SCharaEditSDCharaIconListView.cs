@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 IconViewPrefab                           0001866A7D90 ModelClassType SCharaEditSDCharaIconView SCharaEditSDCharaIconView SCharaEditSDCharaIconView Pointer
     // 028 ContentArea                              0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 030 IconViews                                000185D05228 ModelClassListType List`1<SCharaEditSDCharaIconView> List`1<SCharaEditSDCharaIconView> List<SCharaEditSDCharaIconView> Pointer
-    public partial class SCharaEditSDCharaIconListView
+    public partial class SCharaEditSDCharaIconListView : DataModel
     {
         public SCharaEditSDCharaIconView?               IconViewPrefab                          { get; set; }
         public Transform?                               ContentArea                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaEditSDCharaIconListView();
+            var value   = new SCharaEditSDCharaIconListView() { Pointer= p0 };
 
-            value.IconViewPrefab                            = GetObject<SCharaEditSDCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaEditSDCharaIconView.FromPointer); // 0270DB584B40 0x20 IconViewPrefab              ( 0001866A7D90 ModelClassType SCharaEditSDCharaIconView SCharaEditSDCharaIconView SCharaEditSDCharaIconView Pointer )
-            value.ContentArea                               = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB584B60 0x28 ContentArea                 ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.IconViews                                 = GetObjectList<SCharaEditSDCharaIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaEditSDCharaIconView.FromPointer); // 0270DB584B80 0x30 IconViews                   ( 000185D05228 ModelClassListType List`1<SCharaEditSDCharaIconView> List`1<SCharaEditSDCharaIconView> List<SCharaEditSDCharaIconView> Pointer )
+            value.IconViewPrefab                            = GetObject<SCharaEditSDCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaEditSDCharaIconView.FromPointer); // 02466B610C70 0x20 IconViewPrefab              ( 0001866A7D90 ModelClassType SCharaEditSDCharaIconView SCharaEditSDCharaIconView SCharaEditSDCharaIconView Pointer )
+            value.ContentArea                               = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B610C90 0x28 ContentArea                 ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.IconViews                                 = GetObjectList<SCharaEditSDCharaIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaEditSDCharaIconView.FromPointer); // 02466B610CB0 0x30 IconViews                   ( 000185D05228 ModelClassListType List`1<SCharaEditSDCharaIconView> List`1<SCharaEditSDCharaIconView> List<SCharaEditSDCharaIconView> Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 <From>k__BackingField                    Nullable`1<long> IL2CPP_TYPE_GENERICINST
     // 028 <Length>k__BackingField                  Nullable`1<long> IL2CPP_TYPE_GENERICINST
     // 038 <To>k__BackingField                      Nullable`1<long> IL2CPP_TYPE_GENERICINST
-    public partial class ContentRangeHeaderValue
+    public partial class ContentRangeHeaderValue : DataModel
     {
         public string                                   Unit                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContentRangeHeaderValue();
+            var value   = new ContentRangeHeaderValue() { Pointer= p0 };
 
-            value.Unit                                      = GetString(new IntPtr(p + 0x010)); // 0270DB8562D0 0x10 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Unit                                      = GetString(new IntPtr(p + 0x010)); // 02466B8DE2F0 0x10 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Bitwise
+    public partial class Bitwise : DataModel
     {
 
         public static Bitwise? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Bitwise();
+            var value   = new Bitwise() { Pointer= p0 };
 
 
             return value;

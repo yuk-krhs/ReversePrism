@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstChainTalkTextFormatter
+    public partial class MstChainTalkTextFormatter : DataModel
     {
 
         public static MstChainTalkTextFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstChainTalkTextFormatter();
+            var value   = new MstChainTalkTextFormatter() { Pointer= p0 };
 
 
             return value;

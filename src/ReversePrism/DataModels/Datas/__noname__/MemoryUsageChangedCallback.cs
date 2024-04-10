@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MemoryUsageChangedCallback
+    public partial class MemoryUsageChangedCallback : DataModel
     {
 
         public static MemoryUsageChangedCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryUsageChangedCallback();
+            var value   = new MemoryUsageChangedCallback() { Pointer= p0 };
 
 
             return value;

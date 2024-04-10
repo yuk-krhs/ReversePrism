@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Children>k__BackingField                Dictionary`2<string, Node> IL2CPP_TYPE_GENERICINST
-    public partial class Node
+    public partial class Node : DataModel
     {
 
         public static Node? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Node();
+            var value   = new Node() { Pointer= p0 };
 
 
             return value;

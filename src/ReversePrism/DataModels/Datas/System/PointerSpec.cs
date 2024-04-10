@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Pointer_level                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class PointerSpec
+    public partial class PointerSpec : DataModel
     {
         public int                                      Pointer_level                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerSpec();
+            var value   = new PointerSpec() { Pointer= p0 };
 
-            value.Pointer_level                             = GetInt32(new IntPtr(p + 0x010)); // 0270D6AA1618 0x10 Pointer_level               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pointer_level                             = GetInt32(new IntPtr(p + 0x010)); // 024666B09618 0x10 Pointer_level               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Value                                  0001866656B0 ModelPrimitiveType float float float Single
     // 014 M_Unit                                   00018666B2C0 ModelEnumType TimeUnit TimeUnit TimeUnit Int32
-    public partial class TimeValue
+    public partial class TimeValue : DataModel
     {
         public float                                    M_Value                                 { get; set; }
         public TimeUnit                                 M_Unit                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeValue();
+            var value   = new TimeValue() { Pointer= p0 };
 
-            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 0270067F9538 0x10 M_Value                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Unit                                    = (TimeUnit)GetInt32(new IntPtr(p + 0x014)); // 0270067F9558 0x14 M_Unit                      ( 00018666B2C0 ModelEnumType TimeUnit TimeUnit TimeUnit Int32 )
+            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A67BB6B8 0x10 M_Value                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Unit                                    = (TimeUnit)GetInt32(new IntPtr(p + 0x014)); // 0245A67BB6D8 0x14 M_Unit                      ( 00018666B2C0 ModelEnumType TimeUnit TimeUnit TimeUnit Int32 )
 
             return value;
         }

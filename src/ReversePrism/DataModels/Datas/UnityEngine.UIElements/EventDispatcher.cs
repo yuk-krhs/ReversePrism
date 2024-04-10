@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 008 s_EditorStrategies                       IEventDispatchingStrategy[] IL2CPP_TYPE_SZARRAY
     // 040 M_Immediate                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 041 ProcessingEvents                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class EventDispatcher
+    public partial class EventDispatcher : DataModel
     {
         public ClickDetector?                           M_ClickDetector                         { get; set; }
         public List<IEventDispatchingStrategy>?         M_DispatchingStrategies                 { get; set; }
@@ -33,14 +33,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventDispatcher();
+            var value   = new EventDispatcher() { Pointer= p0 };
 
-            value.M_ClickDetector                           = GetObject<ClickDetector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ClickDetector.FromPointer); // 027006758F68 0x10 M_ClickDetector             ( 0001865B31F0 ModelClassType ClickDetector ClickDetector ClickDetector Pointer )
-            value.M_DispatchingStrategies                   = GetObjectList<IEventDispatchingStrategy>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventDispatchingStrategy.FromPointer); // 027006758F88 0x18 M_DispatchingStrategies     ( 000185CE2B38 ModelClassListType List`1<IEventDispatchingStrategy> List`1<IEventDispatchingStrategy> List<IEventDispatchingStrategy> Pointer )
-            value.PointerState                              = GetObject<PointerDispatchState>(new IntPtr(p + 0x028), ReversePrism.DataModels.PointerDispatchState.FromPointer); // 027006758FE8 0x28 PointerState                ( 000186759C80 ModelClassType PointerDispatchState PointerDispatchState PointerDispatchState Pointer )
-            value.M_GateCount                               = GetUInt32(new IntPtr(p + 0x030)); // 027006759008 0x30 M_GateCount                 ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_Immediate                               = GetBool(new IntPtr(p + 0x040)); // 027006759068 0x40 M_Immediate                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ProcessingEvents                          = GetBool(new IntPtr(p + 0x041)); // 027006759088 0x41 ProcessingEvents            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ClickDetector                           = GetObject<ClickDetector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ClickDetector.FromPointer); // 0245A671AED0 0x10 M_ClickDetector             ( 0001865B31F0 ModelClassType ClickDetector ClickDetector ClickDetector Pointer )
+            value.M_DispatchingStrategies                   = GetObjectList<IEventDispatchingStrategy>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventDispatchingStrategy.FromPointer); // 0245A671AEF0 0x18 M_DispatchingStrategies     ( 000185CE2B38 ModelClassListType List`1<IEventDispatchingStrategy> List`1<IEventDispatchingStrategy> List<IEventDispatchingStrategy> Pointer )
+            value.PointerState                              = GetObject<PointerDispatchState>(new IntPtr(p + 0x028), ReversePrism.DataModels.PointerDispatchState.FromPointer); // 0245A671AF50 0x28 PointerState                ( 000186759C80 ModelClassType PointerDispatchState PointerDispatchState PointerDispatchState Pointer )
+            value.M_GateCount                               = GetUInt32(new IntPtr(p + 0x030)); // 0245A671AF70 0x30 M_GateCount                 ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_Immediate                               = GetBool(new IntPtr(p + 0x040)); // 0245A671AFD0 0x40 M_Immediate                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ProcessingEvents                          = GetBool(new IntPtr(p + 0x041)); // 0245A671AFF0 0x41 ProcessingEvents            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 RewardViewModels                         000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer
     // 030 GetRewardViewModels                      000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer
     // 038 UnitId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourResultViewModel
+    public partial class ChallengeTourResultViewModel : DataModel
     {
         public IChallengeTourStageStatus?               StageStatus                             { get; set; }
         public List<UnitIdol>?                          UnitIdols                               { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourResultViewModel();
+            var value   = new ChallengeTourResultViewModel() { Pointer= p0 };
 
-            value.StageStatus                               = GetObject<IChallengeTourStageStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourStageStatus.FromPointer); // 0270D64B1A80 0x10 StageStatus                 ( 0001867270C0 ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer )
-            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.UnitIdol.FromPointer); // 0270D64B1AA0 0x18 UnitIdols                   ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.FanCount                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D64B1AC0 0x20 FanCount                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RewardViewModels                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 0270D64B1AE0 0x28 RewardViewModels            ( 000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
-            value.GetRewardViewModels                       = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 0270D64B1B00 0x30 GetRewardViewModels         ( 000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x038)); // 0270D64B1B20 0x38 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.StageStatus                               = GetObject<IChallengeTourStageStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourStageStatus.FromPointer); // 0246665206B8 0x10 StageStatus                 ( 0001867270C0 ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer )
+            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.UnitIdol.FromPointer); // 0246665206D8 0x18 UnitIdols                   ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.FanCount                                  = GetInt32(new IntPtr(p + 0x020)); // 0246665206F8 0x20 FanCount                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RewardViewModels                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 024666520718 0x28 RewardViewModels            ( 000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
+            value.GetRewardViewModels                       = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 024666520738 0x30 GetRewardViewModels         ( 000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x038)); // 024666520758 0x38 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

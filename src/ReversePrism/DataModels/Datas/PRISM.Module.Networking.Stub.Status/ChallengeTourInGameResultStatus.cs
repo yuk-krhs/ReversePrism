@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 040 ClearStatus                              00018656FB60 ModelClassType ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus Pointer
     // 000 AccumulatedStatusFieldNumber             int IL2CPP_TYPE_I4
     // 048 AccumulatedStatus                        00018656EC50 ModelClassType ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus Pointer
-    public partial class ChallengeTourInGameResultStatus
+    public partial class ChallengeTourInGameResultStatus : DataModel
     {
         public bool                                     IsSuccess                               { get; set; }
         public InGameAppealPointStatus?                 AppealPoint                             { get; set; }
@@ -42,15 +42,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameResultStatus();
+            var value   = new ChallengeTourInGameResultStatus() { Pointer= p0 };
 
-            value.IsSuccess                                 = GetBool(new IntPtr(p + 0x018)); // 0270041579B8 0x18 IsSuccess                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AppealPoint                               = GetObject<InGameAppealPointStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameAppealPointStatus.FromPointer); // 0270041579F8 0x20 AppealPoint                 ( 0001866D3050 ModelClassType InGameAppealPointStatus InGameAppealPointStatus InGameAppealPointStatus Pointer )
-            value.ClearSecond                               = GetInt32(new IntPtr(p + 0x028)); // 027004157A38 0x28 ClearSecond                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillList                             = GetObjectList<InGameIdolSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.InGameIdolSkillStatus.FromPointer); // 027004157A98 0x30 IdolSkillList               ( 000185CE08C8 ModelClassListType RepeatedField`1<InGameIdolSkillStatus> RepeatedField`1<InGameIdolSkillStatus> List<InGameIdolSkillStatus> Pointer )
-            value.ProduceCardIdList                         = GetStringList(new IntPtr(p + 0x038)); // 027004157AF8 0x38 ProduceCardIdList           ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.ClearStatus                               = GetObject<ChallengeTourInGameClearStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourInGameClearStatus.FromPointer); // 027004157B38 0x40 ClearStatus                 ( 00018656FB60 ModelClassType ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus Pointer )
-            value.AccumulatedStatus                         = GetObject<ChallengeTourInGameAccumulatedStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChallengeTourInGameAccumulatedStatus.FromPointer); // 027004157B78 0x48 AccumulatedStatus           ( 00018656EC50 ModelClassType ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus Pointer )
+            value.IsSuccess                                 = GetBool(new IntPtr(p + 0x018)); // 024660ED42E8 0x18 IsSuccess                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AppealPoint                               = GetObject<InGameAppealPointStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameAppealPointStatus.FromPointer); // 024660ED4328 0x20 AppealPoint                 ( 0001866D3050 ModelClassType InGameAppealPointStatus InGameAppealPointStatus InGameAppealPointStatus Pointer )
+            value.ClearSecond                               = GetInt32(new IntPtr(p + 0x028)); // 024660ED4368 0x28 ClearSecond                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolSkillList                             = GetObjectList<InGameIdolSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.InGameIdolSkillStatus.FromPointer); // 024660ED43C8 0x30 IdolSkillList               ( 000185CE08C8 ModelClassListType RepeatedField`1<InGameIdolSkillStatus> RepeatedField`1<InGameIdolSkillStatus> List<InGameIdolSkillStatus> Pointer )
+            value.ProduceCardIdList                         = GetStringList(new IntPtr(p + 0x038)); // 024660ED4428 0x38 ProduceCardIdList           ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.ClearStatus                               = GetObject<ChallengeTourInGameClearStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourInGameClearStatus.FromPointer); // 024660ED4468 0x40 ClearStatus                 ( 00018656FB60 ModelClassType ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus ChallengeTourInGameClearStatus Pointer )
+            value.AccumulatedStatus                         = GetObject<ChallengeTourInGameAccumulatedStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChallengeTourInGameAccumulatedStatus.FromPointer); // 024660ED44A8 0x48 AccumulatedStatus           ( 00018656EC50 ModelClassType ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus ChallengeTourInGameAccumulatedStatus Pointer )
 
             return value;
         }

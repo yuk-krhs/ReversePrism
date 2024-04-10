@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_Action                                 0001865E82E0 ModelClassType InputAction InputAction InputAction Pointer
     // 018 M_ActionMap                              0001866F5E10 ModelClassType InputActionMap InputActionMap InputActionMap Pointer
     // 020 M_BindingIndexInMap                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CompositeSyntax
+    public partial class CompositeSyntax : DataModel
     {
         public InputAction?                             M_Action                                { get; set; }
         public InputActionMap?                          M_ActionMap                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompositeSyntax();
+            var value   = new CompositeSyntax() { Pointer= p0 };
 
-            value.M_Action                                  = GetObject<InputAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputAction.FromPointer); // 0270D7671988 0x10 M_Action                    ( 0001865E82E0 ModelClassType InputAction InputAction InputAction Pointer )
-            value.M_ActionMap                               = GetObject<InputActionMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputActionMap.FromPointer); // 0270D76719A8 0x18 M_ActionMap                 ( 0001866F5E10 ModelClassType InputActionMap InputActionMap InputActionMap Pointer )
-            value.M_BindingIndexInMap                       = GetInt32(new IntPtr(p + 0x020)); // 0270D76719C8 0x20 M_BindingIndexInMap         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Action                                  = GetObject<InputAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputAction.FromPointer); // 0246676D9988 0x10 M_Action                    ( 0001865E82E0 ModelClassType InputAction InputAction InputAction Pointer )
+            value.M_ActionMap                               = GetObject<InputActionMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputActionMap.FromPointer); // 0246676D99A8 0x18 M_ActionMap                 ( 0001866F5E10 ModelClassType InputActionMap InputActionMap InputActionMap Pointer )
+            value.M_BindingIndexInMap                       = GetInt32(new IntPtr(p + 0x020)); // 0246676D99C8 0x20 M_BindingIndexInMap         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

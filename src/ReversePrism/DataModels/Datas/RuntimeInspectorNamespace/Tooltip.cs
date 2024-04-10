@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Tooltip
+    public partial class Tooltip : DataModel
     {
 
         public static Tooltip? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Tooltip();
+            var value   = new Tooltip() { Pointer= p0 };
 
 
             return value;

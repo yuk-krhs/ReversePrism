@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                000186607560 ModelClassType RadialBlurBehaviour RadialBlurBehaviour RadialBlurBehaviour Pointer
-    public partial class RadialBlurClip
+    public partial class RadialBlurClip : DataModel
     {
         public RadialBlurBehaviour?                     Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RadialBlurClip();
+            var value   = new RadialBlurClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<RadialBlurBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.RadialBlurBehaviour.FromPointer); // 0270D5075BA8 0x18 Behaviour                   ( 000186607560 ModelClassType RadialBlurBehaviour RadialBlurBehaviour RadialBlurBehaviour Pointer )
+            value.Behaviour                                 = GetObject<RadialBlurBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.RadialBlurBehaviour.FromPointer); // 0246650D9500 0x18 Behaviour                   ( 000186607560 ModelClassType RadialBlurBehaviour RadialBlurBehaviour RadialBlurBehaviour Pointer )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 ListTextLogData                          000185D2DD58 ModelClassListType List`1<TextLogData> List`1<TextLogData> List<TextLogData> Pointer
     // 028 UnitIdol                                 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
     // 030 ConvertList                              000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class TextLog
+    public partial class TextLog : DataModel
     {
         public List<string>?                            SpeakerTable                            { get; set; }
         public List<TextLogData>?                       ListTextLogData                         { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextLog();
+            var value   = new TextLog() { Pointer= p0 };
 
-            value.SpeakerTable                              = GetStringList(new IntPtr(p + 0x018)); // 0270069C7F30 0x18 SpeakerTable                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.ListTextLogData                           = GetObjectList<TextLogData>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextLogData.FromPointer); // 0270069C7F50 0x20 ListTextLogData             ( 000185D2DD58 ModelClassListType List`1<TextLogData> List`1<TextLogData> List<TextLogData> Pointer )
-            value.UnitIdol                                  = GetObjectList<UnitIdol>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitIdol.FromPointer); // 0270069C7F70 0x28 UnitIdol                    ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.ConvertList                               = GetInt32List(new IntPtr(p + 0x030)); // 0270069C7F90 0x30 ConvertList                 ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SpeakerTable                              = GetStringList(new IntPtr(p + 0x018)); // 0245A6985438 0x18 SpeakerTable                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.ListTextLogData                           = GetObjectList<TextLogData>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextLogData.FromPointer); // 0245A6985458 0x20 ListTextLogData             ( 000185D2DD58 ModelClassListType List`1<TextLogData> List`1<TextLogData> List<TextLogData> Pointer )
+            value.UnitIdol                                  = GetObjectList<UnitIdol>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitIdol.FromPointer); // 0245A6985478 0x28 UnitIdol                    ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.ConvertList                               = GetInt32List(new IntPtr(p + 0x030)); // 0245A6985498 0x30 ConvertList                 ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

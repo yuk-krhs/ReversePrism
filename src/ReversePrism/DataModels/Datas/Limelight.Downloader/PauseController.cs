@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Paused                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 mutex                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class PauseController
+    public partial class PauseController : DataModel
     {
         public bool                                     Paused                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PauseController();
+            var value   = new PauseController() { Pointer= p0 };
 
-            value.Paused                                    = GetBool(new IntPtr(p + 0x010)); // 027003E2DA60 0x10 Paused                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Paused                                    = GetBool(new IntPtr(p + 0x010)); // 0245A3E2DA60 0x10 Paused                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

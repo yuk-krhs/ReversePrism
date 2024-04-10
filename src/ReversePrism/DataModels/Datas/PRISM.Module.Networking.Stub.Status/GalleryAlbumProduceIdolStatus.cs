@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C InitialStar                              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 EnableFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Enable                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class GalleryAlbumProduceIdolStatus
+    public partial class GalleryAlbumProduceIdolStatus : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      InitialStar                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryAlbumProduceIdolStatus();
+            var value   = new GalleryAlbumProduceIdolStatus() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 027004209720 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InitialStar                               = GetInt32(new IntPtr(p + 0x01C)); // 027004209760 0x1C InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x020)); // 0270042097A0 0x20 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024661519C00 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.InitialStar                               = GetInt32(new IntPtr(p + 0x01C)); // 024661519C40 0x1C InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x020)); // 024661519C80 0x20 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

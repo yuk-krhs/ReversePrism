@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 queue                                    Queue`1<Action> IL2CPP_TYPE_GENERICINST
     // 018 IsAcquired                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 019 HasFaulted                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AsyncLock
+    public partial class AsyncLock : DataModel
     {
         public bool                                     IsAcquired                              { get; set; }
         public bool                                     HasFaulted                              { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncLock();
+            var value   = new AsyncLock() { Pointer= p0 };
 
-            value.IsAcquired                                = GetBool(new IntPtr(p + 0x018)); // 0270D95719A8 0x18 IsAcquired                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasFaulted                                = GetBool(new IntPtr(p + 0x019)); // 0270D95719C8 0x19 HasFaulted                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsAcquired                                = GetBool(new IntPtr(p + 0x018)); // 0246695D7030 0x18 IsAcquired                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasFaulted                                = GetBool(new IntPtr(p + 0x019)); // 0246695D7050 0x19 HasFaulted                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

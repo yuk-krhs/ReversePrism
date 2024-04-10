@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 SingleRangeComparer IL2CPP_TYPE_CLASS
-    public partial class SingleRangeComparer
+    public partial class SingleRangeComparer : DataModel
     {
 
         public static SingleRangeComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleRangeComparer();
+            var value   = new SingleRangeComparer() { Pointer= p0 };
 
 
             return value;

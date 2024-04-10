@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 048 UserName                                 000186671910 ModelPrimitiveType string string string String
     // 050 DisplayName                              000186671910 ModelPrimitiveType string string string String
     // 058 LicenseLastUpdate                        0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class LoginUserData
+    public partial class LoginUserData : DataModel
     {
         public string                                   UserId                                  { get; set; }
         public string                                   UserSecret                              { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoginUserData();
+            var value   = new LoginUserData() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 027003A73C80 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserSecret                                = GetString(new IntPtr(p + 0x028)); // 027003A73CA0 0x28 UserSecret                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.LoginToken                                = GetString(new IntPtr(p + 0x030)); // 027003A73CC0 0x30 LoginToken                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.TutorialFinished                          = GetBool(new IntPtr(p + 0x038)); // 027003A73CE0 0x38 TutorialFinished            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SearchUserId                              = GetString(new IntPtr(p + 0x040)); // 027003A73D00 0x40 SearchUserId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserName                                  = GetString(new IntPtr(p + 0x048)); // 027003A73D20 0x48 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x050)); // 027003A73D40 0x50 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.LicenseLastUpdate                         = GetInt64(new IntPtr(p + 0x058)); // 027003A73D60 0x58 LicenseLastUpdate           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 0245A3A7EBB8 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserSecret                                = GetString(new IntPtr(p + 0x028)); // 0245A3A7EBD8 0x28 UserSecret                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.LoginToken                                = GetString(new IntPtr(p + 0x030)); // 0245A3A7EBF8 0x30 LoginToken                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.TutorialFinished                          = GetBool(new IntPtr(p + 0x038)); // 0245A3A7EC18 0x38 TutorialFinished            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SearchUserId                              = GetString(new IntPtr(p + 0x040)); // 0245A3A7EC38 0x40 SearchUserId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserName                                  = GetString(new IntPtr(p + 0x048)); // 0245A3A7EC58 0x48 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x050)); // 0245A3A7EC78 0x50 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.LicenseLastUpdate                         = GetInt64(new IntPtr(p + 0x058)); // 0245A3A7EC98 0x58 LicenseLastUpdate           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

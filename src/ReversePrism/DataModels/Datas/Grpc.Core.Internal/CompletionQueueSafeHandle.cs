@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
     // 020 ShutdownRefcount                         00018670DCF0 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer
     // 028 CompletionRegistry                       0001865F1C70 ModelClassType CompletionRegistry CompletionRegistry CompletionRegistry Pointer
-    public partial class CompletionQueueSafeHandle
+    public partial class CompletionQueueSafeHandle : DataModel
     {
         public AtomicCounter?                           ShutdownRefcount                        { get; set; }
         public CompletionRegistry?                      CompletionRegistry                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompletionQueueSafeHandle();
+            var value   = new CompletionQueueSafeHandle() { Pointer= p0 };
 
-            value.ShutdownRefcount                          = GetObject<AtomicCounter>(new IntPtr(p + 0x020), ReversePrism.DataModels.AtomicCounter.FromPointer); // 02700410D868 0x20 ShutdownRefcount            ( 00018670DCF0 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
-            value.CompletionRegistry                        = GetObject<CompletionRegistry>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompletionRegistry.FromPointer); // 02700410D888 0x28 CompletionRegistry          ( 0001865F1C70 ModelClassType CompletionRegistry CompletionRegistry CompletionRegistry Pointer )
+            value.ShutdownRefcount                          = GetObject<AtomicCounter>(new IntPtr(p + 0x020), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0245A413AD50 0x20 ShutdownRefcount            ( 00018670DCF0 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
+            value.CompletionRegistry                        = GetObject<CompletionRegistry>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompletionRegistry.FromPointer); // 0245A413AD70 0x28 CompletionRegistry          ( 0001865F1C70 ModelClassType CompletionRegistry CompletionRegistry CompletionRegistry Pointer )
 
             return value;
         }

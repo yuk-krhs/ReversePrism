@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BoringPkcs12Handle
+    public partial class BoringPkcs12Handle : DataModel
     {
 
         public static BoringPkcs12Handle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoringPkcs12Handle();
+            var value   = new BoringPkcs12Handle() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 IsNew                                    0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 015 IsUnread                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 018 ExtraStoryType                           0001865F40A0 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32
-    public partial class ExtraStorySecondCategoryCellData
+    public partial class ExtraStorySecondCategoryCellData : DataModel
     {
         public int                                      SubCategoryId                           { get; set; }
         public bool                                     IsNew                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtraStorySecondCategoryCellData();
+            var value   = new ExtraStorySecondCategoryCellData() { Pointer= p0 };
 
-            value.SubCategoryId                             = GetInt32(new IntPtr(p + 0x010)); // 0270D679CA68 0x10 SubCategoryId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 0270D679CA88 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 0270D679CAA8 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ExtraStoryType                            = (ExtraStoryType)GetInt32(new IntPtr(p + 0x018)); // 0270D679CAC8 0x18 ExtraStoryType              ( 0001865F40A0 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32 )
+            value.SubCategoryId                             = GetInt32(new IntPtr(p + 0x010)); // 0246667FCA68 0x10 SubCategoryId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 0246667FCA88 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 0246667FCAA8 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ExtraStoryType                            = (ExtraStoryType)GetInt32(new IntPtr(p + 0x018)); // 0246667FCAC8 0x18 ExtraStoryType              ( 0001865F40A0 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32 )
 
             return value;
         }

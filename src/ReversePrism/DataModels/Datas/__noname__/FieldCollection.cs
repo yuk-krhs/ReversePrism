@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 MessageDescriptor                        000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer
-    public partial class FieldCollection
+    public partial class FieldCollection : DataModel
     {
         public MessageDescriptor?                       MessageDescriptor                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldCollection();
+            var value   = new FieldCollection() { Pointer= p0 };
 
-            value.MessageDescriptor                         = GetObject<MessageDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 0270D0CF4A58 0x10 MessageDescriptor           ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
+            value.MessageDescriptor                         = GetObject<MessageDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 024660CFC680 0x10 MessageDescriptor           ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
 
             return value;
         }

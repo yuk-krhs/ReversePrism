@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 InvalidHttpStatusCode                    int IL2CPP_TYPE_I4
     // 000 InvalidContentsSize                      long IL2CPP_TYPE_I8
     // 020 handle                                   <int> IL2CPP_TYPE_I
-    public partial class CriFsWebInstaller
+    public partial class CriFsWebInstaller : DataModel
     {
 
         public static CriFsWebInstaller? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriFsWebInstaller();
+            var value   = new CriFsWebInstaller() { Pointer= p0 };
 
 
             return value;

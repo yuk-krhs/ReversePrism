@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChainInfoStatus
+    public partial class IChainInfoStatus : DataModel
     {
 
         public static IChainInfoStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChainInfoStatus();
+            var value   = new IChainInfoStatus() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsValid                                  0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 PageAndID                                0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32
-    public partial class NativeColorPage
+    public partial class NativeColorPage : DataModel
     {
         public int                                      IsValid                                 { get; set; }
         public Color32                                  PageAndID                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeColorPage();
+            var value   = new NativeColorPage() { Pointer= p0 };
 
-            value.IsValid                                   = GetInt32(new IntPtr(p + 0x010)); // 0270067DE650 0x10 IsValid                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PageAndID                                 = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0270067DE670 0x14 PageAndID                   ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.IsValid                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A67A0748 0x10 IsValid                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PageAndID                                 = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0245A67A0768 0x14 PageAndID                   ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
 
             return value;
         }

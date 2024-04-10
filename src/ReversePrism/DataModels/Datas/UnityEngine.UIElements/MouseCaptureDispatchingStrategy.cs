@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MouseCaptureDispatchingStrategy
+    public partial class MouseCaptureDispatchingStrategy : DataModel
     {
 
         public static MouseCaptureDispatchingStrategy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MouseCaptureDispatchingStrategy();
+            var value   = new MouseCaptureDispatchingStrategy() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Image                                    000186613190 ModelClassType RawImage RawImage RawImage Pointer
     // 028 TransformParents                         000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer
-    public partial class GashaSign
+    public partial class GashaSign : DataModel
     {
         public RawImage?                                Image                                   { get; set; }
         public List<Transform>?                         TransformParents                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaSign();
+            var value   = new GashaSign() { Pointer= p0 };
 
-            value.Image                                     = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0270D535BF40 0x20 Image                       ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.TransformParents                          = GetObjectList<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270D535BF60 0x28 TransformParents            ( 000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer )
+            value.Image                                     = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0246653C0198 0x20 Image                       ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.TransformParents                          = GetObjectList<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0246653C01B8 0x28 TransformParents            ( 000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer )
 
             return value;
         }

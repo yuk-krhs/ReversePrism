@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFieldAccessor
+    public partial class IFieldAccessor : DataModel
     {
 
         public static IFieldAccessor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFieldAccessor();
+            var value   = new IFieldAccessor() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     000185CBAA18 ModelClassListType TransformData[] TransformData[] List<TransformData> Pointer
-    public partial class TransformDataArray
+    public partial class TransformDataArray : DataModel
     {
         public List<TransformData>?                     Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformDataArray();
+            var value   = new TransformDataArray() { Pointer= p0 };
 
-            value.Data                                      = GetObjectList<TransformData>(new IntPtr(p + 0x010), ReversePrism.DataModels.TransformData.FromPointer); // 0270D34E29F0 0x10 Data                        ( 000185CBAA18 ModelClassListType TransformData[] TransformData[] List<TransformData> Pointer )
+            value.Data                                      = GetObjectList<TransformData>(new IntPtr(p + 0x010), ReversePrism.DataModels.TransformData.FromPointer); // 0245A5CE70B8 0x10 Data                        ( 000185CBAA18 ModelClassListType TransformData[] TransformData[] List<TransformData> Pointer )
 
             return value;
         }

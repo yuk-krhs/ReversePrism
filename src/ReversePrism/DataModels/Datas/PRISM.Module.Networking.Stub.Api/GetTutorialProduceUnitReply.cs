@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ProduceUnit                              000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer
     // 000 FriendSupportFieldNumber                 int IL2CPP_TYPE_I4
     // 020 FriendSupport                            0001865CC600 ModelClassType FriendSupportStatus FriendSupportStatus FriendSupportStatus Pointer
-    public partial class GetTutorialProduceUnitReply
+    public partial class GetTutorialProduceUnitReply : DataModel
     {
         public ProduceIdolUnitStatus?                   ProduceUnit                             { get; set; }
         public FriendSupportStatus?                     FriendSupport                           { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTutorialProduceUnitReply();
+            var value   = new GetTutorialProduceUnitReply() { Pointer= p0 };
 
-            value.ProduceUnit                               = GetObject<ProduceIdolUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolUnitStatus.FromPointer); // 0270D2C4EB18 0x18 ProduceUnit                 ( 000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer )
-            value.FriendSupport                             = GetObject<FriendSupportStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FriendSupportStatus.FromPointer); // 0270D2C4EB58 0x20 FriendSupport               ( 0001865CC600 ModelClassType FriendSupportStatus FriendSupportStatus FriendSupportStatus Pointer )
+            value.ProduceUnit                               = GetObject<ProduceIdolUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolUnitStatus.FromPointer); // 024662BDD818 0x18 ProduceUnit                 ( 000186552890 ModelClassType ProduceIdolUnitStatus ProduceIdolUnitStatus ProduceIdolUnitStatus Pointer )
+            value.FriendSupport                             = GetObject<FriendSupportStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FriendSupportStatus.FromPointer); // 024662BDD858 0x20 FriendSupport               ( 0001865CC600 ModelClassType FriendSupportStatus FriendSupportStatus FriendSupportStatus Pointer )
 
             return value;
         }

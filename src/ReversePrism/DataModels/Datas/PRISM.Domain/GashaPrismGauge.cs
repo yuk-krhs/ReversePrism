@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Point                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 RewardList                               000185CFA918 ModelClassListType IReadOnlyList`1<IGashaPrismGaugeRewardStatus> IReadOnlyList`1<IGashaPrismGaugeRewardStatus> List<IGashaPrismGaugeRewardStatus> Pointer
     // 028 EndDate                                  000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    public partial class GashaPrismGauge
+    public partial class GashaPrismGauge : DataModel
     {
         public string                                   PrismGaugeId                            { get; set; }
         public int                                      Point                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaPrismGauge();
+            var value   = new GashaPrismGauge() { Pointer= p0 };
 
-            value.PrismGaugeId                              = GetString(new IntPtr(p + 0x010)); // 0270D530C5D8 0x10 PrismGaugeId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D530C5F8 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RewardList                                = GetObjectList<IGashaPrismGaugeRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IGashaPrismGaugeRewardStatus.FromPointer); // 0270D530C618 0x20 RewardList                  ( 000185CFA918 ModelClassListType IReadOnlyList`1<IGashaPrismGaugeRewardStatus> IReadOnlyList`1<IGashaPrismGaugeRewardStatus> List<IGashaPrismGaugeRewardStatus> Pointer )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0270D530C638 0x28 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.PrismGaugeId                              = GetString(new IntPtr(p + 0x010)); // 02466537FDA0 0x10 PrismGaugeId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 02466537FDC0 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RewardList                                = GetObjectList<IGashaPrismGaugeRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IGashaPrismGaugeRewardStatus.FromPointer); // 02466537FDE0 0x20 RewardList                  ( 000185CFA918 ModelClassListType IReadOnlyList`1<IGashaPrismGaugeRewardStatus> IReadOnlyList`1<IGashaPrismGaugeRewardStatus> List<IGashaPrismGaugeRewardStatus> Pointer )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 02466537FE00 0x28 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
 
             return value;
         }

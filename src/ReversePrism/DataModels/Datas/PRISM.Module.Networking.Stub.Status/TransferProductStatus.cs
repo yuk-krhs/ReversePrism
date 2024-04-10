@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 IdolTransferProductListFieldNumber       int IL2CPP_TYPE_I4
     // 010 _repeated_idolTransferProductList_codec  FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 028 IdolTransferProductList                  000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
-    public partial class TransferProductStatus
+    public partial class TransferProductStatus : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
         public List<ProductWithAmountStatus>?           UnitTransferProductList                 { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferProductStatus();
+            var value   = new TransferProductStatus() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D198C230 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitTransferProductList                   = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D198C290 0x20 UnitTransferProductList     ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.IdolTransferProductList                   = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D198C2F0 0x28 IdolTransferProductList     ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 024661909EC0 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitTransferProductList                   = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024661909F20 0x20 UnitTransferProductList     ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.IdolTransferProductList                   = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024661909F80 0x28 IdolTransferProductList     ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

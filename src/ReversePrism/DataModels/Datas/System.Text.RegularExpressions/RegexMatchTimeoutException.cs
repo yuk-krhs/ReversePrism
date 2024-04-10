@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 Input                                    000186672F10 ModelPrimitiveType string string string String
     // 098 Pattern                                  000186672F10 ModelPrimitiveType string string string String
     // 0A0 MatchTimeout                             00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
-    public partial class RegexMatchTimeoutException
+    public partial class RegexMatchTimeoutException : DataModel
     {
         public string                                   Input                                   { get; set; }
         public string                                   Pattern                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexMatchTimeoutException();
+            var value   = new RegexMatchTimeoutException() { Pointer= p0 };
 
-            value.Input                                     = GetString(new IntPtr(p + 0x090)); // 0270D79A18F0 0x90 Input                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x098)); // 0270D79A1910 0x98 Pattern                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.MatchTimeout                              = (TimeSpan)GetInt32(new IntPtr(p + 0x0A0)); // 0270D79A1930 0xA0 MatchTimeout                ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Input                                     = GetString(new IntPtr(p + 0x090)); // 024667A098F0 0x90 Input                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x098)); // 024667A09910 0x98 Pattern                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.MatchTimeout                              = (TimeSpan)GetInt32(new IntPtr(p + 0x0A0)); // 024667A09930 0xA0 MatchTimeout                ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XInputControllerWindows
+    public partial class XInputControllerWindows : DataModel
     {
 
         public static XInputControllerWindows? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XInputControllerWindows();
+            var value   = new XInputControllerWindows() { Pointer= p0 };
 
 
             return value;

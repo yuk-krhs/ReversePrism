@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BioControlFunc
+    public partial class BioControlFunc : DataModel
     {
 
         public static BioControlFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BioControlFunc();
+            var value   = new BioControlFunc() { Pointer= p0 };
 
 
             return value;

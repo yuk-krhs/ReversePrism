@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBackKeyObservableForLegacy
+    public partial class IBackKeyObservableForLegacy : DataModel
     {
 
         public static IBackKeyObservableForLegacy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBackKeyObservableForLegacy();
+            var value   = new IBackKeyObservableForLegacy() { Pointer= p0 };
 
 
             return value;

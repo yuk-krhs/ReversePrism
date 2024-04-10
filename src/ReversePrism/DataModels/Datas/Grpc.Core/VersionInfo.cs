@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 CurrentAssemblyVersion                   string IL2CPP_TYPE_STRING
     // 000 CurrentAssemblyFileVersion               string IL2CPP_TYPE_STRING
     // 000 CurrentVersion                           string IL2CPP_TYPE_STRING
-    public partial class VersionInfo
+    public partial class VersionInfo : DataModel
     {
 
         public static VersionInfo? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VersionInfo();
+            var value   = new VersionInfo() { Pointer= p0 };
 
 
             return value;

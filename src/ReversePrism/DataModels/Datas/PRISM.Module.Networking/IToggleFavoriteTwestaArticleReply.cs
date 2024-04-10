@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IToggleFavoriteTwestaArticleReply
+    public partial class IToggleFavoriteTwestaArticleReply : DataModel
     {
 
         public static IToggleFavoriteTwestaArticleReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IToggleFavoriteTwestaArticleReply();
+            var value   = new IToggleFavoriteTwestaArticleReply() { Pointer= p0 };
 
 
             return value;

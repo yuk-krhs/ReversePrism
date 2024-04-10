@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HashUnsafeUtilities
+    public partial class HashUnsafeUtilities : DataModel
     {
 
         public static HashUnsafeUtilities? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HashUnsafeUtilities();
+            var value   = new HashUnsafeUtilities() { Pointer= p0 };
 
 
             return value;

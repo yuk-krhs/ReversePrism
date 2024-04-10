@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ResultFieldNumber                        int IL2CPP_TYPE_I4
     // 018 Result                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ConfirmedAnnounceReply
+    public partial class ConfirmedAnnounceReply : DataModel
     {
         public bool                                     Result                                  { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfirmedAnnounceReply();
+            var value   = new ConfirmedAnnounceReply() { Pointer= p0 };
 
-            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 027003B073E8 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 024660B10118 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RSAPKCS1SHA384SignatureDescription
+    public partial class RSAPKCS1SHA384SignatureDescription : DataModel
     {
 
         public static RSAPKCS1SHA384SignatureDescription? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RSAPKCS1SHA384SignatureDescription();
+            var value   = new RSAPKCS1SHA384SignatureDescription() { Pointer= p0 };
 
 
             return value;

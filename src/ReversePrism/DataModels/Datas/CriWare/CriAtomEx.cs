@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 InvalidAisacControlId                    uint IL2CPP_TYPE_U4
     // 000 randomize3dParamTable                    Dictionary`2<Randomize3dCalcType, Randomize3dParamType[]> IL2CPP_TYPE_GENERICINST
-    public partial class CriAtomEx
+    public partial class CriAtomEx : DataModel
     {
 
         public static CriAtomEx? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomEx();
+            var value   = new CriAtomEx() { Pointer= p0 };
 
 
             return value;

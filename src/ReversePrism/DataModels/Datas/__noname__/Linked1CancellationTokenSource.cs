@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 Reg1                                     00018653F370 ModelEnumType CancellationTokenRegistration CancellationTokenRegistration CancellationTokenRegistration Int32
-    public partial class Linked1CancellationTokenSource
+    public partial class Linked1CancellationTokenSource : DataModel
     {
         public CancellationTokenRegistration            Reg1                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Linked1CancellationTokenSource();
+            var value   = new Linked1CancellationTokenSource() { Pointer= p0 };
 
-            value.Reg1                                      = (CancellationTokenRegistration)GetInt32(new IntPtr(p + 0x040)); // 027004A3F940 0x40 Reg1                        ( 00018653F370 ModelEnumType CancellationTokenRegistration CancellationTokenRegistration CancellationTokenRegistration Int32 )
+            value.Reg1                                      = (CancellationTokenRegistration)GetInt32(new IntPtr(p + 0x040)); // 0245A4AC9EF8 0x40 Reg1                        ( 00018653F370 ModelEnumType CancellationTokenRegistration CancellationTokenRegistration CancellationTokenRegistration Int32 )
 
             return value;
         }

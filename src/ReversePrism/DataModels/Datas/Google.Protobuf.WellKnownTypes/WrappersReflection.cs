@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
     // 000 WrapperValueFieldNumber                  int IL2CPP_TYPE_I4
-    public partial class WrappersReflection
+    public partial class WrappersReflection : DataModel
     {
 
         public static WrappersReflection? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WrappersReflection();
+            var value   = new WrappersReflection() { Pointer= p0 };
 
 
             return value;

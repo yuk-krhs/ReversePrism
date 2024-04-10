@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Serializer                               00018675EEB0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer
     // 028 TraceWriter                              00018667AB30 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer
     // 030 InternalSerializer                       00018675FFC0 ModelClassType JsonSerializerProxy JsonSerializerProxy JsonSerializerProxy Pointer
-    public partial class JsonSerializerInternalBase
+    public partial class JsonSerializerInternalBase : DataModel
     {
         public ErrorContext?                            CurrentErrorContext                     { get; set; }
         public JsonSerializer?                          Serializer                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSerializerInternalBase();
+            var value   = new JsonSerializerInternalBase() { Pointer= p0 };
 
-            value.CurrentErrorContext                       = GetObject<ErrorContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ErrorContext.FromPointer); // 027005FE53C0 0x10 CurrentErrorContext         ( 000186744850 ModelClassType ErrorContext ErrorContext ErrorContext Pointer )
-            value.Serializer                                = GetObject<JsonSerializer>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonSerializer.FromPointer); // 027005FE5400 0x20 Serializer                  ( 00018675EEB0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer )
-            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x028), ReversePrism.DataModels.ITraceWriter.FromPointer); // 027005FE5420 0x28 TraceWriter                 ( 00018667AB30 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
-            value.InternalSerializer                        = GetObject<JsonSerializerProxy>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonSerializerProxy.FromPointer); // 027005FE5440 0x30 InternalSerializer          ( 00018675FFC0 ModelClassType JsonSerializerProxy JsonSerializerProxy JsonSerializerProxy Pointer )
+            value.CurrentErrorContext                       = GetObject<ErrorContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ErrorContext.FromPointer); // 0245A5FACA88 0x10 CurrentErrorContext         ( 000186744850 ModelClassType ErrorContext ErrorContext ErrorContext Pointer )
+            value.Serializer                                = GetObject<JsonSerializer>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonSerializer.FromPointer); // 0245A5FACAC8 0x20 Serializer                  ( 00018675EEB0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer )
+            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x028), ReversePrism.DataModels.ITraceWriter.FromPointer); // 0245A5FACAE8 0x28 TraceWriter                 ( 00018667AB30 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
+            value.InternalSerializer                        = GetObject<JsonSerializerProxy>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonSerializerProxy.FromPointer); // 0245A5FACB08 0x30 InternalSerializer          ( 00018675FFC0 ModelClassType JsonSerializerProxy JsonSerializerProxy JsonSerializerProxy Pointer )
 
             return value;
         }

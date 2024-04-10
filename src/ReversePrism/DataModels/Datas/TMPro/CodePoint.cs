@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 LOW_SURROGATE_START                      uint IL2CPP_TYPE_U4
     // 000 LOW_SURROGATE_END                        uint IL2CPP_TYPE_U4
     // 000 UNICODE_PLANE01_START                    uint IL2CPP_TYPE_U4
-    public partial class CodePoint
+    public partial class CodePoint : DataModel
     {
 
         public static CodePoint? FromPointer(IntPtr p0)
@@ -37,7 +37,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CodePoint();
+            var value   = new CodePoint() { Pointer= p0 };
 
 
             return value;

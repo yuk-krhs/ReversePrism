@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Handle                                   00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class BatchPackedCullingViewID
+    public partial class BatchPackedCullingViewID : DataModel
     {
         public ulong                                    Handle                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchPackedCullingViewID();
+            var value   = new BatchPackedCullingViewID() { Pointer= p0 };
 
-            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 027002448DE0 0x10 Handle                      ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0245A2448DE0 0x10 Handle                      ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

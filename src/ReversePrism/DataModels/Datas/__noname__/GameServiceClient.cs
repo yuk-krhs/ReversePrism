@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GameServiceClient
+    public partial class GameServiceClient : DataModel
     {
 
         public static GameServiceClient? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameServiceClient();
+            var value   = new GameServiceClient() { Pointer= p0 };
 
 
             return value;

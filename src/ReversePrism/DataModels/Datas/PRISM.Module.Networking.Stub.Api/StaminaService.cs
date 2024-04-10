@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 038 __Method_GetStaminaList                  Method`2<GetStaminaListArgs, GetStaminaListReply> IL2CPP_TYPE_GENERICINST
     // 040 __Method_RecoverStaminaByInGameCurrency  Method`2<RecoverStaminaByInGameCurrencyArgs, RecoverStaminaByInGameCurrencyReply> IL2CPP_TYPE_GENERICINST
     // 048 __Method_RecoverStaminaByItemMulti       Method`2<RecoverStaminaByItemMultiArgs, RecoverStaminaByItemMultiReply> IL2CPP_TYPE_GENERICINST
-    public partial class StaminaService
+    public partial class StaminaService : DataModel
     {
 
         public static StaminaService? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StaminaService();
+            var value   = new StaminaService() { Pointer= p0 };
 
 
             return value;

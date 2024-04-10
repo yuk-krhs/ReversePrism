@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 DETECT_RUNNING_BAD_APPLICATION           int IL2CPP_TYPE_I4
-    public partial class Detect
+    public partial class Detect : DataModel
     {
 
         public static Detect? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Detect();
+            var value   = new Detect() { Pointer= p0 };
 
 
             return value;

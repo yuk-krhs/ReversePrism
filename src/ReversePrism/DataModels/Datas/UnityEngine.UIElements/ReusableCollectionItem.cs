@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 IsDragGhost                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 030 onGeometryChanged                        Action`1<ReusableCollectionItem> IL2CPP_TYPE_GENERICINST
     // 038 m_GeometryChangedEventCallback           EventCallback`1<GeometryChangedEvent> IL2CPP_TYPE_GENERICINST
-    public partial class ReusableCollectionItem
+    public partial class ReusableCollectionItem : DataModel
     {
         public VisualElement?                           BindableElement                         { get; set; }
         public int                                      Index                                   { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableCollectionItem();
+            var value   = new ReusableCollectionItem() { Pointer= p0 };
 
-            value.BindableElement                           = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0270066ECB50 0x10 BindableElement             ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x020)); // 0270066ECB90 0x20 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x024)); // 0270066ECBB0 0x24 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsDragGhost                               = GetBool(new IntPtr(p + 0x028)); // 0270066ECBD0 0x28 IsDragGhost                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BindableElement                           = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66AFAD8 0x10 BindableElement             ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A66AFB18 0x20 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x024)); // 0245A66AFB38 0x24 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsDragGhost                               = GetBool(new IntPtr(p + 0x028)); // 0245A66AFB58 0x28 IsDragGhost                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

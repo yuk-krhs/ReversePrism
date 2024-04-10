@@ -45,7 +45,7 @@ namespace ReversePrism.DataModels
     // 110 InternalId                               000186672F10 ModelPrimitiveType string string string String
     // 118 DeferredReference                        000186671910 ModelPrimitiveType string string string String
     // 120 ReferencesResolved                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonSchema
+    public partial class JsonSchema : DataModel
     {
         public string                                   Id                                      { get; set; }
         public string                                   Title                                   { get; set; }
@@ -71,25 +71,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSchema();
+            var value   = new JsonSchema() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0270D86D5F38 0x10 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x018)); // 0270D86D5F58 0x18 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x028)); // 0270D86D5FF8 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x038)); // 0270D86D6038 0x38 Pattern                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.PositionalItemsValidation                 = GetBool(new IntPtr(p + 0x0A0)); // 0270D86D6198 0xA0 PositionalItemsValidation   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AdditionalItems                           = GetObject<JsonSchema>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.JsonSchema.FromPointer); // 0270D86D61B8 0xA8 AdditionalItems             ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
-            value.AllowAdditionalItems                      = GetBool(new IntPtr(p + 0x0B0)); // 0270D86D61D8 0xB0 AllowAdditionalItems        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UniqueItems                               = GetBool(new IntPtr(p + 0x0B1)); // 0270D86D61F8 0xB1 UniqueItems                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AdditionalProperties                      = GetObject<JsonSchema>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.JsonSchema.FromPointer); // 0270D86D6238 0xC0 AdditionalProperties        ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
-            value.AllowAdditionalProperties                 = GetBool(new IntPtr(p + 0x0D0)); // 0270D86D6278 0xD0 AllowAdditionalProperties   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Requires                                  = GetString(new IntPtr(p + 0x0D8)); // 0270D86D6298 0xD8 Requires                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Default                                   = GetObject<JToken>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.JToken.FromPointer); // 0270D86D62F8 0xF0 Default                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
-            value.Format                                    = GetString(new IntPtr(p + 0x100)); // 0270D86D6338 0x100 Format                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Location                                  = GetString(new IntPtr(p + 0x108)); // 0270D86D6358 0x108 Location                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.InternalId                                = GetString(new IntPtr(p + 0x110)); // 0270D86D6378 0x110 InternalId                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DeferredReference                         = GetString(new IntPtr(p + 0x118)); // 0270D86D6398 0x118 DeferredReference           ( 000186671910 ModelPrimitiveType string string string String )
-            value.ReferencesResolved                        = GetBool(new IntPtr(p + 0x120)); // 0270D86D63B8 0x120 ReferencesResolved          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 02466873DF38 0x10 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x018)); // 02466873DF58 0x18 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x028)); // 02466873DFF8 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x038)); // 02466873E038 0x38 Pattern                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.PositionalItemsValidation                 = GetBool(new IntPtr(p + 0x0A0)); // 02466873E198 0xA0 PositionalItemsValidation   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AdditionalItems                           = GetObject<JsonSchema>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.JsonSchema.FromPointer); // 02466873E1B8 0xA8 AdditionalItems             ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
+            value.AllowAdditionalItems                      = GetBool(new IntPtr(p + 0x0B0)); // 02466873E1D8 0xB0 AllowAdditionalItems        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UniqueItems                               = GetBool(new IntPtr(p + 0x0B1)); // 02466873E1F8 0xB1 UniqueItems                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AdditionalProperties                      = GetObject<JsonSchema>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.JsonSchema.FromPointer); // 02466873E238 0xC0 AdditionalProperties        ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
+            value.AllowAdditionalProperties                 = GetBool(new IntPtr(p + 0x0D0)); // 02466873E278 0xD0 AllowAdditionalProperties   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Requires                                  = GetString(new IntPtr(p + 0x0D8)); // 02466873E298 0xD8 Requires                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Default                                   = GetObject<JToken>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.JToken.FromPointer); // 02466873E2F8 0xF0 Default                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
+            value.Format                                    = GetString(new IntPtr(p + 0x100)); // 02466873E338 0x100 Format                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Location                                  = GetString(new IntPtr(p + 0x108)); // 02466873E358 0x108 Location                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.InternalId                                = GetString(new IntPtr(p + 0x110)); // 02466873E378 0x110 InternalId                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DeferredReference                         = GetString(new IntPtr(p + 0x118)); // 02466873E398 0x118 DeferredReference           ( 000186671910 ModelPrimitiveType string string string String )
+            value.ReferencesResolved                        = GetBool(new IntPtr(p + 0x120)); // 02466873E3B8 0x120 ReferencesResolved          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 StepViews                                000185B81D20 ModelClassListType GashaStepView[] GashaStepView[] List<GashaStepView> Pointer
-    public partial class GashaStepListView
+    public partial class GashaStepListView : DataModel
     {
         public List<GashaStepView>?                     StepViews                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaStepListView();
+            var value   = new GashaStepListView() { Pointer= p0 };
 
-            value.StepViews                                 = GetObjectList<GashaStepView>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaStepView.FromPointer); // 0270D53D5B10 0x20 StepViews                   ( 000185B81D20 ModelClassListType GashaStepView[] GashaStepView[] List<GashaStepView> Pointer )
+            value.StepViews                                 = GetObjectList<GashaStepView>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaStepView.FromPointer); // 024665449388 0x20 StepViews                   ( 000185B81D20 ModelClassListType GashaStepView[] GashaStepView[] List<GashaStepView> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    public partial class EventSource
+    public partial class EventSource : DataModel
     {
         public string                                   Name                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventSource();
+            var value   = new EventSource() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027003D1E010 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A3D1E010 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

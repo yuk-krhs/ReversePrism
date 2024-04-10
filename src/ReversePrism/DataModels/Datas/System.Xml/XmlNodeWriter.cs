@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 nullNodeWriter                           XmlNodeWriter IL2CPP_TYPE_CLASS
-    public partial class XmlNodeWriter
+    public partial class XmlNodeWriter : DataModel
     {
 
         public static XmlNodeWriter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNodeWriter();
+            var value   = new XmlNodeWriter() { Pointer= p0 };
 
 
             return value;

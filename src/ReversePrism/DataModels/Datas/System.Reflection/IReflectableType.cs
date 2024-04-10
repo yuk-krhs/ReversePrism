@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IReflectableType
+    public partial class IReflectableType : DataModel
     {
 
         public static IReflectableType? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IReflectableType();
+            var value   = new IReflectableType() { Pointer= p0 };
 
 
             return value;

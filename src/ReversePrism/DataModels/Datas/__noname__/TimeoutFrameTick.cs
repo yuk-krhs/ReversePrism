@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   TimeoutFrame<<var>> IL2CPP_TYPE_GENERICINST
     // 000 timerId                                  ulong IL2CPP_TYPE_U8
-    public partial class TimeoutFrameTick
+    public partial class TimeoutFrameTick : DataModel
     {
 
         public static TimeoutFrameTick? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeoutFrameTick();
+            var value   = new TimeoutFrameTick() { Pointer= p0 };
 
 
             return value;

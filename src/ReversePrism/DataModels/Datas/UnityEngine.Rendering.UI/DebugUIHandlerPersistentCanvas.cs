@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 ValuePrefab                              000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 030 M_Items                                  000185CD7108 ModelClassListType List`1<DebugUIHandlerValue> List`1<DebugUIHandlerValue> List<DebugUIHandlerValue> Pointer
     // 038 M_ValueTupleWidgets                      000185D21A08 ModelClassListType List`1<ValueTuple> List`1<ValueTuple> List<ValueTuple> Pointer
-    public partial class DebugUIHandlerPersistentCanvas
+    public partial class DebugUIHandlerPersistentCanvas : DataModel
     {
         public RectTransform?                           Panel                                   { get; set; }
         public RectTransform?                           ValuePrefab                             { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerPersistentCanvas();
+            var value   = new DebugUIHandlerPersistentCanvas() { Pointer= p0 };
 
-            value.Panel                                     = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D916A6F8 0x20 Panel                       ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.ValuePrefab                               = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D916A718 0x28 ValuePrefab                 ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_Items                                   = GetObjectList<DebugUIHandlerValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.DebugUIHandlerValue.FromPointer); // 0270D916A738 0x30 M_Items                     ( 000185CD7108 ModelClassListType List`1<DebugUIHandlerValue> List`1<DebugUIHandlerValue> List<DebugUIHandlerValue> Pointer )
-            value.M_ValueTupleWidgets                       = GetObjectList<ValueTuple>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValueTuple.FromPointer); // 0270D916A758 0x38 M_ValueTupleWidgets         ( 000185D21A08 ModelClassListType List`1<ValueTuple> List`1<ValueTuple> List<ValueTuple> Pointer )
+            value.Panel                                     = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0246691CD8B8 0x20 Panel                       ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ValuePrefab                               = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 0246691CD8D8 0x28 ValuePrefab                 ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_Items                                   = GetObjectList<DebugUIHandlerValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.DebugUIHandlerValue.FromPointer); // 0246691CD8F8 0x30 M_Items                     ( 000185CD7108 ModelClassListType List`1<DebugUIHandlerValue> List`1<DebugUIHandlerValue> List<DebugUIHandlerValue> Pointer )
+            value.M_ValueTupleWidgets                       = GetObjectList<ValueTuple>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValueTuple.FromPointer); // 0246691CD918 0x38 M_ValueTupleWidgets         ( 000185D21A08 ModelClassListType List`1<ValueTuple> List`1<ValueTuple> List<ValueTuple> Pointer )
 
             return value;
         }

@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 030 CqPickerCounter                          00018670DF60 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer
     // 038 IsShutdown                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 058 ShuttingDown                             0001867571D0 ModelClassType EventHandler EventHandler EventHandler Pointer
-    public partial class GrpcEnvironment
+    public partial class GrpcEnvironment : DataModel
     {
         public int                                      RefCount                                { get; set; }
         public bool                                     InlineHandlers                          { get; set; }
@@ -56,21 +56,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GrpcEnvironment();
+            var value   = new GrpcEnvironment() { Pointer= p0 };
 
-            value.RefCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D0EA8490 0x10 RefCount                    ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.InlineHandlers                            = GetBool(new IntPtr(p + 0x024)); // 0270D0EA84F0 0x24 InlineHandlers              ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.BatchContextPoolSharedCapacity            = GetInt32(new IntPtr(p + 0x028)); // 0270D0EA8510 0x28 BatchContextPoolSharedCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.BatchContextPoolThreadLocalCapacity       = GetInt32(new IntPtr(p + 0x02C)); // 0270D0EA8530 0x2C BatchContextPoolThreadLocalCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.RequestCallContextPoolSharedCapacity      = GetInt32(new IntPtr(p + 0x030)); // 0270D0EA8550 0x30 RequestCallContextPoolSharedCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.RequestCallContextPoolThreadLocalCapacity = GetInt32(new IntPtr(p + 0x034)); // 0270D0EA8570 0x34 RequestCallContextPoolThreadLocalCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.NativeInitCounter                         = GetObject<AtomicCounter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0270D0EA85D0 0x48 NativeInitCounter           ( 00018670E450 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
-            value.Logger                                    = GetObject<ILogger>(new IntPtr(p + 0x050), ReversePrism.DataModels.ILogger.FromPointer); // 0270D0EA85F0 0x50 Logger                      ( 0001865A0640 ModelClassType ILogger ILogger ILogger Pointer )
-            value.ThreadPool                                = GetObject<GrpcThreadPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.GrpcThreadPool.FromPointer); // 0270D0EA8650 0x20 ThreadPool                  ( 00018669F360 ModelClassType GrpcThreadPool GrpcThreadPool GrpcThreadPool Pointer )
-            value.DebugStats                                = GetObject<DebugStats>(new IntPtr(p + 0x028), ReversePrism.DataModels.DebugStats.FromPointer); // 0270D0EA8670 0x28 DebugStats                  ( 0001866A06B0 ModelClassType DebugStats DebugStats DebugStats Pointer )
-            value.CqPickerCounter                           = GetObject<AtomicCounter>(new IntPtr(p + 0x030), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0270D0EA8690 0x30 CqPickerCounter             ( 00018670DF60 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
-            value.IsShutdown                                = GetBool(new IntPtr(p + 0x038)); // 0270D0EA86B0 0x38 IsShutdown                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ShuttingDown                              = GetObject<EventHandler>(new IntPtr(p + 0x058), ReversePrism.DataModels.EventHandler.FromPointer); // 0270D0EA86D0 0x58 ShuttingDown                ( 0001867571D0 ModelClassType EventHandler EventHandler EventHandler Pointer )
+            value.RefCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A40AD018 0x10 RefCount                    ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.InlineHandlers                            = GetBool(new IntPtr(p + 0x024)); // 0245A40AD078 0x24 InlineHandlers              ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.BatchContextPoolSharedCapacity            = GetInt32(new IntPtr(p + 0x028)); // 0245A40AD098 0x28 BatchContextPoolSharedCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.BatchContextPoolThreadLocalCapacity       = GetInt32(new IntPtr(p + 0x02C)); // 0245A40AD0B8 0x2C BatchContextPoolThreadLocalCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.RequestCallContextPoolSharedCapacity      = GetInt32(new IntPtr(p + 0x030)); // 0245A40AD0D8 0x30 RequestCallContextPoolSharedCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.RequestCallContextPoolThreadLocalCapacity = GetInt32(new IntPtr(p + 0x034)); // 0245A40AD0F8 0x34 RequestCallContextPoolThreadLocalCapacity ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.NativeInitCounter                         = GetObject<AtomicCounter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0245A40AD158 0x48 NativeInitCounter           ( 00018670E450 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
+            value.Logger                                    = GetObject<ILogger>(new IntPtr(p + 0x050), ReversePrism.DataModels.ILogger.FromPointer); // 0245A40AD178 0x50 Logger                      ( 0001865A0640 ModelClassType ILogger ILogger ILogger Pointer )
+            value.ThreadPool                                = GetObject<GrpcThreadPool>(new IntPtr(p + 0x020), ReversePrism.DataModels.GrpcThreadPool.FromPointer); // 0245A40AD1D8 0x20 ThreadPool                  ( 00018669F360 ModelClassType GrpcThreadPool GrpcThreadPool GrpcThreadPool Pointer )
+            value.DebugStats                                = GetObject<DebugStats>(new IntPtr(p + 0x028), ReversePrism.DataModels.DebugStats.FromPointer); // 0245A40AD1F8 0x28 DebugStats                  ( 0001866A06B0 ModelClassType DebugStats DebugStats DebugStats Pointer )
+            value.CqPickerCounter                           = GetObject<AtomicCounter>(new IntPtr(p + 0x030), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0245A40AD218 0x30 CqPickerCounter             ( 00018670DF60 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
+            value.IsShutdown                                = GetBool(new IntPtr(p + 0x038)); // 0245A40AD238 0x38 IsShutdown                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ShuttingDown                              = GetObject<EventHandler>(new IntPtr(p + 0x058), ReversePrism.DataModels.EventHandler.FromPointer); // 0245A40AD258 0x58 ShuttingDown                ( 0001867571D0 ModelClassType EventHandler EventHandler EventHandler Pointer )
 
             return value;
         }

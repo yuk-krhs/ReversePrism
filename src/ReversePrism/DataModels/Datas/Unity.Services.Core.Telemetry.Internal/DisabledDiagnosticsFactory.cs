@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory.CommonTags>k__BackingField IReadOnlyDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class DisabledDiagnosticsFactory
+    public partial class DisabledDiagnosticsFactory : DataModel
     {
 
         public static DisabledDiagnosticsFactory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisabledDiagnosticsFactory();
+            var value   = new DisabledDiagnosticsFactory() { Pointer= p0 };
 
 
             return value;

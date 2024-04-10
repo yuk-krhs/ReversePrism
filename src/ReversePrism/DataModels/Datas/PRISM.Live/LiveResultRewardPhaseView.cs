@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 058 RewardInfoView                           000186573480 ModelClassType LiveResultRewardInfoView LiveResultRewardInfoView LiveResultRewardInfoView Pointer
-    public partial class LiveResultRewardPhaseView
+    public partial class LiveResultRewardPhaseView : DataModel
     {
         public LiveResultRewardInfoView?                RewardInfoView                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveResultRewardPhaseView();
+            var value   = new LiveResultRewardPhaseView() { Pointer= p0 };
 
-            value.RewardInfoView                            = GetObject<LiveResultRewardInfoView>(new IntPtr(p + 0x058), ReversePrism.DataModels.LiveResultRewardInfoView.FromPointer); // 0270D526A840 0x58 RewardInfoView              ( 000186573480 ModelClassType LiveResultRewardInfoView LiveResultRewardInfoView LiveResultRewardInfoView Pointer )
+            value.RewardInfoView                            = GetObject<LiveResultRewardInfoView>(new IntPtr(p + 0x058), ReversePrism.DataModels.LiveResultRewardInfoView.FromPointer); // 0246652DE030 0x58 RewardInfoView              ( 000186573480 ModelClassType LiveResultRewardInfoView LiveResultRewardInfoView LiveResultRewardInfoView Pointer )
 
             return value;
         }

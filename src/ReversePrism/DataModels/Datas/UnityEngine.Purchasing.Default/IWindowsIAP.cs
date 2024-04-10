@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IWindowsIAP
+    public partial class IWindowsIAP : DataModel
     {
 
         public static IWindowsIAP? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IWindowsIAP();
+            var value   = new IWindowsIAP() { Pointer= p0 };
 
 
             return value;

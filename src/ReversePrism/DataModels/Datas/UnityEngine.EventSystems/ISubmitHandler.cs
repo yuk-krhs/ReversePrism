@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISubmitHandler
+    public partial class ISubmitHandler : DataModel
     {
 
         public static ISubmitHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISubmitHandler();
+            var value   = new ISubmitHandler() { Pointer= p0 };
 
 
             return value;

@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 038 OnCursorIndexChange                      0001866794E0 ModelClassType Action Action Action Pointer
     // 040 OnSelectIndexChange                      0001866794E0 ModelClassType Action Action Action Pointer
     // 048 OnRevealCursorChange                     0001866794E0 ModelClassType Action Action Action Pointer
-    public partial class TextSelectingUtilities
+    public partial class TextSelectingUtilities : DataModel
     {
         public DblClickSnapping                         DblClickSnap                            { get; set; }
         public int                                      IAltCursorPos                           { get; set; }
@@ -46,21 +46,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextSelectingUtilities();
+            var value   = new TextSelectingUtilities() { Pointer= p0 };
 
-            value.DblClickSnap                              = (DblClickSnapping)GetInt32(new IntPtr(p + 0x010)); // 02700692CBD0 0x10 DblClickSnap                ( 0001865F7570 ModelEnumType DblClickSnapping DblClickSnapping DblClickSnapping Int32 )
-            value.IAltCursorPos                             = GetInt32(new IntPtr(p + 0x014)); // 02700692CBF0 0x14 IAltCursorPos               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.HasHorizontalCursorPos                    = GetBool(new IntPtr(p + 0x018)); // 02700692CC10 0x18 HasHorizontalCursorPos      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.M_bJustSelected                           = GetBool(new IntPtr(p + 0x019)); // 02700692CC30 0x19 M_bJustSelected             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_MouseDragSelectsWholeWords              = GetBool(new IntPtr(p + 0x01A)); // 02700692CC50 0x1A M_MouseDragSelectsWholeWords ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DblClickInitPos                         = GetInt32(new IntPtr(p + 0x01C)); // 02700692CC70 0x1C M_DblClickInitPos           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_TextHandle                              = GetObject<TextHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextHandle.FromPointer); // 02700692CC90 0x20 M_TextHandle                ( 00018663D5B0 ModelClassType TextHandle TextHandle TextHandle Pointer )
-            value.M_RevealCursor                            = GetBool(new IntPtr(p + 0x028)); // 02700692CCF0 0x28 M_RevealCursor              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_CursorIndex                             = GetInt32(new IntPtr(p + 0x02C)); // 02700692CD10 0x2C M_CursorIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_SelectIndex                             = GetInt32(new IntPtr(p + 0x030)); // 02700692CD30 0x30 M_SelectIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.OnCursorIndexChange                       = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 02700692CD70 0x38 OnCursorIndexChange         ( 0001866794E0 ModelClassType Action Action Action Pointer )
-            value.OnSelectIndexChange                       = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 02700692CD90 0x40 OnSelectIndexChange         ( 0001866794E0 ModelClassType Action Action Action Pointer )
-            value.OnRevealCursorChange                      = GetObject<Action>(new IntPtr(p + 0x048), ReversePrism.DataModels.Action.FromPointer); // 02700692CDB0 0x48 OnRevealCursorChange        ( 0001866794E0 ModelClassType Action Action Action Pointer )
+            value.DblClickSnap                              = (DblClickSnapping)GetInt32(new IntPtr(p + 0x010)); // 0245A68EFAA8 0x10 DblClickSnap                ( 0001865F7570 ModelEnumType DblClickSnapping DblClickSnapping DblClickSnapping Int32 )
+            value.IAltCursorPos                             = GetInt32(new IntPtr(p + 0x014)); // 0245A68EFAC8 0x14 IAltCursorPos               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.HasHorizontalCursorPos                    = GetBool(new IntPtr(p + 0x018)); // 0245A68EFAE8 0x18 HasHorizontalCursorPos      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.M_bJustSelected                           = GetBool(new IntPtr(p + 0x019)); // 0245A68EFB08 0x19 M_bJustSelected             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_MouseDragSelectsWholeWords              = GetBool(new IntPtr(p + 0x01A)); // 0245A68EFB28 0x1A M_MouseDragSelectsWholeWords ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_DblClickInitPos                         = GetInt32(new IntPtr(p + 0x01C)); // 0245A68EFB48 0x1C M_DblClickInitPos           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_TextHandle                              = GetObject<TextHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextHandle.FromPointer); // 0245A68EFB68 0x20 M_TextHandle                ( 00018663D5B0 ModelClassType TextHandle TextHandle TextHandle Pointer )
+            value.M_RevealCursor                            = GetBool(new IntPtr(p + 0x028)); // 0245A68EFBC8 0x28 M_RevealCursor              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_CursorIndex                             = GetInt32(new IntPtr(p + 0x02C)); // 0245A68EFBE8 0x2C M_CursorIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_SelectIndex                             = GetInt32(new IntPtr(p + 0x030)); // 0245A68EFC08 0x30 M_SelectIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.OnCursorIndexChange                       = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0245A68EFC48 0x38 OnCursorIndexChange         ( 0001866794E0 ModelClassType Action Action Action Pointer )
+            value.OnSelectIndexChange                       = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A68EFC68 0x40 OnSelectIndexChange         ( 0001866794E0 ModelClassType Action Action Action Pointer )
+            value.OnRevealCursorChange                      = GetObject<Action>(new IntPtr(p + 0x048), ReversePrism.DataModels.Action.FromPointer); // 0245A68EFC88 0x48 OnRevealCursorChange        ( 0001866794E0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 028 LiveBoost                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnitNumberFieldNumber                    int IL2CPP_TYPE_I4
     // 02C UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LiveStartParamStatus
+    public partial class LiveStartParamStatus : DataModel
     {
         public int                                      MstSongId                               { get; set; }
         public int                                      MstSongTypeId                           { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveStartParamStatus();
+            var value   = new LiveStartParamStatus() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D135BD48 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSongTypeId                             = GetInt32(new IntPtr(p + 0x01C)); // 0270D135BD88 0x1C MstSongTypeId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x020)); // 0270D135BDC8 0x20 DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.StartType                                 = (LiveStartType)GetInt32(new IntPtr(p + 0x024)); // 0270D135BE08 0x24 StartType                   ( 000186582F90 ModelEnumType LiveStartType LiveStartType LiveStartType Int32 )
-            value.LiveBoost                                 = GetInt32(new IntPtr(p + 0x028)); // 0270D135BE48 0x28 LiveBoost                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x02C)); // 0270D135BE88 0x2C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0246612E4ED8 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSongTypeId                             = GetInt32(new IntPtr(p + 0x01C)); // 0246612E4F18 0x1C MstSongTypeId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x020)); // 0246612E4F58 0x20 DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.StartType                                 = (LiveStartType)GetInt32(new IntPtr(p + 0x024)); // 0246612E4F98 0x24 StartType                   ( 000186582F90 ModelEnumType LiveStartType LiveStartType LiveStartType Int32 )
+            value.LiveBoost                                 = GetInt32(new IntPtr(p + 0x028)); // 0246612E4FD8 0x28 LiveBoost                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x02C)); // 0246612E5018 0x2C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

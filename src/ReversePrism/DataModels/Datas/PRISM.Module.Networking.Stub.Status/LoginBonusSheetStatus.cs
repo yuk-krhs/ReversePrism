@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 StepListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_stepList_codec                 FieldCodec`1<LoginBonusStepStatus> IL2CPP_TYPE_GENERICINST
     // 020 StepList                                 000185CE5088 ModelClassListType RepeatedField`1<LoginBonusStepStatus> RepeatedField`1<LoginBonusStepStatus> List<LoginBonusStepStatus> Pointer
-    public partial class LoginBonusSheetStatus
+    public partial class LoginBonusSheetStatus : DataModel
     {
         public int                                      Num                                     { get; set; }
         public List<LoginBonusStepStatus>?              StepList                                { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoginBonusSheetStatus();
+            var value   = new LoginBonusSheetStatus() { Pointer= p0 };
 
-            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 0270D22085F0 0x18 Num                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StepList                                  = GetObjectList<LoginBonusStepStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoginBonusStepStatus.FromPointer); // 0270D2208650 0x20 StepList                    ( 000185CE5088 ModelClassListType RepeatedField`1<LoginBonusStepStatus> RepeatedField`1<LoginBonusStepStatus> List<LoginBonusStepStatus> Pointer )
+            value.Num                                       = GetInt32(new IntPtr(p + 0x018)); // 024662186758 0x18 Num                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StepList                                  = GetObjectList<LoginBonusStepStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoginBonusStepStatus.FromPointer); // 0246621867B8 0x20 StepList                    ( 000185CE5088 ModelClassListType RepeatedField`1<LoginBonusStepStatus> RepeatedField`1<LoginBonusStepStatus> List<LoginBonusStepStatus> Pointer )
 
             return value;
         }

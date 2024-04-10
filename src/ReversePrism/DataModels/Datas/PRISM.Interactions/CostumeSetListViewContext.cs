@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 038 <OnCostumeIconLongPressed>k__BackingField Action`2<CostumeCategory, int> IL2CPP_TYPE_GENERICINST
     // 040 <IsTryOnMode>k__BackingField             ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class CostumeSetListViewContext
+    public partial class CostumeSetListViewContext : DataModel
     {
 
         public static CostumeSetListViewContext? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeSetListViewContext();
+            var value   = new CostumeSetListViewContext() { Pointer= p0 };
 
 
             return value;

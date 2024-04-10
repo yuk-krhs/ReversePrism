@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 cancellationToken                        CancellationToken IL2CPP_TYPE_VALUETYPE
     // 000 groupEnumerator                          IEnumerator`1<IGrouping`2<<var>, <var>>> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _GroupBy
+    public partial class _GroupBy : DataModel
     {
 
         public static _GroupBy? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _GroupBy();
+            var value   = new _GroupBy() { Pointer= p0 };
 
 
             return value;

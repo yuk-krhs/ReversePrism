@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ConditionText                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 RankText                                 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 030 ClearMark                                0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class MusicRewardConditionInfoCell
+    public partial class MusicRewardConditionInfoCell : DataModel
     {
         public UITextMeshProUGUI?                       ConditionText                           { get; set; }
         public UITextMeshProUGUI?                       RankText                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRewardConditionInfoCell();
+            var value   = new MusicRewardConditionInfoCell() { Pointer= p0 };
 
-            value.ConditionText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D51896F0 0x20 ConditionText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RankText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5189710 0x28 RankText                    ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ClearMark                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5189730 0x30 ClearMark                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ConditionText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FCAD0 0x20 ConditionText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RankText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FCAF0 0x28 RankText                    ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ClearMark                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FCB10 0x30 ClearMark                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

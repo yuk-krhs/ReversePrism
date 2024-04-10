@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onEndDrag                                Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableEndDragTrigger
+    public partial class ObservableEndDragTrigger : DataModel
     {
 
         public static ObservableEndDragTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableEndDragTrigger();
+            var value   = new ObservableEndDragTrigger() { Pointer= p0 };
 
 
             return value;

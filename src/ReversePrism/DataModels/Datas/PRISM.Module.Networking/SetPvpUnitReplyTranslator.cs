@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SetPvpUnitReplyTranslator
+    public partial class SetPvpUnitReplyTranslator : DataModel
     {
 
         public static SetPvpUnitReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetPvpUnitReplyTranslator();
+            var value   = new SetPvpUnitReplyTranslator() { Pointer= p0 };
 
 
             return value;

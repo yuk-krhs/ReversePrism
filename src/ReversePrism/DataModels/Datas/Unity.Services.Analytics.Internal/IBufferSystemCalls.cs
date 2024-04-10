@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBufferSystemCalls
+    public partial class IBufferSystemCalls : DataModel
     {
 
         public static IBufferSystemCalls? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBufferSystemCalls();
+            var value   = new IBufferSystemCalls() { Pointer= p0 };
 
 
             return value;

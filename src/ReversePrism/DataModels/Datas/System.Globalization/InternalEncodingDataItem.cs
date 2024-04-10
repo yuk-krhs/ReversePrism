@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 WebName                                  000186671BA0 ModelPrimitiveType string string string String
     // 018 CodePage                                 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class InternalEncodingDataItem
+    public partial class InternalEncodingDataItem : DataModel
     {
         public string                                   WebName                                 { get; set; }
         public ushort                                   CodePage                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalEncodingDataItem();
+            var value   = new InternalEncodingDataItem() { Pointer= p0 };
 
-            value.WebName                                   = GetString(new IntPtr(p + 0x010)); // 027004C300C8 0x10 WebName                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.CodePage                                  = GetUInt16(new IntPtr(p + 0x018)); // 027004C300E8 0x18 CodePage                    ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.WebName                                   = GetString(new IntPtr(p + 0x010)); // 0245A4C6BFD0 0x10 WebName                     ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.CodePage                                  = GetUInt16(new IntPtr(p + 0x018)); // 0245A4C6BFF0 0x18 CodePage                    ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

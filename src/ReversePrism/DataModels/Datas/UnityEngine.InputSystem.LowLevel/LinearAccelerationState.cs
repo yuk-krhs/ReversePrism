@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Acceleration                             0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class LinearAccelerationState
+    public partial class LinearAccelerationState : DataModel
     {
         public Vector3                                  Acceleration                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LinearAccelerationState();
+            var value   = new LinearAccelerationState() { Pointer= p0 };
 
-            value.Acceleration                              = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0270D77FEC90 0x10 Acceleration                ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Acceleration                              = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 024667856C90 0x10 Acceleration                ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

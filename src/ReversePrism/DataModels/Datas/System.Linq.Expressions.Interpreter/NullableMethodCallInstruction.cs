@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 S_getHashCode                            0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer
     // 020 S_getValueOrDefault1                     0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer
     // 028 S_toString                               0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer
-    public partial class NullableMethodCallInstruction
+    public partial class NullableMethodCallInstruction : DataModel
     {
         public NullableMethodCallInstruction?           S_equals                                { get; set; }
         public NullableMethodCallInstruction?           S_getHashCode                           { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NullableMethodCallInstruction();
+            var value   = new NullableMethodCallInstruction() { Pointer= p0 };
 
-            value.S_equals                                  = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x010), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 0270DA039328 0x10 S_equals                    ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
-            value.S_getHashCode                             = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x018), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 0270DA039348 0x18 S_getHashCode               ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
-            value.S_getValueOrDefault1                      = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x020), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 0270DA039368 0x20 S_getValueOrDefault1        ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
-            value.S_toString                                = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x028), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 0270DA039388 0x28 S_toString                  ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
+            value.S_equals                                  = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x010), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 02466A0A5058 0x10 S_equals                    ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
+            value.S_getHashCode                             = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x018), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 02466A0A5078 0x18 S_getHashCode               ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
+            value.S_getValueOrDefault1                      = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x020), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 02466A0A5098 0x20 S_getValueOrDefault1        ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
+            value.S_toString                                = GetObject<NullableMethodCallInstruction>(new IntPtr(p + 0x028), ReversePrism.DataModels.NullableMethodCallInstruction.FromPointer); // 02466A0A50B8 0x28 S_toString                  ( 0001866BFB00 ModelClassType NullableMethodCallInstruction NullableMethodCallInstruction NullableMethodCallInstruction Pointer )
 
             return value;
         }

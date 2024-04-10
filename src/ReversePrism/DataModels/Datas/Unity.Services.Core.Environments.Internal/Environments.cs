@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Current                                  000186671910 ModelPrimitiveType string string string String
-    public partial class Environments
+    public partial class Environments : DataModel
     {
         public string                                   Current                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Environments();
+            var value   = new Environments() { Pointer= p0 };
 
-            value.Current                                   = GetString(new IntPtr(p + 0x010)); // 027006668F08 0x10 Current                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Current                                   = GetString(new IntPtr(p + 0x010)); // 0245A6637470 0x10 Current                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

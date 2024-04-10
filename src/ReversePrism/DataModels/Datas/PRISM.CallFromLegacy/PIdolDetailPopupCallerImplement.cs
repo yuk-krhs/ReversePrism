@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 pIdolDetailPopupViewFactory              PopupViewFactory`1<IPIdolDetailPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class PIdolDetailPopupCallerImplement
+    public partial class PIdolDetailPopupCallerImplement : DataModel
     {
 
         public static PIdolDetailPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PIdolDetailPopupCallerImplement();
+            var value   = new PIdolDetailPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

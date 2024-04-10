@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_String                                 000186672F10 ModelPrimitiveType string string string String
     // 018 M_Index                                  0001865F4260 ModelPrimitiveType int int int Int32
     // 01C M_Length                                 0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class Substring
+    public partial class Substring : DataModel
     {
         public string                                   M_String                                { get; set; }
         public int                                      M_Index                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Substring();
+            var value   = new Substring() { Pointer= p0 };
 
-            value.M_String                                  = GetString(new IntPtr(p + 0x010)); // 0270D76D6730 0x10 M_String                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_Index                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D76D6750 0x18 M_Index                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_Length                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D76D6770 0x1C M_Length                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_String                                  = GetString(new IntPtr(p + 0x010)); // 02466773E730 0x10 M_String                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_Index                                   = GetInt32(new IntPtr(p + 0x018)); // 02466773E750 0x18 M_Index                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_Length                                  = GetInt32(new IntPtr(p + 0x01C)); // 02466773E770 0x1C M_Length                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

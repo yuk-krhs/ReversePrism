@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 BaseIcon                                 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer
-    public partial class IntroductionCharacterSelectGridViewCell
+    public partial class IntroductionCharacterSelectGridViewCell : DataModel
     {
         public CharacterBaseIcon?                       BaseIcon                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionCharacterSelectGridViewCell();
+            var value   = new IntroductionCharacterSelectGridViewCell() { Pointer= p0 };
 
-            value.BaseIcon                                  = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 0270DBC43AD8 0x30 BaseIcon                    ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
+            value.BaseIcon                                  = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 02466BCB2D98 0x30 BaseIcon                    ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
 
             return value;
         }

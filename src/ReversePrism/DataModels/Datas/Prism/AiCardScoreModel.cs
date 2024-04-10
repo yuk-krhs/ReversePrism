@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AiCardScoreModel
+    public partial class AiCardScoreModel : DataModel
     {
 
         public static AiCardScoreModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AiCardScoreModel();
+            var value   = new AiCardScoreModel() { Pointer= p0 };
 
 
             return value;

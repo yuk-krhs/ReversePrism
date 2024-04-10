@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 MoveVector                               0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 028 MoveDir                                  000186654C40 ModelEnumType MoveDirection MoveDirection MoveDirection Int32
-    public partial class AxisEventData
+    public partial class AxisEventData : DataModel
     {
         public Vector2                                  MoveVector                              { get; set; }
         public MoveDirection                            MoveDir                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AxisEventData();
+            var value   = new AxisEventData() { Pointer= p0 };
 
-            value.MoveVector                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0270068E4AF8 0x20 MoveVector                  ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.MoveDir                                   = (MoveDirection)GetInt32(new IntPtr(p + 0x028)); // 0270068E4B18 0x28 MoveDir                     ( 000186654C40 ModelEnumType MoveDirection MoveDirection MoveDirection Int32 )
+            value.MoveVector                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0245A68A7828 0x20 MoveVector                  ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.MoveDir                                   = (MoveDirection)GetInt32(new IntPtr(p + 0x028)); // 0245A68A7848 0x28 MoveDir                     ( 000186654C40 ModelEnumType MoveDirection MoveDirection MoveDirection Int32 )
 
             return value;
         }

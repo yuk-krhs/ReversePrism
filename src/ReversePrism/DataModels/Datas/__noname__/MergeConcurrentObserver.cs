@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 isStopped                                bool IL2CPP_TYPE_BOOLEAN
     // 000 q                                        Queue`1<IObservable`1<<var>>> IL2CPP_TYPE_GENERICINST
     // 000 activeCount                              int IL2CPP_TYPE_I4
-    public partial class MergeConcurrentObserver
+    public partial class MergeConcurrentObserver : DataModel
     {
 
         public static MergeConcurrentObserver? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MergeConcurrentObserver();
+            var value   = new MergeConcurrentObserver() { Pointer= p0 };
 
 
             return value;

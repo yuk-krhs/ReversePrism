@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _digits                                  char[] IL2CPP_TYPE_SZARRAY
     // 000 _mask                                    int IL2CPP_TYPE_I4
     // 000 _shift                                   int IL2CPP_TYPE_I4
-    public partial class Base32Impl
+    public partial class Base32Impl : DataModel
     {
 
         public static Base32Impl? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Base32Impl();
+            var value   = new Base32Impl() { Pointer= p0 };
 
 
             return value;

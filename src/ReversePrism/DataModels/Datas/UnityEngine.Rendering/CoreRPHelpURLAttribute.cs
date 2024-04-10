@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CoreRPHelpURLAttribute
+    public partial class CoreRPHelpURLAttribute : DataModel
     {
 
         public static CoreRPHelpURLAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreRPHelpURLAttribute();
+            var value   = new CoreRPHelpURLAttribute() { Pointer= p0 };
 
 
             return value;

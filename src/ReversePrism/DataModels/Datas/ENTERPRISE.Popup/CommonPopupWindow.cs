@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 0F8 EaseType                                 000186716C50 ModelEnumType Ease Ease Ease Int32
     // 0FC DurationSecond                           0001866656B0 ModelPrimitiveType float float float Single
     // 100 StartScale                               0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class CommonPopupWindow
+    public partial class CommonPopupWindow : DataModel
     {
         public UITextMeshProUGUI?                       TitleText                               { get; set; }
         public ButtonBase?                              OutOfRangeButton                        { get; set; }
@@ -45,22 +45,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonPopupWindow();
+            var value   = new CommonPopupWindow() { Pointer= p0 };
 
-            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D0D4F208 0x90 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.OutOfRangeButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x098), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D0D4F228 0x98 OutOfRangeButton            ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.TitleInfoButton                           = GetObject<ButtonBase>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D0D4F248 0xA0 TitleInfoButton             ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.OutOfRangeTouch                           = (PopupOutOfRangeTouch)GetInt32(new IntPtr(p + 0x0A8)); // 0270D0D4F268 0xA8 OutOfRangeTouch             ( 000186764560 ModelEnumType PopupOutOfRangeTouch PopupOutOfRangeTouch PopupOutOfRangeTouch Int32 )
-            value.HeaderObject                              = GetObject<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0D4F288 0xB0 HeaderObject                ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.FooterObject                              = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0D4F2A8 0xB8 FooterObject                ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TouchBlockerObject                        = GetObject<GameObject>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.GameObject.FromPointer); // 0270D0D4F2C8 0xC0 TouchBlockerObject          ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MButtonInfoList                           = GetObjectList<ButtonInformation>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.ButtonInformation.FromPointer); // 0270D0D4F2E8 0xC8 MButtonInfoList             ( 000185CD0638 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
-            value.IsEnableClickOutOfRange                   = GetBool(new IntPtr(p + 0x0D0)); // 0270D0D4F308 0xD0 IsEnableClickOutOfRange     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OpenSE                                    = (SoundKey)GetInt32(new IntPtr(p + 0x0D8)); // 0270D0D4F328 0xD8 OpenSE                      ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.CloseSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x0E8)); // 0270D0D4F348 0xE8 CloseSE                     ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EaseType                                  = (Ease)GetInt32(new IntPtr(p + 0x0F8)); // 0270D0D4F368 0xF8 EaseType                    ( 000186716C50 ModelEnumType Ease Ease Ease Int32 )
-            value.DurationSecond                            = GetSingle(new IntPtr(p + 0x0FC)); // 0270D0D4F388 0xFC DurationSecond              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.StartScale                                = (Vector3)GetInt32(new IntPtr(p + 0x100)); // 0270D0D4F3A8 0x100 StartScale                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024660D4A1E8 0x90 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.OutOfRangeButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x098), ReversePrism.DataModels.ButtonBase.FromPointer); // 024660D4A208 0x98 OutOfRangeButton            ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.TitleInfoButton                           = GetObject<ButtonBase>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ButtonBase.FromPointer); // 024660D4A228 0xA0 TitleInfoButton             ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.OutOfRangeTouch                           = (PopupOutOfRangeTouch)GetInt32(new IntPtr(p + 0x0A8)); // 024660D4A248 0xA8 OutOfRangeTouch             ( 000186764560 ModelEnumType PopupOutOfRangeTouch PopupOutOfRangeTouch PopupOutOfRangeTouch Int32 )
+            value.HeaderObject                              = GetObject<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 024660D4A268 0xB0 HeaderObject                ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.FooterObject                              = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 024660D4A288 0xB8 FooterObject                ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TouchBlockerObject                        = GetObject<GameObject>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.GameObject.FromPointer); // 024660D4A2A8 0xC0 TouchBlockerObject          ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MButtonInfoList                           = GetObjectList<ButtonInformation>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.ButtonInformation.FromPointer); // 024660D4A2C8 0xC8 MButtonInfoList             ( 000185CD0638 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
+            value.IsEnableClickOutOfRange                   = GetBool(new IntPtr(p + 0x0D0)); // 024660D4A2E8 0xD0 IsEnableClickOutOfRange     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OpenSE                                    = (SoundKey)GetInt32(new IntPtr(p + 0x0D8)); // 024660D4A308 0xD8 OpenSE                      ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.CloseSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x0E8)); // 024660D4A328 0xE8 CloseSE                     ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EaseType                                  = (Ease)GetInt32(new IntPtr(p + 0x0F8)); // 024660D4A348 0xF8 EaseType                    ( 000186716C50 ModelEnumType Ease Ease Ease Int32 )
+            value.DurationSecond                            = GetSingle(new IntPtr(p + 0x0FC)); // 024660D4A368 0xFC DurationSecond              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.StartScale                                = (Vector3)GetInt32(new IntPtr(p + 0x100)); // 024660D4A388 0x100 StartScale                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

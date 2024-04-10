@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 PointerDown                              000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer
     // 028 PointerUp                                000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer
     // 030 PointerClick                             000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer
-    public partial class PointerEventListener
+    public partial class PointerEventListener : DataModel
     {
         public PointerEvent?                            PointerDown                             { get; set; }
         public PointerEvent?                            PointerUp                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerEventListener();
+            var value   = new PointerEventListener() { Pointer= p0 };
 
-            value.PointerDown                               = GetObject<PointerEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.PointerEvent.FromPointer); // 0270DB1B8DB0 0x20 PointerDown                 ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
-            value.PointerUp                                 = GetObject<PointerEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.PointerEvent.FromPointer); // 0270DB1B8DD0 0x28 PointerUp                   ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
-            value.PointerClick                              = GetObject<PointerEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PointerEvent.FromPointer); // 0270DB1B8DF0 0x30 PointerClick                ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
+            value.PointerDown                               = GetObject<PointerEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.PointerEvent.FromPointer); // 02466B2195E0 0x20 PointerDown                 ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
+            value.PointerUp                                 = GetObject<PointerEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.PointerEvent.FromPointer); // 02466B219600 0x28 PointerUp                   ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
+            value.PointerClick                              = GetObject<PointerEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PointerEvent.FromPointer); // 02466B219620 0x30 PointerClick                ( 000186585210 ModelClassType PointerEvent PointerEvent PointerEvent Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Context                                  000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
-    public partial class HttpClientUnityImpl
+    public partial class HttpClientUnityImpl : DataModel
     {
         public SynchronizationContext?                  Context                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpClientUnityImpl();
+            var value   = new HttpClientUnityImpl() { Pointer= p0 };
 
-            value.Context                                   = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 027004C0EC58 0x10 Context                     ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.Context                                   = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0245A4C45BC8 0x10 Context                     ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
 
             return value;
         }

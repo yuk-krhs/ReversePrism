@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 UpdateDelegate                           0001865808B0 ModelClassType UpdateFunction UpdateFunction UpdateFunction Pointer
     // 028 updateFunction                           <int> IL2CPP_TYPE_I
     // 030 loopConditionFunction                    <int> IL2CPP_TYPE_I
-    public partial class PlayerLoopSystem
+    public partial class PlayerLoopSystem : DataModel
     {
         public Type?                                    Type                                    { get; set; }
         public List<PlayerLoopSystem>?                  SubSystemList                           { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerLoopSystem();
+            var value   = new PlayerLoopSystem() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027003BE1E10 0x10 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
-            value.SubSystemList                             = GetEnumList<PlayerLoopSystem>(new IntPtr(p + 0x018)); // 027003BE1E30 0x18 SubSystemList               ( 000185B9B980 ModelEnumListType PlayerLoopSystem[] PlayerLoopSystem[] List<PlayerLoopSystem> Pointer )
-            value.UpdateDelegate                            = GetObject<UpdateFunction>(new IntPtr(p + 0x020), ReversePrism.DataModels.UpdateFunction.FromPointer); // 027003BE1E50 0x20 UpdateDelegate              ( 0001865808B0 ModelClassType UpdateFunction UpdateFunction UpdateFunction Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A3BE1E10 0x10 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.SubSystemList                             = GetEnumList<PlayerLoopSystem>(new IntPtr(p + 0x018)); // 0245A3BE1E30 0x18 SubSystemList               ( 000185B9B980 ModelEnumListType PlayerLoopSystem[] PlayerLoopSystem[] List<PlayerLoopSystem> Pointer )
+            value.UpdateDelegate                            = GetObject<UpdateFunction>(new IntPtr(p + 0x020), ReversePrism.DataModels.UpdateFunction.FromPointer); // 0245A3BE1E50 0x20 UpdateDelegate              ( 0001865808B0 ModelClassType UpdateFunction UpdateFunction UpdateFunction Pointer )
 
             return value;
         }

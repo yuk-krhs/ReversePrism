@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LoggerBase
+    public partial class LoggerBase : DataModel
     {
 
         public static LoggerBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggerBase();
+            var value   = new LoggerBase() { Pointer= p0 };
 
 
             return value;

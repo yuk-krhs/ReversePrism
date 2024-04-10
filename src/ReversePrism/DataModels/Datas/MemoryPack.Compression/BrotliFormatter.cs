@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 CompressionLevel                         0001865F4BD0 ModelEnumType CompressionLevel CompressionLevel CompressionLevel Int32
     // 014 Window                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 018 DecompressionSizeLimit                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class BrotliFormatter
+    public partial class BrotliFormatter : DataModel
     {
         public CompressionLevel                         CompressionLevel                        { get; set; }
         public int                                      Window                                  { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BrotliFormatter();
+            var value   = new BrotliFormatter() { Pointer= p0 };
 
-            value.CompressionLevel                          = (CompressionLevel)GetInt32(new IntPtr(p + 0x010)); // 0270DAFECE18 0x10 CompressionLevel            ( 0001865F4BD0 ModelEnumType CompressionLevel CompressionLevel CompressionLevel Int32 )
-            value.Window                                    = GetInt32(new IntPtr(p + 0x014)); // 0270DAFECE38 0x14 Window                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DecompressionSizeLimit                    = GetInt32(new IntPtr(p + 0x018)); // 0270DAFECE58 0x18 DecompressionSizeLimit      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CompressionLevel                          = (CompressionLevel)GetInt32(new IntPtr(p + 0x010)); // 02466B058E18 0x10 CompressionLevel            ( 0001865F4BD0 ModelEnumType CompressionLevel CompressionLevel CompressionLevel Int32 )
+            value.Window                                    = GetInt32(new IntPtr(p + 0x014)); // 02466B058E38 0x14 Window                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DecompressionSizeLimit                    = GetInt32(new IntPtr(p + 0x018)); // 02466B058E58 0x18 DecompressionSizeLimit      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

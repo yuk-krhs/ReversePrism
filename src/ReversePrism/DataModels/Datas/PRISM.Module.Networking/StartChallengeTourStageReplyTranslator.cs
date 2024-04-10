@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StartChallengeTourStageReplyTranslator
+    public partial class StartChallengeTourStageReplyTranslator : DataModel
     {
 
         public static StartChallengeTourStageReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartChallengeTourStageReplyTranslator();
+            var value   = new StartChallengeTourStageReplyTranslator() { Pointer= p0 };
 
 
             return value;

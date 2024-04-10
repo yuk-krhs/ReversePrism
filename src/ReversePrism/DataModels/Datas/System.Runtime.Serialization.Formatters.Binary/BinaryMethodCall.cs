@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 ArgTypes                                 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer
     // 038 BArgsPrimitive                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 03C MessageEnum                              000186607C50 ModelEnumType MessageEnum MessageEnum MessageEnum Int32
-    public partial class BinaryMethodCall
+    public partial class BinaryMethodCall : DataModel
     {
         public string                                   MethodName                              { get; set; }
         public string                                   TypeName                                { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryMethodCall();
+            var value   = new BinaryMethodCall() { Pointer= p0 };
 
-            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 0270D6C317D8 0x10 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.TypeName                                  = GetString(new IntPtr(p + 0x018)); // 0270D6C317F8 0x18 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.ArgTypes                                  = GetObjectList<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0270D6C31858 0x30 ArgTypes                    ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.BArgsPrimitive                            = GetBool(new IntPtr(p + 0x038)); // 0270D6C31878 0x38 BArgsPrimitive              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MessageEnum                               = (MessageEnum)GetInt32(new IntPtr(p + 0x03C)); // 0270D6C31898 0x3C MessageEnum                 ( 000186607C50 ModelEnumType MessageEnum MessageEnum MessageEnum Int32 )
+            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 024666CA17D8 0x10 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x018)); // 024666CA17F8 0x18 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArgTypes                                  = GetObjectList<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 024666CA1858 0x30 ArgTypes                    ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.BArgsPrimitive                            = GetBool(new IntPtr(p + 0x038)); // 024666CA1878 0x38 BArgsPrimitive              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MessageEnum                               = (MessageEnum)GetInt32(new IntPtr(p + 0x03C)); // 024666CA1898 0x3C MessageEnum                 ( 000186607C50 ModelEnumType MessageEnum MessageEnum MessageEnum Int32 )
 
             return value;
         }

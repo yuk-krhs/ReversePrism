@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 030 Mental                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MentalRankFieldNumber                    int IL2CPP_TYPE_I4
     // 034 MentalRank                               000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
-    public partial class ProduceParameterStatus
+    public partial class ProduceParameterStatus : DataModel
     {
         public int                                      Vocal                                   { get; set; }
         public ProduceParameterRank                     VocalRank                               { get; set; }
@@ -43,16 +43,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceParameterStatus();
+            var value   = new ProduceParameterStatus() { Pointer= p0 };
 
-            value.Vocal                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1122A90 0x18 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VocalRank                                 = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x01C)); // 0270D1122AD0 0x1C VocalRank                   ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Dance                                     = GetInt32(new IntPtr(p + 0x020)); // 0270D1122B10 0x20 Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DanceRank                                 = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x024)); // 0270D1122B50 0x24 DanceRank                   ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Visual                                    = GetInt32(new IntPtr(p + 0x028)); // 0270D1122B90 0x28 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VisualRank                                = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x02C)); // 0270D1122BD0 0x2C VisualRank                  ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Mental                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D1122C10 0x30 Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MentalRank                                = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x034)); // 0270D1122C50 0x34 MentalRank                  ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Vocal                                     = GetInt32(new IntPtr(p + 0x018)); // 02466109E590 0x18 Vocal                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VocalRank                                 = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x01C)); // 02466109E5D0 0x1C VocalRank                   ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Dance                                     = GetInt32(new IntPtr(p + 0x020)); // 02466109E610 0x20 Dance                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DanceRank                                 = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x024)); // 02466109E650 0x24 DanceRank                   ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Visual                                    = GetInt32(new IntPtr(p + 0x028)); // 02466109E690 0x28 Visual                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VisualRank                                = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x02C)); // 02466109E6D0 0x2C VisualRank                  ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Mental                                    = GetInt32(new IntPtr(p + 0x030)); // 02466109E710 0x30 Mental                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalRank                                = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x034)); // 02466109E750 0x34 MentalRank                  ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
 
             return value;
         }

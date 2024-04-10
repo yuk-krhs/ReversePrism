@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 X                                        000186666050 ModelPrimitiveType float float float Single
     // 014 Y                                        000186666050 ModelPrimitiveType float float float Single
     // 018 Z                                        000186666050 ModelPrimitiveType float float float Single
-    public partial class NativeVector
+    public partial class NativeVector : DataModel
     {
         public float                                    X                                       { get; set; }
         public float                                    Y                                       { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeVector();
+            var value   = new NativeVector() { Pointer= p0 };
 
-            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0270DAC6CAC0 0x10 X                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0270DAC6CAE0 0x14 Y                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 0270DAC6CB00 0x18 Z                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 02466ACD4AC0 0x10 X                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 02466ACD4AE0 0x14 Y                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 02466ACD4B00 0x18 Z                           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GreaterThanOrEqualSingle
+    public partial class GreaterThanOrEqualSingle : DataModel
     {
 
         public static GreaterThanOrEqualSingle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GreaterThanOrEqualSingle();
+            var value   = new GreaterThanOrEqualSingle() { Pointer= p0 };
 
 
             return value;

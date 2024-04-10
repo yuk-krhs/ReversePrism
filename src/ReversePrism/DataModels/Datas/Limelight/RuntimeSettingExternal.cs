@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ResourceDownloadURLRoot                  string IL2CPP_TYPE_STRING
     // 000 DefaultResourceVersion                   string IL2CPP_TYPE_STRING
-    public partial class RuntimeSettingExternal
+    public partial class RuntimeSettingExternal : DataModel
     {
 
         public static RuntimeSettingExternal? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeSettingExternal();
+            var value   = new RuntimeSettingExternal() { Pointer= p0 };
 
 
             return value;

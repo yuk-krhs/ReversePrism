@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  SharedStatic`1<StreamCompressionModel> IL2CPP_TYPE_GENERICINST
-    public partial class SharedStaticCompressionModel
+    public partial class SharedStaticCompressionModel : DataModel
     {
 
         public static SharedStaticCompressionModel? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SharedStaticCompressionModel();
+            var value   = new SharedStaticCompressionModel() { Pointer= p0 };
 
 
             return value;

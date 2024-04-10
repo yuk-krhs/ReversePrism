@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 motion                                   MotionCell[] IL2CPP_TYPE_SZARRAY
     // 008 motion_adjust                            float[] IL2CPP_TYPE_SZARRAY
     // 010 ActionLength                             000185B7D8C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class ChemicalLightMotion
+    public partial class ChemicalLightMotion : DataModel
     {
         public Animation?                               Anim                                    { get; set; }
         public bool                                     Resumef                                 { get; set; }
@@ -35,11 +35,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChemicalLightMotion();
+            var value   = new ChemicalLightMotion() { Pointer= p0 };
 
-            value.Anim                                      = GetObject<Animation>(new IntPtr(p + 0x010), ReversePrism.DataModels.Animation.FromPointer); // 0270D4E4BC08 0x10 Anim                        ( 0001866B1B90 ModelClassType Animation Animation Animation Pointer )
-            value.Resumef                                   = GetBool(new IntPtr(p + 0x018)); // 0270D4E4BC28 0x18 Resumef                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ActionLength                              = GetInt32List(new IntPtr(p + 0x010)); // 0270D4E4BDC8 0x10 ActionLength                ( 000185B7D8C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Anim                                      = GetObject<Animation>(new IntPtr(p + 0x010), ReversePrism.DataModels.Animation.FromPointer); // 024664EC0F10 0x10 Anim                        ( 0001866B1B90 ModelClassType Animation Animation Animation Pointer )
+            value.Resumef                                   = GetBool(new IntPtr(p + 0x018)); // 024664EC0F30 0x18 Resumef                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ActionLength                              = GetInt32List(new IntPtr(p + 0x010)); // 024664EC10D0 0x10 ActionLength                ( 000185B7D8C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                000186679DF0 ModelClassType GlitchBehaviour GlitchBehaviour GlitchBehaviour Pointer
-    public partial class GlitchClip
+    public partial class GlitchClip : DataModel
     {
         public GlitchBehaviour?                         Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlitchClip();
+            var value   = new GlitchClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<GlitchBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.GlitchBehaviour.FromPointer); // 0270D50752F8 0x18 Behaviour                   ( 000186679DF0 ModelClassType GlitchBehaviour GlitchBehaviour GlitchBehaviour Pointer )
+            value.Behaviour                                 = GetObject<GlitchBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.GlitchBehaviour.FromPointer); // 0246650D8C50 0x18 Behaviour                   ( 000186679DF0 ModelClassType GlitchBehaviour GlitchBehaviour GlitchBehaviour Pointer )
 
             return value;
         }

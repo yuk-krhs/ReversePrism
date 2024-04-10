@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 platform_user_id                         string IL2CPP_TYPE_STRING
-    public partial class ConnectionInfo
+    public partial class ConnectionInfo : DataModel
     {
 
         public static ConnectionInfo? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConnectionInfo();
+            var value   = new ConnectionInfo() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185CA5FD8 ModelEnumListType SqlInt32[] SqlInt32[] List<SqlInt32> Pointer
-    public partial class SqlInt32Storage
+    public partial class SqlInt32Storage : DataModel
     {
         public List<SqlInt32>?                          Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlInt32Storage();
+            var value   = new SqlInt32Storage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlInt32>(new IntPtr(p + 0x050)); // 0270D89ECED0 0x50 Values                      ( 000185CA5FD8 ModelEnumListType SqlInt32[] SqlInt32[] List<SqlInt32> Pointer )
+            value.Values                                    = GetEnumList<SqlInt32>(new IntPtr(p + 0x050)); // 024668A47AD8 0x50 Values                      ( 000185CA5FD8 ModelEnumListType SqlInt32[] SqlInt32[] List<SqlInt32> Pointer )
 
             return value;
         }

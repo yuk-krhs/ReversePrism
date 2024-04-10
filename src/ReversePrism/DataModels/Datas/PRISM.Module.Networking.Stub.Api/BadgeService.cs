@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 __Method_GetLastUpdateDateList           Method`2<GetLastUpdateDateListArgs, GetLastUpdateDateListReply> IL2CPP_TYPE_GENERICINST
     // 058 __Method_GetCampaignIconList             Method`2<GetCampaignIconListArgs, GetCampaignIconListReply> IL2CPP_TYPE_GENERICINST
     // 060 __Method_GetMenuUnlockList               Method`2<GetMenuUnlockListArgs, GetMenuUnlockListReply> IL2CPP_TYPE_GENERICINST
-    public partial class BadgeService
+    public partial class BadgeService : DataModel
     {
 
         public static BadgeService? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeService();
+            var value   = new BadgeService() { Pointer= p0 };
 
 
             return value;

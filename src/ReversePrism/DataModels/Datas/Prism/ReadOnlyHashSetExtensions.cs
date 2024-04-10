@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReadOnlyHashSetExtensions
+    public partial class ReadOnlyHashSetExtensions : DataModel
     {
 
         public static ReadOnlyHashSetExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadOnlyHashSetExtensions();
+            var value   = new ReadOnlyHashSetExtensions() { Pointer= p0 };
 
 
             return value;

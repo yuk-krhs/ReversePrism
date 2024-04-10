@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 RedirectUri                              0001866722E0 ModelPrimitiveType string string string String
     // 030 ConnectionTimeoutMillis                  0001865F36C0 ModelPrimitiveType int int int Int32
     // 034 ReadTimeoutMillis                        0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class AuthParams
+    public partial class AuthParams : DataModel
     {
         public string                                   ClientId                                { get; set; }
         public string                                   ClientSecret                            { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthParams();
+            var value   = new AuthParams() { Pointer= p0 };
 
-            value.ClientId                                  = GetString(new IntPtr(p + 0x010)); // 0270DB484628 0x10 ClientId                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ClientSecret                              = GetString(new IntPtr(p + 0x018)); // 0270DB484648 0x18 ClientSecret                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SecretKey                                 = GetString(new IntPtr(p + 0x020)); // 0270DB484668 0x20 SecretKey                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.RedirectUri                               = GetString(new IntPtr(p + 0x028)); // 0270DB484688 0x28 RedirectUri                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ConnectionTimeoutMillis                   = GetInt32(new IntPtr(p + 0x030)); // 0270DB4846A8 0x30 ConnectionTimeoutMillis     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ReadTimeoutMillis                         = GetInt32(new IntPtr(p + 0x034)); // 0270DB4846C8 0x34 ReadTimeoutMillis           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ClientId                                  = GetString(new IntPtr(p + 0x010)); // 02466B511558 0x10 ClientId                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ClientSecret                              = GetString(new IntPtr(p + 0x018)); // 02466B511578 0x18 ClientSecret                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SecretKey                                 = GetString(new IntPtr(p + 0x020)); // 02466B511598 0x20 SecretKey                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.RedirectUri                               = GetString(new IntPtr(p + 0x028)); // 02466B5115B8 0x28 RedirectUri                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ConnectionTimeoutMillis                   = GetInt32(new IntPtr(p + 0x030)); // 02466B5115D8 0x30 ConnectionTimeoutMillis     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ReadTimeoutMillis                         = GetInt32(new IntPtr(p + 0x034)); // 02466B5115F8 0x34 ReadTimeoutMillis           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

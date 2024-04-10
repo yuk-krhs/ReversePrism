@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C RequiredDearness                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DearnessFieldNumber                      int IL2CPP_TYPE_I4
     // 020 Dearness                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IdolDearnessConditionStatus
+    public partial class IdolDearnessConditionStatus : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
         public int                                      RequiredDearness                        { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolDearnessConditionStatus();
+            var value   = new IdolDearnessConditionStatus() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D10C7280 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x01C)); // 0270D10C72C0 0x1C RequiredDearness            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Dearness                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D10C7300 0x20 Dearness                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 024661055000 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x01C)); // 024661055040 0x1C RequiredDearness            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Dearness                                  = GetInt32(new IntPtr(p + 0x020)); // 024661055080 0x20 Dearness                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

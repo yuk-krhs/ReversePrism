@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IJobParallelForBatchExtensions
+    public partial class IJobParallelForBatchExtensions : DataModel
     {
 
         public static IJobParallelForBatchExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IJobParallelForBatchExtensions();
+            var value   = new IJobParallelForBatchExtensions() { Pointer= p0 };
 
 
             return value;

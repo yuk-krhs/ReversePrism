@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 SuccessCallback                          0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer
     // 048 FailureCallback                          0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer
     // 050 NetworkErrorCallback                     0001866DAD10 ModelClassType OnNetworkErrorCallback OnNetworkErrorCallback OnNetworkErrorCallback Pointer
-    public partial class RequestTask
+    public partial class RequestTask : DataModel
     {
         public SynchronizationContext?                  Context                                 { get; set; }
         public string                                   Url                                     { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestTask();
+            var value   = new RequestTask() { Pointer= p0 };
 
-            value.Context                                   = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 027004C15DD0 0x10 Context                     ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
-            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 027004C15E10 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Method                                    = GetObject<Method>(new IntPtr(p + 0x028), ReversePrism.DataModels.Method.FromPointer); // 027004C15E30 0x28 Method                      ( 00018660DFF0 ModelClassType Method Method Method Pointer )
-            value.Body                                      = GetString(new IntPtr(p + 0x038)); // 027004C15E70 0x38 Body                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.SuccessCallback                           = GetObject<OnResponseCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.OnResponseCallback.FromPointer); // 027004C15E90 0x40 SuccessCallback             ( 0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer )
-            value.FailureCallback                           = GetObject<OnResponseCallback>(new IntPtr(p + 0x048), ReversePrism.DataModels.OnResponseCallback.FromPointer); // 027004C15EB0 0x48 FailureCallback             ( 0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer )
-            value.NetworkErrorCallback                      = GetObject<OnNetworkErrorCallback>(new IntPtr(p + 0x050), ReversePrism.DataModels.OnNetworkErrorCallback.FromPointer); // 027004C15ED0 0x50 NetworkErrorCallback        ( 0001866DAD10 ModelClassType OnNetworkErrorCallback OnNetworkErrorCallback OnNetworkErrorCallback Pointer )
+            value.Context                                   = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0245A4C4CD40 0x10 Context                     ( 000186601DB0 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 0245A4C4CD80 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Method                                    = GetObject<Method>(new IntPtr(p + 0x028), ReversePrism.DataModels.Method.FromPointer); // 0245A4C4CDA0 0x28 Method                      ( 00018660DFF0 ModelClassType Method Method Method Pointer )
+            value.Body                                      = GetString(new IntPtr(p + 0x038)); // 0245A4C4CDE0 0x38 Body                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.SuccessCallback                           = GetObject<OnResponseCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.OnResponseCallback.FromPointer); // 0245A4C4CE00 0x40 SuccessCallback             ( 0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer )
+            value.FailureCallback                           = GetObject<OnResponseCallback>(new IntPtr(p + 0x048), ReversePrism.DataModels.OnResponseCallback.FromPointer); // 0245A4C4CE20 0x48 FailureCallback             ( 0001866DB690 ModelClassType OnResponseCallback OnResponseCallback OnResponseCallback Pointer )
+            value.NetworkErrorCallback                      = GetObject<OnNetworkErrorCallback>(new IntPtr(p + 0x050), ReversePrism.DataModels.OnNetworkErrorCallback.FromPointer); // 0245A4C4CE40 0x50 NetworkErrorCallback        ( 0001866DAD10 ModelClassType OnNetworkErrorCallback OnNetworkErrorCallback OnNetworkErrorCallback Pointer )
 
             return value;
         }

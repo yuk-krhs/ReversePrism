@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C ProduceParameterRank                     000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
     // 000 TotalFieldNumber                         int IL2CPP_TYPE_I4
     // 020 Total                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class UserProfileFesUnitRankStatus
+    public partial class UserProfileFesUnitRankStatus : DataModel
     {
         public int                                      UnitId                                  { get; set; }
         public ProduceParameterRank                     ProduceParameterRank                    { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserProfileFesUnitRankStatus();
+            var value   = new UserProfileFesUnitRankStatus() { Pointer= p0 };
 
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D27231F0 0x18 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceParameterRank                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x01C)); // 0270D2723230 0x1C ProduceParameterRank        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Total                                     = GetInt32(new IntPtr(p + 0x020)); // 0270D2723270 0x20 Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 024662691F70 0x18 UnitId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceParameterRank                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x01C)); // 024662691FB0 0x1C ProduceParameterRank        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Total                                     = GetInt32(new IntPtr(p + 0x020)); // 024662691FF0 0x20 Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

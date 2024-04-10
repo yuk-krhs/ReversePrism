@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 DefaultKeyOptions                        KeyOptions IL2CPP_TYPE_VALUETYPE
-    public partial class VariantExtension
+    public partial class VariantExtension : DataModel
     {
 
         public static VariantExtension? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VariantExtension();
+            var value   = new VariantExtension() { Pointer= p0 };
 
 
             return value;

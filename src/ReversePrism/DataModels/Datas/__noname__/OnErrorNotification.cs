@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 exception                                Exception IL2CPP_TYPE_CLASS
-    public partial class OnErrorNotification
+    public partial class OnErrorNotification : DataModel
     {
 
         public static OnErrorNotification? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnErrorNotification();
+            var value   = new OnErrorNotification() { Pointer= p0 };
 
 
             return value;

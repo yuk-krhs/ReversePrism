@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   DistinctObservable`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 hashSet                                  HashSet`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class Distinct
+    public partial class Distinct : DataModel
     {
 
         public static Distinct? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Distinct();
+            var value   = new Distinct() { Pointer= p0 };
 
 
             return value;

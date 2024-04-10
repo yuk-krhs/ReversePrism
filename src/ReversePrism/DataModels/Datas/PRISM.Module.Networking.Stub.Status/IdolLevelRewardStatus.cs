@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 ProductWithAmountList                    000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     // 000 IsArchivedFieldNumber                    int IL2CPP_TYPE_I4
     // 030 IsArchived                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class IdolLevelRewardStatus
+    public partial class IdolLevelRewardStatus : DataModel
     {
         public int                                      IdolLevel                               { get; set; }
         public IdolParameterStatus?                     Parameter                               { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolLevelRewardStatus();
+            var value   = new IdolLevelRewardStatus() { Pointer= p0 };
 
-            value.IdolLevel                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D1CED8C0 0x18 IdolLevel                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 0270D1CED900 0x20 Parameter                   ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
-            value.ProductWithAmountList                     = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1CED960 0x28 ProductWithAmountList       ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.IsArchived                                = GetBool(new IntPtr(p + 0x030)); // 0270D1CED9A0 0x30 IsArchived                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IdolLevel                                 = GetInt32(new IntPtr(p + 0x018)); // 024661CA6000 0x18 IdolLevel                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 024661CA6040 0x20 Parameter                   ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
+            value.ProductWithAmountList                     = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024661CA60A0 0x28 ProductWithAmountList       ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.IsArchived                                = GetBool(new IntPtr(p + 0x030)); // 024661CA60E0 0x30 IsArchived                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DirectMessageIdFieldNumber               int IL2CPP_TYPE_I4
     // 018 DirectMessageId                          000186671910 ModelPrimitiveType string string string String
-    public partial class ReadDirectMessageArgs
+    public partial class ReadDirectMessageArgs : DataModel
     {
         public string                                   DirectMessageId                         { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadDirectMessageArgs();
+            var value   = new ReadDirectMessageArgs() { Pointer= p0 };
 
-            value.DirectMessageId                           = GetString(new IntPtr(p + 0x018)); // 0270D0E5C340 0x18 DirectMessageId             ( 000186671910 ModelPrimitiveType string string string String )
+            value.DirectMessageId                           = GetString(new IntPtr(p + 0x018)); // 024660E1D3E8 0x18 DirectMessageId             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

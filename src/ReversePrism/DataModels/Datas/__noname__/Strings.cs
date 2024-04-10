@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 038 DefaultValue                             000186674040 ModelPrimitiveType string string string String
     // 040 Global                                   000186674040 ModelPrimitiveType string string string String
     // 048 Local                                    000186674040 ModelPrimitiveType string string string String
-    public partial class Strings
+    public partial class Strings : DataModel
     {
         public string                                   Parameter                               { get; set; }
         public string                                   Component                               { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Strings();
+            var value   = new Strings() { Pointer= p0 };
 
-            value.Parameter                                 = GetString(new IntPtr(p + 0x010)); // 0270D914FA78 0x10 Parameter                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.Component                                 = GetString(new IntPtr(p + 0x018)); // 0270D914FA98 0x18 Component                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.DebugViewNotSupported                     = GetString(new IntPtr(p + 0x020)); // 0270D914FAB8 0x20 DebugViewNotSupported       ( 000186674040 ModelPrimitiveType string string string String )
-            value.VolumeInfo                                = GetString(new IntPtr(p + 0x028)); // 0270D914FAD8 0x28 VolumeInfo                  ( 000186674040 ModelPrimitiveType string string string String )
-            value.InterpolatedValue                         = GetString(new IntPtr(p + 0x030)); // 0270D914FAF8 0x30 InterpolatedValue           ( 000186674040 ModelPrimitiveType string string string String )
-            value.DefaultValue                              = GetString(new IntPtr(p + 0x038)); // 0270D914FB18 0x38 DefaultValue                ( 000186674040 ModelPrimitiveType string string string String )
-            value.Global                                    = GetString(new IntPtr(p + 0x040)); // 0270D914FB38 0x40 Global                      ( 000186674040 ModelPrimitiveType string string string String )
-            value.Local                                     = GetString(new IntPtr(p + 0x048)); // 0270D914FB58 0x48 Local                       ( 000186674040 ModelPrimitiveType string string string String )
+            value.Parameter                                 = GetString(new IntPtr(p + 0x010)); // 0246691B8DB8 0x10 Parameter                   ( 000186674040 ModelPrimitiveType string string string String )
+            value.Component                                 = GetString(new IntPtr(p + 0x018)); // 0246691B8DD8 0x18 Component                   ( 000186674040 ModelPrimitiveType string string string String )
+            value.DebugViewNotSupported                     = GetString(new IntPtr(p + 0x020)); // 0246691B8DF8 0x20 DebugViewNotSupported       ( 000186674040 ModelPrimitiveType string string string String )
+            value.VolumeInfo                                = GetString(new IntPtr(p + 0x028)); // 0246691B8E18 0x28 VolumeInfo                  ( 000186674040 ModelPrimitiveType string string string String )
+            value.InterpolatedValue                         = GetString(new IntPtr(p + 0x030)); // 0246691B8E38 0x30 InterpolatedValue           ( 000186674040 ModelPrimitiveType string string string String )
+            value.DefaultValue                              = GetString(new IntPtr(p + 0x038)); // 0246691B8E58 0x38 DefaultValue                ( 000186674040 ModelPrimitiveType string string string String )
+            value.Global                                    = GetString(new IntPtr(p + 0x040)); // 0246691B8E78 0x40 Global                      ( 000186674040 ModelPrimitiveType string string string String )
+            value.Local                                     = GetString(new IntPtr(p + 0x048)); // 0246691B8E98 0x48 Local                       ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

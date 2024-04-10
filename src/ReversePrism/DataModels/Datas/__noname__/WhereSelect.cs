@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   WhereSelectObservable`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class WhereSelect
+    public partial class WhereSelect : DataModel
     {
 
         public static WhereSelect? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WhereSelect();
+            var value   = new WhereSelect() { Pointer= p0 };
 
 
             return value;

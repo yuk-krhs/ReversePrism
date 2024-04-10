@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaDetailPopupView
+    public partial class IGashaDetailPopupView : DataModel
     {
 
         public static IGashaDetailPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaDetailPopupView();
+            var value   = new IGashaDetailPopupView() { Pointer= p0 };
 
 
             return value;

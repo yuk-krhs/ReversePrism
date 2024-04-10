@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 TopRight                                 0001865AB0A0 ModelEnumType Color Color Color Int32
     // 030 BottomLeft                               0001865AB0A0 ModelEnumType Color Color Color Int32
     // 040 BottomRight                              0001865AB0A0 ModelEnumType Color Color Color Int32
-    public partial class VertexGradient
+    public partial class VertexGradient : DataModel
     {
         public Color                                    TopLeft                                 { get; set; }
         public Color                                    TopRight                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VertexGradient();
+            var value   = new VertexGradient() { Pointer= p0 };
 
-            value.TopLeft                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 0270D0954460 0x10 TopLeft                     ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.TopRight                                  = (Color)GetInt32(new IntPtr(p + 0x020)); // 0270D0954480 0x20 TopRight                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BottomLeft                                = (Color)GetInt32(new IntPtr(p + 0x030)); // 0270D09544A0 0x30 BottomLeft                  ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BottomRight                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0270D09544C0 0x40 BottomRight                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.TopLeft                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 0245A3FA56B0 0x10 TopLeft                     ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.TopRight                                  = (Color)GetInt32(new IntPtr(p + 0x020)); // 0245A3FA56D0 0x20 TopRight                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.BottomLeft                                = (Color)GetInt32(new IntPtr(p + 0x030)); // 0245A3FA56F0 0x30 BottomLeft                  ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.BottomRight                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0245A3FA5710 0x40 BottomRight                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

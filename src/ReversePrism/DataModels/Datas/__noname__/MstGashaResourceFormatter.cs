@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstGashaResourceFormatter
+    public partial class MstGashaResourceFormatter : DataModel
     {
 
         public static MstGashaResourceFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstGashaResourceFormatter();
+            var value   = new MstGashaResourceFormatter() { Pointer= p0 };
 
 
             return value;

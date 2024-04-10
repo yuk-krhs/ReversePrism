@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Legacy                                   0001865C9AF0 ModelClassType MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy Pointer
-    public partial class MainStoryLastCategoryArgument
+    public partial class MainStoryLastCategoryArgument : DataModel
     {
         public MainStoryLastCategoryArgumentForLegacy?  Legacy                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainStoryLastCategoryArgument();
+            var value   = new MainStoryLastCategoryArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<MainStoryLastCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.MainStoryLastCategoryArgumentForLegacy.FromPointer); // 0270D67BBA98 0x10 Legacy                      ( 0001865C9AF0 ModelClassType MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy Pointer )
+            value.Legacy                                    = GetObject<MainStoryLastCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.MainStoryLastCategoryArgumentForLegacy.FromPointer); // 02466681BA98 0x10 Legacy                      ( 0001865C9AF0 ModelClassType MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 count                                    int IL2CPP_TYPE_I4
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class _Skip
+    public partial class _Skip : DataModel
     {
 
         public static _Skip? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Skip();
+            var value   = new _Skip() { Pointer= p0 };
 
 
             return value;

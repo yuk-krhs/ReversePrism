@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SWIG_CompletionDelegate
+    public partial class SWIG_CompletionDelegate : DataModel
     {
 
         public static SWIG_CompletionDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SWIG_CompletionDelegate();
+            var value   = new SWIG_CompletionDelegate() { Pointer= p0 };
 
 
             return value;

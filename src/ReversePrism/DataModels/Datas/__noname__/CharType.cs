@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 FirstName                                sbyte IL2CPP_TYPE_U1
     // 000 Name                                     sbyte IL2CPP_TYPE_U1
     // 000 None                                     sbyte IL2CPP_TYPE_U1
-    public partial class CharType
+    public partial class CharType : DataModel
     {
 
         public static CharType? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharType();
+            var value   = new CharType() { Pointer= p0 };
 
 
             return value;

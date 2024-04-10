@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CodeTypeReference
+    public partial class CodeTypeReference : DataModel
     {
 
         public static CodeTypeReference? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CodeTypeReference();
+            var value   = new CodeTypeReference() { Pointer= p0 };
 
 
             return value;

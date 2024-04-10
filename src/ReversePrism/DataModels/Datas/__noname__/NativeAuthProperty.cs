@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Name                                     <int> IL2CPP_TYPE_I
     // 018 Value                                    <int> IL2CPP_TYPE_I
     // 020 ValueLength                              <uint> IL2CPP_TYPE_U
-    public partial class NativeAuthProperty
+    public partial class NativeAuthProperty : DataModel
     {
 
         public static NativeAuthProperty? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeAuthProperty();
+            var value   = new NativeAuthProperty() { Pointer= p0 };
 
 
             return value;

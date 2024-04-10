@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 040 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
     // 048 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class UserProfileEventStatus
+    public partial class UserProfileEventStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserProfileEventStatus();
+            var value   = new UserProfileEventStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D2722380 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D27223A0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x038)); // 0270D2722420 0x38 EventType                   ( 0001865B3340 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x03C)); // 0270D2722460 0x3C MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D27224A0 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D27224E0 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024662690E70 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024662690E90 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EventType                                 = (ProfileEventType)GetInt32(new IntPtr(p + 0x038)); // 024662690F10 0x38 EventType                   ( 0001865B3340 ModelEnumType ProfileEventType ProfileEventType ProfileEventType Int32 )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x03C)); // 024662690F50 0x3C MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024662690F90 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024662690FD0 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

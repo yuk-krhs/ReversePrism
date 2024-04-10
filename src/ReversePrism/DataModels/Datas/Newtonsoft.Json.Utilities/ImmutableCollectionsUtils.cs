@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 000 ImmutableSortedDictionaryTypeName        string IL2CPP_TYPE_STRING
     // 000 ImmutableSortedDictionaryGenericTypeName string IL2CPP_TYPE_STRING
     // 008 DictionaryContractImmutableCollectionDefinitions IList`1<ImmutableCollectionTypeInfo> IL2CPP_TYPE_GENERICINST
-    public partial class ImmutableCollectionsUtils
+    public partial class ImmutableCollectionsUtils : DataModel
     {
 
         public static ImmutableCollectionsUtils? FromPointer(IntPtr p0)
@@ -40,7 +40,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImmutableCollectionsUtils();
+            var value   = new ImmutableCollectionsUtils() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     00018671E530 ModelEnumType DeviceType DeviceType DeviceType Int32
     // 014 SubType                                  00018671DD80 ModelEnumType DeviceSubType DeviceSubType DeviceSubType Int32
     // 018 Flags                                    00018671D410 ModelEnumType DeviceFlags DeviceFlags DeviceFlags Int32
-    public partial class Capabilities
+    public partial class Capabilities : DataModel
     {
         public DeviceType                               Type                                    { get; set; }
         public DeviceSubType                            SubType                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Capabilities();
+            var value   = new Capabilities() { Pointer= p0 };
 
-            value.Type                                      = (DeviceType)GetInt32(new IntPtr(p + 0x010)); // 0270D7786E80 0x10 Type                        ( 00018671E530 ModelEnumType DeviceType DeviceType DeviceType Int32 )
-            value.SubType                                   = (DeviceSubType)GetInt32(new IntPtr(p + 0x014)); // 0270D7786EA0 0x14 SubType                     ( 00018671DD80 ModelEnumType DeviceSubType DeviceSubType DeviceSubType Int32 )
-            value.Flags                                     = (DeviceFlags)GetInt32(new IntPtr(p + 0x018)); // 0270D7786EC0 0x18 Flags                       ( 00018671D410 ModelEnumType DeviceFlags DeviceFlags DeviceFlags Int32 )
+            value.Type                                      = (DeviceType)GetInt32(new IntPtr(p + 0x010)); // 0246677DEE80 0x10 Type                        ( 00018671E530 ModelEnumType DeviceType DeviceType DeviceType Int32 )
+            value.SubType                                   = (DeviceSubType)GetInt32(new IntPtr(p + 0x014)); // 0246677DEEA0 0x14 SubType                     ( 00018671DD80 ModelEnumType DeviceSubType DeviceSubType DeviceSubType Int32 )
+            value.Flags                                     = (DeviceFlags)GetInt32(new IntPtr(p + 0x018)); // 0246677DEEC0 0x18 Flags                       ( 00018671D410 ModelEnumType DeviceFlags DeviceFlags DeviceFlags Int32 )
 
             return value;
         }

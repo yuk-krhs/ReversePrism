@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 UpdateModifiedEntries                    int IL2CPP_TYPE_I4
     // 000 InsertNewEntries                         int IL2CPP_TYPE_I4
     // 000 End                                      int IL2CPP_TYPE_I4
-    public partial class CatalogDBUpdateProgress
+    public partial class CatalogDBUpdateProgress : DataModel
     {
 
         public static CatalogDBUpdateProgress? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatalogDBUpdateProgress();
+            var value   = new CatalogDBUpdateProgress() { Pointer= p0 };
 
 
             return value;

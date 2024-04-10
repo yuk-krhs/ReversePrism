@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InternalStringComparer
+    public partial class InternalStringComparer : DataModel
     {
 
         public static InternalStringComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalStringComparer();
+            var value   = new InternalStringComparer() { Pointer= p0 };
 
 
             return value;

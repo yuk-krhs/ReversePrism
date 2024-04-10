@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStartScheduleMiniLiveReply
+    public partial class IStartScheduleMiniLiveReply : DataModel
     {
 
         public static IStartScheduleMiniLiveReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStartScheduleMiniLiveReply();
+            var value   = new IStartScheduleMiniLiveReply() { Pointer= p0 };
 
 
             return value;

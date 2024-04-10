@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 __Marshaller_prism_GetContainerChunkRequest Marshaller`1<GetContainerChunkRequest> IL2CPP_TYPE_GENERICINST
     // 010 __Marshaller_prism_Container             Marshaller`1<Container> IL2CPP_TYPE_GENERICINST
     // 018 __Method_GetContainerChunk               Method`2<GetContainerChunkRequest, Container> IL2CPP_TYPE_GENERICINST
-    public partial class OutgestService
+    public partial class OutgestService : DataModel
     {
 
         public static OutgestService? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutgestService();
+            var value   = new OutgestService() { Pointer= p0 };
 
 
             return value;

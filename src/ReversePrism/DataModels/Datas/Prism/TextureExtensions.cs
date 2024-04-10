@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TextureExtensions
+    public partial class TextureExtensions : DataModel
     {
 
         public static TextureExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureExtensions();
+            var value   = new TextureExtensions() { Pointer= p0 };
 
 
             return value;

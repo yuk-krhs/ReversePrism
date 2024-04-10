@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TraceSwitch
+    public partial class TraceSwitch : DataModel
     {
 
         public static TraceSwitch? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TraceSwitch();
+            var value   = new TraceSwitch() { Pointer= p0 };
 
 
             return value;

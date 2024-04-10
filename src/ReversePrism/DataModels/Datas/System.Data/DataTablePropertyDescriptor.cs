@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 Table                                    0001865B8520 ModelClassType DataTable DataTable DataTable Pointer
-    public partial class DataTablePropertyDescriptor
+    public partial class DataTablePropertyDescriptor : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataTablePropertyDescriptor();
+            var value   = new DataTablePropertyDescriptor() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x088), ReversePrism.DataModels.DataTable.FromPointer); // 0270D8913CA0 0x88 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x088), ReversePrism.DataModels.DataTable.FromPointer); // 02466897FA58 0x88 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
 
             return value;
         }

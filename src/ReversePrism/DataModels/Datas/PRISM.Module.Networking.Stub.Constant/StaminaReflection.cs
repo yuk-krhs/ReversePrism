@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class StaminaReflection
+    public partial class StaminaReflection : DataModel
     {
 
         public static StaminaReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StaminaReflection();
+            var value   = new StaminaReflection() { Pointer= p0 };
 
 
             return value;

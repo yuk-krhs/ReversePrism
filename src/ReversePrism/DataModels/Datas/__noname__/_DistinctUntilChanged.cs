@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 moveNextAction                           Action IL2CPP_TYPE_CLASS
     // 000 prev                                     <var> IL2CPP_TYPE_VAR
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _DistinctUntilChanged
+    public partial class _DistinctUntilChanged : DataModel
     {
 
         public static _DistinctUntilChanged? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _DistinctUntilChanged();
+            var value   = new _DistinctUntilChanged() { Pointer= p0 };
 
 
             return value;

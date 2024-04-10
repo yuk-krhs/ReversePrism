@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 080 InitialPath                              000186671910 ModelPrimitiveType string string string String
     // 088 Parent                                   0001865FFEA0 ModelClassType JToken JToken JToken Pointer
     // 090 Current                                  0001865FFEA0 ModelClassType JToken JToken JToken Pointer
-    public partial class JTokenReader
+    public partial class JTokenReader : DataModel
     {
         public JToken?                                  Root                                    { get; set; }
         public string                                   InitialPath                             { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JTokenReader();
+            var value   = new JTokenReader() { Pointer= p0 };
 
-            value.Root                                      = GetObject<JToken>(new IntPtr(p + 0x078), ReversePrism.DataModels.JToken.FromPointer); // 0270060C4EF8 0x78 Root                        ( 0001866005B0 ModelClassType JToken JToken JToken Pointer )
-            value.InitialPath                               = GetString(new IntPtr(p + 0x080)); // 0270060C4F18 0x80 InitialPath                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parent                                    = GetObject<JToken>(new IntPtr(p + 0x088), ReversePrism.DataModels.JToken.FromPointer); // 0270060C4F38 0x88 Parent                      ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
-            value.Current                                   = GetObject<JToken>(new IntPtr(p + 0x090), ReversePrism.DataModels.JToken.FromPointer); // 0270060C4F58 0x90 Current                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
+            value.Root                                      = GetObject<JToken>(new IntPtr(p + 0x078), ReversePrism.DataModels.JToken.FromPointer); // 0245A609EE78 0x78 Root                        ( 0001866005B0 ModelClassType JToken JToken JToken Pointer )
+            value.InitialPath                               = GetString(new IntPtr(p + 0x080)); // 0245A609EE98 0x80 InitialPath                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parent                                    = GetObject<JToken>(new IntPtr(p + 0x088), ReversePrism.DataModels.JToken.FromPointer); // 0245A609EEB8 0x88 Parent                      ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
+            value.Current                                   = GetObject<JToken>(new IntPtr(p + 0x090), ReversePrism.DataModels.JToken.FromPointer); // 0245A609EED8 0x90 Current                     ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
 
             return value;
         }

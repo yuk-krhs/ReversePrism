@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 TraceId                                  000186672F10 ModelPrimitiveType string string string String
     // 018 SpanId                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 01C IsTrace                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TraceContext
+    public partial class TraceContext : DataModel
     {
         public string                                   TraceId                                 { get; set; }
         public int                                      SpanId                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TraceContext();
+            var value   = new TraceContext() { Pointer= p0 };
 
-            value.TraceId                                   = GetString(new IntPtr(p + 0x010)); // 027004B37498 0x10 TraceId                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.SpanId                                    = GetInt32(new IntPtr(p + 0x018)); // 027004B374B8 0x18 SpanId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsTrace                                   = GetBool(new IntPtr(p + 0x01C)); // 027004B374D8 0x1C IsTrace                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TraceId                                   = GetString(new IntPtr(p + 0x010)); // 0245A4B8F608 0x10 TraceId                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.SpanId                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A4B8F628 0x18 SpanId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IsTrace                                   = GetBool(new IntPtr(p + 0x01C)); // 0245A4B8F648 0x1C IsTrace                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

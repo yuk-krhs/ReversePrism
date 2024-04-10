@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 IdSearchButton                           0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 040 RefreshButton                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 048 ViewModel                                0001865CCD30 ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer
-    public partial class FriendFooterPanelView
+    public partial class FriendFooterPanelView : DataModel
     {
         public UITextMeshProUGUI?                       TextLabel                               { get; set; }
         public UITextMeshProUGUI?                       TextPoint                               { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendFooterPanelView();
+            var value   = new FriendFooterPanelView() { Pointer= p0 };
 
-            value.TextLabel                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE5E18 0x20 TextLabel                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TextPoint                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE5E38 0x28 TextPoint                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SortButton                                = GetObject<FriendSortButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.FriendSortButton.FromPointer); // 0270DBDE5E58 0x30 SortButton                  ( 0001865CABC0 ModelClassType FriendSortButton FriendSortButton FriendSortButton Pointer )
-            value.IdSearchButton                            = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DBDE5E78 0x38 IdSearchButton              ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.RefreshButton                             = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0270DBDE5E98 0x40 RefreshButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ViewModel                                 = GetObject<FriendViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.FriendViewModel.FromPointer); // 0270DBDE5EB8 0x48 ViewModel                   ( 0001865CCD30 ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer )
+            value.TextLabel                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE757B8 0x20 TextLabel                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TextPoint                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE757D8 0x28 TextPoint                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SortButton                                = GetObject<FriendSortButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.FriendSortButton.FromPointer); // 02466BE757F8 0x30 SortButton                  ( 0001865CABC0 ModelClassType FriendSortButton FriendSortButton FriendSortButton Pointer )
+            value.IdSearchButton                            = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466BE75818 0x38 IdSearchButton              ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.RefreshButton                             = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466BE75838 0x40 RefreshButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ViewModel                                 = GetObject<FriendViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.FriendViewModel.FromPointer); // 02466BE75858 0x48 ViewModel                   ( 0001865CCD30 ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IconViewModel                            0001866A84A0 ModelClassType SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel Pointer
     // 018 IsExerted                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class InProduceSupportEffectSDCharaIconViewModel
+    public partial class InProduceSupportEffectSDCharaIconViewModel : DataModel
     {
         public SCharaEditSDCharaIconViewModel?          IconViewModel                           { get; set; }
         public bool                                     IsExerted                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InProduceSupportEffectSDCharaIconViewModel();
+            var value   = new InProduceSupportEffectSDCharaIconViewModel() { Pointer= p0 };
 
-            value.IconViewModel                             = GetObject<SCharaEditSDCharaIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.SCharaEditSDCharaIconViewModel.FromPointer); // 0270D64F6BA0 0x10 IconViewModel               ( 0001866A84A0 ModelClassType SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel Pointer )
-            value.IsExerted                                 = GetBool(new IntPtr(p + 0x018)); // 0270D64F6BC0 0x18 IsExerted                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IconViewModel                             = GetObject<SCharaEditSDCharaIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.SCharaEditSDCharaIconViewModel.FromPointer); // 024666565770 0x10 IconViewModel               ( 0001866A84A0 ModelClassType SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel SCharaEditSDCharaIconViewModel Pointer )
+            value.IsExerted                                 = GetBool(new IntPtr(p + 0x018)); // 024666565790 0x18 IsExerted                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

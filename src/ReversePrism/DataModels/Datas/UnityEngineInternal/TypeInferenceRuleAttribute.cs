@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Rule                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class TypeInferenceRuleAttribute
+    public partial class TypeInferenceRuleAttribute : DataModel
     {
         public string                                   Rule                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeInferenceRuleAttribute();
+            var value   = new TypeInferenceRuleAttribute() { Pointer= p0 };
 
-            value.Rule                                      = GetString(new IntPtr(p + 0x010)); // 0270068A2550 0x10 Rule                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Rule                                      = GetString(new IntPtr(p + 0x010)); // 0245A6864498 0x10 Rule                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

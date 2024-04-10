@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GameSettingStatusTranslator
+    public partial class GameSettingStatusTranslator : DataModel
     {
 
         public static GameSettingStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameSettingStatusTranslator();
+            var value   = new GameSettingStatusTranslator() { Pointer= p0 };
 
 
             return value;

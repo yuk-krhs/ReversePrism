@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DateDataContract
+    public partial class DateDataContract : DataModel
     {
 
         public static DateDataContract? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateDataContract();
+            var value   = new DateDataContract() { Pointer= p0 };
 
 
             return value;

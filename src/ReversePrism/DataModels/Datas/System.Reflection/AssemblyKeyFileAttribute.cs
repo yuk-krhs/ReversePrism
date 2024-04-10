@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 KeyFile                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class AssemblyKeyFileAttribute
+    public partial class AssemblyKeyFileAttribute : DataModel
     {
         public string                                   KeyFile                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyKeyFileAttribute();
+            var value   = new AssemblyKeyFileAttribute() { Pointer= p0 };
 
-            value.KeyFile                                   = GetString(new IntPtr(p + 0x010)); // 0270D6CE8B80 0x10 KeyFile                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.KeyFile                                   = GetString(new IntPtr(p + 0x010)); // 024666D38B80 0x10 KeyFile                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

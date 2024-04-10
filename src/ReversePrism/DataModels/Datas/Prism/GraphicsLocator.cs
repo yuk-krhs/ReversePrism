@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 GraphicsManager                          GraphicsManager IL2CPP_TYPE_CLASS
     // 008 EffectManager                            EffectManager IL2CPP_TYPE_CLASS
     // 010 CameraCaptureManager                     000186535A20 ModelClassType CameraCaptureManager CameraCaptureManager CameraCaptureManager Pointer
-    public partial class GraphicsLocator
+    public partial class GraphicsLocator : DataModel
     {
         public CameraCaptureManager?                    CameraCaptureManager                    { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphicsLocator();
+            var value   = new GraphicsLocator() { Pointer= p0 };
 
-            value.CameraCaptureManager                      = GetObject<CameraCaptureManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraCaptureManager.FromPointer); // 0270D0E624F0 0x10 CameraCaptureManager        ( 000186535A20 ModelClassType CameraCaptureManager CameraCaptureManager CameraCaptureManager Pointer )
+            value.CameraCaptureManager                      = GetObject<CameraCaptureManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraCaptureManager.FromPointer); // 024660DE8200 0x10 CameraCaptureManager        ( 000186535A20 ModelClassType CameraCaptureManager CameraCaptureManager CameraCaptureManager Pointer )
 
             return value;
         }

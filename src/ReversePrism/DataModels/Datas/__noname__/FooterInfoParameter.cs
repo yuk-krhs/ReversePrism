@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ButtonParameters                         000185D196B8 ModelClassListType IReadOnlyList`1<ButtonInfoParameter> IReadOnlyList`1<ButtonInfoParameter> List<ButtonInfoParameter> Pointer
-    public partial class FooterInfoParameter
+    public partial class FooterInfoParameter : DataModel
     {
         public List<ButtonInfoParameter>?               ButtonParameters                        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FooterInfoParameter();
+            var value   = new FooterInfoParameter() { Pointer= p0 };
 
-            value.ButtonParameters                          = GetObjectList<ButtonInfoParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonInfoParameter.FromPointer); // 0270DA128EB0 0x10 ButtonParameters            ( 000185D196B8 ModelClassListType IReadOnlyList`1<ButtonInfoParameter> IReadOnlyList`1<ButtonInfoParameter> List<ButtonInfoParameter> Pointer )
+            value.ButtonParameters                          = GetObjectList<ButtonInfoParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonInfoParameter.FromPointer); // 02466A1845E0 0x10 ButtonParameters            ( 000185D196B8 ModelClassListType IReadOnlyList`1<ButtonInfoParameter> IReadOnlyList`1<ButtonInfoParameter> List<ButtonInfoParameter> Pointer )
 
             return value;
         }

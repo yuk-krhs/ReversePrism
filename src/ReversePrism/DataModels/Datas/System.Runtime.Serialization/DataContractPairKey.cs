@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 object1                                  <object> IL2CPP_TYPE_OBJECT
     // 018 object2                                  <object> IL2CPP_TYPE_OBJECT
-    public partial class DataContractPairKey
+    public partial class DataContractPairKey : DataModel
     {
 
         public static DataContractPairKey? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataContractPairKey();
+            var value   = new DataContractPairKey() { Pointer= p0 };
 
 
             return value;

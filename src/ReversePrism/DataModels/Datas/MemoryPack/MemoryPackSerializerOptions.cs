@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 Utf16                                    0001865F9480 ModelClassType MemoryPackSerializerOptions MemoryPackSerializerOptions MemoryPackSerializerOptions Pointer
     // 010 StringEncoding                           0001865BD720 ModelEnumType StringEncoding StringEncoding StringEncoding Int32
     // 018 ServiceProvider                          000186639E40 ModelClassType IServiceProvider IServiceProvider IServiceProvider Pointer
-    public partial class MemoryPackSerializerOptions
+    public partial class MemoryPackSerializerOptions : DataModel
     {
         public MemoryPackSerializerOptions?             Utf16                                   { get; set; }
         public StringEncoding                           StringEncoding                          { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackSerializerOptions();
+            var value   = new MemoryPackSerializerOptions() { Pointer= p0 };
 
-            value.Utf16                                     = GetObject<MemoryPackSerializerOptions>(new IntPtr(p + 0x010), ReversePrism.DataModels.MemoryPackSerializerOptions.FromPointer); // 02700444E220 0x10 Utf16                       ( 0001865F9480 ModelClassType MemoryPackSerializerOptions MemoryPackSerializerOptions MemoryPackSerializerOptions Pointer )
-            value.StringEncoding                            = (StringEncoding)GetInt32(new IntPtr(p + 0x010)); // 02700444E240 0x10 StringEncoding              ( 0001865BD720 ModelEnumType StringEncoding StringEncoding StringEncoding Int32 )
-            value.ServiceProvider                           = GetObject<IServiceProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IServiceProvider.FromPointer); // 02700444E260 0x18 ServiceProvider             ( 000186639E40 ModelClassType IServiceProvider IServiceProvider IServiceProvider Pointer )
+            value.Utf16                                     = GetObject<MemoryPackSerializerOptions>(new IntPtr(p + 0x010), ReversePrism.DataModels.MemoryPackSerializerOptions.FromPointer); // 0245A44D0670 0x10 Utf16                       ( 0001865F9480 ModelClassType MemoryPackSerializerOptions MemoryPackSerializerOptions MemoryPackSerializerOptions Pointer )
+            value.StringEncoding                            = (StringEncoding)GetInt32(new IntPtr(p + 0x010)); // 0245A44D0690 0x10 StringEncoding              ( 0001865BD720 ModelEnumType StringEncoding StringEncoding StringEncoding Int32 )
+            value.ServiceProvider                           = GetObject<IServiceProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IServiceProvider.FromPointer); // 0245A44D06B0 0x18 ServiceProvider             ( 000186639E40 ModelClassType IServiceProvider IServiceProvider IServiceProvider Pointer )
 
             return value;
         }

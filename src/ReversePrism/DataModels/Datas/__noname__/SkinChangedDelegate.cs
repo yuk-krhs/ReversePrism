@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SkinChangedDelegate
+    public partial class SkinChangedDelegate : DataModel
     {
 
         public static SkinChangedDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkinChangedDelegate();
+            var value   = new SkinChangedDelegate() { Pointer= p0 };
 
 
             return value;

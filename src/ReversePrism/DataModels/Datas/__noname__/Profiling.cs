@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 End3D                                    0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer
     // 058 OnRenderObject                           0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer
     // 060 HashSamplerCache                         Dictionary`2<int, ProfileSampler> IL2CPP_TYPE_GENERICINST
-    public partial class Profiling
+    public partial class Profiling : DataModel
     {
         public ProfilingSampler?                        DrawGizmos                              { get; set; }
         public ProfileSampler?                          PrismRenderPipeline                     { get; set; }
@@ -40,18 +40,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Profiling();
+            var value   = new Profiling() { Pointer= p0 };
 
-            value.DrawGizmos                                = GetObject<ProfilingSampler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProfilingSampler.FromPointer); // 027003FEDE50 0x10 DrawGizmos                  ( 0001865CD840 ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer )
-            value.PrismRenderPipeline                       = GetObject<ProfileSampler>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDE70 0x18 PrismRenderPipeline         ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.BeginCamera                               = GetObject<ProfileSampler>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDE90 0x20 BeginCamera                 ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.EndCamera                                 = GetObject<ProfileSampler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDEB0 0x28 EndCamera                   ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.Begin3D                                   = GetObject<ProfileSampler>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDED0 0x30 Begin3D                     ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.DrawGrabPass                              = GetObject<ProfileSampler>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDEF0 0x38 DrawGrabPass                ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.DrawReservedBufferPass                    = GetObject<ProfileSampler>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDF10 0x40 DrawReservedBufferPass      ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.RestoreCamera                             = GetObject<ProfileSampler>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDF30 0x48 RestoreCamera               ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.End3D                                     = GetObject<ProfileSampler>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDF50 0x50 End3D                       ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
-            value.OnRenderObject                            = GetObject<ProfileSampler>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfileSampler.FromPointer); // 027003FEDF70 0x58 OnRenderObject              ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.DrawGizmos                                = GetObject<ProfilingSampler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProfilingSampler.FromPointer); // 0245A3FFD770 0x10 DrawGizmos                  ( 0001865CD840 ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer )
+            value.PrismRenderPipeline                       = GetObject<ProfileSampler>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD790 0x18 PrismRenderPipeline         ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.BeginCamera                               = GetObject<ProfileSampler>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD7B0 0x20 BeginCamera                 ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.EndCamera                                 = GetObject<ProfileSampler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD7D0 0x28 EndCamera                   ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.Begin3D                                   = GetObject<ProfileSampler>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD7F0 0x30 Begin3D                     ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.DrawGrabPass                              = GetObject<ProfileSampler>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD810 0x38 DrawGrabPass                ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.DrawReservedBufferPass                    = GetObject<ProfileSampler>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD830 0x40 DrawReservedBufferPass      ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.RestoreCamera                             = GetObject<ProfileSampler>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD850 0x48 RestoreCamera               ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.End3D                                     = GetObject<ProfileSampler>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD870 0x50 End3D                       ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
+            value.OnRenderObject                            = GetObject<ProfileSampler>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProfileSampler.FromPointer); // 0245A3FFD890 0x58 OnRenderObject              ( 0001865C15E0 ModelClassType ProfileSampler ProfileSampler ProfileSampler Pointer )
 
             return value;
         }

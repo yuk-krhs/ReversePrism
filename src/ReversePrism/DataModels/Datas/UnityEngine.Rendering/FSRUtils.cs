@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 kMaxSharpnessStops                       float IL2CPP_TYPE_R4
     // 000 kDefaultSharpnessStops                   float IL2CPP_TYPE_R4
     // 000 kDefaultSharpnessLinear                  float IL2CPP_TYPE_R4
-    public partial class FSRUtils
+    public partial class FSRUtils : DataModel
     {
 
         public static FSRUtils? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FSRUtils();
+            var value   = new FSRUtils() { Pointer= p0 };
 
 
             return value;

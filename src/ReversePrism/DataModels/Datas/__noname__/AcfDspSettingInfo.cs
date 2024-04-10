@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 02E SnapshotWorkSize                         000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 030 NumMixerAisacs                           000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 032 MixerAisacStartIndex                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class AcfDspSettingInfo
+    public partial class AcfDspSettingInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<ushort>?                            BusIndexes                              { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AcfDspSettingInfo();
+            var value   = new AcfDspSettingInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270DAC6FC68 0x10 Name                        ( 000186674C50 ModelPrimitiveType string string string String )
-            value.BusIndexes                                = GetUInt16List(new IntPtr(p + 0x018)); // 0270DAC6FC88 0x18 BusIndexes                  ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
-            value.ExtendBusIndexes                          = GetUInt16List(new IntPtr(p + 0x020)); // 0270DAC6FCA8 0x20 ExtendBusIndexes            ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
-            value.SnapshotStartIndex                        = GetUInt16(new IntPtr(p + 0x028)); // 0270DAC6FCC8 0x28 SnapshotStartIndex          ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.NumBuses                                  = GetSByte(new IntPtr(p + 0x02A)); // 0270DAC6FCE8 0x2A NumBuses                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.NumExtendBuses                            = GetSByte(new IntPtr(p + 0x02B)); // 0270DAC6FD08 0x2B NumExtendBuses              ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.NumSnapshots                              = GetUInt16(new IntPtr(p + 0x02C)); // 0270DAC6FD28 0x2C NumSnapshots                ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.SnapshotWorkSize                          = GetUInt16(new IntPtr(p + 0x02E)); // 0270DAC6FD48 0x2E SnapshotWorkSize            ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.NumMixerAisacs                            = GetUInt16(new IntPtr(p + 0x030)); // 0270DAC6FD68 0x30 NumMixerAisacs              ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.MixerAisacStartIndex                      = GetUInt16(new IntPtr(p + 0x032)); // 0270DAC6FD88 0x32 MixerAisacStartIndex        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 02466ACD7C68 0x10 Name                        ( 000186674C50 ModelPrimitiveType string string string String )
+            value.BusIndexes                                = GetUInt16List(new IntPtr(p + 0x018)); // 02466ACD7C88 0x18 BusIndexes                  ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
+            value.ExtendBusIndexes                          = GetUInt16List(new IntPtr(p + 0x020)); // 02466ACD7CA8 0x20 ExtendBusIndexes            ( 000185CAEF38 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
+            value.SnapshotStartIndex                        = GetUInt16(new IntPtr(p + 0x028)); // 02466ACD7CC8 0x28 SnapshotStartIndex          ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.NumBuses                                  = GetSByte(new IntPtr(p + 0x02A)); // 02466ACD7CE8 0x2A NumBuses                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.NumExtendBuses                            = GetSByte(new IntPtr(p + 0x02B)); // 02466ACD7D08 0x2B NumExtendBuses              ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.NumSnapshots                              = GetUInt16(new IntPtr(p + 0x02C)); // 02466ACD7D28 0x2C NumSnapshots                ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.SnapshotWorkSize                          = GetUInt16(new IntPtr(p + 0x02E)); // 02466ACD7D48 0x2E SnapshotWorkSize            ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.NumMixerAisacs                            = GetUInt16(new IntPtr(p + 0x030)); // 02466ACD7D68 0x30 NumMixerAisacs              ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.MixerAisacStartIndex                      = GetUInt16(new IntPtr(p + 0x032)); // 02466ACD7D88 0x32 MixerAisacStartIndex        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

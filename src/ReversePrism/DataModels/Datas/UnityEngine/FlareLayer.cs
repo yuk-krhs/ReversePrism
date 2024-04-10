@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FlareLayer
+    public partial class FlareLayer : DataModel
     {
 
         public static FlareLayer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FlareLayer();
+            var value   = new FlareLayer() { Pointer= p0 };
 
 
             return value;

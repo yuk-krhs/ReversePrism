@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Default                                  IAsyncMessageBroker IL2CPP_TYPE_CLASS
     // 010 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 notifiers                                Dictionary`2<Type, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncMessageBroker
+    public partial class AsyncMessageBroker : DataModel
     {
         public bool                                     IsDisposed                              { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncMessageBroker();
+            var value   = new AsyncMessageBroker() { Pointer= p0 };
 
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0270D9552188 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0246695B7F48 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

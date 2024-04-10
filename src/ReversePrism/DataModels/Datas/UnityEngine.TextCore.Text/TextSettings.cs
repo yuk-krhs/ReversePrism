@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 089 M_DisplayWarnings                        000186595480 ModelPrimitiveType bool bool bool Bool
     // 090 m_FontLookup                             Dictionary`2<int, FontAsset> IL2CPP_TYPE_GENERICINST
     // 098 M_FontReferences                         000185D2DF08 ModelEnumListType List`1<FontReferenceMap> List`1<FontReferenceMap> List<FontReferenceMap> Pointer
-    public partial class TextSettings
+    public partial class TextSettings : DataModel
     {
         public string                                   M_Version                               { get; set; }
         public FontAsset?                               M_DefaultFontAsset                      { get; set; }
@@ -54,26 +54,26 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextSettings();
+            var value   = new TextSettings() { Pointer= p0 };
 
-            value.M_Version                                 = GetString(new IntPtr(p + 0x018)); // 027006844DC8 0x18 M_Version                   ( 000186671E00 ModelPrimitiveType string string string String )
-            value.M_DefaultFontAsset                        = GetObject<FontAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.FontAsset.FromPointer); // 027006844DE8 0x20 M_DefaultFontAsset          ( 0001865D4AF0 ModelClassType FontAsset FontAsset FontAsset Pointer )
-            value.M_DefaultFontAssetPath                    = GetString(new IntPtr(p + 0x028)); // 027006844E08 0x28 M_DefaultFontAssetPath      ( 000186671E00 ModelPrimitiveType string string string String )
-            value.M_FallbackFontAssets                      = GetObjectList<FontAsset>(new IntPtr(p + 0x030), ReversePrism.DataModels.FontAsset.FromPointer); // 027006844E28 0x30 M_FallbackFontAssets        ( 000185CDC668 ModelClassListType List`1<FontAsset> List`1<FontAsset> List<FontAsset> Pointer )
-            value.M_MatchMaterialPreset                     = GetBool(new IntPtr(p + 0x038)); // 027006844E48 0x38 M_MatchMaterialPreset       ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.M_MissingCharacterUnicode                 = GetInt32(new IntPtr(p + 0x03C)); // 027006844E68 0x3C M_MissingCharacterUnicode   ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.M_ClearDynamicDataOnBuild                 = GetBool(new IntPtr(p + 0x040)); // 027006844E88 0x40 M_ClearDynamicDataOnBuild   ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.M_DefaultSpriteAsset                      = GetObject<SpriteAsset>(new IntPtr(p + 0x048), ReversePrism.DataModels.SpriteAsset.FromPointer); // 027006844EA8 0x48 M_DefaultSpriteAsset        ( 00018666CA20 ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer )
-            value.M_DefaultSpriteAssetPath                  = GetString(new IntPtr(p + 0x050)); // 027006844EC8 0x50 M_DefaultSpriteAssetPath    ( 000186671E00 ModelPrimitiveType string string string String )
-            value.M_FallbackSpriteAssets                    = GetObjectList<SpriteAsset>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAsset.FromPointer); // 027006844EE8 0x58 M_FallbackSpriteAssets      ( 000185D0B9E8 ModelClassListType List`1<SpriteAsset> List`1<SpriteAsset> List<SpriteAsset> Pointer )
-            value.M_MissingSpriteCharacterUnicode           = GetUInt32(new IntPtr(p + 0x060)); // 027006844F08 0x60 M_MissingSpriteCharacterUnicode ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_DefaultStyleSheet                       = GetObject<TextStyleSheet>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextStyleSheet.FromPointer); // 027006844F28 0x68 M_DefaultStyleSheet         ( 000186649320 ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer )
-            value.M_StyleSheetsResourcePath                 = GetString(new IntPtr(p + 0x070)); // 027006844F48 0x70 M_StyleSheetsResourcePath   ( 000186671E00 ModelPrimitiveType string string string String )
-            value.M_DefaultColorGradientPresetsPath         = GetString(new IntPtr(p + 0x078)); // 027006844F68 0x78 M_DefaultColorGradientPresetsPath ( 000186671E00 ModelPrimitiveType string string string String )
-            value.M_UnicodeLineBreakingRules                = GetObject<UnicodeLineBreakingRules>(new IntPtr(p + 0x080), ReversePrism.DataModels.UnicodeLineBreakingRules.FromPointer); // 027006844F88 0x80 M_UnicodeLineBreakingRules  ( 0001867086F0 ModelClassType UnicodeLineBreakingRules UnicodeLineBreakingRules UnicodeLineBreakingRules Pointer )
-            value.M_UseModernHangulLineBreakingRules        = GetBool(new IntPtr(p + 0x088)); // 027006844FA8 0x88 M_UseModernHangulLineBreakingRules ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DisplayWarnings                         = GetBool(new IntPtr(p + 0x089)); // 027006844FC8 0x89 M_DisplayWarnings           ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.M_FontReferences                          = GetEnumList<FontReferenceMap>(new IntPtr(p + 0x098)); // 027006845008 0x98 M_FontReferences            ( 000185D2DF08 ModelEnumListType List`1<FontReferenceMap> List`1<FontReferenceMap> List<FontReferenceMap> Pointer )
+            value.M_Version                                 = GetString(new IntPtr(p + 0x018)); // 0245A6806BA8 0x18 M_Version                   ( 000186671E00 ModelPrimitiveType string string string String )
+            value.M_DefaultFontAsset                        = GetObject<FontAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A6806BC8 0x20 M_DefaultFontAsset          ( 0001865D4AF0 ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.M_DefaultFontAssetPath                    = GetString(new IntPtr(p + 0x028)); // 0245A6806BE8 0x28 M_DefaultFontAssetPath      ( 000186671E00 ModelPrimitiveType string string string String )
+            value.M_FallbackFontAssets                      = GetObjectList<FontAsset>(new IntPtr(p + 0x030), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A6806C08 0x30 M_FallbackFontAssets        ( 000185CDC668 ModelClassListType List`1<FontAsset> List`1<FontAsset> List<FontAsset> Pointer )
+            value.M_MatchMaterialPreset                     = GetBool(new IntPtr(p + 0x038)); // 0245A6806C28 0x38 M_MatchMaterialPreset       ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_MissingCharacterUnicode                 = GetInt32(new IntPtr(p + 0x03C)); // 0245A6806C48 0x3C M_MissingCharacterUnicode   ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.M_ClearDynamicDataOnBuild                 = GetBool(new IntPtr(p + 0x040)); // 0245A6806C68 0x40 M_ClearDynamicDataOnBuild   ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_DefaultSpriteAsset                      = GetObject<SpriteAsset>(new IntPtr(p + 0x048), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0245A6806C88 0x48 M_DefaultSpriteAsset        ( 00018666CA20 ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer )
+            value.M_DefaultSpriteAssetPath                  = GetString(new IntPtr(p + 0x050)); // 0245A6806CA8 0x50 M_DefaultSpriteAssetPath    ( 000186671E00 ModelPrimitiveType string string string String )
+            value.M_FallbackSpriteAssets                    = GetObjectList<SpriteAsset>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0245A6806CC8 0x58 M_FallbackSpriteAssets      ( 000185D0B9E8 ModelClassListType List`1<SpriteAsset> List`1<SpriteAsset> List<SpriteAsset> Pointer )
+            value.M_MissingSpriteCharacterUnicode           = GetUInt32(new IntPtr(p + 0x060)); // 0245A6806CE8 0x60 M_MissingSpriteCharacterUnicode ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_DefaultStyleSheet                       = GetObject<TextStyleSheet>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextStyleSheet.FromPointer); // 0245A6806D08 0x68 M_DefaultStyleSheet         ( 000186649320 ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer )
+            value.M_StyleSheetsResourcePath                 = GetString(new IntPtr(p + 0x070)); // 0245A6806D28 0x70 M_StyleSheetsResourcePath   ( 000186671E00 ModelPrimitiveType string string string String )
+            value.M_DefaultColorGradientPresetsPath         = GetString(new IntPtr(p + 0x078)); // 0245A6806D48 0x78 M_DefaultColorGradientPresetsPath ( 000186671E00 ModelPrimitiveType string string string String )
+            value.M_UnicodeLineBreakingRules                = GetObject<UnicodeLineBreakingRules>(new IntPtr(p + 0x080), ReversePrism.DataModels.UnicodeLineBreakingRules.FromPointer); // 0245A6806D68 0x80 M_UnicodeLineBreakingRules  ( 0001867086F0 ModelClassType UnicodeLineBreakingRules UnicodeLineBreakingRules UnicodeLineBreakingRules Pointer )
+            value.M_UseModernHangulLineBreakingRules        = GetBool(new IntPtr(p + 0x088)); // 0245A6806D88 0x88 M_UseModernHangulLineBreakingRules ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_DisplayWarnings                         = GetBool(new IntPtr(p + 0x089)); // 0245A6806DA8 0x89 M_DisplayWarnings           ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_FontReferences                          = GetEnumList<FontReferenceMap>(new IntPtr(p + 0x098)); // 0245A6806DE8 0x98 M_FontReferences            ( 000185D2DF08 ModelEnumListType List`1<FontReferenceMap> List`1<FontReferenceMap> List<FontReferenceMap> Pointer )
 
             return value;
         }

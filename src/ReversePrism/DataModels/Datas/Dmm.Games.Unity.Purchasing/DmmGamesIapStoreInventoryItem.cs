@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <Sku>k__BackingField                     Nullable`1<StockKeepingUnit> IL2CPP_TYPE_GENERICINST
     // 050 <ReceiptModel>k__BackingField            Nullable`1<ReceiptModel> IL2CPP_TYPE_GENERICINST
-    public partial class DmmGamesIapStoreInventoryItem
+    public partial class DmmGamesIapStoreInventoryItem : DataModel
     {
 
         public static DmmGamesIapStoreInventoryItem? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesIapStoreInventoryItem();
+            var value   = new DmmGamesIapStoreInventoryItem() { Pointer= p0 };
 
 
             return value;

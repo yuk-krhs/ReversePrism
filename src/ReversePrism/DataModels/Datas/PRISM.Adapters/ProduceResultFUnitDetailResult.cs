@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 AttachingPotentialLiveSkillList          000185CF1948 ModelClassListType IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> List<IAttachingPotentialLiveSkillStatus> Pointer
     // 020 IsDoneTransfer                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 028 NewUnitName                              000186671910 ModelPrimitiveType string string string String
-    public partial class ProduceResultFUnitDetailResult
+    public partial class ProduceResultFUnitDetailResult : DataModel
     {
         public int                                      MstFavoriteMarkId                       { get; set; }
         public List<IAttachingPotentialLiveSkillStatus>? AttachingPotentialLiveSkillList         { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceResultFUnitDetailResult();
+            var value   = new ProduceResultFUnitDetailResult() { Pointer= p0 };
 
-            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x010)); // 0270D5F4B950 0x10 MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AttachingPotentialLiveSkillList           = GetObjectList<IAttachingPotentialLiveSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAttachingPotentialLiveSkillStatus.FromPointer); // 0270D5F4B970 0x18 AttachingPotentialLiveSkillList ( 000185CF1948 ModelClassListType IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> List<IAttachingPotentialLiveSkillStatus> Pointer )
-            value.IsDoneTransfer                            = GetBool(new IntPtr(p + 0x020)); // 0270D5F4B990 0x20 IsDoneTransfer              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NewUnitName                               = GetString(new IntPtr(p + 0x028)); // 0270D5F4B9B0 0x28 NewUnitName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x010)); // 024665FAB950 0x10 MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AttachingPotentialLiveSkillList           = GetObjectList<IAttachingPotentialLiveSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAttachingPotentialLiveSkillStatus.FromPointer); // 024665FAB970 0x18 AttachingPotentialLiveSkillList ( 000185CF1948 ModelClassListType IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> IReadOnlyList`1<IAttachingPotentialLiveSkillStatus> List<IAttachingPotentialLiveSkillStatus> Pointer )
+            value.IsDoneTransfer                            = GetBool(new IntPtr(p + 0x020)); // 024665FAB990 0x20 IsDoneTransfer              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NewUnitName                               = GetString(new IntPtr(p + 0x028)); // 024665FAB9B0 0x28 NewUnitName                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 03C OffsetSize                               000186666050 ModelPrimitiveType float float float Single
     // 040 FreezeStreaming                          000186595960 ModelPrimitiveType bool bool bool Bool
     // 044 OtherStateIndex                          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class ProbeVolumeDebug
+    public partial class ProbeVolumeDebug : DataModel
     {
         public bool                                     DrawProbes                              { get; set; }
         public bool                                     DrawBricks                              { get; set; }
@@ -51,25 +51,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProbeVolumeDebug();
+            var value   = new ProbeVolumeDebug() { Pointer= p0 };
 
-            value.DrawProbes                                = GetBool(new IntPtr(p + 0x010)); // 0270D920EBB8 0x10 DrawProbes                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DrawBricks                                = GetBool(new IntPtr(p + 0x011)); // 0270D920EBD8 0x11 DrawBricks                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DrawCells                                 = GetBool(new IntPtr(p + 0x012)); // 0270D920EBF8 0x12 DrawCells                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.RealtimeSubdivision                       = GetBool(new IntPtr(p + 0x013)); // 0270D920EC18 0x13 RealtimeSubdivision         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SubdivisionCellUpdatePerFrame             = GetInt32(new IntPtr(p + 0x014)); // 0270D920EC38 0x14 SubdivisionCellUpdatePerFrame ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SubdivisionDelayInSeconds                 = GetSingle(new IntPtr(p + 0x018)); // 0270D920EC58 0x18 SubdivisionDelayInSeconds   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ProbeShading                              = (DebugProbeShadingMode)GetInt32(new IntPtr(p + 0x01C)); // 0270D920EC78 0x1C ProbeShading                ( 00018669F350 ModelEnumType DebugProbeShadingMode DebugProbeShadingMode DebugProbeShadingMode Int32 )
-            value.ProbeSize                                 = GetSingle(new IntPtr(p + 0x020)); // 0270D920EC98 0x20 ProbeSize                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SubdivisionViewCullingDistance            = GetSingle(new IntPtr(p + 0x024)); // 0270D920ECB8 0x24 SubdivisionViewCullingDistance ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ProbeCullingDistance                      = GetSingle(new IntPtr(p + 0x028)); // 0270D920ECD8 0x28 ProbeCullingDistance        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.MaxSubdivToVisualize                      = GetInt32(new IntPtr(p + 0x02C)); // 0270D920ECF8 0x2C MaxSubdivToVisualize        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MinSubdivToVisualize                      = GetInt32(new IntPtr(p + 0x030)); // 0270D920ED18 0x30 MinSubdivToVisualize        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ExposureCompensation                      = GetSingle(new IntPtr(p + 0x034)); // 0270D920ED38 0x34 ExposureCompensation        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DrawVirtualOffsetPush                     = GetBool(new IntPtr(p + 0x038)); // 0270D920ED58 0x38 DrawVirtualOffsetPush       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.OffsetSize                                = GetSingle(new IntPtr(p + 0x03C)); // 0270D920ED78 0x3C OffsetSize                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FreezeStreaming                           = GetBool(new IntPtr(p + 0x040)); // 0270D920ED98 0x40 FreezeStreaming             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.OtherStateIndex                           = GetInt32(new IntPtr(p + 0x044)); // 0270D920EDB8 0x44 OtherStateIndex             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DrawProbes                                = GetBool(new IntPtr(p + 0x010)); // 024669261338 0x10 DrawProbes                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DrawBricks                                = GetBool(new IntPtr(p + 0x011)); // 024669261358 0x11 DrawBricks                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DrawCells                                 = GetBool(new IntPtr(p + 0x012)); // 024669261378 0x12 DrawCells                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.RealtimeSubdivision                       = GetBool(new IntPtr(p + 0x013)); // 024669261398 0x13 RealtimeSubdivision         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SubdivisionCellUpdatePerFrame             = GetInt32(new IntPtr(p + 0x014)); // 0246692613B8 0x14 SubdivisionCellUpdatePerFrame ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SubdivisionDelayInSeconds                 = GetSingle(new IntPtr(p + 0x018)); // 0246692613D8 0x18 SubdivisionDelayInSeconds   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ProbeShading                              = (DebugProbeShadingMode)GetInt32(new IntPtr(p + 0x01C)); // 0246692613F8 0x1C ProbeShading                ( 00018669F350 ModelEnumType DebugProbeShadingMode DebugProbeShadingMode DebugProbeShadingMode Int32 )
+            value.ProbeSize                                 = GetSingle(new IntPtr(p + 0x020)); // 024669261418 0x20 ProbeSize                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SubdivisionViewCullingDistance            = GetSingle(new IntPtr(p + 0x024)); // 024669261438 0x24 SubdivisionViewCullingDistance ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ProbeCullingDistance                      = GetSingle(new IntPtr(p + 0x028)); // 024669261458 0x28 ProbeCullingDistance        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.MaxSubdivToVisualize                      = GetInt32(new IntPtr(p + 0x02C)); // 024669261478 0x2C MaxSubdivToVisualize        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MinSubdivToVisualize                      = GetInt32(new IntPtr(p + 0x030)); // 024669261498 0x30 MinSubdivToVisualize        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ExposureCompensation                      = GetSingle(new IntPtr(p + 0x034)); // 0246692614B8 0x34 ExposureCompensation        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.DrawVirtualOffsetPush                     = GetBool(new IntPtr(p + 0x038)); // 0246692614D8 0x38 DrawVirtualOffsetPush       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.OffsetSize                                = GetSingle(new IntPtr(p + 0x03C)); // 0246692614F8 0x3C OffsetSize                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FreezeStreaming                           = GetBool(new IntPtr(p + 0x040)); // 024669261518 0x40 FreezeStreaming             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.OtherStateIndex                           = GetInt32(new IntPtr(p + 0x044)); // 024669261538 0x44 OtherStateIndex             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

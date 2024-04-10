@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RSA
+    public partial class RSA : DataModel
     {
 
         public static RSA? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RSA();
+            var value   = new RSA() { Pointer= p0 };
 
 
             return value;

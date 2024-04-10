@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 BodyText                                 000186672F10 ModelPrimitiveType string string string String
-    public partial class ChainTalkCellBalloonData
+    public partial class ChainTalkCellBalloonData : DataModel
     {
         public string                                   BodyText                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkCellBalloonData();
+            var value   = new ChainTalkCellBalloonData() { Pointer= p0 };
 
-            value.BodyText                                  = GetString(new IntPtr(p + 0x010)); // 0270D68665F0 0x10 BodyText                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.BodyText                                  = GetString(new IntPtr(p + 0x010)); // 0246668C65F0 0x10 BodyText                    ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

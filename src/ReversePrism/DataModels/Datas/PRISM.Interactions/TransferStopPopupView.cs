@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 048 onClickSubject                           Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 050 UrlQuery                                 000186671910 ModelPrimitiveType string string string String
     // 058 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class TransferStopPopupView
+    public partial class TransferStopPopupView : DataModel
     {
         public UITextMeshProUGUI?                       Message                                 { get; set; }
         public UITextMeshProUGUI?                       PlayerIdLabel                           { get; set; }
@@ -44,15 +44,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferStopPopupView();
+            var value   = new TransferStopPopupView() { Pointer= p0 };
 
-            value.Message                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBF16058 0x20 Message                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PlayerIdLabel                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBF16078 0x28 PlayerIdLabel               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PlayerIdValueText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBF16098 0x30 PlayerIdValueText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CopyIdText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBF160B8 0x38 CopyIdText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CopyIdButton                              = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0270DBF160D8 0x40 CopyIdButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.UrlQuery                                  = GetString(new IntPtr(p + 0x050)); // 0270DBF16118 0x50 UrlQuery                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DBF16138 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.Message                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF85EB8 0x20 Message                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PlayerIdLabel                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF85ED8 0x28 PlayerIdLabel               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PlayerIdValueText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF85EF8 0x30 PlayerIdValueText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CopyIdText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF85F18 0x38 CopyIdText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CopyIdButton                              = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466BF85F38 0x40 CopyIdButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.UrlQuery                                  = GetString(new IntPtr(p + 0x050)); // 02466BF85F78 0x50 UrlQuery                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BF85F98 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

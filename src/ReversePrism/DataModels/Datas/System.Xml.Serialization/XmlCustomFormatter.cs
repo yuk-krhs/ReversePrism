@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 allTimeFormats                           string[] IL2CPP_TYPE_SZARRAY
-    public partial class XmlCustomFormatter
+    public partial class XmlCustomFormatter : DataModel
     {
 
         public static XmlCustomFormatter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlCustomFormatter();
+            var value   = new XmlCustomFormatter() { Pointer= p0 };
 
 
             return value;

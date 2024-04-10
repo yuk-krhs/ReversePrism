@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RendererNotifyInvisible
+    public partial class RendererNotifyInvisible : DataModel
     {
 
         public static RendererNotifyInvisible? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RendererNotifyInvisible();
+            var value   = new RendererNotifyInvisible() { Pointer= p0 };
 
 
             return value;

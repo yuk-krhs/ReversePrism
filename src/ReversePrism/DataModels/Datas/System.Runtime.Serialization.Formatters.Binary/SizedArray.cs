@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 objects                                  <object>[] IL2CPP_TYPE_SZARRAY
     // 018 negObjects                               <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class SizedArray
+    public partial class SizedArray : DataModel
     {
 
         public static SizedArray? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SizedArray();
+            var value   = new SizedArray() { Pointer= p0 };
 
 
             return value;

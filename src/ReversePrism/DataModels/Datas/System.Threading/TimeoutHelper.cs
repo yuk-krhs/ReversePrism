@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimeoutHelper
+    public partial class TimeoutHelper : DataModel
     {
 
         public static TimeoutHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeoutHelper();
+            var value   = new TimeoutHelper() { Pointer= p0 };
 
 
             return value;

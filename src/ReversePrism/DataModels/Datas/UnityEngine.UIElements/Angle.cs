@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Value                                  0001866656B0 ModelPrimitiveType float float float Single
     // 014 M_Unit                                   0001866A18E0 ModelEnumType Unit Unit Unit Int32
-    public partial class Angle
+    public partial class Angle : DataModel
     {
         public float                                    M_Value                                 { get; set; }
         public Unit                                     M_Unit                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Angle();
+            var value   = new Angle() { Pointer= p0 };
 
-            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 027003F20B60 0x10 M_Value                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Unit                                    = (Unit)GetInt32(new IntPtr(p + 0x014)); // 027003F20B80 0x14 M_Unit                      ( 0001866A18E0 ModelEnumType Unit Unit Unit Int32 )
+            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A3F20B60 0x10 M_Value                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Unit                                    = (Unit)GetInt32(new IntPtr(p + 0x014)); // 0245A3F20B80 0x14 M_Unit                      ( 0001866A18E0 ModelEnumType Unit Unit Unit Int32 )
 
             return value;
         }

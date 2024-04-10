@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Path                                     0001866722E0 ModelPrimitiveType string string string String
     // 028 Interactions                             0001866722E0 ModelPrimitiveType string string string String
     // 030 Processors                               0001866722E0 ModelPrimitiveType string string string String
-    public partial class BindingOverrideJson
+    public partial class BindingOverrideJson : DataModel
     {
         public string                                   Action                                  { get; set; }
         public string                                   Id                                      { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BindingOverrideJson();
+            var value   = new BindingOverrideJson() { Pointer= p0 };
 
-            value.Action                                    = GetString(new IntPtr(p + 0x010)); // 0270D764D608 0x10 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0270D764D628 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0270D764D648 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0270D764D668 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0270D764D688 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Action                                    = GetString(new IntPtr(p + 0x010)); // 0246676BD608 0x10 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0246676BD628 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0246676BD648 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0246676BD668 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0246676BD688 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

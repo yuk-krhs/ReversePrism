@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 x                                        NativeArray`1<float> IL2CPP_TYPE_GENERICINST
     // 020 y                                        NativeArray`1<float> IL2CPP_TYPE_GENERICINST
     // 030 z                                        NativeArray`1<float> IL2CPP_TYPE_GENERICINST
-    public partial class ParticleSystemNativeArray3
+    public partial class ParticleSystemNativeArray3 : DataModel
     {
 
         public static ParticleSystemNativeArray3? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParticleSystemNativeArray3();
+            var value   = new ParticleSystemNativeArray3() { Pointer= p0 };
 
 
             return value;

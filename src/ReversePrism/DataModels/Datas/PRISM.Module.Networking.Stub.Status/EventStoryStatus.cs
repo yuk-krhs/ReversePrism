@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 038 UnlockPremiseMstEventStoryId             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseEventPointFieldNumber       int IL2CPP_TYPE_I4
     // 03C UnlockPremiseEventPoint                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class EventStoryStatus
+    public partial class EventStoryStatus : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
         public int                                      MstEventId                              { get; set; }
@@ -40,15 +40,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventStoryStatus();
+            var value   = new EventStoryStatus() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0270D2A35C28 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0270D2A35C68 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0270D2A35CA8 0x28 EventPeriod                 ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x030)); // 0270D2A35CE8 0x30 EventType                   ( 0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x034)); // 0270D2A35D28 0x34 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseMstEventStoryId              = GetInt32(new IntPtr(p + 0x038)); // 0270D2A35D68 0x38 UnlockPremiseMstEventStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseEventPoint                   = GetInt32(new IntPtr(p + 0x03C)); // 0270D2A35DA8 0x3C UnlockPremiseEventPoint     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629BD448 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0246629BD488 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0246629BD4C8 0x28 EventPeriod                 ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x030)); // 0246629BD508 0x30 EventType                   ( 0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x034)); // 0246629BD548 0x34 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseMstEventStoryId              = GetInt32(new IntPtr(p + 0x038)); // 0246629BD588 0x38 UnlockPremiseMstEventStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseEventPoint                   = GetInt32(new IntPtr(p + 0x03C)); // 0246629BD5C8 0x3C UnlockPremiseEventPoint     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

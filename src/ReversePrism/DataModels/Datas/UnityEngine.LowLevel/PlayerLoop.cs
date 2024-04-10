@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerLoop
+    public partial class PlayerLoop : DataModel
     {
 
         public static PlayerLoop? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerLoop();
+            var value   = new PlayerLoop() { Pointer= p0 };
 
 
             return value;

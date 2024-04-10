@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 TextListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_textList_codec                 FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 018 TextList                                 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class CheckNGWordArgs
+    public partial class CheckNGWordArgs : DataModel
     {
         public List<string>?                            TextList                                { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CheckNGWordArgs();
+            var value   = new CheckNGWordArgs() { Pointer= p0 };
 
-            value.TextList                                  = GetStringList(new IntPtr(p + 0x018)); // 0270D2149AB8 0x18 TextList                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.TextList                                  = GetStringList(new IntPtr(p + 0x018)); // 0246620D5058 0x18 TextList                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

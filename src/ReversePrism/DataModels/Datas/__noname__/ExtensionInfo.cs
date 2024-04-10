@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 NodeType                                 00018652E0C0 ModelEnumType ExpressionType ExpressionType ExpressionType Int32
     // 018 Type                                     000186693960 ModelClassType Type Type Type Pointer
-    public partial class ExtensionInfo
+    public partial class ExtensionInfo : DataModel
     {
         public ExpressionType                           NodeType                                { get; set; }
         public Type?                                    Type                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtensionInfo();
+            var value   = new ExtensionInfo() { Pointer= p0 };
 
-            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x010)); // 0270D9F177F0 0x10 NodeType                    ( 00018652E0C0 ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D9F17810 0x18 Type                        ( 000186693960 ModelClassType Type Type Type Pointer )
+            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x010)); // 024669F74920 0x10 NodeType                    ( 00018652E0C0 ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024669F74940 0x18 Type                        ( 000186693960 ModelClassType Type Type Type Pointer )
 
             return value;
         }

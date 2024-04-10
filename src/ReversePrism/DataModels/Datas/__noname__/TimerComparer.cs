@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimerComparer
+    public partial class TimerComparer : DataModel
     {
 
         public static TimerComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimerComparer();
+            var value   = new TimerComparer() { Pointer= p0 };
 
 
             return value;

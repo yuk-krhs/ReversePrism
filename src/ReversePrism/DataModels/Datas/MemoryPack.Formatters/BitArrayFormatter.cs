@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BitArrayFormatter
+    public partial class BitArrayFormatter : DataModel
     {
 
         public static BitArrayFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BitArrayFormatter();
+            var value   = new BitArrayFormatter() { Pointer= p0 };
 
 
             return value;

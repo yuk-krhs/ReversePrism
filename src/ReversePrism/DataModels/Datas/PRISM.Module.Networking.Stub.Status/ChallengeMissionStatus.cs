@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 02C GoalValue                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 BuildUpParameterFieldNumber              int IL2CPP_TYPE_I4
     // 030 BuildUpParameter                         00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer
-    public partial class ChallengeMissionStatus
+    public partial class ChallengeMissionStatus : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public string                                   MstChallengeMissionId                   { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeMissionStatus();
+            var value   = new ChallengeMissionStatus() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0270D10B2D18 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstChallengeMissionId                     = GetString(new IntPtr(p + 0x020)); // 0270D10B2D58 0x20 MstChallengeMissionId       ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstChallengeMissionTypeId                 = GetInt32(new IntPtr(p + 0x028)); // 0270D10B2D98 0x28 MstChallengeMissionTypeId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoalValue                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D10B2DD8 0x2C GoalValue                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BuildUpParameter                          = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 0270D10B2E18 0x30 BuildUpParameter            ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 02466103B450 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstChallengeMissionId                     = GetString(new IntPtr(p + 0x020)); // 02466103B490 0x20 MstChallengeMissionId       ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstChallengeMissionTypeId                 = GetInt32(new IntPtr(p + 0x028)); // 02466103B4D0 0x28 MstChallengeMissionTypeId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoalValue                                 = GetInt32(new IntPtr(p + 0x02C)); // 02466103B510 0x2C GoalValue                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BuildUpParameter                          = GetObject<BuildUpParameterValueStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.BuildUpParameterValueStatus.FromPointer); // 02466103B550 0x30 BuildUpParameter            ( 00018650F800 ModelClassType BuildUpParameterValueStatus BuildUpParameterValueStatus BuildUpParameterValueStatus Pointer )
 
             return value;
         }

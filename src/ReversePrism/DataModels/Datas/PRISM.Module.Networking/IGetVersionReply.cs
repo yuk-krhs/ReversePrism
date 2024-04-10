@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetVersionReply
+    public partial class IGetVersionReply : DataModel
     {
 
         public static IGetVersionReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetVersionReply();
+            var value   = new IGetVersionReply() { Pointer= p0 };
 
 
             return value;

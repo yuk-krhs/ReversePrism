@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFancyScrollRectContext
+    public partial class IFancyScrollRectContext : DataModel
     {
 
         public static IFancyScrollRectContext? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFancyScrollRectContext();
+            var value   = new IFancyScrollRectContext() { Pointer= p0 };
 
 
             return value;

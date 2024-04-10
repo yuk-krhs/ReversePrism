@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 M_UVRegion                               00018664F8A0 ModelEnumType Rect Rect Rect Int32
     // 040 CurrentIndex                             0001865F2F90 ModelPrimitiveType int int int Int32
     // 044 CurrentVertex                            0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class MeshWriteData
+    public partial class MeshWriteData : DataModel
     {
         public Rect                                     M_UVRegion                              { get; set; }
         public int                                      CurrentIndex                            { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshWriteData();
+            var value   = new MeshWriteData() { Pointer= p0 };
 
-            value.M_UVRegion                                = (Rect)GetInt32(new IntPtr(p + 0x030)); // 0270067E3D20 0x30 M_UVRegion                  ( 00018664F8A0 ModelEnumType Rect Rect Rect Int32 )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 0270067E3D40 0x40 CurrentIndex                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CurrentVertex                             = GetInt32(new IntPtr(p + 0x044)); // 0270067E3D60 0x44 CurrentVertex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_UVRegion                                = (Rect)GetInt32(new IntPtr(p + 0x030)); // 0245A67A5E18 0x30 M_UVRegion                  ( 00018664F8A0 ModelEnumType Rect Rect Rect Int32 )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 0245A67A5E38 0x40 CurrentIndex                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CurrentVertex                             = GetInt32(new IntPtr(p + 0x044)); // 0245A67A5E58 0x44 CurrentVertex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

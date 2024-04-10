@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Parent                                   0001866F7BE0 ModelClassType BatchFrame BatchFrame BatchFrame Pointer
     // 018 CurrentFrame                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ReusableEnumerator
+    public partial class ReusableEnumerator : DataModel
     {
         public BatchFrame?                              Parent                                  { get; set; }
         public int                                      CurrentFrame                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableEnumerator();
+            var value   = new ReusableEnumerator() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<BatchFrame>(new IntPtr(p + 0x010), ReversePrism.DataModels.BatchFrame.FromPointer); // 0270D9834D88 0x10 Parent                      ( 0001866F7BE0 ModelClassType BatchFrame BatchFrame BatchFrame Pointer )
-            value.CurrentFrame                              = GetInt32(new IntPtr(p + 0x018)); // 0270D9834DA8 0x18 CurrentFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parent                                    = GetObject<BatchFrame>(new IntPtr(p + 0x010), ReversePrism.DataModels.BatchFrame.FromPointer); // 024669890FE0 0x10 Parent                      ( 0001866F7BE0 ModelClassType BatchFrame BatchFrame BatchFrame Pointer )
+            value.CurrentFrame                              = GetInt32(new IntPtr(p + 0x018)); // 024669891000 0x18 CurrentFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

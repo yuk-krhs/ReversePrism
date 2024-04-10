@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SelectorName                             0001866722E0 ModelPrimitiveType string string string String
     // 018 LabelName                                0001866722E0 ModelPrimitiveType string string string String
-    public partial class SelectorLabelInfo
+    public partial class SelectorLabelInfo : DataModel
     {
         public string                                   SelectorName                            { get; set; }
         public string                                   LabelName                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectorLabelInfo();
+            var value   = new SelectorLabelInfo() { Pointer= p0 };
 
-            value.SelectorName                              = GetString(new IntPtr(p + 0x010)); // 0270DACC2160 0x10 SelectorName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.LabelName                                 = GetString(new IntPtr(p + 0x018)); // 0270DACC2180 0x18 LabelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SelectorName                              = GetString(new IntPtr(p + 0x010)); // 02466AD2A160 0x10 SelectorName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.LabelName                                 = GetString(new IntPtr(p + 0x018)); // 02466AD2A180 0x18 LabelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

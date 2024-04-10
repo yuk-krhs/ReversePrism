@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IgnoreSection
+    public partial class IgnoreSection : DataModel
     {
 
         public static IgnoreSection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IgnoreSection();
+            var value   = new IgnoreSection() { Pointer= p0 };
 
 
             return value;

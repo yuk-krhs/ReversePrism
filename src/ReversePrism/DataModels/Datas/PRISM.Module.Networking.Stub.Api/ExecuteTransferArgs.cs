@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 048 ViewerIdSignature                        000186671910 ModelPrimitiveType string string string String
     // 000 PassPhraseFieldNumber                    int IL2CPP_TYPE_I4
     // 050 PassPhrase                               000186671910 ModelPrimitiveType string string string String
-    public partial class ExecuteTransferArgs
+    public partial class ExecuteTransferArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
         public string                                   Token                                   { get; set; }
@@ -43,16 +43,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteTransferArgs();
+            var value   = new ExecuteTransferArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0270D0B43068 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 0270D0B430A8 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Platform                                  = GetString(new IntPtr(p + 0x028)); // 0270D0B430E8 0x28 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.PlatformUserId                            = GetString(new IntPtr(p + 0x030)); // 0270D0B43128 0x30 PlatformUserId              ( 000186671910 ModelPrimitiveType string string string String )
-            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x038)); // 0270D0B43168 0x38 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
-            value.ViewerId                                  = GetInt64(new IntPtr(p + 0x040)); // 0270D0B431A8 0x40 ViewerId                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.ViewerIdSignature                         = GetString(new IntPtr(p + 0x048)); // 0270D0B431E8 0x48 ViewerIdSignature           ( 000186671910 ModelPrimitiveType string string string String )
-            value.PassPhrase                                = GetString(new IntPtr(p + 0x050)); // 0270D0B43228 0x50 PassPhrase                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 024660B29118 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 024660B29158 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Platform                                  = GetString(new IntPtr(p + 0x028)); // 024660B29198 0x28 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.PlatformUserId                            = GetString(new IntPtr(p + 0x030)); // 024660B291D8 0x30 PlatformUserId              ( 000186671910 ModelPrimitiveType string string string String )
+            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x038)); // 024660B29218 0x38 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
+            value.ViewerId                                  = GetInt64(new IntPtr(p + 0x040)); // 024660B29258 0x40 ViewerId                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.ViewerIdSignature                         = GetString(new IntPtr(p + 0x048)); // 024660B29298 0x48 ViewerIdSignature           ( 000186671910 ModelPrimitiveType string string string String )
+            value.PassPhrase                                = GetString(new IntPtr(p + 0x050)); // 024660B292D8 0x50 PassPhrase                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

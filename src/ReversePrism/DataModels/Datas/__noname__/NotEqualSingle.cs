@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotEqualSingle
+    public partial class NotEqualSingle : DataModel
     {
 
         public static NotEqualSingle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotEqualSingle();
+            var value   = new NotEqualSingle() { Pointer= p0 };
 
 
             return value;

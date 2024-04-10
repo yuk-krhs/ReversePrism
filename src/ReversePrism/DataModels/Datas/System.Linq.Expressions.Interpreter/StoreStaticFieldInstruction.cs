@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StoreStaticFieldInstruction
+    public partial class StoreStaticFieldInstruction : DataModel
     {
 
         public static StoreStaticFieldInstruction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoreStaticFieldInstruction();
+            var value   = new StoreStaticFieldInstruction() { Pointer= p0 };
 
 
             return value;

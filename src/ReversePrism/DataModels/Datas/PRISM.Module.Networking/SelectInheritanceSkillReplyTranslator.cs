@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SelectInheritanceSkillReplyTranslator
+    public partial class SelectInheritanceSkillReplyTranslator : DataModel
     {
 
         public static SelectInheritanceSkillReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectInheritanceSkillReplyTranslator();
+            var value   = new SelectInheritanceSkillReplyTranslator() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 OptionLocalSave                          0001866E72F0 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer
-    public partial class PRISMGraphicSettings
+    public partial class PRISMGraphicSettings : DataModel
     {
         public OptionLocalSave?                         OptionLocalSave                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PRISMGraphicSettings();
+            var value   = new PRISMGraphicSettings() { Pointer= p0 };
 
-            value.OptionLocalSave                           = GetObject<OptionLocalSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 0270D55537E8 0x10 OptionLocalSave             ( 0001866E72F0 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
+            value.OptionLocalSave                           = GetObject<OptionLocalSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 0246655C53D0 0x10 OptionLocalSave             ( 0001866E72F0 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
 
             return value;
         }

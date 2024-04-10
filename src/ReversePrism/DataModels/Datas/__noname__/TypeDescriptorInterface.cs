@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypeDescriptorInterface
+    public partial class TypeDescriptorInterface : DataModel
     {
 
         public static TypeDescriptorInterface? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeDescriptorInterface();
+            var value   = new TypeDescriptorInterface() { Pointer= p0 };
 
 
             return value;

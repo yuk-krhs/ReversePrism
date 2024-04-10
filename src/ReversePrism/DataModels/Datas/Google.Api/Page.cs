@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 SubpagesFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_subpages_codec                 FieldCodec`1<Page> IL2CPP_TYPE_GENERICINST
     // 028 Subpages                                 000185CE85C8 ModelClassListType RepeatedField`1<Page> RepeatedField`1<Page> List<Page> Pointer
-    public partial class Page
+    public partial class Page : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Content                                 { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Page();
+            var value   = new Page() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA7BA2F8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Content                                   = GetString(new IntPtr(p + 0x020)); // 0270DA7BA338 0x20 Content                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Subpages                                  = GetObjectList<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 0270DA7BA398 0x28 Subpages                    ( 000185CE85C8 ModelClassListType RepeatedField`1<Page> RepeatedField`1<Page> List<Page> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A81E3B0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Content                                   = GetString(new IntPtr(p + 0x020)); // 02466A81E3F0 0x20 Content                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Subpages                                  = GetObjectList<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 02466A81E450 0x28 Subpages                    ( 000185CE85C8 ModelClassListType RepeatedField`1<Page> RepeatedField`1<Page> List<Page> Pointer )
 
             return value;
         }

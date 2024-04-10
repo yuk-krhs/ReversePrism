@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 PlaceToGetCellListView                   000186745F30 ModelClassType PlaceToGetCellListView PlaceToGetCellListView PlaceToGetCellListView Pointer
     // 028 onClick                                  Subject`1<ValueTuple`2<ButtonGoToType, string>> IL2CPP_TYPE_GENERICINST
     // 030 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class HowToGetItemsPopupView
+    public partial class HowToGetItemsPopupView : DataModel
     {
         public PlaceToGetCellListView?                  PlaceToGetCellListView                  { get; set; }
         public IPopupFrameView?                         Parent                                  { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HowToGetItemsPopupView();
+            var value   = new HowToGetItemsPopupView() { Pointer= p0 };
 
-            value.PlaceToGetCellListView                    = GetObject<PlaceToGetCellListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlaceToGetCellListView.FromPointer); // 0270DA2ED140 0x20 PlaceToGetCellListView      ( 000186745F30 ModelClassType PlaceToGetCellListView PlaceToGetCellListView PlaceToGetCellListView Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA2ED180 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.PlaceToGetCellListView                    = GetObject<PlaceToGetCellListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlaceToGetCellListView.FromPointer); // 02466A340780 0x20 PlaceToGetCellListView      ( 000186745F30 ModelClassType PlaceToGetCellListView PlaceToGetCellListView PlaceToGetCellListView Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A3407C0 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

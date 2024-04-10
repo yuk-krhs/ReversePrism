@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Success                                  000186596AF0 ModelPrimitiveType bool bool bool Bool
     // 014 TriggerPseudoMask                        0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32
     // 018 DependencyPseudoMask                     0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32
-    public partial class MatchResultInfo
+    public partial class MatchResultInfo : DataModel
     {
         public bool                                     Success                                 { get; set; }
         public PseudoStates                             TriggerPseudoMask                       { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MatchResultInfo();
+            var value   = new MatchResultInfo() { Pointer= p0 };
 
-            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 0270068864C8 0x10 Success                     ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.TriggerPseudoMask                         = (PseudoStates)GetInt32(new IntPtr(p + 0x014)); // 0270068864E8 0x14 TriggerPseudoMask           ( 0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32 )
-            value.DependencyPseudoMask                      = (PseudoStates)GetInt32(new IntPtr(p + 0x018)); // 027006886508 0x18 DependencyPseudoMask        ( 0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32 )
+            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 0245A6848338 0x10 Success                     ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.TriggerPseudoMask                         = (PseudoStates)GetInt32(new IntPtr(p + 0x014)); // 0245A6848358 0x14 TriggerPseudoMask           ( 0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32 )
+            value.DependencyPseudoMask                      = (PseudoStates)GetInt32(new IntPtr(p + 0x018)); // 0245A6848378 0x18 DependencyPseudoMask        ( 0001865D8A70 ModelEnumType PseudoStates PseudoStates PseudoStates Int32 )
 
             return value;
         }

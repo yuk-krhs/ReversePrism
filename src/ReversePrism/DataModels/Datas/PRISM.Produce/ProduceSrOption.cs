@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 IngameCategoryName                       string IL2CPP_TYPE_STRING
     // 000 OutgameCategoryName                      string IL2CPP_TYPE_STRING
     // 010 PropertyChanged                          0001865D1C20 ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer
-    public partial class ProduceSrOption
+    public partial class ProduceSrOption : DataModel
     {
         public PropertyChangedEventHandler?             PropertyChanged                         { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceSrOption();
+            var value   = new ProduceSrOption() { Pointer= p0 };
 
-            value.PropertyChanged                           = GetObject<PropertyChangedEventHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.PropertyChangedEventHandler.FromPointer); // 0270D5D3CDA8 0x10 PropertyChanged             ( 0001865D1C20 ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer )
+            value.PropertyChanged                           = GetObject<PropertyChangedEventHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.PropertyChangedEventHandler.FromPointer); // 024665D9DA98 0x10 PropertyChanged             ( 0001865D1C20 ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer )
 
             return value;
         }

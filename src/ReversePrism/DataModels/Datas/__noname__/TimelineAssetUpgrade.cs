@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimelineAssetUpgrade
+    public partial class TimelineAssetUpgrade : DataModel
     {
 
         public static TimelineAssetUpgrade? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineAssetUpgrade();
+            var value   = new TimelineAssetUpgrade() { Pointer= p0 };
 
 
             return value;

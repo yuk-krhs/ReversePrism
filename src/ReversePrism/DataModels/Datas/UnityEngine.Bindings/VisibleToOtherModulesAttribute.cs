@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VisibleToOtherModulesAttribute
+    public partial class VisibleToOtherModulesAttribute : DataModel
     {
 
         public static VisibleToOtherModulesAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisibleToOtherModulesAttribute();
+            var value   = new VisibleToOtherModulesAttribute() { Pointer= p0 };
 
 
             return value;

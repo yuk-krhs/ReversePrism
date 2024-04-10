@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Vector3MagnitudeComparer
+    public partial class Vector3MagnitudeComparer : DataModel
     {
 
         public static Vector3MagnitudeComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector3MagnitudeComparer();
+            var value   = new Vector3MagnitudeComparer() { Pointer= p0 };
 
 
             return value;

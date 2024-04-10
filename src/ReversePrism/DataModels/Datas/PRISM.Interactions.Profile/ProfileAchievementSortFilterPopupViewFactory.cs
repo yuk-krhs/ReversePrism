@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileAchievementSortFilterPopupViewFactory
+    public partial class ProfileAchievementSortFilterPopupViewFactory : DataModel
     {
 
         public static ProfileAchievementSortFilterPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileAchievementSortFilterPopupViewFactory();
+            var value   = new ProfileAchievementSortFilterPopupViewFactory() { Pointer= p0 };
 
 
             return value;

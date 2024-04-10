@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <ComponentTypeHashToInstance>k__BackingField Dictionary`2<int, IServiceComponent> IL2CPP_TYPE_GENERICINST
-    public partial class ComponentRegistry
+    public partial class ComponentRegistry : DataModel
     {
 
         public static ComponentRegistry? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComponentRegistry();
+            var value   = new ComponentRegistry() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PreparedFormatHelper
+    public partial class PreparedFormatHelper : DataModel
     {
 
         public static PreparedFormatHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreparedFormatHelper();
+            var value   = new PreparedFormatHelper() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 GetEventScheduleList                     Method`2<IGetEventScheduleListArgs, IGetEventScheduleListReply> IL2CPP_TYPE_GENERICINST
-    public partial class EventScheduleServiceMethods
+    public partial class EventScheduleServiceMethods : DataModel
     {
 
         public static EventScheduleServiceMethods? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventScheduleServiceMethods();
+            var value   = new EventScheduleServiceMethods() { Pointer= p0 };
 
 
             return value;

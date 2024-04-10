@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Consumers                                000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     // 020 RefCount                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 Imported                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class CompiledResourceInfo
+    public partial class CompiledResourceInfo : DataModel
     {
         public List<int>?                               Producers                               { get; set; }
         public List<int>?                               Consumers                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompiledResourceInfo();
+            var value   = new CompiledResourceInfo() { Pointer= p0 };
 
-            value.Producers                                 = GetInt32List(new IntPtr(p + 0x010)); // 0270D9094E70 0x10 Producers                   ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.Consumers                                 = GetInt32List(new IntPtr(p + 0x018)); // 0270D9094E90 0x18 Consumers                   ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.RefCount                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D9094EB0 0x20 RefCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Imported                                  = GetBool(new IntPtr(p + 0x024)); // 0270D9094ED0 0x24 Imported                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Producers                                 = GetInt32List(new IntPtr(p + 0x010)); // 0246690D77A0 0x10 Producers                   ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.Consumers                                 = GetInt32List(new IntPtr(p + 0x018)); // 0246690D77C0 0x18 Consumers                   ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.RefCount                                  = GetInt32(new IntPtr(p + 0x020)); // 0246690D77E0 0x20 RefCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Imported                                  = GetBool(new IntPtr(p + 0x024)); // 0246690D7800 0x24 Imported                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

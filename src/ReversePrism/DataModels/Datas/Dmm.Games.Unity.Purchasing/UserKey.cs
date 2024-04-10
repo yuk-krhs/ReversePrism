@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 OpenId                                   000186671910 ModelPrimitiveType string string string String
     // 018 AccessToken                              000186671910 ModelPrimitiveType string string string String
-    public partial class UserKey
+    public partial class UserKey : DataModel
     {
         public string                                   OpenId                                  { get; set; }
         public string                                   AccessToken                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserKey();
+            var value   = new UserKey() { Pointer= p0 };
 
-            value.OpenId                                    = GetString(new IntPtr(p + 0x010)); // 027004BB5F08 0x10 OpenId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.AccessToken                               = GetString(new IntPtr(p + 0x018)); // 027004BB5F28 0x18 AccessToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.OpenId                                    = GetString(new IntPtr(p + 0x010)); // 0245A4BECEA8 0x10 OpenId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.AccessToken                               = GetString(new IntPtr(p + 0x018)); // 0245A4BECEC8 0x18 AccessToken                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

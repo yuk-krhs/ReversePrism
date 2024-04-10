@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Store                                    0001866722E0 ModelPrimitiveType string string string String
     // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    public partial class StoreID
+    public partial class StoreID : DataModel
     {
         public string                                   Store                                   { get; set; }
         public string                                   Id                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoreID();
+            var value   = new StoreID() { Pointer= p0 };
 
-            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 027006919840 0x10 Store                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 027006919860 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 0245A68DC708 0x10 Store                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0245A68DC728 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

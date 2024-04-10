@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DetachFromPanelEvent
+    public partial class DetachFromPanelEvent : DataModel
     {
 
         public static DetachFromPanelEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DetachFromPanelEvent();
+            var value   = new DetachFromPanelEvent() { Pointer= p0 };
 
 
             return value;

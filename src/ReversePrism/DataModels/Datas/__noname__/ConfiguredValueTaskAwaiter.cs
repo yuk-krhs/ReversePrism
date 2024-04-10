@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _value                                   ValueTask`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ConfiguredValueTaskAwaiter
+    public partial class ConfiguredValueTaskAwaiter : DataModel
     {
 
         public static ConfiguredValueTaskAwaiter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfiguredValueTaskAwaiter();
+            var value   = new ConfiguredValueTaskAwaiter() { Pointer= p0 };
 
 
             return value;

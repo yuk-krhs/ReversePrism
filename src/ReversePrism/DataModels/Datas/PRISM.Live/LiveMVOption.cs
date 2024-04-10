@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 IsLyricsOn                               000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveMVOption
+    public partial class LiveMVOption : DataModel
     {
         public bool                                     IsLyricsOn                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVOption();
+            var value   = new LiveMVOption() { Pointer= p0 };
 
-            value.IsLyricsOn                                = GetBool(new IntPtr(p + 0x020)); // 027003A71CE0 0x20 IsLyricsOn                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsLyricsOn                                = GetBool(new IntPtr(p + 0x020)); // 0245A3A7CC18 0x20 IsLyricsOn                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

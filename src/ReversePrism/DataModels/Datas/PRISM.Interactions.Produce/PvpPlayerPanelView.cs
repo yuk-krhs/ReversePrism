@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 050 StaminaText                              0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
     // 058 IdolIconView                             000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
     // 060 AchievementPanelView                     000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer
-    public partial class PvpPlayerPanelView
+    public partial class PvpPlayerPanelView : DataModel
     {
         public Transform?                               IdolImageParent                         { get; set; }
         public TextMeshProUGUI?                         RankText                                { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpPlayerPanelView();
+            var value   = new PvpPlayerPanelView() { Pointer= p0 };
 
-            value.IdolImageParent                           = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 0270DA14A228 0x38 IdolImageParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.RankText                                  = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270DA14A248 0x40 RankText                    ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.UserNameText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270DA14A268 0x48 UserNameText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.StaminaText                               = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270DA14A288 0x50 StaminaText                 ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.IdolIconView                              = GetObject<PFIdolIconView>(new IntPtr(p + 0x058), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DA14A2A8 0x58 IdolIconView                ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x060), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 0270DA14A2C8 0x60 AchievementPanelView        ( 000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
+            value.IdolImageParent                           = GetObject<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 02466A1A5A40 0x38 IdolImageParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.RankText                                  = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 02466A1A5A60 0x40 RankText                    ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.UserNameText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 02466A1A5A80 0x48 UserNameText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.StaminaText                               = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 02466A1A5AA0 0x50 StaminaText                 ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.IdolIconView                              = GetObject<PFIdolIconView>(new IntPtr(p + 0x058), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A1A5AC0 0x58 IdolIconView                ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x060), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 02466A1A5AE0 0x60 AchievementPanelView        ( 000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
 
             return value;
         }

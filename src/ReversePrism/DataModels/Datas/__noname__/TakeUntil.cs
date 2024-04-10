@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   TakeUntilObservable`2<<var>, <var>> IL2CPP_TYPE_GENERICINST
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
-    public partial class TakeUntil
+    public partial class TakeUntil : DataModel
     {
 
         public static TakeUntil? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TakeUntil();
+            var value   = new TakeUntil() { Pointer= p0 };
 
 
             return value;

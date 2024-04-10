@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IScheduleVitalityGauge
+    public partial class IScheduleVitalityGauge : DataModel
     {
 
         public static IScheduleVitalityGauge? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IScheduleVitalityGauge();
+            var value   = new IScheduleVitalityGauge() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 nullKeySubject                           ISubject`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 groupDisposable                          CompositeDisposable IL2CPP_TYPE_CLASS
     // 000 refCountDisposable                       RefCountDisposable IL2CPP_TYPE_CLASS
-    public partial class GroupBy
+    public partial class GroupBy : DataModel
     {
 
         public static GroupBy? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GroupBy();
+            var value   = new GroupBy() { Pointer= p0 };
 
 
             return value;

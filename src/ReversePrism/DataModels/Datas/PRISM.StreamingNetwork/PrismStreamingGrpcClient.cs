@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 090 SoundView                                000186538FC0 ModelClassType SoundView SoundView SoundView Pointer
     // 098 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 0A0 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class PrismStreamingGrpcClient
+    public partial class PrismStreamingGrpcClient : DataModel
     {
         public int                                      ReadedSequenceNumber                    { get; set; }
         public OutgestServiceClient?                    OutgestServiceClient                    { get; set; }
@@ -33,14 +33,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrismStreamingGrpcClient();
+            var value   = new PrismStreamingGrpcClient() { Pointer= p0 };
 
-            value.ReadedSequenceNumber                      = GetInt32(new IntPtr(p + 0x058)); // 0270D4F28430 0x58 ReadedSequenceNumber        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OutgestServiceClient                      = GetObject<OutgestServiceClient>(new IntPtr(p + 0x060), ReversePrism.DataModels.OutgestServiceClient.FromPointer); // 0270D4F28450 0x60 OutgestServiceClient        ( 000186546A70 ModelClassType OutgestServiceClient OutgestServiceClient OutgestServiceClient Pointer )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x080)); // 0270D4F284D0 0x80 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.SoundView                                 = GetObject<SoundView>(new IntPtr(p + 0x090), ReversePrism.DataModels.SoundView.FromPointer); // 0270D4F284F0 0x90 SoundView                   ( 000186538FC0 ModelClassType SoundView SoundView SoundView Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x098), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D4F28510 0x98 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x0A0)); // 0270D4F28530 0xA0 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReadedSequenceNumber                      = GetInt32(new IntPtr(p + 0x058)); // 024664F8EEE0 0x58 ReadedSequenceNumber        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OutgestServiceClient                      = GetObject<OutgestServiceClient>(new IntPtr(p + 0x060), ReversePrism.DataModels.OutgestServiceClient.FromPointer); // 024664F8EF00 0x60 OutgestServiceClient        ( 000186546A70 ModelClassType OutgestServiceClient OutgestServiceClient OutgestServiceClient Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x080)); // 024664F8EF80 0x80 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.SoundView                                 = GetObject<SoundView>(new IntPtr(p + 0x090), ReversePrism.DataModels.SoundView.FromPointer); // 024664F8EFA0 0x90 SoundView                   ( 000186538FC0 ModelClassType SoundView SoundView SoundView Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x098), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024664F8EFC0 0x98 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x0A0)); // 024664F8EFE0 0xA0 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

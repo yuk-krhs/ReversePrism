@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 030 ProduceActionEffectList                  000185CE9EF8 ModelClassListType RepeatedField`1<ProduceActionEffectStatus> RepeatedField`1<ProduceActionEffectStatus> List<ProduceActionEffectStatus> Pointer
     // 000 ProduceActionConditionFieldNumber        int IL2CPP_TYPE_I4
     // 038 ProduceActionCondition                   000186526B70 ModelClassType ProduceActionConditionStatus ProduceActionConditionStatus ProduceActionConditionStatus Pointer
-    public partial class InGameSkillStatus
+    public partial class InGameSkillStatus : DataModel
     {
         public List<ProduceParameterType>?              AppealTypeList                          { get; set; }
         public int                                      Cost                                    { get; set; }
@@ -37,13 +37,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InGameSkillStatus();
+            var value   = new InGameSkillStatus() { Pointer= p0 };
 
-            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x020)); // 0270D10D23F0 0x20 AppealTypeList              ( 000185CEC248 ModelEnumListType RepeatedField`1<ProduceParameterType> RepeatedField`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.Cost                                      = GetInt32(new IntPtr(p + 0x028)); // 0270D10D2430 0x28 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UsableCount                               = GetInt32(new IntPtr(p + 0x02C)); // 0270D10D2470 0x2C UsableCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceActionEffectList                   = GetObjectList<ProduceActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceActionEffectStatus.FromPointer); // 0270D10D24D0 0x30 ProduceActionEffectList     ( 000185CE9EF8 ModelClassListType RepeatedField`1<ProduceActionEffectStatus> RepeatedField`1<ProduceActionEffectStatus> List<ProduceActionEffectStatus> Pointer )
-            value.ProduceActionCondition                    = GetObject<ProduceActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceActionConditionStatus.FromPointer); // 0270D10D2510 0x38 ProduceActionCondition      ( 000186526B70 ModelClassType ProduceActionConditionStatus ProduceActionConditionStatus ProduceActionConditionStatus Pointer )
+            value.AppealTypeList                            = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x020)); // 02466105F0D0 0x20 AppealTypeList              ( 000185CEC248 ModelEnumListType RepeatedField`1<ProduceParameterType> RepeatedField`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.Cost                                      = GetInt32(new IntPtr(p + 0x028)); // 02466105F110 0x28 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UsableCount                               = GetInt32(new IntPtr(p + 0x02C)); // 02466105F150 0x2C UsableCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceActionEffectList                   = GetObjectList<ProduceActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceActionEffectStatus.FromPointer); // 02466105F1B0 0x30 ProduceActionEffectList     ( 000185CE9EF8 ModelClassListType RepeatedField`1<ProduceActionEffectStatus> RepeatedField`1<ProduceActionEffectStatus> List<ProduceActionEffectStatus> Pointer )
+            value.ProduceActionCondition                    = GetObject<ProduceActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceActionConditionStatus.FromPointer); // 02466105F1F0 0x38 ProduceActionCondition      ( 000186526B70 ModelClassType ProduceActionConditionStatus ProduceActionConditionStatus ProduceActionConditionStatus Pointer )
 
             return value;
         }

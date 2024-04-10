@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Rank                                     0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32
     // 000 TargetValueFieldNumber                   int IL2CPP_TYPE_I4
     // 01C TargetValue                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ComboRankStatus
+    public partial class ComboRankStatus : DataModel
     {
         public ComboRank                                Rank                                    { get; set; }
         public int                                      TargetValue                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComboRankStatus();
+            var value   = new ComboRankStatus() { Pointer= p0 };
 
-            value.Rank                                      = (ComboRank)GetInt32(new IntPtr(p + 0x018)); // 0270D133B228 0x18 Rank                        ( 0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32 )
-            value.TargetValue                               = GetInt32(new IntPtr(p + 0x01C)); // 0270D133B268 0x1C TargetValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = (ComboRank)GetInt32(new IntPtr(p + 0x018)); // 0246612C2458 0x18 Rank                        ( 0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32 )
+            value.TargetValue                               = GetInt32(new IntPtr(p + 0x01C)); // 0246612C2498 0x1C TargetValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

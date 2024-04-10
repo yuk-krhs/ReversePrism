@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Slot                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnitIdolFieldNumber                      int IL2CPP_TYPE_I4
     // 020 UnitIdol                                 000186592F90 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer
-    public partial class LiveUnitSlotDetailStatus
+    public partial class LiveUnitSlotDetailStatus : DataModel
     {
         public int                                      Slot                                    { get; set; }
         public LiveUnitIdolDetailStatus?                UnitIdol                                { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitSlotDetailStatus();
+            var value   = new LiveUnitSlotDetailStatus() { Pointer= p0 };
 
-            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0270D1364B90 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitIdol                                  = GetObject<LiveUnitIdolDetailStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitIdolDetailStatus.FromPointer); // 0270D1364BD0 0x20 UnitIdol                    ( 000186592F90 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer )
+            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0246612EF1E0 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnitIdol                                  = GetObject<LiveUnitIdolDetailStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitIdolDetailStatus.FromPointer); // 0246612EF220 0x20 UnitIdol                    ( 000186592F90 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer )
 
             return value;
         }

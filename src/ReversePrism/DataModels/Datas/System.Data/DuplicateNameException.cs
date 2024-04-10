@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DuplicateNameException
+    public partial class DuplicateNameException : DataModel
     {
 
         public static DuplicateNameException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DuplicateNameException();
+            var value   = new DuplicateNameException() { Pointer= p0 };
 
 
             return value;

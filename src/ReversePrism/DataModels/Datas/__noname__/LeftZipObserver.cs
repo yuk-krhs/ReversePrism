@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   Zip<<var>, <var>, <var>> IL2CPP_TYPE_GENERICINST
-    public partial class LeftZipObserver
+    public partial class LeftZipObserver : DataModel
     {
 
         public static LeftZipObserver? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LeftZipObserver();
+            var value   = new LeftZipObserver() { Pointer= p0 };
 
 
             return value;

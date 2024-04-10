@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Predicate                              Func`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class WaitUntil
+    public partial class WaitUntil : DataModel
     {
 
         public static WaitUntil? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitUntil();
+            var value   = new WaitUntil() { Pointer= p0 };
 
 
             return value;

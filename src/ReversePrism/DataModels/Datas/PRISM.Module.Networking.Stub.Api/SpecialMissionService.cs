@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 __Method_ReceiveSpecialMissionReward     Method`2<ReceiveSpecialMissionRewardArgs, ReceiveSpecialMissionRewardReply> IL2CPP_TYPE_GENERICINST
     // 058 __Method_ReceiveSpecialMissionCompleteReward Method`2<ReceiveSpecialMissionCompleteRewardArgs, ReceiveSpecialMissionCompleteRewardReply> IL2CPP_TYPE_GENERICINST
     // 060 __Method_TouchSpecialMission             Method`2<TouchSpecialMissionArgs, TouchSpecialMissionReply> IL2CPP_TYPE_GENERICINST
-    public partial class SpecialMissionService
+    public partial class SpecialMissionService : DataModel
     {
 
         public static SpecialMissionService? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialMissionService();
+            var value   = new SpecialMissionService() { Pointer= p0 };
 
 
             return value;

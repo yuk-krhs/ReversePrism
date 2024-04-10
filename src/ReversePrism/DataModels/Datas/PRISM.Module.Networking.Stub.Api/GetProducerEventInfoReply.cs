@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DetailFieldNumber                        int IL2CPP_TYPE_I4
     // 018 Detail                                   0001865B2BF0 ModelClassType ProfileEventDetailStatus ProfileEventDetailStatus ProfileEventDetailStatus Pointer
-    public partial class GetProducerEventInfoReply
+    public partial class GetProducerEventInfoReply : DataModel
     {
         public ProfileEventDetailStatus?                Detail                                  { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProducerEventInfoReply();
+            var value   = new GetProducerEventInfoReply() { Pointer= p0 };
 
-            value.Detail                                    = GetObject<ProfileEventDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileEventDetailStatus.FromPointer); // 0270D26FBDA8 0x18 Detail                      ( 0001865B2BF0 ModelClassType ProfileEventDetailStatus ProfileEventDetailStatus ProfileEventDetailStatus Pointer )
+            value.Detail                                    = GetObject<ProfileEventDetailStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileEventDetailStatus.FromPointer); // 024662645A28 0x18 Detail                      ( 0001865B2BF0 ModelClassType ProfileEventDetailStatus ProfileEventDetailStatus ProfileEventDetailStatus Pointer )
 
             return value;
         }

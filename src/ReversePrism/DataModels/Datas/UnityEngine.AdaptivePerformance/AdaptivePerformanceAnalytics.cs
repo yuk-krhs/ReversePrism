@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 S_Features                               000185D1E3B8 ModelEnumListType List`1<FeatureData> List`1<FeatureData> List<FeatureData> Pointer
     // 030 S_LastWarningLevel                       000186545840 ModelEnumType WarningLevel WarningLevel WarningLevel Int32
     // 034 S_IsRegistered                           000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class AdaptivePerformanceAnalytics
+    public partial class AdaptivePerformanceAnalytics : DataModel
     {
         public List<FeatureData>?                       S_Features                              { get; set; }
         public WarningLevel                             S_LastWarningLevel                      { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceAnalytics();
+            var value   = new AdaptivePerformanceAnalytics() { Pointer= p0 };
 
-            value.S_Features                                = GetEnumList<FeatureData>(new IntPtr(p + 0x028)); // 0270D090D6E0 0x28 S_Features                  ( 000185D1E3B8 ModelEnumListType List`1<FeatureData> List`1<FeatureData> List<FeatureData> Pointer )
-            value.S_LastWarningLevel                        = (WarningLevel)GetInt32(new IntPtr(p + 0x030)); // 0270D090D700 0x30 S_LastWarningLevel          ( 000186545840 ModelEnumType WarningLevel WarningLevel WarningLevel Int32 )
-            value.S_IsRegistered                            = GetBool(new IntPtr(p + 0x034)); // 0270D090D720 0x34 S_IsRegistered              ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.S_Features                                = GetEnumList<FeatureData>(new IntPtr(p + 0x028)); // 02466090D6E0 0x28 S_Features                  ( 000185D1E3B8 ModelEnumListType List`1<FeatureData> List`1<FeatureData> List<FeatureData> Pointer )
+            value.S_LastWarningLevel                        = (WarningLevel)GetInt32(new IntPtr(p + 0x030)); // 02466090D700 0x30 S_LastWarningLevel          ( 000186545840 ModelEnumType WarningLevel WarningLevel WarningLevel Int32 )
+            value.S_IsRegistered                            = GetBool(new IntPtr(p + 0x034)); // 02466090D720 0x34 S_IsRegistered              ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

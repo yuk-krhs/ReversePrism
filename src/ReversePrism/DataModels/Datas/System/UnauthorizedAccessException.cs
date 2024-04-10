@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnauthorizedAccessException
+    public partial class UnauthorizedAccessException : DataModel
     {
 
         public static UnauthorizedAccessException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnauthorizedAccessException();
+            var value   = new UnauthorizedAccessException() { Pointer= p0 };
 
 
             return value;

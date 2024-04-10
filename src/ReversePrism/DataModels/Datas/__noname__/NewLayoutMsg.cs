@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NewLayoutMsg
+    public partial class NewLayoutMsg : DataModel
     {
 
         public static NewLayoutMsg? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NewLayoutMsg();
+            var value   = new NewLayoutMsg() { Pointer= p0 };
 
 
             return value;

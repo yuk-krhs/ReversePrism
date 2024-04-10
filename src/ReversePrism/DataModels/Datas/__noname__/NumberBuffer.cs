@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Scale                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Sign                                     000186595960 ModelPrimitiveType bool bool bool Bool
     // 020 overrideDigits                           IntPtr IL2CPP_TYPE_PTR
-    public partial class NumberBuffer
+    public partial class NumberBuffer : DataModel
     {
         public int                                      Precision                               { get; set; }
         public int                                      Scale                                   { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NumberBuffer();
+            var value   = new NumberBuffer() { Pointer= p0 };
 
-            value.Precision                                 = GetInt32(new IntPtr(p + 0x010)); // 0270DBBA2490 0x10 Precision                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Scale                                     = GetInt32(new IntPtr(p + 0x014)); // 0270DBBA24B0 0x14 Scale                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Sign                                      = GetBool(new IntPtr(p + 0x018)); // 0270DBBA24D0 0x18 Sign                        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Precision                                 = GetInt32(new IntPtr(p + 0x010)); // 02466BC229B0 0x10 Precision                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Scale                                     = GetInt32(new IntPtr(p + 0x014)); // 02466BC229D0 0x14 Scale                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Sign                                      = GetBool(new IntPtr(p + 0x018)); // 02466BC229F0 0x18 Sign                        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

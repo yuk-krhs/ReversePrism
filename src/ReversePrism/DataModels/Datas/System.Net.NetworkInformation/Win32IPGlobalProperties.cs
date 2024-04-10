@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Win32IPGlobalProperties
+    public partial class Win32IPGlobalProperties : DataModel
     {
 
         public static Win32IPGlobalProperties? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Win32IPGlobalProperties();
+            var value   = new Win32IPGlobalProperties() { Pointer= p0 };
 
 
             return value;

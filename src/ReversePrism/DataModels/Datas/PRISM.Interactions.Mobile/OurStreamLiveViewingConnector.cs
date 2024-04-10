@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OurStreamLiveViewingConnector
+    public partial class OurStreamLiveViewingConnector : DataModel
     {
 
         public static OurStreamLiveViewingConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamLiveViewingConnector();
+            var value   = new OurStreamLiveViewingConnector() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Column                                   000186675CB0 ModelClassType DataColumn DataColumn DataColumn Pointer
     // 018 Error                                    000186671BA0 ModelPrimitiveType string string string String
-    public partial class ColumnError
+    public partial class ColumnError : DataModel
     {
         public DataColumn?                              Column                                  { get; set; }
         public string                                   Error                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColumnError();
+            var value   = new ColumnError() { Pointer= p0 };
 
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0270D88BDC80 0x10 Column                      ( 000186675CB0 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.Error                                     = GetString(new IntPtr(p + 0x018)); // 0270D88BDCA0 0x18 Error                       ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 024668931EE8 0x10 Column                      ( 000186675CB0 ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.Error                                     = GetString(new IntPtr(p + 0x018)); // 024668931F08 0x18 Error                       ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

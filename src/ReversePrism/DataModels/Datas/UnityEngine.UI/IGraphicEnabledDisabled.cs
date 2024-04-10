@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGraphicEnabledDisabled
+    public partial class IGraphicEnabledDisabled : DataModel
     {
 
         public static IGraphicEnabledDisabled? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGraphicEnabledDisabled();
+            var value   = new IGraphicEnabledDisabled() { Pointer= p0 };
 
 
             return value;

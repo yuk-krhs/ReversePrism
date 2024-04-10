@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 030 ActionEffectList                         000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer
     // 000 ActionConditionFieldNumber               int IL2CPP_TYPE_I4
     // 038 ActionCondition                          0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer
-    public partial class FesIdolAttachedIdolSkillStatus
+    public partial class FesIdolAttachedIdolSkillStatus : DataModel
     {
         public int                                      MstIdolSkillId                          { get; set; }
         public int                                      Level                                   { get; set; }
@@ -39,14 +39,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesIdolAttachedIdolSkillStatus();
+            var value   = new FesIdolAttachedIdolSkillStatus() { Pointer= p0 };
 
-            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D12ABF08 0x18 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D12ABF48 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 0270D12ABF88 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AppealTypeList                            = GetInt32List(new IntPtr(p + 0x028)); // 0270D12ABFE8 0x28 AppealTypeList              ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.ActionEffectList                          = GetObjectList<IdolSkillActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IdolSkillActionEffectStatus.FromPointer); // 0270D12AC048 0x30 ActionEffectList            ( 000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer )
-            value.ActionCondition                           = GetObject<IdolSkillActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolSkillActionConditionStatus.FromPointer); // 0270D12AC088 0x38 ActionCondition             ( 0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer )
+            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x018)); // 024661228DD0 0x18 MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 024661228E10 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 024661228E50 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AppealTypeList                            = GetInt32List(new IntPtr(p + 0x028)); // 024661228EB0 0x28 AppealTypeList              ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.ActionEffectList                          = GetObjectList<IdolSkillActionEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IdolSkillActionEffectStatus.FromPointer); // 024661228F10 0x30 ActionEffectList            ( 000185CDFF98 ModelClassListType RepeatedField`1<IdolSkillActionEffectStatus> RepeatedField`1<IdolSkillActionEffectStatus> List<IdolSkillActionEffectStatus> Pointer )
+            value.ActionCondition                           = GetObject<IdolSkillActionConditionStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolSkillActionConditionStatus.FromPointer); // 024661228F50 0x38 ActionCondition             ( 0001866B7DC0 ModelClassType IdolSkillActionConditionStatus IdolSkillActionConditionStatus IdolSkillActionConditionStatus Pointer )
 
             return value;
         }

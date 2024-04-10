@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Guid                                     0001865DBED0 ModelEnumType Guid Guid Guid Int32
-    public partial class CriMonoBehaviour
+    public partial class CriMonoBehaviour : DataModel
     {
         public Guid                                     Guid                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriMonoBehaviour();
+            var value   = new CriMonoBehaviour() { Pointer= p0 };
 
-            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x020)); // 0270D11069E0 0x20 Guid                        ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
+            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x020)); // 024660F43230 0x20 Guid                        ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

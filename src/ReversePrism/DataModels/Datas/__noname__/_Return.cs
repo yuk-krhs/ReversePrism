@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 value                                    <var> IL2CPP_TYPE_VAR
     // 000 cancellationToken                        CancellationToken IL2CPP_TYPE_VALUETYPE
     // 000 called                                   bool IL2CPP_TYPE_BOOLEAN
-    public partial class _Return
+    public partial class _Return : DataModel
     {
 
         public static _Return? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Return();
+            var value   = new _Return() { Pointer= p0 };
 
 
             return value;

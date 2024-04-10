@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 IndexCount                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 MinIndexVal                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C VertsReferenced                          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class DrawBufferRange
+    public partial class DrawBufferRange : DataModel
     {
         public int                                      FirstIndex                              { get; set; }
         public int                                      IndexCount                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawBufferRange();
+            var value   = new DrawBufferRange() { Pointer= p0 };
 
-            value.FirstIndex                                = GetInt32(new IntPtr(p + 0x010)); // 02700685F3A0 0x10 FirstIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IndexCount                                = GetInt32(new IntPtr(p + 0x014)); // 02700685F3C0 0x14 IndexCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MinIndexVal                               = GetInt32(new IntPtr(p + 0x018)); // 02700685F3E0 0x18 MinIndexVal                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VertsReferenced                           = GetInt32(new IntPtr(p + 0x01C)); // 02700685F400 0x1C VertsReferenced             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FirstIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0245A6821230 0x10 FirstIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.IndexCount                                = GetInt32(new IntPtr(p + 0x014)); // 0245A6821250 0x14 IndexCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MinIndexVal                               = GetInt32(new IntPtr(p + 0x018)); // 0245A6821270 0x18 MinIndexVal                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.VertsReferenced                           = GetInt32(new IntPtr(p + 0x01C)); // 0245A6821290 0x1C VertsReferenced             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

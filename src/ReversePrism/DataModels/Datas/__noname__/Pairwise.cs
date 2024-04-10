@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 prev                                     <var> IL2CPP_TYPE_VAR
     // 000 isFirst                                  bool IL2CPP_TYPE_BOOLEAN
-    public partial class Pairwise
+    public partial class Pairwise : DataModel
     {
 
         public static Pairwise? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Pairwise();
+            var value   = new Pairwise() { Pointer= p0 };
 
 
             return value;

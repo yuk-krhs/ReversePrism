@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PrintErrorsCallbackFunc
+    public partial class PrintErrorsCallbackFunc : DataModel
     {
 
         public static PrintErrorsCallbackFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrintErrorsCallbackFunc();
+            var value   = new PrintErrorsCallbackFunc() { Pointer= p0 };
 
 
             return value;

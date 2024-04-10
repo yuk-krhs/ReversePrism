@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 038 SinglePassAllowed                        000186595C30 ModelPrimitiveType bool bool bool Bool
     // 03C FoveatedRenderingCaps                    0001865BC330 ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32
     // 040 DumpDebugInfo                            000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class XRSystem
+    public partial class XRSystem : DataModel
     {
         public MSAASamples                              S_MSAASamples                           { get; set; }
         public Material?                                S_OcclusionMeshMaterial                 { get; set; }
@@ -34,15 +34,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRSystem();
+            var value   = new XRSystem() { Pointer= p0 };
 
-            value.S_MSAASamples                             = (MSAASamples)GetInt32(new IntPtr(p + 0x010)); // 0270035CFF78 0x10 S_MSAASamples               ( 0001865C6110 ModelEnumType MSAASamples MSAASamples MSAASamples Int32 )
-            value.S_OcclusionMeshMaterial                   = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0270035CFF98 0x18 S_OcclusionMeshMaterial     ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.S_MirrorViewMaterial                      = GetObject<Material>(new IntPtr(p + 0x020), ReversePrism.DataModels.Material.FromPointer); // 0270035CFFB8 0x20 S_MirrorViewMaterial        ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.EmptyPass                                 = GetObject<XRPass>(new IntPtr(p + 0x030), ReversePrism.DataModels.XRPass.FromPointer); // 0270035CFFF8 0x30 EmptyPass                   ( 0001865848D0 ModelClassType XRPass XRPass XRPass Pointer )
-            value.SinglePassAllowed                         = GetBool(new IntPtr(p + 0x038)); // 0270035D0018 0x38 SinglePassAllowed           ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.FoveatedRenderingCaps                     = (FoveatedRenderingCaps)GetInt32(new IntPtr(p + 0x03C)); // 0270035D0038 0x3C FoveatedRenderingCaps       ( 0001865BC330 ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32 )
-            value.DumpDebugInfo                             = GetBool(new IntPtr(p + 0x040)); // 0270035D0058 0x40 DumpDebugInfo               ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.S_MSAASamples                             = (MSAASamples)GetInt32(new IntPtr(p + 0x010)); // 0245A35CFF78 0x10 S_MSAASamples               ( 0001865C6110 ModelEnumType MSAASamples MSAASamples MSAASamples Int32 )
+            value.S_OcclusionMeshMaterial                   = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0245A35CFF98 0x18 S_OcclusionMeshMaterial     ( 00018660C770 ModelClassType Material Material Material Pointer )
+            value.S_MirrorViewMaterial                      = GetObject<Material>(new IntPtr(p + 0x020), ReversePrism.DataModels.Material.FromPointer); // 0245A35CFFB8 0x20 S_MirrorViewMaterial        ( 00018660C770 ModelClassType Material Material Material Pointer )
+            value.EmptyPass                                 = GetObject<XRPass>(new IntPtr(p + 0x030), ReversePrism.DataModels.XRPass.FromPointer); // 0245A35CFFF8 0x30 EmptyPass                   ( 0001865848D0 ModelClassType XRPass XRPass XRPass Pointer )
+            value.SinglePassAllowed                         = GetBool(new IntPtr(p + 0x038)); // 0245A35D0018 0x38 SinglePassAllowed           ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.FoveatedRenderingCaps                     = (FoveatedRenderingCaps)GetInt32(new IntPtr(p + 0x03C)); // 0245A35D0038 0x3C FoveatedRenderingCaps       ( 0001865BC330 ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32 )
+            value.DumpDebugInfo                             = GetBool(new IntPtr(p + 0x040)); // 0245A35D0058 0x40 DumpDebugInfo               ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

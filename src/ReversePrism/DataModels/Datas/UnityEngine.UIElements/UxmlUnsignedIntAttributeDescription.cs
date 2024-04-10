@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlUnsignedIntAttributeDescription
+    public partial class UxmlUnsignedIntAttributeDescription : DataModel
     {
 
         public static UxmlUnsignedIntAttributeDescription? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlUnsignedIntAttributeDescription();
+            var value   = new UxmlUnsignedIntAttributeDescription() { Pointer= p0 };
 
 
             return value;

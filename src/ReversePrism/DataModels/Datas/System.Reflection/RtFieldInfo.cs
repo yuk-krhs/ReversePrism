@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RtFieldInfo
+    public partial class RtFieldInfo : DataModel
     {
 
         public static RtFieldInfo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RtFieldInfo();
+            var value   = new RtFieldInfo() { Pointer= p0 };
 
 
             return value;

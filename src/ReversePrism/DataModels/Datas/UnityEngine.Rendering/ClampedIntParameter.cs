@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Min                                      0001865F59B0 ModelPrimitiveType int int int Int32
     // 024 Max                                      0001865F59B0 ModelPrimitiveType int int int Int32
-    public partial class ClampedIntParameter
+    public partial class ClampedIntParameter : DataModel
     {
         public int                                      Min                                     { get; set; }
         public int                                      Max                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClampedIntParameter();
+            var value   = new ClampedIntParameter() { Pointer= p0 };
 
-            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D92EF2C0 0x20 Min                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
-            value.Max                                       = GetInt32(new IntPtr(p + 0x024)); // 0270D92EF2E0 0x24 Max                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
+            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 024669358FE8 0x20 Min                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x024)); // 024669359008 0x24 Max                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

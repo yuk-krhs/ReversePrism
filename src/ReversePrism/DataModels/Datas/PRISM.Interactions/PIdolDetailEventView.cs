@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 GoContent                                0001867530A0 ModelClassType EventContentView EventContentView EventContentView Pointer
     // 030 ContentParent                            0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 038 onClick                                  Subject`1<ScenarioID> IL2CPP_TYPE_GENERICINST
-    public partial class PIdolDetailEventView
+    public partial class PIdolDetailEventView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public EventContentView?                        GoContent                               { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PIdolDetailEventView();
+            var value   = new PIdolDetailEventView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA3059A8 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.GoContent                                 = GetObject<EventContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventContentView.FromPointer); // 0270DA3059C8 0x28 GoContent                   ( 0001867530A0 ModelClassType EventContentView EventContentView EventContentView Pointer )
-            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DA3059E8 0x30 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A358F00 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GoContent                                 = GetObject<EventContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventContentView.FromPointer); // 02466A358F20 0x28 GoContent                   ( 0001867530A0 ModelClassType EventContentView EventContentView EventContentView Pointer )
+            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466A358F40 0x30 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

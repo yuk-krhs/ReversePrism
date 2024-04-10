@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
     // 058 CardId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstCharacterInfoIdFieldNumber            int IL2CPP_TYPE_I4
     // 05C MstCharacterInfoId                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FesUnitIdolStatus
+    public partial class FesUnitIdolStatus : DataModel
     {
         public string                                   FesIdolId                               { get; set; }
         public int                                      MstProduceIdolId                        { get; set; }
@@ -52,19 +52,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitIdolStatus();
+            var value   = new FesUnitIdolStatus() { Pointer= p0 };
 
-            value.FesIdolId                                 = GetString(new IntPtr(p + 0x018)); // 0270D12B17D0 0x18 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x020)); // 0270D12B1810 0x20 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0270D12B1850 0x28 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x030)); // 0270D12B1890 0x30 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.FesUnit                                   = GetObject<FesIdolUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.FesIdolUnitStatus.FromPointer); // 0270D12B18D0 0x38 FesUnit                     ( 000186567370 ModelClassType FesIdolUnitStatus FesIdolUnitStatus FesIdolUnitStatus Pointer )
-            value.AttachedIdolSkill                         = GetObject<FesIdolAttachedIdolSkillStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.FesIdolAttachedIdolSkillStatus.FromPointer); // 0270D12B1910 0x40 AttachedIdolSkill           ( 000186560C30 ModelClassType FesIdolAttachedIdolSkillStatus FesIdolAttachedIdolSkillStatus FesIdolAttachedIdolSkillStatus Pointer )
-            value.AttachedPotentialLiveSkill                = GetObject<FesIdolAttachedPotentialLiveSkillStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.FesIdolAttachedPotentialLiveSkillStatus.FromPointer); // 0270D12B1950 0x48 AttachedPotentialLiveSkill  ( 0001865613F0 ModelClassType FesIdolAttachedPotentialLiveSkillStatus FesIdolAttachedPotentialLiveSkillStatus FesIdolAttachedPotentialLiveSkillStatus Pointer )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x050)); // 0270D12B1990 0x50 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InitialStar                               = GetInt32(new IntPtr(p + 0x054)); // 0270D12B19D0 0x54 InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x058)); // 0270D12B1A10 0x58 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x05C)); // 0270D12B1A50 0x5C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesIdolId                                 = GetString(new IntPtr(p + 0x018)); // 02466122DC90 0x18 FesIdolId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x020)); // 02466122DCD0 0x20 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 02466122DD10 0x28 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x030)); // 02466122DD50 0x30 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.FesUnit                                   = GetObject<FesIdolUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.FesIdolUnitStatus.FromPointer); // 02466122DD90 0x38 FesUnit                     ( 000186567370 ModelClassType FesIdolUnitStatus FesIdolUnitStatus FesIdolUnitStatus Pointer )
+            value.AttachedIdolSkill                         = GetObject<FesIdolAttachedIdolSkillStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.FesIdolAttachedIdolSkillStatus.FromPointer); // 02466122DDD0 0x40 AttachedIdolSkill           ( 000186560C30 ModelClassType FesIdolAttachedIdolSkillStatus FesIdolAttachedIdolSkillStatus FesIdolAttachedIdolSkillStatus Pointer )
+            value.AttachedPotentialLiveSkill                = GetObject<FesIdolAttachedPotentialLiveSkillStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.FesIdolAttachedPotentialLiveSkillStatus.FromPointer); // 02466122DE10 0x48 AttachedPotentialLiveSkill  ( 0001865613F0 ModelClassType FesIdolAttachedPotentialLiveSkillStatus FesIdolAttachedPotentialLiveSkillStatus FesIdolAttachedPotentialLiveSkillStatus Pointer )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x050)); // 02466122DE50 0x50 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.InitialStar                               = GetInt32(new IntPtr(p + 0x054)); // 02466122DE90 0x54 InitialStar                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x058)); // 02466122DED0 0x58 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x05C)); // 02466122DF10 0x5C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

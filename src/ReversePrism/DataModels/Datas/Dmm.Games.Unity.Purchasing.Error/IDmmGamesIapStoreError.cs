@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDmmGamesIapStoreError
+    public partial class IDmmGamesIapStoreError : DataModel
     {
 
         public static IDmmGamesIapStoreError? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDmmGamesIapStoreError();
+            var value   = new IDmmGamesIapStoreError() { Pointer= p0 };
 
 
             return value;

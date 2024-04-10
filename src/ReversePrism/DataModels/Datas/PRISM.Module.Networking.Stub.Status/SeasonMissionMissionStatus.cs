@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 03C FilterType                               000186621470 ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32
     // 000 JumpFieldNumber                          int IL2CPP_TYPE_I4
     // 040 Jump                                     000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer
-    public partial class SeasonMissionMissionStatus
+    public partial class SeasonMissionMissionStatus : DataModel
     {
         public int                                      MstSeasonMissionMissionId               { get; set; }
         public int                                      MstMissionProgressId                    { get; set; }
@@ -49,18 +49,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionMissionStatus();
+            var value   = new SeasonMissionMissionStatus() { Pointer= p0 };
 
-            value.MstSeasonMissionMissionId                 = GetInt32(new IntPtr(p + 0x018)); // 0270D27964E8 0x18 MstSeasonMissionMissionId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstMissionProgressId                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D2796528 0x1C MstMissionProgressId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequiredValue                             = GetInt32(new IntPtr(p + 0x020)); // 0270D2796568 0x20 RequiredValue               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x024)); // 0270D27965A8 0x24 CurrentValue                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Exp                                       = GetInt32(new IntPtr(p + 0x028)); // 0270D27965E8 0x28 Exp                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x02C)); // 0270D2796628 0x2C State                       ( 000186629C10 ModelEnumType MissionState MissionState MissionState Int32 )
-            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0270D2796668 0x30 Period                      ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x038)); // 0270D27966A8 0x38 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FilterType                                = (MissionFilterType)GetInt32(new IntPtr(p + 0x03C)); // 0270D27966E8 0x3C FilterType                  ( 000186621470 ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32 )
-            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.JumpStatus.FromPointer); // 0270D2796728 0x40 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
+            value.MstSeasonMissionMissionId                 = GetInt32(new IntPtr(p + 0x018)); // 0246626F2A00 0x18 MstSeasonMissionMissionId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstMissionProgressId                      = GetInt32(new IntPtr(p + 0x01C)); // 0246626F2A40 0x1C MstMissionProgressId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RequiredValue                             = GetInt32(new IntPtr(p + 0x020)); // 0246626F2A80 0x20 RequiredValue               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x024)); // 0246626F2AC0 0x24 CurrentValue                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Exp                                       = GetInt32(new IntPtr(p + 0x028)); // 0246626F2B00 0x28 Exp                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x02C)); // 0246626F2B40 0x2C State                       ( 000186629C10 ModelEnumType MissionState MissionState MissionState Int32 )
+            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0246626F2B80 0x30 Period                      ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x038)); // 0246626F2BC0 0x38 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FilterType                                = (MissionFilterType)GetInt32(new IntPtr(p + 0x03C)); // 0246626F2C00 0x3C FilterType                  ( 000186621470 ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32 )
+            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.JumpStatus.FromPointer); // 0246626F2C40 0x40 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 <RewardList>k__BackingField              IEnumerable`1<IProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 030 CellType                                 00018666F3A0 ModelEnumType MusicRateRewardListCellType MusicRateRewardListCellType MusicRateRewardListCellType Int32
-    public partial class MusicRateRewardListCellData
+    public partial class MusicRateRewardListCellData : DataModel
     {
         public MusicRateRewardListCellType              CellType                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRateRewardListCellData();
+            var value   = new MusicRateRewardListCellData() { Pointer= p0 };
 
-            value.CellType                                  = (MusicRateRewardListCellType)GetInt32(new IntPtr(p + 0x030)); // 0270D640C808 0x30 CellType                    ( 00018666F3A0 ModelEnumType MusicRateRewardListCellType MusicRateRewardListCellType MusicRateRewardListCellType Int32 )
+            value.CellType                                  = (MusicRateRewardListCellType)GetInt32(new IntPtr(p + 0x030)); // 02466645B380 0x30 CellType                    ( 00018666F3A0 ModelEnumType MusicRateRewardListCellType MusicRateRewardListCellType MusicRateRewardListCellType Int32 )
 
             return value;
         }

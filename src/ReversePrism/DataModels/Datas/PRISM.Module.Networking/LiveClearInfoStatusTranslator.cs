@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveClearInfoStatusTranslator
+    public partial class LiveClearInfoStatusTranslator : DataModel
     {
 
         public static LiveClearInfoStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveClearInfoStatusTranslator();
+            var value   = new LiveClearInfoStatusTranslator() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsOnTitleSequence                        0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 018 SearchUserId                             000186672F10 ModelPrimitiveType string string string String
-    public partial class PrivacyOptionExecutorParameter
+    public partial class PrivacyOptionExecutorParameter : DataModel
     {
         public bool                                     IsOnTitleSequence                       { get; set; }
         public string                                   SearchUserId                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrivacyOptionExecutorParameter();
+            var value   = new PrivacyOptionExecutorParameter() { Pointer= p0 };
 
-            value.IsOnTitleSequence                         = GetBool(new IntPtr(p + 0x010)); // 027004E157C8 0x10 IsOnTitleSequence           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.SearchUserId                              = GetString(new IntPtr(p + 0x018)); // 027004E157E8 0x18 SearchUserId                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.IsOnTitleSequence                         = GetBool(new IntPtr(p + 0x010)); // 0245A4E41B98 0x10 IsOnTitleSequence           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SearchUserId                              = GetString(new IntPtr(p + 0x018)); // 0245A4E41BB8 0x18 SearchUserId                ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

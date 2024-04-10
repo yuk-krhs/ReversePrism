@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceAutoModeConnector
+    public partial class IProduceAutoModeConnector : DataModel
     {
 
         public static IProduceAutoModeConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceAutoModeConnector();
+            var value   = new IProduceAutoModeConnector() { Pointer= p0 };
 
 
             return value;

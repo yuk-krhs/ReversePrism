@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 030 ElapsedBytes                             0001865F7700 ModelPrimitiveType long long long Int64
     // 038 State                                    000186601060 ModelEnumType StabilityProfile StabilityProfile StabilityProfile Int32
     // 040 Throughput                               0001865C2950 ModelPrimitiveType double double double Double
-    public partial class ThroughputMonitor
+    public partial class ThroughputMonitor : DataModel
     {
         public Stopwatch?                               Timer                                   { get; set; }
         public int                                      Head                                    { get; set; }
@@ -35,15 +35,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThroughputMonitor();
+            var value   = new ThroughputMonitor() { Pointer= p0 };
 
-            value.Timer                                     = GetObject<Stopwatch>(new IntPtr(p + 0x018), ReversePrism.DataModels.Stopwatch.FromPointer); // 0270DB5079E0 0x18 Timer                       ( 00018658EAD0 ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
-            value.Head                                      = GetInt32(new IntPtr(p + 0x020)); // 0270DB507A00 0x20 Head                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Tail                                      = GetInt32(new IntPtr(p + 0x024)); // 0270DB507A20 0x24 Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ElapsedMs                                 = GetInt64(new IntPtr(p + 0x028)); // 0270DB507A40 0x28 ElapsedMs                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.ElapsedBytes                              = GetInt64(new IntPtr(p + 0x030)); // 0270DB507A60 0x30 ElapsedBytes                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.State                                     = (StabilityProfile)GetInt32(new IntPtr(p + 0x038)); // 0270DB507A80 0x38 State                       ( 000186601060 ModelEnumType StabilityProfile StabilityProfile StabilityProfile Int32 )
-            value.Throughput                                = GetDouble(new IntPtr(p + 0x040)); // 0270DB507AA0 0x40 Throughput                  ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Timer                                     = GetObject<Stopwatch>(new IntPtr(p + 0x018), ReversePrism.DataModels.Stopwatch.FromPointer); // 02466B59C5E0 0x18 Timer                       ( 00018658EAD0 ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
+            value.Head                                      = GetInt32(new IntPtr(p + 0x020)); // 02466B59C600 0x20 Head                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Tail                                      = GetInt32(new IntPtr(p + 0x024)); // 02466B59C620 0x24 Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ElapsedMs                                 = GetInt64(new IntPtr(p + 0x028)); // 02466B59C640 0x28 ElapsedMs                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.ElapsedBytes                              = GetInt64(new IntPtr(p + 0x030)); // 02466B59C660 0x30 ElapsedBytes                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.State                                     = (StabilityProfile)GetInt32(new IntPtr(p + 0x038)); // 02466B59C680 0x38 State                       ( 000186601060 ModelEnumType StabilityProfile StabilityProfile StabilityProfile Int32 )
+            value.Throughput                                = GetDouble(new IntPtr(p + 0x040)); // 02466B59C6A0 0x40 Throughput                  ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

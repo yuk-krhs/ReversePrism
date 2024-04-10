@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 M_Pyramid                                000185CB6C88 ModelEnumListType Level[] Level[] List<Level> Pointer
     // 000 k_MaxPyramidSize                         int IL2CPP_TYPE_I4
-    public partial class BloomRenderer
+    public partial class BloomRenderer : DataModel
     {
         public List<Level>?                             M_Pyramid                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BloomRenderer();
+            var value   = new BloomRenderer() { Pointer= p0 };
 
-            value.M_Pyramid                                 = GetEnumList<Level>(new IntPtr(p + 0x020)); // 02700655F480 0x20 M_Pyramid                   ( 000185CB6C88 ModelEnumListType Level[] Level[] List<Level> Pointer )
+            value.M_Pyramid                                 = GetEnumList<Level>(new IntPtr(p + 0x020)); // 0245A6535198 0x20 M_Pyramid                   ( 000185CB6C88 ModelEnumListType Level[] Level[] List<Level> Pointer )
 
             return value;
         }

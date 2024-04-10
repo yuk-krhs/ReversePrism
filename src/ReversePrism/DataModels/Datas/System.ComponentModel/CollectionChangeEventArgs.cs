@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Action                                   0001865C3810 ModelEnumType CollectionChangeAction CollectionChangeAction CollectionChangeAction Int32
     // 018 <Element>k__BackingField                 <object> IL2CPP_TYPE_OBJECT
-    public partial class CollectionChangeEventArgs
+    public partial class CollectionChangeEventArgs : DataModel
     {
         public CollectionChangeAction                   Action                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CollectionChangeEventArgs();
+            var value   = new CollectionChangeEventArgs() { Pointer= p0 };
 
-            value.Action                                    = (CollectionChangeAction)GetInt32(new IntPtr(p + 0x010)); // 0270D7B17E00 0x10 Action                      ( 0001865C3810 ModelEnumType CollectionChangeAction CollectionChangeAction CollectionChangeAction Int32 )
+            value.Action                                    = (CollectionChangeAction)GetInt32(new IntPtr(p + 0x010)); // 024667B7FE00 0x10 Action                      ( 0001865C3810 ModelEnumType CollectionChangeAction CollectionChangeAction CollectionChangeAction Int32 )
 
             return value;
         }

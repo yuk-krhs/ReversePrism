@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ContextStaticAttribute
+    public partial class ContextStaticAttribute : DataModel
     {
 
         public static ContextStaticAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContextStaticAttribute();
+            var value   = new ContextStaticAttribute() { Pointer= p0 };
 
 
             return value;

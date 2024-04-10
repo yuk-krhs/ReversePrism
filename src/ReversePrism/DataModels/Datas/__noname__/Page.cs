@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 X                                        000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 012 Y                                        000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 014 FreeSlots                                0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Page
+    public partial class Page : DataModel
     {
         public ushort                                   X                                       { get; set; }
         public ushort                                   Y                                       { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Page();
+            var value   = new Page() { Pointer= p0 };
 
-            value.X                                         = GetUInt16(new IntPtr(p + 0x010)); // 02700687C7F8 0x10 X                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Y                                         = GetUInt16(new IntPtr(p + 0x012)); // 02700687C818 0x12 Y                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.FreeSlots                                 = GetInt32(new IntPtr(p + 0x014)); // 02700687C838 0x14 FreeSlots                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.X                                         = GetUInt16(new IntPtr(p + 0x010)); // 0245A683E668 0x10 X                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Y                                         = GetUInt16(new IntPtr(p + 0x012)); // 0245A683E688 0x12 Y                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.FreeSlots                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A683E6A8 0x14 FreeSlots                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

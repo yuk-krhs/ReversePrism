@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 068 SkillName                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 070 Cost                                     0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 078 Description                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class IdolSkillDetailPopupContent
+    public partial class IdolSkillDetailPopupContent : DataModel
     {
         public IdolSkillIcon?                           Icon                                    { get; set; }
         public UITextMeshProUGUI?                       SkillName                               { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillDetailPopupContent();
+            var value   = new IdolSkillDetailPopupContent() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<IdolSkillIcon>(new IntPtr(p + 0x060), ReversePrism.DataModels.IdolSkillIcon.FromPointer); // 0270D5C7DBD8 0x60 Icon                        ( 0001866BCF80 ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer )
-            value.SkillName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C7DBF8 0x68 SkillName                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Cost                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C7DC18 0x70 Cost                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Description                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5C7DC38 0x78 Description                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Icon                                      = GetObject<IdolSkillIcon>(new IntPtr(p + 0x060), ReversePrism.DataModels.IdolSkillIcon.FromPointer); // 024665CEE698 0x60 Icon                        ( 0001866BCF80 ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer )
+            value.SkillName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CEE6B8 0x68 SkillName                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Cost                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CEE6D8 0x70 Cost                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Description                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CEE6F8 0x78 Description                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Depth                                    0001865F2F90 ModelPrimitiveType int int int Int32
     // 018 Node                                     0001865CEFD0 ModelClassType Expression Expression Expression Pointer
-    public partial class AndNode
+    public partial class AndNode : DataModel
     {
         public int                                      Depth                                   { get; set; }
         public Expression?                              Node                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndNode();
+            var value   = new AndNode() { Pointer= p0 };
 
-            value.Depth                                     = GetInt32(new IntPtr(p + 0x010)); // 0270DA05F028 0x10 Depth                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Node                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0270DA05F048 0x18 Node                        ( 0001865CEFD0 ModelClassType Expression Expression Expression Pointer )
+            value.Depth                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A0C2D80 0x10 Depth                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Node                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 02466A0C2DA0 0x18 Node                        ( 0001865CEFD0 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

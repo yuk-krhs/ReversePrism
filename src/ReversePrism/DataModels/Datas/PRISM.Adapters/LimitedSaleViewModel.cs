@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 030 onChangeViewModel                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 038 onChangeLimitedSaleState                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class LimitedSaleViewModel
+    public partial class LimitedSaleViewModel : DataModel
     {
         public IEventIconStatus?                        Status                                  { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LimitedSaleViewModel();
+            var value   = new LimitedSaleViewModel() { Pointer= p0 };
 
-            value.Status                                    = GetObject<IEventIconStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 027005B3ECF8 0x20 Status                      ( 000186764540 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 027005B3ED18 0x28 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Status                                    = GetObject<IEventIconStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 0245A5B3FE30 0x20 Status                      ( 000186764540 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A5B3FE50 0x28 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

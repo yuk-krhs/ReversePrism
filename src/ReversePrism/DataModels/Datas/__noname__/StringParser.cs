@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 _ch                                      char IL2CPP_TYPE_CHAR
     // 024 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 Len                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StringParser
+    public partial class StringParser : DataModel
     {
         public int                                      Pos                                     { get; set; }
         public int                                      Len                                     { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringParser();
+            var value   = new StringParser() { Pointer= p0 };
 
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x024)); // 0270D6D34C10 0x24 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Len                                       = GetInt32(new IntPtr(p + 0x028)); // 0270D6D34C30 0x28 Len                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x024)); // 024666D8CC10 0x24 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Len                                       = GetInt32(new IntPtr(p + 0x028)); // 024666D8CC30 0x28 Len                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

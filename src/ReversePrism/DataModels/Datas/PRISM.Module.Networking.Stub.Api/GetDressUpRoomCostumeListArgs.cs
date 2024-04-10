@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<GetDressUpRoomCostumeListArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class GetDressUpRoomCostumeListArgs
+    public partial class GetDressUpRoomCostumeListArgs : DataModel
     {
 
         public static GetDressUpRoomCostumeListArgs? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetDressUpRoomCostumeListArgs();
+            var value   = new GetDressUpRoomCostumeListArgs() { Pointer= p0 };
 
 
             return value;

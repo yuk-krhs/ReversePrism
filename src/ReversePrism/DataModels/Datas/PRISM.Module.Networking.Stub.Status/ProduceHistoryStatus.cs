@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 038 StrategyList                             000185CEB688 ModelClassListType RepeatedField`1<ProduceHistoryStrategyStatus> RepeatedField`1<ProduceHistoryStrategyStatus> List<ProduceHistoryStrategyStatus> Pointer
     // 000 IsAutoFieldNumber                        int IL2CPP_TYPE_I4
     // 040 IsAuto                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceHistoryStatus
+    public partial class ProduceHistoryStatus : DataModel
     {
         public DateTime                                 CreateDate                              { get; set; }
         public int                                      MstEpisodeId                            { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceHistoryStatus();
+            var value   = new ProduceHistoryStatus() { Pointer= p0 };
 
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D12B4C20 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x028)); // 0270D12B4CA0 0x28 MstEpisodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = GetInt32(new IntPtr(p + 0x02C)); // 0270D12B4CE0 0x2C DifficultyLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D12B4D20 0x30 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.StrategyList                              = GetObjectList<ProduceHistoryStrategyStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceHistoryStrategyStatus.FromPointer); // 0270D12B4D80 0x38 StrategyList                ( 000185CEB688 ModelClassListType RepeatedField`1<ProduceHistoryStrategyStatus> RepeatedField`1<ProduceHistoryStrategyStatus> List<ProduceHistoryStrategyStatus> Pointer )
-            value.IsAuto                                    = GetBool(new IntPtr(p + 0x040)); // 0270D12B4DC0 0x40 IsAuto                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 024661230F30 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x028)); // 024661230FB0 0x28 MstEpisodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = GetInt32(new IntPtr(p + 0x02C)); // 024661230FF0 0x2C DifficultyLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 024661231030 0x30 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.StrategyList                              = GetObjectList<ProduceHistoryStrategyStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceHistoryStrategyStatus.FromPointer); // 024661231090 0x38 StrategyList                ( 000185CEB688 ModelClassListType RepeatedField`1<ProduceHistoryStrategyStatus> RepeatedField`1<ProduceHistoryStrategyStatus> List<ProduceHistoryStrategyStatus> Pointer )
+            value.IsAuto                                    = GetBool(new IntPtr(p + 0x040)); // 0246612310D0 0x40 IsAuto                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.CreateDate                    = ToDateTime(value._CreateDate);
 
             return value;

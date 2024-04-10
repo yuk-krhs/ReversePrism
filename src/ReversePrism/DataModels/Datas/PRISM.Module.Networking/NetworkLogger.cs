@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 queue                                    ConcurrentQueue`1<ILogRecord> IL2CPP_TYPE_GENERICINST
     // 018 Limit                                    0001865F4260 ModelPrimitiveType int int int Int32
     // 020 Child                                    00018669BE60 ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer
-    public partial class NetworkLogger
+    public partial class NetworkLogger : DataModel
     {
         public int                                      Limit                                   { get; set; }
         public NetworkLoggerBase?                       Child                                   { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NetworkLogger();
+            var value   = new NetworkLogger() { Pointer= p0 };
 
-            value.Limit                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D35196D8 0x18 Limit                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Child                                     = GetObject<NetworkLoggerBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.NetworkLoggerBase.FromPointer); // 0270D35196F8 0x20 Child                       ( 00018669BE60 ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer )
+            value.Limit                                     = GetInt32(new IntPtr(p + 0x018)); // 0246605D8538 0x18 Limit                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Child                                     = GetObject<NetworkLoggerBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.NetworkLoggerBase.FromPointer); // 0246605D8558 0x20 Child                       ( 00018669BE60 ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer )
 
             return value;
         }

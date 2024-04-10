@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BufferEx
+    public partial class BufferEx : DataModel
     {
 
         public static BufferEx? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BufferEx();
+            var value   = new BufferEx() { Pointer= p0 };
 
 
             return value;

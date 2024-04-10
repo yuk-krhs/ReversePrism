@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ExecuteIntroduction                      Method`2<IExecuteIntroductionArgs, IExecuteIntroductionReply> IL2CPP_TYPE_GENERICINST
-    public partial class IntroductionServiceMethods
+    public partial class IntroductionServiceMethods : DataModel
     {
 
         public static IntroductionServiceMethods? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionServiceMethods();
+            var value   = new IntroductionServiceMethods() { Pointer= p0 };
 
 
             return value;

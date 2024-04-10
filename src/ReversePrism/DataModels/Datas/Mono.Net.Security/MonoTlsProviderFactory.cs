@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 UnityTlsId                               0001865DCD00 ModelEnumType Guid Guid Guid Int32
     // 038 AppleTlsId                               0001865DCD00 ModelEnumType Guid Guid Guid Int32
     // 048 BtlsId                                   0001865DCD00 ModelEnumType Guid Guid Guid Int32
-    public partial class MonoTlsProviderFactory
+    public partial class MonoTlsProviderFactory : DataModel
     {
         public MobileTlsProvider?                       DefaultProvider                         { get; set; }
         public Guid                                     UnityTlsId                              { get; set; }
@@ -29,12 +29,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoTlsProviderFactory();
+            var value   = new MonoTlsProviderFactory() { Pointer= p0 };
 
-            value.DefaultProvider                           = GetObject<MobileTlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 0270D7928E60 0x10 DefaultProvider             ( 000186637F50 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
-            value.UnityTlsId                                = (Guid)GetInt32(new IntPtr(p + 0x028)); // 0270D7928EC0 0x28 UnityTlsId                  ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
-            value.AppleTlsId                                = (Guid)GetInt32(new IntPtr(p + 0x038)); // 0270D7928EE0 0x38 AppleTlsId                  ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
-            value.BtlsId                                    = (Guid)GetInt32(new IntPtr(p + 0x048)); // 0270D7928F00 0x48 BtlsId                      ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
+            value.DefaultProvider                           = GetObject<MobileTlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 024667990E60 0x10 DefaultProvider             ( 000186637F50 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
+            value.UnityTlsId                                = (Guid)GetInt32(new IntPtr(p + 0x028)); // 024667990EC0 0x28 UnityTlsId                  ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
+            value.AppleTlsId                                = (Guid)GetInt32(new IntPtr(p + 0x038)); // 024667990EE0 0x38 AppleTlsId                  ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
+            value.BtlsId                                    = (Guid)GetInt32(new IntPtr(p + 0x048)); // 024667990F00 0x48 BtlsId                      ( 0001865DCD00 ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

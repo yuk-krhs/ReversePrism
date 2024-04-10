@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 050 onTriggerEnter2D                         Subject`1<Collider2D> IL2CPP_TYPE_GENERICINST
     // 058 onTriggerExit2D                          Subject`1<Collider2D> IL2CPP_TYPE_GENERICINST
     // 060 onTriggerStay2D                          Subject`1<Collider2D> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableTrigger2DTrigger
+    public partial class ObservableTrigger2DTrigger : DataModel
     {
 
         public static ObservableTrigger2DTrigger? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableTrigger2DTrigger();
+            var value   = new ObservableTrigger2DTrigger() { Pointer= p0 };
 
 
             return value;

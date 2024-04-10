@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 058 IsFullTypeNameSetExplicit                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 059 IsAssemblyNameSetExplicit                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 05A RequireSameTokenInPartialTrust           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SerializationInfo
+    public partial class SerializationInfo : DataModel
     {
         public List<string>?                            M_members                               { get; set; }
         public List<Type>?                              M_types                                 { get; set; }
@@ -42,18 +42,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializationInfo();
+            var value   = new SerializationInfo() { Pointer= p0 };
 
-            value.M_members                                 = GetStringList(new IntPtr(p + 0x010)); // 0270D6960500 0x10 M_members                   ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.M_types                                   = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D6960540 0x20 M_types                     ( 000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.M_currMember                              = GetInt32(new IntPtr(p + 0x030)); // 0270D6960580 0x30 M_currMember                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_converter                               = GetObject<IFormatterConverter>(new IntPtr(p + 0x038), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 0270D69605A0 0x38 M_converter                 ( 000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
-            value.M_fullTypeName                            = GetString(new IntPtr(p + 0x040)); // 0270D69605C0 0x40 M_fullTypeName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_assemName                               = GetString(new IntPtr(p + 0x048)); // 0270D69605E0 0x48 M_assemName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 0270D6960600 0x50 ObjectType                  ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.IsFullTypeNameSetExplicit                 = GetBool(new IntPtr(p + 0x058)); // 0270D6960620 0x58 IsFullTypeNameSetExplicit   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAssemblyNameSetExplicit                 = GetBool(new IntPtr(p + 0x059)); // 0270D6960640 0x59 IsAssemblyNameSetExplicit   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RequireSameTokenInPartialTrust            = GetBool(new IntPtr(p + 0x05A)); // 0270D6960660 0x5A RequireSameTokenInPartialTrust ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_members                                 = GetStringList(new IntPtr(p + 0x010)); // 0246669D8500 0x10 M_members                   ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.M_types                                   = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0246669D8540 0x20 M_types                     ( 000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.M_currMember                              = GetInt32(new IntPtr(p + 0x030)); // 0246669D8580 0x30 M_currMember                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_converter                               = GetObject<IFormatterConverter>(new IntPtr(p + 0x038), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 0246669D85A0 0x38 M_converter                 ( 000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
+            value.M_fullTypeName                            = GetString(new IntPtr(p + 0x040)); // 0246669D85C0 0x40 M_fullTypeName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_assemName                               = GetString(new IntPtr(p + 0x048)); // 0246669D85E0 0x48 M_assemName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 0246669D8600 0x50 ObjectType                  ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.IsFullTypeNameSetExplicit                 = GetBool(new IntPtr(p + 0x058)); // 0246669D8620 0x58 IsFullTypeNameSetExplicit   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsAssemblyNameSetExplicit                 = GetBool(new IntPtr(p + 0x059)); // 0246669D8640 0x59 IsAssemblyNameSetExplicit   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RequireSameTokenInPartialTrust            = GetBool(new IntPtr(p + 0x05A)); // 0246669D8660 0x5A RequireSameTokenInPartialTrust ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

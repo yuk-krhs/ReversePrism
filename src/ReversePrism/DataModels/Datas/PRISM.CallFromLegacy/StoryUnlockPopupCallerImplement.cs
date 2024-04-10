@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<IStoryUnlockPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class StoryUnlockPopupCallerImplement
+    public partial class StoryUnlockPopupCallerImplement : DataModel
     {
 
         public static StoryUnlockPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryUnlockPopupCallerImplement();
+            var value   = new StoryUnlockPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

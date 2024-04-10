@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GashaPriceExtension
+    public partial class GashaPriceExtension : DataModel
     {
 
         public static GashaPriceExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaPriceExtension();
+            var value   = new GashaPriceExtension() { Pointer= p0 };
 
 
             return value;

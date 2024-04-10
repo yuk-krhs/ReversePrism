@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 largePositiveVector2                     Vector2 IL2CPP_TYPE_VALUETYPE
     // 008 largeNegativeVector2                     Vector2 IL2CPP_TYPE_VALUETYPE
-    public partial class TextGeneratorUtilities
+    public partial class TextGeneratorUtilities : DataModel
     {
 
         public static TextGeneratorUtilities? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextGeneratorUtilities();
+            var value   = new TextGeneratorUtilities() { Pointer= p0 };
 
 
             return value;

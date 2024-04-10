@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  FastResourceComparer IL2CPP_TYPE_CLASS
-    public partial class FastResourceComparer
+    public partial class FastResourceComparer : DataModel
     {
 
         public static FastResourceComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FastResourceComparer();
+            var value   = new FastResourceComparer() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 MemberName                               000186671910 ModelPrimitiveType string string string String
-    public partial class XmlChoiceIdentifierAttribute
+    public partial class XmlChoiceIdentifierAttribute : DataModel
     {
         public string                                   MemberName                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlChoiceIdentifierAttribute();
+            var value   = new XmlChoiceIdentifierAttribute() { Pointer= p0 };
 
-            value.MemberName                                = GetString(new IntPtr(p + 0x010)); // 0270D74B7F08 0x10 MemberName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MemberName                                = GetString(new IntPtr(p + 0x010)); // 024667517F08 0x10 MemberName                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

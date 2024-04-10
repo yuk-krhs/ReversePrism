@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_typeName                               000186671910 ModelPrimitiveType string string string String
-    public partial class TypeLoadExceptionHolder
+    public partial class TypeLoadExceptionHolder : DataModel
     {
         public string                                   M_typeName                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeLoadExceptionHolder();
+            var value   = new TypeLoadExceptionHolder() { Pointer= p0 };
 
-            value.M_typeName                                = GetString(new IntPtr(p + 0x010)); // 0270D6C28580 0x10 M_typeName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_typeName                                = GetString(new IntPtr(p + 0x010)); // 024666C98580 0x10 M_typeName                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

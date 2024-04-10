@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                0001865C2BC0 ModelClassType LyricBehaviour LyricBehaviour LyricBehaviour Pointer
-    public partial class LyricClip
+    public partial class LyricClip : DataModel
     {
         public LyricBehaviour?                          Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LyricClip();
+            var value   = new LyricClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<LyricBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LyricBehaviour.FromPointer); // 0270D4DFE5E0 0x18 Behaviour                   ( 0001865C2BC0 ModelClassType LyricBehaviour LyricBehaviour LyricBehaviour Pointer )
+            value.Behaviour                                 = GetObject<LyricBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LyricBehaviour.FromPointer); // 024664E73730 0x18 Behaviour                   ( 0001865C2BC0 ModelClassType LyricBehaviour LyricBehaviour LyricBehaviour Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SupportCharaUnitSetupPopupSequencer
+    public partial class SupportCharaUnitSetupPopupSequencer : DataModel
     {
 
         public static SupportCharaUnitSetupPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharaUnitSetupPopupSequencer();
+            var value   = new SupportCharaUnitSetupPopupSequencer() { Pointer= p0 };
 
 
             return value;

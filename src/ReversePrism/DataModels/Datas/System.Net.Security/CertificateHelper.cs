@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CertificateHelper
+    public partial class CertificateHelper : DataModel
     {
 
         public static CertificateHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CertificateHelper();
+            var value   = new CertificateHelper() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ListChangedEventHandler
+    public partial class ListChangedEventHandler : DataModel
     {
 
         public static ListChangedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ListChangedEventHandler();
+            var value   = new ListChangedEventHandler() { Pointer= p0 };
 
 
             return value;

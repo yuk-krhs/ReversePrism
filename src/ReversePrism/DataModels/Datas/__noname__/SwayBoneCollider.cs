@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 02C R0                                       000186666050 ModelPrimitiveType float float float Single
     // 030 C1                                       0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 03C R1                                       000186666050 ModelPrimitiveType float float float Single
-    public partial class SwayBoneCollider
+    public partial class SwayBoneCollider : DataModel
     {
         public Vector3                                  C0                                      { get; set; }
         public float                                    R0                                      { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwayBoneCollider();
+            var value   = new SwayBoneCollider() { Pointer= p0 };
 
-            value.C0                                        = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0270069EF0B8 0x20 C0                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.R0                                        = GetSingle(new IntPtr(p + 0x02C)); // 0270069EF0D8 0x2C R0                          ( 000186666050 ModelPrimitiveType float float float Single )
-            value.C1                                        = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0270069EF0F8 0x30 C1                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.R1                                        = GetSingle(new IntPtr(p + 0x03C)); // 0270069EF118 0x3C R1                          ( 000186666050 ModelPrimitiveType float float float Single )
+            value.C0                                        = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0245A69BBB10 0x20 C0                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.R0                                        = GetSingle(new IntPtr(p + 0x02C)); // 0245A69BBB30 0x2C R0                          ( 000186666050 ModelPrimitiveType float float float Single )
+            value.C1                                        = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0245A69BBB50 0x30 C1                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.R1                                        = GetSingle(new IntPtr(p + 0x03C)); // 0245A69BBB70 0x3C R1                          ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

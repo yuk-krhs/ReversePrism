@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SubSingle
+    public partial class SubSingle : DataModel
     {
 
         public static SubSingle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSingle();
+            var value   = new SubSingle() { Pointer= p0 };
 
 
             return value;

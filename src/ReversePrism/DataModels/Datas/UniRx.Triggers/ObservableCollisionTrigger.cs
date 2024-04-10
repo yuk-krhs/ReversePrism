@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 050 onCollisionEnter                         Subject`1<Collision> IL2CPP_TYPE_GENERICINST
     // 058 onCollisionExit                          Subject`1<Collision> IL2CPP_TYPE_GENERICINST
     // 060 onCollisionStay                          Subject`1<Collision> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableCollisionTrigger
+    public partial class ObservableCollisionTrigger : DataModel
     {
 
         public static ObservableCollisionTrigger? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableCollisionTrigger();
+            var value   = new ObservableCollisionTrigger() { Pointer= p0 };
 
 
             return value;

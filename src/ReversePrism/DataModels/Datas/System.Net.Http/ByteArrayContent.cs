@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 028 Content                                  000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 030 Offset                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 034 Count                                    0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class ByteArrayContent
+    public partial class ByteArrayContent : DataModel
     {
         public List<sbyte>?                             Content                                 { get; set; }
         public int                                      Offset                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteArrayContent();
+            var value   = new ByteArrayContent() { Pointer= p0 };
 
-            value.Content                                   = GetSByteList(new IntPtr(p + 0x028)); // 0270DB82C528 0x28 Content                     ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x030)); // 0270DB82C548 0x30 Offset                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 0270DB82C568 0x34 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Content                                   = GetSByteList(new IntPtr(p + 0x028)); // 02466B8AC400 0x28 Content                     ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x030)); // 02466B8AC420 0x30 Offset                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 02466B8AC440 0x34 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

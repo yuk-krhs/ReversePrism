@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CrossPlatformValidator
+    public partial class CrossPlatformValidator : DataModel
     {
 
         public static CrossPlatformValidator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrossPlatformValidator();
+            var value   = new CrossPlatformValidator() { Pointer= p0 };
 
 
             return value;

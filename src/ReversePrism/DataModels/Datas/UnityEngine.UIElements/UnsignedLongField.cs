@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 labelUssClassName                        string IL2CPP_TYPE_STRING
     // 010 InputUssClassName                        000186674040 ModelPrimitiveType string string string String
-    public partial class UnsignedLongField
+    public partial class UnsignedLongField : DataModel
     {
         public string                                   InputUssClassName                       { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsignedLongField();
+            var value   = new UnsignedLongField() { Pointer= p0 };
 
-            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 02700674A740 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
+            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0245A670C700 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

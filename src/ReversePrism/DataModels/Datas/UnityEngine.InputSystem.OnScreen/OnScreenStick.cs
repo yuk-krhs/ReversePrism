@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 06C M_PointerDownPos                         0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 078 M_RaycastResults                         000185D00148 ModelEnumListType List`1<RaycastResult> List`1<RaycastResult> List<RaycastResult> Pointer
     // 080 M_PointerEventData                       0001866429D0 ModelClassType PointerEventData PointerEventData PointerEventData Pointer
-    public partial class OnScreenStick
+    public partial class OnScreenStick : DataModel
     {
         public float                                    M_MovementRange                         { get; set; }
         public float                                    M_DynamicOriginRange                    { get; set; }
@@ -40,19 +40,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnScreenStick();
+            var value   = new OnScreenStick() { Pointer= p0 };
 
-            value.M_MovementRange                           = GetSingle(new IntPtr(p + 0x038)); // 0270D77BE9E8 0x38 M_MovementRange             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DynamicOriginRange                      = GetSingle(new IntPtr(p + 0x03C)); // 0270D77BEA08 0x3C M_DynamicOriginRange        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_ControlPath                             = GetString(new IntPtr(p + 0x040)); // 0270D77BEA28 0x40 M_ControlPath               ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Behaviour                               = (Behaviour)GetInt32(new IntPtr(p + 0x048)); // 0270D77BEA48 0x48 M_Behaviour                 ( 000186531D40 ModelEnumType Behaviour Behaviour Behaviour Int32 )
-            value.M_UseIsolatedInputActions                 = GetBool(new IntPtr(p + 0x04C)); // 0270D77BEA68 0x4C M_UseIsolatedInputActions   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_PointerDownAction                       = GetObject<InputAction>(new IntPtr(p + 0x050), ReversePrism.DataModels.InputAction.FromPointer); // 0270D77BEA88 0x50 M_PointerDownAction         ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
-            value.M_PointerMoveAction                       = GetObject<InputAction>(new IntPtr(p + 0x058), ReversePrism.DataModels.InputAction.FromPointer); // 0270D77BEAA8 0x58 M_PointerMoveAction         ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
-            value.M_StartPos                                = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 0270D77BEAC8 0x60 M_StartPos                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_PointerDownPos                          = (Vector2)GetInt32(new IntPtr(p + 0x06C)); // 0270D77BEAE8 0x6C M_PointerDownPos            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_RaycastResults                          = GetEnumList<RaycastResult>(new IntPtr(p + 0x078)); // 0270D77BEB08 0x78 M_RaycastResults            ( 000185D00148 ModelEnumListType List`1<RaycastResult> List`1<RaycastResult> List<RaycastResult> Pointer )
-            value.M_PointerEventData                        = GetObject<PointerEventData>(new IntPtr(p + 0x080), ReversePrism.DataModels.PointerEventData.FromPointer); // 0270D77BEB28 0x80 M_PointerEventData          ( 0001866429D0 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
+            value.M_MovementRange                           = GetSingle(new IntPtr(p + 0x038)); // 0246678169E8 0x38 M_MovementRange             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DynamicOriginRange                      = GetSingle(new IntPtr(p + 0x03C)); // 024667816A08 0x3C M_DynamicOriginRange        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_ControlPath                             = GetString(new IntPtr(p + 0x040)); // 024667816A28 0x40 M_ControlPath               ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Behaviour                               = (Behaviour)GetInt32(new IntPtr(p + 0x048)); // 024667816A48 0x48 M_Behaviour                 ( 000186531D40 ModelEnumType Behaviour Behaviour Behaviour Int32 )
+            value.M_UseIsolatedInputActions                 = GetBool(new IntPtr(p + 0x04C)); // 024667816A68 0x4C M_UseIsolatedInputActions   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_PointerDownAction                       = GetObject<InputAction>(new IntPtr(p + 0x050), ReversePrism.DataModels.InputAction.FromPointer); // 024667816A88 0x50 M_PointerDownAction         ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
+            value.M_PointerMoveAction                       = GetObject<InputAction>(new IntPtr(p + 0x058), ReversePrism.DataModels.InputAction.FromPointer); // 024667816AA8 0x58 M_PointerMoveAction         ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
+            value.M_StartPos                                = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 024667816AC8 0x60 M_StartPos                  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_PointerDownPos                          = (Vector2)GetInt32(new IntPtr(p + 0x06C)); // 024667816AE8 0x6C M_PointerDownPos            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_RaycastResults                          = GetEnumList<RaycastResult>(new IntPtr(p + 0x078)); // 024667816B08 0x78 M_RaycastResults            ( 000185D00148 ModelEnumListType List`1<RaycastResult> List`1<RaycastResult> List<RaycastResult> Pointer )
+            value.M_PointerEventData                        = GetObject<PointerEventData>(new IntPtr(p + 0x080), ReversePrism.DataModels.PointerEventData.FromPointer); // 024667816B28 0x80 M_PointerEventData          ( 0001866429D0 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
 
             return value;
         }

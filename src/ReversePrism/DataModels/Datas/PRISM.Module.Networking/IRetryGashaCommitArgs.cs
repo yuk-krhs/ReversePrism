@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRetryGashaCommitArgs
+    public partial class IRetryGashaCommitArgs : DataModel
     {
 
         public static IRetryGashaCommitArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRetryGashaCommitArgs();
+            var value   = new IRetryGashaCommitArgs() { Pointer= p0 };
 
 
             return value;

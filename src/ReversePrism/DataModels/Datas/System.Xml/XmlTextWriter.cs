@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
     // 008 tokenName                                string[] IL2CPP_TYPE_SZARRAY
     // 010 StateTableDefault                        000185CC8848 ModelEnumListType State[] State[] List<State> Pointer
     // 018 StateTableDocument                       000185CC8848 ModelEnumListType State[] State[] List<State> Pointer
-    public partial class XmlTextWriter
+    public partial class XmlTextWriter : DataModel
     {
         public TextWriter?                              TextWriter                              { get; set; }
         public XmlTextEncoder?                          XmlEncoder                              { get; set; }
@@ -67,30 +67,30 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTextWriter();
+            var value   = new XmlTextWriter() { Pointer= p0 };
 
-            value.TextWriter                                = GetObject<TextWriter>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextWriter.FromPointer); // 0270D73BEBA0 0x18 TextWriter                  ( 00018664BAC0 ModelClassType TextWriter TextWriter TextWriter Pointer )
-            value.XmlEncoder                                = GetObject<XmlTextEncoder>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlTextEncoder.FromPointer); // 0270D73BEBC0 0x20 XmlEncoder                  ( 0001865CCD50 ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer )
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x028), ReversePrism.DataModels.Encoding.FromPointer); // 0270D73BEBE0 0x28 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.Formatting                                = (Formatting)GetInt32(new IntPtr(p + 0x030)); // 0270D73BEC00 0x30 Formatting                  ( 0001865B9E30 ModelEnumType Formatting Formatting Formatting Int32 )
-            value.Indented                                  = GetBool(new IntPtr(p + 0x034)); // 0270D73BEC20 0x34 Indented                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Indentation                               = GetInt32(new IntPtr(p + 0x038)); // 0270D73BEC40 0x38 Indentation                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Stack                                     = GetEnumList<TagInfo>(new IntPtr(p + 0x040)); // 0270D73BEC80 0x40 Stack                       ( 000185CC8A68 ModelEnumListType TagInfo[] TagInfo[] List<TagInfo> Pointer )
-            value.Top                                       = GetInt32(new IntPtr(p + 0x048)); // 0270D73BECA0 0x48 Top                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StateTable                                = GetEnumList<State>(new IntPtr(p + 0x050)); // 0270D73BECC0 0x50 StateTable                  ( 000185CC87B8 ModelEnumListType State[] State[] List<State> Pointer )
-            value.CurrentState                              = (State)GetInt32(new IntPtr(p + 0x058)); // 0270D73BECE0 0x58 CurrentState                ( 0001867478B0 ModelEnumType State State State Int32 )
-            value.LastToken                                 = (Token)GetInt32(new IntPtr(p + 0x05C)); // 0270D73BED00 0x5C LastToken                   ( 000186748140 ModelEnumType Token Token Token Int32 )
-            value.Base64Encoder                             = GetObject<XmlTextWriterBase64Encoder>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlTextWriterBase64Encoder.FromPointer); // 0270D73BED20 0x60 Base64Encoder               ( 0001865CDC00 ModelClassType XmlTextWriterBase64Encoder XmlTextWriterBase64Encoder XmlTextWriterBase64Encoder Pointer )
-            value.Namespaces                                = GetBool(new IntPtr(p + 0x06C)); // 0270D73BED80 0x6C Namespaces                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SpecialAttr                               = (SpecialAttr)GetInt32(new IntPtr(p + 0x070)); // 0270D73BEDA0 0x70 SpecialAttr                 ( 0001867472D0 ModelEnumType SpecialAttr SpecialAttr SpecialAttr Int32 )
-            value.PrefixForXmlNs                            = GetString(new IntPtr(p + 0x078)); // 0270D73BEDC0 0x78 PrefixForXmlNs              ( 000186671910 ModelPrimitiveType string string string String )
-            value.Flush                                     = GetBool(new IntPtr(p + 0x080)); // 0270D73BEDE0 0x80 Flush                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NsStack                                   = GetEnumList<Namespace>(new IntPtr(p + 0x088)); // 0270D73BEE00 0x88 NsStack                     ( 000185CC8588 ModelEnumListType Namespace[] Namespace[] List<Namespace> Pointer )
-            value.NsTop                                     = GetInt32(new IntPtr(p + 0x090)); // 0270D73BEE20 0x90 NsTop                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseNsHashtable                            = GetBool(new IntPtr(p + 0x0A0)); // 0270D73BEE60 0xA0 UseNsHashtable              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x0A8)); // 0270D73BEE80 0xA8 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
-            value.StateTableDefault                         = GetEnumList<State>(new IntPtr(p + 0x010)); // 0270D73BEEE0 0x10 StateTableDefault           ( 000185CC8848 ModelEnumListType State[] State[] List<State> Pointer )
-            value.StateTableDocument                        = GetEnumList<State>(new IntPtr(p + 0x018)); // 0270D73BEF00 0x18 StateTableDocument          ( 000185CC8848 ModelEnumListType State[] State[] List<State> Pointer )
+            value.TextWriter                                = GetObject<TextWriter>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextWriter.FromPointer); // 02466741F3D0 0x18 TextWriter                  ( 00018664BAC0 ModelClassType TextWriter TextWriter TextWriter Pointer )
+            value.XmlEncoder                                = GetObject<XmlTextEncoder>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlTextEncoder.FromPointer); // 02466741F3F0 0x20 XmlEncoder                  ( 0001865CCD50 ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x028), ReversePrism.DataModels.Encoding.FromPointer); // 02466741F410 0x28 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
+            value.Formatting                                = (Formatting)GetInt32(new IntPtr(p + 0x030)); // 02466741F430 0x30 Formatting                  ( 0001865B9E30 ModelEnumType Formatting Formatting Formatting Int32 )
+            value.Indented                                  = GetBool(new IntPtr(p + 0x034)); // 02466741F450 0x34 Indented                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Indentation                               = GetInt32(new IntPtr(p + 0x038)); // 02466741F470 0x38 Indentation                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Stack                                     = GetEnumList<TagInfo>(new IntPtr(p + 0x040)); // 02466741F4B0 0x40 Stack                       ( 000185CC8A68 ModelEnumListType TagInfo[] TagInfo[] List<TagInfo> Pointer )
+            value.Top                                       = GetInt32(new IntPtr(p + 0x048)); // 02466741F4D0 0x48 Top                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StateTable                                = GetEnumList<State>(new IntPtr(p + 0x050)); // 02466741F4F0 0x50 StateTable                  ( 000185CC87B8 ModelEnumListType State[] State[] List<State> Pointer )
+            value.CurrentState                              = (State)GetInt32(new IntPtr(p + 0x058)); // 02466741F510 0x58 CurrentState                ( 0001867478B0 ModelEnumType State State State Int32 )
+            value.LastToken                                 = (Token)GetInt32(new IntPtr(p + 0x05C)); // 02466741F530 0x5C LastToken                   ( 000186748140 ModelEnumType Token Token Token Int32 )
+            value.Base64Encoder                             = GetObject<XmlTextWriterBase64Encoder>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlTextWriterBase64Encoder.FromPointer); // 02466741F550 0x60 Base64Encoder               ( 0001865CDC00 ModelClassType XmlTextWriterBase64Encoder XmlTextWriterBase64Encoder XmlTextWriterBase64Encoder Pointer )
+            value.Namespaces                                = GetBool(new IntPtr(p + 0x06C)); // 02466741F5B0 0x6C Namespaces                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SpecialAttr                               = (SpecialAttr)GetInt32(new IntPtr(p + 0x070)); // 02466741F5D0 0x70 SpecialAttr                 ( 0001867472D0 ModelEnumType SpecialAttr SpecialAttr SpecialAttr Int32 )
+            value.PrefixForXmlNs                            = GetString(new IntPtr(p + 0x078)); // 02466741F5F0 0x78 PrefixForXmlNs              ( 000186671910 ModelPrimitiveType string string string String )
+            value.Flush                                     = GetBool(new IntPtr(p + 0x080)); // 02466741F610 0x80 Flush                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NsStack                                   = GetEnumList<Namespace>(new IntPtr(p + 0x088)); // 02466741F630 0x88 NsStack                     ( 000185CC8588 ModelEnumListType Namespace[] Namespace[] List<Namespace> Pointer )
+            value.NsTop                                     = GetInt32(new IntPtr(p + 0x090)); // 02466741F650 0x90 NsTop                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UseNsHashtable                            = GetBool(new IntPtr(p + 0x0A0)); // 02466741F690 0xA0 UseNsHashtable              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x0A8)); // 02466741F6B0 0xA8 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
+            value.StateTableDefault                         = GetEnumList<State>(new IntPtr(p + 0x010)); // 02466741F710 0x10 StateTableDefault           ( 000185CC8848 ModelEnumListType State[] State[] List<State> Pointer )
+            value.StateTableDocument                        = GetEnumList<State>(new IntPtr(p + 0x018)); // 02466741F730 0x18 StateTableDocument          ( 000185CC8848 ModelEnumListType State[] State[] List<State> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceAutoModeView
+    public partial class IProduceAutoModeView : DataModel
     {
 
         public static IProduceAutoModeView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceAutoModeView();
+            var value   = new IProduceAutoModeView() { Pointer= p0 };
 
 
             return value;

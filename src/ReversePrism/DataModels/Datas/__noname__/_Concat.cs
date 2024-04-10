@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 enumerator                               IUniTaskAsyncEnumerator`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 awaiter                                  Awaiter<bool> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _Concat
+    public partial class _Concat : DataModel
     {
 
         public static _Concat? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Concat();
+            var value   = new _Concat() { Pointer= p0 };
 
 
             return value;

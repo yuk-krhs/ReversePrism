@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AndroidJNIHelper
+    public partial class AndroidJNIHelper : DataModel
     {
 
         public static AndroidJNIHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidJNIHelper();
+            var value   = new AndroidJNIHelper() { Pointer= p0 };
 
 
             return value;

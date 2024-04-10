@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 ReadOnly                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class X509ExtensionCollection
+    public partial class X509ExtensionCollection : DataModel
     {
         public bool                                     ReadOnly                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509ExtensionCollection();
+            var value   = new X509ExtensionCollection() { Pointer= p0 };
 
-            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x018)); // 0270DB37C988 0x18 ReadOnly                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x018)); // 02466B40A758 0x18 ReadOnly                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

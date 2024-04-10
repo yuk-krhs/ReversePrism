@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetRaycastNonAllocCallback
+    public partial class GetRaycastNonAllocCallback : DataModel
     {
 
         public static GetRaycastNonAllocCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetRaycastNonAllocCallback();
+            var value   = new GetRaycastNonAllocCallback() { Pointer= p0 };
 
 
             return value;

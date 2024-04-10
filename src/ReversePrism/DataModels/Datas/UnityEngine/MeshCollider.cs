@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MeshCollider
+    public partial class MeshCollider : DataModel
     {
 
         public static MeshCollider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshCollider();
+            var value   = new MeshCollider() { Pointer= p0 };
 
 
             return value;

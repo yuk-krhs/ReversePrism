@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Monitor                                  000186583720 ModelClassType IInputStateChangeMonitor IInputStateChangeMonitor IInputStateChangeMonitor Pointer
     // 028 MonitorIndex                             0001865F7E40 ModelPrimitiveType long long long Int64
     // 030 TimerIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class StateChangeMonitorTimeout
+    public partial class StateChangeMonitorTimeout : DataModel
     {
         public InputControl?                            Control                                 { get; set; }
         public double                                   Time                                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StateChangeMonitorTimeout();
+            var value   = new StateChangeMonitorTimeout() { Pointer= p0 };
 
-            value.Control                                   = GetObject<InputControl>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputControl.FromPointer); // 02700334EA28 0x10 Control                     ( 0001865EB650 ModelClassType InputControl InputControl InputControl Pointer )
-            value.Time                                      = GetDouble(new IntPtr(p + 0x018)); // 02700334EA48 0x18 Time                        ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Monitor                                   = GetObject<IInputStateChangeMonitor>(new IntPtr(p + 0x020), ReversePrism.DataModels.IInputStateChangeMonitor.FromPointer); // 02700334EA68 0x20 Monitor                     ( 000186583720 ModelClassType IInputStateChangeMonitor IInputStateChangeMonitor IInputStateChangeMonitor Pointer )
-            value.MonitorIndex                              = GetInt64(new IntPtr(p + 0x028)); // 02700334EA88 0x28 MonitorIndex                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.TimerIndex                                = GetInt32(new IntPtr(p + 0x030)); // 02700334EAA8 0x30 TimerIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Control                                   = GetObject<InputControl>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputControl.FromPointer); // 0245A334EA28 0x10 Control                     ( 0001865EB650 ModelClassType InputControl InputControl InputControl Pointer )
+            value.Time                                      = GetDouble(new IntPtr(p + 0x018)); // 0245A334EA48 0x18 Time                        ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.Monitor                                   = GetObject<IInputStateChangeMonitor>(new IntPtr(p + 0x020), ReversePrism.DataModels.IInputStateChangeMonitor.FromPointer); // 0245A334EA68 0x20 Monitor                     ( 000186583720 ModelClassType IInputStateChangeMonitor IInputStateChangeMonitor IInputStateChangeMonitor Pointer )
+            value.MonitorIndex                              = GetInt64(new IntPtr(p + 0x028)); // 0245A334EA88 0x28 MonitorIndex                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.TimerIndex                                = GetInt32(new IntPtr(p + 0x030)); // 0245A334EAA8 0x30 TimerIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

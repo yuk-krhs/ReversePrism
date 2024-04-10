@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AlwaysLinkAssemblyAttribute
+    public partial class AlwaysLinkAssemblyAttribute : DataModel
     {
 
         public static AlwaysLinkAssemblyAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AlwaysLinkAssemblyAttribute();
+            var value   = new AlwaysLinkAssemblyAttribute() { Pointer= p0 };
 
 
             return value;

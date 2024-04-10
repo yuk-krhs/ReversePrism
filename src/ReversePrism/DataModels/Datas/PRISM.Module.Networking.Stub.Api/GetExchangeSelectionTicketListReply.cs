@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 SelectionTicketList                      000185CF0848 ModelClassListType RepeatedField`1<SelectionTicketStatus> RepeatedField`1<SelectionTicketStatus> List<SelectionTicketStatus> Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
     // 030 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class GetExchangeSelectionTicketListReply
+    public partial class GetExchangeSelectionTicketListReply : DataModel
     {
         public DateTime                                 EndDate                                 { get; set; }
         public List<SelectionTicketStatus>?             SelectionTicketList                     { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeSelectionTicketListReply();
+            var value   = new GetExchangeSelectionTicketListReply() { Pointer= p0 };
 
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 0270D1221A20 0x10 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.SelectionTicketList                       = GetObjectList<SelectionTicketStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SelectionTicketStatus.FromPointer); // 0270D1221AC0 0x28 SelectionTicketList         ( 000185CF0848 ModelClassListType RepeatedField`1<SelectionTicketStatus> RepeatedField`1<SelectionTicketStatus> List<SelectionTicketStatus> Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1221B00 0x30 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 024661198200 0x10 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.SelectionTicketList                       = GetObjectList<SelectionTicketStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SelectionTicketStatus.FromPointer); // 0246611982A0 0x28 SelectionTicketList         ( 000185CF0848 ModelClassListType RepeatedField`1<SelectionTicketStatus> RepeatedField`1<SelectionTicketStatus> List<SelectionTicketStatus> Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0246611982E0 0x30 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.EndDate                       = ToDateTime(value._EndDate);
 
             return value;

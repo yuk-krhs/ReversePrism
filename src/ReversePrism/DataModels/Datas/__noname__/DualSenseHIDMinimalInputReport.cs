@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 017 Buttons2                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 018 LeftTrigger                              00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 019 RightTrigger                             00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class DualSenseHIDMinimalInputReport
+    public partial class DualSenseHIDMinimalInputReport : DataModel
     {
         public sbyte                                    ReportId                                { get; set; }
         public sbyte                                    LeftStickX                              { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DualSenseHIDMinimalInputReport();
+            var value   = new DualSenseHIDMinimalInputReport() { Pointer= p0 };
 
-            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 0270D77F9170 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftStickX                                = GetSByte(new IntPtr(p + 0x011)); // 0270D77F9190 0x11 LeftStickX                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftStickY                                = GetSByte(new IntPtr(p + 0x012)); // 0270D77F91B0 0x12 LeftStickY                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightStickX                               = GetSByte(new IntPtr(p + 0x013)); // 0270D77F91D0 0x13 RightStickX                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightStickY                               = GetSByte(new IntPtr(p + 0x014)); // 0270D77F91F0 0x14 RightStickY                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x015)); // 0270D77F9210 0x15 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x016)); // 0270D77F9230 0x16 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons2                                  = GetSByte(new IntPtr(p + 0x017)); // 0270D77F9250 0x17 Buttons2                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftTrigger                               = GetSByte(new IntPtr(p + 0x018)); // 0270D77F9270 0x18 LeftTrigger                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightTrigger                              = GetSByte(new IntPtr(p + 0x019)); // 0270D77F9290 0x19 RightTrigger                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 024667851170 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftStickX                                = GetSByte(new IntPtr(p + 0x011)); // 024667851190 0x11 LeftStickX                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftStickY                                = GetSByte(new IntPtr(p + 0x012)); // 0246678511B0 0x12 LeftStickY                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightStickX                               = GetSByte(new IntPtr(p + 0x013)); // 0246678511D0 0x13 RightStickX                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightStickY                               = GetSByte(new IntPtr(p + 0x014)); // 0246678511F0 0x14 RightStickY                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x015)); // 024667851210 0x15 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x016)); // 024667851230 0x16 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons2                                  = GetSByte(new IntPtr(p + 0x017)); // 024667851250 0x17 Buttons2                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftTrigger                               = GetSByte(new IntPtr(p + 0x018)); // 024667851270 0x18 LeftTrigger                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightTrigger                              = GetSByte(new IntPtr(p + 0x019)); // 024667851290 0x19 RightTrigger                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

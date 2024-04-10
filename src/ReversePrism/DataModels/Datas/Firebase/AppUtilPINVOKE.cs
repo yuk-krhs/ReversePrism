@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 swigExceptionHelper                      SWIGExceptionHelper IL2CPP_TYPE_CLASS
     // 008 swigStringHelper                         SWIGStringHelper IL2CPP_TYPE_CLASS
-    public partial class AppUtilPINVOKE
+    public partial class AppUtilPINVOKE : DataModel
     {
 
         public static AppUtilPINVOKE? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppUtilPINVOKE();
+            var value   = new AppUtilPINVOKE() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Variables                                000185D13CA8 ModelClassListType IReadOnlyList`1<ParameterExpression> IReadOnlyList`1<ParameterExpression> List<ParameterExpression> Pointer
-    public partial class ScopeExpression
+    public partial class ScopeExpression : DataModel
     {
         public List<ParameterExpression>?               Variables                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScopeExpression();
+            var value   = new ScopeExpression() { Pointer= p0 };
 
-            value.Variables                                 = GetObjectList<ParameterExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.ParameterExpression.FromPointer); // 0270D9F38E50 0x10 Variables                   ( 000185D13CA8 ModelClassListType IReadOnlyList`1<ParameterExpression> IReadOnlyList`1<ParameterExpression> List<ParameterExpression> Pointer )
+            value.Variables                                 = GetObjectList<ParameterExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.ParameterExpression.FromPointer); // 024669F95F08 0x10 Variables                   ( 000185D13CA8 ModelClassListType IReadOnlyList`1<ParameterExpression> IReadOnlyList`1<ParameterExpression> List<ParameterExpression> Pointer )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 progress                                 IProgress`1<float> IL2CPP_TYPE_GENERICINST
     // 028 CancellationToken                        00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     // 030 core                                     UniTaskCompletionSourceCore`1<AssetBundle> IL2CPP_TYPE_GENERICINST
-    public partial class AssetBundleCreateRequestConfiguredSource
+    public partial class AssetBundleCreateRequestConfiguredSource : DataModel
     {
         public AssetBundleCreateRequestConfiguredSource? NextNode                                { get; set; }
         public AssetBundleCreateRequest?                AsyncOperation                          { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetBundleCreateRequestConfiguredSource();
+            var value   = new AssetBundleCreateRequestConfiguredSource() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<AssetBundleCreateRequestConfiguredSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundleCreateRequestConfiguredSource.FromPointer); // 0270D8F8C7E0 0x10 NextNode                    ( 00018671C380 ModelClassType AssetBundleCreateRequestConfiguredSource AssetBundleCreateRequestConfiguredSource AssetBundleCreateRequestConfiguredSource Pointer )
-            value.AsyncOperation                            = GetObject<AssetBundleCreateRequest>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundleCreateRequest.FromPointer); // 0270D8F8C800 0x18 AsyncOperation              ( 0001866E39D0 ModelClassType AssetBundleCreateRequest AssetBundleCreateRequest AssetBundleCreateRequest Pointer )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 0270D8F8C840 0x28 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.NextNode                                  = GetObject<AssetBundleCreateRequestConfiguredSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundleCreateRequestConfiguredSource.FromPointer); // 024669001B18 0x10 NextNode                    ( 00018671C380 ModelClassType AssetBundleCreateRequestConfiguredSource AssetBundleCreateRequestConfiguredSource AssetBundleCreateRequestConfiguredSource Pointer )
+            value.AsyncOperation                            = GetObject<AssetBundleCreateRequest>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundleCreateRequest.FromPointer); // 024669001B38 0x18 AsyncOperation              ( 0001866E39D0 ModelClassType AssetBundleCreateRequest AssetBundleCreateRequest AssetBundleCreateRequest Pointer )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 024669001B78 0x28 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

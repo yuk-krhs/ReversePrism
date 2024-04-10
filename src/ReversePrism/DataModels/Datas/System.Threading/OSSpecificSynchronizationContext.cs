@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 m_OSSynchronizationContext               <object> IL2CPP_TYPE_OBJECT
     // 000 s_ContextCache                           ConditionalWeakTable`2<<object>, OSSpecificSynchronizationContext> IL2CPP_TYPE_GENERICINST
-    public partial class OSSpecificSynchronizationContext
+    public partial class OSSpecificSynchronizationContext : DataModel
     {
 
         public static OSSpecificSynchronizationContext? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OSSpecificSynchronizationContext();
+            var value   = new OSSpecificSynchronizationContext() { Pointer= p0 };
 
 
             return value;

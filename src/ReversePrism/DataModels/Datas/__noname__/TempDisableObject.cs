@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Count                                    0001865F4940 ModelPrimitiveType int int int Int32
     // 018 Parent                                   00018672A1B0 ModelClassType EnableCounter EnableCounter EnableCounter Pointer
-    public partial class TempDisableObject
+    public partial class TempDisableObject : DataModel
     {
         public int                                      Count                                   { get; set; }
         public EnableCounter?                           Parent                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TempDisableObject();
+            var value   = new TempDisableObject() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 027003B0E6B0 0x10 Count                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Parent                                    = GetObject<EnableCounter>(new IntPtr(p + 0x018), ReversePrism.DataModels.EnableCounter.FromPointer); // 027003B0E6D0 0x18 Parent                      ( 00018672A1B0 ModelClassType EnableCounter EnableCounter EnableCounter Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 024660B9B568 0x10 Count                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Parent                                    = GetObject<EnableCounter>(new IntPtr(p + 0x018), ReversePrism.DataModels.EnableCounter.FromPointer); // 024660B9B588 0x18 Parent                      ( 00018672A1B0 ModelClassType EnableCounter EnableCounter EnableCounter Pointer )
 
             return value;
         }

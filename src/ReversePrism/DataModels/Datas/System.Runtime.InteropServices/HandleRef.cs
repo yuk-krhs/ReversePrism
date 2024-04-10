@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _wrapper                                 <object> IL2CPP_TYPE_OBJECT
     // 018 _handle                                  <int> IL2CPP_TYPE_I
-    public partial class HandleRef
+    public partial class HandleRef : DataModel
     {
 
         public static HandleRef? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HandleRef();
+            var value   = new HandleRef() { Pointer= p0 };
 
 
             return value;

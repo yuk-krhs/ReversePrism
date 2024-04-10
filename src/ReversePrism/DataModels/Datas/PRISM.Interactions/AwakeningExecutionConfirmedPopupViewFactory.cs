@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AwakeningExecutionConfirmedPopupViewFactory
+    public partial class AwakeningExecutionConfirmedPopupViewFactory : DataModel
     {
 
         public static AwakeningExecutionConfirmedPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AwakeningExecutionConfirmedPopupViewFactory();
+            var value   = new AwakeningExecutionConfirmedPopupViewFactory() { Pointer= p0 };
 
 
             return value;

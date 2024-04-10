@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 IdleSince                                0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 000 nextId                                   int IL2CPP_TYPE_I4
     // 058 ID                                       0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class ServicePointScheduler
+    public partial class ServicePointScheduler : DataModel
     {
         public ServicePoint?                            ServicePoint                            { get; set; }
         public int                                      Running                                 { get; set; }
@@ -39,17 +39,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServicePointScheduler();
+            var value   = new ServicePointScheduler() { Pointer= p0 };
 
-            value.ServicePoint                              = GetObject<ServicePoint>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServicePoint.FromPointer); // 0270D7A91930 0x10 ServicePoint                ( 000186738E90 ModelClassType ServicePoint ServicePoint ServicePoint Pointer )
-            value.Running                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D7A91950 0x18 Running                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxIdleTime                               = GetInt32(new IntPtr(p + 0x01C)); // 0270D7A91970 0x1C MaxIdleTime                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SchedulerEvent                            = GetObject<AsyncManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.AsyncManualResetEvent.FromPointer); // 0270D7A91990 0x20 SchedulerEvent              ( 000186762EA0 ModelClassType AsyncManualResetEvent AsyncManualResetEvent AsyncManualResetEvent Pointer )
-            value.DefaultGroup                              = GetObject<ConnectionGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.ConnectionGroup.FromPointer); // 0270D7A919B0 0x28 DefaultGroup                ( 0001867633A0 ModelClassType ConnectionGroup ConnectionGroup ConnectionGroup Pointer )
-            value.CurrentConnections                        = GetInt32(new IntPtr(p + 0x048)); // 0270D7A91A30 0x48 CurrentConnections          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ConnectionLimit                           = GetInt32(new IntPtr(p + 0x04C)); // 0270D7A91A50 0x4C ConnectionLimit             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdleSince                                 = GetDateTime(new IntPtr(p + 0x050)); // 0270D7A91A70 0x50 IdleSince                   ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.ID                                        = GetInt32(new IntPtr(p + 0x058)); // 0270D7A91AB0 0x58 ID                          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.ServicePoint                              = GetObject<ServicePoint>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServicePoint.FromPointer); // 024667AE9930 0x10 ServicePoint                ( 000186738E90 ModelClassType ServicePoint ServicePoint ServicePoint Pointer )
+            value.Running                                   = GetInt32(new IntPtr(p + 0x018)); // 024667AE9950 0x18 Running                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxIdleTime                               = GetInt32(new IntPtr(p + 0x01C)); // 024667AE9970 0x1C MaxIdleTime                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SchedulerEvent                            = GetObject<AsyncManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.AsyncManualResetEvent.FromPointer); // 024667AE9990 0x20 SchedulerEvent              ( 000186762EA0 ModelClassType AsyncManualResetEvent AsyncManualResetEvent AsyncManualResetEvent Pointer )
+            value.DefaultGroup                              = GetObject<ConnectionGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.ConnectionGroup.FromPointer); // 024667AE99B0 0x28 DefaultGroup                ( 0001867633A0 ModelClassType ConnectionGroup ConnectionGroup ConnectionGroup Pointer )
+            value.CurrentConnections                        = GetInt32(new IntPtr(p + 0x048)); // 024667AE9A30 0x48 CurrentConnections          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ConnectionLimit                           = GetInt32(new IntPtr(p + 0x04C)); // 024667AE9A50 0x4C ConnectionLimit             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdleSince                                 = GetDateTime(new IntPtr(p + 0x050)); // 024667AE9A70 0x50 IdleSince                   ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.ID                                        = GetInt32(new IntPtr(p + 0x058)); // 024667AE9AB0 0x58 ID                          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

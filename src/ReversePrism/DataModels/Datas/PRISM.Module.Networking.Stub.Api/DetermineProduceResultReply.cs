@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 038 IdolBaseRewardList                       000185CDF438 ModelClassListType RepeatedField`1<IdolBaseRewardStatus> RepeatedField`1<IdolBaseRewardStatus> List<IdolBaseRewardStatus> Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
     // 040 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class DetermineProduceResultReply
+    public partial class DetermineProduceResultReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
         public FesUnitStatus?                           FesUnit                                 { get; set; }
@@ -39,14 +39,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DetermineProduceResultReply();
+            var value   = new DetermineProduceResultReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D252D2D0 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 0270D252D310 0x20 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
-            value.TotalParameterValue                       = GetInt32(new IntPtr(p + 0x028)); // 0270D252D350 0x28 TotalParameterValue         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 0270D252D3B0 0x30 FesIdolList                 ( 000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
-            value.IdolBaseRewardList                        = GetObjectList<IdolBaseRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolBaseRewardStatus.FromPointer); // 0270D252D410 0x38 IdolBaseRewardList          ( 000185CDF438 ModelClassListType RepeatedField`1<IdolBaseRewardStatus> RepeatedField`1<IdolBaseRewardStatus> List<IdolBaseRewardStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D252D450 0x40 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 02466250D6B0 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 02466250D6F0 0x20 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
+            value.TotalParameterValue                       = GetInt32(new IntPtr(p + 0x028)); // 02466250D730 0x28 TotalParameterValue         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 02466250D790 0x30 FesIdolList                 ( 000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
+            value.IdolBaseRewardList                        = GetObjectList<IdolBaseRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolBaseRewardStatus.FromPointer); // 02466250D7F0 0x38 IdolBaseRewardList          ( 000185CDF438 ModelClassListType RepeatedField`1<IdolBaseRewardStatus> RepeatedField`1<IdolBaseRewardStatus> List<IdolBaseRewardStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 02466250D830 0x40 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

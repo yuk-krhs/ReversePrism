@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 009 unsafeTypeForwardersIsEnabledInitialized bool IL2CPP_TYPE_BOOLEAN
     // 010 AdvancedTypes                            000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer
     // 018 S_binder                                 00018675D240 ModelClassType Binder Binder Binder Pointer
-    public partial class FormatterServices
+    public partial class FormatterServices : DataModel
     {
         public List<Type>?                              AdvancedTypes                           { get; set; }
         public Binder?                                  S_binder                                { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FormatterServices();
+            var value   = new FormatterServices() { Pointer= p0 };
 
-            value.AdvancedTypes                             = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027004D45260 0x10 AdvancedTypes               ( 000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.S_binder                                  = GetObject<Binder>(new IntPtr(p + 0x018), ReversePrism.DataModels.Binder.FromPointer); // 027004D45280 0x18 S_binder                    ( 00018675D240 ModelClassType Binder Binder Binder Pointer )
+            value.AdvancedTypes                             = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A4D821B8 0x10 AdvancedTypes               ( 000185B83250 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.S_binder                                  = GetObject<Binder>(new IntPtr(p + 0x018), ReversePrism.DataModels.Binder.FromPointer); // 0245A4D821D8 0x18 S_binder                    ( 00018675D240 ModelClassType Binder Binder Binder Pointer )
 
             return value;
         }

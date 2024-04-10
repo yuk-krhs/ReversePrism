@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 LastUpdateDateList                       00018653E690 ModelClassType IGetLastUpdateDateListReply IGetLastUpdateDateListReply IGetLastUpdateDateListReply Pointer
     // 018 CampaignIconList                         00018652DE50 ModelClassType IGetCampaignIconListReply IGetCampaignIconListReply IGetCampaignIconListReply Pointer
-    public partial class BadgeCache
+    public partial class BadgeCache : DataModel
     {
         public IGetLastUpdateDateListReply?             LastUpdateDateList                      { get; set; }
         public IGetCampaignIconListReply?               CampaignIconList                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BadgeCache();
+            var value   = new BadgeCache() { Pointer= p0 };
 
-            value.LastUpdateDateList                        = GetObject<IGetLastUpdateDateListReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGetLastUpdateDateListReply.FromPointer); // 027004A857F8 0x10 LastUpdateDateList          ( 00018653E690 ModelClassType IGetLastUpdateDateListReply IGetLastUpdateDateListReply IGetLastUpdateDateListReply Pointer )
-            value.CampaignIconList                          = GetObject<IGetCampaignIconListReply>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGetCampaignIconListReply.FromPointer); // 027004A85818 0x18 CampaignIconList            ( 00018652DE50 ModelClassType IGetCampaignIconListReply IGetCampaignIconListReply IGetCampaignIconListReply Pointer )
+            value.LastUpdateDateList                        = GetObject<IGetLastUpdateDateListReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGetLastUpdateDateListReply.FromPointer); // 0245A4ADC1D8 0x10 LastUpdateDateList          ( 00018653E690 ModelClassType IGetLastUpdateDateListReply IGetLastUpdateDateListReply IGetLastUpdateDateListReply Pointer )
+            value.CampaignIconList                          = GetObject<IGetCampaignIconListReply>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGetCampaignIconListReply.FromPointer); // 0245A4ADC1F8 0x18 CampaignIconList            ( 00018652DE50 ModelClassType IGetCampaignIconListReply IGetCampaignIconListReply IGetCampaignIconListReply Pointer )
 
             return value;
         }

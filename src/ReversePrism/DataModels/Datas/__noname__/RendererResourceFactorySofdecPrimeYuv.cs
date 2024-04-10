@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RendererResourceFactorySofdecPrimeYuv
+    public partial class RendererResourceFactorySofdecPrimeYuv : DataModel
     {
 
         public static RendererResourceFactorySofdecPrimeYuv? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RendererResourceFactorySofdecPrimeYuv();
+            var value   = new RendererResourceFactorySofdecPrimeYuv() { Pointer= p0 };
 
 
             return value;

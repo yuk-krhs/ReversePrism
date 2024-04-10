@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_UnityThreadId                          int IL2CPP_TYPE_I4
     // 008 <UnityThreadScheduler>k__BackingField    TaskScheduler IL2CPP_TYPE_CLASS
-    public partial class UnityThreadUtils
+    public partial class UnityThreadUtils : DataModel
     {
 
         public static UnityThreadUtils? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityThreadUtils();
+            var value   = new UnityThreadUtils() { Pointer= p0 };
 
 
             return value;

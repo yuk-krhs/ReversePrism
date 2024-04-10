@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OutOfMemoryException
+    public partial class OutOfMemoryException : DataModel
     {
 
         public static OutOfMemoryException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutOfMemoryException();
+            var value   = new OutOfMemoryException() { Pointer= p0 };
 
 
             return value;

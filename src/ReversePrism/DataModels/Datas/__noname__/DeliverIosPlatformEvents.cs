@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeliverIosPlatformEvents
+    public partial class DeliverIosPlatformEvents : DataModel
     {
 
         public static DeliverIosPlatformEvents? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeliverIosPlatformEvents();
+            var value   = new DeliverIosPlatformEvents() { Pointer= p0 };
 
 
             return value;

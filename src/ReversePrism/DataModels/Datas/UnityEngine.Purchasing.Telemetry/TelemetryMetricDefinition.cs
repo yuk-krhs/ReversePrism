@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 MetricType                               00018662BB80 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32
     // 018 MetricName                               000186672F10 ModelPrimitiveType string string string String
-    public partial class TelemetryMetricDefinition
+    public partial class TelemetryMetricDefinition : DataModel
     {
         public TelemetryMetricTypes                     MetricType                              { get; set; }
         public string                                   MetricName                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TelemetryMetricDefinition();
+            var value   = new TelemetryMetricDefinition() { Pointer= p0 };
 
-            value.MetricType                                = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x010)); // 0270066C6168 0x10 MetricType                  ( 00018662BB80 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
-            value.MetricName                                = GetString(new IntPtr(p + 0x018)); // 0270066C6188 0x18 MetricName                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.MetricType                                = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x010)); // 0245A6687AE0 0x10 MetricType                  ( 00018662BB80 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
+            value.MetricName                                = GetString(new IntPtr(p + 0x018)); // 0245A6687B00 0x18 MetricName                  ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

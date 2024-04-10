@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 IsDark                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 048 FadeImage                                0001866CCDB0 ModelClassType Image Image Image Pointer
     // 008 BasicDarkColor                           Color32 IL2CPP_TYPE_VALUETYPE
-    public partial class UIFader
+    public partial class UIFader : DataModel
     {
         public bool                                     IsDark                                  { get; set; }
         public Image?                                   FadeImage                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIFader();
+            var value   = new UIFader() { Pointer= p0 };
 
-            value.IsDark                                    = GetBool(new IntPtr(p + 0x040)); // 0270040000E0 0x40 IsDark                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FadeImage                                 = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 027004000100 0x48 FadeImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.IsDark                                    = GetBool(new IntPtr(p + 0x040)); // 024660C759A0 0x40 IsDark                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FadeImage                                 = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 024660C759C0 0x48 FadeImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
 
             return value;
         }

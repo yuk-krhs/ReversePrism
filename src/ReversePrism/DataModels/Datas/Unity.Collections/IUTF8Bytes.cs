@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUTF8Bytes
+    public partial class IUTF8Bytes : DataModel
     {
 
         public static IUTF8Bytes? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUTF8Bytes();
+            var value   = new IUTF8Bytes() { Pointer= p0 };
 
 
             return value;

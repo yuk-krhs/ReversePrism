@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 Voice                                    000186539B30 ModelClassType VoiceResourceStatus VoiceResourceStatus VoiceResourceStatus Pointer
     // 000 VoiceTypeFieldNumber                     int IL2CPP_TYPE_I4
     // 030 VoiceType                                0001866D4770 ModelEnumType HomeVoiceType HomeVoiceType HomeVoiceType Int32
-    public partial class HomeVoiceMotionStatus
+    public partial class HomeVoiceMotionStatus : DataModel
     {
         public int                                      MstHomeVoiceMotionId                    { get; set; }
         public int                                      MstIdolId                               { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeVoiceMotionStatus();
+            var value   = new HomeVoiceMotionStatus() { Pointer= p0 };
 
-            value.MstHomeVoiceMotionId                      = GetInt32(new IntPtr(p + 0x018)); // 0270D2065188 0x18 MstHomeVoiceMotionId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270D20651C8 0x1C MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Weather                                   = GetInt32(new IntPtr(p + 0x020)); // 0270D2065208 0x20 Weather                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Voice                                     = GetObject<VoiceResourceStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoiceResourceStatus.FromPointer); // 0270D2065248 0x28 Voice                       ( 000186539B30 ModelClassType VoiceResourceStatus VoiceResourceStatus VoiceResourceStatus Pointer )
-            value.VoiceType                                 = (HomeVoiceType)GetInt32(new IntPtr(p + 0x030)); // 0270D2065288 0x30 VoiceType                   ( 0001866D4770 ModelEnumType HomeVoiceType HomeVoiceType HomeVoiceType Int32 )
+            value.MstHomeVoiceMotionId                      = GetInt32(new IntPtr(p + 0x018)); // 02466202C110 0x18 MstHomeVoiceMotionId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 02466202C150 0x1C MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Weather                                   = GetInt32(new IntPtr(p + 0x020)); // 02466202C190 0x20 Weather                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Voice                                     = GetObject<VoiceResourceStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoiceResourceStatus.FromPointer); // 02466202C1D0 0x28 Voice                       ( 000186539B30 ModelClassType VoiceResourceStatus VoiceResourceStatus VoiceResourceStatus Pointer )
+            value.VoiceType                                 = (HomeVoiceType)GetInt32(new IntPtr(p + 0x030)); // 02466202C210 0x30 VoiceType                   ( 0001866D4770 ModelEnumType HomeVoiceType HomeVoiceType HomeVoiceType Int32 )
 
             return value;
         }

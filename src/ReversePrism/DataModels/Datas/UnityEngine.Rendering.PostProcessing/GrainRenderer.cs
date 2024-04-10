@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 M_GrainLookupRT                          000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
     // 000 k_SampleCount                            int IL2CPP_TYPE_I4
     // 028 M_SampleIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GrainRenderer
+    public partial class GrainRenderer : DataModel
     {
         public RenderTexture?                           M_GrainLookupRT                         { get; set; }
         public int                                      M_SampleIndex                           { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GrainRenderer();
+            var value   = new GrainRenderer() { Pointer= p0 };
 
-            value.M_GrainLookupRT                           = GetObject<RenderTexture>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderTexture.FromPointer); // 02700657B2A8 0x20 M_GrainLookupRT             ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
-            value.M_SampleIndex                             = GetInt32(new IntPtr(p + 0x028)); // 02700657B2E8 0x28 M_SampleIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_GrainLookupRT                           = GetObject<RenderTexture>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A6551408 0x20 M_GrainLookupRT             ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.M_SampleIndex                             = GetInt32(new IntPtr(p + 0x028)); // 0245A6551448 0x28 M_SampleIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

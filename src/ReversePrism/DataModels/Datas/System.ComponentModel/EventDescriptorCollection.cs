@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 02A ReadOnly                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 000 Empty                                    EventDescriptorCollection IL2CPP_TYPE_CLASS
     // 02C Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class EventDescriptorCollection
+    public partial class EventDescriptorCollection : DataModel
     {
         public List<EventDescriptor>?                   Events                                  { get; set; }
         public List<string>?                            NamedSort                               { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventDescriptorCollection();
+            var value   = new EventDescriptorCollection() { Pointer= p0 };
 
-            value.Events                                    = GetObjectList<EventDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDescriptor.FromPointer); // 0270D7B1AC20 0x10 Events                      ( 000185B7C500 ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
-            value.NamedSort                                 = GetStringList(new IntPtr(p + 0x018)); // 0270D7B1AC40 0x18 NamedSort                   ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 0270D7B1AC60 0x20 Comparer                    ( 000186735840 ModelClassType IComparer IComparer IComparer Pointer )
-            value.EventsOwned                               = GetBool(new IntPtr(p + 0x028)); // 0270D7B1AC80 0x28 EventsOwned                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NeedSort                                  = GetBool(new IntPtr(p + 0x029)); // 0270D7B1ACA0 0x29 NeedSort                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x02A)); // 0270D7B1ACC0 0x2A ReadOnly                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x02C)); // 0270D7B1AD00 0x2C Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Events                                    = GetObjectList<EventDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDescriptor.FromPointer); // 024667B82C20 0x10 Events                      ( 000185B7C500 ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
+            value.NamedSort                                 = GetStringList(new IntPtr(p + 0x018)); // 024667B82C40 0x18 NamedSort                   ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 024667B82C60 0x20 Comparer                    ( 000186735840 ModelClassType IComparer IComparer IComparer Pointer )
+            value.EventsOwned                               = GetBool(new IntPtr(p + 0x028)); // 024667B82C80 0x28 EventsOwned                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NeedSort                                  = GetBool(new IntPtr(p + 0x029)); // 024667B82CA0 0x29 NeedSort                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x02A)); // 024667B82CC0 0x2A ReadOnly                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x02C)); // 024667B82D00 0x2C Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_reflectionExecutionDomainCallbacks     ReflectionExecutionDomainCallbacks IL2CPP_TYPE_CLASS
-    public partial class RuntimeAugments
+    public partial class RuntimeAugments : DataModel
     {
 
         public static RuntimeAugments? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeAugments();
+            var value   = new RuntimeAugments() { Pointer= p0 };
 
 
             return value;

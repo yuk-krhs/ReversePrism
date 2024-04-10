@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StringReactiveProperty
+    public partial class StringReactiveProperty : DataModel
     {
 
         public static StringReactiveProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringReactiveProperty();
+            var value   = new StringReactiveProperty() { Pointer= p0 };
 
 
             return value;

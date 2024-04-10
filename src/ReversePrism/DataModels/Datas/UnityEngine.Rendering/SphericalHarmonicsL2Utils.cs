@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SphericalHarmonicsL2Utils
+    public partial class SphericalHarmonicsL2Utils : DataModel
     {
 
         public static SphericalHarmonicsL2Utils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SphericalHarmonicsL2Utils();
+            var value   = new SphericalHarmonicsL2Utils() { Pointer= p0 };
 
 
             return value;

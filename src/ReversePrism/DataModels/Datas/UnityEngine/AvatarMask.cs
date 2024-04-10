@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AvatarMask
+    public partial class AvatarMask : DataModel
     {
 
         public static AvatarMask? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AvatarMask();
+            var value   = new AvatarMask() { Pointer= p0 };
 
 
             return value;

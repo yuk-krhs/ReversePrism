@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 GenericSuccess                           long IL2CPP_TYPE_I8
     // 010 Type                                     0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32
     // 014 SizeInBytes                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class InputDeviceCommand
+    public partial class InputDeviceCommand : DataModel
     {
         public FourCC                                   Type                                    { get; set; }
         public int                                      SizeInBytes                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputDeviceCommand();
+            var value   = new InputDeviceCommand() { Pointer= p0 };
 
-            value.Type                                      = (FourCC)GetInt32(new IntPtr(p + 0x010)); // 0270D76FD340 0x10 Type                        ( 0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32 )
-            value.SizeInBytes                               = GetInt32(new IntPtr(p + 0x014)); // 0270D76FD360 0x14 SizeInBytes                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (FourCC)GetInt32(new IntPtr(p + 0x010)); // 024667754B10 0x10 Type                        ( 0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32 )
+            value.SizeInBytes                               = GetInt32(new IntPtr(p + 0x014)); // 024667754B30 0x14 SizeInBytes                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 TraceSource                              00018669A8F0 ModelClassType TraceSource TraceSource TraceSource Pointer
     // 030 EventSourceName                          000186671910 ModelPrimitiveType string string string String
     // 038 LastFailure                              0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class DiagnosticTraceBase
+    public partial class DiagnosticTraceBase : DataModel
     {
         public bool                                     TracingEnabled                          { get; set; }
         public bool                                     CalledShutdown                          { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiagnosticTraceBase();
+            var value   = new DiagnosticTraceBase() { Pointer= p0 };
 
-            value.TracingEnabled                            = GetBool(new IntPtr(p + 0x018)); // 027004CF82D0 0x18 TracingEnabled              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CalledShutdown                            = GetBool(new IntPtr(p + 0x019)); // 027004CF82F0 0x19 CalledShutdown              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HaveListeners                             = GetBool(new IntPtr(p + 0x01A)); // 027004CF8310 0x1A HaveListeners               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Level                                     = (SourceLevels)GetInt32(new IntPtr(p + 0x01C)); // 027004CF8330 0x1C Level                       ( 00018653A940 ModelEnumType SourceLevels SourceLevels SourceLevels Int32 )
-            value.TraceSourceName                           = GetString(new IntPtr(p + 0x020)); // 027004CF8350 0x20 TraceSourceName             ( 000186671E00 ModelPrimitiveType string string string String )
-            value.TraceSource                               = GetObject<TraceSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.TraceSource.FromPointer); // 027004CF8370 0x28 TraceSource                 ( 00018669A8F0 ModelClassType TraceSource TraceSource TraceSource Pointer )
-            value.EventSourceName                           = GetString(new IntPtr(p + 0x030)); // 027004CF8390 0x30 EventSourceName             ( 000186671910 ModelPrimitiveType string string string String )
-            value.LastFailure                               = GetDateTime(new IntPtr(p + 0x038)); // 027004CF83B0 0x38 LastFailure                 ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.TracingEnabled                            = GetBool(new IntPtr(p + 0x018)); // 0245A4D34DB8 0x18 TracingEnabled              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CalledShutdown                            = GetBool(new IntPtr(p + 0x019)); // 0245A4D34DD8 0x19 CalledShutdown              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HaveListeners                             = GetBool(new IntPtr(p + 0x01A)); // 0245A4D34DF8 0x1A HaveListeners               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Level                                     = (SourceLevels)GetInt32(new IntPtr(p + 0x01C)); // 0245A4D34E18 0x1C Level                       ( 00018653A940 ModelEnumType SourceLevels SourceLevels SourceLevels Int32 )
+            value.TraceSourceName                           = GetString(new IntPtr(p + 0x020)); // 0245A4D34E38 0x20 TraceSourceName             ( 000186671E00 ModelPrimitiveType string string string String )
+            value.TraceSource                               = GetObject<TraceSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.TraceSource.FromPointer); // 0245A4D34E58 0x28 TraceSource                 ( 00018669A8F0 ModelClassType TraceSource TraceSource TraceSource Pointer )
+            value.EventSourceName                           = GetString(new IntPtr(p + 0x030)); // 0245A4D34E78 0x30 EventSourceName             ( 000186671910 ModelPrimitiveType string string string String )
+            value.LastFailure                               = GetDateTime(new IntPtr(p + 0x038)); // 0245A4D34E98 0x38 LastFailure                 ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

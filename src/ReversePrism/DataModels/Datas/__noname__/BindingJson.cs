@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 Action                                   0001866722E0 ModelPrimitiveType string string string String
     // 048 IsComposite                              000186595960 ModelPrimitiveType bool bool bool Bool
     // 049 IsPartOfComposite                        000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class BindingJson
+    public partial class BindingJson : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Id                                      { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BindingJson();
+            var value   = new BindingJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D764F610 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0270D764F630 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0270D764F650 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0270D764F670 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0270D764F690 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Groups                                    = GetString(new IntPtr(p + 0x038)); // 0270D764F6B0 0x38 Groups                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Action                                    = GetString(new IntPtr(p + 0x040)); // 0270D764F6D0 0x40 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.IsComposite                               = GetBool(new IntPtr(p + 0x048)); // 0270D764F6F0 0x48 IsComposite                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsPartOfComposite                         = GetBool(new IntPtr(p + 0x049)); // 0270D764F710 0x49 IsPartOfComposite           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246676BF610 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0246676BF630 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0246676BF650 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0246676BF670 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0246676BF690 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Groups                                    = GetString(new IntPtr(p + 0x038)); // 0246676BF6B0 0x38 Groups                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Action                                    = GetString(new IntPtr(p + 0x040)); // 0246676BF6D0 0x40 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.IsComposite                               = GetBool(new IntPtr(p + 0x048)); // 0246676BF6F0 0x48 IsComposite                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsPartOfComposite                         = GetBool(new IntPtr(p + 0x049)); // 0246676BF710 0x49 IsPartOfComposite           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -46,7 +46,7 @@ namespace ReversePrism.DataModels
     // 080 MinPooledTweenerId                       0001865F38E0 ModelPrimitiveType int int int Int32
     // 084 MaxPooledTweenerId                       0001865F38E0 ModelPrimitiveType int int int Int32
     // 088 DespawnAllCalledFromUpdateLoopCallback   000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class TweenManager
+    public partial class TweenManager : DataModel
     {
         public bool                                     HasActiveTweens                         { get; set; }
         public bool                                     HasActiveDefaultTweens                  { get; set; }
@@ -82,35 +82,35 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TweenManager();
+            var value   = new TweenManager() { Pointer= p0 };
 
-            value.HasActiveTweens                           = GetBool(new IntPtr(p + 0x010)); // 027004347920 0x10 HasActiveTweens             ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.HasActiveDefaultTweens                    = GetBool(new IntPtr(p + 0x011)); // 027004347940 0x11 HasActiveDefaultTweens      ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.HasActiveLateTweens                       = GetBool(new IntPtr(p + 0x012)); // 027004347960 0x12 HasActiveLateTweens         ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.HasActiveFixedTweens                      = GetBool(new IntPtr(p + 0x013)); // 027004347980 0x13 HasActiveFixedTweens        ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.HasActiveManualTweens                     = GetBool(new IntPtr(p + 0x014)); // 0270043479A0 0x14 HasActiveManualTweens       ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.TotActiveTweens                           = GetInt32(new IntPtr(p + 0x018)); // 0270043479C0 0x18 TotActiveTweens             ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveDefaultTweens                    = GetInt32(new IntPtr(p + 0x01C)); // 0270043479E0 0x1C TotActiveDefaultTweens      ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveLateTweens                       = GetInt32(new IntPtr(p + 0x020)); // 027004347A00 0x20 TotActiveLateTweens         ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveFixedTweens                      = GetInt32(new IntPtr(p + 0x024)); // 027004347A20 0x24 TotActiveFixedTweens        ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveManualTweens                     = GetInt32(new IntPtr(p + 0x028)); // 027004347A40 0x28 TotActiveManualTweens       ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveTweeners                         = GetInt32(new IntPtr(p + 0x02C)); // 027004347A60 0x2C TotActiveTweeners           ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotActiveSequences                        = GetInt32(new IntPtr(p + 0x030)); // 027004347A80 0x30 TotActiveSequences          ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotPooledTweeners                         = GetInt32(new IntPtr(p + 0x034)); // 027004347AA0 0x34 TotPooledTweeners           ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotPooledSequences                        = GetInt32(new IntPtr(p + 0x038)); // 027004347AC0 0x38 TotPooledSequences          ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotTweeners                               = GetInt32(new IntPtr(p + 0x03C)); // 027004347AE0 0x3C TotTweeners                 ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.TotSequences                              = GetInt32(new IntPtr(p + 0x040)); // 027004347B00 0x40 TotSequences                ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
-            value.IsUpdateLoop                              = GetBool(new IntPtr(p + 0x044)); // 027004347B20 0x44 IsUpdateLoop                ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
-            value.ActiveTweens                              = GetObjectList<Tween>(new IntPtr(p + 0x048), ReversePrism.DataModels.Tween.FromPointer); // 027004347B40 0x48 ActiveTweens                ( 000185CAD5E8 ModelClassListType Tween[] Tween[] List<Tween> Pointer )
-            value.PooledTweeners                            = GetObjectList<Tween>(new IntPtr(p + 0x050), ReversePrism.DataModels.Tween.FromPointer); // 027004347B60 0x50 PooledTweeners              ( 000185CAD4A8 ModelClassListType Tween[] Tween[] List<Tween> Pointer )
-            value.KillList                                  = GetObjectList<Tween>(new IntPtr(p + 0x060), ReversePrism.DataModels.Tween.FromPointer); // 027004347BA0 0x60 KillList                    ( 000185D16758 ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer )
-            value.TotTweenLinks                             = GetInt32(new IntPtr(p + 0x070)); // 027004347BE0 0x70 TotTweenLinks               ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.MaxActiveLookupId                         = GetInt32(new IntPtr(p + 0x074)); // 027004347C00 0x74 MaxActiveLookupId           ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.RequiresActiveReorganization              = GetBool(new IntPtr(p + 0x078)); // 027004347C20 0x78 RequiresActiveReorganization ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.ReorganizeFromId                          = GetInt32(new IntPtr(p + 0x07C)); // 027004347C40 0x7C ReorganizeFromId            ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.MinPooledTweenerId                        = GetInt32(new IntPtr(p + 0x080)); // 027004347C60 0x80 MinPooledTweenerId          ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.MaxPooledTweenerId                        = GetInt32(new IntPtr(p + 0x084)); // 027004347C80 0x84 MaxPooledTweenerId          ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.DespawnAllCalledFromUpdateLoopCallback    = GetBool(new IntPtr(p + 0x088)); // 027004347CA0 0x88 DespawnAllCalledFromUpdateLoopCallback ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.HasActiveTweens                           = GetBool(new IntPtr(p + 0x010)); // 0245A43A7D60 0x10 HasActiveTweens             ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.HasActiveDefaultTweens                    = GetBool(new IntPtr(p + 0x011)); // 0245A43A7D80 0x11 HasActiveDefaultTweens      ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.HasActiveLateTweens                       = GetBool(new IntPtr(p + 0x012)); // 0245A43A7DA0 0x12 HasActiveLateTweens         ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.HasActiveFixedTweens                      = GetBool(new IntPtr(p + 0x013)); // 0245A43A7DC0 0x13 HasActiveFixedTweens        ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.HasActiveManualTweens                     = GetBool(new IntPtr(p + 0x014)); // 0245A43A7DE0 0x14 HasActiveManualTweens       ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.TotActiveTweens                           = GetInt32(new IntPtr(p + 0x018)); // 0245A43A7E00 0x18 TotActiveTweens             ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveDefaultTweens                    = GetInt32(new IntPtr(p + 0x01C)); // 0245A43A7E20 0x1C TotActiveDefaultTweens      ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveLateTweens                       = GetInt32(new IntPtr(p + 0x020)); // 0245A43A7E40 0x20 TotActiveLateTweens         ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveFixedTweens                      = GetInt32(new IntPtr(p + 0x024)); // 0245A43A7E60 0x24 TotActiveFixedTweens        ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveManualTweens                     = GetInt32(new IntPtr(p + 0x028)); // 0245A43A7E80 0x28 TotActiveManualTweens       ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveTweeners                         = GetInt32(new IntPtr(p + 0x02C)); // 0245A43A7EA0 0x2C TotActiveTweeners           ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotActiveSequences                        = GetInt32(new IntPtr(p + 0x030)); // 0245A43A7EC0 0x30 TotActiveSequences          ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotPooledTweeners                         = GetInt32(new IntPtr(p + 0x034)); // 0245A43A7EE0 0x34 TotPooledTweeners           ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotPooledSequences                        = GetInt32(new IntPtr(p + 0x038)); // 0245A43A7F00 0x38 TotPooledSequences          ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotTweeners                               = GetInt32(new IntPtr(p + 0x03C)); // 0245A43A7F20 0x3C TotTweeners                 ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.TotSequences                              = GetInt32(new IntPtr(p + 0x040)); // 0245A43A7F40 0x40 TotSequences                ( 0001865F3B80 ModelPrimitiveType int int int Int32 )
+            value.IsUpdateLoop                              = GetBool(new IntPtr(p + 0x044)); // 0245A43A7F60 0x44 IsUpdateLoop                ( 000186595E60 ModelPrimitiveType bool bool bool Bool )
+            value.ActiveTweens                              = GetObjectList<Tween>(new IntPtr(p + 0x048), ReversePrism.DataModels.Tween.FromPointer); // 0245A43A7F80 0x48 ActiveTweens                ( 000185CAD5E8 ModelClassListType Tween[] Tween[] List<Tween> Pointer )
+            value.PooledTweeners                            = GetObjectList<Tween>(new IntPtr(p + 0x050), ReversePrism.DataModels.Tween.FromPointer); // 0245A43A7FA0 0x50 PooledTweeners              ( 000185CAD4A8 ModelClassListType Tween[] Tween[] List<Tween> Pointer )
+            value.KillList                                  = GetObjectList<Tween>(new IntPtr(p + 0x060), ReversePrism.DataModels.Tween.FromPointer); // 0245A43A7FE0 0x60 KillList                    ( 000185D16758 ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer )
+            value.TotTweenLinks                             = GetInt32(new IntPtr(p + 0x070)); // 0245A43A8020 0x70 TotTweenLinks               ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.MaxActiveLookupId                         = GetInt32(new IntPtr(p + 0x074)); // 0245A43A8040 0x74 MaxActiveLookupId           ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.RequiresActiveReorganization              = GetBool(new IntPtr(p + 0x078)); // 0245A43A8060 0x78 RequiresActiveReorganization ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.ReorganizeFromId                          = GetInt32(new IntPtr(p + 0x07C)); // 0245A43A8080 0x7C ReorganizeFromId            ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.MinPooledTweenerId                        = GetInt32(new IntPtr(p + 0x080)); // 0245A43A80A0 0x80 MinPooledTweenerId          ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.MaxPooledTweenerId                        = GetInt32(new IntPtr(p + 0x084)); // 0245A43A80C0 0x84 MaxPooledTweenerId          ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.DespawnAllCalledFromUpdateLoopCallback    = GetBool(new IntPtr(p + 0x088)); // 0245A43A80E0 0x88 DespawnAllCalledFromUpdateLoopCallback ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

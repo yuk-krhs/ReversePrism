@@ -38,7 +38,7 @@ namespace ReversePrism.DataModels
     // 1A4 ScaleSecond                              0001866656B0 ModelPrimitiveType float float float Single
     // 1A8 EnableScaleAnimation                     000186594D10 ModelPrimitiveType bool bool bool Bool
     // 1AC ScaleEase                                000186716C50 ModelEnumType Ease Ease Ease Int32
-    public partial class ButtonBase
+    public partial class ButtonBase : DataModel
     {
         public bool                                     IsValidOnClick                          { get; set; }
         public bool                                     IsValidLongPress                        { get; set; }
@@ -74,35 +74,35 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonBase();
+            var value   = new ButtonBase() { Pointer= p0 };
 
-            value.IsValidOnClick                            = GetBool(new IntPtr(p + 0x108)); // 0270D0C9BB18 0x108 IsValidOnClick              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsValidLongPress                          = GetBool(new IntPtr(p + 0x109)); // 0270D0C9BB38 0x109 IsValidLongPress            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsValidRepeatPress                        = GetBool(new IntPtr(p + 0x10A)); // 0270D0C9BB58 0x10A IsValidRepeatPress          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PressingTime                              = GetSingle(new IntPtr(p + 0x10C)); // 0270D0C9BB78 0x10C PressingTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ClickDelayTime                            = GetSingle(new IntPtr(p + 0x110)); // 0270D0C9BB98 0x110 ClickDelayTime              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.OnLongPress                               = GetObject<ButtonPressedEvent>(new IntPtr(p + 0x120), ReversePrism.DataModels.ButtonPressedEvent.FromPointer); // 0270D0C9BBF8 0x120 OnLongPress                 ( 000186715660 ModelClassType ButtonPressedEvent ButtonPressedEvent ButtonPressedEvent Pointer )
-            value.OnRepeatPress                             = GetObject<ButtonPressedEvent>(new IntPtr(p + 0x128), ReversePrism.DataModels.ButtonPressedEvent.FromPointer); // 0270D0C9BC18 0x128 OnRepeatPress               ( 000186715660 ModelClassType ButtonPressedEvent ButtonPressedEvent ButtonPressedEvent Pointer )
-            value.ParentBeginDrag                           = GetObject<MonoBehaviour>(new IntPtr(p + 0x130), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 0270D0C9BC38 0x130 ParentBeginDrag             ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
-            value.ParentEndDrag                             = GetObject<MonoBehaviour>(new IntPtr(p + 0x138), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 0270D0C9BC58 0x138 ParentEndDrag               ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
-            value.ParentDrag                                = GetObject<MonoBehaviour>(new IntPtr(p + 0x140), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 0270D0C9BC78 0x140 ParentDrag                  ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
-            value.PassDragEventToParent                     = GetBool(new IntPtr(p + 0x148)); // 0270D0C9BC98 0x148 PassDragEventToParent       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OnClickDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x150), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D0C9BCB8 0x150 OnClickDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.OnLongClickDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x158), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D0C9BCD8 0x158 OnLongClickDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.OnClickFallbackDisposable                 = GetObject<IDisposable>(new IntPtr(p + 0x160), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D0C9BCF8 0x160 OnClickFallbackDisposable   ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.ClickSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x170)); // 0270D0C9BD38 0x170 ClickSE                     ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LongPressSE                               = (SoundKey)GetInt32(new IntPtr(p + 0x180)); // 0270D0C9BD58 0x180 LongPressSE                 ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.IsPlaySound                               = GetBool(new IntPtr(p + 0x190)); // 0270D0C9BD78 0x190 IsPlaySound                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsPlayLongPressSound                      = GetBool(new IntPtr(p + 0x191)); // 0270D0C9BD98 0x191 IsPlayLongPressSound        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDragging                                = GetBool(new IntPtr(p + 0x192)); // 0270D0C9BDB8 0x192 IsDragging                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsLongClicked                             = GetBool(new IntPtr(p + 0x193)); // 0270D0C9BDD8 0x193 IsLongClicked               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LongPressEnabled                          = GetBool(new IntPtr(p + 0x194)); // 0270D0C9BDF8 0x194 LongPressEnabled            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RepeatInterval                            = GetSingle(new IntPtr(p + 0x198)); // 0270D0C9BE18 0x198 RepeatInterval              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ClickedInterval                           = GetSingle(new IntPtr(p + 0x19C)); // 0270D0C9BE38 0x19C ClickedInterval             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.PressScale                                = GetSingle(new IntPtr(p + 0x1A0)); // 0270D0C9BE58 0x1A0 PressScale                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScaleSecond                               = GetSingle(new IntPtr(p + 0x1A4)); // 0270D0C9BE78 0x1A4 ScaleSecond                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.EnableScaleAnimation                      = GetBool(new IntPtr(p + 0x1A8)); // 0270D0C9BE98 0x1A8 EnableScaleAnimation        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ScaleEase                                 = (Ease)GetInt32(new IntPtr(p + 0x1AC)); // 0270D0C9BEB8 0x1AC ScaleEase                   ( 000186716C50 ModelEnumType Ease Ease Ease Int32 )
+            value.IsValidOnClick                            = GetBool(new IntPtr(p + 0x108)); // 024660CCA0E0 0x108 IsValidOnClick              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsValidLongPress                          = GetBool(new IntPtr(p + 0x109)); // 024660CCA100 0x109 IsValidLongPress            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsValidRepeatPress                        = GetBool(new IntPtr(p + 0x10A)); // 024660CCA120 0x10A IsValidRepeatPress          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PressingTime                              = GetSingle(new IntPtr(p + 0x10C)); // 024660CCA140 0x10C PressingTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ClickDelayTime                            = GetSingle(new IntPtr(p + 0x110)); // 024660CCA160 0x110 ClickDelayTime              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.OnLongPress                               = GetObject<ButtonPressedEvent>(new IntPtr(p + 0x120), ReversePrism.DataModels.ButtonPressedEvent.FromPointer); // 024660CCA1C0 0x120 OnLongPress                 ( 000186715660 ModelClassType ButtonPressedEvent ButtonPressedEvent ButtonPressedEvent Pointer )
+            value.OnRepeatPress                             = GetObject<ButtonPressedEvent>(new IntPtr(p + 0x128), ReversePrism.DataModels.ButtonPressedEvent.FromPointer); // 024660CCA1E0 0x128 OnRepeatPress               ( 000186715660 ModelClassType ButtonPressedEvent ButtonPressedEvent ButtonPressedEvent Pointer )
+            value.ParentBeginDrag                           = GetObject<MonoBehaviour>(new IntPtr(p + 0x130), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 024660CCA200 0x130 ParentBeginDrag             ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
+            value.ParentEndDrag                             = GetObject<MonoBehaviour>(new IntPtr(p + 0x138), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 024660CCA220 0x138 ParentEndDrag               ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
+            value.ParentDrag                                = GetObject<MonoBehaviour>(new IntPtr(p + 0x140), ReversePrism.DataModels.MonoBehaviour.FromPointer); // 024660CCA240 0x140 ParentDrag                  ( 00018663D7E0 ModelClassType MonoBehaviour MonoBehaviour MonoBehaviour Pointer )
+            value.PassDragEventToParent                     = GetBool(new IntPtr(p + 0x148)); // 024660CCA260 0x148 PassDragEventToParent       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OnClickDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x150), ReversePrism.DataModels.IDisposable.FromPointer); // 024660CCA280 0x150 OnClickDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.OnLongClickDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x158), ReversePrism.DataModels.IDisposable.FromPointer); // 024660CCA2A0 0x158 OnLongClickDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.OnClickFallbackDisposable                 = GetObject<IDisposable>(new IntPtr(p + 0x160), ReversePrism.DataModels.IDisposable.FromPointer); // 024660CCA2C0 0x160 OnClickFallbackDisposable   ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.ClickSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x170)); // 024660CCA300 0x170 ClickSE                     ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LongPressSE                               = (SoundKey)GetInt32(new IntPtr(p + 0x180)); // 024660CCA320 0x180 LongPressSE                 ( 000186536200 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.IsPlaySound                               = GetBool(new IntPtr(p + 0x190)); // 024660CCA340 0x190 IsPlaySound                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsPlayLongPressSound                      = GetBool(new IntPtr(p + 0x191)); // 024660CCA360 0x191 IsPlayLongPressSound        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDragging                                = GetBool(new IntPtr(p + 0x192)); // 024660CCA380 0x192 IsDragging                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsLongClicked                             = GetBool(new IntPtr(p + 0x193)); // 024660CCA3A0 0x193 IsLongClicked               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LongPressEnabled                          = GetBool(new IntPtr(p + 0x194)); // 024660CCA3C0 0x194 LongPressEnabled            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RepeatInterval                            = GetSingle(new IntPtr(p + 0x198)); // 024660CCA3E0 0x198 RepeatInterval              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ClickedInterval                           = GetSingle(new IntPtr(p + 0x19C)); // 024660CCA400 0x19C ClickedInterval             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.PressScale                                = GetSingle(new IntPtr(p + 0x1A0)); // 024660CCA420 0x1A0 PressScale                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScaleSecond                               = GetSingle(new IntPtr(p + 0x1A4)); // 024660CCA440 0x1A4 ScaleSecond                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.EnableScaleAnimation                      = GetBool(new IntPtr(p + 0x1A8)); // 024660CCA460 0x1A8 EnableScaleAnimation        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ScaleEase                                 = (Ease)GetInt32(new IntPtr(p + 0x1AC)); // 024660CCA480 0x1AC ScaleEase                   ( 000186716C50 ModelEnumType Ease Ease Ease Int32 )
 
             return value;
         }

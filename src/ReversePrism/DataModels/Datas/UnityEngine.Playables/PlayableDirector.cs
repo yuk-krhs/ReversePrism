@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 played                                   Action`1<PlayableDirector> IL2CPP_TYPE_GENERICINST
     // 020 paused                                   Action`1<PlayableDirector> IL2CPP_TYPE_GENERICINST
     // 028 stopped                                  Action`1<PlayableDirector> IL2CPP_TYPE_GENERICINST
-    public partial class PlayableDirector
+    public partial class PlayableDirector : DataModel
     {
 
         public static PlayableDirector? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayableDirector();
+            var value   = new PlayableDirector() { Pointer= p0 };
 
 
             return value;

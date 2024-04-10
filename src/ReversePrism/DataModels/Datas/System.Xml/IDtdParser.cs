@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDtdParser
+    public partial class IDtdParser : DataModel
     {
 
         public static IDtdParser? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDtdParser();
+            var value   = new IDtdParser() { Pointer= p0 };
 
 
             return value;

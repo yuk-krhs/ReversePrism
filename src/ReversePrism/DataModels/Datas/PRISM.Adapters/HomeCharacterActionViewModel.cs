@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 CueName                                  000186671910 ModelPrimitiveType string string string String
     // 028 CueSheetName                             000186671910 ModelPrimitiveType string string string String
     // 030 IsLeaveAction                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class HomeCharacterActionViewModel
+    public partial class HomeCharacterActionViewModel : DataModel
     {
         public int                                      MstId                                   { get; set; }
         public string                                   MessageText                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeCharacterActionViewModel();
+            var value   = new HomeCharacterActionViewModel() { Pointer= p0 };
 
-            value.MstId                                     = GetInt32(new IntPtr(p + 0x010)); // 0270D3131388 0x10 MstId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MessageText                               = GetString(new IntPtr(p + 0x018)); // 0270D31313A8 0x18 MessageText                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x020)); // 0270D31313C8 0x20 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x028)); // 0270D31313E8 0x28 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsLeaveAction                             = GetBool(new IntPtr(p + 0x030)); // 0270D3131408 0x30 IsLeaveAction               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstId                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A5D3FFA8 0x10 MstId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MessageText                               = GetString(new IntPtr(p + 0x018)); // 0245A5D3FFC8 0x18 MessageText                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x020)); // 0245A5D3FFE8 0x20 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x028)); // 0245A5D40008 0x28 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsLeaveAction                             = GetBool(new IntPtr(p + 0x030)); // 0245A5D40028 0x30 IsLeaveAction               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

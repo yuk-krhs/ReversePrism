@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CheckNGWordArgsTranslator
+    public partial class CheckNGWordArgsTranslator : DataModel
     {
 
         public static CheckNGWordArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CheckNGWordArgsTranslator();
+            var value   = new CheckNGWordArgsTranslator() { Pointer= p0 };
 
 
             return value;

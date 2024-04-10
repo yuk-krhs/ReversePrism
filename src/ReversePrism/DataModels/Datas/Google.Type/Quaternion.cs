@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 Z                                        0001865C2950 ModelPrimitiveType double double double Double
     // 000 WFieldNumber                             int IL2CPP_TYPE_I4
     // 030 W                                        0001865C2950 ModelPrimitiveType double double double Double
-    public partial class Quaternion
+    public partial class Quaternion : DataModel
     {
         public double                                   X                                       { get; set; }
         public double                                   Y                                       { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Quaternion();
+            var value   = new Quaternion() { Pointer= p0 };
 
-            value.X                                         = GetDouble(new IntPtr(p + 0x018)); // 0270DA6AFE78 0x18 X                           ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Y                                         = GetDouble(new IntPtr(p + 0x020)); // 0270DA6AFEB8 0x20 Y                           ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Z                                         = GetDouble(new IntPtr(p + 0x028)); // 0270DA6AFEF8 0x28 Z                           ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.W                                         = GetDouble(new IntPtr(p + 0x030)); // 0270DA6AFF38 0x30 W                           ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.X                                         = GetDouble(new IntPtr(p + 0x018)); // 02466A7135D0 0x18 X                           ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Y                                         = GetDouble(new IntPtr(p + 0x020)); // 02466A713610 0x20 Y                           ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Z                                         = GetDouble(new IntPtr(p + 0x028)); // 02466A713650 0x28 Z                           ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.W                                         = GetDouble(new IntPtr(p + 0x030)); // 02466A713690 0x30 W                           ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

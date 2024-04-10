@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Entries                                  000185CB9618 ModelClassListType Entry[] Entry[] List<Entry> Pointer
     // 020 Mask                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DefaultJsonNameTable
+    public partial class DefaultJsonNameTable : DataModel
     {
         public int                                      Count                                   { get; set; }
         public List<Entry>?                             Entries                                 { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultJsonNameTable();
+            var value   = new DefaultJsonNameTable() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 027003B8BAD0 0x10 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x018), ReversePrism.DataModels.Entry.FromPointer); // 027003B8BAF0 0x18 Entries                     ( 000185CB9618 ModelClassListType Entry[] Entry[] List<Entry> Pointer )
-            value.Mask                                      = GetInt32(new IntPtr(p + 0x020)); // 027003B8BB10 0x20 Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A3B8BAD0 0x10 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x018), ReversePrism.DataModels.Entry.FromPointer); // 0245A3B8BAF0 0x18 Entries                     ( 000185CB9618 ModelClassListType Entry[] Entry[] List<Entry> Pointer )
+            value.Mask                                      = GetInt32(new IntPtr(p + 0x020)); // 0245A3B8BB10 0x20 Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

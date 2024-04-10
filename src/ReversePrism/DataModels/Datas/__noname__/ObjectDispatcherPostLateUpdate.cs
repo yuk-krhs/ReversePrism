@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ObjectDispatcherPostLateUpdate
+    public partial class ObjectDispatcherPostLateUpdate : DataModel
     {
 
         public static ObjectDispatcherPostLateUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectDispatcherPostLateUpdate();
+            var value   = new ObjectDispatcherPostLateUpdate() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BoringX509ChainHandle
+    public partial class BoringX509ChainHandle : DataModel
     {
 
         public static BoringX509ChainHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoringX509ChainHandle();
+            var value   = new BoringX509ChainHandle() { Pointer= p0 };
 
 
             return value;

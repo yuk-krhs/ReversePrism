@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Value                                    LinkedSlot<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class LinkedSlotVolatile
+    public partial class LinkedSlotVolatile : DataModel
     {
 
         public static LinkedSlotVolatile? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LinkedSlotVolatile();
+            var value   = new LinkedSlotVolatile() { Pointer= p0 };
 
 
             return value;

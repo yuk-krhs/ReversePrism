@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TutorialCategory                         0001865F4260 ModelPrimitiveType int int int Int32
     // 014 Phase                                    0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstTutorial
+    public partial class MstTutorial : DataModel
     {
         public int                                      TutorialCategory                        { get; set; }
         public int                                      Phase                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstTutorial();
+            var value   = new MstTutorial() { Pointer= p0 };
 
-            value.TutorialCategory                          = GetInt32(new IntPtr(p + 0x010)); // 0270045A1E38 0x10 TutorialCategory            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Phase                                     = GetInt32(new IntPtr(p + 0x014)); // 0270045A1E58 0x14 Phase                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.TutorialCategory                          = GetInt32(new IntPtr(p + 0x010)); // 0245A461E1A8 0x10 TutorialCategory            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Phase                                     = GetInt32(new IntPtr(p + 0x014)); // 0245A461E1C8 0x14 Phase                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

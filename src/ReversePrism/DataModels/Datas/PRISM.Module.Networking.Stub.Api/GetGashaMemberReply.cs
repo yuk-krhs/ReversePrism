@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 ProduceIdolListFieldNumber               int IL2CPP_TYPE_I4
     // 010 _repeated_produceIdolList_codec          FieldCodec`1<MaximumProduceIdolStatus> IL2CPP_TYPE_GENERICINST
     // 020 ProduceIdolList                          000185CE5508 ModelClassListType RepeatedField`1<MaximumProduceIdolStatus> RepeatedField`1<MaximumProduceIdolStatus> List<MaximumProduceIdolStatus> Pointer
-    public partial class GetGashaMemberReply
+    public partial class GetGashaMemberReply : DataModel
     {
         public List<MaximumSupportCharacterStatus>?     SupportCharacterList                    { get; set; }
         public List<MaximumProduceIdolStatus>?          ProduceIdolList                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGashaMemberReply();
+            var value   = new GetGashaMemberReply() { Pointer= p0 };
 
-            value.SupportCharacterList                      = GetObjectList<MaximumSupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MaximumSupportCharacterStatus.FromPointer); // 0270D1A15E60 0x18 SupportCharacterList        ( 000185CE5748 ModelClassListType RepeatedField`1<MaximumSupportCharacterStatus> RepeatedField`1<MaximumSupportCharacterStatus> List<MaximumSupportCharacterStatus> Pointer )
-            value.ProduceIdolList                           = GetObjectList<MaximumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MaximumProduceIdolStatus.FromPointer); // 0270D1A15EC0 0x20 ProduceIdolList             ( 000185CE5508 ModelClassListType RepeatedField`1<MaximumProduceIdolStatus> RepeatedField`1<MaximumProduceIdolStatus> List<MaximumProduceIdolStatus> Pointer )
+            value.SupportCharacterList                      = GetObjectList<MaximumSupportCharacterStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MaximumSupportCharacterStatus.FromPointer); // 0246619A09A0 0x18 SupportCharacterList        ( 000185CE5748 ModelClassListType RepeatedField`1<MaximumSupportCharacterStatus> RepeatedField`1<MaximumSupportCharacterStatus> List<MaximumSupportCharacterStatus> Pointer )
+            value.ProduceIdolList                           = GetObjectList<MaximumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MaximumProduceIdolStatus.FromPointer); // 0246619A0A00 0x20 ProduceIdolList             ( 000185CE5508 ModelClassListType RepeatedField`1<MaximumProduceIdolStatus> RepeatedField`1<MaximumProduceIdolStatus> List<MaximumProduceIdolStatus> Pointer )
 
             return value;
         }

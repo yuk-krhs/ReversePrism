@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SwigCPtr                                 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32
     // 020 SwigCMemOwn                              000186595480 ModelPrimitiveType bool bool bool Bool
-    public partial class FirebaseCrashlyticsInternal
+    public partial class FirebaseCrashlyticsInternal : DataModel
     {
         public HandleRef                                SwigCPtr                                { get; set; }
         public bool                                     SwigCMemOwn                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseCrashlyticsInternal();
+            var value   = new FirebaseCrashlyticsInternal() { Pointer= p0 };
 
-            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 0270DBC63A60 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
-            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 0270DBC63A80 0x20 SwigCMemOwn                 ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 02466BCE3330 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
+            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 02466BCE3350 0x20 SwigCMemOwn                 ( 000186595480 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

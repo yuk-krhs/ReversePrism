@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 workspace                                <int> IL2CPP_TYPE_I
     // 038 inputStreamAccessor                      <int> IL2CPP_TYPE_I
     // 040 animationHandleBinder                    <int> IL2CPP_TYPE_I
-    public partial class AnimationStream
+    public partial class AnimationStream : DataModel
     {
         public uint                                     M_AnimatorBindingsVersion               { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimationStream();
+            var value   = new AnimationStream() { Pointer= p0 };
 
-            value.M_AnimatorBindingsVersion                 = GetUInt32(new IntPtr(p + 0x010)); // 027002247678 0x10 M_AnimatorBindingsVersion   ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_AnimatorBindingsVersion                 = GetUInt32(new IntPtr(p + 0x010)); // 0245A2247678 0x10 M_AnimatorBindingsVersion   ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

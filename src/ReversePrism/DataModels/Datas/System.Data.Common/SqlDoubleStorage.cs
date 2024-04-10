@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185CA5A38 ModelEnumListType SqlDouble[] SqlDouble[] List<SqlDouble> Pointer
-    public partial class SqlDoubleStorage
+    public partial class SqlDoubleStorage : DataModel
     {
         public List<SqlDouble>?                         Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlDoubleStorage();
+            var value   = new SqlDoubleStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlDouble>(new IntPtr(p + 0x050)); // 0270D89EBB50 0x50 Values                      ( 000185CA5A38 ModelEnumListType SqlDouble[] SqlDouble[] List<SqlDouble> Pointer )
+            value.Values                                    = GetEnumList<SqlDouble>(new IntPtr(p + 0x050)); // 024668A46758 0x50 Values                      ( 000185CA5A38 ModelEnumListType SqlDouble[] SqlDouble[] List<SqlDouble> Pointer )
 
             return value;
         }

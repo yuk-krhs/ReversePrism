@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPrismStreamingCallbacks
+    public partial class IPrismStreamingCallbacks : DataModel
     {
 
         public static IPrismStreamingCallbacks? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPrismStreamingCallbacks();
+            var value   = new IPrismStreamingCallbacks() { Pointer= p0 };
 
 
             return value;

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 Environment                              000186671910 ModelPrimitiveType string string string String
     // 000 TokenFieldNumber                         int IL2CPP_TYPE_I4
     // 030 Token                                    000186671910 ModelPrimitiveType string string string String
-    public partial class GetAssetVersionArgs
+    public partial class GetAssetVersionArgs : DataModel
     {
         public string                                   OsName                                  { get; set; }
         public string                                   UnityVersion                            { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAssetVersionArgs();
+            var value   = new GetAssetVersionArgs() { Pointer= p0 };
 
-            value.OsName                                    = GetString(new IntPtr(p + 0x018)); // 027003B0CA10 0x18 OsName                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnityVersion                              = GetString(new IntPtr(p + 0x020)); // 027003B0CA50 0x20 UnityVersion                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Environment                               = GetString(new IntPtr(p + 0x028)); // 027003B0CA90 0x28 Environment                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Token                                     = GetString(new IntPtr(p + 0x030)); // 027003B0CAD0 0x30 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.OsName                                    = GetString(new IntPtr(p + 0x018)); // 024660B0EB18 0x18 OsName                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnityVersion                              = GetString(new IntPtr(p + 0x020)); // 024660B0EB58 0x20 UnityVersion                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Environment                               = GetString(new IntPtr(p + 0x028)); // 024660B0EB98 0x28 Environment                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Token                                     = GetString(new IntPtr(p + 0x030)); // 024660B0EBD8 0x30 Token                       ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

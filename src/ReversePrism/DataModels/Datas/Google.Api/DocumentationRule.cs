@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Description                              000186671910 ModelPrimitiveType string string string String
     // 000 DeprecationDescriptionFieldNumber        int IL2CPP_TYPE_I4
     // 028 DeprecationDescription                   000186671910 ModelPrimitiveType string string string String
-    public partial class DocumentationRule
+    public partial class DocumentationRule : DataModel
     {
         public string                                   Selector                                { get; set; }
         public string                                   Description                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DocumentationRule();
+            var value   = new DocumentationRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0270DA7C10A8 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0270DA7C10E8 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeprecationDescription                    = GetString(new IntPtr(p + 0x028)); // 0270DA7C1128 0x28 DeprecationDescription      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A825F98 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 02466A825FD8 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DeprecationDescription                    = GetString(new IntPtr(p + 0x028)); // 02466A826018 0x28 DeprecationDescription      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

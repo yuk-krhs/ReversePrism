@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UploadValuesCompletedEventHandler
+    public partial class UploadValuesCompletedEventHandler : DataModel
     {
 
         public static UploadValuesCompletedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UploadValuesCompletedEventHandler();
+            var value   = new UploadValuesCompletedEventHandler() { Pointer= p0 };
 
 
             return value;

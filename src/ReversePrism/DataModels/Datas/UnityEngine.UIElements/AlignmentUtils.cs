@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AlignmentUtils
+    public partial class AlignmentUtils : DataModel
     {
 
         public static AlignmentUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AlignmentUtils();
+            var value   = new AlignmentUtils() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Vector3ArrayPlugin
+    public partial class Vector3ArrayPlugin : DataModel
     {
 
         public static Vector3ArrayPlugin? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Vector3ArrayPlugin();
+            var value   = new Vector3ArrayPlugin() { Pointer= p0 };
 
 
             return value;

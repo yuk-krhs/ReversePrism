@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 040 Context                                  0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
     // 048 _lock                                    <object> IL2CPP_TYPE_OBJECT
     // 050 Flags                                    00018651EF10 ModelEnumType StateFlags StateFlags StateFlags Int32
-    public partial class ContextAwareResult
+    public partial class ContextAwareResult : DataModel
     {
         public ExecutionContext?                        Context                                 { get; set; }
         public StateFlags                               Flags                                   { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContextAwareResult();
+            var value   = new ContextAwareResult() { Pointer= p0 };
 
-            value.Context                                   = GetObject<ExecutionContext>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0270D79EFEF0 0x40 Context                     ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.Flags                                     = (StateFlags)GetInt32(new IntPtr(p + 0x050)); // 0270D79EFF30 0x50 Flags                       ( 00018651EF10 ModelEnumType StateFlags StateFlags StateFlags Int32 )
+            value.Context                                   = GetObject<ExecutionContext>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExecutionContext.FromPointer); // 024667A47EF0 0x40 Context                     ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.Flags                                     = (StateFlags)GetInt32(new IntPtr(p + 0x050)); // 024667A47F30 0x50 Flags                       ( 00018651EF10 ModelEnumType StateFlags StateFlags StateFlags Int32 )
 
             return value;
         }

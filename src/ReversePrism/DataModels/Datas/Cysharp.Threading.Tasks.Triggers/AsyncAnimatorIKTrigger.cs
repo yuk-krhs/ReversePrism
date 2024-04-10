@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncAnimatorIKTrigger
+    public partial class AsyncAnimatorIKTrigger : DataModel
     {
 
         public static AsyncAnimatorIKTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncAnimatorIKTrigger();
+            var value   = new AsyncAnimatorIKTrigger() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RSAPKCS1SignatureFormatter
+    public partial class RSAPKCS1SignatureFormatter : DataModel
     {
 
         public static RSAPKCS1SignatureFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RSAPKCS1SignatureFormatter();
+            var value   = new RSAPKCS1SignatureFormatter() { Pointer= p0 };
 
 
             return value;

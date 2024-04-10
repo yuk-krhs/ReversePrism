@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 058 DueTimePhase                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 059 Completed                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 05A Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class _TimerFrame
+    public partial class _TimerFrame : DataModel
     {
         public int                                      DueTimeFrameCount                       { get; set; }
         public CancellationToken                        CancellationToken                       { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TimerFrame();
+            var value   = new _TimerFrame() { Pointer= p0 };
 
-            value.DueTimeFrameCount                         = GetInt32(new IntPtr(p + 0x038)); // 0270D865B158 0x38 DueTimeFrameCount           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x048)); // 0270D865B198 0x48 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x050)); // 0270D865B1B8 0x50 InitialFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentFrame                              = GetInt32(new IntPtr(p + 0x054)); // 0270D865B1D8 0x54 CurrentFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DueTimePhase                              = GetBool(new IntPtr(p + 0x058)); // 0270D865B1F8 0x58 DueTimePhase                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Completed                                 = GetBool(new IntPtr(p + 0x059)); // 0270D865B218 0x59 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x05A)); // 0270D865B238 0x5A Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DueTimeFrameCount                         = GetInt32(new IntPtr(p + 0x038)); // 0246686B3158 0x38 DueTimeFrameCount           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x048)); // 0246686B3198 0x48 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x050)); // 0246686B31B8 0x50 InitialFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentFrame                              = GetInt32(new IntPtr(p + 0x054)); // 0246686B31D8 0x54 CurrentFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DueTimePhase                              = GetBool(new IntPtr(p + 0x058)); // 0246686B31F8 0x58 DueTimePhase                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Completed                                 = GetBool(new IntPtr(p + 0x059)); // 0246686B3218 0x59 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x05A)); // 0246686B3238 0x5A Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

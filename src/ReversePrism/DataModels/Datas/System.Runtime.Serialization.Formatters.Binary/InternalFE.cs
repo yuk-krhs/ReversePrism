@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 FEassemblyFormat                         0001865B7E20 ModelEnumType FormatterAssemblyStyle FormatterAssemblyStyle FormatterAssemblyStyle Int32
     // 018 FEsecurityLevel                          0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32
     // 01C FEserializerTypeEnum                     00018671EC10 ModelEnumType InternalSerializerTypeE InternalSerializerTypeE InternalSerializerTypeE Int32
-    public partial class InternalFE
+    public partial class InternalFE : DataModel
     {
         public FormatterTypeStyle                       FEtypeFormat                            { get; set; }
         public FormatterAssemblyStyle                   FEassemblyFormat                        { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalFE();
+            var value   = new InternalFE() { Pointer= p0 };
 
-            value.FEtypeFormat                              = (FormatterTypeStyle)GetInt32(new IntPtr(p + 0x010)); // 0270D6C54A80 0x10 FEtypeFormat                ( 0001865B8CB0 ModelEnumType FormatterTypeStyle FormatterTypeStyle FormatterTypeStyle Int32 )
-            value.FEassemblyFormat                          = (FormatterAssemblyStyle)GetInt32(new IntPtr(p + 0x014)); // 0270D6C54AA0 0x14 FEassemblyFormat            ( 0001865B7E20 ModelEnumType FormatterAssemblyStyle FormatterAssemblyStyle FormatterAssemblyStyle Int32 )
-            value.FEsecurityLevel                           = (TypeFilterLevel)GetInt32(new IntPtr(p + 0x018)); // 0270D6C54AC0 0x18 FEsecurityLevel             ( 0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32 )
-            value.FEserializerTypeEnum                      = (InternalSerializerTypeE)GetInt32(new IntPtr(p + 0x01C)); // 0270D6C54AE0 0x1C FEserializerTypeEnum        ( 00018671EC10 ModelEnumType InternalSerializerTypeE InternalSerializerTypeE InternalSerializerTypeE Int32 )
+            value.FEtypeFormat                              = (FormatterTypeStyle)GetInt32(new IntPtr(p + 0x010)); // 024666CC4A80 0x10 FEtypeFormat                ( 0001865B8CB0 ModelEnumType FormatterTypeStyle FormatterTypeStyle FormatterTypeStyle Int32 )
+            value.FEassemblyFormat                          = (FormatterAssemblyStyle)GetInt32(new IntPtr(p + 0x014)); // 024666CC4AA0 0x14 FEassemblyFormat            ( 0001865B7E20 ModelEnumType FormatterAssemblyStyle FormatterAssemblyStyle FormatterAssemblyStyle Int32 )
+            value.FEsecurityLevel                           = (TypeFilterLevel)GetInt32(new IntPtr(p + 0x018)); // 024666CC4AC0 0x18 FEsecurityLevel             ( 0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32 )
+            value.FEserializerTypeEnum                      = (InternalSerializerTypeE)GetInt32(new IntPtr(p + 0x01C)); // 024666CC4AE0 0x1C FEserializerTypeEnum        ( 00018671EC10 ModelEnumType InternalSerializerTypeE InternalSerializerTypeE InternalSerializerTypeE Int32 )
 
             return value;
         }

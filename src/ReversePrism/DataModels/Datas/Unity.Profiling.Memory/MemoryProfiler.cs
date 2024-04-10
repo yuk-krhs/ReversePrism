@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 m_SnapshotFinished                       Action`2<string, bool> IL2CPP_TYPE_GENERICINST
     // 008 m_SaveScreenshotToDisk                   Action`3<string, bool, DebugScreenCapture> IL2CPP_TYPE_GENERICINST
     // 010 CreatingMetadata                         Action`1<MemorySnapshotMetadata> IL2CPP_TYPE_GENERICINST
-    public partial class MemoryProfiler
+    public partial class MemoryProfiler : DataModel
     {
 
         public static MemoryProfiler? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryProfiler();
+            var value   = new MemoryProfiler() { Pointer= p0 };
 
 
             return value;

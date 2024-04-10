@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LowerResBlitTexture
+    public partial class LowerResBlitTexture : DataModel
     {
 
         public static LowerResBlitTexture? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LowerResBlitTexture();
+            var value   = new LowerResBlitTexture() { Pointer= p0 };
 
 
             return value;

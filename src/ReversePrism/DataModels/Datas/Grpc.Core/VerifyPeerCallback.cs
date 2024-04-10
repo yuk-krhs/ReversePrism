@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VerifyPeerCallback
+    public partial class VerifyPeerCallback : DataModel
     {
 
         public static VerifyPeerCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyPeerCallback();
+            var value   = new VerifyPeerCallback() { Pointer= p0 };
 
 
             return value;

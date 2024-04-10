@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Repeat
+    public partial class Repeat : DataModel
     {
 
         public static Repeat? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Repeat();
+            var value   = new Repeat() { Pointer= p0 };
 
 
             return value;

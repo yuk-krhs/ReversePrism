@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 020 M_ObfuscatedProfileId                    000186671910 ModelPrimitiveType string string string String
     // 028 M_Util                                   0001866905E0 ModelClassType IUtil IUtil IUtil Pointer
     // 030 M_TelemetryDiagnostics                   00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
-    public partial class GoogleBillingClient
+    public partial class GoogleBillingClient : DataModel
     {
         public AndroidJavaObject?                       M_BillingClient                         { get; set; }
         public string                                   M_ObfuscatedAccountId                   { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GoogleBillingClient();
+            var value   = new GoogleBillingClient() { Pointer= p0 };
 
-            value.M_BillingClient                           = GetObject<AndroidJavaObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaObject.FromPointer); // 027006924928 0x10 M_BillingClient             ( 0001866AD7E0 ModelClassType AndroidJavaObject AndroidJavaObject AndroidJavaObject Pointer )
-            value.M_ObfuscatedAccountId                     = GetString(new IntPtr(p + 0x018)); // 027006924948 0x18 M_ObfuscatedAccountId       ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_ObfuscatedProfileId                     = GetString(new IntPtr(p + 0x020)); // 027006924968 0x20 M_ObfuscatedProfileId       ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x028), ReversePrism.DataModels.IUtil.FromPointer); // 027006924988 0x28 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
-            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x030), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0270069249A8 0x30 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
+            value.M_BillingClient                           = GetObject<AndroidJavaObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaObject.FromPointer); // 0245A68E7800 0x10 M_BillingClient             ( 0001866AD7E0 ModelClassType AndroidJavaObject AndroidJavaObject AndroidJavaObject Pointer )
+            value.M_ObfuscatedAccountId                     = GetString(new IntPtr(p + 0x018)); // 0245A68E7820 0x18 M_ObfuscatedAccountId       ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_ObfuscatedProfileId                     = GetString(new IntPtr(p + 0x020)); // 0245A68E7840 0x20 M_ObfuscatedProfileId       ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x028), ReversePrism.DataModels.IUtil.FromPointer); // 0245A68E7860 0x28 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
+            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x030), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0245A68E7880 0x30 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
 
             return value;
         }

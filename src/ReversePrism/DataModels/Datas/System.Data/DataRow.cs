@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 058 RbTreeNodeId                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 s_objectTypeCount                        int IL2CPP_TYPE_I4
     // 05C ObjectID                                 0001865F44E0 ModelPrimitiveType int int int Int32
-    public partial class DataRow
+    public partial class DataRow : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
         public DataColumnCollection?                    Columns                                 { get; set; }
@@ -48,23 +48,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataRow();
+            var value   = new DataRow() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0270D88A2B68 0x10 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
-            value.Columns                                   = GetObject<DataColumnCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataColumnCollection.FromPointer); // 0270D88A2B88 0x18 Columns                     ( 000186677020 ModelClassType DataColumnCollection DataColumnCollection DataColumnCollection Pointer )
-            value.OldRecord                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D88A2BA8 0x20 OldRecord                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.NewRecord                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D88A2BC8 0x24 NewRecord                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.TempRecord                                = GetInt32(new IntPtr(p + 0x028)); // 0270D88A2BE8 0x28 TempRecord                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.RowID                                     = GetInt64(new IntPtr(p + 0x030)); // 0270D88A2C08 0x30 RowID                       ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.Action                                    = (DataRowAction)GetInt32(new IntPtr(p + 0x038)); // 0270D88A2C28 0x38 Action                      ( 00018667D870 ModelEnumType DataRowAction DataRowAction DataRowAction Int32 )
-            value.InChangingEvent                           = GetBool(new IntPtr(p + 0x03C)); // 0270D88A2C48 0x3C InChangingEvent             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.InDeletingEvent                           = GetBool(new IntPtr(p + 0x03D)); // 0270D88A2C68 0x3D InDeletingEvent             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.InCascade                                 = GetBool(new IntPtr(p + 0x03E)); // 0270D88A2C88 0x3E InCascade                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.LastChangedColumn                         = GetObject<DataColumn>(new IntPtr(p + 0x040), ReversePrism.DataModels.DataColumn.FromPointer); // 0270D88A2CA8 0x40 LastChangedColumn           ( 0001866759E0 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.CountColumnChange                         = GetInt32(new IntPtr(p + 0x048)); // 0270D88A2CC8 0x48 CountColumnChange           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Error                                     = GetObject<DataError>(new IntPtr(p + 0x050), ReversePrism.DataModels.DataError.FromPointer); // 0270D88A2CE8 0x50 Error                       ( 000186679B80 ModelClassType DataError DataError DataError Pointer )
-            value.RbTreeNodeId                              = GetInt32(new IntPtr(p + 0x058)); // 0270D88A2D08 0x58 RbTreeNodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x05C)); // 0270D88A2D48 0x5C ObjectID                    ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0246688FF080 0x10 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Columns                                   = GetObject<DataColumnCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataColumnCollection.FromPointer); // 0246688FF0A0 0x18 Columns                     ( 000186677020 ModelClassType DataColumnCollection DataColumnCollection DataColumnCollection Pointer )
+            value.OldRecord                                 = GetInt32(new IntPtr(p + 0x020)); // 0246688FF0C0 0x20 OldRecord                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.NewRecord                                 = GetInt32(new IntPtr(p + 0x024)); // 0246688FF0E0 0x24 NewRecord                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.TempRecord                                = GetInt32(new IntPtr(p + 0x028)); // 0246688FF100 0x28 TempRecord                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.RowID                                     = GetInt64(new IntPtr(p + 0x030)); // 0246688FF120 0x30 RowID                       ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.Action                                    = (DataRowAction)GetInt32(new IntPtr(p + 0x038)); // 0246688FF140 0x38 Action                      ( 00018667D870 ModelEnumType DataRowAction DataRowAction DataRowAction Int32 )
+            value.InChangingEvent                           = GetBool(new IntPtr(p + 0x03C)); // 0246688FF160 0x3C InChangingEvent             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.InDeletingEvent                           = GetBool(new IntPtr(p + 0x03D)); // 0246688FF180 0x3D InDeletingEvent             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.InCascade                                 = GetBool(new IntPtr(p + 0x03E)); // 0246688FF1A0 0x3E InCascade                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.LastChangedColumn                         = GetObject<DataColumn>(new IntPtr(p + 0x040), ReversePrism.DataModels.DataColumn.FromPointer); // 0246688FF1C0 0x40 LastChangedColumn           ( 0001866759E0 ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.CountColumnChange                         = GetInt32(new IntPtr(p + 0x048)); // 0246688FF1E0 0x48 CountColumnChange           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Error                                     = GetObject<DataError>(new IntPtr(p + 0x050), ReversePrism.DataModels.DataError.FromPointer); // 0246688FF200 0x50 Error                       ( 000186679B80 ModelClassType DataError DataError DataError Pointer )
+            value.RbTreeNodeId                              = GetInt32(new IntPtr(p + 0x058)); // 0246688FF220 0x58 RbTreeNodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x05C)); // 0246688FF260 0x5C ObjectID                    ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

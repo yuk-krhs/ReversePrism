@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITimelineClipAsset
+    public partial class ITimelineClipAsset : DataModel
     {
 
         public static ITimelineClipAsset? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITimelineClipAsset();
+            var value   = new ITimelineClipAsset() { Pointer= p0 };
 
 
             return value;

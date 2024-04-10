@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 080 __Method_GetFollowList                   Method`2<GetFollowListArgs, GetFollowListReply> IL2CPP_TYPE_GENERICINST
     // 088 __Method_GetFollowerList                 Method`2<GetFollowerListArgs, GetFollowerListReply> IL2CPP_TYPE_GENERICINST
     // 090 __Method_GetRecommendedUserList          Method`2<GetRecommendedUserListArgs, GetRecommendedUserListReply> IL2CPP_TYPE_GENERICINST
-    public partial class FriendService
+    public partial class FriendService : DataModel
     {
 
         public static FriendService? FromPointer(IntPtr p0)
@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendService();
+            var value   = new FriendService() { Pointer= p0 };
 
 
             return value;

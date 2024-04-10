@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 060 <IdolStatusDisplayType>k__BackingField   ReactiveProperty`1<LiveIdolIconStatusDisplayType> IL2CPP_TYPE_GENERICINST
     // 068 <IsSupportMemberTabOn>k__BackingField    ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
     // 070 MusicDifficulty                          00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
-    public partial class LiveUnitEditCarouselContext
+    public partial class LiveUnitEditCarouselContext : DataModel
     {
         public SongDifficultyLevel                      MusicDifficulty                         { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitEditCarouselContext();
+            var value   = new LiveUnitEditCarouselContext() { Pointer= p0 };
 
-            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x070)); // 0270D52A46C0 0x70 MusicDifficulty             ( 00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.MusicDifficulty                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x070)); // 024665317FE8 0x70 MusicDifficulty             ( 00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
 
             return value;
         }

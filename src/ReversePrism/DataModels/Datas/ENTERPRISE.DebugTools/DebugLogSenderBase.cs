@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 headerSize                               int IL2CPP_TYPE_I4
-    public partial class DebugLogSenderBase
+    public partial class DebugLogSenderBase : DataModel
     {
 
         public static DebugLogSenderBase? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugLogSenderBase();
+            var value   = new DebugLogSenderBase() { Pointer= p0 };
 
 
             return value;

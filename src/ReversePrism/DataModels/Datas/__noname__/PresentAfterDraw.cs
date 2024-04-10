@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PresentAfterDraw
+    public partial class PresentAfterDraw : DataModel
     {
 
         public static PresentAfterDraw? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PresentAfterDraw();
+            var value   = new PresentAfterDraw() { Pointer= p0 };
 
 
             return value;

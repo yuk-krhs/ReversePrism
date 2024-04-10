@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 State                                    000186619A60 ModelEnumType MimeWriterState MimeWriterState MimeWriterState Int32
     // 028 BufferedWrite                            00018650DC10 ModelClassType BufferedWrite BufferedWrite BufferedWrite Pointer
     // 030 ContentStream                            000186670270 ModelClassType Stream Stream Stream Pointer
-    public partial class MimeWriter
+    public partial class MimeWriter : DataModel
     {
         public Stream?                                  Stream                                  { get; set; }
         public List<sbyte>?                             BoundaryBytes                           { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MimeWriter();
+            var value   = new MimeWriter() { Pointer= p0 };
 
-            value.Stream                                    = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 0270D7C98F78 0x10 Stream                      ( 000186670270 ModelClassType Stream Stream Stream Pointer )
-            value.BoundaryBytes                             = GetSByteList(new IntPtr(p + 0x018)); // 0270D7C98F98 0x18 BoundaryBytes               ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.State                                     = (MimeWriterState)GetInt32(new IntPtr(p + 0x020)); // 0270D7C98FB8 0x20 State                       ( 000186619A60 ModelEnumType MimeWriterState MimeWriterState MimeWriterState Int32 )
-            value.BufferedWrite                             = GetObject<BufferedWrite>(new IntPtr(p + 0x028), ReversePrism.DataModels.BufferedWrite.FromPointer); // 0270D7C98FD8 0x28 BufferedWrite               ( 00018650DC10 ModelClassType BufferedWrite BufferedWrite BufferedWrite Pointer )
-            value.ContentStream                             = GetObject<Stream>(new IntPtr(p + 0x030), ReversePrism.DataModels.Stream.FromPointer); // 0270D7C98FF8 0x30 ContentStream               ( 000186670270 ModelClassType Stream Stream Stream Pointer )
+            value.Stream                                    = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 024667CF8F78 0x10 Stream                      ( 000186670270 ModelClassType Stream Stream Stream Pointer )
+            value.BoundaryBytes                             = GetSByteList(new IntPtr(p + 0x018)); // 024667CF8F98 0x18 BoundaryBytes               ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.State                                     = (MimeWriterState)GetInt32(new IntPtr(p + 0x020)); // 024667CF8FB8 0x20 State                       ( 000186619A60 ModelEnumType MimeWriterState MimeWriterState MimeWriterState Int32 )
+            value.BufferedWrite                             = GetObject<BufferedWrite>(new IntPtr(p + 0x028), ReversePrism.DataModels.BufferedWrite.FromPointer); // 024667CF8FD8 0x28 BufferedWrite               ( 00018650DC10 ModelClassType BufferedWrite BufferedWrite BufferedWrite Pointer )
+            value.ContentStream                             = GetObject<Stream>(new IntPtr(p + 0x030), ReversePrism.DataModels.Stream.FromPointer); // 024667CF8FF8 0x30 ContentStream               ( 000186670270 ModelClassType Stream Stream Stream Pointer )
 
             return value;
         }

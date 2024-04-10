@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_processorCount                         int IL2CPP_TYPE_I4
     // 004 s_lastProcessorCountRefreshTicks         int IL2CPP_TYPE_I4
     // 008 IsSingleProcessor                        bool IL2CPP_TYPE_BOOLEAN
-    public partial class PlatformHelper
+    public partial class PlatformHelper : DataModel
     {
 
         public static PlatformHelper? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlatformHelper();
+            var value   = new PlatformHelper() { Pointer= p0 };
 
 
             return value;

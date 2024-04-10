@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 CurrentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 currentObject                            <object> IL2CPP_TYPE_OBJECT
     // 030 CurrentSize                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StringStringMapEnumerator
+    public partial class StringStringMapEnumerator : DataModel
     {
         public StringStringMap?                         CollectionRef                           { get; set; }
         public int                                      CurrentIndex                            { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringStringMapEnumerator();
+            var value   = new StringStringMapEnumerator() { Pointer= p0 };
 
-            value.CollectionRef                             = GetObject<StringStringMap>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringStringMap.FromPointer); // 0270DB747D68 0x10 CollectionRef               ( 0001865C3500 ModelClassType StringStringMap StringStringMap StringStringMap Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x020)); // 0270DB747DA8 0x20 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x030)); // 0270DB747DE8 0x30 CurrentSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CollectionRef                             = GetObject<StringStringMap>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringStringMap.FromPointer); // 02466B7DC028 0x10 CollectionRef               ( 0001865C3500 ModelClassType StringStringMap StringStringMap StringStringMap Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x020)); // 02466B7DC068 0x20 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x030)); // 02466B7DC0A8 0x30 CurrentSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

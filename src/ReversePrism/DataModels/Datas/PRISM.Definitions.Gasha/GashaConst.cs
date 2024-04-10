@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 PrismGaugeHelpId                         int IL2CPP_TYPE_I4
     // 000 ExchangePointHelpId                      int IL2CPP_TYPE_I4
-    public partial class GashaConst
+    public partial class GashaConst : DataModel
     {
 
         public static GashaConst? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaConst();
+            var value   = new GashaConst() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 BirthDaySetting                          string IL2CPP_TYPE_STRING
-    public partial class PersonalPrefs
+    public partial class PersonalPrefs : DataModel
     {
 
         public static PersonalPrefs? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PersonalPrefs();
+            var value   = new PersonalPrefs() { Pointer= p0 };
 
 
             return value;

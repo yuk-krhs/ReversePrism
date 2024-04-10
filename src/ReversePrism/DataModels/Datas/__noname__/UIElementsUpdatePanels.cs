@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UIElementsUpdatePanels
+    public partial class UIElementsUpdatePanels : DataModel
     {
 
         public static UIElementsUpdatePanels? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIElementsUpdatePanels();
+            var value   = new UIElementsUpdatePanels() { Pointer= p0 };
 
 
             return value;

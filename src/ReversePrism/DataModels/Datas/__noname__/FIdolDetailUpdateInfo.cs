@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <OnChange>k__BackingField                IObservable`1<IFesIdolStatus> IL2CPP_TYPE_GENERICINST
     // 018 DeferTask                                00018669FD00 ModelEnumType UniTask UniTask UniTask Int32
-    public partial class FIdolDetailUpdateInfo
+    public partial class FIdolDetailUpdateInfo : DataModel
     {
         public UniTask                                  DeferTask                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FIdolDetailUpdateInfo();
+            var value   = new FIdolDetailUpdateInfo() { Pointer= p0 };
 
-            value.DeferTask                                 = (UniTask)GetInt32(new IntPtr(p + 0x018)); // 0270D5127FC8 0x18 DeferTask                   ( 00018669FD00 ModelEnumType UniTask UniTask UniTask Int32 )
+            value.DeferTask                                 = (UniTask)GetInt32(new IntPtr(p + 0x018)); // 02466519B520 0x18 DeferTask                   ( 00018669FD00 ModelEnumType UniTask UniTask UniTask Int32 )
 
             return value;
         }

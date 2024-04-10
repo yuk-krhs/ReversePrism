@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstTitleImageFormatter
+    public partial class MstTitleImageFormatter : DataModel
     {
 
         public static MstTitleImageFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstTitleImageFormatter();
+            var value   = new MstTitleImageFormatter() { Pointer= p0 };
 
 
             return value;

@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 050 Rank                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IsPremiumFieldNumber                     int IL2CPP_TYPE_I4
     // 054 IsPremium                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProfileSeasonStatus
+    public partial class ProfileSeasonStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileSeasonStatus();
+            var value   = new ProfileSeasonStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D271C2A8 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D271C2C8 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x038)); // 0270D271C348 0x38 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D271C388 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D271C3C8 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x050)); // 0270D271C408 0x50 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsPremium                                 = GetBool(new IntPtr(p + 0x054)); // 0270D271C448 0x54 IsPremium                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 02466268AF78 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 02466268AF98 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x038)); // 02466268B018 0x38 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 02466268B058 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 02466268B098 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x050)); // 02466268B0D8 0x50 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsPremium                                 = GetBool(new IntPtr(p + 0x054)); // 02466268B118 0x54 IsPremium                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

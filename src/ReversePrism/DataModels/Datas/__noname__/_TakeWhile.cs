@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 predicate                                Func`2<<var>, bool> IL2CPP_TYPE_GENERICINST
-    public partial class _TakeWhile
+    public partial class _TakeWhile : DataModel
     {
 
         public static _TakeWhile? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TakeWhile();
+            var value   = new _TakeWhile() { Pointer= p0 };
 
 
             return value;

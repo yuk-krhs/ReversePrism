@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 BaseObject                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 028 ParamTex                                 000185CAB3C8 ModelClassListType Texture2D[] Texture2D[] List<Texture2D> Pointer
     // 030 Anim                                     0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    public partial class FaceController
+    public partial class FaceController : DataModel
     {
         public GameObject?                              BaseObject                              { get; set; }
         public List<Texture2D>?                         ParamTex                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FaceController();
+            var value   = new FaceController() { Pointer= p0 };
 
-            value.BaseObject                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4B1A150 0x20 BaseObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ParamTex                                  = GetObjectList<Texture2D>(new IntPtr(p + 0x028), ReversePrism.DataModels.Texture2D.FromPointer); // 0270D4B1A170 0x28 ParamTex                    ( 000185CAB3C8 ModelClassListType Texture2D[] Texture2D[] List<Texture2D> Pointer )
-            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x030), ReversePrism.DataModels.Animator.FromPointer); // 0270D4B1A190 0x30 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.BaseObject                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664B81968 0x20 BaseObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ParamTex                                  = GetObjectList<Texture2D>(new IntPtr(p + 0x028), ReversePrism.DataModels.Texture2D.FromPointer); // 024664B81988 0x28 ParamTex                    ( 000185CAB3C8 ModelClassListType Texture2D[] Texture2D[] List<Texture2D> Pointer )
+            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x030), ReversePrism.DataModels.Animator.FromPointer); // 024664B819A8 0x30 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

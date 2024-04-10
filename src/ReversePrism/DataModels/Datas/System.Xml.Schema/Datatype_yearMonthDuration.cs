@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_yearMonthDuration
+    public partial class Datatype_yearMonthDuration : DataModel
     {
 
         public static Datatype_yearMonthDuration? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_yearMonthDuration();
+            var value   = new Datatype_yearMonthDuration() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 SDK_VERSION                              string IL2CPP_TYPE_STRING
-    public partial class SdkVersion
+    public partial class SdkVersion : DataModel
     {
 
         public static SdkVersion? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SdkVersion();
+            var value   = new SdkVersion() { Pointer= p0 };
 
 
             return value;

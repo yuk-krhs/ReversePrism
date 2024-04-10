@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 048 onDetail                                 Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 050 CellViewType                             00018654F530 ModelEnumType CategoryElementGridCellViewType CategoryElementGridCellViewType CategoryElementGridCellViewType Int32
     // 058 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
-    public partial class CategoryElementGridContext
+    public partial class CategoryElementGridContext : DataModel
     {
         public CategoryElementGridCellViewType          CellViewType                            { get; set; }
         public IResourceLoader?                         ResourceLoader                          { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CategoryElementGridContext();
+            var value   = new CategoryElementGridContext() { Pointer= p0 };
 
-            value.CellViewType                              = (CategoryElementGridCellViewType)GetInt32(new IntPtr(p + 0x050)); // 0270DA2FFCC8 0x50 CellViewType                ( 00018654F530 ModelEnumType CategoryElementGridCellViewType CategoryElementGridCellViewType CategoryElementGridCellViewType Int32 )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x058), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270DA2FFCE8 0x58 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.CellViewType                              = (CategoryElementGridCellViewType)GetInt32(new IntPtr(p + 0x050)); // 02466A353220 0x50 CellViewType                ( 00018654F530 ModelEnumType CategoryElementGridCellViewType CategoryElementGridCellViewType CategoryElementGridCellViewType Int32 )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x058), ReversePrism.DataModels.IResourceLoader.FromPointer); // 02466A353240 0x58 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

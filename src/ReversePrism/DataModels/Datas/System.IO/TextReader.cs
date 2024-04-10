@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Null                                     TextReader IL2CPP_TYPE_CLASS
-    public partial class TextReader
+    public partial class TextReader : DataModel
     {
 
         public static TextReader? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextReader();
+            var value   = new TextReader() { Pointer= p0 };
 
 
             return value;

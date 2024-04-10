@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 004 s_MaxArcRadius                           float IL2CPP_TYPE_R4
     // 008 s_StrokeMarker                           ProfilerMarker IL2CPP_TYPE_VALUETYPE
     // 010 S_FillMarker                             0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    public partial class Painter2D
+    public partial class Painter2D : DataModel
     {
         public MeshGenerationContext?                   M_Ctx                                   { get; set; }
         public DetachedAllocator?                       M_DetachedAllocator                     { get; set; }
@@ -30,13 +30,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Painter2D();
+            var value   = new Painter2D() { Pointer= p0 };
 
-            value.M_Ctx                                     = GetObject<MeshGenerationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.MeshGenerationContext.FromPointer); // 0270067E87E8 0x10 M_Ctx                       ( 0001866018B0 ModelClassType MeshGenerationContext MeshGenerationContext MeshGenerationContext Pointer )
-            value.M_DetachedAllocator                       = GetObject<DetachedAllocator>(new IntPtr(p + 0x018), ReversePrism.DataModels.DetachedAllocator.FromPointer); // 0270067E8808 0x18 M_DetachedAllocator         ( 0001866C9140 ModelClassType DetachedAllocator DetachedAllocator DetachedAllocator Pointer )
-            value.M_Handle                                  = (SafeHandleAccess)GetInt32(new IntPtr(p + 0x020)); // 0270067E8828 0x20 M_Handle                    ( 0001866B91A0 ModelEnumType SafeHandleAccess SafeHandleAccess SafeHandleAccess Int32 )
-            value.M_Disposed                                = GetBool(new IntPtr(p + 0x028)); // 0270067E8848 0x28 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.S_FillMarker                              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0270067E88C8 0x10 S_FillMarker                ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.M_Ctx                                     = GetObject<MeshGenerationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.MeshGenerationContext.FromPointer); // 0245A67AA978 0x10 M_Ctx                       ( 0001866018B0 ModelClassType MeshGenerationContext MeshGenerationContext MeshGenerationContext Pointer )
+            value.M_DetachedAllocator                       = GetObject<DetachedAllocator>(new IntPtr(p + 0x018), ReversePrism.DataModels.DetachedAllocator.FromPointer); // 0245A67AA998 0x18 M_DetachedAllocator         ( 0001866C9140 ModelClassType DetachedAllocator DetachedAllocator DetachedAllocator Pointer )
+            value.M_Handle                                  = (SafeHandleAccess)GetInt32(new IntPtr(p + 0x020)); // 0245A67AA9B8 0x20 M_Handle                    ( 0001866B91A0 ModelEnumType SafeHandleAccess SafeHandleAccess SafeHandleAccess Int32 )
+            value.M_Disposed                                = GetBool(new IntPtr(p + 0x028)); // 0245A67AA9D8 0x28 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.S_FillMarker                              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0245A67AAA58 0x10 S_FillMarker                ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
 
             return value;
         }

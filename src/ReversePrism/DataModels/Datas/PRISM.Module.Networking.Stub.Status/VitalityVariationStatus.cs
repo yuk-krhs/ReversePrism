@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 BeforeValue                              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 AfterValueFieldNumber                    int IL2CPP_TYPE_I4
     // 01C AfterValue                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class VitalityVariationStatus
+    public partial class VitalityVariationStatus : DataModel
     {
         public int                                      BeforeValue                             { get; set; }
         public int                                      AfterValue                              { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VitalityVariationStatus();
+            var value   = new VitalityVariationStatus() { Pointer= p0 };
 
-            value.BeforeValue                               = GetInt32(new IntPtr(p + 0x018)); // 0270D11682C0 0x18 BeforeValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AfterValue                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D1168300 0x1C AfterValue                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BeforeValue                               = GetInt32(new IntPtr(p + 0x018)); // 0246610D14C0 0x18 BeforeValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AfterValue                                = GetInt32(new IntPtr(p + 0x01C)); // 0246610D1500 0x1C AfterValue                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

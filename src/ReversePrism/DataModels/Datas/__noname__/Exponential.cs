@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 GrowthFactor                             0001865C2950 ModelPrimitiveType double double double Double
     // 000 ScaleFieldNumber                         int IL2CPP_TYPE_I4
     // 028 Scale                                    0001865C2950 ModelPrimitiveType double double double Double
-    public partial class Exponential
+    public partial class Exponential : DataModel
     {
         public int                                      NumFiniteBuckets                        { get; set; }
         public double                                   GrowthFactor                            { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Exponential();
+            var value   = new Exponential() { Pointer= p0 };
 
-            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 0270DA7969E0 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GrowthFactor                              = GetDouble(new IntPtr(p + 0x020)); // 0270DA796A20 0x20 GrowthFactor                ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Scale                                     = GetDouble(new IntPtr(p + 0x028)); // 0270DA796A60 0x28 Scale                       ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 02466A7FB230 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GrowthFactor                              = GetDouble(new IntPtr(p + 0x020)); // 02466A7FB270 0x20 GrowthFactor                ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Scale                                     = GetDouble(new IntPtr(p + 0x028)); // 02466A7FB2B0 0x28 Scale                       ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ViewType                                 000186692F60 ModelClassType Type Type Type Pointer
     // 018 Parameter                                000186696420 ModelClassType IViewParameter IViewParameter IViewParameter Pointer
-    public partial class ViewValue
+    public partial class ViewValue : DataModel
     {
         public Type?                                    ViewType                                { get; set; }
         public IViewParameter?                          Parameter                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewValue();
+            var value   = new ViewValue() { Pointer= p0 };
 
-            value.ViewType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D0A67038 0x10 ViewType                    ( 000186692F60 ModelClassType Type Type Type Pointer )
-            value.Parameter                                 = GetObject<IViewParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.IViewParameter.FromPointer); // 0270D0A67058 0x18 Parameter                   ( 000186696420 ModelClassType IViewParameter IViewParameter IViewParameter Pointer )
+            value.ViewType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024660A56778 0x10 ViewType                    ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.Parameter                                 = GetObject<IViewParameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.IViewParameter.FromPointer); // 024660A56798 0x18 Parameter                   ( 000186696420 ModelClassType IViewParameter IViewParameter IViewParameter Pointer )
 
             return value;
         }

@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 000 uvSpan                                   float IL2CPP_TYPE_R4
     // 000 lineSpan                                 float IL2CPP_TYPE_R4
     // 000 baseY                                    float IL2CPP_TYPE_R4
-    public partial class TextArea
+    public partial class TextArea : DataModel
     {
         public GameObject?                              TextTemplate                            { get; set; }
         public UITextMeshProUGUI?                       _TextArea                               { get; set; }
@@ -61,27 +61,27 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextArea();
+            var value   = new TextArea() { Pointer= p0 };
 
-            value.TextTemplate                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270069916B8 0x20 TextTemplate                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value._TextArea                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270069916D8 0x28 _TextArea                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270069916F8 0x30 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ArrowImage                                = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 027006991718 0x38 ArrowImage                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DisplayLengthPerSecond                    = GetInt32(new IntPtr(p + 0x040)); // 027006991738 0x40 DisplayLengthPerSecond      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.NewLineWaitTimePerCharacter               = GetSingle(new IntPtr(p + 0x044)); // 027006991758 0x44 NewLineWaitTimePerCharacter ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ProducerSpeakDuration                     = GetSingle(new IntPtr(p + 0x048)); // 027006991778 0x48 ProducerSpeakDuration       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CharacterNumPerLine                       = GetSingle(new IntPtr(p + 0x04C)); // 027006991798 0x4C CharacterNumPerLine         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270069917D8 0x50 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.AreaFadeDuration                          = GetSingle(new IntPtr(p + 0x058)); // 0270069917F8 0x58 AreaFadeDuration            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsDisplay                                 = GetBool(new IntPtr(p + 0x05C)); // 027006991818 0x5C IsDisplay                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TextTexture                               = GetObject<RenderTexture>(new IntPtr(p + 0x068), ReversePrism.DataModels.RenderTexture.FromPointer); // 027006991858 0x68 TextTexture                 ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
-            value.TextLine                                  = GetObjectList<RawImage>(new IntPtr(p + 0x070), ReversePrism.DataModels.RawImage.FromPointer); // 027006991878 0x70 TextLine                    ( 000185C9FC28 ModelClassListType RawImage[] RawImage[] List<RawImage> Pointer )
-            value.CountCalculater                           = GetObject<CountCalculater>(new IntPtr(p + 0x078), ReversePrism.DataModels.CountCalculater.FromPointer); // 027006991898 0x78 CountCalculater             ( 0001865F6720 ModelClassType CountCalculater CountCalculater CountCalculater Pointer )
-            value.Line                                      = GetInt32(new IntPtr(p + 0x080)); // 0270069918B8 0x80 Line                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProducerSpeaker                           = GetObject<ProducerSpeaker>(new IntPtr(p + 0x088), ReversePrism.DataModels.ProducerSpeaker.FromPointer); // 0270069918D8 0x88 ProducerSpeaker             ( 00018659DB70 ModelClassType ProducerSpeaker ProducerSpeaker ProducerSpeaker Pointer )
-            value.IsAutoPlay                                = GetBool(new IntPtr(p + 0x090)); // 0270069918F8 0x90 IsAutoPlay                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CountFrame                                = GetSingle(new IntPtr(p + 0x094)); // 027006991918 0x94 CountFrame                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x098)); // 027006991938 0x98 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TextTemplate                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0245A69555F0 0x20 TextTemplate                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value._TextArea                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A6955610 0x28 _TextArea                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A6955630 0x30 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ArrowImage                                = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0245A6955650 0x38 ArrowImage                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.DisplayLengthPerSecond                    = GetInt32(new IntPtr(p + 0x040)); // 0245A6955670 0x40 DisplayLengthPerSecond      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NewLineWaitTimePerCharacter               = GetSingle(new IntPtr(p + 0x044)); // 0245A6955690 0x44 NewLineWaitTimePerCharacter ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ProducerSpeakDuration                     = GetSingle(new IntPtr(p + 0x048)); // 0245A69556B0 0x48 ProducerSpeakDuration       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CharacterNumPerLine                       = GetSingle(new IntPtr(p + 0x04C)); // 0245A69556D0 0x4C CharacterNumPerLine         ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A6955710 0x50 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.AreaFadeDuration                          = GetSingle(new IntPtr(p + 0x058)); // 0245A6955730 0x58 AreaFadeDuration            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsDisplay                                 = GetBool(new IntPtr(p + 0x05C)); // 0245A6955750 0x5C IsDisplay                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TextTexture                               = GetObject<RenderTexture>(new IntPtr(p + 0x068), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A6955790 0x68 TextTexture                 ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.TextLine                                  = GetObjectList<RawImage>(new IntPtr(p + 0x070), ReversePrism.DataModels.RawImage.FromPointer); // 0245A69557B0 0x70 TextLine                    ( 000185C9FC28 ModelClassListType RawImage[] RawImage[] List<RawImage> Pointer )
+            value.CountCalculater                           = GetObject<CountCalculater>(new IntPtr(p + 0x078), ReversePrism.DataModels.CountCalculater.FromPointer); // 0245A69557D0 0x78 CountCalculater             ( 0001865F6720 ModelClassType CountCalculater CountCalculater CountCalculater Pointer )
+            value.Line                                      = GetInt32(new IntPtr(p + 0x080)); // 0245A69557F0 0x80 Line                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProducerSpeaker                           = GetObject<ProducerSpeaker>(new IntPtr(p + 0x088), ReversePrism.DataModels.ProducerSpeaker.FromPointer); // 0245A6955810 0x88 ProducerSpeaker             ( 00018659DB70 ModelClassType ProducerSpeaker ProducerSpeaker ProducerSpeaker Pointer )
+            value.IsAutoPlay                                = GetBool(new IntPtr(p + 0x090)); // 0245A6955830 0x90 IsAutoPlay                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CountFrame                                = GetSingle(new IntPtr(p + 0x094)); // 0245A6955850 0x94 CountFrame                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x098)); // 0245A6955870 0x98 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

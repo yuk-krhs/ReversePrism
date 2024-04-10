@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NullableFlags                            000185B7A1A0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class NullableAttribute
+    public partial class NullableAttribute : DataModel
     {
         public List<sbyte>?                             NullableFlags                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NullableAttribute();
+            var value   = new NullableAttribute() { Pointer= p0 };
 
-            value.NullableFlags                             = GetSByteList(new IntPtr(p + 0x010)); // 02700692D018 0x10 NullableFlags               ( 000185B7A1A0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.NullableFlags                             = GetSByteList(new IntPtr(p + 0x010)); // 0245A68EFEF0 0x10 NullableFlags               ( 000185B7A1A0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

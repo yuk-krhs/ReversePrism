@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Method                                   000186613DA0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    public partial class MethodCallExpression
+    public partial class MethodCallExpression : DataModel
     {
         public MethodInfo?                              Method                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MethodCallExpression();
+            var value   = new MethodCallExpression() { Pointer= p0 };
 
-            value.Method                                    = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0270D9F34508 0x10 Method                      ( 000186613DA0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.Method                                    = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 024669F812B8 0x10 Method                      ( 000186613DA0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
 
             return value;
         }

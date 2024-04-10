@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class __Il2CppFullySharedGenericType
+    public partial class __Il2CppFullySharedGenericType : DataModel
     {
 
         public static __Il2CppFullySharedGenericType? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new __Il2CppFullySharedGenericType();
+            var value   = new __Il2CppFullySharedGenericType() { Pointer= p0 };
 
 
             return value;

@@ -45,7 +45,7 @@ namespace ReversePrism.DataModels
     // 080 FooterRemoveButtonName                   000186674040 ModelPrimitiveType string string string String
     // 538 M_MaxMultiEditStr                        000186671910 ModelPrimitiveType string string string String
     // 088 K_EmptyListStr                           0001866738F0 ModelPrimitiveType string string string String
-    public partial class BaseListView
+    public partial class BaseListView : DataModel
     {
         public bool                                     M_ShowBoundCollectionSize               { get; set; }
         public bool                                     M_ShowFoldoutHeader                     { get; set; }
@@ -85,39 +85,39 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseListView();
+            var value   = new BaseListView() { Pointer= p0 };
 
-            value.M_ShowBoundCollectionSize                 = GetBool(new IntPtr(p + 0x4B0)); // 0270066F3798 0x4B0 M_ShowBoundCollectionSize   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ShowFoldoutHeader                       = GetBool(new IntPtr(p + 0x4B1)); // 0270066F37B8 0x4B1 M_ShowFoldoutHeader         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_HeaderTitle                             = GetString(new IntPtr(p + 0x4B8)); // 0270066F37D8 0x4B8 M_HeaderTitle               ( 000186671910 ModelPrimitiveType string string string String )
-            value.ItemsSourceSizeChanged                    = GetObject<Action>(new IntPtr(p + 0x4D0), ReversePrism.DataModels.Action.FromPointer); // 0270066F3838 0x4D0 ItemsSourceSizeChanged      ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_ListViewLabel                           = GetObject<Label>(new IntPtr(p + 0x4D8), ReversePrism.DataModels.Label.FromPointer); // 0270066F3858 0x4D8 M_ListViewLabel             ( 000186774D80 ModelClassType Label Label Label Pointer )
-            value.M_Foldout                                 = GetObject<Foldout>(new IntPtr(p + 0x4E0), ReversePrism.DataModels.Foldout.FromPointer); // 0270066F3878 0x4E0 M_Foldout                   ( 0001865AC1D0 ModelClassType Foldout Foldout Foldout Pointer )
-            value.M_ArraySizeField                          = GetObject<TextField>(new IntPtr(p + 0x4E8), ReversePrism.DataModels.TextField.FromPointer); // 0270066F3898 0x4E8 M_ArraySizeField            ( 00018663ACC0 ModelClassType TextField TextField TextField Pointer )
-            value.M_IsOverMultiEditLimit                    = GetBool(new IntPtr(p + 0x4F0)); // 0270066F38B8 0x4F0 M_IsOverMultiEditLimit      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Footer                                  = GetObject<VisualElement>(new IntPtr(p + 0x4F8), ReversePrism.DataModels.VisualElement.FromPointer); // 0270066F38D8 0x4F8 M_Footer                    ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_AddButton                               = GetObject<Button>(new IntPtr(p + 0x500), ReversePrism.DataModels.Button.FromPointer); // 0270066F38F8 0x500 M_AddButton                 ( 000186514B20 ModelClassType Button Button Button Pointer )
-            value.M_RemoveButton                            = GetObject<Button>(new IntPtr(p + 0x508), ReversePrism.DataModels.Button.FromPointer); // 0270066F3918 0x508 M_RemoveButton              ( 000186514B20 ModelClassType Button Button Button Pointer )
-            value.M_ItemsSourceSizeChangedCallback          = GetObject<Action>(new IntPtr(p + 0x520), ReversePrism.DataModels.Action.FromPointer); // 0270066F3978 0x520 M_ItemsSourceSizeChangedCallback ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_ReorderMode                             = (ListViewReorderMode)GetInt32(new IntPtr(p + 0x528)); // 0270066F3998 0x528 M_ReorderMode               ( 00018653C9B0 ModelEnumType ListViewReorderMode ListViewReorderMode ListViewReorderMode Int32 )
-            value.ReorderModeChanged                        = GetObject<Action>(new IntPtr(p + 0x530), ReversePrism.DataModels.Action.FromPointer); // 0270066F39B8 0x530 ReorderModeChanged          ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.EmptyLabelUssClassName                    = GetString(new IntPtr(p + 0x010)); // 0270066F3A18 0x10 EmptyLabelUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
-            value.OverMaxMultiEditLimitClassName            = GetString(new IntPtr(p + 0x018)); // 0270066F3A38 0x18 OverMaxMultiEditLimitClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ReorderableUssClassName                   = GetString(new IntPtr(p + 0x020)); // 0270066F3A58 0x20 ReorderableUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
-            value.ReorderableItemUssClassName               = GetString(new IntPtr(p + 0x028)); // 0270066F3A78 0x28 ReorderableItemUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ReorderableItemContainerUssClassName      = GetString(new IntPtr(p + 0x030)); // 0270066F3A98 0x30 ReorderableItemContainerUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ReorderableItemHandleUssClassName         = GetString(new IntPtr(p + 0x038)); // 0270066F3AB8 0x38 ReorderableItemHandleUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ReorderableItemHandleBarUssClassName      = GetString(new IntPtr(p + 0x040)); // 0270066F3AD8 0x40 ReorderableItemHandleBarUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.FooterUssClassName                        = GetString(new IntPtr(p + 0x048)); // 0270066F3AF8 0x48 FooterUssClassName          ( 000186674040 ModelPrimitiveType string string string String )
-            value.FoldoutHeaderUssClassName                 = GetString(new IntPtr(p + 0x050)); // 0270066F3B18 0x50 FoldoutHeaderUssClassName   ( 000186674040 ModelPrimitiveType string string string String )
-            value.ArraySizeFieldUssClassName                = GetString(new IntPtr(p + 0x058)); // 0270066F3B38 0x58 ArraySizeFieldUssClassName  ( 000186674040 ModelPrimitiveType string string string String )
-            value.ListViewWithHeaderUssClassName            = GetString(new IntPtr(p + 0x060)); // 0270066F3B58 0x60 ListViewWithHeaderUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ListViewWithFooterUssClassName            = GetString(new IntPtr(p + 0x068)); // 0270066F3B78 0x68 ListViewWithFooterUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ScrollViewWithFooterUssClassName          = GetString(new IntPtr(p + 0x070)); // 0270066F3B98 0x70 ScrollViewWithFooterUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.FooterAddButtonName                       = GetString(new IntPtr(p + 0x078)); // 0270066F3BB8 0x78 FooterAddButtonName         ( 000186674040 ModelPrimitiveType string string string String )
-            value.FooterRemoveButtonName                    = GetString(new IntPtr(p + 0x080)); // 0270066F3BD8 0x80 FooterRemoveButtonName      ( 000186674040 ModelPrimitiveType string string string String )
-            value.M_MaxMultiEditStr                         = GetString(new IntPtr(p + 0x538)); // 0270066F3BF8 0x538 M_MaxMultiEditStr           ( 000186671910 ModelPrimitiveType string string string String )
-            value.K_EmptyListStr                            = GetString(new IntPtr(p + 0x088)); // 0270066F3C18 0x88 K_EmptyListStr              ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.M_ShowBoundCollectionSize                 = GetBool(new IntPtr(p + 0x4B0)); // 0245A66B5DA8 0x4B0 M_ShowBoundCollectionSize   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ShowFoldoutHeader                       = GetBool(new IntPtr(p + 0x4B1)); // 0245A66B5DC8 0x4B1 M_ShowFoldoutHeader         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_HeaderTitle                             = GetString(new IntPtr(p + 0x4B8)); // 0245A66B5DE8 0x4B8 M_HeaderTitle               ( 000186671910 ModelPrimitiveType string string string String )
+            value.ItemsSourceSizeChanged                    = GetObject<Action>(new IntPtr(p + 0x4D0), ReversePrism.DataModels.Action.FromPointer); // 0245A66B5E48 0x4D0 ItemsSourceSizeChanged      ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_ListViewLabel                           = GetObject<Label>(new IntPtr(p + 0x4D8), ReversePrism.DataModels.Label.FromPointer); // 0245A66B5E68 0x4D8 M_ListViewLabel             ( 000186774D80 ModelClassType Label Label Label Pointer )
+            value.M_Foldout                                 = GetObject<Foldout>(new IntPtr(p + 0x4E0), ReversePrism.DataModels.Foldout.FromPointer); // 0245A66B5E88 0x4E0 M_Foldout                   ( 0001865AC1D0 ModelClassType Foldout Foldout Foldout Pointer )
+            value.M_ArraySizeField                          = GetObject<TextField>(new IntPtr(p + 0x4E8), ReversePrism.DataModels.TextField.FromPointer); // 0245A66B5EA8 0x4E8 M_ArraySizeField            ( 00018663ACC0 ModelClassType TextField TextField TextField Pointer )
+            value.M_IsOverMultiEditLimit                    = GetBool(new IntPtr(p + 0x4F0)); // 0245A66B5EC8 0x4F0 M_IsOverMultiEditLimit      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Footer                                  = GetObject<VisualElement>(new IntPtr(p + 0x4F8), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B5EE8 0x4F8 M_Footer                    ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_AddButton                               = GetObject<Button>(new IntPtr(p + 0x500), ReversePrism.DataModels.Button.FromPointer); // 0245A66B5F08 0x500 M_AddButton                 ( 000186514B20 ModelClassType Button Button Button Pointer )
+            value.M_RemoveButton                            = GetObject<Button>(new IntPtr(p + 0x508), ReversePrism.DataModels.Button.FromPointer); // 0245A66B5F28 0x508 M_RemoveButton              ( 000186514B20 ModelClassType Button Button Button Pointer )
+            value.M_ItemsSourceSizeChangedCallback          = GetObject<Action>(new IntPtr(p + 0x520), ReversePrism.DataModels.Action.FromPointer); // 0245A66B5F88 0x520 M_ItemsSourceSizeChangedCallback ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_ReorderMode                             = (ListViewReorderMode)GetInt32(new IntPtr(p + 0x528)); // 0245A66B5FA8 0x528 M_ReorderMode               ( 00018653C9B0 ModelEnumType ListViewReorderMode ListViewReorderMode ListViewReorderMode Int32 )
+            value.ReorderModeChanged                        = GetObject<Action>(new IntPtr(p + 0x530), ReversePrism.DataModels.Action.FromPointer); // 0245A66B5FC8 0x530 ReorderModeChanged          ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.EmptyLabelUssClassName                    = GetString(new IntPtr(p + 0x010)); // 0245A66B6028 0x10 EmptyLabelUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
+            value.OverMaxMultiEditLimitClassName            = GetString(new IntPtr(p + 0x018)); // 0245A66B6048 0x18 OverMaxMultiEditLimitClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ReorderableUssClassName                   = GetString(new IntPtr(p + 0x020)); // 0245A66B6068 0x20 ReorderableUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
+            value.ReorderableItemUssClassName               = GetString(new IntPtr(p + 0x028)); // 0245A66B6088 0x28 ReorderableItemUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ReorderableItemContainerUssClassName      = GetString(new IntPtr(p + 0x030)); // 0245A66B60A8 0x30 ReorderableItemContainerUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ReorderableItemHandleUssClassName         = GetString(new IntPtr(p + 0x038)); // 0245A66B60C8 0x38 ReorderableItemHandleUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ReorderableItemHandleBarUssClassName      = GetString(new IntPtr(p + 0x040)); // 0245A66B60E8 0x40 ReorderableItemHandleBarUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.FooterUssClassName                        = GetString(new IntPtr(p + 0x048)); // 0245A66B6108 0x48 FooterUssClassName          ( 000186674040 ModelPrimitiveType string string string String )
+            value.FoldoutHeaderUssClassName                 = GetString(new IntPtr(p + 0x050)); // 0245A66B6128 0x50 FoldoutHeaderUssClassName   ( 000186674040 ModelPrimitiveType string string string String )
+            value.ArraySizeFieldUssClassName                = GetString(new IntPtr(p + 0x058)); // 0245A66B6148 0x58 ArraySizeFieldUssClassName  ( 000186674040 ModelPrimitiveType string string string String )
+            value.ListViewWithHeaderUssClassName            = GetString(new IntPtr(p + 0x060)); // 0245A66B6168 0x60 ListViewWithHeaderUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ListViewWithFooterUssClassName            = GetString(new IntPtr(p + 0x068)); // 0245A66B6188 0x68 ListViewWithFooterUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.ScrollViewWithFooterUssClassName          = GetString(new IntPtr(p + 0x070)); // 0245A66B61A8 0x70 ScrollViewWithFooterUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.FooterAddButtonName                       = GetString(new IntPtr(p + 0x078)); // 0245A66B61C8 0x78 FooterAddButtonName         ( 000186674040 ModelPrimitiveType string string string String )
+            value.FooterRemoveButtonName                    = GetString(new IntPtr(p + 0x080)); // 0245A66B61E8 0x80 FooterRemoveButtonName      ( 000186674040 ModelPrimitiveType string string string String )
+            value.M_MaxMultiEditStr                         = GetString(new IntPtr(p + 0x538)); // 0245A66B6208 0x538 M_MaxMultiEditStr           ( 000186671910 ModelPrimitiveType string string string String )
+            value.K_EmptyListStr                            = GetString(new IntPtr(p + 0x088)); // 0245A66B6228 0x88 K_EmptyListStr              ( 0001866738F0 ModelPrimitiveType string string string String )
 
             return value;
         }

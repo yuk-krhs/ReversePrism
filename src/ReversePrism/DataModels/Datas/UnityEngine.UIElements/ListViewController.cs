@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ListViewController
+    public partial class ListViewController : DataModel
     {
 
         public static ListViewController? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ListViewController();
+            var value   = new ListViewController() { Pointer= p0 };
 
 
             return value;

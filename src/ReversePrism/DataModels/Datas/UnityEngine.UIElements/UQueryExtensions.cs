@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 050 SingleElementTypeAndNameQuery            UQueryState`1<VisualElement> IL2CPP_TYPE_GENERICINST
     // 060 SingleElementTypeAndClassQuery           UQueryState`1<VisualElement> IL2CPP_TYPE_GENERICINST
     // 070 SingleElementTypeAndNameAndClassQuery    UQueryState`1<VisualElement> IL2CPP_TYPE_GENERICINST
-    public partial class UQueryExtensions
+    public partial class UQueryExtensions : DataModel
     {
 
         public static UQueryExtensions? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UQueryExtensions();
+            var value   = new UQueryExtensions() { Pointer= p0 };
 
 
             return value;

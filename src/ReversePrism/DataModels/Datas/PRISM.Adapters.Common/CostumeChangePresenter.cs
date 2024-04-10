@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 View                                     000186740E40 ModelClassType ICostumeChangeView ICostumeChangeView ICostumeChangeView Pointer
     // 028 Disposables                              0001865F3410 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 030 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class CostumeChangePresenter
+    public partial class CostumeChangePresenter : DataModel
     {
         public ICostumeChangeModel?                     Model                                   { get; set; }
         public ICostumeChangeView?                      View                                    { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeChangePresenter();
+            var value   = new CostumeChangePresenter() { Pointer= p0 };
 
-            value.Model                                     = GetObject<ICostumeChangeModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICostumeChangeModel.FromPointer); // 0270D62287B8 0x10 Model                       ( 000186740750 ModelClassType ICostumeChangeModel ICostumeChangeModel ICostumeChangeModel Pointer )
-            value.View                                      = GetObject<ICostumeChangeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICostumeChangeView.FromPointer); // 0270D62287F8 0x20 View                        ( 000186740E40 ModelClassType ICostumeChangeView ICostumeChangeView ICostumeChangeView Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D6228818 0x28 Disposables                 ( 0001865F3410 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D6228838 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Model                                     = GetObject<ICostumeChangeModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICostumeChangeModel.FromPointer); // 024666287F88 0x10 Model                       ( 000186740750 ModelClassType ICostumeChangeModel ICostumeChangeModel ICostumeChangeModel Pointer )
+            value.View                                      = GetObject<ICostumeChangeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICostumeChangeView.FromPointer); // 024666287FC8 0x20 View                        ( 000186740E40 ModelClassType ICostumeChangeView ICostumeChangeView ICostumeChangeView Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666287FE8 0x28 Disposables                 ( 0001865F3410 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024666288008 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

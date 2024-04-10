@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RegularTypeface                          00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer
     // 018 ItalicTypeface                           00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer
-    public partial class TMP_FontWeightPair
+    public partial class TMP_FontWeightPair : DataModel
     {
         public TMP_FontAsset?                           RegularTypeface                         { get; set; }
         public TMP_FontAsset?                           ItalicTypeface                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_FontWeightPair();
+            var value   = new TMP_FontWeightPair() { Pointer= p0 };
 
-            value.RegularTypeface                           = GetObject<TMP_FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0270D09C05D0 0x10 RegularTypeface             ( 00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer )
-            value.ItalicTypeface                            = GetObject<TMP_FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0270D09C05F0 0x18 ItalicTypeface              ( 00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer )
+            value.RegularTypeface                           = GetObject<TMP_FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0246609AF650 0x10 RegularTypeface             ( 00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer )
+            value.ItalicTypeface                            = GetObject<TMP_FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0246609AF670 0x18 ItalicTypeface              ( 00018667FCE0 ModelClassType TMP_FontAsset TMP_FontAsset TMP_FontAsset Pointer )
 
             return value;
         }

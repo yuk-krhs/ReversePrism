@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ReaderAsIXmlNamespaceResolver            0001866A0C80 ModelClassType IXmlNamespaceResolver IXmlNamespaceResolver IXmlNamespaceResolver Pointer
-    public partial class XmlAsyncCheckReaderWithNS
+    public partial class XmlAsyncCheckReaderWithNS : DataModel
     {
         public IXmlNamespaceResolver?                   ReaderAsIXmlNamespaceResolver           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlAsyncCheckReaderWithNS();
+            var value   = new XmlAsyncCheckReaderWithNS() { Pointer= p0 };
 
-            value.ReaderAsIXmlNamespaceResolver             = GetObject<IXmlNamespaceResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlNamespaceResolver.FromPointer); // 0270D7383F20 0x20 ReaderAsIXmlNamespaceResolver ( 0001866A0C80 ModelClassType IXmlNamespaceResolver IXmlNamespaceResolver IXmlNamespaceResolver Pointer )
+            value.ReaderAsIXmlNamespaceResolver             = GetObject<IXmlNamespaceResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlNamespaceResolver.FromPointer); // 0246673DBF20 0x20 ReaderAsIXmlNamespaceResolver ( 0001866A0C80 ModelClassType IXmlNamespaceResolver IXmlNamespaceResolver IXmlNamespaceResolver Pointer )
 
             return value;
         }

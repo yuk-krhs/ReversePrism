@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVoicePopupView
+    public partial class IVoicePopupView : DataModel
     {
 
         public static IVoicePopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVoicePopupView();
+            var value   = new IVoicePopupView() { Pointer= p0 };
 
 
             return value;

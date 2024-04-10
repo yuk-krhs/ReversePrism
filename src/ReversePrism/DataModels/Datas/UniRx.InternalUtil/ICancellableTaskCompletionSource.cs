@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICancellableTaskCompletionSource
+    public partial class ICancellableTaskCompletionSource : DataModel
     {
 
         public static ICancellableTaskCompletionSource? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICancellableTaskCompletionSource();
+            var value   = new ICancellableTaskCompletionSource() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Modifier                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 Button                                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 OverrideModifiersNeedToBePressedFirst    000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class ButtonWithOneModifier
+    public partial class ButtonWithOneModifier : DataModel
     {
         public int                                      Modifier                                { get; set; }
         public int                                      Button                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonWithOneModifier();
+            var value   = new ButtonWithOneModifier() { Pointer= p0 };
 
-            value.Modifier                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D78D5BE0 0x10 Modifier                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Button                                    = GetInt32(new IntPtr(p + 0x014)); // 0270D78D5C00 0x14 Button                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.OverrideModifiersNeedToBePressedFirst     = GetBool(new IntPtr(p + 0x018)); // 0270D78D5C20 0x18 OverrideModifiersNeedToBePressedFirst ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Modifier                                  = GetInt32(new IntPtr(p + 0x010)); // 024667945BE0 0x10 Modifier                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Button                                    = GetInt32(new IntPtr(p + 0x014)); // 024667945C00 0x14 Button                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.OverrideModifiersNeedToBePressedFirst     = GetBool(new IntPtr(p + 0x018)); // 024667945C20 0x18 OverrideModifiersNeedToBePressedFirst ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

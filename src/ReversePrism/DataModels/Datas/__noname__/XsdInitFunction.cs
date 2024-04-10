@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XsdInitFunction
+    public partial class XsdInitFunction : DataModel
     {
 
         public static XsdInitFunction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XsdInitFunction();
+            var value   = new XsdInitFunction() { Pointer= p0 };
 
 
             return value;

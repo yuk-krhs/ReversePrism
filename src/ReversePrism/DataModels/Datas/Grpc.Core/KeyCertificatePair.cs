@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CertificateChain                         000186672F10 ModelPrimitiveType string string string String
     // 018 PrivateKey                               000186672F10 ModelPrimitiveType string string string String
-    public partial class KeyCertificatePair
+    public partial class KeyCertificatePair : DataModel
     {
         public string                                   CertificateChain                        { get; set; }
         public string                                   PrivateKey                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyCertificatePair();
+            var value   = new KeyCertificatePair() { Pointer= p0 };
 
-            value.CertificateChain                          = GetString(new IntPtr(p + 0x010)); // 0270D937F688 0x10 CertificateChain            ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PrivateKey                                = GetString(new IntPtr(p + 0x018)); // 0270D937F6A8 0x18 PrivateKey                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.CertificateChain                          = GetString(new IntPtr(p + 0x010)); // 0246693D1970 0x10 CertificateChain            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PrivateKey                                = GetString(new IntPtr(p + 0x018)); // 0246693D1990 0x18 PrivateKey                  ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

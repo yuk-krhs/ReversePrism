@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 SelectProduceCardIdListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_selectProduceCardIdList_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 018 SelectProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class FinishScheduleOutingArgs
+    public partial class FinishScheduleOutingArgs : DataModel
     {
         public List<string>?                            SelectProduceCardIdList                 { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishScheduleOutingArgs();
+            var value   = new FinishScheduleOutingArgs() { Pointer= p0 };
 
-            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 0270D25496F8 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 02466251FAE0 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

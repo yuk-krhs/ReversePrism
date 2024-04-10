@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 178 CustomData1                              000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32
     // 1B8 CustomData2                              000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32
     // 1F8 <meshIndices>k__BackingField             NativeArray`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ParticleSystemJobData
+    public partial class ParticleSystemJobData : DataModel
     {
         public int                                      Count                                   { get; set; }
         public ParticleSystemNativeArray3               Positions                               { get; set; }
@@ -40,17 +40,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParticleSystemJobData();
+            var value   = new ParticleSystemJobData() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 02700696FAA8 0x10 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Positions                                 = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x018)); // 02700696FAC8 0x18 Positions                   ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.Velocities                                = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x048)); // 02700696FAE8 0x48 Velocities                  ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.AxisOfRotations                           = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x078)); // 02700696FB08 0x78 AxisOfRotations             ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.Rotations                                 = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x0A8)); // 02700696FB28 0xA8 Rotations                   ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.RotationalSpeeds                          = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x0D8)); // 02700696FB48 0xD8 RotationalSpeeds            ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.Sizes                                     = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x108)); // 02700696FB68 0x108 Sizes                       ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
-            value.CustomData1                               = (ParticleSystemNativeArray4)GetInt32(new IntPtr(p + 0x178)); // 02700696FC08 0x178 CustomData1                 ( 000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32 )
-            value.CustomData2                               = (ParticleSystemNativeArray4)GetInt32(new IntPtr(p + 0x1B8)); // 02700696FC28 0x1B8 CustomData2                 ( 000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A6922AC0 0x10 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Positions                                 = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x018)); // 0245A6922AE0 0x18 Positions                   ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.Velocities                                = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x048)); // 0245A6922B00 0x48 Velocities                  ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.AxisOfRotations                           = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x078)); // 0245A6922B20 0x78 AxisOfRotations             ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.Rotations                                 = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x0A8)); // 0245A6922B40 0xA8 Rotations                   ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.RotationalSpeeds                          = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x0D8)); // 0245A6922B60 0xD8 RotationalSpeeds            ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.Sizes                                     = (ParticleSystemNativeArray3)GetInt32(new IntPtr(p + 0x108)); // 0245A6922B80 0x108 Sizes                       ( 000186725E70 ModelEnumType ParticleSystemNativeArray3 ParticleSystemNativeArray3 ParticleSystemNativeArray3 Int32 )
+            value.CustomData1                               = (ParticleSystemNativeArray4)GetInt32(new IntPtr(p + 0x178)); // 0245A6922C20 0x178 CustomData1                 ( 000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32 )
+            value.CustomData2                               = (ParticleSystemNativeArray4)GetInt32(new IntPtr(p + 0x1B8)); // 0245A6922C40 0x1B8 CustomData2                 ( 000186726350 ModelEnumType ParticleSystemNativeArray4 ParticleSystemNativeArray4 ParticleSystemNativeArray4 Int32 )
 
             return value;
         }

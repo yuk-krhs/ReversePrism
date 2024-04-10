@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ShinyPartyTokenStatusTranslator
+    public partial class ShinyPartyTokenStatusTranslator : DataModel
     {
 
         public static ShinyPartyTokenStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShinyPartyTokenStatusTranslator();
+            var value   = new ShinyPartyTokenStatusTranslator() { Pointer= p0 };
 
 
             return value;

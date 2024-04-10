@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MstExchangeProductIdListFieldNumber      int IL2CPP_TYPE_I4
     // 008 _repeated_mstExchangeProductIdList_codec FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 020 MstExchangeProductIdList                 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class HomeExchangeNotificationStatus
+    public partial class HomeExchangeNotificationStatus : DataModel
     {
         public int                                      MstExchangeGroupId                      { get; set; }
         public List<int>?                               MstExchangeProductIdList                { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeExchangeNotificationStatus();
+            var value   = new HomeExchangeNotificationStatus() { Pointer= p0 };
 
-            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D205E0E0 0x18 MstExchangeGroupId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstExchangeProductIdList                  = GetInt32List(new IntPtr(p + 0x020)); // 0270D205E140 0x20 MstExchangeProductIdList    ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x018)); // 024662024330 0x18 MstExchangeGroupId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstExchangeProductIdList                  = GetInt32List(new IntPtr(p + 0x020)); // 024662024390 0x20 MstExchangeProductIdList    ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

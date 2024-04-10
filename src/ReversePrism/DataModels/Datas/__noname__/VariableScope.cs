@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 Variable                                 000186609C80 ModelClassType LocalVariable LocalVariable LocalVariable Pointer
     // 020 Parent                                   0001866E5470 ModelClassType VariableScope VariableScope VariableScope Pointer
     // 028 ChildScopes                              000185D26738 ModelClassListType List`1<VariableScope> List`1<VariableScope> List<VariableScope> Pointer
-    public partial class VariableScope
+    public partial class VariableScope : DataModel
     {
         public int                                      Start                                   { get; set; }
         public int                                      Stop                                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VariableScope();
+            var value   = new VariableScope() { Pointer= p0 };
 
-            value.Start                                     = GetInt32(new IntPtr(p + 0x010)); // 0270DA0111A0 0x10 Start                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Stop                                      = GetInt32(new IntPtr(p + 0x014)); // 0270DA0111C0 0x14 Stop                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Variable                                  = GetObject<LocalVariable>(new IntPtr(p + 0x018), ReversePrism.DataModels.LocalVariable.FromPointer); // 0270DA0111E0 0x18 Variable                    ( 000186609C80 ModelClassType LocalVariable LocalVariable LocalVariable Pointer )
-            value.Parent                                    = GetObject<VariableScope>(new IntPtr(p + 0x020), ReversePrism.DataModels.VariableScope.FromPointer); // 0270DA011200 0x20 Parent                      ( 0001866E5470 ModelClassType VariableScope VariableScope VariableScope Pointer )
-            value.ChildScopes                               = GetObjectList<VariableScope>(new IntPtr(p + 0x028), ReversePrism.DataModels.VariableScope.FromPointer); // 0270DA011220 0x28 ChildScopes                 ( 000185D26738 ModelClassListType List`1<VariableScope> List`1<VariableScope> List<VariableScope> Pointer )
+            value.Start                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A074F20 0x10 Start                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Stop                                      = GetInt32(new IntPtr(p + 0x014)); // 02466A074F40 0x14 Stop                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Variable                                  = GetObject<LocalVariable>(new IntPtr(p + 0x018), ReversePrism.DataModels.LocalVariable.FromPointer); // 02466A074F60 0x18 Variable                    ( 000186609C80 ModelClassType LocalVariable LocalVariable LocalVariable Pointer )
+            value.Parent                                    = GetObject<VariableScope>(new IntPtr(p + 0x020), ReversePrism.DataModels.VariableScope.FromPointer); // 02466A074F80 0x20 Parent                      ( 0001866E5470 ModelClassType VariableScope VariableScope VariableScope Pointer )
+            value.ChildScopes                               = GetObjectList<VariableScope>(new IntPtr(p + 0x028), ReversePrism.DataModels.VariableScope.FromPointer); // 02466A074FA0 0x28 ChildScopes                 ( 000185D26738 ModelClassListType List`1<VariableScope> List`1<VariableScope> List<VariableScope> Pointer )
 
             return value;
         }

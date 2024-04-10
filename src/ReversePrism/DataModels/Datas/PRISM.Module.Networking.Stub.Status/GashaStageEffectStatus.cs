@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 038 Phase4Step1                              0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer
     // 000 Phase4Step2FieldNumber                   int IL2CPP_TYPE_I4
     // 040 Phase4Step2                              0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer
-    public partial class GashaStageEffectStatus
+    public partial class GashaStageEffectStatus : DataModel
     {
         public GashaEffectPhaseStatus?                  Phase1                                  { get; set; }
         public GashaEffectPhaseStatus?                  Phase2                                  { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaStageEffectStatus();
+            var value   = new GashaStageEffectStatus() { Pointer= p0 };
 
-            value.Phase1                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0270D15A2970 0x18 Phase1                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
-            value.Phase2                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0270D15A29B0 0x20 Phase2                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
-            value.Phase3                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0270D15A29F0 0x28 Phase3                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
-            value.CharacterEffectList                       = GetObjectList<GashaProduceIdolEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaProduceIdolEffectStatus.FromPointer); // 0270D15A2A50 0x30 CharacterEffectList         ( 000185CDC678 ModelClassListType RepeatedField`1<GashaProduceIdolEffectStatus> RepeatedField`1<GashaProduceIdolEffectStatus> List<GashaProduceIdolEffectStatus> Pointer )
-            value.Phase4Step1                               = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0270D15A2A90 0x38 Phase4Step1                 ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
-            value.Phase4Step2                               = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0270D15A2AD0 0x40 Phase4Step2                 ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
+            value.Phase1                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 024661544690 0x18 Phase1                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
+            value.Phase2                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0246615446D0 0x20 Phase2                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
+            value.Phase3                                    = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 024661544710 0x28 Phase3                      ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
+            value.CharacterEffectList                       = GetObjectList<GashaProduceIdolEffectStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaProduceIdolEffectStatus.FromPointer); // 024661544770 0x30 CharacterEffectList         ( 000185CDC678 ModelClassListType RepeatedField`1<GashaProduceIdolEffectStatus> RepeatedField`1<GashaProduceIdolEffectStatus> List<GashaProduceIdolEffectStatus> Pointer )
+            value.Phase4Step1                               = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0246615447B0 0x38 Phase4Step1                 ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
+            value.Phase4Step2                               = GetObject<GashaEffectPhaseStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaEffectPhaseStatus.FromPointer); // 0246615447F0 0x40 Phase4Step2                 ( 0001865FB090 ModelClassType GashaEffectPhaseStatus GashaEffectPhaseStatus GashaEffectPhaseStatus Pointer )
 
             return value;
         }

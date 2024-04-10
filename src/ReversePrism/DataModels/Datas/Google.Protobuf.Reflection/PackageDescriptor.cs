@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Name                                     000186672F10 ModelPrimitiveType string string string String
     // 018 FullName                                 000186672F10 ModelPrimitiveType string string string String
     // 020 File                                     000186579C90 ModelClassType FileDescriptor FileDescriptor FileDescriptor Pointer
-    public partial class PackageDescriptor
+    public partial class PackageDescriptor : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   FullName                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PackageDescriptor();
+            var value   = new PackageDescriptor() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D0CE4DC8 0x10 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.FullName                                  = GetString(new IntPtr(p + 0x018)); // 0270D0CE4DE8 0x18 FullName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.File                                      = GetObject<FileDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.FileDescriptor.FromPointer); // 0270D0CE4E08 0x20 File                        ( 000186579C90 ModelClassType FileDescriptor FileDescriptor FileDescriptor Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 024660CEB988 0x10 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.FullName                                  = GetString(new IntPtr(p + 0x018)); // 024660CEB9A8 0x18 FullName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.File                                      = GetObject<FileDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.FileDescriptor.FromPointer); // 024660CEB9C8 0x20 File                        ( 000186579C90 ModelClassType FileDescriptor FileDescriptor FileDescriptor Pointer )
 
             return value;
         }

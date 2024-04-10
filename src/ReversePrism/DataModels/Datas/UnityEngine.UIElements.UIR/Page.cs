@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 indices                                  DataSet`1<ushort> IL2CPP_TYPE_GENERICINST
     // 028 Next                                     0001867144C0 ModelClassType Page Page Page Pointer
     // 030 FramesEmpty                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Page
+    public partial class Page : DataModel
     {
         public bool                                     Disposed                                { get; set; }
         public Page?                                    Next                                    { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Page();
+            var value   = new Page() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 027006862990 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Next                                      = GetObject<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 0270068629F0 0x28 Next                        ( 0001867144C0 ModelClassType Page Page Page Pointer )
-            value.FramesEmpty                               = GetInt32(new IntPtr(p + 0x030)); // 027006862A10 0x30 FramesEmpty                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0245A6824820 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Next                                      = GetObject<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 0245A6824880 0x28 Next                        ( 0001867144C0 ModelClassType Page Page Page Pointer )
+            value.FramesEmpty                               = GetInt32(new IntPtr(p + 0x030)); // 0245A68248A0 0x30 FramesEmpty                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

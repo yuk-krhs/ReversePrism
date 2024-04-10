@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _lock                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class Lock
+    public partial class Lock : DataModel
     {
 
         public static Lock? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Lock();
+            var value   = new Lock() { Pointer= p0 };
 
 
             return value;

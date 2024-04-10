@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 LoadHint                                 00018659AC80 ModelEnumType LoadHint LoadHint LoadHint Int32
-    public partial class DefaultDependencyAttribute
+    public partial class DefaultDependencyAttribute : DataModel
     {
         public LoadHint                                 LoadHint                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultDependencyAttribute();
+            var value   = new DefaultDependencyAttribute() { Pointer= p0 };
 
-            value.LoadHint                                  = (LoadHint)GetInt32(new IntPtr(p + 0x010)); // 0270D6CB0000 0x10 LoadHint                    ( 00018659AC80 ModelEnumType LoadHint LoadHint LoadHint Int32 )
+            value.LoadHint                                  = (LoadHint)GetInt32(new IntPtr(p + 0x010)); // 024666D0F7D0 0x10 LoadHint                    ( 00018659AC80 ModelEnumType LoadHint LoadHint LoadHint Int32 )
 
             return value;
         }

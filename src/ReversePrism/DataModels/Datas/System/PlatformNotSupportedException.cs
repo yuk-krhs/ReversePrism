@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlatformNotSupportedException
+    public partial class PlatformNotSupportedException : DataModel
     {
 
         public static PlatformNotSupportedException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlatformNotSupportedException();
+            var value   = new PlatformNotSupportedException() { Pointer= p0 };
 
 
             return value;

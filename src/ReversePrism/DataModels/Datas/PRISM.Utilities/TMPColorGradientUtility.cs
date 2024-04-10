@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TMPColorGradientUtility
+    public partial class TMPColorGradientUtility : DataModel
     {
 
         public static TMPColorGradientUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMPColorGradientUtility();
+            var value   = new TMPColorGradientUtility() { Pointer= p0 };
 
 
             return value;

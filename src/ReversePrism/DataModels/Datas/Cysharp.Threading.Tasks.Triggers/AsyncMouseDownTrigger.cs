@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncMouseDownTrigger
+    public partial class AsyncMouseDownTrigger : DataModel
     {
 
         public static AsyncMouseDownTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncMouseDownTrigger();
+            var value   = new AsyncMouseDownTrigger() { Pointer= p0 };
 
 
             return value;

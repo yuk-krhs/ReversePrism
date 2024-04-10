@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 Duration                                 0001866656B0 ModelPrimitiveType float float float Single
     // 034 InPos                                    0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 03C OutPos                                   0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    public partial class SimpleSlideAnimation
+    public partial class SimpleSlideAnimation : DataModel
     {
         public RectTransform?                           Body                                    { get; set; }
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SimpleSlideAnimation();
+            var value   = new SimpleSlideAnimation() { Pointer= p0 };
 
-            value.Body                                      = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4C82198 0x20 Body                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270D4C821B8 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x030)); // 0270D4C821D8 0x30 Duration                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.InPos                                     = (Vector2)GetInt32(new IntPtr(p + 0x034)); // 0270D4C821F8 0x34 InPos                       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.OutPos                                    = (Vector2)GetInt32(new IntPtr(p + 0x03C)); // 0270D4C82218 0x3C OutPos                      ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Body                                      = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 024664CE5B88 0x20 Body                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 024664CE5BA8 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x030)); // 024664CE5BC8 0x30 Duration                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.InPos                                     = (Vector2)GetInt32(new IntPtr(p + 0x034)); // 024664CE5BE8 0x34 InPos                       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.OutPos                                    = (Vector2)GetInt32(new IntPtr(p + 0x03C)); // 024664CE5C08 0x3C OutPos                      ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 MstProducePassiveEffectTypeId            0001865F4260 ModelPrimitiveType int int int Int32
     // 018 ScheduleType                             0001865F4260 ModelPrimitiveType int int int Int32
     // 01C ScheduleDetailType                       0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class SupportEffectPassiveEffect
+    public partial class SupportEffectPassiveEffect : DataModel
     {
         public bool                                     AcquiredSkill                           { get; set; }
         public int                                      MstProducePassiveEffectTypeId           { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportEffectPassiveEffect();
+            var value   = new SupportEffectPassiveEffect() { Pointer= p0 };
 
-            value.AcquiredSkill                             = GetBool(new IntPtr(p + 0x010)); // 0270D59A5CA0 0x10 AcquiredSkill               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.MstProducePassiveEffectTypeId             = GetInt32(new IntPtr(p + 0x014)); // 0270D59A5CC0 0x14 MstProducePassiveEffectTypeId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ScheduleType                              = GetInt32(new IntPtr(p + 0x018)); // 0270D59A5CE0 0x18 ScheduleType                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ScheduleDetailType                        = GetInt32(new IntPtr(p + 0x01C)); // 0270D59A5D00 0x1C ScheduleDetailType          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.AcquiredSkill                             = GetBool(new IntPtr(p + 0x010)); // 024665A06448 0x10 AcquiredSkill               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.MstProducePassiveEffectTypeId             = GetInt32(new IntPtr(p + 0x014)); // 024665A06468 0x14 MstProducePassiveEffectTypeId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScheduleType                              = GetInt32(new IntPtr(p + 0x018)); // 024665A06488 0x18 ScheduleType                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScheduleDetailType                        = GetInt32(new IntPtr(p + 0x01C)); // 024665A064A8 0x1C ScheduleDetailType          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

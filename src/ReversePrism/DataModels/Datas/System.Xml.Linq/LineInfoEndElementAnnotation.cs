@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LineInfoEndElementAnnotation
+    public partial class LineInfoEndElementAnnotation : DataModel
     {
 
         public static LineInfoEndElementAnnotation? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LineInfoEndElementAnnotation();
+            var value   = new LineInfoEndElementAnnotation() { Pointer= p0 };
 
 
             return value;

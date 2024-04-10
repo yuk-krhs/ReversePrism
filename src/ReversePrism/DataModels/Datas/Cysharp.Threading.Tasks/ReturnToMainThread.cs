@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 PlayerLoopTiming                         000186753670 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32
     // 018 CancellationToken                        00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    public partial class ReturnToMainThread
+    public partial class ReturnToMainThread : DataModel
     {
         public PlayerLoopTiming                         PlayerLoopTiming                        { get; set; }
         public CancellationToken                        CancellationToken                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReturnToMainThread();
+            var value   = new ReturnToMainThread() { Pointer= p0 };
 
-            value.PlayerLoopTiming                          = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x010)); // 0270D8DA34B0 0x10 PlayerLoopTiming            ( 000186753670 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x018)); // 0270D8DA34D0 0x18 CancellationToken           ( 00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.PlayerLoopTiming                          = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x010)); // 024668DF6010 0x10 PlayerLoopTiming            ( 000186753670 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x018)); // 024668DF6030 0x18 CancellationToken           ( 00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

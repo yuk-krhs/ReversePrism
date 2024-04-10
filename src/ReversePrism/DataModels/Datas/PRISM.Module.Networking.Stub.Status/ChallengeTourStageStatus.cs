@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 030 RewardList                               000185CD1758 ModelClassListType RepeatedField`1<ChallengeTourStageRewardStatus> RepeatedField`1<ChallengeTourStageRewardStatus> List<ChallengeTourStageRewardStatus> Pointer
     // 000 RivalUnitFieldNumber                     int IL2CPP_TYPE_I4
     // 038 RivalUnit                                00018657EB90 ModelClassType ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus Pointer
-    public partial class ChallengeTourStageStatus
+    public partial class ChallengeTourStageStatus : DataModel
     {
         public int                                      StageId                                 { get; set; }
         public int                                      StageNumber                             { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourStageStatus();
+            var value   = new ChallengeTourStageStatus() { Pointer= p0 };
 
-            value.StageId                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D0F36BE0 0x18 StageId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StageNumber                               = GetInt32(new IntPtr(p + 0x01C)); // 0270D0F36C20 0x1C StageNumber                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StageType                                 = (ChallengeTourStageType)GetInt32(new IntPtr(p + 0x020)); // 0270D0F36C60 0x20 StageType                   ( 000186585040 ModelEnumType ChallengeTourStageType ChallengeTourStageType ChallengeTourStageType Int32 )
-            value.Star                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D0F36CA0 0x28 Star                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.RewardList                                = GetObjectList<ChallengeTourStageRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourStageRewardStatus.FromPointer); // 0270D0F36D00 0x30 RewardList                  ( 000185CD1758 ModelClassListType RepeatedField`1<ChallengeTourStageRewardStatus> RepeatedField`1<ChallengeTourStageRewardStatus> List<ChallengeTourStageRewardStatus> Pointer )
-            value.RivalUnit                                 = GetObject<ChallengeTourRivalUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourRivalUnitStatus.FromPointer); // 0270D0F36D40 0x38 RivalUnit                   ( 00018657EB90 ModelClassType ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus Pointer )
+            value.StageId                                   = GetInt32(new IntPtr(p + 0x018)); // 024660EDCE10 0x18 StageId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StageNumber                               = GetInt32(new IntPtr(p + 0x01C)); // 024660EDCE50 0x1C StageNumber                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StageType                                 = (ChallengeTourStageType)GetInt32(new IntPtr(p + 0x020)); // 024660EDCE90 0x20 StageType                   ( 000186585040 ModelEnumType ChallengeTourStageType ChallengeTourStageType ChallengeTourStageType Int32 )
+            value.Star                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024660EDCED0 0x28 Star                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.RewardList                                = GetObjectList<ChallengeTourStageRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourStageRewardStatus.FromPointer); // 024660EDCF30 0x30 RewardList                  ( 000185CD1758 ModelClassListType RepeatedField`1<ChallengeTourStageRewardStatus> RepeatedField`1<ChallengeTourStageRewardStatus> List<ChallengeTourStageRewardStatus> Pointer )
+            value.RivalUnit                                 = GetObject<ChallengeTourRivalUnitStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourRivalUnitStatus.FromPointer); // 024660EDCF70 0x38 RivalUnit                   ( 00018657EB90 ModelClassType ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus ChallengeTourRivalUnitStatus Pointer )
 
             return value;
         }

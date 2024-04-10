@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMGUISendQueuedEvents
+    public partial class IMGUISendQueuedEvents : DataModel
     {
 
         public static IMGUISendQueuedEvents? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMGUISendQueuedEvents();
+            var value   = new IMGUISendQueuedEvents() { Pointer= p0 };
 
 
             return value;

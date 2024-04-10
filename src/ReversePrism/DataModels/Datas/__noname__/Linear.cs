@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Width                                    0001865C2950 ModelPrimitiveType double double double Double
     // 000 OffsetFieldNumber                        int IL2CPP_TYPE_I4
     // 028 Offset                                   0001865C2950 ModelPrimitiveType double double double Double
-    public partial class Linear
+    public partial class Linear : DataModel
     {
         public int                                      NumFiniteBuckets                        { get; set; }
         public double                                   Width                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Linear();
+            var value   = new Linear() { Pointer= p0 };
 
-            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 0270DA7950C0 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Width                                     = GetDouble(new IntPtr(p + 0x020)); // 0270DA795100 0x20 Width                       ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Offset                                    = GetDouble(new IntPtr(p + 0x028)); // 0270DA795140 0x28 Offset                      ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 02466A7F9910 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Width                                     = GetDouble(new IntPtr(p + 0x020)); // 02466A7F9950 0x20 Width                       ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Offset                                    = GetDouble(new IntPtr(p + 0x028)); // 02466A7F9990 0x28 Offset                      ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

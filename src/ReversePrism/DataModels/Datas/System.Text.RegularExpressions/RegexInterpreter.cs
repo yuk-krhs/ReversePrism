@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 094 Codepos                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 098 RightToLeft                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 099 CaseInsensitive                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class RegexInterpreter
+    public partial class RegexInterpreter : DataModel
     {
         public RegexCode?                               Code                                    { get; set; }
         public CultureInfo?                             Culture                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexInterpreter();
+            var value   = new RegexInterpreter() { Pointer= p0 };
 
-            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x080), ReversePrism.DataModels.RegexCode.FromPointer); // 0270001EC828 0x80 Code                        ( 00018663D0E0 ModelClassType RegexCode RegexCode RegexCode Pointer )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x088), ReversePrism.DataModels.CultureInfo.FromPointer); // 0270001EC848 0x88 Culture                     ( 0001865B51E0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.Operator                                  = GetInt32(new IntPtr(p + 0x090)); // 0270001EC868 0x90 Operator                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Codepos                                   = GetInt32(new IntPtr(p + 0x094)); // 0270001EC888 0x94 Codepos                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RightToLeft                               = GetBool(new IntPtr(p + 0x098)); // 0270001EC8A8 0x98 RightToLeft                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x099)); // 0270001EC8C8 0x99 CaseInsensitive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x080), ReversePrism.DataModels.RegexCode.FromPointer); // 0245A01EC828 0x80 Code                        ( 00018663D0E0 ModelClassType RegexCode RegexCode RegexCode Pointer )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x088), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A01EC848 0x88 Culture                     ( 0001865B51E0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.Operator                                  = GetInt32(new IntPtr(p + 0x090)); // 0245A01EC868 0x90 Operator                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Codepos                                   = GetInt32(new IntPtr(p + 0x094)); // 0245A01EC888 0x94 Codepos                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RightToLeft                               = GetBool(new IntPtr(p + 0x098)); // 0245A01EC8A8 0x98 RightToLeft                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CaseInsensitive                           = GetBool(new IntPtr(p + 0x099)); // 0245A01EC8C8 0x99 CaseInsensitive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

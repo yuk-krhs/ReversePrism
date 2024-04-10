@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DataType                                 000186671910 ModelPrimitiveType string string string String
     // 018 Type                                     000186692850 ModelClassType Type Type Type Pointer
-    public partial class XmlTextAttribute
+    public partial class XmlTextAttribute : DataModel
     {
         public string                                   DataType                                { get; set; }
         public Type?                                    Type                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTextAttribute();
+            var value   = new XmlTextAttribute() { Pointer= p0 };
 
-            value.DataType                                  = GetString(new IntPtr(p + 0x010)); // 0270D74B84C8 0x10 DataType                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D74B84E8 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.DataType                                  = GetString(new IntPtr(p + 0x010)); // 0246675184C8 0x10 DataType                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0246675184E8 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Param                                    000185CB62F8 ModelClassListType BodyParameter[] BodyParameter[] List<BodyParameter> Pointer
-    public partial class BodyParameters
+    public partial class BodyParameters : DataModel
     {
         public List<BodyParameter>?                     Param                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BodyParameters();
+            var value   = new BodyParameters() { Pointer= p0 };
 
-            value.Param                                     = GetObjectList<BodyParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.BodyParameter.FromPointer); // 0270069E4E40 0x10 Param                       ( 000185CB62F8 ModelClassListType BodyParameter[] BodyParameter[] List<BodyParameter> Pointer )
+            value.Param                                     = GetObjectList<BodyParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.BodyParameter.FromPointer); // 0245A69A19C0 0x10 Param                       ( 000185CB62F8 ModelClassListType BodyParameter[] BodyParameter[] List<BodyParameter> Pointer )
 
             return value;
         }

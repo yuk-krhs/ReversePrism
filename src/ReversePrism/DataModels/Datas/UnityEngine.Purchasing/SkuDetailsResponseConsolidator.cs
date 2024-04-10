@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 M_Responses                              000186648330 ModelClassType ISkuDetailsQueryResponse ISkuDetailsQueryResponse ISkuDetailsQueryResponse Pointer
     // 028 M_Util                                   0001866905E0 ModelClassType IUtil IUtil IUtil Pointer
     // 030 M_TelemetryDiagnostics                   00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
-    public partial class SkuDetailsResponseConsolidator
+    public partial class SkuDetailsResponseConsolidator : DataModel
     {
         public int                                      M_NumberReceivedCallbacks               { get; set; }
         public ISkuDetailsQueryResponse?                M_Responses                             { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkuDetailsResponseConsolidator();
+            var value   = new SkuDetailsResponseConsolidator() { Pointer= p0 };
 
-            value.M_NumberReceivedCallbacks                 = GetInt32(new IntPtr(p + 0x010)); // 027006908550 0x10 M_NumberReceivedCallbacks   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Responses                               = GetObject<ISkuDetailsQueryResponse>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISkuDetailsQueryResponse.FromPointer); // 027006908590 0x20 M_Responses                 ( 000186648330 ModelClassType ISkuDetailsQueryResponse ISkuDetailsQueryResponse ISkuDetailsQueryResponse Pointer )
-            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x028), ReversePrism.DataModels.IUtil.FromPointer); // 0270069085B0 0x28 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
-            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x030), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0270069085D0 0x30 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
+            value.M_NumberReceivedCallbacks                 = GetInt32(new IntPtr(p + 0x010)); // 0245A68CB1B0 0x10 M_NumberReceivedCallbacks   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Responses                               = GetObject<ISkuDetailsQueryResponse>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISkuDetailsQueryResponse.FromPointer); // 0245A68CB1F0 0x20 M_Responses                 ( 000186648330 ModelClassType ISkuDetailsQueryResponse ISkuDetailsQueryResponse ISkuDetailsQueryResponse Pointer )
+            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x028), ReversePrism.DataModels.IUtil.FromPointer); // 0245A68CB210 0x28 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
+            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x030), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0245A68CB230 0x30 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
 
             return value;
         }

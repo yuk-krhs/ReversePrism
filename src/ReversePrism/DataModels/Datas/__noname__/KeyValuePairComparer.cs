@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 keyComparer                              IComparer`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class KeyValuePairComparer
+    public partial class KeyValuePairComparer : DataModel
     {
 
         public static KeyValuePairComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyValuePairComparer();
+            var value   = new KeyValuePairComparer() { Pointer= p0 };
 
 
             return value;

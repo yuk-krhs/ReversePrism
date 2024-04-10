@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 020 IsXamarin                                000186596D40 ModelPrimitiveType bool bool bool Bool
     // 021 IsXamarinIOS                             000186596D40 ModelPrimitiveType bool bool bool Bool
     // 022 IsXamarinAndroid                         000186596D40 ModelPrimitiveType bool bool bool Bool
-    public partial class PlatformApis
+    public partial class PlatformApis : DataModel
     {
         public string                                   ClrVersion                              { get; set; }
         public string                                   UnityApplicationPlatform                { get; set; }
@@ -39,13 +39,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlatformApis();
+            var value   = new PlatformApis() { Pointer= p0 };
 
-            value.ClrVersion                                = GetString(new IntPtr(p + 0x010)); // 027004083DF0 0x10 ClrVersion                  ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.UnityApplicationPlatform                  = GetString(new IntPtr(p + 0x018)); // 027004083E10 0x18 UnityApplicationPlatform    ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.IsXamarin                                 = GetBool(new IntPtr(p + 0x020)); // 027004083E30 0x20 IsXamarin                   ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.IsXamarinIOS                              = GetBool(new IntPtr(p + 0x021)); // 027004083E50 0x21 IsXamarinIOS                ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
-            value.IsXamarinAndroid                          = GetBool(new IntPtr(p + 0x022)); // 027004083E70 0x22 IsXamarinAndroid            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.ClrVersion                                = GetString(new IntPtr(p + 0x010)); // 0245A40C6510 0x10 ClrVersion                  ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.UnityApplicationPlatform                  = GetString(new IntPtr(p + 0x018)); // 0245A40C6530 0x18 UnityApplicationPlatform    ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.IsXamarin                                 = GetBool(new IntPtr(p + 0x020)); // 0245A40C6550 0x20 IsXamarin                   ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.IsXamarinIOS                              = GetBool(new IntPtr(p + 0x021)); // 0245A40C6570 0x21 IsXamarinIOS                ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
+            value.IsXamarinAndroid                          = GetBool(new IntPtr(p + 0x022)); // 0245A40C6590 0x22 IsXamarinAndroid            ( 000186596D40 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

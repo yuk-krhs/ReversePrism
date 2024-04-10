@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 Put                                      string IL2CPP_TYPE_STRING
     // 000 Post                                     string IL2CPP_TYPE_STRING
     // 000 Delete                                   string IL2CPP_TYPE_STRING
-    public partial class HttpMethod
+    public partial class HttpMethod : DataModel
     {
 
         public static HttpMethod? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpMethod();
+            var value   = new HttpMethod() { Pointer= p0 };
 
 
             return value;

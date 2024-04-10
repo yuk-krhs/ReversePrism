@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILayoutSelfController
+    public partial class ILayoutSelfController : DataModel
     {
 
         public static ILayoutSelfController? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILayoutSelfController();
+            var value   = new ILayoutSelfController() { Pointer= p0 };
 
 
             return value;

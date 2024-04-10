@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     00018665ED90 ModelClassType IStoryTopExtraContentView IStoryTopExtraContentView IStoryTopExtraContentView Pointer
     // 018 CellDataList                             000185CEFC48 ModelClassListType IReadOnlyList`1<ExtraStoryFirstCategoryCellData> IReadOnlyList`1<ExtraStoryFirstCategoryCellData> List<ExtraStoryFirstCategoryCellData> Pointer
     // 020 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class StoryTopExtraContentPresenter
+    public partial class StoryTopExtraContentPresenter : DataModel
     {
         public IStoryTopExtraContentView?               View                                    { get; set; }
         public List<ExtraStoryFirstCategoryCellData>?   CellDataList                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopExtraContentPresenter();
+            var value   = new StoryTopExtraContentPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IStoryTopExtraContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryTopExtraContentView.FromPointer); // 0270D67E50F0 0x10 View                        ( 00018665ED90 ModelClassType IStoryTopExtraContentView IStoryTopExtraContentView IStoryTopExtraContentView Pointer )
-            value.CellDataList                              = GetObjectList<ExtraStoryFirstCategoryCellData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExtraStoryFirstCategoryCellData.FromPointer); // 0270D67E5110 0x18 CellDataList                ( 000185CEFC48 ModelClassListType IReadOnlyList`1<ExtraStoryFirstCategoryCellData> IReadOnlyList`1<ExtraStoryFirstCategoryCellData> List<ExtraStoryFirstCategoryCellData> Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D67E5130 0x20 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.View                                      = GetObject<IStoryTopExtraContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryTopExtraContentView.FromPointer); // 0246668450F0 0x10 View                        ( 00018665ED90 ModelClassType IStoryTopExtraContentView IStoryTopExtraContentView IStoryTopExtraContentView Pointer )
+            value.CellDataList                              = GetObjectList<ExtraStoryFirstCategoryCellData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExtraStoryFirstCategoryCellData.FromPointer); // 024666845110 0x18 CellDataList                ( 000185CEFC48 ModelClassListType IReadOnlyList`1<ExtraStoryFirstCategoryCellData> IReadOnlyList`1<ExtraStoryFirstCategoryCellData> List<ExtraStoryFirstCategoryCellData> Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDisposable.FromPointer); // 024666845130 0x20 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

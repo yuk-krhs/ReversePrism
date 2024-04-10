@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Data                                   00018657A070 ModelEnumType StreamData StreamData StreamData Int32
     // 030 m_SendHandleData                         <int> IL2CPP_TYPE_I
-    public partial class DataStreamWriter
+    public partial class DataStreamWriter : DataModel
     {
         public StreamData                               M_Data                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataStreamWriter();
+            var value   = new DataStreamWriter() { Pointer= p0 };
 
-            value.M_Data                                    = (StreamData)GetInt32(new IntPtr(p + 0x010)); // 02700526BE20 0x10 M_Data                      ( 00018657A070 ModelEnumType StreamData StreamData StreamData Int32 )
+            value.M_Data                                    = (StreamData)GetInt32(new IntPtr(p + 0x010)); // 0245A51751D0 0x10 M_Data                      ( 00018657A070 ModelEnumType StreamData StreamData StreamData Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 Proto                                    000186738240 ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer
     // 030 methods                                  IList`1<MethodDescriptor> IL2CPP_TYPE_GENERICINST
-    public partial class ServiceDescriptor
+    public partial class ServiceDescriptor : DataModel
     {
         public ServiceDescriptorProto?                  Proto                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServiceDescriptor();
+            var value   = new ServiceDescriptor() { Pointer= p0 };
 
-            value.Proto                                     = GetObject<ServiceDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 0270D0CFA2A0 0x28 Proto                       ( 000186738240 ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer )
+            value.Proto                                     = GetObject<ServiceDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 024660D00520 0x28 Proto                       ( 000186738240 ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer )
 
             return value;
         }

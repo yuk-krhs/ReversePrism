@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_AndroidSkuDetailsResponseListenerClassName string IL2CPP_TYPE_STRING
     // 020 m_OnQueryPurchasesResponse               Action`2<IGoogleBillingResult, IEnumerable`1<IAndroidJavaObjectWrapper>> IL2CPP_TYPE_GENERICINST
-    public partial class GooglePurchasesResponseListener
+    public partial class GooglePurchasesResponseListener : DataModel
     {
 
         public static GooglePurchasesResponseListener? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GooglePurchasesResponseListener();
+            var value   = new GooglePurchasesResponseListener() { Pointer= p0 };
 
 
             return value;

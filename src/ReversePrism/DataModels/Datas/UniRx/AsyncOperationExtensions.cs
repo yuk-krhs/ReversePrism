@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncOperationExtensions
+    public partial class AsyncOperationExtensions : DataModel
     {
 
         public static AsyncOperationExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationExtensions();
+            var value   = new AsyncOperationExtensions() { Pointer= p0 };
 
 
             return value;

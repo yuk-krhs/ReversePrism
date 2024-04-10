@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 CueName                                  000186671910 ModelPrimitiveType string string string String
     // 020 Volume                                   0001866656B0 ModelPrimitiveType float float float Single
-    public partial class CueVolumePlayableAsset
+    public partial class CueVolumePlayableAsset : DataModel
     {
         public string                                   CueName                                 { get; set; }
         public float                                    Volume                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CueVolumePlayableAsset();
+            var value   = new CueVolumePlayableAsset() { Pointer= p0 };
 
-            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0270D4B1B000 0x18 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x020)); // 0270D4B1B020 0x20 Volume                      ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 024664B82838 0x18 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x020)); // 024664B82858 0x20 Volume                      ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

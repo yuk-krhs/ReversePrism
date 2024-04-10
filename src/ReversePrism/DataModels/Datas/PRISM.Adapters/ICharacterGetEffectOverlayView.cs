@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICharacterGetEffectOverlayView
+    public partial class ICharacterGetEffectOverlayView : DataModel
     {
 
         public static ICharacterGetEffectOverlayView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICharacterGetEffectOverlayView();
+            var value   = new ICharacterGetEffectOverlayView() { Pointer= p0 };
 
 
             return value;

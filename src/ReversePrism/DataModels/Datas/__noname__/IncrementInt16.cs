@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IncrementInt16
+    public partial class IncrementInt16 : DataModel
     {
 
         public static IncrementInt16? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IncrementInt16();
+            var value   = new IncrementInt16() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 060 <getObjects>k__BackingField              Func`1<IEnumerable`1<Object>> IL2CPP_TYPE_GENERICINST
-    public partial class ObjectPopupField
+    public partial class ObjectPopupField : DataModel
     {
 
         public static ObjectPopupField? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectPopupField();
+            var value   = new ObjectPopupField() { Pointer= p0 };
 
 
             return value;

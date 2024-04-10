@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OutGameSkillEffect
+    public partial class OutGameSkillEffect : DataModel
     {
 
         public static OutGameSkillEffect? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutGameSkillEffect();
+            var value   = new OutGameSkillEffect() { Pointer= p0 };
 
 
             return value;

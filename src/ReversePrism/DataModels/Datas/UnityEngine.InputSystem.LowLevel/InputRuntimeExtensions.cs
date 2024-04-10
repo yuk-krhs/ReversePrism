@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InputRuntimeExtensions
+    public partial class InputRuntimeExtensions : DataModel
     {
 
         public static InputRuntimeExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputRuntimeExtensions();
+            var value   = new InputRuntimeExtensions() { Pointer= p0 };
 
 
             return value;

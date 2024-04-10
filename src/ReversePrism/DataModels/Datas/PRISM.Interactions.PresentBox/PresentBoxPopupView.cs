@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 050 onReceive                                Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 ViewModel                                00018650A360 ModelClassType PresentBoxViewModel PresentBoxViewModel PresentBoxViewModel Pointer
     // 060 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class PresentBoxPopupView
+    public partial class PresentBoxPopupView : DataModel
     {
         public PresentBoxListView?                      PresentListView                         { get; set; }
         public List<UITextMeshProUGUI>?                 ReplaceTexts                            { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PresentBoxPopupView();
+            var value   = new PresentBoxPopupView() { Pointer= p0 };
 
-            value.PresentListView                           = GetObject<PresentBoxListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PresentBoxListView.FromPointer); // 0270DBE81548 0x20 PresentListView             ( 000186779390 ModelClassType PresentBoxListView PresentBoxListView PresentBoxListView Pointer )
-            value.ReplaceTexts                              = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBE81568 0x28 ReplaceTexts                ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.ViewModel                                 = GetObject<PresentBoxViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PresentBoxViewModel.FromPointer); // 0270DBE81628 0x58 ViewModel                   ( 00018650A360 ModelClassType PresentBoxViewModel PresentBoxViewModel PresentBoxViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DBE81648 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.PresentListView                           = GetObject<PresentBoxListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PresentBoxListView.FromPointer); // 02466BF11430 0x20 PresentListView             ( 000186779390 ModelClassType PresentBoxListView PresentBoxListView PresentBoxListView Pointer )
+            value.ReplaceTexts                              = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BF11450 0x28 ReplaceTexts                ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.ViewModel                                 = GetObject<PresentBoxViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PresentBoxViewModel.FromPointer); // 02466BF11510 0x58 ViewModel                   ( 00018650A360 ModelClassType PresentBoxViewModel PresentBoxViewModel PresentBoxViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BF11530 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

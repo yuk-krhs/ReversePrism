@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ButtonTargetRelation                     000186518820 ModelEnumType ButtonTargetRelation ButtonTargetRelation ButtonTargetRelation Int32
-    public partial class WaitButtonClickSequence
+    public partial class WaitButtonClickSequence : DataModel
     {
         public ButtonTargetRelation                     ButtonTargetRelation                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitButtonClickSequence();
+            var value   = new WaitButtonClickSequence() { Pointer= p0 };
 
-            value.ButtonTargetRelation                      = (ButtonTargetRelation)GetInt32(new IntPtr(p + 0x010)); // 0270DBC11B58 0x10 ButtonTargetRelation        ( 000186518820 ModelEnumType ButtonTargetRelation ButtonTargetRelation ButtonTargetRelation Int32 )
+            value.ButtonTargetRelation                      = (ButtonTargetRelation)GetInt32(new IntPtr(p + 0x010)); // 02466BCA8EC0 0x10 ButtonTargetRelation        ( 000186518820 ModelEnumType ButtonTargetRelation ButtonTargetRelation ButtonTargetRelation Int32 )
 
             return value;
         }

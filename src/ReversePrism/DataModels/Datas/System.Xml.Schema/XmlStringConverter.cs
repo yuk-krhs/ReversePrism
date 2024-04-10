@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlStringConverter
+    public partial class XmlStringConverter : DataModel
     {
 
         public static XmlStringConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlStringConverter();
+            var value   = new XmlStringConverter() { Pointer= p0 };
 
 
             return value;

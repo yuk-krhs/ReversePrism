@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
     // 010 Numeric10FacetsChecker                   00018654FD90 ModelClassType FacetsChecker FacetsChecker FacetsChecker Pointer
-    public partial class Datatype_unsignedInt
+    public partial class Datatype_unsignedInt : DataModel
     {
         public FacetsChecker?                           Numeric10FacetsChecker                  { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_unsignedInt();
+            var value   = new Datatype_unsignedInt() { Pointer= p0 };
 
-            value.Numeric10FacetsChecker                    = GetObject<FacetsChecker>(new IntPtr(p + 0x010), ReversePrism.DataModels.FacetsChecker.FromPointer); // 0270D7524930 0x10 Numeric10FacetsChecker      ( 00018654FD90 ModelClassType FacetsChecker FacetsChecker FacetsChecker Pointer )
+            value.Numeric10FacetsChecker                    = GetObject<FacetsChecker>(new IntPtr(p + 0x010), ReversePrism.DataModels.FacetsChecker.FromPointer); // 02466758C930 0x10 Numeric10FacetsChecker      ( 00018654FD90 ModelClassType FacetsChecker FacetsChecker FacetsChecker Pointer )
 
             return value;
         }

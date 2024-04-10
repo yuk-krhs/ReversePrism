@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnDropHandler
+    public partial class IAsyncOnDropHandler : DataModel
     {
 
         public static IAsyncOnDropHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnDropHandler();
+            var value   = new IAsyncOnDropHandler() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 070 M_MousePosition                          0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 078 M_InputPointerEvent                      000186642240 ModelClassType PointerEventData PointerEventData PointerEventData Pointer
     // 080 M_ForceModuleActive                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TouchInputModule
+    public partial class TouchInputModule : DataModel
     {
         public Vector2                                  M_LastMousePosition                     { get; set; }
         public Vector2                                  M_MousePosition                         { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchInputModule();
+            var value   = new TouchInputModule() { Pointer= p0 };
 
-            value.M_LastMousePosition                       = (Vector2)GetInt32(new IntPtr(p + 0x068)); // 0270068E61F0 0x68 M_LastMousePosition         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_MousePosition                           = (Vector2)GetInt32(new IntPtr(p + 0x070)); // 0270068E6210 0x70 M_MousePosition             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_InputPointerEvent                       = GetObject<PointerEventData>(new IntPtr(p + 0x078), ReversePrism.DataModels.PointerEventData.FromPointer); // 0270068E6230 0x78 M_InputPointerEvent         ( 000186642240 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
-            value.M_ForceModuleActive                       = GetBool(new IntPtr(p + 0x080)); // 0270068E6250 0x80 M_ForceModuleActive         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_LastMousePosition                       = (Vector2)GetInt32(new IntPtr(p + 0x068)); // 0245A68A8EB8 0x68 M_LastMousePosition         ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_MousePosition                           = (Vector2)GetInt32(new IntPtr(p + 0x070)); // 0245A68A8ED8 0x70 M_MousePosition             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_InputPointerEvent                       = GetObject<PointerEventData>(new IntPtr(p + 0x078), ReversePrism.DataModels.PointerEventData.FromPointer); // 0245A68A8EF8 0x78 M_InputPointerEvent         ( 000186642240 ModelClassType PointerEventData PointerEventData PointerEventData Pointer )
+            value.M_ForceModuleActive                       = GetBool(new IntPtr(p + 0x080)); // 0245A68A8F18 0x80 M_ForceModuleActive         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

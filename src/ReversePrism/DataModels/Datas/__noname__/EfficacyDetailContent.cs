@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ContentRectTransform                     000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 028 EfficacyName                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 030 EfficacyDescription                      0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class EfficacyDetailContent
+    public partial class EfficacyDetailContent : DataModel
     {
         public RectTransform?                           ContentRectTransform                    { get; set; }
         public UITextMeshProUGUI?                       EfficacyName                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EfficacyDetailContent();
+            var value   = new EfficacyDetailContent() { Pointer= p0 };
 
-            value.ContentRectTransform                      = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4B18BA0 0x20 ContentRectTransform        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.EfficacyName                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4B18BC0 0x28 EfficacyName                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EfficacyDescription                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4B18BE0 0x30 EfficacyDescription         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ContentRectTransform                      = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 024664B7EEE0 0x20 ContentRectTransform        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.EfficacyName                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664B7EF00 0x28 EfficacyName                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EfficacyDescription                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664B7EF20 0x30 EfficacyDescription         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

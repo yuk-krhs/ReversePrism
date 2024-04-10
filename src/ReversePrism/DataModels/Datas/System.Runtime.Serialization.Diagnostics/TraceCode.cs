@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 000 XsdExportDupItems                        int IL2CPP_TYPE_I4
     // 000 FactoryTypeNotFound                      int IL2CPP_TYPE_I4
     // 000 ObjectWithLargeDepth                     int IL2CPP_TYPE_I4
-    public partial class TraceCode
+    public partial class TraceCode : DataModel
     {
 
         public static TraceCode? FromPointer(IntPtr p0)
@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TraceCode();
+            var value   = new TraceCode() { Pointer= p0 };
 
 
             return value;

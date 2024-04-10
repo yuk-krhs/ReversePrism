@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IToggleArchiveFavoriteArgs
+    public partial class IToggleArchiveFavoriteArgs : DataModel
     {
 
         public static IToggleArchiveFavoriteArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IToggleArchiveFavoriteArgs();
+            var value   = new IToggleArchiveFavoriteArgs() { Pointer= p0 };
 
 
             return value;

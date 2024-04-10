@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncMessagePublisher
+    public partial class IAsyncMessagePublisher : DataModel
     {
 
         public static IAsyncMessagePublisher? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncMessagePublisher();
+            var value   = new IAsyncMessagePublisher() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TargetName                               000186672F10 ModelPrimitiveType string string string String
     // 018 PeerPem                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class VerifyPeerContext
+    public partial class VerifyPeerContext : DataModel
     {
         public string                                   TargetName                              { get; set; }
         public string                                   PeerPem                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyPeerContext();
+            var value   = new VerifyPeerContext() { Pointer= p0 };
 
-            value.TargetName                                = GetString(new IntPtr(p + 0x010)); // 0270DBB5F938 0x10 TargetName                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PeerPem                                   = GetString(new IntPtr(p + 0x018)); // 0270DBB5F958 0x18 PeerPem                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.TargetName                                = GetString(new IntPtr(p + 0x010)); // 02466BBE7778 0x10 TargetName                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PeerPem                                   = GetString(new IntPtr(p + 0x018)); // 02466BBE7798 0x18 PeerPem                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

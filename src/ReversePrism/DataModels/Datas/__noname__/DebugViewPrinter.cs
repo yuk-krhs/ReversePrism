@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 _handlerEnter                            Dictionary`2<int, string> IL2CPP_TYPE_GENERICINST
     // 028 _handlerExit                             Dictionary`2<int, int> IL2CPP_TYPE_GENERICINST
     // 030 Indent                                   000186671910 ModelPrimitiveType string string string String
-    public partial class DebugViewPrinter
+    public partial class DebugViewPrinter : DataModel
     {
         public Interpreter?                             Interpreter                             { get; set; }
         public string                                   Indent                                  { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugViewPrinter();
+            var value   = new DebugViewPrinter() { Pointer= p0 };
 
-            value.Interpreter                               = GetObject<Interpreter>(new IntPtr(p + 0x010), ReversePrism.DataModels.Interpreter.FromPointer); // 0270DA00D440 0x10 Interpreter                 ( 000186721AE0 ModelClassType Interpreter Interpreter Interpreter Pointer )
-            value.Indent                                    = GetString(new IntPtr(p + 0x030)); // 0270DA00D4C0 0x30 Indent                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Interpreter                               = GetObject<Interpreter>(new IntPtr(p + 0x010), ReversePrism.DataModels.Interpreter.FromPointer); // 02466A0711C0 0x10 Interpreter                 ( 000186721AE0 ModelClassType Interpreter Interpreter Interpreter Pointer )
+            value.Indent                                    = GetString(new IntPtr(p + 0x030)); // 02466A071240 0x30 Indent                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

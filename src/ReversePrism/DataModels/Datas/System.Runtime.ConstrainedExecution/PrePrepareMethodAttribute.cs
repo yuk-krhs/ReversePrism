@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PrePrepareMethodAttribute
+    public partial class PrePrepareMethodAttribute : DataModel
     {
 
         public static PrePrepareMethodAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrePrepareMethodAttribute();
+            var value   = new PrePrepareMethodAttribute() { Pointer= p0 };
 
 
             return value;

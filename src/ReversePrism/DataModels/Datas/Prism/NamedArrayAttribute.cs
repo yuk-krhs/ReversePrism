@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Names                                    000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class NamedArrayAttribute
+    public partial class NamedArrayAttribute : DataModel
     {
         public List<string>?                            Names                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamedArrayAttribute();
+            var value   = new NamedArrayAttribute() { Pointer= p0 };
 
-            value.Names                                     = GetStringList(new IntPtr(p + 0x010)); // 0270D4C329E0 0x10 Names                       ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Names                                     = GetStringList(new IntPtr(p + 0x010)); // 024664C95B08 0x10 Names                       ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityUIComponentExtensions
+    public partial class UnityUIComponentExtensions : DataModel
     {
 
         public static UnityUIComponentExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityUIComponentExtensions();
+            var value   = new UnityUIComponentExtensions() { Pointer= p0 };
 
 
             return value;

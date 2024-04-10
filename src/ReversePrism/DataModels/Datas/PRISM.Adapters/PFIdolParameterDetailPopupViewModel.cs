@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 FIdolIcon                                000186545550 ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer
     // 020 IdolParameter                            0001865EF800 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
     // 028 BaseBonusParameter                       000186575830 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer
-    public partial class PFIdolParameterDetailPopupViewModel
+    public partial class PFIdolParameterDetailPopupViewModel : DataModel
     {
         public PIdolIcon?                               PIdolIcon                               { get; set; }
         public FIdolIcon?                               FIdolIcon                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PFIdolParameterDetailPopupViewModel();
+            var value   = new PFIdolParameterDetailPopupViewModel() { Pointer= p0 };
 
-            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0270D5F413E0 0x10 PIdolIcon                   ( 00018670CB20 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
-            value.FIdolIcon                                 = GetObject<FIdolIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.FIdolIcon.FromPointer); // 0270D5F41400 0x18 FIdolIcon                   ( 000186545550 ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer )
-            value.IdolParameter                             = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0270D5F41420 0x20 IdolParameter               ( 0001865EF800 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
-            value.BaseBonusParameter                        = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 0270D5F41440 0x28 BaseBonusParameter          ( 000186575830 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
+            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 024665FA13E0 0x10 PIdolIcon                   ( 00018670CB20 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
+            value.FIdolIcon                                 = GetObject<FIdolIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.FIdolIcon.FromPointer); // 024665FA1400 0x18 FIdolIcon                   ( 000186545550 ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer )
+            value.IdolParameter                             = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 024665FA1420 0x20 IdolParameter               ( 0001865EF800 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
+            value.BaseBonusParameter                        = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 024665FA1440 0x28 BaseBonusParameter          ( 000186575830 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
 
             return value;
         }

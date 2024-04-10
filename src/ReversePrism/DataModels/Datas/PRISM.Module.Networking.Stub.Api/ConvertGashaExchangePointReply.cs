@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 ConvertPointList                         000185CDAD18 ModelClassListType RepeatedField`1<GashaConvertExchangePointStatus> RepeatedField`1<GashaConvertExchangePointStatus> List<GashaConvertExchangePointStatus> Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
     // 020 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class ConvertGashaExchangePointReply
+    public partial class ConvertGashaExchangePointReply : DataModel
     {
         public List<GashaConvertExchangePointStatus>?   ConvertPointList                        { get; set; }
         public HavingProductGroupStatus?                HavingGroup                             { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConvertGashaExchangePointReply();
+            var value   = new ConvertGashaExchangePointReply() { Pointer= p0 };
 
-            value.ConvertPointList                          = GetObjectList<GashaConvertExchangePointStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaConvertExchangePointStatus.FromPointer); // 0270D19F4AD0 0x18 ConvertPointList            ( 000185CDAD18 ModelClassListType RepeatedField`1<GashaConvertExchangePointStatus> RepeatedField`1<GashaConvertExchangePointStatus> List<GashaConvertExchangePointStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D19F4B10 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.ConvertPointList                          = GetObjectList<GashaConvertExchangePointStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaConvertExchangePointStatus.FromPointer); // 024661991F20 0x18 ConvertPointList            ( 000185CDAD18 ModelClassListType RepeatedField`1<GashaConvertExchangePointStatus> RepeatedField`1<GashaConvertExchangePointStatus> List<GashaConvertExchangePointStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 024661991F60 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

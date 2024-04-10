@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceStaminaUsagePopupCaller
+    public partial class ProduceStaminaUsagePopupCaller : DataModel
     {
 
         public static ProduceStaminaUsagePopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceStaminaUsagePopupCaller();
+            var value   = new ProduceStaminaUsagePopupCaller() { Pointer= p0 };
 
 
             return value;

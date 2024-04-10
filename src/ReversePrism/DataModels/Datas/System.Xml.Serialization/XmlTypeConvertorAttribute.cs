@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Method                                   000186671910 ModelPrimitiveType string string string String
-    public partial class XmlTypeConvertorAttribute
+    public partial class XmlTypeConvertorAttribute : DataModel
     {
         public string                                   Method                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlTypeConvertorAttribute();
+            var value   = new XmlTypeConvertorAttribute() { Pointer= p0 };
 
-            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 0270D74B40D0 0x10 Method                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 0246675140D0 0x10 Method                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

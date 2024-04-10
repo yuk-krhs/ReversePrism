@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetShopItemJewelGroupReply
+    public partial class IGetShopItemJewelGroupReply : DataModel
     {
 
         public static IGetShopItemJewelGroupReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetShopItemJewelGroupReply();
+            var value   = new IGetShopItemJewelGroupReply() { Pointer= p0 };
 
 
             return value;

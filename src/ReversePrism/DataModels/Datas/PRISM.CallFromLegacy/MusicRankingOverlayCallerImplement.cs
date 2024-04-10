@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 factory                                  OverlayViewFactory`1<IMusicRankingOverlayView> IL2CPP_TYPE_GENERICINST
     // 028 Sequencer                                00018666AF00 ModelClassType MusicRankingOverlaySequencer MusicRankingOverlaySequencer MusicRankingOverlaySequencer Pointer
-    public partial class MusicRankingOverlayCallerImplement
+    public partial class MusicRankingOverlayCallerImplement : DataModel
     {
         public MusicRankingOverlaySequencer?            Sequencer                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRankingOverlayCallerImplement();
+            var value   = new MusicRankingOverlayCallerImplement() { Pointer= p0 };
 
-            value.Sequencer                                 = GetObject<MusicRankingOverlaySequencer>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRankingOverlaySequencer.FromPointer); // 0270DB9D2688 0x28 Sequencer                   ( 00018666AF00 ModelClassType MusicRankingOverlaySequencer MusicRankingOverlaySequencer MusicRankingOverlaySequencer Pointer )
+            value.Sequencer                                 = GetObject<MusicRankingOverlaySequencer>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRankingOverlaySequencer.FromPointer); // 02466BA59C70 0x28 Sequencer                   ( 00018666AF00 ModelClassType MusicRankingOverlaySequencer MusicRankingOverlaySequencer MusicRankingOverlaySequencer Pointer )
 
             return value;
         }

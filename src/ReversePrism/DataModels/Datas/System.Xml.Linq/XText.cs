@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Text                                     000186671BA0 ModelPrimitiveType string string string String
-    public partial class XText
+    public partial class XText : DataModel
     {
         public string                                   Text                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XText();
+            var value   = new XText() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x028)); // 0270D886F340 0x28 Text                        ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x028)); // 0246688C3058 0x28 Text                        ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriLipsMorphAnimatorImplement
+    public partial class CriLipsMorphAnimatorImplement : DataModel
     {
 
         public static CriLipsMorphAnimatorImplement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsMorphAnimatorImplement();
+            var value   = new CriLipsMorphAnimatorImplement() { Pointer= p0 };
 
 
             return value;

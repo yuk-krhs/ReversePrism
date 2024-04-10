@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_TimeStamp                              0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 028 M_has_other_versions                     000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 M_IsReadOnly                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CookieCollection
+    public partial class CookieCollection : DataModel
     {
         public int                                      M_version                               { get; set; }
         public ArrayList?                               M_list                                  { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CookieCollection();
+            var value   = new CookieCollection() { Pointer= p0 };
 
-            value.M_version                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D7A36DE0 0x10 M_version                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_list                                    = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 0270D7A36E00 0x18 M_list                      ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.M_TimeStamp                               = GetDateTime(new IntPtr(p + 0x020)); // 0270D7A36E20 0x20 M_TimeStamp                 ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.M_has_other_versions                      = GetBool(new IntPtr(p + 0x028)); // 0270D7A36E40 0x28 M_has_other_versions        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsReadOnly                              = GetBool(new IntPtr(p + 0x029)); // 0270D7A36E60 0x29 M_IsReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_version                                 = GetInt32(new IntPtr(p + 0x010)); // 024667A96DE0 0x10 M_version                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_list                                    = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 024667A96E00 0x18 M_list                      ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.M_TimeStamp                               = GetDateTime(new IntPtr(p + 0x020)); // 024667A96E20 0x20 M_TimeStamp                 ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.M_has_other_versions                      = GetBool(new IntPtr(p + 0x028)); // 024667A96E40 0x28 M_has_other_versions        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_IsReadOnly                              = GetBool(new IntPtr(p + 0x029)); // 024667A96E60 0x29 M_IsReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

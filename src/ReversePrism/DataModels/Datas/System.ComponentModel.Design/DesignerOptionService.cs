@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DesignerOptionService
+    public partial class DesignerOptionService : DataModel
     {
 
         public static DesignerOptionService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DesignerOptionService();
+            var value   = new DesignerOptionService() { Pointer= p0 };
 
 
             return value;

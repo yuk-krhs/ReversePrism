@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 TitleName                                000186671910 ModelPrimitiveType string string string String
     // 050 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ShopPassDetailPopupView
+    public partial class ShopPassDetailPopupView : DataModel
     {
         public UITextMeshProUGUI?                       DescriptionText                         { get; set; }
         public GameObject?                              CautionView                             { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopPassDetailPopupView();
+            var value   = new ShopPassDetailPopupView() { Pointer= p0 };
 
-            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB7E7708 0x20 DescriptionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CautionView                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB7E7728 0x28 CautionView                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB7E7748 0x30 CautionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CautionStr                                = GetString(new IntPtr(p + 0x038)); // 0270DB7E7768 0x38 CautionStr                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstId                                     = GetInt32(new IntPtr(p + 0x040)); // 0270DB7E7788 0x40 MstId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TitleName                                 = GetString(new IntPtr(p + 0x048)); // 0270DB7E77A8 0x48 TitleName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB7E77E8 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B877670 0x20 DescriptionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CautionView                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B877690 0x28 CautionView                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B8776B0 0x30 CautionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CautionStr                                = GetString(new IntPtr(p + 0x038)); // 02466B8776D0 0x38 CautionStr                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstId                                     = GetInt32(new IntPtr(p + 0x040)); // 02466B8776F0 0x40 MstId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TitleName                                 = GetString(new IntPtr(p + 0x048)); // 02466B877710 0x48 TitleName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B877750 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

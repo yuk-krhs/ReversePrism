@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 044 MaxBufferSize                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 048 BufferRemaining                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 050 Part                                     000186739480 ModelClassType MimePart MimePart MimePart Pointer
-    public partial class XmlMtomReader
+    public partial class XmlMtomReader : DataModel
     {
         public List<Encoding>?                          Encodings                               { get; set; }
         public XmlDictionaryReader?                     XmlReader                               { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlMtomReader();
+            var value   = new XmlMtomReader() { Pointer= p0 };
 
-            value.Encodings                                 = GetObjectList<Encoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.Encoding.FromPointer); // 0270D7C686C0 0x10 Encodings                   ( 000185B7B270 ModelClassListType Encoding[] Encoding[] List<Encoding> Pointer )
-            value.XmlReader                                 = GetObject<XmlDictionaryReader>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDictionaryReader.FromPointer); // 0270D7C686E0 0x18 XmlReader                   ( 000186593BB0 ModelClassType XmlDictionaryReader XmlDictionaryReader XmlDictionaryReader Pointer )
-            value.InfosetReader                             = GetObject<XmlDictionaryReader>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlDictionaryReader.FromPointer); // 0270D7C68700 0x20 InfosetReader               ( 000186593BB0 ModelClassType XmlDictionaryReader XmlDictionaryReader XmlDictionaryReader Pointer )
-            value.MimeReader                                = GetObject<MimeReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.MimeReader.FromPointer); // 0270D7C68720 0x28 MimeReader                  ( 000186618C20 ModelClassType MimeReader MimeReader MimeReader Pointer )
-            value.OnClose                                   = GetObject<OnXmlDictionaryReaderClose>(new IntPtr(p + 0x038), ReversePrism.DataModels.OnXmlDictionaryReaderClose.FromPointer); // 0270D7C68760 0x38 OnClose                     ( 0001866DD0C0 ModelClassType OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose Pointer )
-            value.ReadingBinaryElement                      = GetBool(new IntPtr(p + 0x040)); // 0270D7C68780 0x40 ReadingBinaryElement        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MaxBufferSize                             = GetInt32(new IntPtr(p + 0x044)); // 0270D7C687A0 0x44 MaxBufferSize               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BufferRemaining                           = GetInt32(new IntPtr(p + 0x048)); // 0270D7C687C0 0x48 BufferRemaining             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Part                                      = GetObject<MimePart>(new IntPtr(p + 0x050), ReversePrism.DataModels.MimePart.FromPointer); // 0270D7C687E0 0x50 Part                        ( 000186739480 ModelClassType MimePart MimePart MimePart Pointer )
+            value.Encodings                                 = GetObjectList<Encoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.Encoding.FromPointer); // 024667CC06C0 0x10 Encodings                   ( 000185B7B270 ModelClassListType Encoding[] Encoding[] List<Encoding> Pointer )
+            value.XmlReader                                 = GetObject<XmlDictionaryReader>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDictionaryReader.FromPointer); // 024667CC06E0 0x18 XmlReader                   ( 000186593BB0 ModelClassType XmlDictionaryReader XmlDictionaryReader XmlDictionaryReader Pointer )
+            value.InfosetReader                             = GetObject<XmlDictionaryReader>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlDictionaryReader.FromPointer); // 024667CC0700 0x20 InfosetReader               ( 000186593BB0 ModelClassType XmlDictionaryReader XmlDictionaryReader XmlDictionaryReader Pointer )
+            value.MimeReader                                = GetObject<MimeReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.MimeReader.FromPointer); // 024667CC0720 0x28 MimeReader                  ( 000186618C20 ModelClassType MimeReader MimeReader MimeReader Pointer )
+            value.OnClose                                   = GetObject<OnXmlDictionaryReaderClose>(new IntPtr(p + 0x038), ReversePrism.DataModels.OnXmlDictionaryReaderClose.FromPointer); // 024667CC0760 0x38 OnClose                     ( 0001866DD0C0 ModelClassType OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose OnXmlDictionaryReaderClose Pointer )
+            value.ReadingBinaryElement                      = GetBool(new IntPtr(p + 0x040)); // 024667CC0780 0x40 ReadingBinaryElement        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaxBufferSize                             = GetInt32(new IntPtr(p + 0x044)); // 024667CC07A0 0x44 MaxBufferSize               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BufferRemaining                           = GetInt32(new IntPtr(p + 0x048)); // 024667CC07C0 0x48 BufferRemaining             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Part                                      = GetObject<MimePart>(new IntPtr(p + 0x050), ReversePrism.DataModels.MimePart.FromPointer); // 024667CC07E0 0x50 Part                        ( 000186739480 ModelClassType MimePart MimePart MimePart Pointer )
 
             return value;
         }

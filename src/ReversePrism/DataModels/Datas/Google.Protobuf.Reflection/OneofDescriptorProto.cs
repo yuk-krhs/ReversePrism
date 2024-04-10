@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
     // 020 Options                                  0001866E03F0 ModelClassType OneofOptions OneofOptions OneofOptions Pointer
-    public partial class OneofDescriptorProto
+    public partial class OneofDescriptorProto : DataModel
     {
         public string                                   Name                                    { get; set; }
         public OneofOptions?                            Options                                 { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OneofDescriptorProto();
+            var value   = new OneofDescriptorProto() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 027003B16E20 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Options                                   = GetObject<OneofOptions>(new IntPtr(p + 0x020), ReversePrism.DataModels.OneofOptions.FromPointer); // 027003B16E60 0x20 Options                     ( 0001866E03F0 ModelClassType OneofOptions OneofOptions OneofOptions Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024660BA6508 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Options                                   = GetObject<OneofOptions>(new IntPtr(p + 0x020), ReversePrism.DataModels.OneofOptions.FromPointer); // 024660BA6548 0x20 Options                     ( 0001866E03F0 ModelClassType OneofOptions OneofOptions OneofOptions Pointer )
 
             return value;
         }

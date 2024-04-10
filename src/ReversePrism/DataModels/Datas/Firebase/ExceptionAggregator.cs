@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // FFFFFFFF threadLocalExceptions                    List`1<Exception> IL2CPP_TYPE_GENERICINST
-    public partial class ExceptionAggregator
+    public partial class ExceptionAggregator : DataModel
     {
 
         public static ExceptionAggregator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExceptionAggregator();
+            var value   = new ExceptionAggregator() { Pointer= p0 };
 
 
             return value;

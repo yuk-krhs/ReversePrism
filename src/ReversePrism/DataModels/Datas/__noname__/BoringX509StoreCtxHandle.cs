@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 DontFree                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BoringX509StoreCtxHandle
+    public partial class BoringX509StoreCtxHandle : DataModel
     {
         public bool                                     DontFree                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoringX509StoreCtxHandle();
+            var value   = new BoringX509StoreCtxHandle() { Pointer= p0 };
 
-            value.DontFree                                  = GetBool(new IntPtr(p + 0x020)); // 0270D7963D30 0x20 DontFree                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DontFree                                  = GetBool(new IntPtr(p + 0x020)); // 0246679CBD30 0x20 DontFree                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FUnitSortFilterModel
+    public partial class FUnitSortFilterModel : DataModel
     {
 
         public static FUnitSortFilterModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FUnitSortFilterModel();
+            var value   = new FUnitSortFilterModel() { Pointer= p0 };
 
 
             return value;

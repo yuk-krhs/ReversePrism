@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RuntimeHelpersAbstraction
+    public partial class RuntimeHelpersAbstraction : DataModel
     {
 
         public static RuntimeHelpersAbstraction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeHelpersAbstraction();
+            var value   = new RuntimeHelpersAbstraction() { Pointer= p0 };
 
 
             return value;

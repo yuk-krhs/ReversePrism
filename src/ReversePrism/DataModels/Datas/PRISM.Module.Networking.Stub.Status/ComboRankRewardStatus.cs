@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Rank                                     0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32
     // 000 RewardFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Reward                                   0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class ComboRankRewardStatus
+    public partial class ComboRankRewardStatus : DataModel
     {
         public ComboRank                                Rank                                    { get; set; }
         public ProductWithAmountStatus?                 Reward                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComboRankRewardStatus();
+            var value   = new ComboRankRewardStatus() { Pointer= p0 };
 
-            value.Rank                                      = (ComboRank)GetInt32(new IntPtr(p + 0x018)); // 0270D133A570 0x18 Rank                        ( 0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32 )
-            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D133A5B0 0x20 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.Rank                                      = (ComboRank)GetInt32(new IntPtr(p + 0x018)); // 0246612C1710 0x18 Rank                        ( 0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32 )
+            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246612C1750 0x20 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

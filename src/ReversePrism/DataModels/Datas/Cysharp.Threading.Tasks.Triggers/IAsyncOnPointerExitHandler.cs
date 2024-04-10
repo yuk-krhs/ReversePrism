@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnPointerExitHandler
+    public partial class IAsyncOnPointerExitHandler : DataModel
     {
 
         public static IAsyncOnPointerExitHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnPointerExitHandler();
+            var value   = new IAsyncOnPointerExitHandler() { Pointer= p0 };
 
 
             return value;

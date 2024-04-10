@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 <enabled>k__BackingField                 bool IL2CPP_TYPE_BOOLEAN
     // 001 running                                  bool IL2CPP_TYPE_BOOLEAN
-    public partial class XRGraphicsAutomatedTests
+    public partial class XRGraphicsAutomatedTests : DataModel
     {
 
         public static XRGraphicsAutomatedTests? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRGraphicsAutomatedTests();
+            var value   = new XRGraphicsAutomatedTests() { Pointer= p0 };
 
 
             return value;

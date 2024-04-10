@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 StaticInstance                           CaseInsensitiveAscii IL2CPP_TYPE_CLASS
     // 008 AsciiToLower                             sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class CaseInsensitiveAscii
+    public partial class CaseInsensitiveAscii : DataModel
     {
 
         public static CaseInsensitiveAscii? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CaseInsensitiveAscii();
+            var value   = new CaseInsensitiveAscii() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PrimalityTests
+    public partial class PrimalityTests : DataModel
     {
 
         public static PrimalityTests? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrimalityTests();
+            var value   = new PrimalityTests() { Pointer= p0 };
 
 
             return value;

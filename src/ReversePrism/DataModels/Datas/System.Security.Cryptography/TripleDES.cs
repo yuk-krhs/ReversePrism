@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_legalBlockSizes                        KeySizes[] IL2CPP_TYPE_SZARRAY
     // 008 s_legalKeySizes                          KeySizes[] IL2CPP_TYPE_SZARRAY
-    public partial class TripleDES
+    public partial class TripleDES : DataModel
     {
 
         public static TripleDES? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TripleDES();
+            var value   = new TripleDES() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SecurityTreatAsSafeAttribute
+    public partial class SecurityTreatAsSafeAttribute : DataModel
     {
 
         public static SecurityTreatAsSafeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SecurityTreatAsSafeAttribute();
+            var value   = new SecurityTreatAsSafeAttribute() { Pointer= p0 };
 
 
             return value;

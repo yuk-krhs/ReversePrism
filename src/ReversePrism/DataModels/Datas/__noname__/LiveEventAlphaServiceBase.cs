@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveEventAlphaServiceBase
+    public partial class LiveEventAlphaServiceBase : DataModel
     {
 
         public static LiveEventAlphaServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventAlphaServiceBase();
+            var value   = new LiveEventAlphaServiceBase() { Pointer= p0 };
 
 
             return value;

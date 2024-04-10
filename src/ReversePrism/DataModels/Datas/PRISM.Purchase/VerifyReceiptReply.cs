@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 StoreItem                                00018665A9E0 ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer
     // 020 OrderState                               0001866072C0 ModelEnumType OrderState OrderState OrderState Int32
     // 028 DeferredDocumentBody                     000186671910 ModelPrimitiveType string string string String
-    public partial class VerifyReceiptReply
+    public partial class VerifyReceiptReply : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public IStoreItemStatus?                        StoreItem                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptReply();
+            var value   = new VerifyReceiptReply() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x010)); // 0270D5097760 0x10 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.StoreItem                                 = GetObject<IStoreItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0270D5097780 0x18 StoreItem                   ( 00018665A9E0 ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer )
-            value.OrderState                                = (OrderState)GetInt32(new IntPtr(p + 0x020)); // 0270D50977A0 0x20 OrderState                  ( 0001866072C0 ModelEnumType OrderState OrderState OrderState Int32 )
-            value.DeferredDocumentBody                      = GetString(new IntPtr(p + 0x028)); // 0270D50977C0 0x28 DeferredDocumentBody        ( 000186671910 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x010)); // 0246650F3050 0x10 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.StoreItem                                 = GetObject<IStoreItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0246650F3070 0x18 StoreItem                   ( 00018665A9E0 ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer )
+            value.OrderState                                = (OrderState)GetInt32(new IntPtr(p + 0x020)); // 0246650F3090 0x20 OrderState                  ( 0001866072C0 ModelEnumType OrderState OrderState OrderState Int32 )
+            value.DeferredDocumentBody                      = GetString(new IntPtr(p + 0x028)); // 0246650F30B0 0x28 DeferredDocumentBody        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

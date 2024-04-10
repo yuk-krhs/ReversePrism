@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 SeLittleCrease                           string IL2CPP_TYPE_STRING
     // 000 SeBigDecrease                            string IL2CPP_TYPE_STRING
     // 000 SeLittleDecrease                         string IL2CPP_TYPE_STRING
-    public partial class VitalityGauge
+    public partial class VitalityGauge : DataModel
     {
         public UIImage?                                 BackVitalityGauge                       { get; set; }
         public UIImage?                                 FrontVitalityGauge                      { get; set; }
@@ -42,18 +42,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VitalityGauge();
+            var value   = new VitalityGauge() { Pointer= p0 };
 
-            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270D4BADF70 0x20 BackVitalityGauge           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0270D4BADF90 0x28 FrontVitalityGauge          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontFillVitalityGauge                    = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0270D4BADFB0 0x30 FrontFillVitalityGauge      ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Vitality                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4BADFD0 0x38 Vitality                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NormalColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0270D4BADFF0 0x40 NormalColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.EstimateColor                             = (Color)GetInt32(new IntPtr(p + 0x050)); // 0270D4BAE010 0x50 EstimateColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.BaseScheduleColor                         = (Color)GetInt32(new IntPtr(p + 0x060)); // 0270D4BAE030 0x60 BaseScheduleColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.NormalColorStringHexTag                   = GetString(new IntPtr(p + 0x070)); // 0270D4BAE050 0x70 NormalColorStringHexTag     ( 000186671910 ModelPrimitiveType string string string String )
-            value.EstimateColorStringHexTag                 = GetString(new IntPtr(p + 0x078)); // 0270D4BAE070 0x78 EstimateColorStringHexTag   ( 000186671910 ModelPrimitiveType string string string String )
-            value.BaseScheduleColorStringHexTag             = GetString(new IntPtr(p + 0x080)); // 0270D4BAE090 0x80 BaseScheduleColorStringHexTag ( 000186671910 ModelPrimitiveType string string string String )
+            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10C88 0x20 BackVitalityGauge           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10CA8 0x28 FrontVitalityGauge          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontFillVitalityGauge                    = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10CC8 0x30 FrontFillVitalityGauge      ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.Vitality                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664C10CE8 0x38 Vitality                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 024664C10D08 0x40 NormalColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.EstimateColor                             = (Color)GetInt32(new IntPtr(p + 0x050)); // 024664C10D28 0x50 EstimateColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.BaseScheduleColor                         = (Color)GetInt32(new IntPtr(p + 0x060)); // 024664C10D48 0x60 BaseScheduleColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.NormalColorStringHexTag                   = GetString(new IntPtr(p + 0x070)); // 024664C10D68 0x70 NormalColorStringHexTag     ( 000186671910 ModelPrimitiveType string string string String )
+            value.EstimateColorStringHexTag                 = GetString(new IntPtr(p + 0x078)); // 024664C10D88 0x78 EstimateColorStringHexTag   ( 000186671910 ModelPrimitiveType string string string String )
+            value.BaseScheduleColorStringHexTag             = GetString(new IntPtr(p + 0x080)); // 024664C10DA8 0x80 BaseScheduleColorStringHexTag ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

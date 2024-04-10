@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlFactory
+    public partial class UxmlFactory : DataModel
     {
 
         public static UxmlFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlFactory();
+            var value   = new UxmlFactory() { Pointer= p0 };
 
 
             return value;

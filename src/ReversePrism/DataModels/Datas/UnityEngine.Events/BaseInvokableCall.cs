@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BaseInvokableCall
+    public partial class BaseInvokableCall : DataModel
     {
 
         public static BaseInvokableCall? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseInvokableCall();
+            var value   = new BaseInvokableCall() { Pointer= p0 };
 
 
             return value;

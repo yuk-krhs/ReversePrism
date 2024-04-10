@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncAuthInterceptor
+    public partial class AsyncAuthInterceptor : DataModel
     {
 
         public static AsyncAuthInterceptor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncAuthInterceptor();
+            var value   = new AsyncAuthInterceptor() { Pointer= p0 };
 
 
             return value;

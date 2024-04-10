@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 000 MonitoredResourceTypesFieldNumber        int IL2CPP_TYPE_I4
     // 010 _repeated_monitoredResourceTypes_codec   FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 060 MonitoredResourceTypes                   000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class MetricDescriptor
+    public partial class MetricDescriptor : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Type                                    { get; set; }
@@ -54,19 +54,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetricDescriptor();
+            var value   = new MetricDescriptor() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA7FA9C0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 0270DA7FAA00 0x20 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 0270DA7FAA60 0x28 Labels                      ( 000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
-            value.MetricKind                                = (MetricKind)GetInt32(new IntPtr(p + 0x030)); // 0270DA7FAAA0 0x30 MetricKind                  ( 00018653C7D0 ModelEnumType MetricKind MetricKind MetricKind Int32 )
-            value.ValueType                                 = (ValueType)GetInt32(new IntPtr(p + 0x034)); // 0270DA7FAAE0 0x34 ValueType                   ( 00018653CF50 ModelEnumType ValueType ValueType ValueType Int32 )
-            value.Unit                                      = GetString(new IntPtr(p + 0x038)); // 0270DA7FAB20 0x38 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x040)); // 0270DA7FAB60 0x40 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 0270DA7FABA0 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Metadata                                  = GetObject<MetricDescriptorMetadata>(new IntPtr(p + 0x050), ReversePrism.DataModels.MetricDescriptorMetadata.FromPointer); // 0270DA7FABE0 0x50 Metadata                    ( 00018653C280 ModelClassType MetricDescriptorMetadata MetricDescriptorMetadata MetricDescriptorMetadata Pointer )
-            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x058)); // 0270DA7FAC20 0x58 LaunchStage                 ( 00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
-            value.MonitoredResourceTypes                    = GetStringList(new IntPtr(p + 0x060)); // 0270DA7FAC80 0x60 MonitoredResourceTypes      ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A85F490 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 02466A85F4D0 0x20 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 02466A85F530 0x28 Labels                      ( 000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
+            value.MetricKind                                = (MetricKind)GetInt32(new IntPtr(p + 0x030)); // 02466A85F570 0x30 MetricKind                  ( 00018653C7D0 ModelEnumType MetricKind MetricKind MetricKind Int32 )
+            value.ValueType                                 = (ValueType)GetInt32(new IntPtr(p + 0x034)); // 02466A85F5B0 0x34 ValueType                   ( 00018653CF50 ModelEnumType ValueType ValueType ValueType Int32 )
+            value.Unit                                      = GetString(new IntPtr(p + 0x038)); // 02466A85F5F0 0x38 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x040)); // 02466A85F630 0x40 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 02466A85F670 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Metadata                                  = GetObject<MetricDescriptorMetadata>(new IntPtr(p + 0x050), ReversePrism.DataModels.MetricDescriptorMetadata.FromPointer); // 02466A85F6B0 0x50 Metadata                    ( 00018653C280 ModelClassType MetricDescriptorMetadata MetricDescriptorMetadata MetricDescriptorMetadata Pointer )
+            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x058)); // 02466A85F6F0 0x58 LaunchStage                 ( 00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
+            value.MonitoredResourceTypes                    = GetStringList(new IntPtr(p + 0x060)); // 02466A85F750 0x60 MonitoredResourceTypes      ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

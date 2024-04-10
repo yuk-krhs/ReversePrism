@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 SeasonPassStoreItemListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_seasonPassStoreItemList_codec  FieldCodec`1<SeasonPassStoreItemStatus> IL2CPP_TYPE_GENERICINST
     // 020 SeasonPassStoreItemList                  000185CF03E8 ModelClassListType RepeatedField`1<SeasonPassStoreItemStatus> RepeatedField`1<SeasonPassStoreItemStatus> List<SeasonPassStoreItemStatus> Pointer
-    public partial class ShopItemSeasonPassGroupStatus
+    public partial class ShopItemSeasonPassGroupStatus : DataModel
     {
         public ShopItemType                             ShopItemType                            { get; set; }
         public List<SeasonPassStoreItemStatus>?         SeasonPassStoreItemList                 { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopItemSeasonPassGroupStatus();
+            var value   = new ShopItemSeasonPassGroupStatus() { Pointer= p0 };
 
-            value.ShopItemType                              = (ShopItemType)GetInt32(new IntPtr(p + 0x018)); // 0270D280B1C8 0x18 ShopItemType                ( 000186761B60 ModelEnumType ShopItemType ShopItemType ShopItemType Int32 )
-            value.SeasonPassStoreItemList                   = GetObjectList<SeasonPassStoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SeasonPassStoreItemStatus.FromPointer); // 0270D280B228 0x20 SeasonPassStoreItemList     ( 000185CF03E8 ModelClassListType RepeatedField`1<SeasonPassStoreItemStatus> RepeatedField`1<SeasonPassStoreItemStatus> List<SeasonPassStoreItemStatus> Pointer )
+            value.ShopItemType                              = (ShopItemType)GetInt32(new IntPtr(p + 0x018)); // 0246627677A8 0x18 ShopItemType                ( 000186761B60 ModelEnumType ShopItemType ShopItemType ShopItemType Int32 )
+            value.SeasonPassStoreItemList                   = GetObjectList<SeasonPassStoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SeasonPassStoreItemStatus.FromPointer); // 024662767808 0x20 SeasonPassStoreItemList     ( 000185CF03E8 ModelClassListType RepeatedField`1<SeasonPassStoreItemStatus> RepeatedField`1<SeasonPassStoreItemStatus> List<SeasonPassStoreItemStatus> Pointer )
 
             return value;
         }

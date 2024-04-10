@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MetricsFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_metrics_codec                  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 020 Metrics                                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class MonitoringDestination
+    public partial class MonitoringDestination : DataModel
     {
         public string                                   MonitoredResource                       { get; set; }
         public List<string>?                            Metrics                                 { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonitoringDestination();
+            var value   = new MonitoringDestination() { Pointer= p0 };
 
-            value.MonitoredResource                         = GetString(new IntPtr(p + 0x018)); // 0270DA8045A8 0x18 MonitoredResource           ( 000186671910 ModelPrimitiveType string string string String )
-            value.Metrics                                   = GetStringList(new IntPtr(p + 0x020)); // 0270DA804608 0x20 Metrics                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.MonitoredResource                         = GetString(new IntPtr(p + 0x018)); // 02466A869C10 0x18 MonitoredResource           ( 000186671910 ModelPrimitiveType string string string String )
+            value.Metrics                                   = GetStringList(new IntPtr(p + 0x020)); // 02466A869C70 0x20 Metrics                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

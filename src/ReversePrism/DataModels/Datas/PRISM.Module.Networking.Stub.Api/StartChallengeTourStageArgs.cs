@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StageIdFieldNumber                       int IL2CPP_TYPE_I4
     // 018 StageId                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StartChallengeTourStageArgs
+    public partial class StartChallengeTourStageArgs : DataModel
     {
         public int                                      StageId                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartChallengeTourStageArgs();
+            var value   = new StartChallengeTourStageArgs() { Pointer= p0 };
 
-            value.StageId                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D0B54170 0x18 StageId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StageId                                   = GetInt32(new IntPtr(p + 0x018)); // 024660B45080 0x18 StageId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

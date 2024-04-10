@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 068 EventType                                0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32
     // 000 ResultBeginDateFieldNumber               int IL2CPP_TYPE_I4
     // 070 _ResultBeginDate                         000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class GameEventStatus
+    public partial class GameEventStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -49,19 +49,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameEventStatus();
+            var value   = new GameEventStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D1384508 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D1384528 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ResultBeginDate                           = GetDateTime(new IntPtr(p + 0x030)); // 0270D1384548 0x30 ResultBeginDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x048)); // 0270D13845C8 0x48 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1384608 0x50 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1384648 0x58 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.IsProduce                                 = GetBool(new IntPtr(p + 0x060)); // 0270D1384688 0x60 IsProduce                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsLive                                    = GetBool(new IntPtr(p + 0x061)); // 0270D13846C8 0x61 IsLive                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EventState                                = (GameEventState)GetInt32(new IntPtr(p + 0x064)); // 0270D1384708 0x64 EventState                  ( 0001865E77A0 ModelEnumType GameEventState GameEventState GameEventState Int32 )
-            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x068)); // 0270D1384748 0x68 EventType                   ( 0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32 )
-            value._ResultBeginDate                          = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1384788 0x70 _ResultBeginDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 02466130E6C0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 02466130E6E0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ResultBeginDate                           = GetDateTime(new IntPtr(p + 0x030)); // 02466130E700 0x30 ResultBeginDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x048)); // 02466130E780 0x48 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 02466130E7C0 0x50 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 02466130E800 0x58 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.IsProduce                                 = GetBool(new IntPtr(p + 0x060)); // 02466130E840 0x60 IsProduce                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsLive                                    = GetBool(new IntPtr(p + 0x061)); // 02466130E880 0x61 IsLive                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EventState                                = (GameEventState)GetInt32(new IntPtr(p + 0x064)); // 02466130E8C0 0x64 EventState                  ( 0001865E77A0 ModelEnumType GameEventState GameEventState GameEventState Int32 )
+            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x068)); // 02466130E900 0x68 EventType                   ( 0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32 )
+            value._ResultBeginDate                          = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 02466130E940 0x70 _ResultBeginDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
             value.ResultBeginDate               = ToDateTime(value._ResultBeginDate);

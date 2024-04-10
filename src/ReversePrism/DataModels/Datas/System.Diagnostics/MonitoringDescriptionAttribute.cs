@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonitoringDescriptionAttribute
+    public partial class MonitoringDescriptionAttribute : DataModel
     {
 
         public static MonitoringDescriptionAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonitoringDescriptionAttribute();
+            var value   = new MonitoringDescriptionAttribute() { Pointer= p0 };
 
 
             return value;

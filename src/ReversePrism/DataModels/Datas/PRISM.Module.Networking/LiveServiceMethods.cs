@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 198 GetLiveEnable                            Method`2<IGetLiveEnableArgs, IGetLiveEnableReply> IL2CPP_TYPE_GENERICINST
     // 1B0 StartMV                                  Method`2<IStartMVArgs, IStartMVReply> IL2CPP_TYPE_GENERICINST
     // 1C8 GetEventList                             Method`2<IGetEventListArgs, IGetEventListReply> IL2CPP_TYPE_GENERICINST
-    public partial class LiveServiceMethods
+    public partial class LiveServiceMethods : DataModel
     {
 
         public static LiveServiceMethods? FromPointer(IntPtr p0)
@@ -37,7 +37,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveServiceMethods();
+            var value   = new LiveServiceMethods() { Pointer= p0 };
 
 
             return value;

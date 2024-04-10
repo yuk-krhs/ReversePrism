@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 MaxPoolCount                             int IL2CPP_TYPE_I4
     // 000 pool                                     Stack`1<TemporaryResourceLoader> IL2CPP_TYPE_GENERICINST
     // 010 Tag                                      000186671910 ModelPrimitiveType string string string String
-    public partial class TemporaryResourceLoader
+    public partial class TemporaryResourceLoader : DataModel
     {
         public string                                   Tag                                     { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TemporaryResourceLoader();
+            var value   = new TemporaryResourceLoader() { Pointer= p0 };
 
-            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 027005F743E8 0x10 Tag                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 0245A5F4FAB0 0x10 Tag                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_minSize                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 M_maxSize                                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 M_skipSize                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class KeySizes
+    public partial class KeySizes : DataModel
     {
         public int                                      M_minSize                               { get; set; }
         public int                                      M_maxSize                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeySizes();
+            var value   = new KeySizes() { Pointer= p0 };
 
-            value.M_minSize                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D19826A0 0x10 M_minSize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_maxSize                                 = GetInt32(new IntPtr(p + 0x014)); // 0270D19826C0 0x14 M_maxSize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_skipSize                                = GetInt32(new IntPtr(p + 0x018)); // 0270D19826E0 0x18 M_skipSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_minSize                                 = GetInt32(new IntPtr(p + 0x010)); // 024661927840 0x10 M_minSize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_maxSize                                 = GetInt32(new IntPtr(p + 0x014)); // 024661927860 0x14 M_maxSize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_skipSize                                = GetInt32(new IntPtr(p + 0x018)); // 024661927880 0x18 M_skipSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

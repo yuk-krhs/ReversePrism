@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 RefreshAllEntries                        int IL2CPP_TYPE_I4
     // 000 DeleteDanglingFiles                      int IL2CPP_TYPE_I4
     // 000 End                                      int IL2CPP_TYPE_I4
-    public partial class SynchronizeFilesystemProgress
+    public partial class SynchronizeFilesystemProgress : DataModel
     {
 
         public static SynchronizeFilesystemProgress? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SynchronizeFilesystemProgress();
+            var value   = new SynchronizeFilesystemProgress() { Pointer= p0 };
 
 
             return value;

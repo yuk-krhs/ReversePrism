@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 BaseUri                                  000186671BA0 ModelPrimitiveType string string string String
-    public partial class BaseUriAnnotation
+    public partial class BaseUriAnnotation : DataModel
     {
         public string                                   BaseUri                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseUriAnnotation();
+            var value   = new BaseUriAnnotation() { Pointer= p0 };
 
-            value.BaseUri                                   = GetString(new IntPtr(p + 0x010)); // 0270DBC15918 0x10 BaseUri                     ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.BaseUri                                   = GetString(new IntPtr(p + 0x010)); // 02466BCACC80 0x10 BaseUri                     ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 SpecialMissionListFieldNumber            int IL2CPP_TYPE_I4
     // 008 _repeated_specialMissionList_codec       FieldCodec`1<SpecialMissionStatus> IL2CPP_TYPE_GENERICINST
     // 018 SpecialMissionList                       000185CF21D8 ModelClassListType RepeatedField`1<SpecialMissionStatus> RepeatedField`1<SpecialMissionStatus> List<SpecialMissionStatus> Pointer
-    public partial class GetSpecialMissionListReply
+    public partial class GetSpecialMissionListReply : DataModel
     {
         public List<SpecialMissionStatus>?              SpecialMissionList                      { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSpecialMissionListReply();
+            var value   = new GetSpecialMissionListReply() { Pointer= p0 };
 
-            value.SpecialMissionList                        = GetObjectList<SpecialMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialMissionStatus.FromPointer); // 0270D28B6E28 0x18 SpecialMissionList          ( 000185CF21D8 ModelClassListType RepeatedField`1<SpecialMissionStatus> RepeatedField`1<SpecialMissionStatus> List<SpecialMissionStatus> Pointer )
+            value.SpecialMissionList                        = GetObjectList<SpecialMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialMissionStatus.FromPointer); // 02466283E1F8 0x18 SpecialMissionList          ( 000185CF21D8 ModelClassListType RepeatedField`1<SpecialMissionStatus> RepeatedField`1<SpecialMissionStatus> List<SpecialMissionStatus> Pointer )
 
             return value;
         }

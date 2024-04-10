@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdvScenarioInfoUtility
+    public partial class AdvScenarioInfoUtility : DataModel
     {
 
         public static AdvScenarioInfoUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdvScenarioInfoUtility();
+            var value   = new AdvScenarioInfoUtility() { Pointer= p0 };
 
 
             return value;

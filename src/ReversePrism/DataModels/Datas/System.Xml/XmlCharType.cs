@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_Lock                                   <object> IL2CPP_TYPE_OBJECT
     // 008 s_CharProperties                         sbyte[] IL2CPP_TYPE_SZARRAY
     // 010 CharProperties                           000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class XmlCharType
+    public partial class XmlCharType : DataModel
     {
         public List<sbyte>?                             CharProperties                          { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlCharType();
+            var value   = new XmlCharType() { Pointer= p0 };
 
-            value.CharProperties                            = GetSByteList(new IntPtr(p + 0x010)); // 027004CC0290 0x10 CharProperties              ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.CharProperties                            = GetSByteList(new IntPtr(p + 0x010)); // 0245A4CE3F90 0x10 CharProperties              ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

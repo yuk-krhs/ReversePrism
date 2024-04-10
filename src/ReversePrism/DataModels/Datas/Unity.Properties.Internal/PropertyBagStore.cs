@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 s_RegisteredTypes                        List`1<Type> IL2CPP_TYPE_GENERICINST
     // 010 NewTypeRegistered                        Action`2<Type, IPropertyBag> IL2CPP_TYPE_GENERICINST
     // 018 S_PropertyBagProvider                    000186635B30 ModelClassType ReflectedPropertyBagProvider ReflectedPropertyBagProvider ReflectedPropertyBagProvider Pointer
-    public partial class PropertyBagStore
+    public partial class PropertyBagStore : DataModel
     {
         public ReflectedPropertyBagProvider?            S_PropertyBagProvider                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropertyBagStore();
+            var value   = new PropertyBagStore() { Pointer= p0 };
 
-            value.S_PropertyBagProvider                     = GetObject<ReflectedPropertyBagProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReflectedPropertyBagProvider.FromPointer); // 027006967E40 0x18 S_PropertyBagProvider       ( 000186635B30 ModelClassType ReflectedPropertyBagProvider ReflectedPropertyBagProvider ReflectedPropertyBagProvider Pointer )
+            value.S_PropertyBagProvider                     = GetObject<ReflectedPropertyBagProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReflectedPropertyBagProvider.FromPointer); // 0245A691A4F0 0x18 S_PropertyBagProvider       ( 000186635B30 ModelClassType ReflectedPropertyBagProvider ReflectedPropertyBagProvider ReflectedPropertyBagProvider Pointer )
 
             return value;
         }

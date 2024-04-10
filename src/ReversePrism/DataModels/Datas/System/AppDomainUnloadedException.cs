@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AppDomainUnloadedException
+    public partial class AppDomainUnloadedException : DataModel
     {
 
         public static AppDomainUnloadedException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppDomainUnloadedException();
+            var value   = new AppDomainUnloadedException() { Pointer= p0 };
 
 
             return value;

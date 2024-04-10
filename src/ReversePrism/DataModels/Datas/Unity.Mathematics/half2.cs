@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 X                                        0001865EE010 ModelEnumType half half half Int32
     // 012 Y                                        0001865EE010 ModelEnumType half half half Int32
     // 000 zero                                     half2 IL2CPP_TYPE_VALUETYPE
-    public partial class half2
+    public partial class half2 : DataModel
     {
         public half                                     X                                       { get; set; }
         public half                                     Y                                       { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new half2();
+            var value   = new half2() { Pointer= p0 };
 
-            value.X                                         = (half)GetInt32(new IntPtr(p + 0x010)); // 0270D7E4F288 0x10 X                           ( 0001865EE010 ModelEnumType half half half Int32 )
-            value.Y                                         = (half)GetInt32(new IntPtr(p + 0x012)); // 0270D7E4F2A8 0x12 Y                           ( 0001865EE010 ModelEnumType half half half Int32 )
+            value.X                                         = (half)GetInt32(new IntPtr(p + 0x010)); // 024667EB92B8 0x10 X                           ( 0001865EE010 ModelEnumType half half half Int32 )
+            value.Y                                         = (half)GetInt32(new IntPtr(p + 0x012)); // 024667EB92D8 0x12 Y                           ( 0001865EE010 ModelEnumType half half half Int32 )
 
             return value;
         }

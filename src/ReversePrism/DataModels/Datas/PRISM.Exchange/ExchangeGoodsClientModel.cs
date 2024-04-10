@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 040 HavingGoods                              000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer
     // 048 HavingPurchaseProduct                    000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer
     // 050 PriceRateList                            000185CDAE78 ModelClassListType List`1<ExchangePriceRateClientModel> List`1<ExchangePriceRateClientModel> List<ExchangePriceRateClientModel> Pointer
-    public partial class ExchangeGoodsClientModel
+    public partial class ExchangeGoodsClientModel : DataModel
     {
         public int                                      ExchangeGoodsMaxCount                   { get; set; }
         public string                                   ResourceTag                             { get; set; }
@@ -38,17 +38,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeGoodsClientModel();
+            var value   = new ExchangeGoodsClientModel() { Pointer= p0 };
 
-            value.ExchangeGoodsMaxCount                     = GetInt32(new IntPtr(p + 0x010)); // 0270D54B5510 0x10 ExchangeGoodsMaxCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceTag                               = GetString(new IntPtr(p + 0x018)); // 0270D54B5530 0x18 ResourceTag                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Group                                     = GetObject<IExchangeGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IExchangeGroupStatus.FromPointer); // 0270D54B55B0 0x20 Group                       ( 000186769B00 ModelClassType IExchangeGroupStatus IExchangeGroupStatus IExchangeGroupStatus Pointer )
-            value.Goods                                     = GetObject<IExchangeProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IExchangeProductStatus.FromPointer); // 0270D54B55D0 0x28 Goods                       ( 00018676B4C0 ModelClassType IExchangeProductStatus IExchangeProductStatus IExchangeProductStatus Pointer )
-            value.GoodsProductWithAmount                    = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D54B55F0 0x30 GoodsProductWithAmount      ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.PurchaseProductWithAmount                 = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0270D54B5610 0x38 PurchaseProductWithAmount   ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.HavingGoods                               = GetObject<IHavingProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IHavingProductStatus.FromPointer); // 0270D54B5630 0x40 HavingGoods                 ( 000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer )
-            value.HavingPurchaseProduct                     = GetObject<IHavingProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IHavingProductStatus.FromPointer); // 0270D54B5650 0x48 HavingPurchaseProduct       ( 000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer )
-            value.PriceRateList                             = GetObjectList<ExchangePriceRateClientModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExchangePriceRateClientModel.FromPointer); // 0270D54B5670 0x50 PriceRateList               ( 000185CDAE78 ModelClassListType List`1<ExchangePriceRateClientModel> List`1<ExchangePriceRateClientModel> List<ExchangePriceRateClientModel> Pointer )
+            value.ExchangeGoodsMaxCount                     = GetInt32(new IntPtr(p + 0x010)); // 0246655204E8 0x10 ExchangeGoodsMaxCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ResourceTag                               = GetString(new IntPtr(p + 0x018)); // 024665520508 0x18 ResourceTag                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Group                                     = GetObject<IExchangeGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IExchangeGroupStatus.FromPointer); // 024665520588 0x20 Group                       ( 000186769B00 ModelClassType IExchangeGroupStatus IExchangeGroupStatus IExchangeGroupStatus Pointer )
+            value.Goods                                     = GetObject<IExchangeProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IExchangeProductStatus.FromPointer); // 0246655205A8 0x28 Goods                       ( 00018676B4C0 ModelClassType IExchangeProductStatus IExchangeProductStatus IExchangeProductStatus Pointer )
+            value.GoodsProductWithAmount                    = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0246655205C8 0x30 GoodsProductWithAmount      ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.PurchaseProductWithAmount                 = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0246655205E8 0x38 PurchaseProductWithAmount   ( 0001865F9F40 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.HavingGoods                               = GetObject<IHavingProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IHavingProductStatus.FromPointer); // 024665520608 0x40 HavingGoods                 ( 000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer )
+            value.HavingPurchaseProduct                     = GetObject<IHavingProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IHavingProductStatus.FromPointer); // 024665520628 0x48 HavingPurchaseProduct       ( 000186565CA0 ModelClassType IHavingProductStatus IHavingProductStatus IHavingProductStatus Pointer )
+            value.PriceRateList                             = GetObjectList<ExchangePriceRateClientModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExchangePriceRateClientModel.FromPointer); // 024665520648 0x50 PriceRateList               ( 000185CDAE78 ModelClassListType List`1<ExchangePriceRateClientModel> List`1<ExchangePriceRateClientModel> List<ExchangePriceRateClientModel> Pointer )
 
             return value;
         }

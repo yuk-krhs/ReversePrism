@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Q                                        000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class BoneAxisInt
+    public partial class BoneAxisInt : DataModel
     {
         public List<int>?                               Q                                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoneAxisInt();
+            var value   = new BoneAxisInt() { Pointer= p0 };
 
-            value.Q                                         = GetInt32List(new IntPtr(p + 0x010)); // 0270D4D99458 0x10 Q                           ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Q                                         = GetInt32List(new IntPtr(p + 0x010)); // 024664DF28B0 0x10 Q                           ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

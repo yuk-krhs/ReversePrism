@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 030 Count                                    0001865F7700 ModelPrimitiveType long long long Int64
     // 038 StateMD160                               000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 040 BlockDWords                              000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    public partial class RIPEMD160Managed
+    public partial class RIPEMD160Managed : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public long                                     Count                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RIPEMD160Managed();
+            var value   = new RIPEMD160Managed() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 027004230C68 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Count                                     = GetInt64(new IntPtr(p + 0x030)); // 027004230C88 0x30 Count                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.StateMD160                                = GetUInt32List(new IntPtr(p + 0x038)); // 027004230CA8 0x38 StateMD160                  ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.BlockDWords                               = GetUInt32List(new IntPtr(p + 0x040)); // 027004230CC8 0x40 BlockDWords                 ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 024661930340 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Count                                     = GetInt64(new IntPtr(p + 0x030)); // 024661930360 0x30 Count                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.StateMD160                                = GetUInt32List(new IntPtr(p + 0x038)); // 024661930380 0x38 StateMD160                  ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.BlockDWords                               = GetUInt32List(new IntPtr(p + 0x040)); // 0246619303A0 0x40 BlockDWords                 ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

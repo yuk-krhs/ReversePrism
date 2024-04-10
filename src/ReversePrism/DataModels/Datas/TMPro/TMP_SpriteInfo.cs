@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 SpriteIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 CharacterIndex                           0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 VertexIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class TMP_SpriteInfo
+    public partial class TMP_SpriteInfo : DataModel
     {
         public int                                      SpriteIndex                             { get; set; }
         public int                                      CharacterIndex                          { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_SpriteInfo();
+            var value   = new TMP_SpriteInfo() { Pointer= p0 };
 
-            value.SpriteIndex                               = GetInt32(new IntPtr(p + 0x010)); // 0270DA6104D8 0x10 SpriteIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CharacterIndex                            = GetInt32(new IntPtr(p + 0x014)); // 0270DA6104F8 0x14 CharacterIndex              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VertexIndex                               = GetInt32(new IntPtr(p + 0x018)); // 0270DA610518 0x18 VertexIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SpriteIndex                               = GetInt32(new IntPtr(p + 0x010)); // 02466A674618 0x10 SpriteIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CharacterIndex                            = GetInt32(new IntPtr(p + 0x014)); // 02466A674638 0x14 CharacterIndex              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.VertexIndex                               = GetInt32(new IntPtr(p + 0x018)); // 02466A674658 0x18 VertexIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

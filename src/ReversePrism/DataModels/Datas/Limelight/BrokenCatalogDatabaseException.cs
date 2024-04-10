@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BrokenCatalogDatabaseException
+    public partial class BrokenCatalogDatabaseException : DataModel
     {
 
         public static BrokenCatalogDatabaseException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BrokenCatalogDatabaseException();
+            var value   = new BrokenCatalogDatabaseException() { Pointer= p0 };
 
 
             return value;

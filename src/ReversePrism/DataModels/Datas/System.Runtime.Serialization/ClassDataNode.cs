@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 members                                  IList`1<ExtensionDataMember> IL2CPP_TYPE_GENERICINST
-    public partial class ClassDataNode
+    public partial class ClassDataNode : DataModel
     {
 
         public static ClassDataNode? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClassDataNode();
+            var value   = new ClassDataNode() { Pointer= p0 };
 
 
             return value;

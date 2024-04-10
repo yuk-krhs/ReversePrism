@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Uninitialized                            <uint> IL2CPP_TYPE_U
     // 020 _numBytes                                <uint> IL2CPP_TYPE_U
-    public partial class SafeBuffer
+    public partial class SafeBuffer : DataModel
     {
 
         public static SafeBuffer? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeBuffer();
+            var value   = new SafeBuffer() { Pointer= p0 };
 
 
             return value;

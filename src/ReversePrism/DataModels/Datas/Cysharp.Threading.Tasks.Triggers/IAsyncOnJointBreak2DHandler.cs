@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnJointBreak2DHandler
+    public partial class IAsyncOnJointBreak2DHandler : DataModel
     {
 
         public static IAsyncOnJointBreak2DHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnJointBreak2DHandler();
+            var value   = new IAsyncOnJointBreak2DHandler() { Pointer= p0 };
 
 
             return value;

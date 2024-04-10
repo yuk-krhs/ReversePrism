@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Serializer                             00018675ECF0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer
-    public partial class NewtonsoftSerializer
+    public partial class NewtonsoftSerializer : DataModel
     {
         public JsonSerializer?                          M_Serializer                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NewtonsoftSerializer();
+            var value   = new NewtonsoftSerializer() { Pointer= p0 };
 
-            value.M_Serializer                              = GetObject<JsonSerializer>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonSerializer.FromPointer); // 027003B65458 0x10 M_Serializer                ( 00018675ECF0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer )
+            value.M_Serializer                              = GetObject<JsonSerializer>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonSerializer.FromPointer); // 0245A3B65458 0x10 M_Serializer                ( 00018675ECF0 ModelClassType JsonSerializer JsonSerializer JsonSerializer Pointer )
 
             return value;
         }

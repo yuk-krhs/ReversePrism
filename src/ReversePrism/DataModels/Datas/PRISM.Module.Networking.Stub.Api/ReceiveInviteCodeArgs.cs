@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstFriendInvitationId                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 FriendInvitationCodeFieldNumber          int IL2CPP_TYPE_I4
     // 020 FriendInvitationCode                     000186671910 ModelPrimitiveType string string string String
-    public partial class ReceiveInviteCodeArgs
+    public partial class ReceiveInviteCodeArgs : DataModel
     {
         public int                                      MstFriendInvitationId                   { get; set; }
         public string                                   FriendInvitationCode                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiveInviteCodeArgs();
+            var value   = new ReceiveInviteCodeArgs() { Pointer= p0 };
 
-            value.MstFriendInvitationId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1558870 0x18 MstFriendInvitationId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FriendInvitationCode                      = GetString(new IntPtr(p + 0x020)); // 0270D15588B0 0x20 FriendInvitationCode        ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstFriendInvitationId                     = GetInt32(new IntPtr(p + 0x018)); // 0246614E59F8 0x18 MstFriendInvitationId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FriendInvitationCode                      = GetString(new IntPtr(p + 0x020)); // 0246614E5A38 0x20 FriendInvitationCode        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

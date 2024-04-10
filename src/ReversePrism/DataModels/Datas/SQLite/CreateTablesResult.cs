@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Results>k__BackingField                 Dictionary`2<Type, CreateTableResult> IL2CPP_TYPE_GENERICINST
-    public partial class CreateTablesResult
+    public partial class CreateTablesResult : DataModel
     {
 
         public static CreateTablesResult? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateTablesResult();
+            var value   = new CreateTablesResult() { Pointer= p0 };
 
 
             return value;

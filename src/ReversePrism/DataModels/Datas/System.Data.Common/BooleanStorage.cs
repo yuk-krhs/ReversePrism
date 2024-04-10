@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
-    public partial class BooleanStorage
+    public partial class BooleanStorage : DataModel
     {
         public List<bool>?                              Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BooleanStorage();
+            var value   = new BooleanStorage() { Pointer= p0 };
 
-            value.Values                                    = GetBoolList(new IntPtr(p + 0x050)); // 0270D89A6FC8 0x50 Values                      ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.Values                                    = GetBoolList(new IntPtr(p + 0x050)); // 024668A11EE0 0x50 Values                      ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 ConnectionResult                         000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32
     // 000 SearchIdFieldNumber                      int IL2CPP_TYPE_I4
     // 038 SearchId                                 000186671910 ModelPrimitiveType string string string String
-    public partial class ExecuteTransferReply
+    public partial class ExecuteTransferReply : DataModel
     {
         public bool                                     Result                                  { get; set; }
         public string                                   UserId                                  { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteTransferReply();
+            var value   = new ExecuteTransferReply() { Pointer= p0 };
 
-            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 0270D0B45F80 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 0270D0B45FC0 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Secret                                    = GetString(new IntPtr(p + 0x028)); // 0270D0B46000 0x28 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.ConnectionResult                          = (ConnectionResultType)GetInt32(new IntPtr(p + 0x030)); // 0270D0B46040 0x30 ConnectionResult            ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
-            value.SearchId                                  = GetString(new IntPtr(p + 0x038)); // 0270D0B46080 0x38 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 024660B38338 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 024660B38378 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Secret                                    = GetString(new IntPtr(p + 0x028)); // 024660B383B8 0x28 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.ConnectionResult                          = (ConnectionResultType)GetInt32(new IntPtr(p + 0x030)); // 024660B383F8 0x30 ConnectionResult            ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
+            value.SearchId                                  = GetString(new IntPtr(p + 0x038)); // 024660B38438 0x38 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

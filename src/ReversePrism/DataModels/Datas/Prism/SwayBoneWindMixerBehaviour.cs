@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SwayBoneWindMixerBehaviour
+    public partial class SwayBoneWindMixerBehaviour : DataModel
     {
 
         public static SwayBoneWindMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwayBoneWindMixerBehaviour();
+            var value   = new SwayBoneWindMixerBehaviour() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Service                                  000186635D00 ModelClassType MobileService MobileService MobileService Pointer
     // 018 unreadTwestaExistenceChecker             Func`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class MobileOverlayModel
+    public partial class MobileOverlayModel : DataModel
     {
         public MobileService?                           Service                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileOverlayModel();
+            var value   = new MobileOverlayModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 0270D68C1148 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
+            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 024666931148 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
 
             return value;
         }

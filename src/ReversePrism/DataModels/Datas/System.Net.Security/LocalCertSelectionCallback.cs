@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LocalCertSelectionCallback
+    public partial class LocalCertSelectionCallback : DataModel
     {
 
         public static LocalCertSelectionCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalCertSelectionCallback();
+            var value   = new LocalCertSelectionCallback() { Pointer= p0 };
 
 
             return value;

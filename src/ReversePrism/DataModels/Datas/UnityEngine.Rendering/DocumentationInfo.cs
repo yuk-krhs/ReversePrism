@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 fallbackVersion                          string IL2CPP_TYPE_STRING
     // 000 url                                      string IL2CPP_TYPE_STRING
-    public partial class DocumentationInfo
+    public partial class DocumentationInfo : DataModel
     {
 
         public static DocumentationInfo? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DocumentationInfo();
+            var value   = new DocumentationInfo() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 Ns                                       000186671910 ModelPrimitiveType string string string String
     // 020 Hash                                     0001865F5290 ModelPrimitiveType int int int Int32
     // 008 Empty                                    XmlQualifiedName IL2CPP_TYPE_CLASS
-    public partial class XmlQualifiedName
+    public partial class XmlQualifiedName : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Ns                                      { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlQualifiedName();
+            var value   = new XmlQualifiedName() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027004CBAE58 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 027004CBAE78 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Hash                                      = GetInt32(new IntPtr(p + 0x020)); // 027004CBAE98 0x20 Hash                        ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A4CDEB58 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0245A4CDEB78 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Hash                                      = GetInt32(new IntPtr(p + 0x020)); // 0245A4CDEB98 0x20 Hash                        ( 0001865F5290 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

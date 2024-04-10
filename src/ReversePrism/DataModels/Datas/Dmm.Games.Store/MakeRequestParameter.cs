@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 028 Url                                      0001866722E0 ModelPrimitiveType string string string String
     // 030 Parameters                               000185CFA278 ModelClassListType List`1<PostData> List`1<PostData> List<PostData> Pointer
     // 038 SignaturePublicKey                       0001866722E0 ModelPrimitiveType string string string String
-    public partial class MakeRequestParameter
+    public partial class MakeRequestParameter : DataModel
     {
         public string                                   Url                                     { get; set; }
         public List<PostData>?                          Parameters                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MakeRequestParameter();
+            var value   = new MakeRequestParameter() { Pointer= p0 };
 
-            value.Url                                       = GetString(new IntPtr(p + 0x028)); // 0270DB4985B0 0x28 Url                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Parameters                                = GetObjectList<PostData>(new IntPtr(p + 0x030), ReversePrism.DataModels.PostData.FromPointer); // 0270DB4985D0 0x30 Parameters                  ( 000185CFA278 ModelClassListType List`1<PostData> List`1<PostData> List<PostData> Pointer )
-            value.SignaturePublicKey                        = GetString(new IntPtr(p + 0x038)); // 0270DB4985F0 0x38 SignaturePublicKey          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x028)); // 02466B5154B0 0x28 Url                         ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Parameters                                = GetObjectList<PostData>(new IntPtr(p + 0x030), ReversePrism.DataModels.PostData.FromPointer); // 02466B5154D0 0x30 Parameters                  ( 000185CFA278 ModelClassListType List`1<PostData> List`1<PostData> List<PostData> Pointer )
+            value.SignaturePublicKey                        = GetString(new IntPtr(p + 0x038)); // 02466B5154F0 0x38 SignaturePublicKey          ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

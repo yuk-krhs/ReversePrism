@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Type                                     000186692F60 ModelClassType Type Type Type Pointer
     // 018 Index                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class AttributeEntry
+    public partial class AttributeEntry : DataModel
     {
         public Type?                                    Type                                    { get; set; }
         public int                                      Index                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttributeEntry();
+            var value   = new AttributeEntry() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 02700602E880 0x10 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 02700602E8A0 0x18 Index                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A60085E8 0x10 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A6008608 0x18 Index                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

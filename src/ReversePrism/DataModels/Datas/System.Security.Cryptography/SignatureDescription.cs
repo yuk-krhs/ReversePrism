@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 StrDigest                                000186671910 ModelPrimitiveType string string string String
     // 020 StrFormatter                             000186671910 ModelPrimitiveType string string string String
     // 028 StrDeformatter                           000186671910 ModelPrimitiveType string string string String
-    public partial class SignatureDescription
+    public partial class SignatureDescription : DataModel
     {
         public string                                   StrKey                                  { get; set; }
         public string                                   StrDigest                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignatureDescription();
+            var value   = new SignatureDescription() { Pointer= p0 };
 
-            value.StrKey                                    = GetString(new IntPtr(p + 0x010)); // 02700422F1C0 0x10 StrKey                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.StrDigest                                 = GetString(new IntPtr(p + 0x018)); // 02700422F1E0 0x18 StrDigest                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.StrFormatter                              = GetString(new IntPtr(p + 0x020)); // 02700422F200 0x20 StrFormatter                ( 000186671910 ModelPrimitiveType string string string String )
-            value.StrDeformatter                            = GetString(new IntPtr(p + 0x028)); // 02700422F220 0x28 StrDeformatter              ( 000186671910 ModelPrimitiveType string string string String )
+            value.StrKey                                    = GetString(new IntPtr(p + 0x010)); // 02466192C198 0x10 StrKey                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.StrDigest                                 = GetString(new IntPtr(p + 0x018)); // 02466192C1B8 0x18 StrDigest                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.StrFormatter                              = GetString(new IntPtr(p + 0x020)); // 02466192C1D8 0x20 StrFormatter                ( 000186671910 ModelPrimitiveType string string string String )
+            value.StrDeformatter                            = GetString(new IntPtr(p + 0x028)); // 02466192C1F8 0x28 StrDeformatter              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

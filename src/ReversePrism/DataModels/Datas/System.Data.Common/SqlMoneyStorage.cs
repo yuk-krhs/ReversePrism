@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185CA63E8 ModelEnumListType SqlMoney[] SqlMoney[] List<SqlMoney> Pointer
-    public partial class SqlMoneyStorage
+    public partial class SqlMoneyStorage : DataModel
     {
         public List<SqlMoney>?                          Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlMoneyStorage();
+            var value   = new SqlMoneyStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlMoney>(new IntPtr(p + 0x050)); // 0270D89EDBD0 0x50 Values                      ( 000185CA63E8 ModelEnumListType SqlMoney[] SqlMoney[] List<SqlMoney> Pointer )
+            value.Values                                    = GetEnumList<SqlMoney>(new IntPtr(p + 0x050)); // 024668A58CA8 0x50 Values                      ( 000185CA63E8 ModelEnumListType SqlMoney[] SqlMoney[] List<SqlMoney> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 Distance                                 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
     // 000 <current>k__BackingField                 ProximitySensor IL2CPP_TYPE_CLASS
-    public partial class ProximitySensor
+    public partial class ProximitySensor : DataModel
     {
         public AxisControl?                             Distance                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProximitySensor();
+            var value   = new ProximitySensor() { Pointer= p0 };
 
-            value.Distance                                  = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0270D771A720 0x170 Distance                    ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.Distance                                  = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 024667772720 0x170 Distance                    ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

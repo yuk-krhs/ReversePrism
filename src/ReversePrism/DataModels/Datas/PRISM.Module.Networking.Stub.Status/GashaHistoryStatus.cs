@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 058 DrawProductList                          000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer
     // 000 ResourceIdFieldNumber                    int IL2CPP_TYPE_I4
     // 060 ResourceId                               000186671910 ModelPrimitiveType string string string String
-    public partial class GashaHistoryStatus
+    public partial class GashaHistoryStatus : DataModel
     {
         public DateTime                                 DrawDate                                { get; set; }
         public string                                   GashaHistoryId                          { get; set; }
@@ -49,17 +49,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaHistoryStatus();
+            var value   = new GashaHistoryStatus() { Pointer= p0 };
 
-            value.DrawDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D15913C8 0x10 DrawDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.GashaHistoryId                            = GetString(new IntPtr(p + 0x028)); // 0270D1591448 0x28 GashaHistoryId              ( 000186671910 ModelPrimitiveType string string string String )
-            value.GashaId                                   = GetString(new IntPtr(p + 0x030)); // 0270D1591488 0x30 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value._DrawDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D15914C8 0x38 _DrawDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D1591528 0x40 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.BonusProductList                          = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 0270D1591588 0x48 BonusProductList            ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
-            value.GaugeProductList                          = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 0270D15915E8 0x50 GaugeProductList            ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
-            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 0270D1591648 0x58 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
-            value.ResourceId                                = GetString(new IntPtr(p + 0x060)); // 0270D1591688 0x60 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.DrawDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 024661532EE8 0x10 DrawDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.GashaHistoryId                            = GetString(new IntPtr(p + 0x028)); // 024661532F68 0x28 GashaHistoryId              ( 000186671910 ModelPrimitiveType string string string String )
+            value.GashaId                                   = GetString(new IntPtr(p + 0x030)); // 024661532FA8 0x30 GashaId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value._DrawDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 024661532FE8 0x38 _DrawDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024661533048 0x40 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.BonusProductList                          = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 0246615330A8 0x48 BonusProductList            ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
+            value.GaugeProductList                          = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 024661533108 0x50 GaugeProductList            ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
+            value.DrawProductList                           = GetObjectList<GashaRewardProductStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.GashaRewardProductStatus.FromPointer); // 024661533168 0x58 DrawProductList             ( 000185CDD198 ModelClassListType RepeatedField`1<GashaRewardProductStatus> RepeatedField`1<GashaRewardProductStatus> List<GashaRewardProductStatus> Pointer )
+            value.ResourceId                                = GetString(new IntPtr(p + 0x060)); // 0246615331A8 0x60 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
             value.DrawDate                      = ToDateTime(value._DrawDate);
 
             return value;

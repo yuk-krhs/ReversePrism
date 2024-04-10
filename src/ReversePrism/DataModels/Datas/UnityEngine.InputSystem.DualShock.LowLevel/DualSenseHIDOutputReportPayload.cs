@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 03C RedColor                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 03D GreenColor                               00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 03E BlueColor                                00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class DualSenseHIDOutputReportPayload
+    public partial class DualSenseHIDOutputReportPayload : DataModel
     {
         public sbyte                                    EnableFlags1                            { get; set; }
         public sbyte                                    EnableFlags2                            { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DualSenseHIDOutputReportPayload();
+            var value   = new DualSenseHIDOutputReportPayload() { Pointer= p0 };
 
-            value.EnableFlags1                              = GetSByte(new IntPtr(p + 0x010)); // 0270D77F9878 0x10 EnableFlags1                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.EnableFlags2                              = GetSByte(new IntPtr(p + 0x011)); // 0270D77F9898 0x11 EnableFlags2                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.HighFrequencyMotorSpeed                   = GetSByte(new IntPtr(p + 0x012)); // 0270D77F98B8 0x12 HighFrequencyMotorSpeed     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LowFrequencyMotorSpeed                    = GetSByte(new IntPtr(p + 0x013)); // 0270D77F98D8 0x13 LowFrequencyMotorSpeed      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RedColor                                  = GetSByte(new IntPtr(p + 0x03C)); // 0270D77F98F8 0x3C RedColor                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.GreenColor                                = GetSByte(new IntPtr(p + 0x03D)); // 0270D77F9918 0x3D GreenColor                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.BlueColor                                 = GetSByte(new IntPtr(p + 0x03E)); // 0270D77F9938 0x3E BlueColor                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.EnableFlags1                              = GetSByte(new IntPtr(p + 0x010)); // 024667851878 0x10 EnableFlags1                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.EnableFlags2                              = GetSByte(new IntPtr(p + 0x011)); // 024667851898 0x11 EnableFlags2                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.HighFrequencyMotorSpeed                   = GetSByte(new IntPtr(p + 0x012)); // 0246678518B8 0x12 HighFrequencyMotorSpeed     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LowFrequencyMotorSpeed                    = GetSByte(new IntPtr(p + 0x013)); // 0246678518D8 0x13 LowFrequencyMotorSpeed      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RedColor                                  = GetSByte(new IntPtr(p + 0x03C)); // 0246678518F8 0x3C RedColor                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.GreenColor                                = GetSByte(new IntPtr(p + 0x03D)); // 024667851918 0x3D GreenColor                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.BlueColor                                 = GetSByte(new IntPtr(p + 0x03E)); // 024667851938 0x3E BlueColor                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 080 s_SubmitHandler                          EventFunction`1<ISubmitHandler> IL2CPP_TYPE_GENERICINST
     // 088 s_CancelHandler                          EventFunction`1<ICancelHandler> IL2CPP_TYPE_GENERICINST
     // 090 S_InternalTransformList                  000185D161C8 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer
-    public partial class ExecuteEvents
+    public partial class ExecuteEvents : DataModel
     {
         public List<Transform>?                         S_InternalTransformList                 { get; set; }
 
@@ -37,9 +37,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteEvents();
+            var value   = new ExecuteEvents() { Pointer= p0 };
 
-            value.S_InternalTransformList                   = GetObjectList<Transform>(new IntPtr(p + 0x090), ReversePrism.DataModels.Transform.FromPointer); // 027004A48D58 0x90 S_InternalTransformList     ( 000185D161C8 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
+            value.S_InternalTransformList                   = GetObjectList<Transform>(new IntPtr(p + 0x090), ReversePrism.DataModels.Transform.FromPointer); // 0245A43D1558 0x90 S_InternalTransformList     ( 000185D161C8 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
 
             return value;
         }

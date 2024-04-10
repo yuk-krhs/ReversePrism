@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_stateMachine                           000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer
     // 018 M_defaultContextAction                   0001866794E0 ModelClassType Action Action Action Pointer
-    public partial class AsyncMethodBuilderCore
+    public partial class AsyncMethodBuilderCore : DataModel
     {
         public IAsyncStateMachine?                      M_stateMachine                          { get; set; }
         public Action?                                  M_defaultContextAction                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncMethodBuilderCore();
+            var value   = new AsyncMethodBuilderCore() { Pointer= p0 };
 
-            value.M_stateMachine                            = GetObject<IAsyncStateMachine>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAsyncStateMachine.FromPointer); // 027003C2DD78 0x10 M_stateMachine              ( 000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer )
-            value.M_defaultContextAction                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 027003C2DD98 0x18 M_defaultContextAction      ( 0001866794E0 ModelClassType Action Action Action Pointer )
+            value.M_stateMachine                            = GetObject<IAsyncStateMachine>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAsyncStateMachine.FromPointer); // 0245A3C2DD78 0x10 M_stateMachine              ( 000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer )
+            value.M_defaultContextAction                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A3C2DD98 0x18 M_defaultContextAction      ( 0001866794E0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

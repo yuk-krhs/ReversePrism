@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Id                                       000186671910 ModelPrimitiveType string string string String
     // 000 VersionFieldNumber                       int IL2CPP_TYPE_I4
     // 020 Version                                  000186671910 ModelPrimitiveType string string string String
-    public partial class TimeZone
+    public partial class TimeZone : DataModel
     {
         public string                                   Id                                      { get; set; }
         public string                                   Version                                 { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeZone();
+            var value   = new TimeZone() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0270DA68D440 0x18 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 0270DA68D480 0x20 Version                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 02466A6F8BE0 0x18 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 02466A6F8C20 0x20 Version                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

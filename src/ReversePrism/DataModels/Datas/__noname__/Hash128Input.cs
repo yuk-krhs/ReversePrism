@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Hash128Input
+    public partial class Hash128Input : DataModel
     {
 
         public static Hash128Input? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hash128Input();
+            var value   = new Hash128Input() { Pointer= p0 };
 
 
             return value;

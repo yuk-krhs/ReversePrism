@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 macOS                                    string IL2CPP_TYPE_STRING
     // 000 Web                                      string IL2CPP_TYPE_STRING
     // 000 Windows                                  string IL2CPP_TYPE_STRING
-    public partial class Platform
+    public partial class Platform : DataModel
     {
 
         public static Platform? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Platform();
+            var value   = new Platform() { Pointer= p0 };
 
 
             return value;

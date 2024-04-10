@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 024 SrcRot                                   0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 030 DstPos                                   0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 03C DstRot                                   0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class MoveData
+    public partial class MoveData : DataModel
     {
         public float                                    Time                                    { get; set; }
         public float                                    Duration                                { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MoveData();
+            var value   = new MoveData() { Pointer= p0 };
 
-            value.Time                                      = GetSingle(new IntPtr(p + 0x010)); // 0270D5DF0098 0x10 Time                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x014)); // 0270D5DF00B8 0x14 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SrcPos                                    = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0270D5DF00D8 0x18 SrcPos                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.SrcRot                                    = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 0270D5DF00F8 0x24 SrcRot                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.DstPos                                    = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0270D5DF0118 0x30 DstPos                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.DstRot                                    = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 0270D5DF0138 0x3C DstRot                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Time                                      = GetSingle(new IntPtr(p + 0x010)); // 024665E609F0 0x10 Time                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x014)); // 024665E60A10 0x14 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.SrcPos                                    = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 024665E60A30 0x18 SrcPos                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.SrcRot                                    = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 024665E60A50 0x24 SrcRot                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.DstPos                                    = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 024665E60A70 0x30 DstPos                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.DstRot                                    = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 024665E60A90 0x3C DstRot                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

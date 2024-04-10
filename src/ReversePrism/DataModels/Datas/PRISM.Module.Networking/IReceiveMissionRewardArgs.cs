@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IReceiveMissionRewardArgs
+    public partial class IReceiveMissionRewardArgs : DataModel
     {
 
         public static IReceiveMissionRewardArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IReceiveMissionRewardArgs();
+            var value   = new IReceiveMissionRewardArgs() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Token                                    000186535F80 ModelEnumType HebrewToken HebrewToken HebrewToken Int32
     // 012 Value                                    0001865F12C0 ModelPrimitiveType short short short Int16
-    public partial class HebrewValue
+    public partial class HebrewValue : DataModel
     {
         public HebrewToken                              Token                                   { get; set; }
         public short                                    Value                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HebrewValue();
+            var value   = new HebrewValue() { Pointer= p0 };
 
-            value.Token                                     = (HebrewToken)GetInt32(new IntPtr(p + 0x010)); // 0270D6D324E8 0x10 Token                       ( 000186535F80 ModelEnumType HebrewToken HebrewToken HebrewToken Int32 )
-            value.Value                                     = GetInt16(new IntPtr(p + 0x012)); // 0270D6D32508 0x12 Value                       ( 0001865F12C0 ModelPrimitiveType short short short Int16 )
+            value.Token                                     = (HebrewToken)GetInt32(new IntPtr(p + 0x010)); // 024666D8A4E8 0x10 Token                       ( 000186535F80 ModelEnumType HebrewToken HebrewToken HebrewToken Int32 )
+            value.Value                                     = GetInt16(new IntPtr(p + 0x012)); // 024666D8A508 0x12 Value                       ( 0001865F12C0 ModelPrimitiveType short short short Int16 )
 
             return value;
         }

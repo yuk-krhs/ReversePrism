@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Defer
+    public partial class Defer : DataModel
     {
 
         public static Defer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Defer();
+            var value   = new Defer() { Pointer= p0 };
 
 
             return value;

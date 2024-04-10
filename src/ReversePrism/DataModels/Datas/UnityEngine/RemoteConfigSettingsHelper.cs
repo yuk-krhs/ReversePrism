@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RemoteConfigSettingsHelper
+    public partial class RemoteConfigSettingsHelper : DataModel
     {
 
         public static RemoteConfigSettingsHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoteConfigSettingsHelper();
+            var value   = new RemoteConfigSettingsHelper() { Pointer= p0 };
 
 
             return value;

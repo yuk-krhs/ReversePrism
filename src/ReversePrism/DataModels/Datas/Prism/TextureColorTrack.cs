@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TextureColorTrack
+    public partial class TextureColorTrack : DataModel
     {
 
         public static TextureColorTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureColorTrack();
+            var value   = new TextureColorTrack() { Pointer= p0 };
 
 
             return value;

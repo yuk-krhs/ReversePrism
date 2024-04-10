@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 030 UserName                                 000186671910 ModelPrimitiveType string string string String
     // 000 CreateDateFieldNumber                    int IL2CPP_TYPE_I4
     // 038 _CreateDate                              000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class ConfirmTransferReply
+    public partial class ConfirmTransferReply : DataModel
     {
         public DateTime                                 CreateDate                              { get; set; }
         public string                                   SearchUserId                            { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfirmTransferReply();
+            var value   = new ConfirmTransferReply() { Pointer= p0 };
 
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 027003B0B3E0 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.SearchUserId                              = GetString(new IntPtr(p + 0x028)); // 027003B0B460 0x28 SearchUserId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserName                                  = GetString(new IntPtr(p + 0x030)); // 027003B0B4A0 0x30 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 027003B0B4E0 0x38 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0245A3B08B00 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.SearchUserId                              = GetString(new IntPtr(p + 0x028)); // 0245A3B08B80 0x28 SearchUserId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserName                                  = GetString(new IntPtr(p + 0x030)); // 0245A3B08BC0 0x30 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0245A3B08C00 0x38 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.CreateDate                    = ToDateTime(value._CreateDate);
 
             return value;

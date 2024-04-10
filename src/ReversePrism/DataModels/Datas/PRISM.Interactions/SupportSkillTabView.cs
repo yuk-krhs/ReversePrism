@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 SupportSkillSlotGridView                 0001865F6AA0 ModelClassType SupportSkillSlotGridView SupportSkillSlotGridView SupportSkillSlotGridView Pointer
     // 040 onShowSelfSCharaDetailPopup              Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 onShowFriendSCharaDetailPopup            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class SupportSkillTabView
+    public partial class SupportSkillTabView : DataModel
     {
         public List<SCharaIconView>?                    SelfSCharaIconViews                     { get; set; }
         public SCharaIconView?                          FriendSCharaIconView                    { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportSkillTabView();
+            var value   = new SupportSkillTabView() { Pointer= p0 };
 
-            value.SelfSCharaIconViews                       = GetObjectList<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0270DA0FA1E8 0x20 SelfSCharaIconViews         ( 000185CA2A68 ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer )
-            value.FriendSCharaIconView                      = GetObject<SCharaIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0270DA0FA208 0x28 FriendSCharaIconView        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.SlotCountText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA0FA228 0x30 SlotCountText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SupportSkillSlotGridView                  = GetObject<SupportSkillSlotGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportSkillSlotGridView.FromPointer); // 0270DA0FA248 0x38 SupportSkillSlotGridView    ( 0001865F6AA0 ModelClassType SupportSkillSlotGridView SupportSkillSlotGridView SupportSkillSlotGridView Pointer )
+            value.SelfSCharaIconViews                       = GetObjectList<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 02466A145C10 0x20 SelfSCharaIconViews         ( 000185CA2A68 ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer )
+            value.FriendSCharaIconView                      = GetObject<SCharaIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIconView.FromPointer); // 02466A145C30 0x28 FriendSCharaIconView        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.SlotCountText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A145C50 0x30 SlotCountText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SupportSkillSlotGridView                  = GetObject<SupportSkillSlotGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportSkillSlotGridView.FromPointer); // 02466A145C70 0x38 SupportSkillSlotGridView    ( 0001865F6AA0 ModelClassType SupportSkillSlotGridView SupportSkillSlotGridView SupportSkillSlotGridView Pointer )
 
             return value;
         }

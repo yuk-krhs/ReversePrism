@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 postName                                 string IL2CPP_TYPE_STRING
     // 000 savePostName                             string IL2CPP_TYPE_STRING
-    public partial class SceneCreate
+    public partial class SceneCreate : DataModel
     {
 
         public static SceneCreate? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneCreate();
+            var value   = new SceneCreate() { Pointer= p0 };
 
 
             return value;

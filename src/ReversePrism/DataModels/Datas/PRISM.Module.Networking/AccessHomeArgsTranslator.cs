@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AccessHomeArgsTranslator
+    public partial class AccessHomeArgsTranslator : DataModel
     {
 
         public static AccessHomeArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AccessHomeArgsTranslator();
+            var value   = new AccessHomeArgsTranslator() { Pointer= p0 };
 
 
             return value;

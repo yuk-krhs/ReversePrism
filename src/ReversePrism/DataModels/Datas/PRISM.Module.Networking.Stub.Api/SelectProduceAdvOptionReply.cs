@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 048 PotentialSupportSkill                    000186678D40 ModelClassType GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus Pointer
     // 000 VitalityVariationFieldNumber             int IL2CPP_TYPE_I4
     // 050 VitalityVariation                        00018652F800 ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer
-    public partial class SelectProduceAdvOptionReply
+    public partial class SelectProduceAdvOptionReply : DataModel
     {
         public List<ProduceAdvRewardType>?              ProduceAdvRewardTypeList                { get; set; }
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
@@ -43,15 +43,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectProduceAdvOptionReply();
+            var value   = new SelectProduceAdvOptionReply() { Pointer= p0 };
 
-            value.ProduceAdvRewardTypeList                  = GetEnumList<ProduceAdvRewardType>(new IntPtr(p + 0x028)); // 0270D259B140 0x28 ProduceAdvRewardTypeList    ( 000185CEA388 ModelEnumListType RepeatedField`1<ProduceAdvRewardType> RepeatedField`1<ProduceAdvRewardType> List<ProduceAdvRewardType> Pointer )
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D259B0E0 0x20 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.ProduceIdolParameterVariation             = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 0270D259B180 0x30 ProduceIdolParameterVariation ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
-            value.ProduceCardList                           = GetObjectList<ProduceCardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 0270D259B1E0 0x38 ProduceCardList             ( 000185CEB1C8 ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer )
-            value.GettableProduceCardAmount                 = GetInt32(new IntPtr(p + 0x040)); // 0270D259B220 0x40 GettableProduceCardAmount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PotentialSupportSkill                     = GetObject<GettablePotentialSupportSkillStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.GettablePotentialSupportSkillStatus.FromPointer); // 0270D259B260 0x48 PotentialSupportSkill       ( 000186678D40 ModelClassType GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus Pointer )
-            value.VitalityVariation                         = GetObject<VitalityVariationStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.VitalityVariationStatus.FromPointer); // 0270D259B2A0 0x50 VitalityVariation           ( 00018652F800 ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer )
+            value.ProduceAdvRewardTypeList                  = GetEnumList<ProduceAdvRewardType>(new IntPtr(p + 0x028)); // 024662562718 0x28 ProduceAdvRewardTypeList    ( 000185CEA388 ModelEnumListType RepeatedField`1<ProduceAdvRewardType> RepeatedField`1<ProduceAdvRewardType> List<ProduceAdvRewardType> Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0246625626B8 0x20 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.ProduceIdolParameterVariation             = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 024662562758 0x30 ProduceIdolParameterVariation ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
+            value.ProduceCardList                           = GetObjectList<ProduceCardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 0246625627B8 0x38 ProduceCardList             ( 000185CEB1C8 ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer )
+            value.GettableProduceCardAmount                 = GetInt32(new IntPtr(p + 0x040)); // 0246625627F8 0x40 GettableProduceCardAmount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PotentialSupportSkill                     = GetObject<GettablePotentialSupportSkillStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.GettablePotentialSupportSkillStatus.FromPointer); // 024662562838 0x48 PotentialSupportSkill       ( 000186678D40 ModelClassType GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus GettablePotentialSupportSkillStatus Pointer )
+            value.VitalityVariation                         = GetObject<VitalityVariationStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.VitalityVariationStatus.FromPointer); // 024662562878 0x50 VitalityVariation           ( 00018652F800 ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer )
 
             return value;
         }

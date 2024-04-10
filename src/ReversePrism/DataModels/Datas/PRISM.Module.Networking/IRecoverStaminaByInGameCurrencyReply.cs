@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRecoverStaminaByInGameCurrencyReply
+    public partial class IRecoverStaminaByInGameCurrencyReply : DataModel
     {
 
         public static IRecoverStaminaByInGameCurrencyReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRecoverStaminaByInGameCurrencyReply();
+            var value   = new IRecoverStaminaByInGameCurrencyReply() { Pointer= p0 };
 
 
             return value;

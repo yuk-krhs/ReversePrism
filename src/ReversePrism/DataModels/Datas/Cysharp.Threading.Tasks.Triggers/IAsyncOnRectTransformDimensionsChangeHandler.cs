@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnRectTransformDimensionsChangeHandler
+    public partial class IAsyncOnRectTransformDimensionsChangeHandler : DataModel
     {
 
         public static IAsyncOnRectTransformDimensionsChangeHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnRectTransformDimensionsChangeHandler();
+            var value   = new IAsyncOnRectTransformDimensionsChangeHandler() { Pointer= p0 };
 
 
             return value;

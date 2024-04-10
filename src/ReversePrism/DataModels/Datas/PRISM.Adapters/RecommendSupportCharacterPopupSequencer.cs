@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RecommendSupportCharacterPopupSequencer
+    public partial class RecommendSupportCharacterPopupSequencer : DataModel
     {
 
         public static RecommendSupportCharacterPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecommendSupportCharacterPopupSequencer();
+            var value   = new RecommendSupportCharacterPopupSequencer() { Pointer= p0 };
 
 
             return value;

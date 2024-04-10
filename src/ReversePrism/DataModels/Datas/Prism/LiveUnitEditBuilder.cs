@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 UnitListWindowView                       00018670DFA0 ModelClassType UnitListWindowView UnitListWindowView UnitListWindowView Pointer
     // 030 TitleView                                0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
     // 038 UseRecommendedPopupViewFactory           0001865916E0 ModelClassType LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory Pointer
-    public partial class LiveUnitEditBuilder
+    public partial class LiveUnitEditBuilder : DataModel
     {
         public LiveUnitEditView?                        View                                    { get; set; }
         public UnitListWindowView?                      UnitListWindowView                      { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitEditBuilder();
+            var value   = new LiveUnitEditBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<LiveUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitEditView.FromPointer); // 0270DB5FD310 0x20 View                        ( 000186591C00 ModelClassType LiveUnitEditView LiveUnitEditView LiveUnitEditView Pointer )
-            value.UnitListWindowView                        = GetObject<UnitListWindowView>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitListWindowView.FromPointer); // 0270DB5FD330 0x28 UnitListWindowView          ( 00018670DFA0 ModelClassType UnitListWindowView UnitListWindowView UnitListWindowView Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0270DB5FD350 0x30 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.UseRecommendedPopupViewFactory            = GetObject<LiveUnitEditUseRecommendedPopupViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveUnitEditUseRecommendedPopupViewFactory.FromPointer); // 0270DB5FD370 0x38 UseRecommendedPopupViewFactory ( 0001865916E0 ModelClassType LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory Pointer )
+            value.View                                      = GetObject<LiveUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitEditView.FromPointer); // 02466B679D90 0x20 View                        ( 000186591C00 ModelClassType LiveUnitEditView LiveUnitEditView LiveUnitEditView Pointer )
+            value.UnitListWindowView                        = GetObject<UnitListWindowView>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitListWindowView.FromPointer); // 02466B679DB0 0x28 UnitListWindowView          ( 00018670DFA0 ModelClassType UnitListWindowView UnitListWindowView UnitListWindowView Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466B679DD0 0x30 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.UseRecommendedPopupViewFactory            = GetObject<LiveUnitEditUseRecommendedPopupViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveUnitEditUseRecommendedPopupViewFactory.FromPointer); // 02466B679DF0 0x38 UseRecommendedPopupViewFactory ( 0001865916E0 ModelClassType LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory LiveUnitEditUseRecommendedPopupViewFactory Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CacheSelectProduceAdvOptionReply         000186631230 ModelClassType ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply Pointer
-    public partial class SelectProduceAdvOptionModel
+    public partial class SelectProduceAdvOptionModel : DataModel
     {
         public ISelectProduceAdvOptionReply?            CacheSelectProduceAdvOptionReply        { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectProduceAdvOptionModel();
+            var value   = new SelectProduceAdvOptionModel() { Pointer= p0 };
 
-            value.CacheSelectProduceAdvOptionReply          = GetObject<ISelectProduceAdvOptionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISelectProduceAdvOptionReply.FromPointer); // 0270D65D2CD0 0x10 CacheSelectProduceAdvOptionReply ( 000186631230 ModelClassType ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply Pointer )
+            value.CacheSelectProduceAdvOptionReply          = GetObject<ISelectProduceAdvOptionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISelectProduceAdvOptionReply.FromPointer); // 024666632CD0 0x10 CacheSelectProduceAdvOptionReply ( 000186631230 ModelClassType ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply ISelectProduceAdvOptionReply Pointer )
 
             return value;
         }

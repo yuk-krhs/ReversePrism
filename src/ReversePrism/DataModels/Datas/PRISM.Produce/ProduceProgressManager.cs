@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 ScenarioKey                              string IL2CPP_TYPE_STRING
     // 000 RemainingTurnKey                         string IL2CPP_TYPE_STRING
     // 000 ClearedScenarioKey                       string IL2CPP_TYPE_STRING
-    public partial class ProduceProgressManager
+    public partial class ProduceProgressManager : DataModel
     {
 
         public static ProduceProgressManager? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceProgressManager();
+            var value   = new ProduceProgressManager() { Pointer= p0 };
 
 
             return value;

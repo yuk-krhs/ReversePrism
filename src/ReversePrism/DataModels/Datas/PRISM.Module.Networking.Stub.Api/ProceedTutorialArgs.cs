@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Tutorial                                 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer
     // 000 IsSkipFieldNumber                        int IL2CPP_TYPE_I4
     // 020 IsSkip                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProceedTutorialArgs
+    public partial class ProceedTutorialArgs : DataModel
     {
         public TutorialStatus?                          Tutorial                                { get; set; }
         public bool                                     IsSkip                                  { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProceedTutorialArgs();
+            var value   = new ProceedTutorialArgs() { Pointer= p0 };
 
-            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 0270D2C4F9B0 0x18 Tutorial                    ( 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
-            value.IsSkip                                    = GetBool(new IntPtr(p + 0x020)); // 0270D2C4F9F0 0x20 IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 024662BDE6B0 0x18 Tutorial                    ( 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
+            value.IsSkip                                    = GetBool(new IntPtr(p + 0x020)); // 024662BDE6F0 0x20 IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

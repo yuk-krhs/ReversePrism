@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 Io_buffer                                000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 040 Last_error                               0001865CA820 ModelClassType Exception Exception Exception Pointer
-    public partial class DeflateStreamNative
+    public partial class DeflateStreamNative : DataModel
     {
         public UnmanagedReadOrWrite?                    Feeder                                  { get; set; }
         public Stream?                                  Base_stream                             { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeflateStreamNative();
+            var value   = new DeflateStreamNative() { Pointer= p0 };
 
-            value.Feeder                                    = GetObject<UnmanagedReadOrWrite>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnmanagedReadOrWrite.FromPointer); // 0270D7BDD528 0x10 Feeder                      ( 000186599790 ModelClassType UnmanagedReadOrWrite UnmanagedReadOrWrite UnmanagedReadOrWrite Pointer )
-            value.Base_stream                               = GetObject<Stream>(new IntPtr(p + 0x018), ReversePrism.DataModels.Stream.FromPointer); // 0270D7BDD548 0x18 Base_stream                 ( 000186670270 ModelClassType Stream Stream Stream Pointer )
-            value.Z_stream                                  = GetObject<SafeDeflateStreamHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeDeflateStreamHandle.FromPointer); // 0270D7BDD568 0x20 Z_stream                    ( 000186599290 ModelClassType SafeDeflateStreamHandle SafeDeflateStreamHandle SafeDeflateStreamHandle Pointer )
-            value.Data                                      = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 0270D7BDD588 0x28 Data                        ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x030)); // 0270D7BDD5A8 0x30 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Io_buffer                                 = GetSByteList(new IntPtr(p + 0x038)); // 0270D7BDD5C8 0x38 Io_buffer                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Last_error                                = GetObject<Exception>(new IntPtr(p + 0x040), ReversePrism.DataModels.Exception.FromPointer); // 0270D7BDD5E8 0x40 Last_error                  ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.Feeder                                    = GetObject<UnmanagedReadOrWrite>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnmanagedReadOrWrite.FromPointer); // 024667C3BC98 0x10 Feeder                      ( 000186599790 ModelClassType UnmanagedReadOrWrite UnmanagedReadOrWrite UnmanagedReadOrWrite Pointer )
+            value.Base_stream                               = GetObject<Stream>(new IntPtr(p + 0x018), ReversePrism.DataModels.Stream.FromPointer); // 024667C3BCB8 0x18 Base_stream                 ( 000186670270 ModelClassType Stream Stream Stream Pointer )
+            value.Z_stream                                  = GetObject<SafeDeflateStreamHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeDeflateStreamHandle.FromPointer); // 024667C3BCD8 0x20 Z_stream                    ( 000186599290 ModelClassType SafeDeflateStreamHandle SafeDeflateStreamHandle SafeDeflateStreamHandle Pointer )
+            value.Data                                      = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 024667C3BCF8 0x28 Data                        ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x030)); // 024667C3BD18 0x30 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Io_buffer                                 = GetSByteList(new IntPtr(p + 0x038)); // 024667C3BD38 0x38 Io_buffer                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Last_error                                = GetObject<Exception>(new IntPtr(p + 0x040), ReversePrism.DataModels.Exception.FromPointer); // 024667C3BD58 0x40 Last_error                  ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

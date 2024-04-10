@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 MinLines                                 0001865F4940 ModelPrimitiveType int int int Int32
     // 014 MaxLines                                 0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class TextAreaAttribute
+    public partial class TextAreaAttribute : DataModel
     {
         public int                                      MinLines                                { get; set; }
         public int                                      MaxLines                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextAreaAttribute();
+            var value   = new TextAreaAttribute() { Pointer= p0 };
 
-            value.MinLines                                  = GetInt32(new IntPtr(p + 0x010)); // 0270068B8580 0x10 MinLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.MaxLines                                  = GetInt32(new IntPtr(p + 0x014)); // 0270068B85A0 0x14 MaxLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.MinLines                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A687AC30 0x10 MinLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.MaxLines                                  = GetInt32(new IntPtr(p + 0x014)); // 0245A687AC50 0x14 MaxLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

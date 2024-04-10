@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 AchievementId                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
     // 040 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class AchievementDetailPopupView
+    public partial class AchievementDetailPopupView : DataModel
     {
         public AchievementDetailPanelView?              PanelView                               { get; set; }
         public int                                      AchievementId                           { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AchievementDetailPopupView();
+            var value   = new AchievementDetailPopupView() { Pointer= p0 };
 
-            value.PanelView                                 = GetObject<AchievementDetailPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementDetailPanelView.FromPointer); // 0270DBEE8640 0x20 PanelView                   ( 000186673B90 ModelClassType AchievementDetailPanelView AchievementDetailPanelView AchievementDetailPanelView Pointer )
-            value.AchievementId                             = GetInt32(new IntPtr(p + 0x030)); // 0270DBEE8680 0x30 AchievementId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x038), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270DBEE86A0 0x38 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DBEE86C0 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.PanelView                                 = GetObject<AchievementDetailPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementDetailPanelView.FromPointer); // 02466BF78678 0x20 PanelView                   ( 000186673B90 ModelClassType AchievementDetailPanelView AchievementDetailPanelView AchievementDetailPanelView Pointer )
+            value.AchievementId                             = GetInt32(new IntPtr(p + 0x030)); // 02466BF786B8 0x30 AchievementId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x038), ReversePrism.DataModels.IResourceLoader.FromPointer); // 02466BF786D8 0x38 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BF786F8 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

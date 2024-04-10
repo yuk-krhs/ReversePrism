@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HDROutputUtils
+    public partial class HDROutputUtils : DataModel
     {
 
         public static HDROutputUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HDROutputUtils();
+            var value   = new HDROutputUtils() { Pointer= p0 };
 
 
             return value;

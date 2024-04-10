@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Rc                                       0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Body                                     0001866722E0 ModelPrimitiveType string string string String
     // 020 Headers                                  Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class MakeRequestResult
+    public partial class MakeRequestResult : DataModel
     {
         public int                                      Rc                                      { get; set; }
         public string                                   Body                                    { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MakeRequestResult();
+            var value   = new MakeRequestResult() { Pointer= p0 };
 
-            value.Rc                                        = GetInt32(new IntPtr(p + 0x010)); // 0270DB4C1708 0x10 Rc                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 0270DB4C1728 0x18 Body                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Rc                                        = GetInt32(new IntPtr(p + 0x010)); // 02466B54E4C0 0x10 Rc                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 02466B54E4E0 0x18 Body                        ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

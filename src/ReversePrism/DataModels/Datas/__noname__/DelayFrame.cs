@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 hasError                                 bool IL2CPP_TYPE_BOOLEAN
     // 000 error                                    Exception IL2CPP_TYPE_CLASS
     // 000 cancelationToken                         BooleanDisposable IL2CPP_TYPE_CLASS
-    public partial class DelayFrame
+    public partial class DelayFrame : DataModel
     {
 
         public static DelayFrame? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DelayFrame();
+            var value   = new DelayFrame() { Pointer= p0 };
 
 
             return value;

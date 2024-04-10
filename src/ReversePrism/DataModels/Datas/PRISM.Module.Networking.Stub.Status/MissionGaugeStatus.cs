@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<MissionGaugeRewardStatus> IL2CPP_TYPE_GENERICINST
     // 020 RewardList                               000185CE6C38 ModelClassListType RepeatedField`1<MissionGaugeRewardStatus> RepeatedField`1<MissionGaugeRewardStatus> List<MissionGaugeRewardStatus> Pointer
-    public partial class MissionGaugeStatus
+    public partial class MissionGaugeStatus : DataModel
     {
         public int                                      Point                                   { get; set; }
         public List<MissionGaugeRewardStatus>?          RewardList                              { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionGaugeStatus();
+            var value   = new MissionGaugeStatus() { Pointer= p0 };
 
-            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D22F1740 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RewardList                                = GetObjectList<MissionGaugeRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MissionGaugeRewardStatus.FromPointer); // 0270D22F17A0 0x20 RewardList                  ( 000185CE6C38 ModelClassListType RepeatedField`1<MissionGaugeRewardStatus> RepeatedField`1<MissionGaugeRewardStatus> List<MissionGaugeRewardStatus> Pointer )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 024662260120 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RewardList                                = GetObjectList<MissionGaugeRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MissionGaugeRewardStatus.FromPointer); // 024662260180 0x20 RewardList                  ( 000185CE6C38 ModelClassListType RepeatedField`1<MissionGaugeRewardStatus> RepeatedField`1<MissionGaugeRewardStatus> List<MissionGaugeRewardStatus> Pointer )
 
             return value;
         }

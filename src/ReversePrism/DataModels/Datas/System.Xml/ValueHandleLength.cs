@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 TimeSpan                                 int IL2CPP_TYPE_I4
     // 000 Guid                                     int IL2CPP_TYPE_I4
     // 000 UniqueId                                 int IL2CPP_TYPE_I4
-    public partial class ValueHandleLength
+    public partial class ValueHandleLength : DataModel
     {
 
         public static ValueHandleLength? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueHandleLength();
+            var value   = new ValueHandleLength() { Pointer= p0 };
 
 
             return value;

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 028 M_InternalLoopingCurve                   000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
     // 030 FrameCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 CachedData                               000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer
-    public partial class Spline
+    public partial class Spline : DataModel
     {
         public AnimationCurve?                          Curve                                   { get; set; }
         public bool                                     M_Loop                                  { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Spline();
+            var value   = new Spline() { Pointer= p0 };
 
-            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270061248F8 0x10 Curve                       ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.M_Loop                                    = GetBool(new IntPtr(p + 0x018)); // 027006124918 0x18 M_Loop                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ZeroValue                               = GetSingle(new IntPtr(p + 0x01C)); // 027006124938 0x1C M_ZeroValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Range                                   = GetSingle(new IntPtr(p + 0x020)); // 027006124958 0x20 M_Range                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_InternalLoopingCurve                    = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 027006124978 0x28 M_InternalLoopingCurve      ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.FrameCount                                = GetInt32(new IntPtr(p + 0x030)); // 027006124998 0x30 FrameCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CachedData                                = GetSingleList(new IntPtr(p + 0x038)); // 0270061249B8 0x38 CachedData                  ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60E0380 0x10 Curve                       ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.M_Loop                                    = GetBool(new IntPtr(p + 0x018)); // 0245A60E03A0 0x18 M_Loop                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ZeroValue                               = GetSingle(new IntPtr(p + 0x01C)); // 0245A60E03C0 0x1C M_ZeroValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Range                                   = GetSingle(new IntPtr(p + 0x020)); // 0245A60E03E0 0x20 M_Range                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_InternalLoopingCurve                    = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0245A60E0400 0x28 M_InternalLoopingCurve      ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.FrameCount                                = GetInt32(new IntPtr(p + 0x030)); // 0245A60E0420 0x30 FrameCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CachedData                                = GetSingleList(new IntPtr(p + 0x038)); // 0245A60E0440 0x38 CachedData                  ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 IsActive                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 AxisTree                                 0001866EA170 ModelClassType Asttree Asttree Asttree Pointer
     // 020 AxisStack                                00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    public partial class ActiveAxis
+    public partial class ActiveAxis : DataModel
     {
         public int                                      CurrentDepth                            { get; set; }
         public bool                                     IsActive                                { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ActiveAxis();
+            var value   = new ActiveAxis() { Pointer= p0 };
 
-            value.CurrentDepth                              = GetInt32(new IntPtr(p + 0x010)); // 0270D74D53F0 0x10 CurrentDepth                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x014)); // 0270D74D5410 0x14 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AxisTree                                  = GetObject<Asttree>(new IntPtr(p + 0x018), ReversePrism.DataModels.Asttree.FromPointer); // 0270D74D5430 0x18 AxisTree                    ( 0001866EA170 ModelClassType Asttree Asttree Asttree Pointer )
-            value.AxisStack                                 = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 0270D74D5450 0x20 AxisStack                   ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.CurrentDepth                              = GetInt32(new IntPtr(p + 0x010)); // 02466753D3F0 0x10 CurrentDepth                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x014)); // 02466753D410 0x14 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AxisTree                                  = GetObject<Asttree>(new IntPtr(p + 0x018), ReversePrism.DataModels.Asttree.FromPointer); // 02466753D430 0x18 AxisTree                    ( 0001866EA170 ModelClassType Asttree Asttree Asttree Pointer )
+            value.AxisStack                                 = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 02466753D450 0x20 AxisStack                   ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
 
             return value;
         }

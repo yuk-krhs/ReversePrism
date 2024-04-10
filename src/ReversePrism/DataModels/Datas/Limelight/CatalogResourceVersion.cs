@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CatalogResourceVersion
+    public partial class CatalogResourceVersion : DataModel
     {
 
         public static CatalogResourceVersion? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatalogResourceVersion();
+            var value   = new CatalogResourceVersion() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScreenCapture
+    public partial class ScreenCapture : DataModel
     {
 
         public static ScreenCapture? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenCapture();
+            var value   = new ScreenCapture() { Pointer= p0 };
 
 
             return value;

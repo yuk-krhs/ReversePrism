@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WaitYielding
+    public partial class WaitYielding : DataModel
     {
 
         public static WaitYielding? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitYielding();
+            var value   = new WaitYielding() { Pointer= p0 };
 
 
             return value;

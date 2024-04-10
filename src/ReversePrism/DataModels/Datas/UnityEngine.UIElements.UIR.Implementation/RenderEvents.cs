@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 VisibilityTreshold                       float IL2CPP_TYPE_R4
-    public partial class RenderEvents
+    public partial class RenderEvents : DataModel
     {
 
         public static RenderEvents? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderEvents();
+            var value   = new RenderEvents() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 TransformAccessArray                     <int> IL2CPP_TYPE_I
     // 000 IsReadOnly                               int IL2CPP_TYPE_I4
-    public partial class TransformJobData
+    public partial class TransformJobData : DataModel
     {
 
         public static TransformJobData? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformJobData();
+            var value   = new TransformJobData() { Pointer= p0 };
 
 
             return value;

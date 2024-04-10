@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OutOfSpaceException
+    public partial class OutOfSpaceException : DataModel
     {
 
         public static OutOfSpaceException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutOfSpaceException();
+            var value   = new OutOfSpaceException() { Pointer= p0 };
 
 
             return value;

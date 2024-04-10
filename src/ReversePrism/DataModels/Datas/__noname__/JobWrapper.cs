@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 outputIndices                            NativeList`1<int> IL2CPP_TYPE_GENERICINST
     // 000 appendCount                              int IL2CPP_TYPE_I4
     // 000 JobData                                  <var> IL2CPP_TYPE_VAR
-    public partial class JobWrapper
+    public partial class JobWrapper : DataModel
     {
 
         public static JobWrapper? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JobWrapper();
+            var value   = new JobWrapper() { Pointer= p0 };
 
 
             return value;

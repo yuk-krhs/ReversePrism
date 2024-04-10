@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 handle                                   <int> IL2CPP_TYPE_I
-    public partial class GCHandle
+    public partial class GCHandle : DataModel
     {
 
         public static GCHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GCHandle();
+            var value   = new GCHandle() { Pointer= p0 };
 
 
             return value;

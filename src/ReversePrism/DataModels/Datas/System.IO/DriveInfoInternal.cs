@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DriveInfoInternal
+    public partial class DriveInfoInternal : DataModel
     {
 
         public static DriveInfoInternal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DriveInfoInternal();
+            var value   = new DriveInfoInternal() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class grpcsharp_server_add_secure_http2_port_delegate
+    public partial class grpcsharp_server_add_secure_http2_port_delegate : DataModel
     {
 
         public static grpcsharp_server_add_secure_http2_port_delegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new grpcsharp_server_add_secure_http2_port_delegate();
+            var value   = new grpcsharp_server_add_secure_http2_port_delegate() { Pointer= p0 };
 
 
             return value;

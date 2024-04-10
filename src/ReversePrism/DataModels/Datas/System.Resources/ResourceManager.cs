@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 018 ResSetTypeName                           000186673B80 ModelPrimitiveType string string string String
     // 020 MscorlibName                             000186673B80 ModelPrimitiveType string string string String
     // 028 DEBUG                                    0001865F4E00 ModelPrimitiveType int int int Int32
-    public partial class ResourceManager
+    public partial class ResourceManager : DataModel
     {
         public string                                   BaseNameField                           { get; set; }
         public Hashtable?                               ResourceSets                            { get; set; }
@@ -63,29 +63,29 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceManager();
+            var value   = new ResourceManager() { Pointer= p0 };
 
-            value.BaseNameField                             = GetString(new IntPtr(p + 0x010)); // 0270D6CC9FA0 0x10 BaseNameField               ( 000186671E00 ModelPrimitiveType string string string String )
-            value.ResourceSets                              = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6CC9FC0 0x18 ResourceSets                ( 0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ModuleDir                                 = GetString(new IntPtr(p + 0x028)); // 0270D6CCA000 0x28 ModuleDir                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MainAssembly                              = GetObject<Assembly>(new IntPtr(p + 0x030), ReversePrism.DataModels.Assembly.FromPointer); // 0270D6CCA020 0x30 MainAssembly                ( 00018658B420 ModelClassType Assembly Assembly Assembly Pointer )
-            value.LocationInfo                              = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 0270D6CCA040 0x38 LocationInfo                ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.UserResourceSet                           = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0270D6CCA060 0x40 UserResourceSet             ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.NeutralResourcesCulture                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 0270D6CCA080 0x48 NeutralResourcesCulture     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.LastUsedResourceCache                     = GetObject<CultureNameResourceSetPair>(new IntPtr(p + 0x050), ReversePrism.DataModels.CultureNameResourceSetPair.FromPointer); // 0270D6CCA0A0 0x50 LastUsedResourceCache       ( 0001866D7520 ModelClassType CultureNameResourceSetPair CultureNameResourceSetPair CultureNameResourceSetPair Pointer )
-            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x058)); // 0270D6CCA0C0 0x58 IgnoreCase                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UseManifest                               = GetBool(new IntPtr(p + 0x059)); // 0270D6CCA0E0 0x59 UseManifest                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UseSatelliteAssem                         = GetBool(new IntPtr(p + 0x05A)); // 0270D6CCA100 0x5A UseSatelliteAssem           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FallbackLoc                               = (UltimateResourceFallbackLocation)GetInt32(new IntPtr(p + 0x05C)); // 0270D6CCA120 0x5C FallbackLoc                 ( 00018669EF50 ModelEnumType UltimateResourceFallbackLocation UltimateResourceFallbackLocation UltimateResourceFallbackLocation Int32 )
-            value.SatelliteContractVersion                  = GetObject<Version>(new IntPtr(p + 0x060), ReversePrism.DataModels.Version.FromPointer); // 0270D6CCA140 0x60 SatelliteContractVersion    ( 0001866B0CC0 ModelClassType Version Version Version Pointer )
-            value.LookedForSatelliteContractVersion         = GetBool(new IntPtr(p + 0x068)); // 0270D6CCA160 0x68 LookedForSatelliteContractVersion ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CallingAssembly                           = GetObject<Assembly>(new IntPtr(p + 0x070), ReversePrism.DataModels.Assembly.FromPointer); // 0270D6CCA180 0x70 CallingAssembly             ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
-            value.M_callingAssembly                         = GetObject<RuntimeAssembly>(new IntPtr(p + 0x078), ReversePrism.DataModels.RuntimeAssembly.FromPointer); // 0270D6CCA1A0 0x78 M_callingAssembly           ( 000186696430 ModelClassType RuntimeAssembly RuntimeAssembly RuntimeAssembly Pointer )
-            value.ResourceGroveler                          = GetObject<IResourceGroveler>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceGroveler.FromPointer); // 0270D6CCA1C0 0x80 ResourceGroveler            ( 00018661A400 ModelClassType IResourceGroveler IResourceGroveler IResourceGroveler Pointer )
-            value.ResReaderTypeName                         = GetString(new IntPtr(p + 0x010)); // 0270D6CCA240 0x10 ResReaderTypeName           ( 000186673B80 ModelPrimitiveType string string string String )
-            value.ResSetTypeName                            = GetString(new IntPtr(p + 0x018)); // 0270D6CCA260 0x18 ResSetTypeName              ( 000186673B80 ModelPrimitiveType string string string String )
-            value.MscorlibName                              = GetString(new IntPtr(p + 0x020)); // 0270D6CCA280 0x20 MscorlibName                ( 000186673B80 ModelPrimitiveType string string string String )
-            value.DEBUG                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D6CCA2A0 0x28 DEBUG                       ( 0001865F4E00 ModelPrimitiveType int int int Int32 )
+            value.BaseNameField                             = GetString(new IntPtr(p + 0x010)); // 024666D29FA0 0x10 BaseNameField               ( 000186671E00 ModelPrimitiveType string string string String )
+            value.ResourceSets                              = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024666D29FC0 0x18 ResourceSets                ( 0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ModuleDir                                 = GetString(new IntPtr(p + 0x028)); // 024666D2A000 0x28 ModuleDir                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MainAssembly                              = GetObject<Assembly>(new IntPtr(p + 0x030), ReversePrism.DataModels.Assembly.FromPointer); // 024666D2A020 0x30 MainAssembly                ( 00018658B420 ModelClassType Assembly Assembly Assembly Pointer )
+            value.LocationInfo                              = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 024666D2A040 0x38 LocationInfo                ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.UserResourceSet                           = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 024666D2A060 0x40 UserResourceSet             ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.NeutralResourcesCulture                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 024666D2A080 0x48 NeutralResourcesCulture     ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.LastUsedResourceCache                     = GetObject<CultureNameResourceSetPair>(new IntPtr(p + 0x050), ReversePrism.DataModels.CultureNameResourceSetPair.FromPointer); // 024666D2A0A0 0x50 LastUsedResourceCache       ( 0001866D7520 ModelClassType CultureNameResourceSetPair CultureNameResourceSetPair CultureNameResourceSetPair Pointer )
+            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x058)); // 024666D2A0C0 0x58 IgnoreCase                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UseManifest                               = GetBool(new IntPtr(p + 0x059)); // 024666D2A0E0 0x59 UseManifest                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UseSatelliteAssem                         = GetBool(new IntPtr(p + 0x05A)); // 024666D2A100 0x5A UseSatelliteAssem           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FallbackLoc                               = (UltimateResourceFallbackLocation)GetInt32(new IntPtr(p + 0x05C)); // 024666D2A120 0x5C FallbackLoc                 ( 00018669EF50 ModelEnumType UltimateResourceFallbackLocation UltimateResourceFallbackLocation UltimateResourceFallbackLocation Int32 )
+            value.SatelliteContractVersion                  = GetObject<Version>(new IntPtr(p + 0x060), ReversePrism.DataModels.Version.FromPointer); // 024666D2A140 0x60 SatelliteContractVersion    ( 0001866B0CC0 ModelClassType Version Version Version Pointer )
+            value.LookedForSatelliteContractVersion         = GetBool(new IntPtr(p + 0x068)); // 024666D2A160 0x68 LookedForSatelliteContractVersion ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CallingAssembly                           = GetObject<Assembly>(new IntPtr(p + 0x070), ReversePrism.DataModels.Assembly.FromPointer); // 024666D2A180 0x70 CallingAssembly             ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
+            value.M_callingAssembly                         = GetObject<RuntimeAssembly>(new IntPtr(p + 0x078), ReversePrism.DataModels.RuntimeAssembly.FromPointer); // 024666D2A1A0 0x78 M_callingAssembly           ( 000186696430 ModelClassType RuntimeAssembly RuntimeAssembly RuntimeAssembly Pointer )
+            value.ResourceGroveler                          = GetObject<IResourceGroveler>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceGroveler.FromPointer); // 024666D2A1C0 0x80 ResourceGroveler            ( 00018661A400 ModelClassType IResourceGroveler IResourceGroveler IResourceGroveler Pointer )
+            value.ResReaderTypeName                         = GetString(new IntPtr(p + 0x010)); // 024666D2A240 0x10 ResReaderTypeName           ( 000186673B80 ModelPrimitiveType string string string String )
+            value.ResSetTypeName                            = GetString(new IntPtr(p + 0x018)); // 024666D2A260 0x18 ResSetTypeName              ( 000186673B80 ModelPrimitiveType string string string String )
+            value.MscorlibName                              = GetString(new IntPtr(p + 0x020)); // 024666D2A280 0x20 MscorlibName                ( 000186673B80 ModelPrimitiveType string string string String )
+            value.DEBUG                                     = GetInt32(new IntPtr(p + 0x028)); // 024666D2A2A0 0x28 DEBUG                       ( 0001865F4E00 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

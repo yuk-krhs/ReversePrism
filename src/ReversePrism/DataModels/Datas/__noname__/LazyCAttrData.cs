@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Assembly                                 00018658B170 ModelClassType Assembly Assembly Assembly Pointer
     // 018 data                                     <int> IL2CPP_TYPE_I
     // 020 Data_length                              000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    public partial class LazyCAttrData
+    public partial class LazyCAttrData : DataModel
     {
         public Assembly?                                Assembly                                { get; set; }
         public uint                                     Data_length                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LazyCAttrData();
+            var value   = new LazyCAttrData() { Pointer= p0 };
 
-            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 027003D9D898 0x10 Assembly                    ( 00018658B170 ModelClassType Assembly Assembly Assembly Pointer )
-            value.Data_length                               = GetUInt32(new IntPtr(p + 0x020)); // 027003D9D8D8 0x20 Data_length                 ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0245A3D9D898 0x10 Assembly                    ( 00018658B170 ModelClassType Assembly Assembly Assembly Pointer )
+            value.Data_length                               = GetUInt32(new IntPtr(p + 0x020)); // 0245A3D9D8D8 0x20 Data_length                 ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

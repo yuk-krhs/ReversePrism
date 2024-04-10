@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 idxSil                                   <int> IL2CPP_TYPE_I
     // 038 vertArm                                  <int> IL2CPP_TYPE_I
     // 040 idxArm                                   <int> IL2CPP_TYPE_I
-    public partial class MeshOut
+    public partial class MeshOut : DataModel
     {
 
         public static MeshOut? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshOut();
+            var value   = new MeshOut() { Pointer= p0 };
 
 
             return value;

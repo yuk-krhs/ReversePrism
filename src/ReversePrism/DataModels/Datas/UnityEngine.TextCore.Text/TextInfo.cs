@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 058 MeshInfo                                 000185B936E0 ModelEnumListType MeshInfo[] MeshInfo[] List<MeshInfo> Pointer
     // 060 IsDirty                                  000186595960 ModelPrimitiveType bool bool bool Bool
     // 061 HasMultipleColors                        000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class TextInfo
+    public partial class TextInfo : DataModel
     {
         public int                                      CharacterCount                          { get; set; }
         public int                                      SpriteCount                             { get; set; }
@@ -51,24 +51,24 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextInfo();
+            var value   = new TextInfo() { Pointer= p0 };
 
-            value.CharacterCount                            = GetInt32(new IntPtr(p + 0x010)); // 0270068F9828 0x10 CharacterCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SpriteCount                               = GetInt32(new IntPtr(p + 0x014)); // 0270068F9848 0x14 SpriteCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SpaceCount                                = GetInt32(new IntPtr(p + 0x018)); // 0270068F9868 0x18 SpaceCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.WordCount                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270068F9888 0x1C WordCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LinkCount                                 = GetInt32(new IntPtr(p + 0x020)); // 0270068F98A8 0x20 LinkCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LineCount                                 = GetInt32(new IntPtr(p + 0x024)); // 0270068F98C8 0x24 LineCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PageCount                                 = GetInt32(new IntPtr(p + 0x028)); // 0270068F98E8 0x28 PageCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaterialCount                             = GetInt32(new IntPtr(p + 0x02C)); // 0270068F9908 0x2C MaterialCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TextElementInfo                           = GetEnumList<TextElementInfo>(new IntPtr(p + 0x030)); // 0270068F9928 0x30 TextElementInfo             ( 000185CAAB58 ModelEnumListType TextElementInfo[] TextElementInfo[] List<TextElementInfo> Pointer )
-            value.WordInfo                                  = GetEnumList<WordInfo>(new IntPtr(p + 0x038)); // 0270068F9948 0x38 WordInfo                    ( 000185CB2728 ModelEnumListType WordInfo[] WordInfo[] List<WordInfo> Pointer )
-            value.LinkInfo                                  = GetEnumList<LinkInfo>(new IntPtr(p + 0x040)); // 0270068F9968 0x40 LinkInfo                    ( 000185B90280 ModelEnumListType LinkInfo[] LinkInfo[] List<LinkInfo> Pointer )
-            value.LineInfo                                  = GetEnumList<LineInfo>(new IntPtr(p + 0x048)); // 0270068F9988 0x48 LineInfo                    ( 000185B90080 ModelEnumListType LineInfo[] LineInfo[] List<LineInfo> Pointer )
-            value.PageInfo                                  = GetEnumList<PageInfo>(new IntPtr(p + 0x050)); // 0270068F99A8 0x50 PageInfo                    ( 000185B9A100 ModelEnumListType PageInfo[] PageInfo[] List<PageInfo> Pointer )
-            value.MeshInfo                                  = GetEnumList<MeshInfo>(new IntPtr(p + 0x058)); // 0270068F99C8 0x58 MeshInfo                    ( 000185B936E0 ModelEnumListType MeshInfo[] MeshInfo[] List<MeshInfo> Pointer )
-            value.IsDirty                                   = GetBool(new IntPtr(p + 0x060)); // 0270068F99E8 0x60 IsDirty                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.HasMultipleColors                         = GetBool(new IntPtr(p + 0x061)); // 0270068F9A08 0x61 HasMultipleColors           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CharacterCount                            = GetInt32(new IntPtr(p + 0x010)); // 0245A68BC588 0x10 CharacterCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SpriteCount                               = GetInt32(new IntPtr(p + 0x014)); // 0245A68BC5A8 0x14 SpriteCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SpaceCount                                = GetInt32(new IntPtr(p + 0x018)); // 0245A68BC5C8 0x18 SpaceCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.WordCount                                 = GetInt32(new IntPtr(p + 0x01C)); // 0245A68BC5E8 0x1C WordCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LinkCount                                 = GetInt32(new IntPtr(p + 0x020)); // 0245A68BC608 0x20 LinkCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LineCount                                 = GetInt32(new IntPtr(p + 0x024)); // 0245A68BC628 0x24 LineCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.PageCount                                 = GetInt32(new IntPtr(p + 0x028)); // 0245A68BC648 0x28 PageCount                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MaterialCount                             = GetInt32(new IntPtr(p + 0x02C)); // 0245A68BC668 0x2C MaterialCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TextElementInfo                           = GetEnumList<TextElementInfo>(new IntPtr(p + 0x030)); // 0245A68BC688 0x30 TextElementInfo             ( 000185CAAB58 ModelEnumListType TextElementInfo[] TextElementInfo[] List<TextElementInfo> Pointer )
+            value.WordInfo                                  = GetEnumList<WordInfo>(new IntPtr(p + 0x038)); // 0245A68BC6A8 0x38 WordInfo                    ( 000185CB2728 ModelEnumListType WordInfo[] WordInfo[] List<WordInfo> Pointer )
+            value.LinkInfo                                  = GetEnumList<LinkInfo>(new IntPtr(p + 0x040)); // 0245A68BC6C8 0x40 LinkInfo                    ( 000185B90280 ModelEnumListType LinkInfo[] LinkInfo[] List<LinkInfo> Pointer )
+            value.LineInfo                                  = GetEnumList<LineInfo>(new IntPtr(p + 0x048)); // 0245A68BC6E8 0x48 LineInfo                    ( 000185B90080 ModelEnumListType LineInfo[] LineInfo[] List<LineInfo> Pointer )
+            value.PageInfo                                  = GetEnumList<PageInfo>(new IntPtr(p + 0x050)); // 0245A68BC708 0x50 PageInfo                    ( 000185B9A100 ModelEnumListType PageInfo[] PageInfo[] List<PageInfo> Pointer )
+            value.MeshInfo                                  = GetEnumList<MeshInfo>(new IntPtr(p + 0x058)); // 0245A68BC728 0x58 MeshInfo                    ( 000185B936E0 ModelEnumListType MeshInfo[] MeshInfo[] List<MeshInfo> Pointer )
+            value.IsDirty                                   = GetBool(new IntPtr(p + 0x060)); // 0245A68BC748 0x60 IsDirty                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.HasMultipleColors                         = GetBool(new IntPtr(p + 0x061)); // 0245A68BC768 0x61 HasMultipleColors           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Offset                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Src                                      000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class ByteReader
+    public partial class ByteReader : DataModel
     {
         public int                                      Offset                                  { get; set; }
         public List<sbyte>?                             Src                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteReader();
+            var value   = new ByteReader() { Pointer= p0 };
 
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 0270DBCD6948 0x10 Offset                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Src                                       = GetSByteList(new IntPtr(p + 0x018)); // 0270DBCD6968 0x18 Src                         ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 02466BD5E778 0x10 Offset                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Src                                       = GetSByteList(new IntPtr(p + 0x018)); // 02466BD5E798 0x18 Src                         ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 038 GoodSlow                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 GoodReverseFieldNumber                   int IL2CPP_TYPE_I4
     // 03C GoodReverse                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class LiveTimingJudgementStatus
+    public partial class LiveTimingJudgementStatus : DataModel
     {
         public int                                      Perfect                                 { get; set; }
         public int                                      Great                                   { get; set; }
@@ -49,18 +49,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveTimingJudgementStatus();
+            var value   = new LiveTimingJudgementStatus() { Pointer= p0 };
 
-            value.Perfect                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D135EAC0 0x18 Perfect                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Great                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D135EB00 0x1C Great                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Good                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D135EB40 0x20 Good                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Miss                                      = GetInt32(new IntPtr(p + 0x024)); // 0270D135EB80 0x24 Miss                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GreatFast                                 = GetInt32(new IntPtr(p + 0x028)); // 0270D135EBC0 0x28 GreatFast                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GreatSlow                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D135EC00 0x2C GreatSlow                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GreatReverse                              = GetInt32(new IntPtr(p + 0x030)); // 0270D135EC40 0x30 GreatReverse                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoodFast                                  = GetInt32(new IntPtr(p + 0x034)); // 0270D135EC80 0x34 GoodFast                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoodSlow                                  = GetInt32(new IntPtr(p + 0x038)); // 0270D135ECC0 0x38 GoodSlow                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GoodReverse                               = GetInt32(new IntPtr(p + 0x03C)); // 0270D135ED00 0x3C GoodReverse                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Perfect                                   = GetInt32(new IntPtr(p + 0x018)); // 0246612E7E40 0x18 Perfect                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Great                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246612E7E80 0x1C Great                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Good                                      = GetInt32(new IntPtr(p + 0x020)); // 0246612E7EC0 0x20 Good                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Miss                                      = GetInt32(new IntPtr(p + 0x024)); // 0246612E7F00 0x24 Miss                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GreatFast                                 = GetInt32(new IntPtr(p + 0x028)); // 0246612E7F40 0x28 GreatFast                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GreatSlow                                 = GetInt32(new IntPtr(p + 0x02C)); // 0246612E7F80 0x2C GreatSlow                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GreatReverse                              = GetInt32(new IntPtr(p + 0x030)); // 0246612E7FC0 0x30 GreatReverse                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoodFast                                  = GetInt32(new IntPtr(p + 0x034)); // 0246612E8000 0x34 GoodFast                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoodSlow                                  = GetInt32(new IntPtr(p + 0x038)); // 0246612E8040 0x38 GoodSlow                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GoodReverse                               = GetInt32(new IntPtr(p + 0x03C)); // 0246612E8080 0x3C GoodReverse                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

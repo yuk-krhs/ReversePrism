@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MouseOverEvent
+    public partial class MouseOverEvent : DataModel
     {
 
         public static MouseOverEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MouseOverEvent();
+            var value   = new MouseOverEvent() { Pointer= p0 };
 
 
             return value;

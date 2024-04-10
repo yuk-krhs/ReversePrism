@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 instance                                 FirebaseAppUtils IL2CPP_TYPE_CLASS
-    public partial class FirebaseAppUtils
+    public partial class FirebaseAppUtils : DataModel
     {
 
         public static FirebaseAppUtils? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseAppUtils();
+            var value   = new FirebaseAppUtils() { Pointer= p0 };
 
 
             return value;

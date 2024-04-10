@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CueName                                  000186671910 ModelPrimitiveType string string string String
     // 018 Message                                  000186671910 ModelPrimitiveType string string string String
-    public partial class TextWindowSequence
+    public partial class TextWindowSequence : DataModel
     {
         public string                                   CueName                                 { get; set; }
         public string                                   Message                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextWindowSequence();
+            var value   = new TextWindowSequence() { Pointer= p0 };
 
-            value.CueName                                   = GetString(new IntPtr(p + 0x010)); // 0270DBC117F8 0x10 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0270DBC11818 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x010)); // 02466BCA8B60 0x10 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 02466BCA8B80 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

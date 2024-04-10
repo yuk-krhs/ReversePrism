@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 view                                     IClosableOverlayView`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ClosableOverlay
+    public partial class ClosableOverlay : DataModel
     {
 
         public static ClosableOverlay? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClosableOverlay();
+            var value   = new ClosableOverlay() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 metadata                                 string IL2CPP_TYPE_STRING
-    public partial class FastTouchscreen
+    public partial class FastTouchscreen : DataModel
     {
 
         public static FastTouchscreen? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FastTouchscreen();
+            var value   = new FastTouchscreen() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 LastBytes                                000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 028 LastBytesCount                           0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class Ucs4Decoder
+    public partial class Ucs4Decoder : DataModel
     {
         public List<sbyte>?                             LastBytes                               { get; set; }
         public int                                      LastBytesCount                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Ucs4Decoder();
+            var value   = new Ucs4Decoder() { Pointer= p0 };
 
-            value.LastBytes                                 = GetSByteList(new IntPtr(p + 0x020)); // 0270D7495550 0x20 LastBytes                   ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.LastBytesCount                            = GetInt32(new IntPtr(p + 0x028)); // 0270D7495570 0x28 LastBytesCount              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LastBytes                                 = GetSByteList(new IntPtr(p + 0x020)); // 0246674FD550 0x20 LastBytes                   ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.LastBytesCount                            = GetInt32(new IntPtr(p + 0x028)); // 0246674FD570 0x28 LastBytesCount              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

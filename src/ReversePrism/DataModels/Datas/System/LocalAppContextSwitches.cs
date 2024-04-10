@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 DoNotUseTimeZoneInfo                     bool IL2CPP_TYPE_BOOLEAN
     // 001 DoNotUseEcmaScriptV6EscapeControlCharacter bool IL2CPP_TYPE_BOOLEAN
-    public partial class LocalAppContextSwitches
+    public partial class LocalAppContextSwitches : DataModel
     {
 
         public static LocalAppContextSwitches? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalAppContextSwitches();
+            var value   = new LocalAppContextSwitches() { Pointer= p0 };
 
 
             return value;

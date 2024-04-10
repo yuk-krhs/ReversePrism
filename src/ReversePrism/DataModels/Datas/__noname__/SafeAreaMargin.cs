@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _MarginData                              MarginData IL2CPP_TYPE_CLASS
     // 008 _safeAreaMarginData                      SafeAreaMarginData IL2CPP_TYPE_CLASS
-    public partial class SafeAreaMargin
+    public partial class SafeAreaMargin : DataModel
     {
 
         public static SafeAreaMargin? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeAreaMargin();
+            var value   = new SafeAreaMargin() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_SearchedAssets                         HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class FontAssetUtilities
+    public partial class FontAssetUtilities : DataModel
     {
 
         public static FontAssetUtilities? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FontAssetUtilities();
+            var value   = new FontAssetUtilities() { Pointer= p0 };
 
 
             return value;

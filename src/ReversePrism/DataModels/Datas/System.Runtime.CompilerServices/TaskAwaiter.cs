@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_task                                   000186681890 ModelClassType Task Task Task Pointer
-    public partial class TaskAwaiter
+    public partial class TaskAwaiter : DataModel
     {
         public Task?                                    M_task                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TaskAwaiter();
+            var value   = new TaskAwaiter() { Pointer= p0 };
 
-            value.M_task                                    = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 027003C2DDB8 0x10 M_task                      ( 000186681890 ModelClassType Task Task Task Pointer )
+            value.M_task                                    = GetObject<Task>(new IntPtr(p + 0x010), ReversePrism.DataModels.Task.FromPointer); // 0245A3C2DDB8 0x10 M_task                      ( 000186681890 ModelClassType Task Task Task Pointer )
 
             return value;
         }

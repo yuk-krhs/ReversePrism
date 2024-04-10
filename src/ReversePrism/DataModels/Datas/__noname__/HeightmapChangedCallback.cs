@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HeightmapChangedCallback
+    public partial class HeightmapChangedCallback : DataModel
     {
 
         public static HeightmapChangedCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HeightmapChangedCallback();
+            var value   = new HeightmapChangedCallback() { Pointer= p0 };
 
 
             return value;

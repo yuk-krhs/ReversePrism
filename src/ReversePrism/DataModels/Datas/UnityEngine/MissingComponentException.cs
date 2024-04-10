@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MissingComponentException
+    public partial class MissingComponentException : DataModel
     {
 
         public static MissingComponentException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissingComponentException();
+            var value   = new MissingComponentException() { Pointer= p0 };
 
 
             return value;

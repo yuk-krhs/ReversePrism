@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoInterpRenderTextureParameter
+    public partial class NoInterpRenderTextureParameter : DataModel
     {
 
         public static NoInterpRenderTextureParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoInterpRenderTextureParameter();
+            var value   = new NoInterpRenderTextureParameter() { Pointer= p0 };
 
 
             return value;

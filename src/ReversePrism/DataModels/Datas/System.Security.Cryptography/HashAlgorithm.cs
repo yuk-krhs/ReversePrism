@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 HashSizeValue                            0001865F3220 ModelPrimitiveType int int int Int32
     // 018 HashValue                                000185B79B70 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 020 State                                    0001865F3220 ModelPrimitiveType int int int Int32
-    public partial class HashAlgorithm
+    public partial class HashAlgorithm : DataModel
     {
         public bool                                     Disposed                                { get; set; }
         public int                                      HashSizeValue                           { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HashAlgorithm();
+            var value   = new HashAlgorithm() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 027003D040A8 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HashSizeValue                             = GetInt32(new IntPtr(p + 0x014)); // 027003D040C8 0x14 HashSizeValue               ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.HashValue                                 = GetSByteList(new IntPtr(p + 0x018)); // 027003D040E8 0x18 HashValue                   ( 000185B79B70 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.State                                     = GetInt32(new IntPtr(p + 0x020)); // 027003D04108 0x20 State                       ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0245A3D040A8 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HashSizeValue                             = GetInt32(new IntPtr(p + 0x014)); // 0245A3D040C8 0x14 HashSizeValue               ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.HashValue                                 = GetSByteList(new IntPtr(p + 0x018)); // 0245A3D040E8 0x18 HashValue                   ( 000185B79B70 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.State                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A3D04108 0x20 State                       ( 0001865F3220 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

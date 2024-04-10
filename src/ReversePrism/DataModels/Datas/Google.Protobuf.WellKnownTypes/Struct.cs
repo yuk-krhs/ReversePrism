@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 FieldsFieldNumber                        int IL2CPP_TYPE_I4
     // 008 _map_fields_codec                        Codec<string, Value> IL2CPP_TYPE_GENERICINST
     // 018 fields_                                  MapField`2<string, Value> IL2CPP_TYPE_GENERICINST
-    public partial class Struct
+    public partial class Struct : DataModel
     {
 
         public static Struct? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Struct();
+            var value   = new Struct() { Pointer= p0 };
 
 
             return value;

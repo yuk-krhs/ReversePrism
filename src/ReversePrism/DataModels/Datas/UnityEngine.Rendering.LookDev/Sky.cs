@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Cubemap                                  000186661A90 ModelClassType Cubemap Cubemap Cubemap Pointer
     // 018 LongitudeOffset                          000186666050 ModelPrimitiveType float float float Single
     // 01C Exposure                                 000186666050 ModelPrimitiveType float float float Single
-    public partial class Sky
+    public partial class Sky : DataModel
     {
         public Cubemap?                                 Cubemap                                 { get; set; }
         public float                                    LongitudeOffset                         { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Sky();
+            var value   = new Sky() { Pointer= p0 };
 
-            value.Cubemap                                   = GetObject<Cubemap>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cubemap.FromPointer); // 0270D9303310 0x10 Cubemap                     ( 000186661A90 ModelClassType Cubemap Cubemap Cubemap Pointer )
-            value.LongitudeOffset                           = GetSingle(new IntPtr(p + 0x018)); // 0270D9303330 0x18 LongitudeOffset             ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Exposure                                  = GetSingle(new IntPtr(p + 0x01C)); // 0270D9303350 0x1C Exposure                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Cubemap                                   = GetObject<Cubemap>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cubemap.FromPointer); // 024669365818 0x10 Cubemap                     ( 000186661A90 ModelClassType Cubemap Cubemap Cubemap Pointer )
+            value.LongitudeOffset                           = GetSingle(new IntPtr(p + 0x018)); // 024669365838 0x18 LongitudeOffset             ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Exposure                                  = GetSingle(new IntPtr(p + 0x01C)); // 024669365858 0x1C Exposure                    ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

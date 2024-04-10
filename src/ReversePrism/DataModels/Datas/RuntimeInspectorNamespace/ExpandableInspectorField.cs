@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 0B0 ExposedMethods                           000185CDBBB8 ModelClassListType List`1<ExposedMethodField> List`1<ExposedMethodField> List<ExposedMethodField> Pointer
     // 0B8 M_isExpanded                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 0BC M_headerVisibility                       0001866ED1E0 ModelEnumType HeaderVisibility HeaderVisibility HeaderVisibility Int32
-    public partial class ExpandableInspectorField
+    public partial class ExpandableInspectorField : DataModel
     {
         public RectTransform?                           DrawArea                                { get; set; }
         public PointerEventListener?                    ExpandToggle                            { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpandableInspectorField();
+            var value   = new ExpandableInspectorField() { Pointer= p0 };
 
-            value.DrawArea                                  = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DB1D6218 0x80 DrawArea                    ( 000186630680 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.ExpandToggle                              = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 0270DB1D6238 0x88 ExpandToggle                ( 00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
-            value.ExpandToggleTransform                     = GetObject<RectTransform>(new IntPtr(p + 0x090), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DB1D6258 0x90 ExpandToggleTransform       ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.LayoutGroup                               = GetObject<LayoutGroup>(new IntPtr(p + 0x098), ReversePrism.DataModels.LayoutGroup.FromPointer); // 0270DB1D6278 0x98 LayoutGroup                 ( 00018650CD20 ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer )
-            value.ExpandArrow                               = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 0270DB1D6298 0xA0 ExpandArrow                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.Elements                                  = GetObjectList<InspectorField>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.InspectorField.FromPointer); // 0270DB1D62B8 0xA8 Elements                    ( 000185CECB18 ModelClassListType List`1<InspectorField> List`1<InspectorField> List<InspectorField> Pointer )
-            value.ExposedMethods                            = GetObjectList<ExposedMethodField>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ExposedMethodField.FromPointer); // 0270DB1D62D8 0xB0 ExposedMethods              ( 000185CDBBB8 ModelClassListType List`1<ExposedMethodField> List`1<ExposedMethodField> List<ExposedMethodField> Pointer )
-            value.M_isExpanded                              = GetBool(new IntPtr(p + 0x0B8)); // 0270DB1D62F8 0xB8 M_isExpanded                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_headerVisibility                        = (HeaderVisibility)GetInt32(new IntPtr(p + 0x0BC)); // 0270DB1D6318 0xBC M_headerVisibility          ( 0001866ED1E0 ModelEnumType HeaderVisibility HeaderVisibility HeaderVisibility Int32 )
+            value.DrawArea                                  = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B236218 0x80 DrawArea                    ( 000186630680 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ExpandToggle                              = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 02466B236238 0x88 ExpandToggle                ( 00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
+            value.ExpandToggleTransform                     = GetObject<RectTransform>(new IntPtr(p + 0x090), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B236258 0x90 ExpandToggleTransform       ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.LayoutGroup                               = GetObject<LayoutGroup>(new IntPtr(p + 0x098), ReversePrism.DataModels.LayoutGroup.FromPointer); // 02466B236278 0x98 LayoutGroup                 ( 00018650CD20 ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer )
+            value.ExpandArrow                               = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 02466B236298 0xA0 ExpandArrow                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.Elements                                  = GetObjectList<InspectorField>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.InspectorField.FromPointer); // 02466B2362B8 0xA8 Elements                    ( 000185CECB18 ModelClassListType List`1<InspectorField> List`1<InspectorField> List<InspectorField> Pointer )
+            value.ExposedMethods                            = GetObjectList<ExposedMethodField>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ExposedMethodField.FromPointer); // 02466B2362D8 0xB0 ExposedMethods              ( 000185CDBBB8 ModelClassListType List`1<ExposedMethodField> List`1<ExposedMethodField> List<ExposedMethodField> Pointer )
+            value.M_isExpanded                              = GetBool(new IntPtr(p + 0x0B8)); // 02466B2362F8 0xB8 M_isExpanded                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_headerVisibility                        = (HeaderVisibility)GetInt32(new IntPtr(p + 0x0BC)); // 02466B236318 0xBC M_headerVisibility          ( 0001866ED1E0 ModelEnumType HeaderVisibility HeaderVisibility HeaderVisibility Int32 )
 
             return value;
         }

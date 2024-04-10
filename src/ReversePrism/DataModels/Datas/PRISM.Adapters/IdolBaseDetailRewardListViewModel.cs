@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ViewTitle                                000186672F10 ModelPrimitiveType string string string String
     // 018 CellDataList                             000185CEA778 ModelClassListType List`1<IdolBaseDetailRewardListCellData> List`1<IdolBaseDetailRewardListCellData> List<IdolBaseDetailRewardListCellData> Pointer
-    public partial class IdolBaseDetailRewardListViewModel
+    public partial class IdolBaseDetailRewardListViewModel : DataModel
     {
         public string                                   ViewTitle                               { get; set; }
         public List<IdolBaseDetailRewardListCellData>?  CellDataList                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolBaseDetailRewardListViewModel();
+            var value   = new IdolBaseDetailRewardListViewModel() { Pointer= p0 };
 
-            value.ViewTitle                                 = GetString(new IntPtr(p + 0x010)); // 0270D5EB9718 0x10 ViewTitle                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.CellDataList                              = GetObjectList<IdolBaseDetailRewardListCellData>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolBaseDetailRewardListCellData.FromPointer); // 0270D5EB9738 0x18 CellDataList                ( 000185CEA778 ModelClassListType List`1<IdolBaseDetailRewardListCellData> List`1<IdolBaseDetailRewardListCellData> List<IdolBaseDetailRewardListCellData> Pointer )
+            value.ViewTitle                                 = GetString(new IntPtr(p + 0x010)); // 024665F19D98 0x10 ViewTitle                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.CellDataList                              = GetObjectList<IdolBaseDetailRewardListCellData>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolBaseDetailRewardListCellData.FromPointer); // 024665F19DB8 0x18 CellDataList                ( 000185CEA778 ModelClassListType List`1<IdolBaseDetailRewardListCellData> List`1<IdolBaseDetailRewardListCellData> List<IdolBaseDetailRewardListCellData> Pointer )
 
             return value;
         }

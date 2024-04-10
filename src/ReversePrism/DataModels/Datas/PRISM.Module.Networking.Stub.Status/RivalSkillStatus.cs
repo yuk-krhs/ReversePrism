@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstRivalSkillId                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 InGameSkillFieldNumber                   int IL2CPP_TYPE_I4
     // 020 InGameSkill                              0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer
-    public partial class RivalSkillStatus
+    public partial class RivalSkillStatus : DataModel
     {
         public int                                      MstRivalSkillId                         { get; set; }
         public InGameSkillStatus?                       InGameSkill                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RivalSkillStatus();
+            var value   = new RivalSkillStatus() { Pointer= p0 };
 
-            value.MstRivalSkillId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D1131BD0 0x18 MstRivalSkillId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InGameSkill                               = GetObject<InGameSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameSkillStatus.FromPointer); // 0270D1131C10 0x20 InGameSkill                 ( 0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer )
+            value.MstRivalSkillId                           = GetInt32(new IntPtr(p + 0x018)); // 0246610A4CA0 0x18 MstRivalSkillId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.InGameSkill                               = GetObject<InGameSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGameSkillStatus.FromPointer); // 0246610A4CE0 0x20 InGameSkill                 ( 0001866DA480 ModelClassType InGameSkillStatus InGameSkillStatus InGameSkillStatus Pointer )
 
             return value;
         }

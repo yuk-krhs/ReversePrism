@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FesUnitSearchPopupSequencer
+    public partial class FesUnitSearchPopupSequencer : DataModel
     {
 
         public static FesUnitSearchPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitSearchPopupSequencer();
+            var value   = new FesUnitSearchPopupSequencer() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Corners                                Vector3[] IL2CPP_TYPE_SZARRAY
-    public partial class RectTransformUtility
+    public partial class RectTransformUtility : DataModel
     {
 
         public static RectTransformUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RectTransformUtility();
+            var value   = new RectTransformUtility() { Pointer= p0 };
 
 
             return value;

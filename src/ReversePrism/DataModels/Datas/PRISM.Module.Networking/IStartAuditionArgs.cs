@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStartAuditionArgs
+    public partial class IStartAuditionArgs : DataModel
     {
 
         public static IStartAuditionArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStartAuditionArgs();
+            var value   = new IStartAuditionArgs() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Flash
+    public partial class Flash : DataModel
     {
 
         public static Flash? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Flash();
+            var value   = new Flash() { Pointer= p0 };
 
 
             return value;

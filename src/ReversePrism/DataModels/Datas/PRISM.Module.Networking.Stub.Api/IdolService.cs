@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 050 __Method_SetIdolBaseCostume              Method`2<SetIdolBaseCostumeArgs, SetIdolBaseCostumeReply> IL2CPP_TYPE_GENERICINST
     // 058 __Method_GetIdolLevelRewardList          Method`2<GetIdolLevelRewardListArgs, GetIdolLevelRewardListReply> IL2CPP_TYPE_GENERICINST
     // 060 __Method_GetDearnessLevelRewardList      Method`2<GetDearnessLevelRewardListArgs, GetDearnessLevelRewardListReply> IL2CPP_TYPE_GENERICINST
-    public partial class IdolService
+    public partial class IdolService : DataModel
     {
 
         public static IdolService? FromPointer(IntPtr p0)
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolService();
+            var value   = new IdolService() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Phase                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Sequence                                 0001866809B0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
-    public partial class Data
+    public partial class Data : DataModel
     {
         public int                                      Phase                                   { get; set; }
         public ITutorialSequence?                       Sequence                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Data();
+            var value   = new Data() { Pointer= p0 };
 
-            value.Phase                                     = GetInt32(new IntPtr(p + 0x010)); // 0270DBC10450 0x10 Phase                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Sequence                                  = GetObject<ITutorialSequence>(new IntPtr(p + 0x018), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0270DBC10470 0x18 Sequence                    ( 0001866809B0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.Phase                                     = GetInt32(new IntPtr(p + 0x010)); // 02466BC977B0 0x10 Phase                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Sequence                                  = GetObject<ITutorialSequence>(new IntPtr(p + 0x018), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 02466BC977D0 0x18 Sequence                    ( 0001866809B0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
 
             return value;
         }

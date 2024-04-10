@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 Text                                     0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 048 CostumeDetailPopupCaller                 00018662B0A0 ModelClassType CostumeDetailPopupCaller CostumeDetailPopupCaller CostumeDetailPopupCaller Pointer
     // 050 AchievemntDetailCaller                   000186674050 ModelClassType AchievementDetailPopupCaller AchievementDetailPopupCaller AchievementDetailPopupCaller Pointer
-    public partial class RewardItem
+    public partial class RewardItem : DataModel
     {
         public UIButton?                                Button                                  { get; set; }
         public RawImage?                                Icon                                    { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RewardItem();
+            var value   = new RewardItem() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0270D4BBF058 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Icon                                      = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0270D4BBF078 0x28 Icon                        ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ImgItemBase                               = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 0270D4BBF098 0x30 ImgItemBase                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ImgItemFrame                              = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0270D4BBF0B8 0x38 ImgItemFrame                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D4BBF0D8 0x40 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CostumeDetailPopupCaller                  = GetObject<CostumeDetailPopupCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeDetailPopupCaller.FromPointer); // 0270D4BBF0F8 0x48 CostumeDetailPopupCaller    ( 00018662B0A0 ModelClassType CostumeDetailPopupCaller CostumeDetailPopupCaller CostumeDetailPopupCaller Pointer )
-            value.AchievemntDetailCaller                    = GetObject<AchievementDetailPopupCaller>(new IntPtr(p + 0x050), ReversePrism.DataModels.AchievementDetailPopupCaller.FromPointer); // 0270D4BBF118 0x50 AchievemntDetailCaller      ( 000186674050 ModelClassType AchievementDetailPopupCaller AchievementDetailPopupCaller AchievementDetailPopupCaller Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 024664C21BC0 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Icon                                      = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 024664C21BE0 0x28 Icon                        ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.ImgItemBase                               = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 024664C21C00 0x30 ImgItemBase                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.ImgItemFrame                              = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 024664C21C20 0x38 ImgItemFrame                ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.Text                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664C21C40 0x40 Text                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CostumeDetailPopupCaller                  = GetObject<CostumeDetailPopupCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumeDetailPopupCaller.FromPointer); // 024664C21C60 0x48 CostumeDetailPopupCaller    ( 00018662B0A0 ModelClassType CostumeDetailPopupCaller CostumeDetailPopupCaller CostumeDetailPopupCaller Pointer )
+            value.AchievemntDetailCaller                    = GetObject<AchievementDetailPopupCaller>(new IntPtr(p + 0x050), ReversePrism.DataModels.AchievementDetailPopupCaller.FromPointer); // 024664C21C80 0x50 AchievemntDetailCaller      ( 000186674050 ModelClassType AchievementDetailPopupCaller AchievementDetailPopupCaller AchievementDetailPopupCaller Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 M_TouchKeyboardPoller                    000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
     // 028 M_TouchKeyboardAllowsInPlaceEditing      000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 M_IsClicking                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TouchScreenTextEditorEventHandler
+    public partial class TouchScreenTextEditorEventHandler : DataModel
     {
         public IVisualElementScheduledItem?             M_TouchKeyboardPoller                   { get; set; }
         public bool                                     M_TouchKeyboardAllowsInPlaceEditing     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchScreenTextEditorEventHandler();
+            var value   = new TouchScreenTextEditorEventHandler() { Pointer= p0 };
 
-            value.M_TouchKeyboardPoller                     = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 02700671A9F8 0x20 M_TouchKeyboardPoller       ( 000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
-            value.M_TouchKeyboardAllowsInPlaceEditing       = GetBool(new IntPtr(p + 0x028)); // 02700671AA18 0x28 M_TouchKeyboardAllowsInPlaceEditing ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsClicking                              = GetBool(new IntPtr(p + 0x029)); // 02700671AA38 0x29 M_IsClicking                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_TouchKeyboardPoller                     = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0245A66DC9F0 0x20 M_TouchKeyboardPoller       ( 000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
+            value.M_TouchKeyboardAllowsInPlaceEditing       = GetBool(new IntPtr(p + 0x028)); // 0245A66DCA10 0x28 M_TouchKeyboardAllowsInPlaceEditing ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_IsClicking                              = GetBool(new IntPtr(p + 0x029)); // 0245A66DCA30 0x29 M_IsClicking                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

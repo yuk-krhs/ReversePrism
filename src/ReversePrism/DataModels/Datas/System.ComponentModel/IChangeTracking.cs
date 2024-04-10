@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChangeTracking
+    public partial class IChangeTracking : DataModel
     {
 
         public static IChangeTracking? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChangeTracking();
+            var value   = new IChangeTracking() { Pointer= p0 };
 
 
             return value;

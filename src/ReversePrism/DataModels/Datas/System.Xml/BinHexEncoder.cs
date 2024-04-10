@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BinHexEncoder
+    public partial class BinHexEncoder : DataModel
     {
 
         public static BinHexEncoder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinHexEncoder();
+            var value   = new BinHexEncoder() { Pointer= p0 };
 
 
             return value;

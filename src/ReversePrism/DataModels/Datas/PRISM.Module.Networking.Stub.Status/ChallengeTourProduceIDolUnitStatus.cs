@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MstProduceIdolIdListFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_mstProduceIdolIdList_codec     FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 020 MstProduceIdolIdList                     000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class ChallengeTourProduceIDolUnitStatus
+    public partial class ChallengeTourProduceIDolUnitStatus : DataModel
     {
         public int                                      ChallengeTourId                         { get; set; }
         public List<int>?                               MstProduceIdolIdList                    { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourProduceIDolUnitStatus();
+            var value   = new ChallengeTourProduceIDolUnitStatus() { Pointer= p0 };
 
-            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D0F331F0 0x18 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x020)); // 0270D0F33250 0x20 MstProduceIdolIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 024660ED8290 0x18 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x020)); // 024660ED82F0 0x20 MstProduceIdolIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

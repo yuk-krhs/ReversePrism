@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 040 CostumeGroup                             00018675E4A0 ModelClassType ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus Pointer
     // 000 BirthdateFieldNumber                     int IL2CPP_TYPE_I4
     // 048 Birthdate                                000186671910 ModelPrimitiveType string string string String
-    public partial class GetShopItemGroupListReply
+    public partial class GetShopItemGroupListReply : DataModel
     {
         public int                                      TotalBillingAmount                      { get; set; }
         public ShopItemJewelGroupStatus?                JewelGroup                              { get; set; }
@@ -40,15 +40,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetShopItemGroupListReply();
+            var value   = new GetShopItemGroupListReply() { Pointer= p0 };
 
-            value.TotalBillingAmount                        = GetInt32(new IntPtr(p + 0x018)); // 0270D27DEC78 0x18 TotalBillingAmount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.JewelGroup                                = GetObject<ShopItemJewelGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemJewelGroupStatus.FromPointer); // 0270D27DECB8 0x20 JewelGroup                  ( 00018675F2D0 ModelClassType ShopItemJewelGroupStatus ShopItemJewelGroupStatus ShopItemJewelGroupStatus Pointer )
-            value.ItemGroup                                 = GetObject<ShopItemItemGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopItemItemGroupStatus.FromPointer); // 0270D27DECF8 0x28 ItemGroup                   ( 00018675EBC0 ModelClassType ShopItemItemGroupStatus ShopItemItemGroupStatus ShopItemItemGroupStatus Pointer )
-            value.SeasonPassGroup                           = GetObject<ShopItemSeasonPassGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopItemSeasonPassGroupStatus.FromPointer); // 0270D27DED38 0x30 SeasonPassGroup             ( 000186760CF0 ModelClassType ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus Pointer )
-            value.LoginBonusPassGroup                       = GetObject<ShopItemLoginBonusPassGroupStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopItemLoginBonusPassGroupStatus.FromPointer); // 0270D27DED78 0x38 LoginBonusPassGroup         ( 00018675F9A0 ModelClassType ShopItemLoginBonusPassGroupStatus ShopItemLoginBonusPassGroupStatus ShopItemLoginBonusPassGroupStatus Pointer )
-            value.CostumeGroup                              = GetObject<ShopItemCostumeGroupStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ShopItemCostumeGroupStatus.FromPointer); // 0270D27DEDB8 0x40 CostumeGroup                ( 00018675E4A0 ModelClassType ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus Pointer )
-            value.Birthdate                                 = GetString(new IntPtr(p + 0x048)); // 0270D27DEDF8 0x48 Birthdate                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.TotalBillingAmount                        = GetInt32(new IntPtr(p + 0x018)); // 02466273A1A8 0x18 TotalBillingAmount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.JewelGroup                                = GetObject<ShopItemJewelGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemJewelGroupStatus.FromPointer); // 02466273A1E8 0x20 JewelGroup                  ( 00018675F2D0 ModelClassType ShopItemJewelGroupStatus ShopItemJewelGroupStatus ShopItemJewelGroupStatus Pointer )
+            value.ItemGroup                                 = GetObject<ShopItemItemGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopItemItemGroupStatus.FromPointer); // 02466273A228 0x28 ItemGroup                   ( 00018675EBC0 ModelClassType ShopItemItemGroupStatus ShopItemItemGroupStatus ShopItemItemGroupStatus Pointer )
+            value.SeasonPassGroup                           = GetObject<ShopItemSeasonPassGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopItemSeasonPassGroupStatus.FromPointer); // 02466273A268 0x30 SeasonPassGroup             ( 000186760CF0 ModelClassType ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus Pointer )
+            value.LoginBonusPassGroup                       = GetObject<ShopItemLoginBonusPassGroupStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopItemLoginBonusPassGroupStatus.FromPointer); // 02466273A2A8 0x38 LoginBonusPassGroup         ( 00018675F9A0 ModelClassType ShopItemLoginBonusPassGroupStatus ShopItemLoginBonusPassGroupStatus ShopItemLoginBonusPassGroupStatus Pointer )
+            value.CostumeGroup                              = GetObject<ShopItemCostumeGroupStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ShopItemCostumeGroupStatus.FromPointer); // 02466273A2E8 0x40 CostumeGroup                ( 00018675E4A0 ModelClassType ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus ShopItemCostumeGroupStatus Pointer )
+            value.Birthdate                                 = GetString(new IntPtr(p + 0x048)); // 02466273A328 0x48 Birthdate                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

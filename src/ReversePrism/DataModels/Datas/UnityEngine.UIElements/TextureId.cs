@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Index                                  0001865F4260 ModelPrimitiveType int int int Int32
     // 000 invalid                                  TextureId IL2CPP_TYPE_VALUETYPE
-    public partial class TextureId
+    public partial class TextureId : DataModel
     {
         public int                                      M_Index                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureId();
+            var value   = new TextureId() { Pointer= p0 };
 
-            value.M_Index                                   = GetInt32(new IntPtr(p + 0x010)); // 0270067E2F98 0x10 M_Index                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_Index                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A67A5090 0x10 M_Index                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

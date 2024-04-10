@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdjustUrlStrategyExtension
+    public partial class AdjustUrlStrategyExtension : DataModel
     {
 
         public static AdjustUrlStrategyExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustUrlStrategyExtension();
+            var value   = new AdjustUrlStrategyExtension() { Pointer= p0 };
 
 
             return value;

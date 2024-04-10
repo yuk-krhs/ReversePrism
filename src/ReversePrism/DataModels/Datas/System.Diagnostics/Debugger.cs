@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 DefaultCategory                          string IL2CPP_TYPE_STRING
-    public partial class Debugger
+    public partial class Debugger : DataModel
     {
 
         public static Debugger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Debugger();
+            var value   = new Debugger() { Pointer= p0 };
 
 
             return value;

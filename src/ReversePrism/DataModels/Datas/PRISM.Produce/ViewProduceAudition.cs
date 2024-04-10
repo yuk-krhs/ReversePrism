@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 098 LessonAuditionScene                      000186660100 ModelEnumType Scene Scene Scene Int32
     // 0A0 AuditionViewParam                        00018671E980 ModelClassType AuditionViewParameter AuditionViewParameter AuditionViewParameter Pointer
     // 0A8 TutorialPresenter                        000186590720 ModelClassType ProduceTutorialPresenter ProduceTutorialPresenter ProduceTutorialPresenter Pointer
-    public partial class ViewProduceAudition
+    public partial class ViewProduceAudition : DataModel
     {
         public AuditionPresenter?                       AuditionPresenter                       { get; set; }
         public AuditionPanel?                           AuditionPanel                           { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewProduceAudition();
+            var value   = new ViewProduceAudition() { Pointer= p0 };
 
-            value.AuditionPresenter                         = GetObject<AuditionPresenter>(new IntPtr(p + 0x080), ReversePrism.DataModels.AuditionPresenter.FromPointer); // 0270D5D769D0 0x80 AuditionPresenter           ( 00018671BD40 ModelClassType AuditionPresenter AuditionPresenter AuditionPresenter Pointer )
-            value.AuditionPanel                             = GetObject<AuditionPanel>(new IntPtr(p + 0x088), ReversePrism.DataModels.AuditionPanel.FromPointer); // 0270D5D769F0 0x88 AuditionPanel               ( 00018671B890 ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer )
-            value.LessonAuditionSource                      = GetObject<LessonAudition>(new IntPtr(p + 0x090), ReversePrism.DataModels.LessonAudition.FromPointer); // 0270D5D76A10 0x90 LessonAuditionSource        ( 00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
-            value.LessonAuditionScene                       = (Scene)GetInt32(new IntPtr(p + 0x098)); // 0270D5D76A30 0x98 LessonAuditionScene         ( 000186660100 ModelEnumType Scene Scene Scene Int32 )
-            value.AuditionViewParam                         = GetObject<AuditionViewParameter>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.AuditionViewParameter.FromPointer); // 0270D5D76A50 0xA0 AuditionViewParam           ( 00018671E980 ModelClassType AuditionViewParameter AuditionViewParameter AuditionViewParameter Pointer )
-            value.TutorialPresenter                         = GetObject<ProduceTutorialPresenter>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.ProduceTutorialPresenter.FromPointer); // 0270D5D76A70 0xA8 TutorialPresenter           ( 000186590720 ModelClassType ProduceTutorialPresenter ProduceTutorialPresenter ProduceTutorialPresenter Pointer )
+            value.AuditionPresenter                         = GetObject<AuditionPresenter>(new IntPtr(p + 0x080), ReversePrism.DataModels.AuditionPresenter.FromPointer); // 024665DE75F0 0x80 AuditionPresenter           ( 00018671BD40 ModelClassType AuditionPresenter AuditionPresenter AuditionPresenter Pointer )
+            value.AuditionPanel                             = GetObject<AuditionPanel>(new IntPtr(p + 0x088), ReversePrism.DataModels.AuditionPanel.FromPointer); // 024665DE7610 0x88 AuditionPanel               ( 00018671B890 ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer )
+            value.LessonAuditionSource                      = GetObject<LessonAudition>(new IntPtr(p + 0x090), ReversePrism.DataModels.LessonAudition.FromPointer); // 024665DE7630 0x90 LessonAuditionSource        ( 00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
+            value.LessonAuditionScene                       = (Scene)GetInt32(new IntPtr(p + 0x098)); // 024665DE7650 0x98 LessonAuditionScene         ( 000186660100 ModelEnumType Scene Scene Scene Int32 )
+            value.AuditionViewParam                         = GetObject<AuditionViewParameter>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.AuditionViewParameter.FromPointer); // 024665DE7670 0xA0 AuditionViewParam           ( 00018671E980 ModelClassType AuditionViewParameter AuditionViewParameter AuditionViewParameter Pointer )
+            value.TutorialPresenter                         = GetObject<ProduceTutorialPresenter>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.ProduceTutorialPresenter.FromPointer); // 024665DE7690 0xA8 TutorialPresenter           ( 000186590720 ModelClassType ProduceTutorialPresenter ProduceTutorialPresenter ProduceTutorialPresenter Pointer )
 
             return value;
         }

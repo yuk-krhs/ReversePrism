@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _osArchitecture                          Architecture IL2CPP_TYPE_VALUETYPE
     // 004 _processArchitecture                     Architecture IL2CPP_TYPE_VALUETYPE
     // 008 _osPlatform                              OSPlatform IL2CPP_TYPE_VALUETYPE
-    public partial class RuntimeInformation
+    public partial class RuntimeInformation : DataModel
     {
 
         public static RuntimeInformation? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeInformation();
+            var value   = new RuntimeInformation() { Pointer= p0 };
 
 
             return value;

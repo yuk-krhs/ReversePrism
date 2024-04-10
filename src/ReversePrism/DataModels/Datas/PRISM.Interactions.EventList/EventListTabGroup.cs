@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 040 TabViewContainer                         0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 048 TabViews                                 000185CD98E8 ModelClassListType List`1<EventListTabView> List`1<EventListTabView> List<EventListTabView> Pointer
     // 050 onSelectTab                              Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class EventListTabGroup
+    public partial class EventListTabGroup : DataModel
     {
         public EventListTabView?                        TabViewPrefab                           { get; set; }
         public Transform?                               TabViewContainer                        { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventListTabGroup();
+            var value   = new EventListTabGroup() { Pointer= p0 };
 
-            value.TabViewPrefab                             = GetObject<EventListTabView>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventListTabView.FromPointer); // 0270DBEB5968 0x38 TabViewPrefab               ( 00018675E470 ModelClassType EventListTabView EventListTabView EventListTabView Pointer )
-            value.TabViewContainer                          = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0270DBEB5988 0x40 TabViewContainer            ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.TabViews                                  = GetObjectList<EventListTabView>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventListTabView.FromPointer); // 0270DBEB59A8 0x48 TabViews                    ( 000185CD98E8 ModelClassListType List`1<EventListTabView> List`1<EventListTabView> List<EventListTabView> Pointer )
+            value.TabViewPrefab                             = GetObject<EventListTabView>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventListTabView.FromPointer); // 02466BF35700 0x38 TabViewPrefab               ( 00018675E470 ModelClassType EventListTabView EventListTabView EventListTabView Pointer )
+            value.TabViewContainer                          = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 02466BF35720 0x40 TabViewContainer            ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.TabViews                                  = GetObjectList<EventListTabView>(new IntPtr(p + 0x048), ReversePrism.DataModels.EventListTabView.FromPointer); // 02466BF35740 0x48 TabViews                    ( 000185CD98E8 ModelClassListType List`1<EventListTabView> List`1<EventListTabView> List<EventListTabView> Pointer )
 
             return value;
         }

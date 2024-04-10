@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 OnceDisplayedResult                      000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    public partial class LiveEventSaveData
+    public partial class LiveEventSaveData : DataModel
     {
         public List<int>?                               OnceDisplayedResult                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventSaveData();
+            var value   = new LiveEventSaveData() { Pointer= p0 };
 
-            value.OnceDisplayedResult                       = GetInt32List(new IntPtr(p + 0x010)); // 027003A6AC58 0x10 OnceDisplayedResult         ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.OnceDisplayedResult                       = GetInt32List(new IntPtr(p + 0x010)); // 0245A3A75B90 0x10 OnceDisplayedResult         ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BannerGenre                              00018670E1D0 ModelClassType IBannerGenreStatus IBannerGenreStatus IBannerGenreStatus Pointer
     // 018 Banner                                   00018670E980 ModelClassType IBannerStatus IBannerStatus IBannerStatus Pointer
-    public partial class BannerInfo
+    public partial class BannerInfo : DataModel
     {
         public IBannerGenreStatus?                      BannerGenre                             { get; set; }
         public IBannerStatus?                           Banner                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BannerInfo();
+            var value   = new BannerInfo() { Pointer= p0 };
 
-            value.BannerGenre                               = GetObject<IBannerGenreStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IBannerGenreStatus.FromPointer); // 0270D326AF88 0x10 BannerGenre                 ( 00018670E1D0 ModelClassType IBannerGenreStatus IBannerGenreStatus IBannerGenreStatus Pointer )
-            value.Banner                                    = GetObject<IBannerStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IBannerStatus.FromPointer); // 0270D326AFA8 0x18 Banner                      ( 00018670E980 ModelClassType IBannerStatus IBannerStatus IBannerStatus Pointer )
+            value.BannerGenre                               = GetObject<IBannerGenreStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IBannerGenreStatus.FromPointer); // 02466325B7C0 0x10 BannerGenre                 ( 00018670E1D0 ModelClassType IBannerGenreStatus IBannerGenreStatus IBannerGenreStatus Pointer )
+            value.Banner                                    = GetObject<IBannerStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IBannerStatus.FromPointer); // 02466325B7E0 0x18 Banner                      ( 00018670E980 ModelClassType IBannerStatus IBannerStatus IBannerStatus Pointer )
 
             return value;
         }

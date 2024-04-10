@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CryptographicUnexpectedOperationException
+    public partial class CryptographicUnexpectedOperationException : DataModel
     {
 
         public static CryptographicUnexpectedOperationException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CryptographicUnexpectedOperationException();
+            var value   = new CryptographicUnexpectedOperationException() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 FreeBindsCount                           0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 FreeFilesCount                           0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 FreeLoadersCount                         0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class FileOpenCondition
+    public partial class FileOpenCondition : DataModel
     {
         public int                                      FreeBindsCount                          { get; set; }
         public int                                      FreeFilesCount                          { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileOpenCondition();
+            var value   = new FileOpenCondition() { Pointer= p0 };
 
-            value.FreeBindsCount                            = GetInt32(new IntPtr(p + 0x010)); // 0270DAC2ADC8 0x10 FreeBindsCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FreeFilesCount                            = GetInt32(new IntPtr(p + 0x014)); // 0270DAC2ADE8 0x14 FreeFilesCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FreeLoadersCount                          = GetInt32(new IntPtr(p + 0x018)); // 0270DAC2AE08 0x18 FreeLoadersCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FreeBindsCount                            = GetInt32(new IntPtr(p + 0x010)); // 02466AC82DC8 0x10 FreeBindsCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FreeFilesCount                            = GetInt32(new IntPtr(p + 0x014)); // 02466AC82DE8 0x14 FreeFilesCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FreeLoadersCount                          = GetInt32(new IntPtr(p + 0x018)); // 02466AC82E08 0x18 FreeLoadersCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

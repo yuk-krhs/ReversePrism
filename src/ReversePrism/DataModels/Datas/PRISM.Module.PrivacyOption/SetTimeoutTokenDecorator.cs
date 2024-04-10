@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Timeout                                  00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
-    public partial class SetTimeoutTokenDecorator
+    public partial class SetTimeoutTokenDecorator : DataModel
     {
         public TimeSpan                                 Timeout                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetTimeoutTokenDecorator();
+            var value   = new SetTimeoutTokenDecorator() { Pointer= p0 };
 
-            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 027004E1CD38 0x10 Timeout                     ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0245A4E4E9A0 0x10 Timeout                     ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
 
             return value;
         }

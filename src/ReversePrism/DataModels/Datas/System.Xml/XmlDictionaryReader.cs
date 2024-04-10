@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MaxInitialArrayLength                    int IL2CPP_TYPE_I4
-    public partial class XmlDictionaryReader
+    public partial class XmlDictionaryReader : DataModel
     {
 
         public static XmlDictionaryReader? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlDictionaryReader();
+            var value   = new XmlDictionaryReader() { Pointer= p0 };
 
 
             return value;

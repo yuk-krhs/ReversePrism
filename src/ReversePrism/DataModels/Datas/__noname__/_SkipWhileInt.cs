@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 predicate                                Func`3<<var>, int, bool> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class _SkipWhileInt
+    public partial class _SkipWhileInt : DataModel
     {
 
         public static _SkipWhileInt? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _SkipWhileInt();
+            var value   = new _SkipWhileInt() { Pointer= p0 };
 
 
             return value;

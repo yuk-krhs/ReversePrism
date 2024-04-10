@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 StencilMaterial                          00018660C4B0 ModelClassType Material Material Material Pointer
     // 020 Count                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 StencilID                                0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class MaskingMaterial
+    public partial class MaskingMaterial : DataModel
     {
         public Material?                                BaseMaterial                            { get; set; }
         public Material?                                StencilMaterial                         { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaskingMaterial();
+            var value   = new MaskingMaterial() { Pointer= p0 };
 
-            value.BaseMaterial                              = GetObject<Material>(new IntPtr(p + 0x010), ReversePrism.DataModels.Material.FromPointer); // 027004308EA8 0x10 BaseMaterial                ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.StencilMaterial                           = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 027004308EC8 0x18 StencilMaterial             ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 027004308EE8 0x20 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.StencilID                                 = GetInt32(new IntPtr(p + 0x024)); // 027004308F08 0x24 StencilID                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BaseMaterial                              = GetObject<Material>(new IntPtr(p + 0x010), ReversePrism.DataModels.Material.FromPointer); // 0245A4353B50 0x10 BaseMaterial                ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.StencilMaterial                           = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0245A4353B70 0x18 StencilMaterial             ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A4353B90 0x20 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.StencilID                                 = GetInt32(new IntPtr(p + 0x024)); // 0245A4353BB0 0x24 StencilID                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

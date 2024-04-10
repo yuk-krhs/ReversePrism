@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 02C IsNew                                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 LastDisplayDateFieldNumber               int IL2CPP_TYPE_I4
     // 030 _LastDisplayDate                         000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class SeasonMissionTabStatus
+    public partial class SeasonMissionTabStatus : DataModel
     {
         public DateTime                                 LastDisplayDate                         { get; set; }
         public int                                      ReceivableCount                         { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionTabStatus();
+            var value   = new SeasonMissionTabStatus() { Pointer= p0 };
 
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 0270D279C450 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x028)); // 0270D279C4D0 0x28 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x02C)); // 0270D279C510 0x2C IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D279C550 0x30 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 0246626FC938 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ReceivableCount                           = GetInt32(new IntPtr(p + 0x028)); // 0246626FC9B8 0x28 ReceivableCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x02C)); // 0246626FC9F8 0x2C IsNew                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626FCA38 0x30 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.LastDisplayDate               = ToDateTime(value._LastDisplayDate);
 
             return value;

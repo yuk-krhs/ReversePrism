@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     00018668E5D0 ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer
     // 018 Option                                   000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer
     // 020 needPlayNoteLineEffectDic                Dictionary`2<int, bool> IL2CPP_TYPE_GENERICINST
-    public partial class RhythmGameObjectRenderService
+    public partial class RhythmGameObjectRenderService : DataModel
     {
         public RhythmGameView?                          View                                    { get; set; }
         public RhythmGameOption?                        Option                                  { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameObjectRenderService();
+            var value   = new RhythmGameObjectRenderService() { Pointer= p0 };
 
-            value.View                                      = GetObject<RhythmGameView>(new IntPtr(p + 0x010), ReversePrism.DataModels.RhythmGameView.FromPointer); // 0270D500AB68 0x10 View                        ( 00018668E5D0 ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer )
-            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x018), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 0270D500AB88 0x18 Option                      ( 000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
+            value.View                                      = GetObject<RhythmGameView>(new IntPtr(p + 0x010), ReversePrism.DataModels.RhythmGameView.FromPointer); // 0246650800C8 0x10 View                        ( 00018668E5D0 ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer )
+            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x018), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 0246650800E8 0x18 Option                      ( 000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
 
             return value;
         }

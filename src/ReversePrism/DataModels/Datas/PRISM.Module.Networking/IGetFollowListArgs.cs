@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetFollowListArgs
+    public partial class IGetFollowListArgs : DataModel
     {
 
         public static IGetFollowListArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetFollowListArgs();
+            var value   = new IGetFollowListArgs() { Pointer= p0 };
 
 
             return value;

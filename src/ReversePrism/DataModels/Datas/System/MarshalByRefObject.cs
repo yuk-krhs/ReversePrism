@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _identity                                <object> IL2CPP_TYPE_OBJECT
-    public partial class MarshalByRefObject
+    public partial class MarshalByRefObject : DataModel
     {
 
         public static MarshalByRefObject? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarshalByRefObject();
+            var value   = new MarshalByRefObject() { Pointer= p0 };
 
 
             return value;

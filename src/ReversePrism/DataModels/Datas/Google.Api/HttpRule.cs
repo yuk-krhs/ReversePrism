@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 030 AdditionalBindings                       000185CDECF8 ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer
     // 038 pattern_                                 <object> IL2CPP_TYPE_OBJECT
     // 040 PatternCase                              000186565BF0 ModelEnumType PatternOneofCase PatternOneofCase PatternOneofCase Int32
-    public partial class HttpRule
+    public partial class HttpRule : DataModel
     {
         public string                                   Selector                                { get; set; }
         public string                                   Body                                    { get; set; }
@@ -41,13 +41,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpRule();
+            var value   = new HttpRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0270DA72B930 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Body                                      = GetString(new IntPtr(p + 0x020)); // 0270DA72BA30 0x20 Body                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ResponseBody                              = GetString(new IntPtr(p + 0x028)); // 0270DA72BA70 0x28 ResponseBody                ( 000186671910 ModelPrimitiveType string string string String )
-            value.AdditionalBindings                        = GetObjectList<HttpRule>(new IntPtr(p + 0x030), ReversePrism.DataModels.HttpRule.FromPointer); // 0270DA72BAD0 0x30 AdditionalBindings          ( 000185CDECF8 ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer )
-            value.PatternCase                               = (PatternOneofCase)GetInt32(new IntPtr(p + 0x040)); // 0270DA72BB10 0x40 PatternCase                 ( 000186565BF0 ModelEnumType PatternOneofCase PatternOneofCase PatternOneofCase Int32 )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A777438 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Body                                      = GetString(new IntPtr(p + 0x020)); // 02466A777538 0x20 Body                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ResponseBody                              = GetString(new IntPtr(p + 0x028)); // 02466A777578 0x28 ResponseBody                ( 000186671910 ModelPrimitiveType string string string String )
+            value.AdditionalBindings                        = GetObjectList<HttpRule>(new IntPtr(p + 0x030), ReversePrism.DataModels.HttpRule.FromPointer); // 02466A7775D8 0x30 AdditionalBindings          ( 000185CDECF8 ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer )
+            value.PatternCase                               = (PatternOneofCase)GetInt32(new IntPtr(p + 0x040)); // 02466A777618 0x40 PatternCase                 ( 000186565BF0 ModelEnumType PatternOneofCase PatternOneofCase PatternOneofCase Int32 )
 
             return value;
         }

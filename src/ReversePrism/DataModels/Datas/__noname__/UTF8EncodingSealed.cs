@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UTF8EncodingSealed
+    public partial class UTF8EncodingSealed : DataModel
     {
 
         public static UTF8EncodingSealed? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UTF8EncodingSealed();
+            var value   = new UTF8EncodingSealed() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Error                                    00018662D410 ModelClassType ErrorMain ErrorMain ErrorMain Pointer
-    public partial class ErrorModel
+    public partial class ErrorModel : DataModel
     {
         public ErrorMain?                               Error                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorModel();
+            var value   = new ErrorModel() { Pointer= p0 };
 
-            value.Error                                     = GetObject<ErrorMain>(new IntPtr(p + 0x010), ReversePrism.DataModels.ErrorMain.FromPointer); // 0270DB480F20 0x10 Error                       ( 00018662D410 ModelClassType ErrorMain ErrorMain ErrorMain Pointer )
+            value.Error                                     = GetObject<ErrorMain>(new IntPtr(p + 0x010), ReversePrism.DataModels.ErrorMain.FromPointer); // 02466B50DE50 0x10 Error                       ( 00018662D410 ModelClassType ErrorMain ErrorMain ErrorMain Pointer )
 
             return value;
         }

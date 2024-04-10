@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InsecureCredentials
+    public partial class InsecureCredentials : DataModel
     {
 
         public static InsecureCredentials? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InsecureCredentials();
+            var value   = new InsecureCredentials() { Pointer= p0 };
 
 
             return value;

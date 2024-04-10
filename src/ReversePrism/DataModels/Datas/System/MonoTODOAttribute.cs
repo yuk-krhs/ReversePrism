@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoTODOAttribute
+    public partial class MonoTODOAttribute : DataModel
     {
 
         public static MonoTODOAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoTODOAttribute();
+            var value   = new MonoTODOAttribute() { Pointer= p0 };
 
 
             return value;

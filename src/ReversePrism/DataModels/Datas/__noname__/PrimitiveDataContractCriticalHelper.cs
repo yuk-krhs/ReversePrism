@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 060 XmlFormatWriterMethod                    000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 068 XmlFormatContentWriterMethod             000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 070 XmlFormatReaderMethod                    000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    public partial class PrimitiveDataContractCriticalHelper
+    public partial class PrimitiveDataContractCriticalHelper : DataModel
     {
         public MethodInfo?                              XmlFormatWriterMethod                   { get; set; }
         public MethodInfo?                              XmlFormatContentWriterMethod            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrimitiveDataContractCriticalHelper();
+            var value   = new PrimitiveDataContractCriticalHelper() { Pointer= p0 };
 
-            value.XmlFormatWriterMethod                     = GetObject<MethodInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.MethodInfo.FromPointer); // 027004D4FB28 0x60 XmlFormatWriterMethod       ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.XmlFormatContentWriterMethod              = GetObject<MethodInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.MethodInfo.FromPointer); // 027004D4FB48 0x68 XmlFormatContentWriterMethod ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.XmlFormatReaderMethod                     = GetObject<MethodInfo>(new IntPtr(p + 0x070), ReversePrism.DataModels.MethodInfo.FromPointer); // 027004D4FB68 0x70 XmlFormatReaderMethod       ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.XmlFormatWriterMethod                     = GetObject<MethodInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A4D94258 0x60 XmlFormatWriterMethod       ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.XmlFormatContentWriterMethod              = GetObject<MethodInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A4D94278 0x68 XmlFormatContentWriterMethod ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.XmlFormatReaderMethod                     = GetObject<MethodInfo>(new IntPtr(p + 0x070), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A4D94298 0x70 XmlFormatReaderMethod       ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
 
             return value;
         }

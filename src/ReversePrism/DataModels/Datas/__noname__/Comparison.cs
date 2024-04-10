@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Terminates                               000186595960 ModelPrimitiveType bool bool bool Bool
     // 014 Result                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class Comparison
+    public partial class Comparison : DataModel
     {
         public bool                                     Terminates                              { get; set; }
         public int                                      Result                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Comparison();
+            var value   = new Comparison() { Pointer= p0 };
 
-            value.Terminates                                = GetBool(new IntPtr(p + 0x010)); // 0270D9C64760 0x10 Terminates                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Result                                    = GetInt32(new IntPtr(p + 0x014)); // 0270D9C64780 0x14 Result                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Terminates                                = GetBool(new IntPtr(p + 0x010)); // 024669CBCD88 0x10 Terminates                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Result                                    = GetInt32(new IntPtr(p + 0x014)); // 024669CBCDA8 0x14 Result                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

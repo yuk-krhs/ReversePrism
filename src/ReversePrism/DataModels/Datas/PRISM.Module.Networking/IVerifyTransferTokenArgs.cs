@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVerifyTransferTokenArgs
+    public partial class IVerifyTransferTokenArgs : DataModel
     {
 
         public static IVerifyTransferTokenArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVerifyTransferTokenArgs();
+            var value   = new IVerifyTransferTokenArgs() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoAliasAttribute
+    public partial class NoAliasAttribute : DataModel
     {
 
         public static NoAliasAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoAliasAttribute();
+            var value   = new NoAliasAttribute() { Pointer= p0 };
 
 
             return value;

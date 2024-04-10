@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoTlsProvider
+    public partial class MonoTlsProvider : DataModel
     {
 
         public static MonoTlsProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoTlsProvider();
+            var value   = new MonoTlsProvider() { Pointer= p0 };
 
 
             return value;

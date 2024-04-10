@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C M_OrderInDocument                        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 M_ParentId                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 M_Properties                             000185D0D618 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class UxmlAsset
+    public partial class UxmlAsset : DataModel
     {
         public string                                   M_FullTypeName                          { get; set; }
         public int                                      M_Id                                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlAsset();
+            var value   = new UxmlAsset() { Pointer= p0 };
 
-            value.M_FullTypeName                            = GetString(new IntPtr(p + 0x010)); // 02700684E648 0x10 M_FullTypeName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Id                                      = GetInt32(new IntPtr(p + 0x018)); // 02700684E668 0x18 M_Id                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_OrderInDocument                         = GetInt32(new IntPtr(p + 0x01C)); // 02700684E688 0x1C M_OrderInDocument           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_ParentId                                = GetInt32(new IntPtr(p + 0x020)); // 02700684E6A8 0x20 M_ParentId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Properties                              = GetStringList(new IntPtr(p + 0x028)); // 02700684E6C8 0x28 M_Properties                ( 000185D0D618 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.M_FullTypeName                            = GetString(new IntPtr(p + 0x010)); // 0245A6810410 0x10 M_FullTypeName              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Id                                      = GetInt32(new IntPtr(p + 0x018)); // 0245A6810430 0x18 M_Id                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_OrderInDocument                         = GetInt32(new IntPtr(p + 0x01C)); // 0245A6810450 0x1C M_OrderInDocument           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ParentId                                = GetInt32(new IntPtr(p + 0x020)); // 0245A6810470 0x20 M_ParentId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Properties                              = GetStringList(new IntPtr(p + 0x028)); // 0245A6810490 0x28 M_Properties                ( 000185D0D618 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

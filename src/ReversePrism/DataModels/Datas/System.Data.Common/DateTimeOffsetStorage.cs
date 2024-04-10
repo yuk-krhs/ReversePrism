@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_defaultValue                           DateTimeOffset IL2CPP_TYPE_VALUETYPE
     // 050 Values                                   000185B79760 ModelEnumListType DateTimeOffset[] DateTimeOffset[] List<DateTimeOffset> Pointer
-    public partial class DateTimeOffsetStorage
+    public partial class DateTimeOffsetStorage : DataModel
     {
         public List<DateTimeOffset>?                    Values                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeOffsetStorage();
+            var value   = new DateTimeOffsetStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<DateTimeOffset>(new IntPtr(p + 0x050)); // 0270D89AEF58 0x50 Values                      ( 000185B79760 ModelEnumListType DateTimeOffset[] DateTimeOffset[] List<DateTimeOffset> Pointer )
+            value.Values                                    = GetEnumList<DateTimeOffset>(new IntPtr(p + 0x050)); // 024668A39E88 0x50 Values                      ( 000185B79760 ModelEnumListType DateTimeOffset[] DateTimeOffset[] List<DateTimeOffset> Pointer )
 
             return value;
         }

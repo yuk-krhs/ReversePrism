@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Key                                      000186671910 ModelPrimitiveType string string string String
     // 018 Text                                     000186671910 ModelPrimitiveType string string string String
-    public partial class ScenarioTextList
+    public partial class ScenarioTextList : DataModel
     {
         public string                                   Key                                     { get; set; }
         public string                                   Text                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScenarioTextList();
+            var value   = new ScenarioTextList() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0270069D9930 0x10 Key                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0270069D9950 0x18 Text                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0245A6996F30 0x10 Key                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0245A6996F50 0x18 Text                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

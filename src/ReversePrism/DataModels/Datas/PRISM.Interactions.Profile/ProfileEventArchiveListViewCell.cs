@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 040 EventTitleText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 048 EventSpriteImage                         0001866CCDB0 ModelClassType Image Image Image Pointer
     // 050 ExpiryDate                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class ProfileEventArchiveListViewCell
+    public partial class ProfileEventArchiveListViewCell : DataModel
     {
         public UITextMeshProUGUI?                       EventTitleText                          { get; set; }
         public Image?                                   EventSpriteImage                        { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileEventArchiveListViewCell();
+            var value   = new ProfileEventArchiveListViewCell() { Pointer= p0 };
 
-            value.EventTitleText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB6E2320 0x40 EventTitleText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EventSpriteImage                          = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 0270DB6E2340 0x48 EventSpriteImage            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ExpiryDate                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB6E2360 0x50 ExpiryDate                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventTitleText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B76E3B0 0x40 EventTitleText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventSpriteImage                          = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 02466B76E3D0 0x48 EventSpriteImage            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.ExpiryDate                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B76E3F0 0x50 ExpiryDate                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

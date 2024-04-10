@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     00018654D070 ModelClassType ProduceIdolSelectView ProduceIdolSelectView ProduceIdolSelectView Pointer
-    public partial class ProduceIdolSelectBuilder
+    public partial class ProduceIdolSelectBuilder : DataModel
     {
         public ProduceIdolSelectView?                   View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolSelectBuilder();
+            var value   = new ProduceIdolSelectBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ProduceIdolSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolSelectView.FromPointer); // 0270DB61EC90 0x20 View                        ( 00018654D070 ModelClassType ProduceIdolSelectView ProduceIdolSelectView ProduceIdolSelectView Pointer )
+            value.View                                      = GetObject<ProduceIdolSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolSelectView.FromPointer); // 02466B6B2618 0x20 View                        ( 00018654D070 ModelClassType ProduceIdolSelectView ProduceIdolSelectView ProduceIdolSelectView Pointer )
 
             return value;
         }

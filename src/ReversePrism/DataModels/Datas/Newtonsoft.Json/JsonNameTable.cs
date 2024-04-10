@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonNameTable
+    public partial class JsonNameTable : DataModel
     {
 
         public static JsonNameTable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonNameTable();
+            var value   = new JsonNameTable() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 EndIndex                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 HasHalfByteCached                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 025 CachedHalfByte                           00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class BinHexDecoder
+    public partial class BinHexDecoder : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public int                                      StartIndex                              { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinHexDecoder();
+            var value   = new BinHexDecoder() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0270D734A310 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x018)); // 0270D734A330 0x18 StartIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurIndex                                  = GetInt32(new IntPtr(p + 0x01C)); // 0270D734A350 0x1C CurIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D734A370 0x20 EndIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HasHalfByteCached                         = GetBool(new IntPtr(p + 0x024)); // 0270D734A390 0x24 HasHalfByteCached           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CachedHalfByte                            = GetSByte(new IntPtr(p + 0x025)); // 0270D734A3B0 0x25 CachedHalfByte              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 02466739A310 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x018)); // 02466739A330 0x18 StartIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurIndex                                  = GetInt32(new IntPtr(p + 0x01C)); // 02466739A350 0x1C CurIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x020)); // 02466739A370 0x20 EndIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HasHalfByteCached                         = GetBool(new IntPtr(p + 0x024)); // 02466739A390 0x24 HasHalfByteCached           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CachedHalfByte                            = GetSByte(new IntPtr(p + 0x025)); // 02466739A3B0 0x25 CachedHalfByte              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

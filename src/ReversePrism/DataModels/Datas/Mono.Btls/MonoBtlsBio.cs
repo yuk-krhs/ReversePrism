@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoBtlsBio
+    public partial class MonoBtlsBio : DataModel
     {
 
         public static MonoBtlsBio? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoBtlsBio();
+            var value   = new MonoBtlsBio() { Pointer= p0 };
 
 
             return value;

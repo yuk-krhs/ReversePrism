@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IsUnreadOnlyToggleActive                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class StoryTopExtraContentArgument
+    public partial class StoryTopExtraContentArgument : DataModel
     {
         public bool                                     IsUnreadOnlyToggleActive                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopExtraContentArgument();
+            var value   = new StoryTopExtraContentArgument() { Pointer= p0 };
 
-            value.IsUnreadOnlyToggleActive                  = GetBool(new IntPtr(p + 0x010)); // 0270D5E3FE68 0x10 IsUnreadOnlyToggleActive    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsUnreadOnlyToggleActive                  = GetBool(new IntPtr(p + 0x010)); // 024665EB05E0 0x10 IsUnreadOnlyToggleActive    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

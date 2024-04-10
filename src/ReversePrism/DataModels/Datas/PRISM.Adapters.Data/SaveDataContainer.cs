@@ -40,7 +40,7 @@ namespace ReversePrism.DataModels
     // 228 AchievementUI                            SavableJsonObject`1<ProfileAchievementIsNewSaveData> IL2CPP_TYPE_GENERICINST
     // 230 ProfileIdolListSCSortFilter              SavableJsonObject`1<IdolListSCSortFilterPermanentData> IL2CPP_TYPE_GENERICINST
     // 238 PvpFUSortFilter                          SavableJsonObject`1<IdolListFUSortFilterPermanentData> IL2CPP_TYPE_GENERICINST
-    public partial class SaveDataContainer
+    public partial class SaveDataContainer : DataModel
     {
 
         public static SaveDataContainer? FromPointer(IntPtr p0)
@@ -49,7 +49,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SaveDataContainer();
+            var value   = new SaveDataContainer() { Pointer= p0 };
 
 
             return value;

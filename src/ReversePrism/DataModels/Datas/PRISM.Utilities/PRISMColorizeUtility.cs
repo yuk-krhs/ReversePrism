@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 130 LightRed                                 0001865ABF60 ModelEnumType Color Color Color Int32
     // 140 DefaultCharacterProfileFontColor         0001865ABCF0 ModelEnumType Color Color Color Int32
     // 150 DefaultCharacterProfileBgColor           0001865ABCF0 ModelEnumType Color Color Color Int32
-    public partial class PRISMColorizeUtility
+    public partial class PRISMColorizeUtility : DataModel
     {
         public Color                                    Dance                                   { get; set; }
         public Color                                    Visual                                  { get; set; }
@@ -60,29 +60,29 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PRISMColorizeUtility();
+            var value   = new PRISMColorizeUtility() { Pointer= p0 };
 
-            value.Dance                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 027003EDB5F8 0x10 Dance                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Visual                                    = (Color)GetInt32(new IntPtr(p + 0x020)); // 027003EDB618 0x20 Visual                      ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Mental                                    = (Color)GetInt32(new IntPtr(p + 0x030)); // 027003EDB638 0x30 Mental                      ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.OutlineBlack                              = (Color)GetInt32(new IntPtr(p + 0x040)); // 027003EDB658 0x40 OutlineBlack                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.DisableWhite                              = (Color)GetInt32(new IntPtr(p + 0x050)); // 027003EDB678 0x50 DisableWhite                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.ButtonGreen                               = (Color)GetInt32(new IntPtr(p + 0x060)); // 027003EDB698 0x60 ButtonGreen                 ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.BackgroundGreen                           = (Color)GetInt32(new IntPtr(p + 0x070)); // 027003EDB6B8 0x70 BackgroundGreen             ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.DisableLabel                              = (Color)GetInt32(new IntPtr(p + 0x080)); // 027003EDB6D8 0x80 DisableLabel                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.White                                     = (Color)GetInt32(new IntPtr(p + 0x090)); // 027003EDB6F8 0x90 White                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Black                                     = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 027003EDB718 0xA0 Black                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.UnitBlue                                  = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 027003EDB738 0xB0 UnitBlue                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.WarningRed                                = (Color)GetInt32(new IntPtr(p + 0x0C0)); // 027003EDB758 0xC0 WarningRed                  ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Inactive                                  = (Color)GetInt32(new IntPtr(p + 0x0D0)); // 027003EDB778 0xD0 Inactive                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Inactive2                                 = (Color)GetInt32(new IntPtr(p + 0x0E0)); // 027003EDB798 0xE0 Inactive2                   ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.Hint                                      = (Color)GetInt32(new IntPtr(p + 0x0F0)); // 027003EDB7B8 0xF0 Hint                        ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.OverFlow                                  = (Color)GetInt32(new IntPtr(p + 0x100)); // 027003EDB7D8 0x100 OverFlow                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.LinkPinc                                  = (Color)GetInt32(new IntPtr(p + 0x110)); // 027003EDB7F8 0x110 LinkPinc                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.LightBlue                                 = (Color)GetInt32(new IntPtr(p + 0x120)); // 027003EDB818 0x120 LightBlue                   ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.LightRed                                  = (Color)GetInt32(new IntPtr(p + 0x130)); // 027003EDB838 0x130 LightRed                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
-            value.DefaultCharacterProfileFontColor          = (Color)GetInt32(new IntPtr(p + 0x140)); // 027003EDB858 0x140 DefaultCharacterProfileFontColor ( 0001865ABCF0 ModelEnumType Color Color Color Int32 )
-            value.DefaultCharacterProfileBgColor            = (Color)GetInt32(new IntPtr(p + 0x150)); // 027003EDB878 0x150 DefaultCharacterProfileBgColor ( 0001865ABCF0 ModelEnumType Color Color Color Int32 )
+            value.Dance                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 0245A3EDB5F8 0x10 Dance                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Visual                                    = (Color)GetInt32(new IntPtr(p + 0x020)); // 0245A3EDB618 0x20 Visual                      ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Mental                                    = (Color)GetInt32(new IntPtr(p + 0x030)); // 0245A3EDB638 0x30 Mental                      ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.OutlineBlack                              = (Color)GetInt32(new IntPtr(p + 0x040)); // 0245A3EDB658 0x40 OutlineBlack                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.DisableWhite                              = (Color)GetInt32(new IntPtr(p + 0x050)); // 0245A3EDB678 0x50 DisableWhite                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.ButtonGreen                               = (Color)GetInt32(new IntPtr(p + 0x060)); // 0245A3EDB698 0x60 ButtonGreen                 ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.BackgroundGreen                           = (Color)GetInt32(new IntPtr(p + 0x070)); // 0245A3EDB6B8 0x70 BackgroundGreen             ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.DisableLabel                              = (Color)GetInt32(new IntPtr(p + 0x080)); // 0245A3EDB6D8 0x80 DisableLabel                ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.White                                     = (Color)GetInt32(new IntPtr(p + 0x090)); // 0245A3EDB6F8 0x90 White                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Black                                     = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 0245A3EDB718 0xA0 Black                       ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.UnitBlue                                  = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 0245A3EDB738 0xB0 UnitBlue                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.WarningRed                                = (Color)GetInt32(new IntPtr(p + 0x0C0)); // 0245A3EDB758 0xC0 WarningRed                  ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Inactive                                  = (Color)GetInt32(new IntPtr(p + 0x0D0)); // 0245A3EDB778 0xD0 Inactive                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Inactive2                                 = (Color)GetInt32(new IntPtr(p + 0x0E0)); // 0245A3EDB798 0xE0 Inactive2                   ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.Hint                                      = (Color)GetInt32(new IntPtr(p + 0x0F0)); // 0245A3EDB7B8 0xF0 Hint                        ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.OverFlow                                  = (Color)GetInt32(new IntPtr(p + 0x100)); // 0245A3EDB7D8 0x100 OverFlow                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.LinkPinc                                  = (Color)GetInt32(new IntPtr(p + 0x110)); // 0245A3EDB7F8 0x110 LinkPinc                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.LightBlue                                 = (Color)GetInt32(new IntPtr(p + 0x120)); // 0245A3EDB818 0x120 LightBlue                   ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.LightRed                                  = (Color)GetInt32(new IntPtr(p + 0x130)); // 0245A3EDB838 0x130 LightRed                    ( 0001865ABF60 ModelEnumType Color Color Color Int32 )
+            value.DefaultCharacterProfileFontColor          = (Color)GetInt32(new IntPtr(p + 0x140)); // 0245A3EDB858 0x140 DefaultCharacterProfileFontColor ( 0001865ABCF0 ModelEnumType Color Color Color Int32 )
+            value.DefaultCharacterProfileBgColor            = (Color)GetInt32(new IntPtr(p + 0x150)); // 0245A3EDB878 0x150 DefaultCharacterProfileBgColor ( 0001865ABCF0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

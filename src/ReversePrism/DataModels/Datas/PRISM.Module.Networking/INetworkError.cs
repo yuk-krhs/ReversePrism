@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INetworkError
+    public partial class INetworkError : DataModel
     {
 
         public static INetworkError? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INetworkError();
+            var value   = new INetworkError() { Pointer= p0 };
 
 
             return value;

@@ -62,7 +62,7 @@ namespace ReversePrism.DataModels
     // 11E skAdNetworkHandling                      Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 120 linkMeEnabled                            Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 128 logDelegate                              Action`1<string> IL2CPP_TYPE_GENERICINST
-    public partial class AdjustConfig
+    public partial class AdjustConfig : DataModel
     {
         public string                                   AppToken                                { get; set; }
         public string                                   SceneName                               { get; set; }
@@ -81,18 +81,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustConfig();
+            var value   = new AdjustConfig() { Pointer= p0 };
 
-            value.AppToken                                  = GetString(new IntPtr(p + 0x010)); // 0270043EDD30 0x10 AppToken                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.SceneName                                 = GetString(new IntPtr(p + 0x018)); // 0270043EDD50 0x18 SceneName                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.UserAgent                                 = GetString(new IntPtr(p + 0x020)); // 0270043EDD70 0x20 UserAgent                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.DefaultTracker                            = GetString(new IntPtr(p + 0x028)); // 0270043EDD90 0x28 DefaultTracker              ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.ExternalDeviceId                          = GetString(new IntPtr(p + 0x030)); // 0270043EDDB0 0x30 ExternalDeviceId            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.UrlStrategy                               = GetString(new IntPtr(p + 0x038)); // 0270043EDDD0 0x38 UrlStrategy                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.LaunchDeferredDeeplink                    = GetBool(new IntPtr(p + 0x0AE)); // 0270043EDF90 0xAE LaunchDeferredDeeplink      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Environment                               = (AdjustEnvironment)GetInt32(new IntPtr(p + 0x0B8)); // 0270043EDFD0 0xB8 Environment                 ( 00018668EF40 ModelEnumType AdjustEnvironment AdjustEnvironment AdjustEnvironment Int32 )
-            value.ProcessName                               = GetString(new IntPtr(p + 0x100)); // 0270043EE0F0 0x100 ProcessName                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PreinstallFilePath                        = GetString(new IntPtr(p + 0x110)); // 0270043EE150 0x110 PreinstallFilePath          ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.AppToken                                  = GetString(new IntPtr(p + 0x010)); // 0245A4480A98 0x10 AppToken                    ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.SceneName                                 = GetString(new IntPtr(p + 0x018)); // 0245A4480AB8 0x18 SceneName                   ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.UserAgent                                 = GetString(new IntPtr(p + 0x020)); // 0245A4480AD8 0x20 UserAgent                   ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.DefaultTracker                            = GetString(new IntPtr(p + 0x028)); // 0245A4480AF8 0x28 DefaultTracker              ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.ExternalDeviceId                          = GetString(new IntPtr(p + 0x030)); // 0245A4480B18 0x30 ExternalDeviceId            ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.UrlStrategy                               = GetString(new IntPtr(p + 0x038)); // 0245A4480B38 0x38 UrlStrategy                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.LaunchDeferredDeeplink                    = GetBool(new IntPtr(p + 0x0AE)); // 0245A4480CF8 0xAE LaunchDeferredDeeplink      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Environment                               = (AdjustEnvironment)GetInt32(new IntPtr(p + 0x0B8)); // 0245A4480D38 0xB8 Environment                 ( 00018668EF40 ModelEnumType AdjustEnvironment AdjustEnvironment AdjustEnvironment Int32 )
+            value.ProcessName                               = GetString(new IntPtr(p + 0x100)); // 0245A4480E58 0x100 ProcessName                 ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.PreinstallFilePath                        = GetString(new IntPtr(p + 0x110)); // 0245A4480EB8 0x110 PreinstallFilePath          ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 View                                     0001865F4970 ModelClassType IProduceSubSeasonSelectView IProduceSubSeasonSelectView IProduceSubSeasonSelectView Pointer
     // 018 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    public partial class ProduceSubSeasonSelectPresenter
+    public partial class ProduceSubSeasonSelectPresenter : DataModel
     {
         public IProduceSubSeasonSelectView?             View                                    { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceSubSeasonSelectPresenter();
+            var value   = new ProduceSubSeasonSelectPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceSubSeasonSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceSubSeasonSelectView.FromPointer); // 0270D683EC40 0x10 View                        ( 0001865F4970 ModelClassType IProduceSubSeasonSelectView IProduceSubSeasonSelectView IProduceSubSeasonSelectView Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D683EC60 0x18 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.View                                      = GetObject<IProduceSubSeasonSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceSubSeasonSelectView.FromPointer); // 02466689EC40 0x10 View                        ( 0001865F4970 ModelClassType IProduceSubSeasonSelectView IProduceSubSeasonSelectView IProduceSubSeasonSelectView Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466689EC60 0x18 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

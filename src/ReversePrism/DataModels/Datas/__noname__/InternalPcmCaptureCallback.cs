@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InternalPcmCaptureCallback
+    public partial class InternalPcmCaptureCallback : DataModel
     {
 
         public static InternalPcmCaptureCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalPcmCaptureCallback();
+            var value   = new InternalPcmCaptureCallback() { Pointer= p0 };
 
 
             return value;

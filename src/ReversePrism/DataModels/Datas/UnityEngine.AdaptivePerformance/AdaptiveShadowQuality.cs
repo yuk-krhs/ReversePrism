@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultShadowQualityBias               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AdaptiveShadowQuality
+    public partial class AdaptiveShadowQuality : DataModel
     {
         public int                                      M_DefaultShadowQualityBias              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveShadowQuality();
+            var value   = new AdaptiveShadowQuality() { Pointer= p0 };
 
-            value.M_DefaultShadowQualityBias                = GetInt32(new IntPtr(p + 0x040)); // 0270DB689BB8 0x40 M_DefaultShadowQualityBias  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_DefaultShadowQualityBias                = GetInt32(new IntPtr(p + 0x040)); // 02466B715E78 0x40 M_DefaultShadowQualityBias  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

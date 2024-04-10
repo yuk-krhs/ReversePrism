@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 SpriteRenderer                           000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer
     // 028 Image                                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    public partial class SpriteRendererOrImage
+    public partial class SpriteRendererOrImage : DataModel
     {
         public SpriteRenderer?                          SpriteRenderer                          { get; set; }
         public Image?                                   Image                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpriteRendererOrImage();
+            var value   = new SpriteRendererOrImage() { Pointer= p0 };
 
-            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4EBF6A8 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
-            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0270D4EBF6C8 0x28 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.SpriteRenderer                            = GetObject<SpriteRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024664F24378 0x20 SpriteRenderer              ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 024664F24398 0x28 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
 
             return value;
         }

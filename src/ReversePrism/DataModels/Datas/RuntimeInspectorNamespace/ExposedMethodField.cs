@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 080 InvokeButton                             0001865140C0 ModelClassType Button Button Button Pointer
     // 088 BoundMethod                              000186529440 ModelEnumType ExposedMethod ExposedMethod ExposedMethod Int32
-    public partial class ExposedMethodField
+    public partial class ExposedMethodField : DataModel
     {
         public Button?                                  InvokeButton                            { get; set; }
         public ExposedMethod                            BoundMethod                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExposedMethodField();
+            var value   = new ExposedMethodField() { Pointer= p0 };
 
-            value.InvokeButton                              = GetObject<Button>(new IntPtr(p + 0x080), ReversePrism.DataModels.Button.FromPointer); // 0270DB1E0D68 0x80 InvokeButton                ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.BoundMethod                               = (ExposedMethod)GetInt32(new IntPtr(p + 0x088)); // 0270DB1E0D88 0x88 BoundMethod                 ( 000186529440 ModelEnumType ExposedMethod ExposedMethod ExposedMethod Int32 )
+            value.InvokeButton                              = GetObject<Button>(new IntPtr(p + 0x080), ReversePrism.DataModels.Button.FromPointer); // 02466B240D68 0x80 InvokeButton                ( 0001865140C0 ModelClassType Button Button Button Pointer )
+            value.BoundMethod                               = (ExposedMethod)GetInt32(new IntPtr(p + 0x088)); // 02466B240D88 0x88 BoundMethod                 ( 000186529440 ModelEnumType ExposedMethod ExposedMethod ExposedMethod Int32 )
 
             return value;
         }

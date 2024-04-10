@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Event                                  00018674E900 ModelClassType EventBase EventBase EventBase Pointer
     // 018 M_Panel                                  0001865D1AB0 ModelClassType IPanel IPanel IPanel Pointer
-    public partial class EventRecord
+    public partial class EventRecord : DataModel
     {
         public EventBase?                               M_Event                                 { get; set; }
         public IPanel?                                  M_Panel                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventRecord();
+            var value   = new EventRecord() { Pointer= p0 };
 
-            value.M_Event                                   = GetObject<EventBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventBase.FromPointer); // 027006758A50 0x10 M_Event                     ( 00018674E900 ModelClassType EventBase EventBase EventBase Pointer )
-            value.M_Panel                                   = GetObject<IPanel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPanel.FromPointer); // 027006758A70 0x18 M_Panel                     ( 0001865D1AB0 ModelClassType IPanel IPanel IPanel Pointer )
+            value.M_Event                                   = GetObject<EventBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventBase.FromPointer); // 0245A671A9B8 0x10 M_Event                     ( 00018674E900 ModelClassType EventBase EventBase EventBase Pointer )
+            value.M_Panel                                   = GetObject<IPanel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPanel.FromPointer); // 0245A671A9D8 0x18 M_Panel                     ( 0001865D1AB0 ModelClassType IPanel IPanel IPanel Pointer )
 
             return value;
         }

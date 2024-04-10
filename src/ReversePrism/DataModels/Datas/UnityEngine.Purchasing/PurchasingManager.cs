@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 060 UseTransactionLog                        000186594D10 ModelPrimitiveType bool bool bool Bool
     // 068 Products                                 00018659FC80 ModelClassType ProductCollection ProductCollection ProductCollection Pointer
     // 070 Initialized                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class PurchasingManager
+    public partial class PurchasingManager : DataModel
     {
         public IStore?                                  M_Store                                 { get; set; }
         public IInternalStoreListener?                  M_Listener                              { get; set; }
@@ -40,18 +40,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchasingManager();
+            var value   = new PurchasingManager() { Pointer= p0 };
 
-            value.M_Store                                   = GetObject<IStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStore.FromPointer); // 027004BE13E0 0x10 M_Store                     ( 0001866587B0 ModelClassType IStore IStore IStore Pointer )
-            value.M_Listener                                = GetObject<IInternalStoreListener>(new IntPtr(p + 0x018), ReversePrism.DataModels.IInternalStoreListener.FromPointer); // 027004BE1400 0x18 M_Listener                  ( 000186585300 ModelClassType IInternalStoreListener IInternalStoreListener IInternalStoreListener Pointer )
-            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x020), ReversePrism.DataModels.ILogger.FromPointer); // 027004BE1420 0x20 M_Logger                    ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
-            value.M_TransactionLog                          = GetObject<TransactionLog>(new IntPtr(p + 0x028), ReversePrism.DataModels.TransactionLog.FromPointer); // 027004BE1440 0x28 M_TransactionLog            ( 0001866A11C0 ModelClassType TransactionLog TransactionLog TransactionLog Pointer )
-            value.M_StoreName                               = GetString(new IntPtr(p + 0x030)); // 027004BE1460 0x30 M_StoreName                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_UnityServicesInitializationChecker      = GetObject<IUnityServicesInitializationChecker>(new IntPtr(p + 0x038), ReversePrism.DataModels.IUnityServicesInitializationChecker.FromPointer); // 027004BE1480 0x38 M_UnityServicesInitializationChecker ( 00018668B560 ModelClassType IUnityServicesInitializationChecker IUnityServicesInitializationChecker IUnityServicesInitializationChecker Pointer )
-            value.M_AdditionalProductsCallback              = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 027004BE14A0 0x40 M_AdditionalProductsCallback ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.UseTransactionLog                         = GetBool(new IntPtr(p + 0x060)); // 027004BE1520 0x60 UseTransactionLog           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Products                                  = GetObject<ProductCollection>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProductCollection.FromPointer); // 027004BE1540 0x68 Products                    ( 00018659FC80 ModelClassType ProductCollection ProductCollection ProductCollection Pointer )
-            value.Initialized                               = GetBool(new IntPtr(p + 0x070)); // 027004BE1560 0x70 Initialized                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Store                                   = GetObject<IStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStore.FromPointer); // 0245A4C184E8 0x10 M_Store                     ( 0001866587B0 ModelClassType IStore IStore IStore Pointer )
+            value.M_Listener                                = GetObject<IInternalStoreListener>(new IntPtr(p + 0x018), ReversePrism.DataModels.IInternalStoreListener.FromPointer); // 0245A4C18508 0x18 M_Listener                  ( 000186585300 ModelClassType IInternalStoreListener IInternalStoreListener IInternalStoreListener Pointer )
+            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x020), ReversePrism.DataModels.ILogger.FromPointer); // 0245A4C18528 0x20 M_Logger                    ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
+            value.M_TransactionLog                          = GetObject<TransactionLog>(new IntPtr(p + 0x028), ReversePrism.DataModels.TransactionLog.FromPointer); // 0245A4C18548 0x28 M_TransactionLog            ( 0001866A11C0 ModelClassType TransactionLog TransactionLog TransactionLog Pointer )
+            value.M_StoreName                               = GetString(new IntPtr(p + 0x030)); // 0245A4C18568 0x30 M_StoreName                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_UnityServicesInitializationChecker      = GetObject<IUnityServicesInitializationChecker>(new IntPtr(p + 0x038), ReversePrism.DataModels.IUnityServicesInitializationChecker.FromPointer); // 0245A4C18588 0x38 M_UnityServicesInitializationChecker ( 00018668B560 ModelClassType IUnityServicesInitializationChecker IUnityServicesInitializationChecker IUnityServicesInitializationChecker Pointer )
+            value.M_AdditionalProductsCallback              = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A4C185A8 0x40 M_AdditionalProductsCallback ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.UseTransactionLog                         = GetBool(new IntPtr(p + 0x060)); // 0245A4C18628 0x60 UseTransactionLog           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Products                                  = GetObject<ProductCollection>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProductCollection.FromPointer); // 0245A4C18648 0x68 Products                    ( 00018659FC80 ModelClassType ProductCollection ProductCollection ProductCollection Pointer )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x070)); // 0245A4C18668 0x70 Initialized                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

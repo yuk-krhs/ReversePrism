@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AutoScope
+    public partial class AutoScope : DataModel
     {
 
         public static AutoScope? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AutoScope();
+            var value   = new AutoScope() { Pointer= p0 };
 
 
             return value;

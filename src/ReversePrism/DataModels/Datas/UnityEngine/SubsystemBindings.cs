@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SubsystemBindings
+    public partial class SubsystemBindings : DataModel
     {
 
         public static SubsystemBindings? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubsystemBindings();
+            var value   = new SubsystemBindings() { Pointer= p0 };
 
 
             return value;

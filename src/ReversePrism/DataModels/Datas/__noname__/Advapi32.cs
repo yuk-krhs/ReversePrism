@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Advapi32
+    public partial class Advapi32 : DataModel
     {
 
         public static Advapi32? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Advapi32();
+            var value   = new Advapi32() { Pointer= p0 };
 
 
             return value;

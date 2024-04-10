@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ByrefArgs                                000185B72490 ModelClassListType ByRefUpdater[] ByRefUpdater[] List<ByRefUpdater> Pointer
-    public partial class ByRefMethodInfoCallInstruction
+    public partial class ByRefMethodInfoCallInstruction : DataModel
     {
         public List<ByRefUpdater>?                      ByrefArgs                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByRefMethodInfoCallInstruction();
+            var value   = new ByRefMethodInfoCallInstruction() { Pointer= p0 };
 
-            value.ByrefArgs                                 = GetObjectList<ByRefUpdater>(new IntPtr(p + 0x020), ReversePrism.DataModels.ByRefUpdater.FromPointer); // 0270D9FA09B0 0x20 ByrefArgs                   ( 000185B72490 ModelClassListType ByRefUpdater[] ByRefUpdater[] List<ByRefUpdater> Pointer )
+            value.ByrefArgs                                 = GetObjectList<ByRefUpdater>(new IntPtr(p + 0x020), ReversePrism.DataModels.ByRefUpdater.FromPointer); // 024669FF8520 0x20 ByrefArgs                   ( 000185B72490 ModelClassListType ByRefUpdater[] ByRefUpdater[] List<ByRefUpdater> Pointer )
 
             return value;
         }

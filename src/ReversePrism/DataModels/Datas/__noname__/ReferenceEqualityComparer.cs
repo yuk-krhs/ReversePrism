@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Instance>k__BackingField                ReferenceEqualityComparer IL2CPP_TYPE_CLASS
-    public partial class ReferenceEqualityComparer
+    public partial class ReferenceEqualityComparer : DataModel
     {
 
         public static ReferenceEqualityComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReferenceEqualityComparer();
+            var value   = new ReferenceEqualityComparer() { Pointer= p0 };
 
 
             return value;

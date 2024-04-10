@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 01F GreenColor                               00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 020 BlueColor                                00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 021 Unknown2                                 0001865C7810 ModelEnumType <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer Int32
-    public partial class DualShockHIDOutputReport
+    public partial class DualShockHIDOutputReport : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public sbyte                                    ReportId                                { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DualShockHIDOutputReport();
+            var value   = new DualShockHIDOutputReport() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FA380 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.ReportId                                  = GetSByte(new IntPtr(p + 0x018)); // 0270D77FA3A0 0x18 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Flags                                     = GetSByte(new IntPtr(p + 0x019)); // 0270D77FA3C0 0x19 Flags                       ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Unknown1                                  = (<unknown1>e__FixedBuffer)GetInt32(new IntPtr(p + 0x01A)); // 0270D77FA3E0 0x1A Unknown1                    ( 0001865C7310 ModelEnumType <unknown1>e__FixedBuffer <unknown1>e__FixedBuffer <unknown1>e__FixedBuffer Int32 )
-            value.HighFrequencyMotorSpeed                   = GetSByte(new IntPtr(p + 0x01C)); // 0270D77FA400 0x1C HighFrequencyMotorSpeed     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LowFrequencyMotorSpeed                    = GetSByte(new IntPtr(p + 0x01D)); // 0270D77FA420 0x1D LowFrequencyMotorSpeed      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RedColor                                  = GetSByte(new IntPtr(p + 0x01E)); // 0270D77FA440 0x1E RedColor                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.GreenColor                                = GetSByte(new IntPtr(p + 0x01F)); // 0270D77FA460 0x1F GreenColor                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.BlueColor                                 = GetSByte(new IntPtr(p + 0x020)); // 0270D77FA480 0x20 BlueColor                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Unknown2                                  = (<unknown2>e__FixedBuffer)GetInt32(new IntPtr(p + 0x021)); // 0270D77FA4A0 0x21 Unknown2                    ( 0001865C7810 ModelEnumType <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667852380 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.ReportId                                  = GetSByte(new IntPtr(p + 0x018)); // 0246678523A0 0x18 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Flags                                     = GetSByte(new IntPtr(p + 0x019)); // 0246678523C0 0x19 Flags                       ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Unknown1                                  = (<unknown1>e__FixedBuffer)GetInt32(new IntPtr(p + 0x01A)); // 0246678523E0 0x1A Unknown1                    ( 0001865C7310 ModelEnumType <unknown1>e__FixedBuffer <unknown1>e__FixedBuffer <unknown1>e__FixedBuffer Int32 )
+            value.HighFrequencyMotorSpeed                   = GetSByte(new IntPtr(p + 0x01C)); // 024667852400 0x1C HighFrequencyMotorSpeed     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LowFrequencyMotorSpeed                    = GetSByte(new IntPtr(p + 0x01D)); // 024667852420 0x1D LowFrequencyMotorSpeed      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RedColor                                  = GetSByte(new IntPtr(p + 0x01E)); // 024667852440 0x1E RedColor                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.GreenColor                                = GetSByte(new IntPtr(p + 0x01F)); // 024667852460 0x1F GreenColor                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.BlueColor                                 = GetSByte(new IntPtr(p + 0x020)); // 024667852480 0x20 BlueColor                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Unknown2                                  = (<unknown2>e__FixedBuffer)GetInt32(new IntPtr(p + 0x021)); // 0246678524A0 0x21 Unknown2                    ( 0001865C7810 ModelEnumType <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer <unknown2>e__FixedBuffer Int32 )
 
             return value;
         }

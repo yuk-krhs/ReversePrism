@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPlayerId
+    public partial class IPlayerId : DataModel
     {
 
         public static IPlayerId? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPlayerId();
+            var value   = new IPlayerId() { Pointer= p0 };
 
 
             return value;

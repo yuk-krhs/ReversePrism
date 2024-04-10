@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     0001865E2A50 ModelClassType IProduceAutoSettingPopupView IProduceAutoSettingPopupView IProduceAutoSettingPopupView Pointer
     // 018 autoSettingPackage                       SavableJsonObject`1<ProduceAutoSettingModel> IL2CPP_TYPE_GENERICINST
     // 020 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    public partial class ProduceAutoSettingPopupPresenter
+    public partial class ProduceAutoSettingPopupPresenter : DataModel
     {
         public IProduceAutoSettingPopupView?            View                                    { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoSettingPopupPresenter();
+            var value   = new ProduceAutoSettingPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceAutoSettingPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceAutoSettingPopupView.FromPointer); // 0270D6450DE8 0x10 View                        ( 0001865E2A50 ModelClassType IProduceAutoSettingPopupView IProduceAutoSettingPopupView IProduceAutoSettingPopupView Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D6450E28 0x20 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.View                                      = GetObject<IProduceAutoSettingPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceAutoSettingPopupView.FromPointer); // 0246664A8578 0x10 View                        ( 0001865E2A50 ModelClassType IProduceAutoSettingPopupView IProduceAutoSettingPopupView IProduceAutoSettingPopupView Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246664A85B8 0x20 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

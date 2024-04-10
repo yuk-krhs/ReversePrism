@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Profiler                                 000186600380 ModelClassType IProfiler IProfiler IProfiler Pointer
     // 018 Tag                                      000186672F10 ModelPrimitiveType string string string String
-    public partial class ProfilerScope
+    public partial class ProfilerScope : DataModel
     {
         public IProfiler?                               Profiler                                { get; set; }
         public string                                   Tag                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilerScope();
+            var value   = new ProfilerScope() { Pointer= p0 };
 
-            value.Profiler                                  = GetObject<IProfiler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProfiler.FromPointer); // 0270D938C618 0x10 Profiler                    ( 000186600380 ModelClassType IProfiler IProfiler IProfiler Pointer )
-            value.Tag                                       = GetString(new IntPtr(p + 0x018)); // 0270D938C638 0x18 Tag                         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Profiler                                  = GetObject<IProfiler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProfiler.FromPointer); // 0246693EF130 0x10 Profiler                    ( 000186600380 ModelClassType IProfiler IProfiler IProfiler Pointer )
+            value.Tag                                       = GetString(new IntPtr(p + 0x018)); // 0246693EF150 0x18 Tag                         ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

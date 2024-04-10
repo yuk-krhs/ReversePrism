@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StoreAsTextAttribute
+    public partial class StoreAsTextAttribute : DataModel
     {
 
         public static StoreAsTextAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoreAsTextAttribute();
+            var value   = new StoreAsTextAttribute() { Pointer= p0 };
 
 
             return value;

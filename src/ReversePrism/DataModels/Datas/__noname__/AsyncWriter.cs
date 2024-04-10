@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 enumerator                               _Create<<var>> IL2CPP_TYPE_GENERICINST
     // 000 core                                     UniTaskCompletionSourceCore`1<AsyncUnit> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncWriter
+    public partial class AsyncWriter : DataModel
     {
 
         public static AsyncWriter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncWriter();
+            var value   = new AsyncWriter() { Pointer= p0 };
 
 
             return value;

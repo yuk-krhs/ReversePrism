@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 Seconds                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 NanosFieldNumber                         int IL2CPP_TYPE_I4
     // 024 Nanos                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class TimeOfDay
+    public partial class TimeOfDay : DataModel
     {
         public int                                      Hours                                   { get; set; }
         public int                                      Minutes                                 { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeOfDay();
+            var value   = new TimeOfDay() { Pointer= p0 };
 
-            value.Hours                                     = GetInt32(new IntPtr(p + 0x018)); // 0270DA6B19B8 0x18 Hours                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Minutes                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270DA6B19F8 0x1C Minutes                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Seconds                                   = GetInt32(new IntPtr(p + 0x020)); // 0270DA6B1A38 0x20 Seconds                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Nanos                                     = GetInt32(new IntPtr(p + 0x024)); // 0270DA6B1A78 0x24 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Hours                                     = GetInt32(new IntPtr(p + 0x018)); // 02466A715110 0x18 Hours                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Minutes                                   = GetInt32(new IntPtr(p + 0x01C)); // 02466A715150 0x1C Minutes                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Seconds                                   = GetInt32(new IntPtr(p + 0x020)); // 02466A715190 0x20 Seconds                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Nanos                                     = GetInt32(new IntPtr(p + 0x024)); // 02466A7151D0 0x24 Nanos                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

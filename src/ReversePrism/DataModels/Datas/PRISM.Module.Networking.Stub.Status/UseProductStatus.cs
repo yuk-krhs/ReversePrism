@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C ProductMstId                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 AmountFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class UseProductStatus
+    public partial class UseProductStatus : DataModel
     {
         public int                                      ProductType                             { get; set; }
         public int                                      ProductMstId                            { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UseProductStatus();
+            var value   = new UseProductStatus() { Pointer= p0 };
 
-            value.ProductType                               = GetInt32(new IntPtr(p + 0x018)); // 0270D0F67E48 0x18 ProductType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x01C)); // 0270D0F67E88 0x1C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x020)); // 0270D0F67EC8 0x20 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = GetInt32(new IntPtr(p + 0x018)); // 024660F2C7D0 0x18 ProductType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x01C)); // 024660F2C810 0x1C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x020)); // 024660F2C850 0x20 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

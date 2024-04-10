@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 031 SToggle                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 034 Current                                  00018669FB50 ModelEnumType AlbumType AlbumType AlbumType Int32
     // 038 IsActive                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class AlbumViewModel
+    public partial class AlbumViewModel : DataModel
     {
         public List<PIdolIcon>?                         SourcePIdolIcons                        { get; set; }
         public List<PIdolIcon>?                         PossessionOnlyPIdolIcons                { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AlbumViewModel();
+            var value   = new AlbumViewModel() { Pointer= p0 };
 
-            value.SourcePIdolIcons                          = GetObjectList<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0270D5E6B0E0 0x10 SourcePIdolIcons            ( 000185B99FA0 ModelClassListType PIdolIcon[] PIdolIcon[] List<PIdolIcon> Pointer )
-            value.PossessionOnlyPIdolIcons                  = GetObjectList<PIdolIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0270D5E6B100 0x18 PossessionOnlyPIdolIcons    ( 000185B99FA0 ModelClassListType PIdolIcon[] PIdolIcon[] List<PIdolIcon> Pointer )
-            value.SourceSCharaIcons                         = GetObjectList<SCharaIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIcon.FromPointer); // 0270D5E6B120 0x20 SourceSCharaIcons           ( 000185CA2738 ModelClassListType SCharaIcon[] SCharaIcon[] List<SCharaIcon> Pointer )
-            value.PossessionOnlySCharaIcons                 = GetObjectList<SCharaIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIcon.FromPointer); // 0270D5E6B140 0x28 PossessionOnlySCharaIcons   ( 000185CA2738 ModelClassListType SCharaIcon[] SCharaIcon[] List<SCharaIcon> Pointer )
-            value.PToggle                                   = GetBool(new IntPtr(p + 0x030)); // 0270D5E6B160 0x30 PToggle                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SToggle                                   = GetBool(new IntPtr(p + 0x031)); // 0270D5E6B180 0x31 SToggle                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Current                                   = (AlbumType)GetInt32(new IntPtr(p + 0x034)); // 0270D5E6B1A0 0x34 Current                     ( 00018669FB50 ModelEnumType AlbumType AlbumType AlbumType Int32 )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x038)); // 0270D5E6B1C0 0x38 IsActive                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SourcePIdolIcons                          = GetObjectList<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 024665EDB7C0 0x10 SourcePIdolIcons            ( 000185B99FA0 ModelClassListType PIdolIcon[] PIdolIcon[] List<PIdolIcon> Pointer )
+            value.PossessionOnlyPIdolIcons                  = GetObjectList<PIdolIcon>(new IntPtr(p + 0x018), ReversePrism.DataModels.PIdolIcon.FromPointer); // 024665EDB7E0 0x18 PossessionOnlyPIdolIcons    ( 000185B99FA0 ModelClassListType PIdolIcon[] PIdolIcon[] List<PIdolIcon> Pointer )
+            value.SourceSCharaIcons                         = GetObjectList<SCharaIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIcon.FromPointer); // 024665EDB800 0x20 SourceSCharaIcons           ( 000185CA2738 ModelClassListType SCharaIcon[] SCharaIcon[] List<SCharaIcon> Pointer )
+            value.PossessionOnlySCharaIcons                 = GetObjectList<SCharaIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIcon.FromPointer); // 024665EDB820 0x28 PossessionOnlySCharaIcons   ( 000185CA2738 ModelClassListType SCharaIcon[] SCharaIcon[] List<SCharaIcon> Pointer )
+            value.PToggle                                   = GetBool(new IntPtr(p + 0x030)); // 024665EDB840 0x30 PToggle                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SToggle                                   = GetBool(new IntPtr(p + 0x031)); // 024665EDB860 0x31 SToggle                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Current                                   = (AlbumType)GetInt32(new IntPtr(p + 0x034)); // 024665EDB880 0x34 Current                     ( 00018669FB50 ModelEnumType AlbumType AlbumType AlbumType Int32 )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x038)); // 024665EDB8A0 0x38 IsActive                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

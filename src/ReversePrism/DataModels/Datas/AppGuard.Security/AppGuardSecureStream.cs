@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 038 Length                                   0001865F7700 ModelPrimitiveType long long long Int64
     // 040 Position                                 0001865F7700 ModelPrimitiveType long long long Int64
     // 048 Byte_array_position                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AppGuardSecureStream
+    public partial class AppGuardSecureStream : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public bool                                     Readable                                { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppGuardSecureStream();
+            var value   = new AppGuardSecureStream() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 0270D4BBD4E8 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Readable                                  = GetBool(new IntPtr(p + 0x030)); // 0270D4BBD508 0x30 Readable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Length                                    = GetInt64(new IntPtr(p + 0x038)); // 0270D4BBD528 0x38 Length                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Position                                  = GetInt64(new IntPtr(p + 0x040)); // 0270D4BBD548 0x40 Position                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Byte_array_position                       = GetInt32(new IntPtr(p + 0x048)); // 0270D4BBD568 0x48 Byte_array_position         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 024664C1F810 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Readable                                  = GetBool(new IntPtr(p + 0x030)); // 024664C1F830 0x30 Readable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Length                                    = GetInt64(new IntPtr(p + 0x038)); // 024664C1F850 0x38 Length                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Position                                  = GetInt64(new IntPtr(p + 0x040)); // 024664C1F870 0x40 Position                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Byte_array_position                       = GetInt32(new IntPtr(p + 0x048)); // 024664C1F890 0x48 Byte_array_position         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

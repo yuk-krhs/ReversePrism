@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 Behaviour                                0001866702B0 ModelClassType TimelineLayerBehaviour TimelineLayerBehaviour TimelineLayerBehaviour Pointer
     // 020 Parent                                   0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 028 Layer                                    00018666FB40 ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer
-    public partial class TimelineLayerClip
+    public partial class TimelineLayerClip : DataModel
     {
         public TimelineLayerBehaviour?                  Behaviour                               { get; set; }
         public Transform?                               Parent                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineLayerClip();
+            var value   = new TimelineLayerClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<TimelineLayerBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimelineLayerBehaviour.FromPointer); // 0270D4E00528 0x18 Behaviour                   ( 0001866702B0 ModelClassType TimelineLayerBehaviour TimelineLayerBehaviour TimelineLayerBehaviour Pointer )
-            value.Parent                                    = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0270D4E00548 0x20 Parent                      ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Layer                                     = GetObject<TimelineLayer>(new IntPtr(p + 0x028), ReversePrism.DataModels.TimelineLayer.FromPointer); // 0270D4E00568 0x28 Layer                       ( 00018666FB40 ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer )
+            value.Behaviour                                 = GetObject<TimelineLayerBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimelineLayerBehaviour.FromPointer); // 024664E75958 0x18 Behaviour                   ( 0001866702B0 ModelClassType TimelineLayerBehaviour TimelineLayerBehaviour TimelineLayerBehaviour Pointer )
+            value.Parent                                    = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 024664E75978 0x20 Parent                      ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.Layer                                     = GetObject<TimelineLayer>(new IntPtr(p + 0x028), ReversePrism.DataModels.TimelineLayer.FromPointer); // 024664E75998 0x28 Layer                       ( 00018666FB40 ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer )
 
             return value;
         }

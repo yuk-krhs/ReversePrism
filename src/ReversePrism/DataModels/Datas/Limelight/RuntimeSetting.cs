@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 CatalogDBLocationKey                     string IL2CPP_TYPE_STRING
     // 000 AssetFileCleanerLocationKey              string IL2CPP_TYPE_STRING
     // 000 DefaultSafetyCapacityMargineMB           int IL2CPP_TYPE_I4
-    public partial class RuntimeSetting
+    public partial class RuntimeSetting : DataModel
     {
 
         public static RuntimeSetting? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeSetting();
+            var value   = new RuntimeSetting() { Pointer= p0 };
 
 
             return value;

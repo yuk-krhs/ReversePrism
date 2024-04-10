@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 sources                                  IObservable`1<Unit>[] IL2CPP_TYPE_SZARRAY
     // 020 sourcesEnumerable                        IEnumerable`1<IObservable`1<Unit>> IL2CPP_TYPE_GENERICINST
-    public partial class WhenAllObservable
+    public partial class WhenAllObservable : DataModel
     {
 
         public static WhenAllObservable? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WhenAllObservable();
+            var value   = new WhenAllObservable() { Pointer= p0 };
 
 
             return value;

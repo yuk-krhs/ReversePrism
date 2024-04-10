@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_WasUpdated                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 014 Value                                    000186698B70 ModelPrimitiveType uint uint uint UInt32
-    public partial class UpdateStepCount
+    public partial class UpdateStepCount : DataModel
     {
         public bool                                     M_WasUpdated                            { get; set; }
         public uint                                     Value                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateStepCount();
+            var value   = new UpdateStepCount() { Pointer= p0 };
 
-            value.M_WasUpdated                              = GetBool(new IntPtr(p + 0x010)); // 0270033C9048 0x10 M_WasUpdated                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Value                                     = GetUInt32(new IntPtr(p + 0x014)); // 0270033C9068 0x14 Value                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_WasUpdated                              = GetBool(new IntPtr(p + 0x010)); // 0245A33C9048 0x10 M_WasUpdated                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Value                                     = GetUInt32(new IntPtr(p + 0x014)); // 0245A33C9068 0x14 Value                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

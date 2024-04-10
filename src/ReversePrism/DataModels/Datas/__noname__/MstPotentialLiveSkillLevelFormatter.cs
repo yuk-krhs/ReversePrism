@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstPotentialLiveSkillLevelFormatter
+    public partial class MstPotentialLiveSkillLevelFormatter : DataModel
     {
 
         public static MstPotentialLiveSkillLevelFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstPotentialLiveSkillLevelFormatter();
+            var value   = new MstPotentialLiveSkillLevelFormatter() { Pointer= p0 };
 
 
             return value;

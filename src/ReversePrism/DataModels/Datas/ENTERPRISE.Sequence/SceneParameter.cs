@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 initialParameter                         <object> IL2CPP_TYPE_OBJECT
     // 018 beforeActivated                          Func`1<UniTask> IL2CPP_TYPE_GENERICINST
-    public partial class SceneParameter
+    public partial class SceneParameter : DataModel
     {
 
         public static SceneParameter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneParameter();
+            var value   = new SceneParameter() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RankException
+    public partial class RankException : DataModel
     {
 
         public static RankException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RankException();
+            var value   = new RankException() { Pointer= p0 };
 
 
             return value;

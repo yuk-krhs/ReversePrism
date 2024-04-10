@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_DefaultAPI                             SceneManagerAPI IL2CPP_TYPE_CLASS
     // 008 <overrideAPI>k__BackingField             SceneManagerAPI IL2CPP_TYPE_CLASS
-    public partial class SceneManagerAPI
+    public partial class SceneManagerAPI : DataModel
     {
 
         public static SceneManagerAPI? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneManagerAPI();
+            var value   = new SceneManagerAPI() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 keys                                     <object>[] IL2CPP_TYPE_SZARRAY
     // 018 items                                    <object>[] IL2CPP_TYPE_SZARRAY
     // 020 Comparer                                 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer
-    public partial class SorterObjectArray
+    public partial class SorterObjectArray : DataModel
     {
         public IComparer?                               Comparer                                { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SorterObjectArray();
+            var value   = new SorterObjectArray() { Pointer= p0 };
 
-            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 0270D6A371F0 0x20 Comparer                    ( 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer )
+            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 024666AA71F0 0x20 Comparer                    ( 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer )
 
             return value;
         }

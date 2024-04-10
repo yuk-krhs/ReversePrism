@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Logger>k__BackingField                  PRISMLoggerBase IL2CPP_TYPE_CLASS
-    public partial class LoggerContext
+    public partial class LoggerContext : DataModel
     {
 
         public static LoggerContext? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggerContext();
+            var value   = new LoggerContext() { Pointer= p0 };
 
 
             return value;

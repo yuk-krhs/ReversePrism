@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 textureRebuilt                           Action`1<Font> IL2CPP_TYPE_GENERICINST
     // 018 M_FontTextureRebuildCallback             0001866C7470 ModelClassType FontTextureRebuildCallback FontTextureRebuildCallback FontTextureRebuildCallback Pointer
-    public partial class Font
+    public partial class Font : DataModel
     {
         public FontTextureRebuildCallback?              M_FontTextureRebuildCallback            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Font();
+            var value   = new Font() { Pointer= p0 };
 
-            value.M_FontTextureRebuildCallback              = GetObject<FontTextureRebuildCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontTextureRebuildCallback.FromPointer); // 027002178058 0x18 M_FontTextureRebuildCallback ( 0001866C7470 ModelClassType FontTextureRebuildCallback FontTextureRebuildCallback FontTextureRebuildCallback Pointer )
+            value.M_FontTextureRebuildCallback              = GetObject<FontTextureRebuildCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontTextureRebuildCallback.FromPointer); // 0245A2178058 0x18 M_FontTextureRebuildCallback ( 0001866C7470 ModelClassType FontTextureRebuildCallback FontTextureRebuildCallback FontTextureRebuildCallback Pointer )
 
             return value;
         }

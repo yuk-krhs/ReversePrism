@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 ResourceLoader                           00018666F230 ModelClassType ResourceLoader ResourceLoader ResourceLoader Pointer
     // 068 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
     // 070 onClickTalkHistoryButtonSubject          Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ChainTalkHistoryScreenView
+    public partial class ChainTalkHistoryScreenView : DataModel
     {
         public MobileScreenHeader?                      Header                                  { get; set; }
         public GameObject?                              EmptyView                               { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkHistoryScreenView();
+            var value   = new ChainTalkHistoryScreenView() { Pointer= p0 };
 
-            value.Header                                    = GetObject<MobileScreenHeader>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileScreenHeader.FromPointer); // 0270DB1152A8 0x20 Header                      ( 000186634ED0 ModelClassType MobileScreenHeader MobileScreenHeader MobileScreenHeader Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB1152C8 0x28 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EmptyText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB1152E8 0x30 EmptyText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UserIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB115308 0x38 UserIconImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ButtonsParent                             = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0270DB115328 0x40 ButtonsParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ButtonPrefab                              = GetObject<ChainTalkHistoryButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChainTalkHistoryButton.FromPointer); // 0270DB115348 0x48 ButtonPrefab                ( 000186560E00 ModelClassType ChainTalkHistoryButton ChainTalkHistoryButton ChainTalkHistoryButton Pointer )
-            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScrollRect.FromPointer); // 0270DB115368 0x50 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.ScreenFader                               = GetObject<MobileScreenFader>(new IntPtr(p + 0x058), ReversePrism.DataModels.MobileScreenFader.FromPointer); // 0270DB115388 0x58 ScreenFader                 ( 0001866349F0 ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer )
-            value.ResourceLoader                            = GetObject<ResourceLoader>(new IntPtr(p + 0x060), ReversePrism.DataModels.ResourceLoader.FromPointer); // 0270DB1153A8 0x60 ResourceLoader              ( 00018666F230 ModelClassType ResourceLoader ResourceLoader ResourceLoader Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB1153C8 0x68 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.Header                                    = GetObject<MobileScreenHeader>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileScreenHeader.FromPointer); // 02466B1752A8 0x20 Header                      ( 000186634ED0 ModelClassType MobileScreenHeader MobileScreenHeader MobileScreenHeader Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B1752C8 0x28 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EmptyText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B1752E8 0x30 EmptyText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UserIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 02466B175308 0x38 UserIconImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.ButtonsParent                             = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 02466B175328 0x40 ButtonsParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ButtonPrefab                              = GetObject<ChainTalkHistoryButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChainTalkHistoryButton.FromPointer); // 02466B175348 0x48 ButtonPrefab                ( 000186560E00 ModelClassType ChainTalkHistoryButton ChainTalkHistoryButton ChainTalkHistoryButton Pointer )
+            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScrollRect.FromPointer); // 02466B175368 0x50 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.ScreenFader                               = GetObject<MobileScreenFader>(new IntPtr(p + 0x058), ReversePrism.DataModels.MobileScreenFader.FromPointer); // 02466B175388 0x58 ScreenFader                 ( 0001866349F0 ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer )
+            value.ResourceLoader                            = GetObject<ResourceLoader>(new IntPtr(p + 0x060), ReversePrism.DataModels.ResourceLoader.FromPointer); // 02466B1753A8 0x60 ResourceLoader              ( 00018666F230 ModelClassType ResourceLoader ResourceLoader ResourceLoader Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B1753C8 0x68 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

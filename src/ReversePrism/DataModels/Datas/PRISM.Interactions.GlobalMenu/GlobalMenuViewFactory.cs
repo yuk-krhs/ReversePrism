@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GlobalMenuViewFactory
+    public partial class GlobalMenuViewFactory : DataModel
     {
 
         public static GlobalMenuViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalMenuViewFactory();
+            var value   = new GlobalMenuViewFactory() { Pointer= p0 };
 
 
             return value;

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 008 CreatorCache                             ThreadSafeStore`2<Type, Func`2<<object>[], <object>>> IL2CPP_TYPE_GENERICINST
     // 010 AssociatedMetadataTypesCache             ThreadSafeStore`2<Type, Type> IL2CPP_TYPE_GENERICINST
     // 018 MetadataTypeAttributeReflectionObject    000186637D00 ModelClassType ReflectionObject ReflectionObject ReflectionObject Pointer
-    public partial class JsonTypeReflector
+    public partial class JsonTypeReflector : DataModel
     {
         public ReflectionObject?                        MetadataTypeAttributeReflectionObject   { get; set; }
 
@@ -31,9 +31,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonTypeReflector();
+            var value   = new JsonTypeReflector() { Pointer= p0 };
 
-            value.MetadataTypeAttributeReflectionObject     = GetObject<ReflectionObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReflectionObject.FromPointer); // 027005FE8D80 0x18 MetadataTypeAttributeReflectionObject ( 000186637D00 ModelClassType ReflectionObject ReflectionObject ReflectionObject Pointer )
+            value.MetadataTypeAttributeReflectionObject     = GetObject<ReflectionObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.ReflectionObject.FromPointer); // 0245A5FC21A0 0x18 MetadataTypeAttributeReflectionObject ( 000186637D00 ModelClassType ReflectionObject ReflectionObject ReflectionObject Pointer )
 
             return value;
         }

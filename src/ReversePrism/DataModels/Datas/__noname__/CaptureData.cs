@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 TargetCamera                             0001865A2380 ModelClassType Camera Camera Camera Pointer
     // 020 IsSetCaptureRange                        000186595960 ModelPrimitiveType bool bool bool Bool
     // 024 CaptureRange                             00018664FAF0 ModelEnumType Rect Rect Rect Int32
-    public partial class CaptureData
+    public partial class CaptureData : DataModel
     {
         public int                                      Uid                                     { get; set; }
         public Camera?                                  TargetCamera                            { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CaptureData();
+            var value   = new CaptureData() { Pointer= p0 };
 
-            value.Uid                                       = GetInt32(new IntPtr(p + 0x010)); // 0270D0E6EB98 0x10 Uid                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TargetCamera                              = GetObject<Camera>(new IntPtr(p + 0x018), ReversePrism.DataModels.Camera.FromPointer); // 0270D0E6EBB8 0x18 TargetCamera                ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
-            value.IsSetCaptureRange                         = GetBool(new IntPtr(p + 0x020)); // 0270D0E6EBD8 0x20 IsSetCaptureRange           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CaptureRange                              = (Rect)GetInt32(new IntPtr(p + 0x024)); // 0270D0E6EBF8 0x24 CaptureRange                ( 00018664FAF0 ModelEnumType Rect Rect Rect Int32 )
+            value.Uid                                       = GetInt32(new IntPtr(p + 0x010)); // 024660DF7B88 0x10 Uid                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TargetCamera                              = GetObject<Camera>(new IntPtr(p + 0x018), ReversePrism.DataModels.Camera.FromPointer); // 024660DF7BA8 0x18 TargetCamera                ( 0001865A2380 ModelClassType Camera Camera Camera Pointer )
+            value.IsSetCaptureRange                         = GetBool(new IntPtr(p + 0x020)); // 024660DF7BC8 0x20 IsSetCaptureRange           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CaptureRange                              = (Rect)GetInt32(new IntPtr(p + 0x024)); // 024660DF7BE8 0x24 CaptureRange                ( 00018664FAF0 ModelEnumType Rect Rect Rect Int32 )
 
             return value;
         }

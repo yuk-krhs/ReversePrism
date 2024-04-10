@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 TalkNodeVoicePlaybackContainer           000186668620 ModelClassType ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer Pointer
     // 068 onClickClose                             Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 070 IsOpen                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ADVLogOverlayView
+    public partial class ADVLogOverlayView : DataModel
     {
         public UITextMeshProUGUI?                       Title                                   { get; set; }
         public ScrollRect?                              ScrollRect                              { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogOverlayView();
+            var value   = new ADVLogOverlayView() { Pointer= p0 };
 
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBE3A8A8 0x20 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScrollRect.FromPointer); // 0270DBE3A8C8 0x28 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.NodeListParent                            = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DBE3A8E8 0x30 NodeListParent              ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.CloseButton                               = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DBE3A908 0x38 CloseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TalkNodePrefab                            = GetObject<ADVLogTalkNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.ADVLogTalkNode.FromPointer); // 0270DBE3A928 0x40 TalkNodePrefab              ( 000186667250 ModelClassType ADVLogTalkNode ADVLogTalkNode ADVLogTalkNode Pointer )
-            value.ActionNodePrefab                          = GetObject<ADVLogActionNode>(new IntPtr(p + 0x048), ReversePrism.DataModels.ADVLogActionNode.FromPointer); // 0270DBE3A948 0x48 ActionNodePrefab            ( 000186663090 ModelClassType ADVLogActionNode ADVLogActionNode ADVLogActionNode Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DBE3A968 0x50 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.TalkNodeList                              = GetObjectList<ADVLogTalkNode>(new IntPtr(p + 0x058), ReversePrism.DataModels.ADVLogTalkNode.FromPointer); // 0270DBE3A988 0x58 TalkNodeList                ( 000185CCB088 ModelClassListType List`1<ADVLogTalkNode> List`1<ADVLogTalkNode> List<ADVLogTalkNode> Pointer )
-            value.TalkNodeVoicePlaybackContainer            = GetObject<ADVLogTalkNodeVoicePlaybackContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.ADVLogTalkNodeVoicePlaybackContainer.FromPointer); // 0270DBE3A9A8 0x60 TalkNodeVoicePlaybackContainer ( 000186668620 ModelClassType ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer Pointer )
-            value.IsOpen                                    = GetBool(new IntPtr(p + 0x070)); // 0270DBE3A9E8 0x70 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BEA2BF0 0x20 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScrollRect.FromPointer); // 02466BEA2C10 0x28 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.NodeListParent                            = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466BEA2C30 0x30 NodeListParent              ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CloseButton                               = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466BEA2C50 0x38 CloseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TalkNodePrefab                            = GetObject<ADVLogTalkNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.ADVLogTalkNode.FromPointer); // 02466BEA2C70 0x40 TalkNodePrefab              ( 000186667250 ModelClassType ADVLogTalkNode ADVLogTalkNode ADVLogTalkNode Pointer )
+            value.ActionNodePrefab                          = GetObject<ADVLogActionNode>(new IntPtr(p + 0x048), ReversePrism.DataModels.ADVLogActionNode.FromPointer); // 02466BEA2C90 0x48 ActionNodePrefab            ( 000186663090 ModelClassType ADVLogActionNode ADVLogActionNode ADVLogActionNode Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 02466BEA2CB0 0x50 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.TalkNodeList                              = GetObjectList<ADVLogTalkNode>(new IntPtr(p + 0x058), ReversePrism.DataModels.ADVLogTalkNode.FromPointer); // 02466BEA2CD0 0x58 TalkNodeList                ( 000185CCB088 ModelClassListType List`1<ADVLogTalkNode> List`1<ADVLogTalkNode> List<ADVLogTalkNode> Pointer )
+            value.TalkNodeVoicePlaybackContainer            = GetObject<ADVLogTalkNodeVoicePlaybackContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.ADVLogTalkNodeVoicePlaybackContainer.FromPointer); // 02466BEA2CF0 0x60 TalkNodeVoicePlaybackContainer ( 000186668620 ModelClassType ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer ADVLogTalkNodeVoicePlaybackContainer Pointer )
+            value.IsOpen                                    = GetBool(new IntPtr(p + 0x070)); // 02466BEA2D30 0x70 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

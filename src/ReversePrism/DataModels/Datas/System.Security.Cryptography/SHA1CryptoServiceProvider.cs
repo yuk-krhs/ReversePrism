@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Sha                                      0001866ADD00 ModelClassType SHA1Internal SHA1Internal SHA1Internal Pointer
-    public partial class SHA1CryptoServiceProvider
+    public partial class SHA1CryptoServiceProvider : DataModel
     {
         public SHA1Internal?                            Sha                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SHA1CryptoServiceProvider();
+            var value   = new SHA1CryptoServiceProvider() { Pointer= p0 };
 
-            value.Sha                                       = GetObject<SHA1Internal>(new IntPtr(p + 0x028), ReversePrism.DataModels.SHA1Internal.FromPointer); // 027003E1D018 0x28 Sha                         ( 0001866ADD00 ModelClassType SHA1Internal SHA1Internal SHA1Internal Pointer )
+            value.Sha                                       = GetObject<SHA1Internal>(new IntPtr(p + 0x028), ReversePrism.DataModels.SHA1Internal.FromPointer); // 0245A3E1D018 0x28 Sha                         ( 0001866ADD00 ModelClassType SHA1Internal SHA1Internal SHA1Internal Pointer )
 
             return value;
         }

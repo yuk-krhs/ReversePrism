@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Credentials                              000185CEE638 ModelClassListType IReadOnlyList`1<CallCredentials> IReadOnlyList`1<CallCredentials> List<CallCredentials> Pointer
-    public partial class CompositeCallCredentials
+    public partial class CompositeCallCredentials : DataModel
     {
         public List<CallCredentials>?                   Credentials                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompositeCallCredentials();
+            var value   = new CompositeCallCredentials() { Pointer= p0 };
 
-            value.Credentials                               = GetObjectList<CallCredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallCredentials.FromPointer); // 0270DBB2D458 0x10 Credentials                 ( 000185CEE638 ModelClassListType IReadOnlyList`1<CallCredentials> IReadOnlyList`1<CallCredentials> List<CallCredentials> Pointer )
+            value.Credentials                               = GetObjectList<CallCredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallCredentials.FromPointer); // 02466BBBC970 0x10 Credentials                 ( 000185CEE638 ModelClassListType IReadOnlyList`1<CallCredentials> IReadOnlyList`1<CallCredentials> List<CallCredentials> Pointer )
 
             return value;
         }

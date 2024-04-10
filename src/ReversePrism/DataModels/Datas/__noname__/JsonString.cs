@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Text                                     0001865DAE40 ModelEnumType Substring Substring Substring Int32
     // 020 HasEscapes                               000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonString
+    public partial class JsonString : DataModel
     {
         public Substring                                Text                                    { get; set; }
         public bool                                     HasEscapes                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonString();
+            var value   = new JsonString() { Pointer= p0 };
 
-            value.Text                                      = (Substring)GetInt32(new IntPtr(p + 0x010)); // 0270D78B24D0 0x10 Text                        ( 0001865DAE40 ModelEnumType Substring Substring Substring Int32 )
-            value.HasEscapes                                = GetBool(new IntPtr(p + 0x020)); // 0270D78B24F0 0x20 HasEscapes                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Text                                      = (Substring)GetInt32(new IntPtr(p + 0x010)); // 02466791A4D0 0x10 Text                        ( 0001865DAE40 ModelEnumType Substring Substring Substring Int32 )
+            value.HasEscapes                                = GetBool(new IntPtr(p + 0x020)); // 02466791A4F0 0x20 HasEscapes                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 ContentPrefab                            000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
     // 028 Priority                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 02C IsInfoButtonActive                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CommonFullSizePopupParam
+    public partial class CommonFullSizePopupParam : DataModel
     {
         public string                                   Title                                   { get; set; }
         public string                                   ContentName                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonFullSizePopupParam();
+            var value   = new CommonFullSizePopupParam() { Pointer= p0 };
 
-            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 0270D52D9BD8 0x10 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.ContentName                               = GetString(new IntPtr(p + 0x018)); // 0270D52D9BF8 0x18 ContentName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ContentPrefab                             = GetObject<PopupContentBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.PopupContentBase.FromPointer); // 0270D52D9C18 0x20 ContentPrefab               ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
-            value.Priority                                  = GetInt32(new IntPtr(p + 0x028)); // 0270D52D9C38 0x28 Priority                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsInfoButtonActive                        = GetBool(new IntPtr(p + 0x02C)); // 0270D52D9C58 0x2C IsInfoButtonActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 02466534D3C8 0x10 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.ContentName                               = GetString(new IntPtr(p + 0x018)); // 02466534D3E8 0x18 ContentName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ContentPrefab                             = GetObject<PopupContentBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466534D408 0x20 ContentPrefab               ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
+            value.Priority                                  = GetInt32(new IntPtr(p + 0x028)); // 02466534D428 0x28 Priority                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsInfoButtonActive                        = GetBool(new IntPtr(p + 0x02C)); // 02466534D448 0x2C IsInfoButtonActive          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

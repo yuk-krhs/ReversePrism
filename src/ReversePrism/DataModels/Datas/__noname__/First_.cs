@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   FirstObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 notPublished                             bool IL2CPP_TYPE_BOOLEAN
-    public partial class First_
+    public partial class First_ : DataModel
     {
 
         public static First_? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new First_();
+            var value   = new First_() { Pointer= p0 };
 
 
             return value;

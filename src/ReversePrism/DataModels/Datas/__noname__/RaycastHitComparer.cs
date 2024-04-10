@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 instance                                 RaycastHitComparer IL2CPP_TYPE_CLASS
-    public partial class RaycastHitComparer
+    public partial class RaycastHitComparer : DataModel
     {
 
         public static RaycastHitComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RaycastHitComparer();
+            var value   = new RaycastHitComparer() { Pointer= p0 };
 
 
             return value;

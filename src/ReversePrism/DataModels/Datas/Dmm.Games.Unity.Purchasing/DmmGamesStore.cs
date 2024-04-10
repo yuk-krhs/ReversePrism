@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 ResultLoginData                          0001865AFD10 ModelClassType ResultLoginData ResultLoginData ResultLoginData Pointer
     // 018 _resultAction                            Action`1<ResultLoginData> IL2CPP_TYPE_GENERICINST
     // 020 IsInit                                   000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class DmmGamesStore
+    public partial class DmmGamesStore : DataModel
     {
         public ResultLoginData?                         ResultLoginData                         { get; set; }
         public bool                                     IsInit                                  { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesStore();
+            var value   = new DmmGamesStore() { Pointer= p0 };
 
-            value.ResultLoginData                           = GetObject<ResultLoginData>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResultLoginData.FromPointer); // 0270DB481628 0x10 ResultLoginData             ( 0001865AFD10 ModelClassType ResultLoginData ResultLoginData ResultLoginData Pointer )
-            value.IsInit                                    = GetBool(new IntPtr(p + 0x020)); // 0270DB481668 0x20 IsInit                      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.ResultLoginData                           = GetObject<ResultLoginData>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResultLoginData.FromPointer); // 02466B50E558 0x10 ResultLoginData             ( 0001865AFD10 ModelClassType ResultLoginData ResultLoginData ResultLoginData Pointer )
+            value.IsInit                                    = GetBool(new IntPtr(p + 0x020)); // 02466B50E598 0x20 IsInit                      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

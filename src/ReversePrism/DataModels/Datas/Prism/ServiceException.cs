@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 Result                                   00018673A690 ModelEnumType ServiceResult ServiceResult ServiceResult Int32
     // 098 Error                                    0001865C0880 ModelClassType INetworkError INetworkError INetworkError Pointer
-    public partial class ServiceException
+    public partial class ServiceException : DataModel
     {
         public ServiceResult                            Result                                  { get; set; }
         public INetworkError?                           Error                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServiceException();
+            var value   = new ServiceException() { Pointer= p0 };
 
-            value.Result                                    = (ServiceResult)GetInt32(new IntPtr(p + 0x090)); // 0270D4C4B230 0x90 Result                      ( 00018673A690 ModelEnumType ServiceResult ServiceResult ServiceResult Int32 )
-            value.Error                                     = GetObject<INetworkError>(new IntPtr(p + 0x098), ReversePrism.DataModels.INetworkError.FromPointer); // 0270D4C4B250 0x98 Error                       ( 0001865C0880 ModelClassType INetworkError INetworkError INetworkError Pointer )
+            value.Result                                    = (ServiceResult)GetInt32(new IntPtr(p + 0x090)); // 024664CA5290 0x90 Result                      ( 00018673A690 ModelEnumType ServiceResult ServiceResult ServiceResult Int32 )
+            value.Error                                     = GetObject<INetworkError>(new IntPtr(p + 0x098), ReversePrism.DataModels.INetworkError.FromPointer); // 024664CA52B0 0x98 Error                       ( 0001865C0880 ModelClassType INetworkError INetworkError INetworkError Pointer )
 
             return value;
         }

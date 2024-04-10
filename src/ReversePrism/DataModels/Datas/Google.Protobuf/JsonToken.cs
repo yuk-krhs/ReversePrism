@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     000186671110 ModelEnumType TokenType TokenType TokenType Int32
     // 018 StringValue                              000186672F10 ModelPrimitiveType string string string String
     // 020 NumberValue                              0001865C35C0 ModelPrimitiveType double double double Double
-    public partial class JsonToken
+    public partial class JsonToken : DataModel
     {
         public JsonToken?                               Null                                    { get; set; }
         public JsonToken?                               StartObject                             { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonToken();
+            var value   = new JsonToken() { Pointer= p0 };
 
-            value.Null                                      = GetObject<JsonToken>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A298 0x10 Null                        ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.StartObject                               = GetObject<JsonToken>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A2B8 0x18 StartObject                 ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.EndObject                                 = GetObject<JsonToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A2D8 0x20 EndObject                   ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.StartArray                                = GetObject<JsonToken>(new IntPtr(p + 0x028), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A2F8 0x28 StartArray                  ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.EndArray                                  = GetObject<JsonToken>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A318 0x30 EndArray                    ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.EndDocument                               = GetObject<JsonToken>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonToken.FromPointer); // 0270DA42A338 0x38 EndDocument                 ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
-            value.Type                                      = (TokenType)GetInt32(new IntPtr(p + 0x010)); // 0270DA42A358 0x10 Type                        ( 000186671110 ModelEnumType TokenType TokenType TokenType Int32 )
-            value.StringValue                               = GetString(new IntPtr(p + 0x018)); // 0270DA42A378 0x18 StringValue                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.NumberValue                               = GetDouble(new IntPtr(p + 0x020)); // 0270DA42A398 0x20 NumberValue                 ( 0001865C35C0 ModelPrimitiveType double double double Double )
+            value.Null                                      = GetObject<JsonToken>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CA20 0x10 Null                        ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.StartObject                               = GetObject<JsonToken>(new IntPtr(p + 0x018), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CA40 0x18 StartObject                 ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.EndObject                                 = GetObject<JsonToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CA60 0x20 EndObject                   ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.StartArray                                = GetObject<JsonToken>(new IntPtr(p + 0x028), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CA80 0x28 StartArray                  ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.EndArray                                  = GetObject<JsonToken>(new IntPtr(p + 0x030), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CAA0 0x30 EndArray                    ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.EndDocument                               = GetObject<JsonToken>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonToken.FromPointer); // 02466A47CAC0 0x38 EndDocument                 ( 000186761E90 ModelClassType JsonToken JsonToken JsonToken Pointer )
+            value.Type                                      = (TokenType)GetInt32(new IntPtr(p + 0x010)); // 02466A47CAE0 0x10 Type                        ( 000186671110 ModelEnumType TokenType TokenType TokenType Int32 )
+            value.StringValue                               = GetString(new IntPtr(p + 0x018)); // 02466A47CB00 0x18 StringValue                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.NumberValue                               = GetDouble(new IntPtr(p + 0x020)); // 02466A47CB20 0x20 NumberValue                 ( 0001865C35C0 ModelPrimitiveType double double double Double )
 
             return value;
         }

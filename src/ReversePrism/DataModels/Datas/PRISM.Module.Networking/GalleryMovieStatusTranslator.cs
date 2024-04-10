@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GalleryMovieStatusTranslator
+    public partial class GalleryMovieStatusTranslator : DataModel
     {
 
         public static GalleryMovieStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GalleryMovieStatusTranslator();
+            var value   = new GalleryMovieStatusTranslator() { Pointer= p0 };
 
 
             return value;

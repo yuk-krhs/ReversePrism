@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PieceArchiveConnector
+    public partial class PieceArchiveConnector : DataModel
     {
 
         public static PieceArchiveConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceArchiveConnector();
+            var value   = new PieceArchiveConnector() { Pointer= p0 };
 
 
             return value;

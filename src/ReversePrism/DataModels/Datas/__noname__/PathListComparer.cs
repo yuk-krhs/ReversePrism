@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 StaticInstance                           PathListComparer IL2CPP_TYPE_CLASS
-    public partial class PathListComparer
+    public partial class PathListComparer : DataModel
     {
 
         public static PathListComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PathListComparer();
+            var value   = new PathListComparer() { Pointer= p0 };
 
 
             return value;

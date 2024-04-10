@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 Combining                                0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer
     // 018 Composite                                0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer
     // 020 Helper                                   0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer
-    public partial class NormalizationTableUtil
+    public partial class NormalizationTableUtil : DataModel
     {
         public CodePointIndexer?                        Combining                               { get; set; }
         public CodePointIndexer?                        Composite                               { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NormalizationTableUtil();
+            var value   = new NormalizationTableUtil() { Pointer= p0 };
 
-            value.Combining                                 = GetObject<CodePointIndexer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0270D6932DE8 0x10 Combining                   ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
-            value.Composite                                 = GetObject<CodePointIndexer>(new IntPtr(p + 0x018), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0270D6932E08 0x18 Composite                   ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
-            value.Helper                                    = GetObject<CodePointIndexer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0270D6932E28 0x20 Helper                      ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
+            value.Combining                                 = GetObject<CodePointIndexer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0246669AADE8 0x10 Combining                   ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
+            value.Composite                                 = GetObject<CodePointIndexer>(new IntPtr(p + 0x018), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0246669AAE08 0x18 Composite                   ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
+            value.Helper                                    = GetObject<CodePointIndexer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CodePointIndexer.FromPointer); // 0246669AAE28 0x20 Helper                      ( 0001865A98F0 ModelClassType CodePointIndexer CodePointIndexer CodePointIndexer Pointer )
 
             return value;
         }

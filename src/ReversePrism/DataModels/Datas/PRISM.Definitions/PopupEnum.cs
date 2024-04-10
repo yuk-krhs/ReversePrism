@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PopupEnum
+    public partial class PopupEnum : DataModel
     {
 
         public static PopupEnum? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupEnum();
+            var value   = new PopupEnum() { Pointer= p0 };
 
 
             return value;

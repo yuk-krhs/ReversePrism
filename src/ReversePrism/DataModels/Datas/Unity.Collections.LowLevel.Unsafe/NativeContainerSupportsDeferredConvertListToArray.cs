@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeContainerSupportsDeferredConvertListToArray
+    public partial class NativeContainerSupportsDeferredConvertListToArray : DataModel
     {
 
         public static NativeContainerSupportsDeferredConvertListToArray? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeContainerSupportsDeferredConvertListToArray();
+            var value   = new NativeContainerSupportsDeferredConvertListToArray() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ArticleIdFieldNumber                     int IL2CPP_TYPE_I4
     // 018 ArticleId                                000186671910 ModelPrimitiveType string string string String
-    public partial class GetAnnounceDetailArgs
+    public partial class GetAnnounceDetailArgs : DataModel
     {
         public string                                   ArticleId                               { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAnnounceDetailArgs();
+            var value   = new GetAnnounceDetailArgs() { Pointer= p0 };
 
-            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 027003B0D550 0x18 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 024660B15FB0 0x18 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

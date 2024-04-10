@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 0C8 M_CachedAppReceipt                       000186671910 ModelPrimitiveType string string string String
     // 0D0 m_CachedAppReceiptModificationDate       Nullable`1<double> IL2CPP_TYPE_GENERICINST
     // 0E0 M_ProductsJson                           000186671910 ModelPrimitiveType string string string String
-    public partial class AppleStoreImpl
+    public partial class AppleStoreImpl : DataModel
     {
         public Action?                                  M_FetchStorePromotionOrderError         { get; set; }
         public Action?                                  M_FetchStorePromotionVisibilityError    { get; set; }
@@ -41,14 +41,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppleStoreImpl();
+            var value   = new AppleStoreImpl() { Pointer= p0 };
 
-            value.M_FetchStorePromotionOrderError           = GetObject<Action>(new IntPtr(p + 0x090), ReversePrism.DataModels.Action.FromPointer); // 027006915248 0x90 M_FetchStorePromotionOrderError ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_FetchStorePromotionVisibilityError      = GetObject<Action>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Action.FromPointer); // 0270069152A8 0xA8 M_FetchStorePromotionVisibilityError ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_Native                                  = GetObject<INativeAppleStore>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.INativeAppleStore.FromPointer); // 0270069152E8 0xB8 M_Native                    ( 0001865BC340 ModelClassType INativeAppleStore INativeAppleStore INativeAppleStore Pointer )
-            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 027006915308 0xC0 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
-            value.M_CachedAppReceipt                        = GetString(new IntPtr(p + 0x0C8)); // 027006915368 0xC8 M_CachedAppReceipt          ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_ProductsJson                            = GetString(new IntPtr(p + 0x0E0)); // 0270069153A8 0xE0 M_ProductsJson              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_FetchStorePromotionOrderError           = GetObject<Action>(new IntPtr(p + 0x090), ReversePrism.DataModels.Action.FromPointer); // 0245A68D8110 0x90 M_FetchStorePromotionOrderError ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_FetchStorePromotionVisibilityError      = GetObject<Action>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Action.FromPointer); // 0245A68D8170 0xA8 M_FetchStorePromotionVisibilityError ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_Native                                  = GetObject<INativeAppleStore>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.INativeAppleStore.FromPointer); // 0245A68D81B0 0xB8 M_Native                    ( 0001865BC340 ModelClassType INativeAppleStore INativeAppleStore INativeAppleStore Pointer )
+            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0245A68D81D0 0xC0 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
+            value.M_CachedAppReceipt                        = GetString(new IntPtr(p + 0x0C8)); // 0245A68D8230 0xC8 M_CachedAppReceipt          ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_ProductsJson                            = GetString(new IntPtr(p + 0x0E0)); // 0245A68D8270 0xE0 M_ProductsJson              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

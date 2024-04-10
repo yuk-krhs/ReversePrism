@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 068 CacheGetDeleteAmount                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 06C CacheMaxGetDeleteAmount                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 070 IsLessThan                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DeleteProduceCardFinishPopupContent
+    public partial class DeleteProduceCardFinishPopupContent : DataModel
     {
         public UITextMeshProUGUI?                       DeleteMesseageText                      { get; set; }
         public int                                      CacheGetDeleteAmount                    { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeleteProduceCardFinishPopupContent();
+            var value   = new DeleteProduceCardFinishPopupContent() { Pointer= p0 };
 
-            value.DeleteMesseageText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5CBBDB0 0x60 DeleteMesseageText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CacheGetDeleteAmount                      = GetInt32(new IntPtr(p + 0x068)); // 0270D5CBBDD0 0x68 CacheGetDeleteAmount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CacheMaxGetDeleteAmount                   = GetInt32(new IntPtr(p + 0x06C)); // 0270D5CBBDF0 0x6C CacheMaxGetDeleteAmount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsLessThan                                = GetBool(new IntPtr(p + 0x070)); // 0270D5CBBE10 0x70 IsLessThan                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DeleteMesseageText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D1C820 0x60 DeleteMesseageText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CacheGetDeleteAmount                      = GetInt32(new IntPtr(p + 0x068)); // 024665D1C840 0x68 CacheGetDeleteAmount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CacheMaxGetDeleteAmount                   = GetInt32(new IntPtr(p + 0x06C)); // 024665D1C860 0x6C CacheMaxGetDeleteAmount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsLessThan                                = GetBool(new IntPtr(p + 0x070)); // 024665D1C880 0x70 IsLessThan                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

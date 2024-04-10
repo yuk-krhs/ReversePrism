@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Dict                                   Dictionary`2<string, JSONNode> IL2CPP_TYPE_GENERICINST
-    public partial class JSONClass
+    public partial class JSONClass : DataModel
     {
 
         public static JSONClass? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JSONClass();
+            var value   = new JSONClass() { Pointer= p0 };
 
 
             return value;

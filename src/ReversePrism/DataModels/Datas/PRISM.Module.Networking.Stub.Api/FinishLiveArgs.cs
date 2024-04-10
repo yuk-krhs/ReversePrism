@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 038 Life                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 LiveTokenFieldNumber                     int IL2CPP_TYPE_I4
     // 040 LiveToken                                000186671910 ModelPrimitiveType string string string String
-    public partial class FinishLiveArgs
+    public partial class FinishLiveArgs : DataModel
     {
         public int                                      Score                                   { get; set; }
         public int                                      Combo                                   { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishLiveArgs();
+            var value   = new FinishLiveArgs() { Pointer= p0 };
 
-            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D21C8EE8 0x18 Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Combo                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D21C8F28 0x1C Combo                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TimingJudgement                           = GetObject<LiveTimingJudgementStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveTimingJudgementStatus.FromPointer); // 0270D21C8F68 0x20 TimingJudgement             ( 000186586D00 ModelClassType LiveTimingJudgementStatus LiveTimingJudgementStatus LiveTimingJudgementStatus Pointer )
-            value.BaseTimingJudgement                       = GetObject<LiveTimingJudgementStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveTimingJudgementStatus.FromPointer); // 0270D21C8FA8 0x28 BaseTimingJudgement         ( 000186586D00 ModelClassType LiveTimingJudgementStatus LiveTimingJudgementStatus LiveTimingJudgementStatus Pointer )
-            value.ActivatedSkillList                        = GetObjectList<LiveActivatedSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveActivatedSkillStatus.FromPointer); // 0270D21C9008 0x30 ActivatedSkillList          ( 000185CE2BF8 ModelClassListType RepeatedField`1<LiveActivatedSkillStatus> RepeatedField`1<LiveActivatedSkillStatus> List<LiveActivatedSkillStatus> Pointer )
-            value.Life                                      = GetInt32(new IntPtr(p + 0x038)); // 0270D21C9048 0x38 Life                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LiveToken                                 = GetString(new IntPtr(p + 0x040)); // 0270D21C9088 0x40 LiveToken                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 024662172050 0x18 Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Combo                                     = GetInt32(new IntPtr(p + 0x01C)); // 024662172090 0x1C Combo                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TimingJudgement                           = GetObject<LiveTimingJudgementStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveTimingJudgementStatus.FromPointer); // 0246621720D0 0x20 TimingJudgement             ( 000186586D00 ModelClassType LiveTimingJudgementStatus LiveTimingJudgementStatus LiveTimingJudgementStatus Pointer )
+            value.BaseTimingJudgement                       = GetObject<LiveTimingJudgementStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveTimingJudgementStatus.FromPointer); // 024662172110 0x28 BaseTimingJudgement         ( 000186586D00 ModelClassType LiveTimingJudgementStatus LiveTimingJudgementStatus LiveTimingJudgementStatus Pointer )
+            value.ActivatedSkillList                        = GetObjectList<LiveActivatedSkillStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveActivatedSkillStatus.FromPointer); // 024662172170 0x30 ActivatedSkillList          ( 000185CE2BF8 ModelClassListType RepeatedField`1<LiveActivatedSkillStatus> RepeatedField`1<LiveActivatedSkillStatus> List<LiveActivatedSkillStatus> Pointer )
+            value.Life                                      = GetInt32(new IntPtr(p + 0x038)); // 0246621721B0 0x38 Life                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LiveToken                                 = GetString(new IntPtr(p + 0x040)); // 0246621721F0 0x40 LiveToken                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

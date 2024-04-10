@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ImgIcon                                  000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    public partial class SkillSlotIconView
+    public partial class SkillSlotIconView : DataModel
     {
         public RawImage?                                ImgIcon                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkillSlotIconView();
+            var value   = new SkillSlotIconView() { Pointer= p0 };
 
-            value.ImgIcon                                   = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA28FC10 0x20 ImgIcon                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.ImgIcon                                   = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 02466A2E31E0 0x20 ImgIcon                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
 
             return value;
         }

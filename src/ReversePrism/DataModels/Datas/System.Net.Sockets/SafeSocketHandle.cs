@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 threads_stacktraces                      Dictionary`2<Thread, StackTrace> IL2CPP_TYPE_GENERICINST
     // 030 In_cleanup                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 THROW_ON_ABORT_RETRIES                   bool IL2CPP_TYPE_BOOLEAN
-    public partial class SafeSocketHandle
+    public partial class SafeSocketHandle : DataModel
     {
         public List<Thread>?                            Blocking_threads                        { get; set; }
         public bool                                     In_cleanup                              { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeSocketHandle();
+            var value   = new SafeSocketHandle() { Pointer= p0 };
 
-            value.Blocking_threads                          = GetObjectList<Thread>(new IntPtr(p + 0x020), ReversePrism.DataModels.Thread.FromPointer); // 0270D7AEA7A8 0x20 Blocking_threads            ( 000185D14088 ModelClassListType List`1<Thread> List`1<Thread> List<Thread> Pointer )
-            value.In_cleanup                                = GetBool(new IntPtr(p + 0x030)); // 0270D7AEA7E8 0x30 In_cleanup                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Blocking_threads                          = GetObjectList<Thread>(new IntPtr(p + 0x020), ReversePrism.DataModels.Thread.FromPointer); // 024667B527A8 0x20 Blocking_threads            ( 000185D14088 ModelClassListType List`1<Thread> List`1<Thread> List<Thread> Pointer )
+            value.In_cleanup                                = GetBool(new IntPtr(p + 0x030)); // 024667B527E8 0x30 In_cleanup                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

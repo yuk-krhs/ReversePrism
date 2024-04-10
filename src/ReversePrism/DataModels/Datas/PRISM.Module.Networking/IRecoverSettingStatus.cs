@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRecoverSettingStatus
+    public partial class IRecoverSettingStatus : DataModel
     {
 
         public static IRecoverSettingStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRecoverSettingStatus();
+            var value   = new IRecoverSettingStatus() { Pointer= p0 };
 
 
             return value;

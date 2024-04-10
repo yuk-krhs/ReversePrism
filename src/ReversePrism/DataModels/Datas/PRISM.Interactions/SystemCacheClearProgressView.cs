@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 028 FadeDelay                                0001866656B0 ModelPrimitiveType float float float Single
-    public partial class SystemCacheClearProgressView
+    public partial class SystemCacheClearProgressView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public float                                    FadeDelay                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemCacheClearProgressView();
+            var value   = new SystemCacheClearProgressView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DBCA5A60 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FadeDelay                                 = GetSingle(new IntPtr(p + 0x028)); // 0270DBCA5A80 0x28 FadeDelay                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466BD25920 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FadeDelay                                 = GetSingle(new IntPtr(p + 0x028)); // 02466BD25940 0x28 FadeDelay                   ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // FFFFFFFF pendingException                         Exception IL2CPP_TYPE_CLASS
     // 000 numExceptionsPending                     int IL2CPP_TYPE_I4
     // 008 exceptionsLock                           <object> IL2CPP_TYPE_OBJECT
-    public partial class SWIGPendingException
+    public partial class SWIGPendingException : DataModel
     {
 
         public static SWIGPendingException? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SWIGPendingException();
+            var value   = new SWIGPendingException() { Pointer= p0 };
 
 
             return value;

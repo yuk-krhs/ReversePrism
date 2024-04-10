@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 ScheduleDetailList                       000185CE8228 ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer
     // 080 IsInitilized                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 088 onClickTab                               Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ScheduleDetailTabGroupContent
+    public partial class ScheduleDetailTabGroupContent : DataModel
     {
         public List<ScheduleDetailTabButtonContent>?    ScheduleDetailTabButtonContentList      { get; set; }
         public UITabGroup?                              ScheduleDetailTabGroup                  { get; set; }
@@ -44,21 +44,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleDetailTabGroupContent();
+            var value   = new ScheduleDetailTabGroupContent() { Pointer= p0 };
 
-            value.ScheduleDetailTabButtonContentList        = GetObjectList<ScheduleDetailTabButtonContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScheduleDetailTabButtonContent.FromPointer); // 0270DA0C2EC8 0x20 ScheduleDetailTabButtonContentList ( 000185D05FE8 ModelClassListType List`1<ScheduleDetailTabButtonContent> List`1<ScheduleDetailTabButtonContent> List<ScheduleDetailTabButtonContent> Pointer )
-            value.ScheduleDetailTabGroup                    = GetObject<UITabGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DA0C2EE8 0x28 ScheduleDetailTabGroup      ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.ScheduleNameText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA0C2F08 0x30 ScheduleNameText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScheduleLvText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA0C2F28 0x38 ScheduleLvText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScheduleLvObject                          = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C2F48 0x40 ScheduleLvObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScheduleLvImage                           = GetObject<UIImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA0C2F68 0x48 ScheduleLvImage             ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.SupportBonusObject                        = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C2F88 0x50 SupportBonusObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NoTabDisplayAreaObject                    = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C2FA8 0x58 NoTabDisplayAreaObject      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Lv1Object                                 = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C2FC8 0x60 Lv1Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Lv3Object                                 = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C2FE8 0x68 Lv3Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Lv5Object                                 = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA0C3008 0x70 Lv5Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScheduleDetailList                        = GetObjectList<IScheduleDetailStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IScheduleDetailStatus.FromPointer); // 0270DA0C3028 0x78 ScheduleDetailList          ( 000185CE8228 ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer )
-            value.IsInitilized                              = GetBool(new IntPtr(p + 0x080)); // 0270DA0C3048 0x80 IsInitilized                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ScheduleDetailTabButtonContentList        = GetObjectList<ScheduleDetailTabButtonContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScheduleDetailTabButtonContent.FromPointer); // 02466A1169B8 0x20 ScheduleDetailTabButtonContentList ( 000185D05FE8 ModelClassListType List`1<ScheduleDetailTabButtonContent> List`1<ScheduleDetailTabButtonContent> List<ScheduleDetailTabButtonContent> Pointer )
+            value.ScheduleDetailTabGroup                    = GetObject<UITabGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A1169D8 0x28 ScheduleDetailTabGroup      ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.ScheduleNameText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1169F8 0x30 ScheduleNameText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScheduleLvText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A116A18 0x38 ScheduleLvText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScheduleLvObject                          = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116A38 0x40 ScheduleLvObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleLvImage                           = GetObject<UIImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIImage.FromPointer); // 02466A116A58 0x48 ScheduleLvImage             ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.SupportBonusObject                        = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116A78 0x50 SupportBonusObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.NoTabDisplayAreaObject                    = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116A98 0x58 NoTabDisplayAreaObject      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Lv1Object                                 = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116AB8 0x60 Lv1Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Lv3Object                                 = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116AD8 0x68 Lv3Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Lv5Object                                 = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 02466A116AF8 0x70 Lv5Object                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleDetailList                        = GetObjectList<IScheduleDetailStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IScheduleDetailStatus.FromPointer); // 02466A116B18 0x78 ScheduleDetailList          ( 000185CE8228 ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer )
+            value.IsInitilized                              = GetBool(new IntPtr(p + 0x080)); // 02466A116B38 0x80 IsInitilized                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

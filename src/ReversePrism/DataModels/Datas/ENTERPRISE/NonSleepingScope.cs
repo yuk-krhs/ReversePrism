@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 scopingCount                             int IL2CPP_TYPE_I4
     // 004 savedTimeout                             int IL2CPP_TYPE_I4
-    public partial class NonSleepingScope
+    public partial class NonSleepingScope : DataModel
     {
 
         public static NonSleepingScope? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NonSleepingScope();
+            var value   = new NonSleepingScope() { Pointer= p0 };
 
 
             return value;

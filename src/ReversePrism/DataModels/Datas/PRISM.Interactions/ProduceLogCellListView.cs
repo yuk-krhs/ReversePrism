@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 048 ProduceLogCellList                       000185CE7828 ModelClassListType List`1<IProduceLogCell> List`1<IProduceLogCell> List<IProduceLogCell> Pointer
     // 050 CurrentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 054 MaxIndex                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceLogCellListView
+    public partial class ProduceLogCellListView : DataModel
     {
         public CancellationToken                        CancellationToken                       { get; set; }
         public EnhancedScroller?                        Scroller                                { get; set; }
@@ -44,16 +44,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceLogCellListView();
+            var value   = new ProduceLogCellListView() { Pointer= p0 };
 
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 0270DA1147F8 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 0270DA114818 0x28 Scroller                    ( 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
-            value.ProduceLogListCellAccordionOff            = GetObject<ProduceLogListCellAccordionOff>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceLogListCellAccordionOff.FromPointer); // 0270DA114838 0x30 ProduceLogListCellAccordionOff ( 00018655DCF0 ModelClassType ProduceLogListCellAccordionOff ProduceLogListCellAccordionOff ProduceLogListCellAccordionOff Pointer )
-            value.Scrollbar                                 = GetObject<Scrollbar>(new IntPtr(p + 0x038), ReversePrism.DataModels.Scrollbar.FromPointer); // 0270DA114858 0x38 Scrollbar                   ( 0001866FA460 ModelClassType Scrollbar Scrollbar Scrollbar Pointer )
-            value.WaitLoadImageObject                       = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA114878 0x40 WaitLoadImageObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ProduceLogCellList                        = GetObjectList<IProduceLogCell>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProduceLogCell.FromPointer); // 0270DA114898 0x48 ProduceLogCellList          ( 000185CE7828 ModelClassListType List`1<IProduceLogCell> List`1<IProduceLogCell> List<IProduceLogCell> Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x050)); // 0270DA1148B8 0x50 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxIndex                                  = GetInt32(new IntPtr(p + 0x054)); // 0270DA1148D8 0x54 MaxIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 02466A15FF00 0x20 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 02466A15FF20 0x28 Scroller                    ( 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
+            value.ProduceLogListCellAccordionOff            = GetObject<ProduceLogListCellAccordionOff>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceLogListCellAccordionOff.FromPointer); // 02466A15FF40 0x30 ProduceLogListCellAccordionOff ( 00018655DCF0 ModelClassType ProduceLogListCellAccordionOff ProduceLogListCellAccordionOff ProduceLogListCellAccordionOff Pointer )
+            value.Scrollbar                                 = GetObject<Scrollbar>(new IntPtr(p + 0x038), ReversePrism.DataModels.Scrollbar.FromPointer); // 02466A15FF60 0x38 Scrollbar                   ( 0001866FA460 ModelClassType Scrollbar Scrollbar Scrollbar Pointer )
+            value.WaitLoadImageObject                       = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466A15FF80 0x40 WaitLoadImageObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ProduceLogCellList                        = GetObjectList<IProduceLogCell>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProduceLogCell.FromPointer); // 02466A15FFA0 0x48 ProduceLogCellList          ( 000185CE7828 ModelClassListType List`1<IProduceLogCell> List`1<IProduceLogCell> List<IProduceLogCell> Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x050)); // 02466A15FFC0 0x50 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxIndex                                  = GetInt32(new IntPtr(p + 0x054)); // 02466A15FFE0 0x54 MaxIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

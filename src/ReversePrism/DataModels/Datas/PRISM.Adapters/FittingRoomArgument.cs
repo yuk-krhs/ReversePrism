@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 OrderedGlassId                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 OrderedEarringId                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 OrderedMakeupId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FittingRoomArgument
+    public partial class FittingRoomArgument : DataModel
     {
         public int                                      SelectedCharacterInfoId                 { get; set; }
         public int                                      OrderedCostumeSetId                     { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FittingRoomArgument();
+            var value   = new FittingRoomArgument() { Pointer= p0 };
 
-            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x010)); // 0270D6273F20 0x10 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedCostumeSetId                       = GetInt32(new IntPtr(p + 0x014)); // 0270D6273F40 0x14 OrderedCostumeSetId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedCostumeId                          = GetInt32(new IntPtr(p + 0x018)); // 0270D6273F60 0x18 OrderedCostumeId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedHairstyleId                        = GetInt32(new IntPtr(p + 0x01C)); // 0270D6273F80 0x1C OrderedHairstyleId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedGlassId                            = GetInt32(new IntPtr(p + 0x020)); // 0270D6273FA0 0x20 OrderedGlassId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedEarringId                          = GetInt32(new IntPtr(p + 0x024)); // 0270D6273FC0 0x24 OrderedEarringId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OrderedMakeupId                           = GetInt32(new IntPtr(p + 0x028)); // 0270D6273FE0 0x28 OrderedMakeupId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedCharacterInfoId                   = GetInt32(new IntPtr(p + 0x010)); // 0246662D3F20 0x10 SelectedCharacterInfoId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedCostumeSetId                       = GetInt32(new IntPtr(p + 0x014)); // 0246662D3F40 0x14 OrderedCostumeSetId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedCostumeId                          = GetInt32(new IntPtr(p + 0x018)); // 0246662D3F60 0x18 OrderedCostumeId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedHairstyleId                        = GetInt32(new IntPtr(p + 0x01C)); // 0246662D3F80 0x1C OrderedHairstyleId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedGlassId                            = GetInt32(new IntPtr(p + 0x020)); // 0246662D3FA0 0x20 OrderedGlassId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedEarringId                          = GetInt32(new IntPtr(p + 0x024)); // 0246662D3FC0 0x24 OrderedEarringId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OrderedMakeupId                           = GetInt32(new IntPtr(p + 0x028)); // 0246662D3FE0 0x28 OrderedMakeupId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

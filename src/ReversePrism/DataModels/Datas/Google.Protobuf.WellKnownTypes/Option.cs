@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Name                                     000186671910 ModelPrimitiveType string string string String
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
     // 020 Value                                    0001866C54A0 ModelClassType Any Any Any Pointer
-    public partial class Option
+    public partial class Option : DataModel
     {
         public string                                   Name                                    { get; set; }
         public Any?                                     Value                                   { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Option();
+            var value   = new Option() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA47B560 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetObject<Any>(new IntPtr(p + 0x020), ReversePrism.DataModels.Any.FromPointer); // 0270DA47B5A0 0x20 Value                       ( 0001866C54A0 ModelClassType Any Any Any Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A4B6D68 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Value                                     = GetObject<Any>(new IntPtr(p + 0x020), ReversePrism.DataModels.Any.FromPointer); // 02466A4B6DA8 0x20 Value                       ( 0001866C54A0 ModelClassType Any Any Any Pointer )
 
             return value;
         }

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01D M_Conservative                           00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 01E M_Padding1                               00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 01F M_Padding2                               00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class RasterState
+    public partial class RasterState : DataModel
     {
         public CullMode                                 M_CullingMode                           { get; set; }
         public int                                      M_OffsetUnits                           { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RasterState();
+            var value   = new RasterState() { Pointer= p0 };
 
-            value.M_CullingMode                             = (CullMode)GetInt32(new IntPtr(p + 0x010)); // 0270068CDFA0 0x10 M_CullingMode               ( 000186663F50 ModelEnumType CullMode CullMode CullMode Int32 )
-            value.M_OffsetUnits                             = GetInt32(new IntPtr(p + 0x014)); // 0270068CDFC0 0x14 M_OffsetUnits               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_OffsetFactor                            = GetSingle(new IntPtr(p + 0x018)); // 0270068CDFE0 0x18 M_OffsetFactor              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DepthClip                               = GetSByte(new IntPtr(p + 0x01C)); // 0270068CE000 0x1C M_DepthClip                 ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_Conservative                            = GetSByte(new IntPtr(p + 0x01D)); // 0270068CE020 0x1D M_Conservative              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_Padding1                                = GetSByte(new IntPtr(p + 0x01E)); // 0270068CE040 0x1E M_Padding1                  ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_Padding2                                = GetSByte(new IntPtr(p + 0x01F)); // 0270068CE060 0x1F M_Padding2                  ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_CullingMode                             = (CullMode)GetInt32(new IntPtr(p + 0x010)); // 0245A6890F30 0x10 M_CullingMode               ( 000186663F50 ModelEnumType CullMode CullMode CullMode Int32 )
+            value.M_OffsetUnits                             = GetInt32(new IntPtr(p + 0x014)); // 0245A6890F50 0x14 M_OffsetUnits               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_OffsetFactor                            = GetSingle(new IntPtr(p + 0x018)); // 0245A6890F70 0x18 M_OffsetFactor              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DepthClip                               = GetSByte(new IntPtr(p + 0x01C)); // 0245A6890F90 0x1C M_DepthClip                 ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_Conservative                            = GetSByte(new IntPtr(p + 0x01D)); // 0245A6890FB0 0x1D M_Conservative              ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_Padding1                                = GetSByte(new IntPtr(p + 0x01E)); // 0245A6890FD0 0x1E M_Padding1                  ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_Padding2                                = GetSByte(new IntPtr(p + 0x01F)); // 0245A6890FF0 0x1F M_Padding2                  ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

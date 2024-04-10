@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 TypePropertyName                         string IL2CPP_TYPE_STRING
     // 000 ValuePropertyName                        string IL2CPP_TYPE_STRING
     // 000 _reflectionObject                        ReflectionObject IL2CPP_TYPE_CLASS
-    public partial class EntityKeyMemberConverter
+    public partial class EntityKeyMemberConverter : DataModel
     {
 
         public static EntityKeyMemberConverter? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EntityKeyMemberConverter();
+            var value   = new EntityKeyMemberConverter() { Pointer= p0 };
 
 
             return value;

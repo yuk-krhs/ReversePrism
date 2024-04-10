@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IntroductionLauncherConnector
+    public partial class IntroductionLauncherConnector : DataModel
     {
 
         public static IntroductionLauncherConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLauncherConnector();
+            var value   = new IntroductionLauncherConnector() { Pointer= p0 };
 
 
             return value;

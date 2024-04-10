@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGooglePlayStoreService
+    public partial class IGooglePlayStoreService : DataModel
     {
 
         public static IGooglePlayStoreService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGooglePlayStoreService();
+            var value   = new IGooglePlayStoreService() { Pointer= p0 };
 
 
             return value;

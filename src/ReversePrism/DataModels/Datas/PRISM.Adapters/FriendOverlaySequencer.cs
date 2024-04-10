@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FriendOverlaySequencer
+    public partial class FriendOverlaySequencer : DataModel
     {
 
         public static FriendOverlaySequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendOverlaySequencer();
+            var value   = new FriendOverlaySequencer() { Pointer= p0 };
 
 
             return value;

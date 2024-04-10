@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 GetPieceList                             Method`2<IGetPieceListArgs, IGetPieceListReply> IL2CPP_TYPE_GENERICINST
     // 018 ConvertPieceList                         Method`2<IConvertPieceListArgs, IConvertPieceListReply> IL2CPP_TYPE_GENERICINST
-    public partial class PieceServiceMethods
+    public partial class PieceServiceMethods : DataModel
     {
 
         public static PieceServiceMethods? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceServiceMethods();
+            var value   = new PieceServiceMethods() { Pointer= p0 };
 
 
             return value;

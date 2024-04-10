@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                000186527530 ModelClassType SoftOverlayBehaviour SoftOverlayBehaviour SoftOverlayBehaviour Pointer
-    public partial class SoftOverlayClip
+    public partial class SoftOverlayClip : DataModel
     {
         public SoftOverlayBehaviour?                    Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoftOverlayClip();
+            var value   = new SoftOverlayClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<SoftOverlayBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SoftOverlayBehaviour.FromPointer); // 0270D50760C8 0x18 Behaviour                   ( 000186527530 ModelClassType SoftOverlayBehaviour SoftOverlayBehaviour SoftOverlayBehaviour Pointer )
+            value.Behaviour                                 = GetObject<SoftOverlayBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SoftOverlayBehaviour.FromPointer); // 0246650D9A20 0x18 Behaviour                   ( 000186527530 ModelClassType SoftOverlayBehaviour SoftOverlayBehaviour SoftOverlayBehaviour Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScrollRectExtensions
+    public partial class ScrollRectExtensions : DataModel
     {
 
         public static ScrollRectExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScrollRectExtensions();
+            var value   = new ScrollRectExtensions() { Pointer= p0 };
 
 
             return value;

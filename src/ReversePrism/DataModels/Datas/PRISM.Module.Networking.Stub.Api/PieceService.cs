@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_ConvertPieceListReply   Marshaller`1<ConvertPieceListReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetPieceList                    Method`2<GetPieceListArgs, GetPieceListReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_ConvertPieceList                Method`2<ConvertPieceListArgs, ConvertPieceListReply> IL2CPP_TYPE_GENERICINST
-    public partial class PieceService
+    public partial class PieceService : DataModel
     {
 
         public static PieceService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceService();
+            var value   = new PieceService() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 019 IsDetaching                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 020 m_OnAttachToPanelCallback                EventCallback`1<AttachToPanelEvent> IL2CPP_TYPE_GENERICINST
     // 028 m_OnDetachFromPanelCallback              EventCallback`1<DetachFromPanelEvent> IL2CPP_TYPE_GENERICINST
-    public partial class VisualElementPanelActivator
+    public partial class VisualElementPanelActivator : DataModel
     {
         public IVisualElementPanelActivatable?          M_Activatable                           { get; set; }
         public bool                                     IsActive                                { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualElementPanelActivator();
+            var value   = new VisualElementPanelActivator() { Pointer= p0 };
 
-            value.M_Activatable                             = GetObject<IVisualElementPanelActivatable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IVisualElementPanelActivatable.FromPointer); // 02700685C3E0 0x10 M_Activatable               ( 0001866972A0 ModelClassType IVisualElementPanelActivatable IVisualElementPanelActivatable IVisualElementPanelActivatable Pointer )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x018)); // 02700685C400 0x18 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDetaching                               = GetBool(new IntPtr(p + 0x019)); // 02700685C420 0x19 IsDetaching                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Activatable                             = GetObject<IVisualElementPanelActivatable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IVisualElementPanelActivatable.FromPointer); // 0245A681E270 0x10 M_Activatable               ( 0001866972A0 ModelClassType IVisualElementPanelActivatable IVisualElementPanelActivatable IVisualElementPanelActivatable Pointer )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x018)); // 0245A681E290 0x18 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDetaching                               = GetBool(new IntPtr(p + 0x019)); // 0245A681E2B0 0x19 IsDetaching                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

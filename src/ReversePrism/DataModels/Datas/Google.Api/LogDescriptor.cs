@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 028 Description                              000186671910 ModelPrimitiveType string string string String
     // 000 DisplayNameFieldNumber                   int IL2CPP_TYPE_I4
     // 030 DisplayName                              000186671910 ModelPrimitiveType string string string String
-    public partial class LogDescriptor
+    public partial class LogDescriptor : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<LabelDescriptor>?                   Labels                                  { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogDescriptor();
+            var value   = new LogDescriptor() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA7E1440 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 0270DA7E14A0 0x20 Labels                      ( 000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
-            value.Description                               = GetString(new IntPtr(p + 0x028)); // 0270DA7E14E0 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x030)); // 0270DA7E1520 0x30 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A845E88 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 02466A845EE8 0x20 Labels                      ( 000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
+            value.Description                               = GetString(new IntPtr(p + 0x028)); // 02466A845F28 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x030)); // 02466A845F68 0x30 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

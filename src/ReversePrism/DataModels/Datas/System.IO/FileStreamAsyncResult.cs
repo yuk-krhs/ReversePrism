@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 OriginalCount                            0001865F36C0 ModelPrimitiveType int int int Int32
     // 03C BytesRead                                0001865F36C0 ModelPrimitiveType int int int Int32
     // 040 Realcb                                   0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer
-    public partial class FileStreamAsyncResult
+    public partial class FileStreamAsyncResult : DataModel
     {
         public bool                                     Completed                               { get; set; }
         public ManualResetEvent?                        Wh                                      { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FileStreamAsyncResult();
+            var value   = new FileStreamAsyncResult() { Pointer= p0 };
 
-            value.Completed                                 = GetBool(new IntPtr(p + 0x018)); // 0270D6E3E660 0x18 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Wh                                        = GetObject<ManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0270D6E3E680 0x20 Wh                          ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
-            value.Cb                                        = GetObject<AsyncCallback>(new IntPtr(p + 0x028), ReversePrism.DataModels.AsyncCallback.FromPointer); // 0270D6E3E6A0 0x28 Cb                          ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
-            value.CompletedSynch                            = GetBool(new IntPtr(p + 0x030)); // 0270D6E3E6C0 0x30 CompletedSynch              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 0270D6E3E6E0 0x34 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.OriginalCount                             = GetInt32(new IntPtr(p + 0x038)); // 0270D6E3E700 0x38 OriginalCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BytesRead                                 = GetInt32(new IntPtr(p + 0x03C)); // 0270D6E3E720 0x3C BytesRead                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Realcb                                    = GetObject<AsyncCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.AsyncCallback.FromPointer); // 0270D6E3E740 0x40 Realcb                      ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
+            value.Completed                                 = GetBool(new IntPtr(p + 0x018)); // 024666EB6660 0x18 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Wh                                        = GetObject<ManualResetEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 024666EB6680 0x20 Wh                          ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
+            value.Cb                                        = GetObject<AsyncCallback>(new IntPtr(p + 0x028), ReversePrism.DataModels.AsyncCallback.FromPointer); // 024666EB66A0 0x28 Cb                          ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
+            value.CompletedSynch                            = GetBool(new IntPtr(p + 0x030)); // 024666EB66C0 0x30 CompletedSynch              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 024666EB66E0 0x34 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.OriginalCount                             = GetInt32(new IntPtr(p + 0x038)); // 024666EB6700 0x38 OriginalCount               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BytesRead                                 = GetInt32(new IntPtr(p + 0x03C)); // 024666EB6720 0x3C BytesRead                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Realcb                                    = GetObject<AsyncCallback>(new IntPtr(p + 0x040), ReversePrism.DataModels.AsyncCallback.FromPointer); // 024666EB6740 0x40 Realcb                      ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
 
             return value;
         }

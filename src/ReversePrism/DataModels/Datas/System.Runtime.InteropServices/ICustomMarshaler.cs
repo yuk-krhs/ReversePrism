@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomMarshaler
+    public partial class ICustomMarshaler : DataModel
     {
 
         public static ICustomMarshaler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomMarshaler();
+            var value   = new ICustomMarshaler() { Pointer= p0 };
 
 
             return value;

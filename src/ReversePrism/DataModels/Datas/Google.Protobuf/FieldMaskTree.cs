@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 FIELD_PATH_SEPARATOR                     char IL2CPP_TYPE_CHAR
     // 010 Root                                     0001866A6450 ModelClassType Node Node Node Pointer
-    public partial class FieldMaskTree
+    public partial class FieldMaskTree : DataModel
     {
         public Node?                                    Root                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldMaskTree();
+            var value   = new FieldMaskTree() { Pointer= p0 };
 
-            value.Root                                      = GetObject<Node>(new IntPtr(p + 0x010), ReversePrism.DataModels.Node.FromPointer); // 0270DA3F96E0 0x10 Root                        ( 0001866A6450 ModelClassType Node Node Node Pointer )
+            value.Root                                      = GetObject<Node>(new IntPtr(p + 0x010), ReversePrism.DataModels.Node.FromPointer); // 02466A45CF58 0x10 Root                        ( 0001866A6450 ModelClassType Node Node Node Pointer )
 
             return value;
         }

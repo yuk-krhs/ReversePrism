@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 070 UserSelfProfilePopup                     000186671910 ModelPrimitiveType string string string String
     // 078 ProduceResumePopup                       000186671910 ModelPrimitiveType string string string String
     // 080 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class ButtonGotoTypeReference
+    public partial class ButtonGotoTypeReference : DataModel
     {
         public string                                   TransferAccount                         { get; set; }
         public string                                   UserSelfProfilePopup                    { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonGotoTypeReference();
+            var value   = new ButtonGotoTypeReference() { Pointer= p0 };
 
-            value.TransferAccount                           = GetString(new IntPtr(p + 0x068)); // 02700396A4D8 0x68 TransferAccount             ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserSelfProfilePopup                      = GetString(new IntPtr(p + 0x070)); // 02700396A4F8 0x70 UserSelfProfilePopup        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProduceResumePopup                        = GetString(new IntPtr(p + 0x078)); // 02700396A518 0x78 ProduceResumePopup          ( 000186671910 ModelPrimitiveType string string string String )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceTag.FromPointer); // 02700396A538 0x80 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.TransferAccount                           = GetString(new IntPtr(p + 0x068)); // 0245A39733E8 0x68 TransferAccount             ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserSelfProfilePopup                      = GetString(new IntPtr(p + 0x070)); // 0245A3973408 0x70 UserSelfProfilePopup        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProduceResumePopup                        = GetString(new IntPtr(p + 0x078)); // 0245A3973428 0x78 ProduceResumePopup          ( 000186671910 ModelPrimitiveType string string string String )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceTag.FromPointer); // 0245A3973448 0x80 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

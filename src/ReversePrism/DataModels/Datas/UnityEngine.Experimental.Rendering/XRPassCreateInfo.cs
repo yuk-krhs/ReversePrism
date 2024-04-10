@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 6B0 MultipassId                              0001865F2F90 ModelPrimitiveType int int int Int32
     // 6B4 CullingPassId                            0001865F2F90 ModelPrimitiveType int int int Int32
     // 6B8 CopyDepth                                000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class XRPassCreateInfo
+    public partial class XRPassCreateInfo : DataModel
     {
         public RenderTargetIdentifier                   RenderTarget                            { get; set; }
         public RenderTextureDescriptor                  RenderTargetDesc                        { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRPassCreateInfo();
+            var value   = new XRPassCreateInfo() { Pointer= p0 };
 
-            value.RenderTarget                              = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x010)); // 0270D9077700 0x10 RenderTarget                ( 000186655700 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
-            value.RenderTargetDesc                          = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x038)); // 0270D9077720 0x38 RenderTargetDesc            ( 0001866575B0 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
-            value.CullingParameters                         = (ScriptableCullingParameters)GetInt32(new IntPtr(p + 0x070)); // 0270D9077740 0x70 CullingParameters           ( 000186660FE0 ModelEnumType ScriptableCullingParameters ScriptableCullingParameters ScriptableCullingParameters Int32 )
-            value.OcclusionMeshMaterial                     = GetObject<Material>(new IntPtr(p + 0x6A0), ReversePrism.DataModels.Material.FromPointer); // 0270D9077760 0x6A0 OcclusionMeshMaterial       ( 00018660BFD0 ModelClassType Material Material Material Pointer )
-            value.MultipassId                               = GetInt32(new IntPtr(p + 0x6B0)); // 0270D90777A0 0x6B0 MultipassId                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CullingPassId                             = GetInt32(new IntPtr(p + 0x6B4)); // 0270D90777C0 0x6B4 CullingPassId               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CopyDepth                                 = GetBool(new IntPtr(p + 0x6B8)); // 0270D90777E0 0x6B8 CopyDepth                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.RenderTarget                              = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x010)); // 0246690BA810 0x10 RenderTarget                ( 000186655700 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
+            value.RenderTargetDesc                          = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x038)); // 0246690BA830 0x38 RenderTargetDesc            ( 0001866575B0 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
+            value.CullingParameters                         = (ScriptableCullingParameters)GetInt32(new IntPtr(p + 0x070)); // 0246690BA850 0x70 CullingParameters           ( 000186660FE0 ModelEnumType ScriptableCullingParameters ScriptableCullingParameters ScriptableCullingParameters Int32 )
+            value.OcclusionMeshMaterial                     = GetObject<Material>(new IntPtr(p + 0x6A0), ReversePrism.DataModels.Material.FromPointer); // 0246690BA870 0x6A0 OcclusionMeshMaterial       ( 00018660BFD0 ModelClassType Material Material Material Pointer )
+            value.MultipassId                               = GetInt32(new IntPtr(p + 0x6B0)); // 0246690BA8B0 0x6B0 MultipassId                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CullingPassId                             = GetInt32(new IntPtr(p + 0x6B4)); // 0246690BA8D0 0x6B4 CullingPassId               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CopyDepth                                 = GetBool(new IntPtr(p + 0x6B8)); // 0246690BA8F0 0x6B8 CopyDepth                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

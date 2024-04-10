@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 continueNext                             bool IL2CPP_TYPE_BOOLEAN
     // 000 exception                                Exception IL2CPP_TYPE_CLASS
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _SkipUntil
+    public partial class _SkipUntil : DataModel
     {
 
         public static _SkipUntil? FromPointer(IntPtr p0)
@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _SkipUntil();
+            var value   = new _SkipUntil() { Pointer= p0 };
 
 
             return value;

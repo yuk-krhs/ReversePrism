@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
     // 018 Action                                   0001866792B0 ModelClassType Action Action Action Pointer
     // 020 TargetPP                                 0001866656B0 ModelPrimitiveType float float float Single
-    public partial class ProduceTutorialAddChangePPEvent
+    public partial class ProduceTutorialAddChangePPEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public Action?                                  Action                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialAddChangePPEvent();
+            var value   = new ProduceTutorialAddChangePPEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D48EC8 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0270D5D48EE8 0x18 Action                      ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.TargetPP                                  = GetSingle(new IntPtr(p + 0x020)); // 0270D5D48F08 0x20 TargetPP                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DB9BE0 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 024665DB9C00 0x18 Action                      ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.TargetPP                                  = GetSingle(new IntPtr(p + 0x020)); // 024665DB9C20 0x20 TargetPP                    ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

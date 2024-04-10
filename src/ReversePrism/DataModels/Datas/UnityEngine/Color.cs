@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 G                                        000186666050 ModelPrimitiveType float float float Single
     // 018 B                                        000186666050 ModelPrimitiveType float float float Single
     // 01C A                                        000186666050 ModelPrimitiveType float float float Single
-    public partial class Color
+    public partial class Color : DataModel
     {
         public float                                    R                                       { get; set; }
         public float                                    G                                       { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Color();
+            var value   = new Color() { Pointer= p0 };
 
-            value.R                                         = GetSingle(new IntPtr(p + 0x010)); // 02700217ABD0 0x10 R                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.G                                         = GetSingle(new IntPtr(p + 0x014)); // 02700217ABF0 0x14 G                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.B                                         = GetSingle(new IntPtr(p + 0x018)); // 02700217AC10 0x18 B                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.A                                         = GetSingle(new IntPtr(p + 0x01C)); // 02700217AC30 0x1C A                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.R                                         = GetSingle(new IntPtr(p + 0x010)); // 0245A217ABD0 0x10 R                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.G                                         = GetSingle(new IntPtr(p + 0x014)); // 0245A217ABF0 0x14 G                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.B                                         = GetSingle(new IntPtr(p + 0x018)); // 0245A217AC10 0x18 B                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.A                                         = GetSingle(new IntPtr(p + 0x01C)); // 0245A217AC30 0x1C A                           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

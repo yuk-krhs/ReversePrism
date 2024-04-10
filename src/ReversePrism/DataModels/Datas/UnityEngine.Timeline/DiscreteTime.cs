@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 k_Tick                                   double IL2CPP_TYPE_R8
     // 000 kMaxTime                                 DiscreteTime IL2CPP_TYPE_VALUETYPE
     // 010 M_DiscreteTime                           0001865F8300 ModelPrimitiveType long long long Int64
-    public partial class DiscreteTime
+    public partial class DiscreteTime : DataModel
     {
         public long                                     M_DiscreteTime                          { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiscreteTime();
+            var value   = new DiscreteTime() { Pointer= p0 };
 
-            value.M_DiscreteTime                            = GetInt64(new IntPtr(p + 0x010)); // 027006F4FC30 0x10 M_DiscreteTime              ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.M_DiscreteTime                            = GetInt64(new IntPtr(p + 0x010)); // 024664B7F338 0x10 M_DiscreteTime              ( 0001865F8300 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 DeviceToken                              000186671910 ModelPrimitiveType string string string String
-    public partial class LiveTokenSaveData
+    public partial class LiveTokenSaveData : DataModel
     {
         public string                                   DeviceToken                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveTokenSaveData();
+            var value   = new LiveTokenSaveData() { Pointer= p0 };
 
-            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 027003A72C20 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0245A3A7DB58 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

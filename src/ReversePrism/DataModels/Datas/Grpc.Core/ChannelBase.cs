@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Target                                   000186672F10 ModelPrimitiveType string string string String
-    public partial class ChannelBase
+    public partial class ChannelBase : DataModel
     {
         public string                                   Target                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChannelBase();
+            var value   = new ChannelBase() { Pointer= p0 };
 
-            value.Target                                    = GetString(new IntPtr(p + 0x010)); // 0270D0EA5C58 0x10 Target                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Target                                    = GetString(new IntPtr(p + 0x010)); // 0245A40AAB20 0x10 Target                      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

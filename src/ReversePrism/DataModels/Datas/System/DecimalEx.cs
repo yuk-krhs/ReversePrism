@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ScaleShift                               int IL2CPP_TYPE_I4
-    public partial class DecimalEx
+    public partial class DecimalEx : DataModel
     {
 
         public static DecimalEx? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecimalEx();
+            var value   = new DecimalEx() { Pointer= p0 };
 
 
             return value;

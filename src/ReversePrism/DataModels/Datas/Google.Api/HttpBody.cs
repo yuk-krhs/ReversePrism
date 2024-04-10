@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 ExtensionsFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_extensions_codec               FieldCodec`1<Any> IL2CPP_TYPE_GENERICINST
     // 028 Extensions                               000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer
-    public partial class HttpBody
+    public partial class HttpBody : DataModel
     {
         public string                                   ContentType                             { get; set; }
         public ByteString?                              Data                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpBody();
+            var value   = new HttpBody() { Pointer= p0 };
 
-            value.ContentType                               = GetString(new IntPtr(p + 0x018)); // 0270DA7D64A8 0x18 ContentType                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Data                                      = GetObject<ByteString>(new IntPtr(p + 0x020), ReversePrism.DataModels.ByteString.FromPointer); // 0270DA7D64E8 0x20 Data                        ( 00018659EF10 ModelClassType ByteString ByteString ByteString Pointer )
-            value.Extensions                                = GetObjectList<Any>(new IntPtr(p + 0x028), ReversePrism.DataModels.Any.FromPointer); // 0270DA7D6548 0x28 Extensions                  ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
+            value.ContentType                               = GetString(new IntPtr(p + 0x018)); // 02466A8426D0 0x18 ContentType                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Data                                      = GetObject<ByteString>(new IntPtr(p + 0x020), ReversePrism.DataModels.ByteString.FromPointer); // 02466A842710 0x20 Data                        ( 00018659EF10 ModelClassType ByteString ByteString ByteString Pointer )
+            value.Extensions                                = GetObjectList<Any>(new IntPtr(p + 0x028), ReversePrism.DataModels.Any.FromPointer); // 02466A842770 0x28 Extensions                  ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
 
             return value;
         }

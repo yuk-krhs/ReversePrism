@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Running                                000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class SubsystemProvider
+    public partial class SubsystemProvider : DataModel
     {
         public bool                                     M_Running                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubsystemProvider();
+            var value   = new SubsystemProvider() { Pointer= p0 };
 
-            value.M_Running                                 = GetBool(new IntPtr(p + 0x010)); // 0270001A2DA8 0x10 M_Running                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.M_Running                                 = GetBool(new IntPtr(p + 0x010)); // 0245A01A2DA8 0x10 M_Running                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

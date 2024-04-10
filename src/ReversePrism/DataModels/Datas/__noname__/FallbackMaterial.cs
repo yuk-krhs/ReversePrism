@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 SourceMaterialCRC                        0001865F2F90 ModelPrimitiveType int int int Int32
     // 028 _FallbackMaterial                        00018660C4B0 ModelClassType Material Material Material Pointer
     // 030 Count                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class FallbackMaterial
+    public partial class FallbackMaterial : DataModel
     {
         public long                                     FallbackID                              { get; set; }
         public Material?                                SourceMaterial                          { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FallbackMaterial();
+            var value   = new FallbackMaterial() { Pointer= p0 };
 
-            value.FallbackID                                = GetInt64(new IntPtr(p + 0x010)); // 0270043041B0 0x10 FallbackID                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.SourceMaterial                            = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0270043041D0 0x18 SourceMaterial              ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.SourceMaterialCRC                         = GetInt32(new IntPtr(p + 0x020)); // 0270043041F0 0x20 SourceMaterialCRC           ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value._FallbackMaterial                         = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 027004304210 0x28 _FallbackMaterial           ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x030)); // 027004304230 0x30 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FallbackID                                = GetInt64(new IntPtr(p + 0x010)); // 0245A434F090 0x10 FallbackID                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.SourceMaterial                            = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0245A434F0B0 0x18 SourceMaterial              ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.SourceMaterialCRC                         = GetInt32(new IntPtr(p + 0x020)); // 0245A434F0D0 0x20 SourceMaterialCRC           ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value._FallbackMaterial                         = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0245A434F0F0 0x28 _FallbackMaterial           ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x030)); // 0245A434F110 0x30 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

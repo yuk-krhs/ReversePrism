@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 ItemView                                 000186754E60 ModelClassType ShopCostumeGridItemView ShopCostumeGridItemView ShopCostumeGridItemView Pointer
-    public partial class ShopCostumeGridViewCell
+    public partial class ShopCostumeGridViewCell : DataModel
     {
         public ShopCostumeGridItemView?                 ItemView                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopCostumeGridViewCell();
+            var value   = new ShopCostumeGridViewCell() { Pointer= p0 };
 
-            value.ItemView                                  = GetObject<ShopCostumeGridItemView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopCostumeGridItemView.FromPointer); // 0270DB80E240 0x30 ItemView                    ( 000186754E60 ModelClassType ShopCostumeGridItemView ShopCostumeGridItemView ShopCostumeGridItemView Pointer )
+            value.ItemView                                  = GetObject<ShopCostumeGridItemView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopCostumeGridItemView.FromPointer); // 02466B88E190 0x30 ItemView                    ( 000186754E60 ModelClassType ShopCostumeGridItemView ShopCostumeGridItemView ShopCostumeGridItemView Pointer )
 
             return value;
         }

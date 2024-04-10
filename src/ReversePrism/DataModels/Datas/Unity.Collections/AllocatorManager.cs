@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 01A MaxNumGlobalAllocators                   000186697C20 ModelPrimitiveType ushort ushort ushort UInt16
     // 01C GlobalAllocatorBaseIndex                 00018669A3D0 ModelPrimitiveType uint uint uint UInt32
     // 020 FirstGlobalScratchpadAllocatorIndex      00018669A3D0 ModelPrimitiveType uint uint uint UInt32
-    public partial class AllocatorManager
+    public partial class AllocatorManager : DataModel
     {
         public AllocatorHandle                          Persistent                              { get; set; }
         public AllocatorHandle                          AudioKernel                             { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AllocatorManager();
+            var value   = new AllocatorManager() { Pointer= p0 };
 
-            value.Persistent                                = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 027003498FD8 0x10 Persistent                  ( 000186699E30 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.AudioKernel                               = (AllocatorHandle)GetInt32(new IntPtr(p + 0x014)); // 027003498FF8 0x14 AudioKernel                 ( 000186699E30 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.NumGlobalScratchAllocators                = GetUInt16(new IntPtr(p + 0x018)); // 027003499098 0x18 NumGlobalScratchAllocators  ( 000186697C20 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.MaxNumGlobalAllocators                    = GetUInt16(new IntPtr(p + 0x01A)); // 0270034990B8 0x1A MaxNumGlobalAllocators      ( 000186697C20 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.GlobalAllocatorBaseIndex                  = GetUInt32(new IntPtr(p + 0x01C)); // 0270034990D8 0x1C GlobalAllocatorBaseIndex    ( 00018669A3D0 ModelPrimitiveType uint uint uint UInt32 )
-            value.FirstGlobalScratchpadAllocatorIndex       = GetUInt32(new IntPtr(p + 0x020)); // 0270034990F8 0x20 FirstGlobalScratchpadAllocatorIndex ( 00018669A3D0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Persistent                                = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A3498FD8 0x10 Persistent                  ( 000186699E30 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.AudioKernel                               = (AllocatorHandle)GetInt32(new IntPtr(p + 0x014)); // 0245A3498FF8 0x14 AudioKernel                 ( 000186699E30 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.NumGlobalScratchAllocators                = GetUInt16(new IntPtr(p + 0x018)); // 0245A3499098 0x18 NumGlobalScratchAllocators  ( 000186697C20 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.MaxNumGlobalAllocators                    = GetUInt16(new IntPtr(p + 0x01A)); // 0245A34990B8 0x1A MaxNumGlobalAllocators      ( 000186697C20 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.GlobalAllocatorBaseIndex                  = GetUInt32(new IntPtr(p + 0x01C)); // 0245A34990D8 0x1C GlobalAllocatorBaseIndex    ( 00018669A3D0 ModelPrimitiveType uint uint uint UInt32 )
+            value.FirstGlobalScratchpadAllocatorIndex       = GetUInt32(new IntPtr(p + 0x020)); // 0245A34990F8 0x20 FirstGlobalScratchpadAllocatorIndex ( 00018669A3D0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

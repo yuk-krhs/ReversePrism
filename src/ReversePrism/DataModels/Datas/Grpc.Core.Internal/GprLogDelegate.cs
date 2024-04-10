@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GprLogDelegate
+    public partial class GprLogDelegate : DataModel
     {
 
         public static GprLogDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GprLogDelegate();
+            var value   = new GprLogDelegate() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_connectedPlayers                       000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     // 028 M_IsInitilized                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 008 s_Instance                               PlayerConnection IL2CPP_TYPE_CLASS
-    public partial class PlayerConnection
+    public partial class PlayerConnection : DataModel
     {
         public PlayerEditorConnectionEvents?            M_PlayerEditorConnectionEvents          { get; set; }
         public List<int>?                               M_connectedPlayers                      { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerConnection();
+            var value   = new PlayerConnection() { Pointer= p0 };
 
-            value.M_PlayerEditorConnectionEvents            = GetObject<PlayerEditorConnectionEvents>(new IntPtr(p + 0x018), ReversePrism.DataModels.PlayerEditorConnectionEvents.FromPointer); // 0270023E9540 0x18 M_PlayerEditorConnectionEvents ( 0001867511D0 ModelClassType PlayerEditorConnectionEvents PlayerEditorConnectionEvents PlayerEditorConnectionEvents Pointer )
-            value.M_connectedPlayers                        = GetInt32List(new IntPtr(p + 0x020)); // 0270023E9560 0x20 M_connectedPlayers          ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.M_IsInitilized                            = GetBool(new IntPtr(p + 0x028)); // 0270023E9580 0x28 M_IsInitilized              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_PlayerEditorConnectionEvents            = GetObject<PlayerEditorConnectionEvents>(new IntPtr(p + 0x018), ReversePrism.DataModels.PlayerEditorConnectionEvents.FromPointer); // 0245A23E9540 0x18 M_PlayerEditorConnectionEvents ( 0001867511D0 ModelClassType PlayerEditorConnectionEvents PlayerEditorConnectionEvents PlayerEditorConnectionEvents Pointer )
+            value.M_connectedPlayers                        = GetInt32List(new IntPtr(p + 0x020)); // 0245A23E9560 0x20 M_connectedPlayers          ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.M_IsInitilized                            = GetBool(new IntPtr(p + 0x028)); // 0245A23E9580 0x28 M_IsInitilized              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _key                                     <object> IL2CPP_TYPE_OBJECT
     // 018 _value                                   <object> IL2CPP_TYPE_OBJECT
-    public partial class DictionaryEntry
+    public partial class DictionaryEntry : DataModel
     {
 
         public static DictionaryEntry? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DictionaryEntry();
+            var value   = new DictionaryEntry() { Pointer= p0 };
 
 
             return value;

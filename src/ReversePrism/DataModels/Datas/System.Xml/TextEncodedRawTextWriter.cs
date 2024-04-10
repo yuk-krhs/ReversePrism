@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TextEncodedRawTextWriter
+    public partial class TextEncodedRawTextWriter : DataModel
     {
 
         public static TextEncodedRawTextWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextEncodedRawTextWriter();
+            var value   = new TextEncodedRawTextWriter() { Pointer= p0 };
 
 
             return value;

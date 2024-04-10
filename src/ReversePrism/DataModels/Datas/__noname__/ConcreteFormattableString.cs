@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Format                                   000186672F10 ModelPrimitiveType string string string String
     // 018 _arguments                               <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class ConcreteFormattableString
+    public partial class ConcreteFormattableString : DataModel
     {
         public string                                   Format                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConcreteFormattableString();
+            var value   = new ConcreteFormattableString() { Pointer= p0 };
 
-            value.Format                                    = GetString(new IntPtr(p + 0x010)); // 0270D6CA6FA8 0x10 Format                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Format                                    = GetString(new IntPtr(p + 0x010)); // 024666D06778 0x10 Format                      ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

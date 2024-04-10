@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Legacy                                   00018653C480 ModelClassType ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy Pointer
-    public partial class ExtraStorySecondCategoryArgument
+    public partial class ExtraStorySecondCategoryArgument : DataModel
     {
         public ExtraStorySecondCategoryArgumentForLegacy? Legacy                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtraStorySecondCategoryArgument();
+            var value   = new ExtraStorySecondCategoryArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<ExtraStorySecondCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExtraStorySecondCategoryArgumentForLegacy.FromPointer); // 0270D679C318 0x10 Legacy                      ( 00018653C480 ModelClassType ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy Pointer )
+            value.Legacy                                    = GetObject<ExtraStorySecondCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExtraStorySecondCategoryArgumentForLegacy.FromPointer); // 0246667FC318 0x10 Legacy                      ( 00018653C480 ModelClassType ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy ExtraStorySecondCategoryArgumentForLegacy Pointer )
 
             return value;
         }

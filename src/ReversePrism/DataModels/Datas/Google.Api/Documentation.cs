@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 038 ServiceRootUrl                           000186671910 ModelPrimitiveType string string string String
     // 000 OverviewFieldNumber                      int IL2CPP_TYPE_I4
     // 040 Overview                                 000186671910 ModelPrimitiveType string string string String
-    public partial class Documentation
+    public partial class Documentation : DataModel
     {
         public string                                   Summary                                 { get; set; }
         public List<Page>?                              Pages                                   { get; set; }
@@ -39,14 +39,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Documentation();
+            var value   = new Documentation() { Pointer= p0 };
 
-            value.Summary                                   = GetString(new IntPtr(p + 0x018)); // 0270DA7AFE50 0x18 Summary                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pages                                     = GetObjectList<Page>(new IntPtr(p + 0x020), ReversePrism.DataModels.Page.FromPointer); // 0270DA7AFEB0 0x20 Pages                       ( 000185CE85C8 ModelClassListType RepeatedField`1<Page> RepeatedField`1<Page> List<Page> Pointer )
-            value.Rules                                     = GetObjectList<DocumentationRule>(new IntPtr(p + 0x028), ReversePrism.DataModels.DocumentationRule.FromPointer); // 0270DA7AFF10 0x28 Rules                       ( 000185CD39A8 ModelClassListType RepeatedField`1<DocumentationRule> RepeatedField`1<DocumentationRule> List<DocumentationRule> Pointer )
-            value.DocumentationRootUrl                      = GetString(new IntPtr(p + 0x030)); // 0270DA7AFF50 0x30 DocumentationRootUrl        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ServiceRootUrl                            = GetString(new IntPtr(p + 0x038)); // 0270DA7AFF90 0x38 ServiceRootUrl              ( 000186671910 ModelPrimitiveType string string string String )
-            value.Overview                                  = GetString(new IntPtr(p + 0x040)); // 0270DA7AFFD0 0x40 Overview                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Summary                                   = GetString(new IntPtr(p + 0x018)); // 02466A81BF58 0x18 Summary                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Pages                                     = GetObjectList<Page>(new IntPtr(p + 0x020), ReversePrism.DataModels.Page.FromPointer); // 02466A81BFB8 0x20 Pages                       ( 000185CE85C8 ModelClassListType RepeatedField`1<Page> RepeatedField`1<Page> List<Page> Pointer )
+            value.Rules                                     = GetObjectList<DocumentationRule>(new IntPtr(p + 0x028), ReversePrism.DataModels.DocumentationRule.FromPointer); // 02466A81C018 0x28 Rules                       ( 000185CD39A8 ModelClassListType RepeatedField`1<DocumentationRule> RepeatedField`1<DocumentationRule> List<DocumentationRule> Pointer )
+            value.DocumentationRootUrl                      = GetString(new IntPtr(p + 0x030)); // 02466A81C058 0x30 DocumentationRootUrl        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ServiceRootUrl                            = GetString(new IntPtr(p + 0x038)); // 02466A81C098 0x38 ServiceRootUrl              ( 000186671910 ModelPrimitiveType string string string String )
+            value.Overview                                  = GetString(new IntPtr(p + 0x040)); // 02466A81C0D8 0x40 Overview                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

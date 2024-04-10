@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 FriendUserCaller                         0001865B75C0 ModelClassType ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller Pointer
     // 028 profileOverlayFactory                    OverlayViewFactory`1<IProfileUserSelfOverlayView> IL2CPP_TYPE_GENERICINST
-    public partial class ProfilePopupCallerImplement
+    public partial class ProfilePopupCallerImplement : DataModel
     {
         public ProfileFriendUserProfilePopupCaller?     FriendUserCaller                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilePopupCallerImplement();
+            var value   = new ProfilePopupCallerImplement() { Pointer= p0 };
 
-            value.FriendUserCaller                          = GetObject<ProfileFriendUserProfilePopupCaller>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileFriendUserProfilePopupCaller.FromPointer); // 0270DB9DB7A8 0x20 FriendUserCaller            ( 0001865B75C0 ModelClassType ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller Pointer )
+            value.FriendUserCaller                          = GetObject<ProfileFriendUserProfilePopupCaller>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileFriendUserProfilePopupCaller.FromPointer); // 02466BA6ADA8 0x20 FriendUserCaller            ( 0001865B75C0 ModelClassType ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller ProfileFriendUserProfilePopupCaller Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 EpisodeSelectModel                       000186520000 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer
     // 018 SelectedFriendId                         0001866722E0 ModelPrimitiveType string string string String
     // 020 SelectedFriendSCharaStatus               000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer
-    public partial class LegacyProduceConfirmParameter
+    public partial class LegacyProduceConfirmParameter : DataModel
     {
         public ViewProducePreparationEpisodeSelectModel? EpisodeSelectModel                      { get; set; }
         public string                                   SelectedFriendId                        { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyProduceConfirmParameter();
+            var value   = new LegacyProduceConfirmParameter() { Pointer= p0 };
 
-            value.EpisodeSelectModel                        = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 0270D5DFD660 0x10 EpisodeSelectModel          ( 000186520000 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
-            value.SelectedFriendId                          = GetString(new IntPtr(p + 0x018)); // 0270D5DFD680 0x18 SelectedFriendId            ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SelectedFriendSCharaStatus                = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0270D5DFD6A0 0x20 SelectedFriendSCharaStatus  ( 000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
+            value.EpisodeSelectModel                        = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 024665E6DDA8 0x10 EpisodeSelectModel          ( 000186520000 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
+            value.SelectedFriendId                          = GetString(new IntPtr(p + 0x018)); // 024665E6DDC8 0x18 SelectedFriendId            ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SelectedFriendSCharaStatus                = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 024665E6DDE8 0x20 SelectedFriendSCharaStatus  ( 000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
 
             return value;
         }

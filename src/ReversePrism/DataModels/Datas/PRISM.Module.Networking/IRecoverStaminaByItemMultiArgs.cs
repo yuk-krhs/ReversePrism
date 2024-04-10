@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRecoverStaminaByItemMultiArgs
+    public partial class IRecoverStaminaByItemMultiArgs : DataModel
     {
 
         public static IRecoverStaminaByItemMultiArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRecoverStaminaByItemMultiArgs();
+            var value   = new IRecoverStaminaByItemMultiArgs() { Pointer= p0 };
 
 
             return value;

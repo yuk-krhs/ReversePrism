@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 TextGenerationSettings                   0001866851C0 ModelClassType TextGenerationSettings TextGenerationSettings TextGenerationSettings Pointer
     // 008 s_LayoutSettings                         TextGenerationSettings IL2CPP_TYPE_CLASS
     // 030 IsDirty                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TextHandle
+    public partial class TextHandle : DataModel
     {
         public Vector2                                  M_PreferredSize                         { get; set; }
         public TextInfo?                                M_TextInfo                              { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextHandle();
+            var value   = new TextHandle() { Pointer= p0 };
 
-            value.M_PreferredSize                           = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 027006846D20 0x10 M_PreferredSize             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_TextInfo                                = GetObject<TextInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextInfo.FromPointer); // 027006846D40 0x18 M_TextInfo                  ( 00018663E490 ModelClassType TextInfo TextInfo TextInfo Pointer )
-            value.M_PreviousGenerationSettingsHash          = GetInt32(new IntPtr(p + 0x020)); // 027006846D80 0x20 M_PreviousGenerationSettingsHash ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TextGenerationSettings                    = GetObject<TextGenerationSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextGenerationSettings.FromPointer); // 027006846DA0 0x28 TextGenerationSettings      ( 0001866851C0 ModelClassType TextGenerationSettings TextGenerationSettings TextGenerationSettings Pointer )
-            value.IsDirty                                   = GetBool(new IntPtr(p + 0x030)); // 027006846DE0 0x30 IsDirty                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_PreferredSize                           = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0245A6808B00 0x10 M_PreferredSize             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_TextInfo                                = GetObject<TextInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextInfo.FromPointer); // 0245A6808B20 0x18 M_TextInfo                  ( 00018663E490 ModelClassType TextInfo TextInfo TextInfo Pointer )
+            value.M_PreviousGenerationSettingsHash          = GetInt32(new IntPtr(p + 0x020)); // 0245A6808B60 0x20 M_PreviousGenerationSettingsHash ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TextGenerationSettings                    = GetObject<TextGenerationSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextGenerationSettings.FromPointer); // 0245A6808B80 0x28 TextGenerationSettings      ( 0001866851C0 ModelClassType TextGenerationSettings TextGenerationSettings TextGenerationSettings Pointer )
+            value.IsDirty                                   = GetBool(new IntPtr(p + 0x030)); // 0245A6808BC0 0x30 IsDirty                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

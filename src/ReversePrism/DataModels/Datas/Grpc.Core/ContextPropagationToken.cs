@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ContextPropagationToken
+    public partial class ContextPropagationToken : DataModel
     {
 
         public static ContextPropagationToken? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContextPropagationToken();
+            var value   = new ContextPropagationToken() { Pointer= p0 };
 
 
             return value;

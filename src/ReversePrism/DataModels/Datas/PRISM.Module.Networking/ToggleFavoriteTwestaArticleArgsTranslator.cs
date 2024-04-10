@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ToggleFavoriteTwestaArticleArgsTranslator
+    public partial class ToggleFavoriteTwestaArticleArgsTranslator : DataModel
     {
 
         public static ToggleFavoriteTwestaArticleArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToggleFavoriteTwestaArticleArgsTranslator();
+            var value   = new ToggleFavoriteTwestaArticleArgsTranslator() { Pointer= p0 };
 
 
             return value;

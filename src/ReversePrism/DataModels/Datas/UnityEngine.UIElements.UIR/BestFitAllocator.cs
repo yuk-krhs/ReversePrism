@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_FirstAvailableBlock                    0001866F8D10 ModelClassType Block Block Block Pointer
     // 028 M_BlockPool                              0001866F94B0 ModelClassType BlockPool BlockPool BlockPool Pointer
     // 030 M_HighWatermark                          000186698B70 ModelPrimitiveType uint uint uint UInt32
-    public partial class BestFitAllocator
+    public partial class BestFitAllocator : DataModel
     {
         public uint                                     TotalSize                               { get; set; }
         public Block?                                   M_FirstBlock                            { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BestFitAllocator();
+            var value   = new BestFitAllocator() { Pointer= p0 };
 
-            value.TotalSize                                 = GetUInt32(new IntPtr(p + 0x010)); // 027006861F70 0x10 TotalSize                   ( 000186699A20 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_FirstBlock                              = GetObject<Block>(new IntPtr(p + 0x018), ReversePrism.DataModels.Block.FromPointer); // 027006861F90 0x18 M_FirstBlock                ( 0001866F8D10 ModelClassType Block Block Block Pointer )
-            value.M_FirstAvailableBlock                     = GetObject<Block>(new IntPtr(p + 0x020), ReversePrism.DataModels.Block.FromPointer); // 027006861FB0 0x20 M_FirstAvailableBlock       ( 0001866F8D10 ModelClassType Block Block Block Pointer )
-            value.M_BlockPool                               = GetObject<BlockPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.BlockPool.FromPointer); // 027006861FD0 0x28 M_BlockPool                 ( 0001866F94B0 ModelClassType BlockPool BlockPool BlockPool Pointer )
-            value.M_HighWatermark                           = GetUInt32(new IntPtr(p + 0x030)); // 027006861FF0 0x30 M_HighWatermark             ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.TotalSize                                 = GetUInt32(new IntPtr(p + 0x010)); // 0245A6823E00 0x10 TotalSize                   ( 000186699A20 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_FirstBlock                              = GetObject<Block>(new IntPtr(p + 0x018), ReversePrism.DataModels.Block.FromPointer); // 0245A6823E20 0x18 M_FirstBlock                ( 0001866F8D10 ModelClassType Block Block Block Pointer )
+            value.M_FirstAvailableBlock                     = GetObject<Block>(new IntPtr(p + 0x020), ReversePrism.DataModels.Block.FromPointer); // 0245A6823E40 0x20 M_FirstAvailableBlock       ( 0001866F8D10 ModelClassType Block Block Block Pointer )
+            value.M_BlockPool                               = GetObject<BlockPool>(new IntPtr(p + 0x028), ReversePrism.DataModels.BlockPool.FromPointer); // 0245A6823E60 0x28 M_BlockPool                 ( 0001866F94B0 ModelClassType BlockPool BlockPool BlockPool Pointer )
+            value.M_HighWatermark                           = GetUInt32(new IntPtr(p + 0x030)); // 0245A6823E80 0x30 M_HighWatermark             ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

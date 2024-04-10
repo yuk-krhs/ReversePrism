@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnSuccessCallback
+    public partial class OnSuccessCallback : DataModel
     {
 
         public static OnSuccessCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnSuccessCallback();
+            var value   = new OnSuccessCallback() { Pointer= p0 };
 
 
             return value;

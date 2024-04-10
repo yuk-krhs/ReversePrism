@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 000 MedalGashaBoxListFieldNumber             int IL2CPP_TYPE_I4
     // 020 _repeated_medalGashaBoxList_codec        FieldCodec`1<FeaturedMedalGashaBoxStatus> IL2CPP_TYPE_GENERICINST
     // 040 MedalGashaBoxList                        000185CD7878 ModelClassListType RepeatedField`1<FeaturedMedalGashaBoxStatus> RepeatedField`1<FeaturedMedalGashaBoxStatus> List<FeaturedMedalGashaBoxStatus> Pointer
-    public partial class GetLiveEventAlphaRewardListReply
+    public partial class GetLiveEventAlphaRewardListReply : DataModel
     {
         public List<GameEventRewardType>?               EventRewardTypeList                     { get; set; }
         public int                                      MstEventId                              { get; set; }
@@ -39,13 +39,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetLiveEventAlphaRewardListReply();
+            var value   = new GetLiveEventAlphaRewardListReply() { Pointer= p0 };
 
-            value.EventRewardTypeList                       = GetEnumList<GameEventRewardType>(new IntPtr(p + 0x028)); // 0270D21A76D0 0x28 EventRewardTypeList         ( 000185CDA3C8 ModelEnumListType RepeatedField`1<GameEventRewardType> RepeatedField`1<GameEventRewardType> List<GameEventRewardType> Pointer )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0270D21A7670 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PointRankingRewardList                    = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0270D21A7730 0x30 PointRankingRewardList      ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
-            value.RankRewardList                            = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0270D21A7790 0x38 RankRewardList              ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
-            value.MedalGashaBoxList                         = GetObjectList<FeaturedMedalGashaBoxStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.FeaturedMedalGashaBoxStatus.FromPointer); // 0270D21A77F0 0x40 MedalGashaBoxList           ( 000185CD7878 ModelClassListType RepeatedField`1<FeaturedMedalGashaBoxStatus> RepeatedField`1<FeaturedMedalGashaBoxStatus> List<FeaturedMedalGashaBoxStatus> Pointer )
+            value.EventRewardTypeList                       = GetEnumList<GameEventRewardType>(new IntPtr(p + 0x028)); // 024662152098 0x28 EventRewardTypeList         ( 000185CDA3C8 ModelEnumListType RepeatedField`1<GameEventRewardType> RepeatedField`1<GameEventRewardType> List<GameEventRewardType> Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 024662152038 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PointRankingRewardList                    = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0246621520F8 0x30 PointRankingRewardList      ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
+            value.RankRewardList                            = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 024662152158 0x38 RankRewardList              ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
+            value.MedalGashaBoxList                         = GetObjectList<FeaturedMedalGashaBoxStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.FeaturedMedalGashaBoxStatus.FromPointer); // 0246621521B8 0x40 MedalGashaBoxList           ( 000185CD7878 ModelClassListType RepeatedField`1<FeaturedMedalGashaBoxStatus> RepeatedField`1<FeaturedMedalGashaBoxStatus> List<FeaturedMedalGashaBoxStatus> Pointer )
 
             return value;
         }

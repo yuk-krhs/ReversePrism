@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSongFormatter
+    public partial class MstSongFormatter : DataModel
     {
 
         public static MstSongFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSongFormatter();
+            var value   = new MstSongFormatter() { Pointer= p0 };
 
 
             return value;

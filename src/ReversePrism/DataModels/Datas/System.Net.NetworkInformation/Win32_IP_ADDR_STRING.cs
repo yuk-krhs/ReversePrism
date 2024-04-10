@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 IpAddress                                000186674C50 ModelPrimitiveType string string string String
     // 020 IpMask                                   000186674C50 ModelPrimitiveType string string string String
     // 028 Context                                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    public partial class Win32_IP_ADDR_STRING
+    public partial class Win32_IP_ADDR_STRING : DataModel
     {
         public string                                   IpAddress                               { get; set; }
         public string                                   IpMask                                  { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Win32_IP_ADDR_STRING();
+            var value   = new Win32_IP_ADDR_STRING() { Pointer= p0 };
 
-            value.IpAddress                                 = GetString(new IntPtr(p + 0x018)); // 0270D7AE38D0 0x18 IpAddress                   ( 000186674C50 ModelPrimitiveType string string string String )
-            value.IpMask                                    = GetString(new IntPtr(p + 0x020)); // 0270D7AE38F0 0x20 IpMask                      ( 000186674C50 ModelPrimitiveType string string string String )
-            value.Context                                   = GetUInt32(new IntPtr(p + 0x028)); // 0270D7AE3910 0x28 Context                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.IpAddress                                 = GetString(new IntPtr(p + 0x018)); // 024667B4B8D0 0x18 IpAddress                   ( 000186674C50 ModelPrimitiveType string string string String )
+            value.IpMask                                    = GetString(new IntPtr(p + 0x020)); // 024667B4B8F0 0x20 IpMask                      ( 000186674C50 ModelPrimitiveType string string string String )
+            value.Context                                   = GetUInt32(new IntPtr(p + 0x028)); // 024667B4B910 0x28 Context                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

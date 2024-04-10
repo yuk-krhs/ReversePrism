@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TallyModel                               0001866E90C0 ModelClassType IngameTallyModel IngameTallyModel IngameTallyModel Pointer
-    public partial class IngameChallengeMissionProgressCalcModel
+    public partial class IngameChallengeMissionProgressCalcModel : DataModel
     {
         public IngameTallyModel?                        TallyModel                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameChallengeMissionProgressCalcModel();
+            var value   = new IngameChallengeMissionProgressCalcModel() { Pointer= p0 };
 
-            value.TallyModel                                = GetObject<IngameTallyModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngameTallyModel.FromPointer); // 0270D5B4CBC8 0x10 TallyModel                  ( 0001866E90C0 ModelClassType IngameTallyModel IngameTallyModel IngameTallyModel Pointer )
+            value.TallyModel                                = GetObject<IngameTallyModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngameTallyModel.FromPointer); // 024665BAD3E0 0x10 TallyModel                  ( 0001866E90C0 ModelClassType IngameTallyModel IngameTallyModel IngameTallyModel Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 IconSpriteRenderer                       000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer
-    public partial class SlideJointNote
+    public partial class SlideJointNote : DataModel
     {
         public SpriteRenderer?                          IconSpriteRenderer                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SlideJointNote();
+            var value   = new SlideJointNote() { Pointer= p0 };
 
-            value.IconSpriteRenderer                        = GetObject<SpriteRenderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 0270D4FB34E0 0x28 IconSpriteRenderer          ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
+            value.IconSpriteRenderer                        = GetObject<SpriteRenderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpriteRenderer.FromPointer); // 024665032E58 0x28 IconSpriteRenderer          ( 000186552100 ModelClassType SpriteRenderer SpriteRenderer SpriteRenderer Pointer )
 
             return value;
         }

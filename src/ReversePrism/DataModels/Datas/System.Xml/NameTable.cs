@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C Mask                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 HashCodeRandomizer                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class NameTable
+    public partial class NameTable : DataModel
     {
         public List<Entry>?                             Entries                                 { get; set; }
         public int                                      Count                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NameTable();
+            var value   = new NameTable() { Pointer= p0 };
 
-            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x010), ReversePrism.DataModels.Entry.FromPointer); // 0270D7472F58 0x10 Entries                     ( 000185CBF718 ModelClassListType Entry[] Entry[] List<Entry> Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D7472F78 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Mask                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D7472F98 0x1C Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HashCodeRandomizer                        = GetInt32(new IntPtr(p + 0x020)); // 0270D7472FB8 0x20 HashCodeRandomizer          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x010), ReversePrism.DataModels.Entry.FromPointer); // 0246674D2F58 0x10 Entries                     ( 000185CBF718 ModelClassListType Entry[] Entry[] List<Entry> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0246674D2F78 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Mask                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246674D2F98 0x1C Mask                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HashCodeRandomizer                        = GetInt32(new IntPtr(p + 0x020)); // 0246674D2FB8 0x20 HashCodeRandomizer          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

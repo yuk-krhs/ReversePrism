@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 freeStringBuilders                       ConcurrentQueue`1<StringBuilder> IL2CPP_TYPE_GENERICINST
-    public partial class StringBuilderPool
+    public partial class StringBuilderPool : DataModel
     {
 
         public static StringBuilderPool? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringBuilderPool();
+            var value   = new StringBuilderPool() { Pointer= p0 };
 
 
             return value;

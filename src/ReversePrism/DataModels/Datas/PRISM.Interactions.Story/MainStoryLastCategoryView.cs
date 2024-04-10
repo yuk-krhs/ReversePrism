@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 BgImage                                  0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 028 CellList                                 0001865CA6F0 ModelClassType MainStoryLastCategoryCellList MainStoryLastCategoryCellList MainStoryLastCategoryCellList Pointer
     // 030 AdvTransitionerView                      0001865A6340 ModelClassType StoryToAdvTransitionerView StoryToAdvTransitionerView StoryToAdvTransitionerView Pointer
-    public partial class MainStoryLastCategoryView
+    public partial class MainStoryLastCategoryView : DataModel
     {
         public UIImage?                                 BgImage                                 { get; set; }
         public MainStoryLastCategoryCellList?           CellList                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainStoryLastCategoryView();
+            var value   = new MainStoryLastCategoryView() { Pointer= p0 };
 
-            value.BgImage                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB646C88 0x20 BgImage                     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.CellList                                  = GetObject<MainStoryLastCategoryCellList>(new IntPtr(p + 0x028), ReversePrism.DataModels.MainStoryLastCategoryCellList.FromPointer); // 0270DB646CA8 0x28 CellList                    ( 0001865CA6F0 ModelClassType MainStoryLastCategoryCellList MainStoryLastCategoryCellList MainStoryLastCategoryCellList Pointer )
-            value.AdvTransitionerView                       = GetObject<StoryToAdvTransitionerView>(new IntPtr(p + 0x030), ReversePrism.DataModels.StoryToAdvTransitionerView.FromPointer); // 0270DB646CC8 0x30 AdvTransitionerView         ( 0001865A6340 ModelClassType StoryToAdvTransitionerView StoryToAdvTransitionerView StoryToAdvTransitionerView Pointer )
+            value.BgImage                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B6D2DE8 0x20 BgImage                     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.CellList                                  = GetObject<MainStoryLastCategoryCellList>(new IntPtr(p + 0x028), ReversePrism.DataModels.MainStoryLastCategoryCellList.FromPointer); // 02466B6D2E08 0x28 CellList                    ( 0001865CA6F0 ModelClassType MainStoryLastCategoryCellList MainStoryLastCategoryCellList MainStoryLastCategoryCellList Pointer )
+            value.AdvTransitionerView                       = GetObject<StoryToAdvTransitionerView>(new IntPtr(p + 0x030), ReversePrism.DataModels.StoryToAdvTransitionerView.FromPointer); // 02466B6D2E28 0x30 AdvTransitionerView         ( 0001865A6340 ModelClassType StoryToAdvTransitionerView StoryToAdvTransitionerView StoryToAdvTransitionerView Pointer )
 
             return value;
         }

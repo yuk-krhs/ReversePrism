@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Model                                    0001867024F0 ModelClassType PCardRankUpModel PCardRankUpModel PCardRankUpModel Pointer
-    public partial class PCardRankUpViewModel
+    public partial class PCardRankUpViewModel : DataModel
     {
         public PCardRankUpModel?                        Model                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardRankUpViewModel();
+            var value   = new PCardRankUpViewModel() { Pointer= p0 };
 
-            value.Model                                     = GetObject<PCardRankUpModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.PCardRankUpModel.FromPointer); // 0270D5CE9E90 0x10 Model                       ( 0001867024F0 ModelClassType PCardRankUpModel PCardRankUpModel PCardRankUpModel Pointer )
+            value.Model                                     = GetObject<PCardRankUpModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.PCardRankUpModel.FromPointer); // 024665D3AA68 0x10 Model                       ( 0001867024F0 ModelClassType PCardRankUpModel PCardRankUpModel PCardRankUpModel Pointer )
 
             return value;
         }

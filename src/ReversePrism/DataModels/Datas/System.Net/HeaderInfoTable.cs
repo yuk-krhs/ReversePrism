@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 UnknownHeaderInfo                        HeaderInfo IL2CPP_TYPE_CLASS
     // 010 SingleParser                             0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer
     // 018 MultiParser                              0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer
-    public partial class HeaderInfoTable
+    public partial class HeaderInfoTable : DataModel
     {
         public HeaderParser?                            SingleParser                            { get; set; }
         public HeaderParser?                            MultiParser                             { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HeaderInfoTable();
+            var value   = new HeaderInfoTable() { Pointer= p0 };
 
-            value.SingleParser                              = GetObject<HeaderParser>(new IntPtr(p + 0x010), ReversePrism.DataModels.HeaderParser.FromPointer); // 0270D7A2E348 0x10 SingleParser                ( 0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
-            value.MultiParser                               = GetObject<HeaderParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderParser.FromPointer); // 0270D7A2E368 0x18 MultiParser                 ( 0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
+            value.SingleParser                              = GetObject<HeaderParser>(new IntPtr(p + 0x010), ReversePrism.DataModels.HeaderParser.FromPointer); // 024667A8E348 0x10 SingleParser                ( 0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
+            value.MultiParser                               = GetObject<HeaderParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderParser.FromPointer); // 024667A8E368 0x18 MultiParser                 ( 0001866AEF60 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
 
             return value;
         }

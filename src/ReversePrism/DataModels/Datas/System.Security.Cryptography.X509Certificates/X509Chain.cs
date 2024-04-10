@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Impl                                     000186567EF0 ModelClassType X509ChainImpl X509ChainImpl X509ChainImpl Pointer
-    public partial class X509Chain
+    public partial class X509Chain : DataModel
     {
         public X509ChainImpl?                           Impl                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509Chain();
+            var value   = new X509Chain() { Pointer= p0 };
 
-            value.Impl                                      = GetObject<X509ChainImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.X509ChainImpl.FromPointer); // 0270D78F5710 0x10 Impl                        ( 000186567EF0 ModelClassType X509ChainImpl X509ChainImpl X509ChainImpl Pointer )
+            value.Impl                                      = GetObject<X509ChainImpl>(new IntPtr(p + 0x010), ReversePrism.DataModels.X509ChainImpl.FromPointer); // 02466795D710 0x10 Impl                        ( 000186567EF0 ModelClassType X509ChainImpl X509ChainImpl X509ChainImpl Pointer )
 
             return value;
         }

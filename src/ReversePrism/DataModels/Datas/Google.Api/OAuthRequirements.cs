@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CanonicalScopesFieldNumber               int IL2CPP_TYPE_I4
     // 018 CanonicalScopes                          000186671910 ModelPrimitiveType string string string String
-    public partial class OAuthRequirements
+    public partial class OAuthRequirements : DataModel
     {
         public string                                   CanonicalScopes                         { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OAuthRequirements();
+            var value   = new OAuthRequirements() { Pointer= p0 };
 
-            value.CanonicalScopes                           = GetString(new IntPtr(p + 0x018)); // 0270DA73E630 0x18 CanonicalScopes             ( 000186671910 ModelPrimitiveType string string string String )
+            value.CanonicalScopes                           = GetString(new IntPtr(p + 0x018)); // 02466A792968 0x18 CanonicalScopes             ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

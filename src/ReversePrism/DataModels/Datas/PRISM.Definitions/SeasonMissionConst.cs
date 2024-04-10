@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 RankCountMax                             int IL2CPP_TYPE_I4
     // 000 SpecialRewardPositionOffset              int IL2CPP_TYPE_I4
-    public partial class SeasonMissionConst
+    public partial class SeasonMissionConst : DataModel
     {
 
         public static SeasonMissionConst? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionConst();
+            var value   = new SeasonMissionConst() { Pointer= p0 };
 
 
             return value;

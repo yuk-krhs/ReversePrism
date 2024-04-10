@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 074 CurrentTabType                           00018673E250 ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32
     // 078 PieceConversionItemKey                   0001865A2170 ModelEnumType ProductKey ProductKey ProductKey Int32
     // 080 CurrentPieceConversionItemNum            0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class PieceArchiveViewModel
+    public partial class PieceArchiveViewModel : DataModel
     {
         public List<ProductKey>?                        SelectedIcons                           { get; set; }
         public IntReactiveProperty?                     SelectedIconsNumRP                      { get; set; }
@@ -44,19 +44,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceArchiveViewModel();
+            var value   = new PieceArchiveViewModel() { Pointer= p0 };
 
-            value.SelectedIcons                             = GetEnumList<ProductKey>(new IntPtr(p + 0x010)); // 0270D5F19BF0 0x10 SelectedIcons               ( 000185CFE7A8 ModelEnumListType List`1<ProductKey> List`1<ProductKey> List<ProductKey> Pointer )
-            value.SelectedIconsNumRP                        = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5F19C10 0x18 SelectedIconsNumRP          ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.PiPieceIcons                              = GetObjectList<PieceIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PieceIcon.FromPointer); // 0270D5F19C30 0x20 PiPieceIcons                ( 000185CF93B8 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
-            value.PiSurplusPieceIcons                       = GetObjectList<PieceIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.PieceIcon.FromPointer); // 0270D5F19C50 0x28 PiSurplusPieceIcons         ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
-            value.ScPieceIcons                              = GetObjectList<PieceIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.PieceIcon.FromPointer); // 0270D5F19C70 0x30 ScPieceIcons                ( 000185CF93B8 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
-            value.ScSurplusPieceIcons                       = GetObjectList<PieceIcon>(new IntPtr(p + 0x038), ReversePrism.DataModels.PieceIcon.FromPointer); // 0270D5F19C90 0x38 ScSurplusPieceIcons         ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
-            value.TargetIcons                               = GetObjectList<PieceIcon>(new IntPtr(p + 0x048), ReversePrism.DataModels.PieceIcon.FromPointer); // 0270D5F19CD0 0x48 TargetIcons                 ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
-            value.IsSurplus                                 = GetBool(new IntPtr(p + 0x070)); // 0270D5F19D70 0x70 IsSurplus                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentTabType                            = (PieceArchiveTabType)GetInt32(new IntPtr(p + 0x074)); // 0270D5F19D90 0x74 CurrentTabType              ( 00018673E250 ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32 )
-            value.PieceConversionItemKey                    = (ProductKey)GetInt32(new IntPtr(p + 0x078)); // 0270D5F19DB0 0x78 PieceConversionItemKey      ( 0001865A2170 ModelEnumType ProductKey ProductKey ProductKey Int32 )
-            value.CurrentPieceConversionItemNum             = GetInt64(new IntPtr(p + 0x080)); // 0270D5F19DD0 0x80 CurrentPieceConversionItemNum ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.SelectedIcons                             = GetEnumList<ProductKey>(new IntPtr(p + 0x010)); // 024665F79BF0 0x10 SelectedIcons               ( 000185CFE7A8 ModelEnumListType List`1<ProductKey> List`1<ProductKey> List<ProductKey> Pointer )
+            value.SelectedIconsNumRP                        = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F79C10 0x18 SelectedIconsNumRP          ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.PiPieceIcons                              = GetObjectList<PieceIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PieceIcon.FromPointer); // 024665F79C30 0x20 PiPieceIcons                ( 000185CF93B8 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
+            value.PiSurplusPieceIcons                       = GetObjectList<PieceIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.PieceIcon.FromPointer); // 024665F79C50 0x28 PiSurplusPieceIcons         ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
+            value.ScPieceIcons                              = GetObjectList<PieceIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.PieceIcon.FromPointer); // 024665F79C70 0x30 ScPieceIcons                ( 000185CF93B8 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
+            value.ScSurplusPieceIcons                       = GetObjectList<PieceIcon>(new IntPtr(p + 0x038), ReversePrism.DataModels.PieceIcon.FromPointer); // 024665F79C90 0x38 ScSurplusPieceIcons         ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
+            value.TargetIcons                               = GetObjectList<PieceIcon>(new IntPtr(p + 0x048), ReversePrism.DataModels.PieceIcon.FromPointer); // 024665F79CD0 0x48 TargetIcons                 ( 000185CF9308 ModelClassListType List`1<PieceIcon> List`1<PieceIcon> List<PieceIcon> Pointer )
+            value.IsSurplus                                 = GetBool(new IntPtr(p + 0x070)); // 024665F79D70 0x70 IsSurplus                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentTabType                            = (PieceArchiveTabType)GetInt32(new IntPtr(p + 0x074)); // 024665F79D90 0x74 CurrentTabType              ( 00018673E250 ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32 )
+            value.PieceConversionItemKey                    = (ProductKey)GetInt32(new IntPtr(p + 0x078)); // 024665F79DB0 0x78 PieceConversionItemKey      ( 0001865A2170 ModelEnumType ProductKey ProductKey ProductKey Int32 )
+            value.CurrentPieceConversionItemNum             = GetInt64(new IntPtr(p + 0x080)); // 024665F79DD0 0x80 CurrentPieceConversionItemNum ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

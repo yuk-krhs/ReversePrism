@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 0A0 MixerBehaviour                           0001865FE580 ModelClassType SwitchModelMixerBehaviour SwitchModelMixerBehaviour SwitchModelMixerBehaviour Pointer
-    public partial class SwitchModelTrack
+    public partial class SwitchModelTrack : DataModel
     {
         public SwitchModelMixerBehaviour?               MixerBehaviour                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchModelTrack();
+            var value   = new SwitchModelTrack() { Pointer= p0 };
 
-            value.MixerBehaviour                            = GetObject<SwitchModelMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwitchModelMixerBehaviour.FromPointer); // 027006B64F58 0xA0 MixerBehaviour              ( 0001865FE580 ModelClassType SwitchModelMixerBehaviour SwitchModelMixerBehaviour SwitchModelMixerBehaviour Pointer )
+            value.MixerBehaviour                            = GetObject<SwitchModelMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwitchModelMixerBehaviour.FromPointer); // 024664E72F00 0xA0 MixerBehaviour              ( 0001865FE580 ModelClassType SwitchModelMixerBehaviour SwitchModelMixerBehaviour SwitchModelMixerBehaviour Pointer )
 
             return value;
         }

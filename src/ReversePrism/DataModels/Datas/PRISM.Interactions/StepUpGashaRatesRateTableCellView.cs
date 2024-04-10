@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 078 TrRowViewParent                          0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 080 rowViewPool                              ObjectPool`1<RateTableRowView> IL2CPP_TYPE_GENERICINST
     // 088 ActiveRowViews                           000185CFFA08 ModelClassListType List`1<RateTableRowView> List`1<RateTableRowView> List<RateTableRowView> Pointer
-    public partial class StepUpGashaRatesRateTableCellView
+    public partial class StepUpGashaRatesRateTableCellView : DataModel
     {
         public RectTransform?                           Rect                                    { get; set; }
         public float                                    BaseHeight                              { get; set; }
@@ -40,18 +40,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StepUpGashaRatesRateTableCellView();
+            var value   = new StepUpGashaRatesRateTableCellView() { Pointer= p0 };
 
-            value.Rect                                      = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DBA1A900 0x38 Rect                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.BaseHeight                                = GetSingle(new IntPtr(p + 0x040)); // 0270DBA1A920 0x40 BaseHeight                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TxtRarityGroup                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA1A940 0x48 TxtRarityGroup              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtLabelRarity                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA1A960 0x50 TxtLabelRarity              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtLabelChara                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA1A980 0x58 TxtLabelChara               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtLabelNormal                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA1A9A0 0x60 TxtLabelNormal              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtLabelPromised                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBA1A9C0 0x68 TxtLabelPromised            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RowViewPrefab                             = GetObject<RateTableRowView>(new IntPtr(p + 0x070), ReversePrism.DataModels.RateTableRowView.FromPointer); // 0270DBA1A9E0 0x70 RowViewPrefab               ( 000186612230 ModelClassType RateTableRowView RateTableRowView RateTableRowView Pointer )
-            value.TrRowViewParent                           = GetObject<Transform>(new IntPtr(p + 0x078), ReversePrism.DataModels.Transform.FromPointer); // 0270DBA1AA00 0x78 TrRowViewParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ActiveRowViews                            = GetObjectList<RateTableRowView>(new IntPtr(p + 0x088), ReversePrism.DataModels.RateTableRowView.FromPointer); // 0270DBA1AA40 0x88 ActiveRowViews              ( 000185CFFA08 ModelClassListType List`1<RateTableRowView> List`1<RateTableRowView> List<RateTableRowView> Pointer )
+            value.Rect                                      = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 02466BAA9E40 0x38 Rect                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.BaseHeight                                = GetSingle(new IntPtr(p + 0x040)); // 02466BAA9E60 0x40 BaseHeight                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TxtRarityGroup                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAA9E80 0x48 TxtRarityGroup              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtLabelRarity                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAA9EA0 0x50 TxtLabelRarity              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtLabelChara                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAA9EC0 0x58 TxtLabelChara               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtLabelNormal                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAA9EE0 0x60 TxtLabelNormal              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtLabelPromised                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BAA9F00 0x68 TxtLabelPromised            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RowViewPrefab                             = GetObject<RateTableRowView>(new IntPtr(p + 0x070), ReversePrism.DataModels.RateTableRowView.FromPointer); // 02466BAA9F20 0x70 RowViewPrefab               ( 000186612230 ModelClassType RateTableRowView RateTableRowView RateTableRowView Pointer )
+            value.TrRowViewParent                           = GetObject<Transform>(new IntPtr(p + 0x078), ReversePrism.DataModels.Transform.FromPointer); // 02466BAA9F40 0x78 TrRowViewParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ActiveRowViews                            = GetObjectList<RateTableRowView>(new IntPtr(p + 0x088), ReversePrism.DataModels.RateTableRowView.FromPointer); // 02466BAA9F80 0x88 ActiveRowViews              ( 000185CFFA08 ModelClassListType List`1<RateTableRowView> List`1<RateTableRowView> List<RateTableRowView> Pointer )
 
             return value;
         }

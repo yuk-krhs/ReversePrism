@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 RenderGraph                              000186651FC0 ModelClassType RenderGraph RenderGraph RenderGraph Pointer
-    public partial class RenderGraphExecution
+    public partial class RenderGraphExecution : DataModel
     {
         public RenderGraph?                             RenderGraph                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderGraphExecution();
+            var value   = new RenderGraphExecution() { Pointer= p0 };
 
-            value.RenderGraph                               = GetObject<RenderGraph>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderGraph.FromPointer); // 0270D9079590 0x10 RenderGraph                 ( 000186651FC0 ModelClassType RenderGraph RenderGraph RenderGraph Pointer )
+            value.RenderGraph                               = GetObject<RenderGraph>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderGraph.FromPointer); // 0246690BC6A0 0x10 RenderGraph                 ( 000186651FC0 ModelClassType RenderGraph RenderGraph RenderGraph Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Instance>k__BackingField                IVariableRefreshRate IL2CPP_TYPE_CLASS
-    public partial class VariableRefreshRate
+    public partial class VariableRefreshRate : DataModel
     {
 
         public static VariableRefreshRate? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VariableRefreshRate();
+            var value   = new VariableRefreshRate() { Pointer= p0 };
 
 
             return value;

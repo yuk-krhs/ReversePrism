@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 048 TimeFromUnitChange                       0001866656B0 ModelPrimitiveType float float float Single
     // 008 isPreloadEnd                             bool IL2CPP_TYPE_BOOLEAN
     // 010 dressList                                UnitIdol[][] IL2CPP_TYPE_SZARRAY
-    public partial class AuditionPvP
+    public partial class AuditionPvP : DataModel
     {
         public List<UnitSceneData>?                     UnitSceneData                           { get; set; }
         public int                                      PlayUnit                                { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuditionPvP();
+            var value   = new AuditionPvP() { Pointer= p0 };
 
-            value.UnitSceneData                             = GetObjectList<UnitSceneData>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitSceneData.FromPointer); // 0270D4D9BB78 0x20 UnitSceneData               ( 000185CB6A98 ModelClassListType UnitSceneData[] UnitSceneData[] List<UnitSceneData> Pointer )
-            value.PlayUnit                                  = GetInt32(new IntPtr(p + 0x028)); // 0270D4D9BB98 0x28 PlayUnit                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScreenEffect                              = GetObject<ScreenEffectEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.ScreenEffectEx.FromPointer); // 0270D4D9BBB8 0x30 ScreenEffect                ( 0001866F24C0 ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer )
-            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x038)); // 0270D4D9BBF8 0x38 IsInitializeEnd             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FadeCountTime                             = GetSingle(new IntPtr(p + 0x03C)); // 0270D4D9BC18 0x3C FadeCountTime               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsEnd                                     = GetBool(new IntPtr(p + 0x040)); // 0270D4D9BC38 0x40 IsEnd                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsPause                                   = GetBool(new IntPtr(p + 0x041)); // 0270D4D9BC58 0x41 IsPause                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ChangeCount                               = GetInt32(new IntPtr(p + 0x044)); // 0270D4D9BC78 0x44 ChangeCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TimeFromUnitChange                        = GetSingle(new IntPtr(p + 0x048)); // 0270D4D9BC98 0x48 TimeFromUnitChange          ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.UnitSceneData                             = GetObjectList<UnitSceneData>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitSceneData.FromPointer); // 024664DF4FD0 0x20 UnitSceneData               ( 000185CB6A98 ModelClassListType UnitSceneData[] UnitSceneData[] List<UnitSceneData> Pointer )
+            value.PlayUnit                                  = GetInt32(new IntPtr(p + 0x028)); // 024664DF4FF0 0x28 PlayUnit                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScreenEffect                              = GetObject<ScreenEffectEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.ScreenEffectEx.FromPointer); // 024664DF5010 0x30 ScreenEffect                ( 0001866F24C0 ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer )
+            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x038)); // 024664DF5050 0x38 IsInitializeEnd             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FadeCountTime                             = GetSingle(new IntPtr(p + 0x03C)); // 024664DF5070 0x3C FadeCountTime               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsEnd                                     = GetBool(new IntPtr(p + 0x040)); // 024664DF5090 0x40 IsEnd                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsPause                                   = GetBool(new IntPtr(p + 0x041)); // 024664DF50B0 0x41 IsPause                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ChangeCount                               = GetInt32(new IntPtr(p + 0x044)); // 024664DF50D0 0x44 ChangeCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TimeFromUnitChange                        = GetSingle(new IntPtr(p + 0x048)); // 024664DF50F0 0x48 TimeFromUnitChange          ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

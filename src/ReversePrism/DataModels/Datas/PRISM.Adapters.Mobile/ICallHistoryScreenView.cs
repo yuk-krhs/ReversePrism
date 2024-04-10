@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICallHistoryScreenView
+    public partial class ICallHistoryScreenView : DataModel
     {
 
         public static ICallHistoryScreenView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICallHistoryScreenView();
+            var value   = new ICallHistoryScreenView() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 028 Kind                                     000186671910 ModelPrimitiveType string string string String
     // 000 TimeFieldNumber                          int IL2CPP_TYPE_I4
     // 030 _Time                                    000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class RecordTimeStatus
+    public partial class RecordTimeStatus : DataModel
     {
         public DateTime                                 Time                                    { get; set; }
         public string                                   Kind                                    { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecordTimeStatus();
+            var value   = new RecordTimeStatus() { Pointer= p0 };
 
-            value.Time                                      = GetDateTime(new IntPtr(p + 0x010)); // 0270D0D3AE30 0x10 Time                        ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Kind                                      = GetString(new IntPtr(p + 0x028)); // 0270D0D3AEB0 0x28 Kind                        ( 000186671910 ModelPrimitiveType string string string String )
-            value._Time                                     = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0D3AEF0 0x30 _Time                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Time                                      = GetDateTime(new IntPtr(p + 0x010)); // 024660D5EF20 0x10 Time                        ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Kind                                      = GetString(new IntPtr(p + 0x028)); // 024660D5EFA0 0x28 Kind                        ( 000186671910 ModelPrimitiveType string string string String )
+            value._Time                                     = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 024660D5EFE0 0x30 _Time                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.Time                          = ToDateTime(value._Time);
 
             return value;

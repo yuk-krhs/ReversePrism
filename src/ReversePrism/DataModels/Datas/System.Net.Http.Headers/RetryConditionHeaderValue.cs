@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <Date>k__BackingField                    Nullable`1<DateTimeOffset> IL2CPP_TYPE_GENERICINST
     // 028 <Delta>k__BackingField                   Nullable`1<TimeSpan> IL2CPP_TYPE_GENERICINST
-    public partial class RetryConditionHeaderValue
+    public partial class RetryConditionHeaderValue : DataModel
     {
 
         public static RetryConditionHeaderValue? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RetryConditionHeaderValue();
+            var value   = new RetryConditionHeaderValue() { Pointer= p0 };
 
 
             return value;

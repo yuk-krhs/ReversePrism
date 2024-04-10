@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 Document                                 000186595E90 ModelClassType XmlDocument XmlDocument XmlDocument Pointer
-    public partial class XmlDocumentWrapper
+    public partial class XmlDocumentWrapper : DataModel
     {
         public XmlDocument?                             Document                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlDocumentWrapper();
+            var value   = new XmlDocumentWrapper() { Pointer= p0 };
 
-            value.Document                                  = GetObject<XmlDocument>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlDocument.FromPointer); // 0270D886B458 0x28 Document                    ( 000186595E90 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
+            value.Document                                  = GetObject<XmlDocument>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlDocument.FromPointer); // 0246688AF170 0x28 Document                    ( 000186595E90 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DefaultActionCategories                  0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 DefaultActionAtTargetCategories          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class DefaultEventInterests
+    public partial class DefaultEventInterests : DataModel
     {
         public int                                      DefaultActionCategories                 { get; set; }
         public int                                      DefaultActionAtTargetCategories         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultEventInterests();
+            var value   = new DefaultEventInterests() { Pointer= p0 };
 
-            value.DefaultActionCategories                   = GetInt32(new IntPtr(p + 0x010)); // 027006859C80 0x10 DefaultActionCategories     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.DefaultActionAtTargetCategories           = GetInt32(new IntPtr(p + 0x014)); // 027006859CA0 0x14 DefaultActionAtTargetCategories ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DefaultActionCategories                   = GetInt32(new IntPtr(p + 0x010)); // 0245A681C358 0x10 DefaultActionCategories     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DefaultActionAtTargetCategories           = GetInt32(new IntPtr(p + 0x014)); // 0245A681C378 0x14 DefaultActionAtTargetCategories ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

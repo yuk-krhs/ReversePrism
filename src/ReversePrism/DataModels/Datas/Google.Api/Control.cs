@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 EnvironmentFieldNumber                   int IL2CPP_TYPE_I4
     // 018 Environment                              000186671910 ModelPrimitiveType string string string String
-    public partial class Control
+    public partial class Control : DataModel
     {
         public string                                   Environment                             { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Control();
+            var value   = new Control() { Pointer= p0 };
 
-            value.Environment                               = GetString(new IntPtr(p + 0x018)); // 0270DA790330 0x18 Environment                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Environment                               = GetString(new IntPtr(p + 0x018)); // 02466A7F4B80 0x18 Environment                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

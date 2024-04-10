@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 7C2 IsDirtyOverlayText                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 7C8 OverlayText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 7D0 OverlayRectTransform                     000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    public partial class UITextMeshProUGUI
+    public partial class UITextMeshProUGUI : DataModel
     {
         public TextFontColorId                          FontColorId                             { get; set; }
         public TextOutlineColorId                       OutlineColorId                          { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UITextMeshProUGUI();
+            var value   = new UITextMeshProUGUI() { Pointer= p0 };
 
-            value.FontColorId                               = (TextFontColorId)GetInt32(new IntPtr(p + 0x7A8)); // 0270D0960048 0x7A8 FontColorId                 ( 00018663B3E0 ModelEnumType TextFontColorId TextFontColorId TextFontColorId Int32 )
-            value.OutlineColorId                            = (TextOutlineColorId)GetInt32(new IntPtr(p + 0x7AC)); // 0270D0960068 0x7AC OutlineColorId              ( 000186641890 ModelEnumType TextOutlineColorId TextOutlineColorId TextOutlineColorId Int32 )
-            value.LocalizeOnAwake                           = GetBool(new IntPtr(p + 0x7B0)); // 0270D0960088 0x7B0 LocalizeOnAwake             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LocalizeKeyword                           = GetString(new IntPtr(p + 0x7B8)); // 0270D09600A8 0x7B8 LocalizeKeyword             ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsDirtyOutlineSize                        = GetBool(new IntPtr(p + 0x7C0)); // 0270D09600C8 0x7C0 IsDirtyOutlineSize          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDirtyOutlineColor                       = GetBool(new IntPtr(p + 0x7C1)); // 0270D09600E8 0x7C1 IsDirtyOutlineColor         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDirtyOverlayText                        = GetBool(new IntPtr(p + 0x7C2)); // 0270D0960108 0x7C2 IsDirtyOverlayText          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverlayText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x7C8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D0960128 0x7C8 OverlayText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.OverlayRectTransform                      = GetObject<RectTransform>(new IntPtr(p + 0x7D0), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D0960148 0x7D0 OverlayRectTransform        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.FontColorId                               = (TextFontColorId)GetInt32(new IntPtr(p + 0x7A8)); // 02466094DAE0 0x7A8 FontColorId                 ( 00018663B3E0 ModelEnumType TextFontColorId TextFontColorId TextFontColorId Int32 )
+            value.OutlineColorId                            = (TextOutlineColorId)GetInt32(new IntPtr(p + 0x7AC)); // 02466094DB00 0x7AC OutlineColorId              ( 000186641890 ModelEnumType TextOutlineColorId TextOutlineColorId TextOutlineColorId Int32 )
+            value.LocalizeOnAwake                           = GetBool(new IntPtr(p + 0x7B0)); // 02466094DB20 0x7B0 LocalizeOnAwake             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LocalizeKeyword                           = GetString(new IntPtr(p + 0x7B8)); // 02466094DB40 0x7B8 LocalizeKeyword             ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsDirtyOutlineSize                        = GetBool(new IntPtr(p + 0x7C0)); // 02466094DB60 0x7C0 IsDirtyOutlineSize          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDirtyOutlineColor                       = GetBool(new IntPtr(p + 0x7C1)); // 02466094DB80 0x7C1 IsDirtyOutlineColor         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDirtyOverlayText                        = GetBool(new IntPtr(p + 0x7C2)); // 02466094DBA0 0x7C2 IsDirtyOverlayText          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverlayText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x7C8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466094DBC0 0x7C8 OverlayText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.OverlayRectTransform                      = GetObject<RectTransform>(new IntPtr(p + 0x7D0), ReversePrism.DataModels.RectTransform.FromPointer); // 02466094DBE0 0x7D0 OverlayRectTransform        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

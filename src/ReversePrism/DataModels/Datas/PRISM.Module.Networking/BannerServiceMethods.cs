@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 GetBannerList                            Method`2<IGetBannerListArgs, IGetBannerListReply> IL2CPP_TYPE_GENERICINST
-    public partial class BannerServiceMethods
+    public partial class BannerServiceMethods : DataModel
     {
 
         public static BannerServiceMethods? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BannerServiceMethods();
+            var value   = new BannerServiceMethods() { Pointer= p0 };
 
 
             return value;

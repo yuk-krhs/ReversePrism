@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 InstallBuffer                            000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 028 InstallBufferGch                         0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
     // 030 handle                                   <int> IL2CPP_TYPE_I
-    public partial class CriFsInstaller
+    public partial class CriFsInstaller : DataModel
     {
         public List<sbyte>?                             InstallBuffer                           { get; set; }
         public GCHandle                                 InstallBufferGch                        { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriFsInstaller();
+            var value   = new CriFsInstaller() { Pointer= p0 };
 
-            value.InstallBuffer                             = GetSByteList(new IntPtr(p + 0x020)); // 0270DACB47B8 0x20 InstallBuffer               ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.InstallBufferGch                          = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 0270DACB47D8 0x28 InstallBufferGch            ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.InstallBuffer                             = GetSByteList(new IntPtr(p + 0x020)); // 02466AD1C7B8 0x20 InstallBuffer               ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.InstallBufferGch                          = (GCHandle)GetInt32(new IntPtr(p + 0x028)); // 02466AD1C7D8 0x28 InstallBufferGch            ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
 
             return value;
         }

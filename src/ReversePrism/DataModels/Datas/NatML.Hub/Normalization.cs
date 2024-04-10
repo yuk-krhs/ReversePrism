@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Mean                                     000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer
     // 018 Std                                      000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer
-    public partial class Normalization
+    public partial class Normalization : DataModel
     {
         public List<float>?                             Mean                                    { get; set; }
         public List<float>?                             Std                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Normalization();
+            var value   = new Normalization() { Pointer= p0 };
 
-            value.Mean                                      = GetSingleList(new IntPtr(p + 0x010)); // 0270DBDB7A40 0x10 Mean                        ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Std                                       = GetSingleList(new IntPtr(p + 0x018)); // 0270DBDB7A60 0x18 Std                         ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Mean                                      = GetSingleList(new IntPtr(p + 0x010)); // 02466BE3F498 0x10 Mean                        ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Std                                       = GetSingleList(new IntPtr(p + 0x018)); // 02466BE3F4B8 0x18 Std                         ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
 
             return value;
         }

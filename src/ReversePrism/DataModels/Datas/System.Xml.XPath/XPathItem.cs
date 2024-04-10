@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XPathItem
+    public partial class XPathItem : DataModel
     {
 
         public static XPathItem? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XPathItem();
+            var value   = new XPathItem() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 InfiniteTimeSpan                         TimeSpan IL2CPP_TYPE_VALUETYPE
-    public partial class Timeout
+    public partial class Timeout : DataModel
     {
 
         public static Timeout? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Timeout();
+            var value   = new Timeout() { Pointer= p0 };
 
 
             return value;

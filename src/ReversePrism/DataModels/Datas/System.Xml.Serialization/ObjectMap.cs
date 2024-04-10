@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ObjectMap
+    public partial class ObjectMap : DataModel
     {
 
         public static ObjectMap? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectMap();
+            var value   = new ObjectMap() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_QueueData                              IntPtr IL2CPP_TYPE_PTR
-    public partial class NativeRingQueueDispose
+    public partial class NativeRingQueueDispose : DataModel
     {
 
         public static NativeRingQueueDispose? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeRingQueueDispose();
+            var value   = new NativeRingQueueDispose() { Pointer= p0 };
 
 
             return value;

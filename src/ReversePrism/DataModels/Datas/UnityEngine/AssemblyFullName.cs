@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Version                                  0001866E2110 ModelEnumType AssemblyVersion AssemblyVersion AssemblyVersion Int32
     // 020 PublicKeyToken                           0001866722E0 ModelPrimitiveType string string string String
     // 028 Culture                                  0001866722E0 ModelPrimitiveType string string string String
-    public partial class AssemblyFullName
+    public partial class AssemblyFullName : DataModel
     {
         public string                                   Name                                    { get; set; }
         public AssemblyVersion                          Version                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyFullName();
+            var value   = new AssemblyFullName() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027002322AF8 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Version                                   = (AssemblyVersion)GetInt32(new IntPtr(p + 0x018)); // 027002322B18 0x18 Version                     ( 0001866E2110 ModelEnumType AssemblyVersion AssemblyVersion AssemblyVersion Int32 )
-            value.PublicKeyToken                            = GetString(new IntPtr(p + 0x020)); // 027002322B38 0x20 PublicKeyToken              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Culture                                   = GetString(new IntPtr(p + 0x028)); // 027002322B58 0x28 Culture                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A2322AF8 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Version                                   = (AssemblyVersion)GetInt32(new IntPtr(p + 0x018)); // 0245A2322B18 0x18 Version                     ( 0001866E2110 ModelEnumType AssemblyVersion AssemblyVersion AssemblyVersion Int32 )
+            value.PublicKeyToken                            = GetString(new IntPtr(p + 0x020)); // 0245A2322B38 0x20 PublicKeyToken              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Culture                                   = GetString(new IntPtr(p + 0x028)); // 0245A2322B58 0x28 Culture                     ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

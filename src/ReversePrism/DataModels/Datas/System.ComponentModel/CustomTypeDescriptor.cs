@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Parent                                   000186749310 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer
-    public partial class CustomTypeDescriptor
+    public partial class CustomTypeDescriptor : DataModel
     {
         public ICustomTypeDescriptor?                   Parent                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomTypeDescriptor();
+            var value   = new CustomTypeDescriptor() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 0270D7B187E0 0x10 Parent                      ( 000186749310 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
+            value.Parent                                    = GetObject<ICustomTypeDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICustomTypeDescriptor.FromPointer); // 024667B807E0 0x10 Parent                      ( 000186749310 ModelClassType ICustomTypeDescriptor ICustomTypeDescriptor ICustomTypeDescriptor Pointer )
 
             return value;
         }

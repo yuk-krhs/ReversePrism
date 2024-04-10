@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 M_SourceStyle                            0001865DF720 ModelClassType GUIStyle GUIStyle GUIStyle Pointer
-    public partial class GUIStyleState
+    public partial class GUIStyleState : DataModel
     {
         public GUIStyle?                                M_SourceStyle                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GUIStyleState();
+            var value   = new GUIStyleState() { Pointer= p0 };
 
-            value.M_SourceStyle                             = GetObject<GUIStyle>(new IntPtr(p + 0x018), ReversePrism.DataModels.GUIStyle.FromPointer); // 027006928660 0x18 M_SourceStyle               ( 0001865DF720 ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
+            value.M_SourceStyle                             = GetObject<GUIStyle>(new IntPtr(p + 0x018), ReversePrism.DataModels.GUIStyle.FromPointer); // 0245A68EB538 0x18 M_SourceStyle               ( 0001865DF720 ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
 
             return value;
         }

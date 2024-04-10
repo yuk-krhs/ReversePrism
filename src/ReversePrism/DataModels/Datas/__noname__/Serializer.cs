@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Builder                                  0001866774E0 ModelClassType StringBuilder StringBuilder StringBuilder Pointer
-    public partial class Serializer
+    public partial class Serializer : DataModel
     {
         public StringBuilder?                           Builder                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Serializer();
+            var value   = new Serializer() { Pointer= p0 };
 
-            value.Builder                                   = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 0270DBF14BC0 0x10 Builder                     ( 0001866774E0 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
+            value.Builder                                   = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 02466BF84A20 0x10 Builder                     ( 0001866774E0 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
 
             return value;
         }

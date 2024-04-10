@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 080 InfoText                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 088 CautionText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 090 Model                                    000186754BB0 ModelClassType PlayerNameInputModel PlayerNameInputModel PlayerNameInputModel Pointer
-    public partial class PlayerNameInputPopupBase
+    public partial class PlayerNameInputPopupBase : DataModel
     {
         public CommonInputFieldTMP?                     ProducerName                            { get; set; }
         public UITextMeshProUGUI?                       ProducerNameCount                       { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerNameInputPopupBase();
+            var value   = new PlayerNameInputPopupBase() { Pointer= p0 };
 
-            value.ProducerName                              = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x060), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 0270043957F8 0x60 ProducerName                ( 0001865E53E0 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
-            value.ProducerNameCount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004395818 0x68 ProducerNameCount           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ProducerNameLabelText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004395838 0x70 ProducerNameLabelText       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NameInputEmptyText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004395858 0x78 NameInputEmptyText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.InfoText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004395878 0x80 InfoText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004395898 0x88 CautionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Model                                     = GetObject<PlayerNameInputModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.PlayerNameInputModel.FromPointer); // 0270043958B8 0x90 Model                       ( 000186754BB0 ModelClassType PlayerNameInputModel PlayerNameInputModel PlayerNameInputModel Pointer )
+            value.ProducerName                              = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x060), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 0245A44092E8 0x60 ProducerName                ( 0001865E53E0 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
+            value.ProducerNameCount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4409308 0x68 ProducerNameCount           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProducerNameLabelText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4409328 0x70 ProducerNameLabelText       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NameInputEmptyText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4409348 0x78 NameInputEmptyText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.InfoText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4409368 0x80 InfoText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4409388 0x88 CautionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Model                                     = GetObject<PlayerNameInputModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.PlayerNameInputModel.FromPointer); // 0245A44093A8 0x90 Model                       ( 000186754BB0 ModelClassType PlayerNameInputModel PlayerNameInputModel PlayerNameInputModel Pointer )
 
             return value;
         }

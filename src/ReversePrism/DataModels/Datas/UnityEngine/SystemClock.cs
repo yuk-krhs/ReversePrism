@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Epoch                                  DateTime IL2CPP_TYPE_VALUETYPE
-    public partial class SystemClock
+    public partial class SystemClock : DataModel
     {
 
         public static SystemClock? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemClock();
+            var value   = new SystemClock() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExtensionsButton
+    public partial class ExtensionsButton : DataModel
     {
 
         public static ExtensionsButton? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtensionsButton();
+            var value   = new ExtensionsButton() { Pointer= p0 };
 
 
             return value;

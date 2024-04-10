@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAccessTokenObserver
+    public partial class IAccessTokenObserver : DataModel
     {
 
         public static IAccessTokenObserver? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAccessTokenObserver();
+            var value   = new IAccessTokenObserver() { Pointer= p0 };
 
 
             return value;

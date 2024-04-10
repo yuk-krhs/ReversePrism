@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMaskable
+    public partial class IMaskable : DataModel
     {
 
         public static IMaskable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMaskable();
+            var value   = new IMaskable() { Pointer= p0 };
 
 
             return value;

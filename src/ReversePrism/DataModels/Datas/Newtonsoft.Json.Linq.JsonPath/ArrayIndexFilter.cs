@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Index>k__BackingField                   Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ArrayIndexFilter
+    public partial class ArrayIndexFilter : DataModel
     {
 
         public static ArrayIndexFilter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArrayIndexFilter();
+            var value   = new ArrayIndexFilter() { Pointer= p0 };
 
 
             return value;

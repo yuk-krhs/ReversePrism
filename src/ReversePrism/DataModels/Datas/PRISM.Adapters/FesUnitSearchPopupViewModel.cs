@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 InitialSelectedDisplayOrderIndex         0001865F4260 ModelPrimitiveType int int int Int32
     // 018 SortDirection                            00018652E880 ModelEnumType SortDirection SortDirection SortDirection Int32
     // 020 <FilterOnIndices>k__BackingField         HashSet`1<int>[] IL2CPP_TYPE_SZARRAY
-    public partial class FesUnitSearchPopupViewModel
+    public partial class FesUnitSearchPopupViewModel : DataModel
     {
         public bool                                     IsSortView                              { get; set; }
         public int                                      InitialSelectedDisplayOrderIndex        { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitSearchPopupViewModel();
+            var value   = new FesUnitSearchPopupViewModel() { Pointer= p0 };
 
-            value.IsSortView                                = GetBool(new IntPtr(p + 0x010)); // 0270D5F312F8 0x10 IsSortView                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.InitialSelectedDisplayOrderIndex          = GetInt32(new IntPtr(p + 0x014)); // 0270D5F31318 0x14 InitialSelectedDisplayOrderIndex ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortDirection                             = (SortDirection)GetInt32(new IntPtr(p + 0x018)); // 0270D5F31338 0x18 SortDirection               ( 00018652E880 ModelEnumType SortDirection SortDirection SortDirection Int32 )
+            value.IsSortView                                = GetBool(new IntPtr(p + 0x010)); // 024665F912F8 0x10 IsSortView                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.InitialSelectedDisplayOrderIndex          = GetInt32(new IntPtr(p + 0x014)); // 024665F91318 0x14 InitialSelectedDisplayOrderIndex ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SortDirection                             = (SortDirection)GetInt32(new IntPtr(p + 0x018)); // 024665F91338 0x18 SortDirection               ( 00018652E880 ModelEnumType SortDirection SortDirection SortDirection Int32 )
 
             return value;
         }

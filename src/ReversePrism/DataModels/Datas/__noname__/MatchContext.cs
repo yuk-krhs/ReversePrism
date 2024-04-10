@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ValueIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 MatchedVariableCount                     0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class MatchContext
+    public partial class MatchContext : DataModel
     {
         public int                                      ValueIndex                              { get; set; }
         public int                                      MatchedVariableCount                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MatchContext();
+            var value   = new MatchContext() { Pointer= p0 };
 
-            value.ValueIndex                                = GetInt32(new IntPtr(p + 0x010)); // 027006887168 0x10 ValueIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MatchedVariableCount                      = GetInt32(new IntPtr(p + 0x014)); // 027006887188 0x14 MatchedVariableCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ValueIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0245A6848FD8 0x10 ValueIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MatchedVariableCount                      = GetInt32(new IntPtr(p + 0x014)); // 0245A6848FF8 0x14 MatchedVariableCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

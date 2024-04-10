@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 kControlIndexBits                        int IL2CPP_TYPE_I4
     // 000 kStateOffsetBits                         int IL2CPP_TYPE_I4
     // 000 kStateSizeBits                           int IL2CPP_TYPE_I4
-    public partial class InputDevice
+    public partial class InputDevice : DataModel
     {
         public DeviceFlags                              M_DeviceFlags                           { get; set; }
         public int                                      M_DeviceId                              { get; set; }
@@ -51,22 +51,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputDevice();
+            var value   = new InputDevice() { Pointer= p0 };
 
-            value.M_DeviceFlags                             = (DeviceFlags)GetInt32(new IntPtr(p + 0x0E0)); // 027002E36198 0xE0 M_DeviceFlags               ( 00018662B9E0 ModelEnumType DeviceFlags DeviceFlags DeviceFlags Int32 )
-            value.M_DeviceId                                = GetInt32(new IntPtr(p + 0x0E4)); // 027002E361B8 0xE4 M_DeviceId                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_ParticipantId                           = GetInt32(new IntPtr(p + 0x0E8)); // 027002E361D8 0xE8 M_ParticipantId             ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_DeviceIndex                             = GetInt32(new IntPtr(p + 0x0EC)); // 027002E361F8 0xEC M_DeviceIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_Description                             = (InputDeviceDescription)GetInt32(new IntPtr(p + 0x0F0)); // 027002E36218 0xF0 M_Description               ( 0001865ED4F0 ModelEnumType InputDeviceDescription InputDeviceDescription InputDeviceDescription Int32 )
-            value.M_LastUpdateTimeInternal                  = GetDouble(new IntPtr(p + 0x128)); // 027002E36238 0x128 M_LastUpdateTimeInternal    ( 0001865C2BA0 ModelPrimitiveType double double double Double )
-            value.M_CurrentUpdateStepCount                  = GetUInt32(new IntPtr(p + 0x130)); // 027002E36258 0x130 M_CurrentUpdateStepCount    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_AliasesForEachControl                   = GetEnumList<InternedString>(new IntPtr(p + 0x138)); // 027002E36278 0x138 M_AliasesForEachControl     ( 000185B8E520 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
-            value.M_UsagesForEachControl                    = GetEnumList<InternedString>(new IntPtr(p + 0x140)); // 027002E36298 0x140 M_UsagesForEachControl      ( 000185B8E520 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
-            value.M_UsageToControl                          = GetObjectList<InputControl>(new IntPtr(p + 0x148), ReversePrism.DataModels.InputControl.FromPointer); // 027002E362B8 0x148 M_UsageToControl            ( 000185B8C4A0 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
-            value.M_ChildrenForEachControl                  = GetObjectList<InputControl>(new IntPtr(p + 0x150), ReversePrism.DataModels.InputControl.FromPointer); // 027002E362D8 0x150 M_ChildrenForEachControl    ( 000185B8C4A0 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
-            value.M_StateOffsetToControlMap                 = GetUInt32List(new IntPtr(p + 0x158)); // 027002E362F8 0x158 M_StateOffsetToControlMap   ( 000185B83950 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.M_ControlTreeNodes                        = GetEnumList<ControlBitRangeNode>(new IntPtr(p + 0x160)); // 027002E36318 0x160 M_ControlTreeNodes          ( 000185CBD788 ModelEnumListType ControlBitRangeNode[] ControlBitRangeNode[] List<ControlBitRangeNode> Pointer )
-            value.M_ControlTreeIndices                      = GetUInt16List(new IntPtr(p + 0x168)); // 027002E36338 0x168 M_ControlTreeIndices        ( 000185CAEC08 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
+            value.M_DeviceFlags                             = (DeviceFlags)GetInt32(new IntPtr(p + 0x0E0)); // 0245A2E36198 0xE0 M_DeviceFlags               ( 00018662B9E0 ModelEnumType DeviceFlags DeviceFlags DeviceFlags Int32 )
+            value.M_DeviceId                                = GetInt32(new IntPtr(p + 0x0E4)); // 0245A2E361B8 0xE4 M_DeviceId                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_ParticipantId                           = GetInt32(new IntPtr(p + 0x0E8)); // 0245A2E361D8 0xE8 M_ParticipantId             ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_DeviceIndex                             = GetInt32(new IntPtr(p + 0x0EC)); // 0245A2E361F8 0xEC M_DeviceIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_Description                             = (InputDeviceDescription)GetInt32(new IntPtr(p + 0x0F0)); // 0245A2E36218 0xF0 M_Description               ( 0001865ED4F0 ModelEnumType InputDeviceDescription InputDeviceDescription InputDeviceDescription Int32 )
+            value.M_LastUpdateTimeInternal                  = GetDouble(new IntPtr(p + 0x128)); // 0245A2E36238 0x128 M_LastUpdateTimeInternal    ( 0001865C2BA0 ModelPrimitiveType double double double Double )
+            value.M_CurrentUpdateStepCount                  = GetUInt32(new IntPtr(p + 0x130)); // 0245A2E36258 0x130 M_CurrentUpdateStepCount    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_AliasesForEachControl                   = GetEnumList<InternedString>(new IntPtr(p + 0x138)); // 0245A2E36278 0x138 M_AliasesForEachControl     ( 000185B8E520 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
+            value.M_UsagesForEachControl                    = GetEnumList<InternedString>(new IntPtr(p + 0x140)); // 0245A2E36298 0x140 M_UsagesForEachControl      ( 000185B8E520 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
+            value.M_UsageToControl                          = GetObjectList<InputControl>(new IntPtr(p + 0x148), ReversePrism.DataModels.InputControl.FromPointer); // 0245A2E362B8 0x148 M_UsageToControl            ( 000185B8C4A0 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
+            value.M_ChildrenForEachControl                  = GetObjectList<InputControl>(new IntPtr(p + 0x150), ReversePrism.DataModels.InputControl.FromPointer); // 0245A2E362D8 0x150 M_ChildrenForEachControl    ( 000185B8C4A0 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
+            value.M_StateOffsetToControlMap                 = GetUInt32List(new IntPtr(p + 0x158)); // 0245A2E362F8 0x158 M_StateOffsetToControlMap   ( 000185B83950 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.M_ControlTreeNodes                        = GetEnumList<ControlBitRangeNode>(new IntPtr(p + 0x160)); // 0245A2E36318 0x160 M_ControlTreeNodes          ( 000185CBD788 ModelEnumListType ControlBitRangeNode[] ControlBitRangeNode[] List<ControlBitRangeNode> Pointer )
+            value.M_ControlTreeIndices                      = GetUInt16List(new IntPtr(p + 0x168)); // 0245A2E36338 0x168 M_ControlTreeIndices        ( 000185CAEC08 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
 
             return value;
         }

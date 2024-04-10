@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Parent                                   0001866A5040 ModelClassType HableCurve HableCurve HableCurve Pointer
-    public partial class Uniforms
+    public partial class Uniforms : DataModel
     {
         public HableCurve?                              Parent                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Uniforms();
+            var value   = new Uniforms() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<HableCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.HableCurve.FromPointer); // 0270DB421220 0x10 Parent                      ( 0001866A5040 ModelClassType HableCurve HableCurve HableCurve Pointer )
+            value.Parent                                    = GetObject<HableCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.HableCurve.FromPointer); // 02466B4A6220 0x10 Parent                      ( 0001866A5040 ModelClassType HableCurve HableCurve HableCurve Pointer )
 
             return value;
         }

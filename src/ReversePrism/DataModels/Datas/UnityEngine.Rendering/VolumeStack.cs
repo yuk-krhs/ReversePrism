@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 components                               Dictionary`2<Type, VolumeComponent> IL2CPP_TYPE_GENERICINST
     // 018 defaultParameters                        ValueTuple`2<VolumeParameter, VolumeParameter>[] IL2CPP_TYPE_SZARRAY
     // 020 RequiresReset                            000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class VolumeStack
+    public partial class VolumeStack : DataModel
     {
         public bool                                     RequiresReset                           { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolumeStack();
+            var value   = new VolumeStack() { Pointer= p0 };
 
-            value.RequiresReset                             = GetBool(new IntPtr(p + 0x020)); // 0270D91A0728 0x20 RequiresReset               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.RequiresReset                             = GetBool(new IntPtr(p + 0x020)); // 0246691F2C88 0x20 RequiresReset               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

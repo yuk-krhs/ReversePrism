@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveMVUnitRecommendPopupCaller
+    public partial class LiveMVUnitRecommendPopupCaller : DataModel
     {
 
         public static LiveMVUnitRecommendPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVUnitRecommendPopupCaller();
+            var value   = new LiveMVUnitRecommendPopupCaller() { Pointer= p0 };
 
 
             return value;

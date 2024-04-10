@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 IsAppEarlierThanWindowsPhone8            bool IL2CPP_TYPE_BOOLEAN
-    public partial class CompatibilitySwitches
+    public partial class CompatibilitySwitches : DataModel
     {
 
         public static CompatibilitySwitches? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompatibilitySwitches();
+            var value   = new CompatibilitySwitches() { Pointer= p0 };
 
 
             return value;

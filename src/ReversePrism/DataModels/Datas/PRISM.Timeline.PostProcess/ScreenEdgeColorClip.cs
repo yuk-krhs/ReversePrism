@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                0001866F0EC0 ModelClassType ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour Pointer
-    public partial class ScreenEdgeColorClip
+    public partial class ScreenEdgeColorClip : DataModel
     {
         public ScreenEdgeColorBehaviour?                Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenEdgeColorClip();
+            var value   = new ScreenEdgeColorClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<ScreenEdgeColorBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ScreenEdgeColorBehaviour.FromPointer); // 0270D5075E58 0x18 Behaviour                   ( 0001866F0EC0 ModelClassType ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour Pointer )
+            value.Behaviour                                 = GetObject<ScreenEdgeColorBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ScreenEdgeColorBehaviour.FromPointer); // 0246650D97B0 0x18 Behaviour                   ( 0001866F0EC0 ModelClassType ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour ScreenEdgeColorBehaviour Pointer )
 
             return value;
         }

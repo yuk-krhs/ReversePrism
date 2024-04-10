@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Current                                  0001866907E0 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer
     // 020 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 Start                                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class NodeEnumerator
+    public partial class NodeEnumerator : DataModel
     {
         public ListDictionary?                          List                                    { get; set; }
         public DictionaryNode?                          Current                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NodeEnumerator();
+            var value   = new NodeEnumerator() { Pointer= p0 };
 
-            value.List                                      = GetObject<ListDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListDictionary.FromPointer); // 0270D7B6A110 0x10 List                        ( 000186537C70 ModelClassType ListDictionary ListDictionary ListDictionary Pointer )
-            value.Current                                   = GetObject<DictionaryNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.DictionaryNode.FromPointer); // 0270D7B6A130 0x18 Current                     ( 0001866907E0 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 0270D7B6A150 0x20 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Start                                     = GetBool(new IntPtr(p + 0x024)); // 0270D7B6A170 0x24 Start                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.List                                      = GetObject<ListDictionary>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListDictionary.FromPointer); // 024667BDA110 0x10 List                        ( 000186537C70 ModelClassType ListDictionary ListDictionary ListDictionary Pointer )
+            value.Current                                   = GetObject<DictionaryNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.DictionaryNode.FromPointer); // 024667BDA130 0x18 Current                     ( 0001866907E0 ModelClassType DictionaryNode DictionaryNode DictionaryNode Pointer )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 024667BDA150 0x20 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Start                                     = GetBool(new IntPtr(p + 0x024)); // 024667BDA170 0x24 Start                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

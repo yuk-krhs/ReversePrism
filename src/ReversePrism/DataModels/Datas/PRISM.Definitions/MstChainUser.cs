@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
     // 018 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstChainUser
+    public partial class MstChainUser : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstUnitId                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstChainUser();
+            var value   = new MstChainUser() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004635380 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0270046353A0 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 0270046353C0 0x18 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46B1530 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A46B1550 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 0245A46B1570 0x18 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

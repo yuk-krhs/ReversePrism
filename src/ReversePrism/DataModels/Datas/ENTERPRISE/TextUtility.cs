@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 MultipleString                           string IL2CPP_TYPE_STRING
     // 008 unitList                                 string[] IL2CPP_TYPE_SZARRAY
     // 010 JapaneseUnits                            000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    public partial class TextUtility
+    public partial class TextUtility : DataModel
     {
         public List<string>?                            JapaneseUnits                           { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextUtility();
+            var value   = new TextUtility() { Pointer= p0 };
 
-            value.JapaneseUnits                             = GetStringList(new IntPtr(p + 0x010)); // 027005F79290 0x10 JapaneseUnits               ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.JapaneseUnits                             = GetStringList(new IntPtr(p + 0x010)); // 0245A5F54958 0x10 JapaneseUnits               ( 000185B820A0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 EmptyTypes                               Type[] IL2CPP_TYPE_SZARRAY
     // 008 <CanConvertEnumFuncToInt32Func>k__BackingField bool IL2CPP_TYPE_BOOLEAN
-    public partial class ReflectionUtil
+    public partial class ReflectionUtil : DataModel
     {
 
         public static ReflectionUtil? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionUtil();
+            var value   = new ReflectionUtil() { Pointer= p0 };
 
 
             return value;

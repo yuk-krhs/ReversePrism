@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUniTaskAsyncDisposable
+    public partial class IUniTaskAsyncDisposable : DataModel
     {
 
         public static IUniTaskAsyncDisposable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUniTaskAsyncDisposable();
+            var value   = new IUniTaskAsyncDisposable() { Pointer= p0 };
 
 
             return value;

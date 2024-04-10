@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 060 Type                                     000186692F60 ModelClassType Type Type Type Pointer
-    public partial class ObjectField
+    public partial class ObjectField : DataModel
     {
         public Type?                                    Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectField();
+            var value   = new ObjectField() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0270D918D378 0x60 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0246691DFBD0 0x60 Type                        ( 000186692F60 ModelClassType Type Type Type Pointer )
 
             return value;
         }

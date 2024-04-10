@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 SurrogateChar                            0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class UTF8Encoder
+    public partial class UTF8Encoder : DataModel
     {
         public int                                      SurrogateChar                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UTF8Encoder();
+            var value   = new UTF8Encoder() { Pointer= p0 };
 
-            value.SurrogateChar                             = GetInt32(new IntPtr(p + 0x038)); // 027003CA5D48 0x38 SurrogateChar               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.SurrogateChar                             = GetInt32(new IntPtr(p + 0x038)); // 0245A3CA5D48 0x38 SurrogateChar               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 FesUnitRank                              00018668E5C0 ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer
     // 018 UnitName                                 000186672F10 ModelPrimitiveType string string string String
-    public partial class ProfileFriendUserFesUnitRankViewModel
+    public partial class ProfileFriendUserFesUnitRankViewModel : DataModel
     {
         public IUserProfileFesUnitRankStatus?           FesUnitRank                             { get; set; }
         public string                                   UnitName                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileFriendUserFesUnitRankViewModel();
+            var value   = new ProfileFriendUserFesUnitRankViewModel() { Pointer= p0 };
 
-            value.FesUnitRank                               = GetObject<IUserProfileFesUnitRankStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUserProfileFesUnitRankStatus.FromPointer); // 0270D66B8998 0x10 FesUnitRank                 ( 00018668E5C0 ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer )
-            value.UnitName                                  = GetString(new IntPtr(p + 0x018)); // 0270D66B89B8 0x18 UnitName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.FesUnitRank                               = GetObject<IUserProfileFesUnitRankStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUserProfileFesUnitRankStatus.FromPointer); // 024666728998 0x10 FesUnitRank                 ( 00018668E5C0 ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer )
+            value.UnitName                                  = GetString(new IntPtr(p + 0x018)); // 0246667289B8 0x18 UnitName                    ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

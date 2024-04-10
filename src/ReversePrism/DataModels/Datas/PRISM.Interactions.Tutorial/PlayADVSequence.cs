@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ScenarioId                               000186671910 ModelPrimitiveType string string string String
-    public partial class PlayADVSequence
+    public partial class PlayADVSequence : DataModel
     {
         public string                                   ScenarioId                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayADVSequence();
+            var value   = new PlayADVSequence() { Pointer= p0 };
 
-            value.ScenarioId                                = GetString(new IntPtr(p + 0x010)); // 0270DBC10658 0x10 ScenarioId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ScenarioId                                = GetString(new IntPtr(p + 0x010)); // 02466BC979B8 0x10 ScenarioId                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 extensions                               IDictionary`2<ObjectIntPair`1<Type>, Extension> IL2CPP_TYPE_GENERICINST
-    public partial class ExtensionRegistry
+    public partial class ExtensionRegistry : DataModel
     {
 
         public static ExtensionRegistry? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtensionRegistry();
+            var value   = new ExtensionRegistry() { Pointer= p0 };
 
 
             return value;

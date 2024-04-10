@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 048 IsArEffect                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 EpisodeDifficultyClearCountFieldNumber   int IL2CPP_TYPE_I4
     // 04C EpisodeDifficultyClearCount              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceResultReply
+    public partial class ProduceResultReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
         public FesUnitStatus?                           FesUnit                                 { get; set; }
@@ -45,16 +45,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceResultReply();
+            var value   = new ProduceResultReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D25920C8 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 0270D2592108 0x20 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
-            value.TotalParameterValue                       = GetInt32(new IntPtr(p + 0x028)); // 0270D2592148 0x28 TotalParameterValue         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ParameterVariation                        = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 0270D2592188 0x30 ParameterVariation          ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
-            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D25921E8 0x38 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.CsidList                                  = GetStringList(new IntPtr(p + 0x040)); // 0270D2592248 0x40 CsidList                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.IsArEffect                                = GetBool(new IntPtr(p + 0x048)); // 0270D2592288 0x48 IsArEffect                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EpisodeDifficultyClearCount               = GetInt32(new IntPtr(p + 0x04C)); // 0270D25922C8 0x4C EpisodeDifficultyClearCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 02466255A308 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.FesUnit                                   = GetObject<FesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitStatus.FromPointer); // 02466255A348 0x20 FesUnit                     ( 00018656E120 ModelClassType FesUnitStatus FesUnitStatus FesUnitStatus Pointer )
+            value.TotalParameterValue                       = GetInt32(new IntPtr(p + 0x028)); // 02466255A388 0x28 TotalParameterValue         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ParameterVariation                        = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 02466255A3C8 0x30 ParameterVariation          ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
+            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466255A428 0x38 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.CsidList                                  = GetStringList(new IntPtr(p + 0x040)); // 02466255A488 0x40 CsidList                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.IsArEffect                                = GetBool(new IntPtr(p + 0x048)); // 02466255A4C8 0x48 IsArEffect                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EpisodeDifficultyClearCount               = GetInt32(new IntPtr(p + 0x04C)); // 02466255A508 0x4C EpisodeDifficultyClearCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 060 Recipients                               000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 OrganizationFieldNumber                  int IL2CPP_TYPE_I4
     // 068 Organization                             000186671910 ModelPrimitiveType string string string String
-    public partial class PostalAddress
+    public partial class PostalAddress : DataModel
     {
         public int                                      Revision                                { get; set; }
         public string                                   RegionCode                              { get; set; }
@@ -54,19 +54,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostalAddress();
+            var value   = new PostalAddress() { Pointer= p0 };
 
-            value.Revision                                  = GetInt32(new IntPtr(p + 0x018)); // 0270DA6AE020 0x18 Revision                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RegionCode                                = GetString(new IntPtr(p + 0x020)); // 0270DA6AE060 0x20 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.LanguageCode                              = GetString(new IntPtr(p + 0x028)); // 0270DA6AE0A0 0x28 LanguageCode                ( 000186671910 ModelPrimitiveType string string string String )
-            value.PostalCode                                = GetString(new IntPtr(p + 0x030)); // 0270DA6AE0E0 0x30 PostalCode                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.SortingCode                               = GetString(new IntPtr(p + 0x038)); // 0270DA6AE120 0x38 SortingCode                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.AdministrativeArea                        = GetString(new IntPtr(p + 0x040)); // 0270DA6AE160 0x40 AdministrativeArea          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Locality                                  = GetString(new IntPtr(p + 0x048)); // 0270DA6AE1A0 0x48 Locality                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Sublocality                               = GetString(new IntPtr(p + 0x050)); // 0270DA6AE1E0 0x50 Sublocality                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.AddressLines                              = GetStringList(new IntPtr(p + 0x058)); // 0270DA6AE240 0x58 AddressLines                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Recipients                                = GetStringList(new IntPtr(p + 0x060)); // 0270DA6AE2A0 0x60 Recipients                  ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Organization                              = GetString(new IntPtr(p + 0x068)); // 0270DA6AE2E0 0x68 Organization                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Revision                                  = GetInt32(new IntPtr(p + 0x018)); // 02466A711778 0x18 Revision                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RegionCode                                = GetString(new IntPtr(p + 0x020)); // 02466A7117B8 0x20 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.LanguageCode                              = GetString(new IntPtr(p + 0x028)); // 02466A7117F8 0x28 LanguageCode                ( 000186671910 ModelPrimitiveType string string string String )
+            value.PostalCode                                = GetString(new IntPtr(p + 0x030)); // 02466A711838 0x30 PostalCode                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.SortingCode                               = GetString(new IntPtr(p + 0x038)); // 02466A711878 0x38 SortingCode                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.AdministrativeArea                        = GetString(new IntPtr(p + 0x040)); // 02466A7118B8 0x40 AdministrativeArea          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Locality                                  = GetString(new IntPtr(p + 0x048)); // 02466A7118F8 0x48 Locality                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Sublocality                               = GetString(new IntPtr(p + 0x050)); // 02466A711938 0x50 Sublocality                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.AddressLines                              = GetStringList(new IntPtr(p + 0x058)); // 02466A711998 0x58 AddressLines                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Recipients                                = GetStringList(new IntPtr(p + 0x060)); // 02466A7119F8 0x60 Recipients                  ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Organization                              = GetString(new IntPtr(p + 0x068)); // 02466A711A38 0x68 Organization                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

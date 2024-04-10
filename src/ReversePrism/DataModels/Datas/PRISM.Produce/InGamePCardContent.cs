@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 DeBuffCostUI                             0001866070B0 ModelClassType CostUI CostUI CostUI Pointer
     // 040 CardRankUpIcons                          000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
     // 048 NotAvailableUI                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class InGamePCardContent
+    public partial class InGamePCardContent : DataModel
     {
         public ProduceCardContent?                      ProduceCardContent                      { get; set; }
         public GameObject?                              NormalCostUIArea                        { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InGamePCardContent();
+            var value   = new InGamePCardContent() { Pointer= p0 };
 
-            value.ProduceCardContent                        = GetObject<ProduceCardContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 0270D5B03160 0x20 ProduceCardContent          ( 0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
-            value.NormalCostUIArea                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5B03180 0x28 NormalCostUIArea            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BuffCostUI                                = GetObject<CostUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostUI.FromPointer); // 0270D5B031A0 0x30 BuffCostUI                  ( 0001866070B0 ModelClassType CostUI CostUI CostUI Pointer )
-            value.DeBuffCostUI                              = GetObject<CostUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostUI.FromPointer); // 0270D5B031C0 0x38 DeBuffCostUI                ( 0001866070B0 ModelClassType CostUI CostUI CostUI Pointer )
-            value.CardRankUpIcons                           = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5B031E0 0x40 CardRankUpIcons             ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.NotAvailableUI                            = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5B03200 0x48 NotAvailableUI              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ProduceCardContent                        = GetObject<ProduceCardContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 024665B63B78 0x20 ProduceCardContent          ( 0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
+            value.NormalCostUIArea                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024665B63B98 0x28 NormalCostUIArea            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BuffCostUI                                = GetObject<CostUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostUI.FromPointer); // 024665B63BB8 0x30 BuffCostUI                  ( 0001866070B0 ModelClassType CostUI CostUI CostUI Pointer )
+            value.DeBuffCostUI                              = GetObject<CostUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostUI.FromPointer); // 024665B63BD8 0x38 DeBuffCostUI                ( 0001866070B0 ModelClassType CostUI CostUI CostUI Pointer )
+            value.CardRankUpIcons                           = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 024665B63BF8 0x40 CardRankUpIcons             ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.NotAvailableUI                            = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 024665B63C18 0x48 NotAvailableUI              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

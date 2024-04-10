@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHomeCharacterMessagePanelView
+    public partial class IHomeCharacterMessagePanelView : DataModel
     {
 
         public static IHomeCharacterMessagePanelView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHomeCharacterMessagePanelView();
+            var value   = new IHomeCharacterMessagePanelView() { Pointer= p0 };
 
 
             return value;

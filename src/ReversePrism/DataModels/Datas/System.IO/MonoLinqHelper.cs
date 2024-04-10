@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoLinqHelper
+    public partial class MonoLinqHelper : DataModel
     {
 
         public static MonoLinqHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoLinqHelper();
+            var value   = new MonoLinqHelper() { Pointer= p0 };
 
 
             return value;

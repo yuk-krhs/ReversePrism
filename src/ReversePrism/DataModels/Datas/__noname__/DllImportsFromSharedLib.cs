@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ImportName                               string IL2CPP_TYPE_STRING
-    public partial class DllImportsFromSharedLib
+    public partial class DllImportsFromSharedLib : DataModel
     {
 
         public static DllImportsFromSharedLib? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DllImportsFromSharedLib();
+            var value   = new DllImportsFromSharedLib() { Pointer= p0 };
 
 
             return value;

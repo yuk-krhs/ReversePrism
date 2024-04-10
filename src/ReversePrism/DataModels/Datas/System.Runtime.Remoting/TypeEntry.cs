@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Assembly_name                            000186671910 ModelPrimitiveType string string string String
     // 018 Type_name                                000186671910 ModelPrimitiveType string string string String
-    public partial class TypeEntry
+    public partial class TypeEntry : DataModel
     {
         public string                                   Assembly_name                           { get; set; }
         public string                                   Type_name                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeEntry();
+            var value   = new TypeEntry() { Pointer= p0 };
 
-            value.Assembly_name                             = GetString(new IntPtr(p + 0x010)); // 0270D6BB25A8 0x10 Assembly_name               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type_name                                 = GetString(new IntPtr(p + 0x018)); // 0270D6BB25C8 0x18 Type_name                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Assembly_name                             = GetString(new IntPtr(p + 0x010)); // 024666C2A5A8 0x10 Assembly_name               ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type_name                                 = GetString(new IntPtr(p + 0x018)); // 024666C2A5C8 0x18 Type_name                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

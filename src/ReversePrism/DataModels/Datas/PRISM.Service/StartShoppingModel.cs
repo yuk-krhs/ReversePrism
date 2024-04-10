@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CacheStartScheduleShoppingReply          0001866540F0 ModelClassType IStartScheduleShoppingReply IStartScheduleShoppingReply IStartScheduleShoppingReply Pointer
-    public partial class StartShoppingModel
+    public partial class StartShoppingModel : DataModel
     {
         public IStartScheduleShoppingReply?             CacheStartScheduleShoppingReply         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartShoppingModel();
+            var value   = new StartShoppingModel() { Pointer= p0 };
 
-            value.CacheStartScheduleShoppingReply           = GetObject<IStartScheduleShoppingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartScheduleShoppingReply.FromPointer); // 0270D65DB920 0x10 CacheStartScheduleShoppingReply ( 0001866540F0 ModelClassType IStartScheduleShoppingReply IStartScheduleShoppingReply IStartScheduleShoppingReply Pointer )
+            value.CacheStartScheduleShoppingReply           = GetObject<IStartScheduleShoppingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartScheduleShoppingReply.FromPointer); // 02466663B920 0x10 CacheStartScheduleShoppingReply ( 0001866540F0 ModelClassType IStartScheduleShoppingReply IStartScheduleShoppingReply IStartScheduleShoppingReply Pointer )
 
             return value;
         }

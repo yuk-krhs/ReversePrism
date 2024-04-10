@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 state                                    <object> IL2CPP_TYPE_OBJECT
     // 030 res                                      <object> IL2CPP_TYPE_OBJECT
     // 038 out_args                                 <object> IL2CPP_TYPE_OBJECT
-    public partial class MonoAsyncCall
+    public partial class MonoAsyncCall : DataModel
     {
 
         public static MonoAsyncCall? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoAsyncCall();
+            var value   = new MonoAsyncCall() { Pointer= p0 };
 
 
             return value;

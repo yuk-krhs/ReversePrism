@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IResourceGroveler
+    public partial class IResourceGroveler : DataModel
     {
 
         public static IResourceGroveler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IResourceGroveler();
+            var value   = new IResourceGroveler() { Pointer= p0 };
 
 
             return value;

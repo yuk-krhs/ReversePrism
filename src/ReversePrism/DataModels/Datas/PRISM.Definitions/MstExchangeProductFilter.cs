@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstExchangeProductFilter
+    public partial class MstExchangeProductFilter : DataModel
     {
         public int                                      Id                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstExchangeProductFilter();
+            var value   = new MstExchangeProductFilter() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004599448 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4614A00 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

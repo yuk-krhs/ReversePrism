@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnsafeTextExtensions
+    public partial class UnsafeTextExtensions : DataModel
     {
 
         public static UnsafeTextExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeTextExtensions();
+            var value   = new UnsafeTextExtensions() { Pointer= p0 };
 
 
             return value;

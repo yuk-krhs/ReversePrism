@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LogMessageDelegate
+    public partial class LogMessageDelegate : DataModel
     {
 
         public static LogMessageDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogMessageDelegate();
+            var value   = new LogMessageDelegate() { Pointer= p0 };
 
 
             return value;

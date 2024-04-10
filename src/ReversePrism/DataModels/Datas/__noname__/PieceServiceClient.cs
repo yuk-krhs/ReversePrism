@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PieceServiceClient
+    public partial class PieceServiceClient : DataModel
     {
 
         public static PieceServiceClient? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceServiceClient();
+            var value   = new PieceServiceClient() { Pointer= p0 };
 
 
             return value;

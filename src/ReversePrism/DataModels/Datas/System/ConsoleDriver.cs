@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 driver                                   IConsoleDriver IL2CPP_TYPE_CLASS
     // 008 is_console                               bool IL2CPP_TYPE_BOOLEAN
     // 009 called_isatty                            bool IL2CPP_TYPE_BOOLEAN
-    public partial class ConsoleDriver
+    public partial class ConsoleDriver : DataModel
     {
 
         public static ConsoleDriver? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConsoleDriver();
+            var value   = new ConsoleDriver() { Pointer= p0 };
 
 
             return value;

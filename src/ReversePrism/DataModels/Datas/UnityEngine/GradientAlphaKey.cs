@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Alpha                                    000186666050 ModelPrimitiveType float float float Single
     // 014 Time                                     000186666050 ModelPrimitiveType float float float Single
-    public partial class GradientAlphaKey
+    public partial class GradientAlphaKey : DataModel
     {
         public float                                    Alpha                                   { get; set; }
         public float                                    Time                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GradientAlphaKey();
+            var value   = new GradientAlphaKey() { Pointer= p0 };
 
-            value.Alpha                                     = GetSingle(new IntPtr(p + 0x010)); // 0270023B23F0 0x10 Alpha                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Time                                      = GetSingle(new IntPtr(p + 0x014)); // 0270023B2410 0x14 Time                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Alpha                                     = GetSingle(new IntPtr(p + 0x010)); // 0245A23B23F0 0x10 Alpha                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Time                                      = GetSingle(new IntPtr(p + 0x014)); // 0245A23B2410 0x14 Time                        ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

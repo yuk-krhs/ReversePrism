@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01D FullyInitialized                         000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 RefCount_Mask                            int IL2CPP_TYPE_I4
     // 000 RefCount_One                             int IL2CPP_TYPE_I4
-    public partial class SafeHandle
+    public partial class SafeHandle : DataModel
     {
         public int                                      State                                   { get; set; }
         public bool                                     OwnsHandle                              { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeHandle();
+            var value   = new SafeHandle() { Pointer= p0 };
 
-            value.State                                     = GetInt32(new IntPtr(p + 0x018)); // 027003D00A80 0x18 State                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OwnsHandle                                = GetBool(new IntPtr(p + 0x01C)); // 027003D00AA0 0x1C OwnsHandle                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FullyInitialized                          = GetBool(new IntPtr(p + 0x01D)); // 027003D00AC0 0x1D FullyInitialized            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.State                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A3D00A80 0x18 State                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OwnsHandle                                = GetBool(new IntPtr(p + 0x01C)); // 0245A3D00AA0 0x1C OwnsHandle                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FullyInitialized                          = GetBool(new IntPtr(p + 0x01D)); // 0245A3D00AC0 0x1D FullyInitialized            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

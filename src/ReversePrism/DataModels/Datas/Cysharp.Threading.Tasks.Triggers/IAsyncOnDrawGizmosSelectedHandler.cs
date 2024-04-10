@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncOnDrawGizmosSelectedHandler
+    public partial class IAsyncOnDrawGizmosSelectedHandler : DataModel
     {
 
         public static IAsyncOnDrawGizmosSelectedHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncOnDrawGizmosSelectedHandler();
+            var value   = new IAsyncOnDrawGizmosSelectedHandler() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GashaExchangeRewardStatusTranslator
+    public partial class GashaExchangeRewardStatusTranslator : DataModel
     {
 
         public static GashaExchangeRewardStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaExchangeRewardStatusTranslator();
+            var value   = new GashaExchangeRewardStatusTranslator() { Pointer= p0 };
 
 
             return value;

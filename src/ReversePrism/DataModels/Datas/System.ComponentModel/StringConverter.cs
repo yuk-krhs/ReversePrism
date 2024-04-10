@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StringConverter
+    public partial class StringConverter : DataModel
     {
 
         public static StringConverter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringConverter();
+            var value   = new StringConverter() { Pointer= p0 };
 
 
             return value;

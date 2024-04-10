@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeEventCalls
+    public partial class NativeEventCalls : DataModel
     {
 
         public static NativeEventCalls? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeEventCalls();
+            var value   = new NativeEventCalls() { Pointer= p0 };
 
 
             return value;

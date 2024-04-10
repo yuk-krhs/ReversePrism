@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITypeVisitor
+    public partial class ITypeVisitor : DataModel
     {
 
         public static ITypeVisitor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITypeVisitor();
+            var value   = new ITypeVisitor() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 ViewModel                                00018676A030 ModelClassType ShopProductListPopupViewModel ShopProductListPopupViewModel ShopProductListPopupViewModel Pointer
     // 038 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 040 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ShopProductListPopupView
+    public partial class ShopProductListPopupView : DataModel
     {
         public ShopGoodsSetItem?                        ItemPrefab                              { get; set; }
         public Transform?                               ItemParent                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopProductListPopupView();
+            var value   = new ShopProductListPopupView() { Pointer= p0 };
 
-            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 0270DB7BDDA0 0x20 ItemPrefab                  ( 00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
-            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB7BDDC0 0x28 ItemParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ViewModel                                 = GetObject<ShopProductListPopupViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopProductListPopupViewModel.FromPointer); // 0270DB7BDDE0 0x30 ViewModel                   ( 00018676A030 ModelClassType ShopProductListPopupViewModel ShopProductListPopupViewModel ShopProductListPopupViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB7BDE20 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 02466B855CF0 0x20 ItemPrefab                  ( 00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
+            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B855D10 0x28 ItemParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewModel                                 = GetObject<ShopProductListPopupViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopProductListPopupViewModel.FromPointer); // 02466B855D30 0x30 ViewModel                   ( 00018676A030 ModelClassType ShopProductListPopupViewModel ShopProductListPopupViewModel ShopProductListPopupViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B855D70 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

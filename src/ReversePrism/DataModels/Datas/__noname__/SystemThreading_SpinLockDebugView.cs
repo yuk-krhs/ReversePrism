@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SystemThreading_SpinLockDebugView
+    public partial class SystemThreading_SpinLockDebugView : DataModel
     {
 
         public static SystemThreading_SpinLockDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemThreading_SpinLockDebugView();
+            var value   = new SystemThreading_SpinLockDebugView() { Pointer= p0 };
 
 
             return value;

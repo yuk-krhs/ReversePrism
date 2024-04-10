@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   ConnectableObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 subscription                             IDisposable IL2CPP_TYPE_CLASS
-    public partial class Connection
+    public partial class Connection : DataModel
     {
 
         public static Connection? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Connection();
+            var value   = new Connection() { Pointer= p0 };
 
 
             return value;

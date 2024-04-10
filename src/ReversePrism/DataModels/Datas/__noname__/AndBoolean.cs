@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AndBoolean
+    public partial class AndBoolean : DataModel
     {
 
         public static AndBoolean? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndBoolean();
+            var value   = new AndBoolean() { Pointer= p0 };
 
 
             return value;

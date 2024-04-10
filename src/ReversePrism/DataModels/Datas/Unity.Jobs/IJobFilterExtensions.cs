@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IJobFilterExtensions
+    public partial class IJobFilterExtensions : DataModel
     {
 
         public static IJobFilterExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IJobFilterExtensions();
+            var value   = new IJobFilterExtensions() { Pointer= p0 };
 
 
             return value;

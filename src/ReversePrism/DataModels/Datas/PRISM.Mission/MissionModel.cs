@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 SortFilterModel                          000186629770 ModelClassType MissionSortFilterModel MissionSortFilterModel MissionSortFilterModel Pointer
     // 030 SaveData                                 000186620D80 ModelClassType MissionFilterSaveData MissionFilterSaveData MissionFilterSaveData Pointer
     // 038 NoneFilterMissionGroupTypeList           000185D22928 ModelEnumListType List`1<MissionGroupType> List`1<MissionGroupType> List<MissionGroupType> Pointer
-    public partial class MissionModel
+    public partial class MissionModel : DataModel
     {
         public List<MissionGroup>?                      MissionGroup                            { get; set; }
         public IMissionController?                      IMissionController                      { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionModel();
+            var value   = new MissionModel() { Pointer= p0 };
 
-            value.MissionGroup                              = GetObjectList<MissionGroup>(new IntPtr(p + 0x010), ReversePrism.DataModels.MissionGroup.FromPointer); // 0270D55596E0 0x10 MissionGroup                ( 000185CF3A38 ModelClassListType List`1<MissionGroup> List`1<MissionGroup> List<MissionGroup> Pointer )
-            value.IMissionController                        = GetObject<IMissionController>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMissionController.FromPointer); // 0270D5559700 0x18 IMissionController          ( 0001865B40C0 ModelClassType IMissionController IMissionController IMissionController Pointer )
-            value.SortFilterModel                           = GetObject<MissionSortFilterModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.MissionSortFilterModel.FromPointer); // 0270D5559740 0x28 SortFilterModel             ( 000186629770 ModelClassType MissionSortFilterModel MissionSortFilterModel MissionSortFilterModel Pointer )
-            value.SaveData                                  = GetObject<MissionFilterSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.MissionFilterSaveData.FromPointer); // 0270D5559760 0x30 SaveData                    ( 000186620D80 ModelClassType MissionFilterSaveData MissionFilterSaveData MissionFilterSaveData Pointer )
-            value.NoneFilterMissionGroupTypeList            = GetEnumList<MissionGroupType>(new IntPtr(p + 0x038)); // 0270D5559780 0x38 NoneFilterMissionGroupTypeList ( 000185D22928 ModelEnumListType List`1<MissionGroupType> List`1<MissionGroupType> List<MissionGroupType> Pointer )
+            value.MissionGroup                              = GetObjectList<MissionGroup>(new IntPtr(p + 0x010), ReversePrism.DataModels.MissionGroup.FromPointer); // 0246655CB2C8 0x10 MissionGroup                ( 000185CF3A38 ModelClassListType List`1<MissionGroup> List`1<MissionGroup> List<MissionGroup> Pointer )
+            value.IMissionController                        = GetObject<IMissionController>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMissionController.FromPointer); // 0246655CB2E8 0x18 IMissionController          ( 0001865B40C0 ModelClassType IMissionController IMissionController IMissionController Pointer )
+            value.SortFilterModel                           = GetObject<MissionSortFilterModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.MissionSortFilterModel.FromPointer); // 0246655CB328 0x28 SortFilterModel             ( 000186629770 ModelClassType MissionSortFilterModel MissionSortFilterModel MissionSortFilterModel Pointer )
+            value.SaveData                                  = GetObject<MissionFilterSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.MissionFilterSaveData.FromPointer); // 0246655CB348 0x30 SaveData                    ( 000186620D80 ModelClassType MissionFilterSaveData MissionFilterSaveData MissionFilterSaveData Pointer )
+            value.NoneFilterMissionGroupTypeList            = GetEnumList<MissionGroupType>(new IntPtr(p + 0x038)); // 0246655CB368 0x38 NoneFilterMissionGroupTypeList ( 000185D22928 ModelEnumListType List`1<MissionGroupType> List`1<MissionGroupType> List<MissionGroupType> Pointer )
 
             return value;
         }

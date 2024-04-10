@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 058 ScenarioScene                            000186671910 ModelPrimitiveType string string string String
     // 060 Parameter                                000186523990 ModelClassType ViewScenarioParameter ViewScenarioParameter ViewScenarioParameter Pointer
-    public partial class ViewScenario
+    public partial class ViewScenario : DataModel
     {
         public string                                   ScenarioScene                           { get; set; }
         public ViewScenarioParameter?                   Parameter                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewScenario();
+            var value   = new ViewScenario() { Pointer= p0 };
 
-            value.ScenarioScene                             = GetString(new IntPtr(p + 0x058)); // 0270D5DF8980 0x58 ScenarioScene               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parameter                                 = GetObject<ViewScenarioParameter>(new IntPtr(p + 0x060), ReversePrism.DataModels.ViewScenarioParameter.FromPointer); // 0270D5DF89A0 0x60 Parameter                   ( 000186523990 ModelClassType ViewScenarioParameter ViewScenarioParameter ViewScenarioParameter Pointer )
+            value.ScenarioScene                             = GetString(new IntPtr(p + 0x058)); // 024665E690C8 0x58 ScenarioScene               ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parameter                                 = GetObject<ViewScenarioParameter>(new IntPtr(p + 0x060), ReversePrism.DataModels.ViewScenarioParameter.FromPointer); // 024665E690E8 0x60 Parameter                   ( 000186523990 ModelClassType ViewScenarioParameter ViewScenarioParameter ViewScenarioParameter Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CodeInterpreter
+    public partial class CodeInterpreter : DataModel
     {
 
         public static CodeInterpreter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CodeInterpreter();
+            var value   = new CodeInterpreter() { Pointer= p0 };
 
 
             return value;

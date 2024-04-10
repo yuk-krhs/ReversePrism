@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 070 onMouseOver                              Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 078 onMouseUp                                Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 080 onMouseUpAsButton                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableMouseTrigger
+    public partial class ObservableMouseTrigger : DataModel
     {
 
         public static ObservableMouseTrigger? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableMouseTrigger();
+            var value   = new ObservableMouseTrigger() { Pointer= p0 };
 
 
             return value;

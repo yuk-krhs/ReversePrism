@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriFs
+    public partial class CriFs : DataModel
     {
 
         public static CriFs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriFs();
+            var value   = new CriFs() { Pointer= p0 };
 
 
             return value;

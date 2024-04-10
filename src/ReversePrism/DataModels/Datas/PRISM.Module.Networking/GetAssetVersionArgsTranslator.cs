@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetAssetVersionArgsTranslator
+    public partial class GetAssetVersionArgsTranslator : DataModel
     {
 
         public static GetAssetVersionArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetAssetVersionArgsTranslator();
+            var value   = new GetAssetVersionArgsTranslator() { Pointer= p0 };
 
 
             return value;

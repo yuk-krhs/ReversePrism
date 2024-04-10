@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_FrameTiming                            000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer
-    public partial class GpuTimeProvider
+    public partial class GpuTimeProvider : DataModel
     {
         public List<FrameTiming>?                       M_FrameTiming                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GpuTimeProvider();
+            var value   = new GpuTimeProvider() { Pointer= p0 };
 
-            value.M_FrameTiming                             = GetEnumList<FrameTiming>(new IntPtr(p + 0x010)); // 0270DB65C090 0x10 M_FrameTiming               ( 000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
+            value.M_FrameTiming                             = GetEnumList<FrameTiming>(new IntPtr(p + 0x010)); // 02466B6F0148 0x10 M_FrameTiming               ( 000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
 
             return value;
         }

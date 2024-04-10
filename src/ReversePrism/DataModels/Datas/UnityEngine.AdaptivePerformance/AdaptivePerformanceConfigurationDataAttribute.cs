@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DisplayName                              000186671910 ModelPrimitiveType string string string String
     // 018 BuildSettingsKey                         000186671910 ModelPrimitiveType string string string String
-    public partial class AdaptivePerformanceConfigurationDataAttribute
+    public partial class AdaptivePerformanceConfigurationDataAttribute : DataModel
     {
         public string                                   DisplayName                             { get; set; }
         public string                                   BuildSettingsKey                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceConfigurationDataAttribute();
+            var value   = new AdaptivePerformanceConfigurationDataAttribute() { Pointer= p0 };
 
-            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 0270DB6747D8 0x10 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.BuildSettingsKey                          = GetString(new IntPtr(p + 0x018)); // 0270DB6747F8 0x18 BuildSettingsKey            ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x010)); // 02466B708B98 0x10 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.BuildSettingsKey                          = GetString(new IntPtr(p + 0x018)); // 02466B708BB8 0x18 BuildSettingsKey            ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

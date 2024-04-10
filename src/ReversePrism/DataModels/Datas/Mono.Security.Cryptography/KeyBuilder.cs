@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 rng                                      RandomNumberGenerator IL2CPP_TYPE_CLASS
-    public partial class KeyBuilder
+    public partial class KeyBuilder : DataModel
     {
 
         public static KeyBuilder? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyBuilder();
+            var value   = new KeyBuilder() { Pointer= p0 };
 
 
             return value;

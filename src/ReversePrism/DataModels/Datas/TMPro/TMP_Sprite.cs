@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 044 Unicode                                  0001865F36C0 ModelPrimitiveType int int int Int32
     // 048 Pivot                                    0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
     // 050 Sprite                                   00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer
-    public partial class TMP_Sprite
+    public partial class TMP_Sprite : DataModel
     {
         public string                                   Name                                    { get; set; }
         public int                                      HashCode                                { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_Sprite();
+            var value   = new TMP_Sprite() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x038)); // 0270D0DE0058 0x38 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HashCode                                  = GetInt32(new IntPtr(p + 0x040)); // 0270D0DE0078 0x40 HashCode                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Unicode                                   = GetInt32(new IntPtr(p + 0x044)); // 0270D0DE0098 0x44 Unicode                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Pivot                                     = (Vector2)GetInt32(new IntPtr(p + 0x048)); // 0270D0DE00B8 0x48 Pivot                       ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x050), ReversePrism.DataModels.Sprite.FromPointer); // 0270D0DE00D8 0x50 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x038)); // 024660DA8390 0x38 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.HashCode                                  = GetInt32(new IntPtr(p + 0x040)); // 024660DA83B0 0x40 HashCode                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Unicode                                   = GetInt32(new IntPtr(p + 0x044)); // 024660DA83D0 0x44 Unicode                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Pivot                                     = (Vector2)GetInt32(new IntPtr(p + 0x048)); // 024660DA83F0 0x48 Pivot                       ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x050), ReversePrism.DataModels.Sprite.FromPointer); // 024660DA8410 0x50 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
 
             return value;
         }

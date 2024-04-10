@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PollPlayerConnection
+    public partial class PollPlayerConnection : DataModel
     {
 
         public static PollPlayerConnection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PollPlayerConnection();
+            var value   = new PollPlayerConnection() { Pointer= p0 };
 
 
             return value;

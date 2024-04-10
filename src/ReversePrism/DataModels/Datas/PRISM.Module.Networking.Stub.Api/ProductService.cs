@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_GetProductDetailReply   Marshaller`1<GetProductDetailReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetHavingItemAll                Method`2<GetHavingItemAllArgs, GetHavingItemAllReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_GetProductDetail                Method`2<GetProductDetailArgs, GetProductDetailReply> IL2CPP_TYPE_GENERICINST
-    public partial class ProductService
+    public partial class ProductService : DataModel
     {
 
         public static ProductService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductService();
+            var value   = new ProductService() { Pointer= p0 };
 
 
             return value;

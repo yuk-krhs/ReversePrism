@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ValuesFieldNumber                        int IL2CPP_TYPE_I4
     // 008 _repeated_values_codec                   FieldCodec`1<Value> IL2CPP_TYPE_GENERICINST
     // 018 Values                                   000185CF7BA8 ModelClassListType RepeatedField`1<Value> RepeatedField`1<Value> List<Value> Pointer
-    public partial class ListValue
+    public partial class ListValue : DataModel
     {
         public List<Value>?                             Values                                  { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ListValue();
+            var value   = new ListValue() { Pointer= p0 };
 
-            value.Values                                    = GetObjectList<Value>(new IntPtr(p + 0x018), ReversePrism.DataModels.Value.FromPointer); // 0270DA4A2DB0 0x18 Values                      ( 000185CF7BA8 ModelClassListType RepeatedField`1<Value> RepeatedField`1<Value> List<Value> Pointer )
+            value.Values                                    = GetObjectList<Value>(new IntPtr(p + 0x018), ReversePrism.DataModels.Value.FromPointer); // 02466A4E65E0 0x18 Values                      ( 000185CF7BA8 ModelClassListType RepeatedField`1<Value> RepeatedField`1<Value> List<Value> Pointer )
 
             return value;
         }

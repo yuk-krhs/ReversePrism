@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IComparer
+    public partial class IComparer : DataModel
     {
 
         public static IComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IComparer();
+            var value   = new IComparer() { Pointer= p0 };
 
 
             return value;

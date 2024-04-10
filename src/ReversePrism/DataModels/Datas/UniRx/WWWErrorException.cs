@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 0A8 StatusCode                               0001866E4710 ModelEnumType HttpStatusCode HttpStatusCode HttpStatusCode Int32
     // 0B0 <ResponseHeaders>k__BackingField         Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 0B8 WWW                                      00018653DB00 ModelClassType WWW WWW WWW Pointer
-    public partial class WWWErrorException
+    public partial class WWWErrorException : DataModel
     {
         public string                                   RawErrorMessage                         { get; set; }
         public bool                                     HasResponse                             { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WWWErrorException();
+            var value   = new WWWErrorException() { Pointer= p0 };
 
-            value.RawErrorMessage                           = GetString(new IntPtr(p + 0x090)); // 0270D95AA460 0x90 RawErrorMessage             ( 000186671910 ModelPrimitiveType string string string String )
-            value.HasResponse                               = GetBool(new IntPtr(p + 0x098)); // 0270D95AA480 0x98 HasResponse                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Text                                      = GetString(new IntPtr(p + 0x0A0)); // 0270D95AA4A0 0xA0 Text                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.StatusCode                                = (HttpStatusCode)GetInt32(new IntPtr(p + 0x0A8)); // 0270D95AA4C0 0xA8 StatusCode                  ( 0001866E4710 ModelEnumType HttpStatusCode HttpStatusCode HttpStatusCode Int32 )
-            value.WWW                                       = GetObject<WWW>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.WWW.FromPointer); // 0270D95AA500 0xB8 WWW                         ( 00018653DB00 ModelClassType WWW WWW WWW Pointer )
+            value.RawErrorMessage                           = GetString(new IntPtr(p + 0x090)); // 0246696183B0 0x90 RawErrorMessage             ( 000186671910 ModelPrimitiveType string string string String )
+            value.HasResponse                               = GetBool(new IntPtr(p + 0x098)); // 0246696183D0 0x98 HasResponse                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Text                                      = GetString(new IntPtr(p + 0x0A0)); // 0246696183F0 0xA0 Text                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.StatusCode                                = (HttpStatusCode)GetInt32(new IntPtr(p + 0x0A8)); // 024669618410 0xA8 StatusCode                  ( 0001866E4710 ModelEnumType HttpStatusCode HttpStatusCode HttpStatusCode Int32 )
+            value.WWW                                       = GetObject<WWW>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.WWW.FromPointer); // 024669618450 0xB8 WWW                         ( 00018653DB00 ModelClassType WWW WWW WWW Pointer )
 
             return value;
         }

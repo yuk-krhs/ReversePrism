@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 <activeMeshIndices>k__BackingField       List`1<bool> IL2CPP_TYPE_GENERICINST
     // 008 s_CachedInstance                         List`1<CombineInstanceEx> IL2CPP_TYPE_GENERICINST
     // 010 Count                                    0001865F38E0 ModelPrimitiveType int int int Int32
-    public partial class MeshHelper
+    public partial class MeshHelper : DataModel
     {
         public int                                      Count                                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshHelper();
+            var value   = new MeshHelper() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 027003C5C8A8 0x10 Count                       ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A3C5C8A8 0x10 Count                       ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

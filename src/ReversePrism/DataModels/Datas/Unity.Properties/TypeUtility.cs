@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 s_CachedResolvedName                     ConcurrentDictionary`2<Type, string> IL2CPP_TYPE_GENERICINST
     // 018 s_Builders                               ObjectPool`1<StringBuilder> IL2CPP_TYPE_GENERICINST
     // 020 syncedPoolObject                         <object> IL2CPP_TYPE_OBJECT
-    public partial class TypeUtility
+    public partial class TypeUtility : DataModel
     {
 
         public static TypeUtility? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeUtility();
+            var value   = new TypeUtility() { Pointer= p0 };
 
 
             return value;

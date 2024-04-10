@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 UpdateIdolList                           000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer
     // 000 SongFieldNumber                          int IL2CPP_TYPE_I4
     // 020 Song                                     00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer
-    public partial class SetMvOriginalMemberReply
+    public partial class SetMvOriginalMemberReply : DataModel
     {
         public List<MvIdolStatus>?                      UpdateIdolList                          { get; set; }
         public SongStatus?                              Song                                    { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetMvOriginalMemberReply();
+            var value   = new SetMvOriginalMemberReply() { Pointer= p0 };
 
-            value.UpdateIdolList                            = GetObjectList<MvIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 0270D21F2190 0x18 UpdateIdolList              ( 000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer )
-            value.Song                                      = GetObject<SongStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SongStatus.FromPointer); // 0270D21F21D0 0x20 Song                        ( 00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer )
+            value.UpdateIdolList                            = GetObjectList<MvIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 0246621A0288 0x18 UpdateIdolList              ( 000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer )
+            value.Song                                      = GetObject<SongStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SongStatus.FromPointer); // 0246621A02C8 0x20 Song                        ( 00018652B0A0 ModelClassType SongStatus SongStatus SongStatus Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CanvasPrefab                             000186540570 ModelClassType Canvas Canvas Canvas Pointer
     // 018 CanvasManager                            0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer
-    public partial class DividedCanvasInstantiator
+    public partial class DividedCanvasInstantiator : DataModel
     {
         public Canvas?                                  CanvasPrefab                            { get; set; }
         public UICanvasManager?                         CanvasManager                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DividedCanvasInstantiator();
+            var value   = new DividedCanvasInstantiator() { Pointer= p0 };
 
-            value.CanvasPrefab                              = GetObject<Canvas>(new IntPtr(p + 0x010), ReversePrism.DataModels.Canvas.FromPointer); // 027003A32A38 0x10 CanvasPrefab                ( 000186540570 ModelClassType Canvas Canvas Canvas Pointer )
-            value.CanvasManager                             = GetObject<UICanvasManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.UICanvasManager.FromPointer); // 027003A32A58 0x18 CanvasManager               ( 0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
+            value.CanvasPrefab                              = GetObject<Canvas>(new IntPtr(p + 0x010), ReversePrism.DataModels.Canvas.FromPointer); // 0245A3A3D8D8 0x10 CanvasPrefab                ( 000186540570 ModelClassType Canvas Canvas Canvas Pointer )
+            value.CanvasManager                             = GetObject<UICanvasManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.UICanvasManager.FromPointer); // 0245A3A3D8F8 0x18 CanvasManager               ( 0001866E22B0 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
 
             return value;
         }

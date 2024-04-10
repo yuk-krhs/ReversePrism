@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GraphicsUtil
+    public partial class GraphicsUtil : DataModel
     {
 
         public static GraphicsUtil? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphicsUtil();
+            var value   = new GraphicsUtil() { Pointer= p0 };
 
 
             return value;

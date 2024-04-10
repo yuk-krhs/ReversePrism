@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BySubjectFunc
+    public partial class BySubjectFunc : DataModel
     {
 
         public static BySubjectFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BySubjectFunc();
+            var value   = new BySubjectFunc() { Pointer= p0 };
 
 
             return value;

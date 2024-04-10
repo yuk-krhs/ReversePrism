@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 TxtSkip                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 040 BtnSkipInfo                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 048 Strategies                               000185B9DA40 ModelClassListType ProduceStrategyContentView[] ProduceStrategyContentView[] List<ProduceStrategyContentView> Pointer
-    public partial class FIdolDetailProduceInfoView
+    public partial class FIdolDetailProduceInfoView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public UITextMeshProUGUI?                       TxtEpisodeTitle                         { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FIdolDetailProduceInfoView();
+            var value   = new FIdolDetailProduceInfoView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA2AE218 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.TxtEpisodeTitle                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2AE238 0x28 TxtEpisodeTitle             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtCreateDate                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2AE258 0x30 TxtCreateDate               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtSkip                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2AE278 0x38 TxtSkip                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnSkipInfo                               = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2AE298 0x40 BtnSkipInfo                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Strategies                                = GetObjectList<ProduceStrategyContentView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProduceStrategyContentView.FromPointer); // 0270DA2AE2B8 0x48 Strategies                  ( 000185B9DA40 ModelClassListType ProduceStrategyContentView[] ProduceStrategyContentView[] List<ProduceStrategyContentView> Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A301800 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.TxtEpisodeTitle                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A301820 0x28 TxtEpisodeTitle             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtCreateDate                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A301840 0x30 TxtCreateDate               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtSkip                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A301860 0x38 TxtSkip                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnSkipInfo                               = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466A301880 0x40 BtnSkipInfo                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Strategies                                = GetObjectList<ProduceStrategyContentView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProduceStrategyContentView.FromPointer); // 02466A3018A0 0x48 Strategies                  ( 000185B9DA40 ModelClassListType ProduceStrategyContentView[] ProduceStrategyContentView[] List<ProduceStrategyContentView> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 Out                                      00018664C710 ModelClassType TextWriter TextWriter TextWriter Pointer
-    public partial class SyncTextWriter
+    public partial class SyncTextWriter : DataModel
     {
         public TextWriter?                              Out                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SyncTextWriter();
+            var value   = new SyncTextWriter() { Pointer= p0 };
 
-            value.Out                                       = GetObject<TextWriter>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextWriter.FromPointer); // 0270D6E38040 0x30 Out                         ( 00018664C710 ModelClassType TextWriter TextWriter TextWriter Pointer )
+            value.Out                                       = GetObject<TextWriter>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextWriter.FromPointer); // 024666EB0040 0x30 Out                         ( 00018664C710 ModelClassType TextWriter TextWriter TextWriter Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventCbFunc
+    public partial class EventCbFunc : DataModel
     {
 
         public static EventCbFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventCbFunc();
+            var value   = new EventCbFunc() { Pointer= p0 };
 
 
             return value;

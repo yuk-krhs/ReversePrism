@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SkillDataList                            000185CB5918 ModelClassListType SkillData[] SkillData[] List<SkillData> Pointer
     // 018 Group                                    000186695BA0 ModelClassType CardResultGroupData CardResultGroupData CardResultGroupData Pointer
-    public partial class ExecuteData
+    public partial class ExecuteData : DataModel
     {
         public List<SkillData>?                         SkillDataList                           { get; set; }
         public CardResultGroupData?                     Group                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExecuteData();
+            var value   = new ExecuteData() { Pointer= p0 };
 
-            value.SkillDataList                             = GetObjectList<SkillData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkillData.FromPointer); // 0270D5A91038 0x10 SkillDataList               ( 000185CB5918 ModelClassListType SkillData[] SkillData[] List<SkillData> Pointer )
-            value.Group                                     = GetObject<CardResultGroupData>(new IntPtr(p + 0x018), ReversePrism.DataModels.CardResultGroupData.FromPointer); // 0270D5A91058 0x18 Group                       ( 000186695BA0 ModelClassType CardResultGroupData CardResultGroupData CardResultGroupData Pointer )
+            value.SkillDataList                             = GetObjectList<SkillData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkillData.FromPointer); // 024665B01AB8 0x10 SkillDataList               ( 000185CB5918 ModelClassListType SkillData[] SkillData[] List<SkillData> Pointer )
+            value.Group                                     = GetObject<CardResultGroupData>(new IntPtr(p + 0x018), ReversePrism.DataModels.CardResultGroupData.FromPointer); // 024665B01AD8 0x18 Group                       ( 000186695BA0 ModelClassType CardResultGroupData CardResultGroupData CardResultGroupData Pointer )
 
             return value;
         }

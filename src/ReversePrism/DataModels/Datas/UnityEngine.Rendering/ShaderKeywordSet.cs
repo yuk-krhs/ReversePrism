@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 m_Shader                                 <int> IL2CPP_TYPE_I
     // 020 m_ComputeShader                          <int> IL2CPP_TYPE_I
     // 028 M_StateIndex                             00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class ShaderKeywordSet
+    public partial class ShaderKeywordSet : DataModel
     {
         public ulong                                    M_StateIndex                            { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShaderKeywordSet();
+            var value   = new ShaderKeywordSet() { Pointer= p0 };
 
-            value.M_StateIndex                              = GetUInt64(new IntPtr(p + 0x028)); // 0270024782E8 0x28 M_StateIndex                ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_StateIndex                              = GetUInt64(new IntPtr(p + 0x028)); // 0245A24782E8 0x28 M_StateIndex                ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

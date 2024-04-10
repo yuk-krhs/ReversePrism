@@ -65,7 +65,7 @@ namespace ReversePrism.DataModels
     // 050 BMPrefix                                 00018663C230 ModelClassType RegexBoyerMoore RegexBoyerMoore RegexBoyerMoore Pointer
     // 058 Anchors                                  0001865F4940 ModelPrimitiveType int int int Int32
     // 05C RightToLeft                              000186596AF0 ModelPrimitiveType bool bool bool Bool
-    public partial class RegexCode
+    public partial class RegexCode : DataModel
     {
         public List<int>?                               Codes                                   { get; set; }
         public List<string>?                            Strings                                 { get; set; }
@@ -82,16 +82,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RegexCode();
+            var value   = new RegexCode() { Pointer= p0 };
 
-            value.Codes                                     = GetInt32List(new IntPtr(p + 0x010)); // 027003423EE0 0x10 Codes                       ( 000185B7DC00 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.Strings                                   = GetStringList(new IntPtr(p + 0x018)); // 027003423F00 0x18 Strings                     ( 000185B81FB0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.TrackCount                                = GetInt32(new IntPtr(p + 0x020)); // 027003423F20 0x20 TrackCount                  ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 027003423F40 0x28 Caps                        ( 0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.CapSize                                   = GetInt32(new IntPtr(p + 0x030)); // 027003423F60 0x30 CapSize                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.BMPrefix                                  = GetObject<RegexBoyerMoore>(new IntPtr(p + 0x050), ReversePrism.DataModels.RegexBoyerMoore.FromPointer); // 027003423FA0 0x50 BMPrefix                    ( 00018663C230 ModelClassType RegexBoyerMoore RegexBoyerMoore RegexBoyerMoore Pointer )
-            value.Anchors                                   = GetInt32(new IntPtr(p + 0x058)); // 027003423FC0 0x58 Anchors                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.RightToLeft                               = GetBool(new IntPtr(p + 0x05C)); // 027003423FE0 0x5C RightToLeft                 ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.Codes                                     = GetInt32List(new IntPtr(p + 0x010)); // 0245A3423EE0 0x10 Codes                       ( 000185B7DC00 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Strings                                   = GetStringList(new IntPtr(p + 0x018)); // 0245A3423F00 0x18 Strings                     ( 000185B81FB0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TrackCount                                = GetInt32(new IntPtr(p + 0x020)); // 0245A3423F20 0x20 TrackCount                  ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A3423F40 0x28 Caps                        ( 0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.CapSize                                   = GetInt32(new IntPtr(p + 0x030)); // 0245A3423F60 0x30 CapSize                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.BMPrefix                                  = GetObject<RegexBoyerMoore>(new IntPtr(p + 0x050), ReversePrism.DataModels.RegexBoyerMoore.FromPointer); // 0245A3423FA0 0x50 BMPrefix                    ( 00018663C230 ModelClassType RegexBoyerMoore RegexBoyerMoore RegexBoyerMoore Pointer )
+            value.Anchors                                   = GetInt32(new IntPtr(p + 0x058)); // 0245A3423FC0 0x58 Anchors                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.RightToLeft                               = GetBool(new IntPtr(p + 0x05C)); // 0245A3423FE0 0x5C RightToLeft                 ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

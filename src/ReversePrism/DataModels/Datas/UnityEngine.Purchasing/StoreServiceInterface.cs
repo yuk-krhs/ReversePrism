@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_typeCache                              Type IL2CPP_TYPE_CLASS
-    public partial class StoreServiceInterface
+    public partial class StoreServiceInterface : DataModel
     {
 
         public static StoreServiceInterface? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoreServiceInterface();
+            var value   = new StoreServiceInterface() { Pointer= p0 };
 
 
             return value;

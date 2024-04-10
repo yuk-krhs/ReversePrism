@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 048 PassThrough                              000186595960 ModelPrimitiveType bool bool bool Bool
     // 049 InitialStateCheck                        000186595960 ModelPrimitiveType bool bool bool Bool
     // 050 Bindings                                 000185CBC468 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer
-    public partial class ReadActionJson
+    public partial class ReadActionJson : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Type                                    { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadActionJson();
+            var value   = new ReadActionJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D764F7F8 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270D764F818 0x18 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 0270D764F838 0x20 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ExpectedControlType                       = GetString(new IntPtr(p + 0x028)); // 0270D764F858 0x28 ExpectedControlType         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ExpectedControlLayout                     = GetString(new IntPtr(p + 0x030)); // 0270D764F878 0x30 ExpectedControlLayout       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x038)); // 0270D764F898 0x38 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Interactions                              = GetString(new IntPtr(p + 0x040)); // 0270D764F8B8 0x40 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.PassThrough                               = GetBool(new IntPtr(p + 0x048)); // 0270D764F8D8 0x48 PassThrough                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.InitialStateCheck                         = GetBool(new IntPtr(p + 0x049)); // 0270D764F8F8 0x49 InitialStateCheck           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Bindings                                  = GetEnumList<BindingJson>(new IntPtr(p + 0x050)); // 0270D764F918 0x50 Bindings                    ( 000185CBC468 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246676BF7F8 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0246676BF818 0x18 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 0246676BF838 0x20 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ExpectedControlType                       = GetString(new IntPtr(p + 0x028)); // 0246676BF858 0x28 ExpectedControlType         ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ExpectedControlLayout                     = GetString(new IntPtr(p + 0x030)); // 0246676BF878 0x30 ExpectedControlLayout       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x038)); // 0246676BF898 0x38 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Interactions                              = GetString(new IntPtr(p + 0x040)); // 0246676BF8B8 0x40 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.PassThrough                               = GetBool(new IntPtr(p + 0x048)); // 0246676BF8D8 0x48 PassThrough                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.InitialStateCheck                         = GetBool(new IntPtr(p + 0x049)); // 0246676BF8F8 0x49 InitialStateCheck           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Bindings                                  = GetEnumList<BindingJson>(new IntPtr(p + 0x050)); // 0246676BF918 0x50 Bindings                    ( 000185CBC468 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer )
 
             return value;
         }

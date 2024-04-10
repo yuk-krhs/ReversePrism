@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 FastSlowView                             000186765610 ModelClassType JudgeFastSlowView JudgeFastSlowView JudgeFastSlowView Pointer
     // 028 Sequence                                 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer
-    public partial class JudgementLagView
+    public partial class JudgementLagView : DataModel
     {
         public JudgeFastSlowView?                       FastSlowView                            { get; set; }
         public Sequence?                                Sequence                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JudgementLagView();
+            var value   = new JudgementLagView() { Pointer= p0 };
 
-            value.FastSlowView                              = GetObject<JudgeFastSlowView>(new IntPtr(p + 0x020), ReversePrism.DataModels.JudgeFastSlowView.FromPointer); // 0270D50475A8 0x20 FastSlowView                ( 000186765610 ModelClassType JudgeFastSlowView JudgeFastSlowView JudgeFastSlowView Pointer )
-            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x028), ReversePrism.DataModels.Sequence.FromPointer); // 0270D50475C8 0x28 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
+            value.FastSlowView                              = GetObject<JudgeFastSlowView>(new IntPtr(p + 0x020), ReversePrism.DataModels.JudgeFastSlowView.FromPointer); // 0246650A34B0 0x20 FastSlowView                ( 000186765610 ModelClassType JudgeFastSlowView JudgeFastSlowView JudgeFastSlowView Pointer )
+            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x028), ReversePrism.DataModels.Sequence.FromPointer); // 0246650A34D0 0x28 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
 
             return value;
         }

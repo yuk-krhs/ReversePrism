@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 032 IsResetAvoidEffect                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 034 GetAppealPointCount                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 PlayerModel                              0001866E5D10 ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer
-    public partial class CardAndSkillPlayerPredictionModel
+    public partial class CardAndSkillPlayerPredictionModel : DataModel
     {
         public int                                      DecrementAppealPoint                    { get; set; }
         public int                                      AppealPointOnce                         { get; set; }
@@ -43,21 +43,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CardAndSkillPlayerPredictionModel();
+            var value   = new CardAndSkillPlayerPredictionModel() { Pointer= p0 };
 
-            value.DecrementAppealPoint                      = GetInt32(new IntPtr(p + 0x010)); // 0270D59D7F50 0x10 DecrementAppealPoint        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AppealPointOnce                           = GetInt32(new IntPtr(p + 0x014)); // 0270D59D7F70 0x14 AppealPointOnce             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VoiceAppealPointOnce                      = GetInt32(new IntPtr(p + 0x018)); // 0270D59D7F90 0x18 VoiceAppealPointOnce        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DanceAppealPointOnce                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D59D7FB0 0x1C DanceAppealPointOnce        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VisualAppealPointOnce                     = GetInt32(new IntPtr(p + 0x020)); // 0270D59D7FD0 0x20 VisualAppealPointOnce       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RecoveryMental                            = GetInt32(new IntPtr(p + 0x024)); // 0270D59D7FF0 0x24 RecoveryMental              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DamageMental                              = GetInt32(new IntPtr(p + 0x028)); // 0270D59D8010 0x28 DamageMental                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelfDamageMental                          = GetInt32(new IntPtr(p + 0x02C)); // 0270D59D8030 0x2C SelfDamageMental            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsIgnoreSafeSubMental                     = GetBool(new IntPtr(p + 0x030)); // 0270D59D8050 0x30 IsIgnoreSafeSubMental       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsIgnoreMentalGurad                       = GetBool(new IntPtr(p + 0x031)); // 0270D59D8070 0x31 IsIgnoreMentalGurad         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsResetAvoidEffect                        = GetBool(new IntPtr(p + 0x032)); // 0270D59D8090 0x32 IsResetAvoidEffect          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GetAppealPointCount                       = GetInt32(new IntPtr(p + 0x034)); // 0270D59D80B0 0x34 GetAppealPointCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PlayerModel                               = GetObject<IngamePlayerModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.IngamePlayerModel.FromPointer); // 0270D59D80D0 0x38 PlayerModel                 ( 0001866E5D10 ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer )
+            value.DecrementAppealPoint                      = GetInt32(new IntPtr(p + 0x010)); // 024665A396C8 0x10 DecrementAppealPoint        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AppealPointOnce                           = GetInt32(new IntPtr(p + 0x014)); // 024665A396E8 0x14 AppealPointOnce             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VoiceAppealPointOnce                      = GetInt32(new IntPtr(p + 0x018)); // 024665A39708 0x18 VoiceAppealPointOnce        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DanceAppealPointOnce                      = GetInt32(new IntPtr(p + 0x01C)); // 024665A39728 0x1C DanceAppealPointOnce        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VisualAppealPointOnce                     = GetInt32(new IntPtr(p + 0x020)); // 024665A39748 0x20 VisualAppealPointOnce       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RecoveryMental                            = GetInt32(new IntPtr(p + 0x024)); // 024665A39768 0x24 RecoveryMental              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DamageMental                              = GetInt32(new IntPtr(p + 0x028)); // 024665A39788 0x28 DamageMental                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelfDamageMental                          = GetInt32(new IntPtr(p + 0x02C)); // 024665A397A8 0x2C SelfDamageMental            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsIgnoreSafeSubMental                     = GetBool(new IntPtr(p + 0x030)); // 024665A397C8 0x30 IsIgnoreSafeSubMental       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsIgnoreMentalGurad                       = GetBool(new IntPtr(p + 0x031)); // 024665A397E8 0x31 IsIgnoreMentalGurad         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsResetAvoidEffect                        = GetBool(new IntPtr(p + 0x032)); // 024665A39808 0x32 IsResetAvoidEffect          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.GetAppealPointCount                       = GetInt32(new IntPtr(p + 0x034)); // 024665A39828 0x34 GetAppealPointCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PlayerModel                               = GetObject<IngamePlayerModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.IngamePlayerModel.FromPointer); // 024665A39848 0x38 PlayerModel                 ( 0001866E5D10 ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer )
 
             return value;
         }

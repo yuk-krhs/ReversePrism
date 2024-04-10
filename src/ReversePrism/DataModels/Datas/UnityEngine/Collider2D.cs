@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Collider2D
+    public partial class Collider2D : DataModel
     {
 
         public static Collider2D? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Collider2D();
+            var value   = new Collider2D() { Pointer= p0 };
 
 
             return value;

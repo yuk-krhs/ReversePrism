@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHome3DSceneView
+    public partial class IHome3DSceneView : DataModel
     {
 
         public static IHome3DSceneView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHome3DSceneView();
+            var value   = new IHome3DSceneView() { Pointer= p0 };
 
 
             return value;

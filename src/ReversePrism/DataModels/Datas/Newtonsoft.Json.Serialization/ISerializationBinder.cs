@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISerializationBinder
+    public partial class ISerializationBinder : DataModel
     {
 
         public static ISerializationBinder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISerializationBinder();
+            var value   = new ISerializationBinder() { Pointer= p0 };
 
 
             return value;

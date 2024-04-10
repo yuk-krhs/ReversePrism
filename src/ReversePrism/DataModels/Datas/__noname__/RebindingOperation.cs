@@ -40,7 +40,7 @@ namespace ReversePrism.DataModels
     // 160 M_PathBuilder                            000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer
     // 168 M_Flags                                  000186523480 ModelEnumType Flags Flags Flags Int32
     // 170 m_StartingActuations                     Dictionary`2<InputControl, float> IL2CPP_TYPE_GENERICINST
-    public partial class RebindingOperation
+    public partial class RebindingOperation : DataModel
     {
         public InputAction?                             M_ActionToRebind                        { get; set; }
         public Type?                                    M_ControlType                           { get; set; }
@@ -70,29 +70,29 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RebindingOperation();
+            var value   = new RebindingOperation() { Pointer= p0 };
 
-            value.M_ActionToRebind                          = GetObject<InputAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputAction.FromPointer); // 0270D7650F20 0x10 M_ActionToRebind            ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
-            value.M_ControlType                             = GetObject<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 0270D7650F60 0x78 M_ControlType               ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.M_ExpectedLayout                          = (InternedString)GetInt32(new IntPtr(p + 0x080)); // 0270D7650F80 0x80 M_ExpectedLayout            ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.M_IncludePathCount                        = GetInt32(new IntPtr(p + 0x090)); // 0270D7650FA0 0x90 M_IncludePathCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_IncludePaths                            = GetStringList(new IntPtr(p + 0x098)); // 0270D7650FC0 0x98 M_IncludePaths              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.M_ExcludePathCount                        = GetInt32(new IntPtr(p + 0x0A0)); // 0270D7650FE0 0xA0 M_ExcludePathCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_ExcludePaths                            = GetStringList(new IntPtr(p + 0x0A8)); // 0270D7651000 0xA8 M_ExcludePaths              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.M_TargetBindingIndex                      = GetInt32(new IntPtr(p + 0x0B0)); // 0270D7651020 0xB0 M_TargetBindingIndex        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_BindingGroupForNewBinding               = GetString(new IntPtr(p + 0x0B8)); // 0270D7651040 0xB8 M_BindingGroupForNewBinding ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_CancelBinding                           = GetString(new IntPtr(p + 0x0C0)); // 0270D7651060 0xC0 M_CancelBinding             ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_MagnitudeThreshold                      = GetSingle(new IntPtr(p + 0x0C8)); // 0270D7651080 0xC8 M_MagnitudeThreshold        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Scores                                  = GetSingleList(new IntPtr(p + 0x0D0)); // 0270D76510A0 0xD0 M_Scores                    ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.M_Magnitudes                              = GetSingleList(new IntPtr(p + 0x0D8)); // 0270D76510C0 0xD8 M_Magnitudes                ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.M_LastMatchTime                           = GetDouble(new IntPtr(p + 0x0E0)); // 0270D76510E0 0xE0 M_LastMatchTime             ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_StartTime                               = GetDouble(new IntPtr(p + 0x0E8)); // 0270D7651100 0xE8 M_StartTime                 ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_Timeout                                 = GetSingle(new IntPtr(p + 0x0F0)); // 0270D7651120 0xF0 M_Timeout                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_WaitSecondsAfterMatch                   = GetSingle(new IntPtr(p + 0x0F4)); // 0270D7651140 0xF4 M_WaitSecondsAfterMatch     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_OnAfterUpdateDelegate                   = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 0270D7651260 0x150 M_OnAfterUpdateDelegate     ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_LayoutCache                             = (Cache)GetInt32(new IntPtr(p + 0x158)); // 0270D7651280 0x158 M_LayoutCache               ( 0001866F86E0 ModelEnumType Cache Cache Cache Int32 )
-            value.M_PathBuilder                             = GetObject<StringBuilder>(new IntPtr(p + 0x160), ReversePrism.DataModels.StringBuilder.FromPointer); // 0270D76512A0 0x160 M_PathBuilder               ( 000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
-            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x168)); // 0270D76512C0 0x168 M_Flags                     ( 000186523480 ModelEnumType Flags Flags Flags Int32 )
+            value.M_ActionToRebind                          = GetObject<InputAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputAction.FromPointer); // 0246676C0F20 0x10 M_ActionToRebind            ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
+            value.M_ControlType                             = GetObject<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 0246676C0F60 0x78 M_ControlType               ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.M_ExpectedLayout                          = (InternedString)GetInt32(new IntPtr(p + 0x080)); // 0246676C0F80 0x80 M_ExpectedLayout            ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.M_IncludePathCount                        = GetInt32(new IntPtr(p + 0x090)); // 0246676C0FA0 0x90 M_IncludePathCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_IncludePaths                            = GetStringList(new IntPtr(p + 0x098)); // 0246676C0FC0 0x98 M_IncludePaths              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.M_ExcludePathCount                        = GetInt32(new IntPtr(p + 0x0A0)); // 0246676C0FE0 0xA0 M_ExcludePathCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ExcludePaths                            = GetStringList(new IntPtr(p + 0x0A8)); // 0246676C1000 0xA8 M_ExcludePaths              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.M_TargetBindingIndex                      = GetInt32(new IntPtr(p + 0x0B0)); // 0246676C1020 0xB0 M_TargetBindingIndex        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_BindingGroupForNewBinding               = GetString(new IntPtr(p + 0x0B8)); // 0246676C1040 0xB8 M_BindingGroupForNewBinding ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_CancelBinding                           = GetString(new IntPtr(p + 0x0C0)); // 0246676C1060 0xC0 M_CancelBinding             ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_MagnitudeThreshold                      = GetSingle(new IntPtr(p + 0x0C8)); // 0246676C1080 0xC8 M_MagnitudeThreshold        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Scores                                  = GetSingleList(new IntPtr(p + 0x0D0)); // 0246676C10A0 0xD0 M_Scores                    ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.M_Magnitudes                              = GetSingleList(new IntPtr(p + 0x0D8)); // 0246676C10C0 0xD8 M_Magnitudes                ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.M_LastMatchTime                           = GetDouble(new IntPtr(p + 0x0E0)); // 0246676C10E0 0xE0 M_LastMatchTime             ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_StartTime                               = GetDouble(new IntPtr(p + 0x0E8)); // 0246676C1100 0xE8 M_StartTime                 ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_Timeout                                 = GetSingle(new IntPtr(p + 0x0F0)); // 0246676C1120 0xF0 M_Timeout                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_WaitSecondsAfterMatch                   = GetSingle(new IntPtr(p + 0x0F4)); // 0246676C1140 0xF4 M_WaitSecondsAfterMatch     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_OnAfterUpdateDelegate                   = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 0246676C1260 0x150 M_OnAfterUpdateDelegate     ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_LayoutCache                             = (Cache)GetInt32(new IntPtr(p + 0x158)); // 0246676C1280 0x158 M_LayoutCache               ( 0001866F86E0 ModelEnumType Cache Cache Cache Int32 )
+            value.M_PathBuilder                             = GetObject<StringBuilder>(new IntPtr(p + 0x160), ReversePrism.DataModels.StringBuilder.FromPointer); // 0246676C12A0 0x160 M_PathBuilder               ( 000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
+            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x168)); // 0246676C12C0 0x168 M_Flags                     ( 000186523480 ModelEnumType Flags Flags Flags Int32 )
 
             return value;
         }

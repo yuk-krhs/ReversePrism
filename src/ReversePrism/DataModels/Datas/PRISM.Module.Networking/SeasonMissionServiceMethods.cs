@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 UpdateLastDisplayDate                    Method`2<IUpdateLastDisplayDateArgs, IUpdateLastDisplayDateReply> IL2CPP_TYPE_GENERICINST
     // 030 ReceiveSeasonMissionReward               Method`2<IReceiveSeasonMissionRewardArgs, IReceiveSeasonMissionRewardReply> IL2CPP_TYPE_GENERICINST
     // 048 ReceiveSeasonMissionRankReward           Method`2<IReceiveSeasonMissionRankRewardArgs, IReceiveSeasonMissionRankRewardReply> IL2CPP_TYPE_GENERICINST
-    public partial class SeasonMissionServiceMethods
+    public partial class SeasonMissionServiceMethods : DataModel
     {
 
         public static SeasonMissionServiceMethods? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionServiceMethods();
+            var value   = new SeasonMissionServiceMethods() { Pointer= p0 };
 
 
             return value;

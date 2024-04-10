@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WaitPopupButtonEnabledSequence
+    public partial class WaitPopupButtonEnabledSequence : DataModel
     {
 
         public static WaitPopupButtonEnabledSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitPopupButtonEnabledSequence();
+            var value   = new WaitPopupButtonEnabledSequence() { Pointer= p0 };
 
 
             return value;

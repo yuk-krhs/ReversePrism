@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Category                                 0001866E7400 ModelEnumType Category Category Category Int32
-    public partial class CategorizedLogger
+    public partial class CategorizedLogger : DataModel
     {
         public Category                                 Category                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CategorizedLogger();
+            var value   = new CategorizedLogger() { Pointer= p0 };
 
-            value.Category                                  = (Category)GetInt32(new IntPtr(p + 0x010)); // 027003CBB6A8 0x10 Category                    ( 0001866E7400 ModelEnumType Category Category Category Int32 )
+            value.Category                                  = (Category)GetInt32(new IntPtr(p + 0x010)); // 0245A3CBB6A8 0x10 Category                    ( 0001866E7400 ModelEnumType Category Category Category Int32 )
 
             return value;
         }

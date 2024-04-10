@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MinimumBinaryHeap
+    public partial class MinimumBinaryHeap : DataModel
     {
 
         public static MinimumBinaryHeap? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MinimumBinaryHeap();
+            var value   = new MinimumBinaryHeap() { Pointer= p0 };
 
 
             return value;

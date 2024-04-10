@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 090 AnnotationNSManager                      0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer
     // 098 Xmlns                                    000186671910 ModelPrimitiveType string string string String
     // 0A0 XmlCharType                              00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32
-    public partial class Parser
+    public partial class Parser : DataModel
     {
         public SchemaType                               SchemaType                              { get; set; }
         public XmlNameTable?                            NameTable                               { get; set; }
@@ -57,28 +57,28 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Parser();
+            var value   = new Parser() { Pointer= p0 };
 
-            value.SchemaType                                = (SchemaType)GetInt32(new IntPtr(p + 0x010)); // 0270D7439468 0x10 SchemaType                  ( 0001866EB700 ModelEnumType SchemaType SchemaType SchemaType Int32 )
-            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0270D7439488 0x18 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
-            value.SchemaNames                               = GetObject<SchemaNames>(new IntPtr(p + 0x020), ReversePrism.DataModels.SchemaNames.FromPointer); // 0270D74394A8 0x20 SchemaNames                 ( 0001866EA5B0 ModelClassType SchemaNames SchemaNames SchemaNames Pointer )
-            value.EventHandler                              = GetObject<ValidationEventHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 0270D74394C8 0x28 EventHandler                ( 000186765AD0 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
-            value.NamespaceManager                          = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 0270D74394E8 0x30 NamespaceManager            ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
-            value.Reader                                    = GetObject<XmlReader>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlReader.FromPointer); // 0270D7439508 0x38 Reader                      ( 0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer )
-            value.PositionInfo                              = GetObject<PositionInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.PositionInfo.FromPointer); // 0270D7439528 0x40 PositionInfo                ( 000186768940 ModelClassType PositionInfo PositionInfo PositionInfo Pointer )
-            value.IsProcessNamespaces                       = GetBool(new IntPtr(p + 0x048)); // 0270D7439548 0x48 IsProcessNamespaces         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SchemaXmlDepth                            = GetInt32(new IntPtr(p + 0x04C)); // 0270D7439568 0x4C SchemaXmlDepth              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MarkupDepth                               = GetInt32(new IntPtr(p + 0x050)); // 0270D7439588 0x50 MarkupDepth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Builder                                   = GetObject<SchemaBuilder>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaBuilder.FromPointer); // 0270D74395A8 0x58 Builder                     ( 0001866E7800 ModelClassType SchemaBuilder SchemaBuilder SchemaBuilder Pointer )
-            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchema.FromPointer); // 0270D74395C8 0x60 Schema                      ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.XdrSchema                                 = GetObject<SchemaInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.SchemaInfo.FromPointer); // 0270D74395E8 0x68 XdrSchema                   ( 0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
-            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlResolver.FromPointer); // 0270D7439608 0x70 XmlResolver                 ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
-            value.DummyDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlDocument.FromPointer); // 0270D7439628 0x78 DummyDocument               ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
-            value.ProcessMarkup                             = GetBool(new IntPtr(p + 0x080)); // 0270D7439648 0x80 ProcessMarkup               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ParentNode                                = GetObject<XmlNode>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D7439668 0x88 ParentNode                  ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
-            value.AnnotationNSManager                       = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 0270D7439688 0x90 AnnotationNSManager         ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
-            value.Xmlns                                     = GetString(new IntPtr(p + 0x098)); // 0270D74396A8 0x98 Xmlns                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x0A0)); // 0270D74396C8 0xA0 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
+            value.SchemaType                                = (SchemaType)GetInt32(new IntPtr(p + 0x010)); // 024667499468 0x10 SchemaType                  ( 0001866EB700 ModelEnumType SchemaType SchemaType SchemaType Int32 )
+            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNameTable.FromPointer); // 024667499488 0x18 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.SchemaNames                               = GetObject<SchemaNames>(new IntPtr(p + 0x020), ReversePrism.DataModels.SchemaNames.FromPointer); // 0246674994A8 0x20 SchemaNames                 ( 0001866EA5B0 ModelClassType SchemaNames SchemaNames SchemaNames Pointer )
+            value.EventHandler                              = GetObject<ValidationEventHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 0246674994C8 0x28 EventHandler                ( 000186765AD0 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
+            value.NamespaceManager                          = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 0246674994E8 0x30 NamespaceManager            ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
+            value.Reader                                    = GetObject<XmlReader>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlReader.FromPointer); // 024667499508 0x38 Reader                      ( 0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer )
+            value.PositionInfo                              = GetObject<PositionInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.PositionInfo.FromPointer); // 024667499528 0x40 PositionInfo                ( 000186768940 ModelClassType PositionInfo PositionInfo PositionInfo Pointer )
+            value.IsProcessNamespaces                       = GetBool(new IntPtr(p + 0x048)); // 024667499548 0x48 IsProcessNamespaces         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SchemaXmlDepth                            = GetInt32(new IntPtr(p + 0x04C)); // 024667499568 0x4C SchemaXmlDepth              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MarkupDepth                               = GetInt32(new IntPtr(p + 0x050)); // 024667499588 0x50 MarkupDepth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Builder                                   = GetObject<SchemaBuilder>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaBuilder.FromPointer); // 0246674995A8 0x58 Builder                     ( 0001866E7800 ModelClassType SchemaBuilder SchemaBuilder SchemaBuilder Pointer )
+            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchema.FromPointer); // 0246674995C8 0x60 Schema                      ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.XdrSchema                                 = GetObject<SchemaInfo>(new IntPtr(p + 0x068), ReversePrism.DataModels.SchemaInfo.FromPointer); // 0246674995E8 0x68 XdrSchema                   ( 0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
+            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlResolver.FromPointer); // 024667499608 0x70 XmlResolver                 ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
+            value.DummyDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlDocument.FromPointer); // 024667499628 0x78 DummyDocument               ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
+            value.ProcessMarkup                             = GetBool(new IntPtr(p + 0x080)); // 024667499648 0x80 ProcessMarkup               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ParentNode                                = GetObject<XmlNode>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlNode.FromPointer); // 024667499668 0x88 ParentNode                  ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.AnnotationNSManager                       = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 024667499688 0x90 AnnotationNSManager         ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
+            value.Xmlns                                     = GetString(new IntPtr(p + 0x098)); // 0246674996A8 0x98 Xmlns                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x0A0)); // 0246674996C8 0xA0 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
 
             return value;
         }

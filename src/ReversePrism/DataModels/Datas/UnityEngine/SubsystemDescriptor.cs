@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Id                                       000186671910 ModelPrimitiveType string string string String
-    public partial class SubsystemDescriptor
+    public partial class SubsystemDescriptor : DataModel
     {
         public string                                   Id                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubsystemDescriptor();
+            var value   = new SubsystemDescriptor() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0270001BB150 0x10 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0245A01BB150 0x10 Id                          ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

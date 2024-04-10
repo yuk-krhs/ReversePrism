@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 AssetLoaded                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 050 ActiveScenario                           000186671910 ModelPrimitiveType string string string String
     // 058 OtherScenario                            000186671910 ModelPrimitiveType string string string String
-    public partial class ProbeVolumePerSceneData
+    public partial class ProbeVolumePerSceneData : DataModel
     {
         public ProbeVolumeAsset?                        Asset                                   { get; set; }
         public TextAsset?                               CellSharedDataAsset                     { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProbeVolumePerSceneData();
+            var value   = new ProbeVolumePerSceneData() { Pointer= p0 };
 
-            value.Asset                                     = GetObject<ProbeVolumeAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProbeVolumeAsset.FromPointer); // 0270D920CAE0 0x20 Asset                       ( 00018651FC00 ModelClassType ProbeVolumeAsset ProbeVolumeAsset ProbeVolumeAsset Pointer )
-            value.CellSharedDataAsset                       = GetObject<TextAsset>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextAsset.FromPointer); // 0270D920CB00 0x28 CellSharedDataAsset         ( 000186634EF0 ModelClassType TextAsset TextAsset TextAsset Pointer )
-            value.CellSupportDataAsset                      = GetObject<TextAsset>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextAsset.FromPointer); // 0270D920CB20 0x30 CellSupportDataAsset        ( 000186634EF0 ModelClassType TextAsset TextAsset TextAsset Pointer )
-            value.SerializedScenarios                       = GetEnumList<SerializablePerScenarioDataItem>(new IntPtr(p + 0x038)); // 0270D920CB40 0x38 SerializedScenarios         ( 000185D28C88 ModelEnumListType List`1<SerializablePerScenarioDataItem> List`1<SerializablePerScenarioDataItem> List<SerializablePerScenarioDataItem> Pointer )
-            value.AssetLoaded                               = GetBool(new IntPtr(p + 0x048)); // 0270D920CB80 0x48 AssetLoaded                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ActiveScenario                            = GetString(new IntPtr(p + 0x050)); // 0270D920CBA0 0x50 ActiveScenario              ( 000186671910 ModelPrimitiveType string string string String )
-            value.OtherScenario                             = GetString(new IntPtr(p + 0x058)); // 0270D920CBC0 0x58 OtherScenario               ( 000186671910 ModelPrimitiveType string string string String )
+            value.Asset                                     = GetObject<ProbeVolumeAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProbeVolumeAsset.FromPointer); // 02466925F260 0x20 Asset                       ( 00018651FC00 ModelClassType ProbeVolumeAsset ProbeVolumeAsset ProbeVolumeAsset Pointer )
+            value.CellSharedDataAsset                       = GetObject<TextAsset>(new IntPtr(p + 0x028), ReversePrism.DataModels.TextAsset.FromPointer); // 02466925F280 0x28 CellSharedDataAsset         ( 000186634EF0 ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.CellSupportDataAsset                      = GetObject<TextAsset>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextAsset.FromPointer); // 02466925F2A0 0x30 CellSupportDataAsset        ( 000186634EF0 ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.SerializedScenarios                       = GetEnumList<SerializablePerScenarioDataItem>(new IntPtr(p + 0x038)); // 02466925F2C0 0x38 SerializedScenarios         ( 000185D28C88 ModelEnumListType List`1<SerializablePerScenarioDataItem> List`1<SerializablePerScenarioDataItem> List<SerializablePerScenarioDataItem> Pointer )
+            value.AssetLoaded                               = GetBool(new IntPtr(p + 0x048)); // 02466925F300 0x48 AssetLoaded                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ActiveScenario                            = GetString(new IntPtr(p + 0x050)); // 02466925F320 0x50 ActiveScenario              ( 000186671910 ModelPrimitiveType string string string String )
+            value.OtherScenario                             = GetString(new IntPtr(p + 0x058)); // 02466925F340 0x58 OtherScenario               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 CardCostDownCount                        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 CardExcludeCountFieldNumber              int IL2CPP_TYPE_I4
     // 024 CardExcludeCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourInGameCardActionStatus
+    public partial class ChallengeTourInGameCardActionStatus : DataModel
     {
         public int                                      PhaseChangeCount                        { get; set; }
         public int                                      CostOneCardUseCount                     { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameCardActionStatus();
+            var value   = new ChallengeTourInGameCardActionStatus() { Pointer= p0 };
 
-            value.PhaseChangeCount                          = GetInt32(new IntPtr(p + 0x018)); // 0270041535B0 0x18 PhaseChangeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CostOneCardUseCount                       = GetInt32(new IntPtr(p + 0x01C)); // 0270041535F0 0x1C CostOneCardUseCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardCostDownCount                         = GetInt32(new IntPtr(p + 0x020)); // 027004153630 0x20 CardCostDownCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardExcludeCount                          = GetInt32(new IntPtr(p + 0x024)); // 027004153670 0x24 CardExcludeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PhaseChangeCount                          = GetInt32(new IntPtr(p + 0x018)); // 024660ECFEE0 0x18 PhaseChangeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CostOneCardUseCount                       = GetInt32(new IntPtr(p + 0x01C)); // 024660ECFF20 0x1C CostOneCardUseCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardCostDownCount                         = GetInt32(new IntPtr(p + 0x020)); // 024660ECFF60 0x20 CardCostDownCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardExcludeCount                          = GetInt32(new IntPtr(p + 0x024)); // 024660ECFFA0 0x24 CardExcludeCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

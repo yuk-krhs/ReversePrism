@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 02C NumVoices                                0001865F3220 ModelPrimitiveType int int int Int32
     // 030 MaxChannels                              0001865F3220 ModelPrimitiveType int int int Int32
     // 034 MaxSamplingRate                          0001865F3220 ModelPrimitiveType int int int Int32
-    public partial class CriAtomExVoicePool
+    public partial class CriAtomExVoicePool : DataModel
     {
         public uint                                     Identifier                              { get; set; }
         public int                                      NumVoices                               { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExVoicePool();
+            var value   = new CriAtomExVoicePool() { Pointer= p0 };
 
-            value.Identifier                                = GetUInt32(new IntPtr(p + 0x028)); // 0270D4F5B558 0x28 Identifier                  ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
-            value.NumVoices                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D4F5B578 0x2C NumVoices                   ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x030)); // 0270D4F5B598 0x30 MaxChannels                 ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x034)); // 0270D4F5B5B8 0x34 MaxSamplingRate             ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.Identifier                                = GetUInt32(new IntPtr(p + 0x028)); // 024664FC1F68 0x28 Identifier                  ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
+            value.NumVoices                                 = GetInt32(new IntPtr(p + 0x02C)); // 024664FC1F88 0x2C NumVoices                   ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x030)); // 024664FC1FA8 0x30 MaxChannels                 ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x034)); // 024664FC1FC8 0x34 MaxSamplingRate             ( 0001865F3220 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 Visible                                  0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer
     // 018 Default                                  0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer
     // 010 Visibility                               0001866C82D0 ModelEnumType DesignerSerializationVisibility DesignerSerializationVisibility DesignerSerializationVisibility Int32
-    public partial class DesignerSerializationVisibilityAttribute
+    public partial class DesignerSerializationVisibilityAttribute : DataModel
     {
         public DesignerSerializationVisibilityAttribute? Visible                                 { get; set; }
         public DesignerSerializationVisibilityAttribute? Default                                 { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DesignerSerializationVisibilityAttribute();
+            var value   = new DesignerSerializationVisibilityAttribute() { Pointer= p0 };
 
-            value.Visible                                   = GetObject<DesignerSerializationVisibilityAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignerSerializationVisibilityAttribute.FromPointer); // 0270D7B141E8 0x10 Visible                     ( 0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer )
-            value.Default                                   = GetObject<DesignerSerializationVisibilityAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerSerializationVisibilityAttribute.FromPointer); // 0270D7B14208 0x18 Default                     ( 0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer )
-            value.Visibility                                = (DesignerSerializationVisibility)GetInt32(new IntPtr(p + 0x010)); // 0270D7B14228 0x10 Visibility                  ( 0001866C82D0 ModelEnumType DesignerSerializationVisibility DesignerSerializationVisibility DesignerSerializationVisibility Int32 )
+            value.Visible                                   = GetObject<DesignerSerializationVisibilityAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignerSerializationVisibilityAttribute.FromPointer); // 024667B7C1E8 0x10 Visible                     ( 0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer )
+            value.Default                                   = GetObject<DesignerSerializationVisibilityAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerSerializationVisibilityAttribute.FromPointer); // 024667B7C208 0x18 Default                     ( 0001866C8A00 ModelClassType DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute DesignerSerializationVisibilityAttribute Pointer )
+            value.Visibility                                = (DesignerSerializationVisibility)GetInt32(new IntPtr(p + 0x010)); // 024667B7C228 0x10 Visibility                  ( 0001866C82D0 ModelEnumType DesignerSerializationVisibility DesignerSerializationVisibility DesignerSerializationVisibility Int32 )
 
             return value;
         }

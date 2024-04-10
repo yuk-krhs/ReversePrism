@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorGradingTrack
+    public partial class ColorGradingTrack : DataModel
     {
 
         public static ColorGradingTrack? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorGradingTrack();
+            var value   = new ColorGradingTrack() { Pointer= p0 };
 
 
             return value;

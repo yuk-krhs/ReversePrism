@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 0FC M_buttonTextColor                        0001865AA8E0 ModelEnumType Color Color Color Int32
     // 10C M_selectedItemBackgroundColor            0001865AA8E0 ModelEnumType Color Color Color Int32
     // 11C M_selectedItemTextColor                  0001865AA8E0 ModelEnumType Color Color Color Int32
-    public partial class UISkin
+    public partial class UISkin : DataModel
     {
         public int                                      M_version                               { get; set; }
         public Font?                                    M_font                                  { get; set; }
@@ -61,30 +61,30 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UISkin();
+            var value   = new UISkin() { Pointer= p0 };
 
-            value.M_version                                 = GetInt32(new IntPtr(p + 0x018)); // 0270DB1B8EC0 0x18 M_version                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_font                                    = GetObject<Font>(new IntPtr(p + 0x020), ReversePrism.DataModels.Font.FromPointer); // 0270DB1B8EE0 0x20 M_font                      ( 0001865AD0A0 ModelClassType Font Font Font Pointer )
-            value.M_fontSize                                = GetInt32(new IntPtr(p + 0x028)); // 0270DB1B8F00 0x28 M_fontSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_lineHeight                              = GetInt32(new IntPtr(p + 0x02C)); // 0270DB1B8F20 0x2C M_lineHeight                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_indentAmount                            = GetInt32(new IntPtr(p + 0x030)); // 0270DB1B8F40 0x30 M_indentAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_labelWidthPercentage                    = GetSingle(new IntPtr(p + 0x034)); // 0270DB1B8F60 0x34 M_labelWidthPercentage      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_expandArrowSpacing                      = GetSingle(new IntPtr(p + 0x038)); // 0270DB1B8F80 0x38 M_expandArrowSpacing        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_windowColor                             = (Color)GetInt32(new IntPtr(p + 0x03C)); // 0270DB1B8FA0 0x3C M_windowColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_backgroundColor                         = (Color)GetInt32(new IntPtr(p + 0x04C)); // 0270DB1B8FC0 0x4C M_backgroundColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_textColor                               = (Color)GetInt32(new IntPtr(p + 0x05C)); // 0270DB1B8FE0 0x5C M_textColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_scrollbarColor                          = (Color)GetInt32(new IntPtr(p + 0x06C)); // 0270DB1B9000 0x6C M_scrollbarColor            ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_expandArrowColor                        = (Color)GetInt32(new IntPtr(p + 0x07C)); // 0270DB1B9020 0x7C M_expandArrowColor          ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_inputFieldNormalBackgroundColor         = (Color)GetInt32(new IntPtr(p + 0x08C)); // 0270DB1B9040 0x8C M_inputFieldNormalBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_inputFieldInvalidBackgroundColor        = (Color)GetInt32(new IntPtr(p + 0x09C)); // 0270DB1B9060 0x9C M_inputFieldInvalidBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_inputFieldTextColor                     = (Color)GetInt32(new IntPtr(p + 0x0AC)); // 0270DB1B9080 0xAC M_inputFieldTextColor       ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_toggleCheckmarkColor                    = (Color)GetInt32(new IntPtr(p + 0x0BC)); // 0270DB1B90A0 0xBC M_toggleCheckmarkColor      ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_sliderBackgroundColor                   = (Color)GetInt32(new IntPtr(p + 0x0CC)); // 0270DB1B90C0 0xCC M_sliderBackgroundColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_sliderThumbColor                        = (Color)GetInt32(new IntPtr(p + 0x0DC)); // 0270DB1B90E0 0xDC M_sliderThumbColor          ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_buttonBackgroundColor                   = (Color)GetInt32(new IntPtr(p + 0x0EC)); // 0270DB1B9100 0xEC M_buttonBackgroundColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_buttonTextColor                         = (Color)GetInt32(new IntPtr(p + 0x0FC)); // 0270DB1B9120 0xFC M_buttonTextColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_selectedItemBackgroundColor             = (Color)GetInt32(new IntPtr(p + 0x10C)); // 0270DB1B9140 0x10C M_selectedItemBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_selectedItemTextColor                   = (Color)GetInt32(new IntPtr(p + 0x11C)); // 0270DB1B9160 0x11C M_selectedItemTextColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_version                                 = GetInt32(new IntPtr(p + 0x018)); // 02466B2196F0 0x18 M_version                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_font                                    = GetObject<Font>(new IntPtr(p + 0x020), ReversePrism.DataModels.Font.FromPointer); // 02466B219710 0x20 M_font                      ( 0001865AD0A0 ModelClassType Font Font Font Pointer )
+            value.M_fontSize                                = GetInt32(new IntPtr(p + 0x028)); // 02466B219730 0x28 M_fontSize                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_lineHeight                              = GetInt32(new IntPtr(p + 0x02C)); // 02466B219750 0x2C M_lineHeight                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_indentAmount                            = GetInt32(new IntPtr(p + 0x030)); // 02466B219770 0x30 M_indentAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_labelWidthPercentage                    = GetSingle(new IntPtr(p + 0x034)); // 02466B219790 0x34 M_labelWidthPercentage      ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_expandArrowSpacing                      = GetSingle(new IntPtr(p + 0x038)); // 02466B2197B0 0x38 M_expandArrowSpacing        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_windowColor                             = (Color)GetInt32(new IntPtr(p + 0x03C)); // 02466B2197D0 0x3C M_windowColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_backgroundColor                         = (Color)GetInt32(new IntPtr(p + 0x04C)); // 02466B2197F0 0x4C M_backgroundColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_textColor                               = (Color)GetInt32(new IntPtr(p + 0x05C)); // 02466B219810 0x5C M_textColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_scrollbarColor                          = (Color)GetInt32(new IntPtr(p + 0x06C)); // 02466B219830 0x6C M_scrollbarColor            ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_expandArrowColor                        = (Color)GetInt32(new IntPtr(p + 0x07C)); // 02466B219850 0x7C M_expandArrowColor          ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_inputFieldNormalBackgroundColor         = (Color)GetInt32(new IntPtr(p + 0x08C)); // 02466B219870 0x8C M_inputFieldNormalBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_inputFieldInvalidBackgroundColor        = (Color)GetInt32(new IntPtr(p + 0x09C)); // 02466B219890 0x9C M_inputFieldInvalidBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_inputFieldTextColor                     = (Color)GetInt32(new IntPtr(p + 0x0AC)); // 02466B2198B0 0xAC M_inputFieldTextColor       ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_toggleCheckmarkColor                    = (Color)GetInt32(new IntPtr(p + 0x0BC)); // 02466B2198D0 0xBC M_toggleCheckmarkColor      ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_sliderBackgroundColor                   = (Color)GetInt32(new IntPtr(p + 0x0CC)); // 02466B2198F0 0xCC M_sliderBackgroundColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_sliderThumbColor                        = (Color)GetInt32(new IntPtr(p + 0x0DC)); // 02466B219910 0xDC M_sliderThumbColor          ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_buttonBackgroundColor                   = (Color)GetInt32(new IntPtr(p + 0x0EC)); // 02466B219930 0xEC M_buttonBackgroundColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_buttonTextColor                         = (Color)GetInt32(new IntPtr(p + 0x0FC)); // 02466B219950 0xFC M_buttonTextColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_selectedItemBackgroundColor             = (Color)GetInt32(new IntPtr(p + 0x10C)); // 02466B219970 0x10C M_selectedItemBackgroundColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_selectedItemTextColor                   = (Color)GetInt32(new IntPtr(p + 0x11C)); // 02466B219990 0x11C M_selectedItemTextColor     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 M_IsFromCache                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class WebResponse
+    public partial class WebResponse : DataModel
     {
         public bool                                     M_IsFromCache                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WebResponse();
+            var value   = new WebResponse() { Pointer= p0 };
 
-            value.M_IsFromCache                             = GetBool(new IntPtr(p + 0x018)); // 0270D7491A58 0x18 M_IsFromCache               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_IsFromCache                             = GetBool(new IntPtr(p + 0x018)); // 0246674F9A58 0x18 M_IsFromCache               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

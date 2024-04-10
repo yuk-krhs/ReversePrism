@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ModifierSpec
+    public partial class ModifierSpec : DataModel
     {
 
         public static ModifierSpec? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ModifierSpec();
+            var value   = new ModifierSpec() { Pointer= p0 };
 
 
             return value;

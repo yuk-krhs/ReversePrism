@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Min                                      000186666F40 ModelPrimitiveType float float float Single
     // 014 Max                                      000186666F40 ModelPrimitiveType float float float Single
-    public partial class RangeAttribute
+    public partial class RangeAttribute : DataModel
     {
         public float                                    Min                                     { get; set; }
         public float                                    Max                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RangeAttribute();
+            var value   = new RangeAttribute() { Pointer= p0 };
 
-            value.Min                                       = GetSingle(new IntPtr(p + 0x010)); // 0270068B8438 0x10 Min                         ( 000186666F40 ModelPrimitiveType float float float Single )
-            value.Max                                       = GetSingle(new IntPtr(p + 0x014)); // 0270068B8458 0x14 Max                         ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.Min                                       = GetSingle(new IntPtr(p + 0x010)); // 0245A687AAE8 0x10 Min                         ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.Max                                       = GetSingle(new IntPtr(p + 0x014)); // 0245A687AB08 0x14 Max                         ( 000186666F40 ModelPrimitiveType float float float Single )
 
             return value;
         }

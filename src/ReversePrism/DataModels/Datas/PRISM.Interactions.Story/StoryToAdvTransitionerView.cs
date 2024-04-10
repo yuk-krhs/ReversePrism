@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 storyPlayConfirmationPopupFactory        PopupViewFactory`1<IStoryPlayConfirmationPopupView> IL2CPP_TYPE_GENERICINST
     // 028 storyContinuousPlayConfirmationPopupFactory PopupViewFactory`1<IStoryContinuousPlayConfirmationPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class StoryToAdvTransitionerView
+    public partial class StoryToAdvTransitionerView : DataModel
     {
 
         public static StoryToAdvTransitionerView? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryToAdvTransitionerView();
+            var value   = new StoryToAdvTransitionerView() { Pointer= p0 };
 
 
             return value;

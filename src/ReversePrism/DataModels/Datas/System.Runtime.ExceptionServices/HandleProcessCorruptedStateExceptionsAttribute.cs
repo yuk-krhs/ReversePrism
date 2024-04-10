@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HandleProcessCorruptedStateExceptionsAttribute
+    public partial class HandleProcessCorruptedStateExceptionsAttribute : DataModel
     {
 
         public static HandleProcessCorruptedStateExceptionsAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HandleProcessCorruptedStateExceptionsAttribute();
+            var value   = new HandleProcessCorruptedStateExceptionsAttribute() { Pointer= p0 };
 
 
             return value;

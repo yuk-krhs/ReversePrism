@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 onClick                                  Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 060 onSkillKeyWord                           Subject`1<List`1<int>> IL2CPP_TYPE_GENERICINST
     // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class IdolSkillLvUpExecutionConfirmedPopupView
+    public partial class IdolSkillLvUpExecutionConfirmedPopupView : DataModel
     {
         public UITextMeshProUGUI?                       BeforeSkillLv                           { get; set; }
         public UITextMeshProUGUI?                       AfterSkillLv                            { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillLvUpExecutionConfirmedPopupView();
+            var value   = new IdolSkillLvUpExecutionConfirmedPopupView() { Pointer= p0 };
 
-            value.BeforeSkillLv                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2FECE8 0x20 BeforeSkillLv               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.AfterSkillLv                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2FED08 0x28 AfterSkillLv                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TrItemParent                              = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0270DA2FED28 0x30 TrItemParent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.GoRequiredItemIconView                    = GetObject<RequiredItemIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.RequiredItemIconView.FromPointer); // 0270DA2FED48 0x38 GoRequiredItemIconView      ( 00018666B4B0 ModelClassType RequiredItemIconView RequiredItemIconView RequiredItemIconView Pointer )
-            value.TxtRequiredMoney                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2FED68 0x40 TxtRequiredMoney            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtMoney                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2FED88 0x48 TxtMoney                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SkillListView                             = GetObject<ProduceIdolSkillListView>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceIdolSkillListView.FromPointer); // 0270DA2FEDA8 0x50 SkillListView               ( 00018654E4B0 ModelClassType ProduceIdolSkillListView ProduceIdolSkillListView ProduceIdolSkillListView Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA2FEE08 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.BeforeSkillLv                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A352240 0x20 BeforeSkillLv               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.AfterSkillLv                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A352260 0x28 AfterSkillLv                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TrItemParent                              = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466A352280 0x30 TrItemParent                ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.GoRequiredItemIconView                    = GetObject<RequiredItemIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.RequiredItemIconView.FromPointer); // 02466A3522A0 0x38 GoRequiredItemIconView      ( 00018666B4B0 ModelClassType RequiredItemIconView RequiredItemIconView RequiredItemIconView Pointer )
+            value.TxtRequiredMoney                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3522C0 0x40 TxtRequiredMoney            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtMoney                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3522E0 0x48 TxtMoney                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SkillListView                             = GetObject<ProduceIdolSkillListView>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceIdolSkillListView.FromPointer); // 02466A352300 0x50 SkillListView               ( 00018654E4B0 ModelClassType ProduceIdolSkillListView ProduceIdolSkillListView ProduceIdolSkillListView Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A352360 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

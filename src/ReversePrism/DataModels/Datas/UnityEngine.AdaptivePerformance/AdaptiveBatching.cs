@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultState                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AdaptiveBatching
+    public partial class AdaptiveBatching : DataModel
     {
         public bool                                     M_DefaultState                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveBatching();
+            var value   = new AdaptiveBatching() { Pointer= p0 };
 
-            value.M_DefaultState                            = GetBool(new IntPtr(p + 0x040)); // 0270DB6899D8 0x40 M_DefaultState              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_DefaultState                            = GetBool(new IntPtr(p + 0x040)); // 02466B715C98 0x40 M_DefaultState              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

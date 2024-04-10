@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGalleryAlbumSupportCharacterStatus
+    public partial class IGalleryAlbumSupportCharacterStatus : DataModel
     {
 
         public static IGalleryAlbumSupportCharacterStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGalleryAlbumSupportCharacterStatus();
+            var value   = new IGalleryAlbumSupportCharacterStatus() { Pointer= p0 };
 
 
             return value;

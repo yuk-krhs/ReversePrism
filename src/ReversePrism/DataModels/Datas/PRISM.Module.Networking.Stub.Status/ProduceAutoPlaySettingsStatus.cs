@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 02C CardCostBalanceType                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 DeckPolicyTypeFieldNumber                int IL2CPP_TYPE_I4
     // 030 DeckPolicyType                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceAutoPlaySettingsStatus
+    public partial class ProduceAutoPlaySettingsStatus : DataModel
     {
         public int                                      ScheduleSelectionType                   { get; set; }
         public int                                      SystemType                              { get; set; }
@@ -40,15 +40,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoPlaySettingsStatus();
+            var value   = new ProduceAutoPlaySettingsStatus() { Pointer= p0 };
 
-            value.ScheduleSelectionType                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1109330 0x18 ScheduleSelectionType       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SystemType                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D1109370 0x1C SystemType                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VitalityRecoveryTimingType                = GetInt32(new IntPtr(p + 0x020)); // 0270D11093B0 0x20 VitalityRecoveryTimingType  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardRankUpBalanceType                     = GetInt32(new IntPtr(p + 0x024)); // 0270D11093F0 0x24 CardRankUpBalanceType       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardDeleteType                            = GetInt32(new IntPtr(p + 0x028)); // 0270D1109430 0x28 CardDeleteType              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardCostBalanceType                       = GetInt32(new IntPtr(p + 0x02C)); // 0270D1109470 0x2C CardCostBalanceType         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DeckPolicyType                            = GetInt32(new IntPtr(p + 0x030)); // 0270D11094B0 0x30 DeckPolicyType              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScheduleSelectionType                     = GetInt32(new IntPtr(p + 0x018)); // 024661091428 0x18 ScheduleSelectionType       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SystemType                                = GetInt32(new IntPtr(p + 0x01C)); // 024661091468 0x1C SystemType                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VitalityRecoveryTimingType                = GetInt32(new IntPtr(p + 0x020)); // 0246610914A8 0x20 VitalityRecoveryTimingType  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardRankUpBalanceType                     = GetInt32(new IntPtr(p + 0x024)); // 0246610914E8 0x24 CardRankUpBalanceType       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardDeleteType                            = GetInt32(new IntPtr(p + 0x028)); // 024661091528 0x28 CardDeleteType              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardCostBalanceType                       = GetInt32(new IntPtr(p + 0x02C)); // 024661091568 0x2C CardCostBalanceType         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DeckPolicyType                            = GetInt32(new IntPtr(p + 0x030)); // 0246610915A8 0x30 DeckPolicyType              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

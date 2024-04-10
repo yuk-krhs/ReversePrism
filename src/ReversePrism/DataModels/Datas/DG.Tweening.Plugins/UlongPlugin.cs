@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UlongPlugin
+    public partial class UlongPlugin : DataModel
     {
 
         public static UlongPlugin? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UlongPlugin();
+            var value   = new UlongPlugin() { Pointer= p0 };
 
 
             return value;

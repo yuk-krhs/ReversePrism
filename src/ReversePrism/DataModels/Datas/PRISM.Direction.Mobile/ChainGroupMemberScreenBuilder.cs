@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ViewPrefab                               000186557FA0 ModelClassType ChainGroupMemberScreenView ChainGroupMemberScreenView ChainGroupMemberScreenView Pointer
     // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class ChainGroupMemberScreenBuilder
+    public partial class ChainGroupMemberScreenBuilder : DataModel
     {
         public ChainGroupMemberScreenView?              ViewPrefab                              { get; set; }
         public Transform?                               ViewParent                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainGroupMemberScreenBuilder();
+            var value   = new ChainGroupMemberScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<ChainGroupMemberScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainGroupMemberScreenView.FromPointer); // 0270DB647608 0x20 ViewPrefab                  ( 000186557FA0 ModelClassType ChainGroupMemberScreenView ChainGroupMemberScreenView ChainGroupMemberScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0270DB647628 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<ChainGroupMemberScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainGroupMemberScreenView.FromPointer); // 02466B6D3768 0x20 ViewPrefab                  ( 000186557FA0 ModelClassType ChainGroupMemberScreenView ChainGroupMemberScreenView ChainGroupMemberScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3788 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

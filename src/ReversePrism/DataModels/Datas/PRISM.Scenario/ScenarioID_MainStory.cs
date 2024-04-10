@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScenarioID_MainStory
+    public partial class ScenarioID_MainStory : DataModel
     {
 
         public static ScenarioID_MainStory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScenarioID_MainStory();
+            var value   = new ScenarioID_MainStory() { Pointer= p0 };
 
 
             return value;

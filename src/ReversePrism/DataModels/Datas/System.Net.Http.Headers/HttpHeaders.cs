@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 HeaderKind                               0001866DEF90 ModelEnumType HttpHeaderKind HttpHeaderKind HttpHeaderKind Int32
     // 01C connectionclose                          Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 01E transferEncodingChunked                  Nullable`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class HttpHeaders
+    public partial class HttpHeaders : DataModel
     {
         public HttpHeaderKind                           HeaderKind                              { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpHeaders();
+            var value   = new HttpHeaders() { Pointer= p0 };
 
-            value.HeaderKind                                = (HttpHeaderKind)GetInt32(new IntPtr(p + 0x018)); // 0270DB82B5F8 0x18 HeaderKind                  ( 0001866DEF90 ModelEnumType HttpHeaderKind HttpHeaderKind HttpHeaderKind Int32 )
+            value.HeaderKind                                = (HttpHeaderKind)GetInt32(new IntPtr(p + 0x018)); // 02466B8AB4D0 0x18 HeaderKind                  ( 0001866DEF90 ModelEnumType HttpHeaderKind HttpHeaderKind HttpHeaderKind Int32 )
 
             return value;
         }

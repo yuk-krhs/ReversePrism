@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UIRawImage
+    public partial class UIRawImage : DataModel
     {
 
         public static UIRawImage? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIRawImage();
+            var value   = new UIRawImage() { Pointer= p0 };
 
 
             return value;

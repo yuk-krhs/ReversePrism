@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class STAThreadAttribute
+    public partial class STAThreadAttribute : DataModel
     {
 
         public static STAThreadAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new STAThreadAttribute();
+            var value   = new STAThreadAttribute() { Pointer= p0 };
 
 
             return value;

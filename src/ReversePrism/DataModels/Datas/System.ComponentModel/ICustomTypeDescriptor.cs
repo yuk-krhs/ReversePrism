@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomTypeDescriptor
+    public partial class ICustomTypeDescriptor : DataModel
     {
 
         public static ICustomTypeDescriptor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomTypeDescriptor();
+            var value   = new ICustomTypeDescriptor() { Pointer= p0 };
 
 
             return value;

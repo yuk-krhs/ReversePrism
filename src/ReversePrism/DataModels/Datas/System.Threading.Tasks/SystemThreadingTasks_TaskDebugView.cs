@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SystemThreadingTasks_TaskDebugView
+    public partial class SystemThreadingTasks_TaskDebugView : DataModel
     {
 
         public static SystemThreadingTasks_TaskDebugView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemThreadingTasks_TaskDebugView();
+            var value   = new SystemThreadingTasks_TaskDebugView() { Pointer= p0 };
 
 
             return value;

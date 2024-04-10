@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILGenerator
+    public partial class ILGenerator : DataModel
     {
 
         public static ILGenerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILGenerator();
+            var value   = new ILGenerator() { Pointer= p0 };
 
 
             return value;

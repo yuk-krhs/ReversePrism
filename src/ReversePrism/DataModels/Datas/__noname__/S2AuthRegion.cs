@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 KOREA                                    int IL2CPP_TYPE_I4
     // 000 JAPAN                                    int IL2CPP_TYPE_I4
     // 000 CHINA                                    int IL2CPP_TYPE_I4
-    public partial class S2AuthRegion
+    public partial class S2AuthRegion : DataModel
     {
 
         public static S2AuthRegion? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new S2AuthRegion();
+            var value   = new S2AuthRegion() { Pointer= p0 };
 
 
             return value;

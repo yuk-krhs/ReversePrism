@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomDeviceReset
+    public partial class ICustomDeviceReset : DataModel
     {
 
         public static ICustomDeviceReset? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomDeviceReset();
+            var value   = new ICustomDeviceReset() { Pointer= p0 };
 
 
             return value;

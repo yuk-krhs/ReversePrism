@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 060 Original_method_info                     000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 068 Data                                     0001866BAFD0 ModelClassType DelegateData DelegateData DelegateData Pointer
     // 070 Method_is_virtual                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class Delegate
+    public partial class Delegate : DataModel
     {
         public MethodInfo?                              Method_info                             { get; set; }
         public MethodInfo?                              Original_method_info                    { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Delegate();
+            var value   = new Delegate() { Pointer= p0 };
 
-            value.Method_info                               = GetObject<MethodInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.MethodInfo.FromPointer); // 027001540B98 0x58 Method_info                 ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.Original_method_info                      = GetObject<MethodInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.MethodInfo.FromPointer); // 027001540BB8 0x60 Original_method_info        ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.Data                                      = GetObject<DelegateData>(new IntPtr(p + 0x068), ReversePrism.DataModels.DelegateData.FromPointer); // 027001540BD8 0x68 Data                        ( 0001866BAFD0 ModelClassType DelegateData DelegateData DelegateData Pointer )
-            value.Method_is_virtual                         = GetBool(new IntPtr(p + 0x070)); // 027001540BF8 0x70 Method_is_virtual           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Method_info                               = GetObject<MethodInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A1540B98 0x58 Method_info                 ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.Original_method_info                      = GetObject<MethodInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A1540BB8 0x60 Original_method_info        ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.Data                                      = GetObject<DelegateData>(new IntPtr(p + 0x068), ReversePrism.DataModels.DelegateData.FromPointer); // 0245A1540BD8 0x68 Data                        ( 0001866BAFD0 ModelClassType DelegateData DelegateData DelegateData Pointer )
+            value.Method_is_virtual                         = GetBool(new IntPtr(p + 0x070)); // 0245A1540BF8 0x70 Method_is_virtual           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

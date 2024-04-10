@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 Int32                                    sbyte IL2CPP_TYPE_I1
     // 000 UInt64                                   sbyte IL2CPP_TYPE_I1
     // 000 Int64                                    sbyte IL2CPP_TYPE_I1
-    public partial class VarIntCodes
+    public partial class VarIntCodes : DataModel
     {
 
         public static VarIntCodes? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VarIntCodes();
+            var value   = new VarIntCodes() { Pointer= p0 };
 
 
             return value;

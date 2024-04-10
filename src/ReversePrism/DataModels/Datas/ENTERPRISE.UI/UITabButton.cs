@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 1C4 CurrentState                             000186669DF0 ModelEnumType TabState TabState TabState Int32
     // 1C8 Param                                    000186671910 ModelPrimitiveType string string string String
     // 1D0 ImagePictogramList                       000185CC4C18 ModelClassListType ImageInfo[] ImageInfo[] List<ImageInfo> Pointer
-    public partial class UITabButton
+    public partial class UITabButton : DataModel
     {
         public List<ImageInfo>?                         ImageStateList                          { get; set; }
         public List<TextInfo>?                          TextStateList                           { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UITabButton();
+            var value   = new UITabButton() { Pointer= p0 };
 
-            value.ImageStateList                            = GetObjectList<ImageInfo>(new IntPtr(p + 0x1B0), ReversePrism.DataModels.ImageInfo.FromPointer); // 0270D4BCCDC0 0x1B0 ImageStateList              ( 000185CC4C18 ModelClassListType ImageInfo[] ImageInfo[] List<ImageInfo> Pointer )
-            value.TextStateList                             = GetObjectList<TextInfo>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.TextInfo.FromPointer); // 0270D4BCCDE0 0x1B8 TextStateList               ( 000185CC4D28 ModelClassListType TextInfo[] TextInfo[] List<TextInfo> Pointer )
-            value.TabEnabled                                = GetBool(new IntPtr(p + 0x1C0)); // 0270D4BCCE00 0x1C0 TabEnabled                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentState                              = (TabState)GetInt32(new IntPtr(p + 0x1C4)); // 0270D4BCCE20 0x1C4 CurrentState                ( 000186669DF0 ModelEnumType TabState TabState TabState Int32 )
-            value.Param                                     = GetString(new IntPtr(p + 0x1C8)); // 0270D4BCCE40 0x1C8 Param                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.ImagePictogramList                        = GetObjectList<ImageInfo>(new IntPtr(p + 0x1D0), ReversePrism.DataModels.ImageInfo.FromPointer); // 0270D4BCCE60 0x1D0 ImagePictogramList          ( 000185CC4C18 ModelClassListType ImageInfo[] ImageInfo[] List<ImageInfo> Pointer )
+            value.ImageStateList                            = GetObjectList<ImageInfo>(new IntPtr(p + 0x1B0), ReversePrism.DataModels.ImageInfo.FromPointer); // 024664C2F6C0 0x1B0 ImageStateList              ( 000185CC4C18 ModelClassListType ImageInfo[] ImageInfo[] List<ImageInfo> Pointer )
+            value.TextStateList                             = GetObjectList<TextInfo>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.TextInfo.FromPointer); // 024664C2F6E0 0x1B8 TextStateList               ( 000185CC4D28 ModelClassListType TextInfo[] TextInfo[] List<TextInfo> Pointer )
+            value.TabEnabled                                = GetBool(new IntPtr(p + 0x1C0)); // 024664C2F700 0x1C0 TabEnabled                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentState                              = (TabState)GetInt32(new IntPtr(p + 0x1C4)); // 024664C2F720 0x1C4 CurrentState                ( 000186669DF0 ModelEnumType TabState TabState TabState Int32 )
+            value.Param                                     = GetString(new IntPtr(p + 0x1C8)); // 024664C2F740 0x1C8 Param                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.ImagePictogramList                        = GetObjectList<ImageInfo>(new IntPtr(p + 0x1D0), ReversePrism.DataModels.ImageInfo.FromPointer); // 024664C2F760 0x1D0 ImagePictogramList          ( 000185CC4C18 ModelClassListType ImageInfo[] ImageInfo[] List<ImageInfo> Pointer )
 
             return value;
         }

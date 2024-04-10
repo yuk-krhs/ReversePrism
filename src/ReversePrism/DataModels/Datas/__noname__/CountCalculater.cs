@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CharacterNumList                         000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     // 018 NewLineWaitTimePerCharacter              000186666050 ModelPrimitiveType float float float Single
-    public partial class CountCalculater
+    public partial class CountCalculater : DataModel
     {
         public List<int>?                               CharacterNumList                        { get; set; }
         public float                                    NewLineWaitTimePerCharacter             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CountCalculater();
+            var value   = new CountCalculater() { Pointer= p0 };
 
-            value.CharacterNumList                          = GetInt32List(new IntPtr(p + 0x010)); // 027006991C20 0x10 CharacterNumList            ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.NewLineWaitTimePerCharacter               = GetSingle(new IntPtr(p + 0x018)); // 027006991C40 0x18 NewLineWaitTimePerCharacter ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CharacterNumList                          = GetInt32List(new IntPtr(p + 0x010)); // 0245A6955B58 0x10 CharacterNumList            ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.NewLineWaitTimePerCharacter               = GetSingle(new IntPtr(p + 0x018)); // 0245A6955B78 0x18 NewLineWaitTimePerCharacter ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

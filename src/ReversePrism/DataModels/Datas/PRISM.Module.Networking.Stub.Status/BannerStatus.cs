@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 078 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 JumpFieldNumber                          int IL2CPP_TYPE_I4
     // 080 Jump                                     000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer
-    public partial class BannerStatus
+    public partial class BannerStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -56,21 +56,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BannerStatus();
+            var value   = new BannerStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D0B391B0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D0B391D0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.BannerId                                  = GetString(new IntPtr(p + 0x038)); // 0270D0B39250 0x38 BannerId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstBannerGenreId                          = GetInt32(new IntPtr(p + 0x040)); // 0270D0B39290 0x40 MstBannerGenreId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BannerType                                = (BannerType)GetInt32(new IntPtr(p + 0x044)); // 0270D0B392D0 0x44 BannerType                  ( 00018673B240 ModelEnumType BannerType BannerType BannerType Int32 )
-            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x048)); // 0270D0B39310 0x48 DisplayPriority             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ImageUrl                                  = GetString(new IntPtr(p + 0x050)); // 0270D0B39350 0x50 ImageUrl                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.ArticleId                                 = GetString(new IntPtr(p + 0x058)); // 0270D0B39390 0x58 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.OpenUrl                                   = GetString(new IntPtr(p + 0x060)); // 0270D0B393D0 0x60 OpenUrl                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Text                                      = GetString(new IntPtr(p + 0x068)); // 0270D0B39410 0x68 Text                        ( 000186671910 ModelPrimitiveType string string string String )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B39450 0x70 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B39490 0x78 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.JumpStatus.FromPointer); // 0270D0B394D0 0x80 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024660B22D78 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024660B22D98 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.BannerId                                  = GetString(new IntPtr(p + 0x038)); // 024660B22E18 0x38 BannerId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstBannerGenreId                          = GetInt32(new IntPtr(p + 0x040)); // 024660B22E58 0x40 MstBannerGenreId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BannerType                                = (BannerType)GetInt32(new IntPtr(p + 0x044)); // 024660B22E98 0x44 BannerType                  ( 00018673B240 ModelEnumType BannerType BannerType BannerType Int32 )
+            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x048)); // 024660B22ED8 0x48 DisplayPriority             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ImageUrl                                  = GetString(new IntPtr(p + 0x050)); // 024660B22F18 0x50 ImageUrl                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArticleId                                 = GetString(new IntPtr(p + 0x058)); // 024660B22F58 0x58 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.OpenUrl                                   = GetString(new IntPtr(p + 0x060)); // 024660B22F98 0x60 OpenUrl                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x068)); // 024660B22FD8 0x68 Text                        ( 000186671910 ModelPrimitiveType string string string String )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B23018 0x70 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B23058 0x78 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.JumpStatus.FromPointer); // 024660B23098 0x80 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

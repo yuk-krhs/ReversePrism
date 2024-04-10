@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaMaxLengthFacet
+    public partial class XmlSchemaMaxLengthFacet : DataModel
     {
 
         public static XmlSchemaMaxLengthFacet? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaMaxLengthFacet();
+            var value   = new XmlSchemaMaxLengthFacet() { Pointer= p0 };
 
 
             return value;

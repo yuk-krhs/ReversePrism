@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 PropertiesFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_properties_codec               FieldCodec`1<Property> IL2CPP_TYPE_GENERICINST
     // 018 Properties                               000185CED4E8 ModelClassListType RepeatedField`1<Property> RepeatedField`1<Property> List<Property> Pointer
-    public partial class ProjectProperties
+    public partial class ProjectProperties : DataModel
     {
         public List<Property>?                          Properties                              { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProjectProperties();
+            var value   = new ProjectProperties() { Pointer= p0 };
 
-            value.Properties                                = GetObjectList<Property>(new IntPtr(p + 0x018), ReversePrism.DataModels.Property.FromPointer); // 0270DA77D160 0x18 Properties                  ( 000185CED4E8 ModelClassListType RepeatedField`1<Property> RepeatedField`1<Property> List<Property> Pointer )
+            value.Properties                                = GetObjectList<Property>(new IntPtr(p + 0x018), ReversePrism.DataModels.Property.FromPointer); // 02466A7E1A50 0x18 Properties                  ( 000185CED4E8 ModelClassListType RepeatedField`1<Property> RepeatedField`1<Property> List<Property> Pointer )
 
             return value;
         }

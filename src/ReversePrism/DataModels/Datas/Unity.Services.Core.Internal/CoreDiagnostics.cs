@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 010 <CoreTags>k__BackingField                IDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 018 DiagnosticsComponentProvider             00018674F8B0 ModelClassType IDiagnosticsComponentProvider IDiagnosticsComponentProvider IDiagnosticsComponentProvider Pointer
     // 020 Diagnostics                              00018674F3D0 ModelClassType IDiagnostics IDiagnostics IDiagnostics Pointer
-    public partial class CoreDiagnostics
+    public partial class CoreDiagnostics : DataModel
     {
         public IDiagnosticsComponentProvider?           DiagnosticsComponentProvider            { get; set; }
         public IDiagnostics?                            Diagnostics                             { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreDiagnostics();
+            var value   = new CoreDiagnostics() { Pointer= p0 };
 
-            value.DiagnosticsComponentProvider              = GetObject<IDiagnosticsComponentProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDiagnosticsComponentProvider.FromPointer); // 0270D08758F0 0x18 DiagnosticsComponentProvider ( 00018674F8B0 ModelClassType IDiagnosticsComponentProvider IDiagnosticsComponentProvider IDiagnosticsComponentProvider Pointer )
-            value.Diagnostics                               = GetObject<IDiagnostics>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDiagnostics.FromPointer); // 0270D0875910 0x20 Diagnostics                 ( 00018674F3D0 ModelClassType IDiagnostics IDiagnostics IDiagnostics Pointer )
+            value.DiagnosticsComponentProvider              = GetObject<IDiagnosticsComponentProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDiagnosticsComponentProvider.FromPointer); // 0246608BD880 0x18 DiagnosticsComponentProvider ( 00018674F8B0 ModelClassType IDiagnosticsComponentProvider IDiagnosticsComponentProvider IDiagnosticsComponentProvider Pointer )
+            value.Diagnostics                               = GetObject<IDiagnostics>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDiagnostics.FromPointer); // 0246608BD8A0 0x20 Diagnostics                 ( 00018674F3D0 ModelClassType IDiagnostics IDiagnostics IDiagnostics Pointer )
 
             return value;
         }

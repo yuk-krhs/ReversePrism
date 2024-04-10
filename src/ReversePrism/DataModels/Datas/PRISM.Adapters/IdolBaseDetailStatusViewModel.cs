@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 070 IdolExpObservable                        IObservable`1<IList`1<long>> IL2CPP_TYPE_GENERICINST
     // 078 DearnessLvObservable                     IObservable`1<IList`1<int>> IL2CPP_TYPE_GENERICINST
     // 080 DearnessLvExpObservable                  IObservable`1<IList`1<long>> IL2CPP_TYPE_GENERICINST
-    public partial class IdolBaseDetailStatusViewModel
+    public partial class IdolBaseDetailStatusViewModel : DataModel
     {
         public IntReactiveProperty?                     MstIdolId                               { get; set; }
         public IntReactiveProperty?                     CurrentIdolLv                           { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolBaseDetailStatusViewModel();
+            var value   = new IdolBaseDetailStatusViewModel() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5EC7A18 0x10 MstIdolId                   ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.CurrentIdolLv                             = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5EC7A38 0x18 CurrentIdolLv               ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.MaxIdolLv                                 = GetObject<IntReactiveProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5EC7A58 0x20 MaxIdolLv                   ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.CurrentIdolExp                            = GetObject<LongReactiveProperty>(new IntPtr(p + 0x028), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D5EC7A78 0x28 CurrentIdolExp              ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
-            value.MaxIdolExp                                = GetObject<LongReactiveProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D5EC7A98 0x30 MaxIdolExp                  ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
-            value.CurrentDearnessLv                         = GetObject<IntReactiveProperty>(new IntPtr(p + 0x040), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5EC7AD8 0x40 CurrentDearnessLv           ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.MaxDearnessLv                             = GetObject<IntReactiveProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D5EC7AF8 0x48 MaxDearnessLv               ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.CurrentDearnessLvExp                      = GetObject<LongReactiveProperty>(new IntPtr(p + 0x050), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D5EC7B18 0x50 CurrentDearnessLvExp        ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
-            value.MaxDearnessLvExp                          = GetObject<LongReactiveProperty>(new IntPtr(p + 0x058), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D5EC7B38 0x58 MaxDearnessLvExp            ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.MstIdolId                                 = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F301B8 0x10 MstIdolId                   ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.CurrentIdolLv                             = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F301D8 0x18 CurrentIdolLv               ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.MaxIdolLv                                 = GetObject<IntReactiveProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F301F8 0x20 MaxIdolLv                   ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.CurrentIdolExp                            = GetObject<LongReactiveProperty>(new IntPtr(p + 0x028), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 024665F30218 0x28 CurrentIdolExp              ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.MaxIdolExp                                = GetObject<LongReactiveProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 024665F30238 0x30 MaxIdolExp                  ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.CurrentDearnessLv                         = GetObject<IntReactiveProperty>(new IntPtr(p + 0x040), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F30278 0x40 CurrentDearnessLv           ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.MaxDearnessLv                             = GetObject<IntReactiveProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024665F30298 0x48 MaxDearnessLv               ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.CurrentDearnessLvExp                      = GetObject<LongReactiveProperty>(new IntPtr(p + 0x050), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 024665F302B8 0x50 CurrentDearnessLvExp        ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.MaxDearnessLvExp                          = GetObject<LongReactiveProperty>(new IntPtr(p + 0x058), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 024665F302D8 0x58 MaxDearnessLvExp            ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
 
             return value;
         }

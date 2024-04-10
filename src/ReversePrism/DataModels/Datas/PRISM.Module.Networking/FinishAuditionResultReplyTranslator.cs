@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FinishAuditionResultReplyTranslator
+    public partial class FinishAuditionResultReplyTranslator : DataModel
     {
 
         public static FinishAuditionResultReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishAuditionResultReplyTranslator();
+            var value   = new FinishAuditionResultReplyTranslator() { Pointer= p0 };
 
 
             return value;

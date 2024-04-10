@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 030 <InGameActionResultPool>k__BackingField  ObjectPool`1<InGameActionResult> IL2CPP_TYPE_GENERICINST
     // 038 <InGamePlayerActionResultPool>k__BackingField ObjectPool`1<InGamePlayerActionResult> IL2CPP_TYPE_GENERICINST
     // 040 <TemporaryCardListPool>k__BackingField   ObjectPool`1<List`1<IngamePCardModel>> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceInGamePool
+    public partial class ProduceInGamePool : DataModel
     {
 
         public static ProduceInGamePool? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceInGamePool();
+            var value   = new ProduceInGamePool() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NormalLiveLiveBonusUsageSettingStatus
+    public partial class NormalLiveLiveBonusUsageSettingStatus : DataModel
     {
 
         public static NormalLiveLiveBonusUsageSettingStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NormalLiveLiveBonusUsageSettingStatus();
+            var value   = new NormalLiveLiveBonusUsageSettingStatus() { Pointer= p0 };
 
 
             return value;

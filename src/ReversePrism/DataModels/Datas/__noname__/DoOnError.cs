@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 parent                                   DoOnErrorObservable`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class DoOnError
+    public partial class DoOnError : DataModel
     {
 
         public static DoOnError? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoOnError();
+            var value   = new DoOnError() { Pointer= p0 };
 
 
             return value;

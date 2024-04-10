@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 PopupAssets                              000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 048 PopupNames                               000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 050 customPopup                              AssetCollection`1<PopupContentBase> IL2CPP_TYPE_GENERICINST
-    public partial class ViewBase
+    public partial class ViewBase : DataModel
     {
         public CanvasGroup?                             WindowCanvasGroup                       { get; set; }
         public ViewStatusType                           ViewStatus                              { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewBase();
+            var value   = new ViewBase() { Pointer= p0 };
 
-            value.WindowCanvasGroup                         = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270024F74A8 0x20 WindowCanvasGroup           ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ViewStatus                                = (ViewStatusType)GetInt32(new IntPtr(p + 0x028)); // 0270024F74C8 0x28 ViewStatus                  ( 0001866E0F50 ModelEnumType ViewStatusType ViewStatusType ViewStatusType Int32 )
-            value.ViewType                                  = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0270024F74E8 0x30 ViewType                    ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.JumpParam                                 = GetObject<IViewParameter>(new IntPtr(p + 0x038), ReversePrism.DataModels.IViewParameter.FromPointer); // 0270024F7508 0x38 JumpParam                   ( 000186696190 ModelClassType IViewParameter IViewParameter IViewParameter Pointer )
-            value.PopupAssets                               = GetStringList(new IntPtr(p + 0x040)); // 0270024F7528 0x40 PopupAssets                 ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.PopupNames                                = GetStringList(new IntPtr(p + 0x048)); // 0270024F7548 0x48 PopupNames                  ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.WindowCanvasGroup                         = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A24F74A8 0x20 WindowCanvasGroup           ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ViewStatus                                = (ViewStatusType)GetInt32(new IntPtr(p + 0x028)); // 0245A24F74C8 0x28 ViewStatus                  ( 0001866E0F50 ModelEnumType ViewStatusType ViewStatusType ViewStatusType Int32 )
+            value.ViewType                                  = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0245A24F74E8 0x30 ViewType                    ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.JumpParam                                 = GetObject<IViewParameter>(new IntPtr(p + 0x038), ReversePrism.DataModels.IViewParameter.FromPointer); // 0245A24F7508 0x38 JumpParam                   ( 000186696190 ModelClassType IViewParameter IViewParameter IViewParameter Pointer )
+            value.PopupAssets                               = GetStringList(new IntPtr(p + 0x040)); // 0245A24F7528 0x40 PopupAssets                 ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.PopupNames                                = GetStringList(new IntPtr(p + 0x048)); // 0245A24F7548 0x48 PopupNames                  ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

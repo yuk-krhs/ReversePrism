@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 First                                    char IL2CPP_TYPE_CHAR
     // 012 Last                                     char IL2CPP_TYPE_CHAR
-    public partial class SingleRange
+    public partial class SingleRange : DataModel
     {
 
         public static SingleRange? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleRange();
+            var value   = new SingleRange() { Pointer= p0 };
 
 
             return value;

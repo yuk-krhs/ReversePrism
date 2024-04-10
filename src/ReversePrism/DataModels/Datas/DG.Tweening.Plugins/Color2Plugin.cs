@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Color2Plugin
+    public partial class Color2Plugin : DataModel
     {
 
         public static Color2Plugin? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Color2Plugin();
+            var value   = new Color2Plugin() { Pointer= p0 };
 
 
             return value;

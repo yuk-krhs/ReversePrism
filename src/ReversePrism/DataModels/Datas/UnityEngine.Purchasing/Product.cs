@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 AppleOriginalTransactionID               000186671910 ModelPrimitiveType string string string String
     // 038 AppleProductIsRestored                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 Receipt                                  000186671910 ModelPrimitiveType string string string String
-    public partial class Product
+    public partial class Product : DataModel
     {
         public ProductDefinition?                       Definition                              { get; set; }
         public ProductMetadata?                         Metadata                                { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Product();
+            var value   = new Product() { Pointer= p0 };
 
-            value.Definition                                = GetObject<ProductDefinition>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProductDefinition.FromPointer); // 027004BFBF50 0x10 Definition                  ( 0001865A0170 ModelClassType ProductDefinition ProductDefinition ProductDefinition Pointer )
-            value.Metadata                                  = GetObject<ProductMetadata>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductMetadata.FromPointer); // 027004BFBF70 0x18 Metadata                    ( 0001865A3510 ModelClassType ProductMetadata ProductMetadata ProductMetadata Pointer )
-            value.AvailableToPurchase                       = GetBool(new IntPtr(p + 0x020)); // 027004BFBF90 0x20 AvailableToPurchase         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TransactionID                             = GetString(new IntPtr(p + 0x028)); // 027004BFBFB0 0x28 TransactionID               ( 000186671910 ModelPrimitiveType string string string String )
-            value.AppleOriginalTransactionID                = GetString(new IntPtr(p + 0x030)); // 027004BFBFD0 0x30 AppleOriginalTransactionID  ( 000186671910 ModelPrimitiveType string string string String )
-            value.AppleProductIsRestored                    = GetBool(new IntPtr(p + 0x038)); // 027004BFBFF0 0x38 AppleProductIsRestored      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Receipt                                   = GetString(new IntPtr(p + 0x040)); // 027004BFC010 0x40 Receipt                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Definition                                = GetObject<ProductDefinition>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProductDefinition.FromPointer); // 0245A4C229E0 0x10 Definition                  ( 0001865A0170 ModelClassType ProductDefinition ProductDefinition ProductDefinition Pointer )
+            value.Metadata                                  = GetObject<ProductMetadata>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductMetadata.FromPointer); // 0245A4C22A00 0x18 Metadata                    ( 0001865A3510 ModelClassType ProductMetadata ProductMetadata ProductMetadata Pointer )
+            value.AvailableToPurchase                       = GetBool(new IntPtr(p + 0x020)); // 0245A4C22A20 0x20 AvailableToPurchase         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TransactionID                             = GetString(new IntPtr(p + 0x028)); // 0245A4C22A40 0x28 TransactionID               ( 000186671910 ModelPrimitiveType string string string String )
+            value.AppleOriginalTransactionID                = GetString(new IntPtr(p + 0x030)); // 0245A4C22A60 0x30 AppleOriginalTransactionID  ( 000186671910 ModelPrimitiveType string string string String )
+            value.AppleProductIsRestored                    = GetBool(new IntPtr(p + 0x038)); // 0245A4C22A80 0x38 AppleProductIsRestored      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Receipt                                   = GetString(new IntPtr(p + 0x040)); // 0245A4C22AA0 0x40 Receipt                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 iterateCompleted                         bool IL2CPP_TYPE_BOOLEAN
     // 000 continueNext                             bool IL2CPP_TYPE_BOOLEAN
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _TakeLast
+    public partial class _TakeLast : DataModel
     {
 
         public static _TakeLast? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TakeLast();
+            var value   = new _TakeLast() { Pointer= p0 };
 
 
             return value;

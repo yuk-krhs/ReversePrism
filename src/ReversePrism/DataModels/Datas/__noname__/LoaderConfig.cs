@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ShouldLoadAwbOnMemory                    000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class LoaderConfig
+    public partial class LoaderConfig : DataModel
     {
         public bool                                     ShouldLoadAwbOnMemory                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoaderConfig();
+            var value   = new LoaderConfig() { Pointer= p0 };
 
-            value.ShouldLoadAwbOnMemory                     = GetBool(new IntPtr(p + 0x010)); // 0270DAC6FC48 0x10 ShouldLoadAwbOnMemory       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ShouldLoadAwbOnMemory                     = GetBool(new IntPtr(p + 0x010)); // 02466ACD7C48 0x10 ShouldLoadAwbOnMemory       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

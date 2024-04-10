@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileSupportCharaSelectPopupViewFactory
+    public partial class ProfileSupportCharaSelectPopupViewFactory : DataModel
     {
 
         public static ProfileSupportCharaSelectPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileSupportCharaSelectPopupViewFactory();
+            var value   = new ProfileSupportCharaSelectPopupViewFactory() { Pointer= p0 };
 
 
             return value;

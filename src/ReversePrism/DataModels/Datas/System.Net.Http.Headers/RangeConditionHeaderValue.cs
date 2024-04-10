@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <Date>k__BackingField                    Nullable`1<DateTimeOffset> IL2CPP_TYPE_GENERICINST
     // 028 EntityTag                                0001865C6F40 ModelClassType EntityTagHeaderValue EntityTagHeaderValue EntityTagHeaderValue Pointer
-    public partial class RangeConditionHeaderValue
+    public partial class RangeConditionHeaderValue : DataModel
     {
         public EntityTagHeaderValue?                    EntityTag                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RangeConditionHeaderValue();
+            var value   = new RangeConditionHeaderValue() { Pointer= p0 };
 
-            value.EntityTag                                 = GetObject<EntityTagHeaderValue>(new IntPtr(p + 0x028), ReversePrism.DataModels.EntityTagHeaderValue.FromPointer); // 0270DB8979A0 0x28 EntityTag                   ( 0001865C6F40 ModelClassType EntityTagHeaderValue EntityTagHeaderValue EntityTagHeaderValue Pointer )
+            value.EntityTag                                 = GetObject<EntityTagHeaderValue>(new IntPtr(p + 0x028), ReversePrism.DataModels.EntityTagHeaderValue.FromPointer); // 02466B91F610 0x28 EntityTag                   ( 0001865C6F40 ModelClassType EntityTagHeaderValue EntityTagHeaderValue EntityTagHeaderValue Pointer )
 
             return value;
         }

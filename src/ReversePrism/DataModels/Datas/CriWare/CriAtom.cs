@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 028 Instance                                 000186640EA0 ModelClassType CriAtom CriAtom CriAtom Pointer
     // 058 AcfRegisterGCHandle                      0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
     // 060 DontRemoveExistsCueSheet                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class CriAtom
+    public partial class CriAtom : DataModel
     {
         public string                                   AcfFile                                 { get; set; }
         public bool                                     AcfIsLoading                            { get; set; }
@@ -41,19 +41,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtom();
+            var value   = new CriAtom() { Pointer= p0 };
 
-            value.AcfFile                                   = GetString(new IntPtr(p + 0x030)); // 0270D1882348 0x30 AcfFile                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AcfIsLoading                              = GetBool(new IntPtr(p + 0x038)); // 0270D1882368 0x38 AcfIsLoading                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CueSheets                                 = GetObjectList<CriAtomCueSheet>(new IntPtr(p + 0x040), ReversePrism.DataModels.CriAtomCueSheet.FromPointer); // 0270D1882388 0x40 CueSheets                   ( 000185B77D20 ModelClassListType CriAtomCueSheet[] CriAtomCueSheet[] List<CriAtomCueSheet> Pointer )
-            value.DspBusSetting                             = GetString(new IntPtr(p + 0x048)); // 0270D18823A8 0x48 DspBusSetting               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DontDestroyOnLoad                         = GetBool(new IntPtr(p + 0x050)); // 0270D18823C8 0x50 DontDestroyOnLoad           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BeatsyncUserCbFunc                        = GetObject<CbFunc>(new IntPtr(p + 0x010), ReversePrism.DataModels.CbFunc.FromPointer); // 0270D1882428 0x10 BeatsyncUserCbFunc          ( 000186549DD0 ModelClassType CbFunc CbFunc CbFunc Pointer )
-            value.ObsoleteBeatSyncFunc                      = GetObject<CbFunc>(new IntPtr(p + 0x018), ReversePrism.DataModels.CbFunc.FromPointer); // 0270D1882448 0x18 ObsoleteBeatSyncFunc        ( 000186549DD0 ModelClassType CbFunc CbFunc CbFunc Pointer )
-            value.CueLinkUserCbFunc                         = GetObject<CueLinkCbFunc>(new IntPtr(p + 0x020), ReversePrism.DataModels.CueLinkCbFunc.FromPointer); // 0270D1882468 0x20 CueLinkUserCbFunc           ( 00018653ED40 ModelClassType CueLinkCbFunc CueLinkCbFunc CueLinkCbFunc Pointer )
-            value.Instance                                  = GetObject<CriAtom>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtom.FromPointer); // 0270D1882488 0x28 Instance                    ( 000186640EA0 ModelClassType CriAtom CriAtom CriAtom Pointer )
-            value.AcfRegisterGCHandle                       = (GCHandle)GetInt32(new IntPtr(p + 0x058)); // 0270D18824A8 0x58 AcfRegisterGCHandle         ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
-            value.DontRemoveExistsCueSheet                  = GetBool(new IntPtr(p + 0x060)); // 0270D18824C8 0x60 DontRemoveExistsCueSheet    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AcfFile                                   = GetString(new IntPtr(p + 0x030)); // 0246618136C0 0x30 AcfFile                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AcfIsLoading                              = GetBool(new IntPtr(p + 0x038)); // 0246618136E0 0x38 AcfIsLoading                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CueSheets                                 = GetObjectList<CriAtomCueSheet>(new IntPtr(p + 0x040), ReversePrism.DataModels.CriAtomCueSheet.FromPointer); // 024661813700 0x40 CueSheets                   ( 000185B77D20 ModelClassListType CriAtomCueSheet[] CriAtomCueSheet[] List<CriAtomCueSheet> Pointer )
+            value.DspBusSetting                             = GetString(new IntPtr(p + 0x048)); // 024661813720 0x48 DspBusSetting               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DontDestroyOnLoad                         = GetBool(new IntPtr(p + 0x050)); // 024661813740 0x50 DontDestroyOnLoad           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BeatsyncUserCbFunc                        = GetObject<CbFunc>(new IntPtr(p + 0x010), ReversePrism.DataModels.CbFunc.FromPointer); // 0246618137A0 0x10 BeatsyncUserCbFunc          ( 000186549DD0 ModelClassType CbFunc CbFunc CbFunc Pointer )
+            value.ObsoleteBeatSyncFunc                      = GetObject<CbFunc>(new IntPtr(p + 0x018), ReversePrism.DataModels.CbFunc.FromPointer); // 0246618137C0 0x18 ObsoleteBeatSyncFunc        ( 000186549DD0 ModelClassType CbFunc CbFunc CbFunc Pointer )
+            value.CueLinkUserCbFunc                         = GetObject<CueLinkCbFunc>(new IntPtr(p + 0x020), ReversePrism.DataModels.CueLinkCbFunc.FromPointer); // 0246618137E0 0x20 CueLinkUserCbFunc           ( 00018653ED40 ModelClassType CueLinkCbFunc CueLinkCbFunc CueLinkCbFunc Pointer )
+            value.Instance                                  = GetObject<CriAtom>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriAtom.FromPointer); // 024661813800 0x28 Instance                    ( 000186640EA0 ModelClassType CriAtom CriAtom CriAtom Pointer )
+            value.AcfRegisterGCHandle                       = (GCHandle)GetInt32(new IntPtr(p + 0x058)); // 024661813820 0x58 AcfRegisterGCHandle         ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.DontRemoveExistsCueSheet                  = GetBool(new IntPtr(p + 0x060)); // 024661813840 0x60 DontRemoveExistsCueSheet    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITwestaScrollerView
+    public partial class ITwestaScrollerView : DataModel
     {
 
         public static ITwestaScrollerView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITwestaScrollerView();
+            var value   = new ITwestaScrollerView() { Pointer= p0 };
 
 
             return value;

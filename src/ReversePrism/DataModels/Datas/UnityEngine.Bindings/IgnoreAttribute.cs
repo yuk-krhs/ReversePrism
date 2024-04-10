@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 DoesNotContributeToSize                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class IgnoreAttribute
+    public partial class IgnoreAttribute : DataModel
     {
         public bool                                     DoesNotContributeToSize                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IgnoreAttribute();
+            var value   = new IgnoreAttribute() { Pointer= p0 };
 
-            value.DoesNotContributeToSize                   = GetBool(new IntPtr(p + 0x010)); // 027006979B80 0x10 DoesNotContributeToSize     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DoesNotContributeToSize                   = GetBool(new IntPtr(p + 0x010)); // 0245A692C318 0x10 DoesNotContributeToSize     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

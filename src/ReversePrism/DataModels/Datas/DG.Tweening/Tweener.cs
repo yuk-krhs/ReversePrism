@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 120 HasManuallySetStartValue                 000186595210 ModelPrimitiveType bool bool bool Bool
     // 121 IsFromAllowed                            000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class Tweener
+    public partial class Tweener : DataModel
     {
         public bool                                     HasManuallySetStartValue                { get; set; }
         public bool                                     IsFromAllowed                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Tweener();
+            var value   = new Tweener() { Pointer= p0 };
 
-            value.HasManuallySetStartValue                  = GetBool(new IntPtr(p + 0x120)); // 027004348650 0x120 HasManuallySetStartValue    ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.IsFromAllowed                             = GetBool(new IntPtr(p + 0x121)); // 027004348670 0x121 IsFromAllowed               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.HasManuallySetStartValue                  = GetBool(new IntPtr(p + 0x120)); // 0245A43A8A90 0x120 HasManuallySetStartValue    ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.IsFromAllowed                             = GetBool(new IntPtr(p + 0x121)); // 0245A43A8AB0 0x121 IsFromAllowed               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

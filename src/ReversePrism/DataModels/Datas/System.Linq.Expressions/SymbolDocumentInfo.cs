@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 FileName                                 000186672F10 ModelPrimitiveType string string string String
     // 000 DocumentType_Text                        Guid IL2CPP_TYPE_VALUETYPE
-    public partial class SymbolDocumentInfo
+    public partial class SymbolDocumentInfo : DataModel
     {
         public string                                   FileName                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SymbolDocumentInfo();
+            var value   = new SymbolDocumentInfo() { Pointer= p0 };
 
-            value.FileName                                  = GetString(new IntPtr(p + 0x010)); // 0270D9F3CC30 0x10 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.FileName                                  = GetString(new IntPtr(p + 0x010)); // 024669F99CE8 0x10 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_lock                                   <object> IL2CPP_TYPE_OBJECT
-    public partial class CrossAppDomainChannel
+    public partial class CrossAppDomainChannel : DataModel
     {
 
         public static CrossAppDomainChannel? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrossAppDomainChannel();
+            var value   = new CrossAppDomainChannel() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 InternalKeys                             string[] IL2CPP_TYPE_SZARRAY
-    public partial class MCMDictionary
+    public partial class MCMDictionary : DataModel
     {
 
         public static MCMDictionary? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MCMDictionary();
+            var value   = new MCMDictionary() { Pointer= p0 };
 
 
             return value;

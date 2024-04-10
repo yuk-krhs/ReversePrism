@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPlayerLoopItem
+    public partial class IPlayerLoopItem : DataModel
     {
 
         public static IPlayerLoopItem? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPlayerLoopItem();
+            var value   = new IPlayerLoopItem() { Pointer= p0 };
 
 
             return value;

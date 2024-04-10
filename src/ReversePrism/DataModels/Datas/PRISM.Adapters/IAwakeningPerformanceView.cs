@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAwakeningPerformanceView
+    public partial class IAwakeningPerformanceView : DataModel
     {
 
         public static IAwakeningPerformanceView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAwakeningPerformanceView();
+            var value   = new IAwakeningPerformanceView() { Pointer= p0 };
 
 
             return value;

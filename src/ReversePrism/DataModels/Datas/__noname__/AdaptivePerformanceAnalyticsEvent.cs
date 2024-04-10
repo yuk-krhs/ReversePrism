@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 ProviderData                             000185CB5628 ModelEnumListType ProviderData[] ProviderData[] List<ProviderData> Pointer
     // 028 CtrlMode                                 0001866722E0 ModelPrimitiveType string string string String
     // 030 FeatureData                              000185CB5428 ModelEnumListType FeatureData[] FeatureData[] List<FeatureData> Pointer
-    public partial class AdaptivePerformanceAnalyticsEvent
+    public partial class AdaptivePerformanceAnalyticsEvent : DataModel
     {
         public bool                                     Enabled                                 { get; set; }
         public bool                                     Initialized                             { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceAnalyticsEvent();
+            var value   = new AdaptivePerformanceAnalyticsEvent() { Pointer= p0 };
 
-            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 0270D0912F38 0x10 Enabled                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Initialized                               = GetBool(new IntPtr(p + 0x011)); // 0270D0912F58 0x11 Initialized                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ActiveProvider                            = GetString(new IntPtr(p + 0x018)); // 0270D0912F78 0x18 ActiveProvider              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ProviderData                              = GetEnumList<ProviderData>(new IntPtr(p + 0x020)); // 0270D0912F98 0x20 ProviderData                ( 000185CB5628 ModelEnumListType ProviderData[] ProviderData[] List<ProviderData> Pointer )
-            value.CtrlMode                                  = GetString(new IntPtr(p + 0x028)); // 0270D0912FB8 0x28 CtrlMode                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FeatureData                               = GetEnumList<FeatureData>(new IntPtr(p + 0x030)); // 0270D0912FD8 0x30 FeatureData                 ( 000185CB5428 ModelEnumListType FeatureData[] FeatureData[] List<FeatureData> Pointer )
+            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 024660912F38 0x10 Enabled                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x011)); // 024660912F58 0x11 Initialized                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ActiveProvider                            = GetString(new IntPtr(p + 0x018)); // 024660912F78 0x18 ActiveProvider              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ProviderData                              = GetEnumList<ProviderData>(new IntPtr(p + 0x020)); // 024660912F98 0x20 ProviderData                ( 000185CB5628 ModelEnumListType ProviderData[] ProviderData[] List<ProviderData> Pointer )
+            value.CtrlMode                                  = GetString(new IntPtr(p + 0x028)); // 024660912FB8 0x28 CtrlMode                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.FeatureData                               = GetEnumList<FeatureData>(new IntPtr(p + 0x030)); // 024660912FD8 0x30 FeatureData                 ( 000185CB5428 ModelEnumListType FeatureData[] FeatureData[] List<FeatureData> Pointer )
 
             return value;
         }

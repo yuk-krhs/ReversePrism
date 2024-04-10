@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 070 C3                                       0001866C4F90 ModelEnumType double4 double4 double4 Int32
     // 000 identity                                 double4x4 IL2CPP_TYPE_VALUETYPE
     // 080 Zero                                     0001865EB110 ModelEnumType double4x4 double4x4 double4x4 Int32
-    public partial class double4x4
+    public partial class double4x4 : DataModel
     {
         public double4                                  C0                                      { get; set; }
         public double4                                  C1                                      { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new double4x4();
+            var value   = new double4x4() { Pointer= p0 };
 
-            value.C0                                        = (double4)GetInt32(new IntPtr(p + 0x010)); // 0270015754F0 0x10 C0                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
-            value.C1                                        = (double4)GetInt32(new IntPtr(p + 0x030)); // 027001575510 0x30 C1                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
-            value.C2                                        = (double4)GetInt32(new IntPtr(p + 0x050)); // 027001575530 0x50 C2                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
-            value.C3                                        = (double4)GetInt32(new IntPtr(p + 0x070)); // 027001575550 0x70 C3                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
-            value.Zero                                      = (double4x4)GetInt32(new IntPtr(p + 0x080)); // 027001575590 0x80 Zero                        ( 0001865EB110 ModelEnumType double4x4 double4x4 double4x4 Int32 )
+            value.C0                                        = (double4)GetInt32(new IntPtr(p + 0x010)); // 0245A15754F0 0x10 C0                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
+            value.C1                                        = (double4)GetInt32(new IntPtr(p + 0x030)); // 0245A1575510 0x30 C1                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
+            value.C2                                        = (double4)GetInt32(new IntPtr(p + 0x050)); // 0245A1575530 0x50 C2                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
+            value.C3                                        = (double4)GetInt32(new IntPtr(p + 0x070)); // 0245A1575550 0x70 C3                          ( 0001866C4F90 ModelEnumType double4 double4 double4 Int32 )
+            value.Zero                                      = (double4x4)GetInt32(new IntPtr(p + 0x080)); // 0245A1575590 0x80 Zero                        ( 0001865EB110 ModelEnumType double4x4 double4x4 double4x4 Int32 )
 
             return value;
         }

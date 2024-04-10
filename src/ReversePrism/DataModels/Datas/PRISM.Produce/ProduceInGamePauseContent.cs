@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 BlackBG                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 040 PopupCaller                              000186558D00 ModelClassType ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller Pointer
     // 048 SuspendUnPauseButton                     0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    public partial class ProduceInGamePauseContent
+    public partial class ProduceInGamePauseContent : DataModel
     {
         public UIButton?                                PauseButton                             { get; set; }
         public GameObject?                              BlackBG                                 { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceInGamePauseContent();
+            var value   = new ProduceInGamePauseContent() { Pointer= p0 };
 
-            value.PauseButton                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0270D5BC0080 0x30 PauseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BlackBG                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5BC00A0 0x38 BlackBG                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PopupCaller                               = GetObject<ProduceInGamePausePopupCaller>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceInGamePausePopupCaller.FromPointer); // 0270D5BC00C0 0x40 PopupCaller                 ( 000186558D00 ModelClassType ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller Pointer )
-            value.SuspendUnPauseButton                      = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0270D5BC00E0 0x48 SuspendUnPauseButton        ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.PauseButton                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 024665C308F8 0x30 PauseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BlackBG                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024665C30918 0x38 BlackBG                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PopupCaller                               = GetObject<ProduceInGamePausePopupCaller>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceInGamePausePopupCaller.FromPointer); // 024665C30938 0x40 PopupCaller                 ( 000186558D00 ModelClassType ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller ProduceInGamePausePopupCaller Pointer )
+            value.SuspendUnPauseButton                      = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 024665C30958 0x48 SuspendUnPauseButton        ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

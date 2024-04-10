@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ArrayTypeMismatchException
+    public partial class ArrayTypeMismatchException : DataModel
     {
 
         public static ArrayTypeMismatchException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArrayTypeMismatchException();
+            var value   = new ArrayTypeMismatchException() { Pointer= p0 };
 
 
             return value;

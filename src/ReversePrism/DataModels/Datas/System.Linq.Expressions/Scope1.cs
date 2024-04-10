@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 _body                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class Scope1
+    public partial class Scope1 : DataModel
     {
 
         public static Scope1? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Scope1();
+            var value   = new Scope1() { Pointer= p0 };
 
 
             return value;

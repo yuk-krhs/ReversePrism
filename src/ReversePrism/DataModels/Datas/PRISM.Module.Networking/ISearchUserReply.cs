@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISearchUserReply
+    public partial class ISearchUserReply : DataModel
     {
 
         public static ISearchUserReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISearchUserReply();
+            var value   = new ISearchUserReply() { Pointer= p0 };
 
 
             return value;

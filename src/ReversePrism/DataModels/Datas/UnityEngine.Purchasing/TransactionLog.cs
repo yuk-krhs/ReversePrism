@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Logger                                   0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer
     // 018 PersistentDataPath                       000186672F10 ModelPrimitiveType string string string String
-    public partial class TransactionLog
+    public partial class TransactionLog : DataModel
     {
         public ILogger?                                 Logger                                  { get; set; }
         public string                                   PersistentDataPath                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransactionLog();
+            var value   = new TransactionLog() { Pointer= p0 };
 
-            value.Logger                                    = GetObject<ILogger>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogger.FromPointer); // 027004BE1B50 0x10 Logger                      ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
-            value.PersistentDataPath                        = GetString(new IntPtr(p + 0x018)); // 027004BE1B70 0x18 PersistentDataPath          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Logger                                    = GetObject<ILogger>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogger.FromPointer); // 0245A4C18C58 0x10 Logger                      ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
+            value.PersistentDataPath                        = GetString(new IntPtr(p + 0x018)); // 0245A4C18C78 0x18 PersistentDataPath          ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

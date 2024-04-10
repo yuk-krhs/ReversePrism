@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 MustFlush                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 029 ThrowOnOverflow                          000186595210 ModelPrimitiveType bool bool bool Bool
     // 02C BytesUsed                                0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class DecoderNLS
+    public partial class DecoderNLS : DataModel
     {
         public Encoding?                                Encoding                                { get; set; }
         public bool                                     MustFlush                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecoderNLS();
+            var value   = new DecoderNLS() { Pointer= p0 };
 
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0270033E6BE0 0x20 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.MustFlush                                 = GetBool(new IntPtr(p + 0x028)); // 0270033E6C00 0x28 MustFlush                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ThrowOnOverflow                           = GetBool(new IntPtr(p + 0x029)); // 0270033E6C20 0x29 ThrowOnOverflow             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.BytesUsed                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270033E6C40 0x2C BytesUsed                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0245A33E6BE0 0x20 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
+            value.MustFlush                                 = GetBool(new IntPtr(p + 0x028)); // 0245A33E6C00 0x28 MustFlush                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ThrowOnOverflow                           = GetBool(new IntPtr(p + 0x029)); // 0245A33E6C20 0x29 ThrowOnOverflow             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.BytesUsed                                 = GetInt32(new IntPtr(p + 0x02C)); // 0245A33E6C40 0x2C BytesUsed                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

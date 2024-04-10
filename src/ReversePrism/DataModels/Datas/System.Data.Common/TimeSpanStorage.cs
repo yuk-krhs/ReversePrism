@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_defaultValue                           TimeSpan IL2CPP_TYPE_VALUETYPE
     // 050 Values                                   000185CABAB8 ModelEnumListType TimeSpan[] TimeSpan[] List<TimeSpan> Pointer
-    public partial class TimeSpanStorage
+    public partial class TimeSpanStorage : DataModel
     {
         public List<TimeSpan>?                          Values                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeSpanStorage();
+            var value   = new TimeSpanStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<TimeSpan>(new IntPtr(p + 0x050)); // 0270D8A052C0 0x50 Values                      ( 000185CABAB8 ModelEnumListType TimeSpan[] TimeSpan[] List<TimeSpan> Pointer )
+            value.Values                                    = GetEnumList<TimeSpan>(new IntPtr(p + 0x050)); // 024668A60180 0x50 Values                      ( 000185CABAB8 ModelEnumListType TimeSpan[] TimeSpan[] List<TimeSpan> Pointer )
 
             return value;
         }

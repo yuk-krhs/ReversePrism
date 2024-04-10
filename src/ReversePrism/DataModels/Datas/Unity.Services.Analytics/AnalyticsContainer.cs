@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 024 M_GameRunningTime                        0001866656B0 ModelPrimitiveType float float float Single
     // 028 M_Service                                0001866A9830 ModelClassType AnalyticsServiceInstance AnalyticsServiceInstance AnalyticsServiceInstance Pointer
     // 010 Instance                                 0001866A89A0 ModelClassType AnalyticsContainer AnalyticsContainer AnalyticsContainer Pointer
-    public partial class AnalyticsContainer
+    public partial class AnalyticsContainer : DataModel
     {
         public float                                    M_AutoFlushTime                         { get; set; }
         public float                                    M_GameRunningTime                       { get; set; }
@@ -29,12 +29,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnalyticsContainer();
+            var value   = new AnalyticsContainer() { Pointer= p0 };
 
-            value.M_AutoFlushTime                           = GetSingle(new IntPtr(p + 0x020)); // 0270066C2DB8 0x20 M_AutoFlushTime             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_GameRunningTime                         = GetSingle(new IntPtr(p + 0x024)); // 0270066C2DD8 0x24 M_GameRunningTime           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Service                                 = GetObject<AnalyticsServiceInstance>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnalyticsServiceInstance.FromPointer); // 0270066C2DF8 0x28 M_Service                   ( 0001866A9830 ModelClassType AnalyticsServiceInstance AnalyticsServiceInstance AnalyticsServiceInstance Pointer )
-            value.Instance                                  = GetObject<AnalyticsContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnalyticsContainer.FromPointer); // 0270066C2E18 0x10 Instance                    ( 0001866A89A0 ModelClassType AnalyticsContainer AnalyticsContainer AnalyticsContainer Pointer )
+            value.M_AutoFlushTime                           = GetSingle(new IntPtr(p + 0x020)); // 0245A6684730 0x20 M_AutoFlushTime             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_GameRunningTime                         = GetSingle(new IntPtr(p + 0x024)); // 0245A6684750 0x24 M_GameRunningTime           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Service                                 = GetObject<AnalyticsServiceInstance>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnalyticsServiceInstance.FromPointer); // 0245A6684770 0x28 M_Service                   ( 0001866A9830 ModelClassType AnalyticsServiceInstance AnalyticsServiceInstance AnalyticsServiceInstance Pointer )
+            value.Instance                                  = GetObject<AnalyticsContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnalyticsContainer.FromPointer); // 0245A6684790 0x10 Instance                    ( 0001866A89A0 ModelClassType AnalyticsContainer AnalyticsContainer AnalyticsContainer Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 ColorIds                                 000185CB7498 ModelClassListType IdColorPair[] IdColorPair[] List<IdColorPair> Pointer
-    public partial class ChainTextColor
+    public partial class ChainTextColor : DataModel
     {
         public List<IdColorPair>?                       ColorIds                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTextColor();
+            var value   = new ChainTextColor() { Pointer= p0 };
 
-            value.ColorIds                                  = GetObjectList<IdColorPair>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdColorPair.FromPointer); // 0270DB0E4C40 0x18 ColorIds                    ( 000185CB7498 ModelClassListType IdColorPair[] IdColorPair[] List<IdColorPair> Pointer )
+            value.ColorIds                                  = GetObjectList<IdColorPair>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdColorPair.FromPointer); // 02466B14CC40 0x18 ColorIds                    ( 000185CB7498 ModelClassListType IdColorPair[] IdColorPair[] List<IdColorPair> Pointer )
 
             return value;
         }

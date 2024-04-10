@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Anim                                     0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    public partial class ScreenTransitionCurtain
+    public partial class ScreenTransitionCurtain : DataModel
     {
         public Animator?                                Anim                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenTransitionCurtain();
+            var value   = new ScreenTransitionCurtain() { Pointer= p0 };
 
-            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0270DBC0F0B0 0x20 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.Anim                                      = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 02466BC96410 0x20 Anim                        ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

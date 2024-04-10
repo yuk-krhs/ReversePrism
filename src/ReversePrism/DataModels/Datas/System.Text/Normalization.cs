@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 combiningClass                           IntPtr IL2CPP_TYPE_PTR
     // 030 forLock                                  <object> IL2CPP_TYPE_OBJECT
     // 038 IsReady                                  000186597200 ModelPrimitiveType bool bool bool Bool
-    public partial class Normalization
+    public partial class Normalization : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
 
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Normalization();
+            var value   = new Normalization() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x038)); // 0270D6B674E8 0x38 IsReady                     ( 000186597200 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x038)); // 024666BDF4E8 0x38 IsReady                     ( 000186597200 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

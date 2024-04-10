@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 PopupParameter                           000186661E60 ModelClassType ThumbnailPopupParameter ThumbnailPopupParameter ThumbnailPopupParameter Pointer
     // 038 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     // 040 onClick                                  Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ThumbnailPopupView
+    public partial class ThumbnailPopupView : DataModel
     {
         public UIImage?                                 ThumbnailImage                          { get; set; }
         public UIButton?                                ThumbnailButton                         { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThumbnailPopupView();
+            var value   = new ThumbnailPopupView() { Pointer= p0 };
 
-            value.ThumbnailImage                            = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB57E490 0x20 ThumbnailImage              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ThumbnailButton                           = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB57E4B0 0x28 ThumbnailButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PopupParameter                            = GetObject<ThumbnailPopupParameter>(new IntPtr(p + 0x030), ReversePrism.DataModels.ThumbnailPopupParameter.FromPointer); // 0270DB57E4D0 0x30 PopupParameter              ( 000186661E60 ModelClassType ThumbnailPopupParameter ThumbnailPopupParameter ThumbnailPopupParameter Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB57E4F0 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ThumbnailImage                            = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B60A5C0 0x20 ThumbnailImage              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.ThumbnailButton                           = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B60A5E0 0x28 ThumbnailButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.PopupParameter                            = GetObject<ThumbnailPopupParameter>(new IntPtr(p + 0x030), ReversePrism.DataModels.ThumbnailPopupParameter.FromPointer); // 02466B60A600 0x30 PopupParameter              ( 000186661E60 ModelClassType ThumbnailPopupParameter ThumbnailPopupParameter ThumbnailPopupParameter Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B60A620 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

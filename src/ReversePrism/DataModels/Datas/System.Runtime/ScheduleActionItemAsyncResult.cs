@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 doWork                                   Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class ScheduleActionItemAsyncResult
+    public partial class ScheduleActionItemAsyncResult : DataModel
     {
 
         public static ScheduleActionItemAsyncResult? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleActionItemAsyncResult();
+            var value   = new ScheduleActionItemAsyncResult() { Pointer= p0 };
 
 
             return value;

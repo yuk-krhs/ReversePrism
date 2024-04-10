@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 071 IsEnd                                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 074 CurrentAmount                            0001866656B0 ModelPrimitiveType float float float Single
     // 078 EstimateAmount                           0001866656B0 ModelPrimitiveType float float float Single
-    public partial class ScheduleVitalityGauge
+    public partial class ScheduleVitalityGauge : DataModel
     {
         public UIImage?                                 BackVitalityGauge                       { get; set; }
         public UIImage?                                 FrontVitalityGauge                      { get; set; }
@@ -56,22 +56,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleVitalityGauge();
+            var value   = new ScheduleVitalityGauge() { Pointer= p0 };
 
-            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA175150 0x20 BackVitalityGauge           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA175170 0x28 FrontVitalityGauge          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontFlickerVitalityGauge                 = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA175190 0x30 FrontFlickerVitalityGauge   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.VitalityFrom                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA1751B0 0x38 VitalityFrom                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.VitalityTo                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA1751D0 0x40 VitalityTo                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.FromObject                                = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA1751F0 0x48 FromObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GaugeChangeAnimator                       = GetObject<Animator>(new IntPtr(p + 0x050), ReversePrism.DataModels.Animator.FromPointer); // 0270DA175210 0x50 GaugeChangeAnimator         ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ColorFadeTweener                          = GetObject<Tweener>(new IntPtr(p + 0x058), ReversePrism.DataModels.Tweener.FromPointer); // 0270DA175230 0x58 ColorFadeTweener            ( 0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer )
-            value.CacheCueName                              = GetString(new IntPtr(p + 0x060)); // 0270DA1753B0 0x60 CacheCueName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.CacheEndAnimation                         = GetObject<Action>(new IntPtr(p + 0x068), ReversePrism.DataModels.Action.FromPointer); // 0270DA1753D0 0x68 CacheEndAnimation           ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.CacheIsCrease                             = GetBool(new IntPtr(p + 0x070)); // 0270DA1753F0 0x70 CacheIsCrease               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsEnd                                     = GetBool(new IntPtr(p + 0x071)); // 0270DA175410 0x71 IsEnd                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentAmount                             = GetSingle(new IntPtr(p + 0x074)); // 0270DA175430 0x74 CurrentAmount               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.EstimateAmount                            = GetSingle(new IntPtr(p + 0x078)); // 0270DA175450 0x78 EstimateAmount              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466A1E0220 0x20 BackVitalityGauge           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 02466A1E0240 0x28 FrontVitalityGauge          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontFlickerVitalityGauge                 = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 02466A1E0260 0x30 FrontFlickerVitalityGauge   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.VitalityFrom                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1E0280 0x38 VitalityFrom                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.VitalityTo                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1E02A0 0x40 VitalityTo                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.FromObject                                = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1E02C0 0x48 FromObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GaugeChangeAnimator                       = GetObject<Animator>(new IntPtr(p + 0x050), ReversePrism.DataModels.Animator.FromPointer); // 02466A1E02E0 0x50 GaugeChangeAnimator         ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.ColorFadeTweener                          = GetObject<Tweener>(new IntPtr(p + 0x058), ReversePrism.DataModels.Tweener.FromPointer); // 02466A1E0300 0x58 ColorFadeTweener            ( 0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer )
+            value.CacheCueName                              = GetString(new IntPtr(p + 0x060)); // 02466A1E0480 0x60 CacheCueName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.CacheEndAnimation                         = GetObject<Action>(new IntPtr(p + 0x068), ReversePrism.DataModels.Action.FromPointer); // 02466A1E04A0 0x68 CacheEndAnimation           ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.CacheIsCrease                             = GetBool(new IntPtr(p + 0x070)); // 02466A1E04C0 0x70 CacheIsCrease               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsEnd                                     = GetBool(new IntPtr(p + 0x071)); // 02466A1E04E0 0x71 IsEnd                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentAmount                             = GetSingle(new IntPtr(p + 0x074)); // 02466A1E0500 0x74 CurrentAmount               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.EstimateAmount                            = GetSingle(new IntPtr(p + 0x078)); // 02466A1E0520 0x78 EstimateAmount              ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

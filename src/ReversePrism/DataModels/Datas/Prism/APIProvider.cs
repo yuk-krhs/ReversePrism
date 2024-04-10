@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 downloadThrottleEnabled                  bool IL2CPP_TYPE_BOOLEAN
     // 020 ServerConfig                             000186637CE0 ModelClassType IServerConfig IServerConfig IServerConfig Pointer
-    public partial class APIProvider
+    public partial class APIProvider : DataModel
     {
         public ChannelHandler?                          ChannelHandler                          { get; set; }
         public bool                                     IsInitialized                           { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new APIProvider();
+            var value   = new APIProvider() { Pointer= p0 };
 
-            value.ChannelHandler                            = GetObject<ChannelHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChannelHandler.FromPointer); // 0270D0E861A0 0x10 ChannelHandler              ( 000186592100 ModelClassType ChannelHandler ChannelHandler ChannelHandler Pointer )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x018)); // 0270D0E861C0 0x18 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ServerConfig                              = GetObject<IServerConfig>(new IntPtr(p + 0x020), ReversePrism.DataModels.IServerConfig.FromPointer); // 0270D0E86200 0x20 ServerConfig                ( 000186637CE0 ModelClassType IServerConfig IServerConfig IServerConfig Pointer )
+            value.ChannelHandler                            = GetObject<ChannelHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChannelHandler.FromPointer); // 024660E18210 0x10 ChannelHandler              ( 000186592100 ModelClassType ChannelHandler ChannelHandler ChannelHandler Pointer )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x018)); // 024660E18230 0x18 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ServerConfig                              = GetObject<IServerConfig>(new IntPtr(p + 0x020), ReversePrism.DataModels.IServerConfig.FromPointer); // 024660E18270 0x20 ServerConfig                ( 000186637CE0 ModelClassType IServerConfig IServerConfig IServerConfig Pointer )
 
             return value;
         }

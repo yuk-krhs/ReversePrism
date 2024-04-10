@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 ProductId                                000186671910 ModelPrimitiveType string string string String
     // 020 Quantity                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 DeveloperPayload                         000186671910 ModelPrimitiveType string string string String
-    public partial class RequestModel
+    public partial class RequestModel : DataModel
     {
         public string                                   Locale                                  { get; set; }
         public string                                   ProductId                               { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestModel();
+            var value   = new RequestModel() { Pointer= p0 };
 
-            value.Locale                                    = GetString(new IntPtr(p + 0x010)); // 0270DB47B318 0x10 Locale                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProductId                                 = GetString(new IntPtr(p + 0x018)); // 0270DB47B338 0x18 ProductId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Quantity                                  = GetInt32(new IntPtr(p + 0x020)); // 0270DB47B358 0x20 Quantity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x028)); // 0270DB47B378 0x28 DeveloperPayload            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Locale                                    = GetString(new IntPtr(p + 0x010)); // 02466B508248 0x10 Locale                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProductId                                 = GetString(new IntPtr(p + 0x018)); // 02466B508268 0x18 ProductId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Quantity                                  = GetInt32(new IntPtr(p + 0x020)); // 02466B508288 0x20 Quantity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x028)); // 02466B5082A8 0x28 DeveloperPayload            ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateInputManager
+    public partial class UpdateInputManager : DataModel
     {
 
         public static UpdateInputManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateInputManager();
+            var value   = new UpdateInputManager() { Pointer= p0 };
 
 
             return value;

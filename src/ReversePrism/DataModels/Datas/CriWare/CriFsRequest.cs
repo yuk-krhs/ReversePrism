@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 IsDone                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 030 Error                                    000186671910 ModelPrimitiveType string string string String
     // 038 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriFsRequest
+    public partial class CriFsRequest : DataModel
     {
         public DoneDelegate?                            DoneDelegate                            { get; set; }
         public bool                                     IsDone                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriFsRequest();
+            var value   = new CriFsRequest() { Pointer= p0 };
 
-            value.DoneDelegate                              = GetObject<DoneDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.DoneDelegate.FromPointer); // 0270DACB5370 0x20 DoneDelegate                ( 00018655B6E0 ModelClassType DoneDelegate DoneDelegate DoneDelegate Pointer )
-            value.IsDone                                    = GetBool(new IntPtr(p + 0x028)); // 0270DACB5390 0x28 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Error                                     = GetString(new IntPtr(p + 0x030)); // 0270DACB53B0 0x30 Error                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x038)); // 0270DACB53D0 0x38 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DoneDelegate                              = GetObject<DoneDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.DoneDelegate.FromPointer); // 02466AD1D370 0x20 DoneDelegate                ( 00018655B6E0 ModelClassType DoneDelegate DoneDelegate DoneDelegate Pointer )
+            value.IsDone                                    = GetBool(new IntPtr(p + 0x028)); // 02466AD1D390 0x28 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Error                                     = GetString(new IntPtr(p + 0x030)); // 02466AD1D3B0 0x30 Error                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x038)); // 02466AD1D3D0 0x38 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

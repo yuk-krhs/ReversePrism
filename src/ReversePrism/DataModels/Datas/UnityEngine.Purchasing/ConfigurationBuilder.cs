@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 UseCatalogProvider                       000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 <products>k__BackingField                HashSet`1<ProductDefinition> IL2CPP_TYPE_GENERICINST
     // 020 Factory                                  0001865E1940 ModelClassType PurchasingFactory PurchasingFactory PurchasingFactory Pointer
-    public partial class ConfigurationBuilder
+    public partial class ConfigurationBuilder : DataModel
     {
         public bool                                     UseCatalogProvider                      { get; set; }
         public PurchasingFactory?                       Factory                                 { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConfigurationBuilder();
+            var value   = new ConfigurationBuilder() { Pointer= p0 };
 
-            value.UseCatalogProvider                        = GetBool(new IntPtr(p + 0x010)); // 027004BA9BF0 0x10 UseCatalogProvider          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Factory                                   = GetObject<PurchasingFactory>(new IntPtr(p + 0x020), ReversePrism.DataModels.PurchasingFactory.FromPointer); // 027004BA9C30 0x20 Factory                     ( 0001865E1940 ModelClassType PurchasingFactory PurchasingFactory PurchasingFactory Pointer )
+            value.UseCatalogProvider                        = GetBool(new IntPtr(p + 0x010)); // 02466302E988 0x10 UseCatalogProvider          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Factory                                   = GetObject<PurchasingFactory>(new IntPtr(p + 0x020), ReversePrism.DataModels.PurchasingFactory.FromPointer); // 02466302E9C8 0x20 Factory                     ( 0001865E1940 ModelClassType PurchasingFactory PurchasingFactory PurchasingFactory Pointer )
 
             return value;
         }

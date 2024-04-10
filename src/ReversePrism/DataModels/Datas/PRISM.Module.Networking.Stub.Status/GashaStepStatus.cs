@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 State                                    00018661EEF0 ModelEnumType GashaStepState GashaStepState GashaStepState Int32
     // 000 ResourceIdFieldNumber                    int IL2CPP_TYPE_I4
     // 030 ResourceId                               000186671910 ModelPrimitiveType string string string String
-    public partial class GashaStepStatus
+    public partial class GashaStepStatus : DataModel
     {
         public int                                      StepNo                                  { get; set; }
         public GashaPriceStatus?                        GashaPrice                              { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaStepStatus();
+            var value   = new GashaStepStatus() { Pointer= p0 };
 
-            value.StepNo                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D15A5F48 0x18 StepNo                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GashaPrice                                = GetObject<GashaPriceStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPriceStatus.FromPointer); // 0270D15A5F88 0x20 GashaPrice                  ( 00018660C790 ModelClassType GashaPriceStatus GashaPriceStatus GashaPriceStatus Pointer )
-            value.State                                     = (GashaStepState)GetInt32(new IntPtr(p + 0x028)); // 0270D15A5FC8 0x28 State                       ( 00018661EEF0 ModelEnumType GashaStepState GashaStepState GashaStepState Int32 )
-            value.ResourceId                                = GetString(new IntPtr(p + 0x030)); // 0270D15A6008 0x30 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.StepNo                                    = GetInt32(new IntPtr(p + 0x018)); // 0246615485E0 0x18 StepNo                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GashaPrice                                = GetObject<GashaPriceStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaPriceStatus.FromPointer); // 024661548620 0x20 GashaPrice                  ( 00018660C790 ModelClassType GashaPriceStatus GashaPriceStatus GashaPriceStatus Pointer )
+            value.State                                     = (GashaStepState)GetInt32(new IntPtr(p + 0x028)); // 024661548660 0x28 State                       ( 00018661EEF0 ModelEnumType GashaStepState GashaStepState GashaStepState Int32 )
+            value.ResourceId                                = GetString(new IntPtr(p + 0x030)); // 0246615486A0 0x30 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

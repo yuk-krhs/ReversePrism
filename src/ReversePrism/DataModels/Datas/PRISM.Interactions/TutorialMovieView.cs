@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 ResourceTag                              000186672320 ModelClassType ResourceTag ResourceTag ResourceTag Pointer
     // 048 SkipToken                                0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class TutorialMovieView
+    public partial class TutorialMovieView : DataModel
     {
         public MoviePlayer?                             Player                                  { get; set; }
         public UIButton?                                SkipButton                              { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TutorialMovieView();
+            var value   = new TutorialMovieView() { Pointer= p0 };
 
-            value.Player                                    = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0270DB61F980 0x20 Player                      ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.SkipButton                                = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB61F9A0 0x28 SkipButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TapSkipObject                             = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB61F9C0 0x30 TapSkipObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OnFinishSequence                          = GetObject<ITutorialSequence>(new IntPtr(p + 0x038), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0270DB61F9E0 0x38 OnFinishSequence            ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
-            value.ResourceTag                               = GetObject<ResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResourceTag.FromPointer); // 0270DB61FA00 0x40 ResourceTag                 ( 000186672320 ModelClassType ResourceTag ResourceTag ResourceTag Pointer )
-            value.SkipToken                                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270DB61FA20 0x48 SkipToken                   ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB61FA40 0x50 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Player                                    = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 02466B6B3308 0x20 Player                      ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.SkipButton                                = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B6B3328 0x28 SkipButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TapSkipObject                             = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B6B3348 0x30 TapSkipObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.OnFinishSequence                          = GetObject<ITutorialSequence>(new IntPtr(p + 0x038), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 02466B6B3368 0x38 OnFinishSequence            ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.ResourceTag                               = GetObject<ResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.ResourceTag.FromPointer); // 02466B6B3388 0x40 ResourceTag                 ( 000186672320 ModelClassType ResourceTag ResourceTag ResourceTag Pointer )
+            value.SkipToken                                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466B6B33A8 0x48 SkipToken                   ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B6B33C8 0x50 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

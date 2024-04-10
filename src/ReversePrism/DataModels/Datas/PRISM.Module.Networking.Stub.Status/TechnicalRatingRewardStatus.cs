@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
     // 028 RewardList                               000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
-    public partial class TechnicalRatingRewardStatus
+    public partial class TechnicalRatingRewardStatus : DataModel
     {
         public float                                    TargetRate                              { get; set; }
         public TechnicalRatingFrameType                 TechnicalRatingFrameType                { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TechnicalRatingRewardStatus();
+            var value   = new TechnicalRatingRewardStatus() { Pointer= p0 };
 
-            value.TargetRate                                = GetSingle(new IntPtr(p + 0x018)); // 0270D13752C0 0x18 TargetRate                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TechnicalRatingFrameType                  = (TechnicalRatingFrameType)GetInt32(new IntPtr(p + 0x01C)); // 0270D1375300 0x1C TechnicalRatingFrameType    ( 000186628020 ModelEnumType TechnicalRatingFrameType TechnicalRatingFrameType TechnicalRatingFrameType Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D1375340 0x20 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D13753A0 0x28 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.TargetRate                                = GetSingle(new IntPtr(p + 0x018)); // 0246612FDAA8 0x18 TargetRate                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TechnicalRatingFrameType                  = (TechnicalRatingFrameType)GetInt32(new IntPtr(p + 0x01C)); // 0246612FDAE8 0x1C TechnicalRatingFrameType    ( 000186628020 ModelEnumType TechnicalRatingFrameType TechnicalRatingFrameType TechnicalRatingFrameType Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x020)); // 0246612FDB28 0x20 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246612FDB88 0x28 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

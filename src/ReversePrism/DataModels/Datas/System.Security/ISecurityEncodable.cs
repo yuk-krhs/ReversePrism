@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISecurityEncodable
+    public partial class ISecurityEncodable : DataModel
     {
 
         public static ISecurityEncodable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISecurityEncodable();
+            var value   = new ISecurityEncodable() { Pointer= p0 };
 
 
             return value;

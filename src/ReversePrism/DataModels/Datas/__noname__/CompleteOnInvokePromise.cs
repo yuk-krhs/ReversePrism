@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 058 _tasks                                   IList`1<Task> IL2CPP_TYPE_GENERICINST
-    public partial class CompleteOnInvokePromise
+    public partial class CompleteOnInvokePromise : DataModel
     {
 
         public static CompleteOnInvokePromise? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompleteOnInvokePromise();
+            var value   = new CompleteOnInvokePromise() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ValueListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_valueList_codec                FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 020 ValueList                                000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class GashaEffectPhaseStatus
+    public partial class GashaEffectPhaseStatus : DataModel
     {
         public string                                   Name                                    { get; set; }
         public List<string>?                            ValueList                               { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaEffectPhaseStatus();
+            var value   = new GashaEffectPhaseStatus() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D1589748 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValueList                                 = GetStringList(new IntPtr(p + 0x020)); // 0270D15897A8 0x20 ValueList                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024661527510 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.ValueList                                 = GetStringList(new IntPtr(p + 0x020)); // 024661527570 0x20 ValueList                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

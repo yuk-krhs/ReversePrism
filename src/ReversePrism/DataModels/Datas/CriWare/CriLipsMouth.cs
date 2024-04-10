@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 HasExistingNativeHandle                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 028 handle                                   <int> IL2CPP_TYPE_I
-    public partial class CriLipsMouth
+    public partial class CriLipsMouth : DataModel
     {
         public bool                                     HasExistingNativeHandle                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsMouth();
+            var value   = new CriLipsMouth() { Pointer= p0 };
 
-            value.HasExistingNativeHandle                   = GetBool(new IntPtr(p + 0x020)); // 0270DBBA4DA0 0x20 HasExistingNativeHandle     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasExistingNativeHandle                   = GetBool(new IntPtr(p + 0x020)); // 02466BC252C0 0x20 HasExistingNativeHandle     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

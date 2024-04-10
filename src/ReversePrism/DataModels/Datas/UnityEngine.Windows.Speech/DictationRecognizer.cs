@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 DictationResult                          0001865A3360 ModelClassType DictationResultDelegate DictationResultDelegate DictationResultDelegate Pointer
     // 028 DictationComplete                        0001865A2500 ModelClassType DictationCompletedDelegate DictationCompletedDelegate DictationCompletedDelegate Pointer
     // 030 DictationError                           0001865A29C0 ModelClassType DictationErrorHandler DictationErrorHandler DictationErrorHandler Pointer
-    public partial class DictationRecognizer
+    public partial class DictationRecognizer : DataModel
     {
         public DictationHypothesisDelegate?             DictationHypothesis                     { get; set; }
         public DictationResultDelegate?                 DictationResult                         { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DictationRecognizer();
+            var value   = new DictationRecognizer() { Pointer= p0 };
 
-            value.DictationHypothesis                       = GetObject<DictationHypothesisDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DictationHypothesisDelegate.FromPointer); // 0270024CEA08 0x18 DictationHypothesis         ( 0001865A2EA0 ModelClassType DictationHypothesisDelegate DictationHypothesisDelegate DictationHypothesisDelegate Pointer )
-            value.DictationResult                           = GetObject<DictationResultDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.DictationResultDelegate.FromPointer); // 0270024CEA28 0x20 DictationResult             ( 0001865A3360 ModelClassType DictationResultDelegate DictationResultDelegate DictationResultDelegate Pointer )
-            value.DictationComplete                         = GetObject<DictationCompletedDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.DictationCompletedDelegate.FromPointer); // 0270024CEA48 0x28 DictationComplete           ( 0001865A2500 ModelClassType DictationCompletedDelegate DictationCompletedDelegate DictationCompletedDelegate Pointer )
-            value.DictationError                            = GetObject<DictationErrorHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.DictationErrorHandler.FromPointer); // 0270024CEA68 0x30 DictationError              ( 0001865A29C0 ModelClassType DictationErrorHandler DictationErrorHandler DictationErrorHandler Pointer )
+            value.DictationHypothesis                       = GetObject<DictationHypothesisDelegate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DictationHypothesisDelegate.FromPointer); // 0245A24CEA08 0x18 DictationHypothesis         ( 0001865A2EA0 ModelClassType DictationHypothesisDelegate DictationHypothesisDelegate DictationHypothesisDelegate Pointer )
+            value.DictationResult                           = GetObject<DictationResultDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.DictationResultDelegate.FromPointer); // 0245A24CEA28 0x20 DictationResult             ( 0001865A3360 ModelClassType DictationResultDelegate DictationResultDelegate DictationResultDelegate Pointer )
+            value.DictationComplete                         = GetObject<DictationCompletedDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.DictationCompletedDelegate.FromPointer); // 0245A24CEA48 0x28 DictationComplete           ( 0001865A2500 ModelClassType DictationCompletedDelegate DictationCompletedDelegate DictationCompletedDelegate Pointer )
+            value.DictationError                            = GetObject<DictationErrorHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.DictationErrorHandler.FromPointer); // 0245A24CEA68 0x30 DictationError              ( 0001865A29C0 ModelClassType DictationErrorHandler DictationErrorHandler DictationErrorHandler Pointer )
 
             return value;
         }

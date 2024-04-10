@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EpisodeDifficultyStatusTranslator
+    public partial class EpisodeDifficultyStatusTranslator : DataModel
     {
 
         public static EpisodeDifficultyStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EpisodeDifficultyStatusTranslator();
+            var value   = new EpisodeDifficultyStatusTranslator() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 StampAssetKey                            000186672F10 ModelPrimitiveType string string string String
-    public partial class ChainTalkCellStampData
+    public partial class ChainTalkCellStampData : DataModel
     {
         public string                                   StampAssetKey                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkCellStampData();
+            var value   = new ChainTalkCellStampData() { Pointer= p0 };
 
-            value.StampAssetKey                             = GetString(new IntPtr(p + 0x010)); // 0270D6866E30 0x10 StampAssetKey               ( 000186672F10 ModelPrimitiveType string string string String )
+            value.StampAssetKey                             = GetString(new IntPtr(p + 0x010)); // 0246668C6E30 0x10 StampAssetKey               ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

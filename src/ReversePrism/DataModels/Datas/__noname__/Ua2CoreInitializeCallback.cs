@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_CollectUrlPattern                      string IL2CPP_TYPE_STRING
-    public partial class Ua2CoreInitializeCallback
+    public partial class Ua2CoreInitializeCallback : DataModel
     {
 
         public static Ua2CoreInitializeCallback? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Ua2CoreInitializeCallback();
+            var value   = new Ua2CoreInitializeCallback() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_UseCompatibleTypeConverterBehavior     string IL2CPP_TYPE_STRING
     // 000 useCompatibleTypeConversion              bool IL2CPP_TYPE_BOOLEAN
-    public partial class TypeConverter
+    public partial class TypeConverter : DataModel
     {
 
         public static TypeConverter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeConverter();
+            var value   = new TypeConverter() { Pointer= p0 };
 
 
             return value;

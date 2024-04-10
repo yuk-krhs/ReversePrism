@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 onSelect                                 Subject`1<ValueTuple`3<bool, LiveCameraMode, int>> IL2CPP_TYPE_GENERICINST
     // 038 SelectedFocusPositionIndex               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 040 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class LiveCameraModeSettingPopupView
+    public partial class LiveCameraModeSettingPopupView : DataModel
     {
         public ToggleButtonGroup?                       ModeSelector                            { get; set; }
         public List<LiveCameraModeSettingCharacterIcon>? CharacterIcons                          { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCameraModeSettingPopupView();
+            var value   = new LiveCameraModeSettingPopupView() { Pointer= p0 };
 
-            value.ModeSelector                              = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 0270DB4068D0 0x20 ModeSelector                ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
-            value.CharacterIcons                            = GetObjectList<LiveCameraModeSettingCharacterIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveCameraModeSettingCharacterIcon.FromPointer); // 0270DB4068F0 0x28 CharacterIcons              ( 000185B90670 ModelClassListType LiveCameraModeSettingCharacterIcon[] LiveCameraModeSettingCharacterIcon[] List<LiveCameraModeSettingCharacterIcon> Pointer )
-            value.SelectedFocusPositionIndex                = GetInt32(new IntPtr(p + 0x038)); // 0270DB406930 0x38 SelectedFocusPositionIndex  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB406950 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ModeSelector                              = GetObject<ToggleButtonGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButtonGroup.FromPointer); // 02466B4838E8 0x20 ModeSelector                ( 000186684350 ModelClassType ToggleButtonGroup ToggleButtonGroup ToggleButtonGroup Pointer )
+            value.CharacterIcons                            = GetObjectList<LiveCameraModeSettingCharacterIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveCameraModeSettingCharacterIcon.FromPointer); // 02466B483908 0x28 CharacterIcons              ( 000185B90670 ModelClassListType LiveCameraModeSettingCharacterIcon[] LiveCameraModeSettingCharacterIcon[] List<LiveCameraModeSettingCharacterIcon> Pointer )
+            value.SelectedFocusPositionIndex                = GetInt32(new IntPtr(p + 0x038)); // 02466B483948 0x38 SelectedFocusPositionIndex  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B483968 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

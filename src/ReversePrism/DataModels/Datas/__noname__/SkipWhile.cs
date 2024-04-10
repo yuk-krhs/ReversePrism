@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   SkipWhileObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 endSkip                                  bool IL2CPP_TYPE_BOOLEAN
-    public partial class SkipWhile
+    public partial class SkipWhile : DataModel
     {
 
         public static SkipWhile? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkipWhile();
+            var value   = new SkipWhile() { Pointer= p0 };
 
 
             return value;

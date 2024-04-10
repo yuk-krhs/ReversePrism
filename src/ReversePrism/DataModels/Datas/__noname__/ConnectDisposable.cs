@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 cancellationTokenSource                  CancellationTokenSource IL2CPP_TYPE_CLASS
-    public partial class ConnectDisposable
+    public partial class ConnectDisposable : DataModel
     {
 
         public static ConnectDisposable? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConnectDisposable();
+            var value   = new ConnectDisposable() { Pointer= p0 };
 
 
             return value;

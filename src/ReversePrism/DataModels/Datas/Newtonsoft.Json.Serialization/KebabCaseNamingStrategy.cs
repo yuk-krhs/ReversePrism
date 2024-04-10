@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KebabCaseNamingStrategy
+    public partial class KebabCaseNamingStrategy : DataModel
     {
 
         public static KebabCaseNamingStrategy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KebabCaseNamingStrategy();
+            var value   = new KebabCaseNamingStrategy() { Pointer= p0 };
 
 
             return value;

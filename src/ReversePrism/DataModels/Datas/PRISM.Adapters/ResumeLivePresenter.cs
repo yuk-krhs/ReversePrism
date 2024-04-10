@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ResumeView                               00018661D9D0 ModelClassType IResumeLiveView IResumeLiveView IResumeLiveView Pointer
     // 018 DisposeView                              000186754120 ModelClassType IDisposeLiveView IDisposeLiveView IDisposeLiveView Pointer
-    public partial class ResumeLivePresenter
+    public partial class ResumeLivePresenter : DataModel
     {
         public IResumeLiveView?                         ResumeView                              { get; set; }
         public IDisposeLiveView?                        DisposeView                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResumeLivePresenter();
+            var value   = new ResumeLivePresenter() { Pointer= p0 };
 
-            value.ResumeView                                = GetObject<IResumeLiveView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResumeLiveView.FromPointer); // 0270074D5138 0x10 ResumeView                  ( 00018661D9D0 ModelClassType IResumeLiveView IResumeLiveView IResumeLiveView Pointer )
-            value.DisposeView                               = GetObject<IDisposeLiveView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposeLiveView.FromPointer); // 0270074D5158 0x18 DisposeView                 ( 000186754120 ModelClassType IDisposeLiveView IDisposeLiveView IDisposeLiveView Pointer )
+            value.ResumeView                                = GetObject<IResumeLiveView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResumeLiveView.FromPointer); // 0245A7222348 0x10 ResumeView                  ( 00018661D9D0 ModelClassType IResumeLiveView IResumeLiveView IResumeLiveView Pointer )
+            value.DisposeView                               = GetObject<IDisposeLiveView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposeLiveView.FromPointer); // 0245A7222368 0x18 DisposeView                 ( 000186754120 ModelClassType IDisposeLiveView IDisposeLiveView IDisposeLiveView Pointer )
 
             return value;
         }

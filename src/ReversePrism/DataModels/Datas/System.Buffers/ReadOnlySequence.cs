@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReadOnlySequence
+    public partial class ReadOnlySequence : DataModel
     {
 
         public static ReadOnlySequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadOnlySequence();
+            var value   = new ReadOnlySequence() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<ICostumeDetailPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class CostumeDetailPopupCallerImplement
+    public partial class CostumeDetailPopupCallerImplement : DataModel
     {
 
         public static CostumeDetailPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeDetailPopupCallerImplement();
+            var value   = new CostumeDetailPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 List                                     00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    public partial class CollectionBase
+    public partial class CollectionBase : DataModel
     {
         public ArrayList?                               List                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CollectionBase();
+            var value   = new CollectionBase() { Pointer= p0 };
 
-            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0270D6D3ED98 0x10 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 024666D96D98 0x10 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
 
             return value;
         }

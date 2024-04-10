@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 030 ItemsSourceSizeChanged                   0001866792B0 ModelClassType Action Action Action Pointer
     // 038 itemsAdded                               Action`1<IEnumerable`1<int>> IL2CPP_TYPE_GENERICINST
     // 040 itemsRemoved                             Action`1<IEnumerable`1<int>> IL2CPP_TYPE_GENERICINST
-    public partial class BaseListViewController
+    public partial class BaseListViewController : DataModel
     {
         public Action?                                  ItemsSourceSizeChanged                  { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseListViewController();
+            var value   = new BaseListViewController() { Pointer= p0 };
 
-            value.ItemsSourceSizeChanged                    = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0270066E6608 0x30 ItemsSourceSizeChanged      ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.ItemsSourceSizeChanged                    = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0245A66A8B18 0x30 ItemsSourceSizeChanged      ( 0001866792B0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

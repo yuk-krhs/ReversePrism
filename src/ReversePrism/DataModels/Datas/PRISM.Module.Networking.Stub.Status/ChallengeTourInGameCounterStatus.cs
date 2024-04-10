@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C DanceCounterReleaseCount                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 VisualCounterReleaseCountFieldNumber     int IL2CPP_TYPE_I4
     // 020 VisualCounterReleaseCount                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourInGameCounterStatus
+    public partial class ChallengeTourInGameCounterStatus : DataModel
     {
         public int                                      VocalCounterReleaseCount                { get; set; }
         public int                                      DanceCounterReleaseCount                { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameCounterStatus();
+            var value   = new ChallengeTourInGameCounterStatus() { Pointer= p0 };
 
-            value.VocalCounterReleaseCount                  = GetInt32(new IntPtr(p + 0x018)); // 027004154DE8 0x18 VocalCounterReleaseCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DanceCounterReleaseCount                  = GetInt32(new IntPtr(p + 0x01C)); // 027004154E28 0x1C DanceCounterReleaseCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VisualCounterReleaseCount                 = GetInt32(new IntPtr(p + 0x020)); // 027004154E68 0x20 VisualCounterReleaseCount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VocalCounterReleaseCount                  = GetInt32(new IntPtr(p + 0x018)); // 024660ED1718 0x18 VocalCounterReleaseCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DanceCounterReleaseCount                  = GetInt32(new IntPtr(p + 0x01C)); // 024660ED1758 0x1C DanceCounterReleaseCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.VisualCounterReleaseCount                 = GetInt32(new IntPtr(p + 0x020)); // 024660ED1798 0x20 VisualCounterReleaseCount   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

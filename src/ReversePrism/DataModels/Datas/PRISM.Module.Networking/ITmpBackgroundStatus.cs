@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITmpBackgroundStatus
+    public partial class ITmpBackgroundStatus : DataModel
     {
 
         public static ITmpBackgroundStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITmpBackgroundStatus();
+            var value   = new ITmpBackgroundStatus() { Pointer= p0 };
 
 
             return value;

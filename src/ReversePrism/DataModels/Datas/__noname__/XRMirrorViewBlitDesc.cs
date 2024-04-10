@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 NativeBlitAvailable                      000186595960 ModelPrimitiveType bool bool bool Bool
     // 019 NativeBlitInvalidStates                  000186595960 ModelPrimitiveType bool bool bool Bool
     // 01C BlitParamsCount                          0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class XRMirrorViewBlitDesc
+    public partial class XRMirrorViewBlitDesc : DataModel
     {
         public bool                                     NativeBlitAvailable                     { get; set; }
         public bool                                     NativeBlitInvalidStates                 { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRMirrorViewBlitDesc();
+            var value   = new XRMirrorViewBlitDesc() { Pointer= p0 };
 
-            value.NativeBlitAvailable                       = GetBool(new IntPtr(p + 0x018)); // 0270069724C8 0x18 NativeBlitAvailable         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NativeBlitInvalidStates                   = GetBool(new IntPtr(p + 0x019)); // 0270069724E8 0x19 NativeBlitInvalidStates     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BlitParamsCount                           = GetInt32(new IntPtr(p + 0x01C)); // 027006972508 0x1C BlitParamsCount             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NativeBlitAvailable                       = GetBool(new IntPtr(p + 0x018)); // 0245A69254E0 0x18 NativeBlitAvailable         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NativeBlitInvalidStates                   = GetBool(new IntPtr(p + 0x019)); // 0245A6925500 0x19 NativeBlitInvalidStates     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BlitParamsCount                           = GetInt32(new IntPtr(p + 0x01C)); // 0245A6925520 0x1C BlitParamsCount             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

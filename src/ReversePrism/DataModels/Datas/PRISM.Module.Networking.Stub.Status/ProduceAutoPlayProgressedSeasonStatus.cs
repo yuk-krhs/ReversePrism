@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ScheduleListFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_scheduleList_codec             FieldCodec`1<ProduceAutoProgressedScheduleStatus> IL2CPP_TYPE_GENERICINST
     // 020 ScheduleList                             000185CEAAB8 ModelClassListType RepeatedField`1<ProduceAutoProgressedScheduleStatus> RepeatedField`1<ProduceAutoProgressedScheduleStatus> List<ProduceAutoProgressedScheduleStatus> Pointer
-    public partial class ProduceAutoPlayProgressedSeasonStatus
+    public partial class ProduceAutoPlayProgressedSeasonStatus : DataModel
     {
         public ProduceAutoPlayProgressedTermStatus?     Term                                    { get; set; }
         public List<ProduceAutoProgressedScheduleStatus>? ScheduleList                            { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoPlayProgressedSeasonStatus();
+            var value   = new ProduceAutoPlayProgressedSeasonStatus() { Pointer= p0 };
 
-            value.Term                                      = GetObject<ProduceAutoPlayProgressedTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoPlayProgressedTermStatus.FromPointer); // 0270D11056B0 0x18 Term                        ( 00018652DC30 ModelClassType ProduceAutoPlayProgressedTermStatus ProduceAutoPlayProgressedTermStatus ProduceAutoPlayProgressedTermStatus Pointer )
-            value.ScheduleList                              = GetObjectList<ProduceAutoProgressedScheduleStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceAutoProgressedScheduleStatus.FromPointer); // 0270D1105710 0x20 ScheduleList                ( 000185CEAAB8 ModelClassListType RepeatedField`1<ProduceAutoProgressedScheduleStatus> RepeatedField`1<ProduceAutoProgressedScheduleStatus> List<ProduceAutoProgressedScheduleStatus> Pointer )
+            value.Term                                      = GetObject<ProduceAutoPlayProgressedTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoPlayProgressedTermStatus.FromPointer); // 02466108DF58 0x18 Term                        ( 00018652DC30 ModelClassType ProduceAutoPlayProgressedTermStatus ProduceAutoPlayProgressedTermStatus ProduceAutoPlayProgressedTermStatus Pointer )
+            value.ScheduleList                              = GetObjectList<ProduceAutoProgressedScheduleStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceAutoProgressedScheduleStatus.FromPointer); // 02466108DFB8 0x20 ScheduleList                ( 000185CEAAB8 ModelClassListType RepeatedField`1<ProduceAutoProgressedScheduleStatus> RepeatedField`1<ProduceAutoProgressedScheduleStatus> List<ProduceAutoProgressedScheduleStatus> Pointer )
 
             return value;
         }

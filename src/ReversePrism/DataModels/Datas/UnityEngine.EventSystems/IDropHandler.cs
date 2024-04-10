@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDropHandler
+    public partial class IDropHandler : DataModel
     {
 
         public static IDropHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDropHandler();
+            var value   = new IDropHandler() { Pointer= p0 };
 
 
             return value;

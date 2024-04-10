@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 MetadataFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _map_metadata_codec                      Codec<string, string> IL2CPP_TYPE_GENERICINST
     // 028 metadata_                                MapField`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class ErrorInfo
+    public partial class ErrorInfo : DataModel
     {
         public string                                   Reason                                  { get; set; }
         public string                                   Domain                                  { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorInfo();
+            var value   = new ErrorInfo() { Pointer= p0 };
 
-            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 0270DA6D7EA8 0x18 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 0270DA6D7EE8 0x20 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 02466A72ADD0 0x18 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 02466A72AE10 0x20 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

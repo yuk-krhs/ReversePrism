@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_PendingPointerCapture                  000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer
     // 018 M_PointerCapture                         000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer
     // 020 M_ShouldSendCompatibilityMouseEvents     000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
-    public partial class PointerDispatchState
+    public partial class PointerDispatchState : DataModel
     {
         public List<IEventHandler>?                     M_PendingPointerCapture                 { get; set; }
         public List<IEventHandler>?                     M_PointerCapture                        { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerDispatchState();
+            var value   = new PointerDispatchState() { Pointer= p0 };
 
-            value.M_PendingPointerCapture                   = GetObjectList<IEventHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEventHandler.FromPointer); // 0270067E0E50 0x10 M_PendingPointerCapture     ( 000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer )
-            value.M_PointerCapture                          = GetObjectList<IEventHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventHandler.FromPointer); // 0270067E0E70 0x18 M_PointerCapture            ( 000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer )
-            value.M_ShouldSendCompatibilityMouseEvents      = GetBoolList(new IntPtr(p + 0x020)); // 0270067E0E90 0x20 M_ShouldSendCompatibilityMouseEvents ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.M_PendingPointerCapture                   = GetObjectList<IEventHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEventHandler.FromPointer); // 0245A67A2F48 0x10 M_PendingPointerCapture     ( 000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer )
+            value.M_PointerCapture                          = GetObjectList<IEventHandler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventHandler.FromPointer); // 0245A67A2F68 0x18 M_PointerCapture            ( 000185B867B0 ModelClassListType IEventHandler[] IEventHandler[] List<IEventHandler> Pointer )
+            value.M_ShouldSendCompatibilityMouseEvents      = GetBoolList(new IntPtr(p + 0x020)); // 0245A67A2F88 0x20 M_ShouldSendCompatibilityMouseEvents ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

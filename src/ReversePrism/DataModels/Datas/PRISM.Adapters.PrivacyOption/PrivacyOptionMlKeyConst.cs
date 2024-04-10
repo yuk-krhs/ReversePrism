@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Category                                 string IL2CPP_TYPE_STRING
-    public partial class PrivacyOptionMlKeyConst
+    public partial class PrivacyOptionMlKeyConst : DataModel
     {
 
         public static PrivacyOptionMlKeyConst? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrivacyOptionMlKeyConst();
+            var value   = new PrivacyOptionMlKeyConst() { Pointer= p0 };
 
 
             return value;

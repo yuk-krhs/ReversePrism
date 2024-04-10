@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 DsaKey                                   0001866736E0 ModelClassType DSA DSA DSA Pointer
     // 018 Oid                                      000186671910 ModelPrimitiveType string string string String
-    public partial class DSASignatureDeformatter
+    public partial class DSASignatureDeformatter : DataModel
     {
         public DSA?                                     DsaKey                                  { get; set; }
         public string                                   Oid                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DSASignatureDeformatter();
+            var value   = new DSASignatureDeformatter() { Pointer= p0 };
 
-            value.DsaKey                                    = GetObject<DSA>(new IntPtr(p + 0x010), ReversePrism.DataModels.DSA.FromPointer); // 02700422EF70 0x10 DsaKey                      ( 0001866736E0 ModelClassType DSA DSA DSA Pointer )
-            value.Oid                                       = GetString(new IntPtr(p + 0x018)); // 02700422EF90 0x18 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.DsaKey                                    = GetObject<DSA>(new IntPtr(p + 0x010), ReversePrism.DataModels.DSA.FromPointer); // 02466192B5E8 0x10 DsaKey                      ( 0001866736E0 ModelClassType DSA DSA DSA Pointer )
+            value.Oid                                       = GetString(new IntPtr(p + 0x018)); // 02466192B608 0x18 Oid                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

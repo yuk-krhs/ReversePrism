@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 068 SCharaDetailPopupCaller                  0001866A33D0 ModelClassType SCharaDetailPopupCaller SCharaDetailPopupCaller SCharaDetailPopupCaller Pointer
     // 070 ProducItem                               0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer
     // 078 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class GashaOfferListCell
+    public partial class GashaOfferListCell : DataModel
     {
         public GameObject?                              GoWhite                                 { get; set; }
         public GameObject?                              GoBlue                                  { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaOfferListCell();
+            var value   = new GashaOfferListCell() { Pointer= p0 };
 
-            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5369920 0x20 GoWhite                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5369940 0x28 GoBlue                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TxtVolues1                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5369960 0x30 TxtVolues1                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtVolues2                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5369980 0x38 TxtVolues2                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D53699A0 0x40 TxtName                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtNameAlias                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D53699C0 0x48 TxtNameAlias                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PfIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x050), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270D53699E0 0x50 PfIdolIconView              ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.SCharaIconView                            = GetObject<SCharaIconView>(new IntPtr(p + 0x058), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0270D5369A00 0x58 SCharaIconView              ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x060), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0270D5369A20 0x60 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
-            value.SCharaDetailPopupCaller                   = GetObject<SCharaDetailPopupCaller>(new IntPtr(p + 0x068), ReversePrism.DataModels.SCharaDetailPopupCaller.FromPointer); // 0270D5369A40 0x68 SCharaDetailPopupCaller     ( 0001866A33D0 ModelClassType SCharaDetailPopupCaller SCharaDetailPopupCaller SCharaDetailPopupCaller Pointer )
-            value.ProducItem                                = GetObject<CmnItem>(new IntPtr(p + 0x070), ReversePrism.DataModels.CmnItem.FromPointer); // 0270D5369A60 0x70 ProducItem                  ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x078), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D5369A80 0x78 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0246653C6118 0x20 GoWhite                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0246653C6138 0x28 GoBlue                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtVolues1                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653C6158 0x30 TxtVolues1                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtVolues2                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653C6178 0x38 TxtVolues2                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653C6198 0x40 TxtName                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtNameAlias                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653C61B8 0x48 TxtNameAlias                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PfIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x050), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0246653C61D8 0x50 PfIdolIconView              ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.SCharaIconView                            = GetObject<SCharaIconView>(new IntPtr(p + 0x058), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0246653C61F8 0x58 SCharaIconView              ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x060), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0246653C6218 0x60 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
+            value.SCharaDetailPopupCaller                   = GetObject<SCharaDetailPopupCaller>(new IntPtr(p + 0x068), ReversePrism.DataModels.SCharaDetailPopupCaller.FromPointer); // 0246653C6238 0x68 SCharaDetailPopupCaller     ( 0001866A33D0 ModelClassType SCharaDetailPopupCaller SCharaDetailPopupCaller SCharaDetailPopupCaller Pointer )
+            value.ProducItem                                = GetObject<CmnItem>(new IntPtr(p + 0x070), ReversePrism.DataModels.CmnItem.FromPointer); // 0246653C6258 0x70 ProducItem                  ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x078), ReversePrism.DataModels.IDisposable.FromPointer); // 0246653C6278 0x78 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

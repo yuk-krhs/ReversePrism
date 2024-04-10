@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ToHashSet
+    public partial class ToHashSet : DataModel
     {
 
         public static ToHashSet? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToHashSet();
+            var value   = new ToHashSet() { Pointer= p0 };
 
 
             return value;

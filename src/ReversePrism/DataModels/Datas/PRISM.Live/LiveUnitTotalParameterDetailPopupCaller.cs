@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveUnitTotalParameterDetailPopupCaller
+    public partial class LiveUnitTotalParameterDetailPopupCaller : DataModel
     {
 
         public static LiveUnitTotalParameterDetailPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitTotalParameterDetailPopupCaller();
+            var value   = new LiveUnitTotalParameterDetailPopupCaller() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 <OnInheritanceSkill>k__BackingField      Func`4<IReadOnlyList`1<IGettablePotentialSupportSkillStatus>, IReadOnlyList`1<IInProducePotentialSupportSkillStatus>, int, ISelectionSupportSkillStatus> IL2CPP_TYPE_GENERICINST
     // 038 <OnSelectSubSeason>k__BackingField       Func`2<IReadOnlyList`1<int>, int> IL2CPP_TYPE_GENERICINST
     // 040 <OnSelectSubSeasonIdol>k__BackingField   Func`2<IReadOnlyList`1<int>, int> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceScenarioAutoExecModel
+    public partial class ProduceScenarioAutoExecModel : DataModel
     {
         public ProduceService?                          Service                                 { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceScenarioAutoExecModel();
+            var value   = new ProduceScenarioAutoExecModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 0270DAE11460 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
+            value.Service                                   = GetObject<ProduceService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceService.FromPointer); // 02466AE69460 0x10 Service                     ( 00018657F920 ModelClassType ProduceService ProduceService ProduceService Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPFIdolParameterDetailPopupView
+    public partial class IPFIdolParameterDetailPopupView : DataModel
     {
 
         public static IPFIdolParameterDetailPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPFIdolParameterDetailPopupView();
+            var value   = new IPFIdolParameterDetailPopupView() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PositionConstraint
+    public partial class PositionConstraint : DataModel
     {
 
         public static PositionConstraint? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PositionConstraint();
+            var value   = new PositionConstraint() { Pointer= p0 };
 
 
             return value;

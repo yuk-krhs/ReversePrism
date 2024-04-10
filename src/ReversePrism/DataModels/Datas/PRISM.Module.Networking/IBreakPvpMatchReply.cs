@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IBreakPvpMatchReply
+    public partial class IBreakPvpMatchReply : DataModel
     {
 
         public static IBreakPvpMatchReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IBreakPvpMatchReply();
+            var value   = new IBreakPvpMatchReply() { Pointer= p0 };
 
 
             return value;

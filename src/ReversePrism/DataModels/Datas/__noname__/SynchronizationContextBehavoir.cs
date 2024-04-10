@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 callbackQueue                            Queue`1<Tuple`2<SendOrPostCallback, <object>>> IL2CPP_TYPE_GENERICINST
-    public partial class SynchronizationContextBehavoir
+    public partial class SynchronizationContextBehavoir : DataModel
     {
 
         public static SynchronizationContextBehavoir? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SynchronizationContextBehavoir();
+            var value   = new SynchronizationContextBehavoir() { Pointer= p0 };
 
 
             return value;

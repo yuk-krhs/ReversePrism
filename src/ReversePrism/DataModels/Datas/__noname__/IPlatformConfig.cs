@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPlatformConfig
+    public partial class IPlatformConfig : DataModel
     {
 
         public static IPlatformConfig? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPlatformConfig();
+            var value   = new IPlatformConfig() { Pointer= p0 };
 
 
             return value;

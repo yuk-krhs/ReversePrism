@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class grpcsharp_request_call_context_request_metadata_delegate
+    public partial class grpcsharp_request_call_context_request_metadata_delegate : DataModel
     {
 
         public static grpcsharp_request_call_context_request_metadata_delegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new grpcsharp_request_call_context_request_metadata_delegate();
+            var value   = new grpcsharp_request_call_context_request_metadata_delegate() { Pointer= p0 };
 
 
             return value;

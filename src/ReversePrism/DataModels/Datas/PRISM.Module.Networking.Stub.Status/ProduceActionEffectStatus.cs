@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 050 GrantSkillBufferDisplay                  0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer
     // 000 IsHideConditionEffectFieldNumber         int IL2CPP_TYPE_I4
     // 058 IsHideConditionEffect                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceActionEffectStatus
+    public partial class ProduceActionEffectStatus : DataModel
     {
         public int                                      MstProduceActionEffectId                { get; set; }
         public int                                      MstProduceActionEffectTypeId            { get; set; }
@@ -54,19 +54,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceActionEffectStatus();
+            var value   = new ProduceActionEffectStatus() { Pointer= p0 };
 
-            value.MstProduceActionEffectId                  = GetInt32(new IntPtr(p + 0x018)); // 0270D10FD0E8 0x18 MstProduceActionEffectId    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceActionEffectTypeId              = GetInt32(new IntPtr(p + 0x01C)); // 0270D10FD128 0x1C MstProduceActionEffectTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 0270D10FD188 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.MstProduceActionEffectConditionTypeId     = GetInt32(new IntPtr(p + 0x028)); // 0270D10FD1C8 0x28 MstProduceActionEffectConditionTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ConditionValue                            = GetInt32(new IntPtr(p + 0x02C)); // 0270D10FD208 0x2C ConditionValue              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceActionEffectActivationTimingTypeId = GetInt32(new IntPtr(p + 0x030)); // 0270D10FD248 0x30 MstProduceActionEffectActivationTimingTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceActionEffectDisplayIdList       = GetInt32List(new IntPtr(p + 0x038)); // 0270D10FD2A8 0x38 MstProduceActionEffectDisplayIdList ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.IconId                                    = GetInt32(new IntPtr(p + 0x040)); // 0270D10FD2E8 0x40 IconId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D10FD328 0x48 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
-            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0270D10FD368 0x50 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
-            value.IsHideConditionEffect                     = GetBool(new IntPtr(p + 0x058)); // 0270D10FD3A8 0x58 IsHideConditionEffect       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstProduceActionEffectId                  = GetInt32(new IntPtr(p + 0x018)); // 024661088FA0 0x18 MstProduceActionEffectId    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceActionEffectTypeId              = GetInt32(new IntPtr(p + 0x01C)); // 024661088FE0 0x1C MstProduceActionEffectTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x020)); // 024661089040 0x20 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstProduceActionEffectConditionTypeId     = GetInt32(new IntPtr(p + 0x028)); // 024661089080 0x28 MstProduceActionEffectConditionTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ConditionValue                            = GetInt32(new IntPtr(p + 0x02C)); // 0246610890C0 0x2C ConditionValue              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceActionEffectActivationTimingTypeId = GetInt32(new IntPtr(p + 0x030)); // 024661089100 0x30 MstProduceActionEffectActivationTimingTypeId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceActionEffectDisplayIdList       = GetInt32List(new IntPtr(p + 0x038)); // 024661089160 0x38 MstProduceActionEffectDisplayIdList ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.IconId                                    = GetInt32(new IntPtr(p + 0x040)); // 0246610891A0 0x40 IconId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SkillBufferDisplay                        = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 0246610891E0 0x48 SkillBufferDisplay          ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.GrantSkillBufferDisplay                   = GetObject<SkillBufferDisplayStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.SkillBufferDisplayStatus.FromPointer); // 024661089220 0x50 GrantSkillBufferDisplay     ( 0001865119F0 ModelClassType SkillBufferDisplayStatus SkillBufferDisplayStatus SkillBufferDisplayStatus Pointer )
+            value.IsHideConditionEffect                     = GetBool(new IntPtr(p + 0x058)); // 024661089260 0x58 IsHideConditionEffect       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MemberInitExpressionProxy
+    public partial class MemberInitExpressionProxy : DataModel
     {
 
         public static MemberInitExpressionProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberInitExpressionProxy();
+            var value   = new MemberInitExpressionProxy() { Pointer= p0 };
 
 
             return value;

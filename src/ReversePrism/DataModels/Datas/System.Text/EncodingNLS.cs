@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EncodingNLS
+    public partial class EncodingNLS : DataModel
     {
 
         public static EncodingNLS? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncodingNLS();
+            var value   = new EncodingNLS() { Pointer= p0 };
 
 
             return value;

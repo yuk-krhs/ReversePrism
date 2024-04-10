@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 GenericTypeDefinition                    0001866936B0 ModelClassType Type Type Type Pointer
     // 020 GenericTypeArguments                     000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer
-    public partial class SignatureConstructedGenericType
+    public partial class SignatureConstructedGenericType : DataModel
     {
         public Type?                                    GenericTypeDefinition                   { get; set; }
         public List<Type>?                              GenericTypeArguments                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignatureConstructedGenericType();
+            var value   = new SignatureConstructedGenericType() { Pointer= p0 };
 
-            value.GenericTypeDefinition                     = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D6CEAC50 0x18 GenericTypeDefinition       ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.GenericTypeArguments                      = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D6CEAC70 0x20 GenericTypeArguments        ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.GenericTypeDefinition                     = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024666D3AC50 0x18 GenericTypeDefinition       ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.GenericTypeArguments                      = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024666D3AC70 0x20 GenericTypeArguments        ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
 
             return value;
         }

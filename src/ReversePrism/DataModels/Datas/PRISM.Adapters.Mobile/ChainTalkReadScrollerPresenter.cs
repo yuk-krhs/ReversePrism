@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 View                                     00018671CBF0 ModelClassType IChainReadTalkScrollerView IChainReadTalkScrollerView IChainReadTalkScrollerView Pointer
-    public partial class ChainTalkReadScrollerPresenter
+    public partial class ChainTalkReadScrollerPresenter : DataModel
     {
         public IChainReadTalkScrollerView?              View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkReadScrollerPresenter();
+            var value   = new ChainTalkReadScrollerPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IChainReadTalkScrollerView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChainReadTalkScrollerView.FromPointer); // 0270D686A068 0x10 View                        ( 00018671CBF0 ModelClassType IChainReadTalkScrollerView IChainReadTalkScrollerView IChainReadTalkScrollerView Pointer )
+            value.View                                      = GetObject<IChainReadTalkScrollerView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChainReadTalkScrollerView.FromPointer); // 0246668CA068 0x10 View                        ( 00018671CBF0 ModelClassType IChainReadTalkScrollerView IChainReadTalkScrollerView IChainReadTalkScrollerView Pointer )
 
             return value;
         }

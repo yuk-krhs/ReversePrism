@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 completed                                bool IL2CPP_TYPE_BOOLEAN
     // 000 buffer                                   List`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 IList`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class _Buffer
+    public partial class _Buffer : DataModel
     {
 
         public static _Buffer? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Buffer();
+            var value   = new _Buffer() { Pointer= p0 };
 
 
             return value;

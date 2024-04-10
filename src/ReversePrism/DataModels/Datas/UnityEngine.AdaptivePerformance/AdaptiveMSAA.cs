@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultAA                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AdaptiveMSAA
+    public partial class AdaptiveMSAA : DataModel
     {
         public int                                      M_DefaultAA                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveMSAA();
+            var value   = new AdaptiveMSAA() { Pointer= p0 };
 
-            value.M_DefaultAA                               = GetInt32(new IntPtr(p + 0x040)); // 0270DB689AF8 0x40 M_DefaultAA                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_DefaultAA                               = GetInt32(new IntPtr(p + 0x040)); // 02466B715DB8 0x40 M_DefaultAA                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

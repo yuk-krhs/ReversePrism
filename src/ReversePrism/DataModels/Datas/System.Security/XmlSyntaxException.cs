@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSyntaxException
+    public partial class XmlSyntaxException : DataModel
     {
 
         public static XmlSyntaxException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSyntaxException();
+            var value   = new XmlSyntaxException() { Pointer= p0 };
 
 
             return value;

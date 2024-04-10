@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   DefaultIfEmptyObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 hasValue                                 bool IL2CPP_TYPE_BOOLEAN
-    public partial class DefaultIfEmpty
+    public partial class DefaultIfEmpty : DataModel
     {
 
         public static DefaultIfEmpty? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultIfEmpty();
+            var value   = new DefaultIfEmpty() { Pointer= p0 };
 
 
             return value;

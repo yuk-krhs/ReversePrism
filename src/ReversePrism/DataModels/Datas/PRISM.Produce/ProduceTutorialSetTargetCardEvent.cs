@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
     // 018 CardId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceTutorialSetTargetCardEvent
+    public partial class ProduceTutorialSetTargetCardEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public int                                      CardId                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialSetTargetCardEvent();
+            var value   = new ProduceTutorialSetTargetCardEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D4A108 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D5D4A128 0x18 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DBAE20 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.CardId                                    = GetInt32(new IntPtr(p + 0x018)); // 024665DBAE40 0x18 CardId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

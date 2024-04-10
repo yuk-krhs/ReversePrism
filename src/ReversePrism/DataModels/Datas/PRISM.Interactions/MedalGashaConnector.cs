@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MedalGashaConnector
+    public partial class MedalGashaConnector : DataModel
     {
 
         public static MedalGashaConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaConnector();
+            var value   = new MedalGashaConnector() { Pointer= p0 };
 
 
             return value;

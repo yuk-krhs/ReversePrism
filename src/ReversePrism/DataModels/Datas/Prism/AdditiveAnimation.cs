@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
     // 040 IgnoreOverwriteAnimFrame                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 additiveAnimationList                    List`1<AdditiveAnimation> IL2CPP_TYPE_GENERICINST
-    public partial class AdditiveAnimation
+    public partial class AdditiveAnimation : DataModel
     {
         public List<AdditiveAnimationData>?             AdditiveAnimationData                   { get; set; }
         public List<AdditiveAnimationData>?             CurentAdditiveAnimList                  { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdditiveAnimation();
+            var value   = new AdditiveAnimation() { Pointer= p0 };
 
-            value.AdditiveAnimationData                     = GetObjectList<AdditiveAnimationData>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdditiveAnimationData.FromPointer); // 027006A186B8 0x20 AdditiveAnimationData       ( 000185CB5818 ModelClassListType AdditiveAnimationData[] AdditiveAnimationData[] List<AdditiveAnimationData> Pointer )
-            value.CurentAdditiveAnimList                    = GetObjectList<AdditiveAnimationData>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdditiveAnimationData.FromPointer); // 027006A186D8 0x28 CurentAdditiveAnimList      ( 000185CB5818 ModelClassListType AdditiveAnimationData[] AdditiveAnimationData[] List<AdditiveAnimationData> Pointer )
-            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x030), ReversePrism.DataModels.Character.FromPointer); // 027006A186F8 0x30 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x038), ReversePrism.DataModels.Animator.FromPointer); // 027006A18718 0x38 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.IgnoreOverwriteAnimFrame                  = GetBool(new IntPtr(p + 0x040)); // 027006A18738 0x40 IgnoreOverwriteAnimFrame    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AdditiveAnimationData                     = GetObjectList<AdditiveAnimationData>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdditiveAnimationData.FromPointer); // 0245A69CE798 0x20 AdditiveAnimationData       ( 000185CB5818 ModelClassListType AdditiveAnimationData[] AdditiveAnimationData[] List<AdditiveAnimationData> Pointer )
+            value.CurentAdditiveAnimList                    = GetObjectList<AdditiveAnimationData>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdditiveAnimationData.FromPointer); // 0245A69CE7B8 0x28 CurentAdditiveAnimList      ( 000185CB5818 ModelClassListType AdditiveAnimationData[] AdditiveAnimationData[] List<AdditiveAnimationData> Pointer )
+            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x030), ReversePrism.DataModels.Character.FromPointer); // 0245A69CE7D8 0x30 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x038), ReversePrism.DataModels.Animator.FromPointer); // 0245A69CE7F8 0x38 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.IgnoreOverwriteAnimFrame                  = GetBool(new IntPtr(p + 0x040)); // 0245A69CE818 0x40 IgnoreOverwriteAnimFrame    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

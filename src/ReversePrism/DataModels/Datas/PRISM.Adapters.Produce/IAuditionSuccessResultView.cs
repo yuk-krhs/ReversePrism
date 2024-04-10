@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAuditionSuccessResultView
+    public partial class IAuditionSuccessResultView : DataModel
     {
 
         public static IAuditionSuccessResultView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAuditionSuccessResultView();
+            var value   = new IAuditionSuccessResultView() { Pointer= p0 };
 
 
             return value;

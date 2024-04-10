@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 0B0 IsOrthographic                           00018659D650 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 0B4 ReceiverPlaneOffset                      0001865F4940 ModelPrimitiveType int int int Int32
     // 0B8 ReceiverPlaneCount                       0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class BatchCullingContext
+    public partial class BatchCullingContext : DataModel
     {
         public LODParameters                            LodParameters                           { get; set; }
         public Matrix4x4                                LocalToWorldMatrix                      { get; set; }
@@ -41,19 +41,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchCullingContext();
+            var value   = new BatchCullingContext() { Pointer= p0 };
 
-            value.LodParameters                             = (LODParameters)GetInt32(new IntPtr(p + 0x030)); // 0270024487B0 0x30 LodParameters               ( 000186604EF0 ModelEnumType LODParameters LODParameters LODParameters Int32 )
-            value.LocalToWorldMatrix                        = (Matrix4x4)GetInt32(new IntPtr(p + 0x04C)); // 0270024487D0 0x4C LocalToWorldMatrix          ( 00018660E4B0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
-            value.ViewType                                  = (BatchCullingViewType)GetInt32(new IntPtr(p + 0x08C)); // 0270024487F0 0x8C ViewType                    ( 00018674A3D0 ModelEnumType BatchCullingViewType BatchCullingViewType BatchCullingViewType Int32 )
-            value.ProjectionType                            = (BatchCullingProjectionType)GetInt32(new IntPtr(p + 0x090)); // 027002448810 0x90 ProjectionType              ( 0001867499D0 ModelEnumType BatchCullingProjectionType BatchCullingProjectionType BatchCullingProjectionType Int32 )
-            value.CullingFlags                              = (BatchCullingFlags)GetInt32(new IntPtr(p + 0x094)); // 027002448830 0x94 CullingFlags                ( 000186748D20 ModelEnumType BatchCullingFlags BatchCullingFlags BatchCullingFlags Int32 )
-            value.ViewID                                    = (BatchPackedCullingViewID)GetInt32(new IntPtr(p + 0x098)); // 027002448850 0x98 ViewID                      ( 00018674D6A0 ModelEnumType BatchPackedCullingViewID BatchPackedCullingViewID BatchPackedCullingViewID Int32 )
-            value.CullingLayerMask                          = GetUInt32(new IntPtr(p + 0x0A0)); // 027002448870 0xA0 CullingLayerMask            ( 000186699EB0 ModelPrimitiveType uint uint uint UInt32 )
-            value.SceneCullingMask                          = GetUInt64(new IntPtr(p + 0x0A8)); // 027002448890 0xA8 SceneCullingMask            ( 00018669C740 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.IsOrthographic                            = GetSByte(new IntPtr(p + 0x0B0)); // 0270024488B0 0xB0 IsOrthographic              ( 00018659D650 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.ReceiverPlaneOffset                       = GetInt32(new IntPtr(p + 0x0B4)); // 0270024488D0 0xB4 ReceiverPlaneOffset         ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ReceiverPlaneCount                        = GetInt32(new IntPtr(p + 0x0B8)); // 0270024488F0 0xB8 ReceiverPlaneCount          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.LodParameters                             = (LODParameters)GetInt32(new IntPtr(p + 0x030)); // 0245A24487B0 0x30 LodParameters               ( 000186604EF0 ModelEnumType LODParameters LODParameters LODParameters Int32 )
+            value.LocalToWorldMatrix                        = (Matrix4x4)GetInt32(new IntPtr(p + 0x04C)); // 0245A24487D0 0x4C LocalToWorldMatrix          ( 00018660E4B0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
+            value.ViewType                                  = (BatchCullingViewType)GetInt32(new IntPtr(p + 0x08C)); // 0245A24487F0 0x8C ViewType                    ( 00018674A3D0 ModelEnumType BatchCullingViewType BatchCullingViewType BatchCullingViewType Int32 )
+            value.ProjectionType                            = (BatchCullingProjectionType)GetInt32(new IntPtr(p + 0x090)); // 0245A2448810 0x90 ProjectionType              ( 0001867499D0 ModelEnumType BatchCullingProjectionType BatchCullingProjectionType BatchCullingProjectionType Int32 )
+            value.CullingFlags                              = (BatchCullingFlags)GetInt32(new IntPtr(p + 0x094)); // 0245A2448830 0x94 CullingFlags                ( 000186748D20 ModelEnumType BatchCullingFlags BatchCullingFlags BatchCullingFlags Int32 )
+            value.ViewID                                    = (BatchPackedCullingViewID)GetInt32(new IntPtr(p + 0x098)); // 0245A2448850 0x98 ViewID                      ( 00018674D6A0 ModelEnumType BatchPackedCullingViewID BatchPackedCullingViewID BatchPackedCullingViewID Int32 )
+            value.CullingLayerMask                          = GetUInt32(new IntPtr(p + 0x0A0)); // 0245A2448870 0xA0 CullingLayerMask            ( 000186699EB0 ModelPrimitiveType uint uint uint UInt32 )
+            value.SceneCullingMask                          = GetUInt64(new IntPtr(p + 0x0A8)); // 0245A2448890 0xA8 SceneCullingMask            ( 00018669C740 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.IsOrthographic                            = GetSByte(new IntPtr(p + 0x0B0)); // 0245A24488B0 0xB0 IsOrthographic              ( 00018659D650 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.ReceiverPlaneOffset                       = GetInt32(new IntPtr(p + 0x0B4)); // 0245A24488D0 0xB4 ReceiverPlaneOffset         ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.ReceiverPlaneCount                        = GetInt32(new IntPtr(p + 0x0B8)); // 0245A24488F0 0xB8 ReceiverPlaneCount          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

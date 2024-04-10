@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 IdolId                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 018 ScrollPositionHolder                     0001865B2D20 ModelClassType StoryViewScrollPositionHolder StoryViewScrollPositionHolder StoryViewScrollPositionHolder Pointer
     // 020 AdvTransitionerModel                     0001865A5750 ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer
-    public partial class IdolStoryLastCategoryArgumentForLegacy
+    public partial class IdolStoryLastCategoryArgumentForLegacy : DataModel
     {
         public int                                      IdolId                                  { get; set; }
         public StoryViewScrollPositionHolder?           ScrollPositionHolder                    { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolStoryLastCategoryArgumentForLegacy();
+            var value   = new IdolStoryLastCategoryArgumentForLegacy() { Pointer= p0 };
 
-            value.IdolId                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D5E3F710 0x10 IdolId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ScrollPositionHolder                      = GetObject<StoryViewScrollPositionHolder>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryViewScrollPositionHolder.FromPointer); // 0270D5E3F730 0x18 ScrollPositionHolder        ( 0001865B2D20 ModelClassType StoryViewScrollPositionHolder StoryViewScrollPositionHolder StoryViewScrollPositionHolder Pointer )
-            value.AdvTransitionerModel                      = GetObject<StoryToAdvTransitionerModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryToAdvTransitionerModel.FromPointer); // 0270D5E3F750 0x20 AdvTransitionerModel        ( 0001865A5750 ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer )
+            value.IdolId                                    = GetInt32(new IntPtr(p + 0x010)); // 024665EAFE88 0x10 IdolId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScrollPositionHolder                      = GetObject<StoryViewScrollPositionHolder>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryViewScrollPositionHolder.FromPointer); // 024665EAFEA8 0x18 ScrollPositionHolder        ( 0001865B2D20 ModelClassType StoryViewScrollPositionHolder StoryViewScrollPositionHolder StoryViewScrollPositionHolder Pointer )
+            value.AdvTransitionerModel                      = GetObject<StoryToAdvTransitionerModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryToAdvTransitionerModel.FromPointer); // 024665EAFEC8 0x20 AdvTransitionerModel        ( 0001865A5750 ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer )
 
             return value;
         }

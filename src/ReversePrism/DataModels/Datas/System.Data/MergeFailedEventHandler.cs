@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MergeFailedEventHandler
+    public partial class MergeFailedEventHandler : DataModel
     {
 
         public static MergeFailedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MergeFailedEventHandler();
+            var value   = new MergeFailedEventHandler() { Pointer= p0 };
 
 
             return value;

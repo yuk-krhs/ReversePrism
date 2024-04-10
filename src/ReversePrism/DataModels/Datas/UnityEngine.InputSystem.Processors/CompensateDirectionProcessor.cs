@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CompensateDirectionProcessor
+    public partial class CompensateDirectionProcessor : DataModel
     {
 
         public static CompensateDirectionProcessor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompensateDirectionProcessor();
+            var value   = new CompensateDirectionProcessor() { Pointer= p0 };
 
 
             return value;

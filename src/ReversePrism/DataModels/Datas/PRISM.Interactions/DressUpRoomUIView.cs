@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 CgUIView                                 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 028 GoBackButton                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class DressUpRoomUIView
+    public partial class DressUpRoomUIView : DataModel
     {
         public CanvasGroup?                             CgUIView                                { get; set; }
         public GameObject?                              GoBackButton                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DressUpRoomUIView();
+            var value   = new DressUpRoomUIView() { Pointer= p0 };
 
-            value.CgUIView                                  = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB645638 0x20 CgUIView                    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.GoBackButton                              = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB645658 0x28 GoBackButton                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CgUIView                                  = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B6D1798 0x20 CgUIView                    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GoBackButton                              = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B6D17B8 0x28 GoBackButton                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

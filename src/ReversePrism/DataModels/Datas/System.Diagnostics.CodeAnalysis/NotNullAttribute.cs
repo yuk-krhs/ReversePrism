@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotNullAttribute
+    public partial class NotNullAttribute : DataModel
     {
 
         public static NotNullAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotNullAttribute();
+            var value   = new NotNullAttribute() { Pointer= p0 };
 
 
             return value;

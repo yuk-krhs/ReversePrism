@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyDownEvent
+    public partial class KeyDownEvent : DataModel
     {
 
         public static KeyDownEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyDownEvent();
+            var value   = new KeyDownEvent() { Pointer= p0 };
 
 
             return value;

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 110 _overrideCreator                         ObjectConstructor`1<<object>> IL2CPP_TYPE_GENERICINST
     // 118 _parameterizedCreator                    ObjectConstructor`1<<object>> IL2CPP_TYPE_GENERICINST
     // 120 HasParameterizedCreator                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonDictionaryContract
+    public partial class JsonDictionaryContract : DataModel
     {
         public Type?                                    DictionaryKeyType                       { get; set; }
         public Type?                                    DictionaryValueType                     { get; set; }
@@ -38,16 +38,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonDictionaryContract();
+            var value   = new JsonDictionaryContract() { Pointer= p0 };
 
-            value.DictionaryKeyType                         = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 0270060C5688 0xC8 DictionaryKeyType           ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.DictionaryValueType                       = GetObject<Type>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.Type.FromPointer); // 0270060C56A8 0xD0 DictionaryValueType         ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.KeyContract                               = GetObject<JsonContract>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.JsonContract.FromPointer); // 0270060C56C8 0xD8 KeyContract                 ( 000186602210 ModelClassType JsonContract JsonContract JsonContract Pointer )
-            value.GenericCollectionDefinitionType           = GetObject<Type>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.Type.FromPointer); // 0270060C56E8 0xE0 GenericCollectionDefinitionType ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.GenericWrapperType                        = GetObject<Type>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Type.FromPointer); // 0270060C5708 0xE8 GenericWrapperType          ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.ShouldCreateWrapper                       = GetBool(new IntPtr(p + 0x100)); // 0270060C5768 0x100 ShouldCreateWrapper         ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ParameterizedConstructor                  = GetObject<ConstructorInfo>(new IntPtr(p + 0x108), ReversePrism.DataModels.ConstructorInfo.FromPointer); // 0270060C5788 0x108 ParameterizedConstructor    ( 00018660FE70 ModelClassType ConstructorInfo ConstructorInfo ConstructorInfo Pointer )
-            value.HasParameterizedCreator                   = GetBool(new IntPtr(p + 0x120)); // 0270060C57E8 0x120 HasParameterizedCreator     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DictionaryKeyType                         = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 0245A609F608 0xC8 DictionaryKeyType           ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.DictionaryValueType                       = GetObject<Type>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.Type.FromPointer); // 0245A609F628 0xD0 DictionaryValueType         ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.KeyContract                               = GetObject<JsonContract>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.JsonContract.FromPointer); // 0245A609F648 0xD8 KeyContract                 ( 000186602210 ModelClassType JsonContract JsonContract JsonContract Pointer )
+            value.GenericCollectionDefinitionType           = GetObject<Type>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.Type.FromPointer); // 0245A609F668 0xE0 GenericCollectionDefinitionType ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.GenericWrapperType                        = GetObject<Type>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Type.FromPointer); // 0245A609F688 0xE8 GenericWrapperType          ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.ShouldCreateWrapper                       = GetBool(new IntPtr(p + 0x100)); // 0245A609F6E8 0x100 ShouldCreateWrapper         ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ParameterizedConstructor                  = GetObject<ConstructorInfo>(new IntPtr(p + 0x108), ReversePrism.DataModels.ConstructorInfo.FromPointer); // 0245A609F708 0x108 ParameterizedConstructor    ( 00018660FE70 ModelClassType ConstructorInfo ConstructorInfo ConstructorInfo Pointer )
+            value.HasParameterizedCreator                   = GetBool(new IntPtr(p + 0x120)); // 0245A609F768 0x120 HasParameterizedCreator     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

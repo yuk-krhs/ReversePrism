@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 070 CachedRendererListExecutor               000186522B30 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer
     // 000 AttenuationRange                         float IL2CPP_TYPE_R4
     // 078 FovDistance                              0001866656B0 ModelPrimitiveType float float float Single
-    public partial class OutlineController
+    public partial class OutlineController : DataModel
     {
         public CameraController?                        Camera                                  { get; set; }
         public GameObject?                              BaseObject                              { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutlineController();
+            var value   = new OutlineController() { Pointer= p0 };
 
-            value.Camera                                    = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 027006A1A8E8 0x20 Camera                      ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.BaseObject                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 027006A1A908 0x28 BaseObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OutlineAdjust                             = GetSingle(new IntPtr(p + 0x030)); // 027006A1A928 0x30 OutlineAdjust               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ColorAdd                                  = (Color)GetInt32(new IntPtr(p + 0x034)); // 027006A1A948 0x34 ColorAdd                    ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.OutlineInclusive                          = GetSingle(new IntPtr(p + 0x044)); // 027006A1A968 0x44 OutlineInclusive            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.OutlineResizeRate                         = GetSingle(new IntPtr(p + 0x048)); // 027006A1A988 0x48 OutlineResizeRate           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AdjustValue                               = GetSingle(new IntPtr(p + 0x04C)); // 027006A1A9A8 0x4C AdjustValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.OutlineObject                             = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 027006A1A9C8 0x50 OutlineObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x058), ReversePrism.DataModels.Character.FromPointer); // 027006A1A9E8 0x58 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
-            value.ShadeDir                                  = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 027006A1AA08 0x60 ShadeDir                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.CachedRendererListExecutor                = GetObject<CachedRendererListExecutor>(new IntPtr(p + 0x070), ReversePrism.DataModels.CachedRendererListExecutor.FromPointer); // 027006A1AA28 0x70 CachedRendererListExecutor  ( 000186522B30 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer )
-            value.FovDistance                               = GetSingle(new IntPtr(p + 0x078)); // 027006A1AA68 0x78 FovDistance                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Camera                                    = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 0245A69CE498 0x20 Camera                      ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
+            value.BaseObject                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0245A69CE4B8 0x28 BaseObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.OutlineAdjust                             = GetSingle(new IntPtr(p + 0x030)); // 0245A69CE4D8 0x30 OutlineAdjust               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ColorAdd                                  = (Color)GetInt32(new IntPtr(p + 0x034)); // 0245A69CE4F8 0x34 ColorAdd                    ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.OutlineInclusive                          = GetSingle(new IntPtr(p + 0x044)); // 0245A69CE518 0x44 OutlineInclusive            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.OutlineResizeRate                         = GetSingle(new IntPtr(p + 0x048)); // 0245A69CE538 0x48 OutlineResizeRate           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.AdjustValue                               = GetSingle(new IntPtr(p + 0x04C)); // 0245A69CE558 0x4C AdjustValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.OutlineObject                             = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0245A69CE578 0x50 OutlineObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x058), ReversePrism.DataModels.Character.FromPointer); // 0245A69CE598 0x58 Character                   ( 000186596FD0 ModelClassType Character Character Character Pointer )
+            value.ShadeDir                                  = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 0245A69CE5B8 0x60 ShadeDir                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.CachedRendererListExecutor                = GetObject<CachedRendererListExecutor>(new IntPtr(p + 0x070), ReversePrism.DataModels.CachedRendererListExecutor.FromPointer); // 0245A69CE5D8 0x70 CachedRendererListExecutor  ( 000186522B30 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer )
+            value.FovDistance                               = GetSingle(new IntPtr(p + 0x078)); // 0245A69CE618 0x78 FovDistance                 ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

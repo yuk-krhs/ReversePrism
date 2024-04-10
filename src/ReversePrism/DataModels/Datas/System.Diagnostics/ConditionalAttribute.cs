@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ConditionString                          000186672F10 ModelPrimitiveType string string string String
-    public partial class ConditionalAttribute
+    public partial class ConditionalAttribute : DataModel
     {
         public string                                   ConditionString                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConditionalAttribute();
+            var value   = new ConditionalAttribute() { Pointer= p0 };
 
-            value.ConditionString                           = GetString(new IntPtr(p + 0x010)); // 0270D6D3A5B0 0x10 ConditionString             ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ConditionString                           = GetString(new IntPtr(p + 0x010)); // 024666D925B0 0x10 ConditionString             ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

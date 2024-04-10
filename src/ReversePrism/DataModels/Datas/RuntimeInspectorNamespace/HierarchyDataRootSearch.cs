@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 038 SearchResult                             000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer
     // 040 Reference                                0001866B4610 ModelClassType HierarchyDataRoot HierarchyDataRoot HierarchyDataRoot Pointer
     // 048 SearchTerm                               000186671910 ModelPrimitiveType string string string String
-    public partial class HierarchyDataRootSearch
+    public partial class HierarchyDataRootSearch : DataModel
     {
         public List<Transform>?                         SearchResult                            { get; set; }
         public HierarchyDataRoot?                       Reference                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HierarchyDataRootSearch();
+            var value   = new HierarchyDataRootSearch() { Pointer= p0 };
 
-            value.SearchResult                              = GetObjectList<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 0270DB1B8878 0x38 SearchResult                ( 000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
-            value.Reference                                 = GetObject<HierarchyDataRoot>(new IntPtr(p + 0x040), ReversePrism.DataModels.HierarchyDataRoot.FromPointer); // 0270DB1B8898 0x40 Reference                   ( 0001866B4610 ModelClassType HierarchyDataRoot HierarchyDataRoot HierarchyDataRoot Pointer )
-            value.SearchTerm                                = GetString(new IntPtr(p + 0x048)); // 0270DB1B88B8 0x48 SearchTerm                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.SearchResult                              = GetObjectList<Transform>(new IntPtr(p + 0x038), ReversePrism.DataModels.Transform.FromPointer); // 02466B2190A8 0x38 SearchResult                ( 000185D16118 ModelClassListType List`1<Transform> List`1<Transform> List<Transform> Pointer )
+            value.Reference                                 = GetObject<HierarchyDataRoot>(new IntPtr(p + 0x040), ReversePrism.DataModels.HierarchyDataRoot.FromPointer); // 02466B2190C8 0x40 Reference                   ( 0001866B4610 ModelClassType HierarchyDataRoot HierarchyDataRoot HierarchyDataRoot Pointer )
+            value.SearchTerm                                = GetString(new IntPtr(p + 0x048)); // 02466B2190E8 0x48 SearchTerm                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

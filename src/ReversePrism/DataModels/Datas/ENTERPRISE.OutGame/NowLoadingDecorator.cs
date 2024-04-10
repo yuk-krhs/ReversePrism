@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NowLoadingDecorator
+    public partial class NowLoadingDecorator : DataModel
     {
 
         public static NowLoadingDecorator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NowLoadingDecorator();
+            var value   = new NowLoadingDecorator() { Pointer= p0 };
 
 
             return value;

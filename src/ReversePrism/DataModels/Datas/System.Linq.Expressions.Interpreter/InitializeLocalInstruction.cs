@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InitializeLocalInstruction
+    public partial class InitializeLocalInstruction : DataModel
     {
 
         public static InitializeLocalInstruction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitializeLocalInstruction();
+            var value   = new InitializeLocalInstruction() { Pointer= p0 };
 
 
             return value;

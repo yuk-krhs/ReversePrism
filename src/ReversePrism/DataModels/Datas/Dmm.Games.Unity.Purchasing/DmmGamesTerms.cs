@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 TermOfDelivery                           0001866722E0 ModelPrimitiveType string string string String
     // 020 TermOfPayment                            0001866722E0 ModelPrimitiveType string string string String
     // 028 ReturnPolicy                             0001866722E0 ModelPrimitiveType string string string String
-    public partial class DmmGamesTerms
+    public partial class DmmGamesTerms : DataModel
     {
         public string                                   PeriodTimeDescription                   { get; set; }
         public string                                   TermOfDelivery                          { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesTerms();
+            var value   = new DmmGamesTerms() { Pointer= p0 };
 
-            value.PeriodTimeDescription                     = GetString(new IntPtr(p + 0x010)); // 0270DB483160 0x10 PeriodTimeDescription       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.TermOfDelivery                            = GetString(new IntPtr(p + 0x018)); // 0270DB483180 0x18 TermOfDelivery              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.TermOfPayment                             = GetString(new IntPtr(p + 0x020)); // 0270DB4831A0 0x20 TermOfPayment               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ReturnPolicy                              = GetString(new IntPtr(p + 0x028)); // 0270DB4831C0 0x28 ReturnPolicy                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.PeriodTimeDescription                     = GetString(new IntPtr(p + 0x010)); // 02466B510090 0x10 PeriodTimeDescription       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.TermOfDelivery                            = GetString(new IntPtr(p + 0x018)); // 02466B5100B0 0x18 TermOfDelivery              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.TermOfPayment                             = GetString(new IntPtr(p + 0x020)); // 02466B5100D0 0x20 TermOfPayment               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ReturnPolicy                              = GetString(new IntPtr(p + 0x028)); // 02466B5100F0 0x28 ReturnPolicy                ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

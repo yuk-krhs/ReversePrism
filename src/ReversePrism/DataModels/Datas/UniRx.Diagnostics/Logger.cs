@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 001 isDebugBuild                             bool IL2CPP_TYPE_BOOLEAN
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 logPublisher                             Action`1<LogEntry> IL2CPP_TYPE_GENERICINST
-    public partial class Logger
+    public partial class Logger : DataModel
     {
         public string                                   Name                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Logger();
+            var value   = new Logger() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D965A948 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246696C92C8 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

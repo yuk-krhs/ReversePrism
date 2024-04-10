@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 ErrorCode                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FirebaseException
+    public partial class FirebaseException : DataModel
     {
         public int                                      ErrorCode                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseException();
+            var value   = new FirebaseException() { Pointer= p0 };
 
-            value.ErrorCode                                 = GetInt32(new IntPtr(p + 0x090)); // 0270DB744950 0x90 ErrorCode                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ErrorCode                                 = GetInt32(new IntPtr(p + 0x090)); // 02466B7D8C10 0x90 ErrorCode                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

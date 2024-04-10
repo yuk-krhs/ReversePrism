@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 000 selectedAwaiter                          Awaiter<bool> IL2CPP_TYPE_GENERICINST
     // 000 selectedDisposeAsyncAwaiter              Awaiter IL2CPP_TYPE_VALUETYPE
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _SelectMany
+    public partial class _SelectMany : DataModel
     {
 
         public static _SelectMany? FromPointer(IntPtr p0)
@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _SelectMany();
+            var value   = new _SelectMany() { Pointer= p0 };
 
 
             return value;

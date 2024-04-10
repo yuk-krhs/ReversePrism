@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 OnceDisplayed                            000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 028 <OnceDisplayed>k__BackingField           HashSet`1<string> IL2CPP_TYPE_GENERICINST
-    public partial class HowToPlayPopupSaveData
+    public partial class HowToPlayPopupSaveData : DataModel
     {
         public List<string>?                            OnceDisplayed                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HowToPlayPopupSaveData();
+            var value   = new HowToPlayPopupSaveData() { Pointer= p0 };
 
-            value.OnceDisplayed                             = GetStringList(new IntPtr(p + 0x020)); // 027003A71638 0x20 OnceDisplayed               ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.OnceDisplayed                             = GetStringList(new IntPtr(p + 0x020)); // 0245A3A7C570 0x20 OnceDisplayed               ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 <Handlers>k__BackingField                ReadOnlyCollection`1<CatchBlock> IL2CPP_TYPE_GENERICINST
     // 028 Finally                                  0001865CF210 ModelClassType Expression Expression Expression Pointer
     // 030 Fault                                    0001865CF210 ModelClassType Expression Expression Expression Pointer
-    public partial class TryExpression
+    public partial class TryExpression : DataModel
     {
         public Type?                                    Type                                    { get; set; }
         public Expression?                              Body                                    { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TryExpression();
+            var value   = new TryExpression() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D9F34CD0 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F34CF0 0x18 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Finally                                   = GetObject<Expression>(new IntPtr(p + 0x028), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F34D30 0x28 Finally                     ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Fault                                     = GetObject<Expression>(new IntPtr(p + 0x030), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F34D50 0x30 Fault                       ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024669F81A80 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 024669F81AA0 0x18 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Finally                                   = GetObject<Expression>(new IntPtr(p + 0x028), ReversePrism.DataModels.Expression.FromPointer); // 024669F81AE0 0x28 Finally                     ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Fault                                     = GetObject<Expression>(new IntPtr(p + 0x030), ReversePrism.DataModels.Expression.FromPointer); // 024669F81B00 0x30 Fault                       ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DownloadOverlayViewFactory
+    public partial class DownloadOverlayViewFactory : DataModel
     {
 
         public static DownloadOverlayViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadOverlayViewFactory();
+            var value   = new DownloadOverlayViewFactory() { Pointer= p0 };
 
 
             return value;

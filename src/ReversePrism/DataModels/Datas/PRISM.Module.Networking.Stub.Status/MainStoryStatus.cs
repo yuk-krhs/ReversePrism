@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 024 UnlockPremiseMstMainStoryId              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
     // 028 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class MainStoryStatus
+    public partial class MainStoryStatus : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
         public int                                      MstMainStoryChapterId                   { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainStoryStatus();
+            var value   = new MainStoryStatus() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0270D2A3B230 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.MstMainStoryChapterId                     = GetInt32(new IntPtr(p + 0x020)); // 0270D2A3B270 0x20 MstMainStoryChapterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseMstMainStoryId               = GetInt32(new IntPtr(p + 0x024)); // 0270D2A3B2B0 0x24 UnlockPremiseMstMainStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x028)); // 0270D2A3B2F0 0x28 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629C0320 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.MstMainStoryChapterId                     = GetInt32(new IntPtr(p + 0x020)); // 0246629C0360 0x20 MstMainStoryChapterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseMstMainStoryId               = GetInt32(new IntPtr(p + 0x024)); // 0246629C03A0 0x24 UnlockPremiseMstMainStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x028)); // 0246629C03E0 0x28 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

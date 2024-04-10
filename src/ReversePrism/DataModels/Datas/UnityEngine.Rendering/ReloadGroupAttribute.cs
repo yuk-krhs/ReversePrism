@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReloadGroupAttribute
+    public partial class ReloadGroupAttribute : DataModel
     {
 
         public static ReloadGroupAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReloadGroupAttribute();
+            var value   = new ReloadGroupAttribute() { Pointer= p0 };
 
 
             return value;

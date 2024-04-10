@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 BaseCellData                             00018665C460 ModelClassType IStoryLastCategoryCellData IStoryLastCategoryCellData IStoryLastCategoryCellData Pointer
-    public partial class StoryLastCategoryCellDataForContinuousPlayConfirmation
+    public partial class StoryLastCategoryCellDataForContinuousPlayConfirmation : DataModel
     {
         public IStoryLastCategoryCellData?              BaseCellData                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryLastCategoryCellDataForContinuousPlayConfirmation();
+            var value   = new StoryLastCategoryCellDataForContinuousPlayConfirmation() { Pointer= p0 };
 
-            value.BaseCellData                              = GetObject<IStoryLastCategoryCellData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryLastCategoryCellData.FromPointer); // 0270D67C66B0 0x10 BaseCellData                ( 00018665C460 ModelClassType IStoryLastCategoryCellData IStoryLastCategoryCellData IStoryLastCategoryCellData Pointer )
+            value.BaseCellData                              = GetObject<IStoryLastCategoryCellData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryLastCategoryCellData.FromPointer); // 0246668266B0 0x10 BaseCellData                ( 00018665C460 ModelClassType IStoryLastCategoryCellData IStoryLastCategoryCellData IStoryLastCategoryCellData Pointer )
 
             return value;
         }

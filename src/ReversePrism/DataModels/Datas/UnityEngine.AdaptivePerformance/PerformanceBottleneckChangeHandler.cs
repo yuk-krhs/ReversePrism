@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PerformanceBottleneckChangeHandler
+    public partial class PerformanceBottleneckChangeHandler : DataModel
     {
 
         public static PerformanceBottleneckChangeHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PerformanceBottleneckChangeHandler();
+            var value   = new PerformanceBottleneckChangeHandler() { Pointer= p0 };
 
 
             return value;

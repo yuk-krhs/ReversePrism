@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C FinallyEndIndex                          0001865F44E0 ModelPrimitiveType int int int Int32
     // 020 GotoEndTargetIndex                       0001865F44E0 ModelPrimitiveType int int int Int32
     // 028 Handlers                                 000185B7CF50 ModelClassListType ExceptionHandler[] ExceptionHandler[] List<ExceptionHandler> Pointer
-    public partial class TryCatchFinallyHandler
+    public partial class TryCatchFinallyHandler : DataModel
     {
         public int                                      TryStartIndex                           { get; set; }
         public int                                      TryEndIndex                             { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TryCatchFinallyHandler();
+            var value   = new TryCatchFinallyHandler() { Pointer= p0 };
 
-            value.TryStartIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0270D9FA48E0 0x10 TryStartIndex               ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.TryEndIndex                               = GetInt32(new IntPtr(p + 0x014)); // 0270D9FA4900 0x14 TryEndIndex                 ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.FinallyStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 0270D9FA4920 0x18 FinallyStartIndex           ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.FinallyEndIndex                           = GetInt32(new IntPtr(p + 0x01C)); // 0270D9FA4940 0x1C FinallyEndIndex             ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.GotoEndTargetIndex                        = GetInt32(new IntPtr(p + 0x020)); // 0270D9FA4960 0x20 GotoEndTargetIndex          ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.Handlers                                  = GetObjectList<ExceptionHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExceptionHandler.FromPointer); // 0270D9FA4980 0x28 Handlers                    ( 000185B7CF50 ModelClassListType ExceptionHandler[] ExceptionHandler[] List<ExceptionHandler> Pointer )
+            value.TryStartIndex                             = GetInt32(new IntPtr(p + 0x010)); // 02466A010468 0x10 TryStartIndex               ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.TryEndIndex                               = GetInt32(new IntPtr(p + 0x014)); // 02466A010488 0x14 TryEndIndex                 ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.FinallyStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 02466A0104A8 0x18 FinallyStartIndex           ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.FinallyEndIndex                           = GetInt32(new IntPtr(p + 0x01C)); // 02466A0104C8 0x1C FinallyEndIndex             ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.GotoEndTargetIndex                        = GetInt32(new IntPtr(p + 0x020)); // 02466A0104E8 0x20 GotoEndTargetIndex          ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Handlers                                  = GetObjectList<ExceptionHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExceptionHandler.FromPointer); // 02466A010508 0x28 Handlers                    ( 000185B7CF50 ModelClassListType ExceptionHandler[] ExceptionHandler[] List<ExceptionHandler> Pointer )
 
             return value;
         }

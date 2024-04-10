@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 090 GetProducerEventInfoList                 Method`2<IGetProducerEventInfoListArgs, IGetProducerEventInfoListReply> IL2CPP_TYPE_GENERICINST
     // 0A8 GetProducerEventInfo                     Method`2<IGetProducerEventInfoArgs, IGetProducerEventInfoReply> IL2CPP_TYPE_GENERICINST
     // 0C0 SetSelfProfileName                       Method`2<ISetSelfProfileNameArgs, ISetSelfProfileNameReply> IL2CPP_TYPE_GENERICINST
-    public partial class ProfileServiceMethods
+    public partial class ProfileServiceMethods : DataModel
     {
 
         public static ProfileServiceMethods? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileServiceMethods();
+            var value   = new ProfileServiceMethods() { Pointer= p0 };
 
 
             return value;

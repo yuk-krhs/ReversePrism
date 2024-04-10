@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 AcbFileName                              0001866722E0 ModelPrimitiveType string string string String
     // 018 SheetName                                0001866722E0 ModelPrimitiveType string string string String
     // 020 CueInfos                                 000185CD5A88 ModelClassListType List`1<CueInfoEx> List`1<CueInfoEx> List<CueInfoEx> Pointer
-    public partial class SoundInfo
+    public partial class SoundInfo : DataModel
     {
         public string                                   AcbFileName                             { get; set; }
         public string                                   SheetName                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoundInfo();
+            var value   = new SoundInfo() { Pointer= p0 };
 
-            value.AcbFileName                               = GetString(new IntPtr(p + 0x010)); // 0270D4EC2748 0x10 AcbFileName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SheetName                                 = GetString(new IntPtr(p + 0x018)); // 0270D4EC2768 0x18 SheetName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CueInfos                                  = GetObjectList<CueInfoEx>(new IntPtr(p + 0x020), ReversePrism.DataModels.CueInfoEx.FromPointer); // 0270D4EC2788 0x20 CueInfos                    ( 000185CD5A88 ModelClassListType List`1<CueInfoEx> List`1<CueInfoEx> List<CueInfoEx> Pointer )
+            value.AcbFileName                               = GetString(new IntPtr(p + 0x010)); // 024664F275A0 0x10 AcbFileName                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SheetName                                 = GetString(new IntPtr(p + 0x018)); // 024664F275C0 0x18 SheetName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CueInfos                                  = GetObjectList<CueInfoEx>(new IntPtr(p + 0x020), ReversePrism.DataModels.CueInfoEx.FromPointer); // 024664F275E0 0x20 CueInfos                    ( 000185CD5A88 ModelClassListType List`1<CueInfoEx> List`1<CueInfoEx> List<CueInfoEx> Pointer )
 
             return value;
         }

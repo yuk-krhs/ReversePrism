@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 point                                    NativeArray`1<Point> IL2CPP_TYPE_GENERICINST
     // 020 idx                                      NativeArray`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ApplyJob
+    public partial class ApplyJob : DataModel
     {
 
         public static ApplyJob? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ApplyJob();
+            var value   = new ApplyJob() { Pointer= p0 };
 
 
             return value;

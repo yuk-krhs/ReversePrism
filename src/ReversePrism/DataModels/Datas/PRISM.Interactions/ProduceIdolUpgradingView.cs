@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 AwakeningPerformanceObj                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 060 PiTrainingPerformanceObj                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 068 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class ProduceIdolUpgradingView
+    public partial class ProduceIdolUpgradingView : DataModel
     {
         public UIImage?                                 CharaColorBg                            { get; set; }
         public RawImage?                                ImgFavorite                             { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolUpgradingView();
+            var value   = new ProduceIdolUpgradingView() { Pointer= p0 };
 
-            value.CharaColorBg                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0270DA34E220 0x20 CharaColorBg                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ImgFavorite                               = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA34E240 0x28 ImgFavorite                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.BtnFavorite                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA34E260 0x30 BtnFavorite                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TabBadgeView                              = GetObject<TabBadgeView>(new IntPtr(p + 0x038), ReversePrism.DataModels.TabBadgeView.FromPointer); // 0270DA34E280 0x38 TabBadgeView                ( 0001866182E0 ModelClassType TabBadgeView TabBadgeView TabBadgeView Pointer )
-            value.TrPerformanceAreaParent                   = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0270DA34E2A0 0x40 TrPerformanceAreaParent     ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.PerformanceFader                          = GetObject<PerformanceFader>(new IntPtr(p + 0x048), ReversePrism.DataModels.PerformanceFader.FromPointer); // 0270DA34E2C0 0x48 PerformanceFader            ( 000186732B30 ModelClassType PerformanceFader PerformanceFader PerformanceFader Pointer )
-            value.AwakeningPerformanceObj                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA34E300 0x58 AwakeningPerformanceObj     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PiTrainingPerformanceObj                  = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA34E320 0x60 PiTrainingPerformanceObj    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DA34E340 0x68 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.CharaColorBg                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466A3C1108 0x20 CharaColorBg                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.ImgFavorite                               = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3C1128 0x28 ImgFavorite                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.BtnFavorite                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C1148 0x30 BtnFavorite                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TabBadgeView                              = GetObject<TabBadgeView>(new IntPtr(p + 0x038), ReversePrism.DataModels.TabBadgeView.FromPointer); // 02466A3C1168 0x38 TabBadgeView                ( 0001866182E0 ModelClassType TabBadgeView TabBadgeView TabBadgeView Pointer )
+            value.TrPerformanceAreaParent                   = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 02466A3C1188 0x40 TrPerformanceAreaParent     ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.PerformanceFader                          = GetObject<PerformanceFader>(new IntPtr(p + 0x048), ReversePrism.DataModels.PerformanceFader.FromPointer); // 02466A3C11A8 0x48 PerformanceFader            ( 000186732B30 ModelClassType PerformanceFader PerformanceFader PerformanceFader Pointer )
+            value.AwakeningPerformanceObj                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C11E8 0x58 AwakeningPerformanceObj     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.PiTrainingPerformanceObj                  = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C1208 0x60 PiTrainingPerformanceObj    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A3C1228 0x68 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 scoreRankRewardConditionDic              Dictionary`2<SongDifficultyLevel, Dictionary`2<ScoreRank, int>> IL2CPP_TYPE_GENERICINST
     // 018 comboRankRewardConditionDic              Dictionary`2<SongDifficultyLevel, Dictionary`2<ComboRank, int>> IL2CPP_TYPE_GENERICINST
-    public partial class MusicRewardConditionHandler
+    public partial class MusicRewardConditionHandler : DataModel
     {
 
         public static MusicRewardConditionHandler? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRewardConditionHandler();
+            var value   = new MusicRewardConditionHandler() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 038 MyRenderer                               00018665F150 ModelClassType Renderer Renderer Renderer Pointer
     // 040 Timer                                    0001866656B0 ModelPrimitiveType float float float Single
     // 044 Id                                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class PatternAnimation
+    public partial class PatternAnimation : DataModel
     {
         public int                                      RowCount                                { get; set; }
         public int                                      ColCount                                { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PatternAnimation();
+            var value   = new PatternAnimation() { Pointer= p0 };
 
-            value.RowCount                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D4DF82B8 0x20 RowCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ColCount                                  = GetInt32(new IntPtr(p + 0x024)); // 0270D4DF82D8 0x24 ColCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SpaceTime                                 = GetSingle(new IntPtr(p + 0x028)); // 0270D4DF82F8 0x28 SpaceTime                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MaterialPropertyBlock                     = GetObject<MaterialPropertyBlock>(new IntPtr(p + 0x030), ReversePrism.DataModels.MaterialPropertyBlock.FromPointer); // 0270D4DF8318 0x30 MaterialPropertyBlock       ( 0001865E0FC0 ModelClassType MaterialPropertyBlock MaterialPropertyBlock MaterialPropertyBlock Pointer )
-            value.MyRenderer                                = GetObject<Renderer>(new IntPtr(p + 0x038), ReversePrism.DataModels.Renderer.FromPointer); // 0270D4DF8338 0x38 MyRenderer                  ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
-            value.Timer                                     = GetSingle(new IntPtr(p + 0x040)); // 0270D4DF8358 0x40 Timer                       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x044)); // 0270D4DF8378 0x44 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RowCount                                  = GetInt32(new IntPtr(p + 0x020)); // 024664E6C950 0x20 RowCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ColCount                                  = GetInt32(new IntPtr(p + 0x024)); // 024664E6C970 0x24 ColCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SpaceTime                                 = GetSingle(new IntPtr(p + 0x028)); // 024664E6C990 0x28 SpaceTime                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.MaterialPropertyBlock                     = GetObject<MaterialPropertyBlock>(new IntPtr(p + 0x030), ReversePrism.DataModels.MaterialPropertyBlock.FromPointer); // 024664E6C9B0 0x30 MaterialPropertyBlock       ( 0001865E0FC0 ModelClassType MaterialPropertyBlock MaterialPropertyBlock MaterialPropertyBlock Pointer )
+            value.MyRenderer                                = GetObject<Renderer>(new IntPtr(p + 0x038), ReversePrism.DataModels.Renderer.FromPointer); // 024664E6C9D0 0x38 MyRenderer                  ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
+            value.Timer                                     = GetSingle(new IntPtr(p + 0x040)); // 024664E6C9F0 0x40 Timer                       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x044)); // 024664E6CA10 0x44 Id                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

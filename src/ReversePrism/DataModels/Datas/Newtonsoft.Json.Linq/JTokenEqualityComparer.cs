@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JTokenEqualityComparer
+    public partial class JTokenEqualityComparer : DataModel
     {
 
         public static JTokenEqualityComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JTokenEqualityComparer();
+            var value   = new JTokenEqualityComparer() { Pointer= p0 };
 
 
             return value;

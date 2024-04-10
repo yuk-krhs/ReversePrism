@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 MissionButton                            0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer
     // 038 PresentButton                            0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer
     // 040 ExchangeButton                           0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer
-    public partial class HomeSubFooterPanelView
+    public partial class HomeSubFooterPanelView : DataModel
     {
         public HomeSubFooterButton?                     MobileButton                            { get; set; }
         public HomeSubFooterButton?                     NewsButton                              { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSubFooterPanelView();
+            var value   = new HomeSubFooterPanelView() { Pointer= p0 };
 
-            value.MobileButton                              = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 027004F814D0 0x20 MobileButton                ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
-            value.NewsButton                                = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 027004F814F0 0x28 NewsButton                  ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
-            value.MissionButton                             = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 027004F81510 0x30 MissionButton               ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
-            value.PresentButton                             = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 027004F81530 0x38 PresentButton               ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
-            value.ExchangeButton                            = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 027004F81550 0x40 ExchangeButton              ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
+            value.MobileButton                              = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 0245A4FA7370 0x20 MobileButton                ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
+            value.NewsButton                                = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 0245A4FA7390 0x28 NewsButton                  ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
+            value.MissionButton                             = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 0245A4FA73B0 0x30 MissionButton               ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
+            value.PresentButton                             = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 0245A4FA73D0 0x38 PresentButton               ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
+            value.ExchangeButton                            = GetObject<HomeSubFooterButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeSubFooterButton.FromPointer); // 0245A4FA73F0 0x40 ExchangeButton              ( 0001866D2070 ModelClassType HomeSubFooterButton HomeSubFooterButton HomeSubFooterButton Pointer )
 
             return value;
         }

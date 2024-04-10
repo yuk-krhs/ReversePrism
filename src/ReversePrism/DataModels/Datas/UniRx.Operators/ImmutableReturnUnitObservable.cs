@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 ImmutableReturnUnitObservable IL2CPP_TYPE_CLASS
-    public partial class ImmutableReturnUnitObservable
+    public partial class ImmutableReturnUnitObservable : DataModel
     {
 
         public static ImmutableReturnUnitObservable? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImmutableReturnUnitObservable();
+            var value   = new ImmutableReturnUnitObservable() { Pointer= p0 };
 
 
             return value;

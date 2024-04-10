@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 ShouldTweenPosition                      000186595960 ModelPrimitiveType bool bool bool Bool
     // 021 ShouldTweenRotation                      000186595960 ModelPrimitiveType bool bool bool Bool
     // 028 Curve                                    000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    public partial class TweenBehaviour
+    public partial class TweenBehaviour : DataModel
     {
         public Transform?                               StartLocation                           { get; set; }
         public Transform?                               EndLocation                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TweenBehaviour();
+            var value   = new TweenBehaviour() { Pointer= p0 };
 
-            value.StartLocation                             = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 0270D4E16B00 0x10 StartLocation               ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
-            value.EndLocation                               = GetObject<Transform>(new IntPtr(p + 0x018), ReversePrism.DataModels.Transform.FromPointer); // 0270D4E16B20 0x18 EndLocation                 ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
-            value.ShouldTweenPosition                       = GetBool(new IntPtr(p + 0x020)); // 0270D4E16B40 0x20 ShouldTweenPosition         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ShouldTweenRotation                       = GetBool(new IntPtr(p + 0x021)); // 0270D4E16B60 0x21 ShouldTweenRotation         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270D4E16B80 0x28 Curve                       ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.StartLocation                             = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 024664E8BF10 0x10 StartLocation               ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
+            value.EndLocation                               = GetObject<Transform>(new IntPtr(p + 0x018), ReversePrism.DataModels.Transform.FromPointer); // 024664E8BF30 0x18 EndLocation                 ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
+            value.ShouldTweenPosition                       = GetBool(new IntPtr(p + 0x020)); // 024664E8BF50 0x20 ShouldTweenPosition         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ShouldTweenRotation                       = GetBool(new IntPtr(p + 0x021)); // 024664E8BF70 0x21 ShouldTweenRotation         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024664E8BF90 0x28 Curve                       ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
 
             return value;
         }

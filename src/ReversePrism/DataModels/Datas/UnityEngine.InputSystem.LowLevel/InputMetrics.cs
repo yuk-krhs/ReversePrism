@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 030 TotalUpdateCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 TotalEventProcessingTime                 0001865C2950 ModelPrimitiveType double double double Double
     // 040 TotalEventLagTime                        0001865C2950 ModelPrimitiveType double double double Double
-    public partial class InputMetrics
+    public partial class InputMetrics : DataModel
     {
         public int                                      MaxNumDevices                           { get; set; }
         public int                                      CurrentNumDevices                       { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputMetrics();
+            var value   = new InputMetrics() { Pointer= p0 };
 
-            value.MaxNumDevices                             = GetInt32(new IntPtr(p + 0x010)); // 02700334E6B0 0x10 MaxNumDevices               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentNumDevices                         = GetInt32(new IntPtr(p + 0x014)); // 02700334E6D0 0x14 CurrentNumDevices           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxStateSizeInBytes                       = GetInt32(new IntPtr(p + 0x018)); // 02700334E6F0 0x18 MaxStateSizeInBytes         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentStateSizeInBytes                   = GetInt32(new IntPtr(p + 0x01C)); // 02700334E710 0x1C CurrentStateSizeInBytes     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentControlCount                       = GetInt32(new IntPtr(p + 0x020)); // 02700334E730 0x20 CurrentControlCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentLayoutCount                        = GetInt32(new IntPtr(p + 0x024)); // 02700334E750 0x24 CurrentLayoutCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalEventBytes                           = GetInt32(new IntPtr(p + 0x028)); // 02700334E770 0x28 TotalEventBytes             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalEventCount                           = GetInt32(new IntPtr(p + 0x02C)); // 02700334E790 0x2C TotalEventCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalUpdateCount                          = GetInt32(new IntPtr(p + 0x030)); // 02700334E7B0 0x30 TotalUpdateCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalEventProcessingTime                  = GetDouble(new IntPtr(p + 0x038)); // 02700334E7D0 0x38 TotalEventProcessingTime    ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.TotalEventLagTime                         = GetDouble(new IntPtr(p + 0x040)); // 02700334E7F0 0x40 TotalEventLagTime           ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.MaxNumDevices                             = GetInt32(new IntPtr(p + 0x010)); // 0245A334E6B0 0x10 MaxNumDevices               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentNumDevices                         = GetInt32(new IntPtr(p + 0x014)); // 0245A334E6D0 0x14 CurrentNumDevices           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxStateSizeInBytes                       = GetInt32(new IntPtr(p + 0x018)); // 0245A334E6F0 0x18 MaxStateSizeInBytes         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentStateSizeInBytes                   = GetInt32(new IntPtr(p + 0x01C)); // 0245A334E710 0x1C CurrentStateSizeInBytes     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentControlCount                       = GetInt32(new IntPtr(p + 0x020)); // 0245A334E730 0x20 CurrentControlCount         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentLayoutCount                        = GetInt32(new IntPtr(p + 0x024)); // 0245A334E750 0x24 CurrentLayoutCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalEventBytes                           = GetInt32(new IntPtr(p + 0x028)); // 0245A334E770 0x28 TotalEventBytes             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalEventCount                           = GetInt32(new IntPtr(p + 0x02C)); // 0245A334E790 0x2C TotalEventCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalUpdateCount                          = GetInt32(new IntPtr(p + 0x030)); // 0245A334E7B0 0x30 TotalUpdateCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalEventProcessingTime                  = GetDouble(new IntPtr(p + 0x038)); // 0245A334E7D0 0x38 TotalEventProcessingTime    ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.TotalEventLagTime                         = GetDouble(new IntPtr(p + 0x040)); // 0245A334E7F0 0x40 TotalEventLagTime           ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

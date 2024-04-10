@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LimitBreakProduceIdolArgsTranslator
+    public partial class LimitBreakProduceIdolArgsTranslator : DataModel
     {
 
         public static LimitBreakProduceIdolArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LimitBreakProduceIdolArgsTranslator();
+            var value   = new LimitBreakProduceIdolArgsTranslator() { Pointer= p0 };
 
 
             return value;

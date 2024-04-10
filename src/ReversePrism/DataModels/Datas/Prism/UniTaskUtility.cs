@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UniTaskUtility
+    public partial class UniTaskUtility : DataModel
     {
 
         public static UniTaskUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UniTaskUtility();
+            var value   = new UniTaskUtility() { Pointer= p0 };
 
 
             return value;

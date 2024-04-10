@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GraphicsWarmupPreloadedShaders
+    public partial class GraphicsWarmupPreloadedShaders : DataModel
     {
 
         public static GraphicsWarmupPreloadedShaders? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GraphicsWarmupPreloadedShaders();
+            var value   = new GraphicsWarmupPreloadedShaders() { Pointer= p0 };
 
 
             return value;

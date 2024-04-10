@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SwigCPtr                                 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32
     // 020 SwigCMemOwn                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class MessagingOptions
+    public partial class MessagingOptions : DataModel
     {
         public HandleRef                                SwigCPtr                                { get; set; }
         public bool                                     SwigCMemOwn                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MessagingOptions();
+            var value   = new MessagingOptions() { Pointer= p0 };
 
-            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 0270DBD83F10 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
-            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 0270DBD83F30 0x20 SwigCMemOwn                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 02466BE0C8D8 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
+            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 02466BE0C8F8 0x20 SwigCMemOwn                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

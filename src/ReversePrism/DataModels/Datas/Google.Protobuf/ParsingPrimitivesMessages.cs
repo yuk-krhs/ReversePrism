@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ZeroLengthMessageStreamData              sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class ParsingPrimitivesMessages
+    public partial class ParsingPrimitivesMessages : DataModel
     {
 
         public static ParsingPrimitivesMessages? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParsingPrimitivesMessages();
+            var value   = new ParsingPrimitivesMessages() { Pointer= p0 };
 
 
             return value;

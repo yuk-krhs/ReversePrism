@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<StartScheduleOutingArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class StartScheduleOutingArgs
+    public partial class StartScheduleOutingArgs : DataModel
     {
 
         public static StartScheduleOutingArgs? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartScheduleOutingArgs();
+            var value   = new StartScheduleOutingArgs() { Pointer= p0 };
 
 
             return value;

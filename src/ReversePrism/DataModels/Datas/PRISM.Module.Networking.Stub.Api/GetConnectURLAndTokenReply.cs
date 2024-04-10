@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Connected                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 UrlFieldNumber                           int IL2CPP_TYPE_I4
     // 020 Url                                      000186671910 ModelPrimitiveType string string string String
-    public partial class GetConnectURLAndTokenReply
+    public partial class GetConnectURLAndTokenReply : DataModel
     {
         public bool                                     Connected                               { get; set; }
         public string                                   Url                                     { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetConnectURLAndTokenReply();
+            var value   = new GetConnectURLAndTokenReply() { Pointer= p0 };
 
-            value.Connected                                 = GetBool(new IntPtr(p + 0x018)); // 0270D0B4BF60 0x18 Connected                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 0270D0B4BFA0 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Connected                                 = GetBool(new IntPtr(p + 0x018)); // 024660B3C618 0x18 Connected                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 024660B3C658 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

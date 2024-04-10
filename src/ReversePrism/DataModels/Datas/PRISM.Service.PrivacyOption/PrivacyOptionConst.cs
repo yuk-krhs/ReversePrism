@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 UserNotExistText                         string IL2CPP_TYPE_STRING
-    public partial class PrivacyOptionConst
+    public partial class PrivacyOptionConst : DataModel
     {
 
         public static PrivacyOptionConst? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrivacyOptionConst();
+            var value   = new PrivacyOptionConst() { Pointer= p0 };
 
 
             return value;

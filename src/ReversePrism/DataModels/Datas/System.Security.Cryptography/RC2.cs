@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 048 EffectiveKeySizeValue                    0001865F3220 ModelPrimitiveType int int int Int32
     // 000 s_legalBlockSizes                        KeySizes[] IL2CPP_TYPE_SZARRAY
     // 008 s_legalKeySizes                          KeySizes[] IL2CPP_TYPE_SZARRAY
-    public partial class RC2
+    public partial class RC2 : DataModel
     {
         public int                                      EffectiveKeySizeValue                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RC2();
+            var value   = new RC2() { Pointer= p0 };
 
-            value.EffectiveKeySizeValue                     = GetInt32(new IntPtr(p + 0x048)); // 027004230188 0x48 EffectiveKeySizeValue       ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.EffectiveKeySizeValue                     = GetInt32(new IntPtr(p + 0x048)); // 02466192DEF8 0x48 EffectiveKeySizeValue       ( 0001865F3220 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 000 AccessoryResourceIdListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_accessoryResourceIdList_codec  FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 058 AccessoryResourceIdList                  000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class HairstyleStatus
+    public partial class HairstyleStatus : DataModel
     {
         public DateTime                                 CreateDate                              { get; set; }
         public int                                      MstHairstyleId                          { get; set; }
@@ -49,18 +49,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HairstyleStatus();
+            var value   = new HairstyleStatus() { Pointer= p0 };
 
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D0F59660 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x028)); // 0270D0F596E0 0x28 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x02C)); // 0270D0F59720 0x2C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x030)); // 0270D0F59760 0x30 IsUnlocked                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x034)); // 0270D0F597A0 0x34 CostumeType                 ( 000186637B40 ModelEnumType CostumeType CostumeType CostumeType Int32 )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F597E0 0x38 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x040)); // 0270D0F59820 0x40 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProductStatus.FromPointer); // 0270D0F59860 0x48 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
-            value.ResourceId                                = GetInt32(new IntPtr(p + 0x050)); // 0270D0F598A0 0x50 ResourceId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AccessoryResourceIdList                   = GetInt32List(new IntPtr(p + 0x058)); // 0270D0F59900 0x58 AccessoryResourceIdList     ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x010)); // 024660F0B378 0x10 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x028)); // 024660F0B3F8 0x28 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x02C)); // 024660F0B438 0x2C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsUnlocked                                = GetBool(new IntPtr(p + 0x030)); // 024660F0B478 0x30 IsUnlocked                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CostumeType                               = (CostumeType)GetInt32(new IntPtr(p + 0x034)); // 024660F0B4B8 0x34 CostumeType                 ( 000186637B40 ModelEnumType CostumeType CostumeType CostumeType Int32 )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 024660F0B4F8 0x38 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x040)); // 024660F0B538 0x40 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProductStatus.FromPointer); // 024660F0B578 0x48 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
+            value.ResourceId                                = GetInt32(new IntPtr(p + 0x050)); // 024660F0B5B8 0x50 ResourceId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AccessoryResourceIdList                   = GetInt32List(new IntPtr(p + 0x058)); // 024660F0B618 0x58 AccessoryResourceIdList     ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
             value.CreateDate                    = ToDateTime(value._CreateDate);
 
             return value;

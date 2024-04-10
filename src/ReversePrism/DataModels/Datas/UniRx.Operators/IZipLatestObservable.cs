@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IZipLatestObservable
+    public partial class IZipLatestObservable : DataModel
     {
 
         public static IZipLatestObservable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IZipLatestObservable();
+            var value   = new IZipLatestObservable() { Pointer= p0 };
 
 
             return value;

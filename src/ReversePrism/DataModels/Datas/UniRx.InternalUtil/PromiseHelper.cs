@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PromiseHelper
+    public partial class PromiseHelper : DataModel
     {
 
         public static PromiseHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PromiseHelper();
+            var value   = new PromiseHelper() { Pointer= p0 };
 
 
             return value;

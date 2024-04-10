@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 subUrlConsentInfosUserId                 string IL2CPP_TYPE_STRING
     // 018 BaseUrl                                  000186672F10 ModelPrimitiveType string string string String
     // 020 Token                                    000186672F10 ModelPrimitiveType string string string String
-    public partial class PrivacyOptionCommunicator
+    public partial class PrivacyOptionCommunicator : DataModel
     {
         public TimeSpan                                 Timeout                                 { get; set; }
         public string                                   BaseUrl                                 { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrivacyOptionCommunicator();
+            var value   = new PrivacyOptionCommunicator() { Pointer= p0 };
 
-            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 027004E16538 0x10 Timeout                     ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.BaseUrl                                   = GetString(new IntPtr(p + 0x018)); // 027004E165D8 0x18 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 027004E165F8 0x20 Token                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Timeout                                   = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0245A4E42908 0x10 Timeout                     ( 00018668B520 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.BaseUrl                                   = GetString(new IntPtr(p + 0x018)); // 0245A4E429A8 0x18 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 0245A4E429C8 0x20 Token                       ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

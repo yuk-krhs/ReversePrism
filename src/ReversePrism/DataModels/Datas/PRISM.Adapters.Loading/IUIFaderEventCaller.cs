@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUIFaderEventCaller
+    public partial class IUIFaderEventCaller : DataModel
     {
 
         public static IUIFaderEventCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUIFaderEventCaller();
+            var value   = new IUIFaderEventCaller() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Val                                      000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class ComVisibleAttribute
+    public partial class ComVisibleAttribute : DataModel
     {
         public bool                                     Val                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComVisibleAttribute();
+            var value   = new ComVisibleAttribute() { Pointer= p0 };
 
-            value.Val                                       = GetBool(new IntPtr(p + 0x010)); // 02700601D6D8 0x10 Val                         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Val                                       = GetBool(new IntPtr(p + 0x010)); // 0245A5FE73D0 0x10 Val                         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

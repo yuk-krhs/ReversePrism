@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RhythmGameBuilder
+    public partial class RhythmGameBuilder : DataModel
     {
 
         public static RhythmGameBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameBuilder();
+            var value   = new RhythmGameBuilder() { Pointer= p0 };
 
 
             return value;

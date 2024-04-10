@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ImgSCharaFull                            0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
     // 028 BtnClose                                 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
     // 030 onClose                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class SCharaFullImageOverlayView
+    public partial class SCharaFullImageOverlayView : DataModel
     {
         public UIRawImage?                              ImgSCharaFull                           { get; set; }
         public UIButton?                                BtnClose                                { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaFullImageOverlayView();
+            var value   = new SCharaFullImageOverlayView() { Pointer= p0 };
 
-            value.ImgSCharaFull                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270DA2908A0 0x20 ImgSCharaFull               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.BtnClose                                  = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2908C0 0x28 BtnClose                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ImgSCharaFull                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A2E3E70 0x20 ImgSCharaFull               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.BtnClose                                  = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2E3E90 0x28 BtnClose                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

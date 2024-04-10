@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ChromaticAberrationMixerBehaviour
+    public partial class ChromaticAberrationMixerBehaviour : DataModel
     {
 
         public static ChromaticAberrationMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChromaticAberrationMixerBehaviour();
+            var value   = new ChromaticAberrationMixerBehaviour() { Pointer= p0 };
 
 
             return value;

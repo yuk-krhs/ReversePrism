@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 AuthenticationTypeFieldNumber            int IL2CPP_TYPE_I4
     // 028 AuthenticationType                       0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32
-    public partial class ConnectReleaseOtherArgs
+    public partial class ConnectReleaseOtherArgs : DataModel
     {
         public TransferProviderType                     ProviderType                            { get; set; }
         public string                                   Token                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConnectReleaseOtherArgs();
+            var value   = new ConnectReleaseOtherArgs() { Pointer= p0 };
 
-            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 0270D2C3A120 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 0270D2C3A160 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x028)); // 0270D2C3A1A0 0x28 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
+            value.ProviderType                              = (TransferProviderType)GetInt32(new IntPtr(p + 0x018)); // 024662BB49F0 0x18 ProviderType                ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x020)); // 024662BB4A30 0x20 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.AuthenticationType                        = (TransferAuthenticationType)GetInt32(new IntPtr(p + 0x028)); // 024662BB4A70 0x28 AuthenticationType          ( 0001866A2CB0 ModelEnumType TransferAuthenticationType TransferAuthenticationType TransferAuthenticationType Int32 )
 
             return value;
         }

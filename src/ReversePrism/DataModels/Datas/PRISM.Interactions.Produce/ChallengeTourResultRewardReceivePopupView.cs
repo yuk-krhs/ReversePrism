@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 030 ReceiveModelList                         000185CD1928 ModelClassListType List`1<ChallengeTourRewardViewModel> List`1<ChallengeTourRewardViewModel> List<ChallengeTourRewardViewModel> Pointer
     // 038 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ChallengeTourResultRewardReceivePopupView
+    public partial class ChallengeTourResultRewardReceivePopupView : DataModel
     {
         public ChallengeTourResultRewardReceiveListView? ReceiveListView                         { get; set; }
         public List<ChallengeTourRewardViewModel>?      ReceiveModelList                        { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourResultRewardReceivePopupView();
+            var value   = new ChallengeTourResultRewardReceivePopupView() { Pointer= p0 };
 
-            value.ReceiveListView                           = GetObject<ChallengeTourResultRewardReceiveListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultRewardReceiveListView.FromPointer); // 0270DA1BFBB0 0x20 ReceiveListView             ( 00018657BD40 ModelClassType ChallengeTourResultRewardReceiveListView ChallengeTourResultRewardReceiveListView ChallengeTourResultRewardReceiveListView Pointer )
-            value.ReceiveModelList                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 0270DA1BFBF0 0x30 ReceiveModelList            ( 000185CD1928 ModelClassListType List`1<ChallengeTourRewardViewModel> List`1<ChallengeTourRewardViewModel> List<ChallengeTourRewardViewModel> Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DA1BFC10 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ReceiveListView                           = GetObject<ChallengeTourResultRewardReceiveListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultRewardReceiveListView.FromPointer); // 02466A2232C8 0x20 ReceiveListView             ( 00018657BD40 ModelClassType ChallengeTourResultRewardReceiveListView ChallengeTourResultRewardReceiveListView ChallengeTourResultRewardReceiveListView Pointer )
+            value.ReceiveModelList                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 02466A223308 0x30 ReceiveModelList            ( 000185CD1928 ModelClassListType List`1<ChallengeTourRewardViewModel> List`1<ChallengeTourRewardViewModel> List<ChallengeTourRewardViewModel> Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A223328 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

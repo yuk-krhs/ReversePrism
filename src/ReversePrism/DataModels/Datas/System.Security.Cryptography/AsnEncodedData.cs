@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Oid                                      0001866D8600 ModelClassType Oid Oid Oid Pointer
     // 018 Raw                                      000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class AsnEncodedData
+    public partial class AsnEncodedData : DataModel
     {
         public Oid?                                     Oid                                     { get; set; }
         public List<sbyte>?                             Raw                                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsnEncodedData();
+            var value   = new AsnEncodedData() { Pointer= p0 };
 
-            value.Oid                                       = GetObject<Oid>(new IntPtr(p + 0x010), ReversePrism.DataModels.Oid.FromPointer); // 0270D797A4C0 0x10 Oid                         ( 0001866D8600 ModelClassType Oid Oid Oid Pointer )
-            value.Raw                                       = GetSByteList(new IntPtr(p + 0x018)); // 0270D797A4E0 0x18 Raw                         ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Oid                                       = GetObject<Oid>(new IntPtr(p + 0x010), ReversePrism.DataModels.Oid.FromPointer); // 0246679E24C0 0x10 Oid                         ( 0001866D8600 ModelClassType Oid Oid Oid Pointer )
+            value.Raw                                       = GetSByteList(new IntPtr(p + 0x018)); // 0246679E24E0 0x18 Raw                         ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 058 PModeUrl                                 000186672F10 ModelPrimitiveType string string string String
     // 060 YUrl                                     000186672F10 ModelPrimitiveType string string string String
     // 068 CastList                                 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class MstStreamProgram
+    public partial class MstStreamProgram : DataModel
     {
         public int                                      Id                                      { get; set; }
         public string                                   Name                                    { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstStreamProgram();
+            var value   = new MstStreamProgram() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004637C40 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 027004637C60 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 027004637C80 0x20 Description                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x028)); // 027004637CA0 0x28 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.ArchiveBeginDate                          = GetDateTime(new IntPtr(p + 0x030)); // 027004637CC0 0x30 ArchiveBeginDate            ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.ArchiveEndDate                            = GetDateTime(new IntPtr(p + 0x038)); // 027004637CE0 0x38 ArchiveEndDate              ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.Second                                    = GetInt32(new IntPtr(p + 0x040)); // 027004637D00 0x40 Second                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RoomName                                  = GetString(new IntPtr(p + 0x048)); // 027004637D20 0x48 RoomName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x050)); // 027004637D40 0x50 Url                         ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PModeUrl                                  = GetString(new IntPtr(p + 0x058)); // 027004637D60 0x58 PModeUrl                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.YUrl                                      = GetString(new IntPtr(p + 0x060)); // 027004637D80 0x60 YUrl                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.CastList                                  = GetInt32List(new IntPtr(p + 0x068)); // 027004637DA0 0x68 CastList                    ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46B3DF0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A46B3E10 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0245A46B3E30 0x20 Description                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x028)); // 0245A46B3E50 0x28 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.ArchiveBeginDate                          = GetDateTime(new IntPtr(p + 0x030)); // 0245A46B3E70 0x30 ArchiveBeginDate            ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.ArchiveEndDate                            = GetDateTime(new IntPtr(p + 0x038)); // 0245A46B3E90 0x38 ArchiveEndDate              ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Second                                    = GetInt32(new IntPtr(p + 0x040)); // 0245A46B3EB0 0x40 Second                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RoomName                                  = GetString(new IntPtr(p + 0x048)); // 0245A46B3ED0 0x48 RoomName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x050)); // 0245A46B3EF0 0x50 Url                         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PModeUrl                                  = GetString(new IntPtr(p + 0x058)); // 0245A46B3F10 0x58 PModeUrl                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.YUrl                                      = GetString(new IntPtr(p + 0x060)); // 0245A46B3F30 0x60 YUrl                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.CastList                                  = GetInt32List(new IntPtr(p + 0x068)); // 0245A46B3F50 0x68 CastList                    ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

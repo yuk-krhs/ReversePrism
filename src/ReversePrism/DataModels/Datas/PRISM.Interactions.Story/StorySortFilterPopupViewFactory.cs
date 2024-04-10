@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StorySortFilterPopupViewFactory
+    public partial class StorySortFilterPopupViewFactory : DataModel
     {
 
         public static StorySortFilterPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StorySortFilterPopupViewFactory();
+            var value   = new StorySortFilterPopupViewFactory() { Pointer= p0 };
 
 
             return value;

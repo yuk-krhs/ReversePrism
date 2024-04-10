@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 SeasonPassGroup                          000186760CF0 ModelClassType ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus Pointer
     // 000 TotalBillingAmountFieldNumber            int IL2CPP_TYPE_I4
     // 020 TotalBillingAmount                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GetShopItemSeasonPassGroupReply
+    public partial class GetShopItemSeasonPassGroupReply : DataModel
     {
         public ShopItemSeasonPassGroupStatus?           SeasonPassGroup                         { get; set; }
         public int                                      TotalBillingAmount                      { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetShopItemSeasonPassGroupReply();
+            var value   = new GetShopItemSeasonPassGroupReply() { Pointer= p0 };
 
-            value.SeasonPassGroup                           = GetObject<ShopItemSeasonPassGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemSeasonPassGroupStatus.FromPointer); // 0270D27EE7D8 0x18 SeasonPassGroup             ( 000186760CF0 ModelClassType ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus Pointer )
-            value.TotalBillingAmount                        = GetInt32(new IntPtr(p + 0x020)); // 0270D27EE818 0x20 TotalBillingAmount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SeasonPassGroup                           = GetObject<ShopItemSeasonPassGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemSeasonPassGroupStatus.FromPointer); // 024662747550 0x18 SeasonPassGroup             ( 000186760CF0 ModelClassType ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus ShopItemSeasonPassGroupStatus Pointer )
+            value.TotalBillingAmount                        = GetInt32(new IntPtr(p + 0x020)); // 024662747590 0x20 TotalBillingAmount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

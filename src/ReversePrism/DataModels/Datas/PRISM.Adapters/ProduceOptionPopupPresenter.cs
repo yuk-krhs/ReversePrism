@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 View                                     0001865EEDC0 ModelClassType IProduceOptionPopupView IProduceOptionPopupView IProduceOptionPopupView Pointer
     // 018 Option                                   000186561420 ModelClassType ProduceOptionSaveData ProduceOptionSaveData ProduceOptionSaveData Pointer
-    public partial class ProduceOptionPopupPresenter
+    public partial class ProduceOptionPopupPresenter : DataModel
     {
         public IProduceOptionPopupView?                 View                                    { get; set; }
         public ProduceOptionSaveData?                   Option                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceOptionPopupPresenter();
+            var value   = new ProduceOptionPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IProduceOptionPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceOptionPopupView.FromPointer); // 0270D651AD40 0x10 View                        ( 0001865EEDC0 ModelClassType IProduceOptionPopupView IProduceOptionPopupView IProduceOptionPopupView Pointer )
-            value.Option                                    = GetObject<ProduceOptionSaveData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceOptionSaveData.FromPointer); // 0270D651AD60 0x18 Option                      ( 000186561420 ModelClassType ProduceOptionSaveData ProduceOptionSaveData ProduceOptionSaveData Pointer )
+            value.View                                      = GetObject<IProduceOptionPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceOptionPopupView.FromPointer); // 02466658A438 0x10 View                        ( 0001865EEDC0 ModelClassType IProduceOptionPopupView IProduceOptionPopupView IProduceOptionPopupView Pointer )
+            value.Option                                    = GetObject<ProduceOptionSaveData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceOptionSaveData.FromPointer); // 02466658A458 0x18 Option                      ( 000186561420 ModelClassType ProduceOptionSaveData ProduceOptionSaveData ProduceOptionSaveData Pointer )
 
             return value;
         }

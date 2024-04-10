@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 ExpectedReplyInputReportId               sbyte IL2CPP_TYPE_U1
     // 010 ReportType                               00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 011 CommandId                                00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class SwitchMagicOutputReport
+    public partial class SwitchMagicOutputReport : DataModel
     {
         public sbyte                                    ReportType                              { get; set; }
         public sbyte                                    CommandId                               { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchMagicOutputReport();
+            var value   = new SwitchMagicOutputReport() { Pointer= p0 };
 
-            value.ReportType                                = GetSByte(new IntPtr(p + 0x010)); // 0270D77BBBB0 0x10 ReportType                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.CommandId                                 = GetSByte(new IntPtr(p + 0x011)); // 0270D77BBBD0 0x11 CommandId                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.ReportType                                = GetSByte(new IntPtr(p + 0x010)); // 024667813BB0 0x10 ReportType                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.CommandId                                 = GetSByte(new IntPtr(p + 0x011)); // 024667813BD0 0x11 CommandId                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

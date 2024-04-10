@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 <width>k__BackingField                   Nullable`1<float> IL2CPP_TYPE_GENERICINST
     // 030 <height>k__BackingField                  Nullable`1<float> IL2CPP_TYPE_GENERICINST
     // 038 Tex2d                                    000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    public partial class XMLImageItemParam
+    public partial class XMLImageItemParam : DataModel
     {
         public string                                   ImageUrl                                { get; set; }
         public Texture2D?                               Tex2d                                   { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLImageItemParam();
+            var value   = new XMLImageItemParam() { Pointer= p0 };
 
-            value.ImageUrl                                  = GetString(new IntPtr(p + 0x020)); // 0270D4B3CF40 0x20 ImageUrl                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Tex2d                                     = GetObject<Texture2D>(new IntPtr(p + 0x038), ReversePrism.DataModels.Texture2D.FromPointer); // 0270D4B3CFA0 0x38 Tex2d                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.ImageUrl                                  = GetString(new IntPtr(p + 0x020)); // 024664BB7D28 0x20 ImageUrl                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Tex2d                                     = GetObject<Texture2D>(new IntPtr(p + 0x038), ReversePrism.DataModels.Texture2D.FromPointer); // 024664BB7D88 0x38 Tex2d                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
 
             return value;
         }

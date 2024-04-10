@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 StoryTopContentType                      000186582AF0 ModelEnumType StoryTopContentType StoryTopContentType StoryTopContentType Int32
     // 014 IsNew                                    0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 015 IsUnread                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class StoryTopTabViewModel
+    public partial class StoryTopTabViewModel : DataModel
     {
         public StoryTopContentType                      StoryTopContentType                     { get; set; }
         public bool                                     IsNew                                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopTabViewModel();
+            var value   = new StoryTopTabViewModel() { Pointer= p0 };
 
-            value.StoryTopContentType                       = (StoryTopContentType)GetInt32(new IntPtr(p + 0x010)); // 0270D67FB238 0x10 StoryTopContentType         ( 000186582AF0 ModelEnumType StoryTopContentType StoryTopContentType StoryTopContentType Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 0270D67FB258 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 0270D67FB278 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.StoryTopContentType                       = (StoryTopContentType)GetInt32(new IntPtr(p + 0x010)); // 02466685B238 0x10 StoryTopContentType         ( 000186582AF0 ModelEnumType StoryTopContentType StoryTopContentType StoryTopContentType Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 02466685B258 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 02466685B278 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

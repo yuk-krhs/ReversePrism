@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 Secret                                   000186671910 ModelPrimitiveType string string string String
     // 000 SearchIdFieldNumber                      int IL2CPP_TYPE_I4
     // 030 SearchId                                 000186671910 ModelPrimitiveType string string string String
-    public partial class GetUserForDmmGamesReply
+    public partial class GetUserForDmmGamesReply : DataModel
     {
         public bool                                     IsLinked                                { get; set; }
         public string                                   UserId                                  { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetUserForDmmGamesReply();
+            var value   = new GetUserForDmmGamesReply() { Pointer= p0 };
 
-            value.IsLinked                                  = GetBool(new IntPtr(p + 0x018)); // 0270D0B6A1B0 0x18 IsLinked                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 0270D0B6A1F0 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Secret                                    = GetString(new IntPtr(p + 0x028)); // 0270D0B6A230 0x28 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.SearchId                                  = GetString(new IntPtr(p + 0x030)); // 0270D0B6A270 0x30 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsLinked                                  = GetBool(new IntPtr(p + 0x018)); // 024660B5C618 0x18 IsLinked                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UserId                                    = GetString(new IntPtr(p + 0x020)); // 024660B5C658 0x20 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Secret                                    = GetString(new IntPtr(p + 0x028)); // 024660B5C698 0x28 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.SearchId                                  = GetString(new IntPtr(p + 0x030)); // 024660B5C6D8 0x30 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

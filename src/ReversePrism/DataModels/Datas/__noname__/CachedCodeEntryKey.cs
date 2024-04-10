@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Options                                  00018663F0B0 ModelEnumType RegexOptions RegexOptions RegexOptions Int32
     // 018 CultureKey                               000186672F10 ModelPrimitiveType string string string String
     // 020 Pattern                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class CachedCodeEntryKey
+    public partial class CachedCodeEntryKey : DataModel
     {
         public RegexOptions                             Options                                 { get; set; }
         public string                                   CultureKey                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CachedCodeEntryKey();
+            var value   = new CachedCodeEntryKey() { Pointer= p0 };
 
-            value.Options                                   = (RegexOptions)GetInt32(new IntPtr(p + 0x010)); // 0270033F5158 0x10 Options                     ( 00018663F0B0 ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
-            value.CultureKey                                = GetString(new IntPtr(p + 0x018)); // 0270033F5178 0x18 CultureKey                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x020)); // 0270033F5198 0x20 Pattern                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Options                                   = (RegexOptions)GetInt32(new IntPtr(p + 0x010)); // 0245A33F5158 0x10 Options                     ( 00018663F0B0 ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
+            value.CultureKey                                = GetString(new IntPtr(p + 0x018)); // 0245A33F5178 0x18 CultureKey                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x020)); // 0245A33F5198 0x20 Pattern                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

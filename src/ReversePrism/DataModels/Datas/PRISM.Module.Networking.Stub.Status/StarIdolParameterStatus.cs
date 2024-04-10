@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Star                                     0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IdolParameterFieldNumber                 int IL2CPP_TYPE_I4
     // 020 IdolParameter                            0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer
-    public partial class StarIdolParameterStatus
+    public partial class StarIdolParameterStatus : DataModel
     {
         public int                                      Star                                    { get; set; }
         public IdolParameterStatus?                     IdolParameter                           { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StarIdolParameterStatus();
+            var value   = new StarIdolParameterStatus() { Pointer= p0 };
 
-            value.Star                                      = GetInt32(new IntPtr(p + 0x018)); // 0270D1044870 0x18 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolParameter                             = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 0270D10448B0 0x20 IdolParameter               ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x018)); // 024660FCC318 0x18 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolParameter                             = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 024660FCC358 0x20 IdolParameter               ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AssignLocalToClosureInstruction
+    public partial class AssignLocalToClosureInstruction : DataModel
     {
 
         public static AssignLocalToClosureInstruction? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssignLocalToClosureInstruction();
+            var value   = new AssignLocalToClosureInstruction() { Pointer= p0 };
 
 
             return value;

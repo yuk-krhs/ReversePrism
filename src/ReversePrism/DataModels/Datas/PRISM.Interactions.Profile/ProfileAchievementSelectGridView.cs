@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 CellPrefab                               0001865A7BA0 ModelClassType ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell Pointer
     // 098 EmptyView                                0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class ProfileAchievementSelectGridView
+    public partial class ProfileAchievementSelectGridView : DataModel
     {
         public ProfileAchievementSelectGridViewCell?    CellPrefab                              { get; set; }
         public GameObject?                              EmptyView                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileAchievementSelectGridView();
+            var value   = new ProfileAchievementSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<ProfileAchievementSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProfileAchievementSelectGridViewCell.FromPointer); // 0270DB702768 0x90 CellPrefab                  ( 0001865A7BA0 ModelClassType ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB702788 0x98 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CellPrefab                                = GetObject<ProfileAchievementSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProfileAchievementSelectGridViewCell.FromPointer); // 02466B796750 0x90 CellPrefab                  ( 0001865A7BA0 ModelClassType ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell ProfileAchievementSelectGridViewCell Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 02466B796770 0x98 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

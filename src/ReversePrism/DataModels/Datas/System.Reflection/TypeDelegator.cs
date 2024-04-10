@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 TypeImpl                                 000186692D10 ModelClassType Type Type Type Pointer
-    public partial class TypeDelegator
+    public partial class TypeDelegator : DataModel
     {
         public Type?                                    TypeImpl                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeDelegator();
+            var value   = new TypeDelegator() { Pointer= p0 };
 
-            value.TypeImpl                                  = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 027003D55B38 0x18 TypeImpl                    ( 000186692D10 ModelClassType Type Type Type Pointer )
+            value.TypeImpl                                  = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A3D55B38 0x18 TypeImpl                    ( 000186692D10 ModelClassType Type Type Type Pointer )
 
             return value;
         }

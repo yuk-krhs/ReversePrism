@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 HttpStatusCode                           0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 ContentsSize                             0001865F7E40 ModelPrimitiveType long long long Int64
     // 028 ReceivedSize                             0001865F7E40 ModelPrimitiveType long long long Int64
-    public partial class StatusInfo
+    public partial class StatusInfo : DataModel
     {
         public Status                                   Status                                  { get; set; }
         public Error                                    Error                                   { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StatusInfo();
+            var value   = new StatusInfo() { Pointer= p0 };
 
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 0270DACBD498 0x10 Status                      ( 00018655C8C0 ModelEnumType Status Status Status Int32 )
-            value.Error                                     = (Error)GetInt32(new IntPtr(p + 0x014)); // 0270DACBD4B8 0x14 Error                       ( 00018655BC20 ModelEnumType Error Error Error Int32 )
-            value.HttpStatusCode                            = GetInt32(new IntPtr(p + 0x018)); // 0270DACBD4D8 0x18 HttpStatusCode              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ContentsSize                              = GetInt64(new IntPtr(p + 0x020)); // 0270DACBD4F8 0x20 ContentsSize                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.ReceivedSize                              = GetInt64(new IntPtr(p + 0x028)); // 0270DACBD518 0x28 ReceivedSize                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 02466AD25498 0x10 Status                      ( 00018655C8C0 ModelEnumType Status Status Status Int32 )
+            value.Error                                     = (Error)GetInt32(new IntPtr(p + 0x014)); // 02466AD254B8 0x14 Error                       ( 00018655BC20 ModelEnumType Error Error Error Int32 )
+            value.HttpStatusCode                            = GetInt32(new IntPtr(p + 0x018)); // 02466AD254D8 0x18 HttpStatusCode              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ContentsSize                              = GetInt64(new IntPtr(p + 0x020)); // 02466AD254F8 0x20 ContentsSize                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.ReceivedSize                              = GetInt64(new IntPtr(p + 0x028)); // 02466AD25518 0x28 ReceivedSize                ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

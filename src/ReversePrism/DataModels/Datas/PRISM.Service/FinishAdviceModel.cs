@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CacheFinishScheduleAdviceReply           000186510C20 ModelClassType IFinishScheduleAdviceReply IFinishScheduleAdviceReply IFinishScheduleAdviceReply Pointer
-    public partial class FinishAdviceModel
+    public partial class FinishAdviceModel : DataModel
     {
         public IFinishScheduleAdviceReply?              CacheFinishScheduleAdviceReply          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FinishAdviceModel();
+            var value   = new FinishAdviceModel() { Pointer= p0 };
 
-            value.CacheFinishScheduleAdviceReply            = GetObject<IFinishScheduleAdviceReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishScheduleAdviceReply.FromPointer); // 0270D65ABCC8 0x10 CacheFinishScheduleAdviceReply ( 000186510C20 ModelClassType IFinishScheduleAdviceReply IFinishScheduleAdviceReply IFinishScheduleAdviceReply Pointer )
+            value.CacheFinishScheduleAdviceReply            = GetObject<IFinishScheduleAdviceReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishScheduleAdviceReply.FromPointer); // 024666612C68 0x10 CacheFinishScheduleAdviceReply ( 000186510C20 ModelClassType IFinishScheduleAdviceReply IFinishScheduleAdviceReply IFinishScheduleAdviceReply Pointer )
 
             return value;
         }

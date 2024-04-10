@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConstantBufferBase
+    public partial class ConstantBufferBase : DataModel
     {
 
         public static ConstantBufferBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstantBufferBase();
+            var value   = new ConstantBufferBase() { Pointer= p0 };
 
 
             return value;

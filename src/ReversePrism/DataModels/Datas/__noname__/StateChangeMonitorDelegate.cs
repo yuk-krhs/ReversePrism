@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 valueChangeCallback                      Action`4<InputControl, double, InputEventPtr, long> IL2CPP_TYPE_GENERICINST
     // 018 timerExpiredCallback                     Action`4<InputControl, double, long, int> IL2CPP_TYPE_GENERICINST
-    public partial class StateChangeMonitorDelegate
+    public partial class StateChangeMonitorDelegate : DataModel
     {
 
         public static StateChangeMonitorDelegate? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StateChangeMonitorDelegate();
+            var value   = new StateChangeMonitorDelegate() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _pool                                    Dictionary`2<GameObject, List`1<GameObject>> IL2CPP_TYPE_GENERICINST
-    public partial class EffectManager
+    public partial class EffectManager : DataModel
     {
 
         public static EffectManager? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EffectManager();
+            var value   = new EffectManager() { Pointer= p0 };
 
 
             return value;

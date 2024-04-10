@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_FloatMin                               float IL2CPP_TYPE_R4
     // 000 zero                                     Quaternion IL2CPP_TYPE_VALUETYPE
-    public partial class QuaternionUtils
+    public partial class QuaternionUtils : DataModel
     {
 
         public static QuaternionUtils? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QuaternionUtils();
+            var value   = new QuaternionUtils() { Pointer= p0 };
 
 
             return value;

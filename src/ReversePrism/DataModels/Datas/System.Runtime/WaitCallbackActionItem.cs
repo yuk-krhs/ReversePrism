@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <ShouldUseActivity>k__BackingField       bool IL2CPP_TYPE_BOOLEAN
-    public partial class WaitCallbackActionItem
+    public partial class WaitCallbackActionItem : DataModel
     {
 
         public static WaitCallbackActionItem? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitCallbackActionItem();
+            var value   = new WaitCallbackActionItem() { Pointer= p0 };
 
 
             return value;

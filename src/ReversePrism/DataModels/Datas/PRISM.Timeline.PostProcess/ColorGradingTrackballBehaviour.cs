@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Lift                                     000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer
     // 018 Gamma                                    000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer
     // 020 Gain                                     000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer
-    public partial class ColorGradingTrackballBehaviour
+    public partial class ColorGradingTrackballBehaviour : DataModel
     {
         public Vector4Parameter?                        Lift                                    { get; set; }
         public Vector4Parameter?                        Gamma                                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorGradingTrackballBehaviour();
+            var value   = new ColorGradingTrackballBehaviour() { Pointer= p0 };
 
-            value.Lift                                      = GetObject<Vector4Parameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0270D5074FA8 0x10 Lift                        ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
-            value.Gamma                                     = GetObject<Vector4Parameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0270D5074FC8 0x18 Gamma                       ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
-            value.Gain                                      = GetObject<Vector4Parameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0270D5074FE8 0x20 Gain                        ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
+            value.Lift                                      = GetObject<Vector4Parameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0246650D8900 0x10 Lift                        ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
+            value.Gamma                                     = GetObject<Vector4Parameter>(new IntPtr(p + 0x018), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0246650D8920 0x18 Gamma                       ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
+            value.Gain                                      = GetObject<Vector4Parameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.Vector4Parameter.FromPointer); // 0246650D8940 0x20 Gain                        ( 000186779F30 ModelClassType Vector4Parameter Vector4Parameter Vector4Parameter Pointer )
 
             return value;
         }

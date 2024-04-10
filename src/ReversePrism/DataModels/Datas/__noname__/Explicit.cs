@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 BoundsFieldNumber                        int IL2CPP_TYPE_I4
     // 008 _repeated_bounds_codec                   FieldCodec`1<double> IL2CPP_TYPE_GENERICINST
     // 018 Bounds                                   000185CD3BF8 ModelPrimitiveListType RepeatedField`1<double> RepeatedField`1<double> List<double> Pointer
-    public partial class Explicit
+    public partial class Explicit : DataModel
     {
         public List<double>?                            Bounds                                  { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Explicit();
+            var value   = new Explicit() { Pointer= p0 };
 
-            value.Bounds                                    = GetDoubleList(new IntPtr(p + 0x018)); // 0270DA798110 0x18 Bounds                      ( 000185CD3BF8 ModelPrimitiveListType RepeatedField`1<double> RepeatedField`1<double> List<double> Pointer )
+            value.Bounds                                    = GetDoubleList(new IntPtr(p + 0x018)); // 02466A7FC960 0x18 Bounds                      ( 000185CD3BF8 ModelPrimitiveListType RepeatedField`1<double> RepeatedField`1<double> List<double> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAnimationWindowPreview
+    public partial class IAnimationWindowPreview : DataModel
     {
 
         public static IAnimationWindowPreview? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAnimationWindowPreview();
+            var value   = new IAnimationWindowPreview() { Pointer= p0 };
 
 
             return value;

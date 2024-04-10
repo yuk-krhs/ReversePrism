@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
     // 180 LeftHand                                 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32
     // 190 RightHand                                0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32
     // 1A0 BatteryStrength                          0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32
-    public partial class CommonUsages
+    public partial class CommonUsages : DataModel
     {
         public InternedString                           Secondary2DMotion                       { get; set; }
         public InternedString                           PrimaryAction                           { get; set; }
@@ -70,34 +70,34 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonUsages();
+            var value   = new CommonUsages() { Pointer= p0 };
 
-            value.Secondary2DMotion                         = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 0270D76B5A80 0x10 Secondary2DMotion           ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.PrimaryAction                             = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 0270D76B5AA0 0x20 PrimaryAction               ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.SecondaryAction                           = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 0270D76B5AC0 0x30 SecondaryAction             ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.PrimaryTrigger                            = (InternedString)GetInt32(new IntPtr(p + 0x040)); // 0270D76B5AE0 0x40 PrimaryTrigger              ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.SecondaryTrigger                          = (InternedString)GetInt32(new IntPtr(p + 0x050)); // 0270D76B5B00 0x50 SecondaryTrigger            ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Modifier                                  = (InternedString)GetInt32(new IntPtr(p + 0x060)); // 0270D76B5B20 0x60 Modifier                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Position                                  = (InternedString)GetInt32(new IntPtr(p + 0x070)); // 0270D76B5B40 0x70 Position                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Orientation                               = (InternedString)GetInt32(new IntPtr(p + 0x080)); // 0270D76B5B60 0x80 Orientation                 ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Hatswitch                                 = (InternedString)GetInt32(new IntPtr(p + 0x090)); // 0270D76B5B80 0x90 Hatswitch                   ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Back                                      = (InternedString)GetInt32(new IntPtr(p + 0x0A0)); // 0270D76B5BA0 0xA0 Back                        ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Forward                                   = (InternedString)GetInt32(new IntPtr(p + 0x0B0)); // 0270D76B5BC0 0xB0 Forward                     ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Menu                                      = (InternedString)GetInt32(new IntPtr(p + 0x0C0)); // 0270D76B5BE0 0xC0 Menu                        ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Submit                                    = (InternedString)GetInt32(new IntPtr(p + 0x0D0)); // 0270D76B5C00 0xD0 Submit                      ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Cancel                                    = (InternedString)GetInt32(new IntPtr(p + 0x0E0)); // 0270D76B5C20 0xE0 Cancel                      ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Horizontal                                = (InternedString)GetInt32(new IntPtr(p + 0x0F0)); // 0270D76B5C40 0xF0 Horizontal                  ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Vertical                                  = (InternedString)GetInt32(new IntPtr(p + 0x100)); // 0270D76B5C60 0x100 Vertical                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Twist                                     = (InternedString)GetInt32(new IntPtr(p + 0x110)); // 0270D76B5C80 0x110 Twist                       ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Pressure                                  = (InternedString)GetInt32(new IntPtr(p + 0x120)); // 0270D76B5CA0 0x120 Pressure                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.ScrollHorizontal                          = (InternedString)GetInt32(new IntPtr(p + 0x130)); // 0270D76B5CC0 0x130 ScrollHorizontal            ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.ScrollVertical                            = (InternedString)GetInt32(new IntPtr(p + 0x140)); // 0270D76B5CE0 0x140 ScrollVertical              ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Point                                     = (InternedString)GetInt32(new IntPtr(p + 0x150)); // 0270D76B5D00 0x150 Point                       ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.LowFreqMotor                              = (InternedString)GetInt32(new IntPtr(p + 0x160)); // 0270D76B5D20 0x160 LowFreqMotor                ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.HighFreqMotor                             = (InternedString)GetInt32(new IntPtr(p + 0x170)); // 0270D76B5D40 0x170 HighFreqMotor               ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.LeftHand                                  = (InternedString)GetInt32(new IntPtr(p + 0x180)); // 0270D76B5D60 0x180 LeftHand                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.RightHand                                 = (InternedString)GetInt32(new IntPtr(p + 0x190)); // 0270D76B5D80 0x190 RightHand                   ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.BatteryStrength                           = (InternedString)GetInt32(new IntPtr(p + 0x1A0)); // 0270D76B5DA0 0x1A0 BatteryStrength             ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Secondary2DMotion                         = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 02466771DA80 0x10 Secondary2DMotion           ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.PrimaryAction                             = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 02466771DAA0 0x20 PrimaryAction               ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.SecondaryAction                           = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 02466771DAC0 0x30 SecondaryAction             ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.PrimaryTrigger                            = (InternedString)GetInt32(new IntPtr(p + 0x040)); // 02466771DAE0 0x40 PrimaryTrigger              ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.SecondaryTrigger                          = (InternedString)GetInt32(new IntPtr(p + 0x050)); // 02466771DB00 0x50 SecondaryTrigger            ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Modifier                                  = (InternedString)GetInt32(new IntPtr(p + 0x060)); // 02466771DB20 0x60 Modifier                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Position                                  = (InternedString)GetInt32(new IntPtr(p + 0x070)); // 02466771DB40 0x70 Position                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Orientation                               = (InternedString)GetInt32(new IntPtr(p + 0x080)); // 02466771DB60 0x80 Orientation                 ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Hatswitch                                 = (InternedString)GetInt32(new IntPtr(p + 0x090)); // 02466771DB80 0x90 Hatswitch                   ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Back                                      = (InternedString)GetInt32(new IntPtr(p + 0x0A0)); // 02466771DBA0 0xA0 Back                        ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Forward                                   = (InternedString)GetInt32(new IntPtr(p + 0x0B0)); // 02466771DBC0 0xB0 Forward                     ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Menu                                      = (InternedString)GetInt32(new IntPtr(p + 0x0C0)); // 02466771DBE0 0xC0 Menu                        ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Submit                                    = (InternedString)GetInt32(new IntPtr(p + 0x0D0)); // 02466771DC00 0xD0 Submit                      ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Cancel                                    = (InternedString)GetInt32(new IntPtr(p + 0x0E0)); // 02466771DC20 0xE0 Cancel                      ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Horizontal                                = (InternedString)GetInt32(new IntPtr(p + 0x0F0)); // 02466771DC40 0xF0 Horizontal                  ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Vertical                                  = (InternedString)GetInt32(new IntPtr(p + 0x100)); // 02466771DC60 0x100 Vertical                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Twist                                     = (InternedString)GetInt32(new IntPtr(p + 0x110)); // 02466771DC80 0x110 Twist                       ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Pressure                                  = (InternedString)GetInt32(new IntPtr(p + 0x120)); // 02466771DCA0 0x120 Pressure                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.ScrollHorizontal                          = (InternedString)GetInt32(new IntPtr(p + 0x130)); // 02466771DCC0 0x130 ScrollHorizontal            ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.ScrollVertical                            = (InternedString)GetInt32(new IntPtr(p + 0x140)); // 02466771DCE0 0x140 ScrollVertical              ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Point                                     = (InternedString)GetInt32(new IntPtr(p + 0x150)); // 02466771DD00 0x150 Point                       ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.LowFreqMotor                              = (InternedString)GetInt32(new IntPtr(p + 0x160)); // 02466771DD20 0x160 LowFreqMotor                ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.HighFreqMotor                             = (InternedString)GetInt32(new IntPtr(p + 0x170)); // 02466771DD40 0x170 HighFreqMotor               ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.LeftHand                                  = (InternedString)GetInt32(new IntPtr(p + 0x180)); // 02466771DD60 0x180 LeftHand                    ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.RightHand                                 = (InternedString)GetInt32(new IntPtr(p + 0x190)); // 02466771DD80 0x190 RightHand                   ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.BatteryStrength                           = (InternedString)GetInt32(new IntPtr(p + 0x1A0)); // 02466771DDA0 0x1A0 BatteryStrength             ( 0001865FECD0 ModelEnumType InternedString InternedString InternedString Int32 )
 
             return value;
         }

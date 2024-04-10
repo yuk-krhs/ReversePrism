@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 PrologueStoryNo                          long IL2CPP_TYPE_I8
     // 000 EpilogueStoryNo                          long IL2CPP_TYPE_I8
-    public partial class ADVLocalizeTextUtility
+    public partial class ADVLocalizeTextUtility : DataModel
     {
 
         public static ADVLocalizeTextUtility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLocalizeTextUtility();
+            var value   = new ADVLocalizeTextUtility() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAnnounceSequencerForLegacy
+    public partial class IAnnounceSequencerForLegacy : DataModel
     {
 
         public static IAnnounceSequencerForLegacy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAnnounceSequencerForLegacy();
+            var value   = new IAnnounceSequencerForLegacy() { Pointer= p0 };
 
 
             return value;

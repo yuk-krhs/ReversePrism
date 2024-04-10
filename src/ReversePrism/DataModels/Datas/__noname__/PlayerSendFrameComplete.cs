@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerSendFrameComplete
+    public partial class PlayerSendFrameComplete : DataModel
     {
 
         public static PlayerSendFrameComplete? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerSendFrameComplete();
+            var value   = new PlayerSendFrameComplete() { Pointer= p0 };
 
 
             return value;

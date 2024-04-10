@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BodyFieldNumber                          int IL2CPP_TYPE_I4
     // 018 Body                                     000186671910 ModelPrimitiveType string string string String
-    public partial class GetGashaExchangeInfoReply
+    public partial class GetGashaExchangeInfoReply : DataModel
     {
         public string                                   Body                                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGashaExchangeInfoReply();
+            var value   = new GetGashaExchangeInfoReply() { Pointer= p0 };
 
-            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 0270D1A111E8 0x18 Body                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 02466199BD08 0x18 Body                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

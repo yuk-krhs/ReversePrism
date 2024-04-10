@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SceneLoaderExtension
+    public partial class SceneLoaderExtension : DataModel
     {
 
         public static SceneLoaderExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneLoaderExtension();
+            var value   = new SceneLoaderExtension() { Pointer= p0 };
 
 
             return value;

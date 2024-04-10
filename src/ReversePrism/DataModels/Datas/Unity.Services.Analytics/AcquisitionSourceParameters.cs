@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 CostCurrency                             0001866722E0 ModelPrimitiveType string string string String
     // 048 Network                                  0001866722E0 ModelPrimitiveType string string string String
     // 050 CampaignType                             0001866722E0 ModelPrimitiveType string string string String
-    public partial class AcquisitionSourceParameters
+    public partial class AcquisitionSourceParameters : DataModel
     {
         public string                                   Channel                                 { get; set; }
         public string                                   CampaignId                              { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AcquisitionSourceParameters();
+            var value   = new AcquisitionSourceParameters() { Pointer= p0 };
 
-            value.Channel                                   = GetString(new IntPtr(p + 0x010)); // 0270DB79C868 0x10 Channel                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CampaignId                                = GetString(new IntPtr(p + 0x018)); // 0270DB79C888 0x18 CampaignId                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CreativeId                                = GetString(new IntPtr(p + 0x020)); // 0270DB79C8A8 0x20 CreativeId                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CampaignName                              = GetString(new IntPtr(p + 0x028)); // 0270DB79C8C8 0x28 CampaignName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Provider                                  = GetString(new IntPtr(p + 0x030)); // 0270DB79C8E8 0x30 Provider                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CostCurrency                              = GetString(new IntPtr(p + 0x040)); // 0270DB79C928 0x40 CostCurrency                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Network                                   = GetString(new IntPtr(p + 0x048)); // 0270DB79C948 0x48 Network                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CampaignType                              = GetString(new IntPtr(p + 0x050)); // 0270DB79C968 0x50 CampaignType                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Channel                                   = GetString(new IntPtr(p + 0x010)); // 02466B8346D8 0x10 Channel                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CampaignId                                = GetString(new IntPtr(p + 0x018)); // 02466B8346F8 0x18 CampaignId                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CreativeId                                = GetString(new IntPtr(p + 0x020)); // 02466B834718 0x20 CreativeId                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CampaignName                              = GetString(new IntPtr(p + 0x028)); // 02466B834738 0x28 CampaignName                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Provider                                  = GetString(new IntPtr(p + 0x030)); // 02466B834758 0x30 Provider                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CostCurrency                              = GetString(new IntPtr(p + 0x040)); // 02466B834798 0x40 CostCurrency                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Network                                   = GetString(new IntPtr(p + 0x048)); // 02466B8347B8 0x48 Network                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CampaignType                              = GetString(new IntPtr(p + 0x050)); // 02466B8347D8 0x50 CampaignType                ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

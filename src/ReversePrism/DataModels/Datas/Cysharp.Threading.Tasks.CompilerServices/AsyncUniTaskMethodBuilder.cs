@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RunnerPromise                            0001865E4880 ModelClassType IStateMachineRunnerPromise IStateMachineRunnerPromise IStateMachineRunnerPromise Pointer
     // 018 Ex                                       0001865CA820 ModelClassType Exception Exception Exception Pointer
-    public partial class AsyncUniTaskMethodBuilder
+    public partial class AsyncUniTaskMethodBuilder : DataModel
     {
         public IStateMachineRunnerPromise?              RunnerPromise                           { get; set; }
         public Exception?                               Ex                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncUniTaskMethodBuilder();
+            var value   = new AsyncUniTaskMethodBuilder() { Pointer= p0 };
 
-            value.RunnerPromise                             = GetObject<IStateMachineRunnerPromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStateMachineRunnerPromise.FromPointer); // 027003CBBD20 0x10 RunnerPromise               ( 0001865E4880 ModelClassType IStateMachineRunnerPromise IStateMachineRunnerPromise IStateMachineRunnerPromise Pointer )
-            value.Ex                                        = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 027003CBBD40 0x18 Ex                          ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.RunnerPromise                             = GetObject<IStateMachineRunnerPromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStateMachineRunnerPromise.FromPointer); // 0245A3CBBD20 0x10 RunnerPromise               ( 0001865E4880 ModelClassType IStateMachineRunnerPromise IStateMachineRunnerPromise IStateMachineRunnerPromise Pointer )
+            value.Ex                                        = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0245A3CBBD40 0x18 Ex                          ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

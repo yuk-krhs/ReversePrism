@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 118 Analyzer                                 0001866544C0 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer
     // 120 Channel                                  000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 124 HasInitialized                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriLipsShapeForAnalyzer
+    public partial class CriLipsShapeForAnalyzer : DataModel
     {
         public CriLipsAnalyzer?                         Analyzer                                { get; set; }
         public uint                                     Channel                                 { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsShapeForAnalyzer();
+            var value   = new CriLipsShapeForAnalyzer() { Pointer= p0 };
 
-            value.Analyzer                                  = GetObject<CriLipsAnalyzer>(new IntPtr(p + 0x118), ReversePrism.DataModels.CriLipsAnalyzer.FromPointer); // 0270DBBA94B0 0x118 Analyzer                    ( 0001866544C0 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer )
-            value.Channel                                   = GetUInt32(new IntPtr(p + 0x120)); // 0270DBBA94D0 0x120 Channel                     ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.HasInitialized                            = GetBool(new IntPtr(p + 0x124)); // 0270DBBA94F0 0x124 HasInitialized              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Analyzer                                  = GetObject<CriLipsAnalyzer>(new IntPtr(p + 0x118), ReversePrism.DataModels.CriLipsAnalyzer.FromPointer); // 02466BC40970 0x118 Analyzer                    ( 0001866544C0 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer )
+            value.Channel                                   = GetUInt32(new IntPtr(p + 0x120)); // 02466BC40990 0x120 Channel                     ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.HasInitialized                            = GetBool(new IntPtr(p + 0x124)); // 02466BC409B0 0x124 HasInitialized              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

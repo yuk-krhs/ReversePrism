@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BoringSslCtxHandle
+    public partial class BoringSslCtxHandle : DataModel
     {
 
         public static BoringSslCtxHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoringSslCtxHandle();
+            var value   = new BoringSslCtxHandle() { Pointer= p0 };
 
 
             return value;

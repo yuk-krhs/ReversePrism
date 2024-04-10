@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 AndroidJavaObject                        000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class AndroidJavaObjectWrapper
+    public partial class AndroidJavaObjectWrapper : DataModel
     {
         public IDisposable?                             AndroidJavaObject                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidJavaObjectWrapper();
+            var value   = new AndroidJavaObjectWrapper() { Pointer= p0 };
 
-            value.AndroidJavaObject                         = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 027006923368 0x10 AndroidJavaObject           ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.AndroidJavaObject                         = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A68E6240 0x10 AndroidJavaObject           ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

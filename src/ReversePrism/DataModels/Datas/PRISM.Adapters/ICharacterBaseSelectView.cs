@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICharacterBaseSelectView
+    public partial class ICharacterBaseSelectView : DataModel
     {
 
         public static ICharacterBaseSelectView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICharacterBaseSelectView();
+            var value   = new ICharacterBaseSelectView() { Pointer= p0 };
 
 
             return value;

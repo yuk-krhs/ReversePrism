@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CommentFieldNumber                       int IL2CPP_TYPE_I4
     // 018 Comment                                  000186671910 ModelPrimitiveType string string string String
-    public partial class EditRankingCommentReply
+    public partial class EditRankingCommentReply : DataModel
     {
         public string                                   Comment                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditRankingCommentReply();
+            var value   = new EditRankingCommentReply() { Pointer= p0 };
 
-            value.Comment                                   = GetString(new IntPtr(p + 0x018)); // 0270041A90F0 0x18 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Comment                                   = GetString(new IntPtr(p + 0x018)); // 024660FA5320 0x18 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

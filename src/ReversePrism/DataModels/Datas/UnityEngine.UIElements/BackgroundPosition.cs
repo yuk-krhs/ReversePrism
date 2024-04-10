@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Keyword                                  00018658FD70 ModelEnumType BackgroundPositionKeyword BackgroundPositionKeyword BackgroundPositionKeyword Int32
     // 014 Offset                                   0001866063F0 ModelEnumType Length Length Length Int32
-    public partial class BackgroundPosition
+    public partial class BackgroundPosition : DataModel
     {
         public BackgroundPositionKeyword                Keyword                                 { get; set; }
         public Length                                   Offset                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BackgroundPosition();
+            var value   = new BackgroundPosition() { Pointer= p0 };
 
-            value.Keyword                                   = (BackgroundPositionKeyword)GetInt32(new IntPtr(p + 0x010)); // 027003F2D420 0x10 Keyword                     ( 00018658FD70 ModelEnumType BackgroundPositionKeyword BackgroundPositionKeyword BackgroundPositionKeyword Int32 )
-            value.Offset                                    = (Length)GetInt32(new IntPtr(p + 0x014)); // 027003F2D440 0x14 Offset                      ( 0001866063F0 ModelEnumType Length Length Length Int32 )
+            value.Keyword                                   = (BackgroundPositionKeyword)GetInt32(new IntPtr(p + 0x010)); // 0245A3F2D420 0x10 Keyword                     ( 00018658FD70 ModelEnumType BackgroundPositionKeyword BackgroundPositionKeyword BackgroundPositionKeyword Int32 )
+            value.Offset                                    = (Length)GetInt32(new IntPtr(p + 0x014)); // 0245A3F2D440 0x14 Offset                      ( 0001866063F0 ModelEnumType Length Length Length Int32 )
 
             return value;
         }

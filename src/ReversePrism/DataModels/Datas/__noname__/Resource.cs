@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
     // 068 Etag                                     000186671910 ModelPrimitiveType string string string String
     // 000 LocationFieldNumber                      int IL2CPP_TYPE_I4
     // 070 Location                                 000186671910 ModelPrimitiveType string string string String
-    public partial class Resource
+    public partial class Resource : DataModel
     {
         public string                                   Service                                 { get; set; }
         public string                                   Name                                    { get; set; }
@@ -55,18 +55,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Resource();
+            var value   = new Resource() { Pointer= p0 };
 
-            value.Service                                   = GetString(new IntPtr(p + 0x018)); // 0270DA728EE8 0x18 Service                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270DA728F28 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x028)); // 0270DA728F68 0x28 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Uid                                       = GetString(new IntPtr(p + 0x038)); // 0270DA729008 0x38 Uid                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 0270DA7290A8 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value._CreateTime                               = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270DA7290E8 0x50 _CreateTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._UpdateTime                               = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0270DA729128 0x58 _UpdateTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._DeleteTime                               = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 0270DA729168 0x60 _DeleteTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Etag                                      = GetString(new IntPtr(p + 0x068)); // 0270DA7291A8 0x68 Etag                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Location                                  = GetString(new IntPtr(p + 0x070)); // 0270DA7291E8 0x70 Location                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Service                                   = GetString(new IntPtr(p + 0x018)); // 02466A7749F0 0x18 Service                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 02466A774A30 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x028)); // 02466A774A70 0x28 Type                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Uid                                       = GetString(new IntPtr(p + 0x038)); // 02466A774B10 0x38 Uid                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 02466A774BB0 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value._CreateTime                               = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A774BF0 0x50 _CreateTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._UpdateTime                               = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A774C30 0x58 _UpdateTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._DeleteTime                               = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A774C70 0x60 _DeleteTime                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Etag                                      = GetString(new IntPtr(p + 0x068)); // 02466A774CB0 0x68 Etag                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Location                                  = GetString(new IntPtr(p + 0x070)); // 02466A774CF0 0x70 Location                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

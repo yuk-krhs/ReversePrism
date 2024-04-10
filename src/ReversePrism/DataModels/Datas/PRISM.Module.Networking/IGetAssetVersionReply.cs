@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetAssetVersionReply
+    public partial class IGetAssetVersionReply : DataModel
     {
 
         public static IGetAssetVersionReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetAssetVersionReply();
+            var value   = new IGetAssetVersionReply() { Pointer= p0 };
 
 
             return value;

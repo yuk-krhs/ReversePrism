@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IReadChainTalkArgs
+    public partial class IReadChainTalkArgs : DataModel
     {
 
         public static IReadChainTalkArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IReadChainTalkArgs();
+            var value   = new IReadChainTalkArgs() { Pointer= p0 };
 
 
             return value;

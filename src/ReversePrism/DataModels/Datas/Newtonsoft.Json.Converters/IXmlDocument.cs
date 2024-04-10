@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IXmlDocument
+    public partial class IXmlDocument : DataModel
     {
 
         public static IXmlDocument? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IXmlDocument();
+            var value   = new IXmlDocument() { Pointer= p0 };
 
 
             return value;

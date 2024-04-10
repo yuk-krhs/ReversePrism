@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SeasonPassPurchaseCountBenefitStatusTranslator
+    public partial class SeasonPassPurchaseCountBenefitStatusTranslator : DataModel
     {
 
         public static SeasonPassPurchaseCountBenefitStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonPassPurchaseCountBenefitStatusTranslator();
+            var value   = new SeasonPassPurchaseCountBenefitStatusTranslator() { Pointer= p0 };
 
 
             return value;

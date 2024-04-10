@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 PURCHASE_PENDING_CODE                    int IL2CPP_TYPE_I4
     // 080 m_DeferredCallback                       Action`1<Product> IL2CPP_TYPE_GENERICINST
     // 000 k_Errorcode                              string IL2CPP_TYPE_STRING
-    public partial class UDPImpl
+    public partial class UDPImpl : DataModel
     {
         public INativeUDPStore?                         M_Bindings                              { get; set; }
         public string                                   M_LastInitError                         { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UDPImpl();
+            var value   = new UDPImpl() { Pointer= p0 };
 
-            value.M_Bindings                                = GetObject<INativeUDPStore>(new IntPtr(p + 0x060), ReversePrism.DataModels.INativeUDPStore.FromPointer); // 027006912080 0x60 M_Bindings                  ( 0001865BF720 ModelClassType INativeUDPStore INativeUDPStore INativeUDPStore Pointer )
-            value.M_LastInitError                           = GetString(new IntPtr(p + 0x070)); // 0270069120C0 0x70 M_LastInitError             ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Initialized                             = GetBool(new IntPtr(p + 0x078)); // 027006912100 0x78 M_Initialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Bindings                                = GetObject<INativeUDPStore>(new IntPtr(p + 0x060), ReversePrism.DataModels.INativeUDPStore.FromPointer); // 0245A68D4F48 0x60 M_Bindings                  ( 0001865BF720 ModelClassType INativeUDPStore INativeUDPStore INativeUDPStore Pointer )
+            value.M_LastInitError                           = GetString(new IntPtr(p + 0x070)); // 0245A68D4F88 0x70 M_LastInitError             ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Initialized                             = GetBool(new IntPtr(p + 0x078)); // 0245A68D4FC8 0x78 M_Initialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MiniJson
+    public partial class MiniJson : DataModel
     {
 
         public static MiniJson? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MiniJson();
+            var value   = new MiniJson() { Pointer= p0 };
 
 
             return value;

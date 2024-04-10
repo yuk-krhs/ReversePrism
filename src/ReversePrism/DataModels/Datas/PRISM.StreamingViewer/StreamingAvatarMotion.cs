@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    public partial class StreamingAvatarMotion
+    public partial class StreamingAvatarMotion : DataModel
     {
         public Animator?                                Animator                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StreamingAvatarMotion();
+            var value   = new StreamingAvatarMotion() { Pointer= p0 };
 
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0270D4F2DEE0 0x20 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 024664F94990 0x20 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

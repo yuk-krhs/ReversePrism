@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityLogWriter
+    public partial class UnityLogWriter : DataModel
     {
 
         public static UnityLogWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityLogWriter();
+            var value   = new UnityLogWriter() { Pointer= p0 };
 
 
             return value;

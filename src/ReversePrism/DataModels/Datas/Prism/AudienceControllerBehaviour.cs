@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ArmDrawInRange                           000186666050 ModelPrimitiveType float float float Single
     // 014 BodyDrawInRange                          000186666050 ModelPrimitiveType float float float Single
-    public partial class AudienceControllerBehaviour
+    public partial class AudienceControllerBehaviour : DataModel
     {
         public float                                    ArmDrawInRange                          { get; set; }
         public float                                    BodyDrawInRange                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudienceControllerBehaviour();
+            var value   = new AudienceControllerBehaviour() { Pointer= p0 };
 
-            value.ArmDrawInRange                            = GetSingle(new IntPtr(p + 0x010)); // 0270D4DFD998 0x10 ArmDrawInRange              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.BodyDrawInRange                           = GetSingle(new IntPtr(p + 0x014)); // 0270D4DFD9B8 0x14 BodyDrawInRange             ( 000186666050 ModelPrimitiveType float float float Single )
+            value.ArmDrawInRange                            = GetSingle(new IntPtr(p + 0x010)); // 024664E72018 0x10 ArmDrawInRange              ( 000186666050 ModelPrimitiveType float float float Single )
+            value.BodyDrawInRange                           = GetSingle(new IntPtr(p + 0x014)); // 024664E72038 0x14 BodyDrawInRange             ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

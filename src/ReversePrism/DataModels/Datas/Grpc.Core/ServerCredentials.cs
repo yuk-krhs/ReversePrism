@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 InsecureInstance                         ServerCredentials IL2CPP_TYPE_CLASS
-    public partial class ServerCredentials
+    public partial class ServerCredentials : DataModel
     {
 
         public static ServerCredentials? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerCredentials();
+            var value   = new ServerCredentials() { Pointer= p0 };
 
 
             return value;

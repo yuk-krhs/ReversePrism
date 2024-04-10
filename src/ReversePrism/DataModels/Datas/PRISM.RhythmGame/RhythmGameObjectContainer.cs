@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 notes                                    Dictionary`2<int, NoteBase> IL2CPP_TYPE_GENERICINST
     // 028 noteLines                                Dictionary`2<int, NoteLine> IL2CPP_TYPE_GENERICINST
     // 030 simultaneousLines                        Dictionary`2<int, SimultaneousLine> IL2CPP_TYPE_GENERICINST
-    public partial class RhythmGameObjectContainer
+    public partial class RhythmGameObjectContainer : DataModel
     {
 
         public static RhythmGameObjectContainer? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RhythmGameObjectContainer();
+            var value   = new RhythmGameObjectContainer() { Pointer= p0 };
 
 
             return value;

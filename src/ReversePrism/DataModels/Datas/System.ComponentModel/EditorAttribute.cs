@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 TypeId                                   000186671910 ModelPrimitiveType string string string String
     // 018 EditorBaseTypeName                       000186672F10 ModelPrimitiveType string string string String
     // 020 EditorTypeName                           000186672F10 ModelPrimitiveType string string string String
-    public partial class EditorAttribute
+    public partial class EditorAttribute : DataModel
     {
         public string                                   TypeId                                  { get; set; }
         public string                                   EditorBaseTypeName                      { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditorAttribute();
+            var value   = new EditorAttribute() { Pointer= p0 };
 
-            value.TypeId                                    = GetString(new IntPtr(p + 0x010)); // 0270D7B1C038 0x10 TypeId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.EditorBaseTypeName                        = GetString(new IntPtr(p + 0x018)); // 0270D7B1C058 0x18 EditorBaseTypeName          ( 000186672F10 ModelPrimitiveType string string string String )
-            value.EditorTypeName                            = GetString(new IntPtr(p + 0x020)); // 0270D7B1C078 0x20 EditorTypeName              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.TypeId                                    = GetString(new IntPtr(p + 0x010)); // 024667B84038 0x10 TypeId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.EditorBaseTypeName                        = GetString(new IntPtr(p + 0x018)); // 024667B84058 0x18 EditorBaseTypeName          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.EditorTypeName                            = GetString(new IntPtr(p + 0x020)); // 024667B84078 0x20 EditorTypeName              ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

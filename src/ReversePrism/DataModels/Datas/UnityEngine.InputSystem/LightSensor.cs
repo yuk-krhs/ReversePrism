@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 170 LightLevel                               000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
     // 000 <current>k__BackingField                 LightSensor IL2CPP_TYPE_CLASS
-    public partial class LightSensor
+    public partial class LightSensor : DataModel
     {
         public AxisControl?                             LightLevel                              { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LightSensor();
+            var value   = new LightSensor() { Pointer= p0 };
 
-            value.LightLevel                                = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0270033B1920 0x170 LightLevel                  ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.LightLevel                                = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33B1920 0x170 LightLevel                  ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

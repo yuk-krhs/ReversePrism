@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 070 ProgressBarRect                          000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 078 M_Value                                  000186588C20 ModelClassType ProgressBarValue ProgressBarValue ProgressBarValue Pointer
     // 080 M_Timer                                  0001866656B0 ModelPrimitiveType float float float Single
-    public partial class DebugUIHandlerProgressBar
+    public partial class DebugUIHandlerProgressBar : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public Text?                                    ValueLabel                              { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerProgressBar();
+            var value   = new DebugUIHandlerProgressBar() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D9341F48 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0270D9341F68 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ProgressBarRect                           = GetObject<RectTransform>(new IntPtr(p + 0x070), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D9341F88 0x70 ProgressBarRect             ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_Value                                   = GetObject<ProgressBarValue>(new IntPtr(p + 0x078), ReversePrism.DataModels.ProgressBarValue.FromPointer); // 0270D9341FA8 0x78 M_Value                     ( 000186588C20 ModelClassType ProgressBarValue ProgressBarValue ProgressBarValue Pointer )
-            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x080)); // 0270D9341FC8 0x80 M_Timer                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466939BA50 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 02466939BA70 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ProgressBarRect                           = GetObject<RectTransform>(new IntPtr(p + 0x070), ReversePrism.DataModels.RectTransform.FromPointer); // 02466939BA90 0x70 ProgressBarRect             ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_Value                                   = GetObject<ProgressBarValue>(new IntPtr(p + 0x078), ReversePrism.DataModels.ProgressBarValue.FromPointer); // 02466939BAB0 0x78 M_Value                     ( 000186588C20 ModelClassType ProgressBarValue ProgressBarValue ProgressBarValue Pointer )
+            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x080)); // 02466939BAD0 0x80 M_Timer                     ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

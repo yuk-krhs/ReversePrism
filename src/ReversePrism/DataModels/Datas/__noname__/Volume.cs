@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Level                                    000186666050 ModelPrimitiveType float float float Single
-    public partial class Volume
+    public partial class Volume : DataModel
     {
         public float                                    Level                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Volume();
+            var value   = new Volume() { Pointer= p0 };
 
-            value.Level                                     = GetSingle(new IntPtr(p + 0x010)); // 0270DAC6E518 0x10 Level                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Level                                     = GetSingle(new IntPtr(p + 0x010)); // 02466ACD6518 0x10 Level                       ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

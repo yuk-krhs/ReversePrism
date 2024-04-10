@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Type                                     00018669FE20 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
     // 018 Value                                    <int> IL2CPP_TYPE_I
     // 020 Type                                     <int> IL2CPP_TYPE_I
-    public partial class TypedReference
+    public partial class TypedReference : DataModel
     {
         public RuntimeTypeHandle                        Type                                    { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypedReference();
+            var value   = new TypedReference() { Pointer= p0 };
 
-            value.Type                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 0270D6A62DC8 0x10 Type                        ( 00018669FE20 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Type                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 024666AC2DC8 0x10 Type                        ( 00018669FE20 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
 
             return value;
         }

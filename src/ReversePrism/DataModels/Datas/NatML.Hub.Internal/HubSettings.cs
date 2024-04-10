@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 Version                                  string IL2CPP_TYPE_STRING
     // 000 EditorBundle                             string IL2CPP_TYPE_STRING
     // 008 settings                                 HubSettings IL2CPP_TYPE_CLASS
-    public partial class HubSettings
+    public partial class HubSettings : DataModel
     {
         public string                                   AccessKey                               { get; set; }
         public User?                                    User                                    { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HubSettings();
+            var value   = new HubSettings() { Pointer= p0 };
 
-            value.AccessKey                                 = GetString(new IntPtr(p + 0x018)); // 027003342158 0x18 AccessKey                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.User                                      = GetObject<User>(new IntPtr(p + 0x020), ReversePrism.DataModels.User.FromPointer); // 027003342178 0x20 User                        ( 00018674B3F0 ModelClassType User User User Pointer )
+            value.AccessKey                                 = GetString(new IntPtr(p + 0x018)); // 0245A3342158 0x18 AccessKey                   ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.User                                      = GetObject<User>(new IntPtr(p + 0x020), ReversePrism.DataModels.User.FromPointer); // 0245A3342178 0x20 User                        ( 00018674B3F0 ModelClassType User User User Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_context                                0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
     // 018 M_stateMachine                           000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer
     // 000 s_invokeMoveNext                         ContextCallback IL2CPP_TYPE_CLASS
-    public partial class MoveNextRunner
+    public partial class MoveNextRunner : DataModel
     {
         public ExecutionContext?                        M_context                               { get; set; }
         public IAsyncStateMachine?                      M_stateMachine                          { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MoveNextRunner();
+            var value   = new MoveNextRunner() { Pointer= p0 };
 
-            value.M_context                                 = GetObject<ExecutionContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0270D0F1A280 0x10 M_context                   ( 0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.M_stateMachine                            = GetObject<IAsyncStateMachine>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAsyncStateMachine.FromPointer); // 0270D0F1A2A0 0x18 M_stateMachine              ( 000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer )
+            value.M_context                                 = GetObject<ExecutionContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExecutionContext.FromPointer); // 024660EAD0B0 0x10 M_context                   ( 0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.M_stateMachine                            = GetObject<IAsyncStateMachine>(new IntPtr(p + 0x018), ReversePrism.DataModels.IAsyncStateMachine.FromPointer); // 024660EAD0D0 0x18 M_stateMachine              ( 000186709D10 ModelClassType IAsyncStateMachine IAsyncStateMachine IAsyncStateMachine Pointer )
 
             return value;
         }

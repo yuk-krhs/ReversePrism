@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 0C0 Delta                                    0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class WheelEvent
+    public partial class WheelEvent : DataModel
     {
         public Vector3                                  Delta                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WheelEvent();
+            var value   = new WheelEvent() { Pointer= p0 };
 
-            value.Delta                                     = (Vector3)GetInt32(new IntPtr(p + 0x0C0)); // 02700677FEC0 0xC0 Delta                       ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Delta                                     = (Vector3)GetInt32(new IntPtr(p + 0x0C0)); // 0245A6741E80 0xC0 Delta                       ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

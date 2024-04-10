@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MarkFavoriteFesIdolArgsTranslator
+    public partial class MarkFavoriteFesIdolArgsTranslator : DataModel
     {
 
         public static MarkFavoriteFesIdolArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarkFavoriteFesIdolArgsTranslator();
+            var value   = new MarkFavoriteFesIdolArgsTranslator() { Pointer= p0 };
 
 
             return value;

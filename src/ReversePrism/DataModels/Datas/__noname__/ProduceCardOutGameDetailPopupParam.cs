@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 ProduceCard                              0001865E48A0 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer
-    public partial class ProduceCardOutGameDetailPopupParam
+    public partial class ProduceCardOutGameDetailPopupParam : DataModel
     {
         public IProduceCardStatus?                      ProduceCard                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceCardOutGameDetailPopupParam();
+            var value   = new ProduceCardOutGameDetailPopupParam() { Pointer= p0 };
 
-            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0270D5CE8F60 0x90 ProduceCard                 ( 0001865E48A0 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
+            value.ProduceCard                               = GetObject<IProduceCardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D39B38 0x90 ProduceCard                 ( 0001865E48A0 ModelClassType IProduceCardStatus IProduceCardStatus IProduceCardStatus Pointer )
 
             return value;
         }

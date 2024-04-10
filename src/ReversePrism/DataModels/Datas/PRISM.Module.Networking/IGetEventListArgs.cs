@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetEventListArgs
+    public partial class IGetEventListArgs : DataModel
     {
 
         public static IGetEventListArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetEventListArgs();
+            var value   = new IGetEventListArgs() { Pointer= p0 };
 
 
             return value;

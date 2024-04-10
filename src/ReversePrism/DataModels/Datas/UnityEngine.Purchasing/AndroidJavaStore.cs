@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Store                                  0001866AD7E0 ModelClassType AndroidJavaObject AndroidJavaObject AndroidJavaObject Pointer
-    public partial class AndroidJavaStore
+    public partial class AndroidJavaStore : DataModel
     {
         public AndroidJavaObject?                       M_Store                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidJavaStore();
+            var value   = new AndroidJavaStore() { Pointer= p0 };
 
-            value.M_Store                                   = GetObject<AndroidJavaObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaObject.FromPointer); // 0270068FD668 0x10 M_Store                     ( 0001866AD7E0 ModelClassType AndroidJavaObject AndroidJavaObject AndroidJavaObject Pointer )
+            value.M_Store                                   = GetObject<AndroidJavaObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaObject.FromPointer); // 0245A68C0CB8 0x10 M_Store                     ( 0001866AD7E0 ModelClassType AndroidJavaObject AndroidJavaObject AndroidJavaObject Pointer )
 
             return value;
         }

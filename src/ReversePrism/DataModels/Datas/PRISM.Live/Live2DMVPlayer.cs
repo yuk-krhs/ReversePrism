@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 MoviePlayer                              000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
     // 000 SyncTimeInterval                         float IL2CPP_TYPE_R4
     // 028 SyncTimeDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class Live2DMVPlayer
+    public partial class Live2DMVPlayer : DataModel
     {
         public MoviePlayer?                             MoviePlayer                             { get; set; }
         public IDisposable?                             SyncTimeDisposable                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Live2DMVPlayer();
+            var value   = new Live2DMVPlayer() { Pointer= p0 };
 
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0270D4E2D9C8 0x20 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.SyncTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D4E2DA08 0x28 SyncTimeDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 024664EA2EC8 0x20 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.SyncTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 024664EA2F08 0x28 SyncTimeDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

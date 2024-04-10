@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <Creator>k__BackingField                 ObjectConstructor`1<<object>> IL2CPP_TYPE_GENERICINST
     // 018 <Members>k__BackingField                 IDictionary`2<string, ReflectionMember> IL2CPP_TYPE_GENERICINST
-    public partial class ReflectionObject
+    public partial class ReflectionObject : DataModel
     {
 
         public static ReflectionObject? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionObject();
+            var value   = new ReflectionObject() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Parent                                   000186711BA0 ModelClassType WhenAll_ WhenAll_ WhenAll_ Pointer
     // 018 IsCompleted                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class WhenAllCollectionObserver
+    public partial class WhenAllCollectionObserver : DataModel
     {
         public WhenAll_?                                Parent                                  { get; set; }
         public bool                                     IsCompleted                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WhenAllCollectionObserver();
+            var value   = new WhenAllCollectionObserver() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<WhenAll_>(new IntPtr(p + 0x010), ReversePrism.DataModels.WhenAll_.FromPointer); // 0270D97B0000 0x10 Parent                      ( 000186711BA0 ModelClassType WhenAll_ WhenAll_ WhenAll_ Pointer )
-            value.IsCompleted                               = GetBool(new IntPtr(p + 0x018)); // 0270D97B0020 0x18 IsCompleted                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Parent                                    = GetObject<WhenAll_>(new IntPtr(p + 0x010), ReversePrism.DataModels.WhenAll_.FromPointer); // 024669815168 0x10 Parent                      ( 000186711BA0 ModelClassType WhenAll_ WhenAll_ WhenAll_ Pointer )
+            value.IsCompleted                               = GetBool(new IntPtr(p + 0x018)); // 024669815188 0x18 IsCompleted                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

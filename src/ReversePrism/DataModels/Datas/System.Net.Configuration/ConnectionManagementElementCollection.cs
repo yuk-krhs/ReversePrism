@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConnectionManagementElementCollection
+    public partial class ConnectionManagementElementCollection : DataModel
     {
 
         public static ConnectionManagementElementCollection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConnectionManagementElementCollection();
+            var value   = new ConnectionManagementElementCollection() { Pointer= p0 };
 
 
             return value;

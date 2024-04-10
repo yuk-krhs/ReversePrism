@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GridLayout
+    public partial class GridLayout : DataModel
     {
 
         public static GridLayout? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GridLayout();
+            var value   = new GridLayout() { Pointer= p0 };
 
 
             return value;

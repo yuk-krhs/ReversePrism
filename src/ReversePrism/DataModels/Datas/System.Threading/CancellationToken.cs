@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Source                                   0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 000 s_actionToActionObjShunt                 Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class CancellationToken
+    public partial class CancellationToken : DataModel
     {
         public CancellationTokenSource?                 Source                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CancellationToken();
+            var value   = new CancellationToken() { Pointer= p0 };
 
-            value.Source                                    = GetObject<CancellationTokenSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 027002F30448 0x10 Source                      ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Source                                    = GetObject<CancellationTokenSource>(new IntPtr(p + 0x010), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A2F30448 0x10 Source                      ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

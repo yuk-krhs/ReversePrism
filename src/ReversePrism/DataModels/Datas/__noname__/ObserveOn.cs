@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 parent                                   ObserveOnObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 actions                                  LinkedList`1<SchedulableAction<<var>>> IL2CPP_TYPE_GENERICINST
     // 000 isDisposed                               bool IL2CPP_TYPE_BOOLEAN
-    public partial class ObserveOn
+    public partial class ObserveOn : DataModel
     {
 
         public static ObserveOn? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObserveOn();
+            var value   = new ObserveOn() { Pointer= p0 };
 
 
             return value;

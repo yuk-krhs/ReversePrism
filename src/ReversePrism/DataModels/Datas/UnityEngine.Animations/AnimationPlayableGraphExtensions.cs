@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AnimationPlayableGraphExtensions
+    public partial class AnimationPlayableGraphExtensions : DataModel
     {
 
         public static AnimationPlayableGraphExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimationPlayableGraphExtensions();
+            var value   = new AnimationPlayableGraphExtensions() { Pointer= p0 };
 
 
             return value;

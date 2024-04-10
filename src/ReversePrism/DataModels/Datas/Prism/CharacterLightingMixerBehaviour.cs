@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CharacterLightingMixerBehaviour
+    public partial class CharacterLightingMixerBehaviour : DataModel
     {
 
         public static CharacterLightingMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterLightingMixerBehaviour();
+            var value   = new CharacterLightingMixerBehaviour() { Pointer= p0 };
 
 
             return value;

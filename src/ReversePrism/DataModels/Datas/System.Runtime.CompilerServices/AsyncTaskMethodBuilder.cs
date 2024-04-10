@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_cachedCompleted                        Task`1<VoidTaskResult> IL2CPP_TYPE_GENERICINST
     // 010 m_builder                                AsyncTaskMethodBuilder`1<VoidTaskResult> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncTaskMethodBuilder
+    public partial class AsyncTaskMethodBuilder : DataModel
     {
 
         public static AsyncTaskMethodBuilder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncTaskMethodBuilder();
+            var value   = new AsyncTaskMethodBuilder() { Pointer= p0 };
 
 
             return value;

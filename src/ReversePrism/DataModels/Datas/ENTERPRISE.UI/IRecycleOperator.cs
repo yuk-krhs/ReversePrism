@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRecycleOperator
+    public partial class IRecycleOperator : DataModel
     {
 
         public static IRecycleOperator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRecycleOperator();
+            var value   = new IRecycleOperator() { Pointer= p0 };
 
 
             return value;

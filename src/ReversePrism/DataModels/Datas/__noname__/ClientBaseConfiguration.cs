@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 UndecoratedCallInvoker                   00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer
     // 018 Host                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class ClientBaseConfiguration
+    public partial class ClientBaseConfiguration : DataModel
     {
         public CallInvoker?                             UndecoratedCallInvoker                  { get; set; }
         public string                                   Host                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClientBaseConfiguration();
+            var value   = new ClientBaseConfiguration() { Pointer= p0 };
 
-            value.UndecoratedCallInvoker                    = GetObject<CallInvoker>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallInvoker.FromPointer); // 0270D4126DB8 0x10 UndecoratedCallInvoker      ( 00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
-            value.Host                                      = GetString(new IntPtr(p + 0x018)); // 0270D4126DD8 0x18 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.UndecoratedCallInvoker                    = GetObject<CallInvoker>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallInvoker.FromPointer); // 024664164E48 0x10 UndecoratedCallInvoker      ( 00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
+            value.Host                                      = GetString(new IntPtr(p + 0x018)); // 024664164E68 0x18 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

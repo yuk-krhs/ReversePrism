@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DictationHypothesisDelegate
+    public partial class DictationHypothesisDelegate : DataModel
     {
 
         public static DictationHypothesisDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DictationHypothesisDelegate();
+            var value   = new DictationHypothesisDelegate() { Pointer= p0 };
 
 
             return value;

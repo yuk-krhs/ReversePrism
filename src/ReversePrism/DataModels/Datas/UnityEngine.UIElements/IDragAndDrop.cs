@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDragAndDrop
+    public partial class IDragAndDrop : DataModel
     {
 
         public static IDragAndDrop? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDragAndDrop();
+            var value   = new IDragAndDrop() { Pointer= p0 };
 
 
             return value;

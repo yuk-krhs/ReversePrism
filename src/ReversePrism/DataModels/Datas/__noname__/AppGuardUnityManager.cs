@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 APPGUARD_PLUGIN_VERSION                  string IL2CPP_TYPE_STRING
     // 008 _instance                                AppGuardUnityManager IL2CPP_TYPE_CLASS
-    public partial class AppGuardUnityManager
+    public partial class AppGuardUnityManager : DataModel
     {
 
         public static AppGuardUnityManager? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppGuardUnityManager();
+            var value   = new AppGuardUnityManager() { Pointer= p0 };
 
 
             return value;

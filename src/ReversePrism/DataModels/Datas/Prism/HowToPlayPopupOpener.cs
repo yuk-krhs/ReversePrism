@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 HowToPlayPopupResourceConfigRef          000186671E00 ModelPrimitiveType string string string String
     // 028 HowToPlayPopupResourceConfigRefPc        000186671E00 ModelPrimitiveType string string string String
-    public partial class HowToPlayPopupOpener
+    public partial class HowToPlayPopupOpener : DataModel
     {
         public string                                   HowToPlayPopupResourceConfigRef         { get; set; }
         public string                                   HowToPlayPopupResourceConfigRefPc       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HowToPlayPopupOpener();
+            var value   = new HowToPlayPopupOpener() { Pointer= p0 };
 
-            value.HowToPlayPopupResourceConfigRef           = GetString(new IntPtr(p + 0x020)); // 0270D4C4DB58 0x20 HowToPlayPopupResourceConfigRef ( 000186671E00 ModelPrimitiveType string string string String )
-            value.HowToPlayPopupResourceConfigRefPc         = GetString(new IntPtr(p + 0x028)); // 0270D4C4DB78 0x28 HowToPlayPopupResourceConfigRefPc ( 000186671E00 ModelPrimitiveType string string string String )
+            value.HowToPlayPopupResourceConfigRef           = GetString(new IntPtr(p + 0x020)); // 024664CA7BB8 0x20 HowToPlayPopupResourceConfigRef ( 000186671E00 ModelPrimitiveType string string string String )
+            value.HowToPlayPopupResourceConfigRefPc         = GetString(new IntPtr(p + 0x028)); // 024664CA7BD8 0x28 HowToPlayPopupResourceConfigRefPc ( 000186671E00 ModelPrimitiveType string string string String )
 
             return value;
         }

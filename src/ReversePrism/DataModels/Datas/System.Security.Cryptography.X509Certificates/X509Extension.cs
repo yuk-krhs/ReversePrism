@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Critical                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class X509Extension
+    public partial class X509Extension : DataModel
     {
         public bool                                     Critical                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509Extension();
+            var value   = new X509Extension() { Pointer= p0 };
 
-            value.Critical                                  = GetBool(new IntPtr(p + 0x020)); // 0270D7980008 0x20 Critical                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Critical                                  = GetBool(new IntPtr(p + 0x020)); // 0246679E8008 0x20 Critical                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

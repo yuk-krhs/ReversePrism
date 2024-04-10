@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 UpdateList                               000185CD75F8 ModelClassListType RepeatedField`1<FavoriteSongUpdateStatus> RepeatedField`1<FavoriteSongUpdateStatus> List<FavoriteSongUpdateStatus> Pointer
     // 000 MstSongIdFieldNumber                     int IL2CPP_TYPE_I4
     // 020 MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SetFavoriteSongArgs
+    public partial class SetFavoriteSongArgs : DataModel
     {
         public List<FavoriteSongUpdateStatus>?          UpdateList                              { get; set; }
         public int                                      MstSongId                               { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetFavoriteSongArgs();
+            var value   = new SetFavoriteSongArgs() { Pointer= p0 };
 
-            value.UpdateList                                = GetObjectList<FavoriteSongUpdateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FavoriteSongUpdateStatus.FromPointer); // 0270D21E19A8 0x18 UpdateList                  ( 000185CD75F8 ModelClassListType RepeatedField`1<FavoriteSongUpdateStatus> RepeatedField`1<FavoriteSongUpdateStatus> List<FavoriteSongUpdateStatus> Pointer )
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D21E19E8 0x20 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UpdateList                                = GetObjectList<FavoriteSongUpdateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FavoriteSongUpdateStatus.FromPointer); // 02466218D9B0 0x18 UpdateList                  ( 000185CD75F8 ModelClassListType RepeatedField`1<FavoriteSongUpdateStatus> RepeatedField`1<FavoriteSongUpdateStatus> List<FavoriteSongUpdateStatus> Pointer )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x020)); // 02466218D9F0 0x20 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 logC_d                                   float IL2CPP_TYPE_R4
     // 000 logC_e                                   float IL2CPP_TYPE_R4
     // 000 logC_f                                   float IL2CPP_TYPE_R4
-    public partial class ColorUtilities
+    public partial class ColorUtilities : DataModel
     {
 
         public static ColorUtilities? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorUtilities();
+            var value   = new ColorUtilities() { Pointer= p0 };
 
 
             return value;

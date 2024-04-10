@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FakeUDPExtension
+    public partial class FakeUDPExtension : DataModel
     {
 
         public static FakeUDPExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FakeUDPExtension();
+            var value   = new FakeUDPExtension() { Pointer= p0 };
 
 
             return value;

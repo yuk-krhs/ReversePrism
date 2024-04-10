@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVertexModifier
+    public partial class IVertexModifier : DataModel
     {
 
         public static IVertexModifier? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVertexModifier();
+            var value   = new IVertexModifier() { Pointer= p0 };
 
 
             return value;

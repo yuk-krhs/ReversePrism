@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 magic                                    sbyte[] IL2CPP_TYPE_SZARRAY
     // 008 nullEncMagic                             sbyte[] IL2CPP_TYPE_SZARRAY
-    public partial class ChallengeResponse2
+    public partial class ChallengeResponse2 : DataModel
     {
 
         public static ChallengeResponse2? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeResponse2();
+            var value   = new ChallengeResponse2() { Pointer= p0 };
 
 
             return value;

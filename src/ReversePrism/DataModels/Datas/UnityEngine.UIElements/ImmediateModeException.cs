@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ImmediateModeException
+    public partial class ImmediateModeException : DataModel
     {
 
         public static ImmediateModeException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImmediateModeException();
+            var value   = new ImmediateModeException() { Pointer= p0 };
 
 
             return value;

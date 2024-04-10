@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 CloseButtonLayoutList                    List`1<ButtonInformation> IL2CPP_TYPE_GENERICINST
     // 010 OkCancelButtonLayoutList                 000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer
     // 018 YesNoButtonLayoutList                    000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer
-    public partial class ButtonSetInformation
+    public partial class ButtonSetInformation : DataModel
     {
         public List<ButtonInformation>?                 OkCancelButtonLayoutList                { get; set; }
         public List<ButtonInformation>?                 YesNoButtonLayoutList                   { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ButtonSetInformation();
+            var value   = new ButtonSetInformation() { Pointer= p0 };
 
-            value.OkCancelButtonLayoutList                  = GetObjectList<ButtonInformation>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonInformation.FromPointer); // 0270DAFF1580 0x10 OkCancelButtonLayoutList    ( 000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
-            value.YesNoButtonLayoutList                     = GetObjectList<ButtonInformation>(new IntPtr(p + 0x018), ReversePrism.DataModels.ButtonInformation.FromPointer); // 0270DAFF15A0 0x18 YesNoButtonLayoutList       ( 000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
+            value.OkCancelButtonLayoutList                  = GetObjectList<ButtonInformation>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonInformation.FromPointer); // 02466B05D580 0x10 OkCancelButtonLayoutList    ( 000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
+            value.YesNoButtonLayoutList                     = GetObjectList<ButtonInformation>(new IntPtr(p + 0x018), ReversePrism.DataModels.ButtonInformation.FromPointer); // 02466B05D5A0 0x18 YesNoButtonLayoutList       ( 000185CD0778 ModelClassListType List`1<ButtonInformation> List`1<ButtonInformation> List<ButtonInformation> Pointer )
 
             return value;
         }

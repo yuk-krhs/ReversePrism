@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ClrNamespace                             000186671910 ModelPrimitiveType string string string String
     // 018 ContractNamespace                        000186671910 ModelPrimitiveType string string string String
-    public partial class ContractNamespaceAttribute
+    public partial class ContractNamespaceAttribute : DataModel
     {
         public string                                   ClrNamespace                            { get; set; }
         public string                                   ContractNamespace                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContractNamespaceAttribute();
+            var value   = new ContractNamespaceAttribute() { Pointer= p0 };
 
-            value.ClrNamespace                              = GetString(new IntPtr(p + 0x010)); // 027004CC0480 0x10 ClrNamespace                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ContractNamespace                         = GetString(new IntPtr(p + 0x018)); // 027004CC04A0 0x18 ContractNamespace           ( 000186671910 ModelPrimitiveType string string string String )
+            value.ClrNamespace                              = GetString(new IntPtr(p + 0x010)); // 0245A4CEC1C8 0x10 ClrNamespace                ( 000186671910 ModelPrimitiveType string string string String )
+            value.ContractNamespace                         = GetString(new IntPtr(p + 0x018)); // 0245A4CEC1E8 0x18 ContractNamespace           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Material                                 00018660BFD0 ModelClassType Material Material Material Pointer
     // 030 Flags                                    0001867105B0 ModelEnumType MeshFlags MeshFlags MeshFlags Int32
     // 034 ColorAlloc                               000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    public partial class AllocMeshData
+    public partial class AllocMeshData : DataModel
     {
         public Allocator?                               Alloc                                   { get; set; }
         public Texture?                                 Texture                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AllocMeshData();
+            var value   = new AllocMeshData() { Pointer= p0 };
 
-            value.Alloc                                     = GetObject<Allocator>(new IntPtr(p + 0x010), ReversePrism.DataModels.Allocator.FromPointer); // 027006867B90 0x10 Alloc                       ( 00018653B2C0 ModelClassType Allocator Allocator Allocator Pointer )
-            value.Texture                                   = GetObject<Texture>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture.FromPointer); // 027006867BB0 0x18 Texture                     ( 00018664D240 ModelClassType Texture Texture Texture Pointer )
-            value.SvgTexture                                = (TextureId)GetInt32(new IntPtr(p + 0x020)); // 027006867BD0 0x20 SvgTexture                  ( 000186687E40 ModelEnumType TextureId TextureId TextureId Int32 )
-            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 027006867BF0 0x28 Material                    ( 00018660BFD0 ModelClassType Material Material Material Pointer )
-            value.Flags                                     = (MeshFlags)GetInt32(new IntPtr(p + 0x030)); // 027006867C10 0x30 Flags                       ( 0001867105B0 ModelEnumType MeshFlags MeshFlags MeshFlags Int32 )
-            value.ColorAlloc                                = (BMPAlloc)GetInt32(new IntPtr(p + 0x034)); // 027006867C30 0x34 ColorAlloc                  ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.Alloc                                     = GetObject<Allocator>(new IntPtr(p + 0x010), ReversePrism.DataModels.Allocator.FromPointer); // 0245A6829A20 0x10 Alloc                       ( 00018653B2C0 ModelClassType Allocator Allocator Allocator Pointer )
+            value.Texture                                   = GetObject<Texture>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture.FromPointer); // 0245A6829A40 0x18 Texture                     ( 00018664D240 ModelClassType Texture Texture Texture Pointer )
+            value.SvgTexture                                = (TextureId)GetInt32(new IntPtr(p + 0x020)); // 0245A6829A60 0x20 SvgTexture                  ( 000186687E40 ModelEnumType TextureId TextureId TextureId Int32 )
+            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0245A6829A80 0x28 Material                    ( 00018660BFD0 ModelClassType Material Material Material Pointer )
+            value.Flags                                     = (MeshFlags)GetInt32(new IntPtr(p + 0x030)); // 0245A6829AA0 0x30 Flags                       ( 0001867105B0 ModelEnumType MeshFlags MeshFlags MeshFlags Int32 )
+            value.ColorAlloc                                = (BMPAlloc)GetInt32(new IntPtr(p + 0x034)); // 0245A6829AC0 0x34 ColorAlloc                  ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetProduceAutoPlayProgressReply
+    public partial class IGetProduceAutoPlayProgressReply : DataModel
     {
 
         public static IGetProduceAutoPlayProgressReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetProduceAutoPlayProgressReply();
+            var value   = new IGetProduceAutoPlayProgressReply() { Pointer= p0 };
 
 
             return value;

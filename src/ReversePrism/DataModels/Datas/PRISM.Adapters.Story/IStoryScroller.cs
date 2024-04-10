@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStoryScroller
+    public partial class IStoryScroller : DataModel
     {
 
         public static IStoryScroller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStoryScroller();
+            var value   = new IStoryScroller() { Pointer= p0 };
 
 
             return value;

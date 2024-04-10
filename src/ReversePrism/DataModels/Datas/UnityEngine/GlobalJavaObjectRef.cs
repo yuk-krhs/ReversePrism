@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_disposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 m_jobject                                <int> IL2CPP_TYPE_I
-    public partial class GlobalJavaObjectRef
+    public partial class GlobalJavaObjectRef : DataModel
     {
         public bool                                     M_disposed                              { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalJavaObjectRef();
+            var value   = new GlobalJavaObjectRef() { Pointer= p0 };
 
-            value.M_disposed                                = GetBool(new IntPtr(p + 0x010)); // 027006944890 0x10 M_disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_disposed                                = GetBool(new IntPtr(p + 0x010)); // 0245A68F6FA0 0x10 M_disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

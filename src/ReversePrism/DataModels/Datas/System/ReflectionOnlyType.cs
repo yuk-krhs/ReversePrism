@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReflectionOnlyType
+    public partial class ReflectionOnlyType : DataModel
     {
 
         public static ReflectionOnlyType? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionOnlyType();
+            var value   = new ReflectionOnlyType() { Pointer= p0 };
 
 
             return value;

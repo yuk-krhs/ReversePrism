@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LoggingForPrivacyOptionDecorator
+    public partial class LoggingForPrivacyOptionDecorator : DataModel
     {
 
         public static LoggingForPrivacyOptionDecorator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggingForPrivacyOptionDecorator();
+            var value   = new LoggingForPrivacyOptionDecorator() { Pointer= p0 };
 
 
             return value;

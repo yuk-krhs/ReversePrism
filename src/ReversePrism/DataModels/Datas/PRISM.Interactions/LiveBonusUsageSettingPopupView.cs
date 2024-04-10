@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 onSliderValueChanged                     Action`1<int> IL2CPP_TYPE_GENERICINST
     // 040 onClick                                  Subject`1<ValueTuple`3<bool, int, bool>> IL2CPP_TYPE_GENERICINST
     // 048 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class LiveBonusUsageSettingPopupView
+    public partial class LiveBonusUsageSettingPopupView : DataModel
     {
         public LiveBonusUsageSliderView?                SliderView                              { get; set; }
         public GameObject?                              ZeroUsageAnnotation                     { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveBonusUsageSettingPopupView();
+            var value   = new LiveBonusUsageSettingPopupView() { Pointer= p0 };
 
-            value.SliderView                                = GetObject<LiveBonusUsageSliderView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveBonusUsageSliderView.FromPointer); // 0270DB4066F0 0x20 SliderView                  ( 0001865424D0 ModelClassType LiveBonusUsageSliderView LiveBonusUsageSliderView LiveBonusUsageSliderView Pointer )
-            value.ZeroUsageAnnotation                       = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB406710 0x28 ZeroUsageAnnotation         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ZeroUnselectableAnnotation                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB406730 0x30 ZeroUnselectableAnnotation  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB406790 0x48 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.SliderView                                = GetObject<LiveBonusUsageSliderView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveBonusUsageSliderView.FromPointer); // 02466B483708 0x20 SliderView                  ( 0001865424D0 ModelClassType LiveBonusUsageSliderView LiveBonusUsageSliderView LiveBonusUsageSliderView Pointer )
+            value.ZeroUsageAnnotation                       = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B483728 0x28 ZeroUsageAnnotation         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ZeroUnselectableAnnotation                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B483748 0x30 ZeroUnselectableAnnotation  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B4837A8 0x48 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

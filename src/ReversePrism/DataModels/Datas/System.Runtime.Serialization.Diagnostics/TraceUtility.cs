@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 traceCodes                               Dictionary`2<int, string> IL2CPP_TYPE_GENERICINST
-    public partial class TraceUtility
+    public partial class TraceUtility : DataModel
     {
 
         public static TraceUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TraceUtility();
+            var value   = new TraceUtility() { Pointer= p0 };
 
 
             return value;

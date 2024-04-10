@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Notes                                    000185B98140 ModelClassListType NoteEntity[] NoteEntity[] List<NoteEntity> Pointer
     // 020 NoteLines                                000185B98330 ModelClassListType NoteLineEntity[] NoteLineEntity[] List<NoteLineEntity> Pointer
     // 028 SpeedChanges                             000185CA44A8 ModelClassListType SpeedChangeEntity[] SpeedChangeEntity[] List<SpeedChangeEntity> Pointer
-    public partial class ChartEntity
+    public partial class ChartEntity : DataModel
     {
         public string                                   AudioSource                             { get; set; }
         public List<NoteEntity>?                        Notes                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChartEntity();
+            var value   = new ChartEntity() { Pointer= p0 };
 
-            value.AudioSource                               = GetString(new IntPtr(p + 0x010)); // 0270D4F725A8 0x10 AudioSource                 ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.Notes                                     = GetObjectList<NoteEntity>(new IntPtr(p + 0x018), ReversePrism.DataModels.NoteEntity.FromPointer); // 0270D4F725C8 0x18 Notes                       ( 000185B98140 ModelClassListType NoteEntity[] NoteEntity[] List<NoteEntity> Pointer )
-            value.NoteLines                                 = GetObjectList<NoteLineEntity>(new IntPtr(p + 0x020), ReversePrism.DataModels.NoteLineEntity.FromPointer); // 0270D4F725E8 0x20 NoteLines                   ( 000185B98330 ModelClassListType NoteLineEntity[] NoteLineEntity[] List<NoteLineEntity> Pointer )
-            value.SpeedChanges                              = GetObjectList<SpeedChangeEntity>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpeedChangeEntity.FromPointer); // 0270D4F72608 0x28 SpeedChanges                ( 000185CA44A8 ModelClassListType SpeedChangeEntity[] SpeedChangeEntity[] List<SpeedChangeEntity> Pointer )
+            value.AudioSource                               = GetString(new IntPtr(p + 0x010)); // 024664FE9EE8 0x10 AudioSource                 ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Notes                                     = GetObjectList<NoteEntity>(new IntPtr(p + 0x018), ReversePrism.DataModels.NoteEntity.FromPointer); // 024664FE9F08 0x18 Notes                       ( 000185B98140 ModelClassListType NoteEntity[] NoteEntity[] List<NoteEntity> Pointer )
+            value.NoteLines                                 = GetObjectList<NoteLineEntity>(new IntPtr(p + 0x020), ReversePrism.DataModels.NoteLineEntity.FromPointer); // 024664FE9F28 0x20 NoteLines                   ( 000185B98330 ModelClassListType NoteLineEntity[] NoteLineEntity[] List<NoteLineEntity> Pointer )
+            value.SpeedChanges                              = GetObjectList<SpeedChangeEntity>(new IntPtr(p + 0x028), ReversePrism.DataModels.SpeedChangeEntity.FromPointer); // 024664FE9F48 0x28 SpeedChanges                ( 000185CA44A8 ModelClassListType SpeedChangeEntity[] SpeedChangeEntity[] List<SpeedChangeEntity> Pointer )
 
             return value;
         }

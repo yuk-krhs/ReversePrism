@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyframeUtility
+    public partial class KeyframeUtility : DataModel
     {
 
         public static KeyframeUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyframeUtility();
+            var value   = new KeyframeUtility() { Pointer= p0 };
 
 
             return value;

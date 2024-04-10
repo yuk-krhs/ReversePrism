@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 Player                                   00018674F770 ModelClassType Player Player Player Pointer
-    public partial class CriManaMoviePlayerHolder
+    public partial class CriManaMoviePlayerHolder : DataModel
     {
         public Player?                                  Player                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriManaMoviePlayerHolder();
+            var value   = new CriManaMoviePlayerHolder() { Pointer= p0 };
 
-            value.Player                                    = GetObject<Player>(new IntPtr(p + 0x030), ReversePrism.DataModels.Player.FromPointer); // 0270043EC1B8 0x30 Player                      ( 00018674F770 ModelClassType Player Player Player Pointer )
+            value.Player                                    = GetObject<Player>(new IntPtr(p + 0x030), ReversePrism.DataModels.Player.FromPointer); // 0245A447EF20 0x30 Player                      ( 00018674F770 ModelClassType Player Player Player Pointer )
 
             return value;
         }

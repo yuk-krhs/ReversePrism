@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateAllSkinnedMeshes
+    public partial class UpdateAllSkinnedMeshes : DataModel
     {
 
         public static UpdateAllSkinnedMeshes? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateAllSkinnedMeshes();
+            var value   = new UpdateAllSkinnedMeshes() { Pointer= p0 };
 
 
             return value;

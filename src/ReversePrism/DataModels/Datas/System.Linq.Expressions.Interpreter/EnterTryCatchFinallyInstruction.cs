@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 018 HasFinally                               0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 020 TryHandler                               0001866B4640 ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer
-    public partial class EnterTryCatchFinallyInstruction
+    public partial class EnterTryCatchFinallyInstruction : DataModel
     {
         public bool                                     HasFinally                              { get; set; }
         public TryCatchFinallyHandler?                  TryHandler                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnterTryCatchFinallyInstruction();
+            var value   = new EnterTryCatchFinallyInstruction() { Pointer= p0 };
 
-            value.HasFinally                                = GetBool(new IntPtr(p + 0x018)); // 0270D9FA4578 0x18 HasFinally                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.TryHandler                                = GetObject<TryCatchFinallyHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TryCatchFinallyHandler.FromPointer); // 0270D9FA4598 0x20 TryHandler                  ( 0001866B4640 ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer )
+            value.HasFinally                                = GetBool(new IntPtr(p + 0x018)); // 02466A010100 0x18 HasFinally                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.TryHandler                                = GetObject<TryCatchFinallyHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TryCatchFinallyHandler.FromPointer); // 02466A010120 0x20 TryHandler                  ( 0001866B4640 ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICancelPromise
+    public partial class ICancelPromise : DataModel
     {
 
         public static ICancelPromise? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICancelPromise();
+            var value   = new ICancelPromise() { Pointer= p0 };
 
 
             return value;

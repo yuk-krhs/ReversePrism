@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 BannerUrl                                000186671910 ModelPrimitiveType string string string String
     // 000 SortIdFieldNumber                        int IL2CPP_TYPE_I4
     // 028 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AnnounceBannerStatus
+    public partial class AnnounceBannerStatus : DataModel
     {
         public string                                   ArticleId                               { get; set; }
         public string                                   BannerUrl                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceBannerStatus();
+            var value   = new AnnounceBannerStatus() { Pointer= p0 };
 
-            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 0270D0F4BA50 0x18 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.BannerUrl                                 = GetString(new IntPtr(p + 0x020)); // 0270D0F4BA90 0x20 BannerUrl                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 0270D0F4BAD0 0x28 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 024660EF74B8 0x18 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.BannerUrl                                 = GetString(new IntPtr(p + 0x020)); // 024660EF74F8 0x20 BannerUrl                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 024660EF7538 0x28 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

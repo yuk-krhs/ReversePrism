@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUnitListWindowView
+    public partial class IUnitListWindowView : DataModel
     {
 
         public static IUnitListWindowView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUnitListWindowView();
+            var value   = new IUnitListWindowView() { Pointer= p0 };
 
 
             return value;

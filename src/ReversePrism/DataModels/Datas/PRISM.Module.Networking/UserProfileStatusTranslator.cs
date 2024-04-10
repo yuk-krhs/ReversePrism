@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UserProfileStatusTranslator
+    public partial class UserProfileStatusTranslator : DataModel
     {
 
         public static UserProfileStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserProfileStatusTranslator();
+            var value   = new UserProfileStatusTranslator() { Pointer= p0 };
 
 
             return value;

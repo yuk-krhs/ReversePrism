@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 UnitMaxIdolCount                         int IL2CPP_TYPE_I4
     // 000 BaseLBMaxUsage                           int IL2CPP_TYPE_I4
     // 000 UseOtherCharacterCostumeUnitNumber       int IL2CPP_TYPE_I4
-    public partial class LiveConstant
+    public partial class LiveConstant : DataModel
     {
 
         public static LiveConstant? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveConstant();
+            var value   = new LiveConstant() { Pointer= p0 };
 
 
             return value;

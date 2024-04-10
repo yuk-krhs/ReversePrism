@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 OnError                                  ErrorDelegate IL2CPP_TYPE_CLASS
     // 008 OnStatusChanged                          StatusDelegate IL2CPP_TYPE_CLASS
-    public partial class PhraseRecognitionSystem
+    public partial class PhraseRecognitionSystem : DataModel
     {
 
         public static PhraseRecognitionSystem? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhraseRecognitionSystem();
+            var value   = new PhraseRecognitionSystem() { Pointer= p0 };
 
 
             return value;

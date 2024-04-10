@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ExchangeIdolPiecePaddingHead             int IL2CPP_TYPE_I4
     // 000 ExchangePaddingHead                      int IL2CPP_TYPE_I4
-    public partial class ExchangeConst
+    public partial class ExchangeConst : DataModel
     {
 
         public static ExchangeConst? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeConst();
+            var value   = new ExchangeConst() { Pointer= p0 };
 
 
             return value;

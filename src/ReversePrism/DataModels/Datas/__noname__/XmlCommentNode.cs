@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlCommentNode
+    public partial class XmlCommentNode : DataModel
     {
 
         public static XmlCommentNode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlCommentNode();
+            var value   = new XmlCommentNode() { Pointer= p0 };
 
 
             return value;

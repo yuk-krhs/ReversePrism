@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 encodingLookup                           KeyValuePair`2<sbyte[], Encoding>[] IL2CPP_TYPE_SZARRAY
     // 008 targetEncoding                           Encoding IL2CPP_TYPE_CLASS
-    public partial class EncodingUtility
+    public partial class EncodingUtility : DataModel
     {
 
         public static EncodingUtility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncodingUtility();
+            var value   = new EncodingUtility() { Pointer= p0 };
 
 
             return value;

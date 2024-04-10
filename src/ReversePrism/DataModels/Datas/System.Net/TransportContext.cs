@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TransportContext
+    public partial class TransportContext : DataModel
     {
 
         public static TransportContext? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransportContext();
+            var value   = new TransportContext() { Pointer= p0 };
 
 
             return value;

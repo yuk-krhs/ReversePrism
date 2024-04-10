@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 isUpdated                                bool IL2CPP_TYPE_BOOLEAN
     // 000 isCompleted                              bool IL2CPP_TYPE_BOOLEAN
     // 000 sourceSubscription                       SingleAssignmentDisposable IL2CPP_TYPE_CLASS
-    public partial class SampleFrame
+    public partial class SampleFrame : DataModel
     {
 
         public static SampleFrame? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SampleFrame();
+            var value   = new SampleFrame() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                0001865FBB50 ModelClassType SwayBoneWindBehaviour SwayBoneWindBehaviour SwayBoneWindBehaviour Pointer
-    public partial class SwayBoneWindClip
+    public partial class SwayBoneWindClip : DataModel
     {
         public SwayBoneWindBehaviour?                   Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwayBoneWindClip();
+            var value   = new SwayBoneWindClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<SwayBoneWindBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SwayBoneWindBehaviour.FromPointer); // 0270D4E000E8 0x18 Behaviour                   ( 0001865FBB50 ModelClassType SwayBoneWindBehaviour SwayBoneWindBehaviour SwayBoneWindBehaviour Pointer )
+            value.Behaviour                                 = GetObject<SwayBoneWindBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SwayBoneWindBehaviour.FromPointer); // 024664E75518 0x18 Behaviour                   ( 0001865FBB50 ModelClassType SwayBoneWindBehaviour SwayBoneWindBehaviour SwayBoneWindBehaviour Pointer )
 
             return value;
         }

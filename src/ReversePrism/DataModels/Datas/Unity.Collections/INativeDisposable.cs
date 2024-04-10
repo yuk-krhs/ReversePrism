@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INativeDisposable
+    public partial class INativeDisposable : DataModel
     {
 
         public static INativeDisposable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INativeDisposable();
+            var value   = new INativeDisposable() { Pointer= p0 };
 
 
             return value;

@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 c5                                       CombineLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 c6                                       CombineLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 c7                                       CombineLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class CombineLatest
+    public partial class CombineLatest : DataModel
     {
 
         public static CombineLatest? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CombineLatest();
+            var value   = new CombineLatest() { Pointer= p0 };
 
 
             return value;

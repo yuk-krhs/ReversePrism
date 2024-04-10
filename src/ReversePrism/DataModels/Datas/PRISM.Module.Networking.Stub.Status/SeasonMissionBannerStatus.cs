@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 040 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
     // 048 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class SeasonMissionBannerStatus
+    public partial class SeasonMissionBannerStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionBannerStatus();
+            var value   = new SeasonMissionBannerStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D0B40CD0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D0B40CF0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x038)); // 0270D0B40D70 0x38 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (SeasonMissionBannerState)GetInt32(new IntPtr(p + 0x03C)); // 0270D0B40DB0 0x3C State                       ( 000186700A20 ModelEnumType SeasonMissionBannerState SeasonMissionBannerState SeasonMissionBannerState Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B40DF0 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B40E30 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024660B2BC38 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024660B2BC58 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x038)); // 024660B2BCD8 0x38 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (SeasonMissionBannerState)GetInt32(new IntPtr(p + 0x03C)); // 024660B2BD18 0x3C State                       ( 000186700A20 ModelEnumType SeasonMissionBannerState SeasonMissionBannerState SeasonMissionBannerState Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B2BD58 0x40 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B2BD98 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

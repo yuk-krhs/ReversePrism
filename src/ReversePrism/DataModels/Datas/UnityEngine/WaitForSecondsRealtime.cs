@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 WaitTime                                 0001866656B0 ModelPrimitiveType float float float Single
     // 014 M_WaitUntilTime                          0001866656B0 ModelPrimitiveType float float float Single
-    public partial class WaitForSecondsRealtime
+    public partial class WaitForSecondsRealtime : DataModel
     {
         public float                                    WaitTime                                { get; set; }
         public float                                    M_WaitUntilTime                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitForSecondsRealtime();
+            var value   = new WaitForSecondsRealtime() { Pointer= p0 };
 
-            value.WaitTime                                  = GetSingle(new IntPtr(p + 0x010)); // 0270068BA600 0x10 WaitTime                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_WaitUntilTime                           = GetSingle(new IntPtr(p + 0x014)); // 0270068BA620 0x14 M_WaitUntilTime             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.WaitTime                                  = GetSingle(new IntPtr(p + 0x010)); // 0245A687CCB0 0x10 WaitTime                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_WaitUntilTime                           = GetSingle(new IntPtr(p + 0x014)); // 0245A687CCD0 0x14 M_WaitUntilTime             ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

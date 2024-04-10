@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 IsCansel                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 targetMilliSec                           int IL2CPP_TYPE_I4
     // 000 sycleSecMilliSec                         int IL2CPP_TYPE_I4
-    public partial class ProduceTutorialShowFadeEvent
+    public partial class ProduceTutorialShowFadeEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public bool                                     IsCansel                                { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialShowFadeEvent();
+            var value   = new ProduceTutorialShowFadeEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D3E878 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.IsCansel                                  = GetBool(new IntPtr(p + 0x018)); // 0270D5D3E898 0x18 IsCansel                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665D9F568 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.IsCansel                                  = GetBool(new IntPtr(p + 0x018)); // 024665D9F588 0x18 IsCansel                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

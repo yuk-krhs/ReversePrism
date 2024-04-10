@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 028 Description                              000186671910 ModelPrimitiveType string string string String
     // 000 LocationFieldNumber                      int IL2CPP_TYPE_I4
     // 030 Location                                 000186671910 ModelPrimitiveType string string string String
-    public partial class Expr
+    public partial class Expr : DataModel
     {
         public string                                   Expression                              { get; set; }
         public string                                   Title                                   { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Expr();
+            var value   = new Expr() { Pointer= p0 };
 
-            value.Expression                                = GetString(new IntPtr(p + 0x018)); // 0270DA690AC0 0x18 Expression                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x020)); // 0270DA690B00 0x20 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x028)); // 0270DA690B40 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Location                                  = GetString(new IntPtr(p + 0x030)); // 0270DA690B80 0x30 Location                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Expression                                = GetString(new IntPtr(p + 0x018)); // 02466A6FC260 0x18 Expression                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x020)); // 02466A6FC2A0 0x20 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x028)); // 02466A6FC2E0 0x28 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Location                                  = GetString(new IntPtr(p + 0x030)); // 02466A6FC320 0x30 Location                    ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

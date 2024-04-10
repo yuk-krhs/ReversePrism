@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 swigExceptionHelper                      SWIGExceptionHelper IL2CPP_TYPE_CLASS
     // 008 swigStringHelper                         SWIGStringHelper IL2CPP_TYPE_CLASS
-    public partial class CrashlyticsInternalPINVOKE
+    public partial class CrashlyticsInternalPINVOKE : DataModel
     {
 
         public static CrashlyticsInternalPINVOKE? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrashlyticsInternalPINVOKE();
+            var value   = new CrashlyticsInternalPINVOKE() { Pointer= p0 };
 
 
             return value;

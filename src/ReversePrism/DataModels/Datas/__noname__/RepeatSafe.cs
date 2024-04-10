@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 nextSelf                                 Action IL2CPP_TYPE_CLASS
     // 000 isDisposed                               bool IL2CPP_TYPE_BOOLEAN
     // 000 isRunNext                                bool IL2CPP_TYPE_BOOLEAN
-    public partial class RepeatSafe
+    public partial class RepeatSafe : DataModel
     {
 
         public static RepeatSafe? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RepeatSafe();
+            var value   = new RepeatSafe() { Pointer= p0 };
 
 
             return value;

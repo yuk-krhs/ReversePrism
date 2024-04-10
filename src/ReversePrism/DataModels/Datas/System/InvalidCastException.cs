@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InvalidCastException
+    public partial class InvalidCastException : DataModel
     {
 
         public static InvalidCastException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvalidCastException();
+            var value   = new InvalidCastException() { Pointer= p0 };
 
 
             return value;

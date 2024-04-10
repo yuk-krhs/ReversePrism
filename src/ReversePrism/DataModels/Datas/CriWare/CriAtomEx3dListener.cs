@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 handle                                   <int> IL2CPP_TYPE_I
-    public partial class CriAtomEx3dListener
+    public partial class CriAtomEx3dListener : DataModel
     {
 
         public static CriAtomEx3dListener? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomEx3dListener();
+            var value   = new CriAtomEx3dListener() { Pointer= p0 };
 
 
             return value;

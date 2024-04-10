@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 set                                      HashSet`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 keySelector                              Func`3<<var>, CancellationToken, UniTask`1<<var>>> IL2CPP_TYPE_GENERICINST
-    public partial class _DistinctAwaitWithCancellation
+    public partial class _DistinctAwaitWithCancellation : DataModel
     {
 
         public static _DistinctAwaitWithCancellation? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _DistinctAwaitWithCancellation();
+            var value   = new _DistinctAwaitWithCancellation() { Pointer= p0 };
 
 
             return value;

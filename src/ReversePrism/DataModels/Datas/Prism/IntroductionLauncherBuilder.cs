@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186727220 ModelClassType IntroductionLauncherView IntroductionLauncherView IntroductionLauncherView Pointer
-    public partial class IntroductionLauncherBuilder
+    public partial class IntroductionLauncherBuilder : DataModel
     {
         public IntroductionLauncherView?                View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLauncherBuilder();
+            var value   = new IntroductionLauncherBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<IntroductionLauncherView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionLauncherView.FromPointer); // 0270DB61C920 0x20 View                        ( 000186727220 ModelClassType IntroductionLauncherView IntroductionLauncherView IntroductionLauncherView Pointer )
+            value.View                                      = GetObject<IntroductionLauncherView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionLauncherView.FromPointer); // 02466B6989C0 0x20 View                        ( 000186727220 ModelClassType IntroductionLauncherView IntroductionLauncherView IntroductionLauncherView Pointer )
 
             return value;
         }

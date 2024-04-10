@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 current                                  <var> IL2CPP_TYPE_VAR
     // 000 cacheValue                               bool IL2CPP_TYPE_BOOLEAN
     // 000 running                                  bool IL2CPP_TYPE_BOOLEAN
-    public partial class ReadAllAsyncEnumerable
+    public partial class ReadAllAsyncEnumerable : DataModel
     {
 
         public static ReadAllAsyncEnumerable? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadAllAsyncEnumerable();
+            var value   = new ReadAllAsyncEnumerable() { Pointer= p0 };
 
 
             return value;

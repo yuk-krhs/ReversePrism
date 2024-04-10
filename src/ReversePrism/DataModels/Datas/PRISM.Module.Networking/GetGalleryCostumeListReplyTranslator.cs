@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetGalleryCostumeListReplyTranslator
+    public partial class GetGalleryCostumeListReplyTranslator : DataModel
     {
 
         public static GetGalleryCostumeListReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGalleryCostumeListReplyTranslator();
+            var value   = new GetGalleryCostumeListReplyTranslator() { Pointer= p0 };
 
 
             return value;

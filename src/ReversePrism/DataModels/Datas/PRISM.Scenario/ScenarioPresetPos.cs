@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 camIndexName                             string IL2CPP_TYPE_STRING
     // 000 charaIndexName                           string IL2CPP_TYPE_STRING
     // 000 skitIndexName                            string IL2CPP_TYPE_STRING
-    public partial class ScenarioPresetPos
+    public partial class ScenarioPresetPos : DataModel
     {
 
         public static ScenarioPresetPos? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScenarioPresetPos();
+            var value   = new ScenarioPresetPos() { Pointer= p0 };
 
 
             return value;

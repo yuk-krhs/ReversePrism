@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 ScoreRank                                0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32
     // 000 IsNewRecordFieldNumber                   int IL2CPP_TYPE_I4
     // 024 IsNewRecord                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveScoreInfoStatus
+    public partial class LiveScoreInfoStatus : DataModel
     {
         public int                                      Score                                   { get; set; }
         public int                                      HighScore                               { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveScoreInfoStatus();
+            var value   = new LiveScoreInfoStatus() { Pointer= p0 };
 
-            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1359958 0x18 Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270D1359998 0x1C HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x020)); // 0270D13599D8 0x20 ScoreRank                   ( 0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
-            value.IsNewRecord                               = GetBool(new IntPtr(p + 0x024)); // 0270D1359A18 0x24 IsNewRecord                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 0246612E1C70 0x18 Score                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0246612E1CB0 0x1C HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x020)); // 0246612E1CF0 0x20 ScoreRank                   ( 0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
+            value.IsNewRecord                               = GetBool(new IntPtr(p + 0x024)); // 0246612E1D30 0x24 IsNewRecord                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

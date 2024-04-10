@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ExclusiveOrByte
+    public partial class ExclusiveOrByte : DataModel
     {
 
         public static ExclusiveOrByte? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExclusiveOrByte();
+            var value   = new ExclusiveOrByte() { Pointer= p0 };
 
 
             return value;

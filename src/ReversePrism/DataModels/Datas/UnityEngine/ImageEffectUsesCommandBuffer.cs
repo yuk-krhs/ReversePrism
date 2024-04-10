@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ImageEffectUsesCommandBuffer
+    public partial class ImageEffectUsesCommandBuffer : DataModel
     {
 
         public static ImageEffectUsesCommandBuffer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImageEffectUsesCommandBuffer();
+            var value   = new ImageEffectUsesCommandBuffer() { Pointer= p0 };
 
 
             return value;

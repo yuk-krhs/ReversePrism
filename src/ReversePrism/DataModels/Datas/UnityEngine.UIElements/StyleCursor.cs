@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Value                                  000186668630 ModelEnumType Cursor Cursor Cursor Int32
     // 028 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
-    public partial class StyleCursor
+    public partial class StyleCursor : DataModel
     {
         public Cursor                                   M_Value                                 { get; set; }
         public StyleKeyword                             M_Keyword                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleCursor();
+            var value   = new StyleCursor() { Pointer= p0 };
 
-            value.M_Value                                   = (Cursor)GetInt32(new IntPtr(p + 0x010)); // 0270067ED080 0x10 M_Value                     ( 000186668630 ModelEnumType Cursor Cursor Cursor Int32 )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x028)); // 0270067ED0A0 0x28 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = (Cursor)GetInt32(new IntPtr(p + 0x010)); // 0245A67AF210 0x10 M_Value                     ( 000186668630 ModelEnumType Cursor Cursor Cursor Int32 )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x028)); // 0245A67AF230 0x28 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

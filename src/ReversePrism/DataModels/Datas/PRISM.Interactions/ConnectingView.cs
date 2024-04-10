@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Counter                                  000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
     // 028 ScopeCache                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class ConnectingView
+    public partial class ConnectingView : DataModel
     {
         public IntReactiveProperty?                     Counter                                 { get; set; }
         public IDisposable?                             ScopeCache                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConnectingView();
+            var value   = new ConnectingView() { Pointer= p0 };
 
-            value.Counter                                   = GetObject<IntReactiveProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D0A6A1C0 0x20 Counter                     ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.ScopeCache                                = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D0A6A1E0 0x28 ScopeCache                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Counter                                   = GetObject<IntReactiveProperty>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 024660A59900 0x20 Counter                     ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.ScopeCache                                = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 024660A59920 0x28 ScopeCache                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Mid                                      0001866722E0 ModelPrimitiveType string string string String
     // 020 Len                                      0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 Col                                      0001865AB0A0 ModelEnumType Color Color Color Int32
-    public partial class MotionCell
+    public partial class MotionCell : DataModel
     {
         public string                                   Label                                   { get; set; }
         public string                                   Mid                                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MotionCell();
+            var value   = new MotionCell() { Pointer= p0 };
 
-            value.Label                                     = GetString(new IntPtr(p + 0x010)); // 0270D4E4BF40 0x10 Label                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Mid                                       = GetString(new IntPtr(p + 0x018)); // 0270D4E4BF60 0x18 Mid                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Len                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D4E4BF80 0x20 Len                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Col                                       = (Color)GetInt32(new IntPtr(p + 0x024)); // 0270D4E4BFA0 0x24 Col                         ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Label                                     = GetString(new IntPtr(p + 0x010)); // 024664EC1248 0x10 Label                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Mid                                       = GetString(new IntPtr(p + 0x018)); // 024664EC1268 0x18 Mid                         ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Len                                       = GetInt32(new IntPtr(p + 0x020)); // 024664EC1288 0x20 Len                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Col                                       = (Color)GetInt32(new IntPtr(p + 0x024)); // 024664EC12A8 0x24 Col                         ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

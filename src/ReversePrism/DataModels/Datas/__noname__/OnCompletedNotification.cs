@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnCompletedNotification
+    public partial class OnCompletedNotification : DataModel
     {
 
         public static OnCompletedNotification? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnCompletedNotification();
+            var value   = new OnCompletedNotification() { Pointer= p0 };
 
 
             return value;

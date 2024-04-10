@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SheetHandleKeyComparer
+    public partial class SheetHandleKeyComparer : DataModel
     {
 
         public static SheetHandleKeyComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SheetHandleKeyComparer();
+            var value   = new SheetHandleKeyComparer() { Pointer= p0 };
 
 
             return value;

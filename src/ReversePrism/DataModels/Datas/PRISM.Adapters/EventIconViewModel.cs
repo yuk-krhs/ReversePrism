@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 EventIcon                                000186764760 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer
-    public partial class EventIconViewModel
+    public partial class EventIconViewModel : DataModel
     {
         public IEventIconStatus?                        EventIcon                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventIconViewModel();
+            var value   = new EventIconViewModel() { Pointer= p0 };
 
-            value.EventIcon                                 = GetObject<IEventIconStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 0270D327F270 0x10 EventIcon                   ( 000186764760 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
+            value.EventIcon                                 = GetObject<IEventIconStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 0246632803B0 0x10 EventIcon                   ( 000186764760 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
 
             return value;
         }

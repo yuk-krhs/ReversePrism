@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AsyncOperation                           0001866FAA20 ModelClassType AsyncOperation AsyncOperation AsyncOperation Pointer
     // 018 continuationAction                       Action`1<AsyncOperation> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncOperationAwaiter
+    public partial class AsyncOperationAwaiter : DataModel
     {
         public AsyncOperation?                          AsyncOperation                          { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationAwaiter();
+            var value   = new AsyncOperationAwaiter() { Pointer= p0 };
 
-            value.AsyncOperation                            = GetObject<AsyncOperation>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncOperation.FromPointer); // 0270D50900F0 0x10 AsyncOperation              ( 0001866FAA20 ModelClassType AsyncOperation AsyncOperation AsyncOperation Pointer )
+            value.AsyncOperation                            = GetObject<AsyncOperation>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncOperation.FromPointer); // 0246650EB9E0 0x10 AsyncOperation              ( 0001866FAA20 ModelClassType AsyncOperation AsyncOperation AsyncOperation Pointer )
 
             return value;
         }

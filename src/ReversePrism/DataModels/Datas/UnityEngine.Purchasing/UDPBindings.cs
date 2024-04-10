@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Bridge                                 <object> IL2CPP_TYPE_OBJECT
     // 018 m_RetrieveProductsCallbackCache          Action`2<bool, string> IL2CPP_TYPE_GENERICINST
-    public partial class UDPBindings
+    public partial class UDPBindings : DataModel
     {
 
         public static UDPBindings? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UDPBindings();
+            var value   = new UDPBindings() { Pointer= p0 };
 
 
             return value;

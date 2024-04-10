@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 interceptor                              Func`4<IMethod, string, CallOptions, ClientBaseConfigurationInfo> IL2CPP_TYPE_GENERICINST
-    public partial class ClientBaseConfigurationInterceptor
+    public partial class ClientBaseConfigurationInterceptor : DataModel
     {
 
         public static ClientBaseConfigurationInterceptor? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClientBaseConfigurationInterceptor();
+            var value   = new ClientBaseConfigurationInterceptor() { Pointer= p0 };
 
 
             return value;

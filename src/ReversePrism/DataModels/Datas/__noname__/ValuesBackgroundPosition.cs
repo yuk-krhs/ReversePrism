@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ValuesBackgroundPosition
+    public partial class ValuesBackgroundPosition : DataModel
     {
 
         public static ValuesBackgroundPosition? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesBackgroundPosition();
+            var value   = new ValuesBackgroundPosition() { Pointer= p0 };
 
 
             return value;

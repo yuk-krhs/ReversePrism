@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 ContentID                                string IL2CPP_TYPE_STRING
     // 000 ContentType                              string IL2CPP_TYPE_STRING
     // 000 MimeVersion                              string IL2CPP_TYPE_STRING
-    public partial class Constants
+    public partial class Constants : DataModel
     {
 
         public static Constants? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Constants();
+            var value   = new Constants() { Pointer= p0 };
 
 
             return value;

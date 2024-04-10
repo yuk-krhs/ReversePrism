@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ClickSE                                  0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 020 OnClick                                  00018667A3C0 ModelClassType Action Action Action Pointer
-    public partial class OutOfRangeInfoParameter
+    public partial class OutOfRangeInfoParameter : DataModel
     {
         public SoundKey                                 ClickSE                                 { get; set; }
         public Action?                                  OnClick                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutOfRangeInfoParameter();
+            var value   = new OutOfRangeInfoParameter() { Pointer= p0 };
 
-            value.ClickSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270DB5621F0 0x10 ClickSE                     ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.OnClick                                   = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0270DB562210 0x20 OnClick                     ( 00018667A3C0 ModelClassType Action Action Action Pointer )
+            value.ClickSE                                   = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466B5F6370 0x10 ClickSE                     ( 0001865366F0 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.OnClick                                   = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 02466B5F6390 0x20 OnClick                     ( 00018667A3C0 ModelClassType Action Action Action Pointer )
 
             return value;
         }

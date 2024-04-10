@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CacheCardRankUpReply                     00018671A130 ModelClassType ICardRankUpReply ICardRankUpReply ICardRankUpReply Pointer
-    public partial class CardRankUpModel
+    public partial class CardRankUpModel : DataModel
     {
         public ICardRankUpReply?                        CacheCardRankUpReply                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CardRankUpModel();
+            var value   = new CardRankUpModel() { Pointer= p0 };
 
-            value.CacheCardRankUpReply                      = GetObject<ICardRankUpReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICardRankUpReply.FromPointer); // 0270D65AAC30 0x10 CacheCardRankUpReply        ( 00018671A130 ModelClassType ICardRankUpReply ICardRankUpReply ICardRankUpReply Pointer )
+            value.CacheCardRankUpReply                      = GetObject<ICardRankUpReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICardRankUpReply.FromPointer); // 024666611BD0 0x10 CacheCardRankUpReply        ( 00018671A130 ModelClassType ICardRankUpReply ICardRankUpReply ICardRankUpReply Pointer )
 
             return value;
         }

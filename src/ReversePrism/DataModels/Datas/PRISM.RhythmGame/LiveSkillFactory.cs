@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveSkillFactory
+    public partial class LiveSkillFactory : DataModel
     {
 
         public static LiveSkillFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveSkillFactory();
+            var value   = new LiveSkillFactory() { Pointer= p0 };
 
 
             return value;

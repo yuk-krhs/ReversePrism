@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 CurrentSheetPanelView                    0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer
     // 028 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 030 ViewModel                                0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer
-    public partial class HomeSingleLoginBonusPanelView
+    public partial class HomeSingleLoginBonusPanelView : DataModel
     {
         public HomeLoginBonusSheetPanelView?            CurrentSheetPanelView                   { get; set; }
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSingleLoginBonusPanelView();
+            var value   = new HomeSingleLoginBonusPanelView() { Pointer= p0 };
 
-            value.CurrentSheetPanelView                     = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 0270DB533A60 0x20 CurrentSheetPanelView       ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB533A80 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ViewModel                                 = GetObject<HomeLoginBonusViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeLoginBonusViewModel.FromPointer); // 0270DB533AA0 0x30 ViewModel                   ( 0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer )
+            value.CurrentSheetPanelView                     = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 02466B5A7B58 0x20 CurrentSheetPanelView       ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B5A7B78 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ViewModel                                 = GetObject<HomeLoginBonusViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeLoginBonusViewModel.FromPointer); // 02466B5A7B98 0x30 ViewModel                   ( 0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer )
 
             return value;
         }

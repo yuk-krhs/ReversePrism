@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_FieldInfo                              000186573AB0 ModelClassType FieldInfo FieldInfo FieldInfo Pointer
-    public partial class FieldMember
+    public partial class FieldMember : DataModel
     {
         public FieldInfo?                               M_FieldInfo                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldMember();
+            var value   = new FieldMember() { Pointer= p0 };
 
-            value.M_FieldInfo                               = GetObject<FieldInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.FieldInfo.FromPointer); // 02700694C5F0 0x10 M_FieldInfo                 ( 000186573AB0 ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
+            value.M_FieldInfo                               = GetObject<FieldInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.FieldInfo.FromPointer); // 0245A68FED00 0x10 M_FieldInfo                 ( 000186573AB0 ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
 
             return value;
         }

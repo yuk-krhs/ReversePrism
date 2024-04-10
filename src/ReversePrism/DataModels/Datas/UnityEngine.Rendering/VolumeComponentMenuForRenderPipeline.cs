@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 PipelineTypes                            000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer
-    public partial class VolumeComponentMenuForRenderPipeline
+    public partial class VolumeComponentMenuForRenderPipeline : DataModel
     {
         public List<Type>?                              PipelineTypes                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolumeComponentMenuForRenderPipeline();
+            var value   = new VolumeComponentMenuForRenderPipeline() { Pointer= p0 };
 
-            value.PipelineTypes                             = GetObjectList<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D92D27F8 0x18 PipelineTypes               ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.PipelineTypes                             = GetObjectList<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024669324CE0 0x18 PipelineTypes               ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
 
             return value;
         }

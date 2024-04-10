@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 next                                     Func`3<RequestContext, CancellationToken, UniTask`1<ResponseContext>> IL2CPP_TYPE_GENERICINST
     // 028 Decorators                               000185B85A60 ModelClassListType IAsyncDecorator[] IAsyncDecorator[] List<IAsyncDecorator> Pointer
     // 030 CurrentWebRequest                        00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
-    public partial class UnityWebRequestClient
+    public partial class UnityWebRequestClient : DataModel
     {
         public string                                   BaseUrl                                 { get; set; }
         public List<IAsyncDecorator>?                   Decorators                              { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityWebRequestClient();
+            var value   = new UnityWebRequestClient() { Pointer= p0 };
 
-            value.BaseUrl                                   = GetString(new IntPtr(p + 0x010)); // 027004E1CD70 0x10 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Decorators                                = GetObjectList<IAsyncDecorator>(new IntPtr(p + 0x028), ReversePrism.DataModels.IAsyncDecorator.FromPointer); // 027004E1CDD0 0x28 Decorators                  ( 000185B85A60 ModelClassListType IAsyncDecorator[] IAsyncDecorator[] List<IAsyncDecorator> Pointer )
-            value.CurrentWebRequest                         = GetObject<UnityWebRequest>(new IntPtr(p + 0x030), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 027004E1CDF0 0x30 CurrentWebRequest           ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
+            value.BaseUrl                                   = GetString(new IntPtr(p + 0x010)); // 0245A4E4E9D8 0x10 BaseUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Decorators                                = GetObjectList<IAsyncDecorator>(new IntPtr(p + 0x028), ReversePrism.DataModels.IAsyncDecorator.FromPointer); // 0245A4E4EA38 0x28 Decorators                  ( 000185B85A60 ModelClassListType IAsyncDecorator[] IAsyncDecorator[] List<IAsyncDecorator> Pointer )
+            value.CurrentWebRequest                         = GetObject<UnityWebRequest>(new IntPtr(p + 0x030), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0245A4E4EA58 0x30 CurrentWebRequest           ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
 
             return value;
         }

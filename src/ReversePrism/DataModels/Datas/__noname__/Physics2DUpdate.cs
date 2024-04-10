@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Physics2DUpdate
+    public partial class Physics2DUpdate : DataModel
     {
 
         public static Physics2DUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Physics2DUpdate();
+            var value   = new Physics2DUpdate() { Pointer= p0 };
 
 
             return value;

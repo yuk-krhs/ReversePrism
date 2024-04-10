@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 PropertyName                             000186672F10 ModelPrimitiveType string string string String
-    public partial class PropertyChangingEventArgs
+    public partial class PropertyChangingEventArgs : DataModel
     {
         public string                                   PropertyName                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropertyChangingEventArgs();
+            var value   = new PropertyChangingEventArgs() { Pointer= p0 };
 
-            value.PropertyName                              = GetString(new IntPtr(p + 0x010)); // 0270D7B3AF00 0x10 PropertyName                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PropertyName                              = GetString(new IntPtr(p + 0x010)); // 024667BA2F00 0x10 PropertyName                ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

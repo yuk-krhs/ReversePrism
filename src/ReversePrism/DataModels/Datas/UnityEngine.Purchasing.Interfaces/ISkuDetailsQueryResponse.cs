@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISkuDetailsQueryResponse
+    public partial class ISkuDetailsQueryResponse : DataModel
     {
 
         public static ISkuDetailsQueryResponse? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISkuDetailsQueryResponse();
+            var value   = new ISkuDetailsQueryResponse() { Pointer= p0 };
 
 
             return value;

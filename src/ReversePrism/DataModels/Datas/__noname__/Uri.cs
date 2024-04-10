@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Uri
+    public partial class Uri : DataModel
     {
 
         public static Uri? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Uri();
+            var value   = new Uri() { Pointer= p0 };
 
 
             return value;

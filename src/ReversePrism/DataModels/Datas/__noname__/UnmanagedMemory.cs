@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 078 controlGroupingAndComplexity             IntPtr IL2CPP_TYPE_PTR
     // 080 ControlGroupingInitialized               000186595960 ModelPrimitiveType bool bool bool Bool
     // 088 mapIndices                               IntPtr IL2CPP_TYPE_PTR
-    public partial class UnmanagedMemory
+    public partial class UnmanagedMemory : DataModel
     {
         public int                                      MapCount                                { get; set; }
         public int                                      ActionCount                             { get; set; }
@@ -43,15 +43,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnmanagedMemory();
+            var value   = new UnmanagedMemory() { Pointer= p0 };
 
-            value.MapCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0270001E4F80 0x18 MapCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ActionCount                               = GetInt32(new IntPtr(p + 0x01C)); // 0270001E4FA0 0x1C ActionCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.InteractionCount                          = GetInt32(new IntPtr(p + 0x020)); // 0270001E4FC0 0x20 InteractionCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BindingCount                              = GetInt32(new IntPtr(p + 0x024)); // 0270001E4FE0 0x24 BindingCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ControlCount                              = GetInt32(new IntPtr(p + 0x028)); // 0270001E5000 0x28 ControlCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CompositeCount                            = GetInt32(new IntPtr(p + 0x02C)); // 0270001E5020 0x2C CompositeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ControlGroupingInitialized                = GetBool(new IntPtr(p + 0x080)); // 0270001E5180 0x80 ControlGroupingInitialized  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.MapCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A01E4F80 0x18 MapCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ActionCount                               = GetInt32(new IntPtr(p + 0x01C)); // 0245A01E4FA0 0x1C ActionCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.InteractionCount                          = GetInt32(new IntPtr(p + 0x020)); // 0245A01E4FC0 0x20 InteractionCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BindingCount                              = GetInt32(new IntPtr(p + 0x024)); // 0245A01E4FE0 0x24 BindingCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ControlCount                              = GetInt32(new IntPtr(p + 0x028)); // 0245A01E5000 0x28 ControlCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.CompositeCount                            = GetInt32(new IntPtr(p + 0x02C)); // 0245A01E5020 0x2C CompositeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ControlGroupingInitialized                = GetBool(new IntPtr(p + 0x080)); // 0245A01E5180 0x80 ControlGroupingInitialized  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

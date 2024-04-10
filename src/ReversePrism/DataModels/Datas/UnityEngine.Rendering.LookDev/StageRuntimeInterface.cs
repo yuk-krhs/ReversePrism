@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 m_GetCamera                              Func`1<Camera> IL2CPP_TYPE_GENERICINST
     // 020 m_GetSunLight                            Func`1<Light> IL2CPP_TYPE_GENERICINST
     // 028 SRPData                                  <object> IL2CPP_TYPE_OBJECT
-    public partial class StageRuntimeInterface
+    public partial class StageRuntimeInterface : DataModel
     {
 
         public static StageRuntimeInterface? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StageRuntimeInterface();
+            var value   = new StageRuntimeInterface() { Pointer= p0 };
 
 
             return value;

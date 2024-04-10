@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 IconRect                                 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 018 CharaIcon                                0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
     // 020 FriendMark                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class SDCharaIconInfo
+    public partial class SDCharaIconInfo : DataModel
     {
         public RectTransform?                           IconRect                                { get; set; }
         public UIImage?                                 CharaIcon                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SDCharaIconInfo();
+            var value   = new SDCharaIconInfo() { Pointer= p0 };
 
-            value.IconRect                                  = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 0270DB591978 0x10 IconRect                    ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.CharaIcon                                 = GetObject<UIImage>(new IntPtr(p + 0x018), ReversePrism.DataModels.UIImage.FromPointer); // 0270DB591998 0x18 CharaIcon                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FriendMark                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB5919B8 0x20 FriendMark                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.IconRect                                  = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B615A78 0x10 IconRect                    ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.CharaIcon                                 = GetObject<UIImage>(new IntPtr(p + 0x018), ReversePrism.DataModels.UIImage.FromPointer); // 02466B615A98 0x18 CharaIcon                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.FriendMark                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B615AB8 0x20 FriendMark                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

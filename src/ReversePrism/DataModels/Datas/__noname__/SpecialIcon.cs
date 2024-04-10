@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ProductType                              000186611060 ModelEnumType ProductType ProductType ProductType Int32
     // 014 ProductMstId                             0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Object                                   0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class SpecialIcon
+    public partial class SpecialIcon : DataModel
     {
         public ProductType                              ProductType                             { get; set; }
         public int                                      ProductMstId                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialIcon();
+            var value   = new SpecialIcon() { Pointer= p0 };
 
-            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x010)); // 0270D5307F90 0x10 ProductType                 ( 000186611060 ModelEnumType ProductType ProductType ProductType Int32 )
-            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x014)); // 0270D5307FB0 0x14 ProductMstId                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Object                                    = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5307FD0 0x18 Object                      ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x010)); // 02466537B758 0x10 ProductType                 ( 000186611060 ModelEnumType ProductType ProductType ProductType Int32 )
+            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x014)); // 02466537B778 0x14 ProductMstId                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Object                                    = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 02466537B798 0x18 Object                      ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

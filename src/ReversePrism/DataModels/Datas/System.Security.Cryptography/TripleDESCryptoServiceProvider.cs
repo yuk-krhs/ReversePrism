@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TripleDESCryptoServiceProvider
+    public partial class TripleDESCryptoServiceProvider : DataModel
     {
 
         public static TripleDESCryptoServiceProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TripleDESCryptoServiceProvider();
+            var value   = new TripleDESCryptoServiceProvider() { Pointer= p0 };
 
 
             return value;

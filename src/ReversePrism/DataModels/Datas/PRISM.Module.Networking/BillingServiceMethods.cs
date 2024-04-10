@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 060 VerifyReceiptForDmmGames                 Method`2<IVerifyReceiptForDmmGamesArgs, IVerifyReceiptForDmmGamesReply> IL2CPP_TYPE_GENERICINST
     // 078 GetOrderResult                           Method`2<IGetOrderResultArgs, IGetOrderResultReply> IL2CPP_TYPE_GENERICINST
     // 090 RegisterBillingBirthdate                 Method`2<IRegisterBillingBirthdateArgs, IRegisterBillingBirthdateReply> IL2CPP_TYPE_GENERICINST
-    public partial class BillingServiceMethods
+    public partial class BillingServiceMethods : DataModel
     {
 
         public static BillingServiceMethods? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BillingServiceMethods();
+            var value   = new BillingServiceMethods() { Pointer= p0 };
 
 
             return value;

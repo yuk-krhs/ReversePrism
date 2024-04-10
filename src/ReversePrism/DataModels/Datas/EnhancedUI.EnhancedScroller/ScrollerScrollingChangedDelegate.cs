@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScrollerScrollingChangedDelegate
+    public partial class ScrollerScrollingChangedDelegate : DataModel
     {
 
         public static ScrollerScrollingChangedDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScrollerScrollingChangedDelegate();
+            var value   = new ScrollerScrollingChangedDelegate() { Pointer= p0 };
 
 
             return value;

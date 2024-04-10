@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C MstSubSeasonTypeId                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 JointTrainingCampFieldNumber             int IL2CPP_TYPE_I4
     // 020 JointTrainingCamp                        0001865D5ED0 ModelClassType SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus Pointer
-    public partial class SubSeasonAdditionalInfoStatus
+    public partial class SubSeasonAdditionalInfoStatus : DataModel
     {
         public int                                      MstSubSeasonId                          { get; set; }
         public int                                      MstSubSeasonTypeId                      { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonAdditionalInfoStatus();
+            var value   = new SubSeasonAdditionalInfoStatus() { Pointer= p0 };
 
-            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D114A2D8 0x18 MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSubSeasonTypeId                        = GetInt32(new IntPtr(p + 0x01C)); // 0270D114A318 0x1C MstSubSeasonTypeId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.JointTrainingCamp                         = GetObject<SubSeasonJointTrainingCampStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SubSeasonJointTrainingCampStatus.FromPointer); // 0270D114A358 0x20 JointTrainingCamp           ( 0001865D5ED0 ModelClassType SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus Pointer )
+            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0246610B52C8 0x18 MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSubSeasonTypeId                        = GetInt32(new IntPtr(p + 0x01C)); // 0246610B5308 0x1C MstSubSeasonTypeId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.JointTrainingCamp                         = GetObject<SubSeasonJointTrainingCampStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SubSeasonJointTrainingCampStatus.FromPointer); // 0246610B5348 0x20 JointTrainingCamp           ( 0001865D5ED0 ModelClassType SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus SubSeasonJointTrainingCampStatus Pointer )
 
             return value;
         }

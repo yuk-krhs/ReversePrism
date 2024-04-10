@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 088 target                                   <object> IL2CPP_TYPE_OBJECT
     // 090 Property                                 0001865D2D60 ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer
-    public partial class WrappedPropertyDescriptor
+    public partial class WrappedPropertyDescriptor : DataModel
     {
         public PropertyDescriptor?                      Property                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WrappedPropertyDescriptor();
+            var value   = new WrappedPropertyDescriptor() { Pointer= p0 };
 
-            value.Property                                  = GetObject<PropertyDescriptor>(new IntPtr(p + 0x090), ReversePrism.DataModels.PropertyDescriptor.FromPointer); // 0270D7B3E078 0x90 Property                    ( 0001865D2D60 ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer )
+            value.Property                                  = GetObject<PropertyDescriptor>(new IntPtr(p + 0x090), ReversePrism.DataModels.PropertyDescriptor.FromPointer); // 024667BA6078 0x90 Property                    ( 0001865D2D60 ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer )
 
             return value;
         }

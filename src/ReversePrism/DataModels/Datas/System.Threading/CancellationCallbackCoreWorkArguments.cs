@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _currArrayFragment                       SparselyPopulatedArrayFragment`1<CancellationCallbackInfo> IL2CPP_TYPE_GENERICINST
     // 018 CurrArrayIndex                           0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class CancellationCallbackCoreWorkArguments
+    public partial class CancellationCallbackCoreWorkArguments : DataModel
     {
         public int                                      CurrArrayIndex                          { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CancellationCallbackCoreWorkArguments();
+            var value   = new CancellationCallbackCoreWorkArguments() { Pointer= p0 };
 
-            value.CurrArrayIndex                            = GetInt32(new IntPtr(p + 0x018)); // 027004A3F688 0x18 CurrArrayIndex              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CurrArrayIndex                            = GetInt32(new IntPtr(p + 0x018)); // 0245A4AC9C40 0x18 CurrArrayIndex              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

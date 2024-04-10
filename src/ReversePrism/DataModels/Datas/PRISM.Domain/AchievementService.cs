@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AchievementService
+    public partial class AchievementService : DataModel
     {
 
         public static AchievementService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AchievementService();
+            var value   = new AchievementService() { Pointer= p0 };
 
 
             return value;

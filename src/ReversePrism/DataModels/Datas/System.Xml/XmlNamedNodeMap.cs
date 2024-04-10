@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Parent                                   0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer
     // 018 Nodes                                    00018673A060 ModelEnumType SmallXmlNodeList SmallXmlNodeList SmallXmlNodeList Int32
-    public partial class XmlNamedNodeMap
+    public partial class XmlNamedNodeMap : DataModel
     {
         public XmlNode?                                 Parent                                  { get; set; }
         public SmallXmlNodeList                         Nodes                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNamedNodeMap();
+            var value   = new XmlNamedNodeMap() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D743FF70 0x10 Parent                      ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
-            value.Nodes                                     = (SmallXmlNodeList)GetInt32(new IntPtr(p + 0x018)); // 0270D743FF90 0x18 Nodes                       ( 00018673A060 ModelEnumType SmallXmlNodeList SmallXmlNodeList SmallXmlNodeList Int32 )
+            value.Parent                                    = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 02466749FF70 0x10 Parent                      ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.Nodes                                     = (SmallXmlNodeList)GetInt32(new IntPtr(p + 0x018)); // 02466749FF90 0x18 Nodes                       ( 00018673A060 ModelEnumType SmallXmlNodeList SmallXmlNodeList SmallXmlNodeList Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 088 ExtenderInfo                             000186634EE0 ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer
     // 090 Provider                                 000186771190 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer
-    public partial class ExtendedPropertyDescriptor
+    public partial class ExtendedPropertyDescriptor : DataModel
     {
         public ReflectPropertyDescriptor?               ExtenderInfo                            { get; set; }
         public IExtenderProvider?                       Provider                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtendedPropertyDescriptor();
+            var value   = new ExtendedPropertyDescriptor() { Pointer= p0 };
 
-            value.ExtenderInfo                              = GetObject<ReflectPropertyDescriptor>(new IntPtr(p + 0x088), ReversePrism.DataModels.ReflectPropertyDescriptor.FromPointer); // 0270D7B1C6C0 0x88 ExtenderInfo                ( 000186634EE0 ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer )
-            value.Provider                                  = GetObject<IExtenderProvider>(new IntPtr(p + 0x090), ReversePrism.DataModels.IExtenderProvider.FromPointer); // 0270D7B1C6E0 0x90 Provider                    ( 000186771190 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer )
+            value.ExtenderInfo                              = GetObject<ReflectPropertyDescriptor>(new IntPtr(p + 0x088), ReversePrism.DataModels.ReflectPropertyDescriptor.FromPointer); // 024667B846C0 0x88 ExtenderInfo                ( 000186634EE0 ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer )
+            value.Provider                                  = GetObject<IExtenderProvider>(new IntPtr(p + 0x090), ReversePrism.DataModels.IExtenderProvider.FromPointer); // 024667B846E0 0x90 Provider                    ( 000186771190 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer )
 
             return value;
         }

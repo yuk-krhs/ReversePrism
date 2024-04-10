@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 FollowsOriginalSource                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 014 CalculationType                          000186541EA0 ModelEnumType Randomize3dCalcType Randomize3dCalcType Randomize3dCalcType Int32
     // 018 CalculationParameters                    000185B81070 ModelPrimitiveListType float[] float[] List<float> Pointer
-    public partial class Randomize3dConfig
+    public partial class Randomize3dConfig : DataModel
     {
         public bool                                     FollowsOriginalSource                   { get; set; }
         public Randomize3dCalcType                      CalculationType                         { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Randomize3dConfig();
+            var value   = new Randomize3dConfig() { Pointer= p0 };
 
-            value.FollowsOriginalSource                     = GetBool(new IntPtr(p + 0x010)); // 0270D1123D90 0x10 FollowsOriginalSource       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CalculationType                           = (Randomize3dCalcType)GetInt32(new IntPtr(p + 0x014)); // 0270D1123DB0 0x14 CalculationType             ( 000186541EA0 ModelEnumType Randomize3dCalcType Randomize3dCalcType Randomize3dCalcType Int32 )
-            value.CalculationParameters                     = GetSingleList(new IntPtr(p + 0x018)); // 0270D1123DD0 0x18 CalculationParameters       ( 000185B81070 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.FollowsOriginalSource                     = GetBool(new IntPtr(p + 0x010)); // 0245A421E8E8 0x10 FollowsOriginalSource       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CalculationType                           = (Randomize3dCalcType)GetInt32(new IntPtr(p + 0x014)); // 0245A421E908 0x14 CalculationType             ( 000186541EA0 ModelEnumType Randomize3dCalcType Randomize3dCalcType Randomize3dCalcType Int32 )
+            value.CalculationParameters                     = GetSingleList(new IntPtr(p + 0x018)); // 0245A421E928 0x18 CalculationParameters       ( 000185B81070 ModelPrimitiveListType float[] float[] List<float> Pointer )
 
             return value;
         }

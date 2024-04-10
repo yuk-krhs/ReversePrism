@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 034 LeftBottomColor                          0001865AB0A0 ModelEnumType Color Color Color Int32
     // 044 RightBottomColor                         0001865AB0A0 ModelEnumType Color Color Color Int32
     // 054 BlendType                                0001866F13B0 ModelEnumType ScreenEdgeColorBlendType ScreenEdgeColorBlendType ScreenEdgeColorBlendType Int32
-    public partial class ScreenEdgeColorBehaviour
+    public partial class ScreenEdgeColorBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
         public Color                                    LeftTopColor                            { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenEdgeColorBehaviour();
+            var value   = new ScreenEdgeColorBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0270D5075D38 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LeftTopColor                              = (Color)GetInt32(new IntPtr(p + 0x014)); // 0270D5075D58 0x14 LeftTopColor                ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.RightTopColor                             = (Color)GetInt32(new IntPtr(p + 0x024)); // 0270D5075D78 0x24 RightTopColor               ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.LeftBottomColor                           = (Color)GetInt32(new IntPtr(p + 0x034)); // 0270D5075D98 0x34 LeftBottomColor             ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.RightBottomColor                          = (Color)GetInt32(new IntPtr(p + 0x044)); // 0270D5075DB8 0x44 RightBottomColor            ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BlendType                                 = (ScreenEdgeColorBlendType)GetInt32(new IntPtr(p + 0x054)); // 0270D5075DD8 0x54 BlendType                   ( 0001866F13B0 ModelEnumType ScreenEdgeColorBlendType ScreenEdgeColorBlendType ScreenEdgeColorBlendType Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D9690 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.LeftTopColor                              = (Color)GetInt32(new IntPtr(p + 0x014)); // 0246650D96B0 0x14 LeftTopColor                ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.RightTopColor                             = (Color)GetInt32(new IntPtr(p + 0x024)); // 0246650D96D0 0x24 RightTopColor               ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.LeftBottomColor                           = (Color)GetInt32(new IntPtr(p + 0x034)); // 0246650D96F0 0x34 LeftBottomColor             ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.RightBottomColor                          = (Color)GetInt32(new IntPtr(p + 0x044)); // 0246650D9710 0x44 RightBottomColor            ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.BlendType                                 = (ScreenEdgeColorBlendType)GetInt32(new IntPtr(p + 0x054)); // 0246650D9730 0x54 BlendType                   ( 0001866F13B0 ModelEnumType ScreenEdgeColorBlendType ScreenEdgeColorBlendType ScreenEdgeColorBlendType Int32 )
 
             return value;
         }

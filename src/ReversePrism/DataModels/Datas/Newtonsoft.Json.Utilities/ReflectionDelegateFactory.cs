@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReflectionDelegateFactory
+    public partial class ReflectionDelegateFactory : DataModel
     {
 
         public static ReflectionDelegateFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionDelegateFactory();
+            var value   = new ReflectionDelegateFactory() { Pointer= p0 };
 
 
             return value;

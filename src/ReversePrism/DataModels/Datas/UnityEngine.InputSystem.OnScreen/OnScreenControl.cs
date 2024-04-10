@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 M_NextControlOnDevice                    0001866DBD70 ModelClassType OnScreenControl OnScreenControl OnScreenControl Pointer
     // 030 M_InputEventPtr                          0001865EF0C0 ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32
     // 000 s_OnScreenDevices                        InlinedArray`1<OnScreenDeviceInfo> IL2CPP_TYPE_GENERICINST
-    public partial class OnScreenControl
+    public partial class OnScreenControl : DataModel
     {
         public InputControl?                            M_Control                               { get; set; }
         public OnScreenControl?                         M_NextControlOnDevice                   { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnScreenControl();
+            var value   = new OnScreenControl() { Pointer= p0 };
 
-            value.M_Control                                 = GetObject<InputControl>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputControl.FromPointer); // 0270D77BC4B0 0x20 M_Control                   ( 0001865EB190 ModelClassType InputControl InputControl InputControl Pointer )
-            value.M_NextControlOnDevice                     = GetObject<OnScreenControl>(new IntPtr(p + 0x028), ReversePrism.DataModels.OnScreenControl.FromPointer); // 0270D77BC4D0 0x28 M_NextControlOnDevice       ( 0001866DBD70 ModelClassType OnScreenControl OnScreenControl OnScreenControl Pointer )
-            value.M_InputEventPtr                           = (InputEventPtr)GetInt32(new IntPtr(p + 0x030)); // 0270D77BC4F0 0x30 M_InputEventPtr             ( 0001865EF0C0 ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32 )
+            value.M_Control                                 = GetObject<InputControl>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputControl.FromPointer); // 0246678144B0 0x20 M_Control                   ( 0001865EB190 ModelClassType InputControl InputControl InputControl Pointer )
+            value.M_NextControlOnDevice                     = GetObject<OnScreenControl>(new IntPtr(p + 0x028), ReversePrism.DataModels.OnScreenControl.FromPointer); // 0246678144D0 0x28 M_NextControlOnDevice       ( 0001866DBD70 ModelClassType OnScreenControl OnScreenControl OnScreenControl Pointer )
+            value.M_InputEventPtr                           = (InputEventPtr)GetInt32(new IntPtr(p + 0x030)); // 0246678144F0 0x30 M_InputEventPtr             ( 0001865EF0C0 ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32 )
 
             return value;
         }

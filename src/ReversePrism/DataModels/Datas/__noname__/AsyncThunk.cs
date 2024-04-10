@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncThunk
+    public partial class AsyncThunk : DataModel
     {
 
         public static AsyncThunk? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncThunk();
+            var value   = new AsyncThunk() { Pointer= p0 };
 
 
             return value;

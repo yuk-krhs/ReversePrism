@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 BooleanArrayHelperWithString IL2CPP_TYPE_CLASS
-    public partial class BooleanArrayHelperWithString
+    public partial class BooleanArrayHelperWithString : DataModel
     {
 
         public static BooleanArrayHelperWithString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BooleanArrayHelperWithString();
+            var value   = new BooleanArrayHelperWithString() { Pointer= p0 };
 
 
             return value;

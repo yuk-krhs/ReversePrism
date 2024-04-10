@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     00018653EBB0 ModelClassType ExtraStorySecondCategoryView ExtraStorySecondCategoryView ExtraStorySecondCategoryView Pointer
-    public partial class ExtraStorySecondCategoryBuilder
+    public partial class ExtraStorySecondCategoryBuilder : DataModel
     {
         public ExtraStorySecondCategoryView?            View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtraStorySecondCategoryBuilder();
+            var value   = new ExtraStorySecondCategoryBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ExtraStorySecondCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExtraStorySecondCategoryView.FromPointer); // 0270DB61FBC0 0x20 View                        ( 00018653EBB0 ModelClassType ExtraStorySecondCategoryView ExtraStorySecondCategoryView ExtraStorySecondCategoryView Pointer )
+            value.View                                      = GetObject<ExtraStorySecondCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExtraStorySecondCategoryView.FromPointer); // 02466B6B3548 0x20 View                        ( 00018653EBB0 ModelClassType ExtraStorySecondCategoryView ExtraStorySecondCategoryView ExtraStorySecondCategoryView Pointer )
 
             return value;
         }

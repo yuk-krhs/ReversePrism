@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 InitializeState                          000186682EA0 ModelEnumType InitializeState InitializeState InitializeState Int32
     // 014 BillingState                             000186682750 ModelEnumType BillingState BillingState BillingState Int32
-    public partial class PurchaseUnityEditor
+    public partial class PurchaseUnityEditor : DataModel
     {
         public InitializeState                          InitializeState                         { get; set; }
         public BillingState                             BillingState                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchaseUnityEditor();
+            var value   = new PurchaseUnityEditor() { Pointer= p0 };
 
-            value.InitializeState                           = (InitializeState)GetInt32(new IntPtr(p + 0x010)); // 0270DBD47090 0x10 InitializeState             ( 000186682EA0 ModelEnumType InitializeState InitializeState InitializeState Int32 )
-            value.BillingState                              = (BillingState)GetInt32(new IntPtr(p + 0x014)); // 0270DBD470B0 0x14 BillingState                ( 000186682750 ModelEnumType BillingState BillingState BillingState Int32 )
+            value.InitializeState                           = (InitializeState)GetInt32(new IntPtr(p + 0x010)); // 02466BDD7EA8 0x10 InitializeState             ( 000186682EA0 ModelEnumType InitializeState InitializeState InitializeState Int32 )
+            value.BillingState                              = (BillingState)GetInt32(new IntPtr(p + 0x014)); // 02466BDD7EC8 0x14 BillingState                ( 000186682750 ModelEnumType BillingState BillingState BillingState Int32 )
 
             return value;
         }

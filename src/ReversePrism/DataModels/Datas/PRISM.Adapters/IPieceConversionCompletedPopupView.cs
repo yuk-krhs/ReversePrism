@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPieceConversionCompletedPopupView
+    public partial class IPieceConversionCompletedPopupView : DataModel
     {
 
         public static IPieceConversionCompletedPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPieceConversionCompletedPopupView();
+            var value   = new IPieceConversionCompletedPopupView() { Pointer= p0 };
 
 
             return value;

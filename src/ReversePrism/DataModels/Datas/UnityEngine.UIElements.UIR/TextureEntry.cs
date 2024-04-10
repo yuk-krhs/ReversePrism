@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Source                                   00018664D720 ModelClassType Texture Texture Texture Pointer
     // 018 Actual                                   000186688130 ModelEnumType TextureId TextureId TextureId Int32
     // 01C Replaced                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class TextureEntry
+    public partial class TextureEntry : DataModel
     {
         public Texture?                                 Source                                  { get; set; }
         public TextureId                                Actual                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureEntry();
+            var value   = new TextureEntry() { Pointer= p0 };
 
-            value.Source                                    = GetObject<Texture>(new IntPtr(p + 0x010), ReversePrism.DataModels.Texture.FromPointer); // 027006873560 0x10 Source                      ( 00018664D720 ModelClassType Texture Texture Texture Pointer )
-            value.Actual                                    = (TextureId)GetInt32(new IntPtr(p + 0x018)); // 027006873580 0x18 Actual                      ( 000186688130 ModelEnumType TextureId TextureId TextureId Int32 )
-            value.Replaced                                  = GetBool(new IntPtr(p + 0x01C)); // 0270068735A0 0x1C Replaced                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Source                                    = GetObject<Texture>(new IntPtr(p + 0x010), ReversePrism.DataModels.Texture.FromPointer); // 0245A6835300 0x10 Source                      ( 00018664D720 ModelClassType Texture Texture Texture Pointer )
+            value.Actual                                    = (TextureId)GetInt32(new IntPtr(p + 0x018)); // 0245A6835320 0x18 Actual                      ( 000186688130 ModelEnumType TextureId TextureId TextureId Int32 )
+            value.Replaced                                  = GetBool(new IntPtr(p + 0x01C)); // 0245A6835340 0x1C Replaced                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

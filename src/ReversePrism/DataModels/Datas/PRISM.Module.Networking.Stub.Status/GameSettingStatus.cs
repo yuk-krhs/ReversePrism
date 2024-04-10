@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 TransferProductListFieldNumber           int IL2CPP_TYPE_I4
     // 010 _repeated_transferProductList_codec      FieldCodec`1<TransferProductStatus> IL2CPP_TYPE_GENERICINST
     // 030 TransferProductList                      000185CF54F8 ModelClassListType RepeatedField`1<TransferProductStatus> RepeatedField`1<TransferProductStatus> List<TransferProductStatus> Pointer
-    public partial class GameSettingStatus
+    public partial class GameSettingStatus : DataModel
     {
         public CharacterBirthdayStatus?                 CharacterBirthday                       { get; set; }
         public List<RecoverSettingStatus>?              RecoverSettingList                      { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GameSettingStatus();
+            var value   = new GameSettingStatus() { Pointer= p0 };
 
-            value.CharacterBirthday                         = GetObject<CharacterBirthdayStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterBirthdayStatus.FromPointer); // 0270D1989308 0x18 CharacterBirthday           ( 00018659C7B0 ModelClassType CharacterBirthdayStatus CharacterBirthdayStatus CharacterBirthdayStatus Pointer )
-            value.RecoverSettingList                        = GetObjectList<RecoverSettingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RecoverSettingStatus.FromPointer); // 0270D1989368 0x20 RecoverSettingList          ( 000185CEEC28 ModelClassListType RepeatedField`1<RecoverSettingStatus> RepeatedField`1<RecoverSettingStatus> List<RecoverSettingStatus> Pointer )
-            value.ProducerBirthday                          = GetObject<ProducerBirthdayStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProducerBirthdayStatus.FromPointer); // 0270D19893A8 0x28 ProducerBirthday            ( 00018659CF10 ModelClassType ProducerBirthdayStatus ProducerBirthdayStatus ProducerBirthdayStatus Pointer )
-            value.TransferProductList                       = GetObjectList<TransferProductStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.TransferProductStatus.FromPointer); // 0270D1989408 0x30 TransferProductList         ( 000185CF54F8 ModelClassListType RepeatedField`1<TransferProductStatus> RepeatedField`1<TransferProductStatus> List<TransferProductStatus> Pointer )
+            value.CharacterBirthday                         = GetObject<CharacterBirthdayStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterBirthdayStatus.FromPointer); // 024661906DB0 0x18 CharacterBirthday           ( 00018659C7B0 ModelClassType CharacterBirthdayStatus CharacterBirthdayStatus CharacterBirthdayStatus Pointer )
+            value.RecoverSettingList                        = GetObjectList<RecoverSettingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RecoverSettingStatus.FromPointer); // 024661906E10 0x20 RecoverSettingList          ( 000185CEEC28 ModelClassListType RepeatedField`1<RecoverSettingStatus> RepeatedField`1<RecoverSettingStatus> List<RecoverSettingStatus> Pointer )
+            value.ProducerBirthday                          = GetObject<ProducerBirthdayStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProducerBirthdayStatus.FromPointer); // 024661906E50 0x28 ProducerBirthday            ( 00018659CF10 ModelClassType ProducerBirthdayStatus ProducerBirthdayStatus ProducerBirthdayStatus Pointer )
+            value.TransferProductList                       = GetObjectList<TransferProductStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.TransferProductStatus.FromPointer); // 024661906EB0 0x30 TransferProductList         ( 000185CF54F8 ModelClassListType RepeatedField`1<TransferProductStatus> RepeatedField`1<TransferProductStatus> List<TransferProductStatus> Pointer )
 
             return value;
         }

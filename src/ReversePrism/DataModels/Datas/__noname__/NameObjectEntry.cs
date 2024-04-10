@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Key                                      000186671BA0 ModelPrimitiveType string string string String
     // 018 Value                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class NameObjectEntry
+    public partial class NameObjectEntry : DataModel
     {
         public string                                   Key                                     { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NameObjectEntry();
+            var value   = new NameObjectEntry() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0270D7B6C290 0x10 Key                         ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 024667BDC290 0x10 Key                         ( 000186671BA0 ModelPrimitiveType string string string String )
 
             return value;
         }

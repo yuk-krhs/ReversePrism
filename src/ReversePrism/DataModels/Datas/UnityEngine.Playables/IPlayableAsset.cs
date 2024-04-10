@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPlayableAsset
+    public partial class IPlayableAsset : DataModel
     {
 
         public static IPlayableAsset? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPlayableAsset();
+            var value   = new IPlayableAsset() { Pointer= p0 };
 
 
             return value;

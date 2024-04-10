@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 048 SelectedIdolSkillIconIds                 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 050 SelectedEventIds                         000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 058 SortFilterSettings                       0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer
-    public partial class CharacterSelectPIPermanentData
+    public partial class CharacterSelectPIPermanentData : DataModel
     {
         public int                                      SortTargetIndex                         { get; set; }
         public int                                      SortDirection                           { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectPIPermanentData();
+            var value   = new CharacterSelectPIPermanentData() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 027003A6B520 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SortDirection                             = GetInt32(new IntPtr(p + 0x014)); // 027003A6B540 0x14 SortDirection               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectedFavoriteMarkIds                   = GetInt32List(new IntPtr(p + 0x018)); // 027003A6B560 0x18 SelectedFavoriteMarkIds     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedIdolIds                           = GetInt32List(new IntPtr(p + 0x020)); // 027003A6B580 0x20 SelectedIdolIds             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedStars                             = GetInt32List(new IntPtr(p + 0x028)); // 027003A6B5A0 0x28 SelectedStars               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedAwakeningLvs                      = GetInt32List(new IntPtr(p + 0x030)); // 027003A6B5C0 0x30 SelectedAwakeningLvs        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedLiveSkillIds                      = GetInt32List(new IntPtr(p + 0x038)); // 027003A6B5E0 0x38 SelectedLiveSkillIds        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.AllSkillIcons                             = GetBool(new IntPtr(p + 0x040)); // 027003A6B600 0x40 AllSkillIcons               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SelectedIdolSkillIconIds                  = GetInt32List(new IntPtr(p + 0x048)); // 027003A6B620 0x48 SelectedIdolSkillIconIds    ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SelectedEventIds                          = GetInt32List(new IntPtr(p + 0x050)); // 027003A6B640 0x50 SelectedEventIds            ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x058), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 027003A6B660 0x58 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0245A3A76458 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SortDirection                             = GetInt32(new IntPtr(p + 0x014)); // 0245A3A76478 0x14 SortDirection               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedFavoriteMarkIds                   = GetInt32List(new IntPtr(p + 0x018)); // 0245A3A76498 0x18 SelectedFavoriteMarkIds     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedIdolIds                           = GetInt32List(new IntPtr(p + 0x020)); // 0245A3A764B8 0x20 SelectedIdolIds             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedStars                             = GetInt32List(new IntPtr(p + 0x028)); // 0245A3A764D8 0x28 SelectedStars               ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedAwakeningLvs                      = GetInt32List(new IntPtr(p + 0x030)); // 0245A3A764F8 0x30 SelectedAwakeningLvs        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedLiveSkillIds                      = GetInt32List(new IntPtr(p + 0x038)); // 0245A3A76518 0x38 SelectedLiveSkillIds        ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.AllSkillIcons                             = GetBool(new IntPtr(p + 0x040)); // 0245A3A76538 0x40 AllSkillIcons               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SelectedIdolSkillIconIds                  = GetInt32List(new IntPtr(p + 0x048)); // 0245A3A76558 0x48 SelectedIdolSkillIconIds    ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedEventIds                          = GetInt32List(new IntPtr(p + 0x050)); // 0245A3A76578 0x50 SelectedEventIds            ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x058), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 0245A3A76598 0x58 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
 
             return value;
         }

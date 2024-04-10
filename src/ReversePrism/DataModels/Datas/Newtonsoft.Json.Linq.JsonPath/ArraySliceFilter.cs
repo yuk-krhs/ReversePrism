@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 <Start>k__BackingField                   Nullable`1<int> IL2CPP_TYPE_GENERICINST
     // 018 <End>k__BackingField                     Nullable`1<int> IL2CPP_TYPE_GENERICINST
     // 020 <Step>k__BackingField                    Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ArraySliceFilter
+    public partial class ArraySliceFilter : DataModel
     {
 
         public static ArraySliceFilter? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArraySliceFilter();
+            var value   = new ArraySliceFilter() { Pointer= p0 };
 
 
             return value;

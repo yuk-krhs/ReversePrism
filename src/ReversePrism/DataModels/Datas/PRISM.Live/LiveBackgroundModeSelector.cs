@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 ModeViews                                000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
     // 030 backgroundModes                          IList`1<LiveBackgroundMode> IL2CPP_TYPE_GENERICINST
     // 038 onBackOnModeChanged                      Subject`1<LiveBackgroundMode> IL2CPP_TYPE_GENERICINST
-    public partial class LiveBackgroundModeSelector
+    public partial class LiveBackgroundModeSelector : DataModel
     {
         public ClickNumberCountedButton?                Button                                  { get; set; }
         public List<GameObject>?                        ModeViews                               { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveBackgroundModeSelector();
+            var value   = new LiveBackgroundModeSelector() { Pointer= p0 };
 
-            value.Button                                    = GetObject<ClickNumberCountedButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ClickNumberCountedButton.FromPointer); // 0270D50D39F0 0x20 Button                      ( 0001865B3940 ModelClassType ClickNumberCountedButton ClickNumberCountedButton ClickNumberCountedButton Pointer )
-            value.ModeViews                                 = GetObjectList<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D3A10 0x28 ModeViews                   ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.Button                                    = GetObject<ClickNumberCountedButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ClickNumberCountedButton.FromPointer); // 024665147B70 0x20 Button                      ( 0001865B3940 ModelClassType ClickNumberCountedButton ClickNumberCountedButton ClickNumberCountedButton Pointer )
+            value.ModeViews                                 = GetObjectList<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024665147B90 0x28 ModeViews                   ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

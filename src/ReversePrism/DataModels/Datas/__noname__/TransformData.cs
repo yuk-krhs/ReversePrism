@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Val                                      000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
-    public partial class TransformData
+    public partial class TransformData : DataModel
     {
         public List<Vector3>?                           Val                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformData();
+            var value   = new TransformData() { Pointer= p0 };
 
-            value.Val                                       = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 0270D34E2EC8 0x10 Val                         ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.Val                                       = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 0245A5CE7590 0x10 Val                         ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
 
             return value;
         }

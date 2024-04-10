@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class overrideUrlDelegate
+    public partial class overrideUrlDelegate : DataModel
     {
 
         public static overrideUrlDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new overrideUrlDelegate();
+            var value   = new overrideUrlDelegate() { Pointer= p0 };
 
 
             return value;

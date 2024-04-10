@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 CompiledRegexWhereAvailable              RegexOptions IL2CPP_TYPE_VALUETYPE
-    public partial class FrameworkPortability
+    public partial class FrameworkPortability : DataModel
     {
 
         public static FrameworkPortability? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameworkPortability();
+            var value   = new FrameworkPortability() { Pointer= p0 };
 
 
             return value;

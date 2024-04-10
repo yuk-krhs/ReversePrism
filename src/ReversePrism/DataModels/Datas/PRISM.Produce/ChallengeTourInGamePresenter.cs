@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 070 ChallengeTourInGameView                  000186574760 ModelClassType ChallengeTourInGameView ChallengeTourInGameView ChallengeTourInGameView Pointer
     // 078 ChallengeTourInGameModel                 000186571730 ModelClassType ChallengeTourInGameModel ChallengeTourInGameModel ChallengeTourInGameModel Pointer
     // 080 CacheLessonAuditionSource                00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer
-    public partial class ChallengeTourInGamePresenter
+    public partial class ChallengeTourInGamePresenter : DataModel
     {
         public ChallengeTourInGameView?                 ChallengeTourInGameView                 { get; set; }
         public ChallengeTourInGameModel?                ChallengeTourInGameModel                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGamePresenter();
+            var value   = new ChallengeTourInGamePresenter() { Pointer= p0 };
 
-            value.ChallengeTourInGameView                   = GetObject<ChallengeTourInGameView>(new IntPtr(p + 0x070), ReversePrism.DataModels.ChallengeTourInGameView.FromPointer); // 0270D5AD7B48 0x70 ChallengeTourInGameView     ( 000186574760 ModelClassType ChallengeTourInGameView ChallengeTourInGameView ChallengeTourInGameView Pointer )
-            value.ChallengeTourInGameModel                  = GetObject<ChallengeTourInGameModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.ChallengeTourInGameModel.FromPointer); // 0270D5AD7B68 0x78 ChallengeTourInGameModel    ( 000186571730 ModelClassType ChallengeTourInGameModel ChallengeTourInGameModel ChallengeTourInGameModel Pointer )
-            value.CacheLessonAuditionSource                 = GetObject<LessonAudition>(new IntPtr(p + 0x080), ReversePrism.DataModels.LessonAudition.FromPointer); // 0270D5AD7B88 0x80 CacheLessonAuditionSource   ( 00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
+            value.ChallengeTourInGameView                   = GetObject<ChallengeTourInGameView>(new IntPtr(p + 0x070), ReversePrism.DataModels.ChallengeTourInGameView.FromPointer); // 024665B48538 0x70 ChallengeTourInGameView     ( 000186574760 ModelClassType ChallengeTourInGameView ChallengeTourInGameView ChallengeTourInGameView Pointer )
+            value.ChallengeTourInGameModel                  = GetObject<ChallengeTourInGameModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.ChallengeTourInGameModel.FromPointer); // 024665B48558 0x78 ChallengeTourInGameModel    ( 000186571730 ModelClassType ChallengeTourInGameModel ChallengeTourInGameModel ChallengeTourInGameModel Pointer )
+            value.CacheLessonAuditionSource                 = GetObject<LessonAudition>(new IntPtr(p + 0x080), ReversePrism.DataModels.LessonAudition.FromPointer); // 024665B48578 0x80 CacheLessonAuditionSource   ( 00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
 
             return value;
         }

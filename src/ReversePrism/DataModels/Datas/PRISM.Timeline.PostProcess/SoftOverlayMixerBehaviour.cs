@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SoftOverlayMixerBehaviour
+    public partial class SoftOverlayMixerBehaviour : DataModel
     {
 
         public static SoftOverlayMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoftOverlayMixerBehaviour();
+            var value   = new SoftOverlayMixerBehaviour() { Pointer= p0 };
 
 
             return value;

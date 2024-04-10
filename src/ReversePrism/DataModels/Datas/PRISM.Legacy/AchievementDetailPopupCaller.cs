@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AchievementDetailPopupCaller
+    public partial class AchievementDetailPopupCaller : DataModel
     {
 
         public static AchievementDetailPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AchievementDetailPopupCaller();
+            var value   = new AchievementDetailPopupCaller() { Pointer= p0 };
 
 
             return value;

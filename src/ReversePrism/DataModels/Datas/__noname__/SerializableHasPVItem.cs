@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SceneGUID                                0001866722E0 ModelPrimitiveType string string string String
     // 018 HasProbeVolumes                          000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class SerializableHasPVItem
+    public partial class SerializableHasPVItem : DataModel
     {
         public string                                   SceneGUID                               { get; set; }
         public bool                                     HasProbeVolumes                         { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializableHasPVItem();
+            var value   = new SerializableHasPVItem() { Pointer= p0 };
 
-            value.SceneGUID                                 = GetString(new IntPtr(p + 0x010)); // 0270D922BA40 0x10 SceneGUID                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HasProbeVolumes                           = GetBool(new IntPtr(p + 0x018)); // 0270D922BA60 0x18 HasProbeVolumes             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SceneGUID                                 = GetString(new IntPtr(p + 0x010)); // 0246692871E0 0x10 SceneGUID                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.HasProbeVolumes                           = GetBool(new IntPtr(p + 0x018)); // 024669287200 0x18 HasProbeVolumes             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

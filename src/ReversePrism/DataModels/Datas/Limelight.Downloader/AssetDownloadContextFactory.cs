@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Db                                       00018654BDF0 ModelClassType CatalogDB CatalogDB CatalogDB Pointer
     // 018 temporaryHashPool                        ObjectPool`1<HashSet`1<ulong>> IL2CPP_TYPE_GENERICINST
     // 020 DownloadDataRoot                         000186672F10 ModelPrimitiveType string string string String
-    public partial class AssetDownloadContextFactory
+    public partial class AssetDownloadContextFactory : DataModel
     {
         public CatalogDB?                               Db                                      { get; set; }
         public string                                   DownloadDataRoot                        { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetDownloadContextFactory();
+            var value   = new AssetDownloadContextFactory() { Pointer= p0 };
 
-            value.Db                                        = GetObject<CatalogDB>(new IntPtr(p + 0x010), ReversePrism.DataModels.CatalogDB.FromPointer); // 027003E1DE68 0x10 Db                          ( 00018654BDF0 ModelClassType CatalogDB CatalogDB CatalogDB Pointer )
-            value.DownloadDataRoot                          = GetString(new IntPtr(p + 0x020)); // 027003E1DEA8 0x20 DownloadDataRoot            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Db                                        = GetObject<CatalogDB>(new IntPtr(p + 0x010), ReversePrism.DataModels.CatalogDB.FromPointer); // 0245A3E1DE68 0x10 Db                          ( 00018654BDF0 ModelClassType CatalogDB CatalogDB CatalogDB Pointer )
+            value.DownloadDataRoot                          = GetString(new IntPtr(p + 0x020)); // 0245A3E1DEA8 0x20 DownloadDataRoot            ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

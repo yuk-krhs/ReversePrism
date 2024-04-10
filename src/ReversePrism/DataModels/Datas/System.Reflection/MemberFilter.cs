@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MemberFilter
+    public partial class MemberFilter : DataModel
     {
 
         public static MemberFilter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberFilter();
+            var value   = new MemberFilter() { Pointer= p0 };
 
 
             return value;

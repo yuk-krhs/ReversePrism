@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 LINE_SPACING                             float IL2CPP_TYPE_R4
     // 000 GenreColor                               Dictionary`2<AnnounceGenre, string> IL2CPP_TYPE_GENERICINST
-    public partial class AnnounceConst
+    public partial class AnnounceConst : DataModel
     {
 
         public static AnnounceConst? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceConst();
+            var value   = new AnnounceConst() { Pointer= p0 };
 
 
             return value;

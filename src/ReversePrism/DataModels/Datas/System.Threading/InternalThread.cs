@@ -48,7 +48,7 @@ namespace ReversePrism.DataModels
     // 110 netcore1                                 <int> IL2CPP_TYPE_I
     // 118 netcore2                                 <int> IL2CPP_TYPE_I
     // 120 last                                     <int> IL2CPP_TYPE_I
-    public partial class InternalThread
+    public partial class InternalThread : DataModel
     {
         public int                                      Lock_thread_id                          { get; set; }
         public int                                      Name_free                               { get; set; }
@@ -75,26 +75,26 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalThread();
+            var value   = new InternalThread() { Pointer= p0 };
 
-            value.Lock_thread_id                            = GetInt32(new IntPtr(p + 0x010)); // 02700028BB70 0x10 Lock_thread_id              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name_free                                 = GetInt32(new IntPtr(p + 0x030)); // 02700028BBF0 0x30 Name_free                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name_length                               = GetInt32(new IntPtr(p + 0x034)); // 02700028BC10 0x34 Name_length                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (ThreadState)GetInt32(new IntPtr(p + 0x038)); // 02700028BC30 0x38 State                       ( 00018665D510 ModelEnumType ThreadState ThreadState ThreadState Int32 )
-            value.Abort_state_handle                        = GetInt32(new IntPtr(p + 0x048)); // 02700028BC70 0x48 Abort_state_handle          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Thread_id                                 = GetInt64(new IntPtr(p + 0x050)); // 02700028BC90 0x50 Thread_id                   ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.Serialized_principal                      = GetSByteList(new IntPtr(p + 0x080)); // 02700028BD50 0x80 Serialized_principal        ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Serialized_principal_version              = GetInt32(new IntPtr(p + 0x088)); // 02700028BD70 0x88 Serialized_principal_version ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Interruption_requested                    = GetInt32(new IntPtr(p + 0x098)); // 02700028BDB0 0x98 Interruption_requested      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Threadpool_thread                         = GetBool(new IntPtr(p + 0x0A8)); // 02700028BDF0 0xA8 Threadpool_thread           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Thread_interrupt_requested                = GetBool(new IntPtr(p + 0x0A9)); // 02700028BE10 0xA9 Thread_interrupt_requested  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Stack_size                                = GetInt32(new IntPtr(p + 0x0AC)); // 02700028BE30 0xAC Stack_size                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Apartment_state                           = GetSByte(new IntPtr(p + 0x0B0)); // 02700028BE50 0xB0 Apartment_state             ( 00018659CC70 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Critical_region_level                     = GetInt32(new IntPtr(p + 0x0B4)); // 02700028BE70 0xB4 Critical_region_level       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Managed_id                                = GetInt32(new IntPtr(p + 0x0B8)); // 02700028BE90 0xB8 Managed_id                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Small_id                                  = GetInt32(new IntPtr(p + 0x0BC)); // 02700028BEB0 0xBC Small_id                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Priority                                  = GetInt32(new IntPtr(p + 0x0E0)); // 02700028BF50 0xE0 Priority                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Self_suspended                            = GetInt32(new IntPtr(p + 0x0F8)); // 02700028BFB0 0xF8 Self_suspended              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Lock_thread_id                            = GetInt32(new IntPtr(p + 0x010)); // 0245A028BB70 0x10 Lock_thread_id              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name_free                                 = GetInt32(new IntPtr(p + 0x030)); // 0245A028BBF0 0x30 Name_free                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name_length                               = GetInt32(new IntPtr(p + 0x034)); // 0245A028BC10 0x34 Name_length                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (ThreadState)GetInt32(new IntPtr(p + 0x038)); // 0245A028BC30 0x38 State                       ( 00018665D510 ModelEnumType ThreadState ThreadState ThreadState Int32 )
+            value.Abort_state_handle                        = GetInt32(new IntPtr(p + 0x048)); // 0245A028BC70 0x48 Abort_state_handle          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Thread_id                                 = GetInt64(new IntPtr(p + 0x050)); // 0245A028BC90 0x50 Thread_id                   ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.Serialized_principal                      = GetSByteList(new IntPtr(p + 0x080)); // 0245A028BD50 0x80 Serialized_principal        ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Serialized_principal_version              = GetInt32(new IntPtr(p + 0x088)); // 0245A028BD70 0x88 Serialized_principal_version ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Interruption_requested                    = GetInt32(new IntPtr(p + 0x098)); // 0245A028BDB0 0x98 Interruption_requested      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Threadpool_thread                         = GetBool(new IntPtr(p + 0x0A8)); // 0245A028BDF0 0xA8 Threadpool_thread           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Thread_interrupt_requested                = GetBool(new IntPtr(p + 0x0A9)); // 0245A028BE10 0xA9 Thread_interrupt_requested  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Stack_size                                = GetInt32(new IntPtr(p + 0x0AC)); // 0245A028BE30 0xAC Stack_size                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Apartment_state                           = GetSByte(new IntPtr(p + 0x0B0)); // 0245A028BE50 0xB0 Apartment_state             ( 00018659CC70 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Critical_region_level                     = GetInt32(new IntPtr(p + 0x0B4)); // 0245A028BE70 0xB4 Critical_region_level       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Managed_id                                = GetInt32(new IntPtr(p + 0x0B8)); // 0245A028BE90 0xB8 Managed_id                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Small_id                                  = GetInt32(new IntPtr(p + 0x0BC)); // 0245A028BEB0 0xBC Small_id                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Priority                                  = GetInt32(new IntPtr(p + 0x0E0)); // 0245A028BF50 0xE0 Priority                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Self_suspended                            = GetInt32(new IntPtr(p + 0x0F8)); // 0245A028BFB0 0xF8 Self_suspended              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

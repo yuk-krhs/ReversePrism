@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Comparer                               SheetHandleKeyComparer IL2CPP_TYPE_CLASS
     // 008 s_RulePropertyIdsCache                   Dictionary`2<SheetHandleKey, StylePropertyId[]> IL2CPP_TYPE_GENERICINST
-    public partial class StyleSheetCache
+    public partial class StyleSheetCache : DataModel
     {
 
         public static StyleSheetCache? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleSheetCache();
+            var value   = new StyleSheetCache() { Pointer= p0 };
 
 
             return value;

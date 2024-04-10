@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 setValueDelegate                         Action`2<IMessage, <object>> IL2CPP_TYPE_GENERICINST
     // 028 clearDelegate                            Action`1<IMessage> IL2CPP_TYPE_GENERICINST
     // 030 hasDelegate                              Func`2<IMessage, bool> IL2CPP_TYPE_GENERICINST
-    public partial class SingleFieldAccessor
+    public partial class SingleFieldAccessor : DataModel
     {
 
         public static SingleFieldAccessor? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleFieldAccessor();
+            var value   = new SingleFieldAccessor() { Pointer= p0 };
 
 
             return value;

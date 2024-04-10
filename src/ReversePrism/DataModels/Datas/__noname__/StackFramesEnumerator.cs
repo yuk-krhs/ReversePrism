@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 CurrentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 currentObject                            <object> IL2CPP_TYPE_OBJECT
     // 028 CurrentSize                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StackFramesEnumerator
+    public partial class StackFramesEnumerator : DataModel
     {
         public StackFrames?                             CollectionRef                           { get; set; }
         public int                                      CurrentIndex                            { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StackFramesEnumerator();
+            var value   = new StackFramesEnumerator() { Pointer= p0 };
 
-            value.CollectionRef                             = GetObject<StackFrames>(new IntPtr(p + 0x010), ReversePrism.DataModels.StackFrames.FromPointer); // 0270DBC63DF8 0x10 CollectionRef               ( 00018655F9C0 ModelClassType StackFrames StackFrames StackFrames Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x018)); // 0270DBC63E18 0x18 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x028)); // 0270DBC63E58 0x28 CurrentSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CollectionRef                             = GetObject<StackFrames>(new IntPtr(p + 0x010), ReversePrism.DataModels.StackFrames.FromPointer); // 02466BCE36C8 0x10 CollectionRef               ( 00018655F9C0 ModelClassType StackFrames StackFrames StackFrames Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x018)); // 02466BCE36E8 0x18 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x028)); // 02466BCE3728 0x28 CurrentSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

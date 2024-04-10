@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AnimationCurveParameter
+    public partial class AnimationCurveParameter : DataModel
     {
 
         public static AnimationCurveParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnimationCurveParameter();
+            var value   = new AnimationCurveParameter() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 SCharaIconRectViewOfFriendSetting        0001866AAC10 ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer
     // 040 GoSSkillContentPrefab                    0001865F46A0 ModelClassType SupportSkillContentView SupportSkillContentView SupportSkillContentView Pointer
     // 048 TrSSkillParent                           0001866AA150 ModelClassType Transform Transform Transform Pointer
-    public partial class FUnitDetailSupportView
+    public partial class FUnitDetailSupportView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
         public UITextMeshProUGUI?                       TxtSlotCount                            { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FUnitDetailSupportView();
+            var value   = new FUnitDetailSupportView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DA2C8890 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.TxtSlotCount                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2C88B0 0x28 TxtSlotCount                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SCharaIconRectViews                       = GetObjectList<SCharaIconRectView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 0270DA2C88D0 0x30 SCharaIconRectViews         ( 000185CA2828 ModelClassListType SCharaIconRectView[] SCharaIconRectView[] List<SCharaIconRectView> Pointer )
-            value.SCharaIconRectViewOfFriendSetting         = GetObject<SCharaIconRectView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 0270DA2C88F0 0x38 SCharaIconRectViewOfFriendSetting ( 0001866AAC10 ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer )
-            value.GoSSkillContentPrefab                     = GetObject<SupportSkillContentView>(new IntPtr(p + 0x040), ReversePrism.DataModels.SupportSkillContentView.FromPointer); // 0270DA2C8910 0x40 GoSSkillContentPrefab       ( 0001865F46A0 ModelClassType SupportSkillContentView SupportSkillContentView SupportSkillContentView Pointer )
-            value.TrSSkillParent                            = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 0270DA2C8930 0x48 TrSSkillParent              ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A31BEA0 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.TxtSlotCount                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A31BEC0 0x28 TxtSlotCount                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SCharaIconRectViews                       = GetObjectList<SCharaIconRectView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 02466A31BEE0 0x30 SCharaIconRectViews         ( 000185CA2828 ModelClassListType SCharaIconRectView[] SCharaIconRectView[] List<SCharaIconRectView> Pointer )
+            value.SCharaIconRectViewOfFriendSetting         = GetObject<SCharaIconRectView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 02466A31BF00 0x38 SCharaIconRectViewOfFriendSetting ( 0001866AAC10 ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer )
+            value.GoSSkillContentPrefab                     = GetObject<SupportSkillContentView>(new IntPtr(p + 0x040), ReversePrism.DataModels.SupportSkillContentView.FromPointer); // 02466A31BF20 0x40 GoSSkillContentPrefab       ( 0001865F46A0 ModelClassType SupportSkillContentView SupportSkillContentView SupportSkillContentView Pointer )
+            value.TrSSkillParent                            = GetObject<Transform>(new IntPtr(p + 0x048), ReversePrism.DataModels.Transform.FromPointer); // 02466A31BF40 0x48 TrSSkillParent              ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

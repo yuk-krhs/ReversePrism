@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CallCredentialsConfiguratorBase
+    public partial class CallCredentialsConfiguratorBase : DataModel
     {
 
         public static CallCredentialsConfiguratorBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallCredentialsConfiguratorBase();
+            var value   = new CallCredentialsConfiguratorBase() { Pointer= p0 };
 
 
             return value;

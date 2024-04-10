@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _handlers                                ArrayList IL2CPP_TYPE_CLASS
-    public partial class TrackingServices
+    public partial class TrackingServices : DataModel
     {
 
         public static TrackingServices? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TrackingServices();
+            var value   = new TrackingServices() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Self                                     string IL2CPP_TYPE_STRING
     // 000 Friends                                  string IL2CPP_TYPE_STRING
     // 000 All                                      string IL2CPP_TYPE_STRING
-    public partial class OpenSocialSelector
+    public partial class OpenSocialSelector : DataModel
     {
 
         public static OpenSocialSelector? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OpenSocialSelector();
+            var value   = new OpenSocialSelector() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 trackingOriginUpdated                    Action`1<XRInputSubsystem> IL2CPP_TYPE_GENERICINST
     // 028 boundaryChanged                          Action`1<XRInputSubsystem> IL2CPP_TYPE_GENERICINST
-    public partial class XRInputSubsystem
+    public partial class XRInputSubsystem : DataModel
     {
 
         public static XRInputSubsystem? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRInputSubsystem();
+            var value   = new XRInputSubsystem() { Pointer= p0 };
 
 
             return value;

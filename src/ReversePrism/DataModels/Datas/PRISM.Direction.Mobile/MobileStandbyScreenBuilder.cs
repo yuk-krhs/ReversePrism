@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186636E50 ModelClassType MobileStandbyScreenView MobileStandbyScreenView MobileStandbyScreenView Pointer
-    public partial class MobileStandbyScreenBuilder
+    public partial class MobileStandbyScreenBuilder : DataModel
     {
         public MobileStandbyScreenView?                 View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileStandbyScreenBuilder();
+            var value   = new MobileStandbyScreenBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<MobileStandbyScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileStandbyScreenView.FromPointer); // 0270DB647768 0x20 View                        ( 000186636E50 ModelClassType MobileStandbyScreenView MobileStandbyScreenView MobileStandbyScreenView Pointer )
+            value.View                                      = GetObject<MobileStandbyScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileStandbyScreenView.FromPointer); // 02466B6D38C8 0x20 View                        ( 000186636E50 ModelClassType MobileStandbyScreenView MobileStandbyScreenView MobileStandbyScreenView Pointer )
 
             return value;
         }

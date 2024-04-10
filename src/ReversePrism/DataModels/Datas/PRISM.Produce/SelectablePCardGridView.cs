@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SelectablePCardGridView
+    public partial class SelectablePCardGridView : DataModel
     {
 
         public static SelectablePCardGridView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectablePCardGridView();
+            var value   = new SelectablePCardGridView() { Pointer= p0 };
 
 
             return value;

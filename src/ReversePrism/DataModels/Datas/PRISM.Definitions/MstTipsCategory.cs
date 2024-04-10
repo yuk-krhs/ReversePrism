@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Color                                    000186672F10 ModelPrimitiveType string string string String
-    public partial class MstTipsCategory
+    public partial class MstTipsCategory : DataModel
     {
         public int                                      Id                                      { get; set; }
         public string                                   Color                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstTipsCategory();
+            var value   = new MstTipsCategory() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004652678 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Color                                     = GetString(new IntPtr(p + 0x018)); // 027004652698 0x18 Color                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46CDFA0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Color                                     = GetString(new IntPtr(p + 0x018)); // 0245A46CDFC0 0x18 Color                       ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

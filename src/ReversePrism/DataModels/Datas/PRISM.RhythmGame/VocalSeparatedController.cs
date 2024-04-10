@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 038 loadedCueSheets                          Dictionary`2<int, CriAtomCache> IL2CPP_TYPE_GENERICINST
     // 040 LastToggleCountIndices                   000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 048 volumeOnPlaybackIndexDic                 AutoInitializeDictionary`2<string, List`1<int>> IL2CPP_TYPE_GENERICINST
-    public partial class VocalSeparatedController
+    public partial class VocalSeparatedController : DataModel
     {
         public List<VocalSeparatedData>?                DataList                                { get; set; }
         public CriAtomExPlayer?                         Player                                  { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VocalSeparatedController();
+            var value   = new VocalSeparatedController() { Pointer= p0 };
 
-            value.DataList                                  = GetObjectList<VocalSeparatedData>(new IntPtr(p + 0x018), ReversePrism.DataModels.VocalSeparatedData.FromPointer); // 0270D4E1D5F0 0x18 DataList                    ( 000185CB1F38 ModelClassListType VocalSeparatedData[] VocalSeparatedData[] List<VocalSeparatedData> Pointer )
-            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0270D4E1D610 0x20 Player                      ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.Playbacks                                 = GetEnumList<CriAtomExPlayback>(new IntPtr(p + 0x028)); // 0270D4E1D630 0x28 Playbacks                   ( 000185B77E50 ModelEnumListType CriAtomExPlayback[] CriAtomExPlayback[] List<CriAtomExPlayback> Pointer )
-            value.LastToggleCountIndices                    = GetInt32List(new IntPtr(p + 0x040)); // 0270D4E1D690 0x40 LastToggleCountIndices      ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.DataList                                  = GetObjectList<VocalSeparatedData>(new IntPtr(p + 0x018), ReversePrism.DataModels.VocalSeparatedData.FromPointer); // 024664E92A00 0x18 DataList                    ( 000185CB1F38 ModelClassListType VocalSeparatedData[] VocalSeparatedData[] List<VocalSeparatedData> Pointer )
+            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 024664E92A20 0x20 Player                      ( 000186648E20 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.Playbacks                                 = GetEnumList<CriAtomExPlayback>(new IntPtr(p + 0x028)); // 024664E92A40 0x28 Playbacks                   ( 000185B77E50 ModelEnumListType CriAtomExPlayback[] CriAtomExPlayback[] List<CriAtomExPlayback> Pointer )
+            value.LastToggleCountIndices                    = GetInt32List(new IntPtr(p + 0x040)); // 024664E92AA0 0x40 LastToggleCountIndices      ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

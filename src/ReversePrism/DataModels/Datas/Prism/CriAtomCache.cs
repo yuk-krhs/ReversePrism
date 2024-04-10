@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 SheetName                                000186672F10 ModelPrimitiveType string string string String
     // 030 RefCount                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 034 Loaded                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CriAtomCache
+    public partial class CriAtomCache : DataModel
     {
         public string                                   AcbPath                                 { get; set; }
         public string                                   AwbPath                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomCache();
+            var value   = new CriAtomCache() { Pointer= p0 };
 
-            value.AcbPath                                   = GetString(new IntPtr(p + 0x010)); // 0270041C64C0 0x10 AcbPath                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.AwbPath                                   = GetString(new IntPtr(p + 0x018)); // 0270041C64E0 0x18 AwbPath                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Handle                                    = GetObject<CriAtomExAcb>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExAcb.FromPointer); // 0270041C6500 0x20 Handle                      ( 000186645230 ModelClassType CriAtomExAcb CriAtomExAcb CriAtomExAcb Pointer )
-            value.SheetName                                 = GetString(new IntPtr(p + 0x028)); // 0270041C6520 0x28 SheetName                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.RefCount                                  = GetInt32(new IntPtr(p + 0x030)); // 0270041C6540 0x30 RefCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Loaded                                    = GetBool(new IntPtr(p + 0x034)); // 0270041C6560 0x34 Loaded                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AcbPath                                   = GetString(new IntPtr(p + 0x010)); // 0245A4235C28 0x10 AcbPath                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.AwbPath                                   = GetString(new IntPtr(p + 0x018)); // 0245A4235C48 0x18 AwbPath                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Handle                                    = GetObject<CriAtomExAcb>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriAtomExAcb.FromPointer); // 0245A4235C68 0x20 Handle                      ( 000186645230 ModelClassType CriAtomExAcb CriAtomExAcb CriAtomExAcb Pointer )
+            value.SheetName                                 = GetString(new IntPtr(p + 0x028)); // 0245A4235C88 0x28 SheetName                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.RefCount                                  = GetInt32(new IntPtr(p + 0x030)); // 0245A4235CA8 0x30 RefCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Loaded                                    = GetBool(new IntPtr(p + 0x034)); // 0245A4235CC8 0x34 Loaded                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

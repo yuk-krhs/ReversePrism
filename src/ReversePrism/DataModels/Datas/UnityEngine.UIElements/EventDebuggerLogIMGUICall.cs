@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventDebuggerLogIMGUICall
+    public partial class EventDebuggerLogIMGUICall : DataModel
     {
 
         public static EventDebuggerLogIMGUICall? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventDebuggerLogIMGUICall();
+            var value   = new EventDebuggerLogIMGUICall() { Pointer= p0 };
 
 
             return value;

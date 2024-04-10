@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 030 ConsecutiveFailedUploadCount             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 034 FlushInProgress                          000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 M_FlushBufferIndex                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Dispatcher
+    public partial class Dispatcher : DataModel
     {
         public IWebRequestHelper?                       M_WebRequestHelper                      { get; set; }
         public string                                   M_CollectUrl                            { get; set; }
@@ -34,15 +34,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Dispatcher();
+            var value   = new Dispatcher() { Pointer= p0 };
 
-            value.M_WebRequestHelper                        = GetObject<IWebRequestHelper>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWebRequestHelper.FromPointer); // 0270066C19A0 0x10 M_WebRequestHelper          ( 00018669BE50 ModelClassType IWebRequestHelper IWebRequestHelper IWebRequestHelper Pointer )
-            value.M_CollectUrl                              = GetString(new IntPtr(p + 0x018)); // 0270066C19C0 0x18 M_CollectUrl                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_DataBuffer                              = GetObject<IBuffer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IBuffer.FromPointer); // 0270066C1A40 0x20 M_DataBuffer                ( 0001865E17F0 ModelClassType IBuffer IBuffer IBuffer Pointer )
-            value.M_FlushRequest                            = GetObject<IWebRequest>(new IntPtr(p + 0x028), ReversePrism.DataModels.IWebRequest.FromPointer); // 0270066C1A60 0x28 M_FlushRequest              ( 00018669B4D0 ModelClassType IWebRequest IWebRequest IWebRequest Pointer )
-            value.ConsecutiveFailedUploadCount              = GetInt32(new IntPtr(p + 0x030)); // 0270066C1A80 0x30 ConsecutiveFailedUploadCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FlushInProgress                           = GetBool(new IntPtr(p + 0x034)); // 0270066C1AA0 0x34 FlushInProgress             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_FlushBufferIndex                        = GetInt32(new IntPtr(p + 0x038)); // 0270066C1AC0 0x38 M_FlushBufferIndex          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_WebRequestHelper                        = GetObject<IWebRequestHelper>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWebRequestHelper.FromPointer); // 0245A6683318 0x10 M_WebRequestHelper          ( 00018669BE50 ModelClassType IWebRequestHelper IWebRequestHelper IWebRequestHelper Pointer )
+            value.M_CollectUrl                              = GetString(new IntPtr(p + 0x018)); // 0245A6683338 0x18 M_CollectUrl                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_DataBuffer                              = GetObject<IBuffer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IBuffer.FromPointer); // 0245A66833B8 0x20 M_DataBuffer                ( 0001865E17F0 ModelClassType IBuffer IBuffer IBuffer Pointer )
+            value.M_FlushRequest                            = GetObject<IWebRequest>(new IntPtr(p + 0x028), ReversePrism.DataModels.IWebRequest.FromPointer); // 0245A66833D8 0x28 M_FlushRequest              ( 00018669B4D0 ModelClassType IWebRequest IWebRequest IWebRequest Pointer )
+            value.ConsecutiveFailedUploadCount              = GetInt32(new IntPtr(p + 0x030)); // 0245A66833F8 0x30 ConsecutiveFailedUploadCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FlushInProgress                           = GetBool(new IntPtr(p + 0x034)); // 0245A6683418 0x34 FlushInProgress             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_FlushBufferIndex                        = GetInt32(new IntPtr(p + 0x038)); // 0245A6683438 0x38 M_FlushBufferIndex          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

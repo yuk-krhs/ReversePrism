@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AndroidJavaRunnable
+    public partial class AndroidJavaRunnable : DataModel
     {
 
         public static AndroidJavaRunnable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AndroidJavaRunnable();
+            var value   = new AndroidJavaRunnable() { Pointer= p0 };
 
 
             return value;

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 Img                                      0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
     // 040 AspectRatioFitter                        0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer
     // 048 AspectRatioFitterLight                   0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer
-    public partial class GashaScharaEffects
+    public partial class GashaScharaEffects : DataModel
     {
         public Animator?                                AniSchara                               { get; set; }
         public UIRawImage?                              ImgBase                                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaScharaEffects();
+            var value   = new GashaScharaEffects() { Pointer= p0 };
 
-            value.AniSchara                                 = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0270D53B7D68 0x20 AniSchara                   ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ImgBase                                   = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D53B7D88 0x28 ImgBase                     ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.AspectRatioFitterBase                     = GetObject<AspectRatioFitter>(new IntPtr(p + 0x030), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0270D53B7DA8 0x30 AspectRatioFitterBase       ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
-            value.Img                                       = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 0270D53B7DC8 0x38 Img                         ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.AspectRatioFitter                         = GetObject<AspectRatioFitter>(new IntPtr(p + 0x040), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0270D53B7DE8 0x40 AspectRatioFitter           ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
-            value.AspectRatioFitterLight                    = GetObject<AspectRatioFitter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0270D53B7E08 0x48 AspectRatioFitterLight      ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
+            value.AniSchara                                 = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 02466542B5F8 0x20 AniSchara                   ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.ImgBase                                   = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466542B618 0x28 ImgBase                     ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.AspectRatioFitterBase                     = GetObject<AspectRatioFitter>(new IntPtr(p + 0x030), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 02466542B638 0x30 AspectRatioFitterBase       ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
+            value.Img                                       = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466542B658 0x38 Img                         ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.AspectRatioFitter                         = GetObject<AspectRatioFitter>(new IntPtr(p + 0x040), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 02466542B678 0x40 AspectRatioFitter           ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
+            value.AspectRatioFitterLight                    = GetObject<AspectRatioFitter>(new IntPtr(p + 0x048), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 02466542B698 0x48 AspectRatioFitterLight      ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AssetBundleRecompressOperation
+    public partial class AssetBundleRecompressOperation : DataModel
     {
 
         public static AssetBundleRecompressOperation? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetBundleRecompressOperation();
+            var value   = new AssetBundleRecompressOperation() { Pointer= p0 };
 
 
             return value;

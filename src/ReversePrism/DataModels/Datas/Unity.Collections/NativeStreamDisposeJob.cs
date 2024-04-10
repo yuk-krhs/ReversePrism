@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Data                                     0001866936D0 ModelEnumType NativeStreamDispose NativeStreamDispose NativeStreamDispose Int32
-    public partial class NativeStreamDisposeJob
+    public partial class NativeStreamDisposeJob : DataModel
     {
         public NativeStreamDispose                      Data                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeStreamDisposeJob();
+            var value   = new NativeStreamDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (NativeStreamDispose)GetInt32(new IntPtr(p + 0x010)); // 0270D086EA28 0x10 Data                        ( 0001866936D0 ModelEnumType NativeStreamDispose NativeStreamDispose NativeStreamDispose Int32 )
+            value.Data                                      = (NativeStreamDispose)GetInt32(new IntPtr(p + 0x010)); // 0246608B69B8 0x10 Data                        ( 0001866936D0 ModelEnumType NativeStreamDispose NativeStreamDispose NativeStreamDispose Int32 )
 
             return value;
         }

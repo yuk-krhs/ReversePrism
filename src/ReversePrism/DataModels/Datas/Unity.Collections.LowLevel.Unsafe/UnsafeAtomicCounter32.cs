@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Counter                                  IntPtr IL2CPP_TYPE_PTR
-    public partial class UnsafeAtomicCounter32
+    public partial class UnsafeAtomicCounter32 : DataModel
     {
 
         public static UnsafeAtomicCounter32? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeAtomicCounter32();
+            var value   = new UnsafeAtomicCounter32() { Pointer= p0 };
 
 
             return value;

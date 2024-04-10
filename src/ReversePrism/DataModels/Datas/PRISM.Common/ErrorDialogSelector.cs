@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 IsShowing                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ErrorDialogSelector
+    public partial class ErrorDialogSelector : DataModel
     {
         public bool                                     IsShowing                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorDialogSelector();
+            var value   = new ErrorDialogSelector() { Pointer= p0 };
 
-            value.IsShowing                                 = GetBool(new IntPtr(p + 0x020)); // 0270D59744D8 0x20 IsShowing                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsShowing                                 = GetBool(new IntPtr(p + 0x020)); // 0246659E5668 0x20 IsShowing                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

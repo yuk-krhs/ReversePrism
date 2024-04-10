@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CallerFilePathAttribute
+    public partial class CallerFilePathAttribute : DataModel
     {
 
         public static CallerFilePathAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CallerFilePathAttribute();
+            var value   = new CallerFilePathAttribute() { Pointer= p0 };
 
 
             return value;

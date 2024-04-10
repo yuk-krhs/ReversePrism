@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 050 idxSil                                   NativeArray`1<ushort> IL2CPP_TYPE_GENERICINST
     // 060 vertArm                                  NativeArray`1<VertexData> IL2CPP_TYPE_GENERICINST
     // 070 idxArm                                   NativeArray`1<ushort> IL2CPP_TYPE_GENERICINST
-    public partial class MeshOutInner
+    public partial class MeshOutInner : DataModel
     {
 
         public static MeshOutInner? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshOutInner();
+            var value   = new MeshOutInner() { Pointer= p0 };
 
 
             return value;

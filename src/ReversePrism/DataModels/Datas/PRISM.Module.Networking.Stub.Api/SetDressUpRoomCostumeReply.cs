@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DressUpRoomCostumeFieldNumber            int IL2CPP_TYPE_I4
     // 018 DressUpRoomCostume                       000186700050 ModelClassType DressUpRoomCostumeStatus DressUpRoomCostumeStatus DressUpRoomCostumeStatus Pointer
-    public partial class SetDressUpRoomCostumeReply
+    public partial class SetDressUpRoomCostumeReply : DataModel
     {
         public DressUpRoomCostumeStatus?                DressUpRoomCostume                      { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetDressUpRoomCostumeReply();
+            var value   = new SetDressUpRoomCostumeReply() { Pointer= p0 };
 
-            value.DressUpRoomCostume                        = GetObject<DressUpRoomCostumeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.DressUpRoomCostumeStatus.FromPointer); // 02700417EC78 0x18 DressUpRoomCostume          ( 000186700050 ModelClassType DressUpRoomCostumeStatus DressUpRoomCostumeStatus DressUpRoomCostumeStatus Pointer )
+            value.DressUpRoomCostume                        = GetObject<DressUpRoomCostumeStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.DressUpRoomCostumeStatus.FromPointer); // 024660F8EE20 0x18 DressUpRoomCostume          ( 000186700050 ModelClassType DressUpRoomCostumeStatus DressUpRoomCostumeStatus DressUpRoomCostumeStatus Pointer )
 
             return value;
         }

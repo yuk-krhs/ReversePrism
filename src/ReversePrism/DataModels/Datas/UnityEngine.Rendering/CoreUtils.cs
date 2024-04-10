@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 030 M_EmptyUAV                               0001866566D0 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
     // 038 M_BlackVolumeTexture                     00018664F180 ModelClassType Texture3D Texture3D Texture3D Pointer
     // 040 m_AssemblyTypes                          IEnumerable`1<Type> IL2CPP_TYPE_GENERICINST
-    public partial class CoreUtils
+    public partial class CoreUtils : DataModel
     {
         public Cubemap?                                 M_BlackCubeTexture                      { get; set; }
         public Cubemap?                                 M_MagentaCubeTexture                    { get; set; }
@@ -41,14 +41,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreUtils();
+            var value   = new CoreUtils() { Pointer= p0 };
 
-            value.M_BlackCubeTexture                        = GetObject<Cubemap>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cubemap.FromPointer); // 027003FDD338 0x10 M_BlackCubeTexture          ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
-            value.M_MagentaCubeTexture                      = GetObject<Cubemap>(new IntPtr(p + 0x018), ReversePrism.DataModels.Cubemap.FromPointer); // 027003FDD358 0x18 M_MagentaCubeTexture        ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
-            value.M_MagentaCubeTextureArray                 = GetObject<CubemapArray>(new IntPtr(p + 0x020), ReversePrism.DataModels.CubemapArray.FromPointer); // 027003FDD378 0x20 M_MagentaCubeTextureArray   ( 0001866621E0 ModelClassType CubemapArray CubemapArray CubemapArray Pointer )
-            value.M_WhiteCubeTexture                        = GetObject<Cubemap>(new IntPtr(p + 0x028), ReversePrism.DataModels.Cubemap.FromPointer); // 027003FDD398 0x28 M_WhiteCubeTexture          ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
-            value.M_EmptyUAV                                = GetObject<RenderTexture>(new IntPtr(p + 0x030), ReversePrism.DataModels.RenderTexture.FromPointer); // 027003FDD3B8 0x30 M_EmptyUAV                  ( 0001866566D0 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
-            value.M_BlackVolumeTexture                      = GetObject<Texture3D>(new IntPtr(p + 0x038), ReversePrism.DataModels.Texture3D.FromPointer); // 027003FDD3D8 0x38 M_BlackVolumeTexture        ( 00018664F180 ModelClassType Texture3D Texture3D Texture3D Pointer )
+            value.M_BlackCubeTexture                        = GetObject<Cubemap>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cubemap.FromPointer); // 0245A3FECD20 0x10 M_BlackCubeTexture          ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
+            value.M_MagentaCubeTexture                      = GetObject<Cubemap>(new IntPtr(p + 0x018), ReversePrism.DataModels.Cubemap.FromPointer); // 0245A3FECD40 0x18 M_MagentaCubeTexture        ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
+            value.M_MagentaCubeTextureArray                 = GetObject<CubemapArray>(new IntPtr(p + 0x020), ReversePrism.DataModels.CubemapArray.FromPointer); // 0245A3FECD60 0x20 M_MagentaCubeTextureArray   ( 0001866621E0 ModelClassType CubemapArray CubemapArray CubemapArray Pointer )
+            value.M_WhiteCubeTexture                        = GetObject<Cubemap>(new IntPtr(p + 0x028), ReversePrism.DataModels.Cubemap.FromPointer); // 0245A3FECD80 0x28 M_WhiteCubeTexture          ( 000186661D00 ModelClassType Cubemap Cubemap Cubemap Pointer )
+            value.M_EmptyUAV                                = GetObject<RenderTexture>(new IntPtr(p + 0x030), ReversePrism.DataModels.RenderTexture.FromPointer); // 0245A3FECDA0 0x30 M_EmptyUAV                  ( 0001866566D0 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.M_BlackVolumeTexture                      = GetObject<Texture3D>(new IntPtr(p + 0x038), ReversePrism.DataModels.Texture3D.FromPointer); // 0245A3FECDC0 0x38 M_BlackVolumeTexture        ( 00018664F180 ModelClassType Texture3D Texture3D Texture3D Pointer )
 
             return value;
         }

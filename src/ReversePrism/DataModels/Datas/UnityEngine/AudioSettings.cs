@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 OnAudioConfigurationChanged              AudioConfigurationChangeHandler IL2CPP_TYPE_CLASS
     // 008 OnAudioSystemShuttingDown                Action IL2CPP_TYPE_CLASS
     // 010 OnAudioSystemStartedUp                   000186679C50 ModelClassType Action Action Action Pointer
-    public partial class AudioSettings
+    public partial class AudioSettings : DataModel
     {
         public Action?                                  OnAudioSystemStartedUp                  { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AudioSettings();
+            var value   = new AudioSettings() { Pointer= p0 };
 
-            value.OnAudioSystemStartedUp                    = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0270021BCE88 0x10 OnAudioSystemStartedUp      ( 000186679C50 ModelClassType Action Action Action Pointer )
+            value.OnAudioSystemStartedUp                    = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0245A21BCE88 0x10 OnAudioSystemStartedUp      ( 000186679C50 ModelClassType Action Action Action Pointer )
 
             return value;
         }

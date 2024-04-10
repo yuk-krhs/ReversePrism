@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ctrlHandlerAdded                         bool IL2CPP_TYPE_BOOLEAN
     // 008 cancelHandler                            WindowsCancelHandler IL2CPP_TYPE_CLASS
-    public partial class WindowsConsole
+    public partial class WindowsConsole : DataModel
     {
 
         public static WindowsConsole? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WindowsConsole();
+            var value   = new WindowsConsole() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateRectTransform
+    public partial class UpdateRectTransform : DataModel
     {
 
         public static UpdateRectTransform? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateRectTransform();
+            var value   = new UpdateRectTransform() { Pointer= p0 };
 
 
             return value;

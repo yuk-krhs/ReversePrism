@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 TxtSetEnabled                            000186671910 ModelPrimitiveType string string string String
     // 030 TxtManualLaunch                          000186671910 ModelPrimitiveType string string string String
     // 038 TxtSetOfflineMode                        000186671910 ModelPrimitiveType string string string String
-    public partial class ExampleGUI
+    public partial class ExampleGUI : DataModel
     {
         public int                                      NumberOfButtons                         { get; set; }
         public bool                                     IsEnabled                               { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExampleGUI();
+            var value   = new ExampleGUI() { Pointer= p0 };
 
-            value.NumberOfButtons                           = GetInt32(new IntPtr(p + 0x020)); // 0270DBF15140 0x20 NumberOfButtons             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsEnabled                                 = GetBool(new IntPtr(p + 0x024)); // 0270DBF15160 0x24 IsEnabled                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ShowPopUp                                 = GetBool(new IntPtr(p + 0x025)); // 0270DBF15180 0x25 ShowPopUp                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TxtSetEnabled                             = GetString(new IntPtr(p + 0x028)); // 0270DBF151A0 0x28 TxtSetEnabled               ( 000186671910 ModelPrimitiveType string string string String )
-            value.TxtManualLaunch                           = GetString(new IntPtr(p + 0x030)); // 0270DBF151C0 0x30 TxtManualLaunch             ( 000186671910 ModelPrimitiveType string string string String )
-            value.TxtSetOfflineMode                         = GetString(new IntPtr(p + 0x038)); // 0270DBF151E0 0x38 TxtSetOfflineMode           ( 000186671910 ModelPrimitiveType string string string String )
+            value.NumberOfButtons                           = GetInt32(new IntPtr(p + 0x020)); // 02466BF84FA0 0x20 NumberOfButtons             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsEnabled                                 = GetBool(new IntPtr(p + 0x024)); // 02466BF84FC0 0x24 IsEnabled                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ShowPopUp                                 = GetBool(new IntPtr(p + 0x025)); // 02466BF84FE0 0x25 ShowPopUp                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TxtSetEnabled                             = GetString(new IntPtr(p + 0x028)); // 02466BF85000 0x28 TxtSetEnabled               ( 000186671910 ModelPrimitiveType string string string String )
+            value.TxtManualLaunch                           = GetString(new IntPtr(p + 0x030)); // 02466BF85020 0x30 TxtManualLaunch             ( 000186671910 ModelPrimitiveType string string string String )
+            value.TxtSetOfflineMode                         = GetString(new IntPtr(p + 0x038)); // 02466BF85040 0x38 TxtSetOfflineMode           ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

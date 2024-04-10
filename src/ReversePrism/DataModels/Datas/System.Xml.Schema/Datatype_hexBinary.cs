@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
-    public partial class Datatype_hexBinary
+    public partial class Datatype_hexBinary : DataModel
     {
 
         public static Datatype_hexBinary? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_hexBinary();
+            var value   = new Datatype_hexBinary() { Pointer= p0 };
 
 
             return value;

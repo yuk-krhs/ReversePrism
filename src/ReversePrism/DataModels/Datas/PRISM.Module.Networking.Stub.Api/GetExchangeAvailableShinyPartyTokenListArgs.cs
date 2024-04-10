@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<GetExchangeAvailableShinyPartyTokenListArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    public partial class GetExchangeAvailableShinyPartyTokenListArgs
+    public partial class GetExchangeAvailableShinyPartyTokenListArgs : DataModel
     {
 
         public static GetExchangeAvailableShinyPartyTokenListArgs? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeAvailableShinyPartyTokenListArgs();
+            var value   = new GetExchangeAvailableShinyPartyTokenListArgs() { Pointer= p0 };
 
 
             return value;

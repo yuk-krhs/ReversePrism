@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 CharaMessagePresenter                    0001866BDB80 ModelClassType HomeCharacterMessagePresenter HomeCharacterMessagePresenter HomeCharacterMessagePresenter Pointer
     // 040 LoginBonusCharaMessagePresenter          0001866C26F0 ModelClassType HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter Pointer
     // 048 MobileNotificationPresenter              000186630850 ModelClassType MobileNotificationPresenter MobileNotificationPresenter MobileNotificationPresenter Pointer
-    public partial class Home3DScenePresenter
+    public partial class Home3DScenePresenter : DataModel
     {
         public HomeViewModel?                           ViewModel                               { get; set; }
         public IHomeCharacterMessagePanelView?          View                                    { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Home3DScenePresenter();
+            var value   = new Home3DScenePresenter() { Pointer= p0 };
 
-            value.ViewModel                                 = GetObject<HomeViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeViewModel.FromPointer); // 027003672C90 0x10 ViewModel                   ( 0001866D38A0 ModelClassType HomeViewModel HomeViewModel HomeViewModel Pointer )
-            value.View                                      = GetObject<IHomeCharacterMessagePanelView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IHomeCharacterMessagePanelView.FromPointer); // 027003672CB0 0x18 View                        ( 000186567B00 ModelClassType IHomeCharacterMessagePanelView IHomeCharacterMessagePanelView IHomeCharacterMessagePanelView Pointer )
-            value.HomeMainView                              = GetObject<IHomeMainView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IHomeMainView.FromPointer); // 027003672CD0 0x20 HomeMainView                ( 000186569B50 ModelClassType IHomeMainView IHomeMainView IHomeMainView Pointer )
-            value.BannerView                                = GetObject<IHomeBannerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IHomeBannerView.FromPointer); // 027003672CF0 0x28 BannerView                  ( 000186567380 ModelClassType IHomeBannerView IHomeBannerView IHomeBannerView Pointer )
-            value.Home3dSceneView                           = GetObject<IHome3DSceneView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IHome3DSceneView.FromPointer); // 027003672D10 0x30 Home3dSceneView             ( 000186566BC0 ModelClassType IHome3DSceneView IHome3DSceneView IHome3DSceneView Pointer )
-            value.CharaMessagePresenter                     = GetObject<HomeCharacterMessagePresenter>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeCharacterMessagePresenter.FromPointer); // 027003672D30 0x38 CharaMessagePresenter       ( 0001866BDB80 ModelClassType HomeCharacterMessagePresenter HomeCharacterMessagePresenter HomeCharacterMessagePresenter Pointer )
-            value.LoginBonusCharaMessagePresenter           = GetObject<HomeLoginBonusCharacterMessagePresenter>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeLoginBonusCharacterMessagePresenter.FromPointer); // 027003672D50 0x40 LoginBonusCharaMessagePresenter ( 0001866C26F0 ModelClassType HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter Pointer )
-            value.MobileNotificationPresenter               = GetObject<MobileNotificationPresenter>(new IntPtr(p + 0x048), ReversePrism.DataModels.MobileNotificationPresenter.FromPointer); // 027003672D70 0x48 MobileNotificationPresenter ( 000186630850 ModelClassType MobileNotificationPresenter MobileNotificationPresenter MobileNotificationPresenter Pointer )
+            value.ViewModel                                 = GetObject<HomeViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeViewModel.FromPointer); // 0245A5B60EA8 0x10 ViewModel                   ( 0001866D38A0 ModelClassType HomeViewModel HomeViewModel HomeViewModel Pointer )
+            value.View                                      = GetObject<IHomeCharacterMessagePanelView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IHomeCharacterMessagePanelView.FromPointer); // 0245A5B60EC8 0x18 View                        ( 000186567B00 ModelClassType IHomeCharacterMessagePanelView IHomeCharacterMessagePanelView IHomeCharacterMessagePanelView Pointer )
+            value.HomeMainView                              = GetObject<IHomeMainView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IHomeMainView.FromPointer); // 0245A5B60EE8 0x20 HomeMainView                ( 000186569B50 ModelClassType IHomeMainView IHomeMainView IHomeMainView Pointer )
+            value.BannerView                                = GetObject<IHomeBannerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IHomeBannerView.FromPointer); // 0245A5B60F08 0x28 BannerView                  ( 000186567380 ModelClassType IHomeBannerView IHomeBannerView IHomeBannerView Pointer )
+            value.Home3dSceneView                           = GetObject<IHome3DSceneView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IHome3DSceneView.FromPointer); // 0245A5B60F28 0x30 Home3dSceneView             ( 000186566BC0 ModelClassType IHome3DSceneView IHome3DSceneView IHome3DSceneView Pointer )
+            value.CharaMessagePresenter                     = GetObject<HomeCharacterMessagePresenter>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeCharacterMessagePresenter.FromPointer); // 0245A5B60F48 0x38 CharaMessagePresenter       ( 0001866BDB80 ModelClassType HomeCharacterMessagePresenter HomeCharacterMessagePresenter HomeCharacterMessagePresenter Pointer )
+            value.LoginBonusCharaMessagePresenter           = GetObject<HomeLoginBonusCharacterMessagePresenter>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeLoginBonusCharacterMessagePresenter.FromPointer); // 0245A5B60F68 0x40 LoginBonusCharaMessagePresenter ( 0001866C26F0 ModelClassType HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter HomeLoginBonusCharacterMessagePresenter Pointer )
+            value.MobileNotificationPresenter               = GetObject<MobileNotificationPresenter>(new IntPtr(p + 0x048), ReversePrism.DataModels.MobileNotificationPresenter.FromPointer); // 0245A5B60F88 0x48 MobileNotificationPresenter ( 000186630850 ModelClassType MobileNotificationPresenter MobileNotificationPresenter MobileNotificationPresenter Pointer )
 
             return value;
         }

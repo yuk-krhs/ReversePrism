@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 Text                                     000186671910 ModelPrimitiveType string string string String
-    public partial class Capture
+    public partial class Capture : DataModel
     {
         public int                                      Index                                   { get; set; }
         public int                                      Length                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Capture();
+            var value   = new Capture() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0270001ECD48 0x10 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 0270001ECD68 0x14 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0270001ECD88 0x18 Text                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A01ECD48 0x10 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A01ECD68 0x14 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0245A01ECD88 0x18 Text                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PostDateFieldNumber                      int IL2CPP_TYPE_I4
     // 028 _PostDate                                000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class ReadAllTwestaArticleArgs
+    public partial class ReadAllTwestaArticleArgs : DataModel
     {
         public DateTime                                 PostDate                                { get; set; }
         public Timestamp?                               _PostDate                               { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadAllTwestaArticleArgs();
+            var value   = new ReadAllTwestaArticleArgs() { Pointer= p0 };
 
-            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D22F2110 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D22F2190 0x28 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0246622709F0 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 024662270A70 0x28 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.PostDate                      = ToDateTime(value._PostDate);
 
             return value;

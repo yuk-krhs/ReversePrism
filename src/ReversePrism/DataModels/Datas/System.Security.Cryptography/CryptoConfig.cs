@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 lockObject                               <object> IL2CPP_TYPE_OBJECT
     // 008 algorithms                               Dictionary`2<string, Type> IL2CPP_TYPE_GENERICINST
-    public partial class CryptoConfig
+    public partial class CryptoConfig : DataModel
     {
 
         public static CryptoConfig? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CryptoConfig();
+            var value   = new CryptoConfig() { Pointer= p0 };
 
 
             return value;

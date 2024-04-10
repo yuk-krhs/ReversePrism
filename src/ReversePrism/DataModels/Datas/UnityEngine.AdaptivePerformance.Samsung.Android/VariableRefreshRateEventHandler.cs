@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VariableRefreshRateEventHandler
+    public partial class VariableRefreshRateEventHandler : DataModel
     {
 
         public static VariableRefreshRateEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VariableRefreshRateEventHandler();
+            var value   = new VariableRefreshRateEventHandler() { Pointer= p0 };
 
 
             return value;

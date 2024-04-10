@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 000 AccessLevelsFieldNumber                  int IL2CPP_TYPE_I4
     // 010 _repeated_accessLevels_codec             FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 038 AccessLevels                             000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class Auth
+    public partial class Auth : DataModel
     {
         public string                                   Principal                               { get; set; }
         public List<string>?                            Audiences                               { get; set; }
@@ -36,13 +36,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Auth();
+            var value   = new Auth() { Pointer= p0 };
 
-            value.Principal                                 = GetString(new IntPtr(p + 0x018)); // 0270DA71AFB0 0x18 Principal                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Audiences                                 = GetStringList(new IntPtr(p + 0x020)); // 0270DA71B010 0x20 Audiences                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Presenter                                 = GetString(new IntPtr(p + 0x028)); // 0270DA71B050 0x28 Presenter                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Claims                                    = GetObject<Struct>(new IntPtr(p + 0x030), ReversePrism.DataModels.Struct.FromPointer); // 0270DA71B090 0x30 Claims                      ( 0001865C4EE0 ModelClassType Struct Struct Struct Pointer )
-            value.AccessLevels                              = GetStringList(new IntPtr(p + 0x038)); // 0270DA71B0F0 0x38 AccessLevels                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Principal                                 = GetString(new IntPtr(p + 0x018)); // 02466A76EB10 0x18 Principal                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Audiences                                 = GetStringList(new IntPtr(p + 0x020)); // 02466A76EB70 0x20 Audiences                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Presenter                                 = GetString(new IntPtr(p + 0x028)); // 02466A76EBB0 0x28 Presenter                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Claims                                    = GetObject<Struct>(new IntPtr(p + 0x030), ReversePrism.DataModels.Struct.FromPointer); // 02466A76EBF0 0x30 Claims                      ( 0001865C4EE0 ModelClassType Struct Struct Struct Pointer )
+            value.AccessLevels                              = GetStringList(new IntPtr(p + 0x038)); // 02466A76EC50 0x38 AccessLevels                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

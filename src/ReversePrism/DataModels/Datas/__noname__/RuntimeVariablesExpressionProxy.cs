@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RuntimeVariablesExpressionProxy
+    public partial class RuntimeVariablesExpressionProxy : DataModel
     {
 
         public static RuntimeVariablesExpressionProxy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeVariablesExpressionProxy();
+            var value   = new RuntimeVariablesExpressionProxy() { Pointer= p0 };
 
 
             return value;

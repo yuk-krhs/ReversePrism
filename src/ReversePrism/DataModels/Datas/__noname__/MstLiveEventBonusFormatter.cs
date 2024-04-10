@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstLiveEventBonusFormatter
+    public partial class MstLiveEventBonusFormatter : DataModel
     {
 
         public static MstLiveEventBonusFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstLiveEventBonusFormatter();
+            var value   = new MstLiveEventBonusFormatter() { Pointer= p0 };
 
 
             return value;

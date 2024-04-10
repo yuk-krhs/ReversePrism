@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 Arg1                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
     // 028 Arg2                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
     // 030 Arg3                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
-    public partial class MethodCallExpression4
+    public partial class MethodCallExpression4 : DataModel
     {
         public Expression?                              Arg1                                    { get; set; }
         public Expression?                              Arg2                                    { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MethodCallExpression4();
+            var value   = new MethodCallExpression4() { Pointer= p0 };
 
-            value.Arg1                                      = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F7ADF0 0x20 Arg1                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Arg2                                      = GetObject<Expression>(new IntPtr(p + 0x028), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F7AE10 0x28 Arg2                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Arg3                                      = GetObject<Expression>(new IntPtr(p + 0x030), ReversePrism.DataModels.Expression.FromPointer); // 0270D9F7AE30 0x30 Arg3                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Arg1                                      = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 024669FD2BE0 0x20 Arg1                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Arg2                                      = GetObject<Expression>(new IntPtr(p + 0x028), ReversePrism.DataModels.Expression.FromPointer); // 024669FD2C00 0x28 Arg2                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Arg3                                      = GetObject<Expression>(new IntPtr(p + 0x030), ReversePrism.DataModels.Expression.FromPointer); // 024669FD2C20 0x30 Arg3                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

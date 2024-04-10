@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 CarriageReturn                           char IL2CPP_TYPE_CHAR
     // 000 LineFeed                                 char IL2CPP_TYPE_CHAR
     // 000 Tab                                      char IL2CPP_TYPE_CHAR
-    public partial class StringUtils
+    public partial class StringUtils : DataModel
     {
 
         public static StringUtils? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringUtils();
+            var value   = new StringUtils() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 UserLabelsFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _map_userLabels_codec                    Codec<string, string> IL2CPP_TYPE_GENERICINST
     // 020 userLabels_                              MapField`2<string, string> IL2CPP_TYPE_GENERICINST
-    public partial class MonitoredResourceMetadata
+    public partial class MonitoredResourceMetadata : DataModel
     {
         public Struct?                                  SystemLabels                            { get; set; }
 
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonitoredResourceMetadata();
+            var value   = new MonitoredResourceMetadata() { Pointer= p0 };
 
-            value.SystemLabels                              = GetObject<Struct>(new IntPtr(p + 0x018), ReversePrism.DataModels.Struct.FromPointer); // 0270DA802D10 0x18 SystemLabels                ( 0001865C4EE0 ModelClassType Struct Struct Struct Pointer )
+            value.SystemLabels                              = GetObject<Struct>(new IntPtr(p + 0x018), ReversePrism.DataModels.Struct.FromPointer); // 02466A868378 0x18 SystemLabels                ( 0001865C4EE0 ModelClassType Struct Struct Struct Pointer )
 
             return value;
         }

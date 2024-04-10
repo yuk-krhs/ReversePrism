@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Name                                     string IL2CPP_TYPE_STRING
-    public partial class WindowsStore
+    public partial class WindowsStore : DataModel
     {
 
         public static WindowsStore? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WindowsStore();
+            var value   = new WindowsStore() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class YieldAwaitable
+    public partial class YieldAwaitable : DataModel
     {
 
         public static YieldAwaitable? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new YieldAwaitable();
+            var value   = new YieldAwaitable() { Pointer= p0 };
 
 
             return value;

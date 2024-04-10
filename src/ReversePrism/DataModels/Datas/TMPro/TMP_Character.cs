@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TMP_Character
+    public partial class TMP_Character : DataModel
     {
 
         public static TMP_Character? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_Character();
+            var value   = new TMP_Character() { Pointer= p0 };
 
 
             return value;

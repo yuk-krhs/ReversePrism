@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _cases                                   Dictionary`2<string, int> IL2CPP_TYPE_GENERICINST
     // 018 _nullCase                                StrongBox`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class StringSwitchInstruction
+    public partial class StringSwitchInstruction : DataModel
     {
 
         public static StringSwitchInstruction? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringSwitchInstruction();
+            var value   = new StringSwitchInstruction() { Pointer= p0 };
 
 
             return value;

@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 090 AdHasClicked                             Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 098 AdSource                                 0001866722E0 ModelPrimitiveType string string string String
     // 0A0 AdStatusCallback                         0001866722E0 ModelPrimitiveType string string string String
-    public partial class AdImpressionParameters
+    public partial class AdImpressionParameters : DataModel
     {
         public AdCompletionStatus                       AdCompletionStatus                      { get; set; }
         public AdProvider                               AdProvider                              { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdImpressionParameters();
+            var value   = new AdImpressionParameters() { Pointer= p0 };
 
-            value.AdCompletionStatus                        = (AdCompletionStatus)GetInt32(new IntPtr(p + 0x010)); // 0270DB79C988 0x10 AdCompletionStatus          ( 0001866806D0 ModelEnumType AdCompletionStatus AdCompletionStatus AdCompletionStatus Int32 )
-            value.AdProvider                                = (AdProvider)GetInt32(new IntPtr(p + 0x014)); // 0270DB79C9A8 0x14 AdProvider                  ( 000186681500 ModelEnumType AdProvider AdProvider AdProvider Int32 )
-            value.PlacementID                               = GetString(new IntPtr(p + 0x018)); // 0270DB79C9C8 0x18 PlacementID                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.PlacementName                             = GetString(new IntPtr(p + 0x020)); // 0270DB79C9E8 0x20 PlacementName               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SdkVersion                                = GetString(new IntPtr(p + 0x040)); // 0270DB79CA48 0x40 SdkVersion                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AdImpressionID                            = GetString(new IntPtr(p + 0x048)); // 0270DB79CA68 0x48 AdImpressionID              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AdStoreDstID                              = GetString(new IntPtr(p + 0x050)); // 0270DB79CA88 0x50 AdStoreDstID                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AdMediaType                               = GetString(new IntPtr(p + 0x058)); // 0270DB79CAA8 0x58 AdMediaType                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AdSource                                  = GetString(new IntPtr(p + 0x098)); // 0270DB79CB48 0x98 AdSource                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AdStatusCallback                          = GetString(new IntPtr(p + 0x0A0)); // 0270DB79CB68 0xA0 AdStatusCallback            ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdCompletionStatus                        = (AdCompletionStatus)GetInt32(new IntPtr(p + 0x010)); // 02466B8347F8 0x10 AdCompletionStatus          ( 0001866806D0 ModelEnumType AdCompletionStatus AdCompletionStatus AdCompletionStatus Int32 )
+            value.AdProvider                                = (AdProvider)GetInt32(new IntPtr(p + 0x014)); // 02466B834818 0x14 AdProvider                  ( 000186681500 ModelEnumType AdProvider AdProvider AdProvider Int32 )
+            value.PlacementID                               = GetString(new IntPtr(p + 0x018)); // 02466B834838 0x18 PlacementID                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.PlacementName                             = GetString(new IntPtr(p + 0x020)); // 02466B834858 0x20 PlacementName               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SdkVersion                                = GetString(new IntPtr(p + 0x040)); // 02466B8348B8 0x40 SdkVersion                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdImpressionID                            = GetString(new IntPtr(p + 0x048)); // 02466B8348D8 0x48 AdImpressionID              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdStoreDstID                              = GetString(new IntPtr(p + 0x050)); // 02466B8348F8 0x50 AdStoreDstID                ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdMediaType                               = GetString(new IntPtr(p + 0x058)); // 02466B834918 0x58 AdMediaType                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdSource                                  = GetString(new IntPtr(p + 0x098)); // 02466B8349B8 0x98 AdSource                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AdStatusCallback                          = GetString(new IntPtr(p + 0x0A0)); // 02466B8349D8 0xA0 AdStatusCallback            ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

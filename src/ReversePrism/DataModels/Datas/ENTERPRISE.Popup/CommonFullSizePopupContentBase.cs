@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 058 Param                                    0001865E3C00 ModelClassType CommonFullSizePopupParam CommonFullSizePopupParam CommonFullSizePopupParam Pointer
-    public partial class CommonFullSizePopupContentBase
+    public partial class CommonFullSizePopupContentBase : DataModel
     {
         public CommonFullSizePopupParam?                Param                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CommonFullSizePopupContentBase();
+            var value   = new CommonFullSizePopupContentBase() { Pointer= p0 };
 
-            value.Param                                     = GetObject<CommonFullSizePopupParam>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonFullSizePopupParam.FromPointer); // 0270D4C81C18 0x58 Param                       ( 0001865E3C00 ModelClassType CommonFullSizePopupParam CommonFullSizePopupParam CommonFullSizePopupParam Pointer )
+            value.Param                                     = GetObject<CommonFullSizePopupParam>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonFullSizePopupParam.FromPointer); // 024664CE5608 0x58 Param                       ( 0001865E3C00 ModelClassType CommonFullSizePopupParam CommonFullSizePopupParam CommonFullSizePopupParam Pointer )
 
             return value;
         }

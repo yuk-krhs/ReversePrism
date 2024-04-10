@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 080 M_Timer                                  0001866656B0 ModelPrimitiveType float float float Single
-    public partial class DebugUIHandlerRow
+    public partial class DebugUIHandlerRow : DataModel
     {
         public float                                    M_Timer                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerRow();
+            var value   = new DebugUIHandlerRow() { Pointer= p0 };
 
-            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x080)); // 0270D9341FE8 0x80 M_Timer                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Timer                                   = GetSingle(new IntPtr(p + 0x080)); // 02466939BAF0 0x80 M_Timer                     ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

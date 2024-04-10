@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 IChar                                    0001865F2F90 ModelPrimitiveType int int int Int32
     // 034 ReadByteCount                            0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class UTF32Decoder
+    public partial class UTF32Decoder : DataModel
     {
         public int                                      IChar                                   { get; set; }
         public int                                      ReadByteCount                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UTF32Decoder();
+            var value   = new UTF32Decoder() { Pointer= p0 };
 
-            value.IChar                                     = GetInt32(new IntPtr(p + 0x030)); // 0270D6B64690 0x30 IChar                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.ReadByteCount                             = GetInt32(new IntPtr(p + 0x034)); // 0270D6B646B0 0x34 ReadByteCount               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.IChar                                     = GetInt32(new IntPtr(p + 0x030)); // 024666BDC690 0x30 IChar                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.ReadByteCount                             = GetInt32(new IntPtr(p + 0x034)); // 024666BDC6B0 0x34 ReadByteCount               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Time                                     000186666F40 ModelPrimitiveType float float float Single
     // 014 Speed                                    000186666F40 ModelPrimitiveType float float float Single
-    public partial class SpeedChangeEntity
+    public partial class SpeedChangeEntity : DataModel
     {
         public float                                    Time                                    { get; set; }
         public float                                    Speed                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpeedChangeEntity();
+            var value   = new SpeedChangeEntity() { Pointer= p0 };
 
-            value.Time                                      = GetSingle(new IntPtr(p + 0x010)); // 0270D4F72FE0 0x10 Time                        ( 000186666F40 ModelPrimitiveType float float float Single )
-            value.Speed                                     = GetSingle(new IntPtr(p + 0x014)); // 0270D4F73000 0x14 Speed                       ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.Time                                      = GetSingle(new IntPtr(p + 0x010)); // 024664FEA920 0x10 Time                        ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.Speed                                     = GetSingle(new IntPtr(p + 0x014)); // 024664FEA940 0x14 Speed                       ( 000186666F40 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    public partial class TypedParameterExpression
+    public partial class TypedParameterExpression : DataModel
     {
         public Type?                                    Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypedParameterExpression();
+            var value   = new TypedParameterExpression() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D9F7BF28 0x18 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024669FD3D18 0x18 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
 
             return value;
         }

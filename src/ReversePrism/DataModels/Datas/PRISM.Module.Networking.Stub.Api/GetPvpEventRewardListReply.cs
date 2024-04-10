@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 038 FinalRankRewardList                      000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer
     // 000 HighestRankFieldNumber                   int IL2CPP_TYPE_I4
     // 040 HighestRank                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GetPvpEventRewardListReply
+    public partial class GetPvpEventRewardListReply : DataModel
     {
         public List<GameEventRewardType>?               EventRewardTypeList                     { get; set; }
         public int                                      MstEventId                              { get; set; }
@@ -38,13 +38,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetPvpEventRewardListReply();
+            var value   = new GetPvpEventRewardListReply() { Pointer= p0 };
 
-            value.EventRewardTypeList                       = GetEnumList<GameEventRewardType>(new IntPtr(p + 0x028)); // 0270D27447F0 0x28 EventRewardTypeList         ( 000185CDA3C8 ModelEnumListType RepeatedField`1<GameEventRewardType> RepeatedField`1<GameEventRewardType> List<GameEventRewardType> Pointer )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0270D2744790 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighestRankUpdateRewardList               = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0270D2744850 0x30 HighestRankUpdateRewardList ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
-            value.FinalRankRewardList                       = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0270D27448B0 0x38 FinalRankRewardList         ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
-            value.HighestRank                               = GetInt32(new IntPtr(p + 0x040)); // 0270D27448F0 0x40 HighestRank                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventRewardTypeList                       = GetEnumList<GameEventRewardType>(new IntPtr(p + 0x028)); // 0246626BCC90 0x28 EventRewardTypeList         ( 000185CDA3C8 ModelEnumListType RepeatedField`1<GameEventRewardType> RepeatedField`1<GameEventRewardType> List<GameEventRewardType> Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0246626BCC30 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HighestRankUpdateRewardList               = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0246626BCCF0 0x30 HighestRankUpdateRewardList ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
+            value.FinalRankRewardList                       = GetObjectList<EventRankRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventRankRewardStatus.FromPointer); // 0246626BCD50 0x38 FinalRankRewardList         ( 000185CD5708 ModelClassListType RepeatedField`1<EventRankRewardStatus> RepeatedField`1<EventRankRewardStatus> List<EventRankRewardStatus> Pointer )
+            value.HighestRank                               = GetInt32(new IntPtr(p + 0x040)); // 0246626BCD90 0x40 HighestRank                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

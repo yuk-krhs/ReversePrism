@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ShortHandler
+    public partial class ShortHandler : DataModel
     {
 
         public static ShortHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShortHandler();
+            var value   = new ShortHandler() { Pointer= p0 };
 
 
             return value;

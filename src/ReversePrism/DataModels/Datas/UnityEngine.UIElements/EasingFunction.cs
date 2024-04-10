@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Mode                                   00018671A9C0 ModelEnumType EasingMode EasingMode EasingMode Int32
-    public partial class EasingFunction
+    public partial class EasingFunction : DataModel
     {
         public EasingMode                               M_Mode                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EasingFunction();
+            var value   = new EasingFunction() { Pointer= p0 };
 
-            value.M_Mode                                    = (EasingMode)GetInt32(new IntPtr(p + 0x010)); // 0270067ECAF8 0x10 M_Mode                      ( 00018671A9C0 ModelEnumType EasingMode EasingMode EasingMode Int32 )
+            value.M_Mode                                    = (EasingMode)GetInt32(new IntPtr(p + 0x010)); // 0245A67AEC88 0x10 M_Mode                      ( 00018671A9C0 ModelEnumType EasingMode EasingMode EasingMode Int32 )
 
             return value;
         }

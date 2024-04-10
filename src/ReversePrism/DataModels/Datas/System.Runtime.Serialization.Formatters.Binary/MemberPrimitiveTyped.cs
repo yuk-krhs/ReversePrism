@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 PrimitiveTypeEnum                        0001865FCE10 ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32
     // 018 value                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class MemberPrimitiveTyped
+    public partial class MemberPrimitiveTyped : DataModel
     {
         public InternalPrimitiveTypeE                   PrimitiveTypeEnum                       { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemberPrimitiveTyped();
+            var value   = new MemberPrimitiveTyped() { Pointer= p0 };
 
-            value.PrimitiveTypeEnum                         = (InternalPrimitiveTypeE)GetInt32(new IntPtr(p + 0x010)); // 0270D6C32158 0x10 PrimitiveTypeEnum           ( 0001865FCE10 ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32 )
+            value.PrimitiveTypeEnum                         = (InternalPrimitiveTypeE)GetInt32(new IntPtr(p + 0x010)); // 024666CA2158 0x10 PrimitiveTypeEnum           ( 0001865FCE10 ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MarshalerInstanceKeyComparer
+    public partial class MarshalerInstanceKeyComparer : DataModel
     {
 
         public static MarshalerInstanceKeyComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarshalerInstanceKeyComparer();
+            var value   = new MarshalerInstanceKeyComparer() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 factory                                  PopupViewFactory`1<IGashaCostumePopupView> IL2CPP_TYPE_GENERICINST
     // 028 Sequencer                                0001865F5E90 ModelClassType GashaCostumePopupSequencer GashaCostumePopupSequencer GashaCostumePopupSequencer Pointer
-    public partial class GashaCostumePopupCallerImplement
+    public partial class GashaCostumePopupCallerImplement : DataModel
     {
         public GashaCostumePopupSequencer?              Sequencer                               { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaCostumePopupCallerImplement();
+            var value   = new GashaCostumePopupCallerImplement() { Pointer= p0 };
 
-            value.Sequencer                                 = GetObject<GashaCostumePopupSequencer>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaCostumePopupSequencer.FromPointer); // 0270DB9C4DB0 0x28 Sequencer                   ( 0001865F5E90 ModelClassType GashaCostumePopupSequencer GashaCostumePopupSequencer GashaCostumePopupSequencer Pointer )
+            value.Sequencer                                 = GetObject<GashaCostumePopupSequencer>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaCostumePopupSequencer.FromPointer); // 02466BA54420 0x28 Sequencer                   ( 0001865F5E90 ModelClassType GashaCostumePopupSequencer GashaCostumePopupSequencer GashaCostumePopupSequencer Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Buffer                                 IntPtr IL2CPP_TYPE_PTR
     // 018 M_AllocatorLabel                         0001866991F0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
-    public partial class UntypedUnsafeParallelHashMap
+    public partial class UntypedUnsafeParallelHashMap : DataModel
     {
         public AllocatorHandle                          M_AllocatorLabel                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UntypedUnsafeParallelHashMap();
+            var value   = new UntypedUnsafeParallelHashMap() { Pointer= p0 };
 
-            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 0270D9CF5E90 0x18 M_AllocatorLabel            ( 0001866991F0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 024669D4B360 0x18 M_AllocatorLabel            ( 0001866991F0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
 
             return value;
         }

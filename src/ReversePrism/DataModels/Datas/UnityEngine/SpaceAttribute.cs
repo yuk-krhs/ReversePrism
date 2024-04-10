@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Height                                   000186666F40 ModelPrimitiveType float float float Single
-    public partial class SpaceAttribute
+    public partial class SpaceAttribute : DataModel
     {
         public float                                    Height                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpaceAttribute();
+            var value   = new SpaceAttribute() { Pointer= p0 };
 
-            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 0270068B83F8 0x10 Height                      ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 0245A687AAA8 0x10 Height                      ( 000186666F40 ModelPrimitiveType float float float Single )
 
             return value;
         }

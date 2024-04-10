@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 _cacheObjects                            Dictionary`2<string, ValueTuple`2<string, GameObject>> IL2CPP_TYPE_GENERICINST
     // 028 _templateButtons                         Dictionary`2<MessagePopupButtonType, List`1<ButtonInformation>> IL2CPP_TYPE_GENERICINST
     // 030 AttachedSystem                           000186766470 ModelClassType PopupSystem PopupSystem PopupSystem Pointer
-    public partial class PopupManager
+    public partial class PopupManager : DataModel
     {
         public PopupSystem?                             AttachedSystem                          { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PopupManager();
+            var value   = new PopupManager() { Pointer= p0 };
 
-            value.AttachedSystem                            = GetObject<PopupSystem>(new IntPtr(p + 0x030), ReversePrism.DataModels.PopupSystem.FromPointer); // 0270D0A59C80 0x30 AttachedSystem              ( 000186766470 ModelClassType PopupSystem PopupSystem PopupSystem Pointer )
+            value.AttachedSystem                            = GetObject<PopupSystem>(new IntPtr(p + 0x030), ReversePrism.DataModels.PopupSystem.FromPointer); // 024660A4D8F0 0x30 AttachedSystem              ( 000186766470 ModelClassType PopupSystem PopupSystem PopupSystem Pointer )
 
             return value;
         }

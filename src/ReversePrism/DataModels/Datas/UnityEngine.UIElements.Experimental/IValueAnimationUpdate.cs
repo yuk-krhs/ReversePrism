@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IValueAnimationUpdate
+    public partial class IValueAnimationUpdate : DataModel
     {
 
         public static IValueAnimationUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IValueAnimationUpdate();
+            var value   = new IValueAnimationUpdate() { Pointer= p0 };
 
 
             return value;

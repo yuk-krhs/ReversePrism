@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_HijriAdvance                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 010 CalendarMinValue                         0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 018 CalendarMaxValue                         0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class HijriCalendar
+    public partial class HijriCalendar : DataModel
     {
         public int                                      M_HijriAdvance                          { get; set; }
         public DateTime                                 CalendarMinValue                        { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HijriCalendar();
+            var value   = new HijriCalendar() { Pointer= p0 };
 
-            value.M_HijriAdvance                            = GetInt32(new IntPtr(p + 0x020)); // 0270D6D35108 0x20 M_HijriAdvance              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 0270D6D35128 0x10 CalendarMinValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.CalendarMaxValue                          = GetDateTime(new IntPtr(p + 0x018)); // 0270D6D35148 0x18 CalendarMaxValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.M_HijriAdvance                            = GetInt32(new IntPtr(p + 0x020)); // 024666D8D108 0x20 M_HijriAdvance              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 024666D8D128 0x10 CalendarMinValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.CalendarMaxValue                          = GetDateTime(new IntPtr(p + 0x018)); // 024666D8D148 0x18 CalendarMaxValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

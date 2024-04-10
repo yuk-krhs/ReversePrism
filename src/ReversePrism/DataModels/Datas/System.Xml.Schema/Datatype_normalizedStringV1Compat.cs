@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_normalizedStringV1Compat
+    public partial class Datatype_normalizedStringV1Compat : DataModel
     {
 
         public static Datatype_normalizedStringV1Compat? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_normalizedStringV1Compat();
+            var value   = new Datatype_normalizedStringV1Compat() { Pointer= p0 };
 
 
             return value;

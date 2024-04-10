@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Group                                    000186698B70 ModelPrimitiveType uint uint uint UInt32
     // 018 Label                                    0001865F7700 ModelPrimitiveType long long long Int64
-    public partial class GroupsRow
+    public partial class GroupsRow : DataModel
     {
         public uint                                     Group                                   { get; set; }
         public long                                     Label                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GroupsRow();
+            var value   = new GroupsRow() { Pointer= p0 };
 
-            value.Group                                     = GetUInt32(new IntPtr(p + 0x010)); // 027003E03528 0x10 Group                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.Label                                     = GetInt64(new IntPtr(p + 0x018)); // 027003E03548 0x18 Label                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Group                                     = GetUInt32(new IntPtr(p + 0x010)); // 0245A3E03528 0x10 Group                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Label                                     = GetInt64(new IntPtr(p + 0x018)); // 0245A3E03548 0x18 Label                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
 
             return value;
         }

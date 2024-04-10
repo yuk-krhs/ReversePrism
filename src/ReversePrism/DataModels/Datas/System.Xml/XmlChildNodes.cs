@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Container                                0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer
-    public partial class XmlChildNodes
+    public partial class XmlChildNodes : DataModel
     {
         public XmlNode?                                 Container                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlChildNodes();
+            var value   = new XmlChildNodes() { Pointer= p0 };
 
-            value.Container                                 = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D744BB00 0x10 Container                   ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.Container                                 = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 0246674ABB00 0x10 Container                   ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
 
             return value;
         }

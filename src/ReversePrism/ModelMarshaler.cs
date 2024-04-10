@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
             return dt;
         }
 
-        public unsafe static List<T>? GetObjectList<T>(IntPtr p, Func<IntPtr, T?> reader)
+        public unsafe static List<T>? GetObjectList<T>(IntPtr p, Func<IntPtr, T?> reader) where T : DataModel
         {
             var list    = *(IntPtr*)p;
 
@@ -54,6 +54,9 @@ namespace ReversePrism.DataModels
             {
                 var item= *(IntPtr*)(array.ToInt64() + 0x20 + i * 8);
                 var obj = reader(item);
+
+                if(null != obj)
+                    obj.Pointer = item;
 
                 items.Add(obj);
             }
@@ -129,8 +132,15 @@ namespace ReversePrism.DataModels
             return items;
         }
 
-        public unsafe static T? GetObject<T>(IntPtr ptr, Func<IntPtr, T?> reader) where T : class
-            => reader(*(IntPtr*)ptr);
+        public unsafe static T? GetObject<T>(IntPtr ptr, Func<IntPtr, T?> reader) where T : DataModel
+        {
+            var obj = reader(*(IntPtr*)ptr);
+
+            if(null != obj)
+                obj.Pointer = ptr;
+
+            return obj;
+        }
 
         public unsafe static string? GetUnityString(IntPtr p)
         {

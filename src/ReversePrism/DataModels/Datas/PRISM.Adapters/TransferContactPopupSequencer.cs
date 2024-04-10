@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TransferContactPopupSequencer
+    public partial class TransferContactPopupSequencer : DataModel
     {
 
         public static TransferContactPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferContactPopupSequencer();
+            var value   = new TransferContactPopupSequencer() { Pointer= p0 };
 
 
             return value;

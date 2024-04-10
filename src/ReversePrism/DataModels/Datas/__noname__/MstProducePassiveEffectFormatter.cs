@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstProducePassiveEffectFormatter
+    public partial class MstProducePassiveEffectFormatter : DataModel
     {
 
         public static MstProducePassiveEffectFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstProducePassiveEffectFormatter();
+            var value   = new MstProducePassiveEffectFormatter() { Pointer= p0 };
 
 
             return value;

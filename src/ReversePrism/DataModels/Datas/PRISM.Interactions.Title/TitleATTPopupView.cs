@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 attUrl                                   string IL2CPP_TYPE_STRING
     // 020 PreATTContent                            0001867732B0 ModelClassType PreATTContent PreATTContent PreATTContent Pointer
-    public partial class TitleATTPopupView
+    public partial class TitleATTPopupView : DataModel
     {
         public PreATTContent?                           PreATTContent                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TitleATTPopupView();
+            var value   = new TitleATTPopupView() { Pointer= p0 };
 
-            value.PreATTContent                             = GetObject<PreATTContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.PreATTContent.FromPointer); // 027004371328 0x20 PreATTContent               ( 0001867732B0 ModelClassType PreATTContent PreATTContent PreATTContent Pointer )
+            value.PreATTContent                             = GetObject<PreATTContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.PreATTContent.FromPointer); // 0245A43FBD08 0x20 PreATTContent               ( 0001867732B0 ModelClassType PreATTContent PreATTContent PreATTContent Pointer )
 
             return value;
         }

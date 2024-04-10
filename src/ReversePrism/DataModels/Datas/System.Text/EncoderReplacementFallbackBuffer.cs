@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 030 StrDefault                               000186671910 ModelPrimitiveType string string string String
     // 038 FallbackCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 03C FallbackIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class EncoderReplacementFallbackBuffer
+    public partial class EncoderReplacementFallbackBuffer : DataModel
     {
         public string                                   StrDefault                              { get; set; }
         public int                                      FallbackCount                           { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncoderReplacementFallbackBuffer();
+            var value   = new EncoderReplacementFallbackBuffer() { Pointer= p0 };
 
-            value.StrDefault                                = GetString(new IntPtr(p + 0x030)); // 0270D6B63788 0x30 StrDefault                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.FallbackCount                             = GetInt32(new IntPtr(p + 0x038)); // 0270D6B637A8 0x38 FallbackCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FallbackIndex                             = GetInt32(new IntPtr(p + 0x03C)); // 0270D6B637C8 0x3C FallbackIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StrDefault                                = GetString(new IntPtr(p + 0x030)); // 024666BDB788 0x30 StrDefault                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.FallbackCount                             = GetInt32(new IntPtr(p + 0x038)); // 024666BDB7A8 0x38 FallbackCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FallbackIndex                             = GetInt32(new IntPtr(p + 0x03C)); // 024666BDB7C8 0x3C FallbackIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

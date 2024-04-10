@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ActivePatternSetIndex                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 ActiveSynergyIndex                       0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class EditorAiConfig
+    public partial class EditorAiConfig : DataModel
     {
         public int                                      ActivePatternSetIndex                   { get; set; }
         public int                                      ActiveSynergyIndex                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditorAiConfig();
+            var value   = new EditorAiConfig() { Pointer= p0 };
 
-            value.ActivePatternSetIndex                     = GetInt32(new IntPtr(p + 0x010)); // 0270D5A9DC48 0x10 ActivePatternSetIndex       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ActiveSynergyIndex                        = GetInt32(new IntPtr(p + 0x014)); // 0270D5A9DC68 0x14 ActiveSynergyIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ActivePatternSetIndex                     = GetInt32(new IntPtr(p + 0x010)); // 024665B0E6C8 0x10 ActivePatternSetIndex       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ActiveSynergyIndex                        = GetInt32(new IntPtr(p + 0x014)); // 024665B0E6E8 0x14 ActiveSynergyIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 HijriYearInfo                            DateMapping[] IL2CPP_TYPE_SZARRAY
     // 008 minDate                                  DateTime IL2CPP_TYPE_VALUETYPE
     // 010 MaxDate                                  0001865B9CE0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class UmAlQuraCalendar
+    public partial class UmAlQuraCalendar : DataModel
     {
         public DateTime                                 MaxDate                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UmAlQuraCalendar();
+            var value   = new UmAlQuraCalendar() { Pointer= p0 };
 
-            value.MaxDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 0270D6D37AE8 0x10 MaxDate                     ( 0001865B9CE0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.MaxDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 024666D8FAE8 0x10 MaxDate                     ( 0001865B9CE0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

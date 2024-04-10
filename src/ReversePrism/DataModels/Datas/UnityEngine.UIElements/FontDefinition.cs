@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Font                                   0001865AD0A0 ModelClassType Font Font Font Pointer
     // 018 M_FontAsset                              0001865D4880 ModelClassType FontAsset FontAsset FontAsset Pointer
-    public partial class FontDefinition
+    public partial class FontDefinition : DataModel
     {
         public Font?                                    M_Font                                  { get; set; }
         public FontAsset?                               M_FontAsset                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FontDefinition();
+            var value   = new FontDefinition() { Pointer= p0 };
 
-            value.M_Font                                    = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 027003F1B078 0x10 M_Font                      ( 0001865AD0A0 ModelClassType Font Font Font Pointer )
-            value.M_FontAsset                               = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 027003F1B098 0x18 M_FontAsset                 ( 0001865D4880 ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.M_Font                                    = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 0245A3F1B078 0x10 M_Font                      ( 0001865AD0A0 ModelClassType Font Font Font Pointer )
+            value.M_FontAsset                               = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A3F1B098 0x18 M_FontAsset                 ( 0001865D4880 ModelClassType FontAsset FontAsset FontAsset Pointer )
 
             return value;
         }

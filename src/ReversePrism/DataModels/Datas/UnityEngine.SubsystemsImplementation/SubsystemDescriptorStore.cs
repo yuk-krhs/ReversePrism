@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_IntegratedDescriptors                  List`1<IntegratedSubsystemDescriptor> IL2CPP_TYPE_GENERICINST
     // 008 s_StandaloneDescriptors                  List`1<SubsystemDescriptorWithProvider> IL2CPP_TYPE_GENERICINST
     // 010 S_DeprecatedDescriptors                  000185D0F998 ModelClassListType List`1<SubsystemDescriptor> List`1<SubsystemDescriptor> List<SubsystemDescriptor> Pointer
-    public partial class SubsystemDescriptorStore
+    public partial class SubsystemDescriptorStore : DataModel
     {
         public List<SubsystemDescriptor>?               S_DeprecatedDescriptors                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubsystemDescriptorStore();
+            var value   = new SubsystemDescriptorStore() { Pointer= p0 };
 
-            value.S_DeprecatedDescriptors                   = GetObjectList<SubsystemDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.SubsystemDescriptor.FromPointer); // 0270022B66C8 0x10 S_DeprecatedDescriptors     ( 000185D0F998 ModelClassListType List`1<SubsystemDescriptor> List`1<SubsystemDescriptor> List<SubsystemDescriptor> Pointer )
+            value.S_DeprecatedDescriptors                   = GetObjectList<SubsystemDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.SubsystemDescriptor.FromPointer); // 0245A22B66C8 0x10 S_DeprecatedDescriptors     ( 000185D0F998 ModelClassListType List`1<SubsystemDescriptor> List`1<SubsystemDescriptor> List<SubsystemDescriptor> Pointer )
 
             return value;
         }

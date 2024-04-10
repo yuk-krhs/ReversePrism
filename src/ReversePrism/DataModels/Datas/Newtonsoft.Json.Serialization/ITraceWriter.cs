@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITraceWriter
+    public partial class ITraceWriter : DataModel
     {
 
         public static ITraceWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITraceWriter();
+            var value   = new ITraceWriter() { Pointer= p0 };
 
 
             return value;

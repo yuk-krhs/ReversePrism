@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 Quality_Default                          int IL2CPP_TYPE_I4
     // 000 Quality_Max                              int IL2CPP_TYPE_I4
     // 000 MaxInputSize                             int IL2CPP_TYPE_I4
-    public partial class BrotliUtils
+    public partial class BrotliUtils : DataModel
     {
 
         public static BrotliUtils? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BrotliUtils();
+            var value   = new BrotliUtils() { Pointer= p0 };
 
 
             return value;

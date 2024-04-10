@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class onReceivedErrorDelegate
+    public partial class onReceivedErrorDelegate : DataModel
     {
 
         public static onReceivedErrorDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new onReceivedErrorDelegate();
+            var value   = new onReceivedErrorDelegate() { Pointer= p0 };
 
 
             return value;

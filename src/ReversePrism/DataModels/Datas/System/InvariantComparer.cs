@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_compareInfo                            0001865EB460 ModelClassType CompareInfo CompareInfo CompareInfo Pointer
     // 000 Default                                  InvariantComparer IL2CPP_TYPE_CLASS
-    public partial class InvariantComparer
+    public partial class InvariantComparer : DataModel
     {
         public CompareInfo?                             M_compareInfo                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvariantComparer();
+            var value   = new InvariantComparer() { Pointer= p0 };
 
-            value.M_compareInfo                             = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 0270D79845B0 0x10 M_compareInfo               ( 0001865EB460 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
+            value.M_compareInfo                             = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 0246679EC5B0 0x10 M_compareInfo               ( 0001865EB460 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
 
             return value;
         }

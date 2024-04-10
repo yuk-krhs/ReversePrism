@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Message                                  000186672F10 ModelPrimitiveType string string string String
     // 000 datetimeFormat                           string IL2CPP_TYPE_STRING
     // 028 Culture                                  0001865B51E0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
-    public partial class LogRecord
+    public partial class LogRecord : DataModel
     {
         public DateTime                                 DateTime                                { get; set; }
         public LogLevel                                 LogLevel                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LogRecord();
+            var value   = new LogRecord() { Pointer= p0 };
 
-            value.DateTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D3518F78 0x10 DateTime                    ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.LogLevel                                  = (LogLevel)GetInt32(new IntPtr(p + 0x018)); // 0270D3518F98 0x18 LogLevel                    ( 0001865AED00 ModelEnumType LogLevel LogLevel LogLevel Int32 )
-            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0270D3518FB8 0x20 Message                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.CultureInfo.FromPointer); // 0270D3518FF8 0x28 Culture                     ( 0001865B51E0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.DateTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 0246605D7DD8 0x10 DateTime                    ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.LogLevel                                  = (LogLevel)GetInt32(new IntPtr(p + 0x018)); // 0246605D7DF8 0x18 LogLevel                    ( 0001865AED00 ModelEnumType LogLevel LogLevel LogLevel Int32 )
+            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0246605D7E18 0x20 Message                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.CultureInfo.FromPointer); // 0246605D7E58 0x28 Culture                     ( 0001865B51E0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
 
             return value;
         }

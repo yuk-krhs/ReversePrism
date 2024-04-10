@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RequireDerivedAttribute
+    public partial class RequireDerivedAttribute : DataModel
     {
 
         public static RequireDerivedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequireDerivedAttribute();
+            var value   = new RequireDerivedAttribute() { Pointer= p0 };
 
 
             return value;

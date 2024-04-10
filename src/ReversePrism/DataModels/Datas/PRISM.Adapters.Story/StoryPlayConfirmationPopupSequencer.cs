@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ScenarioName                             000186672F10 ModelPrimitiveType string string string String
     // 018 popupViewFactory                         IPopupViewFactory`1<IStoryPlayConfirmationPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class StoryPlayConfirmationPopupSequencer
+    public partial class StoryPlayConfirmationPopupSequencer : DataModel
     {
         public string                                   ScenarioName                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryPlayConfirmationPopupSequencer();
+            var value   = new StoryPlayConfirmationPopupSequencer() { Pointer= p0 };
 
-            value.ScenarioName                              = GetString(new IntPtr(p + 0x010)); // 0270D67DEBC0 0x10 ScenarioName                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ScenarioName                              = GetString(new IntPtr(p + 0x010)); // 02466683EBC0 0x10 ScenarioName                ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

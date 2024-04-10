@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 EnvoySinks                               0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
-    public partial class EnvoyInfo
+    public partial class EnvoyInfo : DataModel
     {
         public IMessageSink?                            EnvoySinks                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnvoyInfo();
+            var value   = new EnvoyInfo() { Pointer= p0 };
 
-            value.EnvoySinks                                = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 0270D6BB2B98 0x10 EnvoySinks                  ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.EnvoySinks                                = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C2AB98 0x10 EnvoySinks                  ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
 
             return value;
         }

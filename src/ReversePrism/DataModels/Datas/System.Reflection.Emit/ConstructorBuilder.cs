@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConstructorBuilder
+    public partial class ConstructorBuilder : DataModel
     {
 
         public static ConstructorBuilder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstructorBuilder();
+            var value   = new ConstructorBuilder() { Pointer= p0 };
 
 
             return value;

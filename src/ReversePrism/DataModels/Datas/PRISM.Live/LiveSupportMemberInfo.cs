@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 VisualSupports                           ValueTuple`2<LiveIdol, LiveIdol> IL2CPP_TYPE_GENERICINST
     // 040 MentalSupports                           ValueTuple`2<LiveIdol, LiveIdol> IL2CPP_TYPE_GENERICINST
     // 050 SupportBonusValue                        0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class LiveSupportMemberInfo
+    public partial class LiveSupportMemberInfo : DataModel
     {
         public int                                      SupportBonusValue                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveSupportMemberInfo();
+            var value   = new LiveSupportMemberInfo() { Pointer= p0 };
 
-            value.SupportBonusValue                         = GetInt32(new IntPtr(p + 0x050)); // 0270D50EEFC8 0x50 SupportBonusValue           ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.SupportBonusValue                         = GetInt32(new IntPtr(p + 0x050)); // 02466515A7D8 0x50 SupportBonusValue           ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_InitialStyle                           ComputedStyle IL2CPP_TYPE_VALUETYPE
-    public partial class InitialStyle
+    public partial class InitialStyle : DataModel
     {
 
         public static InitialStyle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitialStyle();
+            var value   = new InitialStyle() { Pointer= p0 };
 
 
             return value;

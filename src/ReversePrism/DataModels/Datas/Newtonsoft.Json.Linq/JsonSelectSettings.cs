@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 <RegexMatchTimeout>k__BackingField       Nullable`1<TimeSpan> IL2CPP_TYPE_GENERICINST
     // 020 ErrorWhenNoMatch                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonSelectSettings
+    public partial class JsonSelectSettings : DataModel
     {
         public bool                                     ErrorWhenNoMatch                        { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSelectSettings();
+            var value   = new JsonSelectSettings() { Pointer= p0 };
 
-            value.ErrorWhenNoMatch                          = GetBool(new IntPtr(p + 0x020)); // 0270D8815F30 0x20 ErrorWhenNoMatch            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ErrorWhenNoMatch                          = GetBool(new IntPtr(p + 0x020)); // 024668879528 0x20 ErrorWhenNoMatch            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

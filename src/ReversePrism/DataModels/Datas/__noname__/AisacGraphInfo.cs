@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Type                                     000186546F70 ModelEnumType AisacGraphType AisacGraphType AisacGraphType Int32
-    public partial class AisacGraphInfo
+    public partial class AisacGraphInfo : DataModel
     {
         public AisacGraphType                           Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AisacGraphInfo();
+            var value   = new AisacGraphInfo() { Pointer= p0 };
 
-            value.Type                                      = (AisacGraphType)GetInt32(new IntPtr(p + 0x010)); // 0270DAC72A28 0x10 Type                        ( 000186546F70 ModelEnumType AisacGraphType AisacGraphType AisacGraphType Int32 )
+            value.Type                                      = (AisacGraphType)GetInt32(new IntPtr(p + 0x010)); // 02466ACDAA28 0x10 Type                        ( 000186546F70 ModelEnumType AisacGraphType AisacGraphType AisacGraphType Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CanvasGroupExtensions
+    public partial class CanvasGroupExtensions : DataModel
     {
 
         public static CanvasGroupExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CanvasGroupExtensions();
+            var value   = new CanvasGroupExtensions() { Pointer= p0 };
 
 
             return value;

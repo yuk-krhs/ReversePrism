@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StorySortFilterSaveDataSearch
+    public partial class StorySortFilterSaveDataSearch : DataModel
     {
 
         public static StorySortFilterSaveDataSearch? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StorySortFilterSaveDataSearch();
+            var value   = new StorySortFilterSaveDataSearch() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 displayFilenames                         bool IL2CPP_TYPE_BOOLEAN
     // 008 typeBeautifyRegex                        Regex IL2CPP_TYPE_CLASS
     // 010 builtInTypeNames                         Dictionary`2<Type, string> IL2CPP_TYPE_GENERICINST
-    public partial class DiagnosticsExtensions
+    public partial class DiagnosticsExtensions : DataModel
     {
 
         public static DiagnosticsExtensions? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiagnosticsExtensions();
+            var value   = new DiagnosticsExtensions() { Pointer= p0 };
 
 
             return value;

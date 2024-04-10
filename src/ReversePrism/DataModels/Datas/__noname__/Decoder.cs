@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 LastByte                                 0001865F2F90 ModelPrimitiveType int int int Int32
     // 034 lastChar                                 char IL2CPP_TYPE_CHAR
-    public partial class Decoder
+    public partial class Decoder : DataModel
     {
         public int                                      LastByte                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Decoder();
+            var value   = new Decoder() { Pointer= p0 };
 
-            value.LastByte                                  = GetInt32(new IntPtr(p + 0x030)); // 0270D6B65CE0 0x30 LastByte                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LastByte                                  = GetInt32(new IntPtr(p + 0x030)); // 024666BDDCE0 0x30 LastByte                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

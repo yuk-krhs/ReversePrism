@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 exceptionTrace                           ExceptionTrace IL2CPP_TYPE_CLASS
     // 008 diagnosticTrace                          EtwDiagnosticTrace IL2CPP_TYPE_CLASS
     // 010 AsynchronousThreadExceptionHandler       0001866DF5A0 ModelClassType ExceptionHandler ExceptionHandler ExceptionHandler Pointer
-    public partial class Fx
+    public partial class Fx : DataModel
     {
         public ExceptionHandler?                        AsynchronousThreadExceptionHandler      { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Fx();
+            var value   = new Fx() { Pointer= p0 };
 
-            value.AsynchronousThreadExceptionHandler        = GetObject<ExceptionHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExceptionHandler.FromPointer); // 027004CF71F0 0x10 AsynchronousThreadExceptionHandler ( 0001866DF5A0 ModelClassType ExceptionHandler ExceptionHandler ExceptionHandler Pointer )
+            value.AsynchronousThreadExceptionHandler        = GetObject<ExceptionHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExceptionHandler.FromPointer); // 0245A4D2CF58 0x10 AsynchronousThreadExceptionHandler ( 0001866DF5A0 ModelClassType ExceptionHandler ExceptionHandler ExceptionHandler Pointer )
 
             return value;
         }

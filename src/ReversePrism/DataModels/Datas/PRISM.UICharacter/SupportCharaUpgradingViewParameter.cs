@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
     // 014 DefaultTab                               0001865F2ED0 ModelEnumType SupportIdolUpgradeTab SupportIdolUpgradeTab SupportIdolUpgradeTab Int32
-    public partial class SupportCharaUpgradingViewParameter
+    public partial class SupportCharaUpgradingViewParameter : DataModel
     {
         public int                                      CharacterId                             { get; set; }
         public SupportIdolUpgradeTab                    DefaultTab                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharaUpgradingViewParameter();
+            var value   = new SupportCharaUpgradingViewParameter() { Pointer= p0 };
 
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 0270D5DB1328 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DefaultTab                                = (SupportIdolUpgradeTab)GetInt32(new IntPtr(p + 0x014)); // 0270D5DB1348 0x14 DefaultTab                  ( 0001865F2ED0 ModelEnumType SupportIdolUpgradeTab SupportIdolUpgradeTab SupportIdolUpgradeTab Int32 )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 024665E21CF0 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DefaultTab                                = (SupportIdolUpgradeTab)GetInt32(new IntPtr(p + 0x014)); // 024665E21D10 0x14 DefaultTab                  ( 0001865F2ED0 ModelEnumType SupportIdolUpgradeTab SupportIdolUpgradeTab SupportIdolUpgradeTab Int32 )
 
             return value;
         }

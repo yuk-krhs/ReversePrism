@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Document                                 000186600150 ModelClassType SymbolDocumentInfo SymbolDocumentInfo SymbolDocumentInfo Pointer
-    public partial class DebugInfoExpression
+    public partial class DebugInfoExpression : DataModel
     {
         public SymbolDocumentInfo?                      Document                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugInfoExpression();
+            var value   = new DebugInfoExpression() { Pointer= p0 };
 
-            value.Document                                  = GetObject<SymbolDocumentInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.SymbolDocumentInfo.FromPointer); // 0270D9F3CB50 0x10 Document                    ( 000186600150 ModelClassType SymbolDocumentInfo SymbolDocumentInfo SymbolDocumentInfo Pointer )
+            value.Document                                  = GetObject<SymbolDocumentInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.SymbolDocumentInfo.FromPointer); // 024669F99C08 0x10 Document                    ( 000186600150 ModelClassType SymbolDocumentInfo SymbolDocumentInfo SymbolDocumentInfo Pointer )
 
             return value;
         }

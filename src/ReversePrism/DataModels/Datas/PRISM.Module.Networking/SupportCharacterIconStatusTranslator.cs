@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SupportCharacterIconStatusTranslator
+    public partial class SupportCharacterIconStatusTranslator : DataModel
     {
 
         public static SupportCharacterIconStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharacterIconStatusTranslator();
+            var value   = new SupportCharacterIconStatusTranslator() { Pointer= p0 };
 
 
             return value;

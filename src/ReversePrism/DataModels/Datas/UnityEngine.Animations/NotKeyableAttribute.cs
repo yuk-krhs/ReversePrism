@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NotKeyableAttribute
+    public partial class NotKeyableAttribute : DataModel
     {
 
         public static NotKeyableAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotKeyableAttribute();
+            var value   = new NotKeyableAttribute() { Pointer= p0 };
 
 
             return value;

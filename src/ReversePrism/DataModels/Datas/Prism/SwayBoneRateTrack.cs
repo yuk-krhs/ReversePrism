@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 0A0 MixerBehaviour                           0001865FB3F0 ModelClassType SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour Pointer
-    public partial class SwayBoneRateTrack
+    public partial class SwayBoneRateTrack : DataModel
     {
         public SwayBoneRateMixerBehaviour?              MixerBehaviour                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwayBoneRateTrack();
+            var value   = new SwayBoneRateTrack() { Pointer= p0 };
 
-            value.MixerBehaviour                            = GetObject<SwayBoneRateMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwayBoneRateMixerBehaviour.FromPointer); // 0270D4DFFAB8 0xA0 MixerBehaviour              ( 0001865FB3F0 ModelClassType SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour Pointer )
+            value.MixerBehaviour                            = GetObject<SwayBoneRateMixerBehaviour>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwayBoneRateMixerBehaviour.FromPointer); // 024664E74EE8 0xA0 MixerBehaviour              ( 0001865FB3F0 ModelClassType SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour SwayBoneRateMixerBehaviour Pointer )
 
             return value;
         }

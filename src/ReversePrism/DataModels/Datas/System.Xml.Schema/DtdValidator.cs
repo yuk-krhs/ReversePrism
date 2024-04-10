@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 098 IDs                                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
     // 0A0 IdRefListHead                            0001866A33C0 ModelClassType IdRefNode IdRefNode IdRefNode Pointer
     // 0A8 ProcessIdentityConstraints               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class DtdValidator
+    public partial class DtdValidator : DataModel
     {
         public HWStack?                                 ValidationStack                         { get; set; }
         public Hashtable?                               AttPresence                             { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DtdValidator();
+            var value   = new DtdValidator() { Pointer= p0 };
 
-            value.ValidationStack                           = GetObject<HWStack>(new IntPtr(p + 0x080), ReversePrism.DataModels.HWStack.FromPointer); // 0270D7526758 0x80 ValidationStack             ( 0001866A4660 ModelClassType HWStack HWStack HWStack Pointer )
-            value.AttPresence                               = GetObject<Hashtable>(new IntPtr(p + 0x088), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D7526778 0x88 AttPresence                 ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Name                                      = GetObject<XmlQualifiedName>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7526798 0x90 Name                        ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.IDs                                       = GetObject<Hashtable>(new IntPtr(p + 0x098), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D75267B8 0x98 IDs                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.IdRefListHead                             = GetObject<IdRefNode>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IdRefNode.FromPointer); // 0270D75267D8 0xA0 IdRefListHead               ( 0001866A33C0 ModelClassType IdRefNode IdRefNode IdRefNode Pointer )
-            value.ProcessIdentityConstraints                = GetBool(new IntPtr(p + 0x0A8)); // 0270D75267F8 0xA8 ProcessIdentityConstraints  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ValidationStack                           = GetObject<HWStack>(new IntPtr(p + 0x080), ReversePrism.DataModels.HWStack.FromPointer); // 02466758E758 0x80 ValidationStack             ( 0001866A4660 ModelClassType HWStack HWStack HWStack Pointer )
+            value.AttPresence                               = GetObject<Hashtable>(new IntPtr(p + 0x088), ReversePrism.DataModels.Hashtable.FromPointer); // 02466758E778 0x88 AttPresence                 ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Name                                      = GetObject<XmlQualifiedName>(new IntPtr(p + 0x090), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 02466758E798 0x90 Name                        ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.IDs                                       = GetObject<Hashtable>(new IntPtr(p + 0x098), ReversePrism.DataModels.Hashtable.FromPointer); // 02466758E7B8 0x98 IDs                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.IdRefListHead                             = GetObject<IdRefNode>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IdRefNode.FromPointer); // 02466758E7D8 0xA0 IdRefListHead               ( 0001866A33C0 ModelClassType IdRefNode IdRefNode IdRefNode Pointer )
+            value.ProcessIdentityConstraints                = GetBool(new IntPtr(p + 0x0A8)); // 02466758E7F8 0xA8 ProcessIdentityConstraints  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

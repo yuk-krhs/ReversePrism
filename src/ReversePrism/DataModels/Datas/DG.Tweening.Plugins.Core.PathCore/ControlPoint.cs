@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 A                                        0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 01C B                                        0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class ControlPoint
+    public partial class ControlPoint : DataModel
     {
         public Vector3                                  A                                       { get; set; }
         public Vector3                                  B                                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ControlPoint();
+            var value   = new ControlPoint() { Pointer= p0 };
 
-            value.A                                         = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0270DB0D8AD8 0x10 A                           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.B                                         = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0270DB0D8AF8 0x1C B                           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.A                                         = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 02466B140AD8 0x10 A                           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.B                                         = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 02466B140AF8 0x1C B                           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

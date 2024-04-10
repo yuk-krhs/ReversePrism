@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOSelector
+    public partial class IOSelector : DataModel
     {
 
         public static IOSelector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOSelector();
+            var value   = new IOSelector() { Pointer= p0 };
 
 
             return value;

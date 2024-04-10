@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MobileEnums
+    public partial class MobileEnums : DataModel
     {
 
         public static MobileEnums? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileEnums();
+            var value   = new MobileEnums() { Pointer= p0 };
 
 
             return value;

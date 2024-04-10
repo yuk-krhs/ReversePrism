@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 020 GenericCache                             <object> IL2CPP_TYPE_OBJECT
     // 028 M_serializationCtor                      000186697870 ModelClassType RuntimeConstructorInfo RuntimeConstructorInfo RuntimeConstructorInfo Pointer
     // 000 GenericParameterCountAny                 int IL2CPP_TYPE_I4
-    public partial class RuntimeType
+    public partial class RuntimeType : DataModel
     {
         public RuntimeType?                             ObjectType                              { get; set; }
         public RuntimeType?                             StringType                              { get; set; }
@@ -45,15 +45,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeType();
+            var value   = new RuntimeType() { Pointer= p0 };
 
-            value.ObjectType                                = GetObject<RuntimeType>(new IntPtr(p + 0x010), ReversePrism.DataModels.RuntimeType.FromPointer); // 027001558180 0x10 ObjectType                  ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
-            value.StringType                                = GetObject<RuntimeType>(new IntPtr(p + 0x018), ReversePrism.DataModels.RuntimeType.FromPointer); // 0270015581A0 0x18 StringType                  ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
-            value.DelegateType                              = GetObject<RuntimeType>(new IntPtr(p + 0x020), ReversePrism.DataModels.RuntimeType.FromPointer); // 0270015581C0 0x20 DelegateType                ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
-            value.S_SICtorParamTypes                        = GetObjectList<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0270015581E0 0x28 S_SICtorParamTypes          ( 000185B82F20 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.S_typedRef                                = GetObject<RuntimeType>(new IntPtr(p + 0x038), ReversePrism.DataModels.RuntimeType.FromPointer); // 027001558340 0x38 S_typedRef                  ( 00018669F470 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
-            value.Type_info                                 = GetObject<MonoTypeInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoTypeInfo.FromPointer); // 027001558360 0x18 Type_info                   ( 00018664E420 ModelClassType MonoTypeInfo MonoTypeInfo MonoTypeInfo Pointer )
-            value.M_serializationCtor                       = GetObject<RuntimeConstructorInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.RuntimeConstructorInfo.FromPointer); // 0270015583A0 0x28 M_serializationCtor         ( 000186697870 ModelClassType RuntimeConstructorInfo RuntimeConstructorInfo RuntimeConstructorInfo Pointer )
+            value.ObjectType                                = GetObject<RuntimeType>(new IntPtr(p + 0x010), ReversePrism.DataModels.RuntimeType.FromPointer); // 0245A1558180 0x10 ObjectType                  ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
+            value.StringType                                = GetObject<RuntimeType>(new IntPtr(p + 0x018), ReversePrism.DataModels.RuntimeType.FromPointer); // 0245A15581A0 0x18 StringType                  ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
+            value.DelegateType                              = GetObject<RuntimeType>(new IntPtr(p + 0x020), ReversePrism.DataModels.RuntimeType.FromPointer); // 0245A15581C0 0x20 DelegateType                ( 00018669F680 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
+            value.S_SICtorParamTypes                        = GetObjectList<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0245A15581E0 0x28 S_SICtorParamTypes          ( 000185B82F20 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.S_typedRef                                = GetObject<RuntimeType>(new IntPtr(p + 0x038), ReversePrism.DataModels.RuntimeType.FromPointer); // 0245A1558340 0x38 S_typedRef                  ( 00018669F470 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
+            value.Type_info                                 = GetObject<MonoTypeInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoTypeInfo.FromPointer); // 0245A1558360 0x18 Type_info                   ( 00018664E420 ModelClassType MonoTypeInfo MonoTypeInfo MonoTypeInfo Pointer )
+            value.M_serializationCtor                       = GetObject<RuntimeConstructorInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.RuntimeConstructorInfo.FromPointer); // 0245A15583A0 0x28 M_serializationCtor         ( 000186697870 ModelClassType RuntimeConstructorInfo RuntimeConstructorInfo RuntimeConstructorInfo Pointer )
 
             return value;
         }

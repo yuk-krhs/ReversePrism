@@ -45,7 +45,7 @@ namespace ReversePrism.DataModels
     // 088 K_SaveProcessingStatesMarker             0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
     // 090 K_GenerateTextPhaseIIMarker              0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
     // 098 K_GenerateTextPhaseIIIMarker             0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    public partial class TextMeshPro
+    public partial class TextMeshPro : DataModel
     {
         public int                                      SortingLayer                            { get; set; }
         public int                                      SortingLayerID                          { get; set; }
@@ -88,42 +88,42 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextMeshPro();
+            var value   = new TextMeshPro() { Pointer= p0 };
 
-            value.SortingLayer                              = GetInt32(new IntPtr(p + 0x6D0)); // 0270DA60BE80 0x6D0 SortingLayer                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.SortingLayerID                            = GetInt32(new IntPtr(p + 0x6D4)); // 0270DA60BEA0 0x6D4 SortingLayerID              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.SortingOrder                              = GetInt32(new IntPtr(p + 0x6D8)); // 0270DA60BEC0 0x6D8 SortingOrder                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_currentAutoSizeMode                     = GetBool(new IntPtr(p + 0x6E8)); // 0270DA60BF00 0x6E8 M_currentAutoSizeMode       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_hasFontAssetChanged                     = GetBool(new IntPtr(p + 0x6E9)); // 0270DA60BF20 0x6E9 M_hasFontAssetChanged       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_previousLossyScaleY                     = GetSingle(new IntPtr(p + 0x6EC)); // 0270DA60BF40 0x6EC M_previousLossyScaleY       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_renderer                                = GetObject<Renderer>(new IntPtr(p + 0x6F0), ReversePrism.DataModels.Renderer.FromPointer); // 0270DA60BF60 0x6F0 M_renderer                  ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
-            value.M_meshFilter                              = GetObject<MeshFilter>(new IntPtr(p + 0x6F8), ReversePrism.DataModels.MeshFilter.FromPointer); // 0270DA60BF80 0x6F8 M_meshFilter                ( 000186601410 ModelClassType MeshFilter MeshFilter MeshFilter Pointer )
-            value.M_isFirstAllocation                       = GetBool(new IntPtr(p + 0x700)); // 0270DA60BFA0 0x700 M_isFirstAllocation         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_max_characters                          = GetInt32(new IntPtr(p + 0x704)); // 0270DA60BFC0 0x704 M_max_characters            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_max_numberOfLines                       = GetInt32(new IntPtr(p + 0x708)); // 0270DA60BFE0 0x708 M_max_numberOfLines         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_subTextObjects                          = GetObjectList<TMP_SubMesh>(new IntPtr(p + 0x710), ReversePrism.DataModels.TMP_SubMesh.FromPointer); // 0270DA60C000 0x710 M_subTextObjects            ( 000185CA99C8 ModelClassListType TMP_SubMesh[] TMP_SubMesh[] List<TMP_SubMesh> Pointer )
-            value.M_maskType                                = (MaskingTypes)GetInt32(new IntPtr(p + 0x718)); // 0270DA60C020 0x718 M_maskType                  ( 0001865D9490 ModelEnumType MaskingTypes MaskingTypes MaskingTypes Int32 )
-            value.M_EnvMapMatrix                            = (Matrix4x4)GetInt32(new IntPtr(p + 0x71C)); // 0270DA60C040 0x71C M_EnvMapMatrix              ( 00018660D8C0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
-            value.M_RectTransformCorners                    = GetEnumList<Vector3>(new IntPtr(p + 0x760)); // 0270DA60C060 0x760 M_RectTransformCorners      ( 000185CB0BC8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.M_isRegisteredForEvents                   = GetBool(new IntPtr(p + 0x768)); // 0270DA60C080 0x768 M_isRegisteredForEvents     ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
-            value.K_GenerateTextPhaseIMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0270DA60C0E0 0x10 K_GenerateTextPhaseIMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_ParseMarkupTextMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 0270DA60C100 0x18 K_ParseMarkupTextMarker     ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_CharacterLookupMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x020)); // 0270DA60C120 0x20 K_CharacterLookupMarker     ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleGPOSFeaturesMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x028)); // 0270DA60C140 0x28 K_HandleGPOSFeaturesMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_CalculateVerticesPositionMarker         = (ProfilerMarker)GetInt32(new IntPtr(p + 0x030)); // 0270DA60C160 0x30 K_CalculateVerticesPositionMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_ComputeTextMetricsMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x038)); // 0270DA60C180 0x38 K_ComputeTextMetricsMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleVisibleCharacterMarker            = (ProfilerMarker)GetInt32(new IntPtr(p + 0x040)); // 0270DA60C1A0 0x40 K_HandleVisibleCharacterMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleWhiteSpacesMarker                 = (ProfilerMarker)GetInt32(new IntPtr(p + 0x048)); // 0270DA60C1C0 0x48 K_HandleWhiteSpacesMarker   ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleHorizontalLineBreakingMarker      = (ProfilerMarker)GetInt32(new IntPtr(p + 0x050)); // 0270DA60C1E0 0x50 K_HandleHorizontalLineBreakingMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleVerticalLineBreakingMarker        = (ProfilerMarker)GetInt32(new IntPtr(p + 0x058)); // 0270DA60C200 0x58 K_HandleVerticalLineBreakingMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_SaveGlyphVertexDataMarker               = (ProfilerMarker)GetInt32(new IntPtr(p + 0x060)); // 0270DA60C220 0x60 K_SaveGlyphVertexDataMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_ComputeCharacterAdvanceMarker           = (ProfilerMarker)GetInt32(new IntPtr(p + 0x068)); // 0270DA60C240 0x68 K_ComputeCharacterAdvanceMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleCarriageReturnMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x070)); // 0270DA60C260 0x70 K_HandleCarriageReturnMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_HandleLineTerminationMarker             = (ProfilerMarker)GetInt32(new IntPtr(p + 0x078)); // 0270DA60C280 0x78 K_HandleLineTerminationMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_SavePageInfoMarker                      = (ProfilerMarker)GetInt32(new IntPtr(p + 0x080)); // 0270DA60C2A0 0x80 K_SavePageInfoMarker        ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_SaveProcessingStatesMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x088)); // 0270DA60C2C0 0x88 K_SaveProcessingStatesMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_GenerateTextPhaseIIMarker               = (ProfilerMarker)GetInt32(new IntPtr(p + 0x090)); // 0270DA60C2E0 0x90 K_GenerateTextPhaseIIMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_GenerateTextPhaseIIIMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x098)); // 0270DA60C300 0x98 K_GenerateTextPhaseIIIMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.SortingLayer                              = GetInt32(new IntPtr(p + 0x6D0)); // 02466A66F590 0x6D0 SortingLayer                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.SortingLayerID                            = GetInt32(new IntPtr(p + 0x6D4)); // 02466A66F5B0 0x6D4 SortingLayerID              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.SortingOrder                              = GetInt32(new IntPtr(p + 0x6D8)); // 02466A66F5D0 0x6D8 SortingOrder                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_currentAutoSizeMode                     = GetBool(new IntPtr(p + 0x6E8)); // 02466A66F610 0x6E8 M_currentAutoSizeMode       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_hasFontAssetChanged                     = GetBool(new IntPtr(p + 0x6E9)); // 02466A66F630 0x6E9 M_hasFontAssetChanged       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_previousLossyScaleY                     = GetSingle(new IntPtr(p + 0x6EC)); // 02466A66F650 0x6EC M_previousLossyScaleY       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_renderer                                = GetObject<Renderer>(new IntPtr(p + 0x6F0), ReversePrism.DataModels.Renderer.FromPointer); // 02466A66F670 0x6F0 M_renderer                  ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
+            value.M_meshFilter                              = GetObject<MeshFilter>(new IntPtr(p + 0x6F8), ReversePrism.DataModels.MeshFilter.FromPointer); // 02466A66F690 0x6F8 M_meshFilter                ( 000186601410 ModelClassType MeshFilter MeshFilter MeshFilter Pointer )
+            value.M_isFirstAllocation                       = GetBool(new IntPtr(p + 0x700)); // 02466A66F6B0 0x700 M_isFirstAllocation         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_max_characters                          = GetInt32(new IntPtr(p + 0x704)); // 02466A66F6D0 0x704 M_max_characters            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_max_numberOfLines                       = GetInt32(new IntPtr(p + 0x708)); // 02466A66F6F0 0x708 M_max_numberOfLines         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_subTextObjects                          = GetObjectList<TMP_SubMesh>(new IntPtr(p + 0x710), ReversePrism.DataModels.TMP_SubMesh.FromPointer); // 02466A66F710 0x710 M_subTextObjects            ( 000185CA99C8 ModelClassListType TMP_SubMesh[] TMP_SubMesh[] List<TMP_SubMesh> Pointer )
+            value.M_maskType                                = (MaskingTypes)GetInt32(new IntPtr(p + 0x718)); // 02466A66F730 0x718 M_maskType                  ( 0001865D9490 ModelEnumType MaskingTypes MaskingTypes MaskingTypes Int32 )
+            value.M_EnvMapMatrix                            = (Matrix4x4)GetInt32(new IntPtr(p + 0x71C)); // 02466A66F750 0x71C M_EnvMapMatrix              ( 00018660D8C0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
+            value.M_RectTransformCorners                    = GetEnumList<Vector3>(new IntPtr(p + 0x760)); // 02466A66F770 0x760 M_RectTransformCorners      ( 000185CB0BC8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.M_isRegisteredForEvents                   = GetBool(new IntPtr(p + 0x768)); // 02466A66F790 0x768 M_isRegisteredForEvents     ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.K_GenerateTextPhaseIMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 02466A66F7F0 0x10 K_GenerateTextPhaseIMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_ParseMarkupTextMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 02466A66F810 0x18 K_ParseMarkupTextMarker     ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_CharacterLookupMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x020)); // 02466A66F830 0x20 K_CharacterLookupMarker     ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleGPOSFeaturesMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x028)); // 02466A66F850 0x28 K_HandleGPOSFeaturesMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_CalculateVerticesPositionMarker         = (ProfilerMarker)GetInt32(new IntPtr(p + 0x030)); // 02466A66F870 0x30 K_CalculateVerticesPositionMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_ComputeTextMetricsMarker                = (ProfilerMarker)GetInt32(new IntPtr(p + 0x038)); // 02466A66F890 0x38 K_ComputeTextMetricsMarker  ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleVisibleCharacterMarker            = (ProfilerMarker)GetInt32(new IntPtr(p + 0x040)); // 02466A66F8B0 0x40 K_HandleVisibleCharacterMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleWhiteSpacesMarker                 = (ProfilerMarker)GetInt32(new IntPtr(p + 0x048)); // 02466A66F8D0 0x48 K_HandleWhiteSpacesMarker   ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleHorizontalLineBreakingMarker      = (ProfilerMarker)GetInt32(new IntPtr(p + 0x050)); // 02466A66F8F0 0x50 K_HandleHorizontalLineBreakingMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleVerticalLineBreakingMarker        = (ProfilerMarker)GetInt32(new IntPtr(p + 0x058)); // 02466A66F910 0x58 K_HandleVerticalLineBreakingMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_SaveGlyphVertexDataMarker               = (ProfilerMarker)GetInt32(new IntPtr(p + 0x060)); // 02466A66F930 0x60 K_SaveGlyphVertexDataMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_ComputeCharacterAdvanceMarker           = (ProfilerMarker)GetInt32(new IntPtr(p + 0x068)); // 02466A66F950 0x68 K_ComputeCharacterAdvanceMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleCarriageReturnMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x070)); // 02466A66F970 0x70 K_HandleCarriageReturnMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_HandleLineTerminationMarker             = (ProfilerMarker)GetInt32(new IntPtr(p + 0x078)); // 02466A66F990 0x78 K_HandleLineTerminationMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_SavePageInfoMarker                      = (ProfilerMarker)GetInt32(new IntPtr(p + 0x080)); // 02466A66F9B0 0x80 K_SavePageInfoMarker        ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_SaveProcessingStatesMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x088)); // 02466A66F9D0 0x88 K_SaveProcessingStatesMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_GenerateTextPhaseIIMarker               = (ProfilerMarker)GetInt32(new IntPtr(p + 0x090)); // 02466A66F9F0 0x90 K_GenerateTextPhaseIIMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_GenerateTextPhaseIIIMarker              = (ProfilerMarker)GetInt32(new IntPtr(p + 0x098)); // 02466A66FA10 0x98 K_GenerateTextPhaseIIIMarker ( 0001865C9730 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
 
             return value;
         }

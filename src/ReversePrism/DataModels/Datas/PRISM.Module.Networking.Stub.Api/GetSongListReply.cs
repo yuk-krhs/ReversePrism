@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 FavoriteSongListFieldNumber              int IL2CPP_TYPE_I4
     // 018 _repeated_favoriteSongList_codec         FieldCodec`1<FavoriteSongStatus> IL2CPP_TYPE_GENERICINST
     // 038 FavoriteSongList                         000185CD73C8 ModelClassListType RepeatedField`1<FavoriteSongStatus> RepeatedField`1<FavoriteSongStatus> List<FavoriteSongStatus> Pointer
-    public partial class GetSongListReply
+    public partial class GetSongListReply : DataModel
     {
         public List<SongStatus>?                        SongList                                { get; set; }
         public TotalHighScoreRatingStatus?              TotalHighScoreRating                    { get; set; }
@@ -37,13 +37,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSongListReply();
+            var value   = new GetSongListReply() { Pointer= p0 };
 
-            value.SongList                                  = GetObjectList<SongStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SongStatus.FromPointer); // 0270D21DB998 0x18 SongList                    ( 000185CF1AB8 ModelClassListType RepeatedField`1<SongStatus> RepeatedField`1<SongStatus> List<SongStatus> Pointer )
-            value.TotalHighScoreRating                      = GetObject<TotalHighScoreRatingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.TotalHighScoreRatingStatus.FromPointer); // 0270D21DB9D8 0x20 TotalHighScoreRating        ( 00018668CAE0 ModelClassType TotalHighScoreRatingStatus TotalHighScoreRatingStatus TotalHighScoreRatingStatus Pointer )
-            value.TotalTechnicalRating                      = GetObject<TotalTechnicalRatingStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.TotalTechnicalRatingStatus.FromPointer); // 0270D21DBA18 0x28 TotalTechnicalRating        ( 00018668D290 ModelClassType TotalTechnicalRatingStatus TotalTechnicalRatingStatus TotalTechnicalRatingStatus Pointer )
-            value.RankRewardList                            = GetObjectList<RankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.RankRewardStatus.FromPointer); // 0270D21DBA78 0x30 RankRewardList              ( 000185CEE7D8 ModelClassListType RepeatedField`1<RankRewardStatus> RepeatedField`1<RankRewardStatus> List<RankRewardStatus> Pointer )
-            value.FavoriteSongList                          = GetObjectList<FavoriteSongStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.FavoriteSongStatus.FromPointer); // 0270D21DBAD8 0x38 FavoriteSongList            ( 000185CD73C8 ModelClassListType RepeatedField`1<FavoriteSongStatus> RepeatedField`1<FavoriteSongStatus> List<FavoriteSongStatus> Pointer )
+            value.SongList                                  = GetObjectList<SongStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SongStatus.FromPointer); // 024662185858 0x18 SongList                    ( 000185CF1AB8 ModelClassListType RepeatedField`1<SongStatus> RepeatedField`1<SongStatus> List<SongStatus> Pointer )
+            value.TotalHighScoreRating                      = GetObject<TotalHighScoreRatingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.TotalHighScoreRatingStatus.FromPointer); // 024662185898 0x20 TotalHighScoreRating        ( 00018668CAE0 ModelClassType TotalHighScoreRatingStatus TotalHighScoreRatingStatus TotalHighScoreRatingStatus Pointer )
+            value.TotalTechnicalRating                      = GetObject<TotalTechnicalRatingStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.TotalTechnicalRatingStatus.FromPointer); // 0246621858D8 0x28 TotalTechnicalRating        ( 00018668D290 ModelClassType TotalTechnicalRatingStatus TotalTechnicalRatingStatus TotalTechnicalRatingStatus Pointer )
+            value.RankRewardList                            = GetObjectList<RankRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.RankRewardStatus.FromPointer); // 024662185938 0x30 RankRewardList              ( 000185CEE7D8 ModelClassListType RepeatedField`1<RankRewardStatus> RepeatedField`1<RankRewardStatus> List<RankRewardStatus> Pointer )
+            value.FavoriteSongList                          = GetObjectList<FavoriteSongStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.FavoriteSongStatus.FromPointer); // 024662185998 0x38 FavoriteSongList            ( 000185CD73C8 ModelClassListType RepeatedField`1<FavoriteSongStatus> RepeatedField`1<FavoriteSongStatus> List<FavoriteSongStatus> Pointer )
 
             return value;
         }

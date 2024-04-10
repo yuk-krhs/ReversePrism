@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PointerCaptureOutEvent
+    public partial class PointerCaptureOutEvent : DataModel
     {
 
         public static PointerCaptureOutEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerCaptureOutEvent();
+            var value   = new PointerCaptureOutEvent() { Pointer= p0 };
 
 
             return value;

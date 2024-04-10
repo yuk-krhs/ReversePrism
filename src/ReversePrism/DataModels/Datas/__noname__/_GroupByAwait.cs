@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 groupEnumerator                          IEnumerator`1<IGrouping`2<<var>, <var>>> IL2CPP_TYPE_GENERICINST
     // 000 awaiter                                  Awaiter<<var>> IL2CPP_TYPE_GENERICINST
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _GroupByAwait
+    public partial class _GroupByAwait : DataModel
     {
 
         public static _GroupByAwait? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _GroupByAwait();
+            var value   = new _GroupByAwait() { Pointer= p0 };
 
 
             return value;

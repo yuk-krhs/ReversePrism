@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 LogDatas                                 000185CFC818 ModelClassListType List`1<ProduceLogData> List`1<ProduceLogData> List<ProduceLogData> Pointer
-    public partial class ProduceLogCache
+    public partial class ProduceLogCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
         public List<ProduceLogData>?                    LogDatas                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceLogCache();
+            var value   = new ProduceLogCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x010)); // 027004A8A118 0x10 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LogDatas                                  = GetObjectList<ProduceLogData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceLogData.FromPointer); // 027004A8A138 0x18 LogDatas                    ( 000185CFC818 ModelClassListType List`1<ProduceLogData> List`1<ProduceLogData> List<ProduceLogData> Pointer )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x010)); // 0245A4AE0AF8 0x10 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LogDatas                                  = GetObjectList<ProduceLogData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceLogData.FromPointer); // 0245A4AE0B18 0x18 LogDatas                    ( 000185CFC818 ModelClassListType List`1<ProduceLogData> List`1<ProduceLogData> List<ProduceLogData> Pointer )
 
             return value;
         }

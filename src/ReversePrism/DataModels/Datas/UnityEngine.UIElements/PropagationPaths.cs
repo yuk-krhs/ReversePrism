@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 BubbleUpPath                             000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer
     // 000 k_DefaultPropagationDepth                int IL2CPP_TYPE_I4
     // 000 k_DefaultTargetCount                     int IL2CPP_TYPE_I4
-    public partial class PropagationPaths
+    public partial class PropagationPaths : DataModel
     {
         public List<VisualElement>?                     TrickleDownPath                         { get; set; }
         public List<VisualElement>?                     TargetElements                          { get; set; }
@@ -26,11 +26,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PropagationPaths();
+            var value   = new PropagationPaths() { Pointer= p0 };
 
-            value.TrickleDownPath                           = GetObjectList<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0270067CF588 0x10 TrickleDownPath             ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
-            value.TargetElements                            = GetObjectList<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0270067CF5A8 0x18 TargetElements              ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
-            value.BubbleUpPath                              = GetObjectList<VisualElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualElement.FromPointer); // 0270067CF5C8 0x20 BubbleUpPath                ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
+            value.TrickleDownPath                           = GetObjectList<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A6791678 0x10 TrickleDownPath             ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
+            value.TargetElements                            = GetObjectList<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A6791698 0x18 TargetElements              ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
+            value.BubbleUpPath                              = GetObjectList<VisualElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A67916B8 0x20 BubbleUpPath                ( 000185D1BC78 ModelClassListType List`1<VisualElement> List`1<VisualElement> List<VisualElement> Pointer )
 
             return value;
         }

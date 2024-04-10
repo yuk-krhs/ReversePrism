@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RuntimeUIElementsBridge
+    public partial class RuntimeUIElementsBridge : DataModel
     {
 
         public static RuntimeUIElementsBridge? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeUIElementsBridge();
+            var value   = new RuntimeUIElementsBridge() { Pointer= p0 };
 
 
             return value;

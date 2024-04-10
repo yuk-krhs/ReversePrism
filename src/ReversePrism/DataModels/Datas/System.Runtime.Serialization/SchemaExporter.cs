@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 ActualTypeAnnotationName                 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
     // 038 IsDictionaryAnnotationName               0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
     // 040 IsValueTypeName                          0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    public partial class SchemaExporter
+    public partial class SchemaExporter : DataModel
     {
         public XmlSchemaSet?                            Schemas                                 { get; set; }
         public XmlDocument?                             XmlDoc                                  { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SchemaExporter();
+            var value   = new SchemaExporter() { Pointer= p0 };
 
-            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 0270D7D41170 0x10 Schemas                     ( 0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
-            value.XmlDoc                                    = GetObject<XmlDocument>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDocument.FromPointer); // 0270D7D41190 0x18 XmlDoc                      ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
-            value.DataContractSet                           = GetObject<DataContractSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataContractSet.FromPointer); // 0270D7D411B0 0x20 DataContractSet             ( 000186679430 ModelClassType DataContractSet DataContractSet DataContractSet Pointer )
-            value.DefaultEnumBaseTypeName                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D41210 0x10 DefaultEnumBaseTypeName     ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.EnumerationValueAnnotationName            = GetObject<XmlQualifiedName>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D41230 0x18 EnumerationValueAnnotationName ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.SurrogateDataAnnotationName               = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D41250 0x20 SurrogateDataAnnotationName ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.DefaultValueAnnotation                    = GetObject<XmlQualifiedName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D41270 0x28 DefaultValueAnnotation      ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.ActualTypeAnnotationName                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D41290 0x30 ActualTypeAnnotationName    ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.IsDictionaryAnnotationName                = GetObject<XmlQualifiedName>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D412B0 0x38 IsDictionaryAnnotationName  ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.IsValueTypeName                           = GetObject<XmlQualifiedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0270D7D412D0 0x40 IsValueTypeName             ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 024667DA9170 0x10 Schemas                     ( 0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
+            value.XmlDoc                                    = GetObject<XmlDocument>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDocument.FromPointer); // 024667DA9190 0x18 XmlDoc                      ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
+            value.DataContractSet                           = GetObject<DataContractSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataContractSet.FromPointer); // 024667DA91B0 0x20 DataContractSet             ( 000186679430 ModelClassType DataContractSet DataContractSet DataContractSet Pointer )
+            value.DefaultEnumBaseTypeName                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA9210 0x10 DefaultEnumBaseTypeName     ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.EnumerationValueAnnotationName            = GetObject<XmlQualifiedName>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA9230 0x18 EnumerationValueAnnotationName ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.SurrogateDataAnnotationName               = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA9250 0x20 SurrogateDataAnnotationName ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.DefaultValueAnnotation                    = GetObject<XmlQualifiedName>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA9270 0x28 DefaultValueAnnotation      ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.ActualTypeAnnotationName                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA9290 0x30 ActualTypeAnnotationName    ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.IsDictionaryAnnotationName                = GetObject<XmlQualifiedName>(new IntPtr(p + 0x038), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA92B0 0x38 IsDictionaryAnnotationName  ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.IsValueTypeName                           = GetObject<XmlQualifiedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 024667DA92D0 0x40 IsValueTypeName             ( 0001866BD1D0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
 
             return value;
         }

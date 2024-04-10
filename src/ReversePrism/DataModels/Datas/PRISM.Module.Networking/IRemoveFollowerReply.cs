@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRemoveFollowerReply
+    public partial class IRemoveFollowerReply : DataModel
     {
 
         public static IRemoveFollowerReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRemoveFollowerReply();
+            var value   = new IRemoveFollowerReply() { Pointer= p0 };
 
 
             return value;

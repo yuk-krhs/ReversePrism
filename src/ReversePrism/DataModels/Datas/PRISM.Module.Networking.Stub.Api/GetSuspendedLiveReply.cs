@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 019 CanResume                                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 000 ResumeParamFieldNumber                   int IL2CPP_TYPE_I4
     // 020 ResumeParam                              000186575BC0 ModelClassType LiveResumeParamStatus LiveResumeParamStatus LiveResumeParamStatus Pointer
-    public partial class GetSuspendedLiveReply
+    public partial class GetSuspendedLiveReply : DataModel
     {
         public bool                                     IsSuspended                             { get; set; }
         public bool                                     CanResume                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSuspendedLiveReply();
+            var value   = new GetSuspendedLiveReply() { Pointer= p0 };
 
-            value.IsSuspended                               = GetBool(new IntPtr(p + 0x018)); // 0270D2053288 0x18 IsSuspended                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanResume                                 = GetBool(new IntPtr(p + 0x019)); // 0270D20532C8 0x19 CanResume                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ResumeParam                               = GetObject<LiveResumeParamStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveResumeParamStatus.FromPointer); // 0270D2053308 0x20 ResumeParam                 ( 000186575BC0 ModelClassType LiveResumeParamStatus LiveResumeParamStatus LiveResumeParamStatus Pointer )
+            value.IsSuspended                               = GetBool(new IntPtr(p + 0x018)); // 024662013078 0x18 IsSuspended                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanResume                                 = GetBool(new IntPtr(p + 0x019)); // 0246620130B8 0x19 CanResume                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ResumeParam                               = GetObject<LiveResumeParamStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveResumeParamStatus.FromPointer); // 0246620130F8 0x20 ResumeParam                 ( 000186575BC0 ModelClassType LiveResumeParamStatus LiveResumeParamStatus LiveResumeParamStatus Pointer )
 
             return value;
         }

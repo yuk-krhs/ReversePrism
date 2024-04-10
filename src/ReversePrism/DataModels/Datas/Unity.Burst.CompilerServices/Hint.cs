@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Hint
+    public partial class Hint : DataModel
     {
 
         public static Hint? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hint();
+            var value   = new Hint() { Pointer= p0 };
 
 
             return value;

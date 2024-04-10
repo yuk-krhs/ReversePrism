@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 View                                     0001865A91A0 ModelClassType IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView Pointer
     // 018 Vm                                       0001865DAE30 ModelClassType MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel Pointer
-    public partial class MasterTrainingExecutionConfirmedPopupPresenter
+    public partial class MasterTrainingExecutionConfirmedPopupPresenter : DataModel
     {
         public IMasterTrainingExecutionConfirmedPopupView? View                                    { get; set; }
         public MasterTrainingExecutionConfirmedPopupViewModel? Vm                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MasterTrainingExecutionConfirmedPopupPresenter();
+            var value   = new MasterTrainingExecutionConfirmedPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IMasterTrainingExecutionConfirmedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMasterTrainingExecutionConfirmedPopupView.FromPointer); // 0270D5F77498 0x10 View                        ( 0001865A91A0 ModelClassType IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView Pointer )
-            value.Vm                                        = GetObject<MasterTrainingExecutionConfirmedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.MasterTrainingExecutionConfirmedPopupViewModel.FromPointer); // 0270D5F774B8 0x18 Vm                          ( 0001865DAE30 ModelClassType MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel Pointer )
+            value.View                                      = GetObject<IMasterTrainingExecutionConfirmedPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMasterTrainingExecutionConfirmedPopupView.FromPointer); // 024665FE7CC8 0x10 View                        ( 0001865A91A0 ModelClassType IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView IMasterTrainingExecutionConfirmedPopupView Pointer )
+            value.Vm                                        = GetObject<MasterTrainingExecutionConfirmedPopupViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.MasterTrainingExecutionConfirmedPopupViewModel.FromPointer); // 024665FE7CE8 0x18 Vm                          ( 0001865DAE30 ModelClassType MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel MasterTrainingExecutionConfirmedPopupViewModel Pointer )
 
             return value;
         }

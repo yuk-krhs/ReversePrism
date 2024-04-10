@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 incompatibleStackUnwindingEnabled        MainThreadProperty`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class FirebaseLogger
+    public partial class FirebaseLogger : DataModel
     {
 
         public static FirebaseLogger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseLogger();
+            var value   = new FirebaseLogger() { Pointer= p0 };
 
 
             return value;

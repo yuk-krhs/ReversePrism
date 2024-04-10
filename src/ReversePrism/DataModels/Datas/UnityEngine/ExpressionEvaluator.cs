@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Random                                 PcgRandom IL2CPP_TYPE_VALUETYPE
     // 010 s_Operators                              Dictionary`2<string, Operator> IL2CPP_TYPE_GENERICINST
-    public partial class ExpressionEvaluator
+    public partial class ExpressionEvaluator : DataModel
     {
 
         public static ExpressionEvaluator? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpressionEvaluator();
+            var value   = new ExpressionEvaluator() { Pointer= p0 };
 
 
             return value;

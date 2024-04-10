@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 layoutOverrideNames                      HashSet`1<InternedString> IL2CPP_TYPE_GENERICINST
     // 040 precompiledLayouts                       Dictionary`2<InternedString, PrecompiledLayout> IL2CPP_TYPE_GENERICINST
     // 048 LayoutMatchers                           000185D32318 ModelEnumListType List`1<LayoutMatcher> List`1<LayoutMatcher> List<LayoutMatcher> Pointer
-    public partial class Collection
+    public partial class Collection : DataModel
     {
         public List<LayoutMatcher>?                     LayoutMatchers                          { get; set; }
 
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Collection();
+            var value   = new Collection() { Pointer= p0 };
 
-            value.LayoutMatchers                            = GetEnumList<LayoutMatcher>(new IntPtr(p + 0x048)); // 02700334C3F0 0x48 LayoutMatchers              ( 000185D32318 ModelEnumListType List`1<LayoutMatcher> List`1<LayoutMatcher> List<LayoutMatcher> Pointer )
+            value.LayoutMatchers                            = GetEnumList<LayoutMatcher>(new IntPtr(p + 0x048)); // 0245A334C3F0 0x48 LayoutMatchers              ( 000185D32318 ModelEnumListType List`1<LayoutMatcher> List`1<LayoutMatcher> List<LayoutMatcher> Pointer )
 
             return value;
         }

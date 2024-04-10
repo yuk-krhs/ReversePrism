@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ChainGroupId                             0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 ChainTalkColorType                       00018673EAE0 ModelEnumType ColorType ColorType ColorType Int32
-    public partial class IdColorPair
+    public partial class IdColorPair : DataModel
     {
         public int                                      ChainGroupId                            { get; set; }
         public ColorType                                ChainTalkColorType                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdColorPair();
+            var value   = new IdColorPair() { Pointer= p0 };
 
-            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x010)); // 0270DB1156B0 0x10 ChainGroupId                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ChainTalkColorType                        = (ColorType)GetInt32(new IntPtr(p + 0x014)); // 0270DB1156D0 0x14 ChainTalkColorType          ( 00018673EAE0 ModelEnumType ColorType ColorType ColorType Int32 )
+            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x010)); // 02466B1756B0 0x10 ChainGroupId                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ChainTalkColorType                        = (ColorType)GetInt32(new IntPtr(p + 0x014)); // 02466B1756D0 0x14 ChainTalkColorType          ( 00018673EAE0 ModelEnumType ColorType ColorType ColorType Int32 )
 
             return value;
         }

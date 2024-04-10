@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 068 AllowNullItems                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class JsonArrayAttribute
+    public partial class JsonArrayAttribute : DataModel
     {
         public bool                                     AllowNullItems                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonArrayAttribute();
+            var value   = new JsonArrayAttribute() { Pointer= p0 };
 
-            value.AllowNullItems                            = GetBool(new IntPtr(p + 0x068)); // 027005FE7CE8 0x68 AllowNullItems              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AllowNullItems                            = GetBool(new IntPtr(p + 0x068)); // 0245A5FC1108 0x68 AllowNullItems              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

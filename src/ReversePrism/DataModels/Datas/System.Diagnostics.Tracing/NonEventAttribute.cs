@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NonEventAttribute
+    public partial class NonEventAttribute : DataModel
     {
 
         public static NonEventAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NonEventAttribute();
+            var value   = new NonEventAttribute() { Pointer= p0 };
 
 
             return value;

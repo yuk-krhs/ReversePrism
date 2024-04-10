@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CamelCaseNamingStrategy
+    public partial class CamelCaseNamingStrategy : DataModel
     {
 
         public static CamelCaseNamingStrategy? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CamelCaseNamingStrategy();
+            var value   = new CamelCaseNamingStrategy() { Pointer= p0 };
 
 
             return value;

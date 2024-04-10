@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 040 AutoPlaySettings                         00018652E370 ModelClassType ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus Pointer
     // 000 ProduceBoostFieldNumber                  int IL2CPP_TYPE_I4
     // 048 ProduceBoost                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StartProduceArgs
+    public partial class StartProduceArgs : DataModel
     {
         public int                                      MstEpisodeId                            { get; set; }
         public ProduceDifficultyType                    Difficulty                              { get; set; }
@@ -43,16 +43,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartProduceArgs();
+            var value   = new StartProduceArgs() { Pointer= p0 };
 
-            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x018)); // 0270D25B2C98 0x18 MstEpisodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Difficulty                                = (ProduceDifficultyType)GetInt32(new IntPtr(p + 0x01C)); // 0270D25B2CD8 0x1C Difficulty                  ( 00018653B4F0 ModelEnumType ProduceDifficultyType ProduceDifficultyType ProduceDifficultyType Int32 )
-            value.UnitNumberId                              = GetInt32(new IntPtr(p + 0x020)); // 0270D25B2D18 0x20 UnitNumberId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FriendSupportCharacterId                  = GetString(new IntPtr(p + 0x028)); // 0270D25B2D58 0x28 FriendSupportCharacterId    ( 000186671910 ModelPrimitiveType string string string String )
-            value.InheritanceFesUnitId                      = GetString(new IntPtr(p + 0x030)); // 0270D25B2D98 0x30 InheritanceFesUnitId        ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsAutoPlay                                = GetBool(new IntPtr(p + 0x038)); // 0270D25B2DD8 0x38 IsAutoPlay                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoPlaySettings                          = GetObject<ProduceAutoPlaySettingsStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceAutoPlaySettingsStatus.FromPointer); // 0270D25B2E18 0x40 AutoPlaySettings            ( 00018652E370 ModelClassType ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus Pointer )
-            value.ProduceBoost                              = GetInt32(new IntPtr(p + 0x048)); // 0270D25B2E58 0x48 ProduceBoost                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x018)); // 0246625821B8 0x18 MstEpisodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Difficulty                                = (ProduceDifficultyType)GetInt32(new IntPtr(p + 0x01C)); // 0246625821F8 0x1C Difficulty                  ( 00018653B4F0 ModelEnumType ProduceDifficultyType ProduceDifficultyType ProduceDifficultyType Int32 )
+            value.UnitNumberId                              = GetInt32(new IntPtr(p + 0x020)); // 024662582238 0x20 UnitNumberId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FriendSupportCharacterId                  = GetString(new IntPtr(p + 0x028)); // 024662582278 0x28 FriendSupportCharacterId    ( 000186671910 ModelPrimitiveType string string string String )
+            value.InheritanceFesUnitId                      = GetString(new IntPtr(p + 0x030)); // 0246625822B8 0x30 InheritanceFesUnitId        ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsAutoPlay                                = GetBool(new IntPtr(p + 0x038)); // 0246625822F8 0x38 IsAutoPlay                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AutoPlaySettings                          = GetObject<ProduceAutoPlaySettingsStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceAutoPlaySettingsStatus.FromPointer); // 024662582338 0x40 AutoPlaySettings            ( 00018652E370 ModelClassType ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus ProduceAutoPlaySettingsStatus Pointer )
+            value.ProduceBoost                              = GetInt32(new IntPtr(p + 0x048)); // 024662582378 0x48 ProduceBoost                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

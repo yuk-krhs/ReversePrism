@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DirectMessageService
+    public partial class DirectMessageService : DataModel
     {
 
         public static DirectMessageService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectMessageService();
+            var value   = new DirectMessageService() { Pointer= p0 };
 
 
             return value;

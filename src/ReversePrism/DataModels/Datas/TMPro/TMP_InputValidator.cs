@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TMP_InputValidator
+    public partial class TMP_InputValidator : DataModel
     {
 
         public static TMP_InputValidator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_InputValidator();
+            var value   = new TMP_InputValidator() { Pointer= p0 };
 
 
             return value;

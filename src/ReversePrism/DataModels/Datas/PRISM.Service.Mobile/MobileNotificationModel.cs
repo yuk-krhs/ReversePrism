@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Service                                  000186635D00 ModelClassType MobileService MobileService MobileService Pointer
     // 018 newestTwestaArticles                     IEnumerable`1<ITwestaArticleStatus> IL2CPP_TYPE_GENERICINST
-    public partial class MobileNotificationModel
+    public partial class MobileNotificationModel : DataModel
     {
         public MobileService?                           Service                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileNotificationModel();
+            var value   = new MobileNotificationModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 027003669C78 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
+            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 0245A5B58718 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Color                                    0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32
     // 014 Padding                                  0001866D79C0 ModelEnumType Offset Offset Offset Int32
-    public partial class HighlightState
+    public partial class HighlightState : DataModel
     {
         public Color32                                  Color                                   { get; set; }
         public Offset                                   Padding                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HighlightState();
+            var value   = new HighlightState() { Pointer= p0 };
 
-            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x010)); // 0270068EB2E8 0x10 Color                       ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Padding                                   = (Offset)GetInt32(new IntPtr(p + 0x014)); // 0270068EB308 0x14 Padding                     ( 0001866D79C0 ModelEnumType Offset Offset Offset Int32 )
+            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x010)); // 0245A68ADFB0 0x10 Color                       ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Padding                                   = (Offset)GetInt32(new IntPtr(p + 0x014)); // 0245A68ADFD0 0x14 Padding                     ( 0001866D79C0 ModelEnumType Offset Offset Offset Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NestedStringBuilderCreationException
+    public partial class NestedStringBuilderCreationException : DataModel
     {
 
         public static NestedStringBuilderCreationException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NestedStringBuilderCreationException();
+            var value   = new NestedStringBuilderCreationException() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Version                                  string IL2CPP_TYPE_STRING
     // 000 Production                               string IL2CPP_TYPE_STRING
     // 000 Staging                                  string IL2CPP_TYPE_STRING
-    public partial class AuthSdkInfo
+    public partial class AuthSdkInfo : DataModel
     {
 
         public static AuthSdkInfo? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthSdkInfo();
+            var value   = new AuthSdkInfo() { Pointer= p0 };
 
 
             return value;

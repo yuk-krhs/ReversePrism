@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReloadAttribute
+    public partial class ReloadAttribute : DataModel
     {
 
         public static ReloadAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReloadAttribute();
+            var value   = new ReloadAttribute() { Pointer= p0 };
 
 
             return value;

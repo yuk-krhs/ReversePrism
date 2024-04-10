@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IsTitleCell                              0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 018 ResourceIdList                           000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer
-    public partial class EtceteraListCellViewModel
+    public partial class EtceteraListCellViewModel : DataModel
     {
         public bool                                     IsTitleCell                             { get; set; }
         public List<string>?                            ResourceIdList                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EtceteraListCellViewModel();
+            var value   = new EtceteraListCellViewModel() { Pointer= p0 };
 
-            value.IsTitleCell                               = GetBool(new IntPtr(p + 0x010)); // 0270D5F2D1C8 0x10 IsTitleCell                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ResourceIdList                            = GetStringList(new IntPtr(p + 0x018)); // 0270D5F2D1E8 0x18 ResourceIdList              ( 000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
+            value.IsTitleCell                               = GetBool(new IntPtr(p + 0x010)); // 024665F8D1C8 0x10 IsTitleCell                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ResourceIdList                            = GetStringList(new IntPtr(p + 0x018)); // 024665F8D1E8 0x18 ResourceIdList              ( 000185D17078 ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
 
             return value;
         }

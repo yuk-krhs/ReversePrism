@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XSODictionaryEnumerator
+    public partial class XSODictionaryEnumerator : DataModel
     {
 
         public static XSODictionaryEnumerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XSODictionaryEnumerator();
+            var value   = new XSODictionaryEnumerator() { Pointer= p0 };
 
 
             return value;

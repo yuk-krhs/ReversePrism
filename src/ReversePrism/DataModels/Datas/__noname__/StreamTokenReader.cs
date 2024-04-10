@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 In                                       0001865B5BF0 ModelClassType StreamReader StreamReader StreamReader Pointer
     // 018 NumCharRead                              0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class StreamTokenReader
+    public partial class StreamTokenReader : DataModel
     {
         public StreamReader?                            In                                      { get; set; }
         public int                                      NumCharRead                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StreamTokenReader();
+            var value   = new StreamTokenReader() { Pointer= p0 };
 
-            value.In                                        = GetObject<StreamReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.StreamReader.FromPointer); // 0270D6B6AA90 0x10 In                          ( 0001865B5BF0 ModelClassType StreamReader StreamReader StreamReader Pointer )
-            value.NumCharRead                               = GetInt32(new IntPtr(p + 0x018)); // 0270D6B6AAB0 0x18 NumCharRead                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.In                                        = GetObject<StreamReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.StreamReader.FromPointer); // 024666BE2A90 0x10 In                          ( 0001865B5BF0 ModelClassType StreamReader StreamReader StreamReader Pointer )
+            value.NumCharRead                               = GetInt32(new IntPtr(p + 0x018)); // 024666BE2AB0 0x18 NumCharRead                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

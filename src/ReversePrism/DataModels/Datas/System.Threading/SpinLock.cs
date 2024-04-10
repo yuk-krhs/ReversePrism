@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 ID_DISABLED_AND_ANONYMOUS_OWNED          int IL2CPP_TYPE_I4
     // 000 LOCK_UNOWNED                             int IL2CPP_TYPE_I4
     // 000 MAXIMUM_WAITERS                          int IL2CPP_TYPE_I4
-    public partial class SpinLock
+    public partial class SpinLock : DataModel
     {
         public int                                      M_owner                                 { get; set; }
 
@@ -29,9 +29,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpinLock();
+            var value   = new SpinLock() { Pointer= p0 };
 
-            value.M_owner                                   = GetInt32(new IntPtr(p + 0x010)); // 027003BD8920 0x10 M_owner                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_owner                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A3BD8920 0x10 M_owner                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

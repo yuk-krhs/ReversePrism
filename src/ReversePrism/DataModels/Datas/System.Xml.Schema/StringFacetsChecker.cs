@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 languagePattern                          Regex IL2CPP_TYPE_CLASS
-    public partial class StringFacetsChecker
+    public partial class StringFacetsChecker : DataModel
     {
 
         public static StringFacetsChecker? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringFacetsChecker();
+            var value   = new StringFacetsChecker() { Pointer= p0 };
 
 
             return value;

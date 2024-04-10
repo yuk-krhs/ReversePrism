@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Plan                                     0001866722E0 ModelPrimitiveType string string string String
-    public partial class Billing
+    public partial class Billing : DataModel
     {
         public string                                   Plan                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Billing();
+            var value   = new Billing() { Pointer= p0 };
 
-            value.Plan                                      = GetString(new IntPtr(p + 0x010)); // 027003342368 0x10 Plan                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Plan                                      = GetString(new IntPtr(p + 0x010)); // 0245A3342368 0x10 Plan                        ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

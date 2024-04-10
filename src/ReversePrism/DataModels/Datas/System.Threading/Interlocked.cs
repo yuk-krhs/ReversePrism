@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Interlocked
+    public partial class Interlocked : DataModel
     {
 
         public static Interlocked? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Interlocked();
+            var value   = new Interlocked() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StyleValueExtensions
+    public partial class StyleValueExtensions : DataModel
     {
 
         public static StyleValueExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleValueExtensions();
+            var value   = new StyleValueExtensions() { Pointer= p0 };
 
 
             return value;

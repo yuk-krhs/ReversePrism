@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EmptyParticle
+    public partial class EmptyParticle : DataModel
     {
 
         public static EmptyParticle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EmptyParticle();
+            var value   = new EmptyParticle() { Pointer= p0 };
 
 
             return value;

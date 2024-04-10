@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Company                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class AssemblyCompanyAttribute
+    public partial class AssemblyCompanyAttribute : DataModel
     {
         public string                                   Company                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssemblyCompanyAttribute();
+            var value   = new AssemblyCompanyAttribute() { Pointer= p0 };
 
-            value.Company                                   = GetString(new IntPtr(p + 0x010)); // 0270D6CE86B0 0x10 Company                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Company                                   = GetString(new IntPtr(p + 0x010)); // 024666D386B0 0x10 Company                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

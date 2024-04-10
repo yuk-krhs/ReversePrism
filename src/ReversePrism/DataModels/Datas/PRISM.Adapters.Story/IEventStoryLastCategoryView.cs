@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IEventStoryLastCategoryView
+    public partial class IEventStoryLastCategoryView : DataModel
     {
 
         public static IEventStoryLastCategoryView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IEventStoryLastCategoryView();
+            var value   = new IEventStoryLastCategoryView() { Pointer= p0 };
 
 
             return value;

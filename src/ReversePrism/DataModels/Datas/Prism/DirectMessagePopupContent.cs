@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 UigreadSystem                            0001866F0C40 ModelClassType UIRepeatedGridLayout UIRepeatedGridLayout UIRepeatedGridLayout Pointer
     // 068 MessageTables                            000185B7A6D0 ModelClassListType DirectMessageModel[] DirectMessageModel[] List<DirectMessageModel> Pointer
-    public partial class DirectMessagePopupContent
+    public partial class DirectMessagePopupContent : DataModel
     {
         public UIRepeatedGridLayout?                    UigreadSystem                           { get; set; }
         public List<DirectMessageModel>?                MessageTables                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectMessagePopupContent();
+            var value   = new DirectMessagePopupContent() { Pointer= p0 };
 
-            value.UigreadSystem                             = GetObject<UIRepeatedGridLayout>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRepeatedGridLayout.FromPointer); // 0270D4CAE598 0x60 UigreadSystem               ( 0001866F0C40 ModelClassType UIRepeatedGridLayout UIRepeatedGridLayout UIRepeatedGridLayout Pointer )
-            value.MessageTables                             = GetObjectList<DirectMessageModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.DirectMessageModel.FromPointer); // 0270D4CAE5B8 0x68 MessageTables               ( 000185B7A6D0 ModelClassListType DirectMessageModel[] DirectMessageModel[] List<DirectMessageModel> Pointer )
+            value.UigreadSystem                             = GetObject<UIRepeatedGridLayout>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIRepeatedGridLayout.FromPointer); // 024664D22598 0x60 UigreadSystem               ( 0001866F0C40 ModelClassType UIRepeatedGridLayout UIRepeatedGridLayout UIRepeatedGridLayout Pointer )
+            value.MessageTables                             = GetObjectList<DirectMessageModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.DirectMessageModel.FromPointer); // 024664D225B8 0x68 MessageTables               ( 000185B7A6D0 ModelClassListType DirectMessageModel[] DirectMessageModel[] List<DirectMessageModel> Pointer )
 
             return value;
         }

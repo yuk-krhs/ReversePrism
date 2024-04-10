@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 ClientVersion                            000186671910 ModelPrimitiveType string string string String
     // 068 UserCountry                              000186671910 ModelPrimitiveType string string string String
     // 070 ProjectID                                000186671910 ModelPrimitiveType string string string String
-    public partial class StdCommonParams
+    public partial class StdCommonParams : DataModel
     {
         public string                                   GameStoreID                             { get; set; }
         public string                                   GameBundleID                            { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StdCommonParams();
+            var value   = new StdCommonParams() { Pointer= p0 };
 
-            value.GameStoreID                               = GetString(new IntPtr(p + 0x010)); // 0270066C40D0 0x10 GameStoreID                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.GameBundleID                              = GetString(new IntPtr(p + 0x018)); // 0270066C40F0 0x18 GameBundleID                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Platform                                  = GetString(new IntPtr(p + 0x020)); // 0270066C4110 0x20 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.UasUserID                                 = GetString(new IntPtr(p + 0x028)); // 0270066C4130 0x28 UasUserID                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Idfv                                      = GetString(new IntPtr(p + 0x030)); // 0270066C4150 0x30 Idfv                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.BuildGuuid                                = GetString(new IntPtr(p + 0x058)); // 0270066C41B0 0x58 BuildGuuid                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.ClientVersion                             = GetString(new IntPtr(p + 0x060)); // 0270066C41D0 0x60 ClientVersion               ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserCountry                               = GetString(new IntPtr(p + 0x068)); // 0270066C41F0 0x68 UserCountry                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProjectID                                 = GetString(new IntPtr(p + 0x070)); // 0270066C4210 0x70 ProjectID                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.GameStoreID                               = GetString(new IntPtr(p + 0x010)); // 0245A6685A48 0x10 GameStoreID                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.GameBundleID                              = GetString(new IntPtr(p + 0x018)); // 0245A6685A68 0x18 GameBundleID                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Platform                                  = GetString(new IntPtr(p + 0x020)); // 0245A6685A88 0x20 Platform                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.UasUserID                                 = GetString(new IntPtr(p + 0x028)); // 0245A6685AA8 0x28 UasUserID                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Idfv                                      = GetString(new IntPtr(p + 0x030)); // 0245A6685AC8 0x30 Idfv                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.BuildGuuid                                = GetString(new IntPtr(p + 0x058)); // 0245A6685B28 0x58 BuildGuuid                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ClientVersion                             = GetString(new IntPtr(p + 0x060)); // 0245A6685B48 0x60 ClientVersion               ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserCountry                               = GetString(new IntPtr(p + 0x068)); // 0245A6685B68 0x68 UserCountry                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ProjectID                                 = GetString(new IntPtr(p + 0x070)); // 0245A6685B88 0x70 ProjectID                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

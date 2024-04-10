@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 05C MstCharaInfoId                           0001865F4260 ModelPrimitiveType int int int Int32
     // 060 Rarity                                   0001866201C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32
     // 064 NextLv                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SupportCharaStatusViewModel
+    public partial class SupportCharaStatusViewModel : DataModel
     {
         public IntReactiveProperty?                     FavoriteMarkRP                          { get; set; }
         public LongReactiveProperty?                    TrainingTicketsTotalExpChangeRP         { get; set; }
@@ -38,16 +38,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SupportCharaStatusViewModel();
+            var value   = new SupportCharaStatusViewModel() { Pointer= p0 };
 
-            value.FavoriteMarkRP                            = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0270D6059BC0 0x10 FavoriteMarkRP              ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.TrainingTicketsTotalExpChangeRP           = GetObject<LongReactiveProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D6059C40 0x30 TrainingTicketsTotalExpChangeRP ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
-            value.CurrentExpProgressChangeRP                = GetObject<FloatReactiveProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.FloatReactiveProperty.FromPointer); // 0270D6059C60 0x38 CurrentExpProgressChangeRP  ( 0001865A8B80 ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer )
-            value.ToNextLvExpChange                         = GetObject<LongReactiveProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0270D6059CA0 0x48 ToNextLvExpChange           ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
-            value.MstSupportCharaId                         = GetInt32(new IntPtr(p + 0x058)); // 0270D6059CE0 0x58 MstSupportCharaId           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstCharaInfoId                            = GetInt32(new IntPtr(p + 0x05C)); // 0270D6059D00 0x5C MstCharaInfoId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x060)); // 0270D6059D20 0x60 Rarity                      ( 0001866201C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
-            value.NextLv                                    = GetInt32(new IntPtr(p + 0x064)); // 0270D6059D40 0x64 NextLv                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FavoriteMarkRP                            = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0246660C9BC0 0x10 FavoriteMarkRP              ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.TrainingTicketsTotalExpChangeRP           = GetObject<LongReactiveProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0246660C9C40 0x30 TrainingTicketsTotalExpChangeRP ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.CurrentExpProgressChangeRP                = GetObject<FloatReactiveProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.FloatReactiveProperty.FromPointer); // 0246660C9C60 0x38 CurrentExpProgressChangeRP  ( 0001865A8B80 ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer )
+            value.ToNextLvExpChange                         = GetObject<LongReactiveProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.LongReactiveProperty.FromPointer); // 0246660C9CA0 0x48 ToNextLvExpChange           ( 0001865BF5C0 ModelClassType LongReactiveProperty LongReactiveProperty LongReactiveProperty Pointer )
+            value.MstSupportCharaId                         = GetInt32(new IntPtr(p + 0x058)); // 0246660C9CE0 0x58 MstSupportCharaId           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstCharaInfoId                            = GetInt32(new IntPtr(p + 0x05C)); // 0246660C9D00 0x5C MstCharaInfoId              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x060)); // 0246660C9D20 0x60 Rarity                      ( 0001866201C0 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
+            value.NextLv                                    = GetInt32(new IntPtr(p + 0x064)); // 0246660C9D40 0x64 NextLv                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 queue                                    ConcurrentQueue`1<ReusableReadOnlySequenceBuilder> IL2CPP_TYPE_GENERICINST
-    public partial class ReusableReadOnlySequenceBuilderPool
+    public partial class ReusableReadOnlySequenceBuilderPool : DataModel
     {
 
         public static ReusableReadOnlySequenceBuilderPool? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReusableReadOnlySequenceBuilderPool();
+            var value   = new ReusableReadOnlySequenceBuilderPool() { Pointer= p0 };
 
 
             return value;

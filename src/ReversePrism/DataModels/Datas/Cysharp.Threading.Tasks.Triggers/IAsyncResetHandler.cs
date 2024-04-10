@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAsyncResetHandler
+    public partial class IAsyncResetHandler : DataModel
     {
 
         public static IAsyncResetHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAsyncResetHandler();
+            var value   = new IAsyncResetHandler() { Pointer= p0 };
 
 
             return value;

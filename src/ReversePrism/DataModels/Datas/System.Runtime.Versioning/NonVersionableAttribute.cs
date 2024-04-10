@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NonVersionableAttribute
+    public partial class NonVersionableAttribute : DataModel
     {
 
         public static NonVersionableAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NonVersionableAttribute();
+            var value   = new NonVersionableAttribute() { Pointer= p0 };
 
 
             return value;

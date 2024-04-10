@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class _bezierInterpolate_00005502$PostfixBurstDelegate
+    public partial class _bezierInterpolate_00005502$PostfixBurstDelegate : DataModel
     {
 
         public static _bezierInterpolate_00005502$PostfixBurstDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _bezierInterpolate_00005502$PostfixBurstDelegate();
+            var value   = new _bezierInterpolate_00005502$PostfixBurstDelegate() { Pointer= p0 };
 
 
             return value;

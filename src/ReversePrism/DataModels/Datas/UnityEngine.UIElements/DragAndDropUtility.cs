@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_MakeDragAndDropClientFunc              Func`1<IDragAndDrop> IL2CPP_TYPE_GENERICINST
     // 008 s_DragAndDropEditor                      IDragAndDrop IL2CPP_TYPE_CLASS
     // 010 S_DragAndDropPlayMode                    0001867569C0 ModelClassType IDragAndDrop IDragAndDrop IDragAndDrop Pointer
-    public partial class DragAndDropUtility
+    public partial class DragAndDropUtility : DataModel
     {
         public IDragAndDrop?                            S_DragAndDropPlayMode                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DragAndDropUtility();
+            var value   = new DragAndDropUtility() { Pointer= p0 };
 
-            value.S_DragAndDropPlayMode                     = GetObject<IDragAndDrop>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDragAndDrop.FromPointer); // 027006753AC8 0x10 S_DragAndDropPlayMode       ( 0001867569C0 ModelClassType IDragAndDrop IDragAndDrop IDragAndDrop Pointer )
+            value.S_DragAndDropPlayMode                     = GetObject<IDragAndDrop>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDragAndDrop.FromPointer); // 0245A6715A30 0x10 S_DragAndDropPlayMode       ( 0001867569C0 ModelClassType IDragAndDrop IDragAndDrop IDragAndDrop Pointer )
 
             return value;
         }

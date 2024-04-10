@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypeIdentifiers
+    public partial class TypeIdentifiers : DataModel
     {
 
         public static TypeIdentifiers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeIdentifiers();
+            var value   = new TypeIdentifiers() { Pointer= p0 };
 
 
             return value;

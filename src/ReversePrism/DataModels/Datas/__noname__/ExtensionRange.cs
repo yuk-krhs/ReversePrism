@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 020 End                                      0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
     // 028 Options                                  000186532560 ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer
-    public partial class ExtensionRange
+    public partial class ExtensionRange : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public int                                      Start                                   { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExtensionRange();
+            var value   = new ExtensionRange() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D0B92A60 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D0B92AC0 0x1C Start                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D0B92B20 0x20 End                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Options                                   = GetObject<ExtensionRangeOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExtensionRangeOptions.FromPointer); // 0270D0B92B60 0x28 Options                     ( 000186532560 ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A3B11940 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0245A3B119A0 0x1C Start                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0245A3B11A00 0x20 End                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Options                                   = GetObject<ExtensionRangeOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExtensionRangeOptions.FromPointer); // 0245A3B11A40 0x28 Options                     ( 000186532560 ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer )
 
             return value;
         }

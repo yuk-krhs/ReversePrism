@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RightShiftByte
+    public partial class RightShiftByte : DataModel
     {
 
         public static RightShiftByte? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RightShiftByte();
+            var value   = new RightShiftByte() { Pointer= p0 };
 
 
             return value;

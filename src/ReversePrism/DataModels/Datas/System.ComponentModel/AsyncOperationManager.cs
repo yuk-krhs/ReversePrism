@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncOperationManager
+    public partial class AsyncOperationManager : DataModel
     {
 
         public static AsyncOperationManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncOperationManager();
+            var value   = new AsyncOperationManager() { Pointer= p0 };
 
 
             return value;

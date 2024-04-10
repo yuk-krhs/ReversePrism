@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateLastDisplayDateReplyTranslator
+    public partial class UpdateLastDisplayDateReplyTranslator : DataModel
     {
 
         public static UpdateLastDisplayDateReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateLastDisplayDateReplyTranslator();
+            var value   = new UpdateLastDisplayDateReplyTranslator() { Pointer= p0 };
 
 
             return value;

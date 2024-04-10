@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
-    public partial class AuthContextSafeHandle
+    public partial class AuthContextSafeHandle : DataModel
     {
 
         public static AuthContextSafeHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthContextSafeHandle();
+            var value   = new AuthContextSafeHandle() { Pointer= p0 };
 
 
             return value;

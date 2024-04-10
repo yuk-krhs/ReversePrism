@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HungarianAlgorithm
+    public partial class HungarianAlgorithm : DataModel
     {
 
         public static HungarianAlgorithm? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HungarianAlgorithm();
+            var value   = new HungarianAlgorithm() { Pointer= p0 };
 
 
             return value;

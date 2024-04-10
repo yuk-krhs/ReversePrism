@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 M_Owner                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 020 M_WrapEventAttribute                     000186762990 ModelClassType VFXEventAttribute VFXEventAttribute VFXEventAttribute Pointer
-    public partial class VFXSpawnerState
+    public partial class VFXSpawnerState : DataModel
     {
         public bool                                     M_Owner                                 { get; set; }
         public VFXEventAttribute?                       M_WrapEventAttribute                    { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VFXSpawnerState();
+            var value   = new VFXSpawnerState() { Pointer= p0 };
 
-            value.M_Owner                                   = GetBool(new IntPtr(p + 0x018)); // 0270021A2980 0x18 M_Owner                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_WrapEventAttribute                      = GetObject<VFXEventAttribute>(new IntPtr(p + 0x020), ReversePrism.DataModels.VFXEventAttribute.FromPointer); // 0270021A29A0 0x20 M_WrapEventAttribute        ( 000186762990 ModelClassType VFXEventAttribute VFXEventAttribute VFXEventAttribute Pointer )
+            value.M_Owner                                   = GetBool(new IntPtr(p + 0x018)); // 0245A21A2980 0x18 M_Owner                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_WrapEventAttribute                      = GetObject<VFXEventAttribute>(new IntPtr(p + 0x020), ReversePrism.DataModels.VFXEventAttribute.FromPointer); // 0245A21A29A0 0x20 M_WrapEventAttribute        ( 000186762990 ModelClassType VFXEventAttribute VFXEventAttribute VFXEventAttribute Pointer )
 
             return value;
         }

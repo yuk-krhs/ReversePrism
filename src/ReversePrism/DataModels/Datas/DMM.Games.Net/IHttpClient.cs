@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHttpClient
+    public partial class IHttpClient : DataModel
     {
 
         public static IHttpClient? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHttpClient();
+            var value   = new IHttpClient() { Pointer= p0 };
 
 
             return value;

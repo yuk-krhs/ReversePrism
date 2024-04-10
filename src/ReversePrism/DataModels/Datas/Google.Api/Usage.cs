@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 Rules                                    000185CF6718 ModelClassListType RepeatedField`1<UsageRule> RepeatedField`1<UsageRule> List<UsageRule> Pointer
     // 000 ProducerNotificationChannelFieldNumber   int IL2CPP_TYPE_I4
     // 028 ProducerNotificationChannel              000186671910 ModelPrimitiveType string string string String
-    public partial class Usage
+    public partial class Usage : DataModel
     {
         public List<string>?                            Requirements                            { get; set; }
         public List<UsageRule>?                         Rules                                   { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Usage();
+            var value   = new Usage() { Pointer= p0 };
 
-            value.Requirements                              = GetStringList(new IntPtr(p + 0x018)); // 0270DA867EE0 0x18 Requirements                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Rules                                     = GetObjectList<UsageRule>(new IntPtr(p + 0x020), ReversePrism.DataModels.UsageRule.FromPointer); // 0270DA867F40 0x20 Rules                       ( 000185CF6718 ModelClassListType RepeatedField`1<UsageRule> RepeatedField`1<UsageRule> List<UsageRule> Pointer )
-            value.ProducerNotificationChannel               = GetString(new IntPtr(p + 0x028)); // 0270DA867F80 0x28 ProducerNotificationChannel ( 000186671910 ModelPrimitiveType string string string String )
+            value.Requirements                              = GetStringList(new IntPtr(p + 0x018)); // 02466A8BCBC0 0x18 Requirements                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Rules                                     = GetObjectList<UsageRule>(new IntPtr(p + 0x020), ReversePrism.DataModels.UsageRule.FromPointer); // 02466A8BCC20 0x20 Rules                       ( 000185CF6718 ModelClassListType RepeatedField`1<UsageRule> RepeatedField`1<UsageRule> List<UsageRule> Pointer )
+            value.ProducerNotificationChannel               = GetString(new IntPtr(p + 0x028)); // 02466A8BCC60 0x28 ProducerNotificationChannel ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

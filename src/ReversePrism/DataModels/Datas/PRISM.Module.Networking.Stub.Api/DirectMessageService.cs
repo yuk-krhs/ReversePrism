@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 __Marshaller_api_ReadDirectMessageReply  Marshaller`1<ReadDirectMessageReply> IL2CPP_TYPE_GENERICINST
     // 028 __Method_GetDirectMessageList            Method`2<GetDirectMessageListArgs, GetDirectMessageListReply> IL2CPP_TYPE_GENERICINST
     // 030 __Method_ReadDirectMessage               Method`2<ReadDirectMessageArgs, ReadDirectMessageReply> IL2CPP_TYPE_GENERICINST
-    public partial class DirectMessageService
+    public partial class DirectMessageService : DataModel
     {
 
         public static DirectMessageService? FromPointer(IntPtr p0)
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DirectMessageService();
+            var value   = new DirectMessageService() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CheckErrorReplyTranslator
+    public partial class CheckErrorReplyTranslator : DataModel
     {
 
         public static CheckErrorReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CheckErrorReplyTranslator();
+            var value   = new CheckErrorReplyTranslator() { Pointer= p0 };
 
 
             return value;

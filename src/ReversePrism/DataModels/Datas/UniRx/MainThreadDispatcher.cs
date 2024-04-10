@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 058 onApplicationFocus                       Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 060 onApplicationPause                       Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 068 onApplicationQuit                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class MainThreadDispatcher
+    public partial class MainThreadDispatcher : DataModel
     {
         public ThreadSafeQueueWorker?                   QueueWorker                             { get; set; }
         public MicroCoroutine?                          UpdateMicroCoroutine                    { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainThreadDispatcher();
+            var value   = new MainThreadDispatcher() { Pointer= p0 };
 
-            value.QueueWorker                               = GetObject<ThreadSafeQueueWorker>(new IntPtr(p + 0x020), ReversePrism.DataModels.ThreadSafeQueueWorker.FromPointer); // 027003C1E4E0 0x20 QueueWorker                 ( 00018665CB90 ModelClassType ThreadSafeQueueWorker ThreadSafeQueueWorker ThreadSafeQueueWorker Pointer )
-            value.UpdateMicroCoroutine                      = GetObject<MicroCoroutine>(new IntPtr(p + 0x030), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 027003C1E520 0x30 UpdateMicroCoroutine        ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
-            value.FixedUpdateMicroCoroutine                 = GetObject<MicroCoroutine>(new IntPtr(p + 0x038), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 027003C1E540 0x38 FixedUpdateMicroCoroutine   ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
-            value.EndOfFrameMicroCoroutine                  = GetObject<MicroCoroutine>(new IntPtr(p + 0x040), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 027003C1E560 0x40 EndOfFrameMicroCoroutine    ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
-            value.Initialized                               = GetBool(new IntPtr(p + 0x010)); // 027003C1E5A0 0x10 Initialized                 ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.IsQuitting                                = GetBool(new IntPtr(p + 0x011)); // 027003C1E5C0 0x11 IsQuitting                  ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.QueueWorker                               = GetObject<ThreadSafeQueueWorker>(new IntPtr(p + 0x020), ReversePrism.DataModels.ThreadSafeQueueWorker.FromPointer); // 0245A3C1E4E0 0x20 QueueWorker                 ( 00018665CB90 ModelClassType ThreadSafeQueueWorker ThreadSafeQueueWorker ThreadSafeQueueWorker Pointer )
+            value.UpdateMicroCoroutine                      = GetObject<MicroCoroutine>(new IntPtr(p + 0x030), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 0245A3C1E520 0x30 UpdateMicroCoroutine        ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
+            value.FixedUpdateMicroCoroutine                 = GetObject<MicroCoroutine>(new IntPtr(p + 0x038), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 0245A3C1E540 0x38 FixedUpdateMicroCoroutine   ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
+            value.EndOfFrameMicroCoroutine                  = GetObject<MicroCoroutine>(new IntPtr(p + 0x040), ReversePrism.DataModels.MicroCoroutine.FromPointer); // 0245A3C1E560 0x40 EndOfFrameMicroCoroutine    ( 000186617280 ModelClassType MicroCoroutine MicroCoroutine MicroCoroutine Pointer )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x010)); // 0245A3C1E5A0 0x10 Initialized                 ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.IsQuitting                                = GetBool(new IntPtr(p + 0x011)); // 0245A3C1E5C0 0x11 IsQuitting                  ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

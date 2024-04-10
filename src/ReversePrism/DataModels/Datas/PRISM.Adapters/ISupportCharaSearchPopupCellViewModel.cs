@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISupportCharaSearchPopupCellViewModel
+    public partial class ISupportCharaSearchPopupCellViewModel : DataModel
     {
 
         public static ISupportCharaSearchPopupCellViewModel? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISupportCharaSearchPopupCellViewModel();
+            var value   = new ISupportCharaSearchPopupCellViewModel() { Pointer= p0 };
 
 
             return value;

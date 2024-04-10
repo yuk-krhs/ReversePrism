@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Handle                                   00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class ArchiveHandle
+    public partial class ArchiveHandle : DataModel
     {
         public ulong                                    Handle                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArchiveHandle();
+            var value   = new ArchiveHandle() { Pointer= p0 };
 
-            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0270022F6950 0x10 Handle                      ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0245A22F6950 0x10 Handle                      ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

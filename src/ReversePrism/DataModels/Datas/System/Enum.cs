@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 enumSeperatorCharArray                   char[] IL2CPP_TYPE_SZARRAY
     // 000 enumSeperator                            string IL2CPP_TYPE_STRING
-    public partial class Enum
+    public partial class Enum : DataModel
     {
 
         public static Enum? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Enum();
+            var value   = new Enum() { Pointer= p0 };
 
 
             return value;

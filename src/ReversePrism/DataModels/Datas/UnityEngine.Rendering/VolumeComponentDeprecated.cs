@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VolumeComponentDeprecated
+    public partial class VolumeComponentDeprecated : DataModel
     {
 
         public static VolumeComponentDeprecated? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolumeComponentDeprecated();
+            var value   = new VolumeComponentDeprecated() { Pointer= p0 };
 
 
             return value;

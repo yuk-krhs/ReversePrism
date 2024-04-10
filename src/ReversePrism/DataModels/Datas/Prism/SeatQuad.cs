@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 09C ITateFar                                 0001865F36C0 ModelPrimitiveType int int int Int32
     // 0A0 U2l_yoko                                 000186666050 ModelPrimitiveType float float float Single
     // 0A4 U2l_tate                                 000186666050 ModelPrimitiveType float float float Single
-    public partial class SeatQuad
+    public partial class SeatQuad : DataModel
     {
         public SeatPlan?                                Sp                                      { get; set; }
         public string                                   Name                                    { get; set; }
@@ -61,30 +61,30 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeatQuad();
+            var value   = new SeatQuad() { Pointer= p0 };
 
-            value.Sp                                        = GetObject<SeatPlan>(new IntPtr(p + 0x010), ReversePrism.DataModels.SeatPlan.FromPointer); // 0270D4E46800 0x10 Sp                          ( 00018670F6F0 ModelClassType SeatPlan SeatPlan SeatPlan Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D4E46820 0x18 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.IQuad                                     = GetInt32(new IntPtr(p + 0x020)); // 0270D4E46840 0x20 IQuad                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Wcorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x028)); // 0270D4E46860 0x28 Wcorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.Rcorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x030)); // 0270D4E46880 0x30 Rcorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.Ccorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x038)); // 0270D4E468A0 0x38 Ccorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.Ydeg                                      = GetSingle(new IntPtr(p + 0x040)); // 0270D4E468C0 0x40 Ydeg                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Xposis                                    = GetSingleList(new IntPtr(p + 0x048)); // 0270D4E468E0 0x48 Xposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Yposis                                    = GetSingleList(new IntPtr(p + 0x050)); // 0270D4E46900 0x50 Yposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Zposis                                    = GetSingleList(new IntPtr(p + 0x058)); // 0270D4E46920 0x58 Zposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.LimLs                                     = GetSingleList(new IntPtr(p + 0x060)); // 0270D4E46940 0x60 LimLs                       ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.LimRs                                     = GetSingleList(new IntPtr(p + 0x068)); // 0270D4E46960 0x68 LimRs                       ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.N_yokos                                   = GetInt32List(new IntPtr(p + 0x070)); // 0270D4E46980 0x70 N_yokos                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.N_tates                                   = GetInt32List(new IntPtr(p + 0x078)); // 0270D4E469A0 0x78 N_tates                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.NYokoTotal                                = GetInt32(new IntPtr(p + 0x080)); // 0270D4E469C0 0x80 NYokoTotal                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NTateTotal                                = GetInt32(new IntPtr(p + 0x084)); // 0270D4E469E0 0x84 NTateTotal                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NTrim                                     = GetInt32(new IntPtr(p + 0x088)); // 0270D4E46A00 0x88 NTrim                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NTrimSubs                                 = GetInt32List(new IntPtr(p + 0x090)); // 0270D4E46A20 0x90 NTrimSubs                   ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.ITateNear                                 = GetInt32(new IntPtr(p + 0x098)); // 0270D4E46A40 0x98 ITateNear                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ITateFar                                  = GetInt32(new IntPtr(p + 0x09C)); // 0270D4E46A60 0x9C ITateFar                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.U2l_yoko                                  = GetSingle(new IntPtr(p + 0x0A0)); // 0270D4E46A80 0xA0 U2l_yoko                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.U2l_tate                                  = GetSingle(new IntPtr(p + 0x0A4)); // 0270D4E46AA0 0xA4 U2l_tate                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Sp                                        = GetObject<SeatPlan>(new IntPtr(p + 0x010), ReversePrism.DataModels.SeatPlan.FromPointer); // 024664EBBB08 0x10 Sp                          ( 00018670F6F0 ModelClassType SeatPlan SeatPlan SeatPlan Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024664EBBB28 0x18 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.IQuad                                     = GetInt32(new IntPtr(p + 0x020)); // 024664EBBB48 0x20 IQuad                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Wcorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x028)); // 024664EBBB68 0x28 Wcorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.Rcorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x030)); // 024664EBBB88 0x30 Rcorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.Ccorner4                                  = GetEnumList<Vector3>(new IntPtr(p + 0x038)); // 024664EBBBA8 0x38 Ccorner4                    ( 000185CB0ED8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.Ydeg                                      = GetSingle(new IntPtr(p + 0x040)); // 024664EBBBC8 0x40 Ydeg                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Xposis                                    = GetSingleList(new IntPtr(p + 0x048)); // 024664EBBBE8 0x48 Xposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Yposis                                    = GetSingleList(new IntPtr(p + 0x050)); // 024664EBBC08 0x50 Yposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Zposis                                    = GetSingleList(new IntPtr(p + 0x058)); // 024664EBBC28 0x58 Zposis                      ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.LimLs                                     = GetSingleList(new IntPtr(p + 0x060)); // 024664EBBC48 0x60 LimLs                       ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.LimRs                                     = GetSingleList(new IntPtr(p + 0x068)); // 024664EBBC68 0x68 LimRs                       ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.N_yokos                                   = GetInt32List(new IntPtr(p + 0x070)); // 024664EBBC88 0x70 N_yokos                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.N_tates                                   = GetInt32List(new IntPtr(p + 0x078)); // 024664EBBCA8 0x78 N_tates                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.NYokoTotal                                = GetInt32(new IntPtr(p + 0x080)); // 024664EBBCC8 0x80 NYokoTotal                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NTateTotal                                = GetInt32(new IntPtr(p + 0x084)); // 024664EBBCE8 0x84 NTateTotal                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NTrim                                     = GetInt32(new IntPtr(p + 0x088)); // 024664EBBD08 0x88 NTrim                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NTrimSubs                                 = GetInt32List(new IntPtr(p + 0x090)); // 024664EBBD28 0x90 NTrimSubs                   ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.ITateNear                                 = GetInt32(new IntPtr(p + 0x098)); // 024664EBBD48 0x98 ITateNear                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ITateFar                                  = GetInt32(new IntPtr(p + 0x09C)); // 024664EBBD68 0x9C ITateFar                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.U2l_yoko                                  = GetSingle(new IntPtr(p + 0x0A0)); // 024664EBBD88 0xA0 U2l_yoko                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.U2l_tate                                  = GetSingle(new IntPtr(p + 0x0A4)); // 024664EBBDA8 0xA4 U2l_tate                    ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

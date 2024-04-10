@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ClearImmediateRenderers
+    public partial class ClearImmediateRenderers : DataModel
     {
 
         public static ClearImmediateRenderers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClearImmediateRenderers();
+            var value   = new ClearImmediateRenderers() { Pointer= p0 };
 
 
             return value;

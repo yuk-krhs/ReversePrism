@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IResourceReader
+    public partial class IResourceReader : DataModel
     {
 
         public static IResourceReader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IResourceReader();
+            var value   = new IResourceReader() { Pointer= p0 };
 
 
             return value;

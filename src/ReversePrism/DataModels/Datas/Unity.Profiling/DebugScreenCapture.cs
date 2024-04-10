@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 ImageFormat                              000186652C20 ModelEnumType TextureFormat TextureFormat TextureFormat Int32
     // 024 Width                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 Height                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class DebugScreenCapture
+    public partial class DebugScreenCapture : DataModel
     {
         public TextureFormat                            ImageFormat                             { get; set; }
         public int                                      Width                                   { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugScreenCapture();
+            var value   = new DebugScreenCapture() { Pointer= p0 };
 
-            value.ImageFormat                               = (TextureFormat)GetInt32(new IntPtr(p + 0x020)); // 0270068A3E10 0x20 ImageFormat                 ( 000186652C20 ModelEnumType TextureFormat TextureFormat TextureFormat Int32 )
-            value.Width                                     = GetInt32(new IntPtr(p + 0x024)); // 0270068A3E30 0x24 Width                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Height                                    = GetInt32(new IntPtr(p + 0x028)); // 0270068A3E50 0x28 Height                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ImageFormat                               = (TextureFormat)GetInt32(new IntPtr(p + 0x020)); // 0245A6865D58 0x20 ImageFormat                 ( 000186652C20 ModelEnumType TextureFormat TextureFormat TextureFormat Int32 )
+            value.Width                                     = GetInt32(new IntPtr(p + 0x024)); // 0245A6865D78 0x24 Width                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Height                                    = GetInt32(new IntPtr(p + 0x028)); // 0245A6865D98 0x28 Height                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

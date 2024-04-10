@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaEffectStatus
+    public partial class IGashaEffectStatus : DataModel
     {
 
         public static IGashaEffectStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaEffectStatus();
+            var value   = new IGashaEffectStatus() { Pointer= p0 };
 
 
             return value;

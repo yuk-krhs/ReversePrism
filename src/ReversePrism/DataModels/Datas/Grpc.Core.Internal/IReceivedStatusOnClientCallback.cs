@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IReceivedStatusOnClientCallback
+    public partial class IReceivedStatusOnClientCallback : DataModel
     {
 
         public static IReceivedStatusOnClientCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IReceivedStatusOnClientCallback();
+            var value   = new IReceivedStatusOnClientCallback() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 m_Usages                                 InlinedArray`1<Substring> IL2CPP_TYPE_GENERICINST
     // 040 M_Name                                   0001865DAC30 ModelEnumType Substring Substring Substring Int32
     // 050 M_DisplayName                            0001865DAC30 ModelEnumType Substring Substring Substring Int32
-    public partial class ParsedPathComponent
+    public partial class ParsedPathComponent : DataModel
     {
         public Substring                                M_Layout                                { get; set; }
         public Substring                                M_Name                                  { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParsedPathComponent();
+            var value   = new ParsedPathComponent() { Pointer= p0 };
 
-            value.M_Layout                                  = (Substring)GetInt32(new IntPtr(p + 0x010)); // 0270D76D66B0 0x10 M_Layout                    ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
-            value.M_Name                                    = (Substring)GetInt32(new IntPtr(p + 0x040)); // 0270D76D66F0 0x40 M_Name                      ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
-            value.M_DisplayName                             = (Substring)GetInt32(new IntPtr(p + 0x050)); // 0270D76D6710 0x50 M_DisplayName               ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
+            value.M_Layout                                  = (Substring)GetInt32(new IntPtr(p + 0x010)); // 02466773E6B0 0x10 M_Layout                    ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
+            value.M_Name                                    = (Substring)GetInt32(new IntPtr(p + 0x040)); // 02466773E6F0 0x40 M_Name                      ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
+            value.M_DisplayName                             = (Substring)GetInt32(new IntPtr(p + 0x050)); // 02466773E710 0x50 M_DisplayName               ( 0001865DAC30 ModelEnumType Substring Substring Substring Int32 )
 
             return value;
         }

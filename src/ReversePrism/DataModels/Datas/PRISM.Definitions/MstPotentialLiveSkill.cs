@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstPotentialLiveSkill
+    public partial class MstPotentialLiveSkill : DataModel
     {
         public int                                      Id                                      { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstPotentialLiveSkill();
+            var value   = new MstPotentialLiveSkill() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 02700459BDC0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4617378 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

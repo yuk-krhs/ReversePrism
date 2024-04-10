@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IShopLoginBonusPassView
+    public partial class IShopLoginBonusPassView : DataModel
     {
 
         public static IShopLoginBonusPassView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IShopLoginBonusPassView();
+            var value   = new IShopLoginBonusPassView() { Pointer= p0 };
 
 
             return value;

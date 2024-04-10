@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 X                                        000185B7A7F0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 040 Seed                                     000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 048 Counter                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class DSAParameters
+    public partial class DSAParameters : DataModel
     {
         public List<sbyte>?                             P                                       { get; set; }
         public List<sbyte>?                             Q                                       { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DSAParameters();
+            var value   = new DSAParameters() { Pointer= p0 };
 
-            value.P                                         = GetSByteList(new IntPtr(p + 0x010)); // 0270D695A500 0x10 P                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Q                                         = GetSByteList(new IntPtr(p + 0x018)); // 0270D695A520 0x18 Q                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.G                                         = GetSByteList(new IntPtr(p + 0x020)); // 0270D695A540 0x20 G                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Y                                         = GetSByteList(new IntPtr(p + 0x028)); // 0270D695A560 0x28 Y                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.J                                         = GetSByteList(new IntPtr(p + 0x030)); // 0270D695A580 0x30 J                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.X                                         = GetSByteList(new IntPtr(p + 0x038)); // 0270D695A5A0 0x38 X                           ( 000185B7A7F0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Seed                                      = GetSByteList(new IntPtr(p + 0x040)); // 0270D695A5C0 0x40 Seed                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Counter                                   = GetInt32(new IntPtr(p + 0x048)); // 0270D695A5E0 0x48 Counter                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.P                                         = GetSByteList(new IntPtr(p + 0x010)); // 0246669D2500 0x10 P                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Q                                         = GetSByteList(new IntPtr(p + 0x018)); // 0246669D2520 0x18 Q                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.G                                         = GetSByteList(new IntPtr(p + 0x020)); // 0246669D2540 0x20 G                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Y                                         = GetSByteList(new IntPtr(p + 0x028)); // 0246669D2560 0x28 Y                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.J                                         = GetSByteList(new IntPtr(p + 0x030)); // 0246669D2580 0x30 J                           ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.X                                         = GetSByteList(new IntPtr(p + 0x038)); // 0246669D25A0 0x38 X                           ( 000185B7A7F0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Seed                                      = GetSByteList(new IntPtr(p + 0x040)); // 0246669D25C0 0x40 Seed                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Counter                                   = GetInt32(new IntPtr(p + 0x048)); // 0246669D25E0 0x48 Counter                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

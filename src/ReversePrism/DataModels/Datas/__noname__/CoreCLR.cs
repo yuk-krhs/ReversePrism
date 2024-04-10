@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CoreCLR
+    public partial class CoreCLR : DataModel
     {
 
         public static CoreCLR? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreCLR();
+            var value   = new CoreCLR() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <TargetIndex>k__BackingField             Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class LegacyIntroductionRewardParameter
+    public partial class LegacyIntroductionRewardParameter : DataModel
     {
 
         public static LegacyIntroductionRewardParameter? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyIntroductionRewardParameter();
+            var value   = new LegacyIntroductionRewardParameter() { Pointer= p0 };
 
 
             return value;

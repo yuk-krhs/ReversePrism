@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _Params                                  int IL2CPP_TYPE_I4
-    public partial class ShaderIDs
+    public partial class ShaderIDs : DataModel
     {
 
         public static ShaderIDs? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShaderIDs();
+            var value   = new ShaderIDs() { Pointer= p0 };
 
 
             return value;

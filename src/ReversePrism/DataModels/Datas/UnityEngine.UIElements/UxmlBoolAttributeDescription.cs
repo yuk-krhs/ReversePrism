@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlBoolAttributeDescription
+    public partial class UxmlBoolAttributeDescription : DataModel
     {
 
         public static UxmlBoolAttributeDescription? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlBoolAttributeDescription();
+            var value   = new UxmlBoolAttributeDescription() { Pointer= p0 };
 
 
             return value;

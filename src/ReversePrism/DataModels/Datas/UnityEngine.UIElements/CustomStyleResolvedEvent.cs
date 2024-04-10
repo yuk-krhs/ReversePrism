@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CustomStyleResolvedEvent
+    public partial class CustomStyleResolvedEvent : DataModel
     {
 
         public static CustomStyleResolvedEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomStyleResolvedEvent();
+            var value   = new CustomStyleResolvedEvent() { Pointer= p0 };
 
 
             return value;

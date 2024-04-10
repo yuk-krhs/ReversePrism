@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 particle1                                <object> IL2CPP_TYPE_OBJECT
     // 098 particle2                                <object> IL2CPP_TYPE_OBJECT
-    public partial class UpaException
+    public partial class UpaException : DataModel
     {
 
         public static UpaException? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpaException();
+            var value   = new UpaException() { Pointer= p0 };
 
 
             return value;

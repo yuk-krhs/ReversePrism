@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChallengeTourResultView
+    public partial class IChallengeTourResultView : DataModel
     {
 
         public static IChallengeTourResultView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChallengeTourResultView();
+            var value   = new IChallengeTourResultView() { Pointer= p0 };
 
 
             return value;

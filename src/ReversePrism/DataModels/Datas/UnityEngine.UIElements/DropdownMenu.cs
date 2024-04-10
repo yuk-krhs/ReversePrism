@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_MenuItems                              000185CD7A58 ModelClassListType List`1<DropdownMenuItem> List`1<DropdownMenuItem> List<DropdownMenuItem> Pointer
     // 018 M_DropdownMenuEventInfo                  000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer
-    public partial class DropdownMenu
+    public partial class DropdownMenu : DataModel
     {
         public List<DropdownMenuItem>?                  M_MenuItems                             { get; set; }
         public DropdownMenuEventInfo?                   M_DropdownMenuEventInfo                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DropdownMenu();
+            var value   = new DropdownMenu() { Pointer= p0 };
 
-            value.M_MenuItems                               = GetObjectList<DropdownMenuItem>(new IntPtr(p + 0x010), ReversePrism.DataModels.DropdownMenuItem.FromPointer); // 0270067586A0 0x10 M_MenuItems                 ( 000185CD7A58 ModelClassListType List`1<DropdownMenuItem> List`1<DropdownMenuItem> List<DropdownMenuItem> Pointer )
-            value.M_DropdownMenuEventInfo                   = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0270067586C0 0x18 M_DropdownMenuEventInfo     ( 000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
+            value.M_MenuItems                               = GetObjectList<DropdownMenuItem>(new IntPtr(p + 0x010), ReversePrism.DataModels.DropdownMenuItem.FromPointer); // 0245A671A608 0x10 M_MenuItems                 ( 000185CD7A58 ModelClassListType List`1<DropdownMenuItem> List`1<DropdownMenuItem> List<DropdownMenuItem> Pointer )
+            value.M_DropdownMenuEventInfo                   = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0245A671A628 0x18 M_DropdownMenuEventInfo     ( 000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
 
             return value;
         }

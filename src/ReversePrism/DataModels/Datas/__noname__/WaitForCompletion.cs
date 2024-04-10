@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 T                                        0001866BF4B0 ModelClassType Tween Tween Tween Pointer
-    public partial class WaitForCompletion
+    public partial class WaitForCompletion : DataModel
     {
         public Tween?                                   T                                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitForCompletion();
+            var value   = new WaitForCompletion() { Pointer= p0 };
 
-            value.T                                         = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 0270DBD46380 0x10 T                           ( 0001866BF4B0 ModelClassType Tween Tween Tween Pointer )
+            value.T                                         = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 02466BDD7198 0x10 T                           ( 0001866BF4B0 ModelClassType Tween Tween Tween Pointer )
 
             return value;
         }

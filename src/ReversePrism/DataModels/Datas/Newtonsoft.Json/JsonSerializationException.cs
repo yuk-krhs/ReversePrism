@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 LineNumber                               0001865F4260 ModelPrimitiveType int int int Int32
     // 094 LinePosition                             0001865F4260 ModelPrimitiveType int int int Int32
     // 098 Path                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class JsonSerializationException
+    public partial class JsonSerializationException : DataModel
     {
         public int                                      LineNumber                              { get; set; }
         public int                                      LinePosition                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSerializationException();
+            var value   = new JsonSerializationException() { Pointer= p0 };
 
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x090)); // 0270D8691BB0 0x90 LineNumber                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x094)); // 0270D8691BD0 0x94 LinePosition                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Path                                      = GetString(new IntPtr(p + 0x098)); // 0270D8691BF0 0x98 Path                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x090)); // 0246686F9BB0 0x90 LineNumber                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x094)); // 0246686F9BD0 0x94 LinePosition                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Path                                      = GetString(new IntPtr(p + 0x098)); // 0246686F9BF0 0x98 Path                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

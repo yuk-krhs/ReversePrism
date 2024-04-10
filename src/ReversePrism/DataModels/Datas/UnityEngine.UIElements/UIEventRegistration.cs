@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Utilities                              List`1<IUIElementsUtility> IL2CPP_TYPE_GENERICINST
-    public partial class UIEventRegistration
+    public partial class UIEventRegistration : DataModel
     {
 
         public static UIEventRegistration? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIEventRegistration();
+            var value   = new UIEventRegistration() { Pointer= p0 };
 
 
             return value;

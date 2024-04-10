@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 018 ReleaseDate                              0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class MstExtraStoryCategory
+    public partial class MstExtraStoryCategory : DataModel
     {
         public int                                      Id                                      { get; set; }
         public DateTime                                 ReleaseDate                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstExtraStoryCategory();
+            var value   = new MstExtraStoryCategory() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0270045EB4B0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x018)); // 0270045EB4D0 0x18 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4666CE0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x018)); // 0245A4666D00 0x18 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IXmlTextReaderInitializer
+    public partial class IXmlTextReaderInitializer : DataModel
     {
 
         public static IXmlTextReaderInitializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IXmlTextReaderInitializer();
+            var value   = new IXmlTextReaderInitializer() { Pointer= p0 };
 
 
             return value;

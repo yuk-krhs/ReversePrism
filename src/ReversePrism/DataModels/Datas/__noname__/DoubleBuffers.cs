@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 deviceToBufferMapping                    IntPtr IL2CPP_TYPE_PTR
-    public partial class DoubleBuffers
+    public partial class DoubleBuffers : DataModel
     {
 
         public static DoubleBuffers? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleBuffers();
+            var value   = new DoubleBuffers() { Pointer= p0 };
 
 
             return value;

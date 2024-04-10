@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_IDToken                                string IL2CPP_TYPE_STRING
     // 048 <children>k__BackingField                ObservableList`1<Widget> IL2CPP_TYPE_GENERICINST
-    public partial class Container
+    public partial class Container : DataModel
     {
 
         public static Container? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Container();
+            var value   = new Container() { Pointer= p0 };
 
 
             return value;

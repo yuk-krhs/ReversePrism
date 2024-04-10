@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SeasonMissionFieldNumber                 int IL2CPP_TYPE_I4
     // 018 SeasonMission                            000186708430 ModelClassType SeasonMissionStatus SeasonMissionStatus SeasonMissionStatus Pointer
-    public partial class ReceiveSeasonMissionRewardReply
+    public partial class ReceiveSeasonMissionRewardReply : DataModel
     {
         public SeasonMissionStatus?                     SeasonMission                           { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiveSeasonMissionRewardReply();
+            var value   = new ReceiveSeasonMissionRewardReply() { Pointer= p0 };
 
-            value.SeasonMission                             = GetObject<SeasonMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SeasonMissionStatus.FromPointer); // 0270D278C298 0x18 SeasonMission               ( 000186708430 ModelClassType SeasonMissionStatus SeasonMissionStatus SeasonMissionStatus Pointer )
+            value.SeasonMission                             = GetObject<SeasonMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SeasonMissionStatus.FromPointer); // 0246626E53C0 0x18 SeasonMission               ( 000186708430 ModelClassType SeasonMissionStatus SeasonMissionStatus SeasonMissionStatus Pointer )
 
             return value;
         }

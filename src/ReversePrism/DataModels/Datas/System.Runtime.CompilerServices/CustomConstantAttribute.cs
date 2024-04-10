@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CustomConstantAttribute
+    public partial class CustomConstantAttribute : DataModel
     {
 
         public static CustomConstantAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomConstantAttribute();
+            var value   = new CustomConstantAttribute() { Pointer= p0 };
 
 
             return value;

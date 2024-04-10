@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoBtlsServerNameCallback
+    public partial class MonoBtlsServerNameCallback : DataModel
     {
 
         public static MonoBtlsServerNameCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoBtlsServerNameCallback();
+            var value   = new MonoBtlsServerNameCallback() { Pointer= p0 };
 
 
             return value;

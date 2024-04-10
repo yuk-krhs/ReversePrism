@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Datas                                    000185D27498 ModelClassListType List`1<MvNameIdolOrder> List`1<MvNameIdolOrder> List<MvNameIdolOrder> Pointer
-    public partial class MvNameIdolOrderData
+    public partial class MvNameIdolOrderData : DataModel
     {
         public List<MvNameIdolOrder>?                   Datas                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MvNameIdolOrderData();
+            var value   = new MvNameIdolOrderData() { Pointer= p0 };
 
-            value.Datas                                     = GetObjectList<MvNameIdolOrder>(new IntPtr(p + 0x018), ReversePrism.DataModels.MvNameIdolOrder.FromPointer); // 0270D5C6AEA8 0x18 Datas                       ( 000185D27498 ModelClassListType List`1<MvNameIdolOrder> List`1<MvNameIdolOrder> List<MvNameIdolOrder> Pointer )
+            value.Datas                                     = GetObjectList<MvNameIdolOrder>(new IntPtr(p + 0x018), ReversePrism.DataModels.MvNameIdolOrder.FromPointer); // 024665CDB810 0x18 Datas                       ( 000185D27498 ModelClassListType List`1<MvNameIdolOrder> List`1<MvNameIdolOrder> List<MvNameIdolOrder> Pointer )
 
             return value;
         }

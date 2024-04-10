@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StepUpGashaRatesPopupCaller
+    public partial class StepUpGashaRatesPopupCaller : DataModel
     {
 
         public static StepUpGashaRatesPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StepUpGashaRatesPopupCaller();
+            var value   = new StepUpGashaRatesPopupCaller() { Pointer= p0 };
 
 
             return value;

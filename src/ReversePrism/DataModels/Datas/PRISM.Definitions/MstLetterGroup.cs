@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Name                                     000186672F10 ModelPrimitiveType string string string String
-    public partial class MstLetterGroup
+    public partial class MstLetterGroup : DataModel
     {
         public int                                      Id                                      { get; set; }
         public string                                   Name                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstLetterGroup();
+            var value   = new MstLetterGroup() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004654F18 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 027004654F38 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46E18D0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A46E18F0 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

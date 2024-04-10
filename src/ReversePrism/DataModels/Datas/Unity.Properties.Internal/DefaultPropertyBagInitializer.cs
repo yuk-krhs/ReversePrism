@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DefaultPropertyBagInitializer
+    public partial class DefaultPropertyBagInitializer : DataModel
     {
 
         public static DefaultPropertyBagInitializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultPropertyBagInitializer();
+            var value   = new DefaultPropertyBagInitializer() { Pointer= p0 };
 
 
             return value;

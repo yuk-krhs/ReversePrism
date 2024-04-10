@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISupportCharaStatusView
+    public partial class ISupportCharaStatusView : DataModel
     {
 
         public static ISupportCharaStatusView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISupportCharaStatusView();
+            var value   = new ISupportCharaStatusView() { Pointer= p0 };
 
 
             return value;

@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 008 utf8Encoding                             UTF8Encoding IL2CPP_TYPE_CLASS
     // 010 UnicodeEncoding                          000186707CD0 ModelClassType UnicodeEncoding UnicodeEncoding UnicodeEncoding Pointer
     // 018 Base64Encoding                           00018673CCF0 ModelClassType Base64Encoding Base64Encoding Base64Encoding Pointer
-    public partial class XmlConverter
+    public partial class XmlConverter : DataModel
     {
         public UnicodeEncoding?                         UnicodeEncoding                         { get; set; }
         public Base64Encoding?                          Base64Encoding                          { get; set; }
@@ -32,10 +32,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlConverter();
+            var value   = new XmlConverter() { Pointer= p0 };
 
-            value.UnicodeEncoding                           = GetObject<UnicodeEncoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnicodeEncoding.FromPointer); // 027004CF5320 0x10 UnicodeEncoding             ( 000186707CD0 ModelClassType UnicodeEncoding UnicodeEncoding UnicodeEncoding Pointer )
-            value.Base64Encoding                            = GetObject<Base64Encoding>(new IntPtr(p + 0x018), ReversePrism.DataModels.Base64Encoding.FromPointer); // 027004CF5340 0x18 Base64Encoding              ( 00018673CCF0 ModelClassType Base64Encoding Base64Encoding Base64Encoding Pointer )
+            value.UnicodeEncoding                           = GetObject<UnicodeEncoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnicodeEncoding.FromPointer); // 0245A4D2B088 0x10 UnicodeEncoding             ( 000186707CD0 ModelClassType UnicodeEncoding UnicodeEncoding UnicodeEncoding Pointer )
+            value.Base64Encoding                            = GetObject<Base64Encoding>(new IntPtr(p + 0x018), ReversePrism.DataModels.Base64Encoding.FromPointer); // 0245A4D2B0A8 0x18 Base64Encoding              ( 00018673CCF0 ModelClassType Base64Encoding Base64Encoding Base64Encoding Pointer )
 
             return value;
         }

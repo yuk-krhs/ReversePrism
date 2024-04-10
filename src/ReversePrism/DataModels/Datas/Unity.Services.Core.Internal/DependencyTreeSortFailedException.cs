@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DependencyTreeSortFailedException
+    public partial class DependencyTreeSortFailedException : DataModel
     {
 
         public static DependencyTreeSortFailedException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DependencyTreeSortFailedException();
+            var value   = new DependencyTreeSortFailedException() { Pointer= p0 };
 
 
             return value;

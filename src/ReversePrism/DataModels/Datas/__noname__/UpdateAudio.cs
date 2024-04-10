@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UpdateAudio
+    public partial class UpdateAudio : DataModel
     {
 
         public static UpdateAudio? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UpdateAudio();
+            var value   = new UpdateAudio() { Pointer= p0 };
 
 
             return value;

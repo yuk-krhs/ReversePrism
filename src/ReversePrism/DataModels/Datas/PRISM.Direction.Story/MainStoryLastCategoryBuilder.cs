@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     0001865CBA50 ModelClassType MainStoryLastCategoryView MainStoryLastCategoryView MainStoryLastCategoryView Pointer
-    public partial class MainStoryLastCategoryBuilder
+    public partial class MainStoryLastCategoryBuilder : DataModel
     {
         public MainStoryLastCategoryView?               View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainStoryLastCategoryBuilder();
+            var value   = new MainStoryLastCategoryBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<MainStoryLastCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MainStoryLastCategoryView.FromPointer); // 0270DB646C58 0x20 View                        ( 0001865CBA50 ModelClassType MainStoryLastCategoryView MainStoryLastCategoryView MainStoryLastCategoryView Pointer )
+            value.View                                      = GetObject<MainStoryLastCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MainStoryLastCategoryView.FromPointer); // 02466B6D2DB8 0x20 View                        ( 0001865CBA50 ModelClassType MainStoryLastCategoryView MainStoryLastCategoryView MainStoryLastCategoryView Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 key                                      <object> IL2CPP_TYPE_OBJECT
     // 018 value                                    <object> IL2CPP_TYPE_OBJECT
-    public partial class Ephemeron
+    public partial class Ephemeron : DataModel
     {
 
         public static Ephemeron? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Ephemeron();
+            var value   = new Ephemeron() { Pointer= p0 };
 
 
             return value;

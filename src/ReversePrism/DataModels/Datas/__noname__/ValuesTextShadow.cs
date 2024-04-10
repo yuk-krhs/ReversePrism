@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 088 <SameFunc>k__BackingField                Func`3<TextShadow, TextShadow, bool> IL2CPP_TYPE_GENERICINST
-    public partial class ValuesTextShadow
+    public partial class ValuesTextShadow : DataModel
     {
 
         public static ValuesTextShadow? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValuesTextShadow();
+            var value   = new ValuesTextShadow() { Pointer= p0 };
 
 
             return value;

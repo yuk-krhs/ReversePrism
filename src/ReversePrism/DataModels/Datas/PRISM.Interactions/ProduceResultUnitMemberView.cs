@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 090 onFIdolDetail                            Subject`1<string> IL2CPP_TYPE_GENERICINST
     // 098 onClickLiveSkillIcon                     Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 0A0 onLongPressLiveSkillIcon                 Subject`1<LiveSkillViewModel> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceResultUnitMemberView
+    public partial class ProduceResultUnitMemberView : DataModel
     {
         public PFIdolIconView?                          IconView                                { get; set; }
         public IdolSkillIconView?                       IdolSkillIcon                           { get; set; }
@@ -52,24 +52,24 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceResultUnitMemberView();
+            var value   = new ProduceResultUnitMemberView() { Pointer= p0 };
 
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DA2CE068 0x20 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.IdolSkillIcon                             = GetObject<IdolSkillIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 0270DA2CE088 0x28 IdolSkillIcon               ( 0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
-            value.LiveSkillIcon                             = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA2CE0A8 0x30 LiveSkillIcon               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.LiveSkillLvText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA2CE0C8 0x38 LiveSkillLvText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LiveSkillExchangeButton                   = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA2CE0E8 0x40 LiveSkillExchangeButton     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.LiveSkillSelectFrameImage                 = GetObject<Graphic>(new IntPtr(p + 0x048), ReversePrism.DataModels.Graphic.FromPointer); // 0270DA2CE108 0x48 LiveSkillSelectFrameImage   ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
-            value.LiveSkillSelectFrameBlinkDuration         = GetSingle(new IntPtr(p + 0x050)); // 0270DA2CE128 0x50 LiveSkillSelectFrameBlinkDuration ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LiveSkillSelectFrameBlinkMinAlpha         = GetSingle(new IntPtr(p + 0x054)); // 0270DA2CE148 0x54 LiveSkillSelectFrameBlinkMinAlpha ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LiveSkillExchangeFrame                    = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2CE168 0x58 LiveSkillExchangeFrame      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x060), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 0270DA2CE188 0x60 VoDaViMeRankView            ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
-            value.GetLiveSkillEffect                        = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA2CE1A8 0x68 GetLiveSkillEffect          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.RouletteFPS                               = GetInt32(new IntPtr(p + 0x070)); // 0270DA2CE1C8 0x70 RouletteFPS                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RouletteTime                              = GetSingle(new IntPtr(p + 0x074)); // 0270DA2CE1E8 0x74 RouletteTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SoundIndex                                = GetInt32(new IntPtr(p + 0x078)); // 0270DA2CE208 0x78 SoundIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270DA2CE228 0x80 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
-            value.Tweener                                   = GetObject<Tweener>(new IntPtr(p + 0x088), ReversePrism.DataModels.Tweener.FromPointer); // 0270DA2CE248 0x88 Tweener                     ( 0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A321678 0x20 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.IdolSkillIcon                             = GetObject<IdolSkillIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 02466A321698 0x28 IdolSkillIcon               ( 0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
+            value.LiveSkillIcon                             = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3216B8 0x30 LiveSkillIcon               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.LiveSkillLvText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3216D8 0x38 LiveSkillLvText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LiveSkillExchangeButton                   = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3216F8 0x40 LiveSkillExchangeButton     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.LiveSkillSelectFrameImage                 = GetObject<Graphic>(new IntPtr(p + 0x048), ReversePrism.DataModels.Graphic.FromPointer); // 02466A321718 0x48 LiveSkillSelectFrameImage   ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
+            value.LiveSkillSelectFrameBlinkDuration         = GetSingle(new IntPtr(p + 0x050)); // 02466A321738 0x50 LiveSkillSelectFrameBlinkDuration ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LiveSkillSelectFrameBlinkMinAlpha         = GetSingle(new IntPtr(p + 0x054)); // 02466A321758 0x54 LiveSkillSelectFrameBlinkMinAlpha ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LiveSkillExchangeFrame                    = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A321778 0x58 LiveSkillExchangeFrame      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x060), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 02466A321798 0x60 VoDaViMeRankView            ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
+            value.GetLiveSkillEffect                        = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3217B8 0x68 GetLiveSkillEffect          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.RouletteFPS                               = GetInt32(new IntPtr(p + 0x070)); // 02466A3217D8 0x70 RouletteFPS                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RouletteTime                              = GetSingle(new IntPtr(p + 0x074)); // 02466A3217F8 0x74 RouletteTime                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SoundIndex                                = GetInt32(new IntPtr(p + 0x078)); // 02466A321818 0x78 SoundIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceLoader.FromPointer); // 02466A321838 0x80 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.Tweener                                   = GetObject<Tweener>(new IntPtr(p + 0x088), ReversePrism.DataModels.Tweener.FromPointer); // 02466A321858 0x88 Tweener                     ( 0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer )
 
             return value;
         }

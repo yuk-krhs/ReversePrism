@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 000 EndFieldNumber                           int IL2CPP_TYPE_I4
     // 01C EndDefaultValue                          0001865F4BC0 ModelPrimitiveType int int int Int32
     // 034 End                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class Annotation
+    public partial class Annotation : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public List<int>?                               Path                                    { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Annotation();
+            var value   = new Annotation() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D0B83CF0 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Path                                      = GetInt32List(new IntPtr(p + 0x020)); // 0270D0B83D50 0x20 Path                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.SourceFileDefaultValue                    = GetString(new IntPtr(p + 0x010)); // 0270D0B83D90 0x10 SourceFileDefaultValue      ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.SourceFile                                = GetString(new IntPtr(p + 0x028)); // 0270D0B83DB0 0x28 SourceFile                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.BeginDefaultValue                         = GetInt32(new IntPtr(p + 0x018)); // 0270D0B83DF0 0x18 BeginDefaultValue           ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Begin                                     = GetInt32(new IntPtr(p + 0x030)); // 0270D0B83E10 0x30 Begin                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndDefaultValue                           = GetInt32(new IntPtr(p + 0x01C)); // 0270D0B83E50 0x1C EndDefaultValue             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.End                                       = GetInt32(new IntPtr(p + 0x034)); // 0270D0B83E70 0x34 End                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 024660B71FF8 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Path                                      = GetInt32List(new IntPtr(p + 0x020)); // 024660B72058 0x20 Path                        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.SourceFileDefaultValue                    = GetString(new IntPtr(p + 0x010)); // 024660B72098 0x10 SourceFileDefaultValue      ( 0001866738F0 ModelPrimitiveType string string string String )
+            value.SourceFile                                = GetString(new IntPtr(p + 0x028)); // 024660B720B8 0x28 SourceFile                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.BeginDefaultValue                         = GetInt32(new IntPtr(p + 0x018)); // 024660B720F8 0x18 BeginDefaultValue           ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.Begin                                     = GetInt32(new IntPtr(p + 0x030)); // 024660B72118 0x30 Begin                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EndDefaultValue                           = GetInt32(new IntPtr(p + 0x01C)); // 024660B72158 0x1C EndDefaultValue             ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
+            value.End                                       = GetInt32(new IntPtr(p + 0x034)); // 024660B72178 0x34 End                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UserIdFieldNumber                        int IL2CPP_TYPE_I4
     // 018 UserId                                   000186671910 ModelPrimitiveType string string string String
-    public partial class RemoveFollowArgs
+    public partial class RemoveFollowArgs : DataModel
     {
         public string                                   UserId                                  { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemoveFollowArgs();
+            var value   = new RemoveFollowArgs() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 0270D14195C8 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 0246613A2A50 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

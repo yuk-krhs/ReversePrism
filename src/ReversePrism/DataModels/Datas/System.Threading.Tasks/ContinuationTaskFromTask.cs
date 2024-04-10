@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 M_antecedent                             000186680E70 ModelClassType Task Task Task Pointer
-    public partial class ContinuationTaskFromTask
+    public partial class ContinuationTaskFromTask : DataModel
     {
         public Task?                                    M_antecedent                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContinuationTaskFromTask();
+            var value   = new ContinuationTaskFromTask() { Pointer= p0 };
 
-            value.M_antecedent                              = GetObject<Task>(new IntPtr(p + 0x050), ReversePrism.DataModels.Task.FromPointer); // 0270D6B4F468 0x50 M_antecedent                ( 000186680E70 ModelClassType Task Task Task Pointer )
+            value.M_antecedent                              = GetObject<Task>(new IntPtr(p + 0x050), ReversePrism.DataModels.Task.FromPointer); // 024666BBF468 0x50 M_antecedent                ( 000186680E70 ModelClassType Task Task Task Pointer )
 
             return value;
         }

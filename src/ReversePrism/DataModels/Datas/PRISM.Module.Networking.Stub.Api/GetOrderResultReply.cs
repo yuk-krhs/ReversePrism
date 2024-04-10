@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 StoreItem                                000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer
     // 000 UpdatedHavingProductGroupFieldNumber     int IL2CPP_TYPE_I4
     // 028 UpdatedHavingProductGroup                0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class GetOrderResultReply
+    public partial class GetOrderResultReply : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public StoreItemStatus?                         StoreItem                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetOrderResultReply();
+            var value   = new GetOrderResultReply() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B2BB88 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 0270D0B2BBC8 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
-            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D0B2BC08 0x28 UpdatedHavingProductGroup   ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B1DEC8 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 024660B1DF08 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
+            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 024660B1DF48 0x28 UpdatedHavingProductGroup   ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

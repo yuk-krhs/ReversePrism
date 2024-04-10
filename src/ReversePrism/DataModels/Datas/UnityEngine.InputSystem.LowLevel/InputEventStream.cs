@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 078 M_RemainingAppendEventCount              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 07C M_NumEventsRetainedInBuffer              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 080 M_IsOpen                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class InputEventStream
+    public partial class InputEventStream : DataModel
     {
         public InputEventBuffer                         M_NativeBuffer                          { get; set; }
         public int                                      M_RemainingNativeEventCount             { get; set; }
@@ -35,15 +35,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputEventStream();
+            var value   = new InputEventStream() { Pointer= p0 };
 
-            value.M_NativeBuffer                            = (InputEventBuffer)GetInt32(new IntPtr(p + 0x010)); // 02700334E450 0x10 M_NativeBuffer              ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
-            value.M_RemainingNativeEventCount               = GetInt32(new IntPtr(p + 0x040)); // 02700334E4B0 0x40 M_RemainingNativeEventCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MaxAppendedEvents                       = GetInt32(new IntPtr(p + 0x044)); // 02700334E4D0 0x44 M_MaxAppendedEvents         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_AppendBuffer                            = (InputEventBuffer)GetInt32(new IntPtr(p + 0x048)); // 02700334E4F0 0x48 M_AppendBuffer              ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
-            value.M_RemainingAppendEventCount               = GetInt32(new IntPtr(p + 0x078)); // 02700334E550 0x78 M_RemainingAppendEventCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NumEventsRetainedInBuffer               = GetInt32(new IntPtr(p + 0x07C)); // 02700334E570 0x7C M_NumEventsRetainedInBuffer ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_IsOpen                                  = GetBool(new IntPtr(p + 0x080)); // 02700334E590 0x80 M_IsOpen                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_NativeBuffer                            = (InputEventBuffer)GetInt32(new IntPtr(p + 0x010)); // 0245A334E450 0x10 M_NativeBuffer              ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
+            value.M_RemainingNativeEventCount               = GetInt32(new IntPtr(p + 0x040)); // 0245A334E4B0 0x40 M_RemainingNativeEventCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_MaxAppendedEvents                       = GetInt32(new IntPtr(p + 0x044)); // 0245A334E4D0 0x44 M_MaxAppendedEvents         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_AppendBuffer                            = (InputEventBuffer)GetInt32(new IntPtr(p + 0x048)); // 0245A334E4F0 0x48 M_AppendBuffer              ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
+            value.M_RemainingAppendEventCount               = GetInt32(new IntPtr(p + 0x078)); // 0245A334E550 0x78 M_RemainingAppendEventCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_NumEventsRetainedInBuffer               = GetInt32(new IntPtr(p + 0x07C)); // 0245A334E570 0x7C M_NumEventsRetainedInBuffer ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_IsOpen                                  = GetBool(new IntPtr(p + 0x080)); // 0245A334E590 0x80 M_IsOpen                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 scriptVersionString                      string IL2CPP_TYPE_STRING
     // 000 cri_mana_vp9_name                        string IL2CPP_TYPE_STRING
-    public partial class CriManaVp9
+    public partial class CriManaVp9 : DataModel
     {
 
         public static CriManaVp9? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriManaVp9();
+            var value   = new CriManaVp9() { Pointer= p0 };
 
 
             return value;

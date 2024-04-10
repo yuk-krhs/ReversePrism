@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HttpQSCollection
+    public partial class HttpQSCollection : DataModel
     {
 
         public static HttpQSCollection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpQSCollection();
+            var value   = new HttpQSCollection() { Pointer= p0 };
 
 
             return value;

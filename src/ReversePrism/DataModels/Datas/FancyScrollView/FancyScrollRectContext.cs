@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 FancyScrollView.IFancyScrollRectContext.ScrollDirection 0001866F7950 ModelEnumType ScrollDirection ScrollDirection ScrollDirection Int32
     // 018 <FancyScrollView.IFancyScrollRectContext.CalculateScrollSize>k__BackingField Func`1<ValueTuple`2<float, float>> IL2CPP_TYPE_GENERICINST
-    public partial class FancyScrollRectContext
+    public partial class FancyScrollRectContext : DataModel
     {
         public ScrollDirection                          FancyScrollView.IFancyScrollRectContext.ScrollDirection { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FancyScrollRectContext();
+            var value   = new FancyScrollRectContext() { Pointer= p0 };
 
-            value.FancyScrollView.IFancyScrollRectContext.ScrollDirection = (ScrollDirection)GetInt32(new IntPtr(p + 0x010)); // 027004F748A0 0x10 FancyScrollView.IFancyScrollRectContext.ScrollDirection ( 0001866F7950 ModelEnumType ScrollDirection ScrollDirection ScrollDirection Int32 )
+            value.FancyScrollView.IFancyScrollRectContext.ScrollDirection = (ScrollDirection)GetInt32(new IntPtr(p + 0x010)); // 0245A4F6B728 0x10 FancyScrollView.IFancyScrollRectContext.ScrollDirection ( 0001866F7950 ModelEnumType ScrollDirection ScrollDirection ScrollDirection Int32 )
 
             return value;
         }

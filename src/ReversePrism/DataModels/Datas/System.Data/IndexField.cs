@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Column                                   0001866763C0 ModelClassType DataColumn DataColumn DataColumn Pointer
     // 018 IsDescending                             000186596AF0 ModelPrimitiveType bool bool bool Bool
-    public partial class IndexField
+    public partial class IndexField : DataModel
     {
         public DataColumn?                              Column                                  { get; set; }
         public bool                                     IsDescending                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IndexField();
+            var value   = new IndexField() { Pointer= p0 };
 
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0270D88BF490 0x10 Column                      ( 0001866763C0 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.IsDescending                              = GetBool(new IntPtr(p + 0x018)); // 0270D88BF4B0 0x18 IsDescending                ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0246689336F8 0x10 Column                      ( 0001866763C0 ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.IsDescending                              = GetBool(new IntPtr(p + 0x018)); // 024668933718 0x18 IsDescending                ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

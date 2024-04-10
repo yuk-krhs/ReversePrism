@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DoneDelegate
+    public partial class DoneDelegate : DataModel
     {
 
         public static DoneDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoneDelegate();
+            var value   = new DoneDelegate() { Pointer= p0 };
 
 
             return value;

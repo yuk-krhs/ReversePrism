@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Character                                000186597210 ModelClassType Character Character Character Pointer
     // 028 CharaIndex                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AttachCharacterObject
+    public partial class AttachCharacterObject : DataModel
     {
         public Character?                               Character                               { get; set; }
         public int                                      CharaIndex                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AttachCharacterObject();
+            var value   = new AttachCharacterObject() { Pointer= p0 };
 
-            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 0270072C89B8 0x20 Character                   ( 000186597210 ModelClassType Character Character Character Pointer )
-            value.CharaIndex                                = GetInt32(new IntPtr(p + 0x028)); // 0270072C89D8 0x28 CharaIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Character                                 = GetObject<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 0245A5CD7E58 0x20 Character                   ( 000186597210 ModelClassType Character Character Character Pointer )
+            value.CharaIndex                                = GetInt32(new IntPtr(p + 0x028)); // 0245A5CD7E78 0x28 CharaIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

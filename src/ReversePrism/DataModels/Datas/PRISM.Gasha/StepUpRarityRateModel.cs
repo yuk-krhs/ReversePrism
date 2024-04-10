@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Rarity                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 014 NormalRate                               000186666CB0 ModelPrimitiveType float float float Single
     // 018 PromiseRate                              000186666CB0 ModelPrimitiveType float float float Single
-    public partial class StepUpRarityRateModel
+    public partial class StepUpRarityRateModel : DataModel
     {
         public int                                      Rarity                                  { get; set; }
         public float                                    NormalRate                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StepUpRarityRateModel();
+            var value   = new StepUpRarityRateModel() { Pointer= p0 };
 
-            value.Rarity                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D53F3848 0x10 Rarity                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.NormalRate                                = GetSingle(new IntPtr(p + 0x014)); // 0270D53F3868 0x14 NormalRate                  ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.PromiseRate                               = GetSingle(new IntPtr(p + 0x018)); // 0270D53F3888 0x18 PromiseRate                 ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.Rarity                                    = GetInt32(new IntPtr(p + 0x010)); // 02466545EDC8 0x10 Rarity                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.NormalRate                                = GetSingle(new IntPtr(p + 0x014)); // 02466545EDE8 0x14 NormalRate                  ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.PromiseRate                               = GetSingle(new IntPtr(p + 0x018)); // 02466545EE08 0x18 PromiseRate                 ( 000186666CB0 ModelPrimitiveType float float float Single )
 
             return value;
         }

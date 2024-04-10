@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 RewardStatus                             0001865ABE60 ModelClassType IMedalGashaRewardStatus IMedalGashaRewardStatus IMedalGashaRewardStatus Pointer
     // 018 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class MedalGashaRewardItemData
+    public partial class MedalGashaRewardItemData : DataModel
     {
         public IMedalGashaRewardStatus?                 RewardStatus                            { get; set; }
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MedalGashaRewardItemData();
+            var value   = new MedalGashaRewardItemData() { Pointer= p0 };
 
-            value.RewardStatus                              = GetObject<IMedalGashaRewardStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardStatus.FromPointer); // 0270D629E348 0x10 RewardStatus                ( 0001865ABE60 ModelClassType IMedalGashaRewardStatus IMedalGashaRewardStatus IMedalGashaRewardStatus Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270D629E368 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.RewardStatus                              = GetObject<IMedalGashaRewardStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardStatus.FromPointer); // 02466630EB78 0x10 RewardStatus                ( 0001865ABE60 ModelClassType IMedalGashaRewardStatus IMedalGashaRewardStatus IMedalGashaRewardStatus Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466630EB98 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

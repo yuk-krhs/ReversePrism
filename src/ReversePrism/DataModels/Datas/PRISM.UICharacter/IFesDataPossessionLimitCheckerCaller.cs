@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFesDataPossessionLimitCheckerCaller
+    public partial class IFesDataPossessionLimitCheckerCaller : DataModel
     {
 
         public static IFesDataPossessionLimitCheckerCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFesDataPossessionLimitCheckerCaller();
+            var value   = new IFesDataPossessionLimitCheckerCaller() { Pointer= p0 };
 
 
             return value;

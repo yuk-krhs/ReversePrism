@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Priority                                 0001865F4940 ModelPrimitiveType int int int Int32
-    public partial class RendererResourceFactoryPriorityAttribute
+    public partial class RendererResourceFactoryPriorityAttribute : DataModel
     {
         public int                                      Priority                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RendererResourceFactoryPriorityAttribute();
+            var value   = new RendererResourceFactoryPriorityAttribute() { Pointer= p0 };
 
-            value.Priority                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D1874A88 0x10 Priority                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Priority                                  = GetInt32(new IntPtr(p + 0x010)); // 0246618066A0 0x10 Priority                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

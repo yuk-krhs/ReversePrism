@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ConstantCheck
+    public partial class ConstantCheck : DataModel
     {
 
         public static ConstantCheck? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstantCheck();
+            var value   = new ConstantCheck() { Pointer= p0 };
 
 
             return value;

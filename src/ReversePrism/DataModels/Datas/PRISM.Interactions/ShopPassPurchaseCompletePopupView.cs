@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 048 ViewModel                                000186767550 ModelClassType ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel Pointer
     // 050 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ShopPassPurchaseCompletePopupView
+    public partial class ShopPassPurchaseCompletePopupView : DataModel
     {
         public UITextMeshProUGUI?                       MessageText                             { get; set; }
         public RawImage?                                ItemIconImage                           { get; set; }
@@ -32,14 +32,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopPassPurchaseCompletePopupView();
+            var value   = new ShopPassPurchaseCompletePopupView() { Pointer= p0 };
 
-            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB7E79A8 0x20 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ItemIconImage                             = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0270DB7E79C8 0x28 ItemIconImage               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ItemNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB7E79E8 0x30 ItemNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ProductDetailButton                       = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB7E7A08 0x38 ProductDetailButton         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ViewModel                                 = GetObject<ShopPassPurchaseCompletePopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ShopPassPurchaseCompletePopupViewModel.FromPointer); // 0270DB7E7A48 0x48 ViewModel                   ( 000186767550 ModelClassType ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB7E7A88 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B877910 0x20 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ItemIconImage                             = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 02466B877930 0x28 ItemIconImage               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.ItemNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B877950 0x30 ItemNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProductDetailButton                       = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466B877970 0x38 ProductDetailButton         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.ViewModel                                 = GetObject<ShopPassPurchaseCompletePopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ShopPassPurchaseCompletePopupViewModel.FromPointer); // 02466B8779B0 0x48 ViewModel                   ( 000186767550 ModelClassType ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel ShopPassPurchaseCompletePopupViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B8779F0 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 Notnull                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ColumnInfo
+    public partial class ColumnInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
         public int                                      Notnull                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColumnInfo();
+            var value   = new ColumnInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027003DAFED0 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Notnull                                   = GetInt32(new IntPtr(p + 0x018)); // 027003DAFEF0 0x18 Notnull                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A3DAFED0 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Notnull                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A3DAFEF0 0x18 Notnull                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

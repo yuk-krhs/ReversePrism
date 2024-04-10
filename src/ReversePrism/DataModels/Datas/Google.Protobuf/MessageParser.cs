@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 factory                                  Func`1<IMessage> IL2CPP_TYPE_GENERICINST
     // 018 DiscardUnknownFields                     0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 020 Extensions                               000186532D90 ModelClassType ExtensionRegistry ExtensionRegistry ExtensionRegistry Pointer
-    public partial class MessageParser
+    public partial class MessageParser : DataModel
     {
         public bool                                     DiscardUnknownFields                    { get; set; }
         public ExtensionRegistry?                       Extensions                              { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MessageParser();
+            var value   = new MessageParser() { Pointer= p0 };
 
-            value.DiscardUnknownFields                      = GetBool(new IntPtr(p + 0x018)); // 0270D0B3C328 0x18 DiscardUnknownFields        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Extensions                                = GetObject<ExtensionRegistry>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExtensionRegistry.FromPointer); // 0270D0B3C348 0x20 Extensions                  ( 000186532D90 ModelClassType ExtensionRegistry ExtensionRegistry ExtensionRegistry Pointer )
+            value.DiscardUnknownFields                      = GetBool(new IntPtr(p + 0x018)); // 024660B256F0 0x18 DiscardUnknownFields        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Extensions                                = GetObject<ExtensionRegistry>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExtensionRegistry.FromPointer); // 024660B25710 0x20 Extensions                  ( 000186532D90 ModelClassType ExtensionRegistry ExtensionRegistry ExtensionRegistry Pointer )
 
             return value;
         }

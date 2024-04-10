@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 040 CellImage                                0001866CCDB0 ModelClassType Image Image Image Pointer
     // 048 CellSprites                              000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
     // 050 LockedObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class MusicRankingCategoryListCell
+    public partial class MusicRankingCategoryListCell : DataModel
     {
         public Image?                                   CellImage                               { get; set; }
         public List<Sprite>?                            CellSprites                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRankingCategoryListCell();
+            var value   = new MusicRankingCategoryListCell() { Pointer= p0 };
 
-            value.CellImage                                 = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 0270DB3CEDB0 0x40 CellImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.CellSprites                               = GetObjectList<Sprite>(new IntPtr(p + 0x048), ReversePrism.DataModels.Sprite.FromPointer); // 0270DB3CEDD0 0x48 CellSprites                 ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
-            value.LockedObject                              = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB3CEDF0 0x50 LockedObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CellImage                                 = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 02466B463E90 0x40 CellImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.CellSprites                               = GetObjectList<Sprite>(new IntPtr(p + 0x048), ReversePrism.DataModels.Sprite.FromPointer); // 02466B463EB0 0x48 CellSprites                 ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value.LockedObject                              = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466B463ED0 0x50 LockedObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

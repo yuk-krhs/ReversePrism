@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ToolboxItemTypeName                      000186671910 ModelPrimitiveType string string string String
     // 000 Default                                  ToolboxItemAttribute IL2CPP_TYPE_CLASS
     // 008 None                                     ToolboxItemAttribute IL2CPP_TYPE_CLASS
-    public partial class ToolboxItemAttribute
+    public partial class ToolboxItemAttribute : DataModel
     {
         public string                                   ToolboxItemTypeName                     { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToolboxItemAttribute();
+            var value   = new ToolboxItemAttribute() { Pointer= p0 };
 
-            value.ToolboxItemTypeName                       = GetString(new IntPtr(p + 0x010)); // 0270D7B1B990 0x10 ToolboxItemTypeName         ( 000186671910 ModelPrimitiveType string string string String )
+            value.ToolboxItemTypeName                       = GetString(new IntPtr(p + 0x010)); // 024667B83990 0x10 ToolboxItemTypeName         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

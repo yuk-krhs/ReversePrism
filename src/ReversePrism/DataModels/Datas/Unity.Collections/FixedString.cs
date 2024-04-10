@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FixedString
+    public partial class FixedString : DataModel
     {
 
         public static FixedString? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedString();
+            var value   = new FixedString() { Pointer= p0 };
 
 
             return value;

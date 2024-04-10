@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Element                                  0001865D4750 ModelClassType SubSeasonDetailContentElement SubSeasonDetailContentElement SubSeasonDetailContentElement Pointer
-    public partial class SubSeasonDetailContent
+    public partial class SubSeasonDetailContent : DataModel
     {
         public SubSeasonDetailContentElement?           Element                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonDetailContent();
+            var value   = new SubSeasonDetailContent() { Pointer= p0 };
 
-            value.Element                                   = GetObject<SubSeasonDetailContentElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.SubSeasonDetailContentElement.FromPointer); // 0270D4D21410 0x20 Element                     ( 0001865D4750 ModelClassType SubSeasonDetailContentElement SubSeasonDetailContentElement SubSeasonDetailContentElement Pointer )
+            value.Element                                   = GetObject<SubSeasonDetailContentElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.SubSeasonDetailContentElement.FromPointer); // 024664D95410 0x20 Element                     ( 0001865D4750 ModelClassType SubSeasonDetailContentElement SubSeasonDetailContentElement SubSeasonDetailContentElement Pointer )
 
             return value;
         }

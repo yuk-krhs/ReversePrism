@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 058 M_RootVisualElement                      0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 060 M_FirstChildInsertIndex                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 064 M_SortingOrder                           0001866656B0 ModelPrimitiveType float float float Single
-    public partial class UIDocument
+    public partial class UIDocument : DataModel
     {
         public int                                      M_UIDocumentCreationIndex               { get; set; }
         public PanelSettings?                           M_PanelSettings                         { get; set; }
@@ -41,18 +41,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UIDocument();
+            var value   = new UIDocument() { Pointer= p0 };
 
-            value.M_UIDocumentCreationIndex                 = GetInt32(new IntPtr(p + 0x020)); // 0270067DC9F8 0x20 M_UIDocumentCreationIndex   ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.M_PanelSettings                           = GetObject<PanelSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.PanelSettings.FromPointer); // 0270067DCA18 0x28 M_PanelSettings             ( 0001867179E0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
-            value.M_PreviousPanelSettings                   = GetObject<PanelSettings>(new IntPtr(p + 0x030), ReversePrism.DataModels.PanelSettings.FromPointer); // 0270067DCA38 0x30 M_PreviousPanelSettings     ( 0001867179E0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
-            value.M_ParentUI                                = GetObject<UIDocument>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIDocument.FromPointer); // 0270067DCA58 0x38 M_ParentUI                  ( 0001866E49C0 ModelClassType UIDocument UIDocument UIDocument Pointer )
-            value.M_ChildrenContent                         = GetObject<UIDocumentList>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIDocumentList.FromPointer); // 0270067DCA78 0x40 M_ChildrenContent           ( 0001866E4EA0 ModelClassType UIDocumentList UIDocumentList UIDocumentList Pointer )
-            value.M_ChildrenContentCopy                     = GetObjectList<UIDocument>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIDocument.FromPointer); // 0270067DCA98 0x48 M_ChildrenContentCopy       ( 000185D17BF8 ModelClassListType List`1<UIDocument> List`1<UIDocument> List<UIDocument> Pointer )
-            value.SourceAsset                               = GetObject<VisualTreeAsset>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualTreeAsset.FromPointer); // 0270067DCAB8 0x50 SourceAsset                 ( 00018652C200 ModelClassType VisualTreeAsset VisualTreeAsset VisualTreeAsset Pointer )
-            value.M_RootVisualElement                       = GetObject<VisualElement>(new IntPtr(p + 0x058), ReversePrism.DataModels.VisualElement.FromPointer); // 0270067DCAD8 0x58 M_RootVisualElement         ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_FirstChildInsertIndex                   = GetInt32(new IntPtr(p + 0x060)); // 0270067DCAF8 0x60 M_FirstChildInsertIndex     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_SortingOrder                            = GetSingle(new IntPtr(p + 0x064)); // 0270067DCB18 0x64 M_SortingOrder              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_UIDocumentCreationIndex                 = GetInt32(new IntPtr(p + 0x020)); // 0245A679EAF0 0x20 M_UIDocumentCreationIndex   ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.M_PanelSettings                           = GetObject<PanelSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.PanelSettings.FromPointer); // 0245A679EB10 0x28 M_PanelSettings             ( 0001867179E0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
+            value.M_PreviousPanelSettings                   = GetObject<PanelSettings>(new IntPtr(p + 0x030), ReversePrism.DataModels.PanelSettings.FromPointer); // 0245A679EB30 0x30 M_PreviousPanelSettings     ( 0001867179E0 ModelClassType PanelSettings PanelSettings PanelSettings Pointer )
+            value.M_ParentUI                                = GetObject<UIDocument>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIDocument.FromPointer); // 0245A679EB50 0x38 M_ParentUI                  ( 0001866E49C0 ModelClassType UIDocument UIDocument UIDocument Pointer )
+            value.M_ChildrenContent                         = GetObject<UIDocumentList>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIDocumentList.FromPointer); // 0245A679EB70 0x40 M_ChildrenContent           ( 0001866E4EA0 ModelClassType UIDocumentList UIDocumentList UIDocumentList Pointer )
+            value.M_ChildrenContentCopy                     = GetObjectList<UIDocument>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIDocument.FromPointer); // 0245A679EB90 0x48 M_ChildrenContentCopy       ( 000185D17BF8 ModelClassListType List`1<UIDocument> List`1<UIDocument> List<UIDocument> Pointer )
+            value.SourceAsset                               = GetObject<VisualTreeAsset>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualTreeAsset.FromPointer); // 0245A679EBB0 0x50 SourceAsset                 ( 00018652C200 ModelClassType VisualTreeAsset VisualTreeAsset VisualTreeAsset Pointer )
+            value.M_RootVisualElement                       = GetObject<VisualElement>(new IntPtr(p + 0x058), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A679EBD0 0x58 M_RootVisualElement         ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_FirstChildInsertIndex                   = GetInt32(new IntPtr(p + 0x060)); // 0245A679EBF0 0x60 M_FirstChildInsertIndex     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_SortingOrder                            = GetSingle(new IntPtr(p + 0x064)); // 0245A679EC10 0x64 M_SortingOrder              ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

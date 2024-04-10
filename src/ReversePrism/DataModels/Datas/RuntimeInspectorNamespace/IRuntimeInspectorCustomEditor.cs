@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRuntimeInspectorCustomEditor
+    public partial class IRuntimeInspectorCustomEditor : DataModel
     {
 
         public static IRuntimeInspectorCustomEditor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRuntimeInspectorCustomEditor();
+            var value   = new IRuntimeInspectorCustomEditor() { Pointer= p0 };
 
 
             return value;

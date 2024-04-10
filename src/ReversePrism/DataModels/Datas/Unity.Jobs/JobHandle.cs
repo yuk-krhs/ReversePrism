@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 JobGroup                                 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
     // 018 Version                                  0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class JobHandle
+    public partial class JobHandle : DataModel
     {
         public ulong                                    JobGroup                                { get; set; }
         public int                                      Version                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JobHandle();
+            var value   = new JobHandle() { Pointer= p0 };
 
-            value.JobGroup                                  = GetUInt64(new IntPtr(p + 0x010)); // 0270024543C8 0x10 JobGroup                    ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x018)); // 0270024543E8 0x18 Version                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.JobGroup                                  = GetUInt64(new IntPtr(p + 0x010)); // 0245A24543C8 0x10 JobGroup                    ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A24543E8 0x18 Version                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

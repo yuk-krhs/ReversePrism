@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISelectIdolSkillReply
+    public partial class ISelectIdolSkillReply : DataModel
     {
 
         public static ISelectIdolSkillReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISelectIdolSkillReply();
+            var value   = new ISelectIdolSkillReply() { Pointer= p0 };
 
 
             return value;

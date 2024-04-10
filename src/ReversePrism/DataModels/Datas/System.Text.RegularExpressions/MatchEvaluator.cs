@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MatchEvaluator
+    public partial class MatchEvaluator : DataModel
     {
 
         public static MatchEvaluator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MatchEvaluator();
+            var value   = new MatchEvaluator() { Pointer= p0 };
 
 
             return value;

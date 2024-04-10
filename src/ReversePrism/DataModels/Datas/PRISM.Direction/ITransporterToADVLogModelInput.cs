@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITransporterToADVLogModelInput
+    public partial class ITransporterToADVLogModelInput : DataModel
     {
 
         public static ITransporterToADVLogModelInput? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITransporterToADVLogModelInput();
+            var value   = new ITransporterToADVLogModelInput() { Pointer= p0 };
 
 
             return value;

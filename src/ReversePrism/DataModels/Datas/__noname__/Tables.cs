@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _buckets                                 Node<<var>, <var>>[] IL2CPP_TYPE_SZARRAY
     // 000 _locks                                   <object>[] IL2CPP_TYPE_SZARRAY
     // 000 _countPerLock                            int[] IL2CPP_TYPE_SZARRAY
-    public partial class Tables
+    public partial class Tables : DataModel
     {
 
         public static Tables? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Tables();
+            var value   = new Tables() { Pointer= p0 };
 
 
             return value;

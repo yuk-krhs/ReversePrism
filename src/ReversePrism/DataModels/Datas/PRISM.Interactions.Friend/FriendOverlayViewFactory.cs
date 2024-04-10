@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FriendOverlayViewFactory
+    public partial class FriendOverlayViewFactory : DataModel
     {
 
         public static FriendOverlayViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendOverlayViewFactory();
+            var value   = new FriendOverlayViewFactory() { Pointer= p0 };
 
 
             return value;

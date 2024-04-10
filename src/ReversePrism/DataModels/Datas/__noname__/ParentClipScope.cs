@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Disposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ParentClipScope
+    public partial class ParentClipScope : DataModel
     {
         public bool                                     M_Disposed                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParentClipScope();
+            var value   = new ParentClipScope() { Pointer= p0 };
 
-            value.M_Disposed                                = GetBool(new IntPtr(p + 0x010)); // 027006926588 0x10 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Disposed                                = GetBool(new IntPtr(p + 0x010)); // 0245A68E9460 0x10 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

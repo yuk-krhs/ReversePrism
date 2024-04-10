@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class StartSupportCooperationEventReplyTranslator
+    public partial class StartSupportCooperationEventReplyTranslator : DataModel
     {
 
         public static StartSupportCooperationEventReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartSupportCooperationEventReplyTranslator();
+            var value   = new StartSupportCooperationEventReplyTranslator() { Pointer= p0 };
 
 
             return value;

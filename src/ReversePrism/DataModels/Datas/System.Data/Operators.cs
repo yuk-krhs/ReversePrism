@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_priority                               int[] IL2CPP_TYPE_SZARRAY
     // 008 s_looks                                  string[] IL2CPP_TYPE_SZARRAY
-    public partial class Operators
+    public partial class Operators : DataModel
     {
 
         public static Operators? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Operators();
+            var value   = new Operators() { Pointer= p0 };
 
 
             return value;

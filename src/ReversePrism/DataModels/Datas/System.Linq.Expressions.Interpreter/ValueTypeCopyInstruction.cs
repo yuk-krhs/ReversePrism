@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instruction                              ValueTypeCopyInstruction IL2CPP_TYPE_CLASS
-    public partial class ValueTypeCopyInstruction
+    public partial class ValueTypeCopyInstruction : DataModel
     {
 
         public static ValueTypeCopyInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValueTypeCopyInstruction();
+            var value   = new ValueTypeCopyInstruction() { Pointer= p0 };
 
 
             return value;

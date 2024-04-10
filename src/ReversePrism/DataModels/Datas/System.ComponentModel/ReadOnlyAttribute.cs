@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 No                                       ReadOnlyAttribute IL2CPP_TYPE_CLASS
     // 010 Default                                  000186618DB0 ModelClassType ReadOnlyAttribute ReadOnlyAttribute ReadOnlyAttribute Pointer
     // 010 IsReadOnly                               0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class ReadOnlyAttribute
+    public partial class ReadOnlyAttribute : DataModel
     {
         public ReadOnlyAttribute?                       Default                                 { get; set; }
         public bool                                     IsReadOnly                              { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReadOnlyAttribute();
+            var value   = new ReadOnlyAttribute() { Pointer= p0 };
 
-            value.Default                                   = GetObject<ReadOnlyAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.ReadOnlyAttribute.FromPointer); // 0270D7B14928 0x10 Default                     ( 000186618DB0 ModelClassType ReadOnlyAttribute ReadOnlyAttribute ReadOnlyAttribute Pointer )
-            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x010)); // 0270D7B14948 0x10 IsReadOnly                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Default                                   = GetObject<ReadOnlyAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.ReadOnlyAttribute.FromPointer); // 024667B7C928 0x10 Default                     ( 000186618DB0 ModelClassType ReadOnlyAttribute ReadOnlyAttribute ReadOnlyAttribute Pointer )
+            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x010)); // 024667B7C948 0x10 IsReadOnly                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

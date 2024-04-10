@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Entries                                  LocalCatalogEntry[] IL2CPP_TYPE_SZARRAY
     // 008 AddressMap                               Dictionary`2<ulong, ulong> IL2CPP_TYPE_GENERICINST
     // 010 IndexMap                                 Dictionary`2<ulong, int> IL2CPP_TYPE_GENERICINST
-    public partial class LocalCatalogData
+    public partial class LocalCatalogData : DataModel
     {
 
         public static LocalCatalogData? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalCatalogData();
+            var value   = new LocalCatalogData() { Pointer= p0 };
 
 
             return value;

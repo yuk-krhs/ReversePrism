@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PointerEventsHelper
+    public partial class PointerEventsHelper : DataModel
     {
 
         public static PointerEventsHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerEventsHelper();
+            var value   = new PointerEventsHelper() { Pointer= p0 };
 
 
             return value;

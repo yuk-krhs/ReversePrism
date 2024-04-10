@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FesIdolSearchPopupViewFactory
+    public partial class FesIdolSearchPopupViewFactory : DataModel
     {
 
         public static FesIdolSearchPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesIdolSearchPopupViewFactory();
+            var value   = new FesIdolSearchPopupViewFactory() { Pointer= p0 };
 
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 isConfigured                             bool IL2CPP_TYPE_BOOLEAN
     // 008 defaultInstallBufferSize                 int IL2CPP_TYPE_I4
     // 00C installBufferSize                        int IL2CPP_TYPE_I4
-    public partial class CriFsPlugin
+    public partial class CriFsPlugin : DataModel
     {
 
         public static CriFsPlugin? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriFsPlugin();
+            var value   = new CriFsPlugin() { Pointer= p0 };
 
 
             return value;

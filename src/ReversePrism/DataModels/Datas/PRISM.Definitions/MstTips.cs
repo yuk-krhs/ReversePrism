@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 014 MstTipsCategoryId                        0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Weight                                   0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class MstTips
+    public partial class MstTips : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstTipsCategoryId                       { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstTips();
+            var value   = new MstTips() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027003AF9180 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstTipsCategoryId                         = GetInt32(new IntPtr(p + 0x014)); // 027003AF91A0 0x14 MstTipsCategoryId           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Weight                                    = GetInt32(new IntPtr(p + 0x018)); // 027003AF91C0 0x18 Weight                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A3AF7B58 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstTipsCategoryId                         = GetInt32(new IntPtr(p + 0x014)); // 0245A3AF7B78 0x14 MstTipsCategoryId           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Weight                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A3AF7B98 0x18 Weight                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITweenValue
+    public partial class ITweenValue : DataModel
     {
 
         public static ITweenValue? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITweenValue();
+            var value   = new ITweenValue() { Pointer= p0 };
 
 
             return value;

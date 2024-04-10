@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 060 BirthdayRibbon                           000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 070 BirthdayTitle                            000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 080 BirthdayCracker                          000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class HomeSeConst
+    public partial class HomeSeConst : DataModel
     {
         public SoundKey                                 LoginStamp                              { get; set; }
         public SoundKey                                 LoginBoard                              { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSeConst();
+            var value   = new HomeSeConst() { Pointer= p0 };
 
-            value.LoginStamp                                = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270D5E58080 0x10 LoginStamp                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LoginBoard                                = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 0270D5E580A0 0x20 LoginBoard                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LoginTitle                                = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 0270D5E580C0 0x30 LoginTitle                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LoginWipe                                 = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 0270D5E580E0 0x40 LoginWipe                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LoginNext                                 = (SoundKey)GetInt32(new IntPtr(p + 0x050)); // 0270D5E58100 0x50 LoginNext                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.BirthdayRibbon                            = (SoundKey)GetInt32(new IntPtr(p + 0x060)); // 0270D5E58120 0x60 BirthdayRibbon              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.BirthdayTitle                             = (SoundKey)GetInt32(new IntPtr(p + 0x070)); // 0270D5E58140 0x70 BirthdayTitle               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.BirthdayCracker                           = (SoundKey)GetInt32(new IntPtr(p + 0x080)); // 0270D5E58160 0x80 BirthdayCracker             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LoginStamp                                = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 024665EC87B0 0x10 LoginStamp                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LoginBoard                                = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 024665EC87D0 0x20 LoginBoard                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LoginTitle                                = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 024665EC87F0 0x30 LoginTitle                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LoginWipe                                 = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 024665EC8810 0x40 LoginWipe                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LoginNext                                 = (SoundKey)GetInt32(new IntPtr(p + 0x050)); // 024665EC8830 0x50 LoginNext                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.BirthdayRibbon                            = (SoundKey)GetInt32(new IntPtr(p + 0x060)); // 024665EC8850 0x60 BirthdayRibbon              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.BirthdayTitle                             = (SoundKey)GetInt32(new IntPtr(p + 0x070)); // 024665EC8870 0x70 BirthdayTitle               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.BirthdayCracker                           = (SoundKey)GetInt32(new IntPtr(p + 0x080)); // 024665EC8890 0x80 BirthdayCracker             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

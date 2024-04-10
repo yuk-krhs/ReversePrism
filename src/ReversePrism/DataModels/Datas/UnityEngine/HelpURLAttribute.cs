@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_Url                                    0001866731A0 ModelPrimitiveType string string string String
     // 018 M_Dispatcher                             000186596860 ModelPrimitiveType bool bool bool Bool
     // 020 M_DispatchingFieldName                   0001866731A0 ModelPrimitiveType string string string String
-    public partial class HelpURLAttribute
+    public partial class HelpURLAttribute : DataModel
     {
         public string                                   M_Url                                   { get; set; }
         public bool                                     M_Dispatcher                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HelpURLAttribute();
+            var value   = new HelpURLAttribute() { Pointer= p0 };
 
-            value.M_Url                                     = GetString(new IntPtr(p + 0x010)); // 0270023B95D0 0x10 M_Url                       ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.M_Dispatcher                              = GetBool(new IntPtr(p + 0x018)); // 0270023B95F0 0x18 M_Dispatcher                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.M_DispatchingFieldName                    = GetString(new IntPtr(p + 0x020)); // 0270023B9610 0x20 M_DispatchingFieldName      ( 0001866731A0 ModelPrimitiveType string string string String )
+            value.M_Url                                     = GetString(new IntPtr(p + 0x010)); // 0245A23B95D0 0x10 M_Url                       ( 0001866731A0 ModelPrimitiveType string string string String )
+            value.M_Dispatcher                              = GetBool(new IntPtr(p + 0x018)); // 0245A23B95F0 0x18 M_Dispatcher                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.M_DispatchingFieldName                    = GetString(new IntPtr(p + 0x020)); // 0245A23B9610 0x20 M_DispatchingFieldName      ( 0001866731A0 ModelPrimitiveType string string string String )
 
             return value;
         }

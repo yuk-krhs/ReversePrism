@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 018 Written                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class BufferSegment
+    public partial class BufferSegment : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
         public int                                      Written                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BufferSegment();
+            var value   = new BufferSegment() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0270DAF322D8 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Written                                   = GetInt32(new IntPtr(p + 0x018)); // 0270DAF322F8 0x18 Written                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 02466AFA22D8 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Written                                   = GetInt32(new IntPtr(p + 0x018)); // 02466AFA22F8 0x18 Written                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

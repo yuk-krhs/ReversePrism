@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 CurrentName                              000186671910 ModelPrimitiveType string string string String
     // 020 MaxNameLength                            0001865F4260 ModelPrimitiveType int int int Int32
     // 024 InputOverCount                           0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class EditUnitNamePopupViewModel
+    public partial class EditUnitNamePopupViewModel : DataModel
     {
         public bool                                     ForProduce                              { get; set; }
         public string                                   CurrentName                             { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditUnitNamePopupViewModel();
+            var value   = new EditUnitNamePopupViewModel() { Pointer= p0 };
 
-            value.ForProduce                                = GetBool(new IntPtr(p + 0x010)); // 0270D5F2CAC0 0x10 ForProduce                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentName                               = GetString(new IntPtr(p + 0x018)); // 0270D5F2CAE0 0x18 CurrentName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.MaxNameLength                             = GetInt32(new IntPtr(p + 0x020)); // 0270D5F2CB00 0x20 MaxNameLength               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.InputOverCount                            = GetInt32(new IntPtr(p + 0x024)); // 0270D5F2CB20 0x24 InputOverCount              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ForProduce                                = GetBool(new IntPtr(p + 0x010)); // 024665F8CAC0 0x10 ForProduce                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CurrentName                               = GetString(new IntPtr(p + 0x018)); // 024665F8CAE0 0x18 CurrentName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.MaxNameLength                             = GetInt32(new IntPtr(p + 0x020)); // 024665F8CB00 0x20 MaxNameLength               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.InputOverCount                            = GetInt32(new IntPtr(p + 0x024)); // 024665F8CB20 0x24 InputOverCount              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

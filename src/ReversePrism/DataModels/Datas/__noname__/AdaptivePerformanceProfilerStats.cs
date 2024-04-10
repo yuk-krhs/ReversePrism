@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 010 KAdaptivePerformanceProfilerModuleGuid   0001865DCF20 ModelEnumType Guid Guid Guid Int32
     // 020 KScalerDataTag                           0001865F50A0 ModelPrimitiveType int int int Int32
     // 028 scalerInfos                              Dictionary`2<string, ScalerInfo> IL2CPP_TYPE_GENERICINST
-    public partial class AdaptivePerformanceProfilerStats
+    public partial class AdaptivePerformanceProfilerStats : DataModel
     {
         public Guid                                     KAdaptivePerformanceProfilerModuleGuid  { get; set; }
         public int                                      KScalerDataTag                          { get; set; }
@@ -36,10 +36,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceProfilerStats();
+            var value   = new AdaptivePerformanceProfilerStats() { Pointer= p0 };
 
-            value.KAdaptivePerformanceProfilerModuleGuid    = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0270DB651F00 0x10 KAdaptivePerformanceProfilerModuleGuid ( 0001865DCF20 ModelEnumType Guid Guid Guid Int32 )
-            value.KScalerDataTag                            = GetInt32(new IntPtr(p + 0x020)); // 0270DB651F20 0x20 KScalerDataTag              ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.KAdaptivePerformanceProfilerModuleGuid    = (Guid)GetInt32(new IntPtr(p + 0x010)); // 02466B6D5F98 0x10 KAdaptivePerformanceProfilerModuleGuid ( 0001865DCF20 ModelEnumType Guid Guid Guid Int32 )
+            value.KScalerDataTag                            = GetInt32(new IntPtr(p + 0x020)); // 02466B6D5FB8 0x20 KScalerDataTag              ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

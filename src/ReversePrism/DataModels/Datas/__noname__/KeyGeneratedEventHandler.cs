@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyGeneratedEventHandler
+    public partial class KeyGeneratedEventHandler : DataModel
     {
 
         public static KeyGeneratedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyGeneratedEventHandler();
+            var value   = new KeyGeneratedEventHandler() { Pointer= p0 };
 
 
             return value;

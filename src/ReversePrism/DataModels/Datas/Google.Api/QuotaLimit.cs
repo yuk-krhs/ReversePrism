@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 058 values_                                  MapField`2<string, long> IL2CPP_TYPE_GENERICINST
     // 000 DisplayNameFieldNumber                   int IL2CPP_TYPE_I4
     // 060 DisplayName                              000186671910 ModelPrimitiveType string string string String
-    public partial class QuotaLimit
+    public partial class QuotaLimit : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Description                             { get; set; }
@@ -49,17 +49,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QuotaLimit();
+            var value   = new QuotaLimit() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270DA827B98 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0270DA827BD8 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DefaultLimit                              = GetInt64(new IntPtr(p + 0x028)); // 0270DA827C18 0x28 DefaultLimit                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.MaxLimit                                  = GetInt64(new IntPtr(p + 0x030)); // 0270DA827C58 0x30 MaxLimit                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.FreeTier                                  = GetInt64(new IntPtr(p + 0x038)); // 0270DA827C98 0x38 FreeTier                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Duration                                  = GetString(new IntPtr(p + 0x040)); // 0270DA827CD8 0x40 Duration                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Metric                                    = GetString(new IntPtr(p + 0x048)); // 0270DA827D18 0x48 Metric                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Unit                                      = GetString(new IntPtr(p + 0x050)); // 0270DA827D58 0x50 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x060)); // 0270DA827DF8 0x60 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A87C8D8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 02466A87C918 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DefaultLimit                              = GetInt64(new IntPtr(p + 0x028)); // 02466A87C958 0x28 DefaultLimit                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.MaxLimit                                  = GetInt64(new IntPtr(p + 0x030)); // 02466A87C998 0x30 MaxLimit                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.FreeTier                                  = GetInt64(new IntPtr(p + 0x038)); // 02466A87C9D8 0x38 FreeTier                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Duration                                  = GetString(new IntPtr(p + 0x040)); // 02466A87CA18 0x40 Duration                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Metric                                    = GetString(new IntPtr(p + 0x048)); // 02466A87CA58 0x48 Metric                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Unit                                      = GetString(new IntPtr(p + 0x050)); // 02466A87CA98 0x50 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x060)); // 02466A87CB38 0x60 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

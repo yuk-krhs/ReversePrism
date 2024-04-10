@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InternalSR
+    public partial class InternalSR : DataModel
     {
 
         public static InternalSR? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalSR();
+            var value   = new InternalSR() { Pointer= p0 };
 
 
             return value;

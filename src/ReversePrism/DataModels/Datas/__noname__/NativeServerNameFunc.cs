@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeServerNameFunc
+    public partial class NativeServerNameFunc : DataModel
     {
 
         public static NativeServerNameFunc? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeServerNameFunc();
+            var value   = new NativeServerNameFunc() { Pointer= p0 };
 
 
             return value;

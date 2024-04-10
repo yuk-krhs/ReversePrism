@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonNodeWriter
+    public partial class JsonNodeWriter : DataModel
     {
 
         public static JsonNodeWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonNodeWriter();
+            var value   = new JsonNodeWriter() { Pointer= p0 };
 
 
             return value;

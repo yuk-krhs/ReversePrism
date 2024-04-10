@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Downloader                               0001866E62B0 ModelClassType AssetDownloader AssetDownloader AssetDownloader Pointer
-    public partial class PauseDownloadScope
+    public partial class PauseDownloadScope : DataModel
     {
         public AssetDownloader?                         Downloader                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PauseDownloadScope();
+            var value   = new PauseDownloadScope() { Pointer= p0 };
 
-            value.Downloader                                = GetObject<AssetDownloader>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetDownloader.FromPointer); // 0270DB4E0B50 0x10 Downloader                  ( 0001866E62B0 ModelClassType AssetDownloader AssetDownloader AssetDownloader Pointer )
+            value.Downloader                                = GetObject<AssetDownloader>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetDownloader.FromPointer); // 02466B56D978 0x10 Downloader                  ( 0001866E62B0 ModelClassType AssetDownloader AssetDownloader AssetDownloader Pointer )
 
             return value;
         }

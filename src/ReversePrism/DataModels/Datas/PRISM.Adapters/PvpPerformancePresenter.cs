@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 View                                     0001866089E0 ModelClassType IPvpPerformanceView IPvpPerformanceView IPvpPerformanceView Pointer
     // 018 Argument                                 0001865EC130 ModelClassType PvpPerformanceArgument PvpPerformanceArgument PvpPerformanceArgument Pointer
     // 020 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    public partial class PvpPerformancePresenter
+    public partial class PvpPerformancePresenter : DataModel
     {
         public IPvpPerformanceView?                     View                                    { get; set; }
         public PvpPerformanceArgument?                  Argument                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpPerformancePresenter();
+            var value   = new PvpPerformancePresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IPvpPerformanceView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpPerformanceView.FromPointer); // 0270D66BA5F0 0x10 View                        ( 0001866089E0 ModelClassType IPvpPerformanceView IPvpPerformanceView IPvpPerformanceView Pointer )
-            value.Argument                                  = GetObject<PvpPerformanceArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpPerformanceArgument.FromPointer); // 0270D66BA610 0x18 Argument                    ( 0001865EC130 ModelClassType PvpPerformanceArgument PvpPerformanceArgument PvpPerformanceArgument Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x020), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D66BA630 0x20 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<IPvpPerformanceView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpPerformanceView.FromPointer); // 02466672A5F0 0x10 View                        ( 0001866089E0 ModelClassType IPvpPerformanceView IPvpPerformanceView IPvpPerformanceView Pointer )
+            value.Argument                                  = GetObject<PvpPerformanceArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpPerformanceArgument.FromPointer); // 02466672A610 0x18 Argument                    ( 0001865EC130 ModelClassType PvpPerformanceArgument PvpPerformanceArgument PvpPerformanceArgument Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x020), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466672A630 0x20 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

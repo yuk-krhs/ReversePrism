@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 QualifiedNativeName                      000186671910 ModelPrimitiveType string string string String
     // 018 Declaration                              000186671910 ModelPrimitiveType string string string String
-    public partial class NativeClassAttribute
+    public partial class NativeClassAttribute : DataModel
     {
         public string                                   QualifiedNativeName                     { get; set; }
         public string                                   Declaration                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeClassAttribute();
+            var value   = new NativeClassAttribute() { Pointer= p0 };
 
-            value.QualifiedNativeName                       = GetString(new IntPtr(p + 0x010)); // 027006978AB8 0x10 QualifiedNativeName         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Declaration                               = GetString(new IntPtr(p + 0x018)); // 027006978AD8 0x18 Declaration                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.QualifiedNativeName                       = GetString(new IntPtr(p + 0x010)); // 0245A692B250 0x10 QualifiedNativeName         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Declaration                               = GetString(new IntPtr(p + 0x018)); // 0245A692B270 0x18 Declaration                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

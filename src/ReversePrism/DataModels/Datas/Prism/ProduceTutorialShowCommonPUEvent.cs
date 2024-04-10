@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 OnTapClose                               0001866792B0 ModelClassType Action Action Action Pointer
     // 018 ConfigPath                               000186671910 ModelPrimitiveType string string string String
     // 020 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
-    public partial class ProduceTutorialShowCommonPUEvent
+    public partial class ProduceTutorialShowCommonPUEvent : DataModel
     {
         public Action?                                  OnTapClose                              { get; set; }
         public string                                   ConfigPath                              { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialShowCommonPUEvent();
+            var value   = new ProduceTutorialShowCommonPUEvent() { Pointer= p0 };
 
-            value.OnTapClose                                = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0270D4D4A220 0x10 OnTapClose                  ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.ConfigPath                                = GetString(new IntPtr(p + 0x018)); // 0270D4D4A240 0x18 ConfigPath                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x020), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D4D4A260 0x20 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.OnTapClose                                = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 024664DAD9F0 0x10 OnTapClose                  ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.ConfigPath                                = GetString(new IntPtr(p + 0x018)); // 024664DADA10 0x18 ConfigPath                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x020), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024664DADA30 0x20 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
 
             return value;
         }

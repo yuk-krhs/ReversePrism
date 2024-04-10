@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Left                                   VisualElementFocusChangeDirection IL2CPP_TYPE_CLASS
     // 008 s_Right                                  VisualElementFocusChangeDirection IL2CPP_TYPE_CLASS
-    public partial class VisualElementFocusChangeDirection
+    public partial class VisualElementFocusChangeDirection : DataModel
     {
 
         public static VisualElementFocusChangeDirection? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualElementFocusChangeDirection();
+            var value   = new VisualElementFocusChangeDirection() { Pointer= p0 };
 
 
             return value;

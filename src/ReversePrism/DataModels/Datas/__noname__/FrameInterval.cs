@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 lastFrame                                int IL2CPP_TYPE_I4
-    public partial class FrameInterval
+    public partial class FrameInterval : DataModel
     {
 
         public static FrameInterval? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameInterval();
+            var value   = new FrameInterval() { Pointer= p0 };
 
 
             return value;

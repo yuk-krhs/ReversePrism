@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 C0                                       0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32
     // 014 C1                                       0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32
-    public partial class bool4x2
+    public partial class bool4x2 : DataModel
     {
         public bool4                                    C0                                      { get; set; }
         public bool4                                    C1                                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new bool4x2();
+            var value   = new bool4x2() { Pointer= p0 };
 
-            value.C0                                        = (bool4)GetInt32(new IntPtr(p + 0x010)); // 0270D7E4ADB8 0x10 C0                          ( 0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32 )
-            value.C1                                        = (bool4)GetInt32(new IntPtr(p + 0x014)); // 0270D7E4ADD8 0x14 C1                          ( 0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32 )
+            value.C0                                        = (bool4)GetInt32(new IntPtr(p + 0x010)); // 024667EB4DE8 0x10 C0                          ( 0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32 )
+            value.C1                                        = (bool4)GetInt32(new IntPtr(p + 0x014)); // 024667EB4E08 0x14 C1                          ( 0001866C28B0 ModelEnumType bool4 bool4 bool4 Int32 )
 
             return value;
         }

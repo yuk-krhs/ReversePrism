@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 useUWPFallback                           bool IL2CPP_TYPE_BOOLEAN
-    public partial class Kernel32
+    public partial class Kernel32 : DataModel
     {
 
         public static Kernel32? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Kernel32();
+            var value   = new Kernel32() { Pointer= p0 };
 
 
             return value;

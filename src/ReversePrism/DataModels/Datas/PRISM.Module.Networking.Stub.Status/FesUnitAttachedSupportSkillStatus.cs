@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Level                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 IsInheritedFieldNumber                   int IL2CPP_TYPE_I4
     // 020 IsInherited                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class FesUnitAttachedSupportSkillStatus
+    public partial class FesUnitAttachedSupportSkillStatus : DataModel
     {
         public int                                      MstSupportSkillId                       { get; set; }
         public int                                      Level                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitAttachedSupportSkillStatus();
+            var value   = new FesUnitAttachedSupportSkillStatus() { Pointer= p0 };
 
-            value.MstSupportSkillId                         = GetInt32(new IntPtr(p + 0x018)); // 0270D12B0398 0x18 MstSupportSkillId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D12B03D8 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsInherited                               = GetBool(new IntPtr(p + 0x020)); // 0270D12B0418 0x20 IsInherited                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstSupportSkillId                         = GetInt32(new IntPtr(p + 0x018)); // 02466122C0C0 0x18 MstSupportSkillId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 02466122C100 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsInherited                               = GetBool(new IntPtr(p + 0x020)); // 02466122C140 0x20 IsInherited                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SafeLibraryHandle
+    public partial class SafeLibraryHandle : DataModel
     {
 
         public static SafeLibraryHandle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeLibraryHandle();
+            var value   = new SafeLibraryHandle() { Pointer= p0 };
 
 
             return value;

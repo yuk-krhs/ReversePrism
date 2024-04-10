@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Name                                     000186671910 ModelPrimitiveType string string string String
     // 028 LastChild                                00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
-    public partial class XmlEntityReference
+    public partial class XmlEntityReference : DataModel
     {
         public string                                   Name                                    { get; set; }
         public XmlLinkedNode?                           LastChild                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlEntityReference();
+            var value   = new XmlEntityReference() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D7450EF0 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0270D7450F10 0x28 LastChild                   ( 00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246674B0EF0 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0246674B0F10 0x28 LastChild                   ( 00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
 
             return value;
         }

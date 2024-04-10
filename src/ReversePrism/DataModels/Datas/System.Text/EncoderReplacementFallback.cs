@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 StrDefault                               000186671910 ModelPrimitiveType string string string String
-    public partial class EncoderReplacementFallback
+    public partial class EncoderReplacementFallback : DataModel
     {
         public string                                   StrDefault                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EncoderReplacementFallback();
+            var value   = new EncoderReplacementFallback() { Pointer= p0 };
 
-            value.StrDefault                                = GetString(new IntPtr(p + 0x010)); // 0270033E5D90 0x10 StrDefault                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.StrDefault                                = GetString(new IntPtr(p + 0x010)); // 0245A33E5D90 0x10 StrDefault                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

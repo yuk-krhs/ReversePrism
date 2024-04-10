@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriLipsMorphBlendShapeImplement
+    public partial class CriLipsMorphBlendShapeImplement : DataModel
     {
 
         public static CriLipsMorphBlendShapeImplement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsMorphBlendShapeImplement();
+            var value   = new CriLipsMorphBlendShapeImplement() { Pointer= p0 };
 
 
             return value;

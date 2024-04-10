@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
     // 018 Value                                    0001866656B0 ModelPrimitiveType float float float Single
-    public partial class FloatValue
+    public partial class FloatValue : DataModel
     {
         public float                                    Value                                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FloatValue();
+            var value   = new FloatValue() { Pointer= p0 };
 
-            value.Value                                     = GetSingle(new IntPtr(p + 0x018)); // 0270DA4C7EE0 0x18 Value                       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Value                                     = GetSingle(new IntPtr(p + 0x018)); // 02466A533730 0x18 Value                       ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

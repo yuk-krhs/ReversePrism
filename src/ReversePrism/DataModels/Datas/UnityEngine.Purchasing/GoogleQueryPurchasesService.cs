@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_BillingClient                          00018655AFC0 ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer
     // 018 M_PurchaseBuilder                        0001865609D0 ModelClassType IGooglePurchaseBuilder IGooglePurchaseBuilder IGooglePurchaseBuilder Pointer
-    public partial class GoogleQueryPurchasesService
+    public partial class GoogleQueryPurchasesService : DataModel
     {
         public IGoogleBillingClient?                    M_BillingClient                         { get; set; }
         public IGooglePurchaseBuilder?                  M_PurchaseBuilder                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GoogleQueryPurchasesService();
+            var value   = new GoogleQueryPurchasesService() { Pointer= p0 };
 
-            value.M_BillingClient                           = GetObject<IGoogleBillingClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleBillingClient.FromPointer); // 027006903260 0x10 M_BillingClient             ( 00018655AFC0 ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer )
-            value.M_PurchaseBuilder                         = GetObject<IGooglePurchaseBuilder>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGooglePurchaseBuilder.FromPointer); // 027006903280 0x18 M_PurchaseBuilder           ( 0001865609D0 ModelClassType IGooglePurchaseBuilder IGooglePurchaseBuilder IGooglePurchaseBuilder Pointer )
+            value.M_BillingClient                           = GetObject<IGoogleBillingClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleBillingClient.FromPointer); // 0245A68C5EC0 0x10 M_BillingClient             ( 00018655AFC0 ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer )
+            value.M_PurchaseBuilder                         = GetObject<IGooglePurchaseBuilder>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGooglePurchaseBuilder.FromPointer); // 0245A68C5EE0 0x18 M_PurchaseBuilder           ( 0001865609D0 ModelClassType IGooglePurchaseBuilder IGooglePurchaseBuilder IGooglePurchaseBuilder Pointer )
 
             return value;
         }

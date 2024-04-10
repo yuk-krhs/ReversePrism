@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_ErrorMessage                           string IL2CPP_TYPE_STRING
     // 010 Registry                                 0001867366C0 ModelClassType IComponentRegistry IComponentRegistry IComponentRegistry Pointer
-    public partial class LockedComponentRegistry
+    public partial class LockedComponentRegistry : DataModel
     {
         public IComponentRegistry?                      Registry                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LockedComponentRegistry();
+            var value   = new LockedComponentRegistry() { Pointer= p0 };
 
-            value.Registry                                  = GetObject<IComponentRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.IComponentRegistry.FromPointer); // 027006990E30 0x10 Registry                    ( 0001867366C0 ModelClassType IComponentRegistry IComponentRegistry IComponentRegistry Pointer )
+            value.Registry                                  = GetObject<IComponentRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.IComponentRegistry.FromPointer); // 0245A6954D68 0x10 Registry                    ( 0001867366C0 ModelClassType IComponentRegistry IComponentRegistry IComponentRegistry Pointer )
 
             return value;
         }

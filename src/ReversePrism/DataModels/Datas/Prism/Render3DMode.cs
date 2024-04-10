@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 005 <EdgeColorOff>k__BackingField            bool IL2CPP_TYPE_BOOLEAN
     // 006 <VignetteOff>k__BackingField             bool IL2CPP_TYPE_BOOLEAN
     // 007 <RadialBlurOff>k__BackingField           bool IL2CPP_TYPE_BOOLEAN
-    public partial class Render3DMode
+    public partial class Render3DMode : DataModel
     {
 
         public static Render3DMode? FromPointer(IntPtr p0)
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Render3DMode();
+            var value   = new Render3DMode() { Pointer= p0 };
 
 
             return value;

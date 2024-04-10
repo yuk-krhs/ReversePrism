@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 Host                                     000186672F10 ModelPrimitiveType string string string String
     // 030 Deadline                                 000186675310 ModelEnumType Timespec Timespec Timespec Int32
     // 040 RequestMetadata                          00018660C830 ModelClassType Metadata Metadata Metadata Pointer
-    public partial class ServerRpcNew
+    public partial class ServerRpcNew : DataModel
     {
         public Server?                                  Server                                  { get; set; }
         public CallSafeHandle?                          Call                                    { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServerRpcNew();
+            var value   = new ServerRpcNew() { Pointer= p0 };
 
-            value.Server                                    = GetObject<Server>(new IntPtr(p + 0x010), ReversePrism.DataModels.Server.FromPointer); // 0270D9364C00 0x10 Server                      ( 000186731B80 ModelClassType Server Server Server Pointer )
-            value.Call                                      = GetObject<CallSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallSafeHandle.FromPointer); // 0270D9364C20 0x18 Call                        ( 00018652DD30 ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer )
-            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 0270D9364C40 0x20 Method                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 0270D9364C60 0x28 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Deadline                                  = (Timespec)GetInt32(new IntPtr(p + 0x030)); // 0270D9364C80 0x30 Deadline                    ( 000186675310 ModelEnumType Timespec Timespec Timespec Int32 )
-            value.RequestMetadata                           = GetObject<Metadata>(new IntPtr(p + 0x040), ReversePrism.DataModels.Metadata.FromPointer); // 0270D9364CA0 0x40 RequestMetadata             ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
+            value.Server                                    = GetObject<Server>(new IntPtr(p + 0x010), ReversePrism.DataModels.Server.FromPointer); // 0246693B6E08 0x10 Server                      ( 000186731B80 ModelClassType Server Server Server Pointer )
+            value.Call                                      = GetObject<CallSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallSafeHandle.FromPointer); // 0246693B6E28 0x18 Call                        ( 00018652DD30 ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer )
+            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 0246693B6E48 0x20 Method                      ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 0246693B6E68 0x28 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Deadline                                  = (Timespec)GetInt32(new IntPtr(p + 0x030)); // 0246693B6E88 0x30 Deadline                    ( 000186675310 ModelEnumType Timespec Timespec Timespec Int32 )
+            value.RequestMetadata                           = GetObject<Metadata>(new IntPtr(p + 0x040), ReversePrism.DataModels.Metadata.FromPointer); // 0246693B6EA8 0x40 RequestMetadata             ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
 
             return value;
         }

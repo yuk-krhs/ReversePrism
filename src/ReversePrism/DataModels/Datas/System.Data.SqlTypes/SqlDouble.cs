@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 010 Zero                                     000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32
     // 020 MinValue                                 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32
     // 030 MaxValue                                 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32
-    public partial class SqlDouble
+    public partial class SqlDouble : DataModel
     {
         public bool                                     M_fNotNull                              { get; set; }
         public double                                   M_value                                 { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlDouble();
+            var value   = new SqlDouble() { Pointer= p0 };
 
-            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0270D8982920 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_value                                   = GetDouble(new IntPtr(p + 0x018)); // 0270D8982940 0x18 M_value                     ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Zero                                      = (SqlDouble)GetInt32(new IntPtr(p + 0x010)); // 0270D8982980 0x10 Zero                        ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
-            value.MinValue                                  = (SqlDouble)GetInt32(new IntPtr(p + 0x020)); // 0270D89829A0 0x20 MinValue                    ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
-            value.MaxValue                                  = (SqlDouble)GetInt32(new IntPtr(p + 0x030)); // 0270D89829C0 0x30 MaxValue                    ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
+            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0246689ED370 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetDouble(new IntPtr(p + 0x018)); // 0246689ED390 0x18 M_value                     ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Zero                                      = (SqlDouble)GetInt32(new IntPtr(p + 0x010)); // 0246689ED3D0 0x10 Zero                        ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
+            value.MinValue                                  = (SqlDouble)GetInt32(new IntPtr(p + 0x020)); // 0246689ED3F0 0x20 MinValue                    ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
+            value.MaxValue                                  = (SqlDouble)GetInt32(new IntPtr(p + 0x030)); // 0246689ED410 0x30 MaxValue                    ( 000186557AB0 ModelEnumType SqlDouble SqlDouble SqlDouble Int32 )
 
             return value;
         }

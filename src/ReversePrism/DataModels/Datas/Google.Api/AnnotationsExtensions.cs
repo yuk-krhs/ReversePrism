@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Http                                     Extension`2<MethodOptions, HttpRule> IL2CPP_TYPE_GENERICINST
-    public partial class AnnotationsExtensions
+    public partial class AnnotationsExtensions : DataModel
     {
 
         public static AnnotationsExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnotationsExtensions();
+            var value   = new AnnotationsExtensions() { Pointer= p0 };
 
 
             return value;

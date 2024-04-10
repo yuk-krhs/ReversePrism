@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SecurityManager
+    public partial class SecurityManager : DataModel
     {
 
         public static SecurityManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SecurityManager();
+            var value   = new SecurityManager() { Pointer= p0 };
 
 
             return value;

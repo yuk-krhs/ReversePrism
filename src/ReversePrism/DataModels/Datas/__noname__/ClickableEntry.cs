@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 02C Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 030 onClick                                  Action`1<Attribute> IL2CPP_TYPE_GENERICINST
     // 038 Rects                                    000185D00628 ModelEnumListType List`1<Rect> List`1<Rect> List<Rect> Pointer
-    public partial class ClickableEntry
+    public partial class ClickableEntry : DataModel
     {
         public Attribute                                Attribute                               { get; set; }
         public int                                      StartIndex                              { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClickableEntry();
+            var value   = new ClickableEntry() { Pointer= p0 };
 
-            value.Attribute                                 = (Attribute)GetInt32(new IntPtr(p + 0x010)); // 0270D4B1B5D8 0x10 Attribute                   ( 000186711810 ModelEnumType Attribute Attribute Attribute Int32 )
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x028)); // 0270D4B1B5F8 0x28 StartIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x02C)); // 0270D4B1B618 0x2C Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Rects                                     = GetEnumList<Rect>(new IntPtr(p + 0x038)); // 0270D4B1B658 0x38 Rects                       ( 000185D00628 ModelEnumListType List`1<Rect> List`1<Rect> List<Rect> Pointer )
+            value.Attribute                                 = (Attribute)GetInt32(new IntPtr(p + 0x010)); // 024664B85B70 0x10 Attribute                   ( 000186711810 ModelEnumType Attribute Attribute Attribute Int32 )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x028)); // 024664B85B90 0x28 StartIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x02C)); // 024664B85BB0 0x2C Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Rects                                     = GetEnumList<Rect>(new IntPtr(p + 0x038)); // 024664B85BF0 0x38 Rects                       ( 000185D00628 ModelEnumListType List`1<Rect> List`1<Rect> List<Rect> Pointer )
 
             return value;
         }

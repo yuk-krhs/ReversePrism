@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ViewCautionDMM
+    public partial class ViewCautionDMM : DataModel
     {
 
         public static ViewCautionDMM? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ViewCautionDMM();
+            var value   = new ViewCautionDMM() { Pointer= p0 };
 
 
             return value;

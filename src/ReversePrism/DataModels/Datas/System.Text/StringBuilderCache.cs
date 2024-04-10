@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // FFFFFFFF t_cachedInstance                         StringBuilder IL2CPP_TYPE_CLASS
-    public partial class StringBuilderCache
+    public partial class StringBuilderCache : DataModel
     {
 
         public static StringBuilderCache? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringBuilderCache();
+            var value   = new StringBuilderCache() { Pointer= p0 };
 
 
             return value;

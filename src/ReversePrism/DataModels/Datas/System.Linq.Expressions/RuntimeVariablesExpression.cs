@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Variables>k__BackingField               ReadOnlyCollection`1<ParameterExpression> IL2CPP_TYPE_GENERICINST
-    public partial class RuntimeVariablesExpression
+    public partial class RuntimeVariablesExpression : DataModel
     {
 
         public static RuntimeVariablesExpression? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeVariablesExpression();
+            var value   = new RuntimeVariablesExpression() { Pointer= p0 };
 
 
             return value;

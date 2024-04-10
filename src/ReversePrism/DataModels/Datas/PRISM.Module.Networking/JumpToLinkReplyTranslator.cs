@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JumpToLinkReplyTranslator
+    public partial class JumpToLinkReplyTranslator : DataModel
     {
 
         public static JumpToLinkReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JumpToLinkReplyTranslator();
+            var value   = new JumpToLinkReplyTranslator() { Pointer= p0 };
 
 
             return value;

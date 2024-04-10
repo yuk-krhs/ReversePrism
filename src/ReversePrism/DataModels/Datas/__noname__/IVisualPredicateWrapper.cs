@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IVisualPredicateWrapper
+    public partial class IVisualPredicateWrapper : DataModel
     {
 
         public static IVisualPredicateWrapper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IVisualPredicateWrapper();
+            var value   = new IVisualPredicateWrapper() { Pointer= p0 };
 
 
             return value;

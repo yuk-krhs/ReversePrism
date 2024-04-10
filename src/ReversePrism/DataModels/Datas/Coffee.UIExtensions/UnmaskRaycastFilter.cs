@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 M_TargetUnmask                           000186735050 ModelClassType Unmask Unmask Unmask Pointer
-    public partial class UnmaskRaycastFilter
+    public partial class UnmaskRaycastFilter : DataModel
     {
         public Unmask?                                  M_TargetUnmask                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnmaskRaycastFilter();
+            var value   = new UnmaskRaycastFilter() { Pointer= p0 };
 
-            value.M_TargetUnmask                            = GetObject<Unmask>(new IntPtr(p + 0x020), ReversePrism.DataModels.Unmask.FromPointer); // 0270DBF1E438 0x20 M_TargetUnmask              ( 000186735050 ModelClassType Unmask Unmask Unmask Pointer )
+            value.M_TargetUnmask                            = GetObject<Unmask>(new IntPtr(p + 0x020), ReversePrism.DataModels.Unmask.FromPointer); // 02466BFB62A0 0x20 M_TargetUnmask              ( 000186735050 ModelClassType Unmask Unmask Unmask Pointer )
 
             return value;
         }

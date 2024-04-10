@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 038 DisplayName                              000186671910 ModelPrimitiveType string string string String
     // 040 Description                              000186671910 ModelPrimitiveType string string string String
     // 048 HideInUI                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class InputControlLayoutAttribute
+    public partial class InputControlLayoutAttribute : DataModel
     {
         public Type?                                    StateType                               { get; set; }
         public string                                   StateFormat                             { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputControlLayoutAttribute();
+            var value   = new InputControlLayoutAttribute() { Pointer= p0 };
 
-            value.StateType                                 = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D7878850 0x10 StateType                   ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.StateFormat                               = GetString(new IntPtr(p + 0x018)); // 0270D7878870 0x18 StateFormat                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.CommonUsages                              = GetStringList(new IntPtr(p + 0x020)); // 0270D7878890 0x20 CommonUsages                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Variants                                  = GetString(new IntPtr(p + 0x028)); // 0270D78788B0 0x28 Variants                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsNoisy                                   = GetBool(new IntPtr(p + 0x030)); // 0270D78788D0 0x30 IsNoisy                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsGenericTypeOfDevice                     = GetBool(new IntPtr(p + 0x035)); // 0270D7878930 0x35 IsGenericTypeOfDevice       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x038)); // 0270D7878950 0x38 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x040)); // 0270D7878970 0x40 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.HideInUI                                  = GetBool(new IntPtr(p + 0x048)); // 0270D7878990 0x48 HideInUI                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StateType                                 = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0246678E1080 0x10 StateType                   ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.StateFormat                               = GetString(new IntPtr(p + 0x018)); // 0246678E10A0 0x18 StateFormat                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.CommonUsages                              = GetStringList(new IntPtr(p + 0x020)); // 0246678E10C0 0x20 CommonUsages                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Variants                                  = GetString(new IntPtr(p + 0x028)); // 0246678E10E0 0x28 Variants                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsNoisy                                   = GetBool(new IntPtr(p + 0x030)); // 0246678E1100 0x30 IsNoisy                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsGenericTypeOfDevice                     = GetBool(new IntPtr(p + 0x035)); // 0246678E1160 0x35 IsGenericTypeOfDevice       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x038)); // 0246678E1180 0x38 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x040)); // 0246678E11A0 0x40 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.HideInUI                                  = GetBool(new IntPtr(p + 0x048)); // 0246678E11C0 0x48 HideInUI                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

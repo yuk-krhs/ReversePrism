@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 iconNameList                             HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 018 IsProducing                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class HomeModel
+    public partial class HomeModel : DataModel
     {
         public bool                                     IsProducing                             { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeModel();
+            var value   = new HomeModel() { Pointer= p0 };
 
-            value.IsProducing                               = GetBool(new IntPtr(p + 0x018)); // 027005B3B7F0 0x18 IsProducing                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsProducing                               = GetBool(new IntPtr(p + 0x018)); // 0245A5B3C928 0x18 IsProducing                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

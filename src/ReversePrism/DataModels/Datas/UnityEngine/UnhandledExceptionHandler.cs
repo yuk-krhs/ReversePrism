@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnhandledExceptionHandler
+    public partial class UnhandledExceptionHandler : DataModel
     {
 
         public static UnhandledExceptionHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnhandledExceptionHandler();
+            var value   = new UnhandledExceptionHandler() { Pointer= p0 };
 
 
             return value;

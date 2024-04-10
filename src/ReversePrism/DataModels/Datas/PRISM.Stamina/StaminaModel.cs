@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C MaxValue                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 RecoveryTime                             0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 028 RecoveryInterval                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StaminaModel
+    public partial class StaminaModel : DataModel
     {
         public StaminaType                              Type                                    { get; set; }
         public int                                      MaxValue                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StaminaModel();
+            var value   = new StaminaModel() { Pointer= p0 };
 
-            value.Type                                      = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 027004A8F468 0x18 Type                        ( 00018661DC60 ModelEnumType StaminaType StaminaType StaminaType Int32 )
-            value.MaxValue                                  = GetInt32(new IntPtr(p + 0x01C)); // 027004A8F488 0x1C MaxValue                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RecoveryTime                              = GetDateTime(new IntPtr(p + 0x020)); // 027004A8F4A8 0x20 RecoveryTime                ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.RecoveryInterval                          = GetInt32(new IntPtr(p + 0x028)); // 027004A8F4C8 0x28 RecoveryInterval            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0245A4AECE08 0x18 Type                        ( 00018661DC60 ModelEnumType StaminaType StaminaType StaminaType Int32 )
+            value.MaxValue                                  = GetInt32(new IntPtr(p + 0x01C)); // 0245A4AECE28 0x1C MaxValue                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RecoveryTime                              = GetDateTime(new IntPtr(p + 0x020)); // 0245A4AECE48 0x20 RecoveryTime                ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.RecoveryInterval                          = GetInt32(new IntPtr(p + 0x028)); // 0245A4AECE68 0x28 RecoveryInterval            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

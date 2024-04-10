@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onSelect                                 Subject`1<BaseEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableSelectTrigger
+    public partial class ObservableSelectTrigger : DataModel
     {
 
         public static ObservableSelectTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableSelectTrigger();
+            var value   = new ObservableSelectTrigger() { Pointer= p0 };
 
 
             return value;

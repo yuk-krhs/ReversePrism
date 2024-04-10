@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFragmentCapableXmlDictionaryWriter
+    public partial class IFragmentCapableXmlDictionaryWriter : DataModel
     {
 
         public static IFragmentCapableXmlDictionaryWriter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFragmentCapableXmlDictionaryWriter();
+            var value   = new IFragmentCapableXmlDictionaryWriter() { Pointer= p0 };
 
 
             return value;

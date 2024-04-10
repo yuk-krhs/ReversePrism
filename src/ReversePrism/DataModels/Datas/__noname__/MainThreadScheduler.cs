@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 scheduleAction                           Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class MainThreadScheduler
+    public partial class MainThreadScheduler : DataModel
     {
 
         public static MainThreadScheduler? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MainThreadScheduler();
+            var value   = new MainThreadScheduler() { Pointer= p0 };
 
 
             return value;

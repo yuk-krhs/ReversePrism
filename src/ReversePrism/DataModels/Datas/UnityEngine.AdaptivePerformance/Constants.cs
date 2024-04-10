@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 MinGpuPerformanceLevel                   int IL2CPP_TYPE_I4
     // 000 UnknownPerformanceLevel                  int IL2CPP_TYPE_I4
     // 000 DefaultAverageFrameCount                 int IL2CPP_TYPE_I4
-    public partial class Constants
+    public partial class Constants : DataModel
     {
 
         public static Constants? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Constants();
+            var value   = new Constants() { Pointer= p0 };
 
 
             return value;

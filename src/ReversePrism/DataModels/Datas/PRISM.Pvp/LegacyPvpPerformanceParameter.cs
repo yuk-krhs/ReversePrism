@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 PvpMatch                                 000186607960 ModelClassType IPvpMatchStatus IPvpMatchStatus IPvpMatchStatus Pointer
-    public partial class LegacyPvpPerformanceParameter
+    public partial class LegacyPvpPerformanceParameter : DataModel
     {
         public IPvpMatchStatus?                         PvpMatch                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacyPvpPerformanceParameter();
+            var value   = new LegacyPvpPerformanceParameter() { Pointer= p0 };
 
-            value.PvpMatch                                  = GetObject<IPvpMatchStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpMatchStatus.FromPointer); // 0270D50932B0 0x10 PvpMatch                    ( 000186607960 ModelClassType IPvpMatchStatus IPvpMatchStatus IPvpMatchStatus Pointer )
+            value.PvpMatch                                  = GetObject<IPvpMatchStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpMatchStatus.FromPointer); // 0246650EEBA0 0x10 PvpMatch                    ( 000186607960 ModelClassType IPvpMatchStatus IPvpMatchStatus IPvpMatchStatus Pointer )
 
             return value;
         }

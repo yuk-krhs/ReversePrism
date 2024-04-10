@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 020 S_DefaultSelectableColor                 0001865AB2F0 ModelEnumType Color Color Color Int32
     // 030 S_PanelColor                             0001865AB2F0 ModelEnumType Color Color Color Int32
     // 040 S_TextColor                              0001865AB2F0 ModelEnumType Color Color Color Int32
-    public partial class DefaultControls
+    public partial class DefaultControls : DataModel
     {
         public Vector2                                  S_ThinElementSize                       { get; set; }
         public Vector2                                  S_ImageElementSize                      { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultControls();
+            var value   = new DefaultControls() { Pointer= p0 };
 
-            value.S_ThinElementSize                         = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0270068D9BA8 0x10 S_ThinElementSize           ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.S_ImageElementSize                        = (Vector2)GetInt32(new IntPtr(p + 0x018)); // 0270068D9BC8 0x18 S_ImageElementSize          ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.S_DefaultSelectableColor                  = (Color)GetInt32(new IntPtr(p + 0x020)); // 0270068D9BE8 0x20 S_DefaultSelectableColor    ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
-            value.S_PanelColor                              = (Color)GetInt32(new IntPtr(p + 0x030)); // 0270068D9C08 0x30 S_PanelColor                ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
-            value.S_TextColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0270068D9C28 0x40 S_TextColor                 ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
+            value.S_ThinElementSize                         = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0245A689C2A8 0x10 S_ThinElementSize           ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.S_ImageElementSize                        = (Vector2)GetInt32(new IntPtr(p + 0x018)); // 0245A689C2C8 0x18 S_ImageElementSize          ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.S_DefaultSelectableColor                  = (Color)GetInt32(new IntPtr(p + 0x020)); // 0245A689C2E8 0x20 S_DefaultSelectableColor    ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
+            value.S_PanelColor                              = (Color)GetInt32(new IntPtr(p + 0x030)); // 0245A689C308 0x30 S_PanelColor                ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
+            value.S_TextColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0245A689C328 0x40 S_TextColor                 ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
 
             return value;
         }

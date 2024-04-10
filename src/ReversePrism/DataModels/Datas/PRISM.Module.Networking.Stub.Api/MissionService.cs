@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 068 __Method_ReceiveMissionGaugeReward       Method`2<ReceiveMissionGaugeRewardArgs, ReceiveMissionGaugeRewardReply> IL2CPP_TYPE_GENERICINST
     // 070 __Method_TouchMissionGroup               Method`2<TouchMissionGroupArgs, TouchMissionGroupReply> IL2CPP_TYPE_GENERICINST
     // 078 __Method_JumpToLink                      Method`2<JumpToLinkArgs, JumpToLinkReply> IL2CPP_TYPE_GENERICINST
-    public partial class MissionService
+    public partial class MissionService : DataModel
     {
 
         public static MissionService? FromPointer(IntPtr p0)
@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionService();
+            var value   = new MissionService() { Pointer= p0 };
 
 
             return value;

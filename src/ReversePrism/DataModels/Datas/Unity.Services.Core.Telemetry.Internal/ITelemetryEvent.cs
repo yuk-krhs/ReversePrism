@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITelemetryEvent
+    public partial class ITelemetryEvent : DataModel
     {
 
         public static ITelemetryEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITelemetryEvent();
+            var value   = new ITelemetryEvent() { Pointer= p0 };
 
 
             return value;

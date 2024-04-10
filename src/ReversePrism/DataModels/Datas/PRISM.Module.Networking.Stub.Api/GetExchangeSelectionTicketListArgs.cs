@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C ProductType                              0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32
     // 000 ProductMstIdFieldNumber                  int IL2CPP_TYPE_I4
     // 020 ProductMstId                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GetExchangeSelectionTicketListArgs
+    public partial class GetExchangeSelectionTicketListArgs : DataModel
     {
         public int                                      MstSelectionTicketId                    { get; set; }
         public ProductType                              ProductType                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetExchangeSelectionTicketListArgs();
+            var value   = new GetExchangeSelectionTicketListArgs() { Pointer= p0 };
 
-            value.MstSelectionTicketId                      = GetInt32(new IntPtr(p + 0x018)); // 0270D1220EA8 0x18 MstSelectionTicketId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x01C)); // 0270D1220EE8 0x1C ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
-            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x020)); // 0270D1220F28 0x20 ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSelectionTicketId                      = GetInt32(new IntPtr(p + 0x018)); // 024661197570 0x18 MstSelectionTicketId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x01C)); // 0246611975B0 0x1C ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
+            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x020)); // 0246611975F0 0x20 ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

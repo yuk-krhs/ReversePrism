@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 068 onUpdateMentalBreakStateSubject          Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 070 onUpdateMentalBreakTimeSubject           Subject`1<float> IL2CPP_TYPE_GENERICINST
     // 078 SelfDamageCount                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IngameMentalModel
+    public partial class IngameMentalModel : DataModel
     {
         public int                                      MentalGuardLimit                        { get; set; }
         public int                                      CurrentMental                           { get; set; }
@@ -46,19 +46,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameMentalModel();
+            var value   = new IngameMentalModel() { Pointer= p0 };
 
-            value.MentalGuardLimit                          = GetInt32(new IntPtr(p + 0x010)); // 0270D5B570D0 0x10 MentalGuardLimit            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentMental                             = GetInt32(new IntPtr(p + 0x014)); // 0270D5B570F0 0x14 CurrentMental               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MaxMental                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D5B57110 0x18 MaxMental                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MentalBreakCount                          = GetInt32(new IntPtr(p + 0x01C)); // 0270D5B57130 0x1C MentalBreakCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MentalGurad                               = GetInt32(new IntPtr(p + 0x020)); // 0270D5B57150 0x20 MentalGurad                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MentalDamageCount                         = GetInt32(new IntPtr(p + 0x024)); // 0270D5B57170 0x24 MentalDamageCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OnMentaleBreakAfter                       = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0270D5B571B0 0x30 OnMentaleBreakAfter         ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.CurrentBreakTime                          = GetSingle(new IntPtr(p + 0x038)); // 0270D5B571D0 0x38 CurrentBreakTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsOverrideMaxMentalBreakTime              = GetBool(new IntPtr(p + 0x048)); // 0270D5B57210 0x48 IsOverrideMaxMentalBreakTime ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverrideMaxMentalBreakTime                = GetSingle(new IntPtr(p + 0x04C)); // 0270D5B57230 0x4C OverrideMaxMentalBreakTime  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SelfDamageCount                           = GetInt32(new IntPtr(p + 0x078)); // 0270D5B572F0 0x78 SelfDamageCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalGuardLimit                          = GetInt32(new IntPtr(p + 0x010)); // 024665BB78E8 0x10 MentalGuardLimit            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentMental                             = GetInt32(new IntPtr(p + 0x014)); // 024665BB7908 0x14 CurrentMental               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxMental                                 = GetInt32(new IntPtr(p + 0x018)); // 024665BB7928 0x18 MaxMental                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalBreakCount                          = GetInt32(new IntPtr(p + 0x01C)); // 024665BB7948 0x1C MentalBreakCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalGurad                               = GetInt32(new IntPtr(p + 0x020)); // 024665BB7968 0x20 MentalGurad                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalDamageCount                         = GetInt32(new IntPtr(p + 0x024)); // 024665BB7988 0x24 MentalDamageCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OnMentaleBreakAfter                       = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 024665BB79C8 0x30 OnMentaleBreakAfter         ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.CurrentBreakTime                          = GetSingle(new IntPtr(p + 0x038)); // 024665BB79E8 0x38 CurrentBreakTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.IsOverrideMaxMentalBreakTime              = GetBool(new IntPtr(p + 0x048)); // 024665BB7A28 0x48 IsOverrideMaxMentalBreakTime ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverrideMaxMentalBreakTime                = GetSingle(new IntPtr(p + 0x04C)); // 024665BB7A48 0x4C OverrideMaxMentalBreakTime  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.SelfDamageCount                           = GetInt32(new IntPtr(p + 0x078)); // 024665BB7B08 0x78 SelfDamageCount             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

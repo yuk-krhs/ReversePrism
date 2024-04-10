@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 01C Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 _syncRoot                                <object> IL2CPP_TYPE_OBJECT
     // 000 _defaultCapacity                         int IL2CPP_TYPE_I4
-    public partial class Stack
+    public partial class Stack : DataModel
     {
         public int                                      Size                                    { get; set; }
         public int                                      Version                                 { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Stack();
+            var value   = new Stack() { Pointer= p0 };
 
-            value.Size                                      = GetInt32(new IntPtr(p + 0x018)); // 0270068A2A60 0x18 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270068A2A80 0x1C Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x018)); // 0245A68649A8 0x18 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 0245A68649C8 0x1C Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

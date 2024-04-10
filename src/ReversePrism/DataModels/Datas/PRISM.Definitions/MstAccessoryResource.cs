@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
     // 018 PrefabName                               000186672F10 ModelPrimitiveType string string string String
-    public partial class MstAccessoryResource
+    public partial class MstAccessoryResource : DataModel
     {
         public int                                      Id                                      { get; set; }
         public string                                   PrefabName                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstAccessoryResource();
+            var value   = new MstAccessoryResource() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004632AE0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.PrefabName                                = GetString(new IntPtr(p + 0x018)); // 027004632B00 0x18 PrefabName                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46AE408 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.PrefabName                                = GetString(new IntPtr(p + 0x018)); // 0245A46AE428 0x18 PrefabName                  ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ReflectionBlockedAttribute
+    public partial class ReflectionBlockedAttribute : DataModel
     {
 
         public static ReflectionBlockedAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionBlockedAttribute();
+            var value   = new ReflectionBlockedAttribute() { Pointer= p0 };
 
 
             return value;

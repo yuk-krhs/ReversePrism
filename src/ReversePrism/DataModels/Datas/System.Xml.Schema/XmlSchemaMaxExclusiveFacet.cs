@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaMaxExclusiveFacet
+    public partial class XmlSchemaMaxExclusiveFacet : DataModel
     {
 
         public static XmlSchemaMaxExclusiveFacet? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaMaxExclusiveFacet();
+            var value   = new XmlSchemaMaxExclusiveFacet() { Pointer= p0 };
 
 
             return value;

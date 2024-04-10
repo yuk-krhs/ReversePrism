@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstProduceIdolEventId                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstAdvInfoIdFieldNumber                  int IL2CPP_TYPE_I4
     // 020 MstAdvInfoId                             000186671910 ModelPrimitiveType string string string String
-    public partial class ProduceIdolEventStatus
+    public partial class ProduceIdolEventStatus : DataModel
     {
         public int                                      MstProduceIdolEventId                   { get; set; }
         public string                                   MstAdvInfoId                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIdolEventStatus();
+            var value   = new ProduceIdolEventStatus() { Pointer= p0 };
 
-            value.MstProduceIdolEventId                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1041BE0 0x18 MstProduceIdolEventId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAdvInfoId                              = GetString(new IntPtr(p + 0x020)); // 0270D1041C20 0x20 MstAdvInfoId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProduceIdolEventId                     = GetInt32(new IntPtr(p + 0x018)); // 024660FC95C0 0x18 MstProduceIdolEventId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAdvInfoId                              = GetString(new IntPtr(p + 0x020)); // 024660FC9600 0x20 MstAdvInfoId                ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

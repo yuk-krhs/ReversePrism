@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LocationService
+    public partial class LocationService : DataModel
     {
 
         public static LocationService? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocationService();
+            var value   = new LocationService() { Pointer= p0 };
 
 
             return value;

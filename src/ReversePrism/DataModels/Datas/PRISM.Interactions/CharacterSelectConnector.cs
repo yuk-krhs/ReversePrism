@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CharacterSelectConnector
+    public partial class CharacterSelectConnector : DataModel
     {
 
         public static CharacterSelectConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharacterSelectConnector();
+            var value   = new CharacterSelectConnector() { Pointer= p0 };
 
 
             return value;

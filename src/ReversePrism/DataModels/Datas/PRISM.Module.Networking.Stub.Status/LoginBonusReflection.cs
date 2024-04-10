@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class LoginBonusReflection
+    public partial class LoginBonusReflection : DataModel
     {
 
         public static LoginBonusReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoginBonusReflection();
+            var value   = new LoginBonusReflection() { Pointer= p0 };
 
 
             return value;

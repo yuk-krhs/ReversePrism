@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DownloadHandlerFile
+    public partial class DownloadHandlerFile : DataModel
     {
 
         public static DownloadHandlerFile? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DownloadHandlerFile();
+            var value   = new DownloadHandlerFile() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Paths                                    0001866E2A00 ModelEnumType DllImportSearchPath DllImportSearchPath DllImportSearchPath Int32
-    public partial class DefaultDllImportSearchPathsAttribute
+    public partial class DefaultDllImportSearchPathsAttribute : DataModel
     {
         public DllImportSearchPath                      Paths                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultDllImportSearchPathsAttribute();
+            var value   = new DefaultDllImportSearchPathsAttribute() { Pointer= p0 };
 
-            value.Paths                                     = (DllImportSearchPath)GetInt32(new IntPtr(p + 0x010)); // 0270D6C832E8 0x10 Paths                       ( 0001866E2A00 ModelEnumType DllImportSearchPath DllImportSearchPath DllImportSearchPath Int32 )
+            value.Paths                                     = (DllImportSearchPath)GetInt32(new IntPtr(p + 0x010)); // 024666CF32E8 0x10 Paths                       ( 0001866E2A00 ModelEnumType DllImportSearchPath DllImportSearchPath DllImportSearchPath Int32 )
 
             return value;
         }

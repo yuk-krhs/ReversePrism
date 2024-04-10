@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LipSyncMixerBehaviour
+    public partial class LipSyncMixerBehaviour : DataModel
     {
 
         public static LipSyncMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LipSyncMixerBehaviour();
+            var value   = new LipSyncMixerBehaviour() { Pointer= p0 };
 
 
             return value;

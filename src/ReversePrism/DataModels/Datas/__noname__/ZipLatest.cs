@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 c5                                       ZipLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 c6                                       ZipLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 c7                                       ZipLatestObserver`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class ZipLatest
+    public partial class ZipLatest : DataModel
     {
 
         public static ZipLatest? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ZipLatest();
+            var value   = new ZipLatest() { Pointer= p0 };
 
 
             return value;

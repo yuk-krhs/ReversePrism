@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HierarchyEvent
+    public partial class HierarchyEvent : DataModel
     {
 
         public static HierarchyEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HierarchyEvent();
+            var value   = new HierarchyEvent() { Pointer= p0 };
 
 
             return value;

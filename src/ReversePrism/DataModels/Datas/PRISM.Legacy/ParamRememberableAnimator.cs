@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 floatParams                              Dictionary`2<int, float> IL2CPP_TYPE_GENERICINST
     // 038 boolParams                               Dictionary`2<int, bool> IL2CPP_TYPE_GENERICINST
     // 040 triggerParams                            HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ParamRememberableAnimator
+    public partial class ParamRememberableAnimator : DataModel
     {
         public Animator?                                Animator                                { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ParamRememberableAnimator();
+            var value   = new ParamRememberableAnimator() { Pointer= p0 };
 
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 027005AFF4B0 0x20 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0245A5B01270 0x20 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

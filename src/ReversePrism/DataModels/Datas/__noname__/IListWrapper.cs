@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 List                                     000186591B20 ModelClassType IList IList IList Pointer
-    public partial class IListWrapper
+    public partial class IListWrapper : DataModel
     {
         public IList?                                   List                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IListWrapper();
+            var value   = new IListWrapper() { Pointer= p0 };
 
-            value.List                                      = GetObject<IList>(new IntPtr(p + 0x028), ReversePrism.DataModels.IList.FromPointer); // 0270D6D837D8 0x28 List                        ( 000186591B20 ModelClassType IList IList IList Pointer )
+            value.List                                      = GetObject<IList>(new IntPtr(p + 0x028), ReversePrism.DataModels.IList.FromPointer); // 024666DD37D8 0x28 List                        ( 000186591B20 ModelClassType IList IList IList Pointer )
 
             return value;
         }

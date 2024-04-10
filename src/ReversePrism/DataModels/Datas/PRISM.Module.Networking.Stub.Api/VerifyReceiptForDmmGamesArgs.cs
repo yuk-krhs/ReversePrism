@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 ReceiptData                              000186671910 ModelPrimitiveType string string string String
     // 000 DataSignatureFieldNumber                 int IL2CPP_TYPE_I4
     // 028 DataSignature                            000186671910 ModelPrimitiveType string string string String
-    public partial class VerifyReceiptForDmmGamesArgs
+    public partial class VerifyReceiptForDmmGamesArgs : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public string                                   ReceiptData                             { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptForDmmGamesArgs();
+            var value   = new VerifyReceiptForDmmGamesArgs() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B57FE8 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ReceiptData                               = GetString(new IntPtr(p + 0x020)); // 0270D0B58028 0x20 ReceiptData                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DataSignature                             = GetString(new IntPtr(p + 0x028)); // 0270D0B58068 0x28 DataSignature               ( 000186671910 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B52FD0 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.ReceiptData                               = GetString(new IntPtr(p + 0x020)); // 024660B53010 0x20 ReceiptData                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DataSignature                             = GetString(new IntPtr(p + 0x028)); // 024660B53050 0x28 DataSignature               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

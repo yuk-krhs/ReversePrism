@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UTF8ArrayUnsafeUtility
+    public partial class UTF8ArrayUnsafeUtility : DataModel
     {
 
         public static UTF8ArrayUnsafeUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UTF8ArrayUnsafeUtility();
+            var value   = new UTF8ArrayUnsafeUtility() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RankingRewardPopupCaller
+    public partial class RankingRewardPopupCaller : DataModel
     {
 
         public static RankingRewardPopupCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RankingRewardPopupCaller();
+            var value   = new RankingRewardPopupCaller() { Pointer= p0 };
 
 
             return value;

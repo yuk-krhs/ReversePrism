@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 EventStatusListFieldNumber               int IL2CPP_TYPE_I4
     // 008 _repeated_eventStatusList_codec          FieldCodec`1<UserProfileEventStatus> IL2CPP_TYPE_GENERICINST
     // 018 EventStatusList                          000185CF6BD8 ModelClassListType RepeatedField`1<UserProfileEventStatus> RepeatedField`1<UserProfileEventStatus> List<UserProfileEventStatus> Pointer
-    public partial class GetProducerEventInfoListReply
+    public partial class GetProducerEventInfoListReply : DataModel
     {
         public List<UserProfileEventStatus>?            EventStatusList                         { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProducerEventInfoListReply();
+            var value   = new GetProducerEventInfoListReply() { Pointer= p0 };
 
-            value.EventStatusList                           = GetObjectList<UserProfileEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UserProfileEventStatus.FromPointer); // 0270D26FAED0 0x18 EventStatusList             ( 000185CF6BD8 ModelClassListType RepeatedField`1<UserProfileEventStatus> RepeatedField`1<UserProfileEventStatus> List<UserProfileEventStatus> Pointer )
+            value.EventStatusList                           = GetObjectList<UserProfileEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UserProfileEventStatus.FromPointer); // 024662644ED8 0x18 EventStatusList             ( 000185CF6BD8 ModelClassListType RepeatedField`1<UserProfileEventStatus> RepeatedField`1<UserProfileEventStatus> List<UserProfileEventStatus> Pointer )
 
             return value;
         }

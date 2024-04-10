@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Datatype_fixed
+    public partial class Datatype_fixed : DataModel
     {
 
         public static Datatype_fixed? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_fixed();
+            var value   = new Datatype_fixed() { Pointer= p0 };
 
 
             return value;

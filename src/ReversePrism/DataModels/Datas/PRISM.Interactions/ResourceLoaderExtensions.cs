@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ResourceLoaderExtensions
+    public partial class ResourceLoaderExtensions : DataModel
     {
 
         public static ResourceLoaderExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ResourceLoaderExtensions();
+            var value   = new ResourceLoaderExtensions() { Pointer= p0 };
 
 
             return value;

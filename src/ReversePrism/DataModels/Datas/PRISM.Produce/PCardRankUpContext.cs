@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 060 OnClickMinusButton                       Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 068 RemainingRankUpCount                     0001865F36C0 ModelPrimitiveType int int int Int32
     // 070 rankUpIconBlinkValue                     ReactiveProperty`1<float> IL2CPP_TYPE_GENERICINST
-    public partial class PCardRankUpContext
+    public partial class PCardRankUpContext : DataModel
     {
         public int                                      RemainingRankUpCount                    { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PCardRankUpContext();
+            var value   = new PCardRankUpContext() { Pointer= p0 };
 
-            value.RemainingRankUpCount                      = GetInt32(new IntPtr(p + 0x068)); // 0270D5CE9940 0x68 RemainingRankUpCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RemainingRankUpCount                      = GetInt32(new IntPtr(p + 0x068)); // 024665D3A518 0x68 RemainingRankUpCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

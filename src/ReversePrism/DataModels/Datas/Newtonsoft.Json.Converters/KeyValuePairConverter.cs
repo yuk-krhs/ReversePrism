@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 KeyName                                  string IL2CPP_TYPE_STRING
     // 000 ValueName                                string IL2CPP_TYPE_STRING
     // 000 ReflectionObjectPerType                  ThreadSafeStore`2<Type, ReflectionObject> IL2CPP_TYPE_GENERICINST
-    public partial class KeyValuePairConverter
+    public partial class KeyValuePairConverter : DataModel
     {
 
         public static KeyValuePairConverter? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyValuePairConverter();
+            var value   = new KeyValuePairConverter() { Pointer= p0 };
 
 
             return value;

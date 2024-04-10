@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
     // 070 Modules                                  000186576600 ModelClassType ModulesSetup ModulesSetup ModulesSetup Pointer
     // 078 ShowPlayingTweens                        000186595960 ModelPrimitiveType bool bool bool Bool
     // 079 ShowPausedTweens                         000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class DOTweenSettings
+    public partial class DOTweenSettings : DataModel
     {
         public bool                                     UseSafeMode                             { get; set; }
         public SafeModeOptions?                         SafeModeOptions                         { get; set; }
@@ -69,33 +69,33 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DOTweenSettings();
+            var value   = new DOTweenSettings() { Pointer= p0 };
 
-            value.UseSafeMode                               = GetBool(new IntPtr(p + 0x018)); // 027004348C50 0x18 UseSafeMode                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SafeModeOptions                           = GetObject<SafeModeOptions>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeModeOptions.FromPointer); // 027004348C70 0x20 SafeModeOptions             ( 000186576AE0 ModelClassType SafeModeOptions SafeModeOptions SafeModeOptions Pointer )
-            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x028)); // 027004348C90 0x28 TimeScale                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.UseSmoothDeltaTime                        = GetBool(new IntPtr(p + 0x02C)); // 027004348CB0 0x2C UseSmoothDeltaTime          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.MaxSmoothUnscaledTime                     = GetSingle(new IntPtr(p + 0x030)); // 027004348CD0 0x30 MaxSmoothUnscaledTime       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RewindCallbackMode                        = (RewindCallbackMode)GetInt32(new IntPtr(p + 0x034)); // 027004348CF0 0x34 RewindCallbackMode          ( 000186681060 ModelEnumType RewindCallbackMode RewindCallbackMode RewindCallbackMode Int32 )
-            value.ShowUnityEditorReport                     = GetBool(new IntPtr(p + 0x038)); // 027004348D10 0x38 ShowUnityEditorReport       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LogBehaviour                              = (LogBehaviour)GetInt32(new IntPtr(p + 0x03C)); // 027004348D30 0x3C LogBehaviour                ( 0001865ABE70 ModelEnumType LogBehaviour LogBehaviour LogBehaviour Int32 )
-            value.DrawGizmos                                = GetBool(new IntPtr(p + 0x040)); // 027004348D50 0x40 DrawGizmos                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultRecyclable                         = GetBool(new IntPtr(p + 0x041)); // 027004348D70 0x41 DefaultRecyclable           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultAutoPlay                           = (AutoPlay)GetInt32(new IntPtr(p + 0x044)); // 027004348D90 0x44 DefaultAutoPlay             ( 0001867283F0 ModelEnumType AutoPlay AutoPlay AutoPlay Int32 )
-            value.DefaultUpdateType                         = (UpdateType)GetInt32(new IntPtr(p + 0x048)); // 027004348DB0 0x48 DefaultUpdateType           ( 000186742360 ModelEnumType UpdateType UpdateType UpdateType Int32 )
-            value.DefaultTimeScaleIndependent               = GetBool(new IntPtr(p + 0x04C)); // 027004348DD0 0x4C DefaultTimeScaleIndependent ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultEaseType                           = (Ease)GetInt32(new IntPtr(p + 0x050)); // 027004348DF0 0x50 DefaultEaseType             ( 000186717150 ModelEnumType Ease Ease Ease Int32 )
-            value.DefaultEaseOvershootOrAmplitude           = GetSingle(new IntPtr(p + 0x054)); // 027004348E10 0x54 DefaultEaseOvershootOrAmplitude ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DefaultEasePeriod                         = GetSingle(new IntPtr(p + 0x058)); // 027004348E30 0x58 DefaultEasePeriod           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DefaultAutoKill                           = GetBool(new IntPtr(p + 0x05C)); // 027004348E50 0x5C DefaultAutoKill             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultLoopType                           = (LoopType)GetInt32(new IntPtr(p + 0x060)); // 027004348E70 0x60 DefaultLoopType             ( 0001865C0BF0 ModelEnumType LoopType LoopType LoopType Int32 )
-            value.DebugMode                                 = GetBool(new IntPtr(p + 0x064)); // 027004348E90 0x64 DebugMode                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DebugStoreTargetId                        = GetBool(new IntPtr(p + 0x065)); // 027004348EB0 0x65 DebugStoreTargetId          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ShowPreviewPanel                          = GetBool(new IntPtr(p + 0x066)); // 027004348ED0 0x66 ShowPreviewPanel            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.StoreSettingsLocation                     = (SettingsLocation)GetInt32(new IntPtr(p + 0x068)); // 027004348EF0 0x68 StoreSettingsLocation       ( 000186576FC0 ModelEnumType SettingsLocation SettingsLocation SettingsLocation Int32 )
-            value.Modules                                   = GetObject<ModulesSetup>(new IntPtr(p + 0x070), ReversePrism.DataModels.ModulesSetup.FromPointer); // 027004348F10 0x70 Modules                     ( 000186576600 ModelClassType ModulesSetup ModulesSetup ModulesSetup Pointer )
-            value.ShowPlayingTweens                         = GetBool(new IntPtr(p + 0x078)); // 027004348F30 0x78 ShowPlayingTweens           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ShowPausedTweens                          = GetBool(new IntPtr(p + 0x079)); // 027004348F50 0x79 ShowPausedTweens            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.UseSafeMode                               = GetBool(new IntPtr(p + 0x018)); // 0245A43A9090 0x18 UseSafeMode                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SafeModeOptions                           = GetObject<SafeModeOptions>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeModeOptions.FromPointer); // 0245A43A90B0 0x20 SafeModeOptions             ( 000186576AE0 ModelClassType SafeModeOptions SafeModeOptions SafeModeOptions Pointer )
+            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x028)); // 0245A43A90D0 0x28 TimeScale                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.UseSmoothDeltaTime                        = GetBool(new IntPtr(p + 0x02C)); // 0245A43A90F0 0x2C UseSmoothDeltaTime          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.MaxSmoothUnscaledTime                     = GetSingle(new IntPtr(p + 0x030)); // 0245A43A9110 0x30 MaxSmoothUnscaledTime       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RewindCallbackMode                        = (RewindCallbackMode)GetInt32(new IntPtr(p + 0x034)); // 0245A43A9130 0x34 RewindCallbackMode          ( 000186681060 ModelEnumType RewindCallbackMode RewindCallbackMode RewindCallbackMode Int32 )
+            value.ShowUnityEditorReport                     = GetBool(new IntPtr(p + 0x038)); // 0245A43A9150 0x38 ShowUnityEditorReport       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.LogBehaviour                              = (LogBehaviour)GetInt32(new IntPtr(p + 0x03C)); // 0245A43A9170 0x3C LogBehaviour                ( 0001865ABE70 ModelEnumType LogBehaviour LogBehaviour LogBehaviour Int32 )
+            value.DrawGizmos                                = GetBool(new IntPtr(p + 0x040)); // 0245A43A9190 0x40 DrawGizmos                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultRecyclable                         = GetBool(new IntPtr(p + 0x041)); // 0245A43A91B0 0x41 DefaultRecyclable           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultAutoPlay                           = (AutoPlay)GetInt32(new IntPtr(p + 0x044)); // 0245A43A91D0 0x44 DefaultAutoPlay             ( 0001867283F0 ModelEnumType AutoPlay AutoPlay AutoPlay Int32 )
+            value.DefaultUpdateType                         = (UpdateType)GetInt32(new IntPtr(p + 0x048)); // 0245A43A91F0 0x48 DefaultUpdateType           ( 000186742360 ModelEnumType UpdateType UpdateType UpdateType Int32 )
+            value.DefaultTimeScaleIndependent               = GetBool(new IntPtr(p + 0x04C)); // 0245A43A9210 0x4C DefaultTimeScaleIndependent ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultEaseType                           = (Ease)GetInt32(new IntPtr(p + 0x050)); // 0245A43A9230 0x50 DefaultEaseType             ( 000186717150 ModelEnumType Ease Ease Ease Int32 )
+            value.DefaultEaseOvershootOrAmplitude           = GetSingle(new IntPtr(p + 0x054)); // 0245A43A9250 0x54 DefaultEaseOvershootOrAmplitude ( 000186666050 ModelPrimitiveType float float float Single )
+            value.DefaultEasePeriod                         = GetSingle(new IntPtr(p + 0x058)); // 0245A43A9270 0x58 DefaultEasePeriod           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.DefaultAutoKill                           = GetBool(new IntPtr(p + 0x05C)); // 0245A43A9290 0x5C DefaultAutoKill             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DefaultLoopType                           = (LoopType)GetInt32(new IntPtr(p + 0x060)); // 0245A43A92B0 0x60 DefaultLoopType             ( 0001865C0BF0 ModelEnumType LoopType LoopType LoopType Int32 )
+            value.DebugMode                                 = GetBool(new IntPtr(p + 0x064)); // 0245A43A92D0 0x64 DebugMode                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DebugStoreTargetId                        = GetBool(new IntPtr(p + 0x065)); // 0245A43A92F0 0x65 DebugStoreTargetId          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ShowPreviewPanel                          = GetBool(new IntPtr(p + 0x066)); // 0245A43A9310 0x66 ShowPreviewPanel            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.StoreSettingsLocation                     = (SettingsLocation)GetInt32(new IntPtr(p + 0x068)); // 0245A43A9330 0x68 StoreSettingsLocation       ( 000186576FC0 ModelEnumType SettingsLocation SettingsLocation SettingsLocation Int32 )
+            value.Modules                                   = GetObject<ModulesSetup>(new IntPtr(p + 0x070), ReversePrism.DataModels.ModulesSetup.FromPointer); // 0245A43A9350 0x70 Modules                     ( 000186576600 ModelClassType ModulesSetup ModulesSetup ModulesSetup Pointer )
+            value.ShowPlayingTweens                         = GetBool(new IntPtr(p + 0x078)); // 0245A43A9370 0x78 ShowPlayingTweens           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ShowPausedTweens                          = GetBool(new IntPtr(p + 0x079)); // 0245A43A9390 0x79 ShowPausedTweens            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

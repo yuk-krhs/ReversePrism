@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRejectPromise
+    public partial class IRejectPromise : DataModel
     {
 
         public static IRejectPromise? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRejectPromise();
+            var value   = new IRejectPromise() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 028 KeyValue                                 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class KeyedHashAlgorithm
+    public partial class KeyedHashAlgorithm : DataModel
     {
         public List<sbyte>?                             KeyValue                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyedHashAlgorithm();
+            var value   = new KeyedHashAlgorithm() { Pointer= p0 };
 
-            value.KeyValue                                  = GetSByteList(new IntPtr(p + 0x028)); // 027003D043B8 0x28 KeyValue                    ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.KeyValue                                  = GetSByteList(new IntPtr(p + 0x028)); // 0245A3D043B8 0x28 KeyValue                    ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

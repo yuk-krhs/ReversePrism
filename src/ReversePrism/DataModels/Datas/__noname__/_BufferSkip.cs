@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 buffers                                  Queue`1<List`1<<var>>> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
     // 000 <Current>k__BackingField                 IList`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class _BufferSkip
+    public partial class _BufferSkip : DataModel
     {
 
         public static _BufferSkip? FromPointer(IntPtr p0)
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _BufferSkip();
+            var value   = new _BufferSkip() { Pointer= p0 };
 
 
             return value;

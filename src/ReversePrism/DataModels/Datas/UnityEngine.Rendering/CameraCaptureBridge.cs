@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 actionDict                               Dictionary`2<Camera, HashSet`1<Action`2<RenderTargetIdentifier, CommandBuffer>>> IL2CPP_TYPE_GENERICINST
     // 008 _enabled                                 bool IL2CPP_TYPE_BOOLEAN
-    public partial class CameraCaptureBridge
+    public partial class CameraCaptureBridge : DataModel
     {
 
         public static CameraCaptureBridge? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CameraCaptureBridge();
+            var value   = new CameraCaptureBridge() { Pointer= p0 };
 
 
             return value;

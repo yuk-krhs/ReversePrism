@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 Credentials                              000186745960 ModelClassType ICredentials ICredentials ICredentials Pointer
     // 018 Proxy                                    00018669AB30 ModelClassType IWebProxy IWebProxy IWebProxy Pointer
     // 020 CachePolicy                              0001866657A0 ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer
-    public partial class XmlUrlResolver
+    public partial class XmlUrlResolver : DataModel
     {
         public ICredentials?                            Credentials                             { get; set; }
         public IWebProxy?                               Proxy                                   { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlUrlResolver();
+            var value   = new XmlUrlResolver() { Pointer= p0 };
 
-            value.Credentials                               = GetObject<ICredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICredentials.FromPointer); // 0270D74972D0 0x10 Credentials                 ( 000186745960 ModelClassType ICredentials ICredentials ICredentials Pointer )
-            value.Proxy                                     = GetObject<IWebProxy>(new IntPtr(p + 0x018), ReversePrism.DataModels.IWebProxy.FromPointer); // 0270D74972F0 0x18 Proxy                       ( 00018669AB30 ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
-            value.CachePolicy                               = GetObject<RequestCachePolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCachePolicy.FromPointer); // 0270D7497310 0x20 CachePolicy                 ( 0001866657A0 ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer )
+            value.Credentials                               = GetObject<ICredentials>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICredentials.FromPointer); // 0246674FF2D0 0x10 Credentials                 ( 000186745960 ModelClassType ICredentials ICredentials ICredentials Pointer )
+            value.Proxy                                     = GetObject<IWebProxy>(new IntPtr(p + 0x018), ReversePrism.DataModels.IWebProxy.FromPointer); // 0246674FF2F0 0x18 Proxy                       ( 00018669AB30 ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
+            value.CachePolicy                               = GetObject<RequestCachePolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCachePolicy.FromPointer); // 0246674FF310 0x20 CachePolicy                 ( 0001866657A0 ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer )
 
             return value;
         }

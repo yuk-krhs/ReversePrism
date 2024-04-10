@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 renderChains                             List`1<RenderChain> IL2CPP_TYPE_GENERICINST
-    public partial class RenderChainStaticIndexAllocator
+    public partial class RenderChainStaticIndexAllocator : DataModel
     {
 
         public static RenderChainStaticIndexAllocator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderChainStaticIndexAllocator();
+            var value   = new RenderChainStaticIndexAllocator() { Pointer= p0 };
 
 
             return value;

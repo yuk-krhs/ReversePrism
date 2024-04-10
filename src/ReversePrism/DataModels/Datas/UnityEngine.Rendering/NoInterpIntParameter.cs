@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoInterpIntParameter
+    public partial class NoInterpIntParameter : DataModel
     {
 
         public static NoInterpIntParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoInterpIntParameter();
+            var value   = new NoInterpIntParameter() { Pointer= p0 };
 
 
             return value;

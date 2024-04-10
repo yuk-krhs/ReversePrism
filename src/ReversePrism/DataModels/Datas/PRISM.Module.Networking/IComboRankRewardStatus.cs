@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IComboRankRewardStatus
+    public partial class IComboRankRewardStatus : DataModel
     {
 
         public static IComboRankRewardStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IComboRankRewardStatus();
+            var value   = new IComboRankRewardStatus() { Pointer= p0 };
 
 
             return value;

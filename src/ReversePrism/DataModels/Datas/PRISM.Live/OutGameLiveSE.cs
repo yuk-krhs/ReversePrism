@@ -40,7 +40,7 @@ namespace ReversePrism.DataModels
     // 1C0 EventGetRare                             000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 1D0 EventBoxOpen                             000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
     // 1E0 EventResultIn                            000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class OutGameLiveSE
+    public partial class OutGameLiveSE : DataModel
     {
         public SoundKey                                 ScrollDown                              { get; set; }
         public SoundKey                                 LiveStartCrowdLoop                      { get; set; }
@@ -79,38 +79,38 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OutGameLiveSE();
+            var value   = new OutGameLiveSE() { Pointer= p0 };
 
-            value.ScrollDown                                = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270D51DAFE0 0x10 ScrollDown                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LiveStartCrowdLoop                        = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 0270D51DB000 0x20 LiveStartCrowdLoop          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.LiveStart                                 = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 0270D51DB020 0x30 LiveStart                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultCountLoop                           = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 0270D51DB040 0x40 ResultCountLoop             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultCountEnd                            = (SoundKey)GetInt32(new IntPtr(p + 0x050)); // 0270D51DB060 0x50 ResultCountEnd              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultNewRecord                           = (SoundKey)GetInt32(new IntPtr(p + 0x060)); // 0270D51DB080 0x60 ResultNewRecord             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultCrearlamp                           = (SoundKey)GetInt32(new IntPtr(p + 0x070)); // 0270D51DB0A0 0x70 ResultCrearlamp             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultScoreCBA                            = (SoundKey)GetInt32(new IntPtr(p + 0x080)); // 0270D51DB0C0 0x80 ResultScoreCBA              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultScoreS                              = (SoundKey)GetInt32(new IntPtr(p + 0x090)); // 0270D51DB0E0 0x90 ResultScoreS                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultScoreSS                             = (SoundKey)GetInt32(new IntPtr(p + 0x0A0)); // 0270D51DB100 0xA0 ResultScoreSS               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultGetStamp                            = (SoundKey)GetInt32(new IntPtr(p + 0x0B0)); // 0270D51DB120 0xB0 ResultGetStamp              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.SkipliveClear                             = (SoundKey)GetInt32(new IntPtr(p + 0x0C0)); // 0270D51DB140 0xC0 SkipliveClear               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultItemGet                             = (SoundKey)GetInt32(new IntPtr(p + 0x0D0)); // 0270D51DB160 0xD0 ResultItemGet               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultItemGetRare                         = (SoundKey)GetInt32(new IntPtr(p + 0x0E0)); // 0270D51DB180 0xE0 ResultItemGetRare           ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultMoneyEnd                            = (SoundKey)GetInt32(new IntPtr(p + 0x0F0)); // 0270D51DB1A0 0xF0 ResultMoneyEnd              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultMoneyLoop                           = (SoundKey)GetInt32(new IntPtr(p + 0x100)); // 0270D51DB1C0 0x100 ResultMoneyLoop             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultPuSpecial                           = (SoundKey)GetInt32(new IntPtr(p + 0x110)); // 0270D51DB1E0 0x110 ResultPuSpecial             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.RatinggradeUp                             = (SoundKey)GetInt32(new IntPtr(p + 0x120)); // 0270D51DB200 0x120 RatinggradeUp               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultIdolCountLoop                       = (SoundKey)GetInt32(new IntPtr(p + 0x130)); // 0270D51DB220 0x130 ResultIdolCountLoop         ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultIdolCountLvUp                       = (SoundKey)GetInt32(new IntPtr(p + 0x140)); // 0270D51DB240 0x140 ResultIdolCountLvUp         ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.RatinggradeUpCount                        = (SoundKey)GetInt32(new IntPtr(p + 0x150)); // 0270D51DB260 0x150 RatinggradeUpCount          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.RatinggradeUpCountEnd                     = (SoundKey)GetInt32(new IntPtr(p + 0x160)); // 0270D51DB280 0x160 RatinggradeUpCountEnd       ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.RatinggradeUpGrade                        = (SoundKey)GetInt32(new IntPtr(p + 0x170)); // 0270D51DB2A0 0x170 RatinggradeUpGrade          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.RatinggradeUpStar                         = (SoundKey)GetInt32(new IntPtr(p + 0x180)); // 0270D51DB2C0 0x180 RatinggradeUpStar           ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.ResultIdolFanCount                        = (SoundKey)GetInt32(new IntPtr(p + 0x190)); // 0270D51DB2E0 0x190 ResultIdolFanCount          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EventCongratulations                      = (SoundKey)GetInt32(new IntPtr(p + 0x1A0)); // 0270D51DB300 0x1A0 EventCongratulations        ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EventGet                                  = (SoundKey)GetInt32(new IntPtr(p + 0x1B0)); // 0270D51DB320 0x1B0 EventGet                    ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EventGetRare                              = (SoundKey)GetInt32(new IntPtr(p + 0x1C0)); // 0270D51DB340 0x1C0 EventGetRare                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EventBoxOpen                              = (SoundKey)GetInt32(new IntPtr(p + 0x1D0)); // 0270D51DB360 0x1D0 EventBoxOpen                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.EventResultIn                             = (SoundKey)GetInt32(new IntPtr(p + 0x1E0)); // 0270D51DB380 0x1E0 EventResultIn               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ScrollDown                                = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466522DC08 0x10 ScrollDown                  ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LiveStartCrowdLoop                        = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 02466522DC28 0x20 LiveStartCrowdLoop          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.LiveStart                                 = (SoundKey)GetInt32(new IntPtr(p + 0x030)); // 02466522DC48 0x30 LiveStart                   ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultCountLoop                           = (SoundKey)GetInt32(new IntPtr(p + 0x040)); // 02466522DC68 0x40 ResultCountLoop             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultCountEnd                            = (SoundKey)GetInt32(new IntPtr(p + 0x050)); // 02466522DC88 0x50 ResultCountEnd              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultNewRecord                           = (SoundKey)GetInt32(new IntPtr(p + 0x060)); // 02466522DCA8 0x60 ResultNewRecord             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultCrearlamp                           = (SoundKey)GetInt32(new IntPtr(p + 0x070)); // 02466522DCC8 0x70 ResultCrearlamp             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultScoreCBA                            = (SoundKey)GetInt32(new IntPtr(p + 0x080)); // 02466522DCE8 0x80 ResultScoreCBA              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultScoreS                              = (SoundKey)GetInt32(new IntPtr(p + 0x090)); // 02466522DD08 0x90 ResultScoreS                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultScoreSS                             = (SoundKey)GetInt32(new IntPtr(p + 0x0A0)); // 02466522DD28 0xA0 ResultScoreSS               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultGetStamp                            = (SoundKey)GetInt32(new IntPtr(p + 0x0B0)); // 02466522DD48 0xB0 ResultGetStamp              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.SkipliveClear                             = (SoundKey)GetInt32(new IntPtr(p + 0x0C0)); // 02466522DD68 0xC0 SkipliveClear               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultItemGet                             = (SoundKey)GetInt32(new IntPtr(p + 0x0D0)); // 02466522DD88 0xD0 ResultItemGet               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultItemGetRare                         = (SoundKey)GetInt32(new IntPtr(p + 0x0E0)); // 02466522DDA8 0xE0 ResultItemGetRare           ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultMoneyEnd                            = (SoundKey)GetInt32(new IntPtr(p + 0x0F0)); // 02466522DDC8 0xF0 ResultMoneyEnd              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultMoneyLoop                           = (SoundKey)GetInt32(new IntPtr(p + 0x100)); // 02466522DDE8 0x100 ResultMoneyLoop             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultPuSpecial                           = (SoundKey)GetInt32(new IntPtr(p + 0x110)); // 02466522DE08 0x110 ResultPuSpecial             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.RatinggradeUp                             = (SoundKey)GetInt32(new IntPtr(p + 0x120)); // 02466522DE28 0x120 RatinggradeUp               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultIdolCountLoop                       = (SoundKey)GetInt32(new IntPtr(p + 0x130)); // 02466522DE48 0x130 ResultIdolCountLoop         ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultIdolCountLvUp                       = (SoundKey)GetInt32(new IntPtr(p + 0x140)); // 02466522DE68 0x140 ResultIdolCountLvUp         ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.RatinggradeUpCount                        = (SoundKey)GetInt32(new IntPtr(p + 0x150)); // 02466522DE88 0x150 RatinggradeUpCount          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.RatinggradeUpCountEnd                     = (SoundKey)GetInt32(new IntPtr(p + 0x160)); // 02466522DEA8 0x160 RatinggradeUpCountEnd       ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.RatinggradeUpGrade                        = (SoundKey)GetInt32(new IntPtr(p + 0x170)); // 02466522DEC8 0x170 RatinggradeUpGrade          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.RatinggradeUpStar                         = (SoundKey)GetInt32(new IntPtr(p + 0x180)); // 02466522DEE8 0x180 RatinggradeUpStar           ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.ResultIdolFanCount                        = (SoundKey)GetInt32(new IntPtr(p + 0x190)); // 02466522DF08 0x190 ResultIdolFanCount          ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EventCongratulations                      = (SoundKey)GetInt32(new IntPtr(p + 0x1A0)); // 02466522DF28 0x1A0 EventCongratulations        ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EventGet                                  = (SoundKey)GetInt32(new IntPtr(p + 0x1B0)); // 02466522DF48 0x1B0 EventGet                    ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EventGetRare                              = (SoundKey)GetInt32(new IntPtr(p + 0x1C0)); // 02466522DF68 0x1C0 EventGetRare                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EventBoxOpen                              = (SoundKey)GetInt32(new IntPtr(p + 0x1D0)); // 02466522DF88 0x1D0 EventBoxOpen                ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.EventResultIn                             = (SoundKey)GetInt32(new IntPtr(p + 0x1E0)); // 02466522DFA8 0x1E0 EventResultIn               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SupportCharacter                         000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer
     // 018 Score                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class CardWithRecommendScore
+    public partial class CardWithRecommendScore : DataModel
     {
         public ISupportCharacterStatus?                 SupportCharacter                        { get; set; }
         public int                                      Score                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CardWithRecommendScore();
+            var value   = new CardWithRecommendScore() { Pointer= p0 };
 
-            value.SupportCharacter                          = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0270D6539D98 0x10 SupportCharacter            ( 000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
-            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D6539DB8 0x18 Score                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SupportCharacter                          = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0246665A9458 0x10 SupportCharacter            ( 000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
+            value.Score                                     = GetInt32(new IntPtr(p + 0x018)); // 0246665A9478 0x18 Score                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

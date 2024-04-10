@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
     // 090 _BeginDateTime                           000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 IsDisplayUpdateDateTimeFieldNumber       int IL2CPP_TYPE_I4
     // 098 IsDisplayUpdateDateTime                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AnnounceStatus
+    public partial class AnnounceStatus : DataModel
     {
         public List<AnnounceCategory>?                  Category                                { get; set; }
         public DateTime                                 DisplayNewMarkEndDateTime               { get; set; }
@@ -57,21 +57,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AnnounceStatus();
+            var value   = new AnnounceStatus() { Pointer= p0 };
 
-            value.Category                                  = GetEnumList<AnnounceCategory>(new IntPtr(p + 0x060)); // 0270D0F541D8 0x60 Category                    ( 000185CCDF88 ModelEnumListType RepeatedField`1<AnnounceCategory> RepeatedField`1<AnnounceCategory> List<AnnounceCategory> Pointer )
-            value.DisplayNewMarkEndDateTime                 = GetDateTime(new IntPtr(p + 0x018)); // 0270D0F54078 0x18 DisplayNewMarkEndDateTime   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.LastUpdateDateTime                        = GetDateTime(new IntPtr(p + 0x028)); // 0270D0F54098 0x28 LastUpdateDateTime          ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.BeginDateTime                             = GetDateTime(new IntPtr(p + 0x038)); // 0270D0F540B8 0x38 BeginDateTime               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ArticleId                                 = GetString(new IntPtr(p + 0x050)); // 0270D0F54138 0x50 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x058)); // 0270D0F54178 0x58 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Genre                                     = (AnnounceGenre)GetInt32(new IntPtr(p + 0x068)); // 0270D0F54218 0x68 Genre                       ( 0001866BFD50 ModelEnumType AnnounceGenre AnnounceGenre AnnounceGenre Int32 )
-            value.BannerUrl                                 = GetString(new IntPtr(p + 0x070)); // 0270D0F54258 0x70 BannerUrl                   ( 000186671910 ModelPrimitiveType string string string String )
-            value._DisplayNewMarkEndDateTime                = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F54298 0x78 _DisplayNewMarkEndDateTime  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._LastUpdateDateTime                       = GetObject<Timestamp>(new IntPtr(p + 0x080), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F542D8 0x80 _LastUpdateDateTime         ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x088)); // 0270D0F54318 0x88 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDateTime                            = GetObject<Timestamp>(new IntPtr(p + 0x090), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F54358 0x90 _BeginDateTime              ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.IsDisplayUpdateDateTime                   = GetBool(new IntPtr(p + 0x098)); // 0270D0F54398 0x98 IsDisplayUpdateDateTime     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Category                                  = GetEnumList<AnnounceCategory>(new IntPtr(p + 0x060)); // 024660EFF358 0x60 Category                    ( 000185CCDF88 ModelEnumListType RepeatedField`1<AnnounceCategory> RepeatedField`1<AnnounceCategory> List<AnnounceCategory> Pointer )
+            value.DisplayNewMarkEndDateTime                 = GetDateTime(new IntPtr(p + 0x018)); // 024660EFF1F8 0x18 DisplayNewMarkEndDateTime   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.LastUpdateDateTime                        = GetDateTime(new IntPtr(p + 0x028)); // 024660EFF218 0x28 LastUpdateDateTime          ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.BeginDateTime                             = GetDateTime(new IntPtr(p + 0x038)); // 024660EFF238 0x38 BeginDateTime               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ArticleId                                 = GetString(new IntPtr(p + 0x050)); // 024660EFF2B8 0x50 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x058)); // 024660EFF2F8 0x58 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Genre                                     = (AnnounceGenre)GetInt32(new IntPtr(p + 0x068)); // 024660EFF398 0x68 Genre                       ( 0001866BFD50 ModelEnumType AnnounceGenre AnnounceGenre AnnounceGenre Int32 )
+            value.BannerUrl                                 = GetString(new IntPtr(p + 0x070)); // 024660EFF3D8 0x70 BannerUrl                   ( 000186671910 ModelPrimitiveType string string string String )
+            value._DisplayNewMarkEndDateTime                = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 024660EFF418 0x78 _DisplayNewMarkEndDateTime  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._LastUpdateDateTime                       = GetObject<Timestamp>(new IntPtr(p + 0x080), ReversePrism.DataModels.Timestamp.FromPointer); // 024660EFF458 0x80 _LastUpdateDateTime         ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x088)); // 024660EFF498 0x88 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDateTime                            = GetObject<Timestamp>(new IntPtr(p + 0x090), ReversePrism.DataModels.Timestamp.FromPointer); // 024660EFF4D8 0x90 _BeginDateTime              ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.IsDisplayUpdateDateTime                   = GetBool(new IntPtr(p + 0x098)); // 024660EFF518 0x98 IsDisplayUpdateDateTime     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
             value.DisplayNewMarkEndDateTime     = ToDateTime(value._DisplayNewMarkEndDateTime);
             value.LastUpdateDateTime            = ToDateTime(value._LastUpdateDateTime);
             value.BeginDateTime                 = ToDateTime(value._BeginDateTime);

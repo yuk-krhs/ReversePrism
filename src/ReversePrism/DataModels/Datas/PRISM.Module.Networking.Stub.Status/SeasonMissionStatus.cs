@@ -42,7 +42,7 @@ namespace ReversePrism.DataModels
     // 0B0 LastDisplayRank                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 PremiumRegisteredDateFieldNumber         int IL2CPP_TYPE_I4
     // 0B8 _PremiumRegisteredDate                   000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class SeasonMissionStatus
+    public partial class SeasonMissionStatus : DataModel
     {
         public DateTime                                 ReceiveEndDate                          { get; set; }
         public DateTime                                 BeginDate                               { get; set; }
@@ -68,25 +68,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SeasonMissionStatus();
+            var value   = new SeasonMissionStatus() { Pointer= p0 };
 
-            value.ReceiveEndDate                            = GetDateTime(new IntPtr(p + 0x010)); // 0270D2799940 0x10 ReceiveEndDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0270D2799960 0x20 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x030)); // 0270D2799980 0x30 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.PremiumRegisteredDate                     = GetDateTime(new IntPtr(p + 0x040)); // 0270D27999A0 0x40 PremiumRegisteredDate       ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x058)); // 0270D2799A20 0x58 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._ReceiveEndDate                           = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2799A60 0x60 _ReceiveEndDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x068), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2799AA0 0x68 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2799AE0 0x70 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.MissionList                               = GetObjectList<SeasonMissionMissionStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.SeasonMissionMissionStatus.FromPointer); // 0270D2799B40 0x78 MissionList                 ( 000185CF0198 ModelClassListType RepeatedField`1<SeasonMissionMissionStatus> RepeatedField`1<SeasonMissionMissionStatus> List<SeasonMissionMissionStatus> Pointer )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x080)); // 0270D2799B80 0x80 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SeasonExp                                 = GetObject<LimitedValueStatus>(new IntPtr(p + 0x088), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D2799BC0 0x88 SeasonExp                   ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.SeasonRewardList                          = GetObjectList<SeasonRewardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.SeasonRewardStatus.FromPointer); // 0270D2799C20 0x90 SeasonRewardList            ( 000185CF0608 ModelClassListType RepeatedField`1<SeasonRewardStatus> RepeatedField`1<SeasonRewardStatus> List<SeasonRewardStatus> Pointer )
-            value.IsPremium                                 = GetBool(new IntPtr(p + 0x098)); // 0270D2799C60 0x98 IsPremium                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MissionTab                                = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0270D2799CA0 0xA0 MissionTab                  ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
-            value.RankRewardTab                             = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0270D2799CE0 0xA8 RankRewardTab               ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
-            value.LastDisplayRank                           = GetInt32(new IntPtr(p + 0x0B0)); // 0270D2799D20 0xB0 LastDisplayRank             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._PremiumRegisteredDate                    = GetObject<Timestamp>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2799D60 0xB8 _PremiumRegisteredDate      ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.ReceiveEndDate                            = GetDateTime(new IntPtr(p + 0x010)); // 0246626F5008 0x10 ReceiveEndDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0246626F5028 0x20 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x030)); // 0246626F5048 0x30 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.PremiumRegisteredDate                     = GetDateTime(new IntPtr(p + 0x040)); // 0246626F5068 0x40 PremiumRegisteredDate       ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstSeasonMissionId                        = GetInt32(new IntPtr(p + 0x058)); // 0246626F50E8 0x58 MstSeasonMissionId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._ReceiveEndDate                           = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626F5128 0x60 _ReceiveEndDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x068), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626F5168 0x68 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x070), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626F51A8 0x70 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.MissionList                               = GetObjectList<SeasonMissionMissionStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.SeasonMissionMissionStatus.FromPointer); // 0246626F5208 0x78 MissionList                 ( 000185CF0198 ModelClassListType RepeatedField`1<SeasonMissionMissionStatus> RepeatedField`1<SeasonMissionMissionStatus> List<SeasonMissionMissionStatus> Pointer )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x080)); // 0246626F5248 0x80 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SeasonExp                                 = GetObject<LimitedValueStatus>(new IntPtr(p + 0x088), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246626F5288 0x88 SeasonExp                   ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.SeasonRewardList                          = GetObjectList<SeasonRewardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.SeasonRewardStatus.FromPointer); // 0246626F52E8 0x90 SeasonRewardList            ( 000185CF0608 ModelClassListType RepeatedField`1<SeasonRewardStatus> RepeatedField`1<SeasonRewardStatus> List<SeasonRewardStatus> Pointer )
+            value.IsPremium                                 = GetBool(new IntPtr(p + 0x098)); // 0246626F5328 0x98 IsPremium                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MissionTab                                = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0246626F5368 0xA0 MissionTab                  ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
+            value.RankRewardTab                             = GetObject<SeasonMissionTabStatus>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.SeasonMissionTabStatus.FromPointer); // 0246626F53A8 0xA8 RankRewardTab               ( 000186709060 ModelClassType SeasonMissionTabStatus SeasonMissionTabStatus SeasonMissionTabStatus Pointer )
+            value.LastDisplayRank                           = GetInt32(new IntPtr(p + 0x0B0)); // 0246626F53E8 0xB0 LastDisplayRank             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._PremiumRegisteredDate                    = GetObject<Timestamp>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.Timestamp.FromPointer); // 0246626F5428 0xB8 _PremiumRegisteredDate      ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.ReceiveEndDate                = ToDateTime(value._ReceiveEndDate);
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);

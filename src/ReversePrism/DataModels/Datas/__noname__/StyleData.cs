@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 endValue                                 <var> IL2CPP_TYPE_VAR
     // 000 reversingAdjustedStartValue              <var> IL2CPP_TYPE_VAR
     // 000 currentValue                             <var> IL2CPP_TYPE_VAR
-    public partial class StyleData
+    public partial class StyleData : DataModel
     {
 
         public static StyleData? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StyleData();
+            var value   = new StyleData() { Pointer= p0 };
 
 
             return value;

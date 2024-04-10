@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 Max                                      int IL2CPP_TYPE_I4
     // 000 OverMax                                  int IL2CPP_TYPE_I4
     // 000 Caution                                  int IL2CPP_TYPE_I4
-    public partial class LifeSpecification
+    public partial class LifeSpecification : DataModel
     {
 
         public static LifeSpecification? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LifeSpecification();
+            var value   = new LifeSpecification() { Pointer= p0 };
 
 
             return value;

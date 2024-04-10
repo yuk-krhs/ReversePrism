@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 RenewOnCallTime                          00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 018 SponsorshipTimeout                       00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 020 LeaseManager                             000186512AC0 ModelClassType LeaseManager LeaseManager LeaseManager Pointer
-    public partial class LifetimeServices
+    public partial class LifetimeServices : DataModel
     {
         public TimeSpan                                 RenewOnCallTime                         { get; set; }
         public TimeSpan                                 SponsorshipTimeout                      { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LifetimeServices();
+            var value   = new LifetimeServices() { Pointer= p0 };
 
-            value.RenewOnCallTime                           = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 0270D6BBE438 0x10 RenewOnCallTime             ( 00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.SponsorshipTimeout                        = (TimeSpan)GetInt32(new IntPtr(p + 0x018)); // 0270D6BBE458 0x18 SponsorshipTimeout          ( 00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.LeaseManager                              = GetObject<LeaseManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.LeaseManager.FromPointer); // 0270D6BBE478 0x20 LeaseManager                ( 000186512AC0 ModelClassType LeaseManager LeaseManager LeaseManager Pointer )
+            value.RenewOnCallTime                           = (TimeSpan)GetInt32(new IntPtr(p + 0x010)); // 024666C36438 0x10 RenewOnCallTime             ( 00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.SponsorshipTimeout                        = (TimeSpan)GetInt32(new IntPtr(p + 0x018)); // 024666C36458 0x18 SponsorshipTimeout          ( 00018668B250 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.LeaseManager                              = GetObject<LeaseManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.LeaseManager.FromPointer); // 024666C36478 0x20 LeaseManager                ( 000186512AC0 ModelClassType LeaseManager LeaseManager LeaseManager Pointer )
 
             return value;
         }

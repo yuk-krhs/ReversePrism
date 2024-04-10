@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NewInputFixedUpdate
+    public partial class NewInputFixedUpdate : DataModel
     {
 
         public static NewInputFixedUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NewInputFixedUpdate();
+            var value   = new NewInputFixedUpdate() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncCollisionEnter2DTrigger
+    public partial class AsyncCollisionEnter2DTrigger : DataModel
     {
 
         public static AsyncCollisionEnter2DTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncCollisionEnter2DTrigger();
+            var value   = new AsyncCollisionEnter2DTrigger() { Pointer= p0 };
 
 
             return value;

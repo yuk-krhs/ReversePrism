@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStaminaStatus
+    public partial class IStaminaStatus : DataModel
     {
 
         public static IStaminaStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStaminaStatus();
+            var value   = new IStaminaStatus() { Pointer= p0 };
 
 
             return value;

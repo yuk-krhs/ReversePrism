@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 RequiredFan                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C Fan                                      0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 MstIdolId                                0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class FanCondition
+    public partial class FanCondition : DataModel
     {
         public int                                      RequiredFan                             { get; set; }
         public int                                      Fan                                     { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FanCondition();
+            var value   = new FanCondition() { Pointer= p0 };
 
-            value.RequiredFan                               = GetInt32(new IntPtr(p + 0x018)); // 0270D4D20A90 0x18 RequiredFan                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Fan                                       = GetInt32(new IntPtr(p + 0x01C)); // 0270D4D20AB0 0x1C Fan                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D4D20AD0 0x20 MstIdolId                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RequiredFan                               = GetInt32(new IntPtr(p + 0x018)); // 024664D94A90 0x18 RequiredFan                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Fan                                       = GetInt32(new IntPtr(p + 0x01C)); // 024664D94AB0 0x1C Fan                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 024664D94AD0 0x20 MstIdolId                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

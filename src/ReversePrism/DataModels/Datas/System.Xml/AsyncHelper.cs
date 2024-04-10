@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 008 DoneTaskTrue                             Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 010 DoneTaskFalse                            Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 018 DoneTaskZero                             Task`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class AsyncHelper
+    public partial class AsyncHelper : DataModel
     {
 
         public static AsyncHelper? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncHelper();
+            var value   = new AsyncHelper() { Pointer= p0 };
 
 
             return value;

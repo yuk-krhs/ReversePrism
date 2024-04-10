@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 MarshalAs                                0001865D6AA0 ModelClassType MarshalAsAttribute MarshalAsAttribute MarshalAsAttribute Pointer
-    public partial class RuntimeParameterInfo
+    public partial class RuntimeParameterInfo : DataModel
     {
         public MarshalAsAttribute?                      MarshalAs                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeParameterInfo();
+            var value   = new RuntimeParameterInfo() { Pointer= p0 };
 
-            value.MarshalAs                                 = GetObject<MarshalAsAttribute>(new IntPtr(p + 0x040), ReversePrism.DataModels.MarshalAsAttribute.FromPointer); // 027000283CA0 0x40 MarshalAs                   ( 0001865D6AA0 ModelClassType MarshalAsAttribute MarshalAsAttribute MarshalAsAttribute Pointer )
+            value.MarshalAs                                 = GetObject<MarshalAsAttribute>(new IntPtr(p + 0x040), ReversePrism.DataModels.MarshalAsAttribute.FromPointer); // 0245A0283CA0 0x40 MarshalAs                   ( 0001865D6AA0 ModelClassType MarshalAsAttribute MarshalAsAttribute MarshalAsAttribute Pointer )
 
             return value;
         }

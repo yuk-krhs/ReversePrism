@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICommonListViewContext
+    public partial class ICommonListViewContext : DataModel
     {
 
         public static ICommonListViewContext? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICommonListViewContext();
+            var value   = new ICommonListViewContext() { Pointer= p0 };
 
 
             return value;

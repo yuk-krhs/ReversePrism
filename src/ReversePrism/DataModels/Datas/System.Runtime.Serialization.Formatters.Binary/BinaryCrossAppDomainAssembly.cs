@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 AssemId                                  0001865F2F90 ModelPrimitiveType int int int Int32
     // 014 AssemblyIndex                            0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class BinaryCrossAppDomainAssembly
+    public partial class BinaryCrossAppDomainAssembly : DataModel
     {
         public int                                      AssemId                                 { get; set; }
         public int                                      AssemblyIndex                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryCrossAppDomainAssembly();
+            var value   = new BinaryCrossAppDomainAssembly() { Pointer= p0 };
 
-            value.AssemId                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D6C31430 0x10 AssemId                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.AssemblyIndex                             = GetInt32(new IntPtr(p + 0x014)); // 0270D6C31450 0x14 AssemblyIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.AssemId                                   = GetInt32(new IntPtr(p + 0x010)); // 024666CA1430 0x10 AssemId                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.AssemblyIndex                             = GetInt32(new IntPtr(p + 0x014)); // 024666CA1450 0x14 AssemblyIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 MusicRankIconSprites                     000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
     // 020 LiveResultMusicRankIconSprites           000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
     // 028 UnitColors                               000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
-    public partial class LiveUIResourceConfig
+    public partial class LiveUIResourceConfig : DataModel
     {
         public List<Sprite>?                            MusicRankIconSprites                    { get; set; }
         public List<Sprite>?                            LiveResultMusicRankIconSprites          { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUIResourceConfig();
+            var value   = new LiveUIResourceConfig() { Pointer= p0 };
 
-            value.MusicRankIconSprites                      = GetObjectList<Sprite>(new IntPtr(p + 0x018), ReversePrism.DataModels.Sprite.FromPointer); // 0270D510ED38 0x18 MusicRankIconSprites        ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
-            value.LiveResultMusicRankIconSprites            = GetObjectList<Sprite>(new IntPtr(p + 0x020), ReversePrism.DataModels.Sprite.FromPointer); // 0270D510ED58 0x20 LiveResultMusicRankIconSprites ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
-            value.UnitColors                                = GetEnumList<Color>(new IntPtr(p + 0x028)); // 0270D510ED78 0x28 UnitColors                  ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.MusicRankIconSprites                      = GetObjectList<Sprite>(new IntPtr(p + 0x018), ReversePrism.DataModels.Sprite.FromPointer); // 02466517A218 0x18 MusicRankIconSprites        ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value.LiveResultMusicRankIconSprites            = GetObjectList<Sprite>(new IntPtr(p + 0x020), ReversePrism.DataModels.Sprite.FromPointer); // 02466517A238 0x20 LiveResultMusicRankIconSprites ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value.UnitColors                                = GetEnumList<Color>(new IntPtr(p + 0x028)); // 02466517A258 0x28 UnitColors                  ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
 
             return value;
         }

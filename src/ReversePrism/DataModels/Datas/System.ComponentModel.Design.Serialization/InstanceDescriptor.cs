@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Arguments                                0001867319F0 ModelClassType ICollection ICollection ICollection Pointer
     // 018 IsComplete                               0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 020 MemberInfo                               0001865F2430 ModelClassType MemberInfo MemberInfo MemberInfo Pointer
-    public partial class InstanceDescriptor
+    public partial class InstanceDescriptor : DataModel
     {
         public ICollection?                             Arguments                               { get; set; }
         public bool                                     IsComplete                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InstanceDescriptor();
+            var value   = new InstanceDescriptor() { Pointer= p0 };
 
-            value.Arguments                                 = GetObject<ICollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICollection.FromPointer); // 0270D7B3F108 0x10 Arguments                   ( 0001867319F0 ModelClassType ICollection ICollection ICollection Pointer )
-            value.IsComplete                                = GetBool(new IntPtr(p + 0x018)); // 0270D7B3F128 0x18 IsComplete                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.MemberInfo                                = GetObject<MemberInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MemberInfo.FromPointer); // 0270D7B3F148 0x20 MemberInfo                  ( 0001865F2430 ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
+            value.Arguments                                 = GetObject<ICollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICollection.FromPointer); // 024667BA7108 0x10 Arguments                   ( 0001867319F0 ModelClassType ICollection ICollection ICollection Pointer )
+            value.IsComplete                                = GetBool(new IntPtr(p + 0x018)); // 024667BA7128 0x18 IsComplete                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.MemberInfo                                = GetObject<MemberInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MemberInfo.FromPointer); // 024667BA7148 0x20 MemberInfo                  ( 0001865F2430 ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
 
             return value;
         }

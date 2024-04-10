@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 EncodingUTF8                             Encoding IL2CPP_TYPE_CLASS
-    public partial class MarshalUtils
+    public partial class MarshalUtils : DataModel
     {
 
         public static MarshalUtils? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarshalUtils();
+            var value   = new MarshalUtils() { Pointer= p0 };
 
 
             return value;

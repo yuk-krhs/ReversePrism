@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICriticalNotifyCompletion
+    public partial class ICriticalNotifyCompletion : DataModel
     {
 
         public static ICriticalNotifyCompletion? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICriticalNotifyCompletion();
+            var value   = new ICriticalNotifyCompletion() { Pointer= p0 };
 
 
             return value;

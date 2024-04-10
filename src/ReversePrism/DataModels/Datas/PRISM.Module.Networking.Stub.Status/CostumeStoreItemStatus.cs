@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C MstCostumeShopItemGroupId                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 StoreItemFieldNumber                     int IL2CPP_TYPE_I4
     // 020 StoreItem                                000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer
-    public partial class CostumeStoreItemStatus
+    public partial class CostumeStoreItemStatus : DataModel
     {
         public int                                      MstCostumeShopItemCategoryId            { get; set; }
         public int                                      MstCostumeShopItemGroupId               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumeStoreItemStatus();
+            var value   = new CostumeStoreItemStatus() { Pointer= p0 };
 
-            value.MstCostumeShopItemCategoryId              = GetInt32(new IntPtr(p + 0x018)); // 0270D27FCB68 0x18 MstCostumeShopItemCategoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCostumeShopItemGroupId                 = GetInt32(new IntPtr(p + 0x01C)); // 0270D27FCBA8 0x1C MstCostumeShopItemGroupId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 0270D27FCBE8 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
+            value.MstCostumeShopItemCategoryId              = GetInt32(new IntPtr(p + 0x018)); // 024662756418 0x18 MstCostumeShopItemCategoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCostumeShopItemGroupId                 = GetInt32(new IntPtr(p + 0x01C)); // 024662756458 0x1C MstCostumeShopItemGroupId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 024662756498 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
 
             return value;
         }

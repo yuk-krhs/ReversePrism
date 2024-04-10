@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 X                                        000186661D30 ModelEnumType Repeat Repeat Repeat Int32
     // 014 Y                                        000186661D30 ModelEnumType Repeat Repeat Repeat Int32
-    public partial class BackgroundRepeat
+    public partial class BackgroundRepeat : DataModel
     {
         public Repeat                                   X                                       { get; set; }
         public Repeat                                   Y                                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BackgroundRepeat();
+            var value   = new BackgroundRepeat() { Pointer= p0 };
 
-            value.X                                         = (Repeat)GetInt32(new IntPtr(p + 0x010)); // 027003F2D460 0x10 X                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
-            value.Y                                         = (Repeat)GetInt32(new IntPtr(p + 0x014)); // 027003F2D480 0x14 Y                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
+            value.X                                         = (Repeat)GetInt32(new IntPtr(p + 0x010)); // 0245A3F2D460 0x10 X                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
+            value.Y                                         = (Repeat)GetInt32(new IntPtr(p + 0x014)); // 0245A3F2D480 0x14 Y                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
 
             return value;
         }

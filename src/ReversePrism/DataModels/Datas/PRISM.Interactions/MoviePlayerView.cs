@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 060 GashaS3Setting                           0001866182B0 ModelClassType GashaS3Setting GashaS3Setting GashaS3Setting Pointer
     // 068 Model                                    000186659170 ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer
     // 070 ResourceLoader                           00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
-    public partial class MoviePlayerView
+    public partial class MoviePlayerView : DataModel
     {
         public MovieP7?                                 P7Prefab                                { get; set; }
         public GameObject?                              PhaseParent                             { get; set; }
@@ -40,19 +40,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MoviePlayerView();
+            var value   = new MoviePlayerView() { Pointer= p0 };
 
-            value.P7Prefab                                  = GetObject<MovieP7>(new IntPtr(p + 0x020), ReversePrism.DataModels.MovieP7.FromPointer); // 0270DA26EA48 0x20 P7Prefab                    ( 000186658480 ModelClassType MovieP7 MovieP7 MovieP7 Pointer )
-            value.PhaseParent                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA26EA68 0x28 PhaseParent                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x030), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0270DA26EA88 0x30 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.GashaNamePlateP                           = GetObject<GashaNamePlateEx>(new IntPtr(p + 0x038), ReversePrism.DataModels.GashaNamePlateEx.FromPointer); // 0270DA26EAA8 0x38 GashaNamePlateP             ( 0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer )
-            value.GashaNamePlateS                           = GetObject<GashaNamePlateS>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaNamePlateS.FromPointer); // 0270DA26EAC8 0x40 GashaNamePlateS             ( 0001866090A0 ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer )
-            value.TouchDetector                             = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 0270DA26EAE8 0x48 TouchDetector               ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ImgWhite                                  = GetObject<Image>(new IntPtr(p + 0x050), ReversePrism.DataModels.Image.FromPointer); // 0270DA26EB08 0x50 ImgWhite                    ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.MovieP7                                   = GetObject<MovieP7>(new IntPtr(p + 0x058), ReversePrism.DataModels.MovieP7.FromPointer); // 0270DA26EB28 0x58 MovieP7                     ( 000186658480 ModelClassType MovieP7 MovieP7 MovieP7 Pointer )
-            value.GashaS3Setting                            = GetObject<GashaS3Setting>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaS3Setting.FromPointer); // 0270DA26EB48 0x60 GashaS3Setting              ( 0001866182B0 ModelClassType GashaS3Setting GashaS3Setting GashaS3Setting Pointer )
-            value.Model                                     = GetObject<MoviePlayerModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.MoviePlayerModel.FromPointer); // 0270DA26EB68 0x68 Model                       ( 000186659170 ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer )
-            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x070), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0270DA26EB88 0x70 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.P7Prefab                                  = GetObject<MovieP7>(new IntPtr(p + 0x020), ReversePrism.DataModels.MovieP7.FromPointer); // 02466A2C2010 0x20 P7Prefab                    ( 000186658480 ModelClassType MovieP7 MovieP7 MovieP7 Pointer )
+            value.PhaseParent                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A2C2030 0x28 PhaseParent                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x030), ReversePrism.DataModels.MoviePlayer.FromPointer); // 02466A2C2050 0x30 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.GashaNamePlateP                           = GetObject<GashaNamePlateEx>(new IntPtr(p + 0x038), ReversePrism.DataModels.GashaNamePlateEx.FromPointer); // 02466A2C2070 0x38 GashaNamePlateP             ( 0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer )
+            value.GashaNamePlateS                           = GetObject<GashaNamePlateS>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaNamePlateS.FromPointer); // 02466A2C2090 0x40 GashaNamePlateS             ( 0001866090A0 ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer )
+            value.TouchDetector                             = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 02466A2C20B0 0x48 TouchDetector               ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.ImgWhite                                  = GetObject<Image>(new IntPtr(p + 0x050), ReversePrism.DataModels.Image.FromPointer); // 02466A2C20D0 0x50 ImgWhite                    ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.MovieP7                                   = GetObject<MovieP7>(new IntPtr(p + 0x058), ReversePrism.DataModels.MovieP7.FromPointer); // 02466A2C20F0 0x58 MovieP7                     ( 000186658480 ModelClassType MovieP7 MovieP7 MovieP7 Pointer )
+            value.GashaS3Setting                            = GetObject<GashaS3Setting>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaS3Setting.FromPointer); // 02466A2C2110 0x60 GashaS3Setting              ( 0001866182B0 ModelClassType GashaS3Setting GashaS3Setting GashaS3Setting Pointer )
+            value.Model                                     = GetObject<MoviePlayerModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.MoviePlayerModel.FromPointer); // 02466A2C2130 0x68 Model                       ( 000186659170 ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x070), ReversePrism.DataModels.IResourceLoader.FromPointer); // 02466A2C2150 0x70 ResourceLoader              ( 00018661A8D0 ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

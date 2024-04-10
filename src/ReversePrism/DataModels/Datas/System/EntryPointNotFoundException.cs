@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EntryPointNotFoundException
+    public partial class EntryPointNotFoundException : DataModel
     {
 
         public static EntryPointNotFoundException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EntryPointNotFoundException();
+            var value   = new EntryPointNotFoundException() { Pointer= p0 };
 
 
             return value;

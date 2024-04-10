@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AssertionMessageUtil
+    public partial class AssertionMessageUtil : DataModel
     {
 
         public static AssertionMessageUtil? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssertionMessageUtil();
+            var value   = new AssertionMessageUtil() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 _defaultValue                            <object> IL2CPP_TYPE_OBJECT
-    public partial class ImmutableBox
+    public partial class ImmutableBox : DataModel
     {
 
         public static ImmutableBox? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ImmutableBox();
+            var value   = new ImmutableBox() { Pointer= p0 };
 
 
             return value;

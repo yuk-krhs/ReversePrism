@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 0C0 onInitializePotentialDrag                Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
     // 0C8 onCancel                                 Subject`1<BaseEventData> IL2CPP_TYPE_GENERICINST
     // 0D0 onScroll                                 Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableEventTrigger
+    public partial class ObservableEventTrigger : DataModel
     {
 
         public static ObservableEventTrigger? FromPointer(IntPtr p0)
@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableEventTrigger();
+            var value   = new ObservableEventTrigger() { Pointer= p0 };
 
 
             return value;

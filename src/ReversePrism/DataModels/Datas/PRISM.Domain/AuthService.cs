@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <IsLoggedIn>k__BackingField              bool IL2CPP_TYPE_BOOLEAN
-    public partial class AuthService
+    public partial class AuthService : DataModel
     {
 
         public static AuthService? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AuthService();
+            var value   = new AuthService() { Pointer= p0 };
 
 
             return value;

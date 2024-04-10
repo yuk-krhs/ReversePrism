@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 068 JsonName                                 000186672F10 ModelPrimitiveType string string string String
     // 070 Proto                                    000186572530 ModelClassType FieldDescriptorProto FieldDescriptorProto FieldDescriptorProto Pointer
     // 078 Extension                                0001865CFEB0 ModelClassType Extension Extension Extension Pointer
-    public partial class FieldDescriptor
+    public partial class FieldDescriptor : DataModel
     {
         public EnumDescriptor?                          EnumType                                { get; set; }
         public MessageDescriptor?                       ExtendeeType                            { get; set; }
@@ -39,19 +39,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FieldDescriptor();
+            var value   = new FieldDescriptor() { Pointer= p0 };
 
-            value.EnumType                                  = GetObject<EnumDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptor.FromPointer); // 02700404D030 0x28 EnumType                    ( 000186739B20 ModelClassType EnumDescriptor EnumDescriptor EnumDescriptor Pointer )
-            value.ExtendeeType                              = GetObject<MessageDescriptor>(new IntPtr(p + 0x030), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 02700404D050 0x30 ExtendeeType                ( 000186606920 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
-            value.MessageType                               = GetObject<MessageDescriptor>(new IntPtr(p + 0x038), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 02700404D070 0x38 MessageType                 ( 000186606920 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
-            value.FieldType                                 = (FieldType)GetInt32(new IntPtr(p + 0x040)); // 02700404D090 0x40 FieldType                   ( 0001865772D0 ModelEnumType FieldType FieldType FieldType Int32 )
-            value.PropertyName                              = GetString(new IntPtr(p + 0x048)); // 02700404D0B0 0x48 PropertyName                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Accessor                                  = GetObject<IFieldAccessor>(new IntPtr(p + 0x050), ReversePrism.DataModels.IFieldAccessor.FromPointer); // 02700404D0D0 0x50 Accessor                    ( 00018650AEC0 ModelClassType IFieldAccessor IFieldAccessor IFieldAccessor Pointer )
-            value.ContainingType                            = GetObject<MessageDescriptor>(new IntPtr(p + 0x058), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 02700404D0F0 0x58 ContainingType              ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
-            value.ContainingOneof                           = GetObject<OneofDescriptor>(new IntPtr(p + 0x060), ReversePrism.DataModels.OneofDescriptor.FromPointer); // 02700404D110 0x60 ContainingOneof             ( 0001866DFA70 ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer )
-            value.JsonName                                  = GetString(new IntPtr(p + 0x068)); // 02700404D130 0x68 JsonName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Proto                                     = GetObject<FieldDescriptorProto>(new IntPtr(p + 0x070), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 02700404D150 0x70 Proto                       ( 000186572530 ModelClassType FieldDescriptorProto FieldDescriptorProto FieldDescriptorProto Pointer )
-            value.Extension                                 = GetObject<Extension>(new IntPtr(p + 0x078), ReversePrism.DataModels.Extension.FromPointer); // 02700404D170 0x78 Extension                   ( 0001865CFEB0 ModelClassType Extension Extension Extension Pointer )
+            value.EnumType                                  = GetObject<EnumDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptor.FromPointer); // 0245A4043140 0x28 EnumType                    ( 000186739B20 ModelClassType EnumDescriptor EnumDescriptor EnumDescriptor Pointer )
+            value.ExtendeeType                              = GetObject<MessageDescriptor>(new IntPtr(p + 0x030), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 0245A4043160 0x30 ExtendeeType                ( 000186606920 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
+            value.MessageType                               = GetObject<MessageDescriptor>(new IntPtr(p + 0x038), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 0245A4043180 0x38 MessageType                 ( 000186606920 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
+            value.FieldType                                 = (FieldType)GetInt32(new IntPtr(p + 0x040)); // 0245A40431A0 0x40 FieldType                   ( 0001865772D0 ModelEnumType FieldType FieldType FieldType Int32 )
+            value.PropertyName                              = GetString(new IntPtr(p + 0x048)); // 0245A40431C0 0x48 PropertyName                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Accessor                                  = GetObject<IFieldAccessor>(new IntPtr(p + 0x050), ReversePrism.DataModels.IFieldAccessor.FromPointer); // 0245A40431E0 0x50 Accessor                    ( 00018650AEC0 ModelClassType IFieldAccessor IFieldAccessor IFieldAccessor Pointer )
+            value.ContainingType                            = GetObject<MessageDescriptor>(new IntPtr(p + 0x058), ReversePrism.DataModels.MessageDescriptor.FromPointer); // 0245A4043200 0x58 ContainingType              ( 000186606DB0 ModelClassType MessageDescriptor MessageDescriptor MessageDescriptor Pointer )
+            value.ContainingOneof                           = GetObject<OneofDescriptor>(new IntPtr(p + 0x060), ReversePrism.DataModels.OneofDescriptor.FromPointer); // 0245A4043220 0x60 ContainingOneof             ( 0001866DFA70 ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer )
+            value.JsonName                                  = GetString(new IntPtr(p + 0x068)); // 0245A4043240 0x68 JsonName                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Proto                                     = GetObject<FieldDescriptorProto>(new IntPtr(p + 0x070), ReversePrism.DataModels.FieldDescriptorProto.FromPointer); // 0245A4043260 0x70 Proto                       ( 000186572530 ModelClassType FieldDescriptorProto FieldDescriptorProto FieldDescriptorProto Pointer )
+            value.Extension                                 = GetObject<Extension>(new IntPtr(p + 0x078), ReversePrism.DataModels.Extension.FromPointer); // 0245A4043280 0x78 Extension                   ( 0001865CFEB0 ModelClassType Extension Extension Extension Pointer )
 
             return value;
         }

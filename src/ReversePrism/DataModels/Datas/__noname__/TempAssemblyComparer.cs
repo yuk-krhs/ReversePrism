@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_default                                IEqualityComparer`1<KeyValuePair`2<Type, XmlRootAttribute>> IL2CPP_TYPE_GENERICINST
-    public partial class TempAssemblyComparer
+    public partial class TempAssemblyComparer : DataModel
     {
 
         public static TempAssemblyComparer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TempAssemblyComparer();
+            var value   = new TempAssemblyComparer() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186725970 ModelClassType IntroductionCharacterSelectView IntroductionCharacterSelectView IntroductionCharacterSelectView Pointer
-    public partial class IntroductionCharacterSelectBuilder
+    public partial class IntroductionCharacterSelectBuilder : DataModel
     {
         public IntroductionCharacterSelectView?         View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionCharacterSelectBuilder();
+            var value   = new IntroductionCharacterSelectBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<IntroductionCharacterSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionCharacterSelectView.FromPointer); // 0270DB61C7D0 0x20 View                        ( 000186725970 ModelClassType IntroductionCharacterSelectView IntroductionCharacterSelectView IntroductionCharacterSelectView Pointer )
+            value.View                                      = GetObject<IntroductionCharacterSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionCharacterSelectView.FromPointer); // 02466B698870 0x20 View                        ( 000186725970 ModelClassType IntroductionCharacterSelectView IntroductionCharacterSelectView IntroductionCharacterSelectView Pointer )
 
             return value;
         }

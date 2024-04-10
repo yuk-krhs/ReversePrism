@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MiscFacetsChecker
+    public partial class MiscFacetsChecker : DataModel
     {
 
         public static MiscFacetsChecker? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MiscFacetsChecker();
+            var value   = new MiscFacetsChecker() { Pointer= p0 };
 
 
             return value;

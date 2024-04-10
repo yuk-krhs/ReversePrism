@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 IdName                                   0001866722E0 ModelPrimitiveType string string string String
     // 018 Rotation                                 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 024 Position                                 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    public partial class TransformValue
+    public partial class TransformValue : DataModel
     {
         public string                                   IdName                                  { get; set; }
         public Vector3                                  Rotation                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransformValue();
+            var value   = new TransformValue() { Pointer= p0 };
 
-            value.IdName                                    = GetString(new IntPtr(p + 0x010)); // 0270D4D61830 0x10 IdName                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Rotation                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0270D4D61850 0x18 Rotation                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 0270D4D61870 0x24 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.IdName                                    = GetString(new IntPtr(p + 0x010)); // 024664DCCEA0 0x10 IdName                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Rotation                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 024664DCCEC0 0x18 Rotation                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 024664DCCEE0 0x24 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

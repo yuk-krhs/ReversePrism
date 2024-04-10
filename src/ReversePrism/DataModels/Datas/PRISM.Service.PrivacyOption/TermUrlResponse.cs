@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Ok                                       000186595960 ModelPrimitiveType bool bool bool Bool
     // 018 Errors                                   000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     // 020 Results                                  000185D2DB18 ModelClassListType List`1<Result> List`1<Result> List<Result> Pointer
-    public partial class TermUrlResponse
+    public partial class TermUrlResponse : DataModel
     {
         public bool                                     Ok                                      { get; set; }
         public List<string>?                            Errors                                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TermUrlResponse();
+            var value   = new TermUrlResponse() { Pointer= p0 };
 
-            value.Ok                                        = GetBool(new IntPtr(p + 0x010)); // 027004E0DE10 0x10 Ok                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Errors                                    = GetStringList(new IntPtr(p + 0x018)); // 027004E0DE30 0x18 Errors                      ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.Results                                   = GetObjectList<Result>(new IntPtr(p + 0x020), ReversePrism.DataModels.Result.FromPointer); // 027004E0DE50 0x20 Results                     ( 000185D2DB18 ModelClassListType List`1<Result> List`1<Result> List<Result> Pointer )
+            value.Ok                                        = GetBool(new IntPtr(p + 0x010)); // 0245A4E3AA18 0x10 Ok                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Errors                                    = GetStringList(new IntPtr(p + 0x018)); // 0245A4E3AA38 0x18 Errors                      ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Results                                   = GetObjectList<Result>(new IntPtr(p + 0x020), ReversePrism.DataModels.Result.FromPointer); // 0245A4E3AA58 0x20 Results                     ( 000185D2DB18 ModelClassListType List`1<Result> List`1<Result> List<Result> Pointer )
 
             return value;
         }

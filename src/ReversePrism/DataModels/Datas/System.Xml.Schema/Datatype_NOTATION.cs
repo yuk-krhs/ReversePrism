@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
-    public partial class Datatype_NOTATION
+    public partial class Datatype_NOTATION : DataModel
     {
 
         public static Datatype_NOTATION? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Datatype_NOTATION();
+            var value   = new Datatype_NOTATION() { Pointer= p0 };
 
 
             return value;

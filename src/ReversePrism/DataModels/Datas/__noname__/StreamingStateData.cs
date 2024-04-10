@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 168 Seed                                     00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
     // 170 SecretKey                                00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 22C PadEnd                                   00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class StreamingStateData
+    public partial class StreamingStateData : DataModel
     {
         public ulong                                    Acc                                     { get; set; }
         public sbyte                                    Buffer                                  { get; set; }
@@ -35,17 +35,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StreamingStateData();
+            var value   = new StreamingStateData() { Pointer= p0 };
 
-            value.Acc                                       = GetUInt64(new IntPtr(p + 0x010)); // 0270D9C65120 0x10 Acc                         ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Buffer                                    = GetSByte(new IntPtr(p + 0x050)); // 0270D9C65140 0x50 Buffer                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.IsHash64                                  = GetInt32(new IntPtr(p + 0x150)); // 0270D9C65160 0x150 IsHash64                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BufferedSize                              = GetInt32(new IntPtr(p + 0x154)); // 0270D9C65180 0x154 BufferedSize                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NbStripesSoFar                            = GetInt32(new IntPtr(p + 0x158)); // 0270D9C651A0 0x158 NbStripesSoFar              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TotalLength                               = GetInt64(new IntPtr(p + 0x160)); // 0270D9C651C0 0x160 TotalLength                 ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.Seed                                      = GetUInt64(new IntPtr(p + 0x168)); // 0270D9C651E0 0x168 Seed                        ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.SecretKey                                 = GetSByte(new IntPtr(p + 0x170)); // 0270D9C65200 0x170 SecretKey                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.PadEnd                                    = GetSByte(new IntPtr(p + 0x22C)); // 0270D9C65220 0x22C PadEnd                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Acc                                       = GetUInt64(new IntPtr(p + 0x010)); // 024669CBD748 0x10 Acc                         ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Buffer                                    = GetSByte(new IntPtr(p + 0x050)); // 024669CBD768 0x50 Buffer                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.IsHash64                                  = GetInt32(new IntPtr(p + 0x150)); // 024669CBD788 0x150 IsHash64                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BufferedSize                              = GetInt32(new IntPtr(p + 0x154)); // 024669CBD7A8 0x154 BufferedSize                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NbStripesSoFar                            = GetInt32(new IntPtr(p + 0x158)); // 024669CBD7C8 0x158 NbStripesSoFar              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.TotalLength                               = GetInt64(new IntPtr(p + 0x160)); // 024669CBD7E8 0x160 TotalLength                 ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.Seed                                      = GetUInt64(new IntPtr(p + 0x168)); // 024669CBD808 0x168 Seed                        ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.SecretKey                                 = GetSByte(new IntPtr(p + 0x170)); // 024669CBD828 0x170 SecretKey                   ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.PadEnd                                    = GetSByte(new IntPtr(p + 0x22C)); // 024669CBD848 0x22C PadEnd                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

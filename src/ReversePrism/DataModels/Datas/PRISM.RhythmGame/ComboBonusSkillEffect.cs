@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 024 MaxScoreUpRate                           0001866656B0 ModelPrimitiveType float float float Single
     // 028 ScoreUpRateStep                          0001866656B0 ModelPrimitiveType float float float Single
     // 02C ComboStep                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ComboBonusSkillEffect
+    public partial class ComboBonusSkillEffect : DataModel
     {
         public float                                    MinScoreUpRate                          { get; set; }
         public float                                    MaxScoreUpRate                          { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ComboBonusSkillEffect();
+            var value   = new ComboBonusSkillEffect() { Pointer= p0 };
 
-            value.MinScoreUpRate                            = GetSingle(new IntPtr(p + 0x020)); // 0270D4F8A010 0x20 MinScoreUpRate              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MaxScoreUpRate                            = GetSingle(new IntPtr(p + 0x024)); // 0270D4F8A030 0x24 MaxScoreUpRate              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScoreUpRateStep                           = GetSingle(new IntPtr(p + 0x028)); // 0270D4F8A050 0x28 ScoreUpRateStep             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ComboStep                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D4F8A070 0x2C ComboStep                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MinScoreUpRate                            = GetSingle(new IntPtr(p + 0x020)); // 024665011980 0x20 MinScoreUpRate              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.MaxScoreUpRate                            = GetSingle(new IntPtr(p + 0x024)); // 0246650119A0 0x24 MaxScoreUpRate              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScoreUpRateStep                           = GetSingle(new IntPtr(p + 0x028)); // 0246650119C0 0x28 ScoreUpRateStep             ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ComboStep                                 = GetInt32(new IntPtr(p + 0x02C)); // 0246650119E0 0x2C ComboStep                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

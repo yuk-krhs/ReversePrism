@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 CharacterEncoding                        00018653E590 ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32
     // 024 Volume                                   000186666050 ModelPrimitiveType float float float Single
     // 028 NumCues                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class AcbInfoForMarshaling
+    public partial class AcbInfoForMarshaling : DataModel
     {
         public uint                                     Size                                    { get; set; }
         public uint                                     Version                                 { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AcbInfoForMarshaling();
+            var value   = new AcbInfoForMarshaling() { Pointer= p0 };
 
-            value.Size                                      = GetUInt32(new IntPtr(p + 0x018)); // 0270DACC28D0 0x18 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Version                                   = GetUInt32(new IntPtr(p + 0x01C)); // 0270DACC28F0 0x1C Version                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.CharacterEncoding                         = (CharacterEncoding)GetInt32(new IntPtr(p + 0x020)); // 0270DACC2910 0x20 CharacterEncoding           ( 00018653E590 ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32 )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x024)); // 0270DACC2930 0x24 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.NumCues                                   = GetInt32(new IntPtr(p + 0x028)); // 0270DACC2950 0x28 NumCues                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Size                                      = GetUInt32(new IntPtr(p + 0x018)); // 02466AD2A8D0 0x18 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Version                                   = GetUInt32(new IntPtr(p + 0x01C)); // 02466AD2A8F0 0x1C Version                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.CharacterEncoding                         = (CharacterEncoding)GetInt32(new IntPtr(p + 0x020)); // 02466AD2A910 0x20 CharacterEncoding           ( 00018653E590 ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32 )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x024)); // 02466AD2A930 0x24 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.NumCues                                   = GetInt32(new IntPtr(p + 0x028)); // 02466AD2A950 0x28 NumCues                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

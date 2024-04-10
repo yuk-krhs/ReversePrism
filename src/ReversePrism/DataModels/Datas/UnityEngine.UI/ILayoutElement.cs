@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ILayoutElement
+    public partial class ILayoutElement : DataModel
     {
 
         public static ILayoutElement? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ILayoutElement();
+            var value   = new ILayoutElement() { Pointer= p0 };
 
 
             return value;

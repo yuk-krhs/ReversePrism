@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAlbumPopupView
+    public partial class IAlbumPopupView : DataModel
     {
 
         public static IAlbumPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAlbumPopupView();
+            var value   = new IAlbumPopupView() { Pointer= p0 };
 
 
             return value;

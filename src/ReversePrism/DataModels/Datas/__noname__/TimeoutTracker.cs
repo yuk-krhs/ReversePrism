@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_total                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 M_start                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class TimeoutTracker
+    public partial class TimeoutTracker : DataModel
     {
         public int                                      M_total                                 { get; set; }
         public int                                      M_start                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimeoutTracker();
+            var value   = new TimeoutTracker() { Pointer= p0 };
 
-            value.M_total                                   = GetInt32(new IntPtr(p + 0x010)); // 0270DA09F260 0x10 M_total                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_start                                   = GetInt32(new IntPtr(p + 0x014)); // 0270DA09F280 0x14 M_start                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_total                                   = GetInt32(new IntPtr(p + 0x010)); // 02466A0F3008 0x10 M_total                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_start                                   = GetInt32(new IntPtr(p + 0x014)); // 02466A0F3028 0x14 M_start                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

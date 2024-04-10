@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRetryGashaDrawArgs
+    public partial class IRetryGashaDrawArgs : DataModel
     {
 
         public static IRetryGashaDrawArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRetryGashaDrawArgs();
+            var value   = new IRetryGashaDrawArgs() { Pointer= p0 };
 
 
             return value;

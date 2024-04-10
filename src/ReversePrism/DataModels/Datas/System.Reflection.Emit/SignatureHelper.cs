@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SignatureHelper
+    public partial class SignatureHelper : DataModel
     {
 
         public static SignatureHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SignatureHelper();
+            var value   = new SignatureHelper() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CoreMatrixUtils
+    public partial class CoreMatrixUtils : DataModel
     {
 
         public static CoreMatrixUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CoreMatrixUtils();
+            var value   = new CoreMatrixUtils() { Pointer= p0 };
 
 
             return value;

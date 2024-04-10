@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Delegate                                 000186711D50 ModelClassType UnityAction UnityAction UnityAction Pointer
-    public partial class InvokableCall
+    public partial class InvokableCall : DataModel
     {
         public UnityAction?                             Delegate                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InvokableCall();
+            var value   = new InvokableCall() { Pointer= p0 };
 
-            value.Delegate                                  = GetObject<UnityAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityAction.FromPointer); // 0270D0CAFAB0 0x10 Delegate                    ( 000186711D50 ModelClassType UnityAction UnityAction UnityAction Pointer )
+            value.Delegate                                  = GetObject<UnityAction>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityAction.FromPointer); // 024660BCE208 0x10 Delegate                    ( 000186711D50 ModelClassType UnityAction UnityAction UnityAction Pointer )
 
             return value;
         }

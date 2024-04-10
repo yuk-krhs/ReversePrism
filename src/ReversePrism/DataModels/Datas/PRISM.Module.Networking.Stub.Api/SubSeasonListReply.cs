@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MstSubSeasonIdListFieldNumber            int IL2CPP_TYPE_I4
     // 008 _repeated_mstSubSeasonIdList_codec       FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 020 MstSubSeasonIdList                       000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class SubSeasonListReply
+    public partial class SubSeasonListReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
         public List<int>?                               MstSubSeasonIdList                      { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonListReply();
+            var value   = new SubSeasonListReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D25DB4B0 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.MstSubSeasonIdList                        = GetInt32List(new IntPtr(p + 0x020)); // 0270D25DB510 0x20 MstSubSeasonIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0246625A7AD8 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.MstSubSeasonIdList                        = GetInt32List(new IntPtr(p + 0x020)); // 0246625A7B38 0x20 MstSubSeasonIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

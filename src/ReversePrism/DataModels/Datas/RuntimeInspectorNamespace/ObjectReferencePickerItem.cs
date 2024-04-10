@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 060 M_skinVersion                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 068 M_skin                                   0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer
     // 070 M_isSelected                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ObjectReferencePickerItem
+    public partial class ObjectReferencePickerItem : DataModel
     {
         public Image?                                   Background                              { get; set; }
         public RawImage?                                TexturePreview                          { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectReferencePickerItem();
+            var value   = new ObjectReferencePickerItem() { Pointer= p0 };
 
-            value.Background                                = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 0270DB209260 0x38 Background                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.TexturePreview                            = GetObject<RawImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.RawImage.FromPointer); // 0270DB209280 0x40 TexturePreview              ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.TexturePreviewLayoutElement               = GetObject<LayoutElement>(new IntPtr(p + 0x048), ReversePrism.DataModels.LayoutElement.FromPointer); // 0270DB2092A0 0x48 TexturePreviewLayoutElement ( 00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
-            value.ReferenceNameText                         = GetObject<Text>(new IntPtr(p + 0x050), ReversePrism.DataModels.Text.FromPointer); // 0270DB2092C0 0x50 ReferenceNameText           ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x060)); // 0270DB209300 0x60 M_skinVersion               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x068), ReversePrism.DataModels.UISkin.FromPointer); // 0270DB209320 0x68 M_skin                      ( 0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer )
-            value.M_isSelected                              = GetBool(new IntPtr(p + 0x070)); // 0270DB209340 0x70 M_isSelected                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Background                                = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 02466B269260 0x38 Background                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.TexturePreview                            = GetObject<RawImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.RawImage.FromPointer); // 02466B269280 0x40 TexturePreview              ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.TexturePreviewLayoutElement               = GetObject<LayoutElement>(new IntPtr(p + 0x048), ReversePrism.DataModels.LayoutElement.FromPointer); // 02466B2692A0 0x48 TexturePreviewLayoutElement ( 00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
+            value.ReferenceNameText                         = GetObject<Text>(new IntPtr(p + 0x050), ReversePrism.DataModels.Text.FromPointer); // 02466B2692C0 0x50 ReferenceNameText           ( 000186631C00 ModelClassType Text Text Text Pointer )
+            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x060)); // 02466B269300 0x60 M_skinVersion               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x068), ReversePrism.DataModels.UISkin.FromPointer); // 02466B269320 0x68 M_skin                      ( 0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer )
+            value.M_isSelected                              = GetBool(new IntPtr(p + 0x070)); // 02466B269340 0x70 M_isSelected                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

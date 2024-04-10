@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_FailRefresh                            000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 SimulateAskToBuy                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class FakeAppleExtensions
+    public partial class FakeAppleExtensions : DataModel
     {
         public bool                                     M_FailRefresh                           { get; set; }
         public bool                                     SimulateAskToBuy                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FakeAppleExtensions();
+            var value   = new FakeAppleExtensions() { Pointer= p0 };
 
-            value.M_FailRefresh                             = GetBool(new IntPtr(p + 0x010)); // 0270069161A8 0x10 M_FailRefresh               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SimulateAskToBuy                          = GetBool(new IntPtr(p + 0x011)); // 0270069161C8 0x11 SimulateAskToBuy            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_FailRefresh                             = GetBool(new IntPtr(p + 0x010)); // 0245A68D9070 0x10 M_FailRefresh               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SimulateAskToBuy                          = GetBool(new IntPtr(p + 0x011)); // 0245A68D9090 0x11 SimulateAskToBuy            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 M_Active                                 000186594D10 ModelPrimitiveType bool bool bool Bool
     // 014 M_ThermalActionDelay                     0001866656B0 ModelPrimitiveType float float float Single
     // 018 M_PerformanceActionDelay                 0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptivePerformanceIndexerSettings
+    public partial class AdaptivePerformanceIndexerSettings : DataModel
     {
         public bool                                     M_Active                                { get; set; }
         public float                                    M_ThermalActionDelay                    { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceIndexerSettings();
+            var value   = new AdaptivePerformanceIndexerSettings() { Pointer= p0 };
 
-            value.M_Active                                  = GetBool(new IntPtr(p + 0x010)); // 0270032DB0B0 0x10 M_Active                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ThermalActionDelay                      = GetSingle(new IntPtr(p + 0x014)); // 0270032DB0D0 0x14 M_ThermalActionDelay        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_PerformanceActionDelay                  = GetSingle(new IntPtr(p + 0x018)); // 0270032DB0F0 0x18 M_PerformanceActionDelay    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Active                                  = GetBool(new IntPtr(p + 0x010)); // 0245A32DB0B0 0x10 M_Active                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ThermalActionDelay                      = GetSingle(new IntPtr(p + 0x014)); // 0245A32DB0D0 0x14 M_ThermalActionDelay        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_PerformanceActionDelay                  = GetSingle(new IntPtr(p + 0x018)); // 0245A32DB0F0 0x18 M_PerformanceActionDelay    ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

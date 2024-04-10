@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ScreenTapSkipAnimationPlayerCaller
+    public partial class ScreenTapSkipAnimationPlayerCaller : DataModel
     {
 
         public static ScreenTapSkipAnimationPlayerCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScreenTapSkipAnimationPlayerCaller();
+            var value   = new ScreenTapSkipAnimationPlayerCaller() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdjustEnvironmentExtension
+    public partial class AdjustEnvironmentExtension : DataModel
     {
 
         public static AdjustEnvironmentExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustEnvironmentExtension();
+            var value   = new AdjustEnvironmentExtension() { Pointer= p0 };
 
 
             return value;

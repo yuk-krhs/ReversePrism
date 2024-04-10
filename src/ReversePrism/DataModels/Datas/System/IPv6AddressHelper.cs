@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPv6AddressHelper
+    public partial class IPv6AddressHelper : DataModel
     {
 
         public static IPv6AddressHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPv6AddressHelper();
+            var value   = new IPv6AddressHelper() { Pointer= p0 };
 
 
             return value;

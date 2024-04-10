@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 MstAccessoryIdListFieldNumber            int IL2CPP_TYPE_I4
     // 008 _repeated_mstAccessoryIdList_codec       FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 028 MstAccessoryIdList                       000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class MvIdolStatus
+    public partial class MvIdolStatus : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
         public int                                      MstCostumeId                            { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MvIdolStatus();
+            var value   = new MvIdolStatus() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D1367760 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x01C)); // 0270D13677A0 0x1C MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x020)); // 0270D13677E0 0x20 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 0270D1367840 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0246612F0C60 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x01C)); // 0246612F0CA0 0x1C MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x020)); // 0246612F0CE0 0x20 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 0246612F0D40 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GreaterThanByte
+    public partial class GreaterThanByte : DataModel
     {
 
         public static GreaterThanByte? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GreaterThanByte();
+            var value   = new GreaterThanByte() { Pointer= p0 };
 
 
             return value;

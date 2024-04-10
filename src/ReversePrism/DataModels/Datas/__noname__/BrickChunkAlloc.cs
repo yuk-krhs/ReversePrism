@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 X                                        0001865F36C0 ModelPrimitiveType int int int Int32
     // 014 Y                                        0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 Z                                        0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class BrickChunkAlloc
+    public partial class BrickChunkAlloc : DataModel
     {
         public int                                      X                                       { get; set; }
         public int                                      Y                                       { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BrickChunkAlloc();
+            var value   = new BrickChunkAlloc() { Pointer= p0 };
 
-            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 0270D91E0370 0x10 X                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Y                                         = GetInt32(new IntPtr(p + 0x014)); // 0270D91E0390 0x14 Y                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Z                                         = GetInt32(new IntPtr(p + 0x018)); // 0270D91E03B0 0x18 Z                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 024669232B00 0x10 X                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Y                                         = GetInt32(new IntPtr(p + 0x014)); // 024669232B20 0x14 Y                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Z                                         = GetInt32(new IntPtr(p + 0x018)); // 024669232B40 0x18 Z                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

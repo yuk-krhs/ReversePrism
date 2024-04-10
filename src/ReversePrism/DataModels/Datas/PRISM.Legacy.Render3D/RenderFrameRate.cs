@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <FrameRate>k__BackingField               int IL2CPP_TYPE_I4
-    public partial class RenderFrameRate
+    public partial class RenderFrameRate : DataModel
     {
 
         public static RenderFrameRate? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RenderFrameRate();
+            var value   = new RenderFrameRate() { Pointer= p0 };
 
 
             return value;

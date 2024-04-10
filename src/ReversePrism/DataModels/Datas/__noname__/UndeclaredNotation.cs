@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 LineNo                                   0001865F2F90 ModelPrimitiveType int int int Int32
     // 01C LinePos                                  0001865F2F90 ModelPrimitiveType int int int Int32
     // 020 Next                                     0001865C57B0 ModelClassType UndeclaredNotation UndeclaredNotation UndeclaredNotation Pointer
-    public partial class UndeclaredNotation
+    public partial class UndeclaredNotation : DataModel
     {
         public string                                   Name                                    { get; set; }
         public int                                      LineNo                                  { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UndeclaredNotation();
+            var value   = new UndeclaredNotation() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0270D7476B40 0x10 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.LineNo                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D7476B60 0x18 LineNo                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.LinePos                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D7476B80 0x1C LinePos                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Next                                      = GetObject<UndeclaredNotation>(new IntPtr(p + 0x020), ReversePrism.DataModels.UndeclaredNotation.FromPointer); // 0270D7476BA0 0x20 Next                        ( 0001865C57B0 ModelClassType UndeclaredNotation UndeclaredNotation UndeclaredNotation Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246674D6B40 0x10 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.LineNo                                    = GetInt32(new IntPtr(p + 0x018)); // 0246674D6B60 0x18 LineNo                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LinePos                                   = GetInt32(new IntPtr(p + 0x01C)); // 0246674D6B80 0x1C LinePos                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Next                                      = GetObject<UndeclaredNotation>(new IntPtr(p + 0x020), ReversePrism.DataModels.UndeclaredNotation.FromPointer); // 0246674D6BA0 0x20 Next                        ( 0001865C57B0 ModelClassType UndeclaredNotation UndeclaredNotation UndeclaredNotation Pointer )
 
             return value;
         }

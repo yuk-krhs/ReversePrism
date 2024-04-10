@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 TypeCodeMap                              Dictionary`2<Type, PrimitiveTypeCode> IL2CPP_TYPE_GENERICINST
     // 008 PrimitiveTypeCodes                       TypeInformation[] IL2CPP_TYPE_SZARRAY
     // 010 CastConverters                           ThreadSafeStore`2<StructMultiKey`2<Type, Type>, Func`2<<object>, <object>>> IL2CPP_TYPE_GENERICINST
-    public partial class ConvertUtils
+    public partial class ConvertUtils : DataModel
     {
 
         public static ConvertUtils? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConvertUtils();
+            var value   = new ConvertUtils() { Pointer= p0 };
 
 
             return value;

@@ -48,7 +48,7 @@ namespace ReversePrism.DataModels
     // 030 shared_by_name                           Dictionary`2<string, CultureInfo> IL2CPP_TYPE_GENERICINST
     // 038 S_UserPreferredCultureInfoInAppX         0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
     // 040 IsTaiwanSku                              000186596FC0 ModelPrimitiveType bool bool bool Bool
-    public partial class CultureInfo
+    public partial class CultureInfo : DataModel
     {
         public CultureInfo?                             Default_current_culture                 { get; set; }
         public bool                                     M_isReadOnly                            { get; set; }
@@ -88,39 +88,39 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CultureInfo();
+            var value   = new CultureInfo() { Pointer= p0 };
 
-            value.Default_current_culture                   = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 027002E637F0 0x10 Default_current_culture     ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.M_isReadOnly                              = GetBool(new IntPtr(p + 0x010)); // 027002E63810 0x10 M_isReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CultureID                                 = GetInt32(new IntPtr(p + 0x014)); // 027002E63830 0x14 CultureID                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parent_lcid                               = GetInt32(new IntPtr(p + 0x018)); // 027002E63850 0x18 Parent_lcid                 ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.Datetime_index                            = GetInt32(new IntPtr(p + 0x01C)); // 027002E63870 0x1C Datetime_index              ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.Number_index                              = GetInt32(new IntPtr(p + 0x020)); // 027002E63890 0x20 Number_index                ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.Default_calendar_type                     = GetInt32(new IntPtr(p + 0x024)); // 027002E638B0 0x24 Default_calendar_type       ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.M_useUserOverride                         = GetBool(new IntPtr(p + 0x028)); // 027002E638D0 0x28 M_useUserOverride           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NumInfo                                   = GetObject<NumberFormatInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.NumberFormatInfo.FromPointer); // 027002E638F0 0x30 NumInfo                     ( 0001866C0BE0 ModelClassType NumberFormatInfo NumberFormatInfo NumberFormatInfo Pointer )
-            value.DateTimeInfo                              = GetObject<DateTimeFormatInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.DateTimeFormatInfo.FromPointer); // 027002E63910 0x38 DateTimeInfo                ( 0001865BB310 ModelClassType DateTimeFormatInfo DateTimeFormatInfo DateTimeFormatInfo Pointer )
-            value.TextInfo                                  = GetObject<TextInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextInfo.FromPointer); // 027002E63930 0x40 TextInfo                    ( 00018663DAB0 ModelClassType TextInfo TextInfo TextInfo Pointer )
-            value.M_name                                    = GetString(new IntPtr(p + 0x048)); // 027002E63950 0x48 M_name                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Englishname                               = GetString(new IntPtr(p + 0x050)); // 027002E63970 0x50 Englishname                 ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Nativename                                = GetString(new IntPtr(p + 0x058)); // 027002E63990 0x58 Nativename                  ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Iso3lang                                  = GetString(new IntPtr(p + 0x060)); // 027002E639B0 0x60 Iso3lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Iso2lang                                  = GetString(new IntPtr(p + 0x068)); // 027002E639D0 0x68 Iso2lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Win3lang                                  = GetString(new IntPtr(p + 0x070)); // 027002E639F0 0x70 Win3lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Territory                                 = GetString(new IntPtr(p + 0x078)); // 027002E63A10 0x78 Territory                   ( 0001866742E0 ModelPrimitiveType string string string String )
-            value.Native_calendar_names                     = GetStringList(new IntPtr(p + 0x080)); // 027002E63A30 0x80 Native_calendar_names       ( 000185B82390 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x088), ReversePrism.DataModels.CompareInfo.FromPointer); // 027002E63A50 0x88 CompareInfo                 ( 0001865EB460 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
-            value.M_dataItem                                = GetInt32(new IntPtr(p + 0x098)); // 027002E63A90 0x98 M_dataItem                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Calendar                                  = GetObject<Calendar>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Calendar.FromPointer); // 027002E63AB0 0xA0 Calendar                    ( 0001865A0F00 ModelClassType Calendar Calendar Calendar Pointer )
-            value.Parent_culture                            = GetObject<CultureInfo>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.CultureInfo.FromPointer); // 027002E63AD0 0xA8 Parent_culture              ( 0001865B5970 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.Constructed                               = GetBool(new IntPtr(p + 0x0B0)); // 027002E63AF0 0xB0 Constructed                 ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
-            value.Cached_serialized_form                    = GetSByteList(new IntPtr(p + 0x0B8)); // 027002E63B10 0xB8 Cached_serialized_form      ( 000185B7A6C0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.M_cultureData                             = GetObject<CultureData>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.CultureData.FromPointer); // 027002E63B30 0xC0 M_cultureData               ( 0001866668A0 ModelClassType CultureData CultureData CultureData Pointer )
-            value.M_isInherited                             = GetBool(new IntPtr(p + 0x0C8)); // 027002E63B50 0xC8 M_isInherited               ( 0001865976C0 ModelPrimitiveType bool bool bool Bool )
-            value.S_DefaultThreadCurrentUICulture           = GetObject<CultureInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.CultureInfo.FromPointer); // 027002E63BF0 0x18 S_DefaultThreadCurrentUICulture ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.S_DefaultThreadCurrentCulture             = GetObject<CultureInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.CultureInfo.FromPointer); // 027002E63C10 0x20 S_DefaultThreadCurrentCulture ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.S_UserPreferredCultureInfoInAppX          = GetObject<CultureInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.CultureInfo.FromPointer); // 027002E63C70 0x38 S_UserPreferredCultureInfoInAppX ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.IsTaiwanSku                               = GetBool(new IntPtr(p + 0x040)); // 027002E63C90 0x40 IsTaiwanSku                 ( 000186596FC0 ModelPrimitiveType bool bool bool Bool )
+            value.Default_current_culture                   = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A2E637F0 0x10 Default_current_culture     ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.M_isReadOnly                              = GetBool(new IntPtr(p + 0x010)); // 0245A2E63810 0x10 M_isReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CultureID                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A2E63830 0x14 CultureID                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parent_lcid                               = GetInt32(new IntPtr(p + 0x018)); // 0245A2E63850 0x18 Parent_lcid                 ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.Datetime_index                            = GetInt32(new IntPtr(p + 0x01C)); // 0245A2E63870 0x1C Datetime_index              ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.Number_index                              = GetInt32(new IntPtr(p + 0x020)); // 0245A2E63890 0x20 Number_index                ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.Default_calendar_type                     = GetInt32(new IntPtr(p + 0x024)); // 0245A2E638B0 0x24 Default_calendar_type       ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.M_useUserOverride                         = GetBool(new IntPtr(p + 0x028)); // 0245A2E638D0 0x28 M_useUserOverride           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NumInfo                                   = GetObject<NumberFormatInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.NumberFormatInfo.FromPointer); // 0245A2E638F0 0x30 NumInfo                     ( 0001866C0BE0 ModelClassType NumberFormatInfo NumberFormatInfo NumberFormatInfo Pointer )
+            value.DateTimeInfo                              = GetObject<DateTimeFormatInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.DateTimeFormatInfo.FromPointer); // 0245A2E63910 0x38 DateTimeInfo                ( 0001865BB310 ModelClassType DateTimeFormatInfo DateTimeFormatInfo DateTimeFormatInfo Pointer )
+            value.TextInfo                                  = GetObject<TextInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextInfo.FromPointer); // 0245A2E63930 0x40 TextInfo                    ( 00018663DAB0 ModelClassType TextInfo TextInfo TextInfo Pointer )
+            value.M_name                                    = GetString(new IntPtr(p + 0x048)); // 0245A2E63950 0x48 M_name                      ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Englishname                               = GetString(new IntPtr(p + 0x050)); // 0245A2E63970 0x50 Englishname                 ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Nativename                                = GetString(new IntPtr(p + 0x058)); // 0245A2E63990 0x58 Nativename                  ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Iso3lang                                  = GetString(new IntPtr(p + 0x060)); // 0245A2E639B0 0x60 Iso3lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Iso2lang                                  = GetString(new IntPtr(p + 0x068)); // 0245A2E639D0 0x68 Iso2lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Win3lang                                  = GetString(new IntPtr(p + 0x070)); // 0245A2E639F0 0x70 Win3lang                    ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Territory                                 = GetString(new IntPtr(p + 0x078)); // 0245A2E63A10 0x78 Territory                   ( 0001866742E0 ModelPrimitiveType string string string String )
+            value.Native_calendar_names                     = GetStringList(new IntPtr(p + 0x080)); // 0245A2E63A30 0x80 Native_calendar_names       ( 000185B82390 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x088), ReversePrism.DataModels.CompareInfo.FromPointer); // 0245A2E63A50 0x88 CompareInfo                 ( 0001865EB460 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
+            value.M_dataItem                                = GetInt32(new IntPtr(p + 0x098)); // 0245A2E63A90 0x98 M_dataItem                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Calendar                                  = GetObject<Calendar>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Calendar.FromPointer); // 0245A2E63AB0 0xA0 Calendar                    ( 0001865A0F00 ModelClassType Calendar Calendar Calendar Pointer )
+            value.Parent_culture                            = GetObject<CultureInfo>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A2E63AD0 0xA8 Parent_culture              ( 0001865B5970 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.Constructed                               = GetBool(new IntPtr(p + 0x0B0)); // 0245A2E63AF0 0xB0 Constructed                 ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.Cached_serialized_form                    = GetSByteList(new IntPtr(p + 0x0B8)); // 0245A2E63B10 0xB8 Cached_serialized_form      ( 000185B7A6C0 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.M_cultureData                             = GetObject<CultureData>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.CultureData.FromPointer); // 0245A2E63B30 0xC0 M_cultureData               ( 0001866668A0 ModelClassType CultureData CultureData CultureData Pointer )
+            value.M_isInherited                             = GetBool(new IntPtr(p + 0x0C8)); // 0245A2E63B50 0xC8 M_isInherited               ( 0001865976C0 ModelPrimitiveType bool bool bool Bool )
+            value.S_DefaultThreadCurrentUICulture           = GetObject<CultureInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A2E63BF0 0x18 S_DefaultThreadCurrentUICulture ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.S_DefaultThreadCurrentCulture             = GetObject<CultureInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A2E63C10 0x20 S_DefaultThreadCurrentCulture ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.S_UserPreferredCultureInfoInAppX          = GetObject<CultureInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A2E63C70 0x38 S_UserPreferredCultureInfoInAppX ( 0001865B4CE0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.IsTaiwanSku                               = GetBool(new IntPtr(p + 0x040)); // 0245A2E63C90 0x40 IsTaiwanSku                 ( 000186596FC0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

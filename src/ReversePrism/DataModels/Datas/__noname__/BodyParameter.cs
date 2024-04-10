@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 03C Color                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 040 SkinBright                               0001866722E0 ModelPrimitiveType string string string String
     // 048 SkinDark                                 0001866722E0 ModelPrimitiveType string string string String
-    public partial class BodyParameter
+    public partial class BodyParameter : DataModel
     {
         public string                                   CharaName                               { get; set; }
         public string                                   CharaID                                 { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BodyParameter();
+            var value   = new BodyParameter() { Pointer= p0 };
 
-            value.CharaName                                 = GetString(new IntPtr(p + 0x010)); // 0270069E3268 0x10 CharaName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CharaID                                   = GetString(new IntPtr(p + 0x018)); // 0270069E3288 0x18 CharaID                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Height                                    = GetSingle(new IntPtr(p + 0x020)); // 0270069E32A8 0x20 Height                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Bust                                      = GetSingle(new IntPtr(p + 0x024)); // 0270069E32C8 0x24 Bust                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Head                                      = GetSingle(new IntPtr(p + 0x028)); // 0270069E32E8 0x28 Head                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Thin                                      = GetSingle(new IntPtr(p + 0x02C)); // 0270069E3308 0x2C Thin                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Shoulder                                  = GetSingle(new IntPtr(p + 0x030)); // 0270069E3328 0x30 Shoulder                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Hip                                       = GetSingle(new IntPtr(p + 0x034)); // 0270069E3348 0x34 Hip                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Skin                                      = GetInt32(new IntPtr(p + 0x038)); // 0270069E3368 0x38 Skin                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Color                                     = GetInt32(new IntPtr(p + 0x03C)); // 0270069E3388 0x3C Color                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SkinBright                                = GetString(new IntPtr(p + 0x040)); // 0270069E33A8 0x40 SkinBright                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SkinDark                                  = GetString(new IntPtr(p + 0x048)); // 0270069E33C8 0x48 SkinDark                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CharaName                                 = GetString(new IntPtr(p + 0x010)); // 0245A699F578 0x10 CharaName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.CharaID                                   = GetString(new IntPtr(p + 0x018)); // 0245A699F598 0x18 CharaID                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Height                                    = GetSingle(new IntPtr(p + 0x020)); // 0245A699F5B8 0x20 Height                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Bust                                      = GetSingle(new IntPtr(p + 0x024)); // 0245A699F5D8 0x24 Bust                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Head                                      = GetSingle(new IntPtr(p + 0x028)); // 0245A699F5F8 0x28 Head                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Thin                                      = GetSingle(new IntPtr(p + 0x02C)); // 0245A699F618 0x2C Thin                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Shoulder                                  = GetSingle(new IntPtr(p + 0x030)); // 0245A699F638 0x30 Shoulder                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Hip                                       = GetSingle(new IntPtr(p + 0x034)); // 0245A699F658 0x34 Hip                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Skin                                      = GetInt32(new IntPtr(p + 0x038)); // 0245A699F678 0x38 Skin                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Color                                     = GetInt32(new IntPtr(p + 0x03C)); // 0245A699F698 0x3C Color                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SkinBright                                = GetString(new IntPtr(p + 0x040)); // 0245A699F6B8 0x40 SkinBright                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SkinDark                                  = GetString(new IntPtr(p + 0x048)); // 0245A699F6D8 0x48 SkinDark                    ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

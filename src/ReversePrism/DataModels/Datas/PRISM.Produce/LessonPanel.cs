@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 0D0 LessonTitle                              000186520250 ModelClassType LessonTitleContent LessonTitleContent LessonTitleContent Pointer
-    public partial class LessonPanel
+    public partial class LessonPanel : DataModel
     {
         public LessonTitleContent?                      LessonTitle                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LessonPanel();
+            var value   = new LessonPanel() { Pointer= p0 };
 
-            value.LessonTitle                               = GetObject<LessonTitleContent>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.LessonTitleContent.FromPointer); // 0270D5BF2C70 0xD0 LessonTitle                 ( 000186520250 ModelClassType LessonTitleContent LessonTitleContent LessonTitleContent Pointer )
+            value.LessonTitle                               = GetObject<LessonTitleContent>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.LessonTitleContent.FromPointer); // 024665C63548 0xD0 LessonTitle                 ( 000186520250 ModelClassType LessonTitleContent LessonTitleContent LessonTitleContent Pointer )
 
             return value;
         }

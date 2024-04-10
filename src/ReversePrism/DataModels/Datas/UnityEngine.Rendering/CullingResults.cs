@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 ptr                                      <int> IL2CPP_TYPE_I
     // 018 m_AllocationInfo                         IntPtr IL2CPP_TYPE_PTR
-    public partial class CullingResults
+    public partial class CullingResults : DataModel
     {
 
         public static CullingResults? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CullingResults();
+            var value   = new CullingResults() { Pointer= p0 };
 
 
             return value;

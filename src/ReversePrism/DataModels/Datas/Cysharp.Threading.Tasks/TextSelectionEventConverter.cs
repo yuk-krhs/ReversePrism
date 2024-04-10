@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 innerEvent                               UnityEvent`3<string, int, int> IL2CPP_TYPE_GENERICINST
     // 038 invokeDelegate                           UnityAction`3<string, int, int> IL2CPP_TYPE_GENERICINST
-    public partial class TextSelectionEventConverter
+    public partial class TextSelectionEventConverter : DataModel
     {
 
         public static TextSelectionEventConverter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextSelectionEventConverter();
+            var value   = new TextSelectionEventConverter() { Pointer= p0 };
 
 
             return value;

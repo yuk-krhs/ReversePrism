@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UriFormatException
+    public partial class UriFormatException : DataModel
     {
 
         public static UriFormatException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UriFormatException();
+            var value   = new UriFormatException() { Pointer= p0 };
 
 
             return value;

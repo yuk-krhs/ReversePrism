@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 FUnitIcon                                00018654D050 ModelClassType FUnitIconView FUnitIconView FUnitIconView Pointer
     // 038 SettingsObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class PvpUnitEditGridViewCell
+    public partial class PvpUnitEditGridViewCell : DataModel
     {
         public FUnitIconView?                           FUnitIcon                               { get; set; }
         public GameObject?                              SettingsObject                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpUnitEditGridViewCell();
+            var value   = new PvpUnitEditGridViewCell() { Pointer= p0 };
 
-            value.FUnitIcon                                 = GetObject<FUnitIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUnitIconView.FromPointer); // 0270DA14B7B0 0x30 FUnitIcon                   ( 00018654D050 ModelClassType FUnitIconView FUnitIconView FUnitIconView Pointer )
-            value.SettingsObject                            = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA14B7D0 0x38 SettingsObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.FUnitIcon                                 = GetObject<FUnitIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUnitIconView.FromPointer); // 02466A1A6FC8 0x30 FUnitIcon                   ( 00018654D050 ModelClassType FUnitIconView FUnitIconView FUnitIconView Pointer )
+            value.SettingsObject                            = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1A6FE8 0x38 SettingsObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

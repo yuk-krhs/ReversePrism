@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 ContentArea                              000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    public partial class IdolSkillContentListView
+    public partial class IdolSkillContentListView : DataModel
     {
         public RectTransform?                           ContentArea                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillContentListView();
+            var value   = new IdolSkillContentListView() { Pointer= p0 };
 
-            value.ContentArea                               = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D5BCD6C0 0x30 ContentArea                 ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ContentArea                               = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 024665C3DF38 0x30 ContentArea                 ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InsufficientExecutionStackException
+    public partial class InsufficientExecutionStackException : DataModel
     {
 
         public static InsufficientExecutionStackException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InsufficientExecutionStackException();
+            var value   = new InsufficientExecutionStackException() { Pointer= p0 };
 
 
             return value;

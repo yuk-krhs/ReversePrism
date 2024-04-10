@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileEditPlayerNameConfirmPopupViewFactory
+    public partial class ProfileEditPlayerNameConfirmPopupViewFactory : DataModel
     {
 
         public static ProfileEditPlayerNameConfirmPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileEditPlayerNameConfirmPopupViewFactory();
+            var value   = new ProfileEditPlayerNameConfirmPopupViewFactory() { Pointer= p0 };
 
 
             return value;

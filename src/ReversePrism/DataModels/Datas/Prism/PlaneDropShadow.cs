@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 038 MaxHeight                                0001866656B0 ModelPrimitiveType float float float Single
     // 040 DataList                                 000185CF97A8 ModelClassListType List`1<PlaneDropShadowData> List`1<PlaneDropShadowData> List<PlaneDropShadowData> Pointer
     // 048 Zbias                                    0001866656B0 ModelPrimitiveType float float float Single
-    public partial class PlaneDropShadow
+    public partial class PlaneDropShadow : DataModel
     {
         public MeshRenderer?                            MeshRenderer                            { get; set; }
         public Color                                    BaseColor                               { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlaneDropShadow();
+            var value   = new PlaneDropShadow() { Pointer= p0 };
 
-            value.MeshRenderer                              = GetObject<MeshRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MeshRenderer.FromPointer); // 027006AAC800 0x20 MeshRenderer                ( 000186603F80 ModelClassType MeshRenderer MeshRenderer MeshRenderer Pointer )
-            value.BaseColor                                 = (Color)GetInt32(new IntPtr(p + 0x028)); // 027006AAC820 0x28 BaseColor                   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.MaxHeight                                 = GetSingle(new IntPtr(p + 0x038)); // 027006AAC840 0x38 MaxHeight                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.DataList                                  = GetObjectList<PlaneDropShadowData>(new IntPtr(p + 0x040), ReversePrism.DataModels.PlaneDropShadowData.FromPointer); // 027006AAC860 0x40 DataList                    ( 000185CF97A8 ModelClassListType List`1<PlaneDropShadowData> List`1<PlaneDropShadowData> List<PlaneDropShadowData> Pointer )
-            value.Zbias                                     = GetSingle(new IntPtr(p + 0x048)); // 027006AAC880 0x48 Zbias                       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.MeshRenderer                              = GetObject<MeshRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MeshRenderer.FromPointer); // 0245A6A5CC40 0x20 MeshRenderer                ( 000186603F80 ModelClassType MeshRenderer MeshRenderer MeshRenderer Pointer )
+            value.BaseColor                                 = (Color)GetInt32(new IntPtr(p + 0x028)); // 0245A6A5CC60 0x28 BaseColor                   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.MaxHeight                                 = GetSingle(new IntPtr(p + 0x038)); // 0245A6A5CC80 0x38 MaxHeight                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.DataList                                  = GetObjectList<PlaneDropShadowData>(new IntPtr(p + 0x040), ReversePrism.DataModels.PlaneDropShadowData.FromPointer); // 0245A6A5CCA0 0x40 DataList                    ( 000185CF97A8 ModelClassListType List`1<PlaneDropShadowData> List`1<PlaneDropShadowData> List<PlaneDropShadowData> Pointer )
+            value.Zbias                                     = GetSingle(new IntPtr(p + 0x048)); // 0245A6A5CCC0 0x48 Zbias                       ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

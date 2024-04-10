@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Value                                    0001866722E0 ModelPrimitiveType string string string String
     // 018 Type                                     0001866722E0 ModelPrimitiveType string string string String
-    public partial class Url
+    public partial class Url : DataModel
     {
         public string                                   Value                                   { get; set; }
         public string                                   Type                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Url();
+            var value   = new Url() { Pointer= p0 };
 
-            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 0270DB4B0700 0x10 Value                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0270DB4B0720 0x18 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 02466B53D650 0x10 Value                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466B53D670 0x18 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

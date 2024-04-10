@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 maxMimeParts                             int IL2CPP_TYPE_I4
     // 004 settingsInitalized                       bool IL2CPP_TYPE_BOOLEAN
     // 008 appSettingsLock                          <object> IL2CPP_TYPE_OBJECT
-    public partial class AppSettings
+    public partial class AppSettings : DataModel
     {
 
         public static AppSettings? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AppSettings();
+            var value   = new AppSettings() { Pointer= p0 };
 
 
             return value;

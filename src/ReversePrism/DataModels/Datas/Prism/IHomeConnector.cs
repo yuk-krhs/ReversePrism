@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHomeConnector
+    public partial class IHomeConnector : DataModel
     {
 
         public static IHomeConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHomeConnector();
+            var value   = new IHomeConnector() { Pointer= p0 };
 
 
             return value;

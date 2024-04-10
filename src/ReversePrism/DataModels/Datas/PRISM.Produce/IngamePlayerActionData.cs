@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 BeforeGraveyardList                      000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer
     // 020 BeforeHandList                           000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer
     // 028 ExceptHandAndGraveyards                  000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer
-    public partial class IngamePlayerActionData
+    public partial class IngamePlayerActionData : DataModel
     {
         public List<IngamePCardModel>?                  BeforeDeckDataList                      { get; set; }
         public List<IngamePCardModel>?                  BeforeGraveyardList                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngamePlayerActionData();
+            var value   = new IngamePlayerActionData() { Pointer= p0 };
 
-            value.BeforeDeckDataList                        = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B66288 0x10 BeforeDeckDataList          ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.BeforeGraveyardList                       = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B662A8 0x18 BeforeGraveyardList         ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.BeforeHandList                            = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B662C8 0x20 BeforeHandList              ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.ExceptHandAndGraveyards                   = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B662E8 0x28 ExceptHandAndGraveyards     ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.BeforeDeckDataList                        = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BC6A68 0x10 BeforeDeckDataList          ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.BeforeGraveyardList                       = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BC6A88 0x18 BeforeGraveyardList         ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.BeforeHandList                            = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BC6AA8 0x20 BeforeHandList              ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.ExceptHandAndGraveyards                   = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BC6AC8 0x28 ExceptHandAndGraveyards     ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
 
             return value;
         }

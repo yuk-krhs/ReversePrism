@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FrameCountTypeExtensions
+    public partial class FrameCountTypeExtensions : DataModel
     {
 
         public static FrameCountTypeExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameCountTypeExtensions();
+            var value   = new FrameCountTypeExtensions() { Pointer= p0 };
 
 
             return value;

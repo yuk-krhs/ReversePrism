@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Description                              000186671910 ModelPrimitiveType string string string String
     // 000 UrlFieldNumber                           int IL2CPP_TYPE_I4
     // 020 Url                                      000186671910 ModelPrimitiveType string string string String
-    public partial class Link
+    public partial class Link : DataModel
     {
         public string                                   Description                             { get; set; }
         public string                                   Url                                     { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Link();
+            var value   = new Link() { Pointer= p0 };
 
-            value.Description                               = GetString(new IntPtr(p + 0x018)); // 0270DA6FC978 0x18 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 0270DA6FC9B8 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x018)); // 02466A74F6D8 0x18 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 02466A74F718 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

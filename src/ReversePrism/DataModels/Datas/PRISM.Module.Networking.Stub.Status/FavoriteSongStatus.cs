@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 MstSongIdListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_mstSongIdList_codec            FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 028 MstSongIdList                            000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class FavoriteSongStatus
+    public partial class FavoriteSongStatus : DataModel
     {
         public FavoriteSongSlot                         Slot                                    { get; set; }
         public string                                   Name                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FavoriteSongStatus();
+            var value   = new FavoriteSongStatus() { Pointer= p0 };
 
-            value.Slot                                      = (FavoriteSongSlot)GetInt32(new IntPtr(p + 0x018)); // 0270D133C668 0x18 Slot                        ( 00018655C790 ModelEnumType FavoriteSongSlot FavoriteSongSlot FavoriteSongSlot Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0270D133C6A8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstSongIdList                             = GetInt32List(new IntPtr(p + 0x028)); // 0270D133C708 0x28 MstSongIdList               ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Slot                                      = (FavoriteSongSlot)GetInt32(new IntPtr(p + 0x018)); // 0246612C31E0 0x18 Slot                        ( 00018655C790 ModelEnumType FavoriteSongSlot FavoriteSongSlot FavoriteSongSlot Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246612C3220 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstSongIdList                             = GetInt32List(new IntPtr(p + 0x028)); // 0246612C3280 0x28 MstSongIdList               ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

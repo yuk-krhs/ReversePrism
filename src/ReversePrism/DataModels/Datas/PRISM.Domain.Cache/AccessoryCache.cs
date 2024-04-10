@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 accessoryMap                             Dictionary`2<int, IAccessoryStatus> IL2CPP_TYPE_GENERICINST
     // 018 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class AccessoryCache
+    public partial class AccessoryCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AccessoryCache();
+            var value   = new AccessoryCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 027004A85490 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0245A4ADBE70 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

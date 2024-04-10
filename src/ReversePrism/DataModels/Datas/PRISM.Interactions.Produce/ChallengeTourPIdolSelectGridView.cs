@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 CellPrefab                               000186576AB0 ModelClassType ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell Pointer
-    public partial class ChallengeTourPIdolSelectGridView
+    public partial class ChallengeTourPIdolSelectGridView : DataModel
     {
         public ChallengeTourPIdolSelectGridViewCell?    CellPrefab                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourPIdolSelectGridView();
+            var value   = new ChallengeTourPIdolSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<ChallengeTourPIdolSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ChallengeTourPIdolSelectGridViewCell.FromPointer); // 0270DA1BE760 0x90 CellPrefab                  ( 000186576AB0 ModelClassType ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<ChallengeTourPIdolSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ChallengeTourPIdolSelectGridViewCell.FromPointer); // 02466A221E78 0x90 CellPrefab                  ( 000186576AB0 ModelClassType ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell ChallengeTourPIdolSelectGridViewCell Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LocalizerTextReader
+    public partial class LocalizerTextReader : DataModel
     {
 
         public static LocalizerTextReader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalizerTextReader();
+            var value   = new LocalizerTextReader() { Pointer= p0 };
 
 
             return value;

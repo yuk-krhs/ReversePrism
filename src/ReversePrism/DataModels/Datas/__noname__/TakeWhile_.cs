@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   TakeWhileObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class TakeWhile_
+    public partial class TakeWhile_ : DataModel
     {
 
         public static TakeWhile_? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TakeWhile_();
+            var value   = new TakeWhile_() { Pointer= p0 };
 
 
             return value;

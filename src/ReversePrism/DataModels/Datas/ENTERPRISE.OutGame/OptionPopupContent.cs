@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 OptionData                               0001866E6E30 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer
     // 068 TabGroup                                 0001866E8440 ModelClassType OptionSettingsGroup OptionSettingsGroup OptionSettingsGroup Pointer
-    public partial class OptionPopupContent
+    public partial class OptionPopupContent : DataModel
     {
         public OptionLocalSave?                         OptionData                              { get; set; }
         public OptionSettingsGroup?                     TabGroup                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OptionPopupContent();
+            var value   = new OptionPopupContent() { Pointer= p0 };
 
-            value.OptionData                                = GetObject<OptionLocalSave>(new IntPtr(p + 0x060), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 0270D4C089C8 0x60 OptionData                  ( 0001866E6E30 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
-            value.TabGroup                                  = GetObject<OptionSettingsGroup>(new IntPtr(p + 0x068), ReversePrism.DataModels.OptionSettingsGroup.FromPointer); // 0270D4C089E8 0x68 TabGroup                    ( 0001866E8440 ModelClassType OptionSettingsGroup OptionSettingsGroup OptionSettingsGroup Pointer )
+            value.OptionData                                = GetObject<OptionLocalSave>(new IntPtr(p + 0x060), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 024664C6BAF0 0x60 OptionData                  ( 0001866E6E30 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
+            value.TabGroup                                  = GetObject<OptionSettingsGroup>(new IntPtr(p + 0x068), ReversePrism.DataModels.OptionSettingsGroup.FromPointer); // 024664C6BB10 0x68 TabGroup                    ( 0001866E8440 ModelClassType OptionSettingsGroup OptionSettingsGroup OptionSettingsGroup Pointer )
 
             return value;
         }

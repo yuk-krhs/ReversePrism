@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 CultureName                              000186671910 ModelPrimitiveType string string string String
-    public partial class MissingSatelliteAssemblyException
+    public partial class MissingSatelliteAssemblyException : DataModel
     {
         public string                                   CultureName                             { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissingSatelliteAssemblyException();
+            var value   = new MissingSatelliteAssemblyException() { Pointer= p0 };
 
-            value.CultureName                               = GetString(new IntPtr(p + 0x090)); // 0270D6CC17F0 0x90 CultureName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.CultureName                               = GetString(new IntPtr(p + 0x090)); // 024666D217F0 0x90 CultureName                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

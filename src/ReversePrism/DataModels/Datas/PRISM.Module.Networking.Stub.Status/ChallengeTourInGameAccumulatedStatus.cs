@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 038 Counter                                  0001865702E0 ModelClassType ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus Pointer
     // 000 SelfMentalDecreaseCountFieldNumber       int IL2CPP_TYPE_I4
     // 040 SelfMentalDecreaseCount                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourInGameAccumulatedStatus
+    public partial class ChallengeTourInGameAccumulatedStatus : DataModel
     {
         public int                                      SelfMentalBreakCount                    { get; set; }
         public int                                      SelfMentalRecoveryCount                 { get; set; }
@@ -43,16 +43,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourInGameAccumulatedStatus();
+            var value   = new ChallengeTourInGameAccumulatedStatus() { Pointer= p0 };
 
-            value.SelfMentalBreakCount                      = GetInt32(new IntPtr(p + 0x018)); // 0270041526D0 0x18 SelfMentalBreakCount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelfMentalRecoveryCount                   = GetInt32(new IntPtr(p + 0x01C)); // 027004152710 0x1C SelfMentalRecoveryCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OpponentMentalBreakCount                  = GetInt32(new IntPtr(p + 0x020)); // 027004152750 0x20 OpponentMentalBreakCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OpponentMentalDecreaseCount               = GetInt32(new IntPtr(p + 0x024)); // 027004152790 0x24 OpponentMentalDecreaseCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AvoidCount                                = GetInt32(new IntPtr(p + 0x028)); // 0270041527D0 0x28 AvoidCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CardAction                                = GetObject<ChallengeTourInGameCardActionStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourInGameCardActionStatus.FromPointer); // 027004152810 0x30 CardAction                  ( 00018656F3B0 ModelClassType ChallengeTourInGameCardActionStatus ChallengeTourInGameCardActionStatus ChallengeTourInGameCardActionStatus Pointer )
-            value.Counter                                   = GetObject<ChallengeTourInGameCounterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourInGameCounterStatus.FromPointer); // 027004152850 0x38 Counter                     ( 0001865702E0 ModelClassType ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus Pointer )
-            value.SelfMentalDecreaseCount                   = GetInt32(new IntPtr(p + 0x040)); // 027004152890 0x40 SelfMentalDecreaseCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelfMentalBreakCount                      = GetInt32(new IntPtr(p + 0x018)); // 024660ECF070 0x18 SelfMentalBreakCount        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelfMentalRecoveryCount                   = GetInt32(new IntPtr(p + 0x01C)); // 024660ECF0B0 0x1C SelfMentalRecoveryCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OpponentMentalBreakCount                  = GetInt32(new IntPtr(p + 0x020)); // 024660ECF0F0 0x20 OpponentMentalBreakCount    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OpponentMentalDecreaseCount               = GetInt32(new IntPtr(p + 0x024)); // 024660ECF130 0x24 OpponentMentalDecreaseCount ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AvoidCount                                = GetInt32(new IntPtr(p + 0x028)); // 024660ECF170 0x28 AvoidCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CardAction                                = GetObject<ChallengeTourInGameCardActionStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourInGameCardActionStatus.FromPointer); // 024660ECF1B0 0x30 CardAction                  ( 00018656F3B0 ModelClassType ChallengeTourInGameCardActionStatus ChallengeTourInGameCardActionStatus ChallengeTourInGameCardActionStatus Pointer )
+            value.Counter                                   = GetObject<ChallengeTourInGameCounterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourInGameCounterStatus.FromPointer); // 024660ECF1F0 0x38 Counter                     ( 0001865702E0 ModelClassType ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus ChallengeTourInGameCounterStatus Pointer )
+            value.SelfMentalDecreaseCount                   = GetInt32(new IntPtr(p + 0x040)); // 024660ECF230 0x40 SelfMentalDecreaseCount     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

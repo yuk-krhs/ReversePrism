@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 050 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
     // 058 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class CampaignIconStatus
+    public partial class CampaignIconStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -39,15 +39,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CampaignIconStatus();
+            var value   = new CampaignIconStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D0B4CC90 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D0B4CCB0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MenuType                                  = (MenuType)GetInt32(new IntPtr(p + 0x038)); // 0270D0B4CD30 0x38 MenuType                    ( 0001865FDCF0 ModelEnumType MenuType MenuType MenuType Int32 )
-            value.CampaignIconResourceList                  = GetStringList(new IntPtr(p + 0x040)); // 0270D0B4CD90 0x40 CampaignIconResourceList    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.CampaignIconResource                      = GetString(new IntPtr(p + 0x048)); // 0270D0B4CDD0 0x48 CampaignIconResource        ( 000186671910 ModelPrimitiveType string string string String )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B4CE10 0x50 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0B4CE50 0x58 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 024660B41F20 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 024660B41F40 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MenuType                                  = (MenuType)GetInt32(new IntPtr(p + 0x038)); // 024660B41FC0 0x38 MenuType                    ( 0001865FDCF0 ModelEnumType MenuType MenuType MenuType Int32 )
+            value.CampaignIconResourceList                  = GetStringList(new IntPtr(p + 0x040)); // 024660B42020 0x40 CampaignIconResourceList    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.CampaignIconResource                      = GetString(new IntPtr(p + 0x048)); // 024660B42060 0x48 CampaignIconResource        ( 000186671910 ModelPrimitiveType string string string String )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B420A0 0x50 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 024660B420E0 0x58 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

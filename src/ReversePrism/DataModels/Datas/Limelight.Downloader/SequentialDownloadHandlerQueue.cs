@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SequentialDownloadHandlerQueue
+    public partial class SequentialDownloadHandlerQueue : DataModel
     {
 
         public static SequentialDownloadHandlerQueue? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SequentialDownloadHandlerQueue();
+            var value   = new SequentialDownloadHandlerQueue() { Pointer= p0 };
 
 
             return value;

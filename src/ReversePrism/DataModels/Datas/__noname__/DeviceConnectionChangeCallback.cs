@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DeviceConnectionChangeCallback
+    public partial class DeviceConnectionChangeCallback : DataModel
     {
 
         public static DeviceConnectionChangeCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DeviceConnectionChangeCallback();
+            var value   = new DeviceConnectionChangeCallback() { Pointer= p0 };
 
 
             return value;

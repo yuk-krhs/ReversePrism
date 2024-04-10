@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerPrefsPersistence
+    public partial class PlayerPrefsPersistence : DataModel
     {
 
         public static PlayerPrefsPersistence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerPrefsPersistence();
+            var value   = new PlayerPrefsPersistence() { Pointer= p0 };
 
 
             return value;

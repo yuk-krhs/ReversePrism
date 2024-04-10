@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HaltonSeq
+    public partial class HaltonSeq : DataModel
     {
 
         public static HaltonSeq? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HaltonSeq();
+            var value   = new HaltonSeq() { Pointer= p0 };
 
 
             return value;

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 028 M_BaseSettings                           000185CFA9B8 ModelClassListType List`1<PostProcessEffectSettings> List`1<PostProcessEffectSettings> List<PostProcessEffectSettings> Pointer
     // 030 M_TempColliders                          000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer
     // 038 settingsTypes                            Dictionary`2<Type, PostProcessAttribute> IL2CPP_TYPE_GENERICINST
-    public partial class PostProcessManager
+    public partial class PostProcessManager : DataModel
     {
         public List<PostProcessVolume>?                 M_Volumes                               { get; set; }
         public List<PostProcessEffectSettings>?         M_BaseSettings                          { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostProcessManager();
+            var value   = new PostProcessManager() { Pointer= p0 };
 
-            value.M_Volumes                                 = GetObjectList<PostProcessVolume>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 027006130AC0 0x18 M_Volumes                   ( 000185CFABD8 ModelClassListType List`1<PostProcessVolume> List`1<PostProcessVolume> List<PostProcessVolume> Pointer )
-            value.M_BaseSettings                            = GetObjectList<PostProcessEffectSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.PostProcessEffectSettings.FromPointer); // 027006130B00 0x28 M_BaseSettings              ( 000185CFA9B8 ModelClassListType List`1<PostProcessEffectSettings> List`1<PostProcessEffectSettings> List<PostProcessEffectSettings> Pointer )
-            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x030), ReversePrism.DataModels.Collider.FromPointer); // 027006130B20 0x30 M_TempColliders             ( 000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
+            value.M_Volumes                                 = GetObjectList<PostProcessVolume>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 0245A60EC748 0x18 M_Volumes                   ( 000185CFABD8 ModelClassListType List`1<PostProcessVolume> List`1<PostProcessVolume> List<PostProcessVolume> Pointer )
+            value.M_BaseSettings                            = GetObjectList<PostProcessEffectSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.PostProcessEffectSettings.FromPointer); // 0245A60EC788 0x28 M_BaseSettings              ( 000185CFA9B8 ModelClassListType List`1<PostProcessEffectSettings> List`1<PostProcessEffectSettings> List<PostProcessEffectSettings> Pointer )
+            value.M_TempColliders                           = GetObjectList<Collider>(new IntPtr(p + 0x030), ReversePrism.DataModels.Collider.FromPointer); // 0245A60EC7A8 0x30 M_TempColliders             ( 000185CD3138 ModelClassListType List`1<Collider> List`1<Collider> List<Collider> Pointer )
 
             return value;
         }

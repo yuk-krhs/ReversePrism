@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 AssetPath                                string IL2CPP_TYPE_STRING
-    public partial class ProduceBackToHomeConfirmationPopupContent
+    public partial class ProduceBackToHomeConfirmationPopupContent : DataModel
     {
 
         public static ProduceBackToHomeConfirmationPopupContent? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceBackToHomeConfirmationPopupContent();
+            var value   = new ProduceBackToHomeConfirmationPopupContent() { Pointer= p0 };
 
 
             return value;

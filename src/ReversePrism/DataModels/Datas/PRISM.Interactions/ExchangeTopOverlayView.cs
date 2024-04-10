@@ -36,7 +36,7 @@ namespace ReversePrism.DataModels
     // 0E8 onGoodsSelect                            Subject`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
     // 0F0 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 0F8 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class ExchangeTopOverlayView
+    public partial class ExchangeTopOverlayView : DataModel
     {
         public UITextMeshProUGUI?                       TitleLabelText                          { get; set; }
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -58,21 +58,21 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeTopOverlayView();
+            var value   = new ExchangeTopOverlayView() { Pointer= p0 };
 
-            value.TitleLabelText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB8C6ED0 0x20 TitleLabelText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB8C6EF0 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CloseButton                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB8C6F10 0x30 CloseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.HistoryButton                             = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB8C6F30 0x38 HistoryButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TabPrefab                                 = GetObject<ExchangeTabItemView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeTabItemView.FromPointer); // 0270DB8C6F70 0x48 TabPrefab                   ( 00018651D830 ModelClassType ExchangeTabItemView ExchangeTabItemView ExchangeTabItemView Pointer )
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITabGroup.FromPointer); // 0270DB8C6F90 0x50 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.PurchaseProductObj                        = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB8C6FB0 0x58 PurchaseProductObj          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoodsGridView                             = GetObject<ExchangeGoodsGridView>(new IntPtr(p + 0x060), ReversePrism.DataModels.ExchangeGoodsGridView.FromPointer); // 0270DB8C6FD0 0x60 GoodsGridView               ( 000186509BA0 ModelClassType ExchangeGoodsGridView ExchangeGoodsGridView ExchangeGoodsGridView Pointer )
-            value.LargeGridView                             = GetObject<ExchangeLargeSpaceGridView>(new IntPtr(p + 0x068), ReversePrism.DataModels.ExchangeLargeSpaceGridView.FromPointer); // 0270DB8C6FF0 0x68 LargeGridView               ( 00018650F2C0 ModelClassType ExchangeLargeSpaceGridView ExchangeLargeSpaceGridView ExchangeLargeSpaceGridView Pointer )
-            value.EventGridView                             = GetObject<ExchangeEventGridView>(new IntPtr(p + 0x070), ReversePrism.DataModels.ExchangeEventGridView.FromPointer); // 0270DB8C7010 0x70 EventGridView               ( 000186778970 ModelClassType ExchangeEventGridView ExchangeEventGridView ExchangeEventGridView Pointer )
-            value.ViewModel                                 = GetObject<ExchangeTopViewModel>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.ExchangeTopViewModel.FromPointer); // 0270DB8C7190 0xD0 ViewModel                   ( 00018651E9F0 ModelClassType ExchangeTopViewModel ExchangeTopViewModel ExchangeTopViewModel Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB8C7210 0xF0 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB8C7230 0xF8 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.TitleLabelText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B94E948 0x20 TitleLabelText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B94E968 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CloseButton                               = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466B94E988 0x30 CloseButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.HistoryButton                             = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466B94E9A8 0x38 HistoryButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TabPrefab                                 = GetObject<ExchangeTabItemView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeTabItemView.FromPointer); // 02466B94E9E8 0x48 TabPrefab                   ( 00018651D830 ModelClassType ExchangeTabItemView ExchangeTabItemView ExchangeTabItemView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466B94EA08 0x50 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.PurchaseProductObj                        = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466B94EA28 0x58 PurchaseProductObj          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoodsGridView                             = GetObject<ExchangeGoodsGridView>(new IntPtr(p + 0x060), ReversePrism.DataModels.ExchangeGoodsGridView.FromPointer); // 02466B94EA48 0x60 GoodsGridView               ( 000186509BA0 ModelClassType ExchangeGoodsGridView ExchangeGoodsGridView ExchangeGoodsGridView Pointer )
+            value.LargeGridView                             = GetObject<ExchangeLargeSpaceGridView>(new IntPtr(p + 0x068), ReversePrism.DataModels.ExchangeLargeSpaceGridView.FromPointer); // 02466B94EA68 0x68 LargeGridView               ( 00018650F2C0 ModelClassType ExchangeLargeSpaceGridView ExchangeLargeSpaceGridView ExchangeLargeSpaceGridView Pointer )
+            value.EventGridView                             = GetObject<ExchangeEventGridView>(new IntPtr(p + 0x070), ReversePrism.DataModels.ExchangeEventGridView.FromPointer); // 02466B94EA88 0x70 EventGridView               ( 000186778970 ModelClassType ExchangeEventGridView ExchangeEventGridView ExchangeEventGridView Pointer )
+            value.ViewModel                                 = GetObject<ExchangeTopViewModel>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.ExchangeTopViewModel.FromPointer); // 02466B94EC08 0xD0 ViewModel                   ( 00018651E9F0 ModelClassType ExchangeTopViewModel ExchangeTopViewModel ExchangeTopViewModel Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B94EC88 0xF0 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B94ECA8 0xF8 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

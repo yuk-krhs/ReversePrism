@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetDirectMessageListReply
+    public partial class IGetDirectMessageListReply : DataModel
     {
 
         public static IGetDirectMessageListReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetDirectMessageListReply();
+            var value   = new IGetDirectMessageListReply() { Pointer= p0 };
 
 
             return value;

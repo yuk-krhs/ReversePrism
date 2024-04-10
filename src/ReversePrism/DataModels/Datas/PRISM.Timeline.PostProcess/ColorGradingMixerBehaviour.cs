@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorGradingMixerBehaviour
+    public partial class ColorGradingMixerBehaviour : DataModel
     {
 
         public static ColorGradingMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorGradingMixerBehaviour();
+            var value   = new ColorGradingMixerBehaviour() { Pointer= p0 };
 
 
             return value;

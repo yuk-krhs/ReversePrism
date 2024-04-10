@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EditRankingCommentArgsTranslator
+    public partial class EditRankingCommentArgsTranslator : DataModel
     {
 
         public static EditRankingCommentArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EditRankingCommentArgsTranslator();
+            var value   = new EditRankingCommentArgsTranslator() { Pointer= p0 };
 
 
             return value;

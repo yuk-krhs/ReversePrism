@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 MaxChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 MaxSamplingRate                          0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C Config                                   000186554410 ModelEnumType TimeStretchConfig TimeStretchConfig TimeStretchConfig Int32
-    public partial class ExTimeStretchConfig
+    public partial class ExTimeStretchConfig : DataModel
     {
         public int                                      NumDsp                                  { get; set; }
         public int                                      MaxChannels                             { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExTimeStretchConfig();
+            var value   = new ExTimeStretchConfig() { Pointer= p0 };
 
-            value.NumDsp                                    = GetInt32(new IntPtr(p + 0x010)); // 0270DAC79E00 0x10 NumDsp                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x014)); // 0270DAC79E20 0x14 MaxChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x018)); // 0270DAC79E40 0x18 MaxSamplingRate             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Config                                    = (TimeStretchConfig)GetInt32(new IntPtr(p + 0x01C)); // 0270DAC79E60 0x1C Config                      ( 000186554410 ModelEnumType TimeStretchConfig TimeStretchConfig TimeStretchConfig Int32 )
+            value.NumDsp                                    = GetInt32(new IntPtr(p + 0x010)); // 02466ACE1E00 0x10 NumDsp                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x014)); // 02466ACE1E20 0x14 MaxChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x018)); // 02466ACE1E40 0x18 MaxSamplingRate             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Config                                    = (TimeStretchConfig)GetInt32(new IntPtr(p + 0x01C)); // 02466ACE1E60 0x1C Config                      ( 000186554410 ModelEnumType TimeStretchConfig TimeStretchConfig TimeStretchConfig Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Epsilon                                  float IL2CPP_TYPE_R4
-    public partial class Mathf
+    public partial class Mathf : DataModel
     {
 
         public static Mathf? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Mathf();
+            var value   = new Mathf() { Pointer= p0 };
 
 
             return value;

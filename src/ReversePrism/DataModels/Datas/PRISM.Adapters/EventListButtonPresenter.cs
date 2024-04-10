@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 saveData                                 SavableJsonObject`1<EventListSaveData> IL2CPP_TYPE_GENERICINST
     // 018 View                                     000186764C40 ModelClassType IEventListButtonView IEventListButtonView IEventListButtonView Pointer
-    public partial class EventListButtonPresenter
+    public partial class EventListButtonPresenter : DataModel
     {
         public IEventListButtonView?                    View                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventListButtonPresenter();
+            var value   = new EventListButtonPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IEventListButtonView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventListButtonView.FromPointer); // 027004FD9218 0x18 View                        ( 000186764C40 ModelClassType IEventListButtonView IEventListButtonView IEventListButtonView Pointer )
+            value.View                                      = GetObject<IEventListButtonView>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEventListButtonView.FromPointer); // 0245A5B3AE88 0x18 View                        ( 000186764C40 ModelClassType IEventListButtonView IEventListButtonView IEventListButtonView Pointer )
 
             return value;
         }

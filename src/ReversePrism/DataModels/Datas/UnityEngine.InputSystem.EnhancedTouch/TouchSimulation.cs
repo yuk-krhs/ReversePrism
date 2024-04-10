@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 058 m_OnDeviceChange                         Action`2<InputDevice, InputDeviceChange> IL2CPP_TYPE_GENERICINST
     // 060 m_OnEvent                                Action`2<InputEventPtr, InputDevice> IL2CPP_TYPE_GENERICINST
     // 000 s_Instance                               TouchSimulation IL2CPP_TYPE_CLASS
-    public partial class TouchSimulation
+    public partial class TouchSimulation : DataModel
     {
         public Touchscreen?                             SimulatedTouchscreen                    { get; set; }
         public int                                      M_NumPointers                           { get; set; }
@@ -36,16 +36,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchSimulation();
+            var value   = new TouchSimulation() { Pointer= p0 };
 
-            value.SimulatedTouchscreen                      = GetObject<Touchscreen>(new IntPtr(p + 0x020), ReversePrism.DataModels.Touchscreen.FromPointer); // 0270D77F8910 0x20 SimulatedTouchscreen        ( 0001866950C0 ModelClassType Touchscreen Touchscreen Touchscreen Pointer )
-            value.M_NumPointers                             = GetInt32(new IntPtr(p + 0x028)); // 0270D77F8930 0x28 M_NumPointers               ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.M_Pointers                                = GetObjectList<Pointer>(new IntPtr(p + 0x030), ReversePrism.DataModels.Pointer.FromPointer); // 0270D77F8950 0x30 M_Pointers                  ( 000185B9BB60 ModelClassListType Pointer[] Pointer[] List<Pointer> Pointer )
-            value.M_CurrentPositions                        = GetEnumList<Vector2>(new IntPtr(p + 0x038)); // 0270D77F8970 0x38 M_CurrentPositions          ( 000185CB0928 ModelEnumListType Vector2[] Vector2[] List<Vector2> Pointer )
-            value.M_CurrentDisplayIndices                   = GetInt32List(new IntPtr(p + 0x040)); // 0270D77F8990 0x40 M_CurrentDisplayIndices     ( 000185B7DFD0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.M_Touches                                 = GetObjectList<ButtonControl>(new IntPtr(p + 0x048), ReversePrism.DataModels.ButtonControl.FromPointer); // 0270D77F89B0 0x48 M_Touches                   ( 000185B72160 ModelClassListType ButtonControl[] ButtonControl[] List<ButtonControl> Pointer )
-            value.M_LastTouchId                             = GetInt32(new IntPtr(p + 0x050)); // 0270D77F89D0 0x50 M_LastTouchId               ( 0001865F5290 ModelPrimitiveType int int int Int32 )
-            value.M_PrimaryTouchIndex                       = GetInt32(new IntPtr(p + 0x054)); // 0270D77F89F0 0x54 M_PrimaryTouchIndex         ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.SimulatedTouchscreen                      = GetObject<Touchscreen>(new IntPtr(p + 0x020), ReversePrism.DataModels.Touchscreen.FromPointer); // 024667850910 0x20 SimulatedTouchscreen        ( 0001866950C0 ModelClassType Touchscreen Touchscreen Touchscreen Pointer )
+            value.M_NumPointers                             = GetInt32(new IntPtr(p + 0x028)); // 024667850930 0x28 M_NumPointers               ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.M_Pointers                                = GetObjectList<Pointer>(new IntPtr(p + 0x030), ReversePrism.DataModels.Pointer.FromPointer); // 024667850950 0x30 M_Pointers                  ( 000185B9BB60 ModelClassListType Pointer[] Pointer[] List<Pointer> Pointer )
+            value.M_CurrentPositions                        = GetEnumList<Vector2>(new IntPtr(p + 0x038)); // 024667850970 0x38 M_CurrentPositions          ( 000185CB0928 ModelEnumListType Vector2[] Vector2[] List<Vector2> Pointer )
+            value.M_CurrentDisplayIndices                   = GetInt32List(new IntPtr(p + 0x040)); // 024667850990 0x40 M_CurrentDisplayIndices     ( 000185B7DFD0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_Touches                                 = GetObjectList<ButtonControl>(new IntPtr(p + 0x048), ReversePrism.DataModels.ButtonControl.FromPointer); // 0246678509B0 0x48 M_Touches                   ( 000185B72160 ModelClassListType ButtonControl[] ButtonControl[] List<ButtonControl> Pointer )
+            value.M_LastTouchId                             = GetInt32(new IntPtr(p + 0x050)); // 0246678509D0 0x50 M_LastTouchId               ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.M_PrimaryTouchIndex                       = GetInt32(new IntPtr(p + 0x054)); // 0246678509F0 0x54 M_PrimaryTouchIndex         ( 0001865F5290 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

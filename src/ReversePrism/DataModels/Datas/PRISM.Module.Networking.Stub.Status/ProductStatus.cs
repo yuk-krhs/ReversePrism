@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 040 NaviType                                 0001867404C0 ModelEnumType ItemNaviType ItemNaviType ItemNaviType Int32
     // 000 SortIdFieldNumber                        int IL2CPP_TYPE_I4
     // 044 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProductStatus
+    public partial class ProductStatus : DataModel
     {
         public DateTime                                 ExpireDate                              { get; set; }
         public ProductType                              ProductType                             { get; set; }
@@ -39,15 +39,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProductStatus();
+            var value   = new ProductStatus() { Pointer= p0 };
 
-            value.ExpireDate                                = GetDateTime(new IntPtr(p + 0x010)); // 0270D0F62E88 0x10 ExpireDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x028)); // 0270D0F62F08 0x28 ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
-            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x02C)); // 0270D0F62F48 0x2C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExpireType                                = (ItemExpireType)GetInt32(new IntPtr(p + 0x030)); // 0270D0F62F88 0x30 ExpireType                  ( 00018673E5E0 ModelEnumType ItemExpireType ItemExpireType ItemExpireType Int32 )
-            value._ExpireDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D0F62FC8 0x38 _ExpireDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.NaviType                                  = (ItemNaviType)GetInt32(new IntPtr(p + 0x040)); // 0270D0F63008 0x40 NaviType                    ( 0001867404C0 ModelEnumType ItemNaviType ItemNaviType ItemNaviType Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x044)); // 0270D0F63048 0x44 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExpireDate                                = GetDateTime(new IntPtr(p + 0x010)); // 024660F170D0 0x10 ExpireDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ProductType                               = (ProductType)GetInt32(new IntPtr(p + 0x028)); // 024660F17150 0x28 ProductType                 ( 0001865A5C10 ModelEnumType ProductType ProductType ProductType Int32 )
+            value.ProductMstId                              = GetInt32(new IntPtr(p + 0x02C)); // 024660F17190 0x2C ProductMstId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExpireType                                = (ItemExpireType)GetInt32(new IntPtr(p + 0x030)); // 024660F171D0 0x30 ExpireType                  ( 00018673E5E0 ModelEnumType ItemExpireType ItemExpireType ItemExpireType Int32 )
+            value._ExpireDate                               = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 024660F17210 0x38 _ExpireDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.NaviType                                  = (ItemNaviType)GetInt32(new IntPtr(p + 0x040)); // 024660F17250 0x40 NaviType                    ( 0001867404C0 ModelEnumType ItemNaviType ItemNaviType ItemNaviType Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x044)); // 024660F17290 0x44 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
             value.ExpireDate                    = ToDateTime(value._ExpireDate);
 
             return value;

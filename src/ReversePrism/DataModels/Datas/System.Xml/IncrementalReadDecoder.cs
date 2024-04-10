@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IncrementalReadDecoder
+    public partial class IncrementalReadDecoder : DataModel
     {
 
         public static IncrementalReadDecoder? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IncrementalReadDecoder();
+            var value   = new IncrementalReadDecoder() { Pointer= p0 };
 
 
             return value;

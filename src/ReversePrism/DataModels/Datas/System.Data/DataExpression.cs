@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 030 StorageType                              00018658F9A0 ModelEnumType StorageType StorageType StorageType Int32
     // 038 DataType                                 0001866936B0 ModelClassType Type Type Type Pointer
     // 040 Dependency                               000185B789A0 ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer
-    public partial class DataExpression
+    public partial class DataExpression : DataModel
     {
         public string                                   OriginalExpression                      { get; set; }
         public bool                                     Parsed                                  { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataExpression();
+            var value   = new DataExpression() { Pointer= p0 };
 
-            value.OriginalExpression                        = GetString(new IntPtr(p + 0x010)); // 0270D88A6CC0 0x10 OriginalExpression          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Parsed                                    = GetBool(new IntPtr(p + 0x018)); // 0270D88A6CE0 0x18 Parsed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Bound                                     = GetBool(new IntPtr(p + 0x019)); // 0270D88A6D00 0x19 Bound                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Expr                                      = GetObject<ExpressionNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExpressionNode.FromPointer); // 0270D88A6D20 0x20 Expr                        ( 00018652D210 ModelClassType ExpressionNode ExpressionNode ExpressionNode Pointer )
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 0270D88A6D40 0x28 Table                       ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
-            value.StorageType                               = (StorageType)GetInt32(new IntPtr(p + 0x030)); // 0270D88A6D60 0x30 StorageType                 ( 00018658F9A0 ModelEnumType StorageType StorageType StorageType Int32 )
-            value.DataType                                  = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 0270D88A6D80 0x38 DataType                    ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.Dependency                                = GetObjectList<DataColumn>(new IntPtr(p + 0x040), ReversePrism.DataModels.DataColumn.FromPointer); // 0270D88A6DA0 0x40 Dependency                  ( 000185B789A0 ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer )
+            value.OriginalExpression                        = GetString(new IntPtr(p + 0x010)); // 02466891AE18 0x10 OriginalExpression          ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Parsed                                    = GetBool(new IntPtr(p + 0x018)); // 02466891AE38 0x18 Parsed                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Bound                                     = GetBool(new IntPtr(p + 0x019)); // 02466891AE58 0x19 Bound                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Expr                                      = GetObject<ExpressionNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExpressionNode.FromPointer); // 02466891AE78 0x20 Expr                        ( 00018652D210 ModelClassType ExpressionNode ExpressionNode ExpressionNode Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 02466891AE98 0x28 Table                       ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
+            value.StorageType                               = (StorageType)GetInt32(new IntPtr(p + 0x030)); // 02466891AEB8 0x30 StorageType                 ( 00018658F9A0 ModelEnumType StorageType StorageType StorageType Int32 )
+            value.DataType                                  = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 02466891AED8 0x38 DataType                    ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Dependency                                = GetObjectList<DataColumn>(new IntPtr(p + 0x040), ReversePrism.DataModels.DataColumn.FromPointer); // 02466891AEF8 0x40 Dependency                  ( 000185B789A0 ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer )
 
             return value;
         }

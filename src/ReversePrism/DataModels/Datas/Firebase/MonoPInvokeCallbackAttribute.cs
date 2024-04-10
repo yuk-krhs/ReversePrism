@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MonoPInvokeCallbackAttribute
+    public partial class MonoPInvokeCallbackAttribute : DataModel
     {
 
         public static MonoPInvokeCallbackAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoPInvokeCallbackAttribute();
+            var value   = new MonoPInvokeCallbackAttribute() { Pointer= p0 };
 
 
             return value;

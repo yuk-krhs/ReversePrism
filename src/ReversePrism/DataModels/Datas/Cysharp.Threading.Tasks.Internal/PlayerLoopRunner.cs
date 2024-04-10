@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 034 Running                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 038 LoopItems                                000185B88620 ModelClassListType IPlayerLoopItem[] IPlayerLoopItem[] List<IPlayerLoopItem> Pointer
     // 040 waitQueue                                MinimumQueue`1<IPlayerLoopItem> IL2CPP_TYPE_GENERICINST
-    public partial class PlayerLoopRunner
+    public partial class PlayerLoopRunner : DataModel
     {
         public PlayerLoopTiming                         Timing                                  { get; set; }
         public int                                      Tail                                    { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerLoopRunner();
+            var value   = new PlayerLoopRunner() { Pointer= p0 };
 
-            value.Timing                                    = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x010)); // 027003BDA120 0x10 Timing                      ( 000186753670 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
-            value.Tail                                      = GetInt32(new IntPtr(p + 0x030)); // 027003BDA1A0 0x30 Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Running                                   = GetBool(new IntPtr(p + 0x034)); // 027003BDA1C0 0x34 Running                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LoopItems                                 = GetObjectList<IPlayerLoopItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPlayerLoopItem.FromPointer); // 027003BDA1E0 0x38 LoopItems                   ( 000185B88620 ModelClassListType IPlayerLoopItem[] IPlayerLoopItem[] List<IPlayerLoopItem> Pointer )
+            value.Timing                                    = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x010)); // 0245A3BDA120 0x10 Timing                      ( 000186753670 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
+            value.Tail                                      = GetInt32(new IntPtr(p + 0x030)); // 0245A3BDA1A0 0x30 Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Running                                   = GetBool(new IntPtr(p + 0x034)); // 0245A3BDA1C0 0x34 Running                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LoopItems                                 = GetObjectList<IPlayerLoopItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPlayerLoopItem.FromPointer); // 0245A3BDA1E0 0x38 LoopItems                   ( 000185B88620 ModelClassListType IPlayerLoopItem[] IPlayerLoopItem[] List<IPlayerLoopItem> Pointer )
 
             return value;
         }

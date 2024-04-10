@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 OnceMaxItems                             int IL2CPP_TYPE_I4
     // 000 HistoryMasItems                          int IL2CPP_TYPE_I4
     // 000 ResourceTagName                          string IL2CPP_TYPE_STRING
-    public partial class PresentBoxConst
+    public partial class PresentBoxConst : DataModel
     {
 
         public static PresentBoxConst? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PresentBoxConst();
+            var value   = new PresentBoxConst() { Pointer= p0 };
 
 
             return value;

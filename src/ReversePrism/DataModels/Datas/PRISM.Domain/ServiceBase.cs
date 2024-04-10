@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 cache                                    RuntimeCache IL2CPP_TYPE_CLASS
-    public partial class ServiceBase
+    public partial class ServiceBase : DataModel
     {
 
         public static ServiceBase? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServiceBase();
+            var value   = new ServiceBase() { Pointer= p0 };
 
 
             return value;

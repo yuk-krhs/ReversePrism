@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 030 M_Texture                                000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
     // 038 M_IsCurveDirty                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 039 M_IsTextureDirty                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TextureCurve
+    public partial class TextureCurve : DataModel
     {
         public int                                      Length                                  { get; set; }
         public bool                                     M_Loop                                  { get; set; }
@@ -37,17 +37,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureCurve();
+            var value   = new TextureCurve() { Pointer= p0 };
 
-            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D925B3D8 0x10 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Loop                                    = GetBool(new IntPtr(p + 0x014)); // 0270D925B3F8 0x14 M_Loop                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ZeroValue                               = GetSingle(new IntPtr(p + 0x018)); // 0270D925B418 0x18 M_ZeroValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Range                                   = GetSingle(new IntPtr(p + 0x01C)); // 0270D925B438 0x1C M_Range                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Curve                                   = GetObject<AnimationCurve>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270D925B458 0x20 M_Curve                     ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.M_LoopingCurve                            = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0270D925B478 0x28 M_LoopingCurve              ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.M_Texture                                 = GetObject<Texture2D>(new IntPtr(p + 0x030), ReversePrism.DataModels.Texture2D.FromPointer); // 0270D925B498 0x30 M_Texture                   ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.M_IsCurveDirty                            = GetBool(new IntPtr(p + 0x038)); // 0270D925B4B8 0x38 M_IsCurveDirty              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsTextureDirty                          = GetBool(new IntPtr(p + 0x039)); // 0270D925B4D8 0x39 M_IsTextureDirty            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 0246692BD158 0x10 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Loop                                    = GetBool(new IntPtr(p + 0x014)); // 0246692BD178 0x14 M_Loop                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ZeroValue                               = GetSingle(new IntPtr(p + 0x018)); // 0246692BD198 0x18 M_ZeroValue                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Range                                   = GetSingle(new IntPtr(p + 0x01C)); // 0246692BD1B8 0x1C M_Range                     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Curve                                   = GetObject<AnimationCurve>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0246692BD1D8 0x20 M_Curve                     ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.M_LoopingCurve                            = GetObject<AnimationCurve>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0246692BD1F8 0x28 M_LoopingCurve              ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.M_Texture                                 = GetObject<Texture2D>(new IntPtr(p + 0x030), ReversePrism.DataModels.Texture2D.FromPointer); // 0246692BD218 0x30 M_Texture                   ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.M_IsCurveDirty                            = GetBool(new IntPtr(p + 0x038)); // 0246692BD238 0x38 M_IsCurveDirty              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_IsTextureDirty                          = GetBool(new IntPtr(p + 0x039)); // 0246692BD258 0x39 M_IsTextureDirty            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

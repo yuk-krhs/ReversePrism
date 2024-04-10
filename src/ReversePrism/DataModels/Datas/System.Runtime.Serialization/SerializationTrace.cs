@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 codeGen                                  TraceSource IL2CPP_TYPE_CLASS
-    public partial class SerializationTrace
+    public partial class SerializationTrace : DataModel
     {
 
         public static SerializationTrace? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializationTrace();
+            var value   = new SerializationTrace() { Pointer= p0 };
 
 
             return value;

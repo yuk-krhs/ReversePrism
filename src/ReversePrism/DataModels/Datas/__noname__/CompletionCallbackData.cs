@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Callback                                 000186747ED0 ModelClassType BatchCompletionDelegate BatchCompletionDelegate BatchCompletionDelegate Pointer
     // 018 <State>k__BackingField                   <object> IL2CPP_TYPE_OBJECT
-    public partial class CompletionCallbackData
+    public partial class CompletionCallbackData : DataModel
     {
         public BatchCompletionDelegate?                 Callback                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CompletionCallbackData();
+            var value   = new CompletionCallbackData() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<BatchCompletionDelegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.BatchCompletionDelegate.FromPointer); // 02700409DE30 0x10 Callback                    ( 000186747ED0 ModelClassType BatchCompletionDelegate BatchCompletionDelegate BatchCompletionDelegate Pointer )
+            value.Callback                                  = GetObject<BatchCompletionDelegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.BatchCompletionDelegate.FromPointer); // 024660E36FD8 0x10 Callback                    ( 000186747ED0 ModelClassType BatchCompletionDelegate BatchCompletionDelegate BatchCompletionDelegate Pointer )
 
             return value;
         }

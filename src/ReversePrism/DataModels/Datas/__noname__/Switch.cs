@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   SwitchObserver<<var>> IL2CPP_TYPE_GENERICINST
     // 000 id                                       ulong IL2CPP_TYPE_U8
-    public partial class Switch
+    public partial class Switch : DataModel
     {
 
         public static Switch? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Switch();
+            var value   = new Switch() { Pointer= p0 };
 
 
             return value;

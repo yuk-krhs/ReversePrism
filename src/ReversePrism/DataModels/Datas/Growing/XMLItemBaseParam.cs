@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 LinkUrl                                  000186672F10 ModelPrimitiveType string string string String
     // 018 Align                                    000186722780 ModelEnumType Align Align Align Int32
     // 01C ItemType                                 00018671F660 ModelEnumType ItemType ItemType ItemType Int32
-    public partial class XMLItemBaseParam
+    public partial class XMLItemBaseParam : DataModel
     {
         public string                                   LinkUrl                                 { get; set; }
         public Align                                    Align                                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLItemBaseParam();
+            var value   = new XMLItemBaseParam() { Pointer= p0 };
 
-            value.LinkUrl                                   = GetString(new IntPtr(p + 0x010)); // 0270D4B3C9E0 0x10 LinkUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Align                                     = (Align)GetInt32(new IntPtr(p + 0x018)); // 0270D4B3CA00 0x18 Align                       ( 000186722780 ModelEnumType Align Align Align Int32 )
-            value.ItemType                                  = (ItemType)GetInt32(new IntPtr(p + 0x01C)); // 0270D4B3CA20 0x1C ItemType                    ( 00018671F660 ModelEnumType ItemType ItemType ItemType Int32 )
+            value.LinkUrl                                   = GetString(new IntPtr(p + 0x010)); // 024664BB77C8 0x10 LinkUrl                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Align                                     = (Align)GetInt32(new IntPtr(p + 0x018)); // 024664BB77E8 0x18 Align                       ( 000186722780 ModelEnumType Align Align Align Int32 )
+            value.ItemType                                  = (ItemType)GetInt32(new IntPtr(p + 0x01C)); // 024664BB7808 0x1C ItemType                    ( 00018671F660 ModelEnumType ItemType ItemType ItemType Int32 )
 
             return value;
         }

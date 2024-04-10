@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 ProduceStrategyListFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_produceStrategyList_codec      FieldCodec`1<ProduceStrategyStatus> IL2CPP_TYPE_GENERICINST
     // 020 ProduceStrategyList                      000185CEC478 ModelClassListType RepeatedField`1<ProduceStrategyStatus> RepeatedField`1<ProduceStrategyStatus> List<ProduceStrategyStatus> Pointer
-    public partial class ProduceStrategyListReply
+    public partial class ProduceStrategyListReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
         public List<ProduceStrategyStatus>?             ProduceStrategyList                     { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceStrategyListReply();
+            var value   = new ProduceStrategyListReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0270D25952A0 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.ProduceStrategyList                       = GetObjectList<ProduceStrategyStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceStrategyStatus.FromPointer); // 0270D2595300 0x20 ProduceStrategyList         ( 000185CEC478 ModelClassListType RepeatedField`1<ProduceStrategyStatus> RepeatedField`1<ProduceStrategyStatus> List<ProduceStrategyStatus> Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 02466255D700 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.ProduceStrategyList                       = GetObjectList<ProduceStrategyStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceStrategyStatus.FromPointer); // 02466255D760 0x20 ProduceStrategyList         ( 000185CEC478 ModelClassListType RepeatedField`1<ProduceStrategyStatus> RepeatedField`1<ProduceStrategyStatus> List<ProduceStrategyStatus> Pointer )
 
             return value;
         }

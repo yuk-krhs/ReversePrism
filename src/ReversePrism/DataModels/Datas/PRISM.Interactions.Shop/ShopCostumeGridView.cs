@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 090 CellPrefab                               000186755A10 ModelClassType ShopCostumeGridViewCell ShopCostumeGridViewCell ShopCostumeGridViewCell Pointer
     // 098 EmptyViewText                            0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    public partial class ShopCostumeGridView
+    public partial class ShopCostumeGridView : DataModel
     {
         public ShopCostumeGridViewCell?                 CellPrefab                              { get; set; }
         public UITextMeshProUGUI?                       EmptyViewText                           { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopCostumeGridView();
+            var value   = new ShopCostumeGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<ShopCostumeGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ShopCostumeGridViewCell.FromPointer); // 0270DB7DD070 0x90 CellPrefab                  ( 000186755A10 ModelClassType ShopCostumeGridViewCell ShopCostumeGridViewCell ShopCostumeGridViewCell Pointer )
-            value.EmptyViewText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DB7DD090 0x98 EmptyViewText               ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CellPrefab                                = GetObject<ShopCostumeGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ShopCostumeGridViewCell.FromPointer); // 02466B85CF70 0x90 CellPrefab                  ( 000186755A10 ModelClassType ShopCostumeGridViewCell ShopCostumeGridViewCell ShopCostumeGridViewCell Pointer )
+            value.EmptyViewText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B85CF90 0x98 EmptyViewText               ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

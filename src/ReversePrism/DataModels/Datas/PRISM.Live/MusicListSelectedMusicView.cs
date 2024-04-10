@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ArtistName                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 CommonView                               000186667770 ModelClassType MusicListCellCommonView MusicListCellCommonView MusicListCellCommonView Pointer
-    public partial class MusicListSelectedMusicView
+    public partial class MusicListSelectedMusicView : DataModel
     {
         public UITextMeshProUGUI?                       ArtistName                              { get; set; }
         public MusicListCellCommonView?                 CommonView                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicListSelectedMusicView();
+            var value   = new MusicListSelectedMusicView() { Pointer= p0 };
 
-            value.ArtistName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D517EDB0 0x20 ArtistName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CommonView                                = GetObject<MusicListCellCommonView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicListCellCommonView.FromPointer); // 0270D517EDD0 0x28 CommonView                  ( 000186667770 ModelClassType MusicListCellCommonView MusicListCellCommonView MusicListCellCommonView Pointer )
+            value.ArtistName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA198 0x20 ArtistName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CommonView                                = GetObject<MusicListCellCommonView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicListCellCommonView.FromPointer); // 0246651FA1B8 0x28 CommonView                  ( 000186667770 ModelClassType MusicListCellCommonView MusicListCellCommonView MusicListCellCommonView Pointer )
 
             return value;
         }

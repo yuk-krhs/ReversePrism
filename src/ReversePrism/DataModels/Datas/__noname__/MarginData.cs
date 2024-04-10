@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 024 Right                                    000186666050 ModelPrimitiveType float float float Single
     // 028 Top                                      000186666050 ModelPrimitiveType float float float Single
     // 02C Bottom                                   000186666050 ModelPrimitiveType float float float Single
-    public partial class MarginData
+    public partial class MarginData : DataModel
     {
         public string                                   DeviceName                              { get; set; }
         public string                                   ModelName                               { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MarginData();
+            var value   = new MarginData() { Pointer= p0 };
 
-            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 027004414E70 0x10 DeviceName                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ModelName                                 = GetString(new IntPtr(p + 0x018)); // 027004414E90 0x18 ModelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Left                                      = GetSingle(new IntPtr(p + 0x020)); // 027004414EB0 0x20 Left                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Right                                     = GetSingle(new IntPtr(p + 0x024)); // 027004414ED0 0x24 Right                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Top                                       = GetSingle(new IntPtr(p + 0x028)); // 027004414EF0 0x28 Top                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Bottom                                    = GetSingle(new IntPtr(p + 0x02C)); // 027004414F10 0x2C Bottom                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 0245A448FBA8 0x10 DeviceName                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ModelName                                 = GetString(new IntPtr(p + 0x018)); // 0245A448FBC8 0x18 ModelName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Left                                      = GetSingle(new IntPtr(p + 0x020)); // 0245A448FBE8 0x20 Left                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Right                                     = GetSingle(new IntPtr(p + 0x024)); // 0245A448FC08 0x24 Right                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Top                                       = GetSingle(new IntPtr(p + 0x028)); // 0245A448FC28 0x28 Top                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Bottom                                    = GetSingle(new IntPtr(p + 0x02C)); // 0245A448FC48 0x2C Bottom                      ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

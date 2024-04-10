@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ContentHolder                            000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer
-    public partial class DebugUIHandlerContainer
+    public partial class DebugUIHandlerContainer : DataModel
     {
         public RectTransform?                           ContentHolder                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerContainer();
+            var value   = new DebugUIHandlerContainer() { Pointer= p0 };
 
-            value.ContentHolder                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D931B090 0x20 ContentHolder               ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ContentHolder                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 024669374528 0x20 ContentHolder               ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

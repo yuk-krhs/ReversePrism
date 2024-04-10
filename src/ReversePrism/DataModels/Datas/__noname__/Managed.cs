@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 TryFunctionDelegates                     TryFunction[] IL2CPP_TYPE_SZARRAY
-    public partial class Managed
+    public partial class Managed : DataModel
     {
 
         public static Managed? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Managed();
+            var value   = new Managed() { Pointer= p0 };
 
 
             return value;

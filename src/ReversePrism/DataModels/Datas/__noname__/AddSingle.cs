@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AddSingle
+    public partial class AddSingle : DataModel
     {
 
         public static AddSingle? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AddSingle();
+            var value   = new AddSingle() { Pointer= p0 };
 
 
             return value;

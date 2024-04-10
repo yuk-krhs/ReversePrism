@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 Attributes                               000185B710D0 ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer
     // 038 DataNode                                 00018674B4E0 ModelClassType IDataNode IDataNode IDataNode Pointer
     // 040 ChildElementIndex                        0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class ElementData
+    public partial class ElementData : DataModel
     {
         public string                                   LocalName                               { get; set; }
         public string                                   Ns                                      { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ElementData();
+            var value   = new ElementData() { Pointer= p0 };
 
-            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 0270D7D35230 0x10 LocalName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0270D7D35250 0x18 Ns                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 0270D7D35270 0x20 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AttributeCount                            = GetInt32(new IntPtr(p + 0x028)); // 0270D7D35290 0x28 AttributeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Attributes                                = GetObjectList<AttributeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.AttributeData.FromPointer); // 0270D7D352B0 0x30 Attributes                  ( 000185B710D0 ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer )
-            value.DataNode                                  = GetObject<IDataNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDataNode.FromPointer); // 0270D7D352D0 0x38 DataNode                    ( 00018674B4E0 ModelClassType IDataNode IDataNode IDataNode Pointer )
-            value.ChildElementIndex                         = GetInt32(new IntPtr(p + 0x040)); // 0270D7D352F0 0x40 ChildElementIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 024667D9D230 0x10 LocalName                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 024667D9D250 0x18 Ns                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 024667D9D270 0x20 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AttributeCount                            = GetInt32(new IntPtr(p + 0x028)); // 024667D9D290 0x28 AttributeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Attributes                                = GetObjectList<AttributeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.AttributeData.FromPointer); // 024667D9D2B0 0x30 Attributes                  ( 000185B710D0 ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer )
+            value.DataNode                                  = GetObject<IDataNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDataNode.FromPointer); // 024667D9D2D0 0x38 DataNode                    ( 00018674B4E0 ModelClassType IDataNode IDataNode IDataNode Pointer )
+            value.ChildElementIndex                         = GetInt32(new IntPtr(p + 0x040)); // 024667D9D2F0 0x40 ChildElementIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Pointer                                  <int> IL2CPP_TYPE_I
     // 008 DeferredCompilation                      <int> IL2CPP_TYPE_I
-    public partial class Try_000009D0$BurstDirectCall
+    public partial class Try_000009D0$BurstDirectCall : DataModel
     {
 
         public static Try_000009D0$BurstDirectCall? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Try_000009D0$BurstDirectCall();
+            var value   = new Try_000009D0$BurstDirectCall() { Pointer= p0 };
 
 
             return value;

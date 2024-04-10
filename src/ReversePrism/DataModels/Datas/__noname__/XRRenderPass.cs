@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 0DC ShouldFillOutDepth                       000186595960 ModelPrimitiveType bool bool bool Bool
     // 0E0 CullingPassIndex                         0001865F36C0 ModelPrimitiveType int int int Int32
     // 0E8 foveatedRenderingInfo                    <int> IL2CPP_TYPE_I
-    public partial class XRRenderPass
+    public partial class XRRenderPass : DataModel
     {
         public int                                      RenderPassIndex                         { get; set; }
         public RenderTargetIdentifier                   RenderTarget                            { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRRenderPass();
+            var value   = new XRRenderPass() { Pointer= p0 };
 
-            value.RenderPassIndex                           = GetInt32(new IntPtr(p + 0x018)); // 0270069722E8 0x18 RenderPassIndex             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.RenderTarget                              = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x020)); // 027006972308 0x20 RenderTarget                ( 000186655940 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
-            value.RenderTargetDesc                          = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x048)); // 027006972328 0x48 RenderTargetDesc            ( 000186657800 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
-            value.HasMotionVectorPass                       = GetBool(new IntPtr(p + 0x07C)); // 027006972348 0x7C HasMotionVectorPass         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.MotionVectorRenderTarget                  = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x080)); // 027006972368 0x80 MotionVectorRenderTarget    ( 000186655940 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
-            value.MotionVectorRenderTargetDesc              = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x0A8)); // 027006972388 0xA8 MotionVectorRenderTargetDesc ( 000186657800 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
-            value.ShouldFillOutDepth                        = GetBool(new IntPtr(p + 0x0DC)); // 0270069723A8 0xDC ShouldFillOutDepth          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CullingPassIndex                          = GetInt32(new IntPtr(p + 0x0E0)); // 0270069723C8 0xE0 CullingPassIndex            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RenderPassIndex                           = GetInt32(new IntPtr(p + 0x018)); // 0245A6925300 0x18 RenderPassIndex             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RenderTarget                              = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x020)); // 0245A6925320 0x20 RenderTarget                ( 000186655940 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
+            value.RenderTargetDesc                          = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x048)); // 0245A6925340 0x48 RenderTargetDesc            ( 000186657800 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
+            value.HasMotionVectorPass                       = GetBool(new IntPtr(p + 0x07C)); // 0245A6925360 0x7C HasMotionVectorPass         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.MotionVectorRenderTarget                  = (RenderTargetIdentifier)GetInt32(new IntPtr(p + 0x080)); // 0245A6925380 0x80 MotionVectorRenderTarget    ( 000186655940 ModelEnumType RenderTargetIdentifier RenderTargetIdentifier RenderTargetIdentifier Int32 )
+            value.MotionVectorRenderTargetDesc              = (RenderTextureDescriptor)GetInt32(new IntPtr(p + 0x0A8)); // 0245A69253A0 0xA8 MotionVectorRenderTargetDesc ( 000186657800 ModelEnumType RenderTextureDescriptor RenderTextureDescriptor RenderTextureDescriptor Int32 )
+            value.ShouldFillOutDepth                        = GetBool(new IntPtr(p + 0x0DC)); // 0245A69253C0 0xDC ShouldFillOutDepth          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CullingPassIndex                          = GetInt32(new IntPtr(p + 0x0E0)); // 0245A69253E0 0xE0 CullingPassIndex            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

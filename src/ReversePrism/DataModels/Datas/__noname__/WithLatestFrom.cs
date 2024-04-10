@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 000 hasLatest                                bool IL2CPP_TYPE_BOOLEAN
     // 000 latestValue                              <var> IL2CPP_TYPE_VAR
-    public partial class WithLatestFrom
+    public partial class WithLatestFrom : DataModel
     {
 
         public static WithLatestFrom? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WithLatestFrom();
+            var value   = new WithLatestFrom() { Pointer= p0 };
 
 
             return value;

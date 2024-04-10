@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_ResetHistory                           000186595480 ModelPrimitiveType bool bool bool Bool
-    public partial class PostProcessEffectRenderer
+    public partial class PostProcessEffectRenderer : DataModel
     {
         public bool                                     M_ResetHistory                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostProcessEffectRenderer();
+            var value   = new PostProcessEffectRenderer() { Pointer= p0 };
 
-            value.M_ResetHistory                            = GetBool(new IntPtr(p + 0x010)); // 0270D330AF30 0x10 M_ResetHistory              ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_ResetHistory                            = GetBool(new IntPtr(p + 0x010)); // 024663329CF8 0x10 M_ResetHistory              ( 000186595480 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

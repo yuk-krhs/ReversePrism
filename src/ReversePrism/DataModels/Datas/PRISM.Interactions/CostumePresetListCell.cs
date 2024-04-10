@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 050 PresetName                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 058 ApplyButton                              000186518FC0 ModelClassType ButtonToggleBase ButtonToggleBase ButtonToggleBase Pointer
     // 060 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    public partial class CostumePresetListCell
+    public partial class CostumePresetListCell : DataModel
     {
         public List<CostumeIcon>?                       CostumeIcons                            { get; set; }
         public UITextMeshProUGUI?                       PresetNumber                            { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CostumePresetListCell();
+            var value   = new CostumePresetListCell() { Pointer= p0 };
 
-            value.CostumeIcons                              = GetObjectList<CostumeIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeIcon.FromPointer); // 0270DBC08A30 0x40 CostumeIcons                ( 000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
-            value.PresetNumber                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBC08A50 0x48 PresetNumber                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PresetName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBC08A70 0x50 PresetName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ApplyButton                               = GetObject<ButtonToggleBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonToggleBase.FromPointer); // 0270DBC08A90 0x58 ApplyButton                 ( 000186518FC0 ModelClassType ButtonToggleBase ButtonToggleBase ButtonToggleBase Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x060)); // 0270DBC08AB0 0x60 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.CostumeIcons                              = GetObjectList<CostumeIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.CostumeIcon.FromPointer); // 02466BC8FD90 0x40 CostumeIcons                ( 000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
+            value.PresetNumber                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BC8FDB0 0x48 PresetNumber                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PresetName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BC8FDD0 0x50 PresetName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ApplyButton                               = GetObject<ButtonToggleBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonToggleBase.FromPointer); // 02466BC8FDF0 0x58 ApplyButton                 ( 000186518FC0 ModelClassType ButtonToggleBase ButtonToggleBase ButtonToggleBase Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x060)); // 02466BC8FE10 0x60 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

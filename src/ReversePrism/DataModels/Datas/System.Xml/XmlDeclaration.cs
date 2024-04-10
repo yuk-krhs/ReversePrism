@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 Version                                  000186671910 ModelPrimitiveType string string string String
     // 028 Encoding                                 000186671910 ModelPrimitiveType string string string String
     // 030 Standalone                               000186671910 ModelPrimitiveType string string string String
-    public partial class XmlDeclaration
+    public partial class XmlDeclaration : DataModel
     {
         public string                                   Version                                 { get; set; }
         public string                                   Encoding                                { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlDeclaration();
+            var value   = new XmlDeclaration() { Pointer= p0 };
 
-            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 0270D744C0A0 0x20 Version                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Encoding                                  = GetString(new IntPtr(p + 0x028)); // 0270D744C0C0 0x28 Encoding                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Standalone                                = GetString(new IntPtr(p + 0x030)); // 0270D744C0E0 0x30 Standalone                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 0246674AC0A0 0x20 Version                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Encoding                                  = GetString(new IntPtr(p + 0x028)); // 0246674AC0C0 0x28 Encoding                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Standalone                                = GetString(new IntPtr(p + 0x030)); // 0246674AC0E0 0x30 Standalone                  ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

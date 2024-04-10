@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IHashCodeProvider
+    public partial class IHashCodeProvider : DataModel
     {
 
         public static IHashCodeProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IHashCodeProvider();
+            var value   = new IHashCodeProvider() { Pointer= p0 };
 
 
             return value;

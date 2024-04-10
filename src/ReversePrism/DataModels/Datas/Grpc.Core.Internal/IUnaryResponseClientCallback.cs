@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IUnaryResponseClientCallback
+    public partial class IUnaryResponseClientCallback : DataModel
     {
 
         public static IUnaryResponseClientCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IUnaryResponseClientCallback();
+            var value   = new IUnaryResponseClientCallback() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FontEngineUtilities
+    public partial class FontEngineUtilities : DataModel
     {
 
         public static FontEngineUtilities? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FontEngineUtilities();
+            var value   = new FontEngineUtilities() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 MAX_NAME_LENGTH                          int IL2CPP_TYPE_I4
     // 000 MAX_INPUT_NAME_LENGTH                    int IL2CPP_TYPE_I4
-    public partial class PlayerNameInputModel
+    public partial class PlayerNameInputModel : DataModel
     {
 
         public static PlayerNameInputModel? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerNameInputModel();
+            var value   = new PlayerNameInputModel() { Pointer= p0 };
 
 
             return value;

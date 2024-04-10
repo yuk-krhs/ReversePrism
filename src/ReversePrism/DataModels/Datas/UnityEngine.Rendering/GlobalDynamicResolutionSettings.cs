@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 038 ForcedPercentage                         000186666050 ModelPrimitiveType float float float Single
     // 03C LowResTransparencyMinimumThreshold       000186666050 ModelPrimitiveType float float float Single
     // 040 RayTracingHalfResThreshold               000186666050 ModelPrimitiveType float float float Single
-    public partial class GlobalDynamicResolutionSettings
+    public partial class GlobalDynamicResolutionSettings : DataModel
     {
         public bool                                     Enabled                                 { get; set; }
         public bool                                     UseMipBias                              { get; set; }
@@ -51,25 +51,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GlobalDynamicResolutionSettings();
+            var value   = new GlobalDynamicResolutionSettings() { Pointer= p0 };
 
-            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 027003FB15A0 0x10 Enabled                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.UseMipBias                                = GetBool(new IntPtr(p + 0x011)); // 027003FB15C0 0x11 UseMipBias                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.EnableDLSS                                = GetBool(new IntPtr(p + 0x012)); // 027003FB15E0 0x12 EnableDLSS                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DLSSPerfQualitySetting                    = GetUInt32(new IntPtr(p + 0x014)); // 027003FB1600 0x14 DLSSPerfQualitySetting      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DLSSInjectionPoint                        = (UpsamplerScheduleType)GetInt32(new IntPtr(p + 0x018)); // 027003FB1620 0x18 DLSSInjectionPoint          ( 0001865CC140 ModelEnumType UpsamplerScheduleType UpsamplerScheduleType UpsamplerScheduleType Int32 )
-            value.DLSSUseOptimalSettings                    = GetBool(new IntPtr(p + 0x01C)); // 027003FB1640 0x1C DLSSUseOptimalSettings      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DLSSSharpness                             = GetSingle(new IntPtr(p + 0x020)); // 027003FB1660 0x20 DLSSSharpness               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FsrOverrideSharpness                      = GetBool(new IntPtr(p + 0x024)); // 027003FB1680 0x24 FsrOverrideSharpness        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.FsrSharpness                              = GetSingle(new IntPtr(p + 0x028)); // 027003FB16A0 0x28 FsrSharpness                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.MaxPercentage                             = GetSingle(new IntPtr(p + 0x02C)); // 027003FB16C0 0x2C MaxPercentage               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.MinPercentage                             = GetSingle(new IntPtr(p + 0x030)); // 027003FB16E0 0x30 MinPercentage               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DynResType                                = (DynamicResolutionType)GetInt32(new IntPtr(p + 0x034)); // 027003FB1700 0x34 DynResType                  ( 000186713D60 ModelEnumType DynamicResolutionType DynamicResolutionType DynamicResolutionType Int32 )
-            value.UpsampleFilter                            = (DynamicResUpscaleFilter)GetInt32(new IntPtr(p + 0x035)); // 027003FB1720 0x35 UpsampleFilter              ( 000186712E90 ModelEnumType DynamicResUpscaleFilter DynamicResUpscaleFilter DynamicResUpscaleFilter Int32 )
-            value.ForceResolution                           = GetBool(new IntPtr(p + 0x036)); // 027003FB1740 0x36 ForceResolution             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ForcedPercentage                          = GetSingle(new IntPtr(p + 0x038)); // 027003FB1760 0x38 ForcedPercentage            ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LowResTransparencyMinimumThreshold        = GetSingle(new IntPtr(p + 0x03C)); // 027003FB1780 0x3C LowResTransparencyMinimumThreshold ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RayTracingHalfResThreshold                = GetSingle(new IntPtr(p + 0x040)); // 027003FB17A0 0x40 RayTracingHalfResThreshold  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 0245A3FC1090 0x10 Enabled                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.UseMipBias                                = GetBool(new IntPtr(p + 0x011)); // 0245A3FC10B0 0x11 UseMipBias                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.EnableDLSS                                = GetBool(new IntPtr(p + 0x012)); // 0245A3FC10D0 0x12 EnableDLSS                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DLSSPerfQualitySetting                    = GetUInt32(new IntPtr(p + 0x014)); // 0245A3FC10F0 0x14 DLSSPerfQualitySetting      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DLSSInjectionPoint                        = (UpsamplerScheduleType)GetInt32(new IntPtr(p + 0x018)); // 0245A3FC1110 0x18 DLSSInjectionPoint          ( 0001865CC140 ModelEnumType UpsamplerScheduleType UpsamplerScheduleType UpsamplerScheduleType Int32 )
+            value.DLSSUseOptimalSettings                    = GetBool(new IntPtr(p + 0x01C)); // 0245A3FC1130 0x1C DLSSUseOptimalSettings      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DLSSSharpness                             = GetSingle(new IntPtr(p + 0x020)); // 0245A3FC1150 0x20 DLSSSharpness               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.FsrOverrideSharpness                      = GetBool(new IntPtr(p + 0x024)); // 0245A3FC1170 0x24 FsrOverrideSharpness        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.FsrSharpness                              = GetSingle(new IntPtr(p + 0x028)); // 0245A3FC1190 0x28 FsrSharpness                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.MaxPercentage                             = GetSingle(new IntPtr(p + 0x02C)); // 0245A3FC11B0 0x2C MaxPercentage               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.MinPercentage                             = GetSingle(new IntPtr(p + 0x030)); // 0245A3FC11D0 0x30 MinPercentage               ( 000186666050 ModelPrimitiveType float float float Single )
+            value.DynResType                                = (DynamicResolutionType)GetInt32(new IntPtr(p + 0x034)); // 0245A3FC11F0 0x34 DynResType                  ( 000186713D60 ModelEnumType DynamicResolutionType DynamicResolutionType DynamicResolutionType Int32 )
+            value.UpsampleFilter                            = (DynamicResUpscaleFilter)GetInt32(new IntPtr(p + 0x035)); // 0245A3FC1210 0x35 UpsampleFilter              ( 000186712E90 ModelEnumType DynamicResUpscaleFilter DynamicResUpscaleFilter DynamicResUpscaleFilter Int32 )
+            value.ForceResolution                           = GetBool(new IntPtr(p + 0x036)); // 0245A3FC1230 0x36 ForceResolution             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ForcedPercentage                          = GetSingle(new IntPtr(p + 0x038)); // 0245A3FC1250 0x38 ForcedPercentage            ( 000186666050 ModelPrimitiveType float float float Single )
+            value.LowResTransparencyMinimumThreshold        = GetSingle(new IntPtr(p + 0x03C)); // 0245A3FC1270 0x3C LowResTransparencyMinimumThreshold ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RayTracingHalfResThreshold                = GetSingle(new IntPtr(p + 0x040)); // 0245A3FC1290 0x40 RayTracingHalfResThreshold  ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

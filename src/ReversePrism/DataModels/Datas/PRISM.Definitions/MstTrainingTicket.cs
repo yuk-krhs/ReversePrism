@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 ItemNaviType                             0001865F4260 ModelPrimitiveType int int int Int32
     // 024 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 028 ReleaseDate                              0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    public partial class MstTrainingTicket
+    public partial class MstTrainingTicket : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      ProductType                             { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstTrainingTicket();
+            var value   = new MstTrainingTicket() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 027004642CC8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ProductType                               = GetInt32(new IntPtr(p + 0x014)); // 027004642CE8 0x14 ProductType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Exp                                       = GetInt32(new IntPtr(p + 0x018)); // 027004642D08 0x18 Exp                         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.PresentFilterType                         = GetInt32(new IntPtr(p + 0x01C)); // 027004642D28 0x1C PresentFilterType           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ItemNaviType                              = GetInt32(new IntPtr(p + 0x020)); // 027004642D48 0x20 ItemNaviType                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x024)); // 027004642D68 0x24 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x028)); // 027004642D88 0x28 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46BE638 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = GetInt32(new IntPtr(p + 0x014)); // 0245A46BE658 0x14 ProductType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Exp                                       = GetInt32(new IntPtr(p + 0x018)); // 0245A46BE678 0x18 Exp                         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.PresentFilterType                         = GetInt32(new IntPtr(p + 0x01C)); // 0245A46BE698 0x1C PresentFilterType           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ItemNaviType                              = GetInt32(new IntPtr(p + 0x020)); // 0245A46BE6B8 0x20 ItemNaviType                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x024)); // 0245A46BE6D8 0x24 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x028)); // 0245A46BE6F8 0x28 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

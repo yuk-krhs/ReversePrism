@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_cache                                  Instruction[] IL2CPP_TYPE_SZARRAY
-    public partial class BranchFalseInstruction
+    public partial class BranchFalseInstruction : DataModel
     {
 
         public static BranchFalseInstruction? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BranchFalseInstruction();
+            var value   = new BranchFalseInstruction() { Pointer= p0 };
 
 
             return value;

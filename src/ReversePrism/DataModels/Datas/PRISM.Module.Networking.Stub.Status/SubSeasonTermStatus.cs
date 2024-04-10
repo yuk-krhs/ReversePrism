@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstSubSeasonId                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 WeekFieldNumber                          int IL2CPP_TYPE_I4
     // 020 Week                                     00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
-    public partial class SubSeasonTermStatus
+    public partial class SubSeasonTermStatus : DataModel
     {
         public int                                      MstSubSeasonId                          { get; set; }
         public LimitedValueStatus?                      Week                                    { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonTermStatus();
+            var value   = new SubSeasonTermStatus() { Pointer= p0 };
 
-            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0270D11582E8 0x18 MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Week                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1158328 0x20 Week                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0246610BFD30 0x18 MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Week                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246610BFD70 0x20 Week                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
 
             return value;
         }

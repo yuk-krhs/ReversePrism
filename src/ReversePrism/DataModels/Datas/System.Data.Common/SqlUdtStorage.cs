@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 058 ImplementsIXmlSerializable               0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 059 ImplementsIComparable                    0001865965D0 ModelPrimitiveType bool bool bool Bool
     // 000 s_typeToNull                             ConcurrentDictionary`2<Type, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class SqlUdtStorage
+    public partial class SqlUdtStorage : DataModel
     {
         public bool                                     ImplementsIXmlSerializable              { get; set; }
         public bool                                     ImplementsIComparable                   { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SqlUdtStorage();
+            var value   = new SqlUdtStorage() { Pointer= p0 };
 
-            value.ImplementsIXmlSerializable                = GetBool(new IntPtr(p + 0x058)); // 0270D89EFDC8 0x58 ImplementsIXmlSerializable  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ImplementsIComparable                     = GetBool(new IntPtr(p + 0x059)); // 0270D89EFDE8 0x59 ImplementsIComparable       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ImplementsIXmlSerializable                = GetBool(new IntPtr(p + 0x058)); // 024668A5AEA0 0x58 ImplementsIXmlSerializable  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ImplementsIComparable                     = GetBool(new IntPtr(p + 0x059)); // 024668A5AEC0 0x59 ImplementsIComparable       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

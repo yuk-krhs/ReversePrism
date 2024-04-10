@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileProgressFesUnitRankDetailListView
+    public partial class ProfileProgressFesUnitRankDetailListView : DataModel
     {
 
         public static ProfileProgressFesUnitRankDetailListView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileProgressFesUnitRankDetailListView();
+            var value   = new ProfileProgressFesUnitRankDetailListView() { Pointer= p0 };
 
 
             return value;

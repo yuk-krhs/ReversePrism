@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PreventReadOnlyInstanceModificationAttribute
+    public partial class PreventReadOnlyInstanceModificationAttribute : DataModel
     {
 
         public static PreventReadOnlyInstanceModificationAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PreventReadOnlyInstanceModificationAttribute();
+            var value   = new PreventReadOnlyInstanceModificationAttribute() { Pointer= p0 };
 
 
             return value;

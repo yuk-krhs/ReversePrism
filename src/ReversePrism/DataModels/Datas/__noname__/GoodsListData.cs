@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 GroupID                                  0001865F36C0 ModelPrimitiveType int int int Int32
     // 018 GoodsIDs                                 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    public partial class GoodsListData
+    public partial class GoodsListData : DataModel
     {
         public int                                      GroupID                                 { get; set; }
         public List<int>?                               GoodsIDs                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GoodsListData();
+            var value   = new GoodsListData() { Pointer= p0 };
 
-            value.GroupID                                   = GetInt32(new IntPtr(p + 0x010)); // 027003AB5548 0x10 GroupID                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.GoodsIDs                                  = GetInt32List(new IntPtr(p + 0x018)); // 027003AB5568 0x18 GoodsIDs                    ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.GroupID                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A3AAF0B0 0x10 GroupID                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.GoodsIDs                                  = GetInt32List(new IntPtr(p + 0x018)); // 0245A3AAF0D0 0x18 GoodsIDs                    ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

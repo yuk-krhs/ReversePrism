@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Header                                   00018660C830 ModelClassType Metadata Metadata Metadata Pointer
-    public partial class Invoker
+    public partial class Invoker : DataModel
     {
         public Metadata?                                Header                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Invoker();
+            var value   = new Invoker() { Pointer= p0 };
 
-            value.Header                                    = GetObject<Metadata>(new IntPtr(p + 0x010), ReversePrism.DataModels.Metadata.FromPointer); // 027004B2DE18 0x10 Header                      ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
+            value.Header                                    = GetObject<Metadata>(new IntPtr(p + 0x010), ReversePrism.DataModels.Metadata.FromPointer); // 0245A4B85F88 0x10 Header                      ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
 
             return value;
         }

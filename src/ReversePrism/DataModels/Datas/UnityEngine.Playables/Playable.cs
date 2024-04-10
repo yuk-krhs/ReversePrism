@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_Handle                                 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32
     // 000 m_NullPlayable                           Playable IL2CPP_TYPE_VALUETYPE
-    public partial class Playable
+    public partial class Playable : DataModel
     {
         public PlayableHandle                           M_Handle                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Playable();
+            var value   = new Playable() { Pointer= p0 };
 
-            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0270023F2498 0x10 M_Handle                    ( 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
+            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A23F2498 0x10 M_Handle                    ( 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
 
             return value;
         }

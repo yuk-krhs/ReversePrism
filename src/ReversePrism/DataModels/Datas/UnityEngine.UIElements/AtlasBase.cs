@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TextureRegistry                          000186656990 ModelClassType TextureRegistry TextureRegistry TextureRegistry Pointer
-    public partial class AtlasBase
+    public partial class AtlasBase : DataModel
     {
         public TextureRegistry?                         TextureRegistry                         { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AtlasBase();
+            var value   = new AtlasBase() { Pointer= p0 };
 
-            value.TextureRegistry                           = GetObject<TextureRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.TextureRegistry.FromPointer); // 0270066DF990 0x10 TextureRegistry             ( 000186656990 ModelClassType TextureRegistry TextureRegistry TextureRegistry Pointer )
+            value.TextureRegistry                           = GetObject<TextureRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.TextureRegistry.FromPointer); // 0245A66A1EA0 0x10 TextureRegistry             ( 000186656990 ModelClassType TextureRegistry TextureRegistry TextureRegistry Pointer )
 
             return value;
         }

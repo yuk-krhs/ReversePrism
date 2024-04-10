@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ForwardTo                                00018668ABC0 ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer
-    public partial class JavaBridge
+    public partial class JavaBridge : DataModel
     {
         public IUnityCallback?                          ForwardTo                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JavaBridge();
+            var value   = new JavaBridge() { Pointer= p0 };
 
-            value.ForwardTo                                 = GetObject<IUnityCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUnityCallback.FromPointer); // 02700690E4B0 0x20 ForwardTo                   ( 00018668ABC0 ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer )
+            value.ForwardTo                                 = GetObject<IUnityCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUnityCallback.FromPointer); // 0245A68D1CD0 0x20 ForwardTo                   ( 00018668ABC0 ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer )
 
             return value;
         }

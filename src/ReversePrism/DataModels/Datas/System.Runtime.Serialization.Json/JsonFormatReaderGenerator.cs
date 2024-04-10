@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Helper                                   000186660B30 ModelClassType CriticalHelper CriticalHelper CriticalHelper Pointer
-    public partial class JsonFormatReaderGenerator
+    public partial class JsonFormatReaderGenerator : DataModel
     {
         public CriticalHelper?                          Helper                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonFormatReaderGenerator();
+            var value   = new JsonFormatReaderGenerator() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<CriticalHelper>(new IntPtr(p + 0x010), ReversePrism.DataModels.CriticalHelper.FromPointer); // 027004D43050 0x10 Helper                      ( 000186660B30 ModelClassType CriticalHelper CriticalHelper CriticalHelper Pointer )
+            value.Helper                                    = GetObject<CriticalHelper>(new IntPtr(p + 0x010), ReversePrism.DataModels.CriticalHelper.FromPointer); // 0245A4D7FFA8 0x10 Helper                      ( 000186660B30 ModelClassType CriticalHelper CriticalHelper CriticalHelper Pointer )
 
             return value;
         }

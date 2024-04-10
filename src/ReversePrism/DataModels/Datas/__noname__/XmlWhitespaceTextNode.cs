@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlWhitespaceTextNode
+    public partial class XmlWhitespaceTextNode : DataModel
     {
 
         public static XmlWhitespaceTextNode? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlWhitespaceTextNode();
+            var value   = new XmlWhitespaceTextNode() { Pointer= p0 };
 
 
             return value;

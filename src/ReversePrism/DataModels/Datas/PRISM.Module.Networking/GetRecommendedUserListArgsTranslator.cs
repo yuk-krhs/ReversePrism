@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetRecommendedUserListArgsTranslator
+    public partial class GetRecommendedUserListArgsTranslator : DataModel
     {
 
         public static GetRecommendedUserListArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetRecommendedUserListArgsTranslator();
+            var value   = new GetRecommendedUserListArgsTranslator() { Pointer= p0 };
 
 
             return value;

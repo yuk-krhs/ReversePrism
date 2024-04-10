@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 table                                    Dictionary`2<InternedString, InputControlLayout> IL2CPP_TYPE_GENERICINST
-    public partial class Cache
+    public partial class Cache : DataModel
     {
 
         public static Cache? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Cache();
+            var value   = new Cache() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 descriptor                               FileDescriptor IL2CPP_TYPE_CLASS
-    public partial class PhoneNumberReflection
+    public partial class PhoneNumberReflection : DataModel
     {
 
         public static PhoneNumberReflection? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhoneNumberReflection();
+            var value   = new PhoneNumberReflection() { Pointer= p0 };
 
 
             return value;

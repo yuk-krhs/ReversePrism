@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 EmptyParameters                          <object>[] IL2CPP_TYPE_SZARRAY
     // 010 values                                   IDictionary`2<int, IExtensionValue> IL2CPP_TYPE_GENERICINST
-    public partial class CustomOptions
+    public partial class CustomOptions : DataModel
     {
 
         public static CustomOptions? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomOptions();
+            var value   = new CustomOptions() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class YogaConstants
+    public partial class YogaConstants : DataModel
     {
 
         public static YogaConstants? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new YogaConstants();
+            var value   = new YogaConstants() { Pointer= p0 };
 
 
             return value;

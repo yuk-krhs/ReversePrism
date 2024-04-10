@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 StreamingCDN                             000186517CD0 ModelClassType PrismStreamingCDN PrismStreamingCDN PrismStreamingCDN Pointer
     // 028 SoundView                                000186538FC0 ModelClassType SoundView SoundView SoundView Pointer
     // 030 IsPlayStart                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class OurStreamLiveViewingPreRecordedView
+    public partial class OurStreamLiveViewingPreRecordedView : DataModel
     {
         public PrismStreamingCDN?                       StreamingCDN                            { get; set; }
         public SoundView?                               SoundView                               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamLiveViewingPreRecordedView();
+            var value   = new OurStreamLiveViewingPreRecordedView() { Pointer= p0 };
 
-            value.StreamingCDN                              = GetObject<PrismStreamingCDN>(new IntPtr(p + 0x020), ReversePrism.DataModels.PrismStreamingCDN.FromPointer); // 0270DB14E2F8 0x20 StreamingCDN                ( 000186517CD0 ModelClassType PrismStreamingCDN PrismStreamingCDN PrismStreamingCDN Pointer )
-            value.SoundView                                 = GetObject<SoundView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SoundView.FromPointer); // 0270DB14E318 0x28 SoundView                   ( 000186538FC0 ModelClassType SoundView SoundView SoundView Pointer )
-            value.IsPlayStart                               = GetBool(new IntPtr(p + 0x030)); // 0270DB14E338 0x30 IsPlayStart                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StreamingCDN                              = GetObject<PrismStreamingCDN>(new IntPtr(p + 0x020), ReversePrism.DataModels.PrismStreamingCDN.FromPointer); // 02466B19E2F8 0x20 StreamingCDN                ( 000186517CD0 ModelClassType PrismStreamingCDN PrismStreamingCDN PrismStreamingCDN Pointer )
+            value.SoundView                                 = GetObject<SoundView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SoundView.FromPointer); // 02466B19E318 0x28 SoundView                   ( 000186538FC0 ModelClassType SoundView SoundView SoundView Pointer )
+            value.IsPlayStart                               = GetBool(new IntPtr(p + 0x030)); // 02466B19E338 0x30 IsPlayStart                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

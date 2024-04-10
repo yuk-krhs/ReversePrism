@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PlayerPrefsException
+    public partial class PlayerPrefsException : DataModel
     {
 
         public static PlayerPrefsException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PlayerPrefsException();
+            var value   = new PlayerPrefsException() { Pointer= p0 };
 
 
             return value;

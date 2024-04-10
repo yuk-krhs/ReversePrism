@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 Texts                                    000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
     // 030 PresentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 034 TextsCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ToggleTextButton
+    public partial class ToggleTextButton : DataModel
     {
         public UIButton?                                Button                                  { get; set; }
         public List<UITextMeshProUGUI>?                 Texts                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ToggleTextButton();
+            var value   = new ToggleTextButton() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 027004378008 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Texts                                     = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 027004378028 0x28 Texts                       ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.PresentIndex                              = GetInt32(new IntPtr(p + 0x030)); // 027004378048 0x30 PresentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TextsCount                                = GetInt32(new IntPtr(p + 0x034)); // 027004378068 0x34 TextsCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0245A4403318 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Texts                                     = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4403338 0x28 Texts                       ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.PresentIndex                              = GetInt32(new IntPtr(p + 0x030)); // 0245A4403358 0x30 PresentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TextsCount                                = GetInt32(new IntPtr(p + 0x034)); // 0245A4403378 0x34 TextsCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

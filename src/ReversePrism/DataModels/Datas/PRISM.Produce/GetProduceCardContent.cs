@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 GetObject                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 028 NoGetObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 SelectableProduceCardContent             00018671FE70 ModelClassType SelectableProduceCardContent SelectableProduceCardContent SelectableProduceCardContent Pointer
-    public partial class GetProduceCardContent
+    public partial class GetProduceCardContent : DataModel
     {
         public GameObject?                              GetObject                               { get; set; }
         public GameObject?                              NoGetObject                             { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProduceCardContent();
+            var value   = new GetProduceCardContent() { Pointer= p0 };
 
-            value.GetObject                                 = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5CDA3A8 0x20 GetObject                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NoGetObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5CDA3C8 0x28 NoGetObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SelectableProduceCardContent              = GetObject<SelectableProduceCardContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectableProduceCardContent.FromPointer); // 0270D5CDA3E8 0x30 SelectableProduceCardContent ( 00018671FE70 ModelClassType SelectableProduceCardContent SelectableProduceCardContent SelectableProduceCardContent Pointer )
+            value.GetObject                                 = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024665D2A660 0x20 GetObject                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.NoGetObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024665D2A680 0x28 NoGetObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SelectableProduceCardContent              = GetObject<SelectableProduceCardContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectableProduceCardContent.FromPointer); // 024665D2A6A0 0x30 SelectableProduceCardContent ( 00018671FE70 ModelClassType SelectableProduceCardContent SelectableProduceCardContent SelectableProduceCardContent Pointer )
 
             return value;
         }

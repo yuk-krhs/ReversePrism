@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 048 PurchaseTime                             000186671BA0 ModelPrimitiveType string string string String
     // 050 PartnerList                              000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     // 058 CallbackList                             000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    public partial class AdjustPlayStoreSubscription
+    public partial class AdjustPlayStoreSubscription : DataModel
     {
         public string                                   Price                                   { get; set; }
         public string                                   Currency                                { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdjustPlayStoreSubscription();
+            var value   = new AdjustPlayStoreSubscription() { Pointer= p0 };
 
-            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 0270DBB0DF10 0x10 Price                       ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 0270DBB0DF30 0x18 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Sku                                       = GetString(new IntPtr(p + 0x020)); // 0270DBB0DF50 0x20 Sku                         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 0270DBB0DF70 0x28 OrderId                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Signature                                 = GetString(new IntPtr(p + 0x030)); // 0270DBB0DF90 0x30 Signature                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 0270DBB0DFB0 0x38 PurchaseToken               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.BillingStore                              = GetString(new IntPtr(p + 0x040)); // 0270DBB0DFD0 0x40 BillingStore                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PurchaseTime                              = GetString(new IntPtr(p + 0x048)); // 0270DBB0DFF0 0x48 PurchaseTime                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 0270DBB0E010 0x50 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 0270DBB0E030 0x58 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 02466BB953F0 0x10 Price                       ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 02466BB95410 0x18 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Sku                                       = GetString(new IntPtr(p + 0x020)); // 02466BB95430 0x20 Sku                         ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 02466BB95450 0x28 OrderId                     ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Signature                                 = GetString(new IntPtr(p + 0x030)); // 02466BB95470 0x30 Signature                   ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 02466BB95490 0x38 PurchaseToken               ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.BillingStore                              = GetString(new IntPtr(p + 0x040)); // 02466BB954B0 0x40 BillingStore                ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.PurchaseTime                              = GetString(new IntPtr(p + 0x048)); // 02466BB954D0 0x48 PurchaseTime                ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 02466BB954F0 0x50 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 02466BB95510 0x58 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

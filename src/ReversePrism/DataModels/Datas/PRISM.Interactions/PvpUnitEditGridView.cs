@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 CellPrefab                               0001865F62B0 ModelClassType PvpUnitEditGridViewCell PvpUnitEditGridViewCell PvpUnitEditGridViewCell Pointer
-    public partial class PvpUnitEditGridView
+    public partial class PvpUnitEditGridView : DataModel
     {
         public PvpUnitEditGridViewCell?                 CellPrefab                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpUnitEditGridView();
+            var value   = new PvpUnitEditGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<PvpUnitEditGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.PvpUnitEditGridViewCell.FromPointer); // 0270DA14B600 0x90 CellPrefab                  ( 0001865F62B0 ModelClassType PvpUnitEditGridViewCell PvpUnitEditGridViewCell PvpUnitEditGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<PvpUnitEditGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.PvpUnitEditGridViewCell.FromPointer); // 02466A1A6E18 0x90 CellPrefab                  ( 0001865F62B0 ModelClassType PvpUnitEditGridViewCell PvpUnitEditGridViewCell PvpUnitEditGridViewCell Pointer )
 
             return value;
         }

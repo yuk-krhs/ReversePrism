@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DrivenRectTransformTracker
+    public partial class DrivenRectTransformTracker : DataModel
     {
 
         public static DrivenRectTransformTracker? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrivenRectTransformTracker();
+            var value   = new DrivenRectTransformTracker() { Pointer= p0 };
 
 
             return value;

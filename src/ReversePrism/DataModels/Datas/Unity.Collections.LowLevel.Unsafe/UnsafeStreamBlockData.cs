@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 BlockCount                               0001865F2F90 ModelPrimitiveType int int int Int32
     // 028 Ranges                                   0001866CD820 ModelEnumType Block Block Block Int32
     // 048 RangeCount                               0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class UnsafeStreamBlockData
+    public partial class UnsafeStreamBlockData : DataModel
     {
         public AllocatorHandle                          Allocator                               { get; set; }
         public int                                      BlockCount                              { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeStreamBlockData();
+            var value   = new UnsafeStreamBlockData() { Pointer= p0 };
 
-            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 0270D9E94770 0x10 Allocator                   ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.BlockCount                                = GetInt32(new IntPtr(p + 0x020)); // 0270D9E947B0 0x20 BlockCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Ranges                                    = (Block)GetInt32(new IntPtr(p + 0x028)); // 0270D9E947D0 0x28 Ranges                      ( 0001866CD820 ModelEnumType Block Block Block Int32 )
-            value.RangeCount                                = GetInt32(new IntPtr(p + 0x048)); // 0270D9E947F0 0x48 RangeCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 024669EEE840 0x10 Allocator                   ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.BlockCount                                = GetInt32(new IntPtr(p + 0x020)); // 024669EEE880 0x20 BlockCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Ranges                                    = (Block)GetInt32(new IntPtr(p + 0x028)); // 024669EEE8A0 0x28 Ranges                      ( 0001866CD820 ModelEnumType Block Block Block Int32 )
+            value.RangeCount                                = GetInt32(new IntPtr(p + 0x048)); // 024669EEE8C0 0x48 RangeCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

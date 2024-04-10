@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Analytics                                0001866F16F0 ModelClassType IAnalytics IAnalytics IAnalytics Pointer
     // 018 Crashlytics                              000186744360 ModelClassType ICrashlytics ICrashlytics ICrashlytics Pointer
-    public partial class LoggerAnalysis
+    public partial class LoggerAnalysis : DataModel
     {
         public IAnalytics?                              Analytics                               { get; set; }
         public ICrashlytics?                            Crashlytics                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoggerAnalysis();
+            var value   = new LoggerAnalysis() { Pointer= p0 };
 
-            value.Analytics                                 = GetObject<IAnalytics>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalytics.FromPointer); // 027003C78B28 0x10 Analytics                   ( 0001866F16F0 ModelClassType IAnalytics IAnalytics IAnalytics Pointer )
-            value.Crashlytics                               = GetObject<ICrashlytics>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICrashlytics.FromPointer); // 027003C78B48 0x18 Crashlytics                 ( 000186744360 ModelClassType ICrashlytics ICrashlytics ICrashlytics Pointer )
+            value.Analytics                                 = GetObject<IAnalytics>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalytics.FromPointer); // 0245A3C78B28 0x10 Analytics                   ( 0001866F16F0 ModelClassType IAnalytics IAnalytics IAnalytics Pointer )
+            value.Crashlytics                               = GetObject<ICrashlytics>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICrashlytics.FromPointer); // 0245A3C78B48 0x18 Crashlytics                 ( 000186744360 ModelClassType ICrashlytics ICrashlytics ICrashlytics Pointer )
 
             return value;
         }

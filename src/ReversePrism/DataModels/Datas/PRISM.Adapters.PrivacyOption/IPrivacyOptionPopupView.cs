@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPrivacyOptionPopupView
+    public partial class IPrivacyOptionPopupView : DataModel
     {
 
         public static IPrivacyOptionPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPrivacyOptionPopupView();
+            var value   = new IPrivacyOptionPopupView() { Pointer= p0 };
 
 
             return value;

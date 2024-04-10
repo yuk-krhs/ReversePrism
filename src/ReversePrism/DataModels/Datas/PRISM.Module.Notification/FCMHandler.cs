@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 010 MyToken                                  000186671910 ModelPrimitiveType string string string String
     // 018 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 020 firebaseInitialized                      IObservable`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class FCMHandler
+    public partial class FCMHandler : DataModel
     {
         public string                                   MyToken                                 { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FCMHandler();
+            var value   = new FCMHandler() { Pointer= p0 };
 
-            value.MyToken                                   = GetString(new IntPtr(p + 0x010)); // 0270DBF10A50 0x10 MyToken                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270DBF10A70 0x18 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.MyToken                                   = GetString(new IntPtr(p + 0x010)); // 02466BF808B0 0x10 MyToken                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466BF808D0 0x18 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

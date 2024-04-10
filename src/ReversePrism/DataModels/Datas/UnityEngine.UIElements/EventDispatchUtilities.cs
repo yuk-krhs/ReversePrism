@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EventDispatchUtilities
+    public partial class EventDispatchUtilities : DataModel
     {
 
         public static EventDispatchUtilities? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventDispatchUtilities();
+            var value   = new EventDispatchUtilities() { Pointer= p0 };
 
 
             return value;

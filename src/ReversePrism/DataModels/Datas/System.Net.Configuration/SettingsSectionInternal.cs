@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 instance                                 SettingsSectionInternal IL2CPP_TYPE_CLASS
     // 010 HttpListenerUnescapeRequestUrl           000186596860 ModelPrimitiveType bool bool bool Bool
     // 014 IPProtectionLevel                        0001865D0960 ModelEnumType IPProtectionLevel IPProtectionLevel IPProtectionLevel Int32
-    public partial class SettingsSectionInternal
+    public partial class SettingsSectionInternal : DataModel
     {
         public bool                                     HttpListenerUnescapeRequestUrl          { get; set; }
         public IPProtectionLevel                        IPProtectionLevel                       { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SettingsSectionInternal();
+            var value   = new SettingsSectionInternal() { Pointer= p0 };
 
-            value.HttpListenerUnescapeRequestUrl            = GetBool(new IntPtr(p + 0x010)); // 0270D7AE3DC8 0x10 HttpListenerUnescapeRequestUrl ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IPProtectionLevel                         = (IPProtectionLevel)GetInt32(new IntPtr(p + 0x014)); // 0270D7AE3DE8 0x14 IPProtectionLevel           ( 0001865D0960 ModelEnumType IPProtectionLevel IPProtectionLevel IPProtectionLevel Int32 )
+            value.HttpListenerUnescapeRequestUrl            = GetBool(new IntPtr(p + 0x010)); // 024667B4BDC8 0x10 HttpListenerUnescapeRequestUrl ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IPProtectionLevel                         = (IPProtectionLevel)GetInt32(new IntPtr(p + 0x014)); // 024667B4BDE8 0x14 IPProtectionLevel           ( 0001865D0960 ModelEnumType IPProtectionLevel IPProtectionLevel IPProtectionLevel Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_nullMessage                            string IL2CPP_TYPE_STRING
-    public partial class SerializationException
+    public partial class SerializationException : DataModel
     {
 
         public static SerializationException? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SerializationException();
+            var value   = new SerializationException() { Pointer= p0 };
 
 
             return value;

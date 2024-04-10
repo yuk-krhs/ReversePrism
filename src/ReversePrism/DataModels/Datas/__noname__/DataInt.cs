@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IntFormat                                000186595960 ModelPrimitiveType bool bool bool Bool
     // 018 FrameData                                000185CC12D8 ModelClassListType FrameDataInt[] FrameDataInt[] List<FrameDataInt> Pointer
-    public partial class DataInt
+    public partial class DataInt : DataModel
     {
         public bool                                     IntFormat                               { get; set; }
         public List<FrameDataInt>?                      FrameData                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataInt();
+            var value   = new DataInt() { Pointer= p0 };
 
-            value.IntFormat                                 = GetBool(new IntPtr(p + 0x010)); // 0270D4D99618 0x10 IntFormat                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.FrameData                                 = GetObjectList<FrameDataInt>(new IntPtr(p + 0x018), ReversePrism.DataModels.FrameDataInt.FromPointer); // 0270D4D99638 0x18 FrameData                   ( 000185CC12D8 ModelClassListType FrameDataInt[] FrameDataInt[] List<FrameDataInt> Pointer )
+            value.IntFormat                                 = GetBool(new IntPtr(p + 0x010)); // 024664DF2A70 0x10 IntFormat                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.FrameData                                 = GetObjectList<FrameDataInt>(new IntPtr(p + 0x018), ReversePrism.DataModels.FrameDataInt.FromPointer); // 024664DF2A90 0x18 FrameData                   ( 000185CC12D8 ModelClassListType FrameDataInt[] FrameDataInt[] List<FrameDataInt> Pointer )
 
             return value;
         }

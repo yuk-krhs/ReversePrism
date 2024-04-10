@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 LessonExecModel                          00018651CCA0 ModelClassType LessonAutoExecModel LessonAutoExecModel LessonAutoExecModel Pointer
     // 018 SpecialLessonExecModel                   00018653E2E0 ModelClassType SpecialLessonAutoExecModel SpecialLessonAutoExecModel SpecialLessonAutoExecModel Pointer
     // 020 AuditionExecModel                        00018671A9B0 ModelClassType AuditionAutoExecModel AuditionAutoExecModel AuditionAutoExecModel Pointer
-    public partial class ProduceInGameAutoExecModel
+    public partial class ProduceInGameAutoExecModel : DataModel
     {
         public LessonAutoExecModel?                     LessonExecModel                         { get; set; }
         public SpecialLessonAutoExecModel?              SpecialLessonExecModel                  { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceInGameAutoExecModel();
+            var value   = new ProduceInGameAutoExecModel() { Pointer= p0 };
 
-            value.LessonExecModel                           = GetObject<LessonAutoExecModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.LessonAutoExecModel.FromPointer); // 0270DADFB670 0x10 LessonExecModel             ( 00018651CCA0 ModelClassType LessonAutoExecModel LessonAutoExecModel LessonAutoExecModel Pointer )
-            value.SpecialLessonExecModel                    = GetObject<SpecialLessonAutoExecModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialLessonAutoExecModel.FromPointer); // 0270DADFB690 0x18 SpecialLessonExecModel      ( 00018653E2E0 ModelClassType SpecialLessonAutoExecModel SpecialLessonAutoExecModel SpecialLessonAutoExecModel Pointer )
-            value.AuditionExecModel                         = GetObject<AuditionAutoExecModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.AuditionAutoExecModel.FromPointer); // 0270DADFB6B0 0x20 AuditionExecModel           ( 00018671A9B0 ModelClassType AuditionAutoExecModel AuditionAutoExecModel AuditionAutoExecModel Pointer )
+            value.LessonExecModel                           = GetObject<LessonAutoExecModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.LessonAutoExecModel.FromPointer); // 02466AE53670 0x10 LessonExecModel             ( 00018651CCA0 ModelClassType LessonAutoExecModel LessonAutoExecModel LessonAutoExecModel Pointer )
+            value.SpecialLessonExecModel                    = GetObject<SpecialLessonAutoExecModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialLessonAutoExecModel.FromPointer); // 02466AE53690 0x18 SpecialLessonExecModel      ( 00018653E2E0 ModelClassType SpecialLessonAutoExecModel SpecialLessonAutoExecModel SpecialLessonAutoExecModel Pointer )
+            value.AuditionExecModel                         = GetObject<AuditionAutoExecModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.AuditionAutoExecModel.FromPointer); // 02466AE536B0 0x20 AuditionExecModel           ( 00018671A9B0 ModelClassType AuditionAutoExecModel AuditionAutoExecModel AuditionAutoExecModel Pointer )
 
             return value;
         }

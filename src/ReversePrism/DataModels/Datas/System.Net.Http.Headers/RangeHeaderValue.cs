@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Ranges                                   000185CFF318 ModelClassListType List`1<RangeItemHeaderValue> List`1<RangeItemHeaderValue> List<RangeItemHeaderValue> Pointer
     // 018 Unit                                     000186671910 ModelPrimitiveType string string string String
-    public partial class RangeHeaderValue
+    public partial class RangeHeaderValue : DataModel
     {
         public List<RangeItemHeaderValue>?              Ranges                                  { get; set; }
         public string                                   Unit                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RangeHeaderValue();
+            var value   = new RangeHeaderValue() { Pointer= p0 };
 
-            value.Ranges                                    = GetObjectList<RangeItemHeaderValue>(new IntPtr(p + 0x010), ReversePrism.DataModels.RangeItemHeaderValue.FromPointer); // 0270DB897EC8 0x10 Ranges                      ( 000185CFF318 ModelClassListType List`1<RangeItemHeaderValue> List`1<RangeItemHeaderValue> List<RangeItemHeaderValue> Pointer )
-            value.Unit                                      = GetString(new IntPtr(p + 0x018)); // 0270DB897EE8 0x18 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ranges                                    = GetObjectList<RangeItemHeaderValue>(new IntPtr(p + 0x010), ReversePrism.DataModels.RangeItemHeaderValue.FromPointer); // 02466B91FB38 0x10 Ranges                      ( 000185CFF318 ModelClassListType List`1<RangeItemHeaderValue> List`1<RangeItemHeaderValue> List<RangeItemHeaderValue> Pointer )
+            value.Unit                                      = GetString(new IntPtr(p + 0x018)); // 02466B91FB58 0x18 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

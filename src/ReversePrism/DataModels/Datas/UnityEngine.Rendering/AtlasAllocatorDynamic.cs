@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 M_Pool                                   0001866CE6F0 ModelClassType AtlasNodePool AtlasNodePool AtlasNodePool Pointer
     // 020 M_Root                                   0001865F1060 ModelPrimitiveType short short short Int16
     // 028 m_NodeFromID                             Dictionary`2<int, short> IL2CPP_TYPE_GENERICINST
-    public partial class AtlasAllocatorDynamic
+    public partial class AtlasAllocatorDynamic : DataModel
     {
         public int                                      M_Width                                 { get; set; }
         public int                                      M_Height                                { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AtlasAllocatorDynamic();
+            var value   = new AtlasAllocatorDynamic() { Pointer= p0 };
 
-            value.M_Width                                   = GetInt32(new IntPtr(p + 0x010)); // 0270D927FF88 0x10 M_Width                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Height                                  = GetInt32(new IntPtr(p + 0x014)); // 0270D927FFA8 0x14 M_Height                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Pool                                    = GetObject<AtlasNodePool>(new IntPtr(p + 0x018), ReversePrism.DataModels.AtlasNodePool.FromPointer); // 0270D927FFC8 0x18 M_Pool                      ( 0001866CE6F0 ModelClassType AtlasNodePool AtlasNodePool AtlasNodePool Pointer )
-            value.M_Root                                    = GetInt16(new IntPtr(p + 0x020)); // 0270D927FFE8 0x20 M_Root                      ( 0001865F1060 ModelPrimitiveType short short short Int16 )
+            value.M_Width                                   = GetInt32(new IntPtr(p + 0x010)); // 0246692F2480 0x10 M_Width                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Height                                  = GetInt32(new IntPtr(p + 0x014)); // 0246692F24A0 0x14 M_Height                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Pool                                    = GetObject<AtlasNodePool>(new IntPtr(p + 0x018), ReversePrism.DataModels.AtlasNodePool.FromPointer); // 0246692F24C0 0x18 M_Pool                      ( 0001866CE6F0 ModelClassType AtlasNodePool AtlasNodePool AtlasNodePool Pointer )
+            value.M_Root                                    = GetInt16(new IntPtr(p + 0x020)); // 0246692F24E0 0x20 M_Root                      ( 0001865F1060 ModelPrimitiveType short short short Int16 )
 
             return value;
         }

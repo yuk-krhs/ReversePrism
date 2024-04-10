@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 DeviceName                               0001866722E0 ModelPrimitiveType string string string String
     // 018 SamplingRate                             0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C NumChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class MicrophoneConfig
+    public partial class MicrophoneConfig : DataModel
     {
         public string                                   DeviceName                              { get; set; }
         public int                                      SamplingRate                            { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MicrophoneConfig();
+            var value   = new MicrophoneConfig() { Pointer= p0 };
 
-            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 0270DBBA8728 0x10 DeviceName                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x018)); // 0270DBBA8748 0x18 SamplingRate                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NumChannels                               = GetInt32(new IntPtr(p + 0x01C)); // 0270DBBA8768 0x1C NumChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 02466BC28C48 0x10 DeviceName                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x018)); // 02466BC28C68 0x18 SamplingRate                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NumChannels                               = GetInt32(new IntPtr(p + 0x01C)); // 02466BC28C88 0x1C NumChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 m_SubsystemInstanceMap                   Dictionary`2<Type, ISubsystem> IL2CPP_TYPE_GENERICINST
-    public partial class AdaptivePerformanceLoaderHelper
+    public partial class AdaptivePerformanceLoaderHelper : DataModel
     {
 
         public static AdaptivePerformanceLoaderHelper? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceLoaderHelper();
+            var value   = new AdaptivePerformanceLoaderHelper() { Pointer= p0 };
 
 
             return value;

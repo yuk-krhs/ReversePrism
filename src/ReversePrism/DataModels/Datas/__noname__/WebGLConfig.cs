@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 WebworkerPath                            0001866722E0 ModelPrimitiveType string string string String
     // 018 HeapSize                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class WebGLConfig
+    public partial class WebGLConfig : DataModel
     {
         public string                                   WebworkerPath                           { get; set; }
         public int                                      HeapSize                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WebGLConfig();
+            var value   = new WebGLConfig() { Pointer= p0 };
 
-            value.WebworkerPath                             = GetString(new IntPtr(p + 0x010)); // 0270D117CD68 0x10 WebworkerPath               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HeapSize                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D117CD88 0x18 HeapSize                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.WebworkerPath                             = GetString(new IntPtr(p + 0x010)); // 024660F656B8 0x10 WebworkerPath               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.HeapSize                                  = GetInt32(new IntPtr(p + 0x018)); // 024660F656D8 0x18 HeapSize                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

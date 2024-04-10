@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 0C8 Model                                    00018656E750 ModelClassType LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel Pointer
     // 000 AnimatorParamKeyNext                     int IL2CPP_TYPE_I4
     // 004 AnimatorParamKeyComplete                 int IL2CPP_TYPE_I4
-    public partial class LiveResultEventPhaseView
+    public partial class LiveResultEventPhaseView : DataModel
     {
         public Image?                                   BackgroundImage                         { get; set; }
         public Transform?                               CharacterArea                           { get; set; }
@@ -49,23 +49,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveResultEventPhaseView();
+            var value   = new LiveResultEventPhaseView() { Pointer= p0 };
 
-            value.BackgroundImage                           = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 0270D5237198 0x58 BackgroundImage             ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.CharacterArea                             = GetObject<Transform>(new IntPtr(p + 0x060), ReversePrism.DataModels.Transform.FromPointer); // 0270D52371B8 0x60 CharacterArea               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.LogoImage                                 = GetObject<Image>(new IntPtr(p + 0x068), ReversePrism.DataModels.Image.FromPointer); // 0270D52371D8 0x68 LogoImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.LogoEffectImage                           = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 0270D52371F8 0x70 LogoEffectImage             ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.MusicInfoView                             = GetObject<MusicBasicInfoView>(new IntPtr(p + 0x078), ReversePrism.DataModels.MusicBasicInfoView.FromPointer); // 0270D5237218 0x78 MusicInfoView               ( 0001866630C0 ModelClassType MusicBasicInfoView MusicBasicInfoView MusicBasicInfoView Pointer )
-            value.ScoreDetailPanel                          = GetObject<LiveEventScoreDetailPanel>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveEventScoreDetailPanel.FromPointer); // 0270D5237238 0x80 ScoreDetailPanel            ( 0001865543E0 ModelClassType LiveEventScoreDetailPanel LiveEventScoreDetailPanel LiveEventScoreDetailPanel Pointer )
-            value.EventButton                               = GetObject<ButtonBase>(new IntPtr(p + 0x088), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D5237258 0x88 EventButton                 ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.NextStoryObjects                          = GetObjectList<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0270D5237278 0x90 NextStoryObjects            ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.EventStoryTexts                           = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5237298 0x98 EventStoryTexts             ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.EventStoryRemainPointTexts                = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D52372B8 0xA0 EventStoryRemainPointTexts  ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.NextStoryAnimator                         = GetObject<Animator>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Animator.FromPointer); // 0270D52372D8 0xA8 NextStoryAnimator           ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.CompleteStoryAnimator                     = GetObject<Animator>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Animator.FromPointer); // 0270D52372F8 0xB0 CompleteStoryAnimator       ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x0B8)); // 0270D5237318 0xB8 EventId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceTag                               = GetString(new IntPtr(p + 0x0C0)); // 0270D5237338 0xC0 ResourceTag                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Model                                     = GetObject<LiveResultEventPhaseViewModel>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.LiveResultEventPhaseViewModel.FromPointer); // 0270D5237358 0xC8 Model                       ( 00018656E750 ModelClassType LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel Pointer )
+            value.BackgroundImage                           = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 0246652AC1F8 0x58 BackgroundImage             ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.CharacterArea                             = GetObject<Transform>(new IntPtr(p + 0x060), ReversePrism.DataModels.Transform.FromPointer); // 0246652AC218 0x60 CharacterArea               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.LogoImage                                 = GetObject<Image>(new IntPtr(p + 0x068), ReversePrism.DataModels.Image.FromPointer); // 0246652AC238 0x68 LogoImage                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.LogoEffectImage                           = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 0246652AC258 0x70 LogoEffectImage             ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.MusicInfoView                             = GetObject<MusicBasicInfoView>(new IntPtr(p + 0x078), ReversePrism.DataModels.MusicBasicInfoView.FromPointer); // 0246652AC278 0x78 MusicInfoView               ( 0001866630C0 ModelClassType MusicBasicInfoView MusicBasicInfoView MusicBasicInfoView Pointer )
+            value.ScoreDetailPanel                          = GetObject<LiveEventScoreDetailPanel>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveEventScoreDetailPanel.FromPointer); // 0246652AC298 0x80 ScoreDetailPanel            ( 0001865543E0 ModelClassType LiveEventScoreDetailPanel LiveEventScoreDetailPanel LiveEventScoreDetailPanel Pointer )
+            value.EventButton                               = GetObject<ButtonBase>(new IntPtr(p + 0x088), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246652AC2B8 0x88 EventButton                 ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.NextStoryObjects                          = GetObjectList<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0246652AC2D8 0x90 NextStoryObjects            ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.EventStoryTexts                           = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246652AC2F8 0x98 EventStoryTexts             ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.EventStoryRemainPointTexts                = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246652AC318 0xA0 EventStoryRemainPointTexts  ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.NextStoryAnimator                         = GetObject<Animator>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Animator.FromPointer); // 0246652AC338 0xA8 NextStoryAnimator           ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.CompleteStoryAnimator                     = GetObject<Animator>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Animator.FromPointer); // 0246652AC358 0xB0 CompleteStoryAnimator       ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x0B8)); // 0246652AC378 0xB8 EventId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ResourceTag                               = GetString(new IntPtr(p + 0x0C0)); // 0246652AC398 0xC0 ResourceTag                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Model                                     = GetObject<LiveResultEventPhaseViewModel>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.LiveResultEventPhaseViewModel.FromPointer); // 0246652AC3B8 0xC8 Model                       ( 00018656E750 ModelClassType LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel LiveResultEventPhaseViewModel Pointer )
 
             return value;
         }

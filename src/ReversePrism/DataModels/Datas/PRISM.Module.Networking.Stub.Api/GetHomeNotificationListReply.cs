@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 NotificationListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_notificationList_codec         FieldCodec`1<HomeNotificationStatus> IL2CPP_TYPE_GENERICINST
     // 018 NotificationList                         000185CDE8A8 ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer
-    public partial class GetHomeNotificationListReply
+    public partial class GetHomeNotificationListReply : DataModel
     {
         public List<HomeNotificationStatus>?            NotificationList                        { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetHomeNotificationListReply();
+            var value   = new GetHomeNotificationListReply() { Pointer= p0 };
 
-            value.NotificationList                          = GetObjectList<HomeNotificationStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeNotificationStatus.FromPointer); // 0270D20509D8 0x18 NotificationList            ( 000185CDE8A8 ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer )
+            value.NotificationList                          = GetObjectList<HomeNotificationStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeNotificationStatus.FromPointer); // 024662011A58 0x18 NotificationList            ( 000185CDE8A8 ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer )
 
             return value;
         }

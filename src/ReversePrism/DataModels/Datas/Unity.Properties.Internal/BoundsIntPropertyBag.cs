@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BoundsIntPropertyBag
+    public partial class BoundsIntPropertyBag : DataModel
     {
 
         public static BoundsIntPropertyBag? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BoundsIntPropertyBag();
+            var value   = new BoundsIntPropertyBag() { Pointer= p0 };
 
 
             return value;

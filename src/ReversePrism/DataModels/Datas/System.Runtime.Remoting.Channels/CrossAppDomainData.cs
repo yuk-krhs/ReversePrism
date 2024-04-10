@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 _ContextID                               <object> IL2CPP_TYPE_OBJECT
     // 018 DomainID                                 0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 ProcessGuid                              000186671910 ModelPrimitiveType string string string String
-    public partial class CrossAppDomainData
+    public partial class CrossAppDomainData : DataModel
     {
         public int                                      DomainID                                { get; set; }
         public string                                   ProcessGuid                             { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CrossAppDomainData();
+            var value   = new CrossAppDomainData() { Pointer= p0 };
 
-            value.DomainID                                  = GetInt32(new IntPtr(p + 0x018)); // 0270D6BE5058 0x18 DomainID                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProcessGuid                               = GetString(new IntPtr(p + 0x020)); // 0270D6BE5078 0x20 ProcessGuid                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DomainID                                  = GetInt32(new IntPtr(p + 0x018)); // 024666C5D058 0x18 DomainID                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProcessGuid                               = GetString(new IntPtr(p + 0x020)); // 024666C5D078 0x20 ProcessGuid                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

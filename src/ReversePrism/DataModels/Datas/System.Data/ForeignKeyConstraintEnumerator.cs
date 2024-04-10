@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ForeignKeyConstraintEnumerator
+    public partial class ForeignKeyConstraintEnumerator : DataModel
     {
 
         public static ForeignKeyConstraintEnumerator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ForeignKeyConstraintEnumerator();
+            var value   = new ForeignKeyConstraintEnumerator() { Pointer= p0 };
 
 
             return value;

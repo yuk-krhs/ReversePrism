@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 XmlNode                                  0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer
     // 020 LineNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 LinePosition                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class XmlNodeEventArgs
+    public partial class XmlNodeEventArgs : DataModel
     {
         public XmlNode?                                 XmlNode                                 { get; set; }
         public int                                      LineNumber                              { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlNodeEventArgs();
+            var value   = new XmlNodeEventArgs() { Pointer= p0 };
 
-            value.XmlNode                                   = GetObject<XmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D749ED48 0x18 XmlNode                     ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x020)); // 0270D749ED68 0x20 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x024)); // 0270D749ED88 0x24 LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.XmlNode                                   = GetObject<XmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNode.FromPointer); // 024667506D48 0x18 XmlNode                     ( 0001866BB0D0 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x020)); // 024667506D68 0x20 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x024)); // 024667506D88 0x24 LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

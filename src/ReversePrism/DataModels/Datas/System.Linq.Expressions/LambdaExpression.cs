@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Body                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
-    public partial class LambdaExpression
+    public partial class LambdaExpression : DataModel
     {
         public Expression?                              Body                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LambdaExpression();
+            var value   = new LambdaExpression() { Pointer= p0 };
 
-            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0270D766D2A0 0x10 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0246676D52A0 0x10 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

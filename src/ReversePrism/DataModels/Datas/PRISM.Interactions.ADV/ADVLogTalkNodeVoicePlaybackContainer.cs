@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Playbacks                                000185CD4CA8 ModelEnumListType List`1<CriAtomExPlayback> List`1<CriAtomExPlayback> List<CriAtomExPlayback> Pointer
-    public partial class ADVLogTalkNodeVoicePlaybackContainer
+    public partial class ADVLogTalkNodeVoicePlaybackContainer : DataModel
     {
         public List<CriAtomExPlayback>?                 Playbacks                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogTalkNodeVoicePlaybackContainer();
+            var value   = new ADVLogTalkNodeVoicePlaybackContainer() { Pointer= p0 };
 
-            value.Playbacks                                 = GetEnumList<CriAtomExPlayback>(new IntPtr(p + 0x010)); // 0270DA1F7298 0x10 Playbacks                   ( 000185CD4CA8 ModelEnumListType List`1<CriAtomExPlayback> List`1<CriAtomExPlayback> List<CriAtomExPlayback> Pointer )
+            value.Playbacks                                 = GetEnumList<CriAtomExPlayback>(new IntPtr(p + 0x010)); // 02466A2628F0 0x10 Playbacks                   ( 000185CD4CA8 ModelEnumListType List`1<CriAtomExPlayback> List`1<CriAtomExPlayback> List<CriAtomExPlayback> Pointer )
 
             return value;
         }

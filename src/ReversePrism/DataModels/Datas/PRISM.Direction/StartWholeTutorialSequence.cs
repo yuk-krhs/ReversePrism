@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 SkipSequence                             0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
-    public partial class StartWholeTutorialSequence
+    public partial class StartWholeTutorialSequence : DataModel
     {
         public ITutorialSequence?                       SkipSequence                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StartWholeTutorialSequence();
+            var value   = new StartWholeTutorialSequence() { Pointer= p0 };
 
-            value.SkipSequence                              = GetObject<ITutorialSequence>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0270DB646658 0x10 SkipSequence                ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.SkipSequence                              = GetObject<ITutorialSequence>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 02466B6D27B8 0x10 SkipSequence                ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
 
             return value;
         }

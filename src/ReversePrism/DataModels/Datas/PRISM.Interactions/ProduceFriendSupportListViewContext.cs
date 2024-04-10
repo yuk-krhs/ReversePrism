@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 onShowSCharaDetailPopup                  Subject`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceFriendSupportListViewContext
+    public partial class ProduceFriendSupportListViewContext : DataModel
     {
 
         public static ProduceFriendSupportListViewContext? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceFriendSupportListViewContext();
+            var value   = new ProduceFriendSupportListViewContext() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_MaximumRamSizeInBytes                  long IL2CPP_TYPE_I8
-    public partial class Memory
+    public partial class Memory : DataModel
     {
 
         public static Memory? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Memory();
+            var value   = new Memory() { Pointer= p0 };
 
 
             return value;

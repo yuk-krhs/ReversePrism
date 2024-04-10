@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 PointerMemoryManager                     00018651BFF0 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer
-    public partial class SliceSegment
+    public partial class SliceSegment : DataModel
     {
         public SliceMemoryManager?                      PointerMemoryManager                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SliceSegment();
+            var value   = new SliceSegment() { Pointer= p0 };
 
-            value.PointerMemoryManager                      = GetObject<SliceMemoryManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.SliceMemoryManager.FromPointer); // 0270D304FAA0 0x30 PointerMemoryManager        ( 00018651BFF0 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer )
+            value.PointerMemoryManager                      = GetObject<SliceMemoryManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.SliceMemoryManager.FromPointer); // 024662FBAA98 0x30 PointerMemoryManager        ( 00018651BFF0 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer )
 
             return value;
         }

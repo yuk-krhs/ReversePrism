@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 dic                                      Dictionary`2<TextOutlineColorId, Color> IL2CPP_TYPE_GENERICINST
-    public partial class TextOutlineColor
+    public partial class TextOutlineColor : DataModel
     {
 
         public static TextOutlineColor? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextOutlineColor();
+            var value   = new TextOutlineColor() { Pointer= p0 };
 
 
             return value;

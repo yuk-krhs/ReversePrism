@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 type                                     UxmlTypeAttributeDescription`1<Enum> IL2CPP_TYPE_GENERICINST
     // 008 value                                    UxmlStringAttributeDescription IL2CPP_TYPE_CLASS
     // 010 IncludeObsoleteValues                    00018675BBC0 ModelClassType UxmlBoolAttributeDescription UxmlBoolAttributeDescription UxmlBoolAttributeDescription Pointer
-    public partial class EnumFieldHelpers
+    public partial class EnumFieldHelpers : DataModel
     {
         public UxmlBoolAttributeDescription?            IncludeObsoleteValues                   { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumFieldHelpers();
+            var value   = new EnumFieldHelpers() { Pointer= p0 };
 
-            value.IncludeObsoleteValues                     = GetObject<UxmlBoolAttributeDescription>(new IntPtr(p + 0x010), ReversePrism.DataModels.UxmlBoolAttributeDescription.FromPointer); // 02700670BF30 0x10 IncludeObsoleteValues       ( 00018675BBC0 ModelClassType UxmlBoolAttributeDescription UxmlBoolAttributeDescription UxmlBoolAttributeDescription Pointer )
+            value.IncludeObsoleteValues                     = GetObject<UxmlBoolAttributeDescription>(new IntPtr(p + 0x010), ReversePrism.DataModels.UxmlBoolAttributeDescription.FromPointer); // 0245A66CE540 0x10 IncludeObsoleteValues       ( 00018675BBC0 ModelClassType UxmlBoolAttributeDescription UxmlBoolAttributeDescription UxmlBoolAttributeDescription Pointer )
 
             return value;
         }

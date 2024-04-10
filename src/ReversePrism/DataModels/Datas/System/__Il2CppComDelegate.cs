@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class __Il2CppComDelegate
+    public partial class __Il2CppComDelegate : DataModel
     {
 
         public static __Il2CppComDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new __Il2CppComDelegate();
+            var value   = new __Il2CppComDelegate() { Pointer= p0 };
 
 
             return value;

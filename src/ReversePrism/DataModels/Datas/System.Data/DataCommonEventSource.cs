@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Log                                      DataCommonEventSource IL2CPP_TYPE_CLASS
     // 008 s_nextScopeId                            long IL2CPP_TYPE_I8
-    public partial class DataCommonEventSource
+    public partial class DataCommonEventSource : DataModel
     {
 
         public static DataCommonEventSource? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataCommonEventSource();
+            var value   = new DataCommonEventSource() { Pointer= p0 };
 
 
             return value;

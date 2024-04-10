@@ -5,6 +5,7 @@ namespace ReversePrism
     public partial class MstEventStory : MasterDataItem
     {
         public int                              Id;
+        public int                              EpisodeNumber;
         public int                              ScenarioNumber;
         public int                              MstEventId;
         public int                              EpisodeType;

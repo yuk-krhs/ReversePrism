@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 028 MstAccessoryIdList                       000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     // 000 EnableFieldNumber                        int IL2CPP_TYPE_I4
     // 030 Enable                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SetIdolBaseCostumeArgs
+    public partial class SetIdolBaseCostumeArgs : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
         public IdolBaseCostumeTargetSceneType           SceneType                               { get; set; }
@@ -38,14 +38,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetIdolBaseCostumeArgs();
+            var value   = new SetIdolBaseCostumeArgs() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D20FEDF0 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SceneType                                 = (IdolBaseCostumeTargetSceneType)GetInt32(new IntPtr(p + 0x01C)); // 0270D20FEE30 0x1C SceneType                   ( 0001866A53A0 ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32 )
-            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x020)); // 0270D20FEE70 0x20 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x024)); // 0270D20FEEB0 0x24 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 0270D20FEF10 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x030)); // 0270D20FEF50 0x30 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466206EC40 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SceneType                                 = (IdolBaseCostumeTargetSceneType)GetInt32(new IntPtr(p + 0x01C)); // 02466206EC80 0x1C SceneType                   ( 0001866A53A0 ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32 )
+            value.MstCostumeId                              = GetInt32(new IntPtr(p + 0x020)); // 02466206ECC0 0x20 MstCostumeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstHairstyleId                            = GetInt32(new IntPtr(p + 0x024)); // 02466206ED00 0x24 MstHairstyleId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAccessoryIdList                        = GetInt32List(new IntPtr(p + 0x028)); // 02466206ED60 0x28 MstAccessoryIdList          ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x030)); // 02466206EDA0 0x30 Enable                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

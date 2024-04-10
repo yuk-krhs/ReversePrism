@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 GrayOutController                        0001866EA6A0 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
     // 030 ErrorModalMessage                        000186671E00 ModelPrimitiveType string string string String
     // 038 clickSubject                             Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class GrayOutErrorModalButton
+    public partial class GrayOutErrorModalButton : DataModel
     {
         public ButtonBase?                              Button                                  { get; set; }
         public UIGrayOutController?                     GrayOutController                       { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GrayOutErrorModalButton();
+            var value   = new GrayOutErrorModalButton() { Pointer= p0 };
 
-            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D4EDBF70 0x20 Button                      ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0270D4EDBF90 0x28 GrayOutController           ( 0001866EA6A0 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.ErrorModalMessage                         = GetString(new IntPtr(p + 0x030)); // 0270D4EDBFB0 0x30 ErrorModalMessage           ( 000186671E00 ModelPrimitiveType string string string String )
+            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ButtonBase.FromPointer); // 024664F51BB0 0x20 Button                      ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024664F51BD0 0x28 GrayOutController           ( 0001866EA6A0 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.ErrorModalMessage                         = GetString(new IntPtr(p + 0x030)); // 024664F51BF0 0x30 ErrorModalMessage           ( 000186671E00 ModelPrimitiveType string string string String )
 
             return value;
         }

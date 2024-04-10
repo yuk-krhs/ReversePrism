@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 060 ExchangeNotificationList                 000185CDE638 ModelClassListType RepeatedField`1<HomeExchangeNotificationStatus> RepeatedField`1<HomeExchangeNotificationStatus> List<HomeExchangeNotificationStatus> Pointer
     // 000 MstSpecialMissionIdFieldNumber           int IL2CPP_TYPE_I4
     // 068 MstSpecialMissionId                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class HomeNotificationStatus
+    public partial class HomeNotificationStatus : DataModel
     {
         public DateTime                                 LastUpdateDate                          { get; set; }
         public NotificationPlace                        Place                                   { get; set; }
@@ -54,19 +54,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeNotificationStatus();
+            var value   = new HomeNotificationStatus() { Pointer= p0 };
 
-            value.LastUpdateDate                            = GetDateTime(new IntPtr(p + 0x010)); // 0270D205F760 0x10 LastUpdateDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Place                                     = (NotificationPlace)GetInt32(new IntPtr(p + 0x028)); // 0270D205F7E0 0x28 Place                       ( 0001866B3B90 ModelEnumType NotificationPlace NotificationPlace NotificationPlace Int32 )
-            value.BadgeType                                 = (BadgeType)GetInt32(new IntPtr(p + 0x02C)); // 0270D205F820 0x2C BadgeType                   ( 000186737D90 ModelEnumType BadgeType BadgeType BadgeType Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x030)); // 0270D205F860 0x30 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EventIcon                                 = GetObject<EventIconStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventIconStatus.FromPointer); // 0270D205F8A0 0x38 EventIcon                   ( 000186758530 ModelClassType EventIconStatus EventIconStatus EventIconStatus Pointer )
-            value._LastUpdateDate                           = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D205F8E0 0x40 _LastUpdateDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.MstSongIdList                             = GetInt32List(new IntPtr(p + 0x048)); // 0270D205F940 0x48 MstSongIdList               ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.GashaIdList                               = GetStringList(new IntPtr(p + 0x050)); // 0270D205F9A0 0x50 GashaIdList                 ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.ShopNotification                          = GetObject<HomeShopNotificationStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.HomeShopNotificationStatus.FromPointer); // 0270D205F9E0 0x58 ShopNotification            ( 0001866D0A90 ModelClassType HomeShopNotificationStatus HomeShopNotificationStatus HomeShopNotificationStatus Pointer )
-            value.ExchangeNotificationList                  = GetObjectList<HomeExchangeNotificationStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.HomeExchangeNotificationStatus.FromPointer); // 0270D205FA40 0x60 ExchangeNotificationList    ( 000185CDE638 ModelClassListType RepeatedField`1<HomeExchangeNotificationStatus> RepeatedField`1<HomeExchangeNotificationStatus> List<HomeExchangeNotificationStatus> Pointer )
-            value.MstSpecialMissionId                       = GetInt32(new IntPtr(p + 0x068)); // 0270D205FA80 0x68 MstSpecialMissionId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LastUpdateDate                            = GetDateTime(new IntPtr(p + 0x010)); // 024662027A88 0x10 LastUpdateDate              ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Place                                     = (NotificationPlace)GetInt32(new IntPtr(p + 0x028)); // 024662027B08 0x28 Place                       ( 0001866B3B90 ModelEnumType NotificationPlace NotificationPlace NotificationPlace Int32 )
+            value.BadgeType                                 = (BadgeType)GetInt32(new IntPtr(p + 0x02C)); // 024662027B48 0x2C BadgeType                   ( 000186737D90 ModelEnumType BadgeType BadgeType BadgeType Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x030)); // 024662027B88 0x30 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventIcon                                 = GetObject<EventIconStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventIconStatus.FromPointer); // 024662027BC8 0x38 EventIcon                   ( 000186758530 ModelClassType EventIconStatus EventIconStatus EventIconStatus Pointer )
+            value._LastUpdateDate                           = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024662027C08 0x40 _LastUpdateDate             ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.MstSongIdList                             = GetInt32List(new IntPtr(p + 0x048)); // 024662027C68 0x48 MstSongIdList               ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.GashaIdList                               = GetStringList(new IntPtr(p + 0x050)); // 024662027CC8 0x50 GashaIdList                 ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.ShopNotification                          = GetObject<HomeShopNotificationStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.HomeShopNotificationStatus.FromPointer); // 024662027D08 0x58 ShopNotification            ( 0001866D0A90 ModelClassType HomeShopNotificationStatus HomeShopNotificationStatus HomeShopNotificationStatus Pointer )
+            value.ExchangeNotificationList                  = GetObjectList<HomeExchangeNotificationStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.HomeExchangeNotificationStatus.FromPointer); // 024662027D68 0x60 ExchangeNotificationList    ( 000185CDE638 ModelClassListType RepeatedField`1<HomeExchangeNotificationStatus> RepeatedField`1<HomeExchangeNotificationStatus> List<HomeExchangeNotificationStatus> Pointer )
+            value.MstSpecialMissionId                       = GetInt32(new IntPtr(p + 0x068)); // 024662027DA8 0x68 MstSpecialMissionId         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
             value.LastUpdateDate                = ToDateTime(value._LastUpdateDate);
 
             return value;

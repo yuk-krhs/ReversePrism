@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 038 M_PollingFrequency                       0001866656B0 ModelPrimitiveType float float float Single
     // 03C M_DidCallOnShutdown                      000186594D10 ModelPrimitiveType bool bool bool Bool
     // 040 m_FocusChangedMethod                     Action`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class NativeInputRuntime
+    public partial class NativeInputRuntime : DataModel
     {
         public bool                                     M_RunInBackground                       { get; set; }
         public Action?                                  M_ShutdownMethod                        { get; set; }
@@ -31,13 +31,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeInputRuntime();
+            var value   = new NativeInputRuntime() { Pointer= p0 };
 
-            value.M_RunInBackground                         = GetBool(new IntPtr(p + 0x010)); // 027002DD5990 0x10 M_RunInBackground           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ShutdownMethod                          = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 027002DD59B0 0x18 M_ShutdownMethod            ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_OnUpdate                                = GetObject<InputUpdateDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputUpdateDelegate.FromPointer); // 027002DD59D0 0x20 M_OnUpdate                  ( 0001867052A0 ModelClassType InputUpdateDelegate InputUpdateDelegate InputUpdateDelegate Pointer )
-            value.M_PollingFrequency                        = GetSingle(new IntPtr(p + 0x038)); // 027002DD5A30 0x38 M_PollingFrequency          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DidCallOnShutdown                       = GetBool(new IntPtr(p + 0x03C)); // 027002DD5A50 0x3C M_DidCallOnShutdown         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_RunInBackground                         = GetBool(new IntPtr(p + 0x010)); // 0245A2DD5990 0x10 M_RunInBackground           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ShutdownMethod                          = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A2DD59B0 0x18 M_ShutdownMethod            ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_OnUpdate                                = GetObject<InputUpdateDelegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputUpdateDelegate.FromPointer); // 0245A2DD59D0 0x20 M_OnUpdate                  ( 0001867052A0 ModelClassType InputUpdateDelegate InputUpdateDelegate InputUpdateDelegate Pointer )
+            value.M_PollingFrequency                        = GetSingle(new IntPtr(p + 0x038)); // 0245A2DD5A30 0x38 M_PollingFrequency          ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DidCallOnShutdown                       = GetBool(new IntPtr(p + 0x03C)); // 0245A2DD5A50 0x3C M_DidCallOnShutdown         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

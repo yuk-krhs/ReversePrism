@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HMACRIPEMD160
+    public partial class HMACRIPEMD160 : DataModel
     {
 
         public static HMACRIPEMD160? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HMACRIPEMD160();
+            var value   = new HMACRIPEMD160() { Pointer= p0 };
 
 
             return value;

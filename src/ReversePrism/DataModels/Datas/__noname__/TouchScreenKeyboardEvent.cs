@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TouchScreenKeyboardEvent
+    public partial class TouchScreenKeyboardEvent : DataModel
     {
 
         public static TouchScreenKeyboardEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TouchScreenKeyboardEvent();
+            var value   = new TouchScreenKeyboardEvent() { Pointer= p0 };
 
 
             return value;

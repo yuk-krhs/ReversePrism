@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VignetteModeParameter
+    public partial class VignetteModeParameter : DataModel
     {
 
         public static VignetteModeParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VignetteModeParameter();
+            var value   = new VignetteModeParameter() { Pointer= p0 };
 
 
             return value;

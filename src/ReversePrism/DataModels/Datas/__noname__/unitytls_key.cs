@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class unitytls_key
+    public partial class unitytls_key : DataModel
     {
 
         public static unitytls_key? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new unitytls_key();
+            var value   = new unitytls_key() { Pointer= p0 };
 
 
             return value;

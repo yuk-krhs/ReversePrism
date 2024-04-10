@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 CutSceneData                             000185CBF5F8 ModelClassListType CutSceneData[] CutSceneData[] List<CutSceneData> Pointer
     // 028 InFade                                   00018676CE10 ModelClassType FadeData FadeData FadeData Pointer
     // 030 OutFade                                  00018676CE10 ModelClassType FadeData FadeData FadeData Pointer
-    public partial class SequenceData
+    public partial class SequenceData : DataModel
     {
         public string                                   LiveScene                               { get; set; }
         public float                                    Duration                                { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SequenceData();
+            var value   = new SequenceData() { Pointer= p0 };
 
-            value.LiveScene                                 = GetString(new IntPtr(p + 0x010)); // 0270D4DE0D60 0x10 LiveScene                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x018)); // 0270D4DE0D80 0x18 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CutSceneData                              = GetObjectList<CutSceneData>(new IntPtr(p + 0x020), ReversePrism.DataModels.CutSceneData.FromPointer); // 0270D4DE0DA0 0x20 CutSceneData                ( 000185CBF5F8 ModelClassListType CutSceneData[] CutSceneData[] List<CutSceneData> Pointer )
-            value.InFade                                    = GetObject<FadeData>(new IntPtr(p + 0x028), ReversePrism.DataModels.FadeData.FromPointer); // 0270D4DE0DC0 0x28 InFade                      ( 00018676CE10 ModelClassType FadeData FadeData FadeData Pointer )
-            value.OutFade                                   = GetObject<FadeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.FadeData.FromPointer); // 0270D4DE0DE0 0x30 OutFade                     ( 00018676CE10 ModelClassType FadeData FadeData FadeData Pointer )
+            value.LiveScene                                 = GetString(new IntPtr(p + 0x010)); // 024664E454A8 0x10 LiveScene                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x018)); // 024664E454C8 0x18 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CutSceneData                              = GetObjectList<CutSceneData>(new IntPtr(p + 0x020), ReversePrism.DataModels.CutSceneData.FromPointer); // 024664E454E8 0x20 CutSceneData                ( 000185CBF5F8 ModelClassListType CutSceneData[] CutSceneData[] List<CutSceneData> Pointer )
+            value.InFade                                    = GetObject<FadeData>(new IntPtr(p + 0x028), ReversePrism.DataModels.FadeData.FromPointer); // 024664E45508 0x28 InFade                      ( 00018676CE10 ModelClassType FadeData FadeData FadeData Pointer )
+            value.OutFade                                   = GetObject<FadeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.FadeData.FromPointer); // 024664E45528 0x30 OutFade                     ( 00018676CE10 ModelClassType FadeData FadeData FadeData Pointer )
 
             return value;
         }

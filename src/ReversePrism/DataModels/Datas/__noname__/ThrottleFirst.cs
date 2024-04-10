@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 gate                                     <object> IL2CPP_TYPE_OBJECT
     // 000 open                                     bool IL2CPP_TYPE_BOOLEAN
     // 000 cancelable                               SerialDisposable IL2CPP_TYPE_CLASS
-    public partial class ThrottleFirst
+    public partial class ThrottleFirst : DataModel
     {
 
         public static ThrottleFirst? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ThrottleFirst();
+            var value   = new ThrottleFirst() { Pointer= p0 };
 
 
             return value;

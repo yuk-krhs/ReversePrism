@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 IsSkipIdolSkillCutIn                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ProduceIngameViewModel
+    public partial class ProduceIngameViewModel : DataModel
     {
         public bool                                     IsSkipIdolSkillCutIn                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceIngameViewModel();
+            var value   = new ProduceIngameViewModel() { Pointer= p0 };
 
-            value.IsSkipIdolSkillCutIn                      = GetBool(new IntPtr(p + 0x010)); // 0270D507CE90 0x10 IsSkipIdolSkillCutIn        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsSkipIdolSkillCutIn                      = GetBool(new IntPtr(p + 0x010)); // 0246650E8808 0x10 IsSkipIdolSkillCutIn        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

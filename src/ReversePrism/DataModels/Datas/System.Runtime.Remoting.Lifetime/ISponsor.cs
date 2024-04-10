@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISponsor
+    public partial class ISponsor : DataModel
     {
 
         public static ISponsor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISponsor();
+            var value   = new ISponsor() { Pointer= p0 };
 
 
             return value;

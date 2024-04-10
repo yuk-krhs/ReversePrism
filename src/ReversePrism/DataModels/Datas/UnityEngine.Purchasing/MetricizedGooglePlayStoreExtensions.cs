@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 048 M_TelemetryMetricsService                00018666FD70 ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer
-    public partial class MetricizedGooglePlayStoreExtensions
+    public partial class MetricizedGooglePlayStoreExtensions : DataModel
     {
         public ITelemetryMetricsService?                M_TelemetryMetricsService               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetricizedGooglePlayStoreExtensions();
+            var value   = new MetricizedGooglePlayStoreExtensions() { Pointer= p0 };
 
-            value.M_TelemetryMetricsService                 = GetObject<ITelemetryMetricsService>(new IntPtr(p + 0x048), ReversePrism.DataModels.ITelemetryMetricsService.FromPointer); // 02700690BE38 0x48 M_TelemetryMetricsService   ( 00018666FD70 ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer )
+            value.M_TelemetryMetricsService                 = GetObject<ITelemetryMetricsService>(new IntPtr(p + 0x048), ReversePrism.DataModels.ITelemetryMetricsService.FromPointer); // 0245A68CEA98 0x48 M_TelemetryMetricsService   ( 00018666FD70 ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer )
 
             return value;
         }

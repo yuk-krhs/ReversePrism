@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IShopPassDetailPopupView
+    public partial class IShopPassDetailPopupView : DataModel
     {
 
         public static IShopPassDetailPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IShopPassDetailPopupView();
+            var value   = new IShopPassDetailPopupView() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IssueInviteCodeArgsTranslator
+    public partial class IssueInviteCodeArgsTranslator : DataModel
     {
 
         public static IssueInviteCodeArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IssueInviteCodeArgsTranslator();
+            var value   = new IssueInviteCodeArgsTranslator() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Item                                     XmlValueConverter IL2CPP_TYPE_CLASS
     // 008 AnyAtomic                                XmlValueConverter IL2CPP_TYPE_CLASS
-    public partial class XmlAnyConverter
+    public partial class XmlAnyConverter : DataModel
     {
 
         public static XmlAnyConverter? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlAnyConverter();
+            var value   = new XmlAnyConverter() { Pointer= p0 };
 
 
             return value;

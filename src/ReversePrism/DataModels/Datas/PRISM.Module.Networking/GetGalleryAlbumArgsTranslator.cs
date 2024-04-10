@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetGalleryAlbumArgsTranslator
+    public partial class GetGalleryAlbumArgsTranslator : DataModel
     {
 
         public static GetGalleryAlbumArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGalleryAlbumArgsTranslator();
+            var value   = new GetGalleryAlbumArgsTranslator() { Pointer= p0 };
 
 
             return value;

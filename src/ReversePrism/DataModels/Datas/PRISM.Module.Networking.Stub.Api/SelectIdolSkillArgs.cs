@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstIdolSkillIdFieldNumber                int IL2CPP_TYPE_I4
     // 01C MstIdolSkillId                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class SelectIdolSkillArgs
+    public partial class SelectIdolSkillArgs : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      MstIdolSkillId                          { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectIdolSkillArgs();
+            var value   = new SelectIdolSkillArgs() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0270D25FFB68 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x01C)); // 0270D25FFBA8 0x1C MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 02466253E6A0 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolSkillId                            = GetInt32(new IntPtr(p + 0x01C)); // 02466253E6E0 0x1C MstIdolSkillId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

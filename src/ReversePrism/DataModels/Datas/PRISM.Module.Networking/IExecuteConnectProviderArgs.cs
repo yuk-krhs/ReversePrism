@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IExecuteConnectProviderArgs
+    public partial class IExecuteConnectProviderArgs : DataModel
     {
 
         public static IExecuteConnectProviderArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IExecuteConnectProviderArgs();
+            var value   = new IExecuteConnectProviderArgs() { Pointer= p0 };
 
 
             return value;

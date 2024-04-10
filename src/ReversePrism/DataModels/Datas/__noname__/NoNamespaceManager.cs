@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoNamespaceManager
+    public partial class NoNamespaceManager : DataModel
     {
 
         public static NoNamespaceManager? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoNamespaceManager();
+            var value   = new NoNamespaceManager() { Pointer= p0 };
 
 
             return value;

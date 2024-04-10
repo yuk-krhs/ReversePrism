@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 048 DuplicatedMark                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 050 SelectedMark                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 058 Button                                   000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    public partial class LiveCameraModeSettingCharacterIcon
+    public partial class LiveCameraModeSettingCharacterIcon : DataModel
     {
         public UIGrayOutController?                     GrayOutController                       { get; set; }
         public PFIdolIconRectView?                      IconView                                { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveCameraModeSettingCharacterIcon();
+            var value   = new LiveCameraModeSettingCharacterIcon() { Pointer= p0 };
 
-            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0270D50D6290 0x20 GrayOutController           ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.IconView                                  = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 0270D50D62B0 0x28 IconView                    ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D62D0 0x30 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EmptyViewPositionMarks                    = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D62F0 0x38 EmptyViewPositionMarks      ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.FocusMark                                 = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D6310 0x40 FocusMark                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DuplicatedMark                            = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D6330 0x48 DuplicatedMark              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SelectedMark                              = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0270D50D6350 0x50 SelectedMark                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270D50D6370 0x58 Button                      ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024665151D10 0x20 GrayOutController           ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.IconView                                  = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 024665151D30 0x28 IconView                    ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024665151D50 0x30 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.EmptyViewPositionMarks                    = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024665151D70 0x38 EmptyViewPositionMarks      ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.FocusMark                                 = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 024665151D90 0x40 FocusMark                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.DuplicatedMark                            = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 024665151DB0 0x48 DuplicatedMark              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SelectedMark                              = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 024665151DD0 0x50 SelectedMark                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonBase.FromPointer); // 024665151DF0 0x58 Button                      ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
 
             return value;
         }

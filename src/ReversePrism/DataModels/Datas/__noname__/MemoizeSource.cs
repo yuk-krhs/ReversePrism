@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 result                                   <var> IL2CPP_TYPE_VAR
     // 000 exception                                ExceptionDispatchInfo IL2CPP_TYPE_CLASS
     // 000 status                                   UniTaskStatus IL2CPP_TYPE_VALUETYPE
-    public partial class MemoizeSource
+    public partial class MemoizeSource : DataModel
     {
 
         public static MemoizeSource? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoizeSource();
+            var value   = new MemoizeSource() { Pointer= p0 };
 
 
             return value;

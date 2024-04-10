@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 014 PenPointerIdBase                         0001865F50A0 ModelPrimitiveType int int int Int32
     // 018 PenPointerCount                          0001865F50A0 ModelPrimitiveType int int int Int32
     // 020 HoveringPointers                         000185B7DDE0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class PointerId
+    public partial class PointerId : DataModel
     {
         public int                                      TouchPointerCount                       { get; set; }
         public int                                      PenPointerIdBase                        { get; set; }
@@ -29,12 +29,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PointerId();
+            var value   = new PointerId() { Pointer= p0 };
 
-            value.TouchPointerCount                         = GetInt32(new IntPtr(p + 0x010)); // 0270067AB730 0x10 TouchPointerCount           ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.PenPointerIdBase                          = GetInt32(new IntPtr(p + 0x014)); // 0270067AB750 0x14 PenPointerIdBase            ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.PenPointerCount                           = GetInt32(new IntPtr(p + 0x018)); // 0270067AB770 0x18 PenPointerCount             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
-            value.HoveringPointers                          = GetInt32List(new IntPtr(p + 0x020)); // 0270067AB790 0x20 HoveringPointers            ( 000185B7DDE0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.TouchPointerCount                         = GetInt32(new IntPtr(p + 0x010)); // 0245A676D808 0x10 TouchPointerCount           ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.PenPointerIdBase                          = GetInt32(new IntPtr(p + 0x014)); // 0245A676D828 0x14 PenPointerIdBase            ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.PenPointerCount                           = GetInt32(new IntPtr(p + 0x018)); // 0245A676D848 0x18 PenPointerCount             ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.HoveringPointers                          = GetInt32List(new IntPtr(p + 0x020)); // 0245A676D868 0x20 HoveringPointers            ( 000185B7DDE0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

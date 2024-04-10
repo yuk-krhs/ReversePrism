@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 EndMarkPos                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 CurMarkPos                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 StartOffset                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CharEntityEncoderFallback
+    public partial class CharEntityEncoderFallback : DataModel
     {
         public CharEntityEncoderFallbackBuffer?         FallbackBuffer                          { get; set; }
         public List<int>?                               TextContentMarks                        { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharEntityEncoderFallback();
+            var value   = new CharEntityEncoderFallback() { Pointer= p0 };
 
-            value.FallbackBuffer                            = GetObject<CharEntityEncoderFallbackBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CharEntityEncoderFallbackBuffer.FromPointer); // 0270D7368650 0x10 FallbackBuffer              ( 000186595340 ModelClassType CharEntityEncoderFallbackBuffer CharEntityEncoderFallbackBuffer CharEntityEncoderFallbackBuffer Pointer )
-            value.TextContentMarks                          = GetInt32List(new IntPtr(p + 0x018)); // 0270D7368670 0x18 TextContentMarks            ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.EndMarkPos                                = GetInt32(new IntPtr(p + 0x020)); // 0270D7368690 0x20 EndMarkPos                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurMarkPos                                = GetInt32(new IntPtr(p + 0x024)); // 0270D73686B0 0x24 CurMarkPos                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StartOffset                               = GetInt32(new IntPtr(p + 0x028)); // 0270D73686D0 0x28 StartOffset                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FallbackBuffer                            = GetObject<CharEntityEncoderFallbackBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CharEntityEncoderFallbackBuffer.FromPointer); // 0246673B8650 0x10 FallbackBuffer              ( 000186595340 ModelClassType CharEntityEncoderFallbackBuffer CharEntityEncoderFallbackBuffer CharEntityEncoderFallbackBuffer Pointer )
+            value.TextContentMarks                          = GetInt32List(new IntPtr(p + 0x018)); // 0246673B8670 0x18 TextContentMarks            ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.EndMarkPos                                = GetInt32(new IntPtr(p + 0x020)); // 0246673B8690 0x20 EndMarkPos                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurMarkPos                                = GetInt32(new IntPtr(p + 0x024)); // 0246673B86B0 0x24 CurMarkPos                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StartOffset                               = GetInt32(new IntPtr(p + 0x028)); // 0246673B86D0 0x28 StartOffset                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

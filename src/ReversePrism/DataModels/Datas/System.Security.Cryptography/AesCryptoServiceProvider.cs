@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AesCryptoServiceProvider
+    public partial class AesCryptoServiceProvider : DataModel
     {
 
         public static AesCryptoServiceProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AesCryptoServiceProvider();
+            var value   = new AesCryptoServiceProvider() { Pointer= p0 };
 
 
             return value;

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 CheckmarkUssClassName                    000186674040 ModelPrimitiveType string string string String
     // 028 TextUssClassName                         000186674040 ModelPrimitiveType string string string String
     // 030 MixedValuesUssClassName                  000186674040 ModelPrimitiveType string string string String
-    public partial class Toggle
+    public partial class Toggle : DataModel
     {
         public string                                   InputUssClassName                       { get; set; }
         public string                                   NoTextVariantUssClassName               { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Toggle();
+            var value   = new Toggle() { Pointer= p0 };
 
-            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 02700673F910 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
-            value.NoTextVariantUssClassName                 = GetString(new IntPtr(p + 0x018)); // 02700673F930 0x18 NoTextVariantUssClassName   ( 000186674040 ModelPrimitiveType string string string String )
-            value.CheckmarkUssClassName                     = GetString(new IntPtr(p + 0x020)); // 02700673F950 0x20 CheckmarkUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.TextUssClassName                          = GetString(new IntPtr(p + 0x028)); // 02700673F970 0x28 TextUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
-            value.MixedValuesUssClassName                   = GetString(new IntPtr(p + 0x030)); // 02700673F990 0x30 MixedValuesUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
+            value.InputUssClassName                         = GetString(new IntPtr(p + 0x010)); // 0245A6702148 0x10 InputUssClassName           ( 000186674040 ModelPrimitiveType string string string String )
+            value.NoTextVariantUssClassName                 = GetString(new IntPtr(p + 0x018)); // 0245A6702168 0x18 NoTextVariantUssClassName   ( 000186674040 ModelPrimitiveType string string string String )
+            value.CheckmarkUssClassName                     = GetString(new IntPtr(p + 0x020)); // 0245A6702188 0x20 CheckmarkUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
+            value.TextUssClassName                          = GetString(new IntPtr(p + 0x028)); // 0245A67021A8 0x28 TextUssClassName            ( 000186674040 ModelPrimitiveType string string string String )
+            value.MixedValuesUssClassName                   = GetString(new IntPtr(p + 0x030)); // 0245A67021C8 0x30 MixedValuesUssClassName     ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

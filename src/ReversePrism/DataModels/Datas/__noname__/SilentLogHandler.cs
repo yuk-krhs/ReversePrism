@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SilentLogHandler
+    public partial class SilentLogHandler : DataModel
     {
 
         public static SilentLogHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SilentLogHandler();
+            var value   = new SilentLogHandler() { Pointer= p0 };
 
 
             return value;

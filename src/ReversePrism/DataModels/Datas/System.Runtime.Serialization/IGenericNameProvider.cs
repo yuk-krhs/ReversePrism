@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGenericNameProvider
+    public partial class IGenericNameProvider : DataModel
     {
 
         public static IGenericNameProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGenericNameProvider();
+            var value   = new IGenericNameProvider() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 Values                                   000185B7CA20 ModelPrimitiveListType double[] double[] List<double> Pointer
-    public partial class DoubleStorage
+    public partial class DoubleStorage : DataModel
     {
         public List<double>?                            Values                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleStorage();
+            var value   = new DoubleStorage() { Pointer= p0 };
 
-            value.Values                                    = GetDoubleList(new IntPtr(p + 0x050)); // 0270D89E05C8 0x50 Values                      ( 000185B7CA20 ModelPrimitiveListType double[] double[] List<double> Pointer )
+            value.Values                                    = GetDoubleList(new IntPtr(p + 0x050)); // 024668A3B1D0 0x50 Values                      ( 000185B7CA20 ModelPrimitiveListType double[] double[] List<double> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_DefaultEventInterests                  Dictionary`2<Type, DefaultEventInterests> IL2CPP_TYPE_GENERICINST
     // 008 s_EventCategories                        Dictionary`2<Type, EventCategory> IL2CPP_TYPE_GENERICINST
-    public partial class EventInterestReflectionUtils
+    public partial class EventInterestReflectionUtils : DataModel
     {
 
         public static EventInterestReflectionUtils? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventInterestReflectionUtils();
+            var value   = new EventInterestReflectionUtils() { Pointer= p0 };
 
 
             return value;

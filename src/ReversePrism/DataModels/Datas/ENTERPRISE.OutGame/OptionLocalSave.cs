@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 058 SeSettings                               0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer
     // 060 VoiceSettings                            0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer
     // 068 IsTitleCall                              000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class OptionLocalSave
+    public partial class OptionLocalSave : DataModel
     {
         public ScreenOrientation                        Orientation                             { get; set; }
         public bool                                     GpuDetectedOnce                         { get; set; }
@@ -47,23 +47,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OptionLocalSave();
+            var value   = new OptionLocalSave() { Pointer= p0 };
 
-            value.Orientation                               = (ScreenOrientation)GetInt32(new IntPtr(p + 0x020)); // 027003A7C040 0x20 Orientation                 ( 0001866F2CF0 ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32 )
-            value.GpuDetectedOnce                           = GetBool(new IntPtr(p + 0x024)); // 027003A7C060 0x24 GpuDetectedOnce             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Graphic                                   = (GraphicProperty)GetInt32(new IntPtr(p + 0x028)); // 027003A7C080 0x28 Graphic                     ( 000186693970 ModelEnumType GraphicProperty GraphicProperty GraphicProperty Int32 )
-            value.AllResolution                             = (AllResolution)GetInt32(new IntPtr(p + 0x02C)); // 027003A7C0A0 0x2C AllResolution               ( 0001866A3160 ModelEnumType AllResolution AllResolution AllResolution Int32 )
-            value.Quality3D                                 = (QualityType)GetInt32(new IntPtr(p + 0x030)); // 027003A7C0C0 0x30 Quality3D                   ( 0001865FAA90 ModelEnumType QualityType QualityType QualityType Int32 )
-            value.ShadowQuality                             = (QualityType)GetInt32(new IntPtr(p + 0x034)); // 027003A7C0E0 0x34 ShadowQuality               ( 0001865FAA90 ModelEnumType QualityType QualityType QualityType Int32 )
-            value.AntiAliasing                              = (AntiAliasing)GetInt32(new IntPtr(p + 0x038)); // 027003A7C100 0x38 AntiAliasing                ( 0001866C4B00 ModelEnumType AntiAliasing AntiAliasing AntiAliasing Int32 )
-            value.PowerSaving                               = (PowerSaving)GetInt32(new IntPtr(p + 0x03C)); // 027003A7C120 0x3C PowerSaving                 ( 000186772B30 ModelEnumType PowerSaving PowerSaving PowerSaving Int32 )
-            value.StoryVoice                                = (StoryVoiceSetting)GetInt32(new IntPtr(p + 0x040)); // 027003A7C140 0x40 StoryVoice                  ( 0001865B3210 ModelEnumType StoryVoiceSetting StoryVoiceSetting StoryVoiceSetting Int32 )
-            value.Skip                                      = (SkipSetting)GetInt32(new IntPtr(p + 0x044)); // 027003A7C160 0x44 Skip                        ( 000186518360 ModelEnumType SkipSetting SkipSetting SkipSetting Int32 )
-            value.ShowDownloadUIOnGasha                     = GetBool(new IntPtr(p + 0x048)); // 027003A7C180 0x48 ShowDownloadUIOnGasha       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BgmSettings                               = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x050), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A7C1A0 0x50 BgmSettings                 ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.SeSettings                                = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x058), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A7C1C0 0x58 SeSettings                  ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.VoiceSettings                             = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x060), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 027003A7C1E0 0x60 VoiceSettings               ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
-            value.IsTitleCall                               = GetBool(new IntPtr(p + 0x068)); // 027003A7C200 0x68 IsTitleCall                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Orientation                               = (ScreenOrientation)GetInt32(new IntPtr(p + 0x020)); // 0245A3A7FE48 0x20 Orientation                 ( 0001866F2CF0 ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32 )
+            value.GpuDetectedOnce                           = GetBool(new IntPtr(p + 0x024)); // 0245A3A7FE68 0x24 GpuDetectedOnce             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Graphic                                   = (GraphicProperty)GetInt32(new IntPtr(p + 0x028)); // 0245A3A7FE88 0x28 Graphic                     ( 000186693970 ModelEnumType GraphicProperty GraphicProperty GraphicProperty Int32 )
+            value.AllResolution                             = (AllResolution)GetInt32(new IntPtr(p + 0x02C)); // 0245A3A7FEA8 0x2C AllResolution               ( 0001866A3160 ModelEnumType AllResolution AllResolution AllResolution Int32 )
+            value.Quality3D                                 = (QualityType)GetInt32(new IntPtr(p + 0x030)); // 0245A3A7FEC8 0x30 Quality3D                   ( 0001865FAA90 ModelEnumType QualityType QualityType QualityType Int32 )
+            value.ShadowQuality                             = (QualityType)GetInt32(new IntPtr(p + 0x034)); // 0245A3A7FEE8 0x34 ShadowQuality               ( 0001865FAA90 ModelEnumType QualityType QualityType QualityType Int32 )
+            value.AntiAliasing                              = (AntiAliasing)GetInt32(new IntPtr(p + 0x038)); // 0245A3A7FF08 0x38 AntiAliasing                ( 0001866C4B00 ModelEnumType AntiAliasing AntiAliasing AntiAliasing Int32 )
+            value.PowerSaving                               = (PowerSaving)GetInt32(new IntPtr(p + 0x03C)); // 0245A3A7FF28 0x3C PowerSaving                 ( 000186772B30 ModelEnumType PowerSaving PowerSaving PowerSaving Int32 )
+            value.StoryVoice                                = (StoryVoiceSetting)GetInt32(new IntPtr(p + 0x040)); // 0245A3A7FF48 0x40 StoryVoice                  ( 0001865B3210 ModelEnumType StoryVoiceSetting StoryVoiceSetting StoryVoiceSetting Int32 )
+            value.Skip                                      = (SkipSetting)GetInt32(new IntPtr(p + 0x044)); // 0245A3A7FF68 0x44 Skip                        ( 000186518360 ModelEnumType SkipSetting SkipSetting SkipSetting Int32 )
+            value.ShowDownloadUIOnGasha                     = GetBool(new IntPtr(p + 0x048)); // 0245A3A7FF88 0x48 ShowDownloadUIOnGasha       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BgmSettings                               = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x050), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A7FFA8 0x50 BgmSettings                 ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.SeSettings                                = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x058), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A7FFC8 0x58 SeSettings                  ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.VoiceSettings                             = GetObject<EachSoundSettingsLocalSaveType>(new IntPtr(p + 0x060), ReversePrism.DataModels.EachSoundSettingsLocalSaveType.FromPointer); // 0245A3A7FFE8 0x60 VoiceSettings               ( 0001867162C0 ModelClassType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType EachSoundSettingsLocalSaveType Pointer )
+            value.IsTitleCall                               = GetBool(new IntPtr(p + 0x068)); // 0245A3A80008 0x68 IsTitleCall                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Null                                     BsonToken IL2CPP_TYPE_CLASS
     // 008 Undefined                                BsonToken IL2CPP_TYPE_CLASS
     // 020 Type                                     0001867785E0 ModelEnumType BsonType BsonType BsonType Int32
-    public partial class BsonEmpty
+    public partial class BsonEmpty : DataModel
     {
         public BsonType                                 Type                                    { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BsonEmpty();
+            var value   = new BsonEmpty() { Pointer= p0 };
 
-            value.Type                                      = (BsonType)GetInt32(new IntPtr(p + 0x020)); // 0270D889A640 0x20 Type                        ( 0001867785E0 ModelEnumType BsonType BsonType BsonType Int32 )
+            value.Type                                      = (BsonType)GetInt32(new IntPtr(p + 0x020)); // 0246688F6B58 0x20 Type                        ( 0001867785E0 ModelEnumType BsonType BsonType BsonType Int32 )
 
             return value;
         }

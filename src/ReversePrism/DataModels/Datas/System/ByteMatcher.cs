@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Map                                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
     // 018 Starts                                   0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    public partial class ByteMatcher
+    public partial class ByteMatcher : DataModel
     {
         public Hashtable?                               Map                                     { get; set; }
         public Hashtable?                               Starts                                  { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ByteMatcher();
+            var value   = new ByteMatcher() { Pointer= p0 };
 
-            value.Map                                       = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6A6BE68 0x10 Map                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Starts                                    = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0270D6A6BE88 0x18 Starts                      ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Map                                       = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024666ACBE68 0x10 Map                         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Starts                                    = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024666ACBE88 0x18 Starts                      ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

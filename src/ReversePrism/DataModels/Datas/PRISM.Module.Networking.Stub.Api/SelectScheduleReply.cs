@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Term                                     000186589270 ModelClassType ProduceTermStatus ProduceTermStatus ProduceTermStatus Pointer
     // 000 NextOrderFieldNumber                     int IL2CPP_TYPE_I4
     // 020 NextOrder                                00018655F880 ModelClassType ProduceNextOrderStatus ProduceNextOrderStatus ProduceNextOrderStatus Pointer
-    public partial class SelectScheduleReply
+    public partial class SelectScheduleReply : DataModel
     {
         public ProduceTermStatus?                       Term                                    { get; set; }
         public ProduceNextOrderStatus?                  NextOrder                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SelectScheduleReply();
+            var value   = new SelectScheduleReply() { Pointer= p0 };
 
-            value.Term                                      = GetObject<ProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceTermStatus.FromPointer); // 0270D25A3F90 0x18 Term                        ( 000186589270 ModelClassType ProduceTermStatus ProduceTermStatus ProduceTermStatus Pointer )
-            value.NextOrder                                 = GetObject<ProduceNextOrderStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceNextOrderStatus.FromPointer); // 0270D25A3FD0 0x20 NextOrder                   ( 00018655F880 ModelClassType ProduceNextOrderStatus ProduceNextOrderStatus ProduceNextOrderStatus Pointer )
+            value.Term                                      = GetObject<ProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceTermStatus.FromPointer); // 024662573078 0x18 Term                        ( 000186589270 ModelClassType ProduceTermStatus ProduceTermStatus ProduceTermStatus Pointer )
+            value.NextOrder                                 = GetObject<ProduceNextOrderStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceNextOrderStatus.FromPointer); // 0246625730B8 0x20 NextOrder                   ( 00018655F880 ModelClassType ProduceNextOrderStatus ProduceNextOrderStatus ProduceNextOrderStatus Pointer )
 
             return value;
         }

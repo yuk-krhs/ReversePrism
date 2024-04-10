@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MemoryPackIncludeAttribute
+    public partial class MemoryPackIncludeAttribute : DataModel
     {
 
         public static MemoryPackIncludeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemoryPackIncludeAttribute();
+            var value   = new MemoryPackIncludeAttribute() { Pointer= p0 };
 
 
             return value;

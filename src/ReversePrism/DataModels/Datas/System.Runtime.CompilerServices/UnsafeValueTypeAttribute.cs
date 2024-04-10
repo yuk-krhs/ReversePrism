@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnsafeValueTypeAttribute
+    public partial class UnsafeValueTypeAttribute : DataModel
     {
 
         public static UnsafeValueTypeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeValueTypeAttribute();
+            var value   = new UnsafeValueTypeAttribute() { Pointer= p0 };
 
 
             return value;

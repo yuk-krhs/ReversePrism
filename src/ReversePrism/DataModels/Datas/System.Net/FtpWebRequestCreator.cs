@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FtpWebRequestCreator
+    public partial class FtpWebRequestCreator : DataModel
     {
 
         public static FtpWebRequestCreator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FtpWebRequestCreator();
+            var value   = new FtpWebRequestCreator() { Pointer= p0 };
 
 
             return value;

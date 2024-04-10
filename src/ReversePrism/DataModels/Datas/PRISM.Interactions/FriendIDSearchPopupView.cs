@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 050 onClose                                  Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 058 UserSearchId                             000186671910 ModelPrimitiveType string string string String
     // 060 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class FriendIDSearchPopupView
+    public partial class FriendIDSearchPopupView : DataModel
     {
         public UITextMeshProUGUI?                       MyID                                    { get; set; }
         public ButtonBase?                              MyIDCopyButton                          { get; set; }
@@ -34,16 +34,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendIDSearchPopupView();
+            var value   = new FriendIDSearchPopupView() { Pointer= p0 };
 
-            value.MyID                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE5888 0x20 MyID                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MyIDCopyButton                            = GetObject<ButtonBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ButtonBase.FromPointer); // 0270DBDE58A8 0x28 MyIDCopyButton              ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.StringField                               = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 0270DBDE58C8 0x30 StringField                 ( 0001865E5200 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
-            value.YourIDText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE58E8 0x38 YourIDText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SearchIDText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE5908 0x40 SearchIDText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.InputCountText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDE5928 0x48 InputCountText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UserSearchId                              = GetString(new IntPtr(p + 0x058)); // 0270DBDE5968 0x58 UserSearchId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DBDE5988 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.MyID                                      = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE75228 0x20 MyID                        ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MyIDCopyButton                            = GetObject<ButtonBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466BE75248 0x28 MyIDCopyButton              ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.StringField                               = GetObject<CommonInputFieldTMP>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonInputFieldTMP.FromPointer); // 02466BE75268 0x30 StringField                 ( 0001865E5200 ModelClassType CommonInputFieldTMP CommonInputFieldTMP CommonInputFieldTMP Pointer )
+            value.YourIDText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE75288 0x38 YourIDText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SearchIDText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE752A8 0x40 SearchIDText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.InputCountText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE752C8 0x48 InputCountText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UserSearchId                              = GetString(new IntPtr(p + 0x058)); // 02466BE75308 0x58 UserSearchId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BE75328 0x60 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

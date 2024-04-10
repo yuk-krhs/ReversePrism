@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 leadingCharacters                        Dictionary`2<int, char> IL2CPP_TYPE_GENERICINST
     // 018 followingCharacters                      Dictionary`2<int, char> IL2CPP_TYPE_GENERICINST
-    public partial class LineBreakingTable
+    public partial class LineBreakingTable : DataModel
     {
 
         public static LineBreakingTable? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LineBreakingTable();
+            var value   = new LineBreakingTable() { Pointer= p0 };
 
 
             return value;

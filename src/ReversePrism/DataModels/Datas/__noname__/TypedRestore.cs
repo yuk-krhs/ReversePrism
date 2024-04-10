@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypedRestore
+    public partial class TypedRestore : DataModel
     {
 
         public static TypedRestore? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypedRestore();
+            var value   = new TypedRestore() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 EnumDescriptor                           00018673A000 ModelClassType EnumDescriptor EnumDescriptor EnumDescriptor Pointer
     // 030 Proto                                    00018673D020 ModelClassType EnumValueDescriptorProto EnumValueDescriptorProto EnumValueDescriptorProto Pointer
-    public partial class EnumValueDescriptor
+    public partial class EnumValueDescriptor : DataModel
     {
         public EnumDescriptor?                          EnumDescriptor                          { get; set; }
         public EnumValueDescriptorProto?                Proto                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnumValueDescriptor();
+            var value   = new EnumValueDescriptor() { Pointer= p0 };
 
-            value.EnumDescriptor                            = GetObject<EnumDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptor.FromPointer); // 0270D0CCC4A8 0x28 EnumDescriptor              ( 00018673A000 ModelClassType EnumDescriptor EnumDescriptor EnumDescriptor Pointer )
-            value.Proto                                     = GetObject<EnumValueDescriptorProto>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumValueDescriptorProto.FromPointer); // 0270D0CCC4C8 0x30 Proto                       ( 00018673D020 ModelClassType EnumValueDescriptorProto EnumValueDescriptorProto EnumValueDescriptorProto Pointer )
+            value.EnumDescriptor                            = GetObject<EnumDescriptor>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumDescriptor.FromPointer); // 024660CD3010 0x28 EnumDescriptor              ( 00018673A000 ModelClassType EnumDescriptor EnumDescriptor EnumDescriptor Pointer )
+            value.Proto                                     = GetObject<EnumValueDescriptorProto>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumValueDescriptorProto.FromPointer); // 024660CD3030 0x30 Proto                       ( 00018673D020 ModelClassType EnumValueDescriptorProto EnumValueDescriptorProto EnumValueDescriptorProto Pointer )
 
             return value;
         }

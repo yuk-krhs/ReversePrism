@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnOverrideControllerDirtyCallback
+    public partial class OnOverrideControllerDirtyCallback : DataModel
     {
 
         public static OnOverrideControllerDirtyCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnOverrideControllerDirtyCallback();
+            var value   = new OnOverrideControllerDirtyCallback() { Pointer= p0 };
 
 
             return value;

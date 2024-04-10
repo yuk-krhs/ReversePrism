@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ApplicationUrl                           000186671910 ModelPrimitiveType string string string String
     // 028 Obj_type                                 000186692850 ModelClassType Type Type Type Pointer
-    public partial class ActivatedClientTypeEntry
+    public partial class ActivatedClientTypeEntry : DataModel
     {
         public string                                   ApplicationUrl                          { get; set; }
         public Type?                                    Obj_type                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ActivatedClientTypeEntry();
+            var value   = new ActivatedClientTypeEntry() { Pointer= p0 };
 
-            value.ApplicationUrl                            = GetString(new IntPtr(p + 0x020)); // 0270D6BB25E8 0x20 ApplicationUrl              ( 000186671910 ModelPrimitiveType string string string String )
-            value.Obj_type                                  = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0270D6BB2608 0x28 Obj_type                    ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.ApplicationUrl                            = GetString(new IntPtr(p + 0x020)); // 024666C2A5E8 0x20 ApplicationUrl              ( 000186671910 ModelPrimitiveType string string string String )
+            value.Obj_type                                  = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 024666C2A608 0x28 Obj_type                    ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

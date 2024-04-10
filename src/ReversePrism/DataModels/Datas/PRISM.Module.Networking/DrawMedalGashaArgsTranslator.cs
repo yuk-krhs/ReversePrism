@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DrawMedalGashaArgsTranslator
+    public partial class DrawMedalGashaArgsTranslator : DataModel
     {
 
         public static DrawMedalGashaArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DrawMedalGashaArgsTranslator();
+            var value   = new DrawMedalGashaArgsTranslator() { Pointer= p0 };
 
 
             return value;

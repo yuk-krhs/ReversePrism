@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 040 DanceView                                0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer
     // 048 VisualView                               0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer
     // 050 MentalView                               0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer
-    public partial class IdolLevelUpIdolView
+    public partial class IdolLevelUpIdolView : DataModel
     {
         public PFIdolIconView?                          IconView                                { get; set; }
         public IdolLevelUpParamView?                    LevelView                               { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolLevelUpIdolView();
+            var value   = new IdolLevelUpIdolView() { Pointer= p0 };
 
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270D4C53270 0x20 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.LevelView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C53290 0x28 LevelView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
-            value.DearnessView                              = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C532B0 0x30 DearnessView                ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
-            value.VocalView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C532D0 0x38 VocalView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
-            value.DanceView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C532F0 0x40 DanceView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
-            value.VisualView                                = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C53310 0x48 VisualView                  ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
-            value.MentalView                                = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 0270D4C53330 0x50 MentalView                  ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 024664CAD138 0x20 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.LevelView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD158 0x28 LevelView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.DearnessView                              = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD178 0x30 DearnessView                ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.VocalView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD198 0x38 VocalView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.DanceView                                 = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD1B8 0x40 DanceView                   ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.VisualView                                = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD1D8 0x48 VisualView                  ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
+            value.MentalView                                = GetObject<IdolLevelUpParamView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IdolLevelUpParamView.FromPointer); // 024664CAD1F8 0x50 MentalView                  ( 0001866B1050 ModelClassType IdolLevelUpParamView IdolLevelUpParamView IdolLevelUpParamView Pointer )
 
             return value;
         }

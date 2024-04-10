@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Level                                    0001866A18A0 ModelEnumType AlertLevel AlertLevel AlertLevel Int32
     // 011 Description                              0001866A0EE0 ModelEnumType AlertDescription AlertDescription AlertDescription Int32
-    public partial class Alert
+    public partial class Alert : DataModel
     {
         public AlertLevel                               Level                                   { get; set; }
         public AlertDescription                         Description                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Alert();
+            var value   = new Alert() { Pointer= p0 };
 
-            value.Level                                     = (AlertLevel)GetInt32(new IntPtr(p + 0x010)); // 0270DB37FC88 0x10 Level                       ( 0001866A18A0 ModelEnumType AlertLevel AlertLevel AlertLevel Int32 )
-            value.Description                               = (AlertDescription)GetInt32(new IntPtr(p + 0x011)); // 0270DB37FCA8 0x11 Description                 ( 0001866A0EE0 ModelEnumType AlertDescription AlertDescription AlertDescription Int32 )
+            value.Level                                     = (AlertLevel)GetInt32(new IntPtr(p + 0x010)); // 02466B40DA58 0x10 Level                       ( 0001866A18A0 ModelEnumType AlertLevel AlertLevel AlertLevel Int32 )
+            value.Description                               = (AlertDescription)GetInt32(new IntPtr(p + 0x011)); // 02466B40DA78 0x11 Description                 ( 0001866A0EE0 ModelEnumType AlertDescription AlertDescription AlertDescription Int32 )
 
             return value;
         }

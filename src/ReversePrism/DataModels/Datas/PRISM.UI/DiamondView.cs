@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 DiamondImage                             0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    public partial class DiamondView
+    public partial class DiamondView : DataModel
     {
         public UIImage?                                 DiamondImage                            { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DiamondView();
+            var value   = new DiamondView() { Pointer= p0 };
 
-            value.DiamondImage                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 027005B21A28 0x20 DiamondImage                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.DiamondImage                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0245A5B23598 0x20 DiamondImage                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

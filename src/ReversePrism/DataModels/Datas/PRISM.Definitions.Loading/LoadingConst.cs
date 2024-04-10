@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 CharaAnimationLength                     int IL2CPP_TYPE_I4
     // 000 AnimationIntervalFrame                   int IL2CPP_TYPE_I4
     // 000 TargetFrameRate                          int IL2CPP_TYPE_I4
-    public partial class LoadingConst
+    public partial class LoadingConst : DataModel
     {
 
         public static LoadingConst? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LoadingConst();
+            var value   = new LoadingConst() { Pointer= p0 };
 
 
             return value;

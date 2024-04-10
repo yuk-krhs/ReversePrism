@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 060 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
     // 068 ValueLabel                               0001866320F0 ModelClassType Text Text Text Pointer
-    public partial class DebugUIHandlerObject
+    public partial class DebugUIHandlerObject : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
         public Text?                                    ValueLabel                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerObject();
+            var value   = new DebugUIHandlerObject() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0270D9337730 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0270D9337750 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466938A460 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 02466938A480 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
 
             return value;
         }

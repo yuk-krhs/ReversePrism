@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProtocolViolationException
+    public partial class ProtocolViolationException : DataModel
     {
 
         public static ProtocolViolationException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProtocolViolationException();
+            var value   = new ProtocolViolationException() { Pointer= p0 };
 
 
             return value;

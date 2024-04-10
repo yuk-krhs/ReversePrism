@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 WithoutRowId                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class TableAttribute
+    public partial class TableAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
         public bool                                     WithoutRowId                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TableAttribute();
+            var value   = new TableAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027003D78C98 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.WithoutRowId                              = GetBool(new IntPtr(p + 0x018)); // 027003D78CB8 0x18 WithoutRowId                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A3D78C98 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.WithoutRowId                              = GetBool(new IntPtr(p + 0x018)); // 0245A3D78CB8 0x18 WithoutRowId                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

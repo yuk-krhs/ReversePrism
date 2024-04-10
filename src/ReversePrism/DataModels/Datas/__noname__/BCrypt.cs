@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BCrypt
+    public partial class BCrypt : DataModel
     {
 
         public static BCrypt? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BCrypt();
+            var value   = new BCrypt() { Pointer= p0 };
 
 
             return value;

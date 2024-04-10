@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 SelfSceneData                            0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer
     // 038 OpponentSceneData                        0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer
     // 040 EventEffect                              000186605890 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
-    public partial class PvpInGameViewParam
+    public partial class PvpInGameViewParam : DataModel
     {
         public string                                   SelfName                                { get; set; }
         public string                                   OpponentName                            { get; set; }
@@ -31,15 +31,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpInGameViewParam();
+            var value   = new PvpInGameViewParam() { Pointer= p0 };
 
-            value.SelfName                                  = GetString(new IntPtr(p + 0x010)); // 0270D5093070 0x10 SelfName                    ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.OpponentName                              = GetString(new IntPtr(p + 0x018)); // 0270D5093090 0x18 OpponentName                ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.SelfUnit                                  = GetObject<IPvpInGameSelfUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPvpInGameSelfUnitStatus.FromPointer); // 0270D50930B0 0x20 SelfUnit                    ( 000186606DA0 ModelClassType IPvpInGameSelfUnitStatus IPvpInGameSelfUnitStatus IPvpInGameSelfUnitStatus Pointer )
-            value.OpponentUnit                              = GetObject<IPvpInGameOpponentUnitStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IPvpInGameOpponentUnitStatus.FromPointer); // 0270D50930D0 0x28 OpponentUnit                ( 000186606420 ModelClassType IPvpInGameOpponentUnitStatus IPvpInGameOpponentUnitStatus IPvpInGameOpponentUnitStatus Pointer )
-            value.SelfSceneData                             = GetObject<PvpInGameUnitSceneData>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpInGameUnitSceneData.FromPointer); // 0270D50930F0 0x30 SelfSceneData               ( 0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer )
-            value.OpponentSceneData                         = GetObject<PvpInGameUnitSceneData>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpInGameUnitSceneData.FromPointer); // 0270D5093110 0x38 OpponentSceneData           ( 0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer )
-            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0270D5093130 0x40 EventEffect                 ( 000186605890 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
+            value.SelfName                                  = GetString(new IntPtr(p + 0x010)); // 0246650EE960 0x10 SelfName                    ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.OpponentName                              = GetString(new IntPtr(p + 0x018)); // 0246650EE980 0x18 OpponentName                ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.SelfUnit                                  = GetObject<IPvpInGameSelfUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPvpInGameSelfUnitStatus.FromPointer); // 0246650EE9A0 0x20 SelfUnit                    ( 000186606DA0 ModelClassType IPvpInGameSelfUnitStatus IPvpInGameSelfUnitStatus IPvpInGameSelfUnitStatus Pointer )
+            value.OpponentUnit                              = GetObject<IPvpInGameOpponentUnitStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IPvpInGameOpponentUnitStatus.FromPointer); // 0246650EE9C0 0x28 OpponentUnit                ( 000186606420 ModelClassType IPvpInGameOpponentUnitStatus IPvpInGameOpponentUnitStatus IPvpInGameOpponentUnitStatus Pointer )
+            value.SelfSceneData                             = GetObject<PvpInGameUnitSceneData>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpInGameUnitSceneData.FromPointer); // 0246650EE9E0 0x30 SelfSceneData               ( 0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer )
+            value.OpponentSceneData                         = GetObject<PvpInGameUnitSceneData>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpInGameUnitSceneData.FromPointer); // 0246650EEA00 0x38 OpponentSceneData           ( 0001865E8690 ModelClassType PvpInGameUnitSceneData PvpInGameUnitSceneData PvpInGameUnitSceneData Pointer )
+            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0246650EEA20 0x40 EventEffect                 ( 000186605890 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
 
             return value;
         }

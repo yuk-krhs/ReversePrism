@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 ProcessDictionaryKeys                    000186594D10 ModelPrimitiveType bool bool bool Bool
     // 011 ProcessExtensionDataNames                000186594D10 ModelPrimitiveType bool bool bool Bool
     // 012 OverrideSpecifiedNames                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class NamingStrategy
+    public partial class NamingStrategy : DataModel
     {
         public bool                                     ProcessDictionaryKeys                   { get; set; }
         public bool                                     ProcessExtensionDataNames               { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamingStrategy();
+            var value   = new NamingStrategy() { Pointer= p0 };
 
-            value.ProcessDictionaryKeys                     = GetBool(new IntPtr(p + 0x010)); // 0270066952E8 0x10 ProcessDictionaryKeys       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ProcessExtensionDataNames                 = GetBool(new IntPtr(p + 0x011)); // 027006695308 0x11 ProcessExtensionDataNames   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OverrideSpecifiedNames                    = GetBool(new IntPtr(p + 0x012)); // 027006695328 0x12 OverrideSpecifiedNames      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ProcessDictionaryKeys                     = GetBool(new IntPtr(p + 0x010)); // 0245A665E718 0x10 ProcessDictionaryKeys       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ProcessExtensionDataNames                 = GetBool(new IntPtr(p + 0x011)); // 0245A665E738 0x11 ProcessExtensionDataNames   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OverrideSpecifiedNames                    = GetBool(new IntPtr(p + 0x012)); // 0245A665E758 0x12 OverrideSpecifiedNames      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

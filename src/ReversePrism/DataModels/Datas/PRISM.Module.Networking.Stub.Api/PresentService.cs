@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 038 __Method_GetPresentList                  Method`2<GetPresentListArgs, GetPresentListReply> IL2CPP_TYPE_GENERICINST
     // 040 __Method_GetPresentHistoryList           Method`2<GetPresentHistoryListArgs, GetPresentHistoryListReply> IL2CPP_TYPE_GENERICINST
     // 048 __Method_ReceivePresent                  Method`2<ReceivePresentArgs, ReceivePresentReply> IL2CPP_TYPE_GENERICINST
-    public partial class PresentService
+    public partial class PresentService : DataModel
     {
 
         public static PresentService? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PresentService();
+            var value   = new PresentService() { Pointer= p0 };
 
 
             return value;

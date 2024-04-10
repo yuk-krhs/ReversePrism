@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 TargetsAtLeast_Desktop_V4_5              bool IL2CPP_TYPE_BOOLEAN
     // 001 TargetsAtLeast_Desktop_V4_5_1            bool IL2CPP_TYPE_BOOLEAN
-    public partial class BinaryCompatibility
+    public partial class BinaryCompatibility : DataModel
     {
 
         public static BinaryCompatibility? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryCompatibility();
+            var value   = new BinaryCompatibility() { Pointer= p0 };
 
 
             return value;

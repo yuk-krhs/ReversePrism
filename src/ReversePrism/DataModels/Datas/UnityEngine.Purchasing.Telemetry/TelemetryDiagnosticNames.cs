@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 QueryAsyncSkuError                       string IL2CPP_TYPE_STRING
     // 000 SkuDetailsResponseConsolidatorError      string IL2CPP_TYPE_STRING
     // 000 SkuDetailsResponseError                  string IL2CPP_TYPE_STRING
-    public partial class TelemetryDiagnosticNames
+    public partial class TelemetryDiagnosticNames : DataModel
     {
 
         public static TelemetryDiagnosticNames? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TelemetryDiagnosticNames();
+            var value   = new TelemetryDiagnosticNames() { Pointer= p0 };
 
 
             return value;

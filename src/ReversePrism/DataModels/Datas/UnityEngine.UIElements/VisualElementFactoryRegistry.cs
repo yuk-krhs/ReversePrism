@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Factories                              Dictionary`2<string, List`1<IUxmlFactory>> IL2CPP_TYPE_GENERICINST
     // 008 s_MovedTypesFactories                    Dictionary`2<string, List`1<IUxmlFactory>> IL2CPP_TYPE_GENERICINST
-    public partial class VisualElementFactoryRegistry
+    public partial class VisualElementFactoryRegistry : DataModel
     {
 
         public static VisualElementFactoryRegistry? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VisualElementFactoryRegistry();
+            var value   = new VisualElementFactoryRegistry() { Pointer= p0 };
 
 
             return value;

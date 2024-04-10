@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FindPredicate
+    public partial class FindPredicate : DataModel
     {
 
         public static FindPredicate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FindPredicate();
+            var value   = new FindPredicate() { Pointer= p0 };
 
 
             return value;

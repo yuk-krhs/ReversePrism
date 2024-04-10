@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RijndaelManaged
+    public partial class RijndaelManaged : DataModel
     {
 
         public static RijndaelManaged? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RijndaelManaged();
+            var value   = new RijndaelManaged() { Pointer= p0 };
 
 
             return value;

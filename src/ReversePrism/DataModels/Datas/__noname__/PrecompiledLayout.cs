@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 factoryMethod                            Func`1<InputDevice> IL2CPP_TYPE_GENERICINST
     // 018 Metadata                                 0001866722E0 ModelPrimitiveType string string string String
-    public partial class PrecompiledLayout
+    public partial class PrecompiledLayout : DataModel
     {
         public string                                   Metadata                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PrecompiledLayout();
+            var value   = new PrecompiledLayout() { Pointer= p0 };
 
-            value.Metadata                                  = GetString(new IntPtr(p + 0x018)); // 027002E4C238 0x18 Metadata                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Metadata                                  = GetString(new IntPtr(p + 0x018)); // 0245A2E4C238 0x18 Metadata                    ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

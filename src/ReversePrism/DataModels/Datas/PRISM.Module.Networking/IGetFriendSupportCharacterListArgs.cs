@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetFriendSupportCharacterListArgs
+    public partial class IGetFriendSupportCharacterListArgs : DataModel
     {
 
         public static IGetFriendSupportCharacterListArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetFriendSupportCharacterListArgs();
+            var value   = new IGetFriendSupportCharacterListArgs() { Pointer= p0 };
 
 
             return value;

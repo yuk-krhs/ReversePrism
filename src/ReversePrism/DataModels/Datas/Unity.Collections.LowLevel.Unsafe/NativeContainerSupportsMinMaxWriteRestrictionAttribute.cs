@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeContainerSupportsMinMaxWriteRestrictionAttribute
+    public partial class NativeContainerSupportsMinMaxWriteRestrictionAttribute : DataModel
     {
 
         public static NativeContainerSupportsMinMaxWriteRestrictionAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeContainerSupportsMinMaxWriteRestrictionAttribute();
+            var value   = new NativeContainerSupportsMinMaxWriteRestrictionAttribute() { Pointer= p0 };
 
 
             return value;

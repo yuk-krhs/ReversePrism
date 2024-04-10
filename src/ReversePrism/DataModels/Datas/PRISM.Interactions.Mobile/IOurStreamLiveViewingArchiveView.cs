@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IOurStreamLiveViewingArchiveView
+    public partial class IOurStreamLiveViewingArchiveView : DataModel
     {
 
         public static IOurStreamLiveViewingArchiveView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IOurStreamLiveViewingArchiveView();
+            var value   = new IOurStreamLiveViewingArchiveView() { Pointer= p0 };
 
 
             return value;

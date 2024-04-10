@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeSliceUnsafeUtility
+    public partial class NativeSliceUnsafeUtility : DataModel
     {
 
         public static NativeSliceUnsafeUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeSliceUnsafeUtility();
+            var value   = new NativeSliceUnsafeUtility() { Pointer= p0 };
 
 
             return value;

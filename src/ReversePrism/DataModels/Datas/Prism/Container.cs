@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 040 _EndAt                                   000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 ServerReceivedAtFieldNumber              int IL2CPP_TYPE_I4
     // 048 _ServerReceivedAt                        000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class Container
+    public partial class Container : DataModel
     {
         public List<ByteString>?                        Chunk                                   { get; set; }
         public string                                   StreamingId                             { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Container();
+            var value   = new Container() { Pointer= p0 };
 
-            value.Chunk                                     = GetObjectList<ByteString>(new IntPtr(p + 0x018), ReversePrism.DataModels.ByteString.FromPointer); // 0270D4B664D8 0x18 Chunk                       ( 000185CD0198 ModelClassListType RepeatedField`1<ByteString> RepeatedField`1<ByteString> List<ByteString> Pointer )
-            value.StreamingId                               = GetString(new IntPtr(p + 0x020)); // 0270D4B66518 0x20 StreamingId                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x028)); // 0270D4B66558 0x28 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.SequenceNumber                            = GetInt32(new IntPtr(p + 0x030)); // 0270D4B66598 0x30 SequenceNumber              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._StartAt                                  = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D4B665D8 0x38 _StartAt                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndAt                                    = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D4B66618 0x40 _EndAt                      ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._ServerReceivedAt                         = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D4B66658 0x48 _ServerReceivedAt           ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Chunk                                     = GetObjectList<ByteString>(new IntPtr(p + 0x018), ReversePrism.DataModels.ByteString.FromPointer); // 024664BDA198 0x18 Chunk                       ( 000185CD0198 ModelClassListType RepeatedField`1<ByteString> RepeatedField`1<ByteString> List<ByteString> Pointer )
+            value.StreamingId                               = GetString(new IntPtr(p + 0x020)); // 024664BDA1D8 0x20 StreamingId                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x028)); // 024664BDA218 0x28 Title                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.SequenceNumber                            = GetInt32(new IntPtr(p + 0x030)); // 024664BDA258 0x30 SequenceNumber              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._StartAt                                  = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 024664BDA298 0x38 _StartAt                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndAt                                    = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 024664BDA2D8 0x40 _EndAt                      ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._ServerReceivedAt                         = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024664BDA318 0x48 _ServerReceivedAt           ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
 
             return value;
         }

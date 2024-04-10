@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PKCS8
+    public partial class PKCS8 : DataModel
     {
 
         public static PKCS8? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PKCS8();
+            var value   = new PKCS8() { Pointer= p0 };
 
 
             return value;

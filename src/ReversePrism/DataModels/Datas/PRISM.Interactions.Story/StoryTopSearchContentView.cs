@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 CellList                                 0001865A9930 ModelClassType StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList Pointer
     // 028 StorySearchButton                        00018659BE60 ModelClassType StorySearchButton StorySearchButton StorySearchButton Pointer
     // 030 sortFilterPopupFactory                   PopupViewFactory`1<IStorySortFilterPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class StoryTopSearchContentView
+    public partial class StoryTopSearchContentView : DataModel
     {
         public StoryTopFavoriteContentCellList?         CellList                                { get; set; }
         public StorySearchButton?                       StorySearchButton                       { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryTopSearchContentView();
+            var value   = new StoryTopSearchContentView() { Pointer= p0 };
 
-            value.CellList                                  = GetObject<StoryTopFavoriteContentCellList>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryTopFavoriteContentCellList.FromPointer); // 0270DB9A67D8 0x20 CellList                    ( 0001865A9930 ModelClassType StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList Pointer )
-            value.StorySearchButton                         = GetObject<StorySearchButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.StorySearchButton.FromPointer); // 0270DB9A67F8 0x28 StorySearchButton           ( 00018659BE60 ModelClassType StorySearchButton StorySearchButton StorySearchButton Pointer )
+            value.CellList                                  = GetObject<StoryTopFavoriteContentCellList>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryTopFavoriteContentCellList.FromPointer); // 02466BA1DC38 0x20 CellList                    ( 0001865A9930 ModelClassType StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList StoryTopFavoriteContentCellList Pointer )
+            value.StorySearchButton                         = GetObject<StorySearchButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.StorySearchButton.FromPointer); // 02466BA1DC58 0x28 StorySearchButton           ( 00018659BE60 ModelClassType StorySearchButton StorySearchButton StorySearchButton Pointer )
 
             return value;
         }

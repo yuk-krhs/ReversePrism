@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IValueTupleInternal
+    public partial class IValueTupleInternal : DataModel
     {
 
         public static IValueTupleInternal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IValueTupleInternal();
+            var value   = new IValueTupleInternal() { Pointer= p0 };
 
 
             return value;

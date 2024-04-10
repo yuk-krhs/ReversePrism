@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TitleAnnounceServiceBase
+    public partial class TitleAnnounceServiceBase : DataModel
     {
 
         public static TitleAnnounceServiceBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TitleAnnounceServiceBase();
+            var value   = new TitleAnnounceServiceBase() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 parent                                   FromEventObservable_`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 observer                                 IObserver`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 handler                                  Action`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class FromEvent
+    public partial class FromEvent : DataModel
     {
 
         public static FromEvent? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FromEvent();
+            var value   = new FromEvent() { Pointer= p0 };
 
 
             return value;

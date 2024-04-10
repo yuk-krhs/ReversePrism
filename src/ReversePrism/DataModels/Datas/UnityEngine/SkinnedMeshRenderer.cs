@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SkinnedMeshRenderer
+    public partial class SkinnedMeshRenderer : DataModel
     {
 
         public static SkinnedMeshRenderer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SkinnedMeshRenderer();
+            var value   = new SkinnedMeshRenderer() { Pointer= p0 };
 
 
             return value;

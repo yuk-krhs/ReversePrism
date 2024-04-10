@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 050 Cts                                      0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 058 CurrentEventId                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 060 LiveEventModel                           0001865555B0 ModelClassType LiveEventViewModel LiveEventViewModel LiveEventViewModel Pointer
-    public partial class LiveEventPresenter
+    public partial class LiveEventPresenter : DataModel
     {
         public CompositeDisposable?                     Disposables                             { get; set; }
         public ILiveEventView?                          View                                    { get; set; }
@@ -34,14 +34,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventPresenter();
+            var value   = new LiveEventPresenter() { Pointer= p0 };
 
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0270D627EF28 0x10 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.View                                      = GetObject<ILiveEventView>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILiveEventView.FromPointer); // 0270D627EF48 0x18 View                        ( 000186595FC0 ModelClassType ILiveEventView ILiveEventView ILiveEventView Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x020), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270D627EF68 0x20 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x050), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D627F028 0x50 Cts                         ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.CurrentEventId                            = GetInt32(new IntPtr(p + 0x058)); // 0270D627F048 0x58 CurrentEventId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LiveEventModel                            = GetObject<LiveEventViewModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveEventViewModel.FromPointer); // 0270D627F068 0x60 LiveEventModel              ( 0001865555B0 ModelClassType LiveEventViewModel LiveEventViewModel LiveEventViewModel Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246662DEF28 0x10 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.View                                      = GetObject<ILiveEventView>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILiveEventView.FromPointer); // 0246662DEF48 0x18 View                        ( 000186595FC0 ModelClassType ILiveEventView ILiveEventView ILiveEventView Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x020), ReversePrism.DataModels.IResourceTag.FromPointer); // 0246662DEF68 0x20 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x050), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246662DF028 0x50 Cts                         ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.CurrentEventId                            = GetInt32(new IntPtr(p + 0x058)); // 0246662DF048 0x58 CurrentEventId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LiveEventModel                            = GetObject<LiveEventViewModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveEventViewModel.FromPointer); // 0246662DF068 0x60 LiveEventModel              ( 0001865555B0 ModelClassType LiveEventViewModel LiveEventViewModel LiveEventViewModel Pointer )
 
             return value;
         }

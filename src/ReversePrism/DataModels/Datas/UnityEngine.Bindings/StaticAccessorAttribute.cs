@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Name                                     000186671910 ModelPrimitiveType string string string String
     // 018 Type                                     000186584BA0 ModelEnumType StaticAccessorType StaticAccessorType StaticAccessorType Int32
-    public partial class StaticAccessorAttribute
+    public partial class StaticAccessorAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
         public StaticAccessorType                       Type                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StaticAccessorAttribute();
+            var value   = new StaticAccessorAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 027006979918 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = (StaticAccessorType)GetInt32(new IntPtr(p + 0x018)); // 027006979938 0x18 Type                        ( 000186584BA0 ModelEnumType StaticAccessorType StaticAccessorType StaticAccessorType Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A692C0B0 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = (StaticAccessorType)GetInt32(new IntPtr(p + 0x018)); // 0245A692C0D0 0x18 Type                        ( 000186584BA0 ModelEnumType StaticAccessorType StaticAccessorType StaticAccessorType Int32 )
 
             return value;
         }

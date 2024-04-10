@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Variables                                0001865333C0 ModelClassType Variables Variables Variables Pointer
-    public partial class CreateAppTokenRequest
+    public partial class CreateAppTokenRequest : DataModel
     {
         public Variables?                               Variables                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CreateAppTokenRequest();
+            var value   = new CreateAppTokenRequest() { Pointer= p0 };
 
-            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 0270DBDC0700 0x18 Variables                   ( 0001865333C0 ModelClassType Variables Variables Variables Pointer )
+            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 02466BE40118 0x18 Variables                   ( 0001865333C0 ModelClassType Variables Variables Variables Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 View                                     000186627280 ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer
     // 018 PIdolDetailPopupViewFactory              0001865CFB80 ModelClassType IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory Pointer
-    public partial class ScheduleSelectionUnitIdolPresenter
+    public partial class ScheduleSelectionUnitIdolPresenter : DataModel
     {
         public IScheduleSelectionUnitIdolView?          View                                    { get; set; }
         public IPIdolDetailPopupViewFactory?            PIdolDetailPopupViewFactory             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleSelectionUnitIdolPresenter();
+            var value   = new ScheduleSelectionUnitIdolPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IScheduleSelectionUnitIdolView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionUnitIdolView.FromPointer); // 0270D5E425C0 0x10 View                        ( 000186627280 ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer )
-            value.PIdolDetailPopupViewFactory               = GetObject<IPIdolDetailPopupViewFactory>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPIdolDetailPopupViewFactory.FromPointer); // 0270D5E425E0 0x18 PIdolDetailPopupViewFactory ( 0001865CFB80 ModelClassType IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory Pointer )
+            value.View                                      = GetObject<IScheduleSelectionUnitIdolView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionUnitIdolView.FromPointer); // 024665EB2D38 0x10 View                        ( 000186627280 ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer )
+            value.PIdolDetailPopupViewFactory               = GetObject<IPIdolDetailPopupViewFactory>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPIdolDetailPopupViewFactory.FromPointer); // 024665EB2D58 0x18 PIdolDetailPopupViewFactory ( 0001865CFB80 ModelClassType IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory Pointer )
 
             return value;
         }

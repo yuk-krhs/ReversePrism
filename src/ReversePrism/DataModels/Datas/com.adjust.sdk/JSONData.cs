@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Data                                   000186671910 ModelPrimitiveType string string string String
-    public partial class JSONData
+    public partial class JSONData : DataModel
     {
         public string                                   M_Data                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JSONData();
+            var value   = new JSONData() { Pointer= p0 };
 
-            value.M_Data                                    = GetString(new IntPtr(p + 0x010)); // 0270DBB0BEC0 0x10 M_Data                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Data                                    = GetString(new IntPtr(p + 0x010)); // 02466BB933A0 0x10 M_Data                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

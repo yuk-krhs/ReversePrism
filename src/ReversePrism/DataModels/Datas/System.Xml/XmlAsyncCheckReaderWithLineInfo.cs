@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 ReaderAsIXmlLineInfo                     00018669FE10 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer
-    public partial class XmlAsyncCheckReaderWithLineInfo
+    public partial class XmlAsyncCheckReaderWithLineInfo : DataModel
     {
         public IXmlLineInfo?                            ReaderAsIXmlLineInfo                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlAsyncCheckReaderWithLineInfo();
+            var value   = new XmlAsyncCheckReaderWithLineInfo() { Pointer= p0 };
 
-            value.ReaderAsIXmlLineInfo                      = GetObject<IXmlLineInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlLineInfo.FromPointer); // 0270D73840E0 0x20 ReaderAsIXmlLineInfo        ( 00018669FE10 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer )
+            value.ReaderAsIXmlLineInfo                      = GetObject<IXmlLineInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlLineInfo.FromPointer); // 0246673DC0E0 0x20 ReaderAsIXmlLineInfo        ( 00018669FE10 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer )
 
             return value;
         }

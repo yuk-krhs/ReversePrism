@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStoryTopFavoriteContentCellList
+    public partial class IStoryTopFavoriteContentCellList : DataModel
     {
 
         public static IStoryTopFavoriteContentCellList? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStoryTopFavoriteContentCellList();
+            var value   = new IStoryTopFavoriteContentCellList() { Pointer= p0 };
 
 
             return value;

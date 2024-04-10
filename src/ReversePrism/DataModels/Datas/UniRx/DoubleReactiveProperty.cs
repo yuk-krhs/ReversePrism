@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DoubleReactiveProperty
+    public partial class DoubleReactiveProperty : DataModel
     {
 
         public static DoubleReactiveProperty? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DoubleReactiveProperty();
+            var value   = new DoubleReactiveProperty() { Pointer= p0 };
 
 
             return value;

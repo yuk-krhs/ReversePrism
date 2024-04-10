@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 064 Nothing                                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 068 OnButton                                 Subject`1<ValueTuple`2<int, TicketButtonType>> IL2CPP_TYPE_GENERICINST
-    public partial class TicketSelectorView
+    public partial class TicketSelectorView : DataModel
     {
         public UITextMeshProUGUI?                       TxtName                                 { get; set; }
         public RawImage?                                ImgTicket                               { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TicketSelectorView();
+            var value   = new TicketSelectorView() { Pointer= p0 };
 
-            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA381AE8 0x20 TxtName                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ImgTicket                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0270DA381B08 0x28 ImgTicket                   ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.TxtTicketAmount                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA381B28 0x30 TxtTicketAmount             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtCount                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA381B48 0x38 TxtCount                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnMin                                    = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA381B68 0x40 BtnMin                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnDown                                   = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA381B88 0x48 BtnDown                     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnUp                                     = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA381BA8 0x50 BtnUp                       ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnMax                                    = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA381BC8 0x58 BtnMax                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x060)); // 0270DA381BE8 0x60 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Nothing                                   = GetBool(new IntPtr(p + 0x064)); // 0270DA381C08 0x64 Nothing                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3ED0E0 0x20 TxtName                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgTicket                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 02466A3ED100 0x28 ImgTicket                   ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.TxtTicketAmount                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3ED120 0x30 TxtTicketAmount             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtCount                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3ED140 0x38 TxtCount                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnMin                                    = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3ED160 0x40 BtnMin                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnDown                                   = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3ED180 0x48 BtnDown                     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnUp                                     = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3ED1A0 0x50 BtnUp                       ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnMax                                    = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3ED1C0 0x58 BtnMax                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x060)); // 02466A3ED1E0 0x60 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Nothing                                   = GetBool(new IntPtr(p + 0x064)); // 02466A3ED200 0x64 Nothing                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

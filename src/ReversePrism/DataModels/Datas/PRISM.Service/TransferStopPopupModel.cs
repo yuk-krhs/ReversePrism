@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 UserId                                   000186671910 ModelPrimitiveType string string string String
-    public partial class TransferStopPopupModel
+    public partial class TransferStopPopupModel : DataModel
     {
         public string                                   UserId                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferStopPopupModel();
+            var value   = new TransferStopPopupModel() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x010)); // 0270D676DD30 0x10 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserId                                    = GetString(new IntPtr(p + 0x010)); // 0246667DDD30 0x10 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 m_animations                             Dictionary`2<int, bool> IL2CPP_TYPE_GENERICINST
     // 028 M_TextComponent                          000186613650 ModelClassType TMP_Text TMP_Text TMP_Text Pointer
-    public partial class TMP_SpriteAnimator
+    public partial class TMP_SpriteAnimator : DataModel
     {
         public TMP_Text?                                M_TextComponent                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_SpriteAnimator();
+            var value   = new TMP_SpriteAnimator() { Pointer= p0 };
 
-            value.M_TextComponent                           = GetObject<TMP_Text>(new IntPtr(p + 0x028), ReversePrism.DataModels.TMP_Text.FromPointer); // 0270DA654840 0x28 M_TextComponent             ( 000186613650 ModelClassType TMP_Text TMP_Text TMP_Text Pointer )
+            value.M_TextComponent                           = GetObject<TMP_Text>(new IntPtr(p + 0x028), ReversePrism.DataModels.TMP_Text.FromPointer); // 02466A69FED8 0x28 M_TextComponent             ( 000186613650 ModelClassType TMP_Text TMP_Text TMP_Text Pointer )
 
             return value;
         }

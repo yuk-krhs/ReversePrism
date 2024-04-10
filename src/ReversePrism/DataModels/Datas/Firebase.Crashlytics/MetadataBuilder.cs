@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 METADATA_KEY                             string IL2CPP_TYPE_STRING
-    public partial class MetadataBuilder
+    public partial class MetadataBuilder : DataModel
     {
 
         public static MetadataBuilder? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetadataBuilder();
+            var value   = new MetadataBuilder() { Pointer= p0 };
 
 
             return value;

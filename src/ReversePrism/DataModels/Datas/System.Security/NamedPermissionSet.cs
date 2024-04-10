@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 030 Name                                     000186671910 ModelPrimitiveType string string string String
     // 038 Description                              000186671910 ModelPrimitiveType string string string String
-    public partial class NamedPermissionSet
+    public partial class NamedPermissionSet : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   Description                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamedPermissionSet();
+            var value   = new NamedPermissionSet() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 0270D6B68BD0 0x30 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x038)); // 0270D6B68BF0 0x38 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 024666BE0BD0 0x30 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x038)); // 024666BE0BF0 0x38 Description                 ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

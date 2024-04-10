@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 strings                                  PriorityDictionary`2<string, int> IL2CPP_TYPE_GENERICINST
     // 018 maps                                     PriorityDictionary`2<IXmlDictionary, IntArray> IL2CPP_TYPE_GENERICINST
     // 020 NextKey                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class XmlBinaryWriterSession
+    public partial class XmlBinaryWriterSession : DataModel
     {
         public int                                      NextKey                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlBinaryWriterSession();
+            var value   = new XmlBinaryWriterSession() { Pointer= p0 };
 
-            value.NextKey                                   = GetInt32(new IntPtr(p + 0x020)); // 0270D7C40FA8 0x20 NextKey                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.NextKey                                   = GetInt32(new IntPtr(p + 0x020)); // 024667C98FA8 0x20 NextKey                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnSerializingAttribute
+    public partial class OnSerializingAttribute : DataModel
     {
 
         public static OnSerializingAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnSerializingAttribute();
+            var value   = new OnSerializingAttribute() { Pointer= p0 };
 
 
             return value;

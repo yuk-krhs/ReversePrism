@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 p32                                      IntPtr IL2CPP_TYPE_PTR
     // 010 p64                                      IntPtr IL2CPP_TYPE_PTR
     // 010 I                                        00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    public partial class U
+    public partial class U : DataModel
     {
         public ulong                                    I                                       { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new U();
+            var value   = new U() { Pointer= p0 };
 
-            value.I                                         = GetUInt64(new IntPtr(p + 0x010)); // 0270068AE0A0 0x10 I                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.I                                         = GetUInt64(new IntPtr(p + 0x010)); // 0245A6870750 0x10 I                           ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

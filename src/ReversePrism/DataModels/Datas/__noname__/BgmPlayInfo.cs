@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Playback                                 000186648460 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32
     // 014 IsStopping                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BgmPlayInfo
+    public partial class BgmPlayInfo : DataModel
     {
         public CriAtomExPlayback                        Playback                                { get; set; }
         public bool                                     IsStopping                              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BgmPlayInfo();
+            var value   = new BgmPlayInfo() { Pointer= p0 };
 
-            value.Playback                                  = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x010)); // 0270D199D2F0 0x10 Playback                    ( 000186648460 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
-            value.IsStopping                                = GetBool(new IntPtr(p + 0x014)); // 0270D199D310 0x14 IsStopping                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Playback                                  = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x010)); // 024661956DB8 0x10 Playback                    ( 000186648460 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
+            value.IsStopping                                = GetBool(new IntPtr(p + 0x014)); // 024661956DD8 0x14 IsStopping                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

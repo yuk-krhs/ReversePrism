@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 040 Base64Values                             000185CA2298 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 048 DirectEncode                             000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
     // 050 AllowOptionals                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UTF7Encoding
+    public partial class UTF7Encoding : DataModel
     {
         public List<sbyte>?                             Base64Bytes                             { get; set; }
         public List<sbyte>?                             Base64Values                            { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UTF7Encoding();
+            var value   = new UTF7Encoding() { Pointer= p0 };
 
-            value.Base64Bytes                               = GetSByteList(new IntPtr(p + 0x038)); // 0270D6B65588 0x38 Base64Bytes                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Base64Values                              = GetSByteList(new IntPtr(p + 0x040)); // 0270D6B655A8 0x40 Base64Values                ( 000185CA2298 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.DirectEncode                              = GetBoolList(new IntPtr(p + 0x048)); // 0270D6B655C8 0x48 DirectEncode                ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
-            value.AllowOptionals                            = GetBool(new IntPtr(p + 0x050)); // 0270D6B655E8 0x50 AllowOptionals              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Base64Bytes                               = GetSByteList(new IntPtr(p + 0x038)); // 024666BDD588 0x38 Base64Bytes                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Base64Values                              = GetSByteList(new IntPtr(p + 0x040)); // 024666BDD5A8 0x40 Base64Values                ( 000185CA2298 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.DirectEncode                              = GetBoolList(new IntPtr(p + 0x048)); // 024666BDD5C8 0x48 DirectEncode                ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.AllowOptionals                            = GetBool(new IntPtr(p + 0x050)); // 024666BDD5E8 0x50 AllowOptionals              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

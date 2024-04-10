@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 CueSheetName                             000186671910 ModelPrimitiveType string string string String
     // 000 CueNameFieldNumber                       int IL2CPP_TYPE_I4
     // 028 CueName                                  000186671910 ModelPrimitiveType string string string String
-    public partial class VoiceResourceStatus
+    public partial class VoiceResourceStatus : DataModel
     {
         public int                                      MstVoiceResourceId                      { get; set; }
         public string                                   CueSheetName                            { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VoiceResourceStatus();
+            var value   = new VoiceResourceStatus() { Pointer= p0 };
 
-            value.MstVoiceResourceId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D0F5ECB8 0x18 MstVoiceResourceId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x020)); // 0270D0F5ECF8 0x20 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x028)); // 0270D0F5ED38 0x28 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstVoiceResourceId                        = GetInt32(new IntPtr(p + 0x018)); // 024660EE80F0 0x18 MstVoiceResourceId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x020)); // 024660EE8130 0x20 CueSheetName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x028)); // 024660EE8170 0x28 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

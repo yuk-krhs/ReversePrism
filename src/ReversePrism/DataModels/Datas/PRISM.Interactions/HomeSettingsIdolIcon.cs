@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 BaseIcon                                 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer
     // 028 SelectedCursorObject                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 SettingsPanelObject                      0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class HomeSettingsIdolIcon
+    public partial class HomeSettingsIdolIcon : DataModel
     {
         public CharacterBaseIcon?                       BaseIcon                                { get; set; }
         public GameObject?                              SelectedCursorObject                    { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSettingsIdolIcon();
+            var value   = new HomeSettingsIdolIcon() { Pointer= p0 };
 
-            value.BaseIcon                                  = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 0270DB50B648 0x20 BaseIcon                    ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
-            value.SelectedCursorObject                      = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB50B668 0x28 SelectedCursorObject        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SettingsPanelObject                       = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB50B688 0x30 SettingsPanelObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BaseIcon                                  = GetObject<CharacterBaseIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterBaseIcon.FromPointer); // 02466B59F8F0 0x20 BaseIcon                    ( 000186599240 ModelClassType CharacterBaseIcon CharacterBaseIcon CharacterBaseIcon Pointer )
+            value.SelectedCursorObject                      = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B59F910 0x28 SelectedCursorObject        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SettingsPanelObject                       = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B59F930 0x30 SettingsPanelObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

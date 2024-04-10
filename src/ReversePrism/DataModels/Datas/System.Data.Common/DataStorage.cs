@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 04B IsValueType                              000186596860 ModelPrimitiveType bool bool bool Bool
     // 008 s_inspectTypeForInterfaces               Func`2<Type, Tuple`4<bool, bool, bool, bool>> IL2CPP_TYPE_GENERICINST
     // 010 s_typeImplementsInterface                ConcurrentDictionary`2<Type, Tuple`4<bool, bool, bool, bool>> IL2CPP_TYPE_GENERICINST
-    public partial class DataStorage
+    public partial class DataStorage : DataModel
     {
         public DataColumn?                              Column                                  { get; set; }
         public DataTable?                               Table                                   { get; set; }
@@ -40,17 +40,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DataStorage();
+            var value   = new DataStorage() { Pointer= p0 };
 
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0270D88B54D0 0x10 Column                      ( 000186676190 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataTable.FromPointer); // 0270D88B54F0 0x18 Table                       ( 0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer )
-            value.DataType                                  = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D88B5510 0x20 DataType                    ( 000186693960 ModelClassType Type Type Type Pointer )
-            value.StorageTypeCode                           = (StorageType)GetInt32(new IntPtr(p + 0x028)); // 0270D88B5530 0x28 StorageTypeCode             ( 00018658FC30 ModelEnumType StorageType StorageType StorageType Int32 )
-            value.DbNullBits                                = GetObject<BitArray>(new IntPtr(p + 0x030), ReversePrism.DataModels.BitArray.FromPointer); // 0270D88B5550 0x30 DbNullBits                  ( 000186593200 ModelClassType BitArray BitArray BitArray Pointer )
-            value.IsCloneable                               = GetBool(new IntPtr(p + 0x048)); // 0270D88B55B0 0x48 IsCloneable                 ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IsCustomDefinedType                       = GetBool(new IntPtr(p + 0x049)); // 0270D88B55D0 0x49 IsCustomDefinedType         ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IsStringType                              = GetBool(new IntPtr(p + 0x04A)); // 0270D88B55F0 0x4A IsStringType                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IsValueType                               = GetBool(new IntPtr(p + 0x04B)); // 0270D88B5610 0x4B IsValueType                 ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0246689215F0 0x10 Column                      ( 000186676190 ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataTable.FromPointer); // 024668921610 0x18 Table                       ( 0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer )
+            value.DataType                                  = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024668921630 0x20 DataType                    ( 000186693960 ModelClassType Type Type Type Pointer )
+            value.StorageTypeCode                           = (StorageType)GetInt32(new IntPtr(p + 0x028)); // 024668921650 0x28 StorageTypeCode             ( 00018658FC30 ModelEnumType StorageType StorageType StorageType Int32 )
+            value.DbNullBits                                = GetObject<BitArray>(new IntPtr(p + 0x030), ReversePrism.DataModels.BitArray.FromPointer); // 024668921670 0x30 DbNullBits                  ( 000186593200 ModelClassType BitArray BitArray BitArray Pointer )
+            value.IsCloneable                               = GetBool(new IntPtr(p + 0x048)); // 0246689216D0 0x48 IsCloneable                 ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IsCustomDefinedType                       = GetBool(new IntPtr(p + 0x049)); // 0246689216F0 0x49 IsCustomDefinedType         ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IsStringType                              = GetBool(new IntPtr(p + 0x04A)); // 024668921710 0x4A IsStringType                ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IsValueType                               = GetBool(new IntPtr(p + 0x04B)); // 024668921730 0x4B IsValueType                 ( 000186596860 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

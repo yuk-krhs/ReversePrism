@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 0B0 DefaultState                             0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32
     // 0C0 MinValue                                 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32
     // 0D0 MaxValue                                 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32
-    public partial class ControlItem
+    public partial class ControlItem : DataModel
     {
         public InternedString                           Name                                    { get; set; }
         public InternedString                           Layout                                  { get; set; }
@@ -51,23 +51,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ControlItem();
+            var value   = new ControlItem() { Pointer= p0 };
 
-            value.Name                                      = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 0270D76F39E0 0x10 Name                        ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Layout                                    = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 0270D76F3A00 0x20 Layout                      ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.Variants                                  = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 0270D76F3A20 0x30 Variants                    ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.UseStateFrom                              = GetString(new IntPtr(p + 0x040)); // 0270D76F3A40 0x40 UseStateFrom                ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 0270D76F3A60 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.ShortDisplayName                          = GetString(new IntPtr(p + 0x050)); // 0270D76F3A80 0x50 ShortDisplayName            ( 000186671910 ModelPrimitiveType string string string String )
-            value.Offset                                    = GetUInt32(new IntPtr(p + 0x098)); // 0270D76F3B20 0x98 Offset                      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.Bit                                       = GetUInt32(new IntPtr(p + 0x09C)); // 0270D76F3B40 0x9C Bit                         ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.SizeInBits                                = GetUInt32(new IntPtr(p + 0x0A0)); // 0270D76F3B60 0xA0 SizeInBits                  ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.Format                                    = (FourCC)GetInt32(new IntPtr(p + 0x0A4)); // 0270D76F3B80 0xA4 Format                      ( 0001865BB210 ModelEnumType FourCC FourCC FourCC Int32 )
-            value.Flags                                     = (Flags)GetInt32(new IntPtr(p + 0x0A8)); // 0270D76F3BA0 0xA8 Flags                       ( 0001865256A0 ModelEnumType Flags Flags Flags Int32 )
-            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x0AC)); // 0270D76F3BC0 0xAC ArraySize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DefaultState                              = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0B0)); // 0270D76F3BE0 0xB0 DefaultState                ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
-            value.MinValue                                  = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0C0)); // 0270D76F3C00 0xC0 MinValue                    ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
-            value.MaxValue                                  = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0D0)); // 0270D76F3C20 0xD0 MaxValue                    ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
+            value.Name                                      = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 02466774B1B0 0x10 Name                        ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Layout                                    = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 02466774B1D0 0x20 Layout                      ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.Variants                                  = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 02466774B1F0 0x30 Variants                    ( 0001865FE140 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.UseStateFrom                              = GetString(new IntPtr(p + 0x040)); // 02466774B210 0x40 UseStateFrom                ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 02466774B230 0x48 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ShortDisplayName                          = GetString(new IntPtr(p + 0x050)); // 02466774B250 0x50 ShortDisplayName            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Offset                                    = GetUInt32(new IntPtr(p + 0x098)); // 02466774B2F0 0x98 Offset                      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Bit                                       = GetUInt32(new IntPtr(p + 0x09C)); // 02466774B310 0x9C Bit                         ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.SizeInBits                                = GetUInt32(new IntPtr(p + 0x0A0)); // 02466774B330 0xA0 SizeInBits                  ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Format                                    = (FourCC)GetInt32(new IntPtr(p + 0x0A4)); // 02466774B350 0xA4 Format                      ( 0001865BB210 ModelEnumType FourCC FourCC FourCC Int32 )
+            value.Flags                                     = (Flags)GetInt32(new IntPtr(p + 0x0A8)); // 02466774B370 0xA8 Flags                       ( 0001865256A0 ModelEnumType Flags Flags Flags Int32 )
+            value.ArraySize                                 = GetInt32(new IntPtr(p + 0x0AC)); // 02466774B390 0xAC ArraySize                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DefaultState                              = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0B0)); // 02466774B3B0 0xB0 DefaultState                ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
+            value.MinValue                                  = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0C0)); // 02466774B3D0 0xC0 MinValue                    ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
+            value.MaxValue                                  = (PrimitiveValue)GetInt32(new IntPtr(p + 0x0D0)); // 02466774B3F0 0xD0 MaxValue                    ( 0001865144C0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 EmptyTypes                               Type[] IL2CPP_TYPE_SZARRAY
-    public partial class ReflectionUtils
+    public partial class ReflectionUtils : DataModel
     {
 
         public static ReflectionUtils? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReflectionUtils();
+            var value   = new ReflectionUtils() { Pointer= p0 };
 
 
             return value;

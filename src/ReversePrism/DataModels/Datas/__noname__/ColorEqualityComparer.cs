@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ColorEqualityComparer
+    public partial class ColorEqualityComparer : DataModel
     {
 
         public static ColorEqualityComparer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColorEqualityComparer();
+            var value   = new ColorEqualityComparer() { Pointer= p0 };
 
 
             return value;

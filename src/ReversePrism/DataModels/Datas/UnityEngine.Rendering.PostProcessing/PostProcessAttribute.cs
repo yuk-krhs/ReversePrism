@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 MenuItem                                 0001866736C0 ModelPrimitiveType string string string String
     // 028 AllowInSceneView                         000186596AF0 ModelPrimitiveType bool bool bool Bool
     // 029 BuiltinEffect                            000186596860 ModelPrimitiveType bool bool bool Bool
-    public partial class PostProcessAttribute
+    public partial class PostProcessAttribute : DataModel
     {
         public Type?                                    Renderer                                { get; set; }
         public PostProcessEvent                         EventType                               { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PostProcessAttribute();
+            var value   = new PostProcessAttribute() { Pointer= p0 };
 
-            value.Renderer                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 027006134468 0x10 Renderer                    ( 000186693B90 ModelClassType Type Type Type Pointer )
-            value.EventType                                 = (PostProcessEvent)GetInt32(new IntPtr(p + 0x018)); // 027006134488 0x18 EventType                   ( 00018676B860 ModelEnumType PostProcessEvent PostProcessEvent PostProcessEvent Int32 )
-            value.MenuItem                                  = GetString(new IntPtr(p + 0x020)); // 0270061344A8 0x20 MenuItem                    ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.AllowInSceneView                          = GetBool(new IntPtr(p + 0x028)); // 0270061344C8 0x28 AllowInSceneView            ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.BuiltinEffect                             = GetBool(new IntPtr(p + 0x029)); // 0270061344E8 0x29 BuiltinEffect               ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.Renderer                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A60F00F0 0x10 Renderer                    ( 000186693B90 ModelClassType Type Type Type Pointer )
+            value.EventType                                 = (PostProcessEvent)GetInt32(new IntPtr(p + 0x018)); // 0245A60F0110 0x18 EventType                   ( 00018676B860 ModelEnumType PostProcessEvent PostProcessEvent PostProcessEvent Int32 )
+            value.MenuItem                                  = GetString(new IntPtr(p + 0x020)); // 0245A60F0130 0x20 MenuItem                    ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.AllowInSceneView                          = GetBool(new IntPtr(p + 0x028)); // 0245A60F0150 0x28 AllowInSceneView            ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.BuiltinEffect                             = GetBool(new IntPtr(p + 0x029)); // 0245A60F0170 0x29 BuiltinEffect               ( 000186596860 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

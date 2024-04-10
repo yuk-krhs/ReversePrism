@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAppealCorrectionStatus
+    public partial class IAppealCorrectionStatus : DataModel
     {
 
         public static IAppealCorrectionStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAppealCorrectionStatus();
+            var value   = new IAppealCorrectionStatus() { Pointer= p0 };
 
 
             return value;

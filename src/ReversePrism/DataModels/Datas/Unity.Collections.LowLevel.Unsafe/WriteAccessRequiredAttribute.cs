@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class WriteAccessRequiredAttribute
+    public partial class WriteAccessRequiredAttribute : DataModel
     {
 
         public static WriteAccessRequiredAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WriteAccessRequiredAttribute();
+            var value   = new WriteAccessRequiredAttribute() { Pointer= p0 };
 
 
             return value;

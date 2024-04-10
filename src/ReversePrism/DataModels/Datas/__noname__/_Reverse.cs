@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 array                                    <var>[] IL2CPP_TYPE_SZARRAY
     // 000 index                                    int IL2CPP_TYPE_I4
     // 000 <Current>k__BackingField                 <var> IL2CPP_TYPE_VAR
-    public partial class _Reverse
+    public partial class _Reverse : DataModel
     {
 
         public static _Reverse? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _Reverse();
+            var value   = new _Reverse() { Pointer= p0 };
 
 
             return value;

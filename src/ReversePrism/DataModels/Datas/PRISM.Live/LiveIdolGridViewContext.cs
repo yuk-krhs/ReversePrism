@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 058 <StatusDisplayType>k__BackingField       ReactiveProperty`1<LiveIdolIconStatusDisplayType> IL2CPP_TYPE_GENERICINST
-    public partial class LiveIdolGridViewContext
+    public partial class LiveIdolGridViewContext : DataModel
     {
 
         public static LiveIdolGridViewContext? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveIdolGridViewContext();
+            var value   = new LiveIdolGridViewContext() { Pointer= p0 };
 
 
             return value;

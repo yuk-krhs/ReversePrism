@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 OrderId                                  000186671910 ModelPrimitiveType string string string String
     // 000 StoreItemFieldNumber                     int IL2CPP_TYPE_I4
     // 020 StoreItem                                000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer
-    public partial class ReserveStoreItemReply
+    public partial class ReserveStoreItemReply : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public StoreItemStatus?                         StoreItem                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReserveStoreItemReply();
+            var value   = new ReserveStoreItemReply() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B476E0 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 0270D0B47720 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B3BA50 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.StoreItem                                 = GetObject<StoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoreItemStatus.FromPointer); // 024660B3BA90 0x20 StoreItem                   ( 000186591EC0 ModelClassType StoreItemStatus StoreItemStatus StoreItemStatus Pointer )
 
             return value;
         }

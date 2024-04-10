@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ChallengeTourTopConnector
+    public partial class ChallengeTourTopConnector : DataModel
     {
 
         public static ChallengeTourTopConnector? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourTopConnector();
+            var value   = new ChallengeTourTopConnector() { Pointer= p0 };
 
 
             return value;

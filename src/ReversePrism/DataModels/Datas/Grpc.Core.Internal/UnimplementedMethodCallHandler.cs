@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Instance                                 UnimplementedMethodCallHandler IL2CPP_TYPE_CLASS
     // 010 callHandlerImpl                          DuplexStreamingServerCallHandler`2<sbyte[], sbyte[]> IL2CPP_TYPE_GENERICINST
-    public partial class UnimplementedMethodCallHandler
+    public partial class UnimplementedMethodCallHandler : DataModel
     {
 
         public static UnimplementedMethodCallHandler? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnimplementedMethodCallHandler();
+            var value   = new UnimplementedMethodCallHandler() { Pointer= p0 };
 
 
             return value;

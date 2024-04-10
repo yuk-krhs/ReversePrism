@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C Level                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstPotentialLiveSkillLevelIdFieldNumber  int IL2CPP_TYPE_I4
     // 020 MstPotentialLiveSkillLevelId             0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class InheritanceFesIdolAttachedPotentialLiveSkillStatus
+    public partial class InheritanceFesIdolAttachedPotentialLiveSkillStatus : DataModel
     {
         public int                                      MstPotentialLiveSkillId                 { get; set; }
         public int                                      Level                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InheritanceFesIdolAttachedPotentialLiveSkillStatus();
+            var value   = new InheritanceFesIdolAttachedPotentialLiveSkillStatus() { Pointer= p0 };
 
-            value.MstPotentialLiveSkillId                   = GetInt32(new IntPtr(p + 0x018)); // 0270D10E3EC8 0x18 MstPotentialLiveSkillId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 0270D10E3F08 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstPotentialLiveSkillLevelId              = GetInt32(new IntPtr(p + 0x020)); // 0270D10E3F48 0x20 MstPotentialLiveSkillLevelId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstPotentialLiveSkillId                   = GetInt32(new IntPtr(p + 0x018)); // 02466106D1A0 0x18 MstPotentialLiveSkillId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x01C)); // 02466106D1E0 0x1C Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstPotentialLiveSkillLevelId              = GetInt32(new IntPtr(p + 0x020)); // 02466106D220 0x20 MstPotentialLiveSkillLevelId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

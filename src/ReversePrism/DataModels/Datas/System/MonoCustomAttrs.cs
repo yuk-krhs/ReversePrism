@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 corlib                                   Assembly IL2CPP_TYPE_CLASS
     // FFFFFFFF usage_cache                              Dictionary`2<Type, AttributeUsageAttribute> IL2CPP_TYPE_GENERICINST
     // 008 DefaultAttributeUsage                    AttributeUsageAttribute IL2CPP_TYPE_CLASS
-    public partial class MonoCustomAttrs
+    public partial class MonoCustomAttrs : DataModel
     {
 
         public static MonoCustomAttrs? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoCustomAttrs();
+            var value   = new MonoCustomAttrs() { Pointer= p0 };
 
 
             return value;

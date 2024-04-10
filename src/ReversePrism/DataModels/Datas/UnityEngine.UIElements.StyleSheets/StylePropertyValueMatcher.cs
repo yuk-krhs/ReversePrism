@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 M_Values                                 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer
-    public partial class StylePropertyValueMatcher
+    public partial class StylePropertyValueMatcher : DataModel
     {
         public List<StylePropertyValue>?                M_Values                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StylePropertyValueMatcher();
+            var value   = new StylePropertyValueMatcher() { Pointer= p0 };
 
-            value.M_Values                                  = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x020)); // 027006888838 0x20 M_Values                    ( 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
+            value.M_Values                                  = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x020)); // 0245A684A6A8 0x20 M_Values                    ( 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
 
             return value;
         }

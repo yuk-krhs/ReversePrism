@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UxmlHash128AttributeDescription
+    public partial class UxmlHash128AttributeDescription : DataModel
     {
 
         public static UxmlHash128AttributeDescription? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UxmlHash128AttributeDescription();
+            var value   = new UxmlHash128AttributeDescription() { Pointer= p0 };
 
 
             return value;

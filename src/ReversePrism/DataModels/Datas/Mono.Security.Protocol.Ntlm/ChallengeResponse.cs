@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Challenge                                000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 020 Lmpwd                                    000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     // 028 Ntpwd                                    000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class ChallengeResponse
+    public partial class ChallengeResponse : DataModel
     {
         public bool                                     Disposed                                { get; set; }
         public List<sbyte>?                             Challenge                               { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeResponse();
+            var value   = new ChallengeResponse() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0270DB37E220 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Challenge                                 = GetSByteList(new IntPtr(p + 0x018)); // 0270DB37E240 0x18 Challenge                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Lmpwd                                     = GetSByteList(new IntPtr(p + 0x020)); // 0270DB37E260 0x20 Lmpwd                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Ntpwd                                     = GetSByteList(new IntPtr(p + 0x028)); // 0270DB37E280 0x28 Ntpwd                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 02466B40BFF0 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Challenge                                 = GetSByteList(new IntPtr(p + 0x018)); // 02466B40C010 0x18 Challenge                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Lmpwd                                     = GetSByteList(new IntPtr(p + 0x020)); // 02466B40C030 0x20 Lmpwd                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Ntpwd                                     = GetSByteList(new IntPtr(p + 0x028)); // 02466B40C050 0x28 Ntpwd                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 009 stopDuplicate                            bool IL2CPP_TYPE_BOOLEAN
     // 00A disableDropShadow                        bool IL2CPP_TYPE_BOOLEAN
     // 010 CachedRendererListExecutor               000186522DC0 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer
-    public partial class DropShadow
+    public partial class DropShadow : DataModel
     {
         public CameraController?                        MainCamera                              { get; set; }
         public Renderer?                                DropShadowRenderer                      { get; set; }
@@ -33,14 +33,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DropShadow();
+            var value   = new DropShadow() { Pointer= p0 };
 
-            value.MainCamera                                = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 027004147290 0x20 MainCamera                  ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.DropShadowRenderer                        = GetObject<Renderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.Renderer.FromPointer); // 0270041472B0 0x28 DropShadowRenderer          ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
-            value.ShadowMat                                 = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0270041472D0 0x30 ShadowMat                   ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.ShadowHairMat                             = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 0270041472F0 0x38 ShadowHairMat               ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.RootObjList                               = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 027004147310 0x40 RootObjList                 ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.CachedRendererListExecutor                = GetObject<CachedRendererListExecutor>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedRendererListExecutor.FromPointer); // 027004147390 0x10 CachedRendererListExecutor  ( 000186522DC0 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer )
+            value.MainCamera                                = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 024660EC0FF8 0x20 MainCamera                  ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
+            value.DropShadowRenderer                        = GetObject<Renderer>(new IntPtr(p + 0x028), ReversePrism.DataModels.Renderer.FromPointer); // 024660EC1018 0x28 DropShadowRenderer          ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
+            value.ShadowMat                                 = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 024660EC1038 0x30 ShadowMat                   ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.ShadowHairMat                             = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 024660EC1058 0x38 ShadowHairMat               ( 00018660C4B0 ModelClassType Material Material Material Pointer )
+            value.RootObjList                               = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 024660EC1078 0x40 RootObjList                 ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.CachedRendererListExecutor                = GetObject<CachedRendererListExecutor>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedRendererListExecutor.FromPointer); // 024660EC10F8 0x10 CachedRendererListExecutor  ( 000186522DC0 ModelClassType CachedRendererListExecutor CachedRendererListExecutor CachedRendererListExecutor Pointer )
 
             return value;
         }

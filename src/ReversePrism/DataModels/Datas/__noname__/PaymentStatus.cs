@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 PaymentCompleted                         int IL2CPP_TYPE_I4
     // 000 Cancel                                   int IL2CPP_TYPE_I4
     // 000 Expired                                  int IL2CPP_TYPE_I4
-    public partial class PaymentStatus
+    public partial class PaymentStatus : DataModel
     {
 
         public static PaymentStatus? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PaymentStatus();
+            var value   = new PaymentStatus() { Pointer= p0 };
 
 
             return value;

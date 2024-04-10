@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 factory                                  IPopupViewFactory`1<IProduceResultTransferConfirmedPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class ProduceResultTransferConfirmedPopupSequencer
+    public partial class ProduceResultTransferConfirmedPopupSequencer : DataModel
     {
 
         public static ProduceResultTransferConfirmedPopupSequencer? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceResultTransferConfirmedPopupSequencer();
+            var value   = new ProduceResultTransferConfirmedPopupSequencer() { Pointer= p0 };
 
 
             return value;

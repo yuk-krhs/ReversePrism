@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NativeParallelMultiHashMapExtensions
+    public partial class NativeParallelMultiHashMapExtensions : DataModel
     {
 
         public static NativeParallelMultiHashMapExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NativeParallelMultiHashMapExtensions();
+            var value   = new NativeParallelMultiHashMapExtensions() { Pointer= p0 };
 
 
             return value;

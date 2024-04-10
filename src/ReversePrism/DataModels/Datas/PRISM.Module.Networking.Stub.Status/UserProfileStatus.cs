@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 070 FriendState                              0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32
     // 000 LastLoginDateFieldNumber                 int IL2CPP_TYPE_I4
     // 078 _LastLoginDate                           000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class UserProfileStatus
+    public partial class UserProfileStatus : DataModel
     {
         public DateTime                                 LastLoginDate                           { get; set; }
         public string                                   Name                                    { get; set; }
@@ -55,20 +55,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UserProfileStatus();
+            var value   = new UserProfileStatus() { Pointer= p0 };
 
-            value.LastLoginDate                             = GetDateTime(new IntPtr(p + 0x010)); // 0270D272B280 0x10 LastLoginDate               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270D272B300 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x030)); // 0270D272B340 0x30 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.PlayerId                                  = GetString(new IntPtr(p + 0x038)); // 0270D272B380 0x38 PlayerId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Comment                                   = GetString(new IntPtr(p + 0x040)); // 0270D272B3C0 0x40 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Birthday                                  = GetString(new IntPtr(p + 0x048)); // 0270D272B400 0x48 Birthday                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsBirthdayPublic                          = GetBool(new IntPtr(p + 0x050)); // 0270D272B440 0x50 IsBirthdayPublic            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FavoriteProduceIdol                       = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0270D272B480 0x58 FavoriteProduceIdol         ( 000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
-            value.SupportCharacter                          = GetObject<SupportCharacterStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 0270D272B4C0 0x60 SupportCharacter            ( 0001865ED2A0 ModelClassType SupportCharacterStatus SupportCharacterStatus SupportCharacterStatus Pointer )
-            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x068)); // 0270D272B520 0x68 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x070)); // 0270D272B560 0x70 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
-            value._LastLoginDate                            = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D272B5A0 0x78 _LastLoginDate              ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.LastLoginDate                             = GetDateTime(new IntPtr(p + 0x010)); // 024662696D48 0x10 LastLoginDate               ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 024662696DC8 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x030)); // 024662696E08 0x30 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.PlayerId                                  = GetString(new IntPtr(p + 0x038)); // 024662696E48 0x38 PlayerId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Comment                                   = GetString(new IntPtr(p + 0x040)); // 024662696E88 0x40 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Birthday                                  = GetString(new IntPtr(p + 0x048)); // 024662696EC8 0x48 Birthday                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsBirthdayPublic                          = GetBool(new IntPtr(p + 0x050)); // 024662696F08 0x50 IsBirthdayPublic            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FavoriteProduceIdol                       = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 024662696F48 0x58 FavoriteProduceIdol         ( 000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
+            value.SupportCharacter                          = GetObject<SupportCharacterStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 024662696F88 0x60 SupportCharacter            ( 0001865ED2A0 ModelClassType SupportCharacterStatus SupportCharacterStatus SupportCharacterStatus Pointer )
+            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x068)); // 024662696FE8 0x68 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x070)); // 024662697028 0x70 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
+            value._LastLoginDate                            = GetObject<Timestamp>(new IntPtr(p + 0x078), ReversePrism.DataModels.Timestamp.FromPointer); // 024662697068 0x78 _LastLoginDate              ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.LastLoginDate                 = ToDateTime(value._LastLoginDate);
 
             return value;

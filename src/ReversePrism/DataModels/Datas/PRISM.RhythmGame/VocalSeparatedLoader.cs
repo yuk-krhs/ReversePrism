@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VocalSeparatedLoader
+    public partial class VocalSeparatedLoader : DataModel
     {
 
         public static VocalSeparatedLoader? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VocalSeparatedLoader();
+            var value   = new VocalSeparatedLoader() { Pointer= p0 };
 
 
             return value;

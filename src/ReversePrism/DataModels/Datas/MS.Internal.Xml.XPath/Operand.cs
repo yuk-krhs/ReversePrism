@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Type                                     000186580650 ModelEnumType XPathResultType XPathResultType XPathResultType Int32
     // 018 _val                                     <object> IL2CPP_TYPE_OBJECT
-    public partial class Operand
+    public partial class Operand : DataModel
     {
         public XPathResultType                          Type                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Operand();
+            var value   = new Operand() { Pointer= p0 };
 
-            value.Type                                      = (XPathResultType)GetInt32(new IntPtr(p + 0x010)); // 0270D761AA00 0x10 Type                        ( 000186580650 ModelEnumType XPathResultType XPathResultType XPathResultType Int32 )
+            value.Type                                      = (XPathResultType)GetInt32(new IntPtr(p + 0x010)); // 024667692A00 0x10 Type                        ( 000186580650 ModelEnumType XPathResultType XPathResultType XPathResultType Int32 )
 
             return value;
         }

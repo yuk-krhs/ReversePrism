@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Value                                    000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class BsonObjectId
+    public partial class BsonObjectId : DataModel
     {
         public List<sbyte>?                             Value                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BsonObjectId();
+            var value   = new BsonObjectId() { Pointer= p0 };
 
-            value.Value                                     = GetSByteList(new IntPtr(p + 0x010)); // 0270D8882DB0 0x10 Value                       ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Value                                     = GetSByteList(new IntPtr(p + 0x010)); // 0246688C6AA0 0x10 Value                       ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

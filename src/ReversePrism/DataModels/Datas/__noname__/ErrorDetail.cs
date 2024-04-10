@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Message                                  000186671910 ModelPrimitiveType string string string String
     // 028 GwCode                                   000186671910 ModelPrimitiveType string string string String
     // 030 GwMessage                                000186671910 ModelPrimitiveType string string string String
-    public partial class ErrorDetail
+    public partial class ErrorDetail : DataModel
     {
         public string                                   Domain                                  { get; set; }
         public string                                   Reason                                  { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorDetail();
+            var value   = new ErrorDetail() { Pointer= p0 };
 
-            value.Domain                                    = GetString(new IntPtr(p + 0x010)); // 0270DB47BA00 0x10 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 0270DB47BA20 0x18 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0270DB47BA40 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.GwCode                                    = GetString(new IntPtr(p + 0x028)); // 0270DB47BA60 0x28 GwCode                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.GwMessage                                 = GetString(new IntPtr(p + 0x030)); // 0270DB47BA80 0x30 GwMessage                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Domain                                    = GetString(new IntPtr(p + 0x010)); // 02466B508930 0x10 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 02466B508950 0x18 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 02466B508970 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.GwCode                                    = GetString(new IntPtr(p + 0x028)); // 02466B508990 0x28 GwCode                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.GwMessage                                 = GetString(new IntPtr(p + 0x030)); // 02466B5089B0 0x30 GwMessage                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

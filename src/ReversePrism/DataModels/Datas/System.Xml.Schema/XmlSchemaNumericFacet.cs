@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSchemaNumericFacet
+    public partial class XmlSchemaNumericFacet : DataModel
     {
 
         public static XmlSchemaNumericFacet? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSchemaNumericFacet();
+            var value   = new XmlSchemaNumericFacet() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AsyncAnimatorMoveTrigger
+    public partial class AsyncAnimatorMoveTrigger : DataModel
     {
 
         public static AsyncAnimatorMoveTrigger? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncAnimatorMoveTrigger();
+            var value   = new AsyncAnimatorMoveTrigger() { Pointer= p0 };
 
 
             return value;

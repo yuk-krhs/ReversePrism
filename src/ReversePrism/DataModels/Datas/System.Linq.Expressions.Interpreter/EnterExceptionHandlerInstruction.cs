@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Void                                     EnterExceptionHandlerInstruction IL2CPP_TYPE_CLASS
     // 008 NonVoid                                  EnterExceptionHandlerInstruction IL2CPP_TYPE_CLASS
     // 010 HasValue                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class EnterExceptionHandlerInstruction
+    public partial class EnterExceptionHandlerInstruction : DataModel
     {
         public bool                                     HasValue                                { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EnterExceptionHandlerInstruction();
+            var value   = new EnterExceptionHandlerInstruction() { Pointer= p0 };
 
-            value.HasValue                                  = GetBool(new IntPtr(p + 0x010)); // 0270D9FA62C0 0x10 HasValue                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.HasValue                                  = GetBool(new IntPtr(p + 0x010)); // 02466A011E48 0x10 HasValue                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProgramFieldNumber                       int IL2CPP_TYPE_I4
     // 018 Program                                  000186583E90 ModelClassType LiveStreamProgramStatus LiveStreamProgramStatus LiveStreamProgramStatus Pointer
-    public partial class GetStreamProgramInfoReply
+    public partial class GetStreamProgramInfoReply : DataModel
     {
         public LiveStreamProgramStatus?                 Program                                 { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStreamProgramInfoReply();
+            var value   = new GetStreamProgramInfoReply() { Pointer= p0 };
 
-            value.Program                                   = GetObject<LiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveStreamProgramStatus.FromPointer); // 0270D2AC0EB0 0x18 Program                     ( 000186583E90 ModelClassType LiveStreamProgramStatus LiveStreamProgramStatus LiveStreamProgramStatus Pointer )
+            value.Program                                   = GetObject<LiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveStreamProgramStatus.FromPointer); // 024662A3FB78 0x18 Program                     ( 000186583E90 ModelClassType LiveStreamProgramStatus LiveStreamProgramStatus LiveStreamProgramStatus Pointer )
 
             return value;
         }

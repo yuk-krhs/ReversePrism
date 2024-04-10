@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 DirectMessageListFieldNumber             int IL2CPP_TYPE_I4
     // 008 _repeated_directMessageList_codec        FieldCodec`1<DirectMessageStatus> IL2CPP_TYPE_GENERICINST
     // 018 DirectMessageList                        000185CD3728 ModelClassListType RepeatedField`1<DirectMessageStatus> RepeatedField`1<DirectMessageStatus> List<DirectMessageStatus> Pointer
-    public partial class GetDirectMessageListReply
+    public partial class GetDirectMessageListReply : DataModel
     {
         public List<DirectMessageStatus>?               DirectMessageList                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetDirectMessageListReply();
+            var value   = new GetDirectMessageListReply() { Pointer= p0 };
 
-            value.DirectMessageList                         = GetObjectList<DirectMessageStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.DirectMessageStatus.FromPointer); // 0270D0E5BA28 0x18 DirectMessageList           ( 000185CD3728 ModelClassListType RepeatedField`1<DirectMessageStatus> RepeatedField`1<DirectMessageStatus> List<DirectMessageStatus> Pointer )
+            value.DirectMessageList                         = GetObjectList<DirectMessageStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.DirectMessageStatus.FromPointer); // 024660E1CAD0 0x18 DirectMessageList           ( 000185CD3728 ModelClassListType RepeatedField`1<DirectMessageStatus> RepeatedField`1<DirectMessageStatus> List<DirectMessageStatus> Pointer )
 
             return value;
         }

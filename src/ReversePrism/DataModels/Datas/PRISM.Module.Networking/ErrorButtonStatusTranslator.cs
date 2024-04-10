@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ErrorButtonStatusTranslator
+    public partial class ErrorButtonStatusTranslator : DataModel
     {
 
         public static ErrorButtonStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ErrorButtonStatusTranslator();
+            var value   = new ErrorButtonStatusTranslator() { Pointer= p0 };
 
 
             return value;

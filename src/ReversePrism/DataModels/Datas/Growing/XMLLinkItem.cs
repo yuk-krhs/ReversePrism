@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 070 ArrowItemRootList                        000185D00AE8 ModelClassListType List`1<RectTransform> List`1<RectTransform> List<RectTransform> Pointer
     // 000 TEXT_MARGIN                              float IL2CPP_TYPE_R4
     // 078 Sequence                                 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer
-    public partial class XMLLinkItem
+    public partial class XMLLinkItem : DataModel
     {
         public List<RectTransform>?                     TextItemRootList                        { get; set; }
         public List<LayoutElement>?                     LayoutElementList                       { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XMLLinkItem();
+            var value   = new XMLLinkItem() { Pointer= p0 };
 
-            value.TextItemRootList                          = GetObjectList<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4B3E478 0x60 TextItemRootList            ( 000185D00AE8 ModelClassListType List`1<RectTransform> List`1<RectTransform> List<RectTransform> Pointer )
-            value.LayoutElementList                         = GetObjectList<LayoutElement>(new IntPtr(p + 0x068), ReversePrism.DataModels.LayoutElement.FromPointer); // 0270D4B3E498 0x68 LayoutElementList           ( 000185CEFB18 ModelClassListType List`1<LayoutElement> List`1<LayoutElement> List<LayoutElement> Pointer )
-            value.ArrowItemRootList                         = GetObjectList<RectTransform>(new IntPtr(p + 0x070), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4B3E4B8 0x70 ArrowItemRootList           ( 000185D00AE8 ModelClassListType List`1<RectTransform> List`1<RectTransform> List<RectTransform> Pointer )
-            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x078), ReversePrism.DataModels.Sequence.FromPointer); // 0270D4B3E4F8 0x78 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
+            value.TextItemRootList                          = GetObjectList<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 024664BB9260 0x60 TextItemRootList            ( 000185D00AE8 ModelClassListType List`1<RectTransform> List`1<RectTransform> List<RectTransform> Pointer )
+            value.LayoutElementList                         = GetObjectList<LayoutElement>(new IntPtr(p + 0x068), ReversePrism.DataModels.LayoutElement.FromPointer); // 024664BB9280 0x68 LayoutElementList           ( 000185CEFB18 ModelClassListType List`1<LayoutElement> List`1<LayoutElement> List<LayoutElement> Pointer )
+            value.ArrowItemRootList                         = GetObjectList<RectTransform>(new IntPtr(p + 0x070), ReversePrism.DataModels.RectTransform.FromPointer); // 024664BB92A0 0x70 ArrowItemRootList           ( 000185D00AE8 ModelClassListType List`1<RectTransform> List`1<RectTransform> List<RectTransform> Pointer )
+            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x078), ReversePrism.DataModels.Sequence.FromPointer); // 024664BB92E0 0x78 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
 
             return value;
         }

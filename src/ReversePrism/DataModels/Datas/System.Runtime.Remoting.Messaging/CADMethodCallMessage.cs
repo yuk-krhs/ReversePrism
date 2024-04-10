@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 Uri                                      000186671910 ModelPrimitiveType string string string String
-    public partial class CADMethodCallMessage
+    public partial class CADMethodCallMessage : DataModel
     {
         public string                                   Uri                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CADMethodCallMessage();
+            var value   = new CADMethodCallMessage() { Pointer= p0 };
 
-            value.Uri                                       = GetString(new IntPtr(p + 0x038)); // 0270D6A64858 0x38 Uri                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Uri                                       = GetString(new IntPtr(p + 0x038)); // 024666AC4858 0x38 Uri                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

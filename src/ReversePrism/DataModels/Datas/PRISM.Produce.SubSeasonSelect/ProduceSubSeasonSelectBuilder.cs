@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186585FE0 ModelClassType ProduceSubSeasonSelectView ProduceSubSeasonSelectView ProduceSubSeasonSelectView Pointer
-    public partial class ProduceSubSeasonSelectBuilder
+    public partial class ProduceSubSeasonSelectBuilder : DataModel
     {
         public ProduceSubSeasonSelectView?              View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceSubSeasonSelectBuilder();
+            var value   = new ProduceSubSeasonSelectBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ProduceSubSeasonSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceSubSeasonSelectView.FromPointer); // 0270DB621DD8 0x20 View                        ( 000186585FE0 ModelClassType ProduceSubSeasonSelectView ProduceSubSeasonSelectView ProduceSubSeasonSelectView Pointer )
+            value.View                                      = GetObject<ProduceSubSeasonSelectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceSubSeasonSelectView.FromPointer); // 02466B6B5760 0x20 View                        ( 000186585FE0 ModelClassType ProduceSubSeasonSelectView ProduceSubSeasonSelectView ProduceSubSeasonSelectView Pointer )
 
             return value;
         }

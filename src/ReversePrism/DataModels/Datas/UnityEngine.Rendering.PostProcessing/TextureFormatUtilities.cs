@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_FormatAliasMap                         Dictionary`2<int, RenderTextureFormat> IL2CPP_TYPE_GENERICINST
     // 008 s_SupportedRenderTextureFormats          Dictionary`2<int, bool> IL2CPP_TYPE_GENERICINST
     // 010 s_SupportedTextureFormats                Dictionary`2<int, bool> IL2CPP_TYPE_GENERICINST
-    public partial class TextureFormatUtilities
+    public partial class TextureFormatUtilities : DataModel
     {
 
         public static TextureFormatUtilities? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureFormatUtilities();
+            var value   = new TextureFormatUtilities() { Pointer= p0 };
 
 
             return value;

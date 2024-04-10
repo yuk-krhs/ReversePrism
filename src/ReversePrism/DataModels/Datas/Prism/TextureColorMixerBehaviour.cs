@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TextureColorMixerBehaviour
+    public partial class TextureColorMixerBehaviour : DataModel
     {
 
         public static TextureColorMixerBehaviour? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TextureColorMixerBehaviour();
+            var value   = new TextureColorMixerBehaviour() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 format                                   Utf8PreparedFormat`1<Category> IL2CPP_TYPE_GENERICINST
-    public partial class CategoryTextMapping
+    public partial class CategoryTextMapping : DataModel
     {
 
         public static CategoryTextMapping? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CategoryTextMapping();
+            var value   = new CategoryTextMapping() { Pointer= p0 };
 
 
             return value;

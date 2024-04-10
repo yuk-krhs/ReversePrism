@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IteratorStateMachineAttribute
+    public partial class IteratorStateMachineAttribute : DataModel
     {
 
         public static IteratorStateMachineAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IteratorStateMachineAttribute();
+            var value   = new IteratorStateMachineAttribute() { Pointer= p0 };
 
 
             return value;

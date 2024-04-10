@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 058 Callback                                 000186531CE0 ModelClassType Callback Callback Callback Pointer
     // 060 IsStandaloneAuthEnable                   000186595960 ModelPrimitiveType bool bool bool Bool
     // 068 AuthParams                               00018671FAE0 ModelClassType AuthParams AuthParams AuthParams Pointer
-    public partial class DmmGamesStoreSdkSettings
+    public partial class DmmGamesStoreSdkSettings : DataModel
     {
         public string                                   AppId                                   { get; set; }
         public string                                   ConsumerKey                             { get; set; }
@@ -41,20 +41,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DmmGamesStoreSdkSettings();
+            var value   = new DmmGamesStoreSdkSettings() { Pointer= p0 };
 
-            value.AppId                                     = GetString(new IntPtr(p + 0x010)); // 0270DB481FA0 0x10 AppId                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ConsumerKey                               = GetString(new IntPtr(p + 0x018)); // 0270DB481FC0 0x18 ConsumerKey                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ConsumerSecret                            = GetString(new IntPtr(p + 0x020)); // 0270DB481FE0 0x20 ConsumerSecret              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Environment                               = GetString(new IntPtr(p + 0x028)); // 0270DB482000 0x28 Environment                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DevelopmentMode                           = GetString(new IntPtr(p + 0x030)); // 0270DB482020 0x30 DevelopmentMode             ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.GameName                                  = GetString(new IntPtr(p + 0x038)); // 0270DB482040 0x38 GameName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.OauthSignaturePublicKey                   = GetString(new IntPtr(p + 0x040)); // 0270DB482060 0x40 OauthSignaturePublicKey     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.WebViewTimeoutMillis                      = GetInt32(new IntPtr(p + 0x048)); // 0270DB482080 0x48 WebViewTimeoutMillis        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MarketingEventIds                         = GetObject<MarketingEventIds>(new IntPtr(p + 0x050), ReversePrism.DataModels.MarketingEventIds.FromPointer); // 0270DB4820A0 0x50 MarketingEventIds           ( 0001865D5320 ModelClassType MarketingEventIds MarketingEventIds MarketingEventIds Pointer )
-            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x058), ReversePrism.DataModels.Callback.FromPointer); // 0270DB4820C0 0x58 Callback                    ( 000186531CE0 ModelClassType Callback Callback Callback Pointer )
-            value.IsStandaloneAuthEnable                    = GetBool(new IntPtr(p + 0x060)); // 0270DB4820E0 0x60 IsStandaloneAuthEnable      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AuthParams                                = GetObject<AuthParams>(new IntPtr(p + 0x068), ReversePrism.DataModels.AuthParams.FromPointer); // 0270DB482100 0x68 AuthParams                  ( 00018671FAE0 ModelClassType AuthParams AuthParams AuthParams Pointer )
+            value.AppId                                     = GetString(new IntPtr(p + 0x010)); // 02466B50EED0 0x10 AppId                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ConsumerKey                               = GetString(new IntPtr(p + 0x018)); // 02466B50EEF0 0x18 ConsumerKey                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ConsumerSecret                            = GetString(new IntPtr(p + 0x020)); // 02466B50EF10 0x20 ConsumerSecret              ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Environment                               = GetString(new IntPtr(p + 0x028)); // 02466B50EF30 0x28 Environment                 ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DevelopmentMode                           = GetString(new IntPtr(p + 0x030)); // 02466B50EF50 0x30 DevelopmentMode             ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.GameName                                  = GetString(new IntPtr(p + 0x038)); // 02466B50EF70 0x38 GameName                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.OauthSignaturePublicKey                   = GetString(new IntPtr(p + 0x040)); // 02466B50EF90 0x40 OauthSignaturePublicKey     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.WebViewTimeoutMillis                      = GetInt32(new IntPtr(p + 0x048)); // 02466B50EFB0 0x48 WebViewTimeoutMillis        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.MarketingEventIds                         = GetObject<MarketingEventIds>(new IntPtr(p + 0x050), ReversePrism.DataModels.MarketingEventIds.FromPointer); // 02466B50EFD0 0x50 MarketingEventIds           ( 0001865D5320 ModelClassType MarketingEventIds MarketingEventIds MarketingEventIds Pointer )
+            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x058), ReversePrism.DataModels.Callback.FromPointer); // 02466B50EFF0 0x58 Callback                    ( 000186531CE0 ModelClassType Callback Callback Callback Pointer )
+            value.IsStandaloneAuthEnable                    = GetBool(new IntPtr(p + 0x060)); // 02466B50F010 0x60 IsStandaloneAuthEnable      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.AuthParams                                = GetObject<AuthParams>(new IntPtr(p + 0x068), ReversePrism.DataModels.AuthParams.FromPointer); // 02466B50F030 0x68 AuthParams                  ( 00018671FAE0 ModelClassType AuthParams AuthParams AuthParams Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IsByRefLikeAttribute
+    public partial class IsByRefLikeAttribute : DataModel
     {
 
         public static IsByRefLikeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IsByRefLikeAttribute();
+            var value   = new IsByRefLikeAttribute() { Pointer= p0 };
 
 
             return value;

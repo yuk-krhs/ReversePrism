@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Texture2DParameter
+    public partial class Texture2DParameter : DataModel
     {
 
         public static Texture2DParameter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Texture2DParameter();
+            var value   = new Texture2DParameter() { Pointer= p0 };
 
 
             return value;

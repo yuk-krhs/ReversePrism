@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SpanHelpers
+    public partial class SpanHelpers : DataModel
     {
 
         public static SpanHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpanHelpers();
+            var value   = new SpanHelpers() { Pointer= p0 };
 
 
             return value;

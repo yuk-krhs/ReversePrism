@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Behaviour                                000186524670 ModelClassType VignetteBehaviour VignetteBehaviour VignetteBehaviour Pointer
-    public partial class VignetteClip
+    public partial class VignetteClip : DataModel
     {
         public VignetteBehaviour?                       Behaviour                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VignetteClip();
+            var value   = new VignetteClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<VignetteBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.VignetteBehaviour.FromPointer); // 0270D5076398 0x18 Behaviour                   ( 000186524670 ModelClassType VignetteBehaviour VignetteBehaviour VignetteBehaviour Pointer )
+            value.Behaviour                                 = GetObject<VignetteBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.VignetteBehaviour.FromPointer); // 0246650D9CF0 0x18 Behaviour                   ( 000186524670 ModelClassType VignetteBehaviour VignetteBehaviour VignetteBehaviour Pointer )
 
             return value;
         }

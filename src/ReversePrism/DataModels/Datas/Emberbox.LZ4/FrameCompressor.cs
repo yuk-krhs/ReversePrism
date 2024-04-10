@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // FFFFFFFF fallbackBuffer                           sbyte[] IL2CPP_TYPE_SZARRAY
     // 010 ctx                                      <int> IL2CPP_TYPE_I
-    public partial class FrameCompressor
+    public partial class FrameCompressor : DataModel
     {
 
         public static FrameCompressor? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FrameCompressor();
+            var value   = new FrameCompressor() { Pointer= p0 };
 
 
             return value;

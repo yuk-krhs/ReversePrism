@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 048 <PreKeyAction>k__BackingField            Action`1<SQLiteConnection> IL2CPP_TYPE_GENERICINST
     // 050 <PostKeyAction>k__BackingField           Action`1<SQLiteConnection> IL2CPP_TYPE_GENERICINST
     // 058 VfsName                                  000186672F10 ModelPrimitiveType string string string String
-    public partial class SQLiteConnectionString
+    public partial class SQLiteConnectionString : DataModel
     {
         public string                                   UniqueKey                               { get; set; }
         public string                                   DatabasePath                            { get; set; }
@@ -37,16 +37,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SQLiteConnectionString();
+            var value   = new SQLiteConnectionString() { Pointer= p0 };
 
-            value.UniqueKey                                 = GetString(new IntPtr(p + 0x010)); // 027003D2B568 0x10 UniqueKey                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DatabasePath                              = GetString(new IntPtr(p + 0x018)); // 027003D2B588 0x18 DatabasePath                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.StoreDateTimeAsTicks                      = GetBool(new IntPtr(p + 0x020)); // 027003D2B5A8 0x20 StoreDateTimeAsTicks        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.StoreTimeSpanAsTicks                      = GetBool(new IntPtr(p + 0x021)); // 027003D2B5C8 0x21 StoreTimeSpanAsTicks        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.DateTimeStringFormat                      = GetString(new IntPtr(p + 0x028)); // 027003D2B5E8 0x28 DateTimeStringFormat        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DateTimeStyle                             = (DateTimeStyles)GetInt32(new IntPtr(p + 0x030)); // 027003D2B608 0x30 DateTimeStyle               ( 0001865BE810 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
-            value.OpenFlags                                 = (SQLiteOpenFlags)GetInt32(new IntPtr(p + 0x040)); // 027003D2B648 0x40 OpenFlags                   ( 0001866B2B30 ModelEnumType SQLiteOpenFlags SQLiteOpenFlags SQLiteOpenFlags Int32 )
-            value.VfsName                                   = GetString(new IntPtr(p + 0x058)); // 027003D2B6A8 0x58 VfsName                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.UniqueKey                                 = GetString(new IntPtr(p + 0x010)); // 0245A3D2B568 0x10 UniqueKey                   ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DatabasePath                              = GetString(new IntPtr(p + 0x018)); // 0245A3D2B588 0x18 DatabasePath                ( 000186672F10 ModelPrimitiveType string string string String )
+            value.StoreDateTimeAsTicks                      = GetBool(new IntPtr(p + 0x020)); // 0245A3D2B5A8 0x20 StoreDateTimeAsTicks        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.StoreTimeSpanAsTicks                      = GetBool(new IntPtr(p + 0x021)); // 0245A3D2B5C8 0x21 StoreTimeSpanAsTicks        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.DateTimeStringFormat                      = GetString(new IntPtr(p + 0x028)); // 0245A3D2B5E8 0x28 DateTimeStringFormat        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DateTimeStyle                             = (DateTimeStyles)GetInt32(new IntPtr(p + 0x030)); // 0245A3D2B608 0x30 DateTimeStyle               ( 0001865BE810 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
+            value.OpenFlags                                 = (SQLiteOpenFlags)GetInt32(new IntPtr(p + 0x040)); // 0245A3D2B648 0x40 OpenFlags                   ( 0001866B2B30 ModelEnumType SQLiteOpenFlags SQLiteOpenFlags SQLiteOpenFlags Int32 )
+            value.VfsName                                   = GetString(new IntPtr(p + 0x058)); // 0245A3D2B6A8 0x58 VfsName                     ( 000186672F10 ModelPrimitiveType string string string String )
 
             return value;
         }

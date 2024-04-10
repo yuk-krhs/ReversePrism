@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MstSelectionTicketFormatter
+    public partial class MstSelectionTicketFormatter : DataModel
     {
 
         public static MstSelectionTicketFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MstSelectionTicketFormatter();
+            var value   = new MstSelectionTicketFormatter() { Pointer= p0 };
 
 
             return value;

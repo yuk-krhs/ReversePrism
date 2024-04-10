@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 040 NumberValue                              0001865C2950 ModelPrimitiveType double double double Double
     // 048 CanBeFunction                            000186594D10 ModelPrimitiveType bool bool bool Bool
     // 050 XmlCharType                              00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32
-    public partial class XPathScanner
+    public partial class XPathScanner : DataModel
     {
         public string                                   XpathExpr                               { get; set; }
         public int                                      XpathExprIndex                          { get; set; }
@@ -36,17 +36,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XPathScanner();
+            var value   = new XPathScanner() { Pointer= p0 };
 
-            value.XpathExpr                                 = GetString(new IntPtr(p + 0x010)); // 0270D761BEB8 0x10 XpathExpr                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.XpathExprIndex                            = GetInt32(new IntPtr(p + 0x018)); // 0270D761BED8 0x18 XpathExprIndex              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Kind                                      = (LexKind)GetInt32(new IntPtr(p + 0x01C)); // 0270D761BEF8 0x1C Kind                        ( 000186723D90 ModelEnumType LexKind LexKind LexKind Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270D761BF38 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x030)); // 0270D761BF58 0x30 Prefix                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.StringValue                               = GetString(new IntPtr(p + 0x038)); // 0270D761BF78 0x38 StringValue                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.NumberValue                               = GetDouble(new IntPtr(p + 0x040)); // 0270D761BF98 0x40 NumberValue                 ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.CanBeFunction                             = GetBool(new IntPtr(p + 0x048)); // 0270D761BFB8 0x48 CanBeFunction               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x050)); // 0270D761BFD8 0x50 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
+            value.XpathExpr                                 = GetString(new IntPtr(p + 0x010)); // 024667693EB8 0x10 XpathExpr                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.XpathExprIndex                            = GetInt32(new IntPtr(p + 0x018)); // 024667693ED8 0x18 XpathExprIndex              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Kind                                      = (LexKind)GetInt32(new IntPtr(p + 0x01C)); // 024667693EF8 0x1C Kind                        ( 000186723D90 ModelEnumType LexKind LexKind LexKind Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 024667693F38 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x030)); // 024667693F58 0x30 Prefix                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.StringValue                               = GetString(new IntPtr(p + 0x038)); // 024667693F78 0x38 StringValue                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.NumberValue                               = GetDouble(new IntPtr(p + 0x040)); // 024667693F98 0x40 NumberValue                 ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.CanBeFunction                             = GetBool(new IntPtr(p + 0x048)); // 024667693FB8 0x48 CanBeFunction               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.XmlCharType                               = (XmlCharType)GetInt32(new IntPtr(p + 0x050)); // 024667693FD8 0x50 XmlCharType                 ( 00018658F4B0 ModelEnumType XmlCharType XmlCharType XmlCharType Int32 )
 
             return value;
         }

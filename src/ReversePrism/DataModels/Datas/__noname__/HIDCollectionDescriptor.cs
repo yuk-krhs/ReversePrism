@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 01C Parent                                   0001865F36C0 ModelPrimitiveType int int int Int32
     // 020 ChildCount                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 FirstChild                               0001865F36C0 ModelPrimitiveType int int int Int32
-    public partial class HIDCollectionDescriptor
+    public partial class HIDCollectionDescriptor : DataModel
     {
         public HIDCollectionType                        Type                                    { get; set; }
         public int                                      Usage                                   { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HIDCollectionDescriptor();
+            var value   = new HIDCollectionDescriptor() { Pointer= p0 };
 
-            value.Type                                      = (HIDCollectionType)GetInt32(new IntPtr(p + 0x010)); // 0270D77BF840 0x10 Type                        ( 00018652A0D0 ModelEnumType HIDCollectionType HIDCollectionType HIDCollectionType Int32 )
-            value.Usage                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D77BF860 0x14 Usage                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.UsagePage                                 = (UsagePage)GetInt32(new IntPtr(p + 0x018)); // 0270D77BF880 0x18 UsagePage                   ( 00018652C5F0 ModelEnumType UsagePage UsagePage UsagePage Int32 )
-            value.Parent                                    = GetInt32(new IntPtr(p + 0x01C)); // 0270D77BF8A0 0x1C Parent                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ChildCount                                = GetInt32(new IntPtr(p + 0x020)); // 0270D77BF8C0 0x20 ChildCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FirstChild                                = GetInt32(new IntPtr(p + 0x024)); // 0270D77BF8E0 0x24 FirstChild                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (HIDCollectionType)GetInt32(new IntPtr(p + 0x010)); // 024667817840 0x10 Type                        ( 00018652A0D0 ModelEnumType HIDCollectionType HIDCollectionType HIDCollectionType Int32 )
+            value.Usage                                     = GetInt32(new IntPtr(p + 0x014)); // 024667817860 0x14 Usage                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.UsagePage                                 = (UsagePage)GetInt32(new IntPtr(p + 0x018)); // 024667817880 0x18 UsagePage                   ( 00018652C5F0 ModelEnumType UsagePage UsagePage UsagePage Int32 )
+            value.Parent                                    = GetInt32(new IntPtr(p + 0x01C)); // 0246678178A0 0x1C Parent                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ChildCount                                = GetInt32(new IntPtr(p + 0x020)); // 0246678178C0 0x20 ChildCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.FirstChild                                = GetInt32(new IntPtr(p + 0x024)); // 0246678178E0 0x24 FirstChild                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

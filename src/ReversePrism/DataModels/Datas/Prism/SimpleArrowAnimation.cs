@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 028 RightArrow                               000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
     // 030 PunchStrength                            0001866656B0 ModelPrimitiveType float float float Single
     // 034 PunchDuration                            0001866656B0 ModelPrimitiveType float float float Single
-    public partial class SimpleArrowAnimation
+    public partial class SimpleArrowAnimation : DataModel
     {
         public RectTransform?                           LeftArrow                               { get; set; }
         public RectTransform?                           RightArrow                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SimpleArrowAnimation();
+            var value   = new SimpleArrowAnimation() { Pointer= p0 };
 
-            value.LeftArrow                                 = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4C82078 0x20 LeftArrow                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.RightArrow                                = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 0270D4C82098 0x28 RightArrow                  ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.PunchStrength                             = GetSingle(new IntPtr(p + 0x030)); // 0270D4C820B8 0x30 PunchStrength               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.PunchDuration                             = GetSingle(new IntPtr(p + 0x034)); // 0270D4C820D8 0x34 PunchDuration               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LeftArrow                                 = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 024664CE5A68 0x20 LeftArrow                   ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.RightArrow                                = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 024664CE5A88 0x28 RightArrow                  ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.PunchStrength                             = GetSingle(new IntPtr(p + 0x030)); // 024664CE5AA8 0x30 PunchStrength               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.PunchDuration                             = GetSingle(new IntPtr(p + 0x034)); // 024664CE5AC8 0x34 PunchDuration               ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 030 UnitPrice                                0001865C2950 ModelPrimitiveType double double double Double
     // 000 DataSignatureFieldNumber                 int IL2CPP_TYPE_I4
     // 038 DataSignature                            000186671910 ModelPrimitiveType string string string String
-    public partial class VerifyReceiptForGooglePlayArgs
+    public partial class VerifyReceiptForGooglePlayArgs : DataModel
     {
         public string                                   OrderId                                 { get; set; }
         public string                                   ReceiptData                             { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptForGooglePlayArgs();
+            var value   = new VerifyReceiptForGooglePlayArgs() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0270D0B65310 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ReceiptData                               = GetString(new IntPtr(p + 0x020)); // 0270D0B65350 0x20 ReceiptData                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.CurrencyCode                              = GetString(new IntPtr(p + 0x028)); // 0270D0B65390 0x28 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnitPrice                                 = GetDouble(new IntPtr(p + 0x030)); // 0270D0B653D0 0x30 UnitPrice                   ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.DataSignature                             = GetString(new IntPtr(p + 0x038)); // 0270D0B65410 0x38 DataSignature               ( 000186671910 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B588F8 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.ReceiptData                               = GetString(new IntPtr(p + 0x020)); // 024660B58938 0x20 ReceiptData                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.CurrencyCode                              = GetString(new IntPtr(p + 0x028)); // 024660B58978 0x28 CurrencyCode                ( 000186671910 ModelPrimitiveType string string string String )
+            value.UnitPrice                                 = GetDouble(new IntPtr(p + 0x030)); // 024660B589B8 0x30 UnitPrice                   ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.DataSignature                             = GetString(new IntPtr(p + 0x038)); // 024660B589F8 0x38 DataSignature               ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

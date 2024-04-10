@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 060 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 068 HighScoreRateData                        00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer
     // 070 TechnicalRateData                        00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer
-    public partial class MusicRateOverlayView
+    public partial class MusicRateOverlayView : DataModel
     {
         public UITabGroupEx?                            RateTabGroup                            { get; set; }
         public MusicRateDetailView?                     HighScoreRateView                       { get; set; }
@@ -38,18 +38,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MusicRateOverlayView();
+            var value   = new MusicRateOverlayView() { Pointer= p0 };
 
-            value.RateTabGroup                              = GetObject<UITabGroupEx>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0270DB3F65A0 0x20 RateTabGroup                ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
-            value.HighScoreRateView                         = GetObject<MusicRateDetailView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRateDetailView.FromPointer); // 0270DB3F65C0 0x28 HighScoreRateView           ( 00018666C7B0 ModelClassType MusicRateDetailView MusicRateDetailView MusicRateDetailView Pointer )
-            value.TechnicalRateView                         = GetObject<MusicRateDetailView>(new IntPtr(p + 0x030), ReversePrism.DataModels.MusicRateDetailView.FromPointer); // 0270DB3F65E0 0x30 TechnicalRateView           ( 00018666C7B0 ModelClassType MusicRateDetailView MusicRateDetailView MusicRateDetailView Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0270DB3F6600 0x38 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.HowToPlayPopupOpener                      = GetObject<HowToPlayPopupOpener>(new IntPtr(p + 0x040), ReversePrism.DataModels.HowToPlayPopupOpener.FromPointer); // 0270DB3F6620 0x40 HowToPlayPopupOpener        ( 0001866D8C30 ModelClassType HowToPlayPopupOpener HowToPlayPopupOpener HowToPlayPopupOpener Pointer )
-            value.BackButton                                = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0270DB3F6640 0x48 BackButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.InitialDisplayType                        = (MusicRateType)GetInt32(new IntPtr(p + 0x050)); // 0270DB3F6660 0x50 InitialDisplayType          ( 000186670C10 ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 0270DB3F66A0 0x60 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.HighScoreRateData                         = GetObject<MusicRateDetailViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicRateDetailViewModel.FromPointer); // 0270DB3F66C0 0x68 HighScoreRateData           ( 00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer )
-            value.TechnicalRateData                         = GetObject<MusicRateDetailViewModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.MusicRateDetailViewModel.FromPointer); // 0270DB3F66E0 0x70 TechnicalRateData           ( 00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer )
+            value.RateTabGroup                              = GetObject<UITabGroupEx>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466B473600 0x20 RateTabGroup                ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.HighScoreRateView                         = GetObject<MusicRateDetailView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRateDetailView.FromPointer); // 02466B473620 0x28 HighScoreRateView           ( 00018666C7B0 ModelClassType MusicRateDetailView MusicRateDetailView MusicRateDetailView Pointer )
+            value.TechnicalRateView                         = GetObject<MusicRateDetailView>(new IntPtr(p + 0x030), ReversePrism.DataModels.MusicRateDetailView.FromPointer); // 02466B473640 0x30 TechnicalRateView           ( 00018666C7B0 ModelClassType MusicRateDetailView MusicRateDetailView MusicRateDetailView Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466B473660 0x38 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.HowToPlayPopupOpener                      = GetObject<HowToPlayPopupOpener>(new IntPtr(p + 0x040), ReversePrism.DataModels.HowToPlayPopupOpener.FromPointer); // 02466B473680 0x40 HowToPlayPopupOpener        ( 0001866D8C30 ModelClassType HowToPlayPopupOpener HowToPlayPopupOpener HowToPlayPopupOpener Pointer )
+            value.BackButton                                = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466B4736A0 0x48 BackButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.InitialDisplayType                        = (MusicRateType)GetInt32(new IntPtr(p + 0x050)); // 02466B4736C0 0x50 InitialDisplayType          ( 000186670C10 ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B473700 0x60 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.HighScoreRateData                         = GetObject<MusicRateDetailViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.MusicRateDetailViewModel.FromPointer); // 02466B473720 0x68 HighScoreRateData           ( 00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer )
+            value.TechnicalRateData                         = GetObject<MusicRateDetailViewModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.MusicRateDetailViewModel.FromPointer); // 02466B473740 0x70 TechnicalRateData           ( 00018666CF40 ModelClassType MusicRateDetailViewModel MusicRateDetailViewModel MusicRateDetailViewModel Pointer )
 
             return value;
         }

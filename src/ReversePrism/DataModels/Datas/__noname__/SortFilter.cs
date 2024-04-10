@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SortFilter
+    public partial class SortFilter : DataModel
     {
 
         public static SortFilter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SortFilter();
+            var value   = new SortFilter() { Pointer= p0 };
 
 
             return value;

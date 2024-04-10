@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Description                              000186671910 ModelPrimitiveType string string string String
     // 018 Data                                     000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    public partial class MemorySnapshotMetadata
+    public partial class MemorySnapshotMetadata : DataModel
     {
         public string                                   Description                             { get; set; }
         public List<sbyte>?                             Data                                    { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MemorySnapshotMetadata();
+            var value   = new MemorySnapshotMetadata() { Pointer= p0 };
 
-            value.Description                               = GetString(new IntPtr(p + 0x010)); // 0270068A44F8 0x10 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Data                                      = GetSByteList(new IntPtr(p + 0x018)); // 0270068A4518 0x18 Data                        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Description                               = GetString(new IntPtr(p + 0x010)); // 0245A6866440 0x10 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Data                                      = GetSByteList(new IntPtr(p + 0x018)); // 0245A6866460 0x18 Data                        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

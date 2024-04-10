@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMouseEventInternal
+    public partial class IMouseEventInternal : DataModel
     {
 
         public static IMouseEventInternal? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMouseEventInternal();
+            var value   = new IMouseEventInternal() { Pointer= p0 };
 
 
             return value;

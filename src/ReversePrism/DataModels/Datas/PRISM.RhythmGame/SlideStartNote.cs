@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SlideStartNote
+    public partial class SlideStartNote : DataModel
     {
 
         public static SlideStartNote? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SlideStartNote();
+            var value   = new SlideStartNote() { Pointer= p0 };
 
 
             return value;

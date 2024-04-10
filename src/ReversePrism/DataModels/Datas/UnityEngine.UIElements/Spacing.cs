@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Top                                      000186666050 ModelPrimitiveType float float float Single
     // 018 Right                                    000186666050 ModelPrimitiveType float float float Single
     // 01C Bottom                                   000186666050 ModelPrimitiveType float float float Single
-    public partial class Spacing
+    public partial class Spacing : DataModel
     {
         public float                                    Left                                    { get; set; }
         public float                                    Top                                     { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Spacing();
+            var value   = new Spacing() { Pointer= p0 };
 
-            value.Left                                      = GetSingle(new IntPtr(p + 0x010)); // 0270067EAE30 0x10 Left                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Top                                       = GetSingle(new IntPtr(p + 0x014)); // 0270067EAE50 0x14 Top                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Right                                     = GetSingle(new IntPtr(p + 0x018)); // 0270067EAE70 0x18 Right                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Bottom                                    = GetSingle(new IntPtr(p + 0x01C)); // 0270067EAE90 0x1C Bottom                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Left                                      = GetSingle(new IntPtr(p + 0x010)); // 0245A67ACFC0 0x10 Left                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Top                                       = GetSingle(new IntPtr(p + 0x014)); // 0245A67ACFE0 0x14 Top                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Right                                     = GetSingle(new IntPtr(p + 0x018)); // 0245A67AD000 0x18 Right                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Bottom                                    = GetSingle(new IntPtr(p + 0x01C)); // 0245A67AD020 0x1C Bottom                      ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

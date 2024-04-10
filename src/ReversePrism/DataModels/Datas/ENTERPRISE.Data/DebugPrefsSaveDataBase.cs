@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DebugPrefsSaveDataBase
+    public partial class DebugPrefsSaveDataBase : DataModel
     {
 
         public static DebugPrefsSaveDataBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugPrefsSaveDataBase();
+            var value   = new DebugPrefsSaveDataBase() { Pointer= p0 };
 
 
             return value;

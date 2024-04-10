@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ISpecialMissionStepStatus
+    public partial class ISpecialMissionStepStatus : DataModel
     {
 
         public static ISpecialMissionStepStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ISpecialMissionStepStatus();
+            var value   = new ISpecialMissionStepStatus() { Pointer= p0 };
 
 
             return value;

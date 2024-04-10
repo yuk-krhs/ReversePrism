@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Snapping                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    public partial class RectOptions
+    public partial class RectOptions : DataModel
     {
         public bool                                     Snapping                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RectOptions();
+            var value   = new RectOptions() { Pointer= p0 };
 
-            value.Snapping                                  = GetBool(new IntPtr(p + 0x010)); // 0270DB0742E0 0x10 Snapping                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Snapping                                  = GetBool(new IntPtr(p + 0x010)); // 02466B0D42E0 0x10 Snapping                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

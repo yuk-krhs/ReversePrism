@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Count                                    0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class RuntimeVariablesInstruction
+    public partial class RuntimeVariablesInstruction : DataModel
     {
         public int                                      Count                                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeVariablesInstruction();
+            var value   = new RuntimeVariablesInstruction() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0270DA010F18 0x10 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A074C98 0x10 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 Fonts                                    000185CA8E28 ModelClassListType TMP_FontAsset[] TMP_FontAsset[] List<TMP_FontAsset> Pointer
     // 000 disableCounter                           int IL2CPP_TYPE_I4
-    public partial class FontCleaner
+    public partial class FontCleaner : DataModel
     {
         public List<TMP_FontAsset>?                     Fonts                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FontCleaner();
+            var value   = new FontCleaner() { Pointer= p0 };
 
-            value.Fonts                                     = GetObjectList<TMP_FontAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 027001E99F50 0x20 Fonts                       ( 000185CA8E28 ModelClassListType TMP_FontAsset[] TMP_FontAsset[] List<TMP_FontAsset> Pointer )
+            value.Fonts                                     = GetObjectList<TMP_FontAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0245A1E9CD48 0x20 Fonts                       ( 000185CA8E28 ModelClassListType TMP_FontAsset[] TMP_FontAsset[] List<TMP_FontAsset> Pointer )
 
             return value;
         }

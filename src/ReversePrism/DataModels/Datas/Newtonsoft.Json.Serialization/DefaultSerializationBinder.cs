@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Instance                                 DefaultSerializationBinder IL2CPP_TYPE_CLASS
     // 010 _typeCache                               ThreadSafeStore`2<StructMultiKey`2<string, string>, Type> IL2CPP_TYPE_GENERICINST
-    public partial class DefaultSerializationBinder
+    public partial class DefaultSerializationBinder : DataModel
     {
 
         public static DefaultSerializationBinder? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultSerializationBinder();
+            var value   = new DefaultSerializationBinder() { Pointer= p0 };
 
 
             return value;

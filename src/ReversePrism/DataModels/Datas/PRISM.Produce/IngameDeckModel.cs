@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
     // 0A8 InitialDeckCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 0AC TotalUseCardCount                        0001865F2AF0 ModelPrimitiveType int int int Int32
     // 0B0 ReleaseHandIndexes                       000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    public partial class IngameDeckModel
+    public partial class IngameDeckModel : DataModel
     {
         public bool                                     IsFixSkillCard                          { get; set; }
         public List<int>?                               StartTargetCardList                     { get; set; }
@@ -55,23 +55,23 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IngameDeckModel();
+            var value   = new IngameDeckModel() { Pointer= p0 };
 
-            value.IsFixSkillCard                            = GetBool(new IntPtr(p + 0x010)); // 0270D5B4DA20 0x10 IsFixSkillCard              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StartTargetCardList                       = GetInt32List(new IntPtr(p + 0x018)); // 0270D5B4DA40 0x18 StartTargetCardList         ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.TargetCardList                            = GetInt32List(new IntPtr(p + 0x020)); // 0270D5B4DA60 0x20 TargetCardList              ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.MaxDefaultSelectCardLength                = GetInt32(new IntPtr(p + 0x028)); // 0270D5B4DA80 0x28 MaxDefaultSelectCardLength  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AddHandCountMaxOnDraw                     = GetInt32(new IntPtr(p + 0x02C)); // 0270D5B4DAA0 0x2C AddHandCountMaxOnDraw       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RandomoModel                              = GetObject<IngameRandomModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.IngameRandomModel.FromPointer); // 0270D5B4DAC0 0x30 RandomoModel                ( 0001866E6920 ModelClassType IngameRandomModel IngameRandomModel IngameRandomModel Pointer )
-            value.DeckDataList                              = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DB20 0x48 DeckDataList                ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.HandList                                  = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DB40 0x50 HandList                    ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.Graveyard                                 = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DB60 0x58 Graveyard                   ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.CopyCardList                              = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DB80 0x60 CopyCardList                ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.ExclusionCards                            = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DBA0 0x68 ExclusionCards              ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.ExceptHandAndGraveyards                   = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 0270D5B4DBC0 0x70 ExceptHandAndGraveyards     ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
-            value.InitialDeckCount                          = GetInt32(new IntPtr(p + 0x0A8)); // 0270D5B4DCA0 0xA8 InitialDeckCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalUseCardCount                         = GetInt32(new IntPtr(p + 0x0AC)); // 0270D5B4DCC0 0xAC TotalUseCardCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ReleaseHandIndexes                        = GetInt32List(new IntPtr(p + 0x0B0)); // 0270D5B4DCE0 0xB0 ReleaseHandIndexes          ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.IsFixSkillCard                            = GetBool(new IntPtr(p + 0x010)); // 024665BAE238 0x10 IsFixSkillCard              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StartTargetCardList                       = GetInt32List(new IntPtr(p + 0x018)); // 024665BAE258 0x18 StartTargetCardList         ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.TargetCardList                            = GetInt32List(new IntPtr(p + 0x020)); // 024665BAE278 0x20 TargetCardList              ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.MaxDefaultSelectCardLength                = GetInt32(new IntPtr(p + 0x028)); // 024665BAE298 0x28 MaxDefaultSelectCardLength  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AddHandCountMaxOnDraw                     = GetInt32(new IntPtr(p + 0x02C)); // 024665BAE2B8 0x2C AddHandCountMaxOnDraw       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.RandomoModel                              = GetObject<IngameRandomModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.IngameRandomModel.FromPointer); // 024665BAE2D8 0x30 RandomoModel                ( 0001866E6920 ModelClassType IngameRandomModel IngameRandomModel IngameRandomModel Pointer )
+            value.DeckDataList                              = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE338 0x48 DeckDataList                ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.HandList                                  = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE358 0x50 HandList                    ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.Graveyard                                 = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE378 0x58 Graveyard                   ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.CopyCardList                              = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE398 0x60 CopyCardList                ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.ExclusionCards                            = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE3B8 0x68 ExclusionCards              ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.ExceptHandAndGraveyards                   = GetObjectList<IngamePCardModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.IngamePCardModel.FromPointer); // 024665BAE3D8 0x70 ExceptHandAndGraveyards     ( 000185CEBD78 ModelClassListType List`1<IngamePCardModel> List`1<IngamePCardModel> List<IngamePCardModel> Pointer )
+            value.InitialDeckCount                          = GetInt32(new IntPtr(p + 0x0A8)); // 024665BAE4B8 0xA8 InitialDeckCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalUseCardCount                         = GetInt32(new IntPtr(p + 0x0AC)); // 024665BAE4D8 0xAC TotalUseCardCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ReleaseHandIndexes                        = GetInt32List(new IntPtr(p + 0x0B0)); // 024665BAE4F8 0xB0 ReleaseHandIndexes          ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

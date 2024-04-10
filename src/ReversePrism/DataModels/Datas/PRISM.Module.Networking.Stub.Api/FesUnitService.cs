@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 068 __Method_TransferFesUnit                 Method`2<TransferFesUnitArgs, TransferFesUnitReply> IL2CPP_TYPE_GENERICINST
     // 070 __Method_SetFesUnitName                  Method`2<SetFesUnitNameArgs, SetFesUnitNameReply> IL2CPP_TYPE_GENERICINST
     // 078 __Method_GetFesUnitIDListUsingForPvpEvent Method`2<GetFesUnitIDListUsingForPvpEventArgs, GetFesUnitIDListUsingForPvpEventReply> IL2CPP_TYPE_GENERICINST
-    public partial class FesUnitService
+    public partial class FesUnitService : DataModel
     {
 
         public static FesUnitService? FromPointer(IntPtr p0)
@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FesUnitService();
+            var value   = new FesUnitService() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 signs                                    char[] IL2CPP_TYPE_SZARRAY
     // 010 MaxValue                                 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
     // 020 MinValue                                 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
-    public partial class Numeric10FacetsChecker
+    public partial class Numeric10FacetsChecker : DataModel
     {
         public Decimal                                  MaxValue                                { get; set; }
         public Decimal                                  MinValue                                { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Numeric10FacetsChecker();
+            var value   = new Numeric10FacetsChecker() { Pointer= p0 };
 
-            value.MaxValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 0270D7528028 0x10 MaxValue                    ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.MinValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x020)); // 0270D7528048 0x20 MinValue                    ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MaxValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 024667590028 0x10 MaxValue                    ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MinValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x020)); // 024667590048 0x20 MinValue                    ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
 
             return value;
         }

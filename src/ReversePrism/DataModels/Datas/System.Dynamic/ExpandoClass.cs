@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 HashCode                                 0001865F4260 ModelPrimitiveType int int int Int32
     // 020 _transitions                             Dictionary`2<int, List`1<WeakReference>> IL2CPP_TYPE_GENERICINST
     // 000 Empty                                    ExpandoClass IL2CPP_TYPE_CLASS
-    public partial class ExpandoClass
+    public partial class ExpandoClass : DataModel
     {
         public List<string>?                            Keys                                    { get; set; }
         public int                                      HashCode                                { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExpandoClass();
+            var value   = new ExpandoClass() { Pointer= p0 };
 
-            value.Keys                                      = GetStringList(new IntPtr(p + 0x010)); // 0270DA06CAF0 0x10 Keys                        ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.HashCode                                  = GetInt32(new IntPtr(p + 0x018)); // 0270DA06CB10 0x18 HashCode                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Keys                                      = GetStringList(new IntPtr(p + 0x010)); // 02466A0D0850 0x10 Keys                        ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.HashCode                                  = GetInt32(new IntPtr(p + 0x018)); // 02466A0D0870 0x18 HashCode                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

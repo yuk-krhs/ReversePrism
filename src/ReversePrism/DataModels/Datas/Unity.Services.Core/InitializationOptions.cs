@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Values>k__BackingField                  IDictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
-    public partial class InitializationOptions
+    public partial class InitializationOptions : DataModel
     {
 
         public static InitializationOptions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InitializationOptions();
+            var value   = new InitializationOptions() { Pointer= p0 };
 
 
             return value;

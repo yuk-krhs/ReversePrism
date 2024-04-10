@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 k_DebuggerDisplay                        string IL2CPP_TYPE_STRING
     // 010 M_OverrideState                          000186595480 ModelPrimitiveType bool bool bool Bool
-    public partial class VolumeParameter
+    public partial class VolumeParameter : DataModel
     {
         public bool                                     M_OverrideState                         { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VolumeParameter();
+            var value   = new VolumeParameter() { Pointer= p0 };
 
-            value.M_OverrideState                           = GetBool(new IntPtr(p + 0x010)); // 0270D9152220 0x10 M_OverrideState             ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.M_OverrideState                           = GetBool(new IntPtr(p + 0x010)); // 0246691BB560 0x10 M_OverrideState             ( 000186595480 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

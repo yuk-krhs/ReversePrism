@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 <externBeginRenderOverlays>k__BackingField Action`1<int> IL2CPP_TYPE_GENERICINST
     // 018 <externRenderOverlaysBefore>k__BackingField Action`2<int, int> IL2CPP_TYPE_GENERICINST
     // 020 <externEndRenderOverlays>k__BackingField Action`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class Canvas
+    public partial class Canvas : DataModel
     {
 
         public static Canvas? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Canvas();
+            var value   = new Canvas() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Handle                                 <int> IL2CPP_TYPE_I
-    public partial class SafeHandleAccess
+    public partial class SafeHandleAccess : DataModel
     {
 
         public static SafeHandleAccess? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SafeHandleAccess();
+            var value   = new SafeHandleAccess() { Pointer= p0 };
 
 
             return value;

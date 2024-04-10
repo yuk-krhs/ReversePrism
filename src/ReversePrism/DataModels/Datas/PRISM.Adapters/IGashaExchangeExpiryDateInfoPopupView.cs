@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGashaExchangeExpiryDateInfoPopupView
+    public partial class IGashaExchangeExpiryDateInfoPopupView : DataModel
     {
 
         public static IGashaExchangeExpiryDateInfoPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGashaExchangeExpiryDateInfoPopupView();
+            var value   = new IGashaExchangeExpiryDateInfoPopupView() { Pointer= p0 };
 
 
             return value;

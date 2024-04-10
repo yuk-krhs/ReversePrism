@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 02C M_used                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 M_enableBlockFree                        00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
     // 031 M_reachMaxBlockSize                      00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
-    public partial class RewindableAllocator
+    public partial class RewindableAllocator : DataModel
     {
         public Spinner                                  M_spinner                               { get; set; }
         public AllocatorHandle                          M_handle                                { get; set; }
@@ -36,14 +36,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RewindableAllocator();
+            var value   = new RewindableAllocator() { Pointer= p0 };
 
-            value.M_spinner                                 = (Spinner)GetInt32(new IntPtr(p + 0x010)); // 027003562B88 0x10 M_spinner                   ( 00018654D4B0 ModelEnumType Spinner Spinner Spinner Int32 )
-            value.M_handle                                  = (AllocatorHandle)GetInt32(new IntPtr(p + 0x014)); // 027003562BA8 0x14 M_handle                    ( 0001866991F0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.M_last                                    = GetInt32(new IntPtr(p + 0x028)); // 027003562BE8 0x28 M_last                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_used                                    = GetInt32(new IntPtr(p + 0x02C)); // 027003562C08 0x2C M_used                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_enableBlockFree                         = GetSByte(new IntPtr(p + 0x030)); // 027003562C28 0x30 M_enableBlockFree           ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.M_reachMaxBlockSize                       = GetSByte(new IntPtr(p + 0x031)); // 027003562C48 0x31 M_reachMaxBlockSize         ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_spinner                                 = (Spinner)GetInt32(new IntPtr(p + 0x010)); // 0245A3562B88 0x10 M_spinner                   ( 00018654D4B0 ModelEnumType Spinner Spinner Spinner Int32 )
+            value.M_handle                                  = (AllocatorHandle)GetInt32(new IntPtr(p + 0x014)); // 0245A3562BA8 0x14 M_handle                    ( 0001866991F0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.M_last                                    = GetInt32(new IntPtr(p + 0x028)); // 0245A3562BE8 0x28 M_last                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_used                                    = GetInt32(new IntPtr(p + 0x02C)); // 0245A3562C08 0x2C M_used                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_enableBlockFree                         = GetSByte(new IntPtr(p + 0x030)); // 0245A3562C28 0x30 M_enableBlockFree           ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_reachMaxBlockSize                       = GetSByte(new IntPtr(p + 0x031)); // 0245A3562C48 0x31 M_reachMaxBlockSize         ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

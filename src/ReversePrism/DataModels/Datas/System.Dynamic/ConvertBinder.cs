@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    public partial class ConvertBinder
+    public partial class ConvertBinder : DataModel
     {
         public Type?                                    Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConvertBinder();
+            var value   = new ConvertBinder() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0270D8716DA0 0x18 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 02466877EDA0 0x18 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class X509CertificateCollection
+    public partial class X509CertificateCollection : DataModel
     {
 
         public static X509CertificateCollection? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new X509CertificateCollection();
+            var value   = new X509CertificateCollection() { Pointer= p0 };
 
 
             return value;

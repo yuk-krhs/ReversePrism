@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 UssStyle                                 0001866736C0 ModelPrimitiveType string string string String
-    public partial class CustomStyleAttribute
+    public partial class CustomStyleAttribute : DataModel
     {
         public string                                   UssStyle                                { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CustomStyleAttribute();
+            var value   = new CustomStyleAttribute() { Pointer= p0 };
 
-            value.UssStyle                                  = GetString(new IntPtr(p + 0x010)); // 0270DB2A48B0 0x10 UssStyle                    ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.UssStyle                                  = GetString(new IntPtr(p + 0x010)); // 02466B311418 0x10 UssStyle                    ( 0001866736C0 ModelPrimitiveType string string string String )
 
             return value;
         }

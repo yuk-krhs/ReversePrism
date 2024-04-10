@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 marshalledInterface                      unitytls_interface_struct IL2CPP_TYPE_CLASS
-    public partial class UnityTls
+    public partial class UnityTls : DataModel
     {
 
         public static UnityTls? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityTls();
+            var value   = new UnityTls() { Pointer= p0 };
 
 
             return value;

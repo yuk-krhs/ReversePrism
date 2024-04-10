@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 012 Reserved1                                000186697450 ModelPrimitiveType ushort ushort ushort UInt16
     // 014 Size                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
     // 018 Ptr                                      IntPtr IL2CPP_TYPE_PTR
-    public partial class ProfilerMarkerData
+    public partial class ProfilerMarkerData : DataModel
     {
         public sbyte                                    Type                                    { get; set; }
         public sbyte                                    Reserved0                               { get; set; }
@@ -26,12 +26,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfilerMarkerData();
+            var value   = new ProfilerMarkerData() { Pointer= p0 };
 
-            value.Type                                      = GetSByte(new IntPtr(p + 0x010)); // 0270068A4210 0x10 Type                        ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Reserved0                                 = GetSByte(new IntPtr(p + 0x011)); // 0270068A4230 0x11 Reserved0                   ( 00018659D3E0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Reserved1                                 = GetUInt16(new IntPtr(p + 0x012)); // 0270068A4250 0x12 Reserved1                   ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0270068A4270 0x14 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Type                                      = GetSByte(new IntPtr(p + 0x010)); // 0245A6866158 0x10 Type                        ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Reserved0                                 = GetSByte(new IntPtr(p + 0x011)); // 0245A6866178 0x11 Reserved0                   ( 00018659D3E0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Reserved1                                 = GetUInt16(new IntPtr(p + 0x012)); // 0245A6866198 0x12 Reserved1                   ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0245A68661B8 0x14 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

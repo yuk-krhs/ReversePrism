@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 UnixEpoch                                DateTime IL2CPP_TYPE_VALUETYPE
     // 010 AllowPreEpoch                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UnixDateTimeConverter
+    public partial class UnixDateTimeConverter : DataModel
     {
         public bool                                     AllowPreEpoch                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnixDateTimeConverter();
+            var value   = new UnixDateTimeConverter() { Pointer= p0 };
 
-            value.AllowPreEpoch                             = GetBool(new IntPtr(p + 0x010)); // 0270D886AF08 0x10 AllowPreEpoch               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AllowPreEpoch                             = GetBool(new IntPtr(p + 0x010)); // 0246688AEC20 0x10 AllowPreEpoch               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

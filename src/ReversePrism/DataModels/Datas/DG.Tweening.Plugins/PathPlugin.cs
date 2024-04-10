@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MinLookAhead                             float IL2CPP_TYPE_R4
-    public partial class PathPlugin
+    public partial class PathPlugin : DataModel
     {
 
         public static PathPlugin? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PathPlugin();
+            var value   = new PathPlugin() { Pointer= p0 };
 
 
             return value;

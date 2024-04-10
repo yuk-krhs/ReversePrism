@@ -33,7 +33,7 @@ namespace ReversePrism.DataModels
     // 074 MstExchangeProductFilterId               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstCharacterInfoIdFieldNumber            int IL2CPP_TYPE_I4
     // 078 MstCharacterInfoId                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ExchangeProductStatus
+    public partial class ExchangeProductStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -54,20 +54,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeProductStatus();
+            var value   = new ExchangeProductStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D122A370 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D122A390 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstExchangeProductId                      = GetInt32(new IntPtr(p + 0x038)); // 0270D122A410 0x38 MstExchangeProductId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D122A450 0x40 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
-            value.PurchaseLimit                             = GetObject<ExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeProductPurchaseLimitStatus.FromPointer); // 0270D122A490 0x48 PurchaseLimit               ( 0001865131D0 ModelClassType ExchangeProductPurchaseLimitStatus ExchangeProductPurchaseLimitStatus ExchangeProductPurchaseLimitStatus Pointer )
-            value.PriceRateList                             = GetObjectList<ExchangeProductPriceRateStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExchangeProductPriceRateStatus.FromPointer); // 0270D122A4F0 0x50 PriceRateList               ( 000185CD6668 ModelClassListType RepeatedField`1<ExchangeProductPriceRateStatus> RepeatedField`1<ExchangeProductPriceRateStatus> List<ExchangeProductPriceRateStatus> Pointer )
-            value.TotalPurchaseCount                        = GetInt32(new IntPtr(p + 0x058)); // 0270D122A530 0x58 TotalPurchaseCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D122A570 0x60 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x068), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D122A5B0 0x68 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x070)); // 0270D122A5F0 0x70 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstExchangeProductFilterId                = GetInt32(new IntPtr(p + 0x074)); // 0270D122A630 0x74 MstExchangeProductFilterId  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x078)); // 0270D122A670 0x78 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0246611A20E0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0246611A2100 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstExchangeProductId                      = GetInt32(new IntPtr(p + 0x038)); // 0246611A2180 0x38 MstExchangeProductId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductWithAmount                         = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246611A21C0 0x40 ProductWithAmount           ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.PurchaseLimit                             = GetObject<ExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeProductPurchaseLimitStatus.FromPointer); // 0246611A2200 0x48 PurchaseLimit               ( 0001865131D0 ModelClassType ExchangeProductPurchaseLimitStatus ExchangeProductPurchaseLimitStatus ExchangeProductPurchaseLimitStatus Pointer )
+            value.PriceRateList                             = GetObjectList<ExchangeProductPriceRateStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExchangeProductPriceRateStatus.FromPointer); // 0246611A2260 0x50 PriceRateList               ( 000185CD6668 ModelClassListType RepeatedField`1<ExchangeProductPriceRateStatus> RepeatedField`1<ExchangeProductPriceRateStatus> List<ExchangeProductPriceRateStatus> Pointer )
+            value.TotalPurchaseCount                        = GetInt32(new IntPtr(p + 0x058)); // 0246611A22A0 0x58 TotalPurchaseCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x060), ReversePrism.DataModels.Timestamp.FromPointer); // 0246611A22E0 0x60 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x068), ReversePrism.DataModels.Timestamp.FromPointer); // 0246611A2320 0x68 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x070)); // 0246611A2360 0x70 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstExchangeProductFilterId                = GetInt32(new IntPtr(p + 0x074)); // 0246611A23A0 0x74 MstExchangeProductFilterId  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x078)); // 0246611A23E0 0x78 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

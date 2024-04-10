@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 RootsPemResourceName                     string IL2CPP_TYPE_STRING
     // 000 staticLock                               <object> IL2CPP_TYPE_OBJECT
-    public partial class DefaultSslRootsOverride
+    public partial class DefaultSslRootsOverride : DataModel
     {
 
         public static DefaultSslRootsOverride? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultSslRootsOverride();
+            var value   = new DefaultSslRootsOverride() { Pointer= p0 };
 
 
             return value;

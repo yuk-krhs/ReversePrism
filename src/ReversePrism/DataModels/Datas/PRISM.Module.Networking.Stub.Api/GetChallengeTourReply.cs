@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 ChallengeTourListFieldNumber             int IL2CPP_TYPE_I4
     // 008 _repeated_challengeTourList_codec        FieldCodec`1<ChallengeTourStatus> IL2CPP_TYPE_GENERICINST
     // 018 ChallengeTourList                        000185CD1B78 ModelClassListType RepeatedField`1<ChallengeTourStatus> RepeatedField`1<ChallengeTourStatus> List<ChallengeTourStatus> Pointer
-    public partial class GetChallengeTourReply
+    public partial class GetChallengeTourReply : DataModel
     {
         public List<ChallengeTourStatus>?               ChallengeTourList                       { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetChallengeTourReply();
+            var value   = new GetChallengeTourReply() { Pointer= p0 };
 
-            value.ChallengeTourList                         = GetObjectList<ChallengeTourStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourStatus.FromPointer); // 0270D0B46CA0 0x18 ChallengeTourList           ( 000185CD1B78 ModelClassListType RepeatedField`1<ChallengeTourStatus> RepeatedField`1<ChallengeTourStatus> List<ChallengeTourStatus> Pointer )
+            value.ChallengeTourList                         = GetObjectList<ChallengeTourStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourStatus.FromPointer); // 024660B39728 0x18 ChallengeTourList           ( 000185CD1B78 ModelClassListType RepeatedField`1<ChallengeTourStatus> RepeatedField`1<ChallengeTourStatus> List<ChallengeTourStatus> Pointer )
 
             return value;
         }

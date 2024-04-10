@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 GetSelfRanking                           Method`2<IGetSelfRankingArgs, IGetSelfRankingReply> IL2CPP_TYPE_GENERICINST
     // 048 EditRankingComment                       Method`2<IEditRankingCommentArgs, IEditRankingCommentReply> IL2CPP_TYPE_GENERICINST
     // 060 GetPvpRanking                            Method`2<IGetPvpRankingArgs, IGetPvpRankingReply> IL2CPP_TYPE_GENERICINST
-    public partial class EventRankingServiceMethods
+    public partial class EventRankingServiceMethods : DataModel
     {
 
         public static EventRankingServiceMethods? FromPointer(IntPtr p0)
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EventRankingServiceMethods();
+            var value   = new EventRankingServiceMethods() { Pointer= p0 };
 
 
             return value;

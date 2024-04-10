@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveIdolGridView
+    public partial class LiveIdolGridView : DataModel
     {
 
         public static LiveIdolGridView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveIdolGridView();
+            var value   = new LiveIdolGridView() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 InappPurchaseData                        000186671910 ModelPrimitiveType string string string String
     // 018 <ReceiptInfo>k__BackingField             Nullable`1<ReceiptInfo> IL2CPP_TYPE_GENERICINST
     // 068 InappDataSignature                       000186671910 ModelPrimitiveType string string string String
-    public partial class ReceiptModel
+    public partial class ReceiptModel : DataModel
     {
         public string                                   InappPurchaseData                       { get; set; }
         public string                                   InappDataSignature                      { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceiptModel();
+            var value   = new ReceiptModel() { Pointer= p0 };
 
-            value.InappPurchaseData                         = GetString(new IntPtr(p + 0x010)); // 027004BC8040 0x10 InappPurchaseData           ( 000186671910 ModelPrimitiveType string string string String )
-            value.InappDataSignature                        = GetString(new IntPtr(p + 0x068)); // 027004BC8080 0x68 InappDataSignature          ( 000186671910 ModelPrimitiveType string string string String )
+            value.InappPurchaseData                         = GetString(new IntPtr(p + 0x010)); // 0245A4BFF090 0x10 InappPurchaseData           ( 000186671910 ModelPrimitiveType string string string String )
+            value.InappDataSignature                        = GetString(new IntPtr(p + 0x068)); // 0245A4BFF0D0 0x68 InappDataSignature          ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

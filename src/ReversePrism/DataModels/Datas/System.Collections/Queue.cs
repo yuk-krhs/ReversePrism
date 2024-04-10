@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 024 GrowFactor                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 028 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 _syncRoot                                <object> IL2CPP_TYPE_OBJECT
-    public partial class Queue
+    public partial class Queue : DataModel
     {
         public int                                      Head                                    { get; set; }
         public int                                      Tail                                    { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Queue();
+            var value   = new Queue() { Pointer= p0 };
 
-            value.Head                                      = GetInt32(new IntPtr(p + 0x018)); // 0270D6BBDE30 0x18 Head                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Tail                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D6BBDE50 0x1C Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Size                                      = GetInt32(new IntPtr(p + 0x020)); // 0270D6BBDE70 0x20 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GrowFactor                                = GetInt32(new IntPtr(p + 0x024)); // 0270D6BBDE90 0x24 GrowFactor                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x028)); // 0270D6BBDEB0 0x28 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Head                                      = GetInt32(new IntPtr(p + 0x018)); // 024666C35E30 0x18 Head                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Tail                                      = GetInt32(new IntPtr(p + 0x01C)); // 024666C35E50 0x1C Tail                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x020)); // 024666C35E70 0x20 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GrowFactor                                = GetInt32(new IntPtr(p + 0x024)); // 024666C35E90 0x24 GrowFactor                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x028)); // 024666C35EB0 0x28 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Null                                     BatchMaterialID IL2CPP_TYPE_VALUETYPE
     // 010 Value                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    public partial class BatchMaterialID
+    public partial class BatchMaterialID : DataModel
     {
         public uint                                     Value                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BatchMaterialID();
+            var value   = new BatchMaterialID() { Pointer= p0 };
 
-            value.Value                                     = GetUInt32(new IntPtr(p + 0x010)); // 027002450CA8 0x10 Value                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Value                                     = GetUInt32(new IntPtr(p + 0x010)); // 0245A2450CA8 0x10 Value                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

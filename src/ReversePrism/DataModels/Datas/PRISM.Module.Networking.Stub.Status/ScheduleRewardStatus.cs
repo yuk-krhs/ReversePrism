@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceRewardTypeFieldNumber             int IL2CPP_TYPE_I4
     // 018 ProduceRewardType                        00018657BC70 ModelEnumType ProduceRewardType ProduceRewardType ProduceRewardType Int32
-    public partial class ScheduleRewardStatus
+    public partial class ScheduleRewardStatus : DataModel
     {
         public ProduceRewardType                        ProduceRewardType                       { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ScheduleRewardStatus();
+            var value   = new ScheduleRewardStatus() { Pointer= p0 };
 
-            value.ProduceRewardType                         = (ProduceRewardType)GetInt32(new IntPtr(p + 0x018)); // 0270041C3300 0x18 ProduceRewardType           ( 00018657BC70 ModelEnumType ProduceRewardType ProduceRewardType ProduceRewardType Int32 )
+            value.ProduceRewardType                         = (ProduceRewardType)GetInt32(new IntPtr(p + 0x018)); // 0246610AC128 0x18 ProduceRewardType           ( 00018657BC70 ModelEnumType ProduceRewardType ProduceRewardType ProduceRewardType Int32 )
 
             return value;
         }

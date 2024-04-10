@@ -34,7 +34,7 @@ namespace ReversePrism.DataModels
     // 000 SongListFieldNumber                      int IL2CPP_TYPE_I4
     // 040 _repeated_songList_codec                 FieldCodec`1<SongStatus> IL2CPP_TYPE_GENERICINST
     // 050 SongList                                 000185CF1AB8 ModelClassListType RepeatedField`1<SongStatus> RepeatedField`1<SongStatus> List<SongStatus> Pointer
-    public partial class HavingProductGroupStatus
+    public partial class HavingProductGroupStatus : DataModel
     {
         public List<HavingProductStatus>?               HavingProductList                       { get; set; }
         public List<ProduceIdolStatus>?                 ProduceIdolList                         { get; set; }
@@ -51,16 +51,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HavingProductGroupStatus();
+            var value   = new HavingProductGroupStatus() { Pointer= p0 };
 
-            value.HavingProductList                         = GetObjectList<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0270D1205848 0x18 HavingProductList           ( 000185CDDF68 ModelClassListType RepeatedField`1<HavingProductStatus> RepeatedField`1<HavingProductStatus> List<HavingProductStatus> Pointer )
-            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0270D12058A8 0x20 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
-            value.SupportCharacter                          = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 0270D1205908 0x28 SupportCharacter            ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
-            value.CostumeSetList                            = GetObjectList<CostumeSetStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeSetStatus.FromPointer); // 0270D1205968 0x30 CostumeSetList              ( 000185CD2998 ModelClassListType RepeatedField`1<CostumeSetStatus> RepeatedField`1<CostumeSetStatus> List<CostumeSetStatus> Pointer )
-            value.CostumeList                               = GetObjectList<CostumeStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeStatus.FromPointer); // 0270D12059C8 0x38 CostumeList                 ( 000185CD2DF8 ModelClassListType RepeatedField`1<CostumeStatus> RepeatedField`1<CostumeStatus> List<CostumeStatus> Pointer )
-            value.HairstyleList                             = GetObjectList<HairstyleStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.HairstyleStatus.FromPointer); // 0270D1205A28 0x40 HairstyleList               ( 000185CDDCF8 ModelClassListType RepeatedField`1<HairstyleStatus> RepeatedField`1<HairstyleStatus> List<HairstyleStatus> Pointer )
-            value.AccessoryList                             = GetObjectList<AccessoryStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.AccessoryStatus.FromPointer); // 0270D1205A88 0x48 AccessoryList               ( 000185CCD648 ModelClassListType RepeatedField`1<AccessoryStatus> RepeatedField`1<AccessoryStatus> List<AccessoryStatus> Pointer )
-            value.SongList                                  = GetObjectList<SongStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.SongStatus.FromPointer); // 0270D1205AE8 0x50 SongList                    ( 000185CF1AB8 ModelClassListType RepeatedField`1<SongStatus> RepeatedField`1<SongStatus> List<SongStatus> Pointer )
+            value.HavingProductList                         = GetObjectList<HavingProductStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductStatus.FromPointer); // 0246611A3458 0x18 HavingProductList           ( 000185CDDF68 ModelClassListType RepeatedField`1<HavingProductStatus> RepeatedField`1<HavingProductStatus> List<HavingProductStatus> Pointer )
+            value.ProduceIdolList                           = GetObjectList<ProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0246611A34B8 0x20 ProduceIdolList             ( 000185CEBD88 ModelClassListType RepeatedField`1<ProduceIdolStatus> RepeatedField`1<ProduceIdolStatus> List<ProduceIdolStatus> Pointer )
+            value.SupportCharacter                          = GetObjectList<SupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SupportCharacterStatus.FromPointer); // 0246611A3518 0x28 SupportCharacter            ( 000185CF42A8 ModelClassListType RepeatedField`1<SupportCharacterStatus> RepeatedField`1<SupportCharacterStatus> List<SupportCharacterStatus> Pointer )
+            value.CostumeSetList                            = GetObjectList<CostumeSetStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeSetStatus.FromPointer); // 0246611A3578 0x30 CostumeSetList              ( 000185CD2998 ModelClassListType RepeatedField`1<CostumeSetStatus> RepeatedField`1<CostumeSetStatus> List<CostumeSetStatus> Pointer )
+            value.CostumeList                               = GetObjectList<CostumeStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeStatus.FromPointer); // 0246611A35D8 0x38 CostumeList                 ( 000185CD2DF8 ModelClassListType RepeatedField`1<CostumeStatus> RepeatedField`1<CostumeStatus> List<CostumeStatus> Pointer )
+            value.HairstyleList                             = GetObjectList<HairstyleStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.HairstyleStatus.FromPointer); // 0246611A3638 0x40 HairstyleList               ( 000185CDDCF8 ModelClassListType RepeatedField`1<HairstyleStatus> RepeatedField`1<HairstyleStatus> List<HairstyleStatus> Pointer )
+            value.AccessoryList                             = GetObjectList<AccessoryStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.AccessoryStatus.FromPointer); // 0246611A3698 0x48 AccessoryList               ( 000185CCD648 ModelClassListType RepeatedField`1<AccessoryStatus> RepeatedField`1<AccessoryStatus> List<AccessoryStatus> Pointer )
+            value.SongList                                  = GetObjectList<SongStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.SongStatus.FromPointer); // 0246611A36F8 0x50 SongList                    ( 000185CF1AB8 ModelClassListType RepeatedField`1<SongStatus> RepeatedField`1<SongStatus> List<SongStatus> Pointer )
 
             return value;
         }

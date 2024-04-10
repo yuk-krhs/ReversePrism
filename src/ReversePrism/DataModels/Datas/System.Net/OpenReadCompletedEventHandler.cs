@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OpenReadCompletedEventHandler
+    public partial class OpenReadCompletedEventHandler : DataModel
     {
 
         public static OpenReadCompletedEventHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OpenReadCompletedEventHandler();
+            var value   = new OpenReadCompletedEventHandler() { Pointer= p0 };
 
 
             return value;

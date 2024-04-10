@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InspectedObjectChangingDelegate
+    public partial class InspectedObjectChangingDelegate : DataModel
     {
 
         public static InspectedObjectChangingDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InspectedObjectChangingDelegate();
+            var value   = new InspectedObjectChangingDelegate() { Pointer= p0 };
 
 
             return value;

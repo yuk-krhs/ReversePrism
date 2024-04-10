@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     // 018 m_SourceStyle                            <object> IL2CPP_TYPE_OBJECT
-    public partial class RectOffset
+    public partial class RectOffset : DataModel
     {
 
         public static RectOffset? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RectOffset();
+            var value   = new RectOffset() { Pointer= p0 };
 
 
             return value;

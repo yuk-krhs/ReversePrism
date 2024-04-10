@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SequentialSearchPrimeGeneratorBase
+    public partial class SequentialSearchPrimeGeneratorBase : DataModel
     {
 
         public static SequentialSearchPrimeGeneratorBase? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SequentialSearchPrimeGeneratorBase();
+            var value   = new SequentialSearchPrimeGeneratorBase() { Pointer= p0 };
 
 
             return value;

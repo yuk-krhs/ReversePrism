@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_MaxItems                               0001865F36C0 ModelPrimitiveType int int int Int32
     // 024 M_CurrentRead                            0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 m_CurrentWriteBlockTLS                   IntPtr IL2CPP_TYPE_PTR
-    public partial class UnsafeQueueData
+    public partial class UnsafeQueueData : DataModel
     {
         public int                                      M_MaxItems                              { get; set; }
         public int                                      M_CurrentRead                           { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnsafeQueueData();
+            var value   = new UnsafeQueueData() { Pointer= p0 };
 
-            value.M_MaxItems                                = GetInt32(new IntPtr(p + 0x020)); // 0270D9C60768 0x20 M_MaxItems                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.M_CurrentRead                             = GetInt32(new IntPtr(p + 0x024)); // 0270D9C60788 0x24 M_CurrentRead               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_MaxItems                                = GetInt32(new IntPtr(p + 0x020)); // 024669CB8D90 0x20 M_MaxItems                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_CurrentRead                             = GetInt32(new IntPtr(p + 0x024)); // 024669CB8DB0 0x24 M_CurrentRead               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

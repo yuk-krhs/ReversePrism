@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 098 onSwipe                                  Subject`1<Vector2> IL2CPP_TYPE_GENERICINST
     // 0A0 onPinch                                  Subject`1<float> IL2CPP_TYPE_GENERICINST
     // 0A8 CurrentFov                               0001866656B0 ModelPrimitiveType float float float Single
-    public partial class UICharacterViewer
+    public partial class UICharacterViewer : DataModel
     {
         public Image?                                   ImgTouchDetector                        { get; set; }
         public RawImage?                                CharaView                               { get; set; }
@@ -55,25 +55,25 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UICharacterViewer();
+            var value   = new UICharacterViewer() { Pointer= p0 };
 
-            value.ImgTouchDetector                          = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0270D543B2D8 0x20 ImgTouchDetector            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.CharaView                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0270D543B2F8 0x28 CharaView                   ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.SpeechBalloonView                         = GetObject<CharacterSpeechBalloonView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CharacterSpeechBalloonView.FromPointer); // 0270D543B318 0x30 SpeechBalloonView           ( 0001865A3FE0 ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer )
-            value.IsEnableManualCamera                      = GetBool(new IntPtr(p + 0x038)); // 0270D543B338 0x38 IsEnableManualCamera        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CameraRotateSensitivity                   = GetSingle(new IntPtr(p + 0x03C)); // 0270D543B358 0x3C CameraRotateSensitivity     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMoveSensitivity                     = GetSingle(new IntPtr(p + 0x040)); // 0270D543B378 0x40 CameraMoveSensitivity       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraPinchZoomSensitivity                = GetSingle(new IntPtr(p + 0x044)); // 0270D543B398 0x44 CameraPinchZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMouseZoomSensitivity                = GetSingle(new IntPtr(p + 0x048)); // 0270D543B3B8 0x48 CameraMouseZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMaxFov                              = GetSingle(new IntPtr(p + 0x04C)); // 0270D543B3D8 0x4C CameraMaxFov                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMinFov                              = GetSingle(new IntPtr(p + 0x050)); // 0270D543B3F8 0x50 CameraMinFov                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.OnStopVoiceDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x058), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D543B418 0x58 OnStopVoiceDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.AutoActionCts                             = GetObject<CancellationTokenSource>(new IntPtr(p + 0x060), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0270D543B438 0x60 AutoActionCts               ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Viewer                                    = GetObject<UI3DModelViewer>(new IntPtr(p + 0x070), ReversePrism.DataModels.UI3DModelViewer.FromPointer); // 0270D543B478 0x70 Viewer                      ( 0001866E0670 ModelClassType UI3DModelViewer UI3DModelViewer UI3DModelViewer Pointer )
-            value.LastPlayTime                              = GetDateTime(new IntPtr(p + 0x080)); // 0270D543B4B8 0x80 LastPlayTime                ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.DefaultRenderTexture                      = GetObject<Texture>(new IntPtr(p + 0x088), ReversePrism.DataModels.Texture.FromPointer); // 0270D543B4D8 0x88 DefaultRenderTexture        ( 00018664CFB0 ModelClassType Texture Texture Texture Pointer )
-            value.Info                                      = GetObject<UICharacterVoiceInfo>(new IntPtr(p + 0x090), ReversePrism.DataModels.UICharacterVoiceInfo.FromPointer); // 0270D543B4F8 0x90 Info                        ( 0001866E3400 ModelClassType UICharacterVoiceInfo UICharacterVoiceInfo UICharacterVoiceInfo Pointer )
-            value.CurrentFov                                = GetSingle(new IntPtr(p + 0x0A8)); // 0270D543B558 0xA8 CurrentFov                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ImgTouchDetector                          = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0246654A6758 0x20 ImgTouchDetector            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.CharaView                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0246654A6778 0x28 CharaView                   ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.SpeechBalloonView                         = GetObject<CharacterSpeechBalloonView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CharacterSpeechBalloonView.FromPointer); // 0246654A6798 0x30 SpeechBalloonView           ( 0001865A3FE0 ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer )
+            value.IsEnableManualCamera                      = GetBool(new IntPtr(p + 0x038)); // 0246654A67B8 0x38 IsEnableManualCamera        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CameraRotateSensitivity                   = GetSingle(new IntPtr(p + 0x03C)); // 0246654A67D8 0x3C CameraRotateSensitivity     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CameraMoveSensitivity                     = GetSingle(new IntPtr(p + 0x040)); // 0246654A67F8 0x40 CameraMoveSensitivity       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CameraPinchZoomSensitivity                = GetSingle(new IntPtr(p + 0x044)); // 0246654A6818 0x44 CameraPinchZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CameraMouseZoomSensitivity                = GetSingle(new IntPtr(p + 0x048)); // 0246654A6838 0x48 CameraMouseZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CameraMaxFov                              = GetSingle(new IntPtr(p + 0x04C)); // 0246654A6858 0x4C CameraMaxFov                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CameraMinFov                              = GetSingle(new IntPtr(p + 0x050)); // 0246654A6878 0x50 CameraMinFov                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.OnStopVoiceDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x058), ReversePrism.DataModels.IDisposable.FromPointer); // 0246654A6898 0x58 OnStopVoiceDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.AutoActionCts                             = GetObject<CancellationTokenSource>(new IntPtr(p + 0x060), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246654A68B8 0x60 AutoActionCts               ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Viewer                                    = GetObject<UI3DModelViewer>(new IntPtr(p + 0x070), ReversePrism.DataModels.UI3DModelViewer.FromPointer); // 0246654A68F8 0x70 Viewer                      ( 0001866E0670 ModelClassType UI3DModelViewer UI3DModelViewer UI3DModelViewer Pointer )
+            value.LastPlayTime                              = GetDateTime(new IntPtr(p + 0x080)); // 0246654A6938 0x80 LastPlayTime                ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.DefaultRenderTexture                      = GetObject<Texture>(new IntPtr(p + 0x088), ReversePrism.DataModels.Texture.FromPointer); // 0246654A6958 0x88 DefaultRenderTexture        ( 00018664CFB0 ModelClassType Texture Texture Texture Pointer )
+            value.Info                                      = GetObject<UICharacterVoiceInfo>(new IntPtr(p + 0x090), ReversePrism.DataModels.UICharacterVoiceInfo.FromPointer); // 0246654A6978 0x90 Info                        ( 0001866E3400 ModelClassType UICharacterVoiceInfo UICharacterVoiceInfo UICharacterVoiceInfo Pointer )
+            value.CurrentFov                                = GetSingle(new IntPtr(p + 0x0A8)); // 0246654A69D8 0xA8 CurrentFov                  ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

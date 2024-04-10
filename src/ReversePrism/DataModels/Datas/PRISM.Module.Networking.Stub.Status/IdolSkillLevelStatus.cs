@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 000 ValueListFieldNumber                     int IL2CPP_TYPE_I4
     // 010 _repeated_valueList_codec                FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 038 ValueList                                000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class IdolSkillLevelStatus
+    public partial class IdolSkillLevelStatus : DataModel
     {
         public int                                      Level                                   { get; set; }
         public int                                      UnlockPremiseStar                       { get; set; }
@@ -42,15 +42,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolSkillLevelStatus();
+            var value   = new IdolSkillLevelStatus() { Pointer= p0 };
 
-            value.Level                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D1039180 0x18 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseStar                         = GetInt32(new IntPtr(p + 0x01C)); // 0270D10391C0 0x1C UnlockPremiseStar           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 0270D1039200 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Cost                                      = GetInt32(new IntPtr(p + 0x024)); // 0270D1039240 0x24 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductRecipeList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D10392A0 0x28 ProductRecipeList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.Money                                     = GetInt32(new IntPtr(p + 0x030)); // 0270D10392E0 0x30 Money                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x038)); // 0270D1039340 0x38 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Level                                     = GetInt32(new IntPtr(p + 0x018)); // 024660FB81A8 0x18 Level                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseStar                         = GetInt32(new IntPtr(p + 0x01C)); // 024660FB81E8 0x1C UnlockPremiseStar           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Pp                                        = GetInt32(new IntPtr(p + 0x020)); // 024660FB8228 0x20 Pp                          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Cost                                      = GetInt32(new IntPtr(p + 0x024)); // 024660FB8268 0x24 Cost                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductRecipeList                         = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 024660FB82C8 0x28 ProductRecipeList           ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.Money                                     = GetInt32(new IntPtr(p + 0x030)); // 024660FB8308 0x30 Money                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ValueList                                 = GetInt32List(new IntPtr(p + 0x038)); // 024660FB8368 0x38 ValueList                   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

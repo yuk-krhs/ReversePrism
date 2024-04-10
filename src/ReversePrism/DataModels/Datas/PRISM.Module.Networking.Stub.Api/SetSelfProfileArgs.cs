@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 000 MstAchievementIdListFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_mstAchievementIdList_codec     FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
     // 048 MstAchievementIdList                     000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
-    public partial class SetSelfProfileArgs
+    public partial class SetSelfProfileArgs : DataModel
     {
         public string                                   Name                                    { get; set; }
         public string                                   DisplayName                             { get; set; }
@@ -44,16 +44,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetSelfProfileArgs();
+            var value   = new SetSelfProfileArgs() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D270CA00 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 0270D270CA40 0x20 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Comment                                   = GetString(new IntPtr(p + 0x028)); // 0270D270CA80 0x28 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Birthday                                  = GetString(new IntPtr(p + 0x030)); // 0270D270CAC0 0x30 Birthday                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsBirthdayPublic                          = GetBool(new IntPtr(p + 0x038)); // 0270D270CB00 0x38 IsBirthdayPublic            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x03C)); // 0270D270CB40 0x3C MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x040)); // 0270D270CB80 0x40 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x048)); // 0270D270CBE0 0x48 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466267A4C0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 02466267A500 0x20 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Comment                                   = GetString(new IntPtr(p + 0x028)); // 02466267A540 0x28 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Birthday                                  = GetString(new IntPtr(p + 0x030)); // 02466267A580 0x30 Birthday                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsBirthdayPublic                          = GetBool(new IntPtr(p + 0x038)); // 02466267A5C0 0x38 IsBirthdayPublic            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x03C)); // 02466267A600 0x3C MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x040)); // 02466267A640 0x40 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstAchievementIdList                      = GetInt32List(new IntPtr(p + 0x048)); // 02466267A6A0 0x48 MstAchievementIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

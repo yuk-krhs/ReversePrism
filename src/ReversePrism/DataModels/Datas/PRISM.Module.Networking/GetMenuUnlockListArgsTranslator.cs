@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetMenuUnlockListArgsTranslator
+    public partial class GetMenuUnlockListArgsTranslator : DataModel
     {
 
         public static GetMenuUnlockListArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetMenuUnlockListArgsTranslator();
+            var value   = new GetMenuUnlockListArgsTranslator() { Pointer= p0 };
 
 
             return value;

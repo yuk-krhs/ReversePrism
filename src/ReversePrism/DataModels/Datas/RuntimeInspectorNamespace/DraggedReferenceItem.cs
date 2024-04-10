@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 068 m_references                             <object>[] IL2CPP_TYPE_SZARRAY
-    public partial class DraggedReferenceItem
+    public partial class DraggedReferenceItem : DataModel
     {
 
         public static DraggedReferenceItem? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DraggedReferenceItem();
+            var value   = new DraggedReferenceItem() { Pointer= p0 };
 
 
             return value;

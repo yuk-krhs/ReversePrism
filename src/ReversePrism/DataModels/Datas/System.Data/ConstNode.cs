@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 _val                                     <object> IL2CPP_TYPE_OBJECT
-    public partial class ConstNode
+    public partial class ConstNode : DataModel
     {
 
         public static ConstNode? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstNode();
+            var value   = new ConstNode() { Pointer= p0 };
 
 
             return value;

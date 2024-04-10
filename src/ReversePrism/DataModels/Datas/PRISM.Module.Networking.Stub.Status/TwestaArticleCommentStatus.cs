@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 02C MstTwestaUserId                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 PostDateFieldNumber                      int IL2CPP_TYPE_I4
     // 030 _PostDate                                000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class TwestaArticleCommentStatus
+    public partial class TwestaArticleCommentStatus : DataModel
     {
         public DateTime                                 PostDate                                { get; set; }
         public int                                      MstTwestaArticleCommentId               { get; set; }
@@ -30,12 +30,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaArticleCommentStatus();
+            var value   = new TwestaArticleCommentStatus() { Pointer= p0 };
 
-            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D23135F8 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstTwestaArticleCommentId                 = GetInt32(new IntPtr(p + 0x028)); // 0270D2313678 0x28 MstTwestaArticleCommentId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x02C)); // 0270D23136B8 0x2C MstTwestaUserId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D23136F8 0x30 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 024662291118 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstTwestaArticleCommentId                 = GetInt32(new IntPtr(p + 0x028)); // 024662291198 0x28 MstTwestaArticleCommentId   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x02C)); // 0246622911D8 0x2C MstTwestaUserId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 024662291218 0x30 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.PostDate                      = ToDateTime(value._PostDate);
 
             return value;

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 _entries                                 Entry<<var>>[] IL2CPP_TYPE_SZARRAY
     // 000 _numEntries                              int IL2CPP_TYPE_I4
     // 000 _extractKey                              ExtractKeyDelegate<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class XHashtableState
+    public partial class XHashtableState : DataModel
     {
 
         public static XHashtableState? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XHashtableState();
+            var value   = new XHashtableState() { Pointer= p0 };
 
 
             return value;

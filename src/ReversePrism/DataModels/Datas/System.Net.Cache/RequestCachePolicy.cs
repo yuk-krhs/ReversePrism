@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Level                                  000186664DF0 ModelEnumType RequestCacheLevel RequestCacheLevel RequestCacheLevel Int32
-    public partial class RequestCachePolicy
+    public partial class RequestCachePolicy : DataModel
     {
         public RequestCacheLevel                        M_Level                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestCachePolicy();
+            var value   = new RequestCachePolicy() { Pointer= p0 };
 
-            value.M_Level                                   = (RequestCacheLevel)GetInt32(new IntPtr(p + 0x010)); // 0270D747F6C0 0x10 M_Level                     ( 000186664DF0 ModelEnumType RequestCacheLevel RequestCacheLevel RequestCacheLevel Int32 )
+            value.M_Level                                   = (RequestCacheLevel)GetInt32(new IntPtr(p + 0x010)); // 0246674DF6C0 0x10 M_Level                     ( 000186664DF0 ModelEnumType RequestCacheLevel RequestCacheLevel RequestCacheLevel Int32 )
 
             return value;
         }

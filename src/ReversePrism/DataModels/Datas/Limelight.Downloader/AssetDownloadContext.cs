@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 050 enumProvider                             Func`2<INativeDownloadRequestListener, IEnumerable`1<INativeDownloadJob>> IL2CPP_TYPE_GENERICINST
     // 058 iterator                                 IEnumerator`1<INativeDownloadJob> IL2CPP_TYPE_GENERICINST
     // 000 emptyContext                             AssetDownloadContext IL2CPP_TYPE_CLASS
-    public partial class AssetDownloadContext
+    public partial class AssetDownloadContext : DataModel
     {
         public bool                                     IsDone                                  { get; set; }
         public long                                     TotalDownloadBytes                      { get; set; }
@@ -37,16 +37,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetDownloadContext();
+            var value   = new AssetDownloadContext() { Pointer= p0 };
 
-            value.IsDone                                    = GetBool(new IntPtr(p + 0x010)); // 027004E05D00 0x10 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TotalDownloadBytes                        = GetInt64(new IntPtr(p + 0x018)); // 027004E05D20 0x18 TotalDownloadBytes          ( 0001865F8300 ModelPrimitiveType long long long Int64 )
-            value.TotalDownloadFiles                        = GetInt32(new IntPtr(p + 0x020)); // 027004E05D40 0x20 TotalDownloadFiles          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DownloadedFiles                           = GetInt32(new IntPtr(p + 0x024)); // 027004E05D60 0x24 DownloadedFiles             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Error                                     = GetObject<AssetDownloadError>(new IntPtr(p + 0x028), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 027004E05D80 0x28 Error                       ( 0001866E5710 ModelClassType AssetDownloadError AssetDownloadError AssetDownloadError Pointer )
-            value.CurrentDownloadedBytes                    = GetInt64(new IntPtr(p + 0x030)); // 027004E05DA0 0x30 CurrentDownloadedBytes      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.PeakDownloadedBytes                       = GetInt64(new IntPtr(p + 0x038)); // 027004E05DC0 0x38 PeakDownloadedBytes         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Db                                        = GetObject<CatalogDB>(new IntPtr(p + 0x040), ReversePrism.DataModels.CatalogDB.FromPointer); // 027004E05DE0 0x40 Db                          ( 00018654BDF0 ModelClassType CatalogDB CatalogDB CatalogDB Pointer )
+            value.IsDone                                    = GetBool(new IntPtr(p + 0x010)); // 02466305E788 0x10 IsDone                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TotalDownloadBytes                        = GetInt64(new IntPtr(p + 0x018)); // 02466305E7A8 0x18 TotalDownloadBytes          ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.TotalDownloadFiles                        = GetInt32(new IntPtr(p + 0x020)); // 02466305E7C8 0x20 TotalDownloadFiles          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DownloadedFiles                           = GetInt32(new IntPtr(p + 0x024)); // 02466305E7E8 0x24 DownloadedFiles             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Error                                     = GetObject<AssetDownloadError>(new IntPtr(p + 0x028), ReversePrism.DataModels.AssetDownloadError.FromPointer); // 02466305E808 0x28 Error                       ( 0001866E5710 ModelClassType AssetDownloadError AssetDownloadError AssetDownloadError Pointer )
+            value.CurrentDownloadedBytes                    = GetInt64(new IntPtr(p + 0x030)); // 02466305E828 0x30 CurrentDownloadedBytes      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.PeakDownloadedBytes                       = GetInt64(new IntPtr(p + 0x038)); // 02466305E848 0x38 PeakDownloadedBytes         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Db                                        = GetObject<CatalogDB>(new IntPtr(p + 0x040), ReversePrism.DataModels.CatalogDB.FromPointer); // 02466305E868 0x40 Db                          ( 00018654BDF0 ModelClassType CatalogDB CatalogDB CatalogDB Pointer )
 
             return value;
         }

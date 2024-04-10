@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 168 RevertGashaExchangePoint                 Method`2<IRevertGashaExchangePointArgs, IRevertGashaExchangePointReply> IL2CPP_TYPE_GENERICINST
     // 180 CreateGashaSupportCharacterEffect        Method`2<ICreateGashaSupportCharacterEffectArgs, ICreateGashaSupportCharacterEffectReply> IL2CPP_TYPE_GENERICINST
     // 198 CreateGashaProduceIdolEffect             Method`2<ICreateGashaProduceIdolEffectArgs, ICreateGashaProduceIdolEffectReply> IL2CPP_TYPE_GENERICINST
-    public partial class GashaServiceMethods
+    public partial class GashaServiceMethods : DataModel
     {
 
         public static GashaServiceMethods? FromPointer(IntPtr p0)
@@ -35,7 +35,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaServiceMethods();
+            var value   = new GashaServiceMethods() { Pointer= p0 };
 
 
             return value;

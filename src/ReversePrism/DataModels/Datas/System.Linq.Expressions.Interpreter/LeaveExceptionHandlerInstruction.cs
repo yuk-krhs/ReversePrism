@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_cache                                  LeaveExceptionHandlerInstruction[] IL2CPP_TYPE_SZARRAY
     // 018 HasValue                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class LeaveExceptionHandlerInstruction
+    public partial class LeaveExceptionHandlerInstruction : DataModel
     {
         public bool                                     HasValue                                { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LeaveExceptionHandlerInstruction();
+            var value   = new LeaveExceptionHandlerInstruction() { Pointer= p0 };
 
-            value.HasValue                                  = GetBool(new IntPtr(p + 0x018)); // 0270D9FA65C8 0x18 HasValue                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.HasValue                                  = GetBool(new IntPtr(p + 0x018)); // 02466A012150 0x18 HasValue                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

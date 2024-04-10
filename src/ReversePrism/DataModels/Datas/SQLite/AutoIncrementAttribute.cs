@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AutoIncrementAttribute
+    public partial class AutoIncrementAttribute : DataModel
     {
 
         public static AutoIncrementAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AutoIncrementAttribute();
+            var value   = new AutoIncrementAttribute() { Pointer= p0 };
 
 
             return value;

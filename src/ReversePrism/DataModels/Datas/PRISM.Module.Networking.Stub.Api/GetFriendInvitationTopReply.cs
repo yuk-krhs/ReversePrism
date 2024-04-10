@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
     // 000 FriendMissionListFieldNumber             int IL2CPP_TYPE_I4
     // 010 _repeated_friendMissionList_codec        FieldCodec`1<FriendInvitationMissionStatus> IL2CPP_TYPE_GENERICINST
     // 068 FriendMissionList                        000185CD8FA8 ModelClassListType RepeatedField`1<FriendInvitationMissionStatus> RepeatedField`1<FriendInvitationMissionStatus> List<FriendInvitationMissionStatus> Pointer
-    public partial class GetFriendInvitationTopReply
+    public partial class GetFriendInvitationTopReply : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
         public DateTime                                 EndDate                                 { get; set; }
@@ -46,17 +46,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFriendInvitationTopReply();
+            var value   = new GetFriendInvitationTopReply() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0270D1555418 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0270D1555438 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstFriendInvitationId                     = GetInt32(new IntPtr(p + 0x038)); // 0270D15554B8 0x38 MstFriendInvitationId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FriendInvitationCode                      = GetString(new IntPtr(p + 0x040)); // 0270D15554F8 0x40 FriendInvitationCode        ( 000186671910 ModelPrimitiveType string string string String )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1555538 0x48 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D1555578 0x50 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.ReceivedFriendInvitation                  = GetBool(new IntPtr(p + 0x058)); // 0270D15555B8 0x58 ReceivedFriendInvitation    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SelfMissionList                           = GetObjectList<FriendInvitationMissionStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.FriendInvitationMissionStatus.FromPointer); // 0270D1555618 0x60 SelfMissionList             ( 000185CD8FA8 ModelClassListType RepeatedField`1<FriendInvitationMissionStatus> RepeatedField`1<FriendInvitationMissionStatus> List<FriendInvitationMissionStatus> Pointer )
-            value.FriendMissionList                         = GetObjectList<FriendInvitationMissionStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.FriendInvitationMissionStatus.FromPointer); // 0270D1555678 0x68 FriendMissionList           ( 000185CD8FA8 ModelClassListType RepeatedField`1<FriendInvitationMissionStatus> RepeatedField`1<FriendInvitationMissionStatus> List<FriendInvitationMissionStatus> Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0246614E3858 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0246614E3878 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstFriendInvitationId                     = GetInt32(new IntPtr(p + 0x038)); // 0246614E38F8 0x38 MstFriendInvitationId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FriendInvitationCode                      = GetString(new IntPtr(p + 0x040)); // 0246614E3938 0x40 FriendInvitationCode        ( 000186671910 ModelPrimitiveType string string string String )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0246614E3978 0x48 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0246614E39B8 0x50 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.ReceivedFriendInvitation                  = GetBool(new IntPtr(p + 0x058)); // 0246614E39F8 0x58 ReceivedFriendInvitation    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SelfMissionList                           = GetObjectList<FriendInvitationMissionStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.FriendInvitationMissionStatus.FromPointer); // 0246614E3A58 0x60 SelfMissionList             ( 000185CD8FA8 ModelClassListType RepeatedField`1<FriendInvitationMissionStatus> RepeatedField`1<FriendInvitationMissionStatus> List<FriendInvitationMissionStatus> Pointer )
+            value.FriendMissionList                         = GetObjectList<FriendInvitationMissionStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.FriendInvitationMissionStatus.FromPointer); // 0246614E3AB8 0x68 FriendMissionList           ( 000185CD8FA8 ModelClassListType RepeatedField`1<FriendInvitationMissionStatus> RepeatedField`1<FriendInvitationMissionStatus> List<FriendInvitationMissionStatus> Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
     // 000 AllowedResponseExtensionsFieldNumber     int IL2CPP_TYPE_I4
     // 020 _repeated_allowedResponseExtensions_codec FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 038 AllowedResponseExtensions                000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class ContextRule
+    public partial class ContextRule : DataModel
     {
         public string                                   Selector                                { get; set; }
         public List<string>?                            Requested                               { get; set; }
@@ -38,13 +38,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ContextRule();
+            var value   = new ContextRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0270DA789090 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Requested                                 = GetStringList(new IntPtr(p + 0x020)); // 0270DA7890F0 0x20 Requested                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Provided                                  = GetStringList(new IntPtr(p + 0x028)); // 0270DA789150 0x28 Provided                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.AllowedRequestExtensions                  = GetStringList(new IntPtr(p + 0x030)); // 0270DA7891B0 0x30 AllowedRequestExtensions    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.AllowedResponseExtensions                 = GetStringList(new IntPtr(p + 0x038)); // 0270DA789210 0x38 AllowedResponseExtensions   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A7ED088 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Requested                                 = GetStringList(new IntPtr(p + 0x020)); // 02466A7ED0E8 0x20 Requested                   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Provided                                  = GetStringList(new IntPtr(p + 0x028)); // 02466A7ED148 0x28 Provided                    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.AllowedRequestExtensions                  = GetStringList(new IntPtr(p + 0x030)); // 02466A7ED1A8 0x30 AllowedRequestExtensions    ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.AllowedResponseExtensions                 = GetStringList(new IntPtr(p + 0x038)); // 02466A7ED208 0x38 AllowedResponseExtensions   ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

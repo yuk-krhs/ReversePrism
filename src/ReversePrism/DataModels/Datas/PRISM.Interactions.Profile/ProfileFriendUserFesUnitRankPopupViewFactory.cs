@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProfileFriendUserFesUnitRankPopupViewFactory
+    public partial class ProfileFriendUserFesUnitRankPopupViewFactory : DataModel
     {
 
         public static ProfileFriendUserFesUnitRankPopupViewFactory? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileFriendUserFesUnitRankPopupViewFactory();
+            var value   = new ProfileFriendUserFesUnitRankPopupViewFactory() { Pointer= p0 };
 
 
             return value;

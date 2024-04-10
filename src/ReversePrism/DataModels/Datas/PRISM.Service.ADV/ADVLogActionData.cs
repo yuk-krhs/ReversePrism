@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Content                                  000186671910 ModelPrimitiveType string string string String
-    public partial class ADVLogActionData
+    public partial class ADVLogActionData : DataModel
     {
         public string                                   Content                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogActionData();
+            var value   = new ADVLogActionData() { Pointer= p0 };
 
-            value.Content                                   = GetString(new IntPtr(p + 0x010)); // 0270D691A138 0x10 Content                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Content                                   = GetString(new IntPtr(p + 0x010)); // 02466698A138 0x10 Content                     ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

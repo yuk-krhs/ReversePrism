@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 030 RotationAnimator                         0001866B8DE0 ModelClassType Animator Animator Animator Pointer
     // 038 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 040 ViewModel                                0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer
-    public partial class HomeDailyLoginBonusPanelView
+    public partial class HomeDailyLoginBonusPanelView : DataModel
     {
         public HomeLoginBonusSheetPanelView?            CurrentSheetPanelView                   { get; set; }
         public HomeLoginBonusSheetPanelView?            NextSheetPanelView                      { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeDailyLoginBonusPanelView();
+            var value   = new HomeDailyLoginBonusPanelView() { Pointer= p0 };
 
-            value.CurrentSheetPanelView                     = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 0270DB508B28 0x20 CurrentSheetPanelView       ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
-            value.NextSheetPanelView                        = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 0270DB508B48 0x28 NextSheetPanelView          ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
-            value.RotationAnimator                          = GetObject<Animator>(new IntPtr(p + 0x030), ReversePrism.DataModels.Animator.FromPointer); // 0270DB508B68 0x30 RotationAnimator            ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB508B88 0x38 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ViewModel                                 = GetObject<HomeLoginBonusViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeLoginBonusViewModel.FromPointer); // 0270DB508BA8 0x40 ViewModel                   ( 0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer )
+            value.CurrentSheetPanelView                     = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 02466B59CDD0 0x20 CurrentSheetPanelView       ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
+            value.NextSheetPanelView                        = GetObject<HomeLoginBonusSheetPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeLoginBonusSheetPanelView.FromPointer); // 02466B59CDF0 0x28 NextSheetPanelView          ( 0001866C4410 ModelClassType HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView HomeLoginBonusSheetPanelView Pointer )
+            value.RotationAnimator                          = GetObject<Animator>(new IntPtr(p + 0x030), ReversePrism.DataModels.Animator.FromPointer); // 02466B59CE10 0x30 RotationAnimator            ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B59CE30 0x38 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ViewModel                                 = GetObject<HomeLoginBonusViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.HomeLoginBonusViewModel.FromPointer); // 02466B59CE50 0x40 ViewModel                   ( 0001866C49A0 ModelClassType HomeLoginBonusViewModel HomeLoginBonusViewModel HomeLoginBonusViewModel Pointer )
 
             return value;
         }

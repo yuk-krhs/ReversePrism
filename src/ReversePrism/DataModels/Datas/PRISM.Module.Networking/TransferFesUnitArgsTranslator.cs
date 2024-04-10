@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TransferFesUnitArgsTranslator
+    public partial class TransferFesUnitArgsTranslator : DataModel
     {
 
         public static TransferFesUnitArgsTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferFesUnitArgsTranslator();
+            var value   = new TransferFesUnitArgsTranslator() { Pointer= p0 };
 
 
             return value;

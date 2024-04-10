@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 EmptyText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 098 missionButtonSubject                     Subject`1<SpecialMissionListViewModel> IL2CPP_TYPE_GENERICINST
     // 0A0 missionUnknownButtonSubject              Subject`1<SpecialMissionListViewModel> IL2CPP_TYPE_GENERICINST
-    public partial class SpecialMissionListView
+    public partial class SpecialMissionListView : DataModel
     {
         public UITextMeshProUGUI?                       EmptyText                               { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SpecialMissionListView();
+            var value   = new SpecialMissionListView() { Pointer= p0 };
 
-            value.EmptyText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBD67168 0x90 EmptyText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EmptyText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BDDFEE0 0x90 EmptyText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

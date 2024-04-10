@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 MainThreadId                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 Timeout                                  int IL2CPP_TYPE_I4
     // 008 signalDictionary                         Dictionary`2<int, ManualResetEvent> IL2CPP_TYPE_GENERICINST
-    public partial class UnitySynchronizationContext
+    public partial class UnitySynchronizationContext : DataModel
     {
         public SynchronizationContextBehavoir?          Behavior                                { get; set; }
         public int                                      MainThreadId                            { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnitySynchronizationContext();
+            var value   = new UnitySynchronizationContext() { Pointer= p0 };
 
-            value.Behavior                                  = GetObject<SynchronizationContextBehavoir>(new IntPtr(p + 0x020), ReversePrism.DataModels.SynchronizationContextBehavoir.FromPointer); // 0270DBCE62D8 0x20 Behavior                    ( 0001866AC4A0 ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer )
-            value.MainThreadId                              = GetInt32(new IntPtr(p + 0x028)); // 0270DBCE62F8 0x28 MainThreadId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Behavior                                  = GetObject<SynchronizationContextBehavoir>(new IntPtr(p + 0x020), ReversePrism.DataModels.SynchronizationContextBehavoir.FromPointer); // 02466BD660C8 0x20 Behavior                    ( 0001866AC4A0 ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer )
+            value.MainThreadId                              = GetInt32(new IntPtr(p + 0x028)); // 02466BD660E8 0x28 MainThreadId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

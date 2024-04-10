@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NullReceiptException
+    public partial class NullReceiptException : DataModel
     {
 
         public static NullReceiptException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NullReceiptException();
+            var value   = new NullReceiptException() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 UiTMP                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 028 UIDisplayCamera                          0001865A1C90 ModelClassType Camera Camera Camera Pointer
     // 030 onTouchId                                Subject`1<IReadOnlyList`1<int>> IL2CPP_TYPE_GENERICINST
-    public partial class TMPKeyWordTouchDetector
+    public partial class TMPKeyWordTouchDetector : DataModel
     {
         public UITextMeshProUGUI?                       UiTMP                                   { get; set; }
         public Camera?                                  UIDisplayCamera                         { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMPKeyWordTouchDetector();
+            var value   = new TMPKeyWordTouchDetector() { Pointer= p0 };
 
-            value.UiTMP                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270D5434A40 0x20 UiTMP                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UIDisplayCamera                           = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 0270D5434A60 0x28 UIDisplayCamera             ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.UiTMP                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466549FEC0 0x20 UiTMP                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UIDisplayCamera                           = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 02466549FEE0 0x28 UIDisplayCamera             ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
     // 018 Value                                    000186698B70 ModelPrimitiveType uint uint uint UInt32
-    public partial class UInt32Value
+    public partial class UInt32Value : DataModel
     {
         public uint                                     Value                                   { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UInt32Value();
+            var value   = new UInt32Value() { Pointer= p0 };
 
-            value.Value                                     = GetUInt32(new IntPtr(p + 0x018)); // 0270DA4D5A18 0x18 Value                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Value                                     = GetUInt32(new IntPtr(p + 0x018)); // 02466A541220 0x18 Value                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

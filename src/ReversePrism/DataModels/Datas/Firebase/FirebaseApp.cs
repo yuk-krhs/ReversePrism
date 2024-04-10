@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
     // 02C CheckDependenciesThread                  0001865F38E0 ModelPrimitiveType int int int Int32
     // 030 CheckDependenciesThreadLock              <object> IL2CPP_TYPE_OBJECT
     // 038 AppPlatform                              000186595740 ModelClassType FirebaseAppPlatform FirebaseAppPlatform FirebaseAppPlatform Pointer
-    public partial class FirebaseApp
+    public partial class FirebaseApp : DataModel
     {
         public HandleRef                                SwigCPtr                                { get; set; }
         public bool                                     SwigCMemOwn                             { get; set; }
@@ -44,18 +44,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FirebaseApp();
+            var value   = new FirebaseApp() { Pointer= p0 };
 
-            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 0270DB76F180 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
-            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 0270DB76F1A0 0x20 SwigCMemOwn                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0270DB76F1E0 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.AppDisposed                               = GetObject<EventHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventHandler.FromPointer); // 0270DB76F200 0x30 AppDisposed                 ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
-            value.AppUtilCallbacksInitialized               = GetBool(new IntPtr(p + 0x018)); // 0270DB76F260 0x18 AppUtilCallbacksInitialized ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.PreventOnAllAppsDestroyed                 = GetBool(new IntPtr(p + 0x028)); // 0270DB76F2A0 0x28 PreventOnAllAppsDestroyed   ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.CrashlyticsInitializationAttempted        = GetBool(new IntPtr(p + 0x029)); // 0270DB76F2C0 0x29 CrashlyticsInitializationAttempted ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.UserAgentRegistered                       = GetBool(new IntPtr(p + 0x02A)); // 0270DB76F2E0 0x2A UserAgentRegistered         ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.CheckDependenciesThread                   = GetInt32(new IntPtr(p + 0x02C)); // 0270DB76F340 0x2C CheckDependenciesThread     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.AppPlatform                               = GetObject<FirebaseAppPlatform>(new IntPtr(p + 0x038), ReversePrism.DataModels.FirebaseAppPlatform.FromPointer); // 0270DB76F380 0x38 AppPlatform                 ( 000186595740 ModelClassType FirebaseAppPlatform FirebaseAppPlatform FirebaseAppPlatform Pointer )
+            value.SwigCPtr                                  = (HandleRef)GetInt32(new IntPtr(p + 0x010)); // 02466B7FB400 0x10 SwigCPtr                    ( 0001866A7EC0 ModelEnumType HandleRef HandleRef HandleRef Int32 )
+            value.SwigCMemOwn                               = GetBool(new IntPtr(p + 0x020)); // 02466B7FB420 0x20 SwigCMemOwn                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 02466B7FB460 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.AppDisposed                               = GetObject<EventHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.EventHandler.FromPointer); // 02466B7FB480 0x30 AppDisposed                 ( 000186756FD0 ModelClassType EventHandler EventHandler EventHandler Pointer )
+            value.AppUtilCallbacksInitialized               = GetBool(new IntPtr(p + 0x018)); // 02466B7FB4E0 0x18 AppUtilCallbacksInitialized ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.PreventOnAllAppsDestroyed                 = GetBool(new IntPtr(p + 0x028)); // 02466B7FB520 0x28 PreventOnAllAppsDestroyed   ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.CrashlyticsInitializationAttempted        = GetBool(new IntPtr(p + 0x029)); // 02466B7FB540 0x29 CrashlyticsInitializationAttempted ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.UserAgentRegistered                       = GetBool(new IntPtr(p + 0x02A)); // 02466B7FB560 0x2A UserAgentRegistered         ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.CheckDependenciesThread                   = GetInt32(new IntPtr(p + 0x02C)); // 02466B7FB5C0 0x2C CheckDependenciesThread     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.AppPlatform                               = GetObject<FirebaseAppPlatform>(new IntPtr(p + 0x038), ReversePrism.DataModels.FirebaseAppPlatform.FromPointer); // 02466B7FB600 0x38 AppPlatform                 ( 000186595740 ModelClassType FirebaseAppPlatform FirebaseAppPlatform FirebaseAppPlatform Pointer )
 
             return value;
         }

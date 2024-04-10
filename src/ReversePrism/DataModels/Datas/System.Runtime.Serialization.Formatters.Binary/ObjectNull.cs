@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NullCount                                0001865F2F90 ModelPrimitiveType int int int Int32
-    public partial class ObjectNull
+    public partial class ObjectNull : DataModel
     {
         public int                                      NullCount                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectNull();
+            var value   = new ObjectNull() { Pointer= p0 };
 
-            value.NullCount                                 = GetInt32(new IntPtr(p + 0x010)); // 0270D6C33248 0x10 NullCount                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.NullCount                                 = GetInt32(new IntPtr(p + 0x010)); // 024666CA3248 0x10 NullCount                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

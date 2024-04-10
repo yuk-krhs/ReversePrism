@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 058 ItemName                                 000186671910 ModelPrimitiveType string string string String
     // 060 ItemNamespace                            000186671910 ModelPrimitiveType string string string String
     // 068 Size                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CollectionDataNode
+    public partial class CollectionDataNode : DataModel
     {
         public string                                   ItemName                                { get; set; }
         public string                                   ItemNamespace                           { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CollectionDataNode();
+            var value   = new CollectionDataNode() { Pointer= p0 };
 
-            value.ItemName                                  = GetString(new IntPtr(p + 0x058)); // 0270D7D35988 0x58 ItemName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.ItemNamespace                             = GetString(new IntPtr(p + 0x060)); // 0270D7D359A8 0x60 ItemNamespace               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Size                                      = GetInt32(new IntPtr(p + 0x068)); // 0270D7D359C8 0x68 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ItemName                                  = GetString(new IntPtr(p + 0x058)); // 024667D9D988 0x58 ItemName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.ItemNamespace                             = GetString(new IntPtr(p + 0x060)); // 024667D9D9A8 0x60 ItemNamespace               ( 000186671910 ModelPrimitiveType string string string String )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x068)); // 024667D9D9C8 0x68 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

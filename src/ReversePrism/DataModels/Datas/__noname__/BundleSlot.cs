@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 Seed                                     00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
     // 038 FileEnsured                              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 039 FileExists                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class BundleSlot
+    public partial class BundleSlot : DataModel
     {
         public AssetBundle?                             AB                                      { get; set; }
         public int                                      RefCount                                { get; set; }
@@ -30,14 +30,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BundleSlot();
+            var value   = new BundleSlot() { Pointer= p0 };
 
-            value.AB                                        = GetObject<AssetBundle>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundle.FromPointer); // 027003E181C0 0x10 AB                          ( 0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
-            value.RefCount                                  = GetInt32(new IntPtr(p + 0x018)); // 027003E181E0 0x18 RefCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceType                              = GetInt32(new IntPtr(p + 0x028)); // 027003E18220 0x28 ResourceType                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Seed                                      = GetUInt64(new IntPtr(p + 0x030)); // 027003E18240 0x30 Seed                        ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.FileEnsured                               = GetBool(new IntPtr(p + 0x038)); // 027003E18260 0x38 FileEnsured                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FileExists                                = GetBool(new IntPtr(p + 0x039)); // 027003E18280 0x39 FileExists                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.AB                                        = GetObject<AssetBundle>(new IntPtr(p + 0x010), ReversePrism.DataModels.AssetBundle.FromPointer); // 0245A3E181C0 0x10 AB                          ( 0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
+            value.RefCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A3E181E0 0x18 RefCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ResourceType                              = GetInt32(new IntPtr(p + 0x028)); // 0245A3E18220 0x28 ResourceType                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Seed                                      = GetUInt64(new IntPtr(p + 0x030)); // 0245A3E18240 0x30 Seed                        ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.FileEnsured                               = GetBool(new IntPtr(p + 0x038)); // 0245A3E18260 0x38 FileEnsured                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FileExists                                = GetBool(new IntPtr(p + 0x039)); // 0245A3E18280 0x39 FileExists                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

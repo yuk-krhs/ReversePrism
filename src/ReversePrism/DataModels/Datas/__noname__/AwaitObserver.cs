@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _context                                 SynchronizationContext IL2CPP_TYPE_CLASS
     // 000 _callback                                Action IL2CPP_TYPE_CLASS
-    public partial class AwaitObserver
+    public partial class AwaitObserver : DataModel
     {
 
         public static AwaitObserver? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AwaitObserver();
+            var value   = new AwaitObserver() { Pointer= p0 };
 
 
             return value;

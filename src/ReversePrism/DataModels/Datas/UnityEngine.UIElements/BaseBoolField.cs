@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 438 M_CheckMark                              0001866B3770 ModelClassType VisualElement VisualElement VisualElement Pointer
     // 440 M_Clickable                              0001865B4CF0 ModelClassType Clickable Clickable Clickable Pointer
     // 448 M_OriginalText                           000186671910 ModelPrimitiveType string string string String
-    public partial class BaseBoolField
+    public partial class BaseBoolField : DataModel
     {
         public Label?                                   M_Label                                 { get; set; }
         public VisualElement?                           M_CheckMark                             { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BaseBoolField();
+            var value   = new BaseBoolField() { Pointer= p0 };
 
-            value.M_Label                                   = GetObject<Label>(new IntPtr(p + 0x430), ReversePrism.DataModels.Label.FromPointer); // 0270066F0C28 0x430 M_Label                     ( 000186774FE0 ModelClassType Label Label Label Pointer )
-            value.M_CheckMark                               = GetObject<VisualElement>(new IntPtr(p + 0x438), ReversePrism.DataModels.VisualElement.FromPointer); // 0270066F0C48 0x438 M_CheckMark                 ( 0001866B3770 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_Clickable                               = GetObject<Clickable>(new IntPtr(p + 0x440), ReversePrism.DataModels.Clickable.FromPointer); // 0270066F0C68 0x440 M_Clickable                 ( 0001865B4CF0 ModelClassType Clickable Clickable Clickable Pointer )
-            value.M_OriginalText                            = GetString(new IntPtr(p + 0x448)); // 0270066F0C88 0x448 M_OriginalText              ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Label                                   = GetObject<Label>(new IntPtr(p + 0x430), ReversePrism.DataModels.Label.FromPointer); // 0245A66B3238 0x430 M_Label                     ( 000186774FE0 ModelClassType Label Label Label Pointer )
+            value.M_CheckMark                               = GetObject<VisualElement>(new IntPtr(p + 0x438), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B3258 0x438 M_CheckMark                 ( 0001866B3770 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Clickable                               = GetObject<Clickable>(new IntPtr(p + 0x440), ReversePrism.DataModels.Clickable.FromPointer); // 0245A66B3278 0x440 M_Clickable                 ( 0001865B4CF0 ModelClassType Clickable Clickable Clickable Pointer )
+            value.M_OriginalText                            = GetString(new IntPtr(p + 0x448)); // 0245A66B3298 0x448 M_OriginalText              ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

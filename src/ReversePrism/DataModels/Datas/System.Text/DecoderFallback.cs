@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_replacementFallback                    DecoderFallback IL2CPP_TYPE_CLASS
     // 008 s_exceptionFallback                      DecoderFallback IL2CPP_TYPE_CLASS
-    public partial class DecoderFallback
+    public partial class DecoderFallback : DataModel
     {
 
         public static DecoderFallback? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DecoderFallback();
+            var value   = new DecoderFallback() { Pointer= p0 };
 
 
             return value;

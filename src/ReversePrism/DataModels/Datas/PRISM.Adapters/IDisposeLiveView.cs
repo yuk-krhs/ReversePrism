@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDisposeLiveView
+    public partial class IDisposeLiveView : DataModel
     {
 
         public static IDisposeLiveView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDisposeLiveView();
+            var value   = new IDisposeLiveView() { Pointer= p0 };
 
 
             return value;

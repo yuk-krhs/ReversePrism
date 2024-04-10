@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Default                                  EventKeywords IL2CPP_TYPE_VALUETYPE
     // 000 Debug                                    EventKeywords IL2CPP_TYPE_VALUETYPE
     // 000 EnterExit                                EventKeywords IL2CPP_TYPE_VALUETYPE
-    public partial class Keywords
+    public partial class Keywords : DataModel
     {
 
         public static Keywords? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Keywords();
+            var value   = new Keywords() { Pointer= p0 };
 
 
             return value;

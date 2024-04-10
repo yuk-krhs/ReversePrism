@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 ConditionCheckMarkOn                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 028 ConditionCheckMarkOff                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 030 ConditionText                            0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
-    public partial class SubSeasonDearnessAndFanConditionContent
+    public partial class SubSeasonDearnessAndFanConditionContent : DataModel
     {
         public GameObject?                              ConditionCheckMarkOn                    { get; set; }
         public GameObject?                              ConditionCheckMarkOff                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonDearnessAndFanConditionContent();
+            var value   = new SubSeasonDearnessAndFanConditionContent() { Pointer= p0 };
 
-            value.ConditionCheckMarkOn                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D1FE48 0x20 ConditionCheckMarkOn        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ConditionCheckMarkOff                     = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D1FE68 0x28 ConditionCheckMarkOff       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ConditionText                             = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D1FE88 0x30 ConditionText               ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.ConditionCheckMarkOn                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664D93E48 0x20 ConditionCheckMarkOn        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ConditionCheckMarkOff                     = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664D93E68 0x28 ConditionCheckMarkOff       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ConditionText                             = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D93E88 0x30 ConditionText               ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 TabArray                                 000185B99350 ModelClassListType OurStreamArchiveListHeaderTab[] OurStreamArchiveListHeaderTab[] List<OurStreamArchiveListHeaderTab> Pointer
     // 028 onClickTabSubject                        Subject`1<ValueTuple`2<int, bool>> IL2CPP_TYPE_GENERICINST
     // 030 CurrentTabIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class OurStreamArchiveListHeaderTabGroup
+    public partial class OurStreamArchiveListHeaderTabGroup : DataModel
     {
         public List<OurStreamArchiveListHeaderTab>?     TabArray                                { get; set; }
         public int                                      CurrentTabIndex                         { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OurStreamArchiveListHeaderTabGroup();
+            var value   = new OurStreamArchiveListHeaderTabGroup() { Pointer= p0 };
 
-            value.TabArray                                  = GetObjectList<OurStreamArchiveListHeaderTab>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamArchiveListHeaderTab.FromPointer); // 0270DB1662C0 0x20 TabArray                    ( 000185B99350 ModelClassListType OurStreamArchiveListHeaderTab[] OurStreamArchiveListHeaderTab[] List<OurStreamArchiveListHeaderTab> Pointer )
-            value.CurrentTabIndex                           = GetInt32(new IntPtr(p + 0x030)); // 0270DB166300 0x30 CurrentTabIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TabArray                                  = GetObjectList<OurStreamArchiveListHeaderTab>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamArchiveListHeaderTab.FromPointer); // 02466B1B62C0 0x20 TabArray                    ( 000185B99350 ModelClassListType OurStreamArchiveListHeaderTab[] OurStreamArchiveListHeaderTab[] List<OurStreamArchiveListHeaderTab> Pointer )
+            value.CurrentTabIndex                           = GetInt32(new IntPtr(p + 0x030)); // 02466B1B6300 0x30 CurrentTabIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

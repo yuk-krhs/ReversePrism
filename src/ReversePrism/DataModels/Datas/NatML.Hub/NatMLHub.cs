@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 URL                                      string IL2CPP_TYPE_STRING
-    public partial class NatMLHub
+    public partial class NatMLHub : DataModel
     {
 
         public static NatMLHub? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NatMLHub();
+            var value   = new NatMLHub() { Pointer= p0 };
 
 
             return value;

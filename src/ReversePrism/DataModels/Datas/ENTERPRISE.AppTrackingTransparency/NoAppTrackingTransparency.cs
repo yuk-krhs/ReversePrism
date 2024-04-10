@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NoAppTrackingTransparency
+    public partial class NoAppTrackingTransparency : DataModel
     {
 
         public static NoAppTrackingTransparency? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NoAppTrackingTransparency();
+            var value   = new NoAppTrackingTransparency() { Pointer= p0 };
 
 
             return value;

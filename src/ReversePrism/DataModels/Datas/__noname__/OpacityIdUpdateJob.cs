@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 oldVerts                                 NativeSlice`1<Vertex> IL2CPP_TYPE_GENERICINST
     // 020 newVerts                                 NativeSlice`1<Vertex> IL2CPP_TYPE_GENERICINST
     // 030 OpacityData                              0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32
-    public partial class OpacityIdUpdateJob
+    public partial class OpacityIdUpdateJob : DataModel
     {
         public Color32                                  OpacityData                             { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OpacityIdUpdateJob();
+            var value   = new OpacityIdUpdateJob() { Pointer= p0 };
 
-            value.OpacityData                               = (Color32)GetInt32(new IntPtr(p + 0x030)); // 0270068681C8 0x30 OpacityData                 ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.OpacityData                               = (Color32)GetInt32(new IntPtr(p + 0x030)); // 0245A682A058 0x30 OpacityData                 ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
 
             return value;
         }

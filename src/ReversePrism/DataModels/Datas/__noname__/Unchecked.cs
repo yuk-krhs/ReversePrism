@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class Unchecked
+    public partial class Unchecked : DataModel
     {
 
         public static Unchecked? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Unchecked();
+            var value   = new Unchecked() { Pointer= p0 };
 
 
             return value;

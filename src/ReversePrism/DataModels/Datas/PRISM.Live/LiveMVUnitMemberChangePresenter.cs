@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 090 View                                     000186562060 ModelClassType LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView Pointer
     // 098 IdolListView                             00018655AEA0 ModelClassType LiveMVIdolListView LiveMVIdolListView LiveMVIdolListView Pointer
     // 0A0 JumpParameter                            0001866AFD00 ModelClassType JumpParameter JumpParameter JumpParameter Pointer
-    public partial class LiveMVUnitMemberChangePresenter
+    public partial class LiveMVUnitMemberChangePresenter : DataModel
     {
         public MusicBasicInfoView?                      MusicBasicInfoView                      { get; set; }
         public LiveIdolChangePreview?                   IdolChangePreview                       { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveMVUnitMemberChangePresenter();
+            var value   = new LiveMVUnitMemberChangePresenter() { Pointer= p0 };
 
-            value.MusicBasicInfoView                        = GetObject<MusicBasicInfoView>(new IntPtr(p + 0x080), ReversePrism.DataModels.MusicBasicInfoView.FromPointer); // 0270D51B85F8 0x80 MusicBasicInfoView          ( 0001866630C0 ModelClassType MusicBasicInfoView MusicBasicInfoView MusicBasicInfoView Pointer )
-            value.IdolChangePreview                         = GetObject<LiveIdolChangePreview>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveIdolChangePreview.FromPointer); // 0270D51B8618 0x88 IdolChangePreview           ( 0001865568C0 ModelClassType LiveIdolChangePreview LiveIdolChangePreview LiveIdolChangePreview Pointer )
-            value.View                                      = GetObject<LiveMVUnitMemberChangeView>(new IntPtr(p + 0x090), ReversePrism.DataModels.LiveMVUnitMemberChangeView.FromPointer); // 0270D51B8638 0x90 View                        ( 000186562060 ModelClassType LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView Pointer )
-            value.IdolListView                              = GetObject<LiveMVIdolListView>(new IntPtr(p + 0x098), ReversePrism.DataModels.LiveMVIdolListView.FromPointer); // 0270D51B8658 0x98 IdolListView                ( 00018655AEA0 ModelClassType LiveMVIdolListView LiveMVIdolListView LiveMVIdolListView Pointer )
-            value.JumpParameter                             = GetObject<JumpParameter>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.JumpParameter.FromPointer); // 0270D51B8678 0xA0 JumpParameter               ( 0001866AFD00 ModelClassType JumpParameter JumpParameter JumpParameter Pointer )
+            value.MusicBasicInfoView                        = GetObject<MusicBasicInfoView>(new IntPtr(p + 0x080), ReversePrism.DataModels.MusicBasicInfoView.FromPointer); // 02466521B210 0x80 MusicBasicInfoView          ( 0001866630C0 ModelClassType MusicBasicInfoView MusicBasicInfoView MusicBasicInfoView Pointer )
+            value.IdolChangePreview                         = GetObject<LiveIdolChangePreview>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveIdolChangePreview.FromPointer); // 02466521B230 0x88 IdolChangePreview           ( 0001865568C0 ModelClassType LiveIdolChangePreview LiveIdolChangePreview LiveIdolChangePreview Pointer )
+            value.View                                      = GetObject<LiveMVUnitMemberChangeView>(new IntPtr(p + 0x090), ReversePrism.DataModels.LiveMVUnitMemberChangeView.FromPointer); // 02466521B250 0x90 View                        ( 000186562060 ModelClassType LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView LiveMVUnitMemberChangeView Pointer )
+            value.IdolListView                              = GetObject<LiveMVIdolListView>(new IntPtr(p + 0x098), ReversePrism.DataModels.LiveMVIdolListView.FromPointer); // 02466521B270 0x98 IdolListView                ( 00018655AEA0 ModelClassType LiveMVIdolListView LiveMVIdolListView LiveMVIdolListView Pointer )
+            value.JumpParameter                             = GetObject<JumpParameter>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.JumpParameter.FromPointer); // 02466521B290 0xA0 JumpParameter               ( 0001866AFD00 ModelClassType JumpParameter JumpParameter JumpParameter Pointer )
 
             return value;
         }

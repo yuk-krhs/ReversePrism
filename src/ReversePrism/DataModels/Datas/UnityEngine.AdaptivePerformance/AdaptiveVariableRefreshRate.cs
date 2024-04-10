@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 050 M_VRR                                    0001866929B0 ModelClassType IVariableRefreshRate IVariableRefreshRate IVariableRefreshRate Pointer
     // 058 M_CurrentRefreshRateIndex                0001865F2AF0 ModelPrimitiveType int int int Int32
     // 05C M_DefaultRefreshRateIndex                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class AdaptiveVariableRefreshRate
+    public partial class AdaptiveVariableRefreshRate : DataModel
     {
         public bool                                     M_AdaptiveVRREnabled                    { get; set; }
         public IVariableRefreshRate?                    M_VRR                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveVariableRefreshRate();
+            var value   = new AdaptiveVariableRefreshRate() { Pointer= p0 };
 
-            value.M_AdaptiveVRREnabled                      = GetBool(new IntPtr(p + 0x048)); // 0270DBF1B430 0x48 M_AdaptiveVRREnabled        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_VRR                                     = GetObject<IVariableRefreshRate>(new IntPtr(p + 0x050), ReversePrism.DataModels.IVariableRefreshRate.FromPointer); // 0270DBF1B450 0x50 M_VRR                       ( 0001866929B0 ModelClassType IVariableRefreshRate IVariableRefreshRate IVariableRefreshRate Pointer )
-            value.M_CurrentRefreshRateIndex                 = GetInt32(new IntPtr(p + 0x058)); // 0270DBF1B470 0x58 M_CurrentRefreshRateIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_DefaultRefreshRateIndex                 = GetInt32(new IntPtr(p + 0x05C)); // 0270DBF1B490 0x5C M_DefaultRefreshRateIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_AdaptiveVRREnabled                      = GetBool(new IntPtr(p + 0x048)); // 02466BFB3298 0x48 M_AdaptiveVRREnabled        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_VRR                                     = GetObject<IVariableRefreshRate>(new IntPtr(p + 0x050), ReversePrism.DataModels.IVariableRefreshRate.FromPointer); // 02466BFB32B8 0x50 M_VRR                       ( 0001866929B0 ModelClassType IVariableRefreshRate IVariableRefreshRate IVariableRefreshRate Pointer )
+            value.M_CurrentRefreshRateIndex                 = GetInt32(new IntPtr(p + 0x058)); // 02466BFB32D8 0x58 M_CurrentRefreshRateIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_DefaultRefreshRateIndex                 = GetInt32(new IntPtr(p + 0x05C)); // 02466BFB32F8 0x5C M_DefaultRefreshRateIndex   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

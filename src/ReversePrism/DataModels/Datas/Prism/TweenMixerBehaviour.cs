@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 M_ShouldInitializeTransform              000186594D10 ModelPrimitiveType bool bool bool Bool
     // 014 M_InitialPosition                        0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 020 M_InitialRotation                        000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32
-    public partial class TweenMixerBehaviour
+    public partial class TweenMixerBehaviour : DataModel
     {
         public bool                                     M_ShouldInitializeTransform             { get; set; }
         public Vector3                                  M_InitialPosition                       { get; set; }
@@ -24,11 +24,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TweenMixerBehaviour();
+            var value   = new TweenMixerBehaviour() { Pointer= p0 };
 
-            value.M_ShouldInitializeTransform               = GetBool(new IntPtr(p + 0x010)); // 0270D4E16F40 0x10 M_ShouldInitializeTransform ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_InitialPosition                         = (Vector3)GetInt32(new IntPtr(p + 0x014)); // 0270D4E16F60 0x14 M_InitialPosition           ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_InitialRotation                         = (Quaternion)GetInt32(new IntPtr(p + 0x020)); // 0270D4E16F80 0x20 M_InitialRotation           ( 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.M_ShouldInitializeTransform               = GetBool(new IntPtr(p + 0x010)); // 024664E8C350 0x10 M_ShouldInitializeTransform ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_InitialPosition                         = (Vector3)GetInt32(new IntPtr(p + 0x014)); // 024664E8C370 0x14 M_InitialPosition           ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_InitialRotation                         = (Quaternion)GetInt32(new IntPtr(p + 0x020)); // 024664E8C390 0x20 M_InitialRotation           ( 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32 )
 
             return value;
         }

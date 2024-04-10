@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetDocumentArgs
+    public partial class IGetDocumentArgs : DataModel
     {
 
         public static IGetDocumentArgs? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetDocumentArgs();
+            var value   = new IGetDocumentArgs() { Pointer= p0 };
 
 
             return value;

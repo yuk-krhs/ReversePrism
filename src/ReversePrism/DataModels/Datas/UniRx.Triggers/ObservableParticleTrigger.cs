@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 onParticleCollision                      Subject`1<GameObject> IL2CPP_TYPE_GENERICINST
     // 058 onParticleTrigger                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableParticleTrigger
+    public partial class ObservableParticleTrigger : DataModel
     {
 
         public static ObservableParticleTrigger? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableParticleTrigger();
+            var value   = new ObservableParticleTrigger() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 parent                                   WhereObservable`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 index                                    int IL2CPP_TYPE_I4
-    public partial class Where_
+    public partial class Where_ : DataModel
     {
 
         public static Where_? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Where_();
+            var value   = new Where_() { Pointer= p0 };
 
 
             return value;

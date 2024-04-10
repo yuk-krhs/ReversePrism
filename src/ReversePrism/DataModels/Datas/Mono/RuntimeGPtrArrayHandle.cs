@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 value                                    IntPtr IL2CPP_TYPE_PTR
-    public partial class RuntimeGPtrArrayHandle
+    public partial class RuntimeGPtrArrayHandle : DataModel
     {
 
         public static RuntimeGPtrArrayHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeGPtrArrayHandle();
+            var value   = new RuntimeGPtrArrayHandle() { Pointer= p0 };
 
 
             return value;

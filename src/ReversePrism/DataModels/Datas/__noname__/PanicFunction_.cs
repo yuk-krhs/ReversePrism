@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PanicFunction_
+    public partial class PanicFunction_ : DataModel
     {
 
         public static PanicFunction_? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PanicFunction_();
+            var value   = new PanicFunction_() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Node                                     000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer
     // 018 _instance                                <object> IL2CPP_TYPE_OBJECT
-    public partial class DefaultExtendedTypeDescriptor
+    public partial class DefaultExtendedTypeDescriptor : DataModel
     {
         public TypeDescriptionNode?                     Node                                    { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultExtendedTypeDescriptor();
+            var value   = new DefaultExtendedTypeDescriptor() { Pointer= p0 };
 
-            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 0270D7B3CE08 0x10 Node                        ( 000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
+            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 024667BA4E08 0x10 Node                        ( 000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
 
             return value;
         }

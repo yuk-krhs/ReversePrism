@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 020 Offset                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 024 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 constStrings                             string[] IL2CPP_TYPE_SZARRAY
-    public partial class StringHandle
+    public partial class StringHandle : DataModel
     {
         public XmlBufferReader?                         BufferReader                            { get; set; }
         public StringHandleType                         Type                                    { get; set; }
@@ -28,13 +28,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StringHandle();
+            var value   = new StringHandle() { Pointer= p0 };
 
-            value.BufferReader                              = GetObject<XmlBufferReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlBufferReader.FromPointer); // 027004C53930 0x10 BufferReader                ( 00018658E370 ModelClassType XmlBufferReader XmlBufferReader XmlBufferReader Pointer )
-            value.Type                                      = (StringHandleType)GetInt32(new IntPtr(p + 0x018)); // 027004C53950 0x18 Type                        ( 0001865992B0 ModelEnumType StringHandleType StringHandleType StringHandleType Int32 )
-            value.Key                                       = GetInt32(new IntPtr(p + 0x01C)); // 027004C53970 0x1C Key                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x020)); // 027004C53990 0x20 Offset                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 027004C539B0 0x24 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BufferReader                              = GetObject<XmlBufferReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlBufferReader.FromPointer); // 0245A4C97478 0x10 BufferReader                ( 00018658E370 ModelClassType XmlBufferReader XmlBufferReader XmlBufferReader Pointer )
+            value.Type                                      = (StringHandleType)GetInt32(new IntPtr(p + 0x018)); // 0245A4C97498 0x18 Type                        ( 0001865992B0 ModelEnumType StringHandleType StringHandleType StringHandleType Int32 )
+            value.Key                                       = GetInt32(new IntPtr(p + 0x01C)); // 0245A4C974B8 0x1C Key                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x020)); // 0245A4C974D8 0x20 Offset                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 0245A4C974F8 0x24 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

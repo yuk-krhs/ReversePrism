@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OverlaySequenceExtension
+    public partial class OverlaySequenceExtension : DataModel
     {
 
         public static OverlaySequenceExtension? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OverlaySequenceExtension();
+            var value   = new OverlaySequenceExtension() { Pointer= p0 };
 
 
             return value;

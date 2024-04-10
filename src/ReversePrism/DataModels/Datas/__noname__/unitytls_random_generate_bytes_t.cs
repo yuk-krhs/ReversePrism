@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class unitytls_random_generate_bytes_t
+    public partial class unitytls_random_generate_bytes_t : DataModel
     {
 
         public static unitytls_random_generate_bytes_t? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new unitytls_random_generate_bytes_t();
+            var value   = new unitytls_random_generate_bytes_t() { Pointer= p0 };
 
 
             return value;

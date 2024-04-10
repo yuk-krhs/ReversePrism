@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_UseYSign                               bool IL2CPP_TYPE_BOOLEAN
-    public partial class NumericFieldDraggerUtility
+    public partial class NumericFieldDraggerUtility : DataModel
     {
 
         public static NumericFieldDraggerUtility? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NumericFieldDraggerUtility();
+            var value   = new NumericFieldDraggerUtility() { Pointer= p0 };
 
 
             return value;

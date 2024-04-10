@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ITimeProvider
+    public partial class ITimeProvider : DataModel
     {
 
         public static ITimeProvider? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ITimeProvider();
+            var value   = new ITimeProvider() { Pointer= p0 };
 
 
             return value;

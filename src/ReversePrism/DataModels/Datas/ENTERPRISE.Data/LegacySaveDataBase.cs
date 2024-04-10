@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 property                                 SavableProperty`1<string> IL2CPP_TYPE_GENERICINST
-    public partial class LegacySaveDataBase
+    public partial class LegacySaveDataBase : DataModel
     {
 
         public static LegacySaveDataBase? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LegacySaveDataBase();
+            var value   = new LegacySaveDataBase() { Pointer= p0 };
 
 
             return value;

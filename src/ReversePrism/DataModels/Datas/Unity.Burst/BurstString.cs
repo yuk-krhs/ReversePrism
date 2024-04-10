@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
     // 000 DoubleNumberBufferLength                 int IL2CPP_TYPE_I4
     // 000 SinglePrecisionCustomFormat              int IL2CPP_TYPE_I4
     // 000 DoublePrecisionCustomFormat              int IL2CPP_TYPE_I4
-    public partial class BurstString
+    public partial class BurstString : DataModel
     {
         public List<uint>?                              G_PowerOf10_U32                         { get; set; }
         public List<sbyte>?                             InfinityString                          { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BurstString();
+            var value   = new BurstString() { Pointer= p0 };
 
-            value.G_PowerOf10_U32                           = GetUInt32List(new IntPtr(p + 0x010)); // 0270DA8AA1B0 0x10 G_PowerOf10_U32             ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.InfinityString                            = GetSByteList(new IntPtr(p + 0x018)); // 0270DA8AA1D0 0x18 InfinityString              ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.NanString                                 = GetSByteList(new IntPtr(p + 0x020)); // 0270DA8AA1F0 0x20 NanString                   ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.G_PowerOf10_U32                           = GetUInt32List(new IntPtr(p + 0x010)); // 02466A90F008 0x10 G_PowerOf10_U32             ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.InfinityString                            = GetSByteList(new IntPtr(p + 0x018)); // 02466A90F028 0x18 InfinityString              ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.NanString                                 = GetSByteList(new IntPtr(p + 0x020)); // 02466A90F048 0x20 NanString                   ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

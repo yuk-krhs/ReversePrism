@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DOTweenAsyncExtensions
+    public partial class DOTweenAsyncExtensions : DataModel
     {
 
         public static DOTweenAsyncExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DOTweenAsyncExtensions();
+            var value   = new DOTweenAsyncExtensions() { Pointer= p0 };
 
 
             return value;

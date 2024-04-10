@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Nop                                      Action IL2CPP_TYPE_CLASS
     // 008 Throw                                    Action`1<Exception> IL2CPP_TYPE_GENERICINST
-    public partial class Stubs
+    public partial class Stubs : DataModel
     {
 
         public static Stubs? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Stubs();
+            var value   = new Stubs() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class DisposeHelper
+    public partial class DisposeHelper : DataModel
     {
 
         public static DisposeHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DisposeHelper();
+            var value   = new DisposeHelper() { Pointer= p0 };
 
 
             return value;

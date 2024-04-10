@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Runner                                   0001865E4180 ModelClassType IStateMachineRunner IStateMachineRunner IStateMachineRunner Pointer
-    public partial class AsyncUniTaskVoidMethodBuilder
+    public partial class AsyncUniTaskVoidMethodBuilder : DataModel
     {
         public IStateMachineRunner?                     Runner                                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AsyncUniTaskVoidMethodBuilder();
+            var value   = new AsyncUniTaskVoidMethodBuilder() { Pointer= p0 };
 
-            value.Runner                                    = GetObject<IStateMachineRunner>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStateMachineRunner.FromPointer); // 027003DDA260 0x10 Runner                      ( 0001865E4180 ModelClassType IStateMachineRunner IStateMachineRunner IStateMachineRunner Pointer )
+            value.Runner                                    = GetObject<IStateMachineRunner>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStateMachineRunner.FromPointer); // 0245A3DDA260 0x10 Runner                      ( 0001865E4180 ModelClassType IStateMachineRunner IStateMachineRunner IStateMachineRunner Pointer )
 
             return value;
         }

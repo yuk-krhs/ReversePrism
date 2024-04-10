@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 IdolId                                   0001865F4260 ModelPrimitiveType int int int Int32
     // 018 IdolStories                              000185CFE358 ModelClassListType IReadOnlyList`1<IIdolStoryStatus> IReadOnlyList`1<IIdolStoryStatus> List<IIdolStoryStatus> Pointer
-    public partial class IdolStoryLastCategoryModel
+    public partial class IdolStoryLastCategoryModel : DataModel
     {
         public int                                      IdolId                                  { get; set; }
         public List<IIdolStoryStatus>?                  IdolStories                             { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolStoryLastCategoryModel();
+            var value   = new IdolStoryLastCategoryModel() { Pointer= p0 };
 
-            value.IdolId                                    = GetInt32(new IntPtr(p + 0x010)); // 0270D67BA6F0 0x10 IdolId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IdolStories                               = GetObjectList<IIdolStoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IIdolStoryStatus.FromPointer); // 0270D67BA710 0x18 IdolStories                 ( 000185CFE358 ModelClassListType IReadOnlyList`1<IIdolStoryStatus> IReadOnlyList`1<IIdolStoryStatus> List<IIdolStoryStatus> Pointer )
+            value.IdolId                                    = GetInt32(new IntPtr(p + 0x010)); // 02466681A6F0 0x10 IdolId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.IdolStories                               = GetObjectList<IIdolStoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IIdolStoryStatus.FromPointer); // 02466681A710 0x18 IdolStories                 ( 000185CFE358 ModelClassListType IReadOnlyList`1<IIdolStoryStatus> IReadOnlyList`1<IIdolStoryStatus> List<IIdolStoryStatus> Pointer )
 
             return value;
         }

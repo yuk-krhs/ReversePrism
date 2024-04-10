@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 01D GenerateCBuffer                          000186595960 ModelPrimitiveType bool bool bool Bool
     // 020 ConstantRegister                         0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 SourcePath                               0001866722E0 ModelPrimitiveType string string string String
-    public partial class GenerateHLSL
+    public partial class GenerateHLSL : DataModel
     {
         public PackingRules                             PackingRules                            { get; set; }
         public bool                                     ContainsPackedFields                    { get; set; }
@@ -37,18 +37,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GenerateHLSL();
+            var value   = new GenerateHLSL() { Pointer= p0 };
 
-            value.PackingRules                              = (PackingRules)GetInt32(new IntPtr(p + 0x010)); // 0270D925BE48 0x10 PackingRules                ( 000186712490 ModelEnumType PackingRules PackingRules PackingRules Int32 )
-            value.ContainsPackedFields                      = GetBool(new IntPtr(p + 0x014)); // 0270D925BE68 0x14 ContainsPackedFields        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedAccessors                             = GetBool(new IntPtr(p + 0x015)); // 0270D925BE88 0x15 NeedAccessors               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedSetters                               = GetBool(new IntPtr(p + 0x016)); // 0270D925BEA8 0x16 NeedSetters                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedParamDebug                            = GetBool(new IntPtr(p + 0x017)); // 0270D925BEC8 0x17 NeedParamDebug              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ParamDefinesStart                         = GetInt32(new IntPtr(p + 0x018)); // 0270D925BEE8 0x18 ParamDefinesStart           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.OmitStructDeclaration                     = GetBool(new IntPtr(p + 0x01C)); // 0270D925BF08 0x1C OmitStructDeclaration       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.GenerateCBuffer                           = GetBool(new IntPtr(p + 0x01D)); // 0270D925BF28 0x1D GenerateCBuffer             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ConstantRegister                          = GetInt32(new IntPtr(p + 0x020)); // 0270D925BF48 0x20 ConstantRegister            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SourcePath                                = GetString(new IntPtr(p + 0x028)); // 0270D925BF68 0x28 SourcePath                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.PackingRules                              = (PackingRules)GetInt32(new IntPtr(p + 0x010)); // 0246692BDBC8 0x10 PackingRules                ( 000186712490 ModelEnumType PackingRules PackingRules PackingRules Int32 )
+            value.ContainsPackedFields                      = GetBool(new IntPtr(p + 0x014)); // 0246692BDBE8 0x14 ContainsPackedFields        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NeedAccessors                             = GetBool(new IntPtr(p + 0x015)); // 0246692BDC08 0x15 NeedAccessors               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NeedSetters                               = GetBool(new IntPtr(p + 0x016)); // 0246692BDC28 0x16 NeedSetters                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.NeedParamDebug                            = GetBool(new IntPtr(p + 0x017)); // 0246692BDC48 0x17 NeedParamDebug              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ParamDefinesStart                         = GetInt32(new IntPtr(p + 0x018)); // 0246692BDC68 0x18 ParamDefinesStart           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.OmitStructDeclaration                     = GetBool(new IntPtr(p + 0x01C)); // 0246692BDC88 0x1C OmitStructDeclaration       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.GenerateCBuffer                           = GetBool(new IntPtr(p + 0x01D)); // 0246692BDCA8 0x1D GenerateCBuffer             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ConstantRegister                          = GetInt32(new IntPtr(p + 0x020)); // 0246692BDCC8 0x20 ConstantRegister            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SourcePath                                = GetString(new IntPtr(p + 0x028)); // 0246692BDCE8 0x28 SourcePath                  ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

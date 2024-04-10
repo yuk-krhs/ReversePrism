@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 090 IsNetworkError                           000186594D10 ModelPrimitiveType bool bool bool Bool
     // 094 StatusCode                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 098 Result                                   000186613AC0 ModelEnumType RawResult RawResult RawResult Int32
-    public partial class HttpException
+    public partial class HttpException : DataModel
     {
         public bool                                     IsNetworkError                          { get; set; }
         public int                                      StatusCode                              { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HttpException();
+            var value   = new HttpException() { Pointer= p0 };
 
-            value.IsNetworkError                            = GetBool(new IntPtr(p + 0x090)); // 0270DB482C40 0x90 IsNetworkError              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StatusCode                                = GetInt32(new IntPtr(p + 0x094)); // 0270DB482C60 0x94 StatusCode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Result                                    = (RawResult)GetInt32(new IntPtr(p + 0x098)); // 0270DB482C80 0x98 Result                      ( 000186613AC0 ModelEnumType RawResult RawResult RawResult Int32 )
+            value.IsNetworkError                            = GetBool(new IntPtr(p + 0x090)); // 02466B50FB70 0x90 IsNetworkError              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StatusCode                                = GetInt32(new IntPtr(p + 0x094)); // 02466B50FB90 0x94 StatusCode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Result                                    = (RawResult)GetInt32(new IntPtr(p + 0x098)); // 02466B50FBB0 0x98 Result                      ( 000186613AC0 ModelEnumType RawResult RawResult RawResult Int32 )
 
             return value;
         }

@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 028 UnlockPremiseIdolBaseDearness            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseMstIdolStoryIdFieldNumber   int IL2CPP_TYPE_I4
     // 02C UnlockPremiseMstIdolStoryId              0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class IdolStoryStatus
+    public partial class IdolStoryStatus : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
         public int                                      MstIdolId                               { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolStoryStatus();
+            var value   = new IdolStoryStatus() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0270D2A38C98 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D2A38CD8 0x20 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D2A38D18 0x24 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseIdolBaseDearness             = GetInt32(new IntPtr(p + 0x028)); // 0270D2A38D58 0x28 UnlockPremiseIdolBaseDearness ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseMstIdolStoryId               = GetInt32(new IntPtr(p + 0x02C)); // 0270D2A38D98 0x2C UnlockPremiseMstIdolStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629BF538 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 0246629BF578 0x20 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x024)); // 0246629BF5B8 0x24 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseIdolBaseDearness             = GetInt32(new IntPtr(p + 0x028)); // 0246629BF5F8 0x28 UnlockPremiseIdolBaseDearness ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseMstIdolStoryId               = GetInt32(new IntPtr(p + 0x02C)); // 0246629BF638 0x2C UnlockPremiseMstIdolStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

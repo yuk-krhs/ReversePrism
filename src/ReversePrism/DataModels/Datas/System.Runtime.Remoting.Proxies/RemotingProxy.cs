@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 050 Sink                                     0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
     // 058 HasEnvoySink                             000186594D10 ModelPrimitiveType bool bool bool Bool
     // 060 CtorCall                                 00018660E150 ModelClassType ConstructionCall ConstructionCall ConstructionCall Pointer
-    public partial class RemotingProxy
+    public partial class RemotingProxy : DataModel
     {
         public IMessageSink?                            Sink                                    { get; set; }
         public bool                                     HasEnvoySink                            { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RemotingProxy();
+            var value   = new RemotingProxy() { Pointer= p0 };
 
-            value.Sink                                      = GetObject<IMessageSink>(new IntPtr(p + 0x050), ReversePrism.DataModels.IMessageSink.FromPointer); // 0270D6BBB950 0x50 Sink                        ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.HasEnvoySink                              = GetBool(new IntPtr(p + 0x058)); // 0270D6BBB970 0x58 HasEnvoySink                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CtorCall                                  = GetObject<ConstructionCall>(new IntPtr(p + 0x060), ReversePrism.DataModels.ConstructionCall.FromPointer); // 0270D6BBB990 0x60 CtorCall                    ( 00018660E150 ModelClassType ConstructionCall ConstructionCall ConstructionCall Pointer )
+            value.Sink                                      = GetObject<IMessageSink>(new IntPtr(p + 0x050), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C33950 0x50 Sink                        ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.HasEnvoySink                              = GetBool(new IntPtr(p + 0x058)); // 024666C33970 0x58 HasEnvoySink                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CtorCall                                  = GetObject<ConstructionCall>(new IntPtr(p + 0x060), ReversePrism.DataModels.ConstructionCall.FromPointer); // 024666C33990 0x60 CtorCall                    ( 00018660E150 ModelClassType ConstructionCall ConstructionCall ConstructionCall Pointer )
 
             return value;
         }

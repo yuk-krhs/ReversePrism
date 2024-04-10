@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 AnnounceList                             000185CCE1F8 ModelClassListType RepeatedField`1<AnnounceStatus> RepeatedField`1<AnnounceStatus> List<AnnounceStatus> Pointer
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
     // 020 Cursor                                   000186671910 ModelPrimitiveType string string string String
-    public partial class GetTitleAnnounceListReply
+    public partial class GetTitleAnnounceListReply : DataModel
     {
         public List<AnnounceStatus>?                    AnnounceList                            { get; set; }
         public string                                   Cursor                                  { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTitleAnnounceListReply();
+            var value   = new GetTitleAnnounceListReply() { Pointer= p0 };
 
-            value.AnnounceList                              = GetObjectList<AnnounceStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnnounceStatus.FromPointer); // 0270D2B613D0 0x18 AnnounceList                ( 000185CCE1F8 ModelClassListType RepeatedField`1<AnnounceStatus> RepeatedField`1<AnnounceStatus> List<AnnounceStatus> Pointer )
-            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0270D2B61410 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.AnnounceList                              = GetObjectList<AnnounceStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnnounceStatus.FromPointer); // 024662AE9F20 0x18 AnnounceList                ( 000185CCE1F8 ModelClassListType RepeatedField`1<AnnounceStatus> RepeatedField`1<AnnounceStatus> List<AnnounceStatus> Pointer )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 024662AE9F60 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

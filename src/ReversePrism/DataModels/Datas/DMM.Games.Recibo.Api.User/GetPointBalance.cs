@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetPointBalance
+    public partial class GetPointBalance : DataModel
     {
 
         public static GetPointBalance? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetPointBalance();
+            var value   = new GetPointBalance() { Pointer= p0 };
 
 
             return value;

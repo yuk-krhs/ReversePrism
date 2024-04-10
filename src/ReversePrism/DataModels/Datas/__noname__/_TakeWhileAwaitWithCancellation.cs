@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 predicate                                Func`3<<var>, CancellationToken, UniTask`1<bool>> IL2CPP_TYPE_GENERICINST
-    public partial class _TakeWhileAwaitWithCancellation
+    public partial class _TakeWhileAwaitWithCancellation : DataModel
     {
 
         public static _TakeWhileAwaitWithCancellation? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new _TakeWhileAwaitWithCancellation();
+            var value   = new _TakeWhileAwaitWithCancellation() { Pointer= p0 };
 
 
             return value;

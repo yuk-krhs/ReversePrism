@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Instance                                 DateTimeArrayHelperWithDictionaryString IL2CPP_TYPE_CLASS
-    public partial class DateTimeArrayHelperWithDictionaryString
+    public partial class DateTimeArrayHelperWithDictionaryString : DataModel
     {
 
         public static DateTimeArrayHelperWithDictionaryString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DateTimeArrayHelperWithDictionaryString();
+            var value   = new DateTimeArrayHelperWithDictionaryString() { Pointer= p0 };
 
 
             return value;

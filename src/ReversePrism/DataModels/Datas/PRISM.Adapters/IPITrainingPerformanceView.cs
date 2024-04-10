@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IPITrainingPerformanceView
+    public partial class IPITrainingPerformanceView : DataModel
     {
 
         public static IPITrainingPerformanceView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IPITrainingPerformanceView();
+            var value   = new IPITrainingPerformanceView() { Pointer= p0 };
 
 
             return value;

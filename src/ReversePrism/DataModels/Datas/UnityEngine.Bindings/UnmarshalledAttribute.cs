@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnmarshalledAttribute
+    public partial class UnmarshalledAttribute : DataModel
     {
 
         public static UnmarshalledAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnmarshalledAttribute();
+            var value   = new UnmarshalledAttribute() { Pointer= p0 };
 
 
             return value;

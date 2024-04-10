@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 FesUnitIdListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_fesUnitIdList_codec            FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
     // 018 FesUnitIdList                            000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
-    public partial class GetFesUnitIDListUsingForPvpEventReply
+    public partial class GetFesUnitIDListUsingForPvpEventReply : DataModel
     {
         public List<string>?                            FesUnitIdList                           { get; set; }
 
@@ -23,9 +23,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetFesUnitIDListUsingForPvpEventReply();
+            var value   = new GetFesUnitIDListUsingForPvpEventReply() { Pointer= p0 };
 
-            value.FesUnitIdList                             = GetStringList(new IntPtr(p + 0x018)); // 0270D13217D0 0x18 FesUnitIdList               ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.FesUnitIdList                             = GetStringList(new IntPtr(p + 0x018)); // 0246612A42B8 0x18 FesUnitIdList               ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

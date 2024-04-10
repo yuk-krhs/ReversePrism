@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstMedalGashaIdFieldNumber               int IL2CPP_TYPE_I4
     // 018 MstMedalGashaId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class GetMedalGashaArgs
+    public partial class GetMedalGashaArgs : DataModel
     {
         public int                                      MstMedalGashaId                         { get; set; }
 
@@ -22,9 +22,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetMedalGashaArgs();
+            var value   = new GetMedalGashaArgs() { Pointer= p0 };
 
-            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x018)); // 0270D2289710 0x18 MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstMedalGashaId                           = GetInt32(new IntPtr(p + 0x018)); // 024662201220 0x18 MstMedalGashaId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

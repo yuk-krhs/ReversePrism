@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class FakeTransactionHistoryExtensions
+    public partial class FakeTransactionHistoryExtensions : DataModel
     {
 
         public static FakeTransactionHistoryExtensions? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FakeTransactionHistoryExtensions();
+            var value   = new FakeTransactionHistoryExtensions() { Pointer= p0 };
 
 
             return value;

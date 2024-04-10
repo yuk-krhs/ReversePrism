@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
     // 000 CostumeListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_costumeList_codec              FieldCodec`1<IdolBaseCostumeStatus> IL2CPP_TYPE_GENERICINST
     // 058 CostumeList                              000185CDEF68 ModelClassListType RepeatedField`1<IdolBaseCostumeStatus> RepeatedField`1<IdolBaseCostumeStatus> List<IdolBaseCostumeStatus> Pointer
-    public partial class IdolBaseStatus
+    public partial class IdolBaseStatus : DataModel
     {
         public string                                   IdolBaseId                              { get; set; }
         public int                                      MstIdolId                               { get; set; }
@@ -47,17 +47,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IdolBaseStatus();
+            var value   = new IdolBaseStatus() { Pointer= p0 };
 
-            value.IdolBaseId                                = GetString(new IntPtr(p + 0x018)); // 0270D1CEC5F0 0x18 IdolBaseId                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D1CEC630 0x20 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<IdolParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 0270D1CEC670 0x28 Parameter                   ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
-            value.Fan                                       = GetInt64(new IntPtr(p + 0x030)); // 0270D1CEC6B0 0x30 Fan                         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.IdolLevel                                 = GetObject<LimitedValueStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1CEC6F0 0x38 IdolLevel                   ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.IdolLevelExp                              = GetObject<LimitedValueStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1CEC730 0x40 IdolLevelExp                ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.DearnessLevel                             = GetObject<LimitedValueStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1CEC770 0x48 DearnessLevel               ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.DearnessLevelExp                          = GetObject<LimitedValueStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0270D1CEC7B0 0x50 DearnessLevelExp            ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.CostumeList                               = GetObjectList<IdolBaseCostumeStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IdolBaseCostumeStatus.FromPointer); // 0270D1CEC810 0x58 CostumeList                 ( 000185CDEF68 ModelClassListType RepeatedField`1<IdolBaseCostumeStatus> RepeatedField`1<IdolBaseCostumeStatus> List<IdolBaseCostumeStatus> Pointer )
+            value.IdolBaseId                                = GetString(new IntPtr(p + 0x018)); // 024661CA4DA8 0x18 IdolBaseId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 024661CA4DE8 0x20 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<IdolParameterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 024661CA4E28 0x28 Parameter                   ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
+            value.Fan                                       = GetInt64(new IntPtr(p + 0x030)); // 024661CA4E68 0x30 Fan                         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.IdolLevel                                 = GetObject<LimitedValueStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024661CA4EA8 0x38 IdolLevel                   ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.IdolLevelExp                              = GetObject<LimitedValueStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024661CA4EE8 0x40 IdolLevelExp                ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.DearnessLevel                             = GetObject<LimitedValueStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024661CA4F28 0x48 DearnessLevel               ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.DearnessLevelExp                          = GetObject<LimitedValueStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 024661CA4F68 0x50 DearnessLevelExp            ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.CostumeList                               = GetObjectList<IdolBaseCostumeStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IdolBaseCostumeStatus.FromPointer); // 024661CA4FC8 0x58 CostumeList                 ( 000185CDEF68 ModelClassListType RepeatedField`1<IdolBaseCostumeStatus> RepeatedField`1<IdolBaseCostumeStatus> List<IdolBaseCostumeStatus> Pointer )
 
             return value;
         }

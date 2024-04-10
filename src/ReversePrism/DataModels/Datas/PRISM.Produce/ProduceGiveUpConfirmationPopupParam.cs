@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 090 GiveupMessage                            0001866722E0 ModelPrimitiveType string string string String
-    public partial class ProduceGiveUpConfirmationPopupParam
+    public partial class ProduceGiveUpConfirmationPopupParam : DataModel
     {
         public string                                   GiveupMessage                           { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceGiveUpConfirmationPopupParam();
+            var value   = new ProduceGiveUpConfirmationPopupParam() { Pointer= p0 };
 
-            value.GiveupMessage                             = GetString(new IntPtr(p + 0x090)); // 0270D5C83028 0x90 GiveupMessage               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.GiveupMessage                             = GetString(new IntPtr(p + 0x090)); // 024665CF3AE8 0x90 GiveupMessage               ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

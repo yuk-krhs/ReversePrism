@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Changed                                  000185B98AE0 ModelClassListType Object[] Object[] List<Object> Pointer
     // 018 changedID                                NativeArray`1<int> IL2CPP_TYPE_GENERICINST
     // 028 destroyedID                              NativeArray`1<int> IL2CPP_TYPE_GENERICINST
-    public partial class TypeDispatchData
+    public partial class TypeDispatchData : DataModel
     {
         public List<Object>?                            Changed                                 { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeDispatchData();
+            var value   = new TypeDispatchData() { Pointer= p0 };
 
-            value.Changed                                   = GetObjectList<Object>(new IntPtr(p + 0x010), ReversePrism.DataModels.Object.FromPointer); // 0270068B1968 0x10 Changed                     ( 000185B98AE0 ModelClassListType Object[] Object[] List<Object> Pointer )
+            value.Changed                                   = GetObjectList<Object>(new IntPtr(p + 0x010), ReversePrism.DataModels.Object.FromPointer); // 0245A6874018 0x10 Changed                     ( 000185B98AE0 ModelClassListType Object[] Object[] List<Object> Pointer )
 
             return value;
         }

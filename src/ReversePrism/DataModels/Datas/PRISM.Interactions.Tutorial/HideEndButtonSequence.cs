@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class HideEndButtonSequence
+    public partial class HideEndButtonSequence : DataModel
     {
 
         public static HideEndButtonSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HideEndButtonSequence();
+            var value   = new HideEndButtonSequence() { Pointer= p0 };
 
 
             return value;

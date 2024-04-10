@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class SecureStringAllocator
+    public partial class SecureStringAllocator : DataModel
     {
 
         public static SecureStringAllocator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SecureStringAllocator();
+            var value   = new SecureStringAllocator() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 NativeCredentials                        000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer
-    public partial class DefaultCallCredentialsConfigurator
+    public partial class DefaultCallCredentialsConfigurator : DataModel
     {
         public CallCredentialsSafeHandle?               NativeCredentials                       { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultCallCredentialsConfigurator();
+            var value   = new DefaultCallCredentialsConfigurator() { Pointer= p0 };
 
-            value.NativeCredentials                         = GetObject<CallCredentialsSafeHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallCredentialsSafeHandle.FromPointer); // 0270D93ABDE0 0x10 NativeCredentials           ( 000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer )
+            value.NativeCredentials                         = GetObject<CallCredentialsSafeHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallCredentialsSafeHandle.FromPointer); // 02466940E0E0 0x10 NativeCredentials           ( 000186527030 ModelClassType CallCredentialsSafeHandle CallCredentialsSafeHandle CallCredentialsSafeHandle Pointer )
 
             return value;
         }

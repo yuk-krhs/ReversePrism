@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
     // 018 CardIds                                  000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    public partial class ProduceTutorialSetStartTargetCardListEvent
+    public partial class ProduceTutorialSetStartTargetCardListEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
         public List<int>?                               CardIds                                 { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTutorialSetStartTargetCardListEvent();
+            var value   = new ProduceTutorialSetStartTargetCardListEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0270D5D4A288 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.CardIds                                   = GetInt32List(new IntPtr(p + 0x018)); // 0270D5D4A2A8 0x18 CardIds                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DBAFA0 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.CardIds                                   = GetInt32List(new IntPtr(p + 0x018)); // 024665DBAFC0 0x18 CardIds                     ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

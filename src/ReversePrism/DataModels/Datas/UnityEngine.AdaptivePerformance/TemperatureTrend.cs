@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
     // 04C M_NextValueIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 050 M_OldestValueIndex                       0001865F2AF0 ModelPrimitiveType int int int Int32
     // 054 ThermalTrend                             0001866656B0 ModelPrimitiveType float float float Single
-    public partial class TemperatureTrend
+    public partial class TemperatureTrend : DataModel
     {
         public bool                                     M_UseProviderTrend                      { get; set; }
         public double                                   M_SumX                                  { get; set; }
@@ -43,19 +43,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TemperatureTrend();
+            var value   = new TemperatureTrend() { Pointer= p0 };
 
-            value.M_UseProviderTrend                        = GetBool(new IntPtr(p + 0x010)); // 0270DB65C4E0 0x10 M_UseProviderTrend          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_SumX                                    = GetDouble(new IntPtr(p + 0x018)); // 0270DB65C500 0x18 M_SumX                      ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_SumY                                    = GetDouble(new IntPtr(p + 0x020)); // 0270DB65C520 0x20 M_SumY                      ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_SumXY                                   = GetDouble(new IntPtr(p + 0x028)); // 0270DB65C540 0x28 M_SumXY                     ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_SumXX                                   = GetDouble(new IntPtr(p + 0x030)); // 0270DB65C560 0x30 M_SumXX                     ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_TimeStamps                              = GetSingleList(new IntPtr(p + 0x038)); // 0270DB65C600 0x38 M_TimeStamps                ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.M_Temperature                             = GetSingleList(new IntPtr(p + 0x040)); // 0270DB65C620 0x40 M_Temperature               ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.M_NumValues                               = GetInt32(new IntPtr(p + 0x048)); // 0270DB65C640 0x48 M_NumValues                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NextValueIndex                          = GetInt32(new IntPtr(p + 0x04C)); // 0270DB65C660 0x4C M_NextValueIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_OldestValueIndex                        = GetInt32(new IntPtr(p + 0x050)); // 0270DB65C680 0x50 M_OldestValueIndex          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ThermalTrend                              = GetSingle(new IntPtr(p + 0x054)); // 0270DB65C6A0 0x54 ThermalTrend                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_UseProviderTrend                        = GetBool(new IntPtr(p + 0x010)); // 02466B6F0598 0x10 M_UseProviderTrend          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_SumX                                    = GetDouble(new IntPtr(p + 0x018)); // 02466B6F05B8 0x18 M_SumX                      ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_SumY                                    = GetDouble(new IntPtr(p + 0x020)); // 02466B6F05D8 0x20 M_SumY                      ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_SumXY                                   = GetDouble(new IntPtr(p + 0x028)); // 02466B6F05F8 0x28 M_SumXY                     ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_SumXX                                   = GetDouble(new IntPtr(p + 0x030)); // 02466B6F0618 0x30 M_SumXX                     ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_TimeStamps                              = GetSingleList(new IntPtr(p + 0x038)); // 02466B6F06B8 0x38 M_TimeStamps                ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.M_Temperature                             = GetSingleList(new IntPtr(p + 0x040)); // 02466B6F06D8 0x40 M_Temperature               ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.M_NumValues                               = GetInt32(new IntPtr(p + 0x048)); // 02466B6F06F8 0x48 M_NumValues                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_NextValueIndex                          = GetInt32(new IntPtr(p + 0x04C)); // 02466B6F0718 0x4C M_NextValueIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_OldestValueIndex                        = GetInt32(new IntPtr(p + 0x050)); // 02466B6F0738 0x50 M_OldestValueIndex          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ThermalTrend                              = GetSingle(new IntPtr(p + 0x054)); // 02466B6F0758 0x54 ThermalTrend                ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

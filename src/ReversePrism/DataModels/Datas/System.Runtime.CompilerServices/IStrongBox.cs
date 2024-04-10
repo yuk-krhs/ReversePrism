@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IStrongBox
+    public partial class IStrongBox : DataModel
     {
 
         public static IStrongBox? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IStrongBox();
+            var value   = new IStrongBox() { Pointer= p0 };
 
 
             return value;

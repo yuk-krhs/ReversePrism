@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 <Instance>k__BackingField                IDirectionLocator IL2CPP_TYPE_CLASS
-    public partial class IDirectionLocator
+    public partial class IDirectionLocator : DataModel
     {
 
         public static IDirectionLocator? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDirectionLocator();
+            var value   = new IDirectionLocator() { Pointer= p0 };
 
 
             return value;

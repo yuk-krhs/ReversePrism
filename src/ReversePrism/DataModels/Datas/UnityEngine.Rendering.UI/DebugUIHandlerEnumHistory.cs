@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 088 HistoryValues                            000185CAA658 ModelClassListType Text[] Text[] List<Text> Pointer
     // 000 k_XOffset                                float IL2CPP_TYPE_R4
-    public partial class DebugUIHandlerEnumHistory
+    public partial class DebugUIHandlerEnumHistory : DataModel
     {
         public List<Text>?                              HistoryValues                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebugUIHandlerEnumHistory();
+            var value   = new DebugUIHandlerEnumHistory() { Pointer= p0 };
 
-            value.HistoryValues                             = GetObjectList<Text>(new IntPtr(p + 0x088), ReversePrism.DataModels.Text.FromPointer); // 0270D93365F0 0x88 HistoryValues               ( 000185CAA658 ModelClassListType Text[] Text[] List<Text> Pointer )
+            value.HistoryValues                             = GetObjectList<Text>(new IntPtr(p + 0x088), ReversePrism.DataModels.Text.FromPointer); // 024669389320 0x88 HistoryValues               ( 000185CAA658 ModelClassListType Text[] Text[] List<Text> Pointer )
 
             return value;
         }

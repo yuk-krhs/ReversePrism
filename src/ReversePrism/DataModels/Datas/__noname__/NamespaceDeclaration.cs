@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 Ns                                       00018657B870 ModelClassType XNamespace XNamespace XNamespace Pointer
     // 020 Scope                                    0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 Prev                                     000186770BC0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer
-    public partial class NamespaceDeclaration
+    public partial class NamespaceDeclaration : DataModel
     {
         public string                                   Prefix                                  { get; set; }
         public XNamespace?                              Ns                                      { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamespaceDeclaration();
+            var value   = new NamespaceDeclaration() { Pointer= p0 };
 
-            value.Prefix                                    = GetString(new IntPtr(p + 0x010)); // 0270DBC416B0 0x10 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetObject<XNamespace>(new IntPtr(p + 0x018), ReversePrism.DataModels.XNamespace.FromPointer); // 0270DBC416D0 0x18 Ns                          ( 00018657B870 ModelClassType XNamespace XNamespace XNamespace Pointer )
-            value.Scope                                     = GetInt32(new IntPtr(p + 0x020)); // 0270DBC416F0 0x20 Scope                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Prev                                      = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x028), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 0270DBC41710 0x28 Prev                        ( 000186770BC0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x010)); // 02466BCB0970 0x10 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetObject<XNamespace>(new IntPtr(p + 0x018), ReversePrism.DataModels.XNamespace.FromPointer); // 02466BCB0990 0x18 Ns                          ( 00018657B870 ModelClassType XNamespace XNamespace XNamespace Pointer )
+            value.Scope                                     = GetInt32(new IntPtr(p + 0x020)); // 02466BCB09B0 0x20 Scope                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Prev                                      = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x028), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 02466BCB09D0 0x28 Prev                        ( 000186770BC0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
 
             return value;
         }

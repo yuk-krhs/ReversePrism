@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProduceHistoryStrategyStatusTranslator
+    public partial class ProduceHistoryStrategyStatusTranslator : DataModel
     {
 
         public static ProduceHistoryStrategyStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceHistoryStrategyStatusTranslator();
+            var value   = new ProduceHistoryStrategyStatusTranslator() { Pointer= p0 };
 
 
             return value;

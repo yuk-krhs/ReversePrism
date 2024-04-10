@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MeshGenerationContextUtils
+    public partial class MeshGenerationContextUtils : DataModel
     {
 
         public static MeshGenerationContextUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MeshGenerationContextUtils();
+            var value   = new MeshGenerationContextUtils() { Pointer= p0 };
 
 
             return value;

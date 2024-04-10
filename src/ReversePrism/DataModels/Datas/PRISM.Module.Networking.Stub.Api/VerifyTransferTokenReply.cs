@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 038 Token                                    000186671910 ModelPrimitiveType string string string String
     // 000 InTermMonthlyTicketFieldNumber           int IL2CPP_TYPE_I4
     // 040 InTermMonthlyTicket                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class VerifyTransferTokenReply
+    public partial class VerifyTransferTokenReply : DataModel
     {
         public ConnectionResultType                     Result                                  { get; set; }
         public string                                   SearchId                                { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyTransferTokenReply();
+            var value   = new VerifyTransferTokenReply() { Pointer= p0 };
 
-            value.Result                                    = (ConnectionResultType)GetInt32(new IntPtr(p + 0x018)); // 0270D0B85930 0x18 Result                      ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
-            value.SearchId                                  = GetString(new IntPtr(p + 0x020)); // 0270D0B85970 0x20 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.UserName                                  = GetString(new IntPtr(p + 0x028)); // 0270D0B859B0 0x28 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = (TransferProviderType)GetInt32(new IntPtr(p + 0x030)); // 0270D0B859F0 0x30 Type                        ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
-            value.Token                                     = GetString(new IntPtr(p + 0x038)); // 0270D0B85A30 0x38 Token                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.InTermMonthlyTicket                       = GetBool(new IntPtr(p + 0x040)); // 0270D0B85A70 0x40 InTermMonthlyTicket         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Result                                    = (ConnectionResultType)GetInt32(new IntPtr(p + 0x018)); // 024660B73C30 0x18 Result                      ( 000186604590 ModelEnumType ConnectionResultType ConnectionResultType ConnectionResultType Int32 )
+            value.SearchId                                  = GetString(new IntPtr(p + 0x020)); // 024660B73C70 0x20 SearchId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserName                                  = GetString(new IntPtr(p + 0x028)); // 024660B73CB0 0x28 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = (TransferProviderType)GetInt32(new IntPtr(p + 0x030)); // 024660B73CF0 0x30 Type                        ( 0001866A6ED0 ModelEnumType TransferProviderType TransferProviderType TransferProviderType Int32 )
+            value.Token                                     = GetString(new IntPtr(p + 0x038)); // 024660B73D30 0x38 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.InTermMonthlyTicket                       = GetBool(new IntPtr(p + 0x040)); // 024660B73D70 0x40 InTermMonthlyTicket         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

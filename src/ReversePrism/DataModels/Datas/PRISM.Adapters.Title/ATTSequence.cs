@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ATTSequence
+    public partial class ATTSequence : DataModel
     {
 
         public static ATTSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ATTSequence();
+            var value   = new ATTSequence() { Pointer= p0 };
 
 
             return value;

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_hebrewValues                           HebrewValue[] IL2CPP_TYPE_SZARRAY
     // 008 s_maxHebrewNumberCh                      char IL2CPP_TYPE_CHAR
     // 010 S_numberPasingState                      000185CBBB88 ModelEnumListType HS[] HS[] List<HS> Pointer
-    public partial class HebrewNumber
+    public partial class HebrewNumber : DataModel
     {
         public List<HS>?                                S_numberPasingState                     { get; set; }
 
@@ -21,9 +21,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HebrewNumber();
+            var value   = new HebrewNumber() { Pointer= p0 };
 
-            value.S_numberPasingState                       = GetEnumList<HS>(new IntPtr(p + 0x010)); // 0270D6D321C8 0x10 S_numberPasingState         ( 000185CBBB88 ModelEnumListType HS[] HS[] List<HS> Pointer )
+            value.S_numberPasingState                       = GetEnumList<HS>(new IntPtr(p + 0x010)); // 024666D8A1C8 0x10 S_numberPasingState         ( 000185CBBB88 ModelEnumListType HS[] HS[] List<HS> Pointer )
 
             return value;
         }

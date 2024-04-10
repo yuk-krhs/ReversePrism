@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SelectUnitIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 SelectStageIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ChallengeTourSelectUnitStageSaveData
+    public partial class ChallengeTourSelectUnitStageSaveData : DataModel
     {
         public int                                      SelectUnitIndex                         { get; set; }
         public int                                      SelectStageIndex                        { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourSelectUnitStageSaveData();
+            var value   = new ChallengeTourSelectUnitStageSaveData() { Pointer= p0 };
 
-            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x010)); // 027003A6E188 0x10 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x014)); // 027003A6E1A8 0x14 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0245A3A790C0 0x10 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x014)); // 0245A3A790E0 0x14 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

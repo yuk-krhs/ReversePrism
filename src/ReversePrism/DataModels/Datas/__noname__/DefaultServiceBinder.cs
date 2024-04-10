@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 callHandlers                             Dictionary`2<string, IServerCallHandler> IL2CPP_TYPE_GENERICINST
-    public partial class DefaultServiceBinder
+    public partial class DefaultServiceBinder : DataModel
     {
 
         public static DefaultServiceBinder? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DefaultServiceBinder();
+            var value   = new DefaultServiceBinder() { Pointer= p0 };
 
 
             return value;

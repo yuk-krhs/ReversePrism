@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 DefaultPosition                          0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 050 Sequence                                 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer
     // 058 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class HomeLoginBonusOverlayView
+    public partial class HomeLoginBonusOverlayView : DataModel
     {
         public GameObject?                              PanelRootObject                         { get; set; }
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeLoginBonusOverlayView();
+            var value   = new HomeLoginBonusOverlayView() { Pointer= p0 };
 
-            value.PanelRootObject                           = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB509348 0x20 PanelRootObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0270DB509368 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.TransitionView                            = GetObject<HomeTransitionView>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeTransitionView.FromPointer); // 0270DB5093A8 0x38 TransitionView              ( 0001866D2A50 ModelClassType HomeTransitionView HomeTransitionView HomeTransitionView Pointer )
-            value.DefaultPosition                           = (Vector3)GetInt32(new IntPtr(p + 0x040)); // 0270DB5093C8 0x40 DefaultPosition             ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x050), ReversePrism.DataModels.Sequence.FromPointer); // 0270DB5093E8 0x50 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x058), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB509408 0x58 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.PanelRootObject                           = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B59D5F0 0x20 PanelRootObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B59D610 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.TransitionView                            = GetObject<HomeTransitionView>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeTransitionView.FromPointer); // 02466B59D650 0x38 TransitionView              ( 0001866D2A50 ModelClassType HomeTransitionView HomeTransitionView HomeTransitionView Pointer )
+            value.DefaultPosition                           = (Vector3)GetInt32(new IntPtr(p + 0x040)); // 02466B59D670 0x40 DefaultPosition             ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Sequence                                  = GetObject<Sequence>(new IntPtr(p + 0x050), ReversePrism.DataModels.Sequence.FromPointer); // 02466B59D690 0x50 Sequence                    ( 0001867264E0 ModelClassType Sequence Sequence Sequence Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x058), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B59D6B0 0x58 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

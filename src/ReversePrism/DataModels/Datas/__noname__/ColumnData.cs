@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Control                                  00018665E750 ModelClassType MultiColumnHeaderColumn MultiColumnHeaderColumn MultiColumnHeaderColumn Pointer
     // 018 ResizeHandle                             00018665F5E0 ModelClassType MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle Pointer
-    public partial class ColumnData
+    public partial class ColumnData : DataModel
     {
         public MultiColumnHeaderColumn?                 Control                                 { get; set; }
         public MultiColumnHeaderColumnResizeHandle?     ResizeHandle                            { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ColumnData();
+            var value   = new ColumnData() { Pointer= p0 };
 
-            value.Control                                   = GetObject<MultiColumnHeaderColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.MultiColumnHeaderColumn.FromPointer); // 0270068A09B8 0x10 Control                     ( 00018665E750 ModelClassType MultiColumnHeaderColumn MultiColumnHeaderColumn MultiColumnHeaderColumn Pointer )
-            value.ResizeHandle                              = GetObject<MultiColumnHeaderColumnResizeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.MultiColumnHeaderColumnResizeHandle.FromPointer); // 0270068A09D8 0x18 ResizeHandle                ( 00018665F5E0 ModelClassType MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle Pointer )
+            value.Control                                   = GetObject<MultiColumnHeaderColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.MultiColumnHeaderColumn.FromPointer); // 0245A6862900 0x10 Control                     ( 00018665E750 ModelClassType MultiColumnHeaderColumn MultiColumnHeaderColumn MultiColumnHeaderColumn Pointer )
+            value.ResizeHandle                              = GetObject<MultiColumnHeaderColumnResizeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.MultiColumnHeaderColumnResizeHandle.FromPointer); // 0245A6862920 0x18 ResizeHandle                ( 00018665F5E0 ModelClassType MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle MultiColumnHeaderColumnResizeHandle Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 M_Store                                  0001865A3610 ModelClassType LocalDataStore LocalDataStore LocalDataStore Pointer
-    public partial class LocalDataStoreHolder
+    public partial class LocalDataStoreHolder : DataModel
     {
         public LocalDataStore?                          M_Store                                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LocalDataStoreHolder();
+            var value   = new LocalDataStoreHolder() { Pointer= p0 };
 
-            value.M_Store                                   = GetObject<LocalDataStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.LocalDataStore.FromPointer); // 0270D6A609A8 0x10 M_Store                     ( 0001865A3610 ModelClassType LocalDataStore LocalDataStore LocalDataStore Pointer )
+            value.M_Store                                   = GetObject<LocalDataStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.LocalDataStore.FromPointer); // 024666AC09A8 0x10 M_Store                     ( 0001865A3610 ModelClassType LocalDataStore LocalDataStore LocalDataStore Pointer )
 
             return value;
         }

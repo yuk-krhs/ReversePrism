@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 Parser                                   0001866AF1D0 ModelClassType HeaderParser HeaderParser HeaderParser Pointer
     // 020 HeaderName                               0001866731A0 ModelPrimitiveType string string string String
     // 028 AllowMultiValues                         000186596860 ModelPrimitiveType bool bool bool Bool
-    public partial class HeaderInfo
+    public partial class HeaderInfo : DataModel
     {
         public bool                                     IsRequestRestricted                     { get; set; }
         public bool                                     IsResponseRestricted                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HeaderInfo();
+            var value   = new HeaderInfo() { Pointer= p0 };
 
-            value.IsRequestRestricted                       = GetBool(new IntPtr(p + 0x010)); // 0270D7A312F0 0x10 IsRequestRestricted         ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IsResponseRestricted                      = GetBool(new IntPtr(p + 0x011)); // 0270D7A31310 0x11 IsResponseRestricted        ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.Parser                                    = GetObject<HeaderParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderParser.FromPointer); // 0270D7A31330 0x18 Parser                      ( 0001866AF1D0 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
-            value.HeaderName                                = GetString(new IntPtr(p + 0x020)); // 0270D7A31350 0x20 HeaderName                  ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.AllowMultiValues                          = GetBool(new IntPtr(p + 0x028)); // 0270D7A31370 0x28 AllowMultiValues            ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IsRequestRestricted                       = GetBool(new IntPtr(p + 0x010)); // 024667A912F0 0x10 IsRequestRestricted         ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.IsResponseRestricted                      = GetBool(new IntPtr(p + 0x011)); // 024667A91310 0x11 IsResponseRestricted        ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.Parser                                    = GetObject<HeaderParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.HeaderParser.FromPointer); // 024667A91330 0x18 Parser                      ( 0001866AF1D0 ModelClassType HeaderParser HeaderParser HeaderParser Pointer )
+            value.HeaderName                                = GetString(new IntPtr(p + 0x020)); // 024667A91350 0x20 HeaderName                  ( 0001866731A0 ModelPrimitiveType string string string String )
+            value.AllowMultiValues                          = GetBool(new IntPtr(p + 0x028)); // 024667A91370 0x28 AllowMultiValues            ( 000186596860 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IInputStateChangeMonitor
+    public partial class IInputStateChangeMonitor : DataModel
     {
 
         public static IInputStateChangeMonitor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IInputStateChangeMonitor();
+            var value   = new IInputStateChangeMonitor() { Pointer= p0 };
 
 
             return value;

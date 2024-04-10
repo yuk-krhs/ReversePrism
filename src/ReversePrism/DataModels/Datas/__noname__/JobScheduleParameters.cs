@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 020 ScheduleMode                             0001865F36C0 ModelPrimitiveType int int int Int32
     // 028 ReflectionData                           <int> IL2CPP_TYPE_I
     // 030 JobDataPtr                               <int> IL2CPP_TYPE_I
-    public partial class JobScheduleParameters
+    public partial class JobScheduleParameters : DataModel
     {
         public JobHandle                                Dependency                              { get; set; }
         public int                                      ScheduleMode                            { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JobScheduleParameters();
+            var value   = new JobScheduleParameters() { Pointer= p0 };
 
-            value.Dependency                                = (JobHandle)GetInt32(new IntPtr(p + 0x010)); // 0270068A32C8 0x10 Dependency                  ( 000186601120 ModelEnumType JobHandle JobHandle JobHandle Int32 )
-            value.ScheduleMode                              = GetInt32(new IntPtr(p + 0x020)); // 0270068A32E8 0x20 ScheduleMode                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Dependency                                = (JobHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A6865210 0x10 Dependency                  ( 000186601120 ModelEnumType JobHandle JobHandle JobHandle Int32 )
+            value.ScheduleMode                              = GetInt32(new IntPtr(p + 0x020)); // 0245A6865230 0x20 ScheduleMode                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_activeTasks                            LowLevelDictionary`2<int, Task> IL2CPP_TYPE_GENERICINST
     // 008 s_activeTasksLock                        <object> IL2CPP_TYPE_OBJECT
-    public partial class DebuggerSupport
+    public partial class DebuggerSupport : DataModel
     {
 
         public static DebuggerSupport? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new DebuggerSupport();
+            var value   = new DebuggerSupport() { Pointer= p0 };
 
 
             return value;

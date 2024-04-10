@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 Comp                                     <var> IL2CPP_TYPE_VAR
     // 000 Length                                   int IL2CPP_TYPE_I4
     // 000 SegmentWidth                             int IL2CPP_TYPE_I4
-    public partial class SegmentSort
+    public partial class SegmentSort : DataModel
     {
 
         public static SegmentSort? FromPointer(IntPtr p0)
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SegmentSort();
+            var value   = new SegmentSort() { Pointer= p0 };
 
 
             return value;

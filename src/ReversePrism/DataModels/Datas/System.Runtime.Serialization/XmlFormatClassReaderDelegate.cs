@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlFormatClassReaderDelegate
+    public partial class XmlFormatClassReaderDelegate : DataModel
     {
 
         public static XmlFormatClassReaderDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlFormatClassReaderDelegate();
+            var value   = new XmlFormatClassReaderDelegate() { Pointer= p0 };
 
 
             return value;

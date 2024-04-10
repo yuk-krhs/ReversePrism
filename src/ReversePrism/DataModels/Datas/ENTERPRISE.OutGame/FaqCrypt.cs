@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 KeySize                                  int IL2CPP_TYPE_I4
     // 000 Iterations                               int IL2CPP_TYPE_I4
-    public partial class FaqCrypt
+    public partial class FaqCrypt : DataModel
     {
 
         public static FaqCrypt? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FaqCrypt();
+            var value   = new FaqCrypt() { Pointer= p0 };
 
 
             return value;

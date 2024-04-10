@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Sdk                                      string IL2CPP_TYPE_STRING
     // 000 Osapi                                    string IL2CPP_TYPE_STRING
-    public partial class FunctionKind
+    public partial class FunctionKind : DataModel
     {
 
         public static FunctionKind? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FunctionKind();
+            var value   = new FunctionKind() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 ShilhouetteParent                        0001866AA150 ModelClassType Transform Transform Transform Pointer
     // 028 InstanceObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class ChallengeTourEnemySilhouettePanelView
+    public partial class ChallengeTourEnemySilhouettePanelView : DataModel
     {
         public Transform?                               ShilhouetteParent                       { get; set; }
         public GameObject?                              InstanceObject                          { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChallengeTourEnemySilhouettePanelView();
+            var value   = new ChallengeTourEnemySilhouettePanelView() { Pointer= p0 };
 
-            value.ShilhouetteParent                         = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0270DA1CC088 0x20 ShilhouetteParent           ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.InstanceObject                            = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DA1CC0A8 0x28 InstanceObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ShilhouetteParent                         = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 02466A2276F8 0x20 ShilhouetteParent           ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.InstanceObject                            = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A227718 0x28 InstanceObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

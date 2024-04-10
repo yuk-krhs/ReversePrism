@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 DateTimeFormat                           000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
     // 030 DateTimeArrayHelper                      0001866656F0 ModelClassType DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString Pointer
-    public partial class JsonReaderDelegator
+    public partial class JsonReaderDelegator : DataModel
     {
         public DateTimeFormat?                          DateTimeFormat                          { get; set; }
         public DateTimeArrayJsonHelperWithString?       DateTimeArrayHelper                     { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonReaderDelegator();
+            var value   = new JsonReaderDelegator() { Pointer= p0 };
 
-            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x028), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 027004C65E88 0x28 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
-            value.DateTimeArrayHelper                       = GetObject<DateTimeArrayJsonHelperWithString>(new IntPtr(p + 0x030), ReversePrism.DataModels.DateTimeArrayJsonHelperWithString.FromPointer); // 027004C65EA8 0x30 DateTimeArrayHelper         ( 0001866656F0 ModelClassType DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString Pointer )
+            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x028), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0245A4CA1988 0x28 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
+            value.DateTimeArrayHelper                       = GetObject<DateTimeArrayJsonHelperWithString>(new IntPtr(p + 0x030), ReversePrism.DataModels.DateTimeArrayJsonHelperWithString.FromPointer); // 0245A4CA19A8 0x30 DateTimeArrayHelper         ( 0001866656F0 ModelClassType DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString DateTimeArrayJsonHelperWithString Pointer )
 
             return value;
         }

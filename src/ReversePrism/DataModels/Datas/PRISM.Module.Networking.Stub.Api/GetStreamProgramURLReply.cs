@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 020 StreamUrl                                000186671910 ModelPrimitiveType string string string String
     // 000 RoomIdFieldNumber                        int IL2CPP_TYPE_I4
     // 028 RoomId                                   000186671910 ModelPrimitiveType string string string String
-    public partial class GetStreamProgramURLReply
+    public partial class GetStreamProgramURLReply : DataModel
     {
         public int                                      MstStreamProgramId                      { get; set; }
         public string                                   StreamUrl                               { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetStreamProgramURLReply();
+            var value   = new GetStreamProgramURLReply() { Pointer= p0 };
 
-            value.MstStreamProgramId                        = GetInt32(new IntPtr(p + 0x018)); // 0270D2AC35F8 0x18 MstStreamProgramId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StreamUrl                                 = GetString(new IntPtr(p + 0x020)); // 0270D2AC3638 0x20 StreamUrl                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.RoomId                                    = GetString(new IntPtr(p + 0x028)); // 0270D2AC3678 0x28 RoomId                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstStreamProgramId                        = GetInt32(new IntPtr(p + 0x018)); // 024662A44290 0x18 MstStreamProgramId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StreamUrl                                 = GetString(new IntPtr(p + 0x020)); // 024662A442D0 0x20 StreamUrl                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.RoomId                                    = GetString(new IntPtr(p + 0x028)); // 024662A44310 0x28 RoomId                      ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class __Error
+    public partial class __Error : DataModel
     {
 
         public static __Error? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new __Error();
+            var value   = new __Error() { Pointer= p0 };
 
 
             return value;

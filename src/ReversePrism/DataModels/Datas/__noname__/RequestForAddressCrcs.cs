@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Crcs>k__BackingField                    IEnumerable`1<ulong> IL2CPP_TYPE_GENERICINST
-    public partial class RequestForAddressCrcs
+    public partial class RequestForAddressCrcs : DataModel
     {
 
         public static RequestForAddressCrcs? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RequestForAddressCrcs();
+            var value   = new RequestForAddressCrcs() { Pointer= p0 };
 
 
             return value;

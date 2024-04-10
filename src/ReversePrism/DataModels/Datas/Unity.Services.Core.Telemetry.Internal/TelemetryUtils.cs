@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TelemetryUtils
+    public partial class TelemetryUtils : DataModel
     {
 
         public static TelemetryUtils? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TelemetryUtils();
+            var value   = new TelemetryUtils() { Pointer= p0 };
 
 
             return value;

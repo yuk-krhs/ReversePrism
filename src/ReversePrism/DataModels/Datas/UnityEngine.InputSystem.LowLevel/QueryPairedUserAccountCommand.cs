@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 Handle                                   00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
     // 020 NameBuffer                               00018669A440 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32
     // 220 IdBuffer                                 000186699F20 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32
-    public partial class QueryPairedUserAccountCommand
+    public partial class QueryPairedUserAccountCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public ulong                                    Handle                                  { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueryPairedUserAccountCommand();
+            var value   = new QueryPairedUserAccountCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FC100 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.Handle                                    = GetUInt64(new IntPtr(p + 0x018)); // 0270D77FC120 0x18 Handle                      ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x020)); // 0270D77FC140 0x20 NameBuffer                  ( 00018669A440 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
-            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x220)); // 0270D77FC160 0x220 IdBuffer                    ( 000186699F20 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667854100 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.Handle                                    = GetUInt64(new IntPtr(p + 0x018)); // 024667854120 0x18 Handle                      ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x020)); // 024667854140 0x20 NameBuffer                  ( 00018669A440 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
+            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x220)); // 024667854160 0x220 IdBuffer                    ( 000186699F20 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 M_count                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 01C M_index                                  0001865F2AF0 ModelPrimitiveType int int int Int32
     // 020 M_version                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class CookieCollectionEnumerator
+    public partial class CookieCollectionEnumerator : DataModel
     {
         public CookieCollection?                        M_cookies                               { get; set; }
         public int                                      M_count                                 { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CookieCollectionEnumerator();
+            var value   = new CookieCollectionEnumerator() { Pointer= p0 };
 
-            value.M_cookies                                 = GetObject<CookieCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.CookieCollection.FromPointer); // 0270D7A36F58 0x10 M_cookies                   ( 00018661E7C0 ModelClassType CookieCollection CookieCollection CookieCollection Pointer )
-            value.M_count                                   = GetInt32(new IntPtr(p + 0x018)); // 0270D7A36F78 0x18 M_count                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_index                                   = GetInt32(new IntPtr(p + 0x01C)); // 0270D7A36F98 0x1C M_index                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_version                                 = GetInt32(new IntPtr(p + 0x020)); // 0270D7A36FB8 0x20 M_version                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_cookies                                 = GetObject<CookieCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.CookieCollection.FromPointer); // 024667A96F58 0x10 M_cookies                   ( 00018661E7C0 ModelClassType CookieCollection CookieCollection CookieCollection Pointer )
+            value.M_count                                   = GetInt32(new IntPtr(p + 0x018)); // 024667A96F78 0x18 M_count                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_index                                   = GetInt32(new IntPtr(p + 0x01C)); // 024667A96F98 0x1C M_index                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_version                                 = GetInt32(new IntPtr(p + 0x020)); // 024667A96FB8 0x20 M_version                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

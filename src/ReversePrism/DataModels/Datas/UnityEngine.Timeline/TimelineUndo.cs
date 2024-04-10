@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TimelineUndo
+    public partial class TimelineUndo : DataModel
     {
 
         public static TimelineUndo? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TimelineUndo();
+            var value   = new TimelineUndo() { Pointer= p0 };
 
 
             return value;

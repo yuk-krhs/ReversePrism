@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 CancelCancellationTokenSourceStateDelegate Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    public partial class CancellationTokenSourceExtensions
+    public partial class CancellationTokenSourceExtensions : DataModel
     {
 
         public static CancellationTokenSourceExtensions? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CancellationTokenSourceExtensions();
+            var value   = new CancellationTokenSourceExtensions() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICustomYieldInstructionErrorHandler
+    public partial class ICustomYieldInstructionErrorHandler : DataModel
     {
 
         public static ICustomYieldInstructionErrorHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICustomYieldInstructionErrorHandler();
+            var value   = new ICustomYieldInstructionErrorHandler() { Pointer= p0 };
 
 
             return value;

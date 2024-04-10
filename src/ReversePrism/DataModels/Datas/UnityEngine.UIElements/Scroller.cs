@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 018 SliderUssClassName                       000186674040 ModelPrimitiveType string string string String
     // 020 LowButtonUssClassName                    000186674040 ModelPrimitiveType string string string String
     // 028 HighButtonUssClassName                   000186674040 ModelPrimitiveType string string string String
-    public partial class Scroller
+    public partial class Scroller : DataModel
     {
         public Slider?                                  Slider                                  { get; set; }
         public RepeatButton?                            LowButton                               { get; set; }
@@ -34,15 +34,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Scroller();
+            var value   = new Scroller() { Pointer= p0 };
 
-            value.Slider                                    = GetObject<Slider>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.Slider.FromPointer); // 027006736748 0x3D0 Slider                      ( 00018651D6D0 ModelClassType Slider Slider Slider Pointer )
-            value.LowButton                                 = GetObject<RepeatButton>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.RepeatButton.FromPointer); // 027006736768 0x3D8 LowButton                   ( 000186662440 ModelClassType RepeatButton RepeatButton RepeatButton Pointer )
-            value.HighButton                                = GetObject<RepeatButton>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.RepeatButton.FromPointer); // 027006736788 0x3E0 HighButton                  ( 000186662440 ModelClassType RepeatButton RepeatButton RepeatButton Pointer )
-            value.VerticalVariantUssClassName               = GetString(new IntPtr(p + 0x010)); // 0270067367E8 0x10 VerticalVariantUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.SliderUssClassName                        = GetString(new IntPtr(p + 0x018)); // 027006736808 0x18 SliderUssClassName          ( 000186674040 ModelPrimitiveType string string string String )
-            value.LowButtonUssClassName                     = GetString(new IntPtr(p + 0x020)); // 027006736828 0x20 LowButtonUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.HighButtonUssClassName                    = GetString(new IntPtr(p + 0x028)); // 027006736848 0x28 HighButtonUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
+            value.Slider                                    = GetObject<Slider>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.Slider.FromPointer); // 0245A66F8720 0x3D0 Slider                      ( 00018651D6D0 ModelClassType Slider Slider Slider Pointer )
+            value.LowButton                                 = GetObject<RepeatButton>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.RepeatButton.FromPointer); // 0245A66F8740 0x3D8 LowButton                   ( 000186662440 ModelClassType RepeatButton RepeatButton RepeatButton Pointer )
+            value.HighButton                                = GetObject<RepeatButton>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.RepeatButton.FromPointer); // 0245A66F8760 0x3E0 HighButton                  ( 000186662440 ModelClassType RepeatButton RepeatButton RepeatButton Pointer )
+            value.VerticalVariantUssClassName               = GetString(new IntPtr(p + 0x010)); // 0245A66F87C0 0x10 VerticalVariantUssClassName ( 000186674040 ModelPrimitiveType string string string String )
+            value.SliderUssClassName                        = GetString(new IntPtr(p + 0x018)); // 0245A66F87E0 0x18 SliderUssClassName          ( 000186674040 ModelPrimitiveType string string string String )
+            value.LowButtonUssClassName                     = GetString(new IntPtr(p + 0x020)); // 0245A66F8800 0x20 LowButtonUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
+            value.HighButtonUssClassName                    = GetString(new IntPtr(p + 0x028)); // 0245A66F8820 0x28 HighButtonUssClassName      ( 000186674040 ModelPrimitiveType string string string String )
 
             return value;
         }

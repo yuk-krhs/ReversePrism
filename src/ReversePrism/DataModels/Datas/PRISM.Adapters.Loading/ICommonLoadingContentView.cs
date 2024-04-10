@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ICommonLoadingContentView
+    public partial class ICommonLoadingContentView : DataModel
     {
 
         public static ICommonLoadingContentView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ICommonLoadingContentView();
+            var value   = new ICommonLoadingContentView() { Pointer= p0 };
 
 
             return value;

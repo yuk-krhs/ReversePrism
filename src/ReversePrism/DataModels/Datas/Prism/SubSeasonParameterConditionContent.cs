@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 DaAchieveObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 080 ViAchieveObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
     // 088 MeAchieveObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class SubSeasonParameterConditionContent
+    public partial class SubSeasonParameterConditionContent : DataModel
     {
         public GameObject?                              ConditionCheckMarkOn                    { get; set; }
         public GameObject?                              ConditionCheckMarkOff                   { get; set; }
@@ -45,22 +45,22 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SubSeasonParameterConditionContent();
+            var value   = new SubSeasonParameterConditionContent() { Pointer= p0 };
 
-            value.ConditionCheckMarkOn                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D26418 0x20 ConditionCheckMarkOn        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ConditionCheckMarkOff                     = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D26438 0x28 ConditionCheckMarkOff       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.VoBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D26458 0x30 VoBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.DaBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D26478 0x38 DaBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.ViBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D26498 0x40 ViBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.MeBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D264B8 0x48 MeBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.VoShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D264D8 0x50 VoShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.DaShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D264F8 0x58 DaShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.ViShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D26518 0x60 ViShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.MeShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270D4D26538 0x68 MeShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.VoAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D26558 0x70 VoAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DaAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D26578 0x78 DaAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ViAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D26598 0x80 ViAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MeAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0270D4D265B8 0x88 MeAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ConditionCheckMarkOn                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A418 0x20 ConditionCheckMarkOn        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ConditionCheckMarkOff                     = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A438 0x28 ConditionCheckMarkOff       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.VoBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A458 0x30 VoBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.DaBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A478 0x38 DaBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.ViBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A498 0x40 ViBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.MeBorderText                              = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A4B8 0x48 MeBorderText                ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.VoShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A4D8 0x50 VoShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.DaShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A4F8 0x58 DaShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.ViShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A518 0x60 ViShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.MeShortageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 024664D9A538 0x68 MeShortageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.VoAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A558 0x70 VoAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.DaAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A578 0x78 DaAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ViAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A598 0x80 ViAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MeAchieveObject                           = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 024664D9A5B8 0x88 MeAchieveObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

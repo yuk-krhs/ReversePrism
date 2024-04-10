@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 HistoryDetalTitleKey                     int IL2CPP_TYPE_I4
     // 030 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 038 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class ExchangeHistoryDetailPopupView
+    public partial class ExchangeHistoryDetailPopupView : DataModel
     {
         public ExchangeHistoryItemView?                 ExchangeItemView                        { get; set; }
         public ExchangeHistoryDetailItemContainerView?  ExchangeHistoryDetailItemContainerView  { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeHistoryDetailPopupView();
+            var value   = new ExchangeHistoryDetailPopupView() { Pointer= p0 };
 
-            value.ExchangeItemView                          = GetObject<ExchangeHistoryItemView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExchangeHistoryItemView.FromPointer); // 0270DB8EB090 0x20 ExchangeItemView            ( 00018650BC70 ModelClassType ExchangeHistoryItemView ExchangeHistoryItemView ExchangeHistoryItemView Pointer )
-            value.ExchangeHistoryDetailItemContainerView    = GetObject<ExchangeHistoryDetailItemContainerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExchangeHistoryDetailItemContainerView.FromPointer); // 0270DB8EB0B0 0x28 ExchangeHistoryDetailItemContainerView ( 00018650B2B0 ModelClassType ExchangeHistoryDetailItemContainerView ExchangeHistoryDetailItemContainerView ExchangeHistoryDetailItemContainerView Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB8EB110 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ExchangeItemView                          = GetObject<ExchangeHistoryItemView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExchangeHistoryItemView.FromPointer); // 02466B972B98 0x20 ExchangeItemView            ( 00018650BC70 ModelClassType ExchangeHistoryItemView ExchangeHistoryItemView ExchangeHistoryItemView Pointer )
+            value.ExchangeHistoryDetailItemContainerView    = GetObject<ExchangeHistoryDetailItemContainerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExchangeHistoryDetailItemContainerView.FromPointer); // 02466B972BB8 0x28 ExchangeHistoryDetailItemContainerView ( 00018650B2B0 ModelClassType ExchangeHistoryDetailItemContainerView ExchangeHistoryDetailItemContainerView ExchangeHistoryDetailItemContainerView Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B972C18 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

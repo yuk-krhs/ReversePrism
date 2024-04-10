@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UQuery
+    public partial class UQuery : DataModel
     {
 
         public static UQuery? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UQuery();
+            var value   = new UQuery() { Pointer= p0 };
 
 
             return value;

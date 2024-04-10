@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 054 Build                                    000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16
     // 056 Revision                                 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16
     // 058 Arch                                     000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class MonoAssemblyName
+    public partial class MonoAssemblyName : DataModel
     {
         public <public_key_token>e__FixedBuffer         Public_key_token                        { get; set; }
         public uint                                     Hash_alg                                { get; set; }
@@ -39,17 +39,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoAssemblyName();
+            var value   = new MonoAssemblyName() { Pointer= p0 };
 
-            value.Public_key_token                          = (<public_key_token>e__FixedBuffer)GetInt32(new IntPtr(p + 0x030)); // 0270D6930400 0x30 Public_key_token            ( 00018673D220 ModelEnumType <public_key_token>e__FixedBuffer <public_key_token>e__FixedBuffer <public_key_token>e__FixedBuffer Int32 )
-            value.Hash_alg                                  = GetUInt32(new IntPtr(p + 0x044)); // 0270D6930420 0x44 Hash_alg                    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Hash_len                                  = GetUInt32(new IntPtr(p + 0x048)); // 0270D6930440 0x48 Hash_len                    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Flags                                     = GetUInt32(new IntPtr(p + 0x04C)); // 0270D6930460 0x4C Flags                       ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Major                                     = GetUInt16(new IntPtr(p + 0x050)); // 0270D6930480 0x50 Major                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Minor                                     = GetUInt16(new IntPtr(p + 0x052)); // 0270D69304A0 0x52 Minor                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Build                                     = GetUInt16(new IntPtr(p + 0x054)); // 0270D69304C0 0x54 Build                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Revision                                  = GetUInt16(new IntPtr(p + 0x056)); // 0270D69304E0 0x56 Revision                    ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Arch                                      = GetUInt16(new IntPtr(p + 0x058)); // 0270D6930500 0x58 Arch                        ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Public_key_token                          = (<public_key_token>e__FixedBuffer)GetInt32(new IntPtr(p + 0x030)); // 0246669A8400 0x30 Public_key_token            ( 00018673D220 ModelEnumType <public_key_token>e__FixedBuffer <public_key_token>e__FixedBuffer <public_key_token>e__FixedBuffer Int32 )
+            value.Hash_alg                                  = GetUInt32(new IntPtr(p + 0x044)); // 0246669A8420 0x44 Hash_alg                    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Hash_len                                  = GetUInt32(new IntPtr(p + 0x048)); // 0246669A8440 0x48 Hash_len                    ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Flags                                     = GetUInt32(new IntPtr(p + 0x04C)); // 0246669A8460 0x4C Flags                       ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Major                                     = GetUInt16(new IntPtr(p + 0x050)); // 0246669A8480 0x50 Major                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Minor                                     = GetUInt16(new IntPtr(p + 0x052)); // 0246669A84A0 0x52 Minor                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Build                                     = GetUInt16(new IntPtr(p + 0x054)); // 0246669A84C0 0x54 Build                       ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Revision                                  = GetUInt16(new IntPtr(p + 0x056)); // 0246669A84E0 0x56 Revision                    ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Arch                                      = GetUInt16(new IntPtr(p + 0x058)); // 0246669A8500 0x58 Arch                        ( 000186696DB0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

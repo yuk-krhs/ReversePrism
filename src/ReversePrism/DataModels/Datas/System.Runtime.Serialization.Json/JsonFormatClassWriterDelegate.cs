@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class JsonFormatClassWriterDelegate
+    public partial class JsonFormatClassWriterDelegate : DataModel
     {
 
         public static JsonFormatClassWriterDelegate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonFormatClassWriterDelegate();
+            var value   = new JsonFormatClassWriterDelegate() { Pointer= p0 };
 
 
             return value;

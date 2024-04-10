@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Container                                0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer
     // 018 Child                                    0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer
     // 020 IsFirst                                  000186595210 ModelPrimitiveType bool bool bool Bool
-    public partial class XmlChildEnumerator
+    public partial class XmlChildEnumerator : DataModel
     {
         public XmlNode?                                 Container                               { get; set; }
         public XmlNode?                                 Child                                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlChildEnumerator();
+            var value   = new XmlChildEnumerator() { Pointer= p0 };
 
-            value.Container                                 = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D744B808 0x10 Container                   ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
-            value.Child                                     = GetObject<XmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNode.FromPointer); // 0270D744B828 0x18 Child                       ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
-            value.IsFirst                                   = GetBool(new IntPtr(p + 0x020)); // 0270D744B848 0x20 IsFirst                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Container                                 = GetObject<XmlNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNode.FromPointer); // 0246674AB808 0x10 Container                   ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.Child                                     = GetObject<XmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNode.FromPointer); // 0246674AB828 0x18 Child                       ( 0001866BB360 ModelClassType XmlNode XmlNode XmlNode Pointer )
+            value.IsFirst                                   = GetBool(new IntPtr(p + 0x020)); // 0246674AB848 0x20 IsFirst                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

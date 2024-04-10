@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 038 M_securityLevel                          0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32
     // 040 m_crossAppDomainArray                    <object>[] IL2CPP_TYPE_SZARRAY
     // 000 typeNameCache                            Dictionary`2<Type, TypeInformation> IL2CPP_TYPE_GENERICINST
-    public partial class BinaryFormatter
+    public partial class BinaryFormatter : DataModel
     {
         public ISurrogateSelector?                      M_surrogates                            { get; set; }
         public StreamingContext                         M_context                               { get; set; }
@@ -31,14 +31,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BinaryFormatter();
+            var value   = new BinaryFormatter() { Pointer= p0 };
 
-            value.M_surrogates                              = GetObject<ISurrogateSelector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 0270D6BB6388 0x10 M_surrogates                ( 0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
-            value.M_context                                 = (StreamingContext)GetInt32(new IntPtr(p + 0x018)); // 0270D6BB63A8 0x18 M_context                   ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
-            value.M_binder                                  = GetObject<SerializationBinder>(new IntPtr(p + 0x028), ReversePrism.DataModels.SerializationBinder.FromPointer); // 0270D6BB63C8 0x28 M_binder                    ( 00018672B650 ModelClassType SerializationBinder SerializationBinder SerializationBinder Pointer )
-            value.M_typeFormat                              = (FormatterTypeStyle)GetInt32(new IntPtr(p + 0x030)); // 0270D6BB63E8 0x30 M_typeFormat                ( 0001865B8CB0 ModelEnumType FormatterTypeStyle FormatterTypeStyle FormatterTypeStyle Int32 )
-            value.M_assemblyFormat                          = (FormatterAssemblyStyle)GetInt32(new IntPtr(p + 0x034)); // 0270D6BB6408 0x34 M_assemblyFormat            ( 0001865B7E20 ModelEnumType FormatterAssemblyStyle FormatterAssemblyStyle FormatterAssemblyStyle Int32 )
-            value.M_securityLevel                           = (TypeFilterLevel)GetInt32(new IntPtr(p + 0x038)); // 0270D6BB6428 0x38 M_securityLevel             ( 0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32 )
+            value.M_surrogates                              = GetObject<ISurrogateSelector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 024666C2E388 0x10 M_surrogates                ( 0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
+            value.M_context                                 = (StreamingContext)GetInt32(new IntPtr(p + 0x018)); // 024666C2E3A8 0x18 M_context                   ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
+            value.M_binder                                  = GetObject<SerializationBinder>(new IntPtr(p + 0x028), ReversePrism.DataModels.SerializationBinder.FromPointer); // 024666C2E3C8 0x28 M_binder                    ( 00018672B650 ModelClassType SerializationBinder SerializationBinder SerializationBinder Pointer )
+            value.M_typeFormat                              = (FormatterTypeStyle)GetInt32(new IntPtr(p + 0x030)); // 024666C2E3E8 0x30 M_typeFormat                ( 0001865B8CB0 ModelEnumType FormatterTypeStyle FormatterTypeStyle FormatterTypeStyle Int32 )
+            value.M_assemblyFormat                          = (FormatterAssemblyStyle)GetInt32(new IntPtr(p + 0x034)); // 024666C2E408 0x34 M_assemblyFormat            ( 0001865B7E20 ModelEnumType FormatterAssemblyStyle FormatterAssemblyStyle FormatterAssemblyStyle Int32 )
+            value.M_securityLevel                           = (TypeFilterLevel)GetInt32(new IntPtr(p + 0x038)); // 024666C2E428 0x38 M_securityLevel             ( 0001866D5CF0 ModelEnumType TypeFilterLevel TypeFilterLevel TypeFilterLevel Int32 )
 
             return value;
         }

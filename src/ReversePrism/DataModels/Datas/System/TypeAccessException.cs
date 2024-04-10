@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class TypeAccessException
+    public partial class TypeAccessException : DataModel
     {
 
         public static TypeAccessException? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeAccessException();
+            var value   = new TypeAccessException() { Pointer= p0 };
 
 
             return value;

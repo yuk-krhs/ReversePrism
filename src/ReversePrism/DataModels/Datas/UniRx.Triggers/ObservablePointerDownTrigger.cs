@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 050 onPointerDown                            Subject`1<PointerEventData> IL2CPP_TYPE_GENERICINST
-    public partial class ObservablePointerDownTrigger
+    public partial class ObservablePointerDownTrigger : DataModel
     {
 
         public static ObservablePointerDownTrigger? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservablePointerDownTrigger();
+            var value   = new ObservablePointerDownTrigger() { Pointer= p0 };
 
 
             return value;

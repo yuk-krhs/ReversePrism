@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 <OpenLetterBgm>k__BackingField           SoundKey IL2CPP_TYPE_VALUETYPE
     // 010 OpenLetterSe                             000186536970 ModelEnumType SoundKey SoundKey SoundKey Int32
-    public partial class IntroductionLetterSoundConst
+    public partial class IntroductionLetterSoundConst : DataModel
     {
         public SoundKey                                 OpenLetterSe                            { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IntroductionLetterSoundConst();
+            var value   = new IntroductionLetterSoundConst() { Pointer= p0 };
 
-            value.OpenLetterSe                              = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0270DBC4BB48 0x10 OpenLetterSe                ( 000186536970 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.OpenLetterSe                              = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466BCDB418 0x10 OpenLetterSe                ( 000186536970 ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

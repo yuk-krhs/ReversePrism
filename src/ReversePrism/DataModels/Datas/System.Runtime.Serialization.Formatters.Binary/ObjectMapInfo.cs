@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 NumMembers                               0001865F2AF0 ModelPrimitiveType int int int Int32
     // 018 MemberNames                              000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
     // 020 MemberTypes                              000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer
-    public partial class ObjectMapInfo
+    public partial class ObjectMapInfo : DataModel
     {
         public int                                      ObjectId                                { get; set; }
         public int                                      NumMembers                              { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectMapInfo();
+            var value   = new ObjectMapInfo() { Pointer= p0 };
 
-            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 0270D6C54198 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.NumMembers                                = GetInt32(new IntPtr(p + 0x014)); // 0270D6C541B8 0x14 NumMembers                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MemberNames                               = GetStringList(new IntPtr(p + 0x018)); // 0270D6C541D8 0x18 MemberNames                 ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0270D6C541F8 0x20 MemberTypes                 ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 024666CC4198 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.NumMembers                                = GetInt32(new IntPtr(p + 0x014)); // 024666CC41B8 0x14 NumMembers                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MemberNames                               = GetStringList(new IntPtr(p + 0x018)); // 024666CC41D8 0x18 MemberNames                 ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024666CC41F8 0x20 MemberTypes                 ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
 
             return value;
         }

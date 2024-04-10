@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OverlayManagerCaller
+    public partial class OverlayManagerCaller : DataModel
     {
 
         public static OverlayManagerCaller? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OverlayManagerCaller();
+            var value   = new OverlayManagerCaller() { Pointer= p0 };
 
 
             return value;

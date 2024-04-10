@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 028 TotalWeekLimit                           0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 TotalWeekFieldNumber                     int IL2CPP_TYPE_I4
     // 02C TotalWeek                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceTermStatus
+    public partial class ProduceTermStatus : DataModel
     {
         public int                                      Season                                  { get; set; }
         public int                                      Week                                    { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceTermStatus();
+            var value   = new ProduceTermStatus() { Pointer= p0 };
 
-            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D112BD90 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Week                                      = GetInt32(new IntPtr(p + 0x01C)); // 0270D112BDD0 0x1C Week                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsAudition                                = GetBool(new IntPtr(p + 0x020)); // 0270D112BE10 0x20 IsAudition                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WeekLimit                                 = GetInt32(new IntPtr(p + 0x024)); // 0270D112BE50 0x24 WeekLimit                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalWeekLimit                            = GetInt32(new IntPtr(p + 0x028)); // 0270D112BE90 0x28 TotalWeekLimit              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalWeek                                 = GetInt32(new IntPtr(p + 0x02C)); // 0270D112BED0 0x2C TotalWeek                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 0246610A17C0 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Week                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246610A1800 0x1C Week                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsAudition                                = GetBool(new IntPtr(p + 0x020)); // 0246610A1840 0x20 IsAudition                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WeekLimit                                 = GetInt32(new IntPtr(p + 0x024)); // 0246610A1880 0x24 WeekLimit                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalWeekLimit                            = GetInt32(new IntPtr(p + 0x028)); // 0246610A18C0 0x28 TotalWeekLimit              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalWeek                                 = GetInt32(new IntPtr(p + 0x02C)); // 0246610A1900 0x2C TotalWeek                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

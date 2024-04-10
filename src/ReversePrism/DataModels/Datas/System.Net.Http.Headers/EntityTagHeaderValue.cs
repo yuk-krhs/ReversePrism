@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 any                                      EntityTagHeaderValue IL2CPP_TYPE_CLASS
     // 010 IsWeak                                   000186594D10 ModelPrimitiveType bool bool bool Bool
     // 018 Tag                                      000186671910 ModelPrimitiveType string string string String
-    public partial class EntityTagHeaderValue
+    public partial class EntityTagHeaderValue : DataModel
     {
         public bool                                     IsWeak                                  { get; set; }
         public string                                   Tag                                     { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EntityTagHeaderValue();
+            var value   = new EntityTagHeaderValue() { Pointer= p0 };
 
-            value.IsWeak                                    = GetBool(new IntPtr(p + 0x010)); // 0270DB8569D0 0x10 IsWeak                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Tag                                       = GetString(new IntPtr(p + 0x018)); // 0270DB8569F0 0x18 Tag                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsWeak                                    = GetBool(new IntPtr(p + 0x010)); // 02466B8DE9F0 0x10 IsWeak                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Tag                                       = GetString(new IntPtr(p + 0x018)); // 02466B8DEA10 0x18 Tag                         ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

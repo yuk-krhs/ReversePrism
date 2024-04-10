@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AssumeRangeAttribute
+    public partial class AssumeRangeAttribute : DataModel
     {
 
         public static AssumeRangeAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssumeRangeAttribute();
+            var value   = new AssumeRangeAttribute() { Pointer= p0 };
 
 
             return value;

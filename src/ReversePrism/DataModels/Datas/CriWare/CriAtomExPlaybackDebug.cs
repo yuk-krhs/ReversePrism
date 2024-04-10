@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CriAtomExPlaybackDebug
+    public partial class CriAtomExPlaybackDebug : DataModel
     {
 
         public static CriAtomExPlaybackDebug? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriAtomExPlaybackDebug();
+            var value   = new CriAtomExPlaybackDebug() { Pointer= p0 };
 
 
             return value;

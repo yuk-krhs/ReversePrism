@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AutoWebProxyScriptEngine
+    public partial class AutoWebProxyScriptEngine : DataModel
     {
 
         public static AutoWebProxyScriptEngine? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AutoWebProxyScriptEngine();
+            var value   = new AutoWebProxyScriptEngine() { Pointer= p0 };
 
 
             return value;

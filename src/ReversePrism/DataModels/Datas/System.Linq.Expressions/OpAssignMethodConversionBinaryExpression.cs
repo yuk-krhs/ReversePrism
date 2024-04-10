@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 038 Conversion                               0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer
-    public partial class OpAssignMethodConversionBinaryExpression
+    public partial class OpAssignMethodConversionBinaryExpression : DataModel
     {
         public LambdaExpression?                        Conversion                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OpAssignMethodConversionBinaryExpression();
+            var value   = new OpAssignMethodConversionBinaryExpression() { Pointer= p0 };
 
-            value.Conversion                                = GetObject<LambdaExpression>(new IntPtr(p + 0x038), ReversePrism.DataModels.LambdaExpression.FromPointer); // 0270D9F17468 0x38 Conversion                  ( 0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
+            value.Conversion                                = GetObject<LambdaExpression>(new IntPtr(p + 0x038), ReversePrism.DataModels.LambdaExpression.FromPointer); // 024669F74598 0x38 Conversion                  ( 0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
 
             return value;
         }

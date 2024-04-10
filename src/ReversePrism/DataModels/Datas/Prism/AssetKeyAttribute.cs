@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Type                                     000186693B90 ModelClassType Type Type Type Pointer
-    public partial class AssetKeyAttribute
+    public partial class AssetKeyAttribute : DataModel
     {
         public Type?                                    Type                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AssetKeyAttribute();
+            var value   = new AssetKeyAttribute() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0270D4C327D8 0x10 Type                        ( 000186693B90 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024664C95900 0x10 Type                        ( 000186693B90 ModelClassType Type Type Type Pointer )
 
             return value;
         }

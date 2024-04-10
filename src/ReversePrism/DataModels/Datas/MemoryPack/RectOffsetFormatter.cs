@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RectOffsetFormatter
+    public partial class RectOffsetFormatter : DataModel
     {
 
         public static RectOffsetFormatter? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RectOffsetFormatter();
+            var value   = new RectOffsetFormatter() { Pointer= p0 };
 
 
             return value;

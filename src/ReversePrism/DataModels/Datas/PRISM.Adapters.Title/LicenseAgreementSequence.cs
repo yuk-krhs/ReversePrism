@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LicenseAgreementSequence
+    public partial class LicenseAgreementSequence : DataModel
     {
 
         public static LicenseAgreementSequence? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LicenseAgreementSequence();
+            var value   = new LicenseAgreementSequence() { Pointer= p0 };
 
 
             return value;

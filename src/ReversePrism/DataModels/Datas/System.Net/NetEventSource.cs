@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Log                                      NetEventSource IL2CPP_TYPE_CLASS
-    public partial class NetEventSource
+    public partial class NetEventSource : DataModel
     {
 
         public static NetEventSource? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NetEventSource();
+            var value   = new NetEventSource() { Pointer= p0 };
 
 
             return value;

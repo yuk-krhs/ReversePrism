@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 018 U                                        000186666050 ModelPrimitiveType float float float Single
     // 01C E                                        000186666050 ModelPrimitiveType float float float Single
     // 020 O                                        000186666050 ModelPrimitiveType float float float Single
-    public partial class MorphTargetBlendAmountAsJapanese
+    public partial class MorphTargetBlendAmountAsJapanese : DataModel
     {
         public float                                    A                                       { get; set; }
         public float                                    I                                       { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MorphTargetBlendAmountAsJapanese();
+            var value   = new MorphTargetBlendAmountAsJapanese() { Pointer= p0 };
 
-            value.A                                         = GetSingle(new IntPtr(p + 0x010)); // 0270DBBA4F70 0x10 A                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.I                                         = GetSingle(new IntPtr(p + 0x014)); // 0270DBBA4F90 0x14 I                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.U                                         = GetSingle(new IntPtr(p + 0x018)); // 0270DBBA4FB0 0x18 U                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.E                                         = GetSingle(new IntPtr(p + 0x01C)); // 0270DBBA4FD0 0x1C E                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.O                                         = GetSingle(new IntPtr(p + 0x020)); // 0270DBBA4FF0 0x20 O                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.A                                         = GetSingle(new IntPtr(p + 0x010)); // 02466BC25490 0x10 A                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.I                                         = GetSingle(new IntPtr(p + 0x014)); // 02466BC254B0 0x14 I                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.U                                         = GetSingle(new IntPtr(p + 0x018)); // 02466BC254D0 0x18 U                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.E                                         = GetSingle(new IntPtr(p + 0x01C)); // 02466BC254F0 0x1C E                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.O                                         = GetSingle(new IntPtr(p + 0x020)); // 02466BC25510 0x20 O                           ( 000186666050 ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ArrayHelpers
+    public partial class ArrayHelpers : DataModel
     {
 
         public static ArrayHelpers? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ArrayHelpers();
+            var value   = new ArrayHelpers() { Pointer= p0 };
 
 
             return value;

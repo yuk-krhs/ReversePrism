@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IArchiveStreamProgramStatus
+    public partial class IArchiveStreamProgramStatus : DataModel
     {
 
         public static IArchiveStreamProgramStatus? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IArchiveStreamProgramStatus();
+            var value   = new IArchiveStreamProgramStatus() { Pointer= p0 };
 
 
             return value;

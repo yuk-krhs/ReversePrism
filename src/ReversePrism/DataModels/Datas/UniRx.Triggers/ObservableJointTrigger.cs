@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 onJointBreak                             Subject`1<float> IL2CPP_TYPE_GENERICINST
     // 058 onJointBreak2D                           Subject`1<Joint2D> IL2CPP_TYPE_GENERICINST
-    public partial class ObservableJointTrigger
+    public partial class ObservableJointTrigger : DataModel
     {
 
         public static ObservableJointTrigger? FromPointer(IntPtr p0)
@@ -19,7 +19,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObservableJointTrigger();
+            var value   = new ObservableJointTrigger() { Pointer= p0 };
 
 
             return value;

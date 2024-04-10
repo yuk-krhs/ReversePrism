@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InputEndFrame
+    public partial class InputEndFrame : DataModel
     {
 
         public static InputEndFrame? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputEndFrame();
+            var value   = new InputEndFrame() { Pointer= p0 };
 
 
             return value;

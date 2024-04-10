@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 M_DefaultFarClipPlane                    0001866656B0 ModelPrimitiveType float float float Single
-    public partial class AdaptiveViewDistance
+    public partial class AdaptiveViewDistance : DataModel
     {
         public float                                    M_DefaultFarClipPlane                   { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptiveViewDistance();
+            var value   = new AdaptiveViewDistance() { Pointer= p0 };
 
-            value.M_DefaultFarClipPlane                     = GetSingle(new IntPtr(p + 0x040)); // 0270DB689BF8 0x40 M_DefaultFarClipPlane       ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DefaultFarClipPlane                     = GetSingle(new IntPtr(p + 0x040)); // 02466B715EB8 0x40 M_DefaultFarClipPlane       ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

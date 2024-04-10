@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IGetTransferURLReply
+    public partial class IGetTransferURLReply : DataModel
     {
 
         public static IGetTransferURLReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IGetTransferURLReply();
+            var value   = new IGetTransferURLReply() { Pointer= p0 };
 
 
             return value;

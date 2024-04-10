@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 value                                    <int> IL2CPP_TYPE_I
-    public partial class RuntimeFieldHandle
+    public partial class RuntimeFieldHandle : DataModel
     {
 
         public static RuntimeFieldHandle? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RuntimeFieldHandle();
+            var value   = new RuntimeFieldHandle() { Pointer= p0 };
 
 
             return value;

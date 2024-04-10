@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 044 IsUseGyro                                000186595960 ModelPrimitiveType bool bool bool Bool
     // 045 IsActoveControll                         000186595960 ModelPrimitiveType bool bool bool Bool
     // 048 BASE_ROTATION                            00018664A570 ModelEnumType Quaternion Quaternion Quaternion Int32
-    public partial class SceneCameraController_Stream
+    public partial class SceneCameraController_Stream : DataModel
     {
         public Vector3                                  TargetPoint                             { get; set; }
         public float                                    RotateSpeed                             { get; set; }
@@ -33,16 +33,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneCameraController_Stream();
+            var value   = new SceneCameraController_Stream() { Pointer= p0 };
 
-            value.TargetPoint                               = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0270D4B1A210 0x20 TargetPoint                 ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.RotateSpeed                               = GetSingle(new IntPtr(p + 0x02C)); // 0270D4B1A230 0x2C RotateSpeed                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TranslateSpeed                            = GetSingle(new IntPtr(p + 0x030)); // 0270D4B1A250 0x30 TranslateSpeed              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ZoomSpeed                                 = GetSingle(new IntPtr(p + 0x034)); // 0270D4B1A270 0x34 ZoomSpeed                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LastPos                                   = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0270D4B1A290 0x38 LastPos                     ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.IsUseGyro                                 = GetBool(new IntPtr(p + 0x044)); // 0270D4B1A2B0 0x44 IsUseGyro                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsActoveControll                          = GetBool(new IntPtr(p + 0x045)); // 0270D4B1A2D0 0x45 IsActoveControll            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BASE_ROTATION                             = (Quaternion)GetInt32(new IntPtr(p + 0x048)); // 0270D4B1A2F0 0x48 BASE_ROTATION               ( 00018664A570 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.TargetPoint                               = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 024664B81A48 0x20 TargetPoint                 ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.RotateSpeed                               = GetSingle(new IntPtr(p + 0x02C)); // 024664B81A68 0x2C RotateSpeed                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TranslateSpeed                            = GetSingle(new IntPtr(p + 0x030)); // 024664B81A88 0x30 TranslateSpeed              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ZoomSpeed                                 = GetSingle(new IntPtr(p + 0x034)); // 024664B81AA8 0x34 ZoomSpeed                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LastPos                                   = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 024664B81AC8 0x38 LastPos                     ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.IsUseGyro                                 = GetBool(new IntPtr(p + 0x044)); // 024664B81AE8 0x44 IsUseGyro                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsActoveControll                          = GetBool(new IntPtr(p + 0x045)); // 024664B81B08 0x45 IsActoveControll            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BASE_ROTATION                             = (Quaternion)GetInt32(new IntPtr(p + 0x048)); // 024664B81B28 0x48 BASE_ROTATION               ( 00018664A570 ModelEnumType Quaternion Quaternion Quaternion Int32 )
 
             return value;
         }

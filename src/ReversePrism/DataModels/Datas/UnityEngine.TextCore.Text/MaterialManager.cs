@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_FallbackMaterials                      Dictionary`2<long, Material> IL2CPP_TYPE_GENERICINST
-    public partial class MaterialManager
+    public partial class MaterialManager : DataModel
     {
 
         public static MaterialManager? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaterialManager();
+            var value   = new MaterialManager() { Pointer= p0 };
 
 
             return value;

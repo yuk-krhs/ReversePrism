@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 defaultCredential                        SystemNetworkCredential IL2CPP_TYPE_CLASS
-    public partial class SystemNetworkCredential
+    public partial class SystemNetworkCredential : DataModel
     {
 
         public static SystemNetworkCredential? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SystemNetworkCredential();
+            var value   = new SystemNetworkCredential() { Pointer= p0 };
 
 
             return value;

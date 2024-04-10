@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UintPlugin
+    public partial class UintPlugin : DataModel
     {
 
         public static UintPlugin? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UintPlugin();
+            var value   = new UintPlugin() { Pointer= p0 };
 
 
             return value;

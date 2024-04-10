@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class VerifyReceiptForAppStoreReplyTranslator
+    public partial class VerifyReceiptForAppStoreReplyTranslator : DataModel
     {
 
         public static VerifyReceiptForAppStoreReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new VerifyReceiptForAppStoreReplyTranslator();
+            var value   = new VerifyReceiptForAppStoreReplyTranslator() { Pointer= p0 };
 
 
             return value;

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnityWebRequestSender
+    public partial class UnityWebRequestSender : DataModel
     {
 
         public static UnityWebRequestSender? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnityWebRequestSender();
+            var value   = new UnityWebRequestSender() { Pointer= p0 };
 
 
             return value;

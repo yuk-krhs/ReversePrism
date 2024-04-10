@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class PhysicsSkinnedClothBeginUpdate
+    public partial class PhysicsSkinnedClothBeginUpdate : DataModel
     {
 
         public static PhysicsSkinnedClothBeginUpdate? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PhysicsSkinnedClothBeginUpdate();
+            var value   = new PhysicsSkinnedClothBeginUpdate() { Pointer= p0 };
 
 
             return value;

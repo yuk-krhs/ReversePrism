@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 _exception                               <object> IL2CPP_TYPE_OBJECT
     // 018 IsTerminating                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class UnhandledExceptionEventArgs
+    public partial class UnhandledExceptionEventArgs : DataModel
     {
         public bool                                     IsTerminating                           { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnhandledExceptionEventArgs();
+            var value   = new UnhandledExceptionEventArgs() { Pointer= p0 };
 
-            value.IsTerminating                             = GetBool(new IntPtr(p + 0x018)); // 0270D6A041E0 0x18 IsTerminating               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsTerminating                             = GetBool(new IntPtr(p + 0x018)); // 024666A7C1E0 0x18 IsTerminating               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

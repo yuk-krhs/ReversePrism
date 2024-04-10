@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MissionGaugeStatusTranslator
+    public partial class MissionGaugeStatusTranslator : DataModel
     {
 
         public static MissionGaugeStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionGaugeStatusTranslator();
+            var value   = new MissionGaugeStatusTranslator() { Pointer= p0 };
 
 
             return value;

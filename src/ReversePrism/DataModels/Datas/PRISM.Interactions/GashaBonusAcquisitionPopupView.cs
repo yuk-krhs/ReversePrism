@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 020 CmnItems                                 000185B75410 ModelClassListType CmnItem[] CmnItem[] List<CmnItem> Pointer
     // 028 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 030 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class GashaBonusAcquisitionPopupView
+    public partial class GashaBonusAcquisitionPopupView : DataModel
     {
         public List<CmnItem>?                           CmnItems                                { get; set; }
         public IPopupFrameView?                         Parent                                  { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaBonusAcquisitionPopupView();
+            var value   = new GashaBonusAcquisitionPopupView() { Pointer= p0 };
 
-            value.CmnItems                                  = GetObjectList<CmnItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnItem.FromPointer); // 0270DB9DEFD8 0x20 CmnItems                    ( 000185B75410 ModelClassListType CmnItem[] CmnItem[] List<CmnItem> Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DB9DF018 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.CmnItems                                  = GetObjectList<CmnItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnItem.FromPointer); // 02466BA6E5D8 0x20 CmnItems                    ( 000185B75410 ModelClassListType CmnItem[] CmnItem[] List<CmnItem> Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BA6E618 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

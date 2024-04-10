@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 068 ViewModel                                0001865C9D30 ModelClassType FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel Pointer
     // 070 removeTaskFactory                        Func`1<UniTask> IL2CPP_TYPE_GENERICINST
     // 078 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    public partial class FriendRemoveConfirmPopupView
+    public partial class FriendRemoveConfirmPopupView : DataModel
     {
         public TextMeshProUGUI?                         TopMessageText                          { get; set; }
         public UITextMeshProUGUI?                       PlayerName                              { get; set; }
@@ -37,16 +37,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FriendRemoveConfirmPopupView();
+            var value   = new FriendRemoveConfirmPopupView() { Pointer= p0 };
 
-            value.TopMessageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0270DBDF3300 0x20 TopMessageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.PlayerName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDF3320 0x28 PlayerName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LatestLoginDate                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DBDF3340 0x30 LatestLoginDate             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0270DBDF3360 0x38 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x040), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 0270DBDF3380 0x40 AchievementPanelView        ( 000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
-            value.StateObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0270DBDF33A0 0x48 StateObjects                ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.ViewModel                                 = GetObject<FriendRemoveConfirmPopupViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.FriendRemoveConfirmPopupViewModel.FromPointer); // 0270DBDF3420 0x68 ViewModel                   ( 0001865C9D30 ModelClassType FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x078), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0270DBDF3460 0x78 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.TopMessageText                            = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 02466BE7AC98 0x20 TopMessageText              ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.PlayerName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE7ACB8 0x28 PlayerName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LatestLoginDate                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE7ACD8 0x30 LatestLoginDate             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466BE7ACF8 0x38 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x040), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 02466BE7AD18 0x40 AchievementPanelView        ( 000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
+            value.StateObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466BE7AD38 0x48 StateObjects                ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.ViewModel                                 = GetObject<FriendRemoveConfirmPopupViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.FriendRemoveConfirmPopupViewModel.FromPointer); // 02466BE7ADB8 0x68 ViewModel                   ( 0001865C9D30 ModelClassType FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel FriendRemoveConfirmPopupViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x078), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BE7ADF8 0x78 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

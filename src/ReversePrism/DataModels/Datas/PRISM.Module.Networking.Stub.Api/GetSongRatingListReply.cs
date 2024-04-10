@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 000 TechnicalRatingRewardListFieldNumber     int IL2CPP_TYPE_I4
     // 020 _repeated_technicalRatingRewardList_codec FieldCodec`1<TechnicalRatingRewardStatus> IL2CPP_TYPE_GENERICINST
     // 030 TechnicalRatingRewardList                000185CF4BF8 ModelClassListType RepeatedField`1<TechnicalRatingRewardStatus> RepeatedField`1<TechnicalRatingRewardStatus> List<TechnicalRatingRewardStatus> Pointer
-    public partial class GetSongRatingListReply
+    public partial class GetSongRatingListReply : DataModel
     {
         public List<HighScoreRatingStatus>?             HighScoreRatingList                     { get; set; }
         public List<HighScoreRatingRewardStatus>?       HighScoreRatingRewardList               { get; set; }
@@ -35,12 +35,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetSongRatingListReply();
+            var value   = new GetSongRatingListReply() { Pointer= p0 };
 
-            value.HighScoreRatingList                       = GetObjectList<HighScoreRatingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HighScoreRatingStatus.FromPointer); // 0270D21DD7D8 0x18 HighScoreRatingList         ( 000185CDE3C8 ModelClassListType RepeatedField`1<HighScoreRatingStatus> RepeatedField`1<HighScoreRatingStatus> List<HighScoreRatingStatus> Pointer )
-            value.HighScoreRatingRewardList                 = GetObjectList<HighScoreRatingRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HighScoreRatingRewardStatus.FromPointer); // 0270D21DD838 0x20 HighScoreRatingRewardList   ( 000185CDE1A8 ModelClassListType RepeatedField`1<HighScoreRatingRewardStatus> RepeatedField`1<HighScoreRatingRewardStatus> List<HighScoreRatingRewardStatus> Pointer )
-            value.TechnicalRatingList                       = GetObjectList<TechnicalRatingStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.TechnicalRatingStatus.FromPointer); // 0270D21DD898 0x28 TechnicalRatingList         ( 000185CF4E38 ModelClassListType RepeatedField`1<TechnicalRatingStatus> RepeatedField`1<TechnicalRatingStatus> List<TechnicalRatingStatus> Pointer )
-            value.TechnicalRatingRewardList                 = GetObjectList<TechnicalRatingRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.TechnicalRatingRewardStatus.FromPointer); // 0270D21DD8F8 0x30 TechnicalRatingRewardList   ( 000185CF4BF8 ModelClassListType RepeatedField`1<TechnicalRatingRewardStatus> RepeatedField`1<TechnicalRatingRewardStatus> List<TechnicalRatingRewardStatus> Pointer )
+            value.HighScoreRatingList                       = GetObjectList<HighScoreRatingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HighScoreRatingStatus.FromPointer); // 02466218A5D8 0x18 HighScoreRatingList         ( 000185CDE3C8 ModelClassListType RepeatedField`1<HighScoreRatingStatus> RepeatedField`1<HighScoreRatingStatus> List<HighScoreRatingStatus> Pointer )
+            value.HighScoreRatingRewardList                 = GetObjectList<HighScoreRatingRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HighScoreRatingRewardStatus.FromPointer); // 02466218A638 0x20 HighScoreRatingRewardList   ( 000185CDE1A8 ModelClassListType RepeatedField`1<HighScoreRatingRewardStatus> RepeatedField`1<HighScoreRatingRewardStatus> List<HighScoreRatingRewardStatus> Pointer )
+            value.TechnicalRatingList                       = GetObjectList<TechnicalRatingStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.TechnicalRatingStatus.FromPointer); // 02466218A698 0x28 TechnicalRatingList         ( 000185CF4E38 ModelClassListType RepeatedField`1<TechnicalRatingStatus> RepeatedField`1<TechnicalRatingStatus> List<TechnicalRatingStatus> Pointer )
+            value.TechnicalRatingRewardList                 = GetObjectList<TechnicalRatingRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.TechnicalRatingRewardStatus.FromPointer); // 02466218A6F8 0x30 TechnicalRatingRewardList   ( 000185CF4BF8 ModelClassListType RepeatedField`1<TechnicalRatingRewardStatus> RepeatedField`1<TechnicalRatingRewardStatus> List<TechnicalRatingRewardStatus> Pointer )
 
             return value;
         }

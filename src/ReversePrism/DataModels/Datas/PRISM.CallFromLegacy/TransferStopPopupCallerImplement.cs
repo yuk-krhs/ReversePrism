@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 factory                                  PopupViewFactory`1<ITransferStopPopupView> IL2CPP_TYPE_GENERICINST
-    public partial class TransferStopPopupCallerImplement
+    public partial class TransferStopPopupCallerImplement : DataModel
     {
 
         public static TransferStopPopupCallerImplement? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TransferStopPopupCallerImplement();
+            var value   = new TransferStopPopupCallerImplement() { Pointer= p0 };
 
 
             return value;

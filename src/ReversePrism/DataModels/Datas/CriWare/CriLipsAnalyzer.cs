@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 068 ProcessTime                              0001866656B0 ModelPrimitiveType float float float Single
     // 06C HasMonoBehaviourStarted                  000186594D10 ModelPrimitiveType bool bool bool Bool
     // 070 UnupdatedDuration                        0001866656B0 ModelPrimitiveType float float float Single
-    public partial class CriLipsAnalyzer
+    public partial class CriLipsAnalyzer : DataModel
     {
         public uint                                     NumChannels                             { get; set; }
         public float                                    SilenceThresholdVolumeDb                { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CriLipsAnalyzer();
+            var value   = new CriLipsAnalyzer() { Pointer= p0 };
 
-            value.NumChannels                               = GetUInt32(new IntPtr(p + 0x030)); // 0270DBBA3A60 0x30 NumChannels                 ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
-            value.SilenceThresholdVolumeDb                  = GetSingle(new IntPtr(p + 0x034)); // 0270DBBA3A80 0x34 SilenceThresholdVolumeDb    ( 000186665B50 ModelPrimitiveType float float float Single )
-            value.LipsSampler                               = GetObject<CriLipsSampler>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriLipsSampler.FromPointer); // 0270DBBA3AA0 0x38 LipsSampler                 ( 0001866576A0 ModelClassType CriLipsSampler CriLipsSampler CriLipsSampler Pointer )
-            value.BehaviourParamsPreset                     = (BehaviourParamsPreset)GetInt32(new IntPtr(p + 0x040)); // 0270DBBA3AC0 0x40 BehaviourParamsPreset       ( 00018655E210 ModelEnumType BehaviourParamsPreset BehaviourParamsPreset BehaviourParamsPreset Int32 )
-            value.Mouths                                    = GetObjectList<CriLipsMouth>(new IntPtr(p + 0x048), ReversePrism.DataModels.CriLipsMouth.FromPointer); // 0270DBBA3AE0 0x48 Mouths                      ( 000185B78260 ModelClassListType CriLipsMouth[] CriLipsMouth[] List<CriLipsMouth> Pointer )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x050)); // 0270DBBA3B00 0x50 MaxSamplingRate             ( 0001865F4700 ModelPrimitiveType int int int Int32 )
-            value.MinimumSupportSamplingRate                = GetInt32(new IntPtr(p + 0x054)); // 0270DBBA3B20 0x54 MinimumSupportSamplingRate  ( 0001865F4700 ModelPrimitiveType int int int Int32 )
-            value.CurrentSamplingRate                       = GetInt32(new IntPtr(p + 0x058)); // 0270DBBA3B40 0x58 CurrentSamplingRate         ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.SamplingRateConfigured                    = GetBool(new IntPtr(p + 0x05C)); // 0270DBBA3B60 0x5C SamplingRateConfigured      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ProcessTime                               = GetSingle(new IntPtr(p + 0x068)); // 0270DBBA3BA0 0x68 ProcessTime                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.HasMonoBehaviourStarted                   = GetBool(new IntPtr(p + 0x06C)); // 0270DBBA3BC0 0x6C HasMonoBehaviourStarted     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UnupdatedDuration                         = GetSingle(new IntPtr(p + 0x070)); // 0270DBBA3BE0 0x70 UnupdatedDuration           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.NumChannels                               = GetUInt32(new IntPtr(p + 0x030)); // 02466BC23F80 0x30 NumChannels                 ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
+            value.SilenceThresholdVolumeDb                  = GetSingle(new IntPtr(p + 0x034)); // 02466BC23FA0 0x34 SilenceThresholdVolumeDb    ( 000186665B50 ModelPrimitiveType float float float Single )
+            value.LipsSampler                               = GetObject<CriLipsSampler>(new IntPtr(p + 0x038), ReversePrism.DataModels.CriLipsSampler.FromPointer); // 02466BC23FC0 0x38 LipsSampler                 ( 0001866576A0 ModelClassType CriLipsSampler CriLipsSampler CriLipsSampler Pointer )
+            value.BehaviourParamsPreset                     = (BehaviourParamsPreset)GetInt32(new IntPtr(p + 0x040)); // 02466BC23FE0 0x40 BehaviourParamsPreset       ( 00018655E210 ModelEnumType BehaviourParamsPreset BehaviourParamsPreset BehaviourParamsPreset Int32 )
+            value.Mouths                                    = GetObjectList<CriLipsMouth>(new IntPtr(p + 0x048), ReversePrism.DataModels.CriLipsMouth.FromPointer); // 02466BC24000 0x48 Mouths                      ( 000185B78260 ModelClassListType CriLipsMouth[] CriLipsMouth[] List<CriLipsMouth> Pointer )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x050)); // 02466BC24020 0x50 MaxSamplingRate             ( 0001865F4700 ModelPrimitiveType int int int Int32 )
+            value.MinimumSupportSamplingRate                = GetInt32(new IntPtr(p + 0x054)); // 02466BC24040 0x54 MinimumSupportSamplingRate  ( 0001865F4700 ModelPrimitiveType int int int Int32 )
+            value.CurrentSamplingRate                       = GetInt32(new IntPtr(p + 0x058)); // 02466BC24060 0x58 CurrentSamplingRate         ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.SamplingRateConfigured                    = GetBool(new IntPtr(p + 0x05C)); // 02466BC24080 0x5C SamplingRateConfigured      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ProcessTime                               = GetSingle(new IntPtr(p + 0x068)); // 02466BC240C0 0x68 ProcessTime                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.HasMonoBehaviourStarted                   = GetBool(new IntPtr(p + 0x06C)); // 02466BC240E0 0x6C HasMonoBehaviourStarted     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UnupdatedDuration                         = GetSingle(new IntPtr(p + 0x070)); // 02466BC24100 0x70 UnupdatedDuration           ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

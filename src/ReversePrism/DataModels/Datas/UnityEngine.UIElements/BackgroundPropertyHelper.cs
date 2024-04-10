@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class BackgroundPropertyHelper
+    public partial class BackgroundPropertyHelper : DataModel
     {
 
         public static BackgroundPropertyHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new BackgroundPropertyHelper();
+            var value   = new BackgroundPropertyHelper() { Pointer= p0 };
 
 
             return value;

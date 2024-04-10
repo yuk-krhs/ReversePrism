@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
+    public partial class UnitySourceGeneratedAssemblyMonoScriptTypes_v1 : DataModel
     {
 
         public static UnitySourceGeneratedAssemblyMonoScriptTypes_v1? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnitySourceGeneratedAssemblyMonoScriptTypes_v1();
+            var value   = new UnitySourceGeneratedAssemblyMonoScriptTypes_v1() { Pointer= p0 };
 
 
             return value;

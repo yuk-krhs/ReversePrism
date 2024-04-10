@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 038 <TotalMedal>k__BackingField              ValueTuple`2<int, int> IL2CPP_TYPE_GENERICINST
     // 040 EventPointProduct                        0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer
     // 048 MedalProduct                             0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer
-    public partial class LiveEventScoreDetailData
+    public partial class LiveEventScoreDetailData : DataModel
     {
         public ScoreRank                                ScoreRank                               { get; set; }
         public int                                      Score                                   { get; set; }
@@ -39,18 +39,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveEventScoreDetailData();
+            var value   = new LiveEventScoreDetailData() { Pointer= p0 };
 
-            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x010)); // 0270D50D67B0 0x10 ScoreRank                   ( 000186616A50 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
-            value.Score                                     = GetInt32(new IntPtr(p + 0x014)); // 0270D50D67D0 0x14 Score                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EventPointBaseScore                       = GetInt32(new IntPtr(p + 0x018)); // 0270D50D67F0 0x18 EventPointBaseScore         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MedalScore                                = GetInt32(new IntPtr(p + 0x01C)); // 0270D50D6810 0x1C MedalScore                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EventBonusRate                            = GetSingle(new IntPtr(p + 0x020)); // 0270D50D6830 0x20 EventBonusRate              ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.LbRate                                    = GetInt32(new IntPtr(p + 0x024)); // 0270D50D6850 0x24 LbRate                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RewardEventPoint                          = GetInt32(new IntPtr(p + 0x028)); // 0270D50D6870 0x28 RewardEventPoint            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RewardMedal                               = GetInt32(new IntPtr(p + 0x02C)); // 0270D50D6890 0x2C RewardMedal                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EventPointProduct                         = GetObject<IProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProductStatus.FromPointer); // 0270D50D68F0 0x40 EventPointProduct           ( 0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
-            value.MedalProduct                              = GetObject<IProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProductStatus.FromPointer); // 0270D50D6910 0x48 MedalProduct                ( 0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
+            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x010)); // 024665152230 0x10 ScoreRank                   ( 000186616A50 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
+            value.Score                                     = GetInt32(new IntPtr(p + 0x014)); // 024665152250 0x14 Score                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventPointBaseScore                       = GetInt32(new IntPtr(p + 0x018)); // 024665152270 0x18 EventPointBaseScore         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MedalScore                                = GetInt32(new IntPtr(p + 0x01C)); // 024665152290 0x1C MedalScore                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventBonusRate                            = GetSingle(new IntPtr(p + 0x020)); // 0246651522B0 0x20 EventBonusRate              ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.LbRate                                    = GetInt32(new IntPtr(p + 0x024)); // 0246651522D0 0x24 LbRate                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RewardEventPoint                          = GetInt32(new IntPtr(p + 0x028)); // 0246651522F0 0x28 RewardEventPoint            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RewardMedal                               = GetInt32(new IntPtr(p + 0x02C)); // 024665152310 0x2C RewardMedal                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.EventPointProduct                         = GetObject<IProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProductStatus.FromPointer); // 024665152370 0x40 EventPointProduct           ( 0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
+            value.MedalProduct                              = GetObject<IProductStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IProductStatus.FromPointer); // 024665152390 0x48 MedalProduct                ( 0001865F9930 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
 
             return value;
         }

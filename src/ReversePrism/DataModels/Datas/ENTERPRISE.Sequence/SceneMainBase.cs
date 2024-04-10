@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 SystemRoot                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class SceneMainBase
+    public partial class SceneMainBase : DataModel
     {
         public GameObject?                              SystemRoot                              { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SceneMainBase();
+            var value   = new SceneMainBase() { Pointer= p0 };
 
-            value.SystemRoot                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270D09E7960 0x20 SystemRoot                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.SystemRoot                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0246609E12D0 0x20 SystemRoot                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

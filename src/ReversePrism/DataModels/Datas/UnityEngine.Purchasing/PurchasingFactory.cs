@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 M_Store                                  000186658560 ModelClassType IStore IStore IStore Pointer
     // 028 M_CatalogProvider                        00018671A8E0 ModelClassType ICatalogProvider ICatalogProvider ICatalogProvider Pointer
     // 030 StoreName                                000186671910 ModelPrimitiveType string string string String
-    public partial class PurchasingFactory
+    public partial class PurchasingFactory : DataModel
     {
         public IStore?                                  M_Store                                 { get; set; }
         public ICatalogProvider?                        M_CatalogProvider                       { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PurchasingFactory();
+            var value   = new PurchasingFactory() { Pointer= p0 };
 
-            value.M_Store                                   = GetObject<IStore>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStore.FromPointer); // 027004BA9D28 0x20 M_Store                     ( 000186658560 ModelClassType IStore IStore IStore Pointer )
-            value.M_CatalogProvider                         = GetObject<ICatalogProvider>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICatalogProvider.FromPointer); // 027004BA9D48 0x28 M_CatalogProvider           ( 00018671A8E0 ModelClassType ICatalogProvider ICatalogProvider ICatalogProvider Pointer )
-            value.StoreName                                 = GetString(new IntPtr(p + 0x030)); // 027004BA9D68 0x30 StoreName                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Store                                   = GetObject<IStore>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStore.FromPointer); // 02466302EAC0 0x20 M_Store                     ( 000186658560 ModelClassType IStore IStore IStore Pointer )
+            value.M_CatalogProvider                         = GetObject<ICatalogProvider>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICatalogProvider.FromPointer); // 02466302EAE0 0x28 M_CatalogProvider           ( 00018671A8E0 ModelClassType ICatalogProvider ICatalogProvider ICatalogProvider Pointer )
+            value.StoreName                                 = GetString(new IntPtr(p + 0x030)); // 02466302EB00 0x30 StoreName                   ( 000186671910 ModelPrimitiveType string string string String )
 
             return value;
         }

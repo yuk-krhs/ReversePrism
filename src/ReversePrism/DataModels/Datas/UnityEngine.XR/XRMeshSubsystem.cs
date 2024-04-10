@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XRMeshSubsystem
+    public partial class XRMeshSubsystem : DataModel
     {
 
         public static XRMeshSubsystem? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XRMeshSubsystem();
+            var value   = new XRMeshSubsystem() { Pointer= p0 };
 
 
             return value;

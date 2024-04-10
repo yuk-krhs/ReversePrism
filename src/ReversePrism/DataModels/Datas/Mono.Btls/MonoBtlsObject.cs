@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Handle                                   00018673EEC0 ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer
     // 018 LastError                                0001865CA820 ModelClassType Exception Exception Exception Pointer
-    public partial class MonoBtlsObject
+    public partial class MonoBtlsObject : DataModel
     {
         public MonoBtlsHandle?                          Handle                                  { get; set; }
         public Exception?                               LastError                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MonoBtlsObject();
+            var value   = new MonoBtlsObject() { Pointer= p0 };
 
-            value.Handle                                    = GetObject<MonoBtlsHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsHandle.FromPointer); // 0270D793DD88 0x10 Handle                      ( 00018673EEC0 ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer )
-            value.LastError                                 = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0270D793DDA8 0x18 LastError                   ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.Handle                                    = GetObject<MonoBtlsHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsHandle.FromPointer); // 0246679A5D88 0x10 Handle                      ( 00018673EEC0 ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer )
+            value.LastError                                 = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0246679A5DA8 0x18 LastError                   ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

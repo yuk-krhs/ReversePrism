@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IProduceTopMenuBackToHomeConfirmationPopupView
+    public partial class IProduceTopMenuBackToHomeConfirmationPopupView : DataModel
     {
 
         public static IProduceTopMenuBackToHomeConfirmationPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IProduceTopMenuBackToHomeConfirmationPopupView();
+            var value   = new IProduceTopMenuBackToHomeConfirmationPopupView() { Pointer= p0 };
 
 
             return value;

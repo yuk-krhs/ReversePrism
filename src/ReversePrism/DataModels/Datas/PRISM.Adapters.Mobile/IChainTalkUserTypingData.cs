@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IChainTalkUserTypingData
+    public partial class IChainTalkUserTypingData : DataModel
     {
 
         public static IChainTalkUserTypingData? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IChainTalkUserTypingData();
+            var value   = new IChainTalkUserTypingData() { Pointer= p0 };
 
 
             return value;

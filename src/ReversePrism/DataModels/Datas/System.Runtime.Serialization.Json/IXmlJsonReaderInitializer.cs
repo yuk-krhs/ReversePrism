@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IXmlJsonReaderInitializer
+    public partial class IXmlJsonReaderInitializer : DataModel
     {
 
         public static IXmlJsonReaderInitializer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IXmlJsonReaderInitializer();
+            var value   = new IXmlJsonReaderInitializer() { Pointer= p0 };
 
 
             return value;

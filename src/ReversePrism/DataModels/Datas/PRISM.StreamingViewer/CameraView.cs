@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 038 receivedData                             Queue`1<ReceivedData> IL2CPP_TYPE_GENERICINST
     // 040 ProducerModeWatching                     000186594D10 ModelPrimitiveType bool bool bool Bool
     // 041 IsViewPaused                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class CameraView
+    public partial class CameraView : DataModel
     {
         public Camera?                                  LiveCamera                              { get; set; }
         public PostProcessVolume?                       PostProcessVolume                       { get; set; }
@@ -29,13 +29,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CameraView();
+            var value   = new CameraView() { Pointer= p0 };
 
-            value.LiveCamera                                = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0270D4F43CF8 0x20 LiveCamera                  ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.PostProcessVolume                         = GetObject<PostProcessVolume>(new IntPtr(p + 0x028), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 0270D4F43D18 0x28 PostProcessVolume           ( 00018676E4B0 ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer )
-            value.DepthOfField                              = GetObject<DepthOfField>(new IntPtr(p + 0x030), ReversePrism.DataModels.DepthOfField.FromPointer); // 0270D4F43D38 0x30 DepthOfField                ( 0001866C21C0 ModelClassType DepthOfField DepthOfField DepthOfField Pointer )
-            value.ProducerModeWatching                      = GetBool(new IntPtr(p + 0x040)); // 0270D4F43D78 0x40 ProducerModeWatching        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x041)); // 0270D4F43D98 0x41 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.LiveCamera                                = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 024664FAA7F8 0x20 LiveCamera                  ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.PostProcessVolume                         = GetObject<PostProcessVolume>(new IntPtr(p + 0x028), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 024664FAA818 0x28 PostProcessVolume           ( 00018676E4B0 ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer )
+            value.DepthOfField                              = GetObject<DepthOfField>(new IntPtr(p + 0x030), ReversePrism.DataModels.DepthOfField.FromPointer); // 024664FAA838 0x30 DepthOfField                ( 0001866C21C0 ModelClassType DepthOfField DepthOfField DepthOfField Pointer )
+            value.ProducerModeWatching                      = GetBool(new IntPtr(p + 0x040)); // 024664FAA878 0x40 ProducerModeWatching        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x041)); // 024664FAA898 0x41 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

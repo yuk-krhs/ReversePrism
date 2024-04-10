@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class OnResponseCallback
+    public partial class OnResponseCallback : DataModel
     {
 
         public static OnResponseCallback? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new OnResponseCallback();
+            var value   = new OnResponseCallback() { Pointer= p0 };
 
 
             return value;

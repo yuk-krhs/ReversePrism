@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class KeyHelper
+    public partial class KeyHelper : DataModel
     {
 
         public static KeyHelper? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new KeyHelper();
+            var value   = new KeyHelper() { Pointer= p0 };
 
 
             return value;

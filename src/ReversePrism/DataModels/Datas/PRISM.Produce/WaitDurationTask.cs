@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 TimeScale                                0001866656B0 ModelPrimitiveType float float float Single
-    public partial class WaitDurationTask
+    public partial class WaitDurationTask : DataModel
     {
         public float                                    TimeScale                               { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new WaitDurationTask();
+            var value   = new WaitDurationTask() { Pointer= p0 };
 
-            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x010)); // 0270D5B07DD0 0x10 TimeScale                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x010)); // 024665B69040 0x10 TimeScale                   ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

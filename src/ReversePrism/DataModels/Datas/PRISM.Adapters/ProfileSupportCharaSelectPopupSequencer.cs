@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 UserSelfViewModel                        0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer
     // 028 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
     // 030 SCharaDetailDisposable                   0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    public partial class ProfileSupportCharaSelectPopupSequencer
+    public partial class ProfileSupportCharaSelectPopupSequencer : DataModel
     {
         public ProfileUserSalfViewModel?                UserSelfViewModel                       { get; set; }
         public AutoCancellationTokenSource              Canceller                               { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProfileSupportCharaSelectPopupSequencer();
+            var value   = new ProfileSupportCharaSelectPopupSequencer() { Pointer= p0 };
 
-            value.UserSelfViewModel                         = GetObject<ProfileUserSalfViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileUserSalfViewModel.FromPointer); // 0270D668DEE8 0x20 UserSelfViewModel           ( 0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x028)); // 0270D668DF08 0x28 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
-            value.SCharaDetailDisposable                    = GetObject<IDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.IDisposable.FromPointer); // 0270D668DF28 0x30 SCharaDetailDisposable      ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.UserSelfViewModel                         = GetObject<ProfileUserSalfViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProfileUserSalfViewModel.FromPointer); // 0246666FDEE8 0x20 UserSelfViewModel           ( 0001865C6380 ModelClassType ProfileUserSalfViewModel ProfileUserSalfViewModel ProfileUserSalfViewModel Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x028)); // 0246666FDF08 0x28 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.SCharaDetailDisposable                    = GetObject<IDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.IDisposable.FromPointer); // 0246666FDF28 0x30 SCharaDetailDisposable      ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
     // 050 CommentList                              000185CF5BF8 ModelClassListType RepeatedField`1<TwestaArticleCommentStatus> RepeatedField`1<TwestaArticleCommentStatus> List<TwestaArticleCommentStatus> Pointer
     // 000 FavoriteDateFieldNumber                  int IL2CPP_TYPE_I4
     // 058 _FavoriteDate                            000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
-    public partial class TwestaArticleStatus
+    public partial class TwestaArticleStatus : DataModel
     {
         public DateTime                                 PostDate                                { get; set; }
         public DateTime                                 FavoriteDate                            { get; set; }
@@ -45,17 +45,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaArticleStatus();
+            var value   = new TwestaArticleStatus() { Pointer= p0 };
 
-            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 0270D2314C30 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.FavoriteDate                              = GetDateTime(new IntPtr(p + 0x020)); // 0270D2314C50 0x20 FavoriteDate                ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstTwestaArticleId                        = GetInt32(new IntPtr(p + 0x038)); // 0270D2314CD0 0x38 MstTwestaArticleId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x03C)); // 0270D2314D10 0x3C MstTwestaUserId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2314D50 0x40 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.IsFavorite                                = GetBool(new IntPtr(p + 0x048)); // 0270D2314D90 0x48 IsFavorite                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x049)); // 0270D2314DD0 0x49 IsUnread                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CommentList                               = GetObjectList<TwestaArticleCommentStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.TwestaArticleCommentStatus.FromPointer); // 0270D2314E30 0x50 CommentList                 ( 000185CF5BF8 ModelClassListType RepeatedField`1<TwestaArticleCommentStatus> RepeatedField`1<TwestaArticleCommentStatus> List<TwestaArticleCommentStatus> Pointer )
-            value._FavoriteDate                             = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2314E70 0x58 _FavoriteDate               ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.PostDate                                  = GetDateTime(new IntPtr(p + 0x010)); // 024662292298 0x10 PostDate                    ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.FavoriteDate                              = GetDateTime(new IntPtr(p + 0x020)); // 0246622922B8 0x20 FavoriteDate                ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstTwestaArticleId                        = GetInt32(new IntPtr(p + 0x038)); // 024662292338 0x38 MstTwestaArticleId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstTwestaUserId                           = GetInt32(new IntPtr(p + 0x03C)); // 024662292378 0x3C MstTwestaUserId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value._PostDate                                 = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0246622923B8 0x40 _PostDate                   ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.IsFavorite                                = GetBool(new IntPtr(p + 0x048)); // 0246622923F8 0x48 IsFavorite                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x049)); // 024662292438 0x49 IsUnread                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CommentList                               = GetObjectList<TwestaArticleCommentStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.TwestaArticleCommentStatus.FromPointer); // 024662292498 0x50 CommentList                 ( 000185CF5BF8 ModelClassListType RepeatedField`1<TwestaArticleCommentStatus> RepeatedField`1<TwestaArticleCommentStatus> List<TwestaArticleCommentStatus> Pointer )
+            value._FavoriteDate                             = GetObject<Timestamp>(new IntPtr(p + 0x058), ReversePrism.DataModels.Timestamp.FromPointer); // 0246622924D8 0x58 _FavoriteDate               ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.PostDate                      = ToDateTime(value._PostDate);
             value.FavoriteDate                  = ToDateTime(value._FavoriteDate);
 

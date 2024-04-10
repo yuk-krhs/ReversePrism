@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 UTF8NoBom                                Encoding IL2CPP_TYPE_CLASS
-    public partial class ZString
+    public partial class ZString : DataModel
     {
 
         public static ZString? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ZString();
+            var value   = new ZString() { Pointer= p0 };
 
 
             return value;

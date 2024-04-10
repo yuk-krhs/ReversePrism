@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 Keys                                     000186589390 ModelClassType Array Array Array Pointer
     // 018 Items                                    000186589390 ModelClassType Array Array Array Pointer
     // 020 Comparer                                 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer
-    public partial class SorterGenericArray
+    public partial class SorterGenericArray : DataModel
     {
         public Array?                                   Keys                                    { get; set; }
         public Array?                                   Items                                   { get; set; }
@@ -23,11 +23,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SorterGenericArray();
+            var value   = new SorterGenericArray() { Pointer= p0 };
 
-            value.Keys                                      = GetObject<Array>(new IntPtr(p + 0x010), ReversePrism.DataModels.Array.FromPointer); // 0270D6A37688 0x10 Keys                        ( 000186589390 ModelClassType Array Array Array Pointer )
-            value.Items                                     = GetObject<Array>(new IntPtr(p + 0x018), ReversePrism.DataModels.Array.FromPointer); // 0270D6A376A8 0x18 Items                       ( 000186589390 ModelClassType Array Array Array Pointer )
-            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 0270D6A376C8 0x20 Comparer                    ( 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer )
+            value.Keys                                      = GetObject<Array>(new IntPtr(p + 0x010), ReversePrism.DataModels.Array.FromPointer); // 024666AA7688 0x10 Keys                        ( 000186589390 ModelClassType Array Array Array Pointer )
+            value.Items                                     = GetObject<Array>(new IntPtr(p + 0x018), ReversePrism.DataModels.Array.FromPointer); // 024666AA76A8 0x18 Items                       ( 000186589390 ModelClassType Array Array Array Pointer )
+            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 024666AA76C8 0x20 Comparer                    ( 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer )
 
             return value;
         }

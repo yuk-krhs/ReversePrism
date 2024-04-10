@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 m_BufferStart                            IntPtr IL2CPP_TYPE_PTR
     // 030 M_BufferLength                           0001865F4260 ModelPrimitiveType int int int Int32
     // 034 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class FixedBufferStringQueue
+    public partial class FixedBufferStringQueue : DataModel
     {
         public int                                      M_BufferLength                          { get; set; }
         public int                                      Count                                   { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new FixedBufferStringQueue();
+            var value   = new FixedBufferStringQueue() { Pointer= p0 };
 
-            value.M_BufferLength                            = GetInt32(new IntPtr(p + 0x030)); // 0270D90FD978 0x30 M_BufferLength              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 0270D90FD998 0x34 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_BufferLength                            = GetInt32(new IntPtr(p + 0x030)); // 024669160C50 0x30 M_BufferLength              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 024669160C70 0x34 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

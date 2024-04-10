@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 016 LeftY                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 018 RightX                                   000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
     // 01A RightY                                   000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    public partial class SwitchSimpleInputReport
+    public partial class SwitchSimpleInputReport : DataModel
     {
         public sbyte                                    ReportId                                { get; set; }
         public sbyte                                    Buttons0                                { get; set; }
@@ -35,16 +35,16 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SwitchSimpleInputReport();
+            var value   = new SwitchSimpleInputReport() { Pointer= p0 };
 
-            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 0270D77BB718 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x011)); // 0270D77BB738 0x11 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x012)); // 0270D77BB758 0x12 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Hat                                       = GetSByte(new IntPtr(p + 0x013)); // 0270D77BB778 0x13 Hat                         ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftX                                     = GetUInt16(new IntPtr(p + 0x014)); // 0270D77BB798 0x14 LeftX                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.LeftY                                     = GetUInt16(new IntPtr(p + 0x016)); // 0270D77BB7B8 0x16 LeftY                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.RightX                                    = GetUInt16(new IntPtr(p + 0x018)); // 0270D77BB7D8 0x18 RightX                      ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.RightY                                    = GetUInt16(new IntPtr(p + 0x01A)); // 0270D77BB7F8 0x1A RightY                      ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.ReportId                                  = GetSByte(new IntPtr(p + 0x010)); // 024667813718 0x10 ReportId                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x011)); // 024667813738 0x11 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x012)); // 024667813758 0x12 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Hat                                       = GetSByte(new IntPtr(p + 0x013)); // 024667813778 0x13 Hat                         ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftX                                     = GetUInt16(new IntPtr(p + 0x014)); // 024667813798 0x14 LeftX                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.LeftY                                     = GetUInt16(new IntPtr(p + 0x016)); // 0246678137B8 0x16 LeftY                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.RightX                                    = GetUInt16(new IntPtr(p + 0x018)); // 0246678137D8 0x18 RightX                      ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.RightY                                    = GetUInt16(new IntPtr(p + 0x01A)); // 0246678137F8 0x1A RightY                      ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

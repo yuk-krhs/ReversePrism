@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 UninterpretedOptionFieldNumber           int IL2CPP_TYPE_I4
     // 010 _repeated_uninterpretedOption_codec      FieldCodec`1<UninterpretedOption> IL2CPP_TYPE_GENERICINST
     // 028 UninterpretedOption                      000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer
-    public partial class ServiceOptions
+    public partial class ServiceOptions : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public bool                                     Deprecated                              { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ServiceOptions();
+            var value   = new ServiceOptions() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x020)); // 0270D0CA6830 0x20 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Deprecated                                = GetBool(new IntPtr(p + 0x024)); // 0270D0CA6890 0x24 Deprecated                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x028), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 0270D0CA68F0 0x28 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x020)); // 024660BAE0D0 0x20 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Deprecated                                = GetBool(new IntPtr(p + 0x024)); // 024660BAE130 0x24 Deprecated                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UninterpretedOption                       = GetObjectList<UninterpretedOption>(new IntPtr(p + 0x028), ReversePrism.DataModels.UninterpretedOption.FromPointer); // 024660BAE190 0x28 UninterpretedOption         ( 000185CF62B8 ModelClassListType RepeatedField`1<UninterpretedOption> RepeatedField`1<UninterpretedOption> List<UninterpretedOption> Pointer )
 
             return value;
         }

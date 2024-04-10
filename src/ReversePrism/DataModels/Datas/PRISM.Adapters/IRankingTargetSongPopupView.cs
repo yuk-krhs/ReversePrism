@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRankingTargetSongPopupView
+    public partial class IRankingTargetSongPopupView : DataModel
     {
 
         public static IRankingTargetSongPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRankingTargetSongPopupView();
+            var value   = new IRankingTargetSongPopupView() { Pointer= p0 };
 
 
             return value;

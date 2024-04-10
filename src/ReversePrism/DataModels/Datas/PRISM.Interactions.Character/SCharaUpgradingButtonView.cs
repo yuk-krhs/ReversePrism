@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 030 MasterTrainingButtonText                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 038 TrainingButtonText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 040 onButtonChange                           Subject`1<ValueTuple`2<bool, bool>> IL2CPP_TYPE_GENERICINST
-    public partial class SCharaUpgradingButtonView
+    public partial class SCharaUpgradingButtonView : DataModel
     {
         public ToggleButton?                            CanMasterTrainingButton                 { get; set; }
         public ToggleButton?                            CanTrainingButton                       { get; set; }
@@ -28,12 +28,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SCharaUpgradingButtonView();
+            var value   = new SCharaUpgradingButtonView() { Pointer= p0 };
 
-            value.CanMasterTrainingButton                   = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DA39BCC0 0x20 CanMasterTrainingButton     ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.CanTrainingButton                         = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 0270DA39BCE0 0x28 CanTrainingButton           ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.MasterTrainingButtonText                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA39BD00 0x30 MasterTrainingButtonText    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TrainingButtonText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA39BD20 0x38 TrainingButtonText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CanMasterTrainingButton                   = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3F7268 0x20 CanMasterTrainingButton     ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.CanTrainingButton                         = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3F7288 0x28 CanTrainingButton           ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.MasterTrainingButtonText                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3F72A8 0x30 MasterTrainingButtonText    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TrainingButtonText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3F72C8 0x38 TrainingButtonText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

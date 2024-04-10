@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 028 ElementName                              000186671910 ModelPrimitiveType string string string String
     // 030 IsElement                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class SoapFieldAttribute
+    public partial class SoapFieldAttribute : DataModel
     {
         public string                                   ElementName                             { get; set; }
         public bool                                     IsElement                               { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SoapFieldAttribute();
+            var value   = new SoapFieldAttribute() { Pointer= p0 };
 
-            value.ElementName                               = GetString(new IntPtr(p + 0x028)); // 0270D6BE6D80 0x28 ElementName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsElement                                 = GetBool(new IntPtr(p + 0x030)); // 0270D6BE6DA0 0x30 IsElement                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ElementName                               = GetString(new IntPtr(p + 0x028)); // 024666C5ED80 0x28 ElementName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsElement                                 = GetBool(new IntPtr(p + 0x030)); // 024666C5EDA0 0x30 IsElement                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 cancellationTokenRegistration            CancellationTokenRegistration IL2CPP_TYPE_VALUETYPE
     // 000 core                                     UniTaskCompletionSourceCore`1<bool> IL2CPP_TYPE_GENERICINST
     // 000 isWaiting                                bool IL2CPP_TYPE_BOOLEAN
-    public partial class SingleConsumerUnboundedChannelReader
+    public partial class SingleConsumerUnboundedChannelReader : DataModel
     {
 
         public static SingleConsumerUnboundedChannelReader? FromPointer(IntPtr p0)
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SingleConsumerUnboundedChannelReader();
+            var value   = new SingleConsumerUnboundedChannelReader() { Pointer= p0 };
 
 
             return value;

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 SortTargetIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 UseFavoriteToggle                        0001865965D0 ModelPrimitiveType bool bool bool Bool
-    public partial class StorySortFilterPopupSortContentViewModel
+    public partial class StorySortFilterPopupSortContentViewModel : DataModel
     {
         public int                                      SortTargetIndex                         { get; set; }
         public bool                                     UseFavoriteToggle                       { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StorySortFilterPopupSortContentViewModel();
+            var value   = new StorySortFilterPopupSortContentViewModel() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0270D67C3520 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseFavoriteToggle                         = GetBool(new IntPtr(p + 0x014)); // 0270D67C3540 0x14 UseFavoriteToggle           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 024666823520 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.UseFavoriteToggle                         = GetBool(new IntPtr(p + 0x014)); // 024666823540 0x14 UseFavoriteToggle           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

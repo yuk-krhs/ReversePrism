@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 038 DailyMissionNotificationDay              0001865F36C0 ModelPrimitiveType int int int Int32
     // 040 UserBirthdayNotificationId               0001866722E0 ModelPrimitiveType string string string String
     // 048 ComebackNotificationId                   0001866722E0 ModelPrimitiveType string string string String
-    public partial class NotificationSaveData
+    public partial class NotificationSaveData : DataModel
     {
         public string                                   StaminaNotificationId                   { get; set; }
         public string                                   LiveBonusNotificationId                 { get; set; }
@@ -29,14 +29,14 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NotificationSaveData();
+            var value   = new NotificationSaveData() { Pointer= p0 };
 
-            value.StaminaNotificationId                     = GetString(new IntPtr(p + 0x020)); // 027003A74A28 0x20 StaminaNotificationId       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.LiveBonusNotificationId                   = GetString(new IntPtr(p + 0x028)); // 027003A74A48 0x28 LiveBonusNotificationId     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DailyMissionNotificationId                = GetString(new IntPtr(p + 0x030)); // 027003A74A68 0x30 DailyMissionNotificationId  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DailyMissionNotificationDay               = GetInt32(new IntPtr(p + 0x038)); // 027003A74A88 0x38 DailyMissionNotificationDay ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.UserBirthdayNotificationId                = GetString(new IntPtr(p + 0x040)); // 027003A74AA8 0x40 UserBirthdayNotificationId  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ComebackNotificationId                    = GetString(new IntPtr(p + 0x048)); // 027003A74AC8 0x48 ComebackNotificationId      ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.StaminaNotificationId                     = GetString(new IntPtr(p + 0x020)); // 0245A3A7F960 0x20 StaminaNotificationId       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.LiveBonusNotificationId                   = GetString(new IntPtr(p + 0x028)); // 0245A3A7F980 0x28 LiveBonusNotificationId     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DailyMissionNotificationId                = GetString(new IntPtr(p + 0x030)); // 0245A3A7F9A0 0x30 DailyMissionNotificationId  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.DailyMissionNotificationDay               = GetInt32(new IntPtr(p + 0x038)); // 0245A3A7F9C0 0x38 DailyMissionNotificationDay ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.UserBirthdayNotificationId                = GetString(new IntPtr(p + 0x040)); // 0245A3A7F9E0 0x40 UserBirthdayNotificationId  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ComebackNotificationId                    = GetString(new IntPtr(p + 0x048)); // 0245A3A7FA00 0x48 ComebackNotificationId      ( 0001866722E0 ModelPrimitiveType string string string String )
 
             return value;
         }

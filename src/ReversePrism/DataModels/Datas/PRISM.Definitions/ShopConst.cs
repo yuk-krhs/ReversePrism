@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 000 LoginPassValidDays                       int IL2CPP_TYPE_I4
     // 000 HistoryShowDays                          int IL2CPP_TYPE_I4
     // 000 ElapsedDaysArrayToPeriodEnd              int[] IL2CPP_TYPE_SZARRAY
-    public partial class ShopConst
+    public partial class ShopConst : DataModel
     {
 
         public static ShopConst? FromPointer(IntPtr p0)
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ShopConst();
+            var value   = new ShopConst() { Pointer= p0 };
 
 
             return value;

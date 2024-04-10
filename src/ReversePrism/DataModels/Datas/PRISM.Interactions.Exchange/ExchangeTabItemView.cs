@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 020 TabButton                                0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer
     // 028 NewBadge                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    public partial class ExchangeTabItemView
+    public partial class ExchangeTabItemView : DataModel
     {
         public UITabButton?                             TabButton                               { get; set; }
         public GameObject?                              NewBadge                                { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExchangeTabItemView();
+            var value   = new ExchangeTabItemView() { Pointer= p0 };
 
-            value.TabButton                                 = GetObject<UITabButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabButton.FromPointer); // 0270DB8C7B58 0x20 TabButton                   ( 0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer )
-            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB8C7B78 0x28 NewBadge                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TabButton                                 = GetObject<UITabButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabButton.FromPointer); // 02466B94F5D0 0x20 TabButton                   ( 0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer )
+            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B94F5F0 0x28 NewBadge                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

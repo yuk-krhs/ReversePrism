@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <Value>k__BackingField                   <object> IL2CPP_TYPE_OBJECT
-    public partial class ConstantExpression
+    public partial class ConstantExpression : DataModel
     {
 
         public static ConstantExpression? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ConstantExpression();
+            var value   = new ConstantExpression() { Pointer= p0 };
 
 
             return value;

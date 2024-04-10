@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 CharacterIconModelList                   000185CE0148 ModelClassListType List`1<HomeSettingsIdolIconViewModel> List`1<HomeSettingsIdolIconViewModel> List<HomeSettingsIdolIconViewModel> Pointer
-    public partial class HomeSettingsIdolSelectViewModel
+    public partial class HomeSettingsIdolSelectViewModel : DataModel
     {
         public List<HomeSettingsIdolIconViewModel>?     CharacterIconModelList                  { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new HomeSettingsIdolSelectViewModel();
+            var value   = new HomeSettingsIdolSelectViewModel() { Pointer= p0 };
 
-            value.CharacterIconModelList                    = GetObjectList<HomeSettingsIdolIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeSettingsIdolIconViewModel.FromPointer); // 0270D622C7A8 0x10 CharacterIconModelList      ( 000185CE0148 ModelClassListType List`1<HomeSettingsIdolIconViewModel> List`1<HomeSettingsIdolIconViewModel> List<HomeSettingsIdolIconViewModel> Pointer )
+            value.CharacterIconModelList                    = GetObjectList<HomeSettingsIdolIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeSettingsIdolIconViewModel.FromPointer); // 02466628BF78 0x10 CharacterIconModelList      ( 000185CE0148 ModelClassListType List`1<HomeSettingsIdolIconViewModel> List`1<HomeSettingsIdolIconViewModel> List<HomeSettingsIdolIconViewModel> Pointer )
 
             return value;
         }

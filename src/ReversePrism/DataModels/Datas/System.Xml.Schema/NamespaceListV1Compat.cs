@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class NamespaceListV1Compat
+    public partial class NamespaceListV1Compat : DataModel
     {
 
         public static NamespaceListV1Compat? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new NamespaceListV1Compat();
+            var value   = new NamespaceListV1Compat() { Pointer= p0 };
 
 
             return value;

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 ScrollPosition                           0001866656B0 ModelPrimitiveType float float float Single
-    public partial class StoryViewScrollPositionHolder
+    public partial class StoryViewScrollPositionHolder : DataModel
     {
         public float                                    ScrollPosition                          { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StoryViewScrollPositionHolder();
+            var value   = new StoryViewScrollPositionHolder() { Pointer= p0 };
 
-            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0270D5E3EF90 0x10 ScrollPosition              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 024665EAF708 0x10 ScrollPosition              ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

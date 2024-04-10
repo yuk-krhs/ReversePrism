@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class XmlSerializerImplementation
+    public partial class XmlSerializerImplementation : DataModel
     {
 
         public static XmlSerializerImplementation? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new XmlSerializerImplementation();
+            var value   = new XmlSerializerImplementation() { Pointer= p0 };
 
 
             return value;

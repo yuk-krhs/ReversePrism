@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IDevicePerformanceLevelControl
+    public partial class IDevicePerformanceLevelControl : DataModel
     {
 
         public static IDevicePerformanceLevelControl? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IDevicePerformanceLevelControl();
+            var value   = new IDevicePerformanceLevelControl() { Pointer= p0 };
 
 
             return value;

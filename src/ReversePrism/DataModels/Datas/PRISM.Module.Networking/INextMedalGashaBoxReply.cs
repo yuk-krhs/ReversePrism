@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class INextMedalGashaBoxReply
+    public partial class INextMedalGashaBoxReply : DataModel
     {
 
         public static INextMedalGashaBoxReply? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new INextMedalGashaBoxReply();
+            var value   = new INextMedalGashaBoxReply() { Pointer= p0 };
 
 
             return value;

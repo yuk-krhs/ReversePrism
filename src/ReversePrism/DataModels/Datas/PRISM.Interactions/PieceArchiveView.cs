@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 050 onConversion                             Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 058 Vm                                       00018673F090 ModelClassType PieceArchiveViewModel PieceArchiveViewModel PieceArchiveViewModel Pointer
     // 060 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class PieceArchiveView
+    public partial class PieceArchiveView : DataModel
     {
         public UITextMeshProUGUI?                       TxtPieceConversionItem                  { get; set; }
         public UIButton?                                BtnToExchange                           { get; set; }
@@ -33,15 +33,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PieceArchiveView();
+            var value   = new PieceArchiveView() { Pointer= p0 };
 
-            value.TxtPieceConversionItem                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0270DA290C58 0x20 TxtPieceConversionItem      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnToExchange                             = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0270DA290C78 0x28 BtnToExchange               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TabGroupView                              = GetObject<LabelTabGroupView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LabelTabGroupView.FromPointer); // 0270DA290C98 0x30 TabGroupView                ( 000186777080 ModelClassType LabelTabGroupView LabelTabGroupView LabelTabGroupView Pointer )
-            value.GridView                                  = GetObject<EnhancedPieceSelectGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.EnhancedPieceSelectGridView.FromPointer); // 0270DA290CB8 0x38 GridView                    ( 000186734B50 ModelClassType EnhancedPieceSelectGridView EnhancedPieceSelectGridView EnhancedPieceSelectGridView Pointer )
-            value.PieceArchiveBottomView                    = GetObject<PieceArchiveBottomView>(new IntPtr(p + 0x040), ReversePrism.DataModels.PieceArchiveBottomView.FromPointer); // 0270DA290CD8 0x40 PieceArchiveBottomView      ( 00018673D400 ModelClassType PieceArchiveBottomView PieceArchiveBottomView PieceArchiveBottomView Pointer )
-            value.Vm                                        = GetObject<PieceArchiveViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PieceArchiveViewModel.FromPointer); // 0270DA290D38 0x58 Vm                          ( 00018673F090 ModelClassType PieceArchiveViewModel PieceArchiveViewModel PieceArchiveViewModel Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DA290D58 0x60 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.TxtPieceConversionItem                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2E4228 0x20 TxtPieceConversionItem      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnToExchange                             = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2E4248 0x28 BtnToExchange               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.TabGroupView                              = GetObject<LabelTabGroupView>(new IntPtr(p + 0x030), ReversePrism.DataModels.LabelTabGroupView.FromPointer); // 02466A2E4268 0x30 TabGroupView                ( 000186777080 ModelClassType LabelTabGroupView LabelTabGroupView LabelTabGroupView Pointer )
+            value.GridView                                  = GetObject<EnhancedPieceSelectGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.EnhancedPieceSelectGridView.FromPointer); // 02466A2E4288 0x38 GridView                    ( 000186734B50 ModelClassType EnhancedPieceSelectGridView EnhancedPieceSelectGridView EnhancedPieceSelectGridView Pointer )
+            value.PieceArchiveBottomView                    = GetObject<PieceArchiveBottomView>(new IntPtr(p + 0x040), ReversePrism.DataModels.PieceArchiveBottomView.FromPointer); // 02466A2E42A8 0x40 PieceArchiveBottomView      ( 00018673D400 ModelClassType PieceArchiveBottomView PieceArchiveBottomView PieceArchiveBottomView Pointer )
+            value.Vm                                        = GetObject<PieceArchiveViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.PieceArchiveViewModel.FromPointer); // 02466A2E4308 0x58 Vm                          ( 00018673F090 ModelClassType PieceArchiveViewModel PieceArchiveViewModel PieceArchiveViewModel Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A2E4328 0x60 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

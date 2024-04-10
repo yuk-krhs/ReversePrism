@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 View                                     000186630D40 ModelClassType MobileNotificationView MobileNotificationView MobileNotificationView Pointer
-    public partial class MobileNotificationBuilder
+    public partial class MobileNotificationBuilder : DataModel
     {
         public MobileNotificationView?                  View                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MobileNotificationBuilder();
+            var value   = new MobileNotificationBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<MobileNotificationView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileNotificationView.FromPointer); // 027004F63288 0x20 View                        ( 000186630D40 ModelClassType MobileNotificationView MobileNotificationView MobileNotificationView Pointer )
+            value.View                                      = GetObject<MobileNotificationView>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileNotificationView.FromPointer); // 0245A4F661A8 0x20 View                        ( 000186630D40 ModelClassType MobileNotificationView MobileNotificationView MobileNotificationView Pointer )
 
             return value;
         }

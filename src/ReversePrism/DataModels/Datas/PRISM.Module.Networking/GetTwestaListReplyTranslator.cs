@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GetTwestaListReplyTranslator
+    public partial class GetTwestaListReplyTranslator : DataModel
     {
 
         public static GetTwestaListReplyTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetTwestaListReplyTranslator();
+            var value   = new GetTwestaListReplyTranslator() { Pointer= p0 };
 
 
             return value;

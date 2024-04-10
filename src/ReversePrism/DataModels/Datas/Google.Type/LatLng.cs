@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Latitude                                 0001865C2950 ModelPrimitiveType double double double Double
     // 000 LongitudeFieldNumber                     int IL2CPP_TYPE_I4
     // 020 Longitude                                0001865C2950 ModelPrimitiveType double double double Double
-    public partial class LatLng
+    public partial class LatLng : DataModel
     {
         public double                                   Latitude                                { get; set; }
         public double                                   Longitude                               { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LatLng();
+            var value   = new LatLng() { Pointer= p0 };
 
-            value.Latitude                                  = GetDouble(new IntPtr(p + 0x018)); // 0270DA695630 0x18 Latitude                    ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Longitude                                 = GetDouble(new IntPtr(p + 0x020)); // 0270DA695670 0x20 Longitude                   ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Latitude                                  = GetDouble(new IntPtr(p + 0x018)); // 02466A700DD0 0x18 Latitude                    ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.Longitude                                 = GetDouble(new IntPtr(p + 0x020)); // 02466A700E10 0x20 Longitude                   ( 0001865C2950 ModelPrimitiveType double double double Double )
 
             return value;
         }

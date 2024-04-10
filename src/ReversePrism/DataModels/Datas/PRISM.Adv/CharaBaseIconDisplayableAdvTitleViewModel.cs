@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BaseViewModel                            0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer
     // 018 CharacterBaseIconViewModel               000186599E70 ModelClassType CharacterBaseIconViewModel CharacterBaseIconViewModel CharacterBaseIconViewModel Pointer
-    public partial class CharaBaseIconDisplayableAdvTitleViewModel
+    public partial class CharaBaseIconDisplayableAdvTitleViewModel : DataModel
     {
         public AdvTitleViewModel?                       BaseViewModel                           { get; set; }
         public CharacterBaseIconViewModel?              CharacterBaseIconViewModel              { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharaBaseIconDisplayableAdvTitleViewModel();
+            var value   = new CharaBaseIconDisplayableAdvTitleViewModel() { Pointer= p0 };
 
-            value.BaseViewModel                             = GetObject<AdvTitleViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdvTitleViewModel.FromPointer); // 0270D5DD2C68 0x10 BaseViewModel               ( 0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer )
-            value.CharacterBaseIconViewModel                = GetObject<CharacterBaseIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterBaseIconViewModel.FromPointer); // 0270D5DD2C88 0x18 CharacterBaseIconViewModel  ( 000186599E70 ModelClassType CharacterBaseIconViewModel CharacterBaseIconViewModel CharacterBaseIconViewModel Pointer )
+            value.BaseViewModel                             = GetObject<AdvTitleViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdvTitleViewModel.FromPointer); // 024665E43578 0x10 BaseViewModel               ( 0001866985C0 ModelClassType AdvTitleViewModel AdvTitleViewModel AdvTitleViewModel Pointer )
+            value.CharacterBaseIconViewModel                = GetObject<CharacterBaseIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterBaseIconViewModel.FromPointer); // 024665E43598 0x18 CharacterBaseIconViewModel  ( 000186599E70 ModelClassType CharacterBaseIconViewModel CharacterBaseIconViewModel CharacterBaseIconViewModel Pointer )
 
             return value;
         }

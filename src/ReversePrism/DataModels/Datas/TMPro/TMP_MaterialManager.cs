@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 m_fallbackMaterialLookup                 Dictionary`2<int, long> IL2CPP_TYPE_GENERICINST
     // 018 M_fallbackCleanupList                    000185D2D3D8 ModelClassListType List`1<FallbackMaterial> List`1<FallbackMaterial> List<FallbackMaterial> Pointer
     // 020 IsFallbackListDirty                      000186595C30 ModelPrimitiveType bool bool bool Bool
-    public partial class TMP_MaterialManager
+    public partial class TMP_MaterialManager : DataModel
     {
         public List<FallbackMaterial>?                  M_fallbackCleanupList                   { get; set; }
         public bool                                     IsFallbackListDirty                     { get; set; }
@@ -24,10 +24,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TMP_MaterialManager();
+            var value   = new TMP_MaterialManager() { Pointer= p0 };
 
-            value.M_fallbackCleanupList                     = GetObjectList<FallbackMaterial>(new IntPtr(p + 0x018), ReversePrism.DataModels.FallbackMaterial.FromPointer); // 0270D0F9F678 0x18 M_fallbackCleanupList       ( 000185D2D3D8 ModelClassListType List`1<FallbackMaterial> List`1<FallbackMaterial> List<FallbackMaterial> Pointer )
-            value.IsFallbackListDirty                       = GetBool(new IntPtr(p + 0x020)); // 0270D0F9F698 0x20 IsFallbackListDirty         ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.M_fallbackCleanupList                     = GetObjectList<FallbackMaterial>(new IntPtr(p + 0x018), ReversePrism.DataModels.FallbackMaterial.FromPointer); // 0245A4199930 0x18 M_fallbackCleanupList       ( 000185D2D3D8 ModelClassListType List`1<FallbackMaterial> List`1<FallbackMaterial> List<FallbackMaterial> Pointer )
+            value.IsFallbackListDirty                       = GetBool(new IntPtr(p + 0x020)); // 0245A4199950 0x20 IsFallbackListDirty         ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

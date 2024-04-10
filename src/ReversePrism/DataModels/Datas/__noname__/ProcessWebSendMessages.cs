@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ProcessWebSendMessages
+    public partial class ProcessWebSendMessages : DataModel
     {
 
         public static ProcessWebSendMessages? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProcessWebSendMessages();
+            var value   = new ProcessWebSendMessages() { Pointer= p0 };
 
 
             return value;

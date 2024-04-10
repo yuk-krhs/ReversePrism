@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 GoTemplateScharaEffects                  000186618EB0 ModelClassType GashaScharaEffects GashaScharaEffects GashaScharaEffects Pointer
-    public partial class GashaScharaEffectsDirection
+    public partial class GashaScharaEffectsDirection : DataModel
     {
         public GashaScharaEffects?                      GoTemplateScharaEffects                 { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GashaScharaEffectsDirection();
+            var value   = new GashaScharaEffectsDirection() { Pointer= p0 };
 
-            value.GoTemplateScharaEffects                   = GetObject<GashaScharaEffects>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaScharaEffects.FromPointer); // 0270D4DC2CD0 0x20 GoTemplateScharaEffects     ( 000186618EB0 ModelClassType GashaScharaEffects GashaScharaEffects GashaScharaEffects Pointer )
+            value.GoTemplateScharaEffects                   = GetObject<GashaScharaEffects>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaScharaEffects.FromPointer); // 024664E279E0 0x20 GoTemplateScharaEffects     ( 000186618EB0 ModelClassType GashaScharaEffects GashaScharaEffects GashaScharaEffects Pointer )
 
             return value;
         }

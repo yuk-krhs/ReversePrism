@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 Type                                     int IL2CPP_TYPE_I4
     // 010 BaseEvent                                0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32
     // 024 CompositionString                        0001865A5C00 ModelEnumType IMECompositionString IMECompositionString IMECompositionString Int32
-    public partial class IMECompositionEvent
+    public partial class IMECompositionEvent : DataModel
     {
         public InputEvent                               BaseEvent                               { get; set; }
         public IMECompositionString                     CompositionString                       { get; set; }
@@ -23,10 +23,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMECompositionEvent();
+            var value   = new IMECompositionEvent() { Pointer= p0 };
 
-            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0270D7818230 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
-            value.CompositionString                         = (IMECompositionString)GetInt32(new IntPtr(p + 0x024)); // 0270D7818250 0x24 CompositionString           ( 0001865A5C00 ModelEnumType IMECompositionString IMECompositionString IMECompositionString Int32 )
+            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 024667870230 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
+            value.CompositionString                         = (IMECompositionString)GetInt32(new IntPtr(p + 0x024)); // 024667870250 0x24 CompositionString           ( 0001865A5C00 ModelEnumType IMECompositionString IMECompositionString IMECompositionString Int32 )
 
             return value;
         }

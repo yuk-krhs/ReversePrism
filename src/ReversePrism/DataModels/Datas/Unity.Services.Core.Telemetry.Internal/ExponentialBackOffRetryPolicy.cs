@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 M_MaxTryCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
     // 014 M_BaseDelaySeconds                       0001866656B0 ModelPrimitiveType float float float Single
-    public partial class ExponentialBackOffRetryPolicy
+    public partial class ExponentialBackOffRetryPolicy : DataModel
     {
         public int                                      M_MaxTryCount                           { get; set; }
         public float                                    M_BaseDelaySeconds                      { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ExponentialBackOffRetryPolicy();
+            var value   = new ExponentialBackOffRetryPolicy() { Pointer= p0 };
 
-            value.M_MaxTryCount                             = GetInt32(new IntPtr(p + 0x010)); // 02700666B018 0x10 M_MaxTryCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_BaseDelaySeconds                        = GetSingle(new IntPtr(p + 0x014)); // 02700666B038 0x14 M_BaseDelaySeconds          ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_MaxTryCount                             = GetInt32(new IntPtr(p + 0x010)); // 0245A6639580 0x10 M_MaxTryCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_BaseDelaySeconds                        = GetSingle(new IntPtr(p + 0x014)); // 0245A66395A0 0x14 M_BaseDelaySeconds          ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

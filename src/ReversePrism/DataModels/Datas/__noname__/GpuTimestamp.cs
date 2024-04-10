@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class GpuTimestamp
+    public partial class GpuTimestamp : DataModel
     {
 
         public static GpuTimestamp? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GpuTimestamp();
+            var value   = new GpuTimestamp() { Pointer= p0 };
 
 
             return value;

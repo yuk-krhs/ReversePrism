@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 Max                                      0001865F59B0 ModelPrimitiveType int int int Int32
-    public partial class MaxIntParameter
+    public partial class MaxIntParameter : DataModel
     {
         public int                                      Max                                     { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaxIntParameter();
+            var value   = new MaxIntParameter() { Pointer= p0 };
 
-            value.Max                                       = GetInt32(new IntPtr(p + 0x020)); // 0270D92EEFB0 0x20 Max                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x020)); // 024669358CD8 0x20 Max                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

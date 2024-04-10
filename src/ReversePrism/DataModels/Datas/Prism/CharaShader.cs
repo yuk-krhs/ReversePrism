@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 NormalOutline                            Shader IL2CPP_TYPE_CLASS
     // 008 NormalOutlineLite                        Shader IL2CPP_TYPE_CLASS
     // 010 NormalOutlineSuperLite                   00018674D100 ModelClassType Shader Shader Shader Pointer
-    public partial class CharaShader
+    public partial class CharaShader : DataModel
     {
         public Shader?                                  NormalOutlineSuperLite                  { get; set; }
 
@@ -24,9 +24,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CharaShader();
+            var value   = new CharaShader() { Pointer= p0 };
 
-            value.NormalOutlineSuperLite                    = GetObject<Shader>(new IntPtr(p + 0x010), ReversePrism.DataModels.Shader.FromPointer); // 0270073B3C68 0x10 NormalOutlineSuperLite      ( 00018674D100 ModelClassType Shader Shader Shader Pointer )
+            value.NormalOutlineSuperLite                    = GetObject<Shader>(new IntPtr(p + 0x010), ReversePrism.DataModels.Shader.FromPointer); // 0245A7087258 0x10 NormalOutlineSuperLite      ( 00018674D100 ModelClassType Shader Shader Shader Pointer )
 
             return value;
         }

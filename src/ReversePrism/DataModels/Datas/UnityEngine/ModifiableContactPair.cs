@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 05C OtherPosition                            0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
     // 068 NumContacts                              0001865F2AF0 ModelPrimitiveType int int int Int32
     // 070 contacts                                 <int> IL2CPP_TYPE_I
-    public partial class ModifiableContactPair
+    public partial class ModifiableContactPair : DataModel
     {
         public Quaternion                               Rotation                                { get; set; }
         public Vector3                                  Position                                { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ModifiableContactPair();
+            var value   = new ModifiableContactPair() { Pointer= p0 };
 
-            value.Rotation                                  = (Quaternion)GetInt32(new IntPtr(p + 0x030)); // 02700696B3A0 0x30 Rotation                    ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x040)); // 02700696B3C0 0x40 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.OtherRotation                             = (Quaternion)GetInt32(new IntPtr(p + 0x04C)); // 02700696B3E0 0x4C OtherRotation               ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.OtherPosition                             = (Vector3)GetInt32(new IntPtr(p + 0x05C)); // 02700696B400 0x5C OtherPosition               ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.NumContacts                               = GetInt32(new IntPtr(p + 0x068)); // 02700696B420 0x68 NumContacts                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Rotation                                  = (Quaternion)GetInt32(new IntPtr(p + 0x030)); // 0245A691DA50 0x30 Rotation                    ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x040)); // 0245A691DA70 0x40 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.OtherRotation                             = (Quaternion)GetInt32(new IntPtr(p + 0x04C)); // 0245A691DA90 0x4C OtherRotation               ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.OtherPosition                             = (Vector3)GetInt32(new IntPtr(p + 0x05C)); // 0245A691DAB0 0x5C OtherPosition               ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.NumContacts                               = GetInt32(new IntPtr(p + 0x068)); // 0245A691DAD0 0x68 NumContacts                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

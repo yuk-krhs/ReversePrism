@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 q5                                       Queue`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 q6                                       Queue`1<<var>> IL2CPP_TYPE_GENERICINST
     // 000 q7                                       Queue`1<<var>> IL2CPP_TYPE_GENERICINST
-    public partial class Zip
+    public partial class Zip : DataModel
     {
 
         public static Zip? FromPointer(IntPtr p0)
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Zip();
+            var value   = new Zip() { Pointer= p0 };
 
 
             return value;

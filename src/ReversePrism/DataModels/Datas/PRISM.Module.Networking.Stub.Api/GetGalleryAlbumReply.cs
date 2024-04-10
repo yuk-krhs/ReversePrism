@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
     // 000 SupportCharacterListFieldNumber          int IL2CPP_TYPE_I4
     // 010 _repeated_supportCharacterList_codec     FieldCodec`1<GalleryAlbumSupportCharacterStatus> IL2CPP_TYPE_GENERICINST
     // 028 SupportCharacterList                     000185CD9898 ModelClassListType RepeatedField`1<GalleryAlbumSupportCharacterStatus> RepeatedField`1<GalleryAlbumSupportCharacterStatus> List<GalleryAlbumSupportCharacterStatus> Pointer
-    public partial class GetGalleryAlbumReply
+    public partial class GetGalleryAlbumReply : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
         public int                                      MstUnitId                               { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetGalleryAlbumReply();
+            var value   = new GetGalleryAlbumReply() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 027004203E48 0x18 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x01C)); // 027004203E88 0x1C MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceIdolList                           = GetObjectList<GalleryAlbumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GalleryAlbumProduceIdolStatus.FromPointer); // 027004203EE8 0x20 ProduceIdolList             ( 000185CD9688 ModelClassListType RepeatedField`1<GalleryAlbumProduceIdolStatus> RepeatedField`1<GalleryAlbumProduceIdolStatus> List<GalleryAlbumProduceIdolStatus> Pointer )
-            value.SupportCharacterList                      = GetObjectList<GalleryAlbumSupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryAlbumSupportCharacterStatus.FromPointer); // 027004203F48 0x28 SupportCharacterList        ( 000185CD9898 ModelClassListType RepeatedField`1<GalleryAlbumSupportCharacterStatus> RepeatedField`1<GalleryAlbumSupportCharacterStatus> List<GalleryAlbumSupportCharacterStatus> Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 024661513F98 0x18 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x01C)); // 024661513FD8 0x1C MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProduceIdolList                           = GetObjectList<GalleryAlbumProduceIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GalleryAlbumProduceIdolStatus.FromPointer); // 024661514038 0x20 ProduceIdolList             ( 000185CD9688 ModelClassListType RepeatedField`1<GalleryAlbumProduceIdolStatus> RepeatedField`1<GalleryAlbumProduceIdolStatus> List<GalleryAlbumProduceIdolStatus> Pointer )
+            value.SupportCharacterList                      = GetObjectList<GalleryAlbumSupportCharacterStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryAlbumSupportCharacterStatus.FromPointer); // 024661514098 0x28 SupportCharacterList        ( 000185CD9898 ModelClassListType RepeatedField`1<GalleryAlbumSupportCharacterStatus> RepeatedField`1<GalleryAlbumSupportCharacterStatus> List<GalleryAlbumSupportCharacterStatus> Pointer )
 
             return value;
         }

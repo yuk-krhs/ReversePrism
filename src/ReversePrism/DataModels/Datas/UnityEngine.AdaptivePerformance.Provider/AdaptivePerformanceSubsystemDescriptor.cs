@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class AdaptivePerformanceSubsystemDescriptor
+    public partial class AdaptivePerformanceSubsystemDescriptor : DataModel
     {
 
         public static AdaptivePerformanceSubsystemDescriptor? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new AdaptivePerformanceSubsystemDescriptor();
+            var value   = new AdaptivePerformanceSubsystemDescriptor() { Pointer= p0 };
 
 
             return value;

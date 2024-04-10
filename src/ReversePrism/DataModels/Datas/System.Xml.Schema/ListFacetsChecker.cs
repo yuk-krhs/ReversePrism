@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ListFacetsChecker
+    public partial class ListFacetsChecker : DataModel
     {
 
         public static ListFacetsChecker? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ListFacetsChecker();
+            var value   = new ListFacetsChecker() { Pointer= p0 };
 
 
             return value;

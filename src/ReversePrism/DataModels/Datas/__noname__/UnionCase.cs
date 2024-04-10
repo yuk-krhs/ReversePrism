@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Fields                                   000185C9F578 ModelClassListType PropertyInfo[] PropertyInfo[] List<PropertyInfo> Pointer
     // 028 FieldReader                              000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer
     // 030 Constructor                              000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer
-    public partial class UnionCase
+    public partial class UnionCase : DataModel
     {
         public int                                      Tag                                     { get; set; }
         public string                                   Name                                    { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UnionCase();
+            var value   = new UnionCase() { Pointer= p0 };
 
-            value.Tag                                       = GetInt32(new IntPtr(p + 0x010)); // 0270D8867218 0x10 Tag                         ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0270D8867238 0x18 Name                        ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.Fields                                    = GetObjectList<PropertyInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0270D8867258 0x20 Fields                      ( 000185C9F578 ModelClassListType PropertyInfo[] PropertyInfo[] List<PropertyInfo> Pointer )
-            value.FieldReader                               = GetObject<FSharpFunction>(new IntPtr(p + 0x028), ReversePrism.DataModels.FSharpFunction.FromPointer); // 0270D8867278 0x28 FieldReader                 ( 000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer )
-            value.Constructor                               = GetObject<FSharpFunction>(new IntPtr(p + 0x030), ReversePrism.DataModels.FSharpFunction.FromPointer); // 0270D8867298 0x30 Constructor                 ( 000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer )
+            value.Tag                                       = GetInt32(new IntPtr(p + 0x010)); // 0246688AA878 0x10 Tag                         ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0246688AA898 0x18 Name                        ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Fields                                    = GetObjectList<PropertyInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0246688AA8B8 0x20 Fields                      ( 000185C9F578 ModelClassListType PropertyInfo[] PropertyInfo[] List<PropertyInfo> Pointer )
+            value.FieldReader                               = GetObject<FSharpFunction>(new IntPtr(p + 0x028), ReversePrism.DataModels.FSharpFunction.FromPointer); // 0246688AA8D8 0x28 FieldReader                 ( 000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer )
+            value.Constructor                               = GetObject<FSharpFunction>(new IntPtr(p + 0x030), ReversePrism.DataModels.FSharpFunction.FromPointer); // 0246688AA8F8 0x30 Constructor                 ( 000186546B60 ModelClassType FSharpFunction FSharpFunction FSharpFunction Pointer )
 
             return value;
         }

@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 018 PresentList                              000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
     // 020 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
-    public partial class ReceivePresentReply
+    public partial class ReceivePresentReply : DataModel
     {
         public List<PresentStatus>?                     PresentList                             { get; set; }
         public HavingProductGroupStatus?                HavingGroup                             { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReceivePresentReply();
+            var value   = new ReceivePresentReply() { Pointer= p0 };
 
-            value.PresentList                               = GetObjectList<PresentStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentStatus.FromPointer); // 0270D246EC58 0x18 PresentList                 ( 000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0270D246EC98 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.PresentList                               = GetObjectList<PresentStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentStatus.FromPointer); // 0246623FA4C0 0x18 PresentList                 ( 000185CE9CA8 ModelClassListType RepeatedField`1<PresentStatus> RepeatedField`1<PresentStatus> List<PresentStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0246623FA500 0x20 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

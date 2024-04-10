@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ValidateCommandEvent
+    public partial class ValidateCommandEvent : DataModel
     {
 
         public static ValidateCommandEvent? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ValidateCommandEvent();
+            var value   = new ValidateCommandEvent() { Pointer= p0 };
 
 
             return value;

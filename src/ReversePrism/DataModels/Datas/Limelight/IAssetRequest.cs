@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAssetRequest
+    public partial class IAssetRequest : DataModel
     {
 
         public static IAssetRequest? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAssetRequest();
+            var value   = new IAssetRequest() { Pointer= p0 };
 
 
             return value;

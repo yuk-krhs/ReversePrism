@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IRhythmGameRenderOptionWatcherState
+    public partial class IRhythmGameRenderOptionWatcherState : DataModel
     {
 
         public static IRhythmGameRenderOptionWatcherState? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IRhythmGameRenderOptionWatcherState();
+            var value   = new IRhythmGameRenderOptionWatcherState() { Pointer= p0 };
 
 
             return value;

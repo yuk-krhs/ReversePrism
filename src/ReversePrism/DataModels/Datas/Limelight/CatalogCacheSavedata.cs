@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 ProcessedResourceVersion                 SavableProperty`1<string> IL2CPP_TYPE_GENERICINST
     // 020 ServerResourceVersion                    SavableProperty`1<string> IL2CPP_TYPE_GENERICINST
     // 028 RecoveryRequired                         SavableProperty`1<bool> IL2CPP_TYPE_GENERICINST
-    public partial class CatalogCacheSavedata
+    public partial class CatalogCacheSavedata : DataModel
     {
 
         public static CatalogCacheSavedata? FromPointer(IntPtr p0)
@@ -20,7 +20,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CatalogCacheSavedata();
+            var value   = new CatalogCacheSavedata() { Pointer= p0 };
 
 
             return value;

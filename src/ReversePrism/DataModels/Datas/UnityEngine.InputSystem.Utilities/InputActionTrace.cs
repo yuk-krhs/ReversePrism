@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 080 m_ActionMapStateClones                   InlinedArray`1<InputActionState> IL2CPP_TYPE_GENERICINST
     // 098 m_CallbackDelegate                       Action`1<CallbackContext> IL2CPP_TYPE_GENERICINST
     // 0A0 m_ActionChangeDelegate                   Action`2<<object>, InputActionChange> IL2CPP_TYPE_GENERICINST
-    public partial class InputActionTrace
+    public partial class InputActionTrace : DataModel
     {
         public bool                                     M_SubscribedToAll                       { get; set; }
         public bool                                     M_OnActionChangeHooked                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputActionTrace();
+            var value   = new InputActionTrace() { Pointer= p0 };
 
-            value.M_SubscribedToAll                         = GetBool(new IntPtr(p + 0x010)); // 0270D787BCB0 0x10 M_SubscribedToAll           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_OnActionChangeHooked                    = GetBool(new IntPtr(p + 0x011)); // 0270D787BCD0 0x11 M_OnActionChangeHooked      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_EventBuffer                             = (InputEventBuffer)GetInt32(new IntPtr(p + 0x048)); // 0270D787BD30 0x48 M_EventBuffer               ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
+            value.M_SubscribedToAll                         = GetBool(new IntPtr(p + 0x010)); // 0246678E44E0 0x10 M_SubscribedToAll           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_OnActionChangeHooked                    = GetBool(new IntPtr(p + 0x011)); // 0246678E4500 0x11 M_OnActionChangeHooked      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_EventBuffer                             = (InputEventBuffer)GetInt32(new IntPtr(p + 0x048)); // 0246678E4560 0x48 M_EventBuffer               ( 0001865EE780 ModelEnumType InputEventBuffer InputEventBuffer InputEventBuffer Int32 )
 
             return value;
         }

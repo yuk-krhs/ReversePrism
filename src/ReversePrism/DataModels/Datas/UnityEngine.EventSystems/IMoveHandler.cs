@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IMoveHandler
+    public partial class IMoveHandler : DataModel
     {
 
         public static IMoveHandler? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IMoveHandler();
+            var value   = new IMoveHandler() { Pointer= p0 };
 
 
             return value;

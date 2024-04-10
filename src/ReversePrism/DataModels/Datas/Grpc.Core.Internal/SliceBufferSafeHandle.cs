@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 020 tailSpacePtr                             <int> IL2CPP_TYPE_I
     // 028 TailSpaceLen                             0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 MemoryManagerLazy                        00018651BD60 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer
-    public partial class SliceBufferSafeHandle
+    public partial class SliceBufferSafeHandle : DataModel
     {
         public SliceBufferSafeHandle?                   NullInstance                            { get; set; }
         public int                                      TailSpaceLen                            { get; set; }
@@ -27,11 +27,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SliceBufferSafeHandle();
+            var value   = new SliceBufferSafeHandle() { Pointer= p0 };
 
-            value.NullInstance                              = GetObject<SliceBufferSafeHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.SliceBufferSafeHandle.FromPointer); // 0270D3040AE8 0x10 NullInstance                ( 00018651B840 ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer )
-            value.TailSpaceLen                              = GetInt32(new IntPtr(p + 0x028)); // 0270D3040B28 0x28 TailSpaceLen                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MemoryManagerLazy                         = GetObject<SliceMemoryManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.SliceMemoryManager.FromPointer); // 0270D3040B48 0x30 MemoryManagerLazy           ( 00018651BD60 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer )
+            value.NullInstance                              = GetObject<SliceBufferSafeHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.SliceBufferSafeHandle.FromPointer); // 024662FB2590 0x10 NullInstance                ( 00018651B840 ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer )
+            value.TailSpaceLen                              = GetInt32(new IntPtr(p + 0x028)); // 024662FB25D0 0x28 TailSpaceLen                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MemoryManagerLazy                         = GetObject<SliceMemoryManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.SliceMemoryManager.FromPointer); // 024662FB25F0 0x30 MemoryManagerLazy           ( 00018651BD60 ModelClassType SliceMemoryManager SliceMemoryManager SliceMemoryManager Pointer )
 
             return value;
         }

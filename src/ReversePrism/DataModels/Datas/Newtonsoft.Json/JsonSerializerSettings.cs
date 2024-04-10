@@ -61,7 +61,7 @@ namespace ReversePrism.DataModels
     // 0F8 TraceWriter                              00018667A660 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer
     // 100 SerializationBinder                      000186635FA0 ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer
     // 108 <Error>k__BackingField                   EventHandler`1<ErrorEventArgs> IL2CPP_TYPE_GENERICINST
-    public partial class JsonSerializerSettings
+    public partial class JsonSerializerSettings : DataModel
     {
         public CultureInfo?                             DefaultCulture                          { get; set; }
         public CultureInfo?                             Culture                                 { get; set; }
@@ -79,17 +79,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new JsonSerializerSettings();
+            var value   = new JsonSerializerSettings() { Pointer= p0 };
 
-            value.DefaultCulture                            = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 027003B74DD8 0x10 DefaultCulture              ( 0001865B5450 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 027003B74F38 0x48 Culture                     ( 0001865B4AB0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.MaxDepthSet                               = GetBool(new IntPtr(p + 0x05C)); // 027003B74F98 0x5C MaxDepthSet                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 027003B74FB8 0x60 DateFormatString            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.DateFormatStringSet                       = GetBool(new IntPtr(p + 0x068)); // 027003B74FD8 0x68 DateFormatStringSet         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IContractResolver.FromPointer); // 027003B75178 0xE0 ContractResolver            ( 00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
-            value.EqualityComparer                          = GetObject<IEqualityComparer>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 027003B75198 0xE8 EqualityComparer            ( 000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
-            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ITraceWriter.FromPointer); // 027003B751D8 0xF8 TraceWriter                 ( 00018667A660 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
-            value.SerializationBinder                       = GetObject<ISerializationBinder>(new IntPtr(p + 0x100), ReversePrism.DataModels.ISerializationBinder.FromPointer); // 027003B751F8 0x100 SerializationBinder         ( 000186635FA0 ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer )
+            value.DefaultCulture                            = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A3B74DD8 0x10 DefaultCulture              ( 0001865B5450 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A3B74F38 0x48 Culture                     ( 0001865B4AB0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.MaxDepthSet                               = GetBool(new IntPtr(p + 0x05C)); // 0245A3B74F98 0x5C MaxDepthSet                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 0245A3B74FB8 0x60 DateFormatString            ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.DateFormatStringSet                       = GetBool(new IntPtr(p + 0x068)); // 0245A3B74FD8 0x68 DateFormatStringSet         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IContractResolver.FromPointer); // 0245A3B75178 0xE0 ContractResolver            ( 00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
+            value.EqualityComparer                          = GetObject<IEqualityComparer>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 0245A3B75198 0xE8 EqualityComparer            ( 000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
+            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ITraceWriter.FromPointer); // 0245A3B751D8 0xF8 TraceWriter                 ( 00018667A660 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
+            value.SerializationBinder                       = GetObject<ISerializationBinder>(new IntPtr(p + 0x100), ReversePrism.DataModels.ISerializationBinder.FromPointer); // 0245A3B751F8 0x100 SerializationBinder         ( 000186635FA0 ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer )
 
             return value;
         }

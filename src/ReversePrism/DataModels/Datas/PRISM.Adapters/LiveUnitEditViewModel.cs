@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 028 CostumeService                           000186715C30 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer
     // 030 SpecialUnitCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
     // 038 Units                                    000185B917B0 ModelClassListType LiveUnit[] LiveUnit[] List<LiveUnit> Pointer
-    public partial class LiveUnitEditViewModel
+    public partial class LiveUnitEditViewModel : DataModel
     {
         public ICachedIdolService?                      IdolService                             { get; set; }
         public ICachedCostumeService?                   CostumeService                          { get; set; }
@@ -27,12 +27,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitEditViewModel();
+            var value   = new LiveUnitEditViewModel() { Pointer= p0 };
 
-            value.IdolService                               = GetObject<ICachedIdolService>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICachedIdolService.FromPointer); // 0270D5F146C0 0x20 IdolService                 ( 000186716AD0 ModelClassType ICachedIdolService ICachedIdolService ICachedIdolService Pointer )
-            value.CostumeService                            = GetObject<ICachedCostumeService>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICachedCostumeService.FromPointer); // 0270D5F146E0 0x28 CostumeService              ( 000186715C30 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer )
-            value.SpecialUnitCount                          = GetInt32(new IntPtr(p + 0x030)); // 0270D5F14700 0x30 SpecialUnitCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Units                                     = GetObjectList<LiveUnit>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveUnit.FromPointer); // 0270D5F14720 0x38 Units                       ( 000185B917B0 ModelClassListType LiveUnit[] LiveUnit[] List<LiveUnit> Pointer )
+            value.IdolService                               = GetObject<ICachedIdolService>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICachedIdolService.FromPointer); // 024665F746C0 0x20 IdolService                 ( 000186716AD0 ModelClassType ICachedIdolService ICachedIdolService ICachedIdolService Pointer )
+            value.CostumeService                            = GetObject<ICachedCostumeService>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICachedCostumeService.FromPointer); // 024665F746E0 0x28 CostumeService              ( 000186715C30 ModelClassType ICachedCostumeService ICachedCostumeService ICachedCostumeService Pointer )
+            value.SpecialUnitCount                          = GetInt32(new IntPtr(p + 0x030)); // 024665F74700 0x30 SpecialUnitCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Units                                     = GetObjectList<LiveUnit>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveUnit.FromPointer); // 024665F74720 0x38 Units                       ( 000185B917B0 ModelClassListType LiveUnit[] LiveUnit[] List<LiveUnit> Pointer )
 
             return value;
         }

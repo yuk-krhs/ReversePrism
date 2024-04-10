@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class LiveStageDetailPopupSequencer
+    public partial class LiveStageDetailPopupSequencer : DataModel
     {
 
         public static LiveStageDetailPopupSequencer? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveStageDetailPopupSequencer();
+            var value   = new LiveStageDetailPopupSequencer() { Pointer= p0 };
 
 
             return value;

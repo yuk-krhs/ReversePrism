@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 BaseDisposable                           000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer
     // 018 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class StackableDisposable
+    public partial class StackableDisposable : DataModel
     {
         public IDisposable?                             BaseDisposable                          { get; set; }
         public int                                      Count                                   { get; set; }
@@ -21,10 +21,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StackableDisposable();
+            var value   = new StackableDisposable() { Pointer= p0 };
 
-            value.BaseDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 0270041CE518 0x10 BaseDisposable              ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0270041CE538 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BaseDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A423B958 0x10 BaseDisposable              ( 000186753A40 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A423B978 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

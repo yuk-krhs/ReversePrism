@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IAdaptivePerformance
+    public partial class IAdaptivePerformance : DataModel
     {
 
         public static IAdaptivePerformance? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IAdaptivePerformance();
+            var value   = new IAdaptivePerformance() { Pointer= p0 };
 
 
             return value;

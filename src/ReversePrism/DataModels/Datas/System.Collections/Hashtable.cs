@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
     // 040 Keycomparer                              000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer
     // 048 _syncRoot                                <object> IL2CPP_TYPE_OBJECT
     // 000 s_serializationInfoTable                 ConditionalWeakTable`2<<object>, SerializationInfo> IL2CPP_TYPE_GENERICINST
-    public partial class Hashtable
+    public partial class Hashtable : DataModel
     {
         public List<bucket>?                            Buckets                                 { get; set; }
         public int                                      Count                                   { get; set; }
@@ -49,18 +49,18 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Hashtable();
+            var value   = new Hashtable() { Pointer= p0 };
 
-            value.Buckets                                   = GetEnumList<bucket>(new IntPtr(p + 0x010)); // 0270033FD7C8 0x10 Buckets                     ( 000185CBBA28 ModelEnumListType bucket[] bucket[] List<bucket> Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0270033FD7E8 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Occupancy                                 = GetInt32(new IntPtr(p + 0x01C)); // 0270033FD808 0x1C Occupancy                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Loadsize                                  = GetInt32(new IntPtr(p + 0x020)); // 0270033FD828 0x20 Loadsize                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LoadFactor                                = GetSingle(new IntPtr(p + 0x024)); // 0270033FD848 0x24 LoadFactor                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x028)); // 0270033FD868 0x28 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsWriterInProgress                        = GetBool(new IntPtr(p + 0x02C)); // 0270033FD888 0x2C IsWriterInProgress          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Keys                                      = GetObject<ICollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.ICollection.FromPointer); // 0270033FD8A8 0x30 Keys                        ( 000186731510 ModelClassType ICollection ICollection ICollection Pointer )
-            value.Values                                    = GetObject<ICollection>(new IntPtr(p + 0x038), ReversePrism.DataModels.ICollection.FromPointer); // 0270033FD8C8 0x38 Values                      ( 000186731510 ModelClassType ICollection ICollection ICollection Pointer )
-            value.Keycomparer                               = GetObject<IEqualityComparer>(new IntPtr(p + 0x040), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 0270033FD8E8 0x40 Keycomparer                 ( 000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
+            value.Buckets                                   = GetEnumList<bucket>(new IntPtr(p + 0x010)); // 0245A33FD7C8 0x10 Buckets                     ( 000185CBBA28 ModelEnumListType bucket[] bucket[] List<bucket> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A33FD7E8 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Occupancy                                 = GetInt32(new IntPtr(p + 0x01C)); // 0245A33FD808 0x1C Occupancy                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Loadsize                                  = GetInt32(new IntPtr(p + 0x020)); // 0245A33FD828 0x20 Loadsize                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LoadFactor                                = GetSingle(new IntPtr(p + 0x024)); // 0245A33FD848 0x24 LoadFactor                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x028)); // 0245A33FD868 0x28 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsWriterInProgress                        = GetBool(new IntPtr(p + 0x02C)); // 0245A33FD888 0x2C IsWriterInProgress          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Keys                                      = GetObject<ICollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.ICollection.FromPointer); // 0245A33FD8A8 0x30 Keys                        ( 000186731510 ModelClassType ICollection ICollection ICollection Pointer )
+            value.Values                                    = GetObject<ICollection>(new IntPtr(p + 0x038), ReversePrism.DataModels.ICollection.FromPointer); // 0245A33FD8C8 0x38 Values                      ( 000186731510 ModelClassType ICollection ICollection ICollection Pointer )
+            value.Keycomparer                               = GetObject<IEqualityComparer>(new IntPtr(p + 0x040), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 0245A33FD8E8 0x40 Keycomparer                 ( 000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
 
             return value;
         }

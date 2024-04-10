@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 040 onShowSubject                            Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 048 Button2                                  0001865F4260 ModelPrimitiveType int int int Int32
     // 04C Button3                                  0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class ChainTalkChoiceButtonGroup
+    public partial class ChainTalkChoiceButtonGroup : DataModel
     {
         public GameObject?                              ButtonParent                            { get; set; }
         public Animator?                                Animator                                { get; set; }
@@ -32,15 +32,15 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ChainTalkChoiceButtonGroup();
+            var value   = new ChainTalkChoiceButtonGroup() { Pointer= p0 };
 
-            value.ButtonParent                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB0E5750 0x20 ButtonParent                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 0270DB0E5770 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ChoiceButtons                             = GetObjectList<ChainTalkChoiceButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChainTalkChoiceButton.FromPointer); // 0270DB0E5790 0x30 ChoiceButtons               ( 000185CB7258 ModelClassListType ChainTalkChoiceButton[] ChainTalkChoiceButton[] List<ChainTalkChoiceButton> Pointer )
-            value.IsWaiting                                 = GetBool(new IntPtr(p + 0x038)); // 0270DB0E57B0 0x38 IsWaiting                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ChoiceIndex                               = GetInt32(new IntPtr(p + 0x03C)); // 0270DB0E57D0 0x3C ChoiceIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Button2                                   = GetInt32(new IntPtr(p + 0x048)); // 0270DB0E5810 0x48 Button2                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Button3                                   = GetInt32(new IntPtr(p + 0x04C)); // 0270DB0E5830 0x4C Button3                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ButtonParent                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B14D750 0x20 ButtonParent                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x028), ReversePrism.DataModels.Animator.FromPointer); // 02466B14D770 0x28 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.ChoiceButtons                             = GetObjectList<ChainTalkChoiceButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChainTalkChoiceButton.FromPointer); // 02466B14D790 0x30 ChoiceButtons               ( 000185CB7258 ModelClassListType ChainTalkChoiceButton[] ChainTalkChoiceButton[] List<ChainTalkChoiceButton> Pointer )
+            value.IsWaiting                                 = GetBool(new IntPtr(p + 0x038)); // 02466B14D7B0 0x38 IsWaiting                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ChoiceIndex                               = GetInt32(new IntPtr(p + 0x03C)); // 02466B14D7D0 0x3C ChoiceIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Button2                                   = GetInt32(new IntPtr(p + 0x048)); // 02466B14D810 0x48 Button2                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Button3                                   = GetInt32(new IntPtr(p + 0x04C)); // 02466B14D830 0x4C Button3                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

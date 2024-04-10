@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class MaskUtilities
+    public partial class MaskUtilities : DataModel
     {
 
         public static MaskUtilities? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MaskUtilities();
+            var value   = new MaskUtilities() { Pointer= p0 };
 
 
             return value;

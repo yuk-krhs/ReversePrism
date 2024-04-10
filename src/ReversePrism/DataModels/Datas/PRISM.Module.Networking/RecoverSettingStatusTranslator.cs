@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class RecoverSettingStatusTranslator
+    public partial class RecoverSettingStatusTranslator : DataModel
     {
 
         public static RecoverSettingStatusTranslator? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new RecoverSettingStatusTranslator();
+            var value   = new RecoverSettingStatusTranslator() { Pointer= p0 };
 
 
             return value;

@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
     // 018 ScanOrKeyCode                            0001865F36C0 ModelPrimitiveType int int int Int32
     // 01C NameBuffer                               000186699590 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32
-    public partial class QueryKeyNameCommand
+    public partial class QueryKeyNameCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
         public int                                      ScanOrKeyCode                           { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new QueryKeyNameCommand();
+            var value   = new QueryKeyNameCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0270D77FBAC0 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.ScanOrKeyCode                             = GetInt32(new IntPtr(p + 0x018)); // 0270D77FBAE0 0x18 ScanOrKeyCode               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x01C)); // 0270D77FBB00 0x1C NameBuffer                  ( 000186699590 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667853AC0 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.ScanOrKeyCode                             = GetInt32(new IntPtr(p + 0x018)); // 024667853AE0 0x18 ScanOrKeyCode               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NameBuffer                                = (<nameBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x01C)); // 024667853B00 0x1C NameBuffer                  ( 000186699590 ModelEnumType <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer <nameBuffer>e__FixedBuffer Int32 )
 
             return value;
         }

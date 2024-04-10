@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class ClearLines
+    public partial class ClearLines : DataModel
     {
 
         public static ClearLines? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ClearLines();
+            var value   = new ClearLines() { Pointer= p0 };
 
 
             return value;

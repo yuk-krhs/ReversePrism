@@ -15,7 +15,7 @@ namespace ReversePrism.DataModels
     // 000 IdolListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_idolList_codec                 FieldCodec`1<MvIdolStatus> IL2CPP_TYPE_GENERICINST
     // 020 IdolList                                 000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer
-    public partial class SetMvOriginalMemberArgs
+    public partial class SetMvOriginalMemberArgs : DataModel
     {
         public int                                      MstSongId                               { get; set; }
         public List<MvIdolStatus>?                      IdolList                                { get; set; }
@@ -26,10 +26,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SetMvOriginalMemberArgs();
+            var value   = new SetMvOriginalMemberArgs() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0270D21F1370 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolList                                  = GetObjectList<MvIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 0270D21F13D0 0x20 IdolList                    ( 000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466219D6B8 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IdolList                                  = GetObjectList<MvIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 02466219D718 0x20 IdolList                    ( 000185CE77F8 ModelClassListType RepeatedField`1<MvIdolStatus> RepeatedField`1<MvIdolStatus> List<MvIdolStatus> Pointer )
 
             return value;
         }

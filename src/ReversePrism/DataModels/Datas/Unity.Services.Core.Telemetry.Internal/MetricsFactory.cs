@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 M_ProjectConfig                          000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer
     // 018 <CommonTags>k__BackingField              IReadOnlyDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     // 020 Handler                                  000186616B60 ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer
-    public partial class MetricsFactory
+    public partial class MetricsFactory : DataModel
     {
         public IProjectConfiguration?                   M_ProjectConfig                         { get; set; }
         public MetricsHandler?                          Handler                                 { get; set; }
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MetricsFactory();
+            var value   = new MetricsFactory() { Pointer= p0 };
 
-            value.M_ProjectConfig                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0270066AFAF0 0x10 M_ProjectConfig             ( 000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
-            value.Handler                                   = GetObject<MetricsHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.MetricsHandler.FromPointer); // 0270066AFB30 0x20 Handler                     ( 000186616B60 ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer )
+            value.M_ProjectConfig                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0245A6678860 0x10 M_ProjectConfig             ( 000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
+            value.Handler                                   = GetObject<MetricsHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.MetricsHandler.FromPointer); // 0245A66788A0 0x20 Handler                     ( 000186616B60 ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer )
 
             return value;
         }

@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
     // 058 onClickThumbnail                         Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 060 CellDataWithDisposablesList              000185D2EFF8 ModelClassListType List`1<TwestaArticleCellDataWithDisposables> List`1<TwestaArticleCellDataWithDisposables> List<TwestaArticleCellDataWithDisposables> Pointer
     // 068 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    public partial class TwestaScrollerView
+    public partial class TwestaScrollerView : DataModel
     {
         public EnhancedScroller?                        Scroller                                { get; set; }
         public TwestaArticleCell?                       ArticleCellPrefab                       { get; set; }
@@ -32,13 +32,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TwestaScrollerView();
+            var value   = new TwestaScrollerView() { Pointer= p0 };
 
-            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 0270DB17E0E0 0x20 Scroller                    ( 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
-            value.ArticleCellPrefab                         = GetObject<TwestaArticleCell>(new IntPtr(p + 0x028), ReversePrism.DataModels.TwestaArticleCell.FromPointer); // 0270DB17E100 0x28 ArticleCellPrefab           ( 0001866C44C0 ModelClassType TwestaArticleCell TwestaArticleCell TwestaArticleCell Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0270DB17E120 0x30 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CellDataWithDisposablesList               = GetObjectList<TwestaArticleCellDataWithDisposables>(new IntPtr(p + 0x060), ReversePrism.DataModels.TwestaArticleCellDataWithDisposables.FromPointer); // 0270DB17E1E0 0x60 CellDataWithDisposablesList ( 000185D2EFF8 ModelClassListType List`1<TwestaArticleCellDataWithDisposables> List`1<TwestaArticleCellDataWithDisposables> List<TwestaArticleCellDataWithDisposables> Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 0270DB17E200 0x68 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 02466B1CE0E0 0x20 Scroller                    ( 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
+            value.ArticleCellPrefab                         = GetObject<TwestaArticleCell>(new IntPtr(p + 0x028), ReversePrism.DataModels.TwestaArticleCell.FromPointer); // 02466B1CE100 0x28 ArticleCellPrefab           ( 0001866C44C0 ModelClassType TwestaArticleCell TwestaArticleCell TwestaArticleCell Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B1CE120 0x30 EmptyView                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CellDataWithDisposablesList               = GetObjectList<TwestaArticleCellDataWithDisposables>(new IntPtr(p + 0x060), ReversePrism.DataModels.TwestaArticleCellDataWithDisposables.FromPointer); // 02466B1CE1E0 0x60 CellDataWithDisposablesList ( 000185D2EFF8 ModelClassListType List`1<TwestaArticleCellDataWithDisposables> List`1<TwestaArticleCellDataWithDisposables> List<TwestaArticleCellDataWithDisposables> Pointer )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x068), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B1CE200 0x68 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
 
             return value;
         }

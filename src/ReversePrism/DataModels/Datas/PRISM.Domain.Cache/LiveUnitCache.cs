@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 idolIdDic                                Dictionary`2<int, ValueTuple`2<string, int>[]> IL2CPP_TYPE_GENERICINST
     // 018 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class LiveUnitCache
+    public partial class LiveUnitCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new LiveUnitCache();
+            var value   = new LiveUnitCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 027004A88E18 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0245A4ADF7F8 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

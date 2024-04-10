@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 Season                                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 000 MstSubSeasonIdFieldNumber                int IL2CPP_TYPE_I4
     // 01C MstSubSeasonId                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    public partial class ProduceAutoPlayProgressedTermStatus
+    public partial class ProduceAutoPlayProgressedTermStatus : DataModel
     {
         public int                                      Season                                  { get; set; }
         public int                                      MstSubSeasonId                          { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ProduceAutoPlayProgressedTermStatus();
+            var value   = new ProduceAutoPlayProgressedTermStatus() { Pointer= p0 };
 
-            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 0270D11065A0 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x01C)); // 0270D11065E0 0x1C MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Season                                    = GetInt32(new IntPtr(p + 0x018)); // 024661090350 0x18 Season                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x01C)); // 024661090390 0x1C MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

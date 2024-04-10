@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
     // 06C PaddingRight                             0001866656B0 ModelPrimitiveType float float float Single
     // 070 PaddingLeft                              0001866656B0 ModelPrimitiveType float float float Single
     // 074 PaddingBottom                            0001866656B0 ModelPrimitiveType float float float Single
-    public partial class UISafeArea
+    public partial class UISafeArea : DataModel
     {
         public int                                      ScreenHeight                            { get; set; }
         public int                                      ScreenWidth                             { get; set; }
@@ -42,20 +42,20 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new UISafeArea();
+            var value   = new UISafeArea() { Pointer= p0 };
 
-            value.ScreenHeight                              = GetInt32(new IntPtr(p + 0x020)); // 027003F89628 0x20 ScreenHeight                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScreenWidth                               = GetInt32(new IntPtr(p + 0x024)); // 027003F89648 0x24 ScreenWidth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExecType                                  = (ViewType)GetInt32(new IntPtr(p + 0x028)); // 027003F89668 0x28 ExecType                    ( 000186666690 ModelEnumType ViewType ViewType ViewType Int32 )
-            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 027003F89688 0x30 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.CurrentSafeArea                           = (Rect)GetInt32(new IntPtr(p + 0x038)); // 027003F896A8 0x38 CurrentSafeArea             ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
-            value.LastSafeArea                              = (Rect)GetInt32(new IntPtr(p + 0x04C)); // 027003F896E8 0x4C LastSafeArea                ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
-            value.LastResolution                            = (Vector2Int)GetInt32(new IntPtr(p + 0x05C)); // 027003F89708 0x5C LastResolution              ( 0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.DeviceOrientation                         = (DeviceOrientation)GetInt32(new IntPtr(p + 0x064)); // 027003F89728 0x64 DeviceOrientation           ( 0001866CB0E0 ModelEnumType DeviceOrientation DeviceOrientation DeviceOrientation Int32 )
-            value.IsDebug                                   = GetBool(new IntPtr(p + 0x068)); // 027003F89748 0x68 IsDebug                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PaddingRight                              = GetSingle(new IntPtr(p + 0x06C)); // 027003F89768 0x6C PaddingRight                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.PaddingLeft                               = GetSingle(new IntPtr(p + 0x070)); // 027003F89788 0x70 PaddingLeft                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.PaddingBottom                             = GetSingle(new IntPtr(p + 0x074)); // 027003F897A8 0x74 PaddingBottom               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScreenHeight                              = GetInt32(new IntPtr(p + 0x020)); // 0245A3F99F60 0x20 ScreenHeight                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ScreenWidth                               = GetInt32(new IntPtr(p + 0x024)); // 0245A3F99F80 0x24 ScreenWidth                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ExecType                                  = (ViewType)GetInt32(new IntPtr(p + 0x028)); // 0245A3F99FA0 0x28 ExecType                    ( 000186666690 ModelEnumType ViewType ViewType ViewType Int32 )
+            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A3F99FC0 0x30 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.CurrentSafeArea                           = (Rect)GetInt32(new IntPtr(p + 0x038)); // 0245A3F99FE0 0x38 CurrentSafeArea             ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
+            value.LastSafeArea                              = (Rect)GetInt32(new IntPtr(p + 0x04C)); // 0245A3F9A020 0x4C LastSafeArea                ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
+            value.LastResolution                            = (Vector2Int)GetInt32(new IntPtr(p + 0x05C)); // 0245A3F9A040 0x5C LastResolution              ( 0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.DeviceOrientation                         = (DeviceOrientation)GetInt32(new IntPtr(p + 0x064)); // 0245A3F9A060 0x64 DeviceOrientation           ( 0001866CB0E0 ModelEnumType DeviceOrientation DeviceOrientation DeviceOrientation Int32 )
+            value.IsDebug                                   = GetBool(new IntPtr(p + 0x068)); // 0245A3F9A080 0x68 IsDebug                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PaddingRight                              = GetSingle(new IntPtr(p + 0x06C)); // 0245A3F9A0A0 0x6C PaddingRight                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.PaddingLeft                               = GetSingle(new IntPtr(p + 0x070)); // 0245A3F9A0C0 0x70 PaddingLeft                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.PaddingBottom                             = GetSingle(new IntPtr(p + 0x074)); // 0245A3F9A0E0 0x74 PaddingBottom               ( 0001866656B0 ModelPrimitiveType float float float Single )
 
             return value;
         }

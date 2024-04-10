@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 018 ProfileStatus                            0001865C39B0 ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer
     // 000 FriendStateFieldNumber                   int IL2CPP_TYPE_I4
     // 020 FriendState                              0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32
-    public partial class GetProfileReply
+    public partial class GetProfileReply : DataModel
     {
         public ProfileStatus?                           ProfileStatus                           { get; set; }
         public FriendState                              FriendState                             { get; set; }
@@ -25,10 +25,10 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new GetProfileReply();
+            var value   = new GetProfileReply() { Pointer= p0 };
 
-            value.ProfileStatus                             = GetObject<ProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileStatus.FromPointer); // 0270D2D1A9B0 0x18 ProfileStatus               ( 0001865C39B0 ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer )
-            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x020)); // 0270D2D1A9F0 0x20 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
+            value.ProfileStatus                             = GetObject<ProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileStatus.FromPointer); // 024662CCE680 0x18 ProfileStatus               ( 0001865C39B0 ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer )
+            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x020)); // 024662CCE6C0 0x20 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
 
             return value;
         }

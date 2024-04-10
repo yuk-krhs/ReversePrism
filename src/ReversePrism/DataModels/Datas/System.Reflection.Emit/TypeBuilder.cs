@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 UnspecifiedTypeSize                      int IL2CPP_TYPE_I4
-    public partial class TypeBuilder
+    public partial class TypeBuilder : DataModel
     {
 
         public static TypeBuilder? FromPointer(IntPtr p0)
@@ -18,7 +18,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new TypeBuilder();
+            var value   = new TypeBuilder() { Pointer= p0 };
 
 
             return value;

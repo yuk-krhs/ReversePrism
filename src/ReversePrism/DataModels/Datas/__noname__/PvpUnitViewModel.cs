@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 Status                                   00018660B6D0 ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer
     // 018 <ProduceCards>k__BackingField            IEnumerable`1<IProduceCardStatus> IL2CPP_TYPE_GENERICINST
-    public partial class PvpUnitViewModel
+    public partial class PvpUnitViewModel : DataModel
     {
         public IPvpUnitStatus?                          Status                                  { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PvpUnitViewModel();
+            var value   = new PvpUnitViewModel() { Pointer= p0 };
 
-            value.Status                                    = GetObject<IPvpUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpUnitStatus.FromPointer); // 0270D5E412B0 0x10 Status                      ( 00018660B6D0 ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer )
+            value.Status                                    = GetObject<IPvpUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpUnitStatus.FromPointer); // 024665EB1A28 0x10 Status                      ( 00018660B6D0 ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer )
 
             return value;
         }

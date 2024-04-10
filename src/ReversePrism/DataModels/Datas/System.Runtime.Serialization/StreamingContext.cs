@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_additionalContext                      <object> IL2CPP_TYPE_OBJECT
     // 018 M_state                                  0001865B9B70 ModelEnumType StreamingContextStates StreamingContextStates StreamingContextStates Int32
-    public partial class StreamingContext
+    public partial class StreamingContext : DataModel
     {
         public StreamingContextStates                   M_state                                 { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new StreamingContext();
+            var value   = new StreamingContext() { Pointer= p0 };
 
-            value.M_state                                   = (StreamingContextStates)GetInt32(new IntPtr(p + 0x018)); // 027003B65888 0x18 M_state                     ( 0001865B9B70 ModelEnumType StreamingContextStates StreamingContextStates StreamingContextStates Int32 )
+            value.M_state                                   = (StreamingContextStates)GetInt32(new IntPtr(p + 0x018)); // 0245A3B65888 0x18 M_state                     ( 0001865B9B70 ModelEnumType StreamingContextStates StreamingContextStates StreamingContextStates Int32 )
 
             return value;
         }

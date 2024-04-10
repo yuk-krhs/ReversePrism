@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 01C State                                    000186622610 ModelEnumType MissionGaugeState MissionGaugeState MissionGaugeState Int32
     // 000 ProductFieldNumber                       int IL2CPP_TYPE_I4
     // 020 Product                                  0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
-    public partial class MissionGaugeRewardStatus
+    public partial class MissionGaugeRewardStatus : DataModel
     {
         public int                                      Point                                   { get; set; }
         public MissionGaugeState                        State                                   { get; set; }
@@ -28,11 +28,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new MissionGaugeRewardStatus();
+            var value   = new MissionGaugeRewardStatus() { Pointer= p0 };
 
-            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 0270D22F0A18 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (MissionGaugeState)GetInt32(new IntPtr(p + 0x01C)); // 0270D22F0A58 0x1C State                       ( 000186622610 ModelEnumType MissionGaugeState MissionGaugeState MissionGaugeState Int32 )
-            value.Product                                   = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0270D22F0A98 0x20 Product                     ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.Point                                     = GetInt32(new IntPtr(p + 0x018)); // 02466225F3F8 0x18 Point                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.State                                     = (MissionGaugeState)GetInt32(new IntPtr(p + 0x01C)); // 02466225F438 0x1C State                       ( 000186622610 ModelEnumType MissionGaugeState MissionGaugeState MissionGaugeState Int32 )
+            value.Product                                   = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466225F478 0x20 Product                     ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

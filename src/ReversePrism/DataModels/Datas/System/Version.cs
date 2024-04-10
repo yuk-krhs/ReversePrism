@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 014 Minor                                    0001865F4260 ModelPrimitiveType int int int Int32
     // 018 Build                                    0001865F4260 ModelPrimitiveType int int int Int32
     // 01C Revision                                 0001865F4260 ModelPrimitiveType int int int Int32
-    public partial class Version
+    public partial class Version : DataModel
     {
         public int                                      Major                                   { get; set; }
         public int                                      Minor                                   { get; set; }
@@ -25,12 +25,12 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new Version();
+            var value   = new Version() { Pointer= p0 };
 
-            value.Major                                     = GetInt32(new IntPtr(p + 0x010)); // 027003F4AC48 0x10 Major                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Minor                                     = GetInt32(new IntPtr(p + 0x014)); // 027003F4AC68 0x14 Minor                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Build                                     = GetInt32(new IntPtr(p + 0x018)); // 027003F4AC88 0x18 Build                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Revision                                  = GetInt32(new IntPtr(p + 0x01C)); // 027003F4ACA8 0x1C Revision                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Major                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A3F4AC48 0x10 Major                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Minor                                     = GetInt32(new IntPtr(p + 0x014)); // 0245A3F4AC68 0x14 Minor                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Build                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A3F4AC88 0x18 Build                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Revision                                  = GetInt32(new IntPtr(p + 0x01C)); // 0245A3F4ACA8 0x1C Revision                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
 
             return value;
         }

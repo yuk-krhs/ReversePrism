@@ -32,7 +32,7 @@ namespace ReversePrism.DataModels
     // 0B8 PreviousAssemblyString                   000186671910 ModelPrimitiveType string string string String
     // 0C0 PreviousName                             000186671910 ModelPrimitiveType string string string String
     // 0C8 PreviousType                             000186692850 ModelClassType Type Type Type Pointer
-    public partial class ObjectReader
+    public partial class ObjectReader : DataModel
     {
         public Stream?                                  M_stream                                { get; set; }
         public ISurrogateSelector?                      M_surrogates                            { get; set; }
@@ -62,29 +62,29 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ObjectReader();
+            var value   = new ObjectReader() { Pointer= p0 };
 
-            value.M_stream                                  = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 0270D6C30628 0x10 M_stream                    ( 000186670490 ModelClassType Stream Stream Stream Pointer )
-            value.M_surrogates                              = GetObject<ISurrogateSelector>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 0270D6C30648 0x18 M_surrogates                ( 0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
-            value.M_context                                 = (StreamingContext)GetInt32(new IntPtr(p + 0x020)); // 0270D6C30668 0x20 M_context                   ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
-            value.M_objectManager                           = GetObject<ObjectManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.ObjectManager.FromPointer); // 0270D6C30688 0x30 M_objectManager             ( 0001866C9860 ModelClassType ObjectManager ObjectManager ObjectManager Pointer )
-            value.FormatterEnums                            = GetObject<InternalFE>(new IntPtr(p + 0x038), ReversePrism.DataModels.InternalFE.FromPointer); // 0270D6C306A8 0x38 FormatterEnums              ( 00018671BB00 ModelClassType InternalFE InternalFE InternalFE Pointer )
-            value.M_binder                                  = GetObject<SerializationBinder>(new IntPtr(p + 0x040), ReversePrism.DataModels.SerializationBinder.FromPointer); // 0270D6C306C8 0x40 M_binder                    ( 00018672B650 ModelClassType SerializationBinder SerializationBinder SerializationBinder Pointer )
-            value.TopId                                     = GetInt64(new IntPtr(p + 0x048)); // 0270D6C306E8 0x48 TopId                       ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.BSimpleAssembly                           = GetBool(new IntPtr(p + 0x050)); // 0270D6C30708 0x50 BSimpleAssembly             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Headers                                   = GetObjectList<Header>(new IntPtr(p + 0x068), ReversePrism.DataModels.Header.FromPointer); // 0270D6C30768 0x68 Headers                     ( 000185B83F20 ModelClassListType Header[] Header[] List<Header> Pointer )
-            value.Handler                                   = GetObject<HeaderHandler>(new IntPtr(p + 0x070), ReversePrism.DataModels.HeaderHandler.FromPointer); // 0270D6C30788 0x70 Handler                     ( 0001866AE1D0 ModelClassType HeaderHandler HeaderHandler HeaderHandler Pointer )
-            value.SerObjectInfoInit                         = GetObject<SerObjectInfoInit>(new IntPtr(p + 0x078), ReversePrism.DataModels.SerObjectInfoInit.FromPointer); // 0270D6C307A8 0x78 SerObjectInfoInit           ( 000186729020 ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer )
-            value.M_formatterConverter                      = GetObject<IFormatterConverter>(new IntPtr(p + 0x080), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 0270D6C307C8 0x80 M_formatterConverter        ( 000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
-            value.Stack                                     = GetObject<SerStack>(new IntPtr(p + 0x088), ReversePrism.DataModels.SerStack.FromPointer); // 0270D6C307E8 0x88 Stack                       ( 0001867296E0 ModelClassType SerStack SerStack SerStack Pointer )
-            value.ValueFixupStack                           = GetObject<SerStack>(new IntPtr(p + 0x090), ReversePrism.DataModels.SerStack.FromPointer); // 0270D6C30808 0x90 ValueFixupStack             ( 0001867294C0 ModelClassType SerStack SerStack SerStack Pointer )
-            value.BFullDeserialization                      = GetBool(new IntPtr(p + 0x0A0)); // 0270D6C30848 0xA0 BFullDeserialization        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BOldFormatDetected                        = GetBool(new IntPtr(p + 0x0A1)); // 0270D6C30868 0xA1 BOldFormatDetected          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ValTypeObjectIdTable                      = GetObject<IntSizedArray>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IntSizedArray.FromPointer); // 0270D6C30888 0xA8 ValTypeObjectIdTable        ( 000186715030 ModelClassType IntSizedArray IntSizedArray IntSizedArray Pointer )
-            value.TypeCache                                 = GetObject<NameCache>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.NameCache.FromPointer); // 0270D6C308A8 0xB0 TypeCache                   ( 00018667B190 ModelClassType NameCache NameCache NameCache Pointer )
-            value.PreviousAssemblyString                    = GetString(new IntPtr(p + 0x0B8)); // 0270D6C308C8 0xB8 PreviousAssemblyString      ( 000186671910 ModelPrimitiveType string string string String )
-            value.PreviousName                              = GetString(new IntPtr(p + 0x0C0)); // 0270D6C308E8 0xC0 PreviousName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.PreviousType                              = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 0270D6C30908 0xC8 PreviousType                ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.M_stream                                  = GetObject<Stream>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stream.FromPointer); // 024666CA0628 0x10 M_stream                    ( 000186670490 ModelClassType Stream Stream Stream Pointer )
+            value.M_surrogates                              = GetObject<ISurrogateSelector>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 024666CA0648 0x18 M_surrogates                ( 0001865E51F0 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
+            value.M_context                                 = (StreamingContext)GetInt32(new IntPtr(p + 0x020)); // 024666CA0668 0x20 M_context                   ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
+            value.M_objectManager                           = GetObject<ObjectManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.ObjectManager.FromPointer); // 024666CA0688 0x30 M_objectManager             ( 0001866C9860 ModelClassType ObjectManager ObjectManager ObjectManager Pointer )
+            value.FormatterEnums                            = GetObject<InternalFE>(new IntPtr(p + 0x038), ReversePrism.DataModels.InternalFE.FromPointer); // 024666CA06A8 0x38 FormatterEnums              ( 00018671BB00 ModelClassType InternalFE InternalFE InternalFE Pointer )
+            value.M_binder                                  = GetObject<SerializationBinder>(new IntPtr(p + 0x040), ReversePrism.DataModels.SerializationBinder.FromPointer); // 024666CA06C8 0x40 M_binder                    ( 00018672B650 ModelClassType SerializationBinder SerializationBinder SerializationBinder Pointer )
+            value.TopId                                     = GetInt64(new IntPtr(p + 0x048)); // 024666CA06E8 0x48 TopId                       ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.BSimpleAssembly                           = GetBool(new IntPtr(p + 0x050)); // 024666CA0708 0x50 BSimpleAssembly             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Headers                                   = GetObjectList<Header>(new IntPtr(p + 0x068), ReversePrism.DataModels.Header.FromPointer); // 024666CA0768 0x68 Headers                     ( 000185B83F20 ModelClassListType Header[] Header[] List<Header> Pointer )
+            value.Handler                                   = GetObject<HeaderHandler>(new IntPtr(p + 0x070), ReversePrism.DataModels.HeaderHandler.FromPointer); // 024666CA0788 0x70 Handler                     ( 0001866AE1D0 ModelClassType HeaderHandler HeaderHandler HeaderHandler Pointer )
+            value.SerObjectInfoInit                         = GetObject<SerObjectInfoInit>(new IntPtr(p + 0x078), ReversePrism.DataModels.SerObjectInfoInit.FromPointer); // 024666CA07A8 0x78 SerObjectInfoInit           ( 000186729020 ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer )
+            value.M_formatterConverter                      = GetObject<IFormatterConverter>(new IntPtr(p + 0x080), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 024666CA07C8 0x80 M_formatterConverter        ( 000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
+            value.Stack                                     = GetObject<SerStack>(new IntPtr(p + 0x088), ReversePrism.DataModels.SerStack.FromPointer); // 024666CA07E8 0x88 Stack                       ( 0001867296E0 ModelClassType SerStack SerStack SerStack Pointer )
+            value.ValueFixupStack                           = GetObject<SerStack>(new IntPtr(p + 0x090), ReversePrism.DataModels.SerStack.FromPointer); // 024666CA0808 0x90 ValueFixupStack             ( 0001867294C0 ModelClassType SerStack SerStack SerStack Pointer )
+            value.BFullDeserialization                      = GetBool(new IntPtr(p + 0x0A0)); // 024666CA0848 0xA0 BFullDeserialization        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BOldFormatDetected                        = GetBool(new IntPtr(p + 0x0A1)); // 024666CA0868 0xA1 BOldFormatDetected          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ValTypeObjectIdTable                      = GetObject<IntSizedArray>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IntSizedArray.FromPointer); // 024666CA0888 0xA8 ValTypeObjectIdTable        ( 000186715030 ModelClassType IntSizedArray IntSizedArray IntSizedArray Pointer )
+            value.TypeCache                                 = GetObject<NameCache>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.NameCache.FromPointer); // 024666CA08A8 0xB0 TypeCache                   ( 00018667B190 ModelClassType NameCache NameCache NameCache Pointer )
+            value.PreviousAssemblyString                    = GetString(new IntPtr(p + 0x0B8)); // 024666CA08C8 0xB8 PreviousAssemblyString      ( 000186671910 ModelPrimitiveType string string string String )
+            value.PreviousName                              = GetString(new IntPtr(p + 0x0C0)); // 024666CA08E8 0xC0 PreviousName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.PreviousType                              = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 024666CA0908 0xC8 PreviousType                ( 000186692850 ModelClassType Type Type Type Pointer )
 
             return value;
         }

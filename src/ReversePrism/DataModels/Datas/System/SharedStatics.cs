@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _sharedStatics                           SharedStatics IL2CPP_TYPE_CLASS
     // 010 Maker                                    000186714EA0 ModelClassType StringMaker StringMaker StringMaker Pointer
-    public partial class SharedStatics
+    public partial class SharedStatics : DataModel
     {
         public StringMaker?                             Maker                                   { get; set; }
 
@@ -20,9 +20,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new SharedStatics();
+            var value   = new SharedStatics() { Pointer= p0 };
 
-            value.Maker                                     = GetObject<StringMaker>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringMaker.FromPointer); // 0270D6A624C8 0x10 Maker                       ( 000186714EA0 ModelClassType StringMaker StringMaker StringMaker Pointer )
+            value.Maker                                     = GetObject<StringMaker>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringMaker.FromPointer); // 024666AC24C8 0x10 Maker                       ( 000186714EA0 ModelClassType StringMaker StringMaker StringMaker Pointer )
 
             return value;
         }

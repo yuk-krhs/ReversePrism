@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class EqualSByte
+    public partial class EqualSByte : DataModel
     {
 
         public static EqualSByte? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new EqualSByte();
+            var value   = new EqualSByte() { Pointer= p0 };
 
 
             return value;

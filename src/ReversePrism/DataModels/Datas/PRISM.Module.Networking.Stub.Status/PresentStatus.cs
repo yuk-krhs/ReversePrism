@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 05C PresentState                             00018650E000 ModelEnumType PresentState PresentState PresentState Int32
     // 000 ProductFieldNumber                       int IL2CPP_TYPE_I4
     // 060 Product                                  0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer
-    public partial class PresentStatus
+    public partial class PresentStatus : DataModel
     {
         public DateTime                                 EndDate                                 { get; set; }
         public DateTime                                 CreateDate                              { get; set; }
@@ -44,17 +44,17 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PresentStatus();
+            var value   = new PresentStatus() { Pointer= p0 };
 
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 0270D24752D0 0x10 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x020)); // 0270D24752F0 0x20 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.PresentId                                 = GetString(new IntPtr(p + 0x038)); // 0270D2475370 0x38 PresentId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Comment                                   = GetString(new IntPtr(p + 0x040)); // 0270D24753B0 0x40 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D24753F0 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0270D2475430 0x50 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x058)); // 0270D2475470 0x58 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PresentState                              = (PresentState)GetInt32(new IntPtr(p + 0x05C)); // 0270D24754B0 0x5C PresentState                ( 00018650E000 ModelEnumType PresentState PresentState PresentState Int32 )
-            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ProductStatus.FromPointer); // 0270D24754F0 0x60 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 024662401938 0x10 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x020)); // 024662401958 0x20 CreateDate                  ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.PresentId                                 = GetString(new IntPtr(p + 0x038)); // 0246624019D8 0x38 PresentId                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Comment                                   = GetString(new IntPtr(p + 0x040)); // 024662401A18 0x40 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 024662401A58 0x48 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._CreateDate                               = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 024662401A98 0x50 _CreateDate                 ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x058)); // 024662401AD8 0x58 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.PresentState                              = (PresentState)GetInt32(new IntPtr(p + 0x05C)); // 024662401B18 0x5C PresentState                ( 00018650E000 ModelEnumType PresentState PresentState PresentState Int32 )
+            value.Product                                   = GetObject<ProductStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ProductStatus.FromPointer); // 024662401B58 0x60 Product                     ( 0001865A5470 ModelClassType ProductStatus ProductStatus ProductStatus Pointer )
             value.EndDate                       = ToDateTime(value._EndDate);
             value.CreateDate                    = ToDateTime(value._CreateDate);
 

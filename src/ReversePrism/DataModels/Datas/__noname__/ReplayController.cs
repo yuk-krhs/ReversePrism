@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
     // 078 M_StartTimeAsPerRuntime                  0001865C2950 ModelPrimitiveType double double double Double
     // 080 M_AllEventsByTimeIndex                   0001865F2AF0 ModelPrimitiveType int int int Int32
     // 088 M_AllEventsByTime                        000185CEC5D8 ModelEnumListType List`1<InputEventPtr> List`1<InputEventPtr> List<InputEventPtr> Pointer
-    public partial class ReplayController
+    public partial class ReplayController : DataModel
     {
         public bool                                     Finished                                { get; set; }
         public bool                                     Paused                                  { get; set; }
@@ -42,19 +42,19 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ReplayController();
+            var value   = new ReplayController() { Pointer= p0 };
 
-            value.Finished                                  = GetBool(new IntPtr(p + 0x010)); // 0270D7820368 0x10 Finished                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Paused                                    = GetBool(new IntPtr(p + 0x011)); // 0270D7820388 0x11 Paused                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Position                                  = GetInt32(new IntPtr(p + 0x014)); // 0270D78203A8 0x14 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_EventTrace                              = GetObject<InputEventTrace>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputEventTrace.FromPointer); // 0270D78203C8 0x18 M_EventTrace                ( 0001866FDDA0 ModelClassType InputEventTrace InputEventTrace InputEventTrace Pointer )
-            value.M_Enumerator                              = GetObject<Enumerator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Enumerator.FromPointer); // 0270D78203E8 0x20 M_Enumerator                ( 00018662E420 ModelClassType Enumerator Enumerator Enumerator Pointer )
-            value.M_CreateNewDevices                        = GetBool(new IntPtr(p + 0x040)); // 0270D7820428 0x40 M_CreateNewDevices          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_OnFinished                              = GetObject<Action>(new IntPtr(p + 0x060), ReversePrism.DataModels.Action.FromPointer); // 0270D7820468 0x60 M_OnFinished                ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.M_StartTimeAsPerFirstEvent                = GetDouble(new IntPtr(p + 0x070)); // 0270D78204A8 0x70 M_StartTimeAsPerFirstEvent  ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_StartTimeAsPerRuntime                   = GetDouble(new IntPtr(p + 0x078)); // 0270D78204C8 0x78 M_StartTimeAsPerRuntime     ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_AllEventsByTimeIndex                    = GetInt32(new IntPtr(p + 0x080)); // 0270D78204E8 0x80 M_AllEventsByTimeIndex      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_AllEventsByTime                         = GetEnumList<InputEventPtr>(new IntPtr(p + 0x088)); // 0270D7820508 0x88 M_AllEventsByTime           ( 000185CEC5D8 ModelEnumListType List`1<InputEventPtr> List`1<InputEventPtr> List<InputEventPtr> Pointer )
+            value.Finished                                  = GetBool(new IntPtr(p + 0x010)); // 024667878368 0x10 Finished                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Paused                                    = GetBool(new IntPtr(p + 0x011)); // 024667878388 0x11 Paused                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Position                                  = GetInt32(new IntPtr(p + 0x014)); // 0246678783A8 0x14 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_EventTrace                              = GetObject<InputEventTrace>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputEventTrace.FromPointer); // 0246678783C8 0x18 M_EventTrace                ( 0001866FDDA0 ModelClassType InputEventTrace InputEventTrace InputEventTrace Pointer )
+            value.M_Enumerator                              = GetObject<Enumerator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Enumerator.FromPointer); // 0246678783E8 0x20 M_Enumerator                ( 00018662E420 ModelClassType Enumerator Enumerator Enumerator Pointer )
+            value.M_CreateNewDevices                        = GetBool(new IntPtr(p + 0x040)); // 024667878428 0x40 M_CreateNewDevices          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_OnFinished                              = GetObject<Action>(new IntPtr(p + 0x060), ReversePrism.DataModels.Action.FromPointer); // 024667878468 0x60 M_OnFinished                ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_StartTimeAsPerFirstEvent                = GetDouble(new IntPtr(p + 0x070)); // 0246678784A8 0x70 M_StartTimeAsPerFirstEvent  ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_StartTimeAsPerRuntime                   = GetDouble(new IntPtr(p + 0x078)); // 0246678784C8 0x78 M_StartTimeAsPerRuntime     ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.M_AllEventsByTimeIndex                    = GetInt32(new IntPtr(p + 0x080)); // 0246678784E8 0x80 M_AllEventsByTimeIndex      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_AllEventsByTime                         = GetEnumList<InputEventPtr>(new IntPtr(p + 0x088)); // 024667878508 0x88 M_AllEventsByTime           ( 000185CEC5D8 ModelEnumListType List`1<InputEventPtr> List`1<InputEventPtr> List<InputEventPtr> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class IFesDataPossessionLimitPopupView
+    public partial class IFesDataPossessionLimitPopupView : DataModel
     {
 
         public static IFesDataPossessionLimitPopupView? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new IFesDataPossessionLimitPopupView();
+            var value   = new IFesDataPossessionLimitPopupView() { Pointer= p0 };
 
 
             return value;

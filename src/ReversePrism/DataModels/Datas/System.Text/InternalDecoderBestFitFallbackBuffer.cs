@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 028 ISize                                    0001865F2AF0 ModelPrimitiveType int int int Int32
     // 030 OFallback                                00018671A640 ModelClassType InternalDecoderBestFitFallback InternalDecoderBestFitFallback InternalDecoderBestFitFallback Pointer
     // 000 s_InternalSyncObject                     <object> IL2CPP_TYPE_OBJECT
-    public partial class InternalDecoderBestFitFallbackBuffer
+    public partial class InternalDecoderBestFitFallbackBuffer : DataModel
     {
         public int                                      ICount                                  { get; set; }
         public int                                      ISize                                   { get; set; }
@@ -25,11 +25,11 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InternalDecoderBestFitFallbackBuffer();
+            var value   = new InternalDecoderBestFitFallbackBuffer() { Pointer= p0 };
 
-            value.ICount                                    = GetInt32(new IntPtr(p + 0x024)); // 0270D6B61DE8 0x24 ICount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ISize                                     = GetInt32(new IntPtr(p + 0x028)); // 0270D6B61E08 0x28 ISize                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OFallback                                 = GetObject<InternalDecoderBestFitFallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.InternalDecoderBestFitFallback.FromPointer); // 0270D6B61E28 0x30 OFallback                   ( 00018671A640 ModelClassType InternalDecoderBestFitFallback InternalDecoderBestFitFallback InternalDecoderBestFitFallback Pointer )
+            value.ICount                                    = GetInt32(new IntPtr(p + 0x024)); // 024666BD9DE8 0x24 ICount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ISize                                     = GetInt32(new IntPtr(p + 0x028)); // 024666BD9E08 0x28 ISize                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OFallback                                 = GetObject<InternalDecoderBestFitFallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.InternalDecoderBestFitFallback.FromPointer); // 024666BD9E28 0x30 OFallback                   ( 00018671A640 ModelClassType InternalDecoderBestFitFallback InternalDecoderBestFitFallback InternalDecoderBestFitFallback Pointer )
 
             return value;
         }

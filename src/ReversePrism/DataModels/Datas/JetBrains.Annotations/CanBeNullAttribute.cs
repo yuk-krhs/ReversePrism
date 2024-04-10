@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class CanBeNullAttribute
+    public partial class CanBeNullAttribute : DataModel
     {
 
         public static CanBeNullAttribute? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new CanBeNullAttribute();
+            var value   = new CanBeNullAttribute() { Pointer= p0 };
 
 
             return value;

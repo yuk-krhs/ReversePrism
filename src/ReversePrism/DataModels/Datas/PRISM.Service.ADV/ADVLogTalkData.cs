@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 020 Content                                  000186671910 ModelPrimitiveType string string string String
     // 028 VoiceId                                  000186671910 ModelPrimitiveType string string string String
     // 030 IsChoice                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    public partial class ADVLogTalkData
+    public partial class ADVLogTalkData : DataModel
     {
         public string                                   CharaId                                 { get; set; }
         public string                                   SpeakerName                             { get; set; }
@@ -27,13 +27,13 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new ADVLogTalkData();
+            var value   = new ADVLogTalkData() { Pointer= p0 };
 
-            value.CharaId                                   = GetString(new IntPtr(p + 0x010)); // 0270D691FD68 0x10 CharaId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.SpeakerName                               = GetString(new IntPtr(p + 0x018)); // 0270D691FD88 0x18 SpeakerName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Content                                   = GetString(new IntPtr(p + 0x020)); // 0270D691FDA8 0x20 Content                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.VoiceId                                   = GetString(new IntPtr(p + 0x028)); // 0270D691FDC8 0x28 VoiceId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsChoice                                  = GetBool(new IntPtr(p + 0x030)); // 0270D691FDE8 0x30 IsChoice                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CharaId                                   = GetString(new IntPtr(p + 0x010)); // 02466698FD68 0x10 CharaId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.SpeakerName                               = GetString(new IntPtr(p + 0x018)); // 02466698FD88 0x18 SpeakerName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Content                                   = GetString(new IntPtr(p + 0x020)); // 02466698FDA8 0x20 Content                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.VoiceId                                   = GetString(new IntPtr(p + 0x028)); // 02466698FDC8 0x28 VoiceId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsChoice                                  = GetBool(new IntPtr(p + 0x030)); // 02466698FDE8 0x30 IsChoice                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    public partial class InputUnsafeUtility
+    public partial class InputUnsafeUtility : DataModel
     {
 
         public static InputUnsafeUtility? FromPointer(IntPtr p0)
@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new InputUnsafeUtility();
+            var value   = new InputUnsafeUtility() { Pointer= p0 };
 
 
             return value;

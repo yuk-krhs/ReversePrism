@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Tree                                     0001866BFBB0 ModelClassType DependencyTree DependencyTree DependencyTree Pointer
-    public partial class PackageRegistry
+    public partial class PackageRegistry : DataModel
     {
         public DependencyTree?                          Tree                                    { get; set; }
 
@@ -19,9 +19,9 @@ namespace ReversePrism.DataModels
                 return null;
 
             var p       = p0.ToInt64();
-            var value   = new PackageRegistry();
+            var value   = new PackageRegistry() { Pointer= p0 };
 
-            value.Tree                                      = GetObject<DependencyTree>(new IntPtr(p + 0x010), ReversePrism.DataModels.DependencyTree.FromPointer); // 027003583D08 0x10 Tree                        ( 0001866BFBB0 ModelClassType DependencyTree DependencyTree DependencyTree Pointer )
+            value.Tree                                      = GetObject<DependencyTree>(new IntPtr(p + 0x010), ReversePrism.DataModels.DependencyTree.FromPointer); // 0245A3583C90 0x10 Tree                        ( 0001866BFBB0 ModelClassType DependencyTree DependencyTree DependencyTree Pointer )
 
             return value;
         }
