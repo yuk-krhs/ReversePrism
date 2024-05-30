@@ -6,5 +6,6 @@ namespace ReversePrism
     {
         public int                              Id;
         public int                              MissionType;
+        public int                              Value;
     }
 }

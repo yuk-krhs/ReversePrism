@@ -6,6 +6,7 @@ namespace ReversePrism
     {
         public int                              Id;
         public int                              MstExtraStoryCategoryId;
+        public int                              JumpType;
         public DateTime                         ReleaseDate;
     }
 }
