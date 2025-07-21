@@ -62,9 +62,6 @@ namespace ReversePrism
         public static MasterData FromPackedFile(string file, long label, long encrypt)
         {
             var packfile= PackedFile.FromEncryptedFile(file, label, encrypt);
-
-            File.WriteAllBytes("G:\\DMM\\imas_scsp\\SONGforPRISM_manage\\hack\\tmp\\master.bytes", packfile.Data);
-
             var value   = FromBytes(packfile.Data);
 
             value.FileName  = file;
